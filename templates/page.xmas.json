@@ -1,233 +1,233 @@
 {
-    "sections": {
-      "banner": {
-        "type": "xmas-banner",
-        "settings": {
-          "image": "shopify:\/\/shop_images\/xmas-banner-desktop.webp",
-          "mobile_image": "shopify:\/\/shop_images\/xmas-banner-mobile.webp",
-          "title": "Venta Navideña EcoFlow",
-          "sub_title": "El regalo que se sigue dando",
-          "banner_image": "shopify:\/\/shop_images\/es-sale-banner-png.png",
-          "sale_title": "Termina el 31 de diciembre",
-          "countdown": "Dec 31, 2022"
-        }
-      },
-      "video-with-steps": {
-        "type": "xmas-wish-fulfilled",
-        "blocks": {
-          "84f159fd-4e39-48dd-bcc5-69a4702967a7": {
-            "type": "steps",
-            "settings": {
-              "heading_image": "shopify:\/\/shop_images\/1_139e1fb2-58b3-4d82-93ef-0fd50ebd8c1c.png",
-              "heading": "1",
-              "content": "Inicia sesión en tu cuenta de EcoFlow."
-            }
-          },
-          "936c378b-4e1b-483b-a659-5fa2540557cd": {
-            "type": "steps",
-            "settings": {
-              "heading_image": "shopify:\/\/shop_images\/2.png",
-              "heading": "2",
-              "content": "Haz clic en el botón de la lista de deseos de abajo, <br> o añade un producto <br> que te gustaría a tu lista de <br> deseos desde <br> la página del producto."
-            }
-          },
-          "cb795c1b-afb7-4091-ab30-4eb9a44b07fe": {
-            "type": "steps",
-            "settings": {
-              "heading_image": "shopify:\/\/shop_images\/3_bcfe2601-e661-4496-82c1-0da4f173753d.png",
-              "heading": "3",
-              "content": "Una vez que hayas configurado tu lista de deseos, <br> haz clic en la pestaña <br>\"Lista de deseos\"<br> en la parte <br> derecha de la página."
-            }
-          },
-          "c7489187-4d35-46bb-8281-f41f22f5379e": {
-            "type": "steps",
-            "settings": {
-              "heading_image": "shopify:\/\/shop_images\/4_c68fb83f-7a65-400b-95f5-44145001b599.png",
-              "heading": "4",
-              "content": "Selecciona el <br>\"menú de tres puntos\"<br> para compartir."
-            }
-          },
-          "be688ca3-ff56-4bf2-aa28-9f23811330a3": {
-            "type": "steps",
-            "settings": {
-              "heading_image": "shopify:\/\/shop_images\/5_f421e77f-2835-4caa-99f4-e5af3cbdcbc1.png",
-              "heading": "5",
-              "content": "Comparte con tus amigos para que más gente lo sepa con <br>#ecoflowwishlist #ecoflowxmas."
-            }
-          },
-          "4b3ef9fd-5b18-42da-8e4f-0ea18b88b5ba": {
-            "type": "steps",
-            "settings": {
-              "heading_image": "shopify:\/\/shop_images\/6_0ef99419-c28a-4b4f-adbe-a8afab919ff1.png",
-              "heading": "6",
-              "content": "El día de Navidad, elegiremos un <br> afortunado ganador que cumplirá su wishlist y lo anunciaremos en nuestra comunidad de <br>Facebook y por email."
-            }
-          },
-          "05beedcf-6339-46dc-9d66-0de0a8e1cc5e": {
-            "type": "steps",
-            "settings": {
-              "heading": "7",
-              "content": "Se enviará un código de canje al ganador para que canjee el producto de la lista de deseo."
-            }
-          }
-        },
-        "block_order": [
-          "84f159fd-4e39-48dd-bcc5-69a4702967a7",
-          "936c378b-4e1b-483b-a659-5fa2540557cd",
-          "cb795c1b-afb7-4091-ab30-4eb9a44b07fe",
-          "c7489187-4d35-46bb-8281-f41f22f5379e",
-          "be688ca3-ff56-4bf2-aa28-9f23811330a3",
-          "4b3ef9fd-5b18-42da-8e4f-0ea18b88b5ba",
-          "05beedcf-6339-46dc-9d66-0de0a8e1cc5e"
-        ],
-        "settings": {
-          "video": "https:\/\/www.youtube.com\/watch?v=JboAafIZRmQ",
-          "heading": "Consigue que EcoFlow cumpla tu deseo",
-          "subtitle": "¡El día de Navidad, elegiremos 1 ganador de cada sitio y cumpliremos su deseo! (precio limitado a 1225€)"
-        }
-      },
-      "best-choice": {
-        "type": "xmas-best-choice",
-        "settings": {
-          "heading": "Las mejores opciones de Navidad"
-        }
-      },
-      "popular-products": {
-        "type": "xmas-popular-product",
-        "settings": {
-          "heading": "Productos más populares"
-        }
-      },
-      "new-arrivals": {
-        "type": "xmas-new-arrival",
-        "blocks": {
-          "444026da-5476-4cad-a437-84ba41b9ad45": {
-            "type": "product_block",
-            "settings": {
-              "product_handle": "river-2-portable-power-station",
-              "product_id": "river-2-series",
-              "product_img_title": "shopify:\/\/shop_images\/ecoflow-river-2-product-title.png",
-              "product_bundle": "",
-              "product_image": "shopify:\/\/shop_images\/eu_river_2.png",
-              "product_description": "Con una química LFP de larga duración <br> y una carga 5 veces más rápida, <br>la serie RIVER 2 es segura,<br> duradera y muy eficiente en <br> cualquier condición."
-            }
-          },
-          "f504a221-930f-440c-9709-266c2864dda6": {
-            "type": "product_block",
-            "settings": {
-              "product_handle": "river-2-110w-portable-solar-panel",
-              "product_id": "",
-              "product_img_title": "shopify:\/\/shop_images\/ecoflow-river-2-product-title.png",
-              "product_bundle": "+ Panel Solar de 110W",
-              "product_image": "shopify:\/\/shop_images\/ecoflow-river-2-110w-updated.png",
-              "product_description": "Ligero, con carga solar rápida y más de <br>3000 ciclos de batería, <br>el RIVER 2 con panel solar portátil de 110W<br> es perfecto para acampar o <br>realizar actividades al aire libre."
-            }
-          },
-          "db50f9f2-989e-4fed-b56a-d6b48bf2c74e": {
-            "type": "product_block",
-            "settings": {
-              "product_handle": "river-2-max-160w-portable-solar-panel",
-              "product_id": "",
-              "product_img_title": "shopify:\/\/shop_images\/river2max.png",
-              "product_bundle": "+ 160W Portable Solar Panel",
-              "product_image": "shopify:\/\/shop_images\/river_2_max_bundle.png",
-              "product_description": "Aprovecha la energía renovable para tu <br>aplicación fuera de la red con RIVER 2 Max,<br> conecta un par de <br>Paneles Solares de 160W para recargar completamente en solo 3 horas."
-            }
-          },
-          "a8cc84cc-ff4d-4010-adea-592cfff16017": {
-            "type": "product_block",
-            "settings": {
-              "product_handle": "river-2-max-portable-power-station",
-              "product_id": "",
-              "product_img_title": "shopify:\/\/shop_images\/river2max.png",
-              "product_bundle": "",
-              "product_image": "shopify:\/\/shop_images\/river_2_max.png",
-              "product_description": "RIVER 2 Max es una opción <br> perfecta para cualquier<br> seguridad doméstica <br>o aplicaciones fuera de la red."
-            }
-          },
-          "3103da2f-2ae4-45ba-bf8c-85c4b9bface5": {
-            "type": "product_block",
-            "disabled": true,
-            "settings": {
-              "product_handle": "river-2-pro-portable-power-station",
-              "product_id": "",
-              "product_img_title": "shopify:\/\/shop_images\/ecoflow-river-2-pro-product-title.png",
-              "product_bundle": "",
-              "product_image": "shopify:\/\/shop_images\/ecoflow-river-2-pro-product-image.png",
-              "product_description": "¡Tamaño pequeño con gran potencia!<br> ¡Esta estación de energía ligera y <br>resistente te proporciona <br>una energía cómoda y sobre la marcha!"
-            }
-          },
-          "bb7e60be-8210-4a5f-bb92-73dfecd4067a": {
-            "type": "product_block",
-            "disabled": true,
-            "settings": {
-              "product_handle": "river-2-pro-220w-portable-solar-panel",
-              "product_id": "",
-              "product_img_title": "shopify:\/\/shop_images\/ecoflow-river-2-pro-product-title.png",
-              "product_bundle": "+ panel solar de 220 W",
-              "product_image": "shopify:\/\/shop_images\/ecoflow-river-2-pro-220w-product-image.png",
-              "product_description": "Lleva la energía verde y <br>limpia fuera de la red con el potente <br>RIVER 2 Pro y el panel solar de 220W <br>y explora el mundo sin límites de energía."
-            }
-          }
-        },
-        "block_order": [
-          "444026da-5476-4cad-a437-84ba41b9ad45",
-          "f504a221-930f-440c-9709-266c2864dda6",
-          "db50f9f2-989e-4fed-b56a-d6b48bf2c74e",
-          "a8cc84cc-ff4d-4010-adea-592cfff16017",
-          "3103da2f-2ae4-45ba-bf8c-85c4b9bface5",
-          "bb7e60be-8210-4a5f-bb92-73dfecd4067a"
-        ],
-        "settings": {
-          "heading": "Nuevos Arribos"
-        }
-      },
-      "shop-the-sale": {
-        "type": "xmas-shop-the-sale",
-        "blocks": {
-          "eee111c7-05e6-49ab-b0b0-8f1d86e8c70e": {
-            "type": "steps",
-            "settings": {
-              "icon": "shopify:\/\/shop_images\/free-shipping.png",
-              "heading": "Envío gratis",
-              "content": "Disfrute de envíos gratis en todos los pedidos."
-            }
-          },
-          "9d6b31a1-e9ae-4295-aa7f-20a3e3eea636": {
-            "type": "steps",
-            "settings": {
-              "icon": "shopify:\/\/shop_images\/installment-plans.png",
-              "heading": "Planes de pagos a plazos",
-              "content": "Empiece a pagar más adelante en plazos mensuales con Paypal."
-            }
-          },
-          "5f73e1b1-e691-42af-a5bc-f6052cb61348": {
-            "type": "steps",
-            "settings": {
-              "icon": "shopify:\/\/shop_images\/membership.png",
-              "heading": "Membresía",
-              "content": "Consiga el doble de EcoCredits durante las rebajas navideñas."
-            }
-          }
-        },
-        "block_order": [
-          "eee111c7-05e6-49ab-b0b0-8f1d86e8c70e",
-          "9d6b31a1-e9ae-4295-aa7f-20a3e3eea636",
-          "5f73e1b1-e691-42af-a5bc-f6052cb61348"
-        ],
-        "settings": {
-          "heading": "Descubrir todas las ofertas >>>",
-          "url": "https:\/\/es.ecoflow.com\/collections\/promotional-items",
-          "subheading": "Además de los grandes descuentos, aquí tienes otras razones para comprar en las rebajas navideñas."
-        }
+  "sections": {
+    "banner": {
+      "type": "xmas-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/xmas-banner-desktop.webp",
+        "mobile_image": "shopify:\/\/shop_images\/xmas-banner-mobile.webp",
+        "title": "Venta Navideña EcoFlow",
+        "sub_title": "El regalo que se sigue dando",
+        "banner_image": "shopify:\/\/shop_images\/es-sale-banner-png.png",
+        "sale_title": "Termina el 31 de diciembre",
+        "countdown": "Dec 31, 2022"
       }
     },
-    "order": [
-      "banner",
-      "video-with-steps",
-      "best-choice",
-      "popular-products",
-      "new-arrivals",
-      "shop-the-sale"
-    ]
-  }
+    "video-with-steps": {
+      "type": "xmas-wish-fulfilled",
+      "blocks": {
+        "84f159fd-4e39-48dd-bcc5-69a4702967a7": {
+          "type": "steps",
+          "settings": {
+            "heading_image": "shopify:\/\/shop_images\/1_139e1fb2-58b3-4d82-93ef-0fd50ebd8c1c.png",
+            "heading": "1",
+            "content": "Inicia sesión en tu cuenta de EcoFlow."
+          }
+        },
+        "936c378b-4e1b-483b-a659-5fa2540557cd": {
+          "type": "steps",
+          "settings": {
+            "heading_image": "shopify:\/\/shop_images\/2.png",
+            "heading": "2",
+            "content": "Haz clic en el botón de la lista de deseos de abajo, <br> o añade un producto <br> que te gustaría a tu lista de <br> deseos desde <br> la página del producto."
+          }
+        },
+        "cb795c1b-afb7-4091-ab30-4eb9a44b07fe": {
+          "type": "steps",
+          "settings": {
+            "heading_image": "shopify:\/\/shop_images\/3_bcfe2601-e661-4496-82c1-0da4f173753d.png",
+            "heading": "3",
+            "content": "Una vez que hayas configurado tu lista de deseos, <br> haz clic en la pestaña <br>\"Lista de deseos\"<br> en la parte <br> derecha de la página."
+          }
+        },
+        "c7489187-4d35-46bb-8281-f41f22f5379e": {
+          "type": "steps",
+          "settings": {
+            "heading_image": "shopify:\/\/shop_images\/4_c68fb83f-7a65-400b-95f5-44145001b599.png",
+            "heading": "4",
+            "content": "Selecciona el <br>\"menú de tres puntos\"<br> para compartir."
+          }
+        },
+        "be688ca3-ff56-4bf2-aa28-9f23811330a3": {
+          "type": "steps",
+          "settings": {
+            "heading_image": "shopify:\/\/shop_images\/5_f421e77f-2835-4caa-99f4-e5af3cbdcbc1.png",
+            "heading": "5",
+            "content": "Comparte con tus amigos para que más gente lo sepa con <br>#ecoflowwishlist #ecoflowxmas."
+          }
+        },
+        "4b3ef9fd-5b18-42da-8e4f-0ea18b88b5ba": {
+          "type": "steps",
+          "settings": {
+            "heading_image": "shopify:\/\/shop_images\/6_0ef99419-c28a-4b4f-adbe-a8afab919ff1.png",
+            "heading": "6",
+            "content": "El día de Navidad, elegiremos un <br> afortunado ganador que cumplirá su wishlist y lo anunciaremos en nuestra comunidad de <br>Facebook y por email."
+          }
+        },
+        "05beedcf-6339-46dc-9d66-0de0a8e1cc5e": {
+          "type": "steps",
+          "settings": {
+            "heading": "7",
+            "content": "Se enviará un código de canje al ganador para que canjee el producto de la lista de deseo."
+          }
+        }
+      },
+      "block_order": [
+        "84f159fd-4e39-48dd-bcc5-69a4702967a7",
+        "936c378b-4e1b-483b-a659-5fa2540557cd",
+        "cb795c1b-afb7-4091-ab30-4eb9a44b07fe",
+        "c7489187-4d35-46bb-8281-f41f22f5379e",
+        "be688ca3-ff56-4bf2-aa28-9f23811330a3",
+        "4b3ef9fd-5b18-42da-8e4f-0ea18b88b5ba",
+        "05beedcf-6339-46dc-9d66-0de0a8e1cc5e"
+      ],
+      "settings": {
+        "video": "https:\/\/www.youtube.com\/watch?v=JboAafIZRmQ",
+        "heading": "Consigue que EcoFlow cumpla tu deseo",
+        "subtitle": "¡El día de Navidad, elegiremos 1 ganador de cada sitio y cumpliremos su deseo! (precio limitado a 1225€)"
+      }
+    },
+    "best-choice": {
+      "type": "xmas-best-choice",
+      "settings": {
+        "heading": "Las mejores opciones de Navidad"
+      }
+    },
+    "popular-products": {
+      "type": "xmas-popular-product",
+      "settings": {
+        "heading": "Productos más populares"
+      }
+    },
+    "new-arrivals": {
+      "type": "xmas-new-arrival",
+      "blocks": {
+        "444026da-5476-4cad-a437-84ba41b9ad45": {
+          "type": "product_block",
+          "settings": {
+            "product_handle": "river-2-portable-power-station",
+            "product_id": "river-2-series",
+            "product_img_title": "shopify:\/\/shop_images\/ecoflow-river-2-product-title.png",
+            "product_bundle": "",
+            "product_image": "shopify:\/\/shop_images\/eu_river_2.png",
+            "product_description": "Con una química LFP de larga duración <br> y una carga 5 veces más rápida, <br>la serie RIVER 2 es segura,<br> duradera y muy eficiente en <br> cualquier condición."
+          }
+        },
+        "f504a221-930f-440c-9709-266c2864dda6": {
+          "type": "product_block",
+          "settings": {
+            "product_handle": "river-2-110w-portable-solar-panel",
+            "product_id": "",
+            "product_img_title": "shopify:\/\/shop_images\/ecoflow-river-2-product-title.png",
+            "product_bundle": "+ Panel Solar de 110W",
+            "product_image": "shopify:\/\/shop_images\/ecoflow-river-2-110w-updated.png",
+            "product_description": "Ligero, con carga solar rápida y más de <br>3000 ciclos de batería, <br>el RIVER 2 con panel solar portátil de 110W<br> es perfecto para acampar o <br>realizar actividades al aire libre."
+          }
+        },
+        "db50f9f2-989e-4fed-b56a-d6b48bf2c74e": {
+          "type": "product_block",
+          "settings": {
+            "product_handle": "river-2-max-160w-portable-solar-panel",
+            "product_id": "",
+            "product_img_title": "shopify:\/\/shop_images\/river2max.png",
+            "product_bundle": "+ 160W Portable Solar Panel",
+            "product_image": "shopify:\/\/shop_images\/river_2_max_bundle.png",
+            "product_description": "Aprovecha la energía renovable para tu <br>aplicación fuera de la red con RIVER 2 Max,<br> conecta un par de <br>Paneles Solares de 160W para recargar completamente en solo 3 horas."
+          }
+        },
+        "a8cc84cc-ff4d-4010-adea-592cfff16017": {
+          "type": "product_block",
+          "settings": {
+            "product_handle": "river-2-max-portable-power-station",
+            "product_id": "",
+            "product_img_title": "shopify:\/\/shop_images\/river2max.png",
+            "product_bundle": "",
+            "product_image": "shopify:\/\/shop_images\/river_2_max.png",
+            "product_description": "RIVER 2 Max es una opción <br> perfecta para cualquier<br> seguridad doméstica <br>o aplicaciones fuera de la red."
+          }
+        },
+        "3103da2f-2ae4-45ba-bf8c-85c4b9bface5": {
+          "type": "product_block",
+          "disabled": true,
+          "settings": {
+            "product_handle": "river-2-pro-portable-power-station",
+            "product_id": "",
+            "product_img_title": "shopify:\/\/shop_images\/ecoflow-river-2-pro-product-title.png",
+            "product_bundle": "",
+            "product_image": "shopify:\/\/shop_images\/ecoflow-river-2-pro-product-image.png",
+            "product_description": "¡Tamaño pequeño con gran potencia!<br> ¡Esta estación de energía ligera y <br>resistente te proporciona <br>una energía cómoda y sobre la marcha!"
+          }
+        },
+        "bb7e60be-8210-4a5f-bb92-73dfecd4067a": {
+          "type": "product_block",
+          "disabled": true,
+          "settings": {
+            "product_handle": "river-2-pro-220w-portable-solar-panel",
+            "product_id": "",
+            "product_img_title": "shopify:\/\/shop_images\/ecoflow-river-2-pro-product-title.png",
+            "product_bundle": "+ panel solar de 220 W",
+            "product_image": "shopify:\/\/shop_images\/ecoflow-river-2-pro-220w-product-image.png",
+            "product_description": "Lleva la energía verde y <br>limpia fuera de la red con el potente <br>RIVER 2 Pro y el panel solar de 220W <br>y explora el mundo sin límites de energía."
+          }
+        }
+      },
+      "block_order": [
+        "444026da-5476-4cad-a437-84ba41b9ad45",
+        "f504a221-930f-440c-9709-266c2864dda6",
+        "db50f9f2-989e-4fed-b56a-d6b48bf2c74e",
+        "a8cc84cc-ff4d-4010-adea-592cfff16017",
+        "3103da2f-2ae4-45ba-bf8c-85c4b9bface5",
+        "bb7e60be-8210-4a5f-bb92-73dfecd4067a"
+      ],
+      "settings": {
+        "heading": "Nuevos Arribos"
+      }
+    },
+    "shop-the-sale": {
+      "type": "xmas-shop-the-sale",
+      "blocks": {
+        "eee111c7-05e6-49ab-b0b0-8f1d86e8c70e": {
+          "type": "steps",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/free-shipping.png",
+            "heading": "Envío gratis",
+            "content": "Disfrute de envíos gratis en todos los pedidos."
+          }
+        },
+        "9d6b31a1-e9ae-4295-aa7f-20a3e3eea636": {
+          "type": "steps",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/installment-plans.png",
+            "heading": "Planes de pagos a plazos",
+            "content": "Empiece a pagar más adelante en plazos mensuales con Paypal."
+          }
+        },
+        "5f73e1b1-e691-42af-a5bc-f6052cb61348": {
+          "type": "steps",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/membership.png",
+            "heading": "Membresía",
+            "content": "Consiga el doble de EcoCredits durante las rebajas navideñas."
+          }
+        }
+      },
+      "block_order": [
+        "eee111c7-05e6-49ab-b0b0-8f1d86e8c70e",
+        "9d6b31a1-e9ae-4295-aa7f-20a3e3eea636",
+        "5f73e1b1-e691-42af-a5bc-f6052cb61348"
+      ],
+      "settings": {
+        "heading": "Descubrir todas las ofertas >>>",
+        "url": "https:\/\/es.ecoflow.com\/collections\/promotional-items",
+        "subheading": "Además de los grandes descuentos, aquí tienes otras razones para comprar en las rebajas navideñas."
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "video-with-steps",
+    "best-choice",
+    "popular-products",
+    "new-arrivals",
+    "shop-the-sale"
+  ]
+}
