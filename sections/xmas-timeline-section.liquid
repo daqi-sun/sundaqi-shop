@@ -1,0 +1,1081 @@
+{{ 'jquery.min.js' | asset_url | script_tag }}
+<div class="ef-story-line-a-wrapper ef-story_pc">
+    <div class='ef-story-line-a'>
+      <div class="ef-story-line-a-h">
+        {% include 'icon-ef-xmas' %}
+        <span>{{ section.settings.title }}</span>
+        {% include 'icon-ef-xmas-2' %}
+      </div>
+      <div class="ef-story-line-a-box">
+        <div class="ef-story-line-a-card">
+          <div class="ef-story-line-a-l">
+            <div class="ef-story-line-a-card-item">
+              <div class="ef-story-line-a-card-msa">
+                <div class="ef-story-line-a-card-msa-1">{{ section.settings.msleft }}</div>
+              </div>
+              <div class="ef-story-line-a-card-msd">
+                <svg class="ef-story-line-a-card-mad-icon" xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38" fill="none">
+                  <path d="M19.1776 0.399994C8.82304 0.399994 0.399902 8.82313 0.399902 19.1777C0.399902 29.5322 8.82304 37.9554 19.1776 37.9554C29.5322 37.9554 37.9553 29.5322 37.9553 19.1777C37.9553 8.82313 29.5322 0.399994 19.1776 0.399994ZM19.1776 35.7462C10.0412 35.7462 2.60904 28.3141 2.60904 19.1777C2.60904 10.0413 10.0412 2.60913 19.1776 2.60913C28.314 2.60913 35.7461 10.0413 35.7461 19.1777C35.7461 28.3141 28.314 35.7462 19.1776 35.7462Z" fill="#054634"/>
+                  <path d="M32.811 15.2422C32.811 13.7463 31.5929 12.5281 30.097 12.5281C28.6011 12.5281 27.3829 13.7463 27.3829 15.2422C27.3829 15.9176 27.6322 16.533 28.0393 17.0064L23.7757 19.4932L20.3925 13.6169C21.5539 13.1372 22.3744 11.9948 22.3744 10.663C22.3744 8.90199 20.9417 7.46605 19.1775 7.46605C17.4133 7.46605 15.9806 8.89883 15.9806 10.663C15.9806 11.9948 16.8011 13.1404 17.9625 13.6169L14.5888 19.4775L10.3157 17.0064C10.7228 16.533 10.9721 15.9144 10.9721 15.2422C10.9721 13.7463 9.75394 12.5281 8.25803 12.5281C6.76213 12.5281 5.54395 13.7463 5.54395 15.2422C5.54395 16.4068 6.28243 17.4009 7.31442 17.7827C7.31442 17.8301 7.31442 17.8806 7.32073 17.9311L8.92078 28.8379C8.99021 29.3018 9.38785 29.6458 9.85809 29.6458H28.4969C28.9671 29.6458 29.3648 29.3018 29.4342 28.8379L31.0343 17.9311C31.0406 17.8806 31.0406 17.8332 31.0406 17.7827C32.0726 17.3977 32.811 16.4068 32.811 15.2422ZM30.097 14.4217C30.5483 14.4217 30.9175 14.7909 30.9175 15.2422C30.9175 15.6935 30.5483 16.0628 30.097 16.0628C29.6457 16.0628 29.2764 15.6935 29.2764 15.2422C29.2764 14.7909 29.6457 14.4217 30.097 14.4217ZM19.1807 9.3596C19.9002 9.3596 20.484 9.94344 20.484 10.663C20.484 11.3825 19.9002 11.9664 19.1807 11.9664C18.4611 11.9664 17.8773 11.3825 17.8773 10.663C17.8773 9.94344 18.4611 9.3596 19.1807 9.3596ZM19.1807 15.3053L22.1409 20.4463L19.2154 22.1505L16.233 20.4242L19.1807 15.3053ZM8.26434 14.4217C8.71564 14.4217 9.08488 14.7909 9.08488 15.2422C9.08488 15.6935 8.71564 16.0628 8.26434 16.0628C7.81305 16.0628 7.4438 15.6935 7.4438 15.2422C7.4438 14.7909 7.81305 14.4217 8.26434 14.4217ZM27.6827 27.7523H10.6818L9.34367 18.6254L18.7451 24.0662C18.8903 24.1514 19.0544 24.1924 19.2185 24.1924C19.3826 24.1924 19.5467 24.1482 19.6951 24.063L29.0208 18.6285L27.6827 27.7523Z" fill="#054634"/>
+                </svg>
+                <span class="ef-story-line-a-card-msd1">
+                  {{ section.settings.msleftc }}
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="ef-story-line-a-r">
+            {% if section.settings.msline1 != blank %}
+              <div class="ef-story-line-a-long ef-story-line-a-long1 ef-story-line-a-popup" data-win="{{ section.settings.msline1text }}">
+                <div class="ef-story-line-a-long-text">{{ section.settings.msline1 }}</div>
+              </div>
+              {% endif %}
+              {% if section.settings.msline2 != blank %}
+              <div class="ef-story-line-a-long ef-story-line-a-long2 ef-story-line-a-popup" data-win="{{ section.settings.msline2text }}">
+                <div class="ef-story-line-a-long-text">{{ section.settings.msline2 }}</div>
+              </div>
+              {% endif %}
+              {% if section.settings.msline3 != blank %}
+              <div class="ef-story-line-a-long ef-story-line-a-long3 ef-story-line-a-popup" data-win="{{ section.settings.msline3text }}">
+                <div class="ef-story-line-a-long-text">{{ section.settings.msline3 }}</div>
+              </div>
+              {% endif %}
+              {% if section.settings.msline4 != blank %}
+              <div class="ef-story-line-a-long ef-story-line-a-long4 ef-story-line-a-popup" data-win="{{ section.settings.msline4text }}">
+                <div class="ef-story-line-a-long-text">{{ section.settings.msline4 }}</div>
+              </div>
+              {% endif %}
+            <div class="ef-story-line-a-card-item ef-story-line-openwin">
+              <div class="ef-story-line-a-card-msa">
+                <div class="ef-story-line-a-card-msa-1">
+                  {{ section.settings.ms1a }}
+                </div>
+              </div>
+            </div>
+            <div class="ef-story-line-a-card-item ef-story-line-openwin">
+              <div class="ef-story-line-a-card-msa">
+                <div class="ef-story-line-a-card-msa-1">{{ section.settings.ms2a }}</div>
+              </div>
+            </div>
+            <div class="ef-story-line-a-card-item ef-story-line-openwin">
+              <div class="ef-story-line-a-card-msa">
+                <div class="ef-story-line-a-card-msa-1">{{ section.settings.ms3a }}</div>
+              </div>
+            </div>
+            <div class="ef-story-line-a-card-item ef-story-line-openwin">
+              <div class="ef-story-line-a-card-msa">
+                <div class="ef-story-line-a-card-msa-1">{{ section.settings.ms4a }}</div>
+              </div>
+            </div>
+            <div class="ef-story-line-a-card-item ef-story-line-openwin">
+              <div class="ef-story-line-a-card-msa">
+                <div class="ef-story-line-a-card-msa-1">{{ section.settings.ms5a }}</div>
+              </div>
+            </div>
+            <div class="ef-story-line-a-card-item ef-story-line-a-card-item-two ef-story-line-openwin">
+              <div class="ef-story-line-a-card-msa">
+                <div class="ef-story-line-a-card-msa-1">{{ section.settings.ms6a }}</div>
+              </div>
+              {% comment %} <div class="ef-story-line-a-card-msb ef-story-line-a-popup" data-win="{{ section.settings.ms6d }}">
+                <span class="ef-story-line-a-card-msb1">{{ section.settings.ms6c }}</span>
+              </div> {% endcomment %}
+            </div>
+            <div class="ef-story-line-a-card-item ef-story-line-openwin">
+              <div class="ef-story-line-a-card-msa">
+                <div class="ef-story-line-a-card-msa-1">{{ section.settings.ms7a }}</div>
+              </div>
+            </div>
+            <div class="ef-story-line-a-card-item ef-story-line-openwin">
+              <div class="ef-story-line-a-card-msa">
+                <div class="ef-story-line-a-card-msa-1">{{ section.settings.ms8a }}</div>
+              </div>
+            </div>
+            <div class="ef-story-line-a-card-item ef-story-line-a-card-item-two ef-story-line-openwin">
+              <div class="ef-story-line-a-card-msa">
+                <div class="ef-story-line-a-card-msa-1">{{ section.settings.ms9a }}</div>
+              </div>
+              {% comment %} <div class="ef-story-line-a-card-msb ef-story-line-a-popup" data-win="{{ section.settings.ms9d }}">
+                <span class="ef-story-line-a-card-msb1">{{ section.settings.ms9c }}</span>
+              </div> {% endcomment %}
+            </div>
+            <div class="ef-story-line-a-card-item ef-story-line-openwin">
+              <div class="ef-story-line-a-card-msa">
+                <div class="ef-story-line-a-card-msa-1">{{ section.settings.ms10a }}</div>
+              </div>
+            </div>
+            <div class="ef-story-line-a-card-item ef-story-line-openwin">
+              <div class="ef-story-line-a-card-msa">
+                <div class="ef-story-line-a-card-msa-1">{{ section.settings.ms11a }}</div>
+              </div>
+            </div>
+            <div class="ef-story-line-a-card-item ef-story-line-openwin">
+              <div class="ef-story-line-a-card-msa">
+                <div class="ef-story-line-a-card-msa-1">{{ section.settings.ms12a }}</div>
+              </div>
+            </div>
+            <div class="ef-story-line-a-card-item ef-story-line-openwin">
+              <div class="ef-story-line-a-card-msa">
+                <div class="ef-story-line-a-card-msa-1">{{ section.settings.ms13a }}</div>
+              </div>
+            </div>
+            <div class="ef-story-line-a-card-item ef-story-line-openwin">
+              <div class="ef-story-line-a-card-msa">
+                <div class="ef-story-line-a-card-msa-1">{{ section.settings.ms14a }}</div>
+              </div>
+            </div>
+            <div class="ef-story-line-a-card-item ef-story-line-openwin">
+              <div class="ef-story-line-a-card-msa">
+                <div class="ef-story-line-a-card-msa-1">{{ section.settings.ms15a }}</div>
+              </div>
+            </div>
+            <div class="ef-story-line-a-card-item ef-story-line-openwin">
+              <div class="ef-story-line-a-card-msa">
+                <div class="ef-story-line-a-card-msa-1">{{ section.settings.ms16a }}</div>
+              </div>
+            </div>
+            <div class="ef-story-line-a-card-item ef-story-line-openwin">
+              <div class="ef-story-line-a-card-msa">
+                <div class="ef-story-line-a-card-msa-1">{{ section.settings.ms17a }}</div>
+              </div>
+            </div>
+            <div class="ef-story-line-a-card-item ef-story-line-openwin">
+              <div class="ef-story-line-a-card-msa">
+                <div class="ef-story-line-a-card-msa-1">{{ section.settings.ms18a }}</div>
+              </div>
+            </div>
+            <div class="ef-story-line-a-card-item ef-story-line-openwin">
+              <div class="ef-story-line-a-card-msa">
+                <div class="ef-story-line-a-card-msa-1">{{ section.settings.ms19a }}</div>
+              </div>
+            </div>
+            <div class="ef-story-line-a-card-item ef-story-line-openwin">
+              <div class="ef-story-line-a-card-msa">
+                <div class="ef-story-line-a-card-msa-1">{{ section.settings.ms20a }}</div>
+              </div>
+            </div>
+            <div class="ef-story-line-a-card-item ef-story-line-openwin">
+              <div class="ef-story-line-a-card-msa">
+                <div class="ef-story-line-a-card-msa-1">{{ section.settings.ms21a }}</div>
+              </div>
+            </div>
+            <div class="ef-story-line-a-card-item ef-story-line-openwin">
+              <div class="ef-story-line-a-card-msa">
+                <div class="ef-story-line-a-card-msa-1">{{ section.settings.ms22a }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ef-story-line-a-win" data-win="wina">
+        <div class="ef-story-line-a-win-in">
+          <span class="ef-story-line-a-win-ms"></span>
+          {% include 'icon-ef-close' %}
+        </div>
+      </div>
+    </div>
+    <div class="ef-story-line-more">{{ section.settings.more_text }}</div>
+  </div>
+  <div class="ef-story-line-a-wrapper ef-story_mobile">
+    <div class='ef-story-line-a'>
+      <div class="ef-story-line-a-h">
+        {% include 'icon-ef-xmas' %}
+        <span>{{ section.settings.title }}</span>
+        {% include 'icon-ef-xmas-2' %}
+      </div>
+       <div class="ef-story-line-a-box">
+        <div class="ef-story-line-a-card">
+          <div class="ef-story-line-a-l">
+            <div class="ef-story-line-a-card-item">
+              <div class="ef-story-line-a-card-msa">
+                <div class="ef-story-line-a-card-msa-1">{{ section.settings.msleft }}</div>
+              </div>
+              <div class="ef-story-line-a-card-msd">
+                <svg class="ef-story-line-a-card-mad-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 38 38" fill="none">
+                  <path d="M19.1776 0.399994C8.82304 0.399994 0.399902 8.82313 0.399902 19.1777C0.399902 29.5322 8.82304 37.9554 19.1776 37.9554C29.5322 37.9554 37.9553 29.5322 37.9553 19.1777C37.9553 8.82313 29.5322 0.399994 19.1776 0.399994ZM19.1776 35.7462C10.0412 35.7462 2.60904 28.3141 2.60904 19.1777C2.60904 10.0413 10.0412 2.60913 19.1776 2.60913C28.314 2.60913 35.7461 10.0413 35.7461 19.1777C35.7461 28.3141 28.314 35.7462 19.1776 35.7462Z" fill="#054634"/>
+                  <path d="M32.811 15.2422C32.811 13.7463 31.5929 12.5281 30.097 12.5281C28.6011 12.5281 27.3829 13.7463 27.3829 15.2422C27.3829 15.9176 27.6322 16.533 28.0393 17.0064L23.7757 19.4932L20.3925 13.6169C21.5539 13.1372 22.3744 11.9948 22.3744 10.663C22.3744 8.90199 20.9417 7.46605 19.1775 7.46605C17.4133 7.46605 15.9806 8.89883 15.9806 10.663C15.9806 11.9948 16.8011 13.1404 17.9625 13.6169L14.5888 19.4775L10.3157 17.0064C10.7228 16.533 10.9721 15.9144 10.9721 15.2422C10.9721 13.7463 9.75394 12.5281 8.25803 12.5281C6.76213 12.5281 5.54395 13.7463 5.54395 15.2422C5.54395 16.4068 6.28243 17.4009 7.31442 17.7827C7.31442 17.8301 7.31442 17.8806 7.32073 17.9311L8.92078 28.8379C8.99021 29.3018 9.38785 29.6458 9.85809 29.6458H28.4969C28.9671 29.6458 29.3648 29.3018 29.4342 28.8379L31.0343 17.9311C31.0406 17.8806 31.0406 17.8332 31.0406 17.7827C32.0726 17.3977 32.811 16.4068 32.811 15.2422ZM30.097 14.4217C30.5483 14.4217 30.9175 14.7909 30.9175 15.2422C30.9175 15.6935 30.5483 16.0628 30.097 16.0628C29.6457 16.0628 29.2764 15.6935 29.2764 15.2422C29.2764 14.7909 29.6457 14.4217 30.097 14.4217ZM19.1807 9.3596C19.9002 9.3596 20.484 9.94344 20.484 10.663C20.484 11.3825 19.9002 11.9664 19.1807 11.9664C18.4611 11.9664 17.8773 11.3825 17.8773 10.663C17.8773 9.94344 18.4611 9.3596 19.1807 9.3596ZM19.1807 15.3053L22.1409 20.4463L19.2154 22.1505L16.233 20.4242L19.1807 15.3053ZM8.26434 14.4217C8.71564 14.4217 9.08488 14.7909 9.08488 15.2422C9.08488 15.6935 8.71564 16.0628 8.26434 16.0628C7.81305 16.0628 7.4438 15.6935 7.4438 15.2422C7.4438 14.7909 7.81305 14.4217 8.26434 14.4217ZM27.6827 27.7523H10.6818L9.34367 18.6254L18.7451 24.0662C18.8903 24.1514 19.0544 24.1924 19.2185 24.1924C19.3826 24.1924 19.5467 24.1482 19.6951 24.063L29.0208 18.6285L27.6827 27.7523Z" fill="#054634"/>
+                </svg>
+                <span class="ef-story-line-a-card-msd1">
+                  {{ section.settings.msleftc }}
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="ef-story-line-a-r">
+            {% if section.settings.msline1 != blank %}
+              <div class="ef-story-line-a-long ef-story-line-a-long1 ef-story-line-a-popup" data-win="{{ section.settings.msline1text }}">
+                <div class="ef-story-line-a-long-text">{{ section.settings.msline1 }}</div>
+              </div>
+              {% endif %}
+              {% if section.settings.msline2 != blank %}
+              <div class="ef-story-line-a-long ef-story-line-a-long2 ef-story-line-a-popup" data-win="{{ section.settings.msline2text }}">
+                <div class="ef-story-line-a-long-text">{{ section.settings.msline2 }}</div>
+              </div>
+              {% endif %}
+              {% if section.settings.msline3 != blank %}
+              <div class="ef-story-line-a-long ef-story-line-a-long3 ef-story-line-a-popup" data-win="{{ section.settings.msline3text }}">
+                <div class="ef-story-line-a-long-text">{{ section.settings.msline3 }}</div>
+              </div>
+              {% endif %}
+              {% if section.settings.msline4 != blank %}
+              <div class="ef-story-line-a-long ef-story-line-a-long4 ef-story-line-a-popup" data-win="{{ section.settings.msline4text }}">
+                <div class="ef-story-line-a-long-text">{{ section.settings.msline4 }}</div>
+              </div>
+              {% endif %}
+            <div class="ef-story-line-a-card-item ef-story-line-openwin">
+              <div class="ef-story-line-a-card-msa">
+                <div class="ef-story-line-a-card-msa-1 card-time-wrapper">
+                  <div class="ef-story-line-a-card-start"><div>11</div> - <div>18</div></div>
+                  <div>-</div>
+                  <div class="ef-story-line-a-card-end">21 - 25</div>
+                </div>
+              </div>
+            </div>
+            <div class="ef-story-line-a-card-item ef-story-line-openwin">
+              <div class="ef-story-line-a-card-msa">
+                <div class="ef-story-line-a-card-msa-1">{{ section.settings.ms2a_m }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ef-story-line-more">{{ section.settings.more_text }}</div>
+  </div>
+  <div id="term_text" style="display: none;">{{ section.settings.story_terms_text }}</div>
+  
+  <style>
+    .ef-story-line-a-wrapper {
+      width: 100%;
+      padding: 98px 57px;
+    }
+    .ef-story-line-a {
+      position: relative;
+      max-width: 1240px;
+      padding: 20px;
+      margin: 0 auto;
+      border-radius: 8px;
+      background: #FEFAE8;
+      border: 1px solid #054634;
+    }
+    .ef-story-line-a-h {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #054634;
+      text-align: center;
+      font-family: Helvetica Neue ForEco;
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 1.1;
+      padding: 0 20px;
+    }
+    .ef-story-line-a-h span {
+      margin: 0 20px;
+    }
+    .ef-story-line-a-card {
+      display: flex;
+      height: 254px;
+      padding: 0 18px;
+      border-radius: 10px;
+      background: #FBFFF3;
+      color: #fff;
+      margin-top: 26px;
+    }
+    .ef-story-line-a-box .ef-story-line-a-r {
+      position: relative;
+      display: flex;
+      flex: 10;
+      padding-top: 54px;
+    }
+    .ef-story-line-a-box .ef-story-line-a-card-item {
+      position: relative;
+      flex: 1;
+      height: 189px;
+      margin: 0 2px;
+      border-radius: 8px;
+      background: #EBF3DD;
+      text-align: center;
+    }
+    .ef-story-line-a-box .ef-story-line-a-card-msa {
+      position: absolute;
+      top: -54px;
+      left: 0;
+      width: 100%;
+      height: 54px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+    .ef-story-line-a-card-msa-1 {
+      width: 100%;
+      color: #054634;
+      text-align: center;
+      font-family: Helvetica Neue ForEco;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 22px;
+    }
+    .ef-story-line-a-card-item.ef-story-line-a-card-item-active .ef-story-line-a-card-msa-1 {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      background-color: #FFC24D;
+      border-radius: 50%;
+      color: #000;
+    }
+    .ef-story-line-a-box .ef-story-line-a-card-msb {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 72px;
+      border-radius: 0px 0px 10.658px 10.658px;
+      background: rgba(255, 194, 77, 0.42);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+    .ef-story-line-a-box .ef-story-line-a-card-msb1 {
+      color: #040D1C;
+      text-align: center;
+      font-family: Helvetica Neue ForEco;
+      font-size: 17.706px;
+      font-style: normal;
+      line-height: 20.219px; /* 114.192% */
+      text-decoration-line: underline;
+      font-weight: 500;
+    }
+    .ef-story-line-a-box .ef-story-line-a-l {
+      flex: 2;
+      padding-top: 54px;
+    }
+    .ef-story-line-a-box .ef-story-line-a-l .ef-story-line-a-card-item {
+      display: flex;
+      align-items: center;
+    }
+    .ef-story-line-a-box .ef-story-line-a-l .ef-story-line-a-card-msa {
+      flex-wrap: initial;
+      white-space: nowrap;
+    }
+    .ef-story-line-a-box .ef-story-line-a-l .ef-story-line-a-card-msa-1 {
+      flex: 1;
+    }
+    .ef-story-line-a-box .ef-story-line-a-l .ef-story-line-a-card-msd {
+      border-radius: 0px 10px 10px 0px;
+      background: #FFC24D;
+      color: #054634;
+      font-family: Helvetica Neue ForEco;
+      font-size: 21.079px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 26.349px; /* 125% */
+      text-align: left;
+      padding: 24px 8px;
+    }
+    .ef-story-line-a-box .ef-story-line-a-l .ef-story-line-a-card-msd1 {
+      display: block;
+    }
+  </style>
+  <style>
+    .ef-story-line-more {
+      color: #054634;
+      text-align: center;
+      font-family: Helvetica Neue ForEco;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      text-decoration-line: underline;
+      margin-top: 24px;
+      cursor: pointer;
+    }
+    .ef-story-line-a-long {
+      position: absolute;
+      top: 76px;
+      left: 0;
+      z-index: 8;
+      width: 100%;
+      height: 30px;
+      border-radius: 0px 5.517px 5.517px 0px;
+      background: #FFC24D;
+      color: #054634;
+      text-align: center;
+      font-family: Helvetica Neue ForEco;
+      font-size: 16px;
+      font-style: normal;
+      line-height: 11.504px; /* 57.518% */
+      text-decoration-line: underline;
+      line-height: 30px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .ef-story-line-a-long1 {
+      top: 66px;
+      left: 0;
+      height: 53px;
+      width: 33.05%;
+      line-height: 53px;
+    }
+    .ef-story-line-a-long2 {
+      top: 126px;
+      left: 0%;
+      width: 33.05%;
+      height: 69px;
+      line-height: 69px;
+    }
+    .ef-story-line-a-long3 {
+      top: 146px;
+      left: 33.5%;
+      width: 66.15%;
+      height: 80px;
+      line-height: 80px;
+    }
+    .ef-story-line-a-long4 {
+      top: 85px;
+      left: 63.8%;
+      width: 17.75%;
+      height: 54px;
+      line-height: 54px;
+    }
+    .ef-story-line-a-long-text {
+      line-height: 1.2;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      justify-content: center;
+    }
+  </style>
+  <style>
+    .ef-story_pc {
+      display: block;
+    }
+    .ef-story_mobile {
+      display: none;
+    }
+    .ef-story-line-a-popup {
+      cursor: pointer;
+    }
+    .ef-story-line-a-win {
+      position: absolute;
+      top: 65%;
+      left: 50%;
+      transform: translate(-50%, 0%);
+      z-index: 22;
+      display: none;
+      width: 820px;
+      min-height: 60px;
+    }
+    .ef-story-line-a-win-in-out {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 22;
+      width: 820px;
+      min-height: 60px;
+      transform: translate(-50%, -50%);
+    }
+    .ef-story-line-a-win.ef-story-line-a-win-active {
+      display: block;
+    }
+    .ef-story-line-a-win-in-opacity {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #000;
+      opacity: 0.7;
+    }
+    .ef-story-line-a-win-in {
+      position: relative;
+      border-radius: 3px;
+      padding: 22px 42px;
+      margin: 0 auto;
+      border-radius: 8px;
+      background: #FEE2B9;
+    }
+    .ef-story-line-a-win-close {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      cursor: pointer;
+      font-size: 40px
+    }
+    .ef-story-line-a-win-ms *{
+      color: #054634;
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.2;
+    }
+    .ef-story-more-global-inner .ef-story-line-a-win-ms *{ font-size: 14px; font-weight: 300; }
+    .ef-story-more-global-inner .ef-story-line-a-win-ms strong{ font-size: 16px; font-weight: 700; }
+  </style>
+  <style>
+    @media screen and (max-width: 765px) {
+      .ef-story-line-a {
+        padding: 10px 4px 0;
+      }
+      .ef-story-line-a-h {
+        font-size: 20px;
+        line-height: 22px;
+      }
+      .ef-story-line-a-card {
+        padding: 0 4px;
+        margin-top: 10px;
+      }
+      .ef-story-line-a-box .ef-story-line-a-l .ef-story-line-a-card-msd {
+        border-radius: 0px 2.7px 2.7px 0px;
+        font-size: 16px;
+        line-height: 16px;
+      }
+      .ef-story-line-a-box .ef-story-line-a-l .ef-story-line-a-card-mad-icon {
+        width: 14px;
+        height: 14px;
+      }
+      .ef-story-line-a-box .ef-story-line-a-r {
+        padding-top: 38px;
+      }
+      .ef-story-line-a-box .ef-story-line-a-card-msa {
+        top: -38px;
+        height: 38px;
+        flex-wrap: wrap-reverse;
+        flex-direction: column;
+        padding-bottom: 0 !important;
+      }
+      .ef-story-line-a-box .ef-story-line-a-l {
+        padding-top: 38px;
+      }
+      .ef-story-line-a-box .ef-story-line-a-card-item.ef-story-line-a-card-item-two {
+        flex: 4;
+      }
+      .ef-story-line-a-long {
+        top: 68px;
+        font-size: 14px;
+      }
+      .ef-story-line-a-long2 {
+        top: 100px;
+        white-space: nowrap;
+      }
+      .ef-story-line-a-card {
+        height: auto;
+      }
+      .ef-story-line-a-box .ef-story-line-a-card-item {
+        height: 150px;
+        border-radius: 2.7px;
+      }
+      .ef-story-line-a-box .ef-story-line-a-card-msb {
+        height: 48px;
+        border-radius: 0px 0px 2.7px 2.7px;
+      }
+      .ef-story-line-a-box .ef-story-line-a-card-msb1 {
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 500;
+      }
+      .ef-story-line-a-win-in-out {
+        width: 280px;
+      }
+      .ef-story-line-a-card-item.ef-story-line-a-card-item-active .ef-story-line-a-card-msa-1 {
+        width: 26px;
+        height: 26px;
+        line-height: 26px;
+      }
+    }
+    @media screen and (max-width: 1023px) {
+      .ef-story_pc {
+        display: none;
+      }
+      .ef-story_mobile {
+        display: block;
+      }
+      .ef-story-line-a-wrapper {
+        padding: 20px 15px 35px;
+      }
+      .ef-story-line-a {
+        padding: 0 4px;
+        font-family: Helvetica Neue ForEco;
+        font-size: 20px;
+        font-weight: 500;
+        padding: 0 4px 10px;
+      }
+      .ef-story-line-more {
+        font-size: 12px;
+        line-height: 1.2;
+      }
+      .ef-story-line-a-box .ef-story-line-a-l .ef-story-line-a-card-msd {
+        padding: 8px 2px 16px;
+      }
+      .ef-story-line-a-card-msa-1 {
+        font-size: 12px;
+        line-height: 38px;
+      }
+      .ef-story-line-a-long1 {
+        top: 48px;
+        font-size: 14px;
+        width: 50%;
+      }
+      .ef-story-line-a-long2 {
+        top: 110px;
+        font-size: 14px;
+        width: 50%;
+      }
+      .ef-story-line-a-long3 {
+        width: 50%;
+        height: 80px;
+        top: 98px;
+        left: 51%;
+        bottom: 0;
+      }
+      .ef-story-line-a-long4 {
+        top: 60px;
+        height: 32px;
+        width: calc(50% - 101px);
+        min-width: 45px;
+        left: calc(50% + 48px);
+      }
+      .ef-story-line-a-card-msa .line{
+        width: 36px;
+        display: inline-block;
+        height: 1px;
+        background: #054634;
+        vertical-align: middle;
+      }
+      .ef-story-line-a-card-msa .line.line-1{ width: 24px; }
+      .ef-story-line-a-long-text {
+        white-space: break-spaces;
+        font-size: 9px;
+      }
+      .ef-story-line-a-win {
+        top: 58%;
+        width: 280px;
+        transform: translate(-69%, 0%);
+      }
+      .ef-story-line-a-win-in .ef-story-line-a-win-ms p {
+        font-size: 14px !important;
+        display: inline-block;
+        line-height: 1.24;
+      }
+      .ef-story-line-a-win-close {
+        font-size: 20px;
+      }
+      .ef-story-line-a-win-in {
+        padding: 20px;
+      }
+      .card-time-wrapper {
+        display: inline-flex;
+        justify-content: space-between;
+      }
+      .ef-story-line-a-card-start {
+        width: 56px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .ef-story-line-a-card-end {
+        width: 45px;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    .ef-story-more-global {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 99999;
+        display: block;
+      }
+      .ef-story-more-global:before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,.5);
+      }
+
+      .ef-story-more-global-inner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 820px;
+        max-height: 460px;
+        padding: 34px 39px 24px;
+        border-radius: 12px;
+        text-align: center;
+        transform: translate(-50%,-50%);
+        z-index: 2;
+        color: #FFF;
+        font-family: Helvetica Neue ForEco;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 22px;
+        overflow-y: auto;
+        background: #FEE2B9;
+        text-align: left;
+      }
+      .ef-story-global-close {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        cursor: pointer;
+        font-size: 40px;
+      }
+
+      @media screen and (max-width: 1023px) {
+        .ef-story-more-global-inner {
+          width: 280px;
+          max-height: 290px;
+          font-size: 14px;
+          padding: 16px 12px;
+        }
+        .ef-story-global-close {
+          font-size: 14px;
+          width: 14px;
+          height: 14px;
+        }
+        .ef-story-more-global-inner .ef-story-line-a-win-ms p {
+          font-size: 14px !important;
+        }
+      }
+  </style>
+  <script type="text/javascript">
+  $(function(){
+    var htmlText = $('#term_text').html();
+    console.log({htmlText})
+    function initialGlobalPopup (text) {
+      var tpl = `
+        <div class="ef-story-more-global">
+            <div class="ef-story-more-global-inner">
+              <span class="ef-story-line-a-win-ms">${text}</span>
+              <svg class="ef-story-global-close" xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+                <path d="M16.2777 29.3333C23.7693 29.3333 29.8424 23.3638 29.8424 16C29.8424 8.63621 23.7693 2.66667 16.2777 2.66667C8.78605 2.66667 2.71289 8.63621 2.71289 16C2.71289 23.3638 8.78605 29.3333 16.2777 29.3333Z" fill="#FFCE78"/>
+                <path d="M20.3459 12L12.207 20" stroke="white" stroke-width="1.11111" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12.207 12L20.3459 20" stroke="white" stroke-width="1.11111" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+      `;
+
+      $('body').append(tpl);
+
+      // 关闭弹窗
+      $('.ef-story-more-global').on('click', '.ef-story-global-close', function() {
+         $('.ef-story-more-global').remove();
+      });
+    };
+
+    function initialModal($node, text){
+      var tpl = `
+          <div class="ef-story-line-a-win ef-story-line-a-win-active" data-win="wina">
+            <div class="ef-story-line-a-win-in">
+              <span class="ef-story-line-a-win-ms">${text}</span>
+              <svg class="ef-story-line-a-win-close" xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40" fill="none">
+                <path d="M20.0736 36.1733C29.3121 36.1733 36.8014 28.8118 36.8014 19.7308C36.8014 10.6499 29.3121 3.28839 20.0736 3.28839C10.835 3.28839 3.3457 10.6499 3.3457 19.7308C3.3457 28.8118 10.835 36.1733 20.0736 36.1733Z" fill="#FFCE78"/>
+                <path d="M25.0914 14.7981L15.0547 24.6636" stroke="white" stroke-width="1.11111" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M15.0547 14.7981L25.0914 24.6636" stroke="white" stroke-width="1.11111" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+      `;
+
+      $node.append(tpl);
+
+      // 关闭弹窗
+      $('.ef-story-line-a-win').on('click', '.ef-story-line-a-win-close', function() {
+         $('.ef-story-line-a .ef-story-line-a-win').remove()
+      });
+    };
+
+    $('.ef-story-line-a').delegate('.ef-story-line-a-popup', 'click', function(evt) {
+      var name = $(this).attr('data-win');
+
+      if(/Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Silk/.test(navigator.userAgent)) {
+        var width = $(this).width();
+        var height = $(this).height()
+
+        var position = $(this).position();
+        var top = $(this).hasClass('ef-story-line-a-card-msb') ? position.top + height + 40 : position.top + height;
+        var style = `top: ${top}px; right: 5%; transform: translateX(0%)`;
+
+        if(name) {
+          $('.ef-story-line-a .ef-story-line-a-win').remove()
+          initialModal($('.ef-story-line-a-r'), name, style);
+        }
+      } else {
+        if(name) {
+          $('.ef-story-line-a .ef-story-line-a-win').remove()
+          initialModal($('.ef-story-line-a-r'), name);
+        }
+      }
+    });
+
+    $('.ef-story-line-more').on('click', function(){
+      initialGlobalPopup(htmlText);
+    });
+  });
+  </script>
+  <style>
+    .ef-story-line-a-box .ef-story-line-a-l .ef-story-line-a-card-msd { background-color: {{ section.settings.bg_color1 | default: '#FFC24D'  }};}
+    .page-container .ef-story-line-a-long1 { background-color: {{ section.settings.bg_color2 |  hex_to_rgba: 0.6 | default: 'rgba(255, 194, 77, 0.6)'  }};}
+    .page-container .ef-story-line-a-long2 { background-color: {{ section.settings.bg_color3 |  hex_to_rgba: 0.6 | default: 'rgba(255, 194, 77, 0.6)'  }};}
+    .page-container .ef-story-line-a-long3 { background-color: {{ section.settings.bg_color4 |  hex_to_rgba: 0.6 | default: 'rgba(255, 194, 77, 0.6)'  }};}
+    .page-container .ef-story-line-a-long4 { background-color: {{ section.settings.bg_color5 |  hex_to_rgba: 0.6 | default: 'rgba(255, 194, 77)'  }};}
+  </style>
+  {% schema %}
+    {
+      "name": "Xmas - Custom section",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "msleft",
+          "label": "msleft"
+        },
+        {
+          "type": "text",
+          "id": "msleftc",
+          "label": "msleftc"
+        },
+        {
+          "type": "text",
+          "id": "msline1",
+          "label": "msline1"
+        },
+        {
+          "type": "richtext",
+          "id": "msline1text",
+          "label": "msline1text",
+          "default": "<p>On both Black Friday and Cyber Mond</p>"
+        },
+        {
+          "type": "text",
+          "id": "msline2",
+          "label": "msline2"
+        },
+        {
+          "type": "richtext",
+          "id": "msline2text",
+          "label": "msline2text",
+          "default": "<p>Time to unlock your member-only ben</p>"
+        },
+        {
+          "type": "text",
+          "id": "msline3",
+          "label": "msline3"
+        },
+        {
+          "type": "richtext",
+          "id": "msline3text",
+          "label": "msline3text",
+          "default": "<p>Time to unlock your member-only ben</p>"
+        },
+        {
+          "type": "text",
+          "id": "msline4",
+          "label": "msline4"
+        },
+        {
+          "type": "richtext",
+          "id": "msline4text",
+          "label": "msline4text",
+          "default": "<p>Time to unlock your member-only ben</p>"
+        },
+        {
+          "type": "text",
+          "id": "ms1a",
+          "label": "ms1a"
+        },
+        {
+          "type": "text",
+          "id": "ms1b",
+          "label": "ms1b"
+        },
+        {
+          "type": "text",
+          "id": "ms1c",
+          "label": "ms1c"
+        },
+        {
+          "type": "text",
+          "id": "ms1d",
+          "label": "ms1d"
+        },
+        {
+          "type": "text",
+          "id": "ms1a_m",
+          "label": "ms1a mobile"
+        },
+        {
+          "type": "text",
+          "id": "ms2a_m",
+          "label": "ms2a mobile"
+        },
+        {
+          "type": "text",
+          "id": "ms2a",
+          "label": "ms2a"
+        },
+        {
+          "type": "text",
+          "id": "ms2d",
+          "label": "ms2d"
+        },
+        {
+          "type": "text",
+          "id": "ms3a",
+          "label": "ms3a"
+        },
+        {
+          "type": "text",
+          "id": "ms4a",
+          "label": "ms4a"
+        },
+        {
+          "type": "text",
+          "id": "ms5a",
+          "label": "ms5a"
+        },
+        {
+          "type": "text",
+          "id": "ms6a",
+          "label": "ms6a"
+        },
+        {
+          "type": "text",
+          "id": "ms7a",
+          "label": "ms7a"
+        },
+        {
+          "type": "text",
+          "id": "ms8a",
+          "label": "ms8a"
+        },
+        {
+          "type": "text",
+          "id": "ms9a",
+          "label": "ms9a"
+        },
+        {
+          "type": "text",
+          "id": "ms10a",
+          "label": "ms10a"
+        },
+        {
+          "type": "text",
+          "id": "ms11a",
+          "label": "ms11a"
+        },
+        {
+          "type": "text",
+          "id": "ms12a",
+          "label": "ms12a"
+        },
+        {
+          "type": "text",
+          "id": "ms13a",
+          "label": "ms13a"
+        },
+        {
+          "type": "text",
+          "id": "ms14a",
+          "label": "ms14a"
+        },
+        {
+          "type": "text",
+          "id": "ms15a",
+          "label": "ms15a"
+        },
+        {
+          "type": "text",
+          "id": "ms16a",
+          "label": "ms16a"
+        },
+        {
+          "type": "text",
+          "id": "ms17a",
+          "label": "ms17a"
+        },
+        {
+          "type": "text",
+          "id": "ms18a",
+          "label": "ms18a"
+        },
+        {
+          "type": "text",
+          "id": "ms19a",
+          "label": "ms19a"
+        },
+        {
+          "type": "text",
+          "id": "ms20a",
+          "label": "ms20a"
+        },
+        {
+          "type": "text",
+          "id": "ms21a",
+          "label": "ms21a"
+        },
+        {
+          "type": "text",
+          "id": "ms22a",
+          "label": "ms22a"
+        },
+        {
+          "type": "text",
+          "id": "more_text",
+          "label": "more text",
+          "default": "For more information, please check the Terms & Conditions."
+        },
+        {
+          "type": "richtext",
+          "id": "story_terms_text",
+          "label": "terms and conditions text"
+        },
+        {
+          "type": "color",
+          "id": "bg_color1",
+          "label": "Card 1 color",
+          "default": "#FFC24D"
+        },
+        {
+          "type": "color",
+          "id": "bg_color2",
+          "label": "Card 2 color",
+          "default": "#ffc24d"
+        },
+        {
+          "type": "color",
+          "id": "bg_color3",
+          "label": "Card 3 color",
+          "default": "#ffc24d"
+        },
+        {
+          "type": "color",
+          "id": "bg_color4",
+          "label": "Card 4 color",
+          "default": "#ffc24d"
+        },
+        {
+          "type": "color",
+          "id": "bg_color5",
+          "label": "Card 5 color",
+          "default": "#ffc24d"
+        }
+      ],
+      "presets": [
+          {
+              "name": "Xmas - Custom section",
+              "category": "Custom Sections"
+          }
+      ]
+    }
+  {% endschema %}

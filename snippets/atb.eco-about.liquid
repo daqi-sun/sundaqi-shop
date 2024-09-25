@@ -1,0 +1,118 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "About",
+  "id": "eco-about",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "class": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "id": "atb_main_background_image",
+      "type": "image_picker",
+      "label": "Main image",
+      "info": ""
+    },
+    {
+      "id": "atb_title",
+      "type": "text",
+      "label": "Title",
+      "default": "About",
+      "info": ""
+    },
+    {
+      "id": "atb_description",
+      "type": "text",
+      "label": "description",
+      "default": "EcoFlow was founded in 2017 by entrepreneurs who emerged from a leading drone developer where they had worked to perfect the drone battery to be lightweight, long-lasting and, most importantly, powerful",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "blocks",
+      "label": "Block ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": "",
+      "repeatable": "tile"
+    },
+    {
+      "id": "block_background_image",
+      "type": "image_picker",
+      "label": "Background image",
+      "info": "1800x1000 recommended",
+      "repeatable": "tile"
+    },
+    {
+      "id": "block_title",
+      "type": "text",
+      "label": "Heading",
+      "default": "Slideshow",
+      "repeatable": "tile",
+      "info": ""
+    }
+  ],
+  "warnings": [
+    "repeating image fields may not be properly handled"
+  ]
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_main_background_image' -%}
+{%- assign atb_main_background_image = val -%}
+{%- include 'atb-render' field:'atb_title' -%}
+{%- assign atb_title = val -%}
+{%- include 'atb-render' field:'atb_description' -%}
+{%- assign atb_description = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_background_image' -%}
+{%- assign block_background_image = val -%}
+{%- include 'atb-render' field:'block_title' -%}
+{%- assign block_title = val -%}
+{%- assign atb_main_background_image_key = atb_main_background_image| split: '/files/' | last -%}{%- assign atb_main_background_image = images[atb_main_background_image_key] -%}{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section ">
+<section class="eco-about text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <h2 class="d-flex align-items-center justify-content-center">{{atb_title}}
+          <img width="170" data-src="{{atb_main_background_image | img_url: '400x'}}"  class="ml-3 lazyload">
+        </h2>
+        <p class="md-4 mt-0">{{atb_description}}</p>
+      </div>
+      <div class="col-lg-12 about-icons mx-auto">
+        <div class="row">
+          {% for block0 in blocks %}
+{%- assign my_image_key0 = block_background_image[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image0 = images[my_image_key0] -%}
+            <div class="col-md-3 mt-4 col-6">
+              <span class="ab-imgs"><img style="height: 64px" class="lazyload" data-src="{{my_image0 | img_url: '800x'}}" src="" alt="First slide"></span>
+              <p>{{block_title[forloop.index0]}}</p>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<style>
+</style>
+
+<script type="application/javascript">
+</script>
+</section>

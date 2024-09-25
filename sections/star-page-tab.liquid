@@ -1,0 +1,143 @@
+{% if section.blocks.size > 0 %}
+    <div class="star-page-tab-wrapper flickity-enabled {% if section.settings.sticky_section %}is-sticky{% endif %}"
+         style="{% if section.settings.background_type == 'gradient' %}
+                background-color: {{ section.settings.gradient_color }};
+                {% else %}
+                background-image: url({{ section.settings.background_image | img_url: 'small' | replace: '_small', '' }});
+                background-repeat: no-repeat;
+                background-size: cover;
+                {% endif %}
+                --text-color: {{ section.settings.tab_color }};
+                --text-active-color: {{ section.settings.tab_active_color | default: section.settings.tab_color  }};
+                --text-active-undeline-color: {{ section.settings.tab_undeline_color | default: section.settings.tab_color  }};
+                --text-font-size: {{ section.settings.tab_font_size }}px;
+                --mobiel-text-font-size: {{ section.settings.tab_font_size_m }}px;
+                --section-background-color: {{ section.settings.gradient_color }};"
+        >
+        <div class="star-page-container">
+            <div class="sticky-row">
+                {% for block in section.blocks %}
+                    <div class="star_tab"><a href="#{{ block.settings.tab_id }}" data-first-section="#{{ block.settings.tab_id }}" data-last-section="{% if block.settings.tab_id_1 != blank %}#{{ block.settings.tab_id_1 }}{% endif %}">{{ block.settings.title }}</a></div>
+                {% endfor %}
+            </div>
+            <div class="slider-button previous">
+                <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 13L1 7L7 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="slider-button next">
+                <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 13L1 7L7 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{% schema %}
+    {
+    "name": "Star_tab_underline",
+    "max_blocks": 10,
+    "settings": [
+        {
+            "type": "checkbox",
+            "id": "sticky_section",
+            "label": "Sticky section"
+        },
+        {
+            "type": "header",
+            "content": "Section background"
+        },
+        {
+            "type": "radio",
+            "id": "background_type",
+            "label": "Background type",
+            "default": "gradient",
+            "options": [
+                {
+                    "label": "Gradient",
+                    "value": "gradient"
+                },
+                {
+                    "label": "Image",
+                    "value": "image"
+                }
+            ]
+        },
+        {
+            "id":"gradient_color",
+            "type":"color",
+            "label":"Gradient color"
+        },
+        {
+            "id":"background_image",
+            "type":"image_picker",
+            "label":"Background image"
+        },
+        {
+          "type": "color",
+          "id": "tab_color",
+          "label": "Text color"
+        },
+        {
+          "type": "color",
+          "id": "tab_active_color",
+          "label": "Tab active color"
+        },
+        {
+          "type": "color",
+          "id": "tab_undeline_color",
+          "label": "Tab active underline color"
+        },
+        {
+          "type": "range",
+          "id": "tab_font_size",
+          "label": "Font size(Desktop)",
+          "min": 10,
+          "max": 30,
+          "step": 1,
+          "unit": "px",
+          "default": 24
+        },
+        {
+          "type": "range",
+          "id": "tab_font_size_m",
+          "label": "Font size(Mobile)",
+          "min": 10,
+          "max": 30,
+          "step": 1,
+          "unit": "px",
+          "default": 24
+        }
+    ],
+    "blocks": [
+        {
+            "type": "tab",
+            "name": "Tab",
+            "settings": [
+                {
+                    "id":"title",
+                    "type":"text",
+                    "label":"Title"
+                },
+                {
+                    "id":"tab_id",
+                    "type":"text",
+                    "label":"ID of linked section"
+                },
+                {
+                    "id":"tab_id_1",
+                    "type":"text",
+                    "label":"ID of last linked section"
+                }
+            ]
+        }
+    ],
+	"presets": [
+        {
+            "name": "Star_tab_underline",
+            "category":"Custom Sections"
+        }
+	]
+    }
+{% endschema %}

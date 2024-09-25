@@ -1,0 +1,205 @@
+<style>
+  .promotion-message-wrapper.alter{
+      background: {{ settings.promotion_bar_bg }};
+      color: {{ settings.promotion_bar_text_color }};
+      font-size: 14px;
+      padding: 6px 30px;
+  }
+  .cart__block .promotion-message-wrapper.alter{
+      border-radius: 4px;
+      margin-top: 24px;
+      margin-bottom: 16px;
+  }
+  .promotion-message-wrapper.alter .flexbox{ display: flex; align-items: center; gap: 12px; }
+  .promotion-message-wrapper.alter p, .promotion-message-wrapper.alter p strong{ color: inherit; }
+  .promotion-message-wrapper.alter p strong{ font-weight: 700; }
+  .promotion-message-wrapper.alter .btnBox{ margin-left: 18px; }
+  .promotion-message-wrapper.alter .btn{
+      background: {{ settings.login_btn_bg | default: 'transparent' }};
+      color: {{ settings.login_btn_text_color }};
+      {% if settings.login_btn_border != blank %}border: 1px solid {{ settings.login_btn_border }};{% endif %}
+      white-space: nowrap;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 4px 20px;
+  }
+  .promotion-message-wrapper.alter .iconBox svg{ margin: 0; width: unset; display: block; }
+  @media screen and (max-width: 749px){
+    .promotion-message-wrapper.alter{ padding-left: 24px; padding-right: 24px; }
+    .cart__block .promotion-message-wrapper.alter{ padding-left: 15px; padding-right: 15px; }
+  }
+</style>
+
+<script>
+  {%- liquid
+    assign userStatus = false
+    if customer
+      assign userStatus = true
+    endif
+    assign currency_symbol = cart.currency.symbol
+    assign promotion_enable_tier1 = settings.promotion_enable_tier1
+    assign promotion_pricefrom_tier1 = settings.promotion_pricefrom_tier1 | default: 0
+    assign promotion_priceto_tier1 = settings.promotion_priceto_tier1 | default: 0
+    assign promotion_tier1 = settings.promotion_tier1
+    assign promotion_msg_not_log_in_tier1 = settings.promotion_msg_not_log_in_tier1
+    assign promotion_enable_tier2 = settings.promotion_enable_tier2
+    assign promotion_pricefrom_tier2 = settings.promotion_pricefrom_tier2 | default: 0
+    assign promotion_priceto_tier2 = settings.promotion_priceto_tier2 | default: 0
+    assign promotion_tier2 = settings.promotion_tier2
+    assign promotion_msg_not_log_in_tier2 = settings.promotion_msg_not_log_in_tier2
+    assign promotion_enable_tier3 = settings.promotion_enable_tier3
+    assign promotion_pricefrom_tier3 = settings.promotion_pricefrom_tier3 | default: 0
+    assign promotion_priceto_tier3 = settings.promotion_priceto_tier3 | default: 0
+    assign promotion_tier3 = settings.promotion_tier3
+    assign promotion_msg_not_log_in_tier3 = settings.promotion_msg_not_log_in_tier3
+    assign promotion_enable_tier4 = settings.promotion_enable_tier4
+    assign promotion_pricefrom_tier4 = settings.promotion_pricefrom_tier4 | default: 0
+    assign promotion_priceto_tier4 = settings.promotion_priceto_tier4 | default: 0
+    assign promotion_tier4 = settings.promotion_tier4
+    assign promotion_msg_not_log_in_tier4 = settings.promotion_msg_not_log_in_tier4
+    assign promotion_enable_tier5 = settings.promotion_enable_tier5
+    assign promotion_pricefrom_tier5 = settings.promotion_pricefrom_tier5 | default: 0
+    assign promotion_priceto_tier5 = settings.promotion_priceto_tier5 | default: 0
+    assign promotion_tier5 = settings.promotion_tier5
+    assign promotion_msg_not_log_in_tier5 = settings.promotion_msg_not_log_in_tier5
+  -%}
+  window.promotionMessageAlter = {
+    enable: {{ settings.enable_promotion_message }},
+    tier1: {
+      enable: {{ promotion_enable_tier1 }},
+      priceFrom: {{ promotion_pricefrom_tier1 }},
+      priceTo: {{ promotion_priceto_tier1 }},
+      message: "{{ promotion_tier1 }}",
+      userLoginMsg: "{{ promotion_msg_not_log_in_tier1 }}"
+    },
+    tier2: {
+      enable: {{ promotion_enable_tier2 }},
+      priceFrom: {{ promotion_pricefrom_tier2 }},
+      priceTo: {{ promotion_priceto_tier2 }},
+      message: "{{ promotion_tier2 }}",
+      userLoginMsg: "{{ promotion_msg_not_log_in_tier2 }}"
+    },
+    tier3: {
+      enable: {{ promotion_enable_tier3 }},
+      priceFrom: {{ promotion_pricefrom_tier3 }},
+      priceTo: {{ promotion_priceto_tier3 }},
+      message: "{{ promotion_tier3 }}",
+      userLoginMsg: "{{ promotion_msg_not_log_in_tier3 }}"
+    },
+    tier4: {
+      enable: {{ promotion_enable_tier4 }},
+      priceFrom: {{ promotion_pricefrom_tier4 }},
+      priceTo: {{ promotion_priceto_tier4 }},
+      message: "{{ promotion_tier4 }}",
+      userLoginMsg: "{{ promotion_msg_not_log_in_tier4 }}"
+    },
+    tier5: {
+      enable: {{ promotion_enable_tier5 }},
+      priceFrom: {{ promotion_pricefrom_tier5 }},
+      priceTo: {{ promotion_priceto_tier5 }},
+      message: "{{ promotion_tier5 }}",
+      userLoginMsg: "{{ promotion_msg_not_log_in_tier5 }}"
+    }
+  }
+
+  function updatePromotionMessageAlter(subtotal) {
+    if(window.promotionMessageAlter.enable){
+      const cartTotal = Number(moneyFormat(subtotal).replaceAll('.','').replace('{{ currency_symbol }}','').replace(',','.'))
+      const dataPromotionMessage_wrap = document.querySelector('[data-promotion-message-alter]')
+
+      let message = ''
+      const userStatus = {{ userStatus }};
+      const enableTier1_alter = promotionMessageAlter.tier1.enable,
+        priceFromTier1_alter = Number(promotionMessageAlter.tier1.priceFrom),
+        priceToTier1_alter = Number(promotionMessageAlter.tier1.priceTo),
+        userMessageTier1_alter = promotionMessageAlter.tier1.userLoginMsg,
+        messageTier1_alter = promotionMessageAlter.tier1.message
+      const enableTier2_alter = promotionMessageAlter.tier2.enable,
+        priceFromTier2_alter = Number(promotionMessageAlter.tier2.priceFrom),
+        priceToTier2_alter = Number(promotionMessageAlter.tier2.priceTo),
+        userMessageTier2_alter = promotionMessageAlter.tier2.userLoginMsg,
+        messageTier2_alter = promotionMessageAlter.tier2.message
+      const enableTier3_alter = promotionMessageAlter.tier3.enable,
+        priceFromTier3_alter = Number(promotionMessageAlter.tier3.priceFrom),
+        priceToTier3_alter = Number(promotionMessageAlter.tier3.priceTo),
+        userMessageTier3_alter = promotionMessageAlter.tier3.userLoginMsg,
+        messageTier3_alter = promotionMessageAlter.tier3.message
+      const enableTier4_alter = promotionMessageAlter.tier4.enable,
+        priceFromTier4_alter = Number(promotionMessageAlter.tier4.priceFrom),
+        priceToTier4_alter = Number(promotionMessageAlter.tier4.priceTo),
+        userMessageTier4_alter = promotionMessageAlter.tier4.userLoginMsg,
+        messageTier4_alter = promotionMessageAlter.tier4.message
+      const enableTier5_alter = promotionMessageAlter.tier5.enable,
+        priceFromTier5_alter = Number(promotionMessageAlter.tier5.priceFrom),
+        priceToTier5_alter = Number(promotionMessageAlter.tier5.priceTo),
+        userMessageTier5_alter = promotionMessageAlter.tier5.userLoginMsg,
+        messageTier5_alter = promotionMessageAlter.tier5.message
+      const isTier1Range_alter = enableTier1_alter && cartTotal >= priceFromTier1_alter && (priceToTier1_alter > 0 ? cartTotal <= priceToTier1_alter : true),
+        isTier2Range_alter = enableTier2_alter && cartTotal >= priceFromTier2_alter && (priceToTier2_alter > 0 ? cartTotal <= priceToTier2_alter : true),
+        isTier3Range_alter = enableTier3_alter && cartTotal >= priceFromTier3_alter && (priceToTier3_alter > 0 ? cartTotal <= priceToTier3_alter : true),
+        isTier4Range_alter = enableTier4_alter && cartTotal >= priceFromTier4_alter && (priceToTier4_alter > 0 ? cartTotal <= priceToTier4_alter : true),
+        isTier5Range_alter = enableTier5_alter && cartTotal >= priceFromTier5_alter && (priceToTier5_alter > 0 ? cartTotal <= priceToTier5_alter : true)
+
+      if(!userStatus){
+        if(isTier1Range_alter)
+          message = '<div class="flexbox"><div class="message">'+userMessageTier1_alter+'</div><div class="btnBox"><a class="btn" href="https://account.ecoflow.com/login?return_to={{ request.host }}{{ request.path }}">{{ settings.login_btn_text }}</a></div></div>';
+        else if(isTier2Range_alter)
+          message = '<div class="flexbox"><div class="message">'+userMessageTier2_alter+'</div><div class="btnBox"><a class="btn" href="https://account.ecoflow.com/login?return_to={{ request.host }}{{ request.path }}">{{ settings.login_btn_text }}</a></div></div>';
+        else if(isTier3Range_alter)
+            message = '<div class="flexbox"><div class="message">'+userMessageTier3_alter+'</div><div class="btnBox"><a class="btn" href="https://account.ecoflow.com/login?return_to={{ request.host }}{{ request.path }}">{{ settings.login_btn_text }}</a></div></div>';
+        else if(isTier4Range_alter)
+          message = '<div class="flexbox"><div class="message">'+userMessageTier4_alter+'</div><div class="btnBox"><a class="btn" href="https://account.ecoflow.com/login?return_to={{ request.host }}{{ request.path }}">{{ settings.login_btn_text }}</a></div></div>';
+        else if(isTier5Range_alter)
+          message = '<div class="flexbox"><div class="message">'+userMessageTier5_alter+'</div><div class="btnBox"><a class="btn" href="https://account.ecoflow.com/login?return_to={{ request.host }}{{ request.path }}">{{ settings.login_btn_text }}</a></div></div>';
+      }
+      else{
+        message = `<div class="flexbox"><div class="iconBox">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_8_7938)">
+        <path d="M27.6818 17.9999C27.6818 15.8338 29.4439 14.08 31.6143 14.08V6.18286H4.38525V14.0827C4.40358 14.0827 4.42453 14.08 4.44285 14.08C6.61594 14.08 8.37536 15.8364 8.37536 17.9999C8.37536 20.1634 6.61333 21.9198 4.44285 21.9198C4.42453 21.9198 4.40358 21.9172 4.38525 21.9172V29.817H31.6143V21.9198C29.4413 21.9198 27.6818 20.1634 27.6818 17.9999Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13.5081 17C14.8932 17 16.0161 15.8807 16.0161 14.5C16.0161 13.1193 14.8932 12 13.5081 12C12.1229 12 11 13.1193 11 14.5C11 15.8807 12.1229 17 13.5081 17Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M22.1155 24.0552C23.5006 24.0552 24.6235 22.9359 24.6235 21.5552C24.6235 20.1745 23.5006 19.0552 22.1155 19.0552C20.7303 19.0552 19.6074 20.1745 19.6074 21.5552C19.6074 22.9359 20.7303 24.0552 22.1155 24.0552Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M22.0799 12.5732L13 23.3621" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <defs>
+        <clipPath id="clip0_8_7938">
+        <rect width="28.8" height="25.2" fill="white" transform="translate(3.6001 5.3999)"/>
+        </clipPath>
+        </defs>
+        </svg></div><div class="message">`;
+
+        if(isTier1Range_alter) {
+            const leftAmount = priceToTier1_alter - cartTotal
+            message = message + messageTier1_alter.replace('[amount]', moneyFormat(leftAmount.toFixed(2)).replace(',00', '').replace(' ', ''))
+        }
+        else if(isTier2Range_alter) {
+            const leftAmount = priceToTier2_alter - cartTotal
+            message = message + messageTier2_alter.replace('[amount]', moneyFormat(leftAmount.toFixed(2)).replace(',00', '').replace(' ', ''))
+        }
+        else if(isTier3Range_alter) {
+            const leftAmount = priceToTier3_alter - cartTotal
+            message = message + messageTier3_alter.replace('[amount]', moneyFormat(leftAmount.toFixed(2)).replace(',00', '').replace(' ', ''))
+        }
+        else if(isTier4Range_alter) {
+            const leftAmount = priceToTier4_alter - cartTotal
+            message = message + messageTier4_alter.replace('[amount]', moneyFormat(leftAmount.toFixed(2)).replace(',00', '').replace(' ', ''))
+        }
+        else if(isTier5Range_alter) {
+            const leftAmount = priceToTier5_alter - cartTotal
+            message = message + messageTier5_alter.replace('[amount]', moneyFormat(leftAmount.toFixed(2)).replace(',00', '').replace(' ', ''))
+        }
+        else {
+            if(dataPromotionMessage_wrap) dataPromotionMessage_wrap.innerHTML = ''
+            dataPromotionMessage_wrap.parentElement.classList.add('hide');
+        }
+
+        message = message + '</div></div>';
+      }
+
+      if(dataPromotionMessage_wrap){
+        dataPromotionMessage_wrap.innerHTML = message;
+        dataPromotionMessage_wrap.parentElement.classList.remove('hide');
+      }
+    }
+  }
+</script>

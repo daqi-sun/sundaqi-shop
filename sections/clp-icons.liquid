@@ -1,0 +1,55 @@
+<div class="clp-icons">
+  <div class="clp-title">{{ section.settings.title }}</div>
+  <div class="clp-icons-grid">
+    {% for block in section.blocks %}
+      <div class="clp-icons-item">
+        <img
+          class="clp-icon"
+          src="{{ block.settings.image | img_url: 'master' }}"
+          alt="{{ block.settings.image.alt }}"
+          loading="lazy"
+        >
+        <div>
+          <div class="clp-icon-title">{{ block.settings.title }}</div>
+          <div class="clp-icon-desc">{{ block.settings.description }}</div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "CLP Icons",
+  "settings": [
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "icon",
+      "name": "Icon",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "html",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "html",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,544 @@
+{{ 'page-aftersale.css' | asset_url | stylesheet_tag }}
+{{ 'page-trade-in-online.css' | asset_url | stylesheet_tag }}
+{{ 'jquery.min.js' | asset_url | script_tag }}
+
+{% render 'popup-trade-in-online' %}
+
+{%- liquid
+    assign heading = section.settings.heading
+    assign back_url = section.settings.back_url
+-%}
+
+<section id="{{ section.id }}" class="page-aftersale__section page-tradein-online__section floating-labels">
+    <div class="container container--main">
+
+        {% comment %} Enter information {% endcomment %}
+        <div data-step="1" class="step-container step-container--active">
+            <div class="step-container-box">
+                <div class="step-header">
+                    <h2 class="page-aftersale__h2">{{ heading }}</h2>
+                    <ol class="steps">
+                        <li class="step is-active" data-step-progress="1"><span></span></li>
+                        <li class="step" data-step-progress="2"><span></span></li>
+                        <li class="step" data-step-progress="3"><span></span></li>
+                        <li class="step" data-step-progress="4"><span></span></li>
+                        <li class="step" data-step-progress="5"><span></span></li>
+                        <li class="step" data-step-progress="6"><span></span></li>
+                        <li class="step" data-step-progress="7"><span></span></li>
+                    </ol>
+                </div>
+                <div class="form-info">
+                    <p>Please fill in the form below with your information to get started.</p>
+                </div>
+                <div class="form-box-outline" data-information-form>
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="field">
+                                <div class="field__input-wrapper">
+                                    <label class="field__label">First Name*</label>
+                                    <input type="text" placeholder="First Name*" class="field__input" data-info-first-name required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="field">
+                                <div class="field__input-wrapper">
+                                    <label class="field__label">Last Name*</label>
+                                    <input type="text" placeholder="Last Name*" class="field__input" data-info-last-name required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="field">
+                                <div class="field__input-wrapper">
+                                    <label class="field__label">Email Address*</label>
+                                    <input type="text" placeholder="Email Address*" class="field__input" data-info-email required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="field">
+                                <div class="field__input-wrapper">
+                                    <label class="field__label">Phone Number*</label>
+                                    <input type="text" placeholder="Phone Number*" class="field__input" data-info-phone-number required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-12">
+                            <div class="field">
+                                <div class="field__input-wrapper">
+                                    <label class="field__label">Detailed Address*</label>
+                                    <input type="text" placeholder="Detailed Address*" class="field__input" data-info-address required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-4">
+                            <div class="field field--show-floating-label">
+                                <div class="field__input-wrapper">
+                                    <label class="field__label">State*</label>
+                                    <div class="select-style">
+                                        <select data-province data-info-province required></select>
+                                        <span class="select-style__arrow"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="field">
+                                <div class="field__input-wrapper">
+                                    <label class="field__label">City*</label>
+                                    <input type="text" placeholder="City*" class="field__input" data-info-city required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="field">
+                                <div class="field__input-wrapper">
+                                    <label class="field__label">Zip Code*</label>
+                                    <input type="text" placeholder="Zip Code*" class="field__input" data-info-zip-code required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-12">
+                            <div class="field">
+                                <div class="field__input-wrapper">
+                                    <p>You’ll get your EcoFlow Gift Card via email, so make sure your email address is correct. It can’t be changed after your trade-in is initiated.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-12">
+                            <div class="field">
+                                <div class="field__input-wrapper">
+                                    <label class="option-agree">
+                                        <span class="option-circle-style">
+                                            <input type="checkbox" data-agree-to-ecoflow><span class="ala-option"></span>
+                                        </span>
+                                        <span class="text">
+                                            I agree to comply with the EcoFlow <a href="/pages/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and <a href="/pages/terms-of-use" target="_blank" rel="noopener noreferrer">Terms of Use</a>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-controls">
+                    {% if back_url != blank %}
+                        <a href="{{ back_url }}" class="btn btn-text btn-pill text-capitalize">&lt; Back</a>
+                    {% endif %}
+                    <div class="step-controls__right">
+                        <a href="#" class="btn btn-primary btn-pill text-capitalize btn-loading isDisabled" data-enter-information>Next Step</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% comment %} Confirm if item is workable {% endcomment %}
+        <div data-step="2" class="step-container ">
+            <div class="step-container-box">
+                <div class="step-header">
+                    <h2 class="page-aftersale__h2">{{ heading }}</h2>
+                    <ol class="steps">
+                        <li class="step is-complete" data-step-progress="1"><span></span></li>
+                        <li class="step is-active" data-step-progress="2"><span></span></li>
+                        <li class="step" data-step-progress="3"><span></span></li>
+                        <li class="step" data-step-progress="4"><span></span></li>
+                        <li class="step" data-step-progress="5"><span></span></li>
+                        <li class="step" data-step-progress="6"><span></span></li>
+                        <li class="step" data-step-progress="7"><span></span></li>
+                    </ol>
+                </div>
+                <div class="form-info">
+                    <p>1. Select your product model to get a trade-in valuation.</p>
+                </div>
+                <div class="form-box-no-outline" data-confirm-workable-form>
+                    <div class="form-row d-flex justify-content-center">
+                        <div class="col-md-6">
+                            <div class="field field--show-floating-label">
+                                <div class="field__input-wrapper select-box">
+                                    <label class="field__label">Product Model*</label>
+                                    <div class="select-style">
+                                        <select data-product-model required>
+                                            <option value>Select model</option>
+                                            <option value="DELTA mini">DELTA mini</option>
+                                            <option value="DELTA 1300">DELTA 1300</option>
+                                            <option value="DELTA 1000">DELTA 1000</option>
+                                            <option value="RIVER">RIVER</option>
+                                            <option value="RIVER Max">RIVER Max</option>
+                                        </select>
+                                        <span class="select-style__arrow"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-info">
+                    <p>2. Does your product work normally?</p>
+                </div>
+                <div class="options-style">
+                    <label>
+                        <input type="radio" name="product_workable" value="true" checked><span class="radio-style"></span>
+                        Yes
+                    </label>
+                    <label>
+                        <input type="radio" name="product_workable" value="false"><span class="radio-style"></span>
+                        No
+                    </label>
+                </div>
+                <div class="step-controls">
+                    <button type="button" class="btn btn-text btn-pill text-capitalize" data-back-button>&lt; Back</button>
+                    <div class="step-controls__right">
+                        <a href="#" class="btn btn-primary btn-pill text-capitalize btn-loading isDisabled" data-confirm-workable>Next Step</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% comment %} Level 3 Gift Card {% endcomment %}
+        <div data-step="gift-level-3" class="step-container ">
+            <div class="step-container-box">
+                <div class="step-header">
+                    <h2 class="page-aftersale__h2">{{ heading }}</h2>
+                    <ol class="steps">
+                        <li class="step is-complete" data-step-progress="1"><span></span></li>
+                        <li class="step is-complete" data-step-progress="2"><span></span></li>
+                        <li class="step is-active" data-step-progress="3"><span></span></li>
+                        <li class="step" data-step-progress="4"><span></span></li>
+                    </ol>
+                </div>
+                <div class="form-info">
+                    <p>Thank you for confirming. Your product does not meet the requirements for return. But in return for your support to EcoFlow, you will get <strong>$<span class="gift-card-img--price"></span></strong> gift card after you submit related proof.</p>
+                </div>
+                <div class="form-box-outline">
+                    <div class="gift-card-img gift-card-img--level-3 text-center mb-5">
+                        <div class="gift-card-img__amount">
+                            <i>$</i><span class="gift-card-img--price"></span>
+                        </div>
+                        <img src="https://cdn.shopify.com/s/files/1/1996/9707/files/gift-card-level-3.png?v=1663339316" alt="Gift Card">
+                    </div>
+                    <div class="gift-card-btn text-center">
+                        <a href="#" class="btn btn-primary btn-pill text-capitalize btn-loading" data-gift-card="level3" data-trade-in-for-a-gift>Submit Proof for a Gift Card</a>
+                    </div>
+                </div>
+                <div class="step-controls">
+                    <div class="step-controls__center text-center">
+                        <a href="#" class="btn btn-text text-capitalize" data-gift-card-step="3" data-back-button>< Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% comment %} Confirm if return item to warehouse {% endcomment %}
+        <div data-step="3" class="step-container ">
+            <div class="step-container-box">
+                <div class="step-header">
+                    <h2 class="page-aftersale__h2">{{ heading }}</h2>
+                    <ol class="steps">
+                        <li class="step is-complete" data-step-progress="1"><span></span></li>
+                        <li class="step is-complete" data-step-progress="2"><span></span></li>
+                        <li class="step is-active" data-step-progress="3"><span></span></li>
+                        <li class="step" data-step-progress="4"><span></span></li>
+                        <li class="step" data-step-progress="5"><span></span></li>
+                        <li class="step" data-step-progress="6"><span></span></li>
+                        <li class="step" data-step-progress="7"><span></span></li>
+                    </ol>
+                </div>
+                <div class="form-info">
+                    <p>Do you want to return your product?</p>
+                </div>
+                <div class="options-style" data-return-product-form>
+                    <label>
+                        <input type="radio" name="product_return_to_warehouse" value="true" checked><span class="radio-style"></span>
+                        Yes
+                    </label>
+                    <label>
+                        <input type="radio" name="product_return_to_warehouse" value="false"><span class="radio-style"></span>
+                        No
+                    </label>
+                </div>
+                <div class="step-controls">
+                    <button type="button" class="btn btn-text btn-pill text-capitalize" data-back-button>&lt; Back</button>
+                    <div class="step-controls__right">
+                        <a href="#" class="btn btn-primary btn-pill text-capitalize btn-loading" data-confirm-return-to-warehouse>Next Step</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% comment %} Confirm if item is damage {% endcomment %}
+        <div data-step="4" class="step-container ">
+            <div class="step-container-box">
+                <div class="step-header">
+                    <h2 class="page-aftersale__h2">{{ heading }}</h2>
+                    <ol class="steps">
+                        <li class="step is-complete" data-step-progress="1"><span></span></li>
+                        <li class="step is-complete" data-step-progress="2"><span></span></li>
+                        <li class="step is-complete" data-step-progress="3"><span></span></li>
+                        <li class="step is-active" data-step-progress="4"><span></span></li>
+                        <li class="step" data-step-progress="5"><span></span></li>
+                        <li class="step" data-step-progress="6"><span></span></li>
+                        <li class="step" data-step-progress="7"><span></span></li>
+                    </ol>
+                </div>
+                <div class="form-info">
+                    <p>Is your product in damaged?*</p>
+
+                    <p>*Answer NO if all of the following apply:</p>
+
+                    <p>NO external bump, deformation or breakage of the product <br />
+                    The product is NOT missing packaging or accessories.</p>
+                </div>
+                <div class="options-style">
+                    <label>
+                        <input type="radio" name="product_is_damage" value="true" checked><span class="radio-style"></span>
+                        Yes
+                    </label>
+                    <label>
+                        <input type="radio" name="product_is_damage" value="false"><span class="radio-style"></span>
+                        No
+                    </label>
+                </div>
+                <div class="step-controls">
+                    <button type="button" class="btn btn-text btn-pill text-capitalize" data-back-button>&lt; Back</button>
+                    <div class="step-controls__right">
+                        <a href="#" class="btn btn-primary btn-pill text-capitalize btn-loading" data-confirm-product-is-damage>Next Step</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% comment %} Level 2 Gift Card {% endcomment %}
+        <div data-step="gift-level-2" class="step-container ">
+            <div class="step-container-box">
+                <div class="step-header">
+                    <h2 class="page-aftersale__h2">{{ heading }}</h2>
+                    <ol class="steps">
+                        <li class="step is-complete" data-step-progress="1"><span></span></li>
+                        <li class="step is-complete" data-step-progress="2"><span></span></li>
+                        <li class="step is-complete" data-step-progress="3"><span></span></li>
+                        <li class="step is-complete" data-step-progress="4"><span></span></li>
+                        <li class="step is-active" data-step-progress="5"><span></span></li>
+                        <li class="step" data-step-progress="6"><span></span></li>
+                        <li class="step" data-step-progress="7"><span></span></li>
+                    </ol>
+                </div>
+                <div class="form-info">
+                    <p>Thank you for confirming. You’ve got <strong>$<span class="gift-card-img--price"></span></strong> in trade-in value</p>
+                </div>
+                <div class="form-box-outline">
+                    <div class="gift-card-img gift-card-img--level-2 text-center mb-5">
+                        <div class="gift-card-img__amount">
+                            <i>$</i><span class="gift-card-img--price"></span>
+                        </div>
+                        <img src="https://cdn.shopify.com/s/files/1/1996/9707/files/gift-card-level-2.png?v=1663339316" alt="Gift Card">
+                    </div>
+                    <div class="gift-card-btn text-center">
+                        <a href="#" class="btn btn-primary btn-pill text-capitalize btn-loading" data-gift-card="level2" data-trade-in-for-a-gift>Trade it in for a gift card</a>
+                    </div>
+                </div>
+                <div class="step-controls">
+                    <div class="step-controls__center text-center">
+                        <a href="#" class="btn btn-text text-capitalize" data-gift-card-step="5" data-back-button>< Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% comment %} Level 1 Gift Card {% endcomment %}
+        <div data-step="gift-level-1" class="step-container ">
+            <div class="step-container-box">
+                <div class="step-header">
+                    <h2 class="page-aftersale__h2">{{ heading }}</h2>
+                    <ol class="steps">
+                        <li class="step is-complete" data-step-progress="1"><span></span></li>
+                        <li class="step is-complete" data-step-progress="2"><span></span></li>
+                        <li class="step is-complete" data-step-progress="3"><span></span></li>
+                        <li class="step is-complete" data-step-progress="4"><span></span></li>
+                        <li class="step is-active" data-step-progress="5"><span></span></li>
+                        <li class="step" data-step-progress="6"><span></span></li>
+                        <li class="step" data-step-progress="7"><span></span></li>
+                    </ol>
+                </div>
+                <div class="form-info">
+                    <p>Thank you for confirming. You’ve got <strong>$<span class="gift-card-img--price"></span></strong> in trade-in value</p>
+                </div>
+                <div class="form-box-outline">
+                    <div class="gift-card-img text-center mb-5">
+                    </div>
+                    <div class="gift-card-img gift-card-img--level-1 text-center mb-5">
+                        <div class="gift-card-img__amount">
+                            <i>$</i><span class="gift-card-img--price"></span>
+                        </div>
+                        <img src="https://cdn.shopify.com/s/files/1/1996/9707/files/gift-card-level-1.png?v=1663339316" alt="Gift Card">
+                    </div>
+                    <div class="gift-card-btn text-center">
+                        <a href="#" class="btn btn-primary btn-pill text-capitalize btn-loading" data-gift-card="level1" data-trade-in-for-a-gift>Trade it in for a gift card</a>
+                    </div>
+                </div>
+                <div class="step-controls">
+                    <div class="step-controls__center text-center">
+                        <a href="#" class="btn btn-text text-capitalize" data-gift-card-step="5" data-back-button>< Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% comment %} Enter Serial number {% endcomment %}
+        <div data-step="6" class="step-container ">
+            <div class="step-container-box">
+                <div class="step-header">
+                    <h2 class="page-aftersale__h2">{{ heading }}</h2>
+                    <ol class="steps steps-level hide">
+                        <li class="step is-complete" data-step-progress="1"><span></span></li>
+                        <li class="step is-complete" data-step-progress="2"><span></span></li>
+                        <li class="step is-complete" data-step-progress="3"><span></span></li>
+                        <li class="step is-complete" data-step-progress="4"><span></span></li>
+                        <li class="step is-complete" data-step-progress="5"><span></span></li>
+                        <li class="step is-active" data-step-progress="6"><span></span></li>
+                        <li class="step" data-step-progress="7"><span></span></li>
+                    </ol>
+                    <ol class="steps steps-level steps-level3 hide">
+                        <li class="step is-complete" data-step-progress="1"><span></span></li>
+                        <li class="step is-complete" data-step-progress="2"><span></span></li>
+                        <li class="step is-complete" data-step-progress="3"><span></span></li>
+                        <li class="step is-active" data-step-progress="4"><span></span></li>
+                    </ol>
+                </div>
+                <div class="form-info">
+                    <p>1. Enter the serial number of the product you want to trade in</p>
+                </div>
+                <div class="form-box-no-outline no-padding">
+                    <div class="form-row">
+                        <div class="col-md-12">
+                            <div class="field" data-field-serial-number>
+                                <div class="field__input-wrapper">
+                                    <label class="field__label">Serial Number*</label>
+                                    <input type="text" placeholder="Serial Number*" class="field__input" data-serial-number required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-info">
+                    <p>2. Upload a picture which shows the condition of your product</p>
+                </div>
+                <div class="form-box-no-outline no-padding">
+                    <div class="form-row">
+                        <div class="col-md-12">
+                            <label class="input-file-label" data-uploaded-label-container="0">
+                                <input name="aliOssUploadFile0" class="aliOssUploadFile" type="file" accept="image/*" hidden data-upload-image="0" block-index="0" />
+                                <div class="upload-image-area" data-uploaded-label="0" >
+                                    <span class="icon-upload"></span>
+                                    <span class="label">Upload image</span>
+                                    <p>Select image file (JPG, PNG, BMP, and more)</p>
+                                </div>
+                                <div class="field field--show-floating-label hide" data-uploaded-images="0">
+                                    <div class="field__input-wrapper">
+                                        <label class="field__label">Image Uploaded</label>
+                                        <div class="uploaded-images">
+                                            <div class="uploaded-images__content-list">
+                                                <ul>
+                                                    <li><span class="tick-btn"></span> <span class="uploaded-filename">Image file name</span></li>
+                                                    <li><span class="tick-btn"></span> <span class="uploaded-filename">Image file name</span></li>
+                                                    <li><span class="tick-btn"></span> <span class="uploaded-filename">Image file name</span></li>
+                                                    <li><span class="tick-btn"></span> <span class="uploaded-filename">Image file name</span></li>
+                                                </ul>
+                                            </div>
+                                            <span class="upload-image-btn" data-uploaded-button="0">Upload image</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+                            <input type="hidden" name="product_images_0">
+                        </div>
+                    </div>
+                </div>
+                <div class="step-controls">
+                    <button type="button" class="btn btn-text btn-pill text-capitalize" data-back-button data-back-button-from-gift>&lt; Back</button>
+                    <div class="step-controls__right">
+                        <a href="#" class="btn btn-primary btn-pill text-capitalize btn-loading isDisabled" data-get-return-label>Get The Return Label</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% comment %} Download Return Label {% endcomment %}
+        <div data-step="7" class="step-container ">
+            <div class="step-container-box">
+                <div class="step-header">
+                    <h2 class="page-aftersale__h2">{{ heading }}</h2>
+                    <ol class="steps">
+                        <li class="step is-complete" data-step-progress="1"><span></span></li>
+                        <li class="step is-complete" data-step-progress="2"><span></span></li>
+                        <li class="step is-complete" data-step-progress="3"><span></span></li>
+                        <li class="step is-complete" data-step-progress="4"><span></span></li>
+                        <li class="step is-complete" data-step-progress="5"><span></span></li>
+                        <li class="step is-complete" data-step-progress="6"><span></span></li>
+                        <li class="step is-active" data-step-progress="7"><span></span></li>
+                    </ol>
+                </div>
+                <div class="form-info">
+                    <p>Please return the product with this return label, we will send you the Gift Card via e-mail after we receive the package.</p>
+                </div>
+                <div class="form-box-outline">
+                    <div class="form-row">
+                        <div class="col-md-12 text-center">
+                            <div class="download-img text-center mb-1">
+                                <svg width="60" height="61" viewBox="0 0 60 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M18 55.899H42C46.9706 55.899 51 51.8696 51 46.8991V23.2664C51 21.0602 50.1896 18.9309 48.7229 17.2829L41.2756 8.91548C39.5678 6.99667 37.1215 5.89905 34.5528 5.89905H18C13.0294 5.89905 9 9.92849 9 14.899V46.899C9 51.8696 13.0294 55.899 18 55.899Z" stroke="#212121" stroke-width="3"/>
+                                    <path d="M38 6.89905V20.899H50" stroke="#212121" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M19 35.899V42.899C19 43.4513 19.4477 43.899 20 43.899H40C40.5523 43.899 41 43.4513 41 42.899V35.899" stroke="#0ECFE2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M36 30.899L30.7071 36.1919C30.3166 36.5825 29.6834 36.5825 29.2929 36.1919L24 30.899" stroke="#0ECFE2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M30 22.899L30 35.899" stroke="#0ECFE2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="download-btn text-center">
+                                <a href="#" class="btn btn-primary btn-pill text-capitalize btn-loading" data-generate-return-label>Generate & Download Label</a>
+                                <div data-download-link></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-controls">
+                    <button type="button" class="btn btn-text btn-pill text-capitalize" data-back-button>&lt; Back</button>
+                    <div class="step-controls__right">
+                        <a href="/collections/all" class="btn btn-text btn-pill text-capitalize">Continue Shopping &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script src="https://gosspublic.alicdn.com/aliyun-oss-sdk-6.17.0.min.js"></script>
+<script src="{{ 'page-trade-in-online.js' | asset_url }}" async></script>
+
+{% schema %}
+{
+  "name": "Trade-in Online Page",
+  "settings": [
+    {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+    },
+    {
+        "type": "url",
+        "id": "back_url",
+        "label": "First step back url"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,753 @@
+/*Global Page Style */
+
+html {
+  scroll-behavior: smooth;
+}
+
+.sl__text--heading {
+  font-size: 20px;
+}
+
+.sl__text--subheading {
+  font-size: 20px;
+}
+
+.sl__text--description {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .sl__text--heading {
+    font-size: 36px;
+  }
+  .sl__text--subheading {
+    font-size: 28px;
+  }
+  .sl__text--description {
+    font-size: 14px;
+  }
+}
+
+.sl__text--white {
+  color: #ffffff;
+}
+
+.sl__text--black {
+  color: #000000 !important;
+}
+
+.sl__text--blue {
+  color: #2164ff;
+}
+
+.sl__text--gold {
+  color: #ffd253;
+}
+
+.sl__text--left {
+  text-align: left;
+}
+
+.sl__text--center {
+  text-align: center;
+}
+
+.sl__text--capitalize {
+  text-transform: capitalize;
+}
+
+.sl__text--uppercase {
+  text-transform: uppercase;
+}
+
+.sl__relative {
+  position: relative;
+}
+
+.container--normal {
+  max-width: 1537px;
+  width: 100%;
+  margin: auto;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.container--short {
+  max-width: 1242px;
+  width: 100%;
+  margin: auto;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+@media (min-width: 1024px) {
+  .container--normal {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  .container--short {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container--normal {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .container--short {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.container--flex {
+  display: flex;
+}
+
+.background--white {
+  background: #ffffff !important;
+}
+
+.background--blue {
+  background: #2164ff;
+}
+
+.background--dark-blue {
+  background: #01020f;
+}
+
+.display--hidden {
+  opacity: 0;
+}
+
+.display--desktop {
+  display: none;
+}
+
+.sl__btn {
+  font-size: 20px !important;
+  line-height: 1.16 !important;
+  width: fit-content;
+  padding: 13px 40px !important;
+  border-radius: 42px;
+  font-family: inherit !important;
+  text-transform: none !important;
+}
+
+.sl__border-radius--8 {
+  border-radius: 8px;
+}
+
+@media (min-width: 1024px) {
+  .sl__btn {
+    padding: 13px 70px !important;
+    font-size: 30px !important;
+  }
+}
+@media (min-width: 768px) {
+  .display--desktop {
+    display: block;
+  }
+
+  .display--mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .display--tablet {
+    display: none;
+  }
+}
+.custom-img__wrapper {
+  position: relative;
+}
+
+.custom-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+/*End Global Page Style */
+
+/* Start smart-living-banner.liquid Style */
+
+.smart-living-banner {
+  position: relative;
+}
+
+.smart-living-banner__content {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  text-align: center;
+  padding-top: 71px;
+}
+
+@media (min-width: 768px) {
+  .smart-living-banner__content {
+    padding-top: 80px;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, 0);
+  }
+}
+
+@media (min-width: 1023px) {
+  .smart-living-banner__content {
+    padding-top: 140px;
+  }
+}
+
+@media (min-width: 1261px) {
+  .smart-living-banner__content {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+.smart-living-banner__content__h1 {
+  line-height: 1.2;
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+.smart-living-banner__content__h2 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .smart-living-banner__content__h1 {
+    font-size: 52px;
+  }
+  .smart-living-banner__content__h2 {
+    font-size: 36px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .smart-living-banner__content__h1 {
+    font-size: 77px;
+  }
+  .smart-living-banner__content__h2 {
+    font-size: 52px;
+  }
+}
+@media (min-width: 768px) {
+  .smart-living-banner--flex-style .smart-living-banner__content {
+    padding-top: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: left;
+    max-width: 760px;
+  }
+  .smart-living-banner--flex-style .smart-living-banner-btn {
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 1400px) {
+  .smart-living-banner--flex-style .smart-living-banner__content {
+    padding-left: 100px;
+  }
+}
+
+/* End smart-living-banner.liquid Style */
+
+/* Start smart-living-steps.liquid Style */
+
+.smart-living-steps__section {
+  padding-top: 115px;
+  padding-bottom: 70px;
+  margin-top: -1px;
+}
+
+.smart-living-steps__heading {
+  font-size: 40px;
+  margin-bottom: 104px;
+}
+
+.smart-living-steps__icon-question {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  font-size: 24px;
+  line-height: 28px;
+  vertical-align: middle;
+  cursor: pointer;
+  text-align: center;
+}
+
+.smart-living-steps__popup__container .modal {
+  z-index: 2000;
+  width: 532px;
+  display: flex !important;
+  overflow: hidden;
+}
+.smart-living-steps__popup__container .modal .modal-content {
+  border-radius: 20px;
+}
+.smart-living-steps__popup__container .modal .modal-content .close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 2001;
+}
+.smart-living-steps__popup__container .modal .modal-content .modal-body {
+  padding: 70px 30px 50px;
+}
+.smart-living-steps__popup__container .modal .modal-content h5 {
+  color: #000;
+  margin-bottom: 20px;
+  font-size: 24px;
+  line-height: 32px;
+}
+.smart-living-steps__popup__container .modal .modal-content .content {
+  color: #000;
+  text-align: left;
+  font-size: 16px;
+  max-height: 50vh;
+  overflow-y: auto;
+}
+.smart-living-steps__popup__container .modal-content .content::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.smart-living-steps__popup__container .modal-content .content::-webkit-scrollbar-track {
+  background: rgb(239, 239, 239);
+  border-radius: 2px;
+}
+.smart-living-steps__popup__container .modal-content .content::-webkit-scrollbar-thumb {
+  background: #bfbfbf;
+  border-radius: 5px;
+}
+.smart-living-steps__popup__container.modal-content .content::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
+
+.smart-living-steps__popup__icon {
+  padding: 0;
+  background-color: transparent;
+  height: 100%;
+  border: none;
+}
+.smart-living-steps__popup__icon:focus {
+  border: none;
+  outline: none;
+}
+
+.popover {
+  max-width: 50%;
+}
+
+.popover-body {
+  height: 400px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}
+
+.smart-living-steps__step-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 70px;
+  max-width: 1335px;
+  margin: auto;
+}
+
+.smart-living-steps__step {
+  flex: 1 0 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.smart-living-steps__title {
+  font-size: 20px;
+  margin-top: 16px;
+}
+
+@media (max-width: 1400px) {
+  .smart-living-steps__step-container {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .smart-living-steps__step-container {
+    justify-content: center;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .smart-living-steps__heading {
+    font-size: 32px;
+    margin-bottom: 60px;
+  }
+  .smart-living-steps__step-container {
+    justify-content: start;
+  }
+  .smart-living-steps__step {
+    flex: 0 0 47%;
+  }
+  .smart-living-steps__title {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 767px) {
+  .smart-living-steps__section {
+    padding-top: 45px;
+    padding-bottom: 106px;
+  }
+  .smart-living-steps__icon-question {
+    width: 4.27vw;
+    height: 4.27vw;
+    border: 1px solid #fff;
+    border-radius: 4.27vw;
+    font-size: 4vw;
+    line-height: 4vw;
+  }
+  .smart-living-steps__popup__container .modal {
+    width: 100%;
+  }
+  .smart-living-steps__popup__container .modal .modal-dialog {
+    margin: 0;
+  }
+  .smart-living-steps__popup__container .modal .modal-content .modal-body {
+    padding: 15vw 5vw 10vw;
+  }
+  .smart-living-steps__popup__container .modal .modal-content h5 {
+    margin-bottom: 20px;
+    font-size: 7vw;
+  }
+  .smart-living-steps__popup__container .modal .modal-content p {
+    font-size: 3vw;
+  }
+}
+
+@media (max-width: 550px) {
+  .smart-living-steps__heading {
+    font-size: 12px;
+    margin-bottom: 45px;
+  }
+
+  .smart-living-steps__step-container {
+    gap: 48px;
+    justify-content: space-between;
+  }
+  .smart-living-steps__step {
+    flex: 0 0 41%;
+  }
+  .smart-living-steps__step-heading {
+    height: 30px;
+    width: 40px;
+  }
+  .smart-living-steps__title {
+    margin-top: 5px;
+    font-size: 8px;
+  }
+}
+
+/* Start smart-living-product.liquid Style */
+
+.smart-living-product {
+  position: relative;
+  margin-top: -1px;
+}
+
+.smart-living-product__content {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  text-align: center;
+  padding-top: 59px;
+}
+.smart-living-product__content__details {
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+@media (min-width: 768px) {
+  .smart-living-product__content,
+  .smart-living-product__content__details {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, 0);
+  }
+}
+
+@media (min-width: 1023px) {
+  .smart-living-product__content {
+    padding-top: 40px;
+  }
+}
+
+@media (min-width: 1261px) {
+  .smart-living-product__content {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 107px;
+  }
+  .smart-living-product__content__details {
+    padding-bottom: 54px;
+  }
+}
+.smart-living-product__content__h2 {
+  font-size: 50px;
+  font-weight: 800;
+}
+
+@media (min-width: 768px) {
+  .smart-living-product__content__h2 {
+    font-size: 60px;
+  }
+}
+
+@media (min-width: 1023px) {
+  .smart-living-product__content__h2 {
+    font-size: 80px;
+  }
+}
+
+.smart-living-product__btn__container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@media (min-width: 768px) {
+  .smart-living-product__btn__container {
+    gap: 42px;
+    flex-direction: row;
+  }
+}
+
+.smart-living-product__btn {
+  font-weight: 700;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin: auto;
+  width: 100% !important;
+  justify-content: center;
+  border: unset;
+}
+
+@media (min-width: 768px) {
+  .smart-living-product--flex-style .smart-living-product__content {
+    padding-top: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: left;
+    max-width: 760px;
+  }
+  .smart-living-product--flex-style .smart-living-product-btn {
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 1400px) {
+  .smart-living-product--flex-style .smart-living-product__content {
+    padding-left: 100px;
+  }
+}
+
+.smart-living-product__description__wrapper {
+  margin-top: 54px;
+}
+
+.smart-living-product__description__wrapper p {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .smart-living-product__description__wrapper {
+    margin-top: 20px;
+  }
+  .smart-living-product__description__wrapper p {
+    text-align: center;
+  }
+}
+
+@media (min-width: 1023px) {
+  .smart-living-product__description__wrapper p {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 1261px) {
+  .smart-living-product__description__wrapper {
+    margin-top: 62px;
+  }
+}
+
+/* Start Wishlist Style */
+
+.smart-living-product__btn__wrapper .swym-button.swym-add-to-wishlist-view-product {
+  opacity: 1;
+  max-width: unset;
+  width: 100% !important;
+}
+
+.smart-living-product__btn__wrapper .swym-button.swym-add-to-wishlist-view-product.swym-added {
+  opacity: 0.4;
+}
+
+.smart-living-product__btn__wrapper
+  .swym-button.swym-add-to-wishlist-view-product.swym-heart.swym-added:after,
+.smart-living-product__btn__wrapper
+  .swym-button.swym-add-to-wishlist-view-product.swym-heart:after {
+  display: none;
+}
+
+[data-page="smart-living-innovation-lp"]
+  ~ #swym-plugin
+  .swym-ui-component
+  .swym-empty-wishlist-container
+  .swym-empty-wishlist-continue-btn {
+  text-align: center;
+}
+
+/* End Wishlist Style */
+
+/* End smart-living-product.liquid Style */
+
+/* Start smart-living-shop.liquid Style */
+
+.smart-living-shop__section {
+  padding-top: 200px;
+  padding-bottom: 175px;
+}
+
+.smart-living-heading {
+  font-size: 56px;
+  margin-bottom: 165px;
+}
+
+.smart-living-heading a:hover {
+  color: inherit;
+}
+
+.smart-living-icons__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.smart-living-icons__block {
+  flex: 0 0 auto;
+}
+
+.smart-living-icons__details__wrapper {
+  margin-top: 50px;
+}
+
+.smart-living-icon__wrapper img {
+  height: 60px;
+}
+
+.smart-living-icons__heading {
+  font-size: 28px;
+  margin-bottom: 12.6px;
+  font-weight: 800;
+}
+
+.smart-living-icons__description {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+@media (max-width: 1023px) {
+  .smart-living-icons__container {
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .smart-living-icons__block {
+    flex: 1 0 45%;
+  }
+}
+
+@media (max-width: 767px) {
+  .smart-living-shop__section {
+    padding-top: 88px;
+    padding-bottom: 150px;
+  }
+  .smart-living-icons__container {
+    flex-direction: column;
+    max-width: 400px;
+    width: 100%;
+    margin: auto;
+    gap: 26px;
+  }
+  .smart-living-heading {
+    font-size: 32px;
+    margin-bottom: 52px;
+  }
+  .smart-living-icons__block {
+    display: flex;
+    gap: 28px;
+    flex: 100%;
+  }
+  .smart-living-icon__wrapper {
+    flex: 0 0 100px;
+  }
+  .smart-living-icon__wrapper img {
+    height: 42px;
+  }
+  .smart-living-icons__details__wrapper {
+    margin-top: 0;
+    text-align: left;
+    flex: 1 0 auto;
+  }
+  .smart-living-icons__heading {
+    font-size: 22px;
+    margin-bottom: 7px;
+  }
+  .smart-living-icons__description {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 550px) {
+  .smart-living-heading {
+    font-size: 16px;
+  }
+  .smart-living-icons__container {
+    max-width: 250px;
+  }
+  .smart-living-icons__details__wrapper {
+    flex: 1 0 80%;
+  }
+  .smart-living-icons__heading {
+    font-size: 14px;
+  }
+  .smart-living-icons__description {
+    font-size: 15px;
+  }
+  .smart-living-icon__wrapper {
+    flex: 0 0 60px;
+  }
+}
+
+/* End smart-living-shop.liquid Style */

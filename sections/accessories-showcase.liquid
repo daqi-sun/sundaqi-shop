@@ -1,0 +1,219 @@
+{%- if section.blocks.size > 0 -%}
+    {%- assign collection_found = false -%}
+    {%- for block in section.blocks -%}
+        {% if collections[block.settings.main_collection].handle == collection.handle %}
+            {%- assign collection_found = true -%}
+        {% endif %}
+    {%- endfor -%}
+
+    {%- if collection_found -%}
+    <div class="accessories-wrapper accessories-template">
+        <div class="page-width-small">
+            {%- if section.settings.title != blank -%}<h2>{{ section.settings.title }}</h2>{%- endif -%}
+
+            {%- assign tab_count = 0 -%}
+            {%- for block in section.blocks -%}
+                {%- if collections[block.settings.main_collection].handle == collection.handle -%}
+                    {%- for i in (1..6) -%}
+                        {%- capture title -%}tab_{{i}}_title{%- endcapture -%}
+                        {%- if block.settings[title] != blank -%}
+                            {%- assign tab_count = tab_count | plus: 1 -%}
+                        {%- endif -%}
+                    {%- endfor -%}
+                {%- endif -%}
+            {%- endfor -%}
+
+            {%- if tab_count > 1 -%}
+            <div class="accessories-tab-wrapper">
+                {%- assign tab_shown = false -%}
+                {%- for block in section.blocks -%}
+                    {%- if collections[block.settings.main_collection].handle == collection.handle -%}
+                        {%- for i in (1..6) -%}
+                            {%- capture title -%}tab_{{i}}_title{%- endcapture -%}
+                            {%- if block.settings[title] != blank -%}
+                                <div class="accessories-tab-title {% unless tab_shown %}tab-active{% endunless %}" data-tab-title="{{ block.settings[title] | handleize }}">{{ block.settings[title] }}</div>
+                                {%- assign tab_shown = true -%}
+                            {%- endif -%}
+                        {%- endfor -%}
+                    {%- endif -%}
+                {%- endfor -%}
+            </div>
+            {%- endif -%}
+
+            <div class="accessories-tab-content-wrapper">
+                {%- assign tab_shown = false -%}
+                {%- assign grid_item_width = 'medium-up--one-third' -%}
+                {%- assign grid_item_mobile_width = 'small--one-half' -%}
+                {%- assign max_height = 345 -%}
+                {%- for block in section.blocks -%}
+                    {%- if block.settings.main_collection == collection.handle -%}
+                        {%- for i in (1..6) -%}
+                            {%- capture title -%}tab_{{i}}_title{%- endcapture -%}
+                            {%- capture tab_collection -%}tab_{{i}}_collection{%- endcapture -%}
+                            {%- capture products_count -%}tab_{{i}}_max_products_count{%- endcapture -%}
+                            {%- if block.settings[title] != blank -%}
+                                {%- assign tab_collection = block.settings[tab_collection] -%}
+
+                                <script>window.gaAccessoriesList = window.gaAccessoriesList || [];window.gaAccessoriesList.push({{ collections[tab_collection].products | json }})</script>
+              
+                                <div class="accessories-tab-content {% unless tab_shown %}tab-content-active{% endunless %}" data-tab-title="{{ block.settings[title] | handleize }}">
+                                    <div class="grid {% if settings.align_height %} use_align_height {% else %} use_image_height {% endif %} Collection-wrapper grid--uniform" >
+                                        {% for product in collections[tab_collection].products %}
+                                            {%- comment %}<locksmith:eb20>{% endcomment -%}
+                                              {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: collections[tab_collection], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                                            {%- comment %}</locksmith:eb20>{% endcomment -%}
+                                            {% include 'product-card-item', list: false, show_alternate_image: true, image_position: section.settings.image_position, max_height: max_height, product: product, show_vendor: false %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                {%- assign tab_shown = true -%}
+                            {%- endif -%}
+                        {%- endfor -%}
+                    {%- endif -%}
+                {%- endfor -%}
+            </div>
+        </div>
+    </div>
+    {%- endif -%}
+{%- endif -%}
+{% schema %}
+{
+  "name": "Accessories Showcase",
+  "settings": [
+    {
+        "type":"text",
+        "id":"title",
+        "label":"Section title"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_last_image_on_hover",
+        "label": "Show alternate image ",
+        "default": true
+    },
+    {
+        "type":"select",
+        "id":"image_position",
+        "label":"Product image position",
+        "options": [
+            {
+                    "label":"Top",
+                    "value":"top"
+            },
+            {
+                    "label":"Bottom",
+                    "value":"bottom"
+            }
+        ],
+        "default": "top"
+    }
+  ],
+  "blocks": [
+    {
+        "type": "block",
+        "name": "Accessories block",
+        "settings": [
+            {
+                "type":"collection",
+                "id":"main_collection",
+                "label":"Parent Collection"
+            },
+            {
+                "type":"header",
+                "content":"Accessories tabs"
+            },
+            {
+                "type":"header",
+                "content":"Tab 1"
+            },
+            {
+                "type":"text",
+                "id":"tab_1_title",
+                "label":"Title"
+            },
+            {
+                "type":"collection",
+                "id":"tab_1_collection",
+                "label":"Collection"
+            },
+            {
+                "type":"header",
+                "content":"Tab 2"
+            },
+            {
+                "type":"text",
+                "id":"tab_2_title",
+                "label":"Title"
+            },
+            {
+                "type":"collection",
+                "id":"tab_2_collection",
+                "label":"Collection"
+            },
+            {
+                "type":"header",
+                "content":"Tab 3"
+            },
+            {
+                "type":"text",
+                "id":"tab_3_title",
+                "label":"Title"
+            },
+            {
+                "type":"collection",
+                "id":"tab_3_collection",
+                "label":"Collection"
+            },
+            {
+                "type":"header",
+                "content":"Tab 4"
+            },
+            {
+                "type":"text",
+                "id":"tab_4_title",
+                "label":"Title"
+            },
+            {
+                "type":"collection",
+                "id":"tab_4_collection",
+                "label":"Collection"
+            },
+            {
+                "type":"header",
+                "content":"Tab 5"
+            },
+            {
+                "type":"text",
+                "id":"tab_5_title",
+                "label":"Title"
+            },
+            {
+                "type":"collection",
+                "id":"tab_5_collection",
+                "label":"Collection"
+            },
+            {
+                "type":"header",
+                "content":"Tab 6"
+            },
+            {
+                "type":"text",
+                "id":"tab_6_title",
+                "label":"Title"
+            },
+            {
+                "type":"collection",
+                "id":"tab_6_collection",
+                "label":"Collection"
+            }
+        ]
+    }
+  ],
+  "presets": [
+    {
+        "name":"Accessories Showcase",
+        "category":"Custom Sections"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,765 @@
+{% if section.settings.show %}
+    <div class="ecocredits-popup-wrap"
+      x-data="
+      {
+        showContent1: true,
+        showContent2: false,
+        showContent3: false,
+        showContent4: false,
+        showContent5: false,
+        show: false,
+        popup: 'default',
+        selectedIndex: 0,
+	customer: {% if customer %}true{% else %}false{% endif %},
+        isTitleRowBoxShadowAdded: false,
+        isPopupBoxHasScrollbar: false,
+        trackScrollPosition(element, callback) {
+          element.addEventListener('scroll', () => {
+            const { scrollTop, scrollHeight, clientHeight } = element;
+            const isScrolledToBottom = scrollTop + clientHeight === scrollHeight;
+            callback(scrollTop, isScrolledToBottom);
+          });
+        },
+        addTitleRowBoxShadow() {
+          // add setTimeout 0 to defer the execution of the addTitleRowBoxShadow method until the next tick of the event loop
+          // This can help ensure that the method is executed after any pending layout and rendering updates have been applied.
+          // Note that the delay of 0 is used to ensure that the setTimeout callback is executed as soon as possible, but still after any pending layout and rendering updates have been applied.
+          setTimeout(() => {
+            const box = document.querySelector('.ecocredits-popup.active');
+            this.trackScrollPosition(box, (scrollTop, isScrolledToBottom) => {
+              const title = box.querySelector('.ecocredits-section-content.active .title-row');
+
+              // Check if the content div overlaps with the visible portion of the Title Row
+              if (scrollTop > 20) {
+                title.classList.add('title-row--box-shadow')
+              } else {
+                if(title.classList.contains('title-row--box-shadow')) title.classList.remove('title-row--box-shadow')
+              }
+
+            });
+          }, 0);
+          this.isTitleRowBoxShadowAdded = true;
+        },
+        checkPopupBoxScrollbar() {
+          setTimeout(() => {
+            const box = document.querySelector('.ecocredits-popup.active');
+            const hasScrollBar = box.scrollHeight > box.clientHeight;
+            this.isPopupBoxHasScrollbar = hasScrollBar ? true : false;
+          }, 0);
+        }
+      }"
+    >
+        <div class="ecocredits-popup-trigger" @click="
+          show = ! show;
+          if (!isTitleRowBoxShadowAdded) addTitleRowBoxShadow();
+          checkPopupBoxScrollbar();
+        ">
+            <img loading="lazy" src="{{ 'ecocredits-icon.png' | file_url }}" alt="Ecocredits" />
+        </div>
+        <div class="ecocredits-popup" x-bind:class="{ 'active': show, 'add-padding': customer && selectedIndex != 4 }">
+            <div class="ecocredits-popup-default-content" x-bind:class="{ 'active': selectedIndex == 0 }">
+              <div class="ecocredits-popup-close" x-on:click="[selectedIndex=0, show=!show]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M5 4.16666L15.8333 15M15.8333 4.16666L5 15" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="section section-1">
+                <div class="sec-title">Programa de EcoCredits</div>
+                <div class="sec-desc">Conviértete en miembro y ahórrate los gastos de envío, y gana EcoCredits para conseguir descuentos y deducciones en efectivo.</div>
+                <div class="sec-links">
+                  <div class="sec-link" x-on:click="
+                    [selectedIndex=1];
+                    checkPopupBoxScrollbar();
+                  ">
+                    <span>
+                      <svg class="link-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.33333 7.5C11.0948 7.5 13.3333 6.38071 13.3333 5C13.3333 3.61929 11.0948 2.5 8.33333 2.5C5.57191 2.5 3.33333 3.61929 3.33333 5C3.33333 6.38071 5.57191 7.5 8.33333 7.5Z" stroke="#010101" stroke-width="0.833333" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3.33333 9.16666C3.33333 10.5474 5.57191 11.6667 8.33333 11.6667" stroke="#010101" stroke-width="0.833333" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3.33333 13.3333C3.33333 14.714 5.57191 15.8333 8.33333 15.8333" stroke="#010101" stroke-width="0.833333" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3.33333 5V13.3333" stroke="#010101" stroke-width="0.833333" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M13.3333 5V7.08333" stroke="#010101" stroke-width="0.833333" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M13.3333 12.2917C15.0327 12.2917 16.4103 11.5921 16.4103 10.7292C16.4103 9.86622 15.0327 9.16666 13.3333 9.16666C11.634 9.16666 10.2564 9.86622 10.2564 10.7292C10.2564 11.5921 11.634 12.2917 13.3333 12.2917Z" stroke="#010101" stroke-width="0.833333" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M10.2564 13.3333C10.2564 14.1963 11.634 14.8958 13.3333 14.8958C15.0327 14.8958 16.4103 14.1963 16.4103 13.3333" stroke="#010101" stroke-width="0.833333" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M10.2564 15.9375C10.2564 16.8004 11.634 17.5 13.3333 17.5C15.0327 17.5 16.4103 16.8004 16.4103 15.9375" stroke="#010101" stroke-width="0.833333" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M10.2564 10.7292V15.9375" stroke="#010101" stroke-width="0.833333" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M16.4103 10.7292V15.9375" stroke="#010101" stroke-width="0.833333" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>Cómo conseguir EcoCredits
+                    </span>
+                    <span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M5.66666 3.66666L9.99999 8L5.66666 12.3333" stroke="#010101" stroke-width="1.06667" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="sec-link-divider"></div>
+                  <div class="sec-link" x-on:click="
+                    [selectedIndex=2];
+                    checkPopupBoxScrollbar();
+                  ">
+                    <span>
+                      <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                        <path d="M13.4007 9.07863L7.51546 14.5653C7.07282 14.9797 6.35918 14.9743 5.92476 14.553L2.05723 10.8027C1.62976 10.3882 1.62152 9.70541 2.03879 9.27886L9.12357 2.03663L8.86644 2.1448H13.7251C14.3203 2.1448 14.8016 2.62728 14.8016 3.22653V7.90015C14.8016 8.09882 14.9627 8.25986 15.1614 8.25986C15.36 8.25986 15.5211 8.09882 15.5211 7.90015V3.22653C15.5211 2.23034 14.718 1.42538 13.7251 1.42538H8.86644C8.76967 1.42538 8.67698 1.46437 8.60931 1.53354L1.52453 8.77578C0.828799 9.48697 0.842555 10.6269 1.55641 11.3192L5.42394 15.0695C6.13418 15.7582 7.28458 15.7669 8.00658 15.091L13.8913 9.60485C14.0366 9.46938 14.0446 9.24176 13.9091 9.09645C13.7736 8.95114 13.546 8.94316 13.4007 9.07863ZM11.7441 6.82102C12.6381 6.82102 13.3628 6.09631 13.3628 5.20233C13.3628 4.30835 12.6381 3.58364 11.7441 3.58364C10.8501 3.58364 10.1254 4.30835 10.1254 5.20233C10.1254 6.09631 10.8501 6.82102 11.7441 6.82102ZM11.7441 6.1016C11.2475 6.1016 10.8448 5.69899 10.8448 5.20233C10.8448 4.70567 11.2475 4.30306 11.7441 4.30306C12.2408 4.30306 12.6434 4.70567 12.6434 5.20233C12.6434 5.69899 12.2408 6.1016 11.7441 6.1016Z" fill="black" stroke="black" stroke-width="0.0833333"/>
+                        <path d="M4.16667 9.16666L7.5 12.5" stroke="black" stroke-width="0.833333" stroke-linecap="round"/>
+                      </svg>Obtén recompensas
+                    </span>
+                    <span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M5.66666 3.66666L9.99999 8L5.66666 12.3333" stroke="#010101" stroke-width="1.06667" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="section section-2">
+                <div class="sec-title">Semana de agradecimiento de EcoCredits</div>
+                <div class="sec-desc">Tiene lugar la cuarta semana de cada mes.</div>
+                <div class="sec-links">
+                  <div class="sec-link" x-on:click="
+                    [selectedIndex=3];
+                    checkPopupBoxScrollbar();
+                  ">
+                    Más información
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M5.66666 3.66666L9.99999 8L5.66666 12.3333" stroke="#010101" stroke-width="1.06667" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="section section-3">
+                <div class="sec-title">Recomienda a un amigo</div>
+                <div class="sec-desc">Regala un cupón de descuento del 5 % y gana hasta 500 € en efectivo por referencia.</div>
+                <div class="sec-links">
+                  <div class="sec-link" x-on:click="
+                    [selectedIndex=4];
+                    checkPopupBoxScrollbar();
+                  ">
+                    Más información
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M5.66666 3.66666L9.99999 8L5.66666 12.3333" stroke="#010101" stroke-width="1.06667" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ecocredits-section-content ecocredits-popup-earn-content" x-bind:class="{ 'active': selectedIndex == 1 }">
+              <div class="title-row">
+                <div class="back-btn" x-on:click="
+                  [selectedIndex=0];
+                  checkPopupBoxScrollbar();
+                ">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M12.9167 3.33325L6.25 9.99992L12.9167 16.6666" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div class="title">Cómo conseguir EcoCredits</div>
+                <div class="ecocredits-popup-close" x-on:click="[selectedIndex=0, show=!show];">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M5 4.16666L15.8333 15M15.8333 4.16666L5 15" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="earn-content-boxes">
+                <div class="earn-content-box" x-bind:class="{ 'open': showContent1 }">
+                  <div class="arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                      <path d="M10 8L6.14132 4.14142C6.06321 4.06332 5.93658 4.06332 5.85848 4.14142L2 8" stroke="black" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                  <div class="earn-content-box-title" @click="
+                    showContent1 = ! showContent1;
+                    checkPopupBoxScrollbar();
+                  ">
+                    <div class="earn-content-icon">
+                      <svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.864 3.88843H8.95939C7.9191 3.88843 7.14301 4.74892 7.14301 5.725V27.0019C7.14301 27.9407 8.14661 28.6899 9.10006 28.1975L17.8438 23.678L26.001 28.1896L26.0163 28.1975C26.9692 28.6899 27.9728 27.9407 27.9728 27.0013V14.9293" stroke="black" stroke-width="1.5059"/>
+                        <path d="M19.3788 7.15698H28.1855" stroke="black" stroke-width="1.5059" stroke-linecap="round"/>
+                        <path d="M23.7825 2.75317L23.7825 11.5599" stroke="black" stroke-width="1.5059" stroke-linecap="round"/>
+                      </svg>
+                    </div>
+                    <div class="earn-content-box-title-text">
+                      Regístrate y suscríbete
+                      <div class="small-text">Obtén 1000 EcoCredits</div>
+                    </div>
+                  </div>
+                  <div class="earn-content-box-content" x-bind:class="{ 'open': showContent1 }">Únete a nosotros y suscríbete al boletín de EcoFlow.</div>
+                </div>
+                <div class="earn-content-box" x-bind:class="{ 'open': showContent2 }">
+                  <div class="arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                      <path d="M10 8L6.14132 4.14142C6.06321 4.06332 5.93658 4.06332 5.85848 4.14142L2 8" stroke="black" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                  <div class="earn-content-box-title" @click="
+                    showContent2 = ! showContent2;
+                    checkPopupBoxScrollbar();
+                  ">
+                    <div class="earn-content-icon">
+                      <svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3.98301" y="3.8502" width="24.3" height="24.3" rx="2.55" stroke="black" stroke-width="1.3"/>
+                        <path d="M11.333 8L11.333 9.6C11.333 12.251 13.482 14.4 16.133 14.4V14.4C18.784 14.4 20.933 12.251 20.933 9.6V8" stroke="black" stroke-width="1.3"/>
+                        <path d="M4.1333 22.3999H28.1333" stroke="black" stroke-width="1.3"/>
+                      </svg>
+                    </div>
+                    <div class="earn-content-box-title-text">
+                        Compra
+                      <div class="small-text">Recibe 1 EcoCredit por cada 1 € que gastes</div>
+                    </div>
+                  </div>
+                  <div class="earn-content-box-content" x-bind:class="{ 'open': showContent2 }">Gana cada vez que hagas un pedido.</div>
+                </div>
+
+                <div class="earn-content-box" x-bind:class="{ 'open': showContent5 }">
+                    <div class="arrow">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <path d="M10 8L6.14132 4.14142C6.06321 4.06332 5.93658 4.06332 5.85848 4.14142L2 8" stroke="black" stroke-linecap="round"/>
+                      </svg>
+                    </div>
+                    <div class="earn-content-box-title" @click="
+                      showContent5 = ! showContent5;
+                      checkPopupBoxScrollbar();
+                    ">
+                      <div class="earn-content-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 28 25" fill="none">
+                            <g clip-path="url(#clip0_1_1116)">
+                              <path d="M13.8247 24.9783C13.7023 24.9475 13.5893 24.8867 13.4959 24.8013H13.4578V24.7724H13.4543H13.4256V24.7411L13.3642 24.6821H13.3777L0.612713 10.8283C0.217861 10.3884 -0.000793457 9.81636 -0.000793457 9.22311C-0.000793457 8.62986 0.217861 8.05778 0.612713 7.61795L7.02181 0.664489C7.20839 0.455315 7.43653 0.288047 7.69139 0.173548C7.94626 0.0590488 8.22217 -0.00012207 8.50119 -0.00012207C8.78021 -0.00012207 9.05612 0.0590488 9.31099 0.173548C9.56586 0.288047 9.79399 0.455315 9.98057 0.664489L14.0009 5.02655L18.0218 0.664489C18.2084 0.455508 18.4364 0.288407 18.6912 0.174024C18.9459 0.059642 19.2217 0.000533688 19.5006 0.000533688C19.7795 0.000533688 20.0552 0.059642 20.31 0.174024C20.5647 0.288407 20.7928 0.455508 20.9794 0.664489L27.3867 7.61854C27.7812 8.05846 27.9996 8.63037 27.9996 9.22341C27.9996 9.81645 27.7812 10.3884 27.3867 10.8283L14.5399 24.7665C14.4698 24.8397 14.3859 24.898 14.2931 24.9379C14.2004 24.9778 14.1006 24.9986 13.9997 24.9989C13.9408 24.9991 13.882 24.9922 13.8247 24.9783ZM8.13778 1.87699L1.72986 8.83045C1.63339 8.93787 1.57996 9.07761 1.57996 9.22252C1.57996 9.36744 1.63339 9.50718 1.72986 9.6146L13.9997 22.9291L15.6318 21.159L14.1285 19.5294C13.9797 19.3632 13.8974 19.1473 13.8974 18.9234C13.8974 18.6996 13.9797 18.4837 14.1285 18.3175C14.1989 18.2383 14.2851 18.175 14.3815 18.1317C14.4778 18.0884 14.5821 18.066 14.6876 18.066C14.7931 18.066 14.8974 18.0884 14.9938 18.1317C15.0901 18.175 15.1763 18.2383 15.2468 18.3175L16.7502 19.9483L18.3829 18.1782L16.8795 16.5468C16.7309 16.3806 16.6486 16.1647 16.6486 15.9409C16.6486 15.717 16.7309 15.5012 16.8795 15.3349C16.95 15.2559 17.0362 15.1928 17.1325 15.1496C17.2287 15.1063 17.333 15.084 17.4383 15.084C17.5437 15.084 17.6479 15.1063 17.7442 15.1496C17.8405 15.1928 17.9267 15.2559 17.9972 15.3349L19.5006 16.9663L21.1333 15.1962L16.7507 10.4406L13.1851 14.3106C13.0659 14.4447 12.9031 14.5314 12.726 14.5551C12.549 14.5788 12.3693 14.5379 12.2195 14.4398L8.79496 12.2048C8.74216 12.1728 8.69359 12.1341 8.65042 12.0898C8.63696 12.0762 8.62174 12.0608 8.60887 12.0443C8.47548 11.887 8.40058 11.6878 8.39703 11.4808C8.39703 11.462 8.39703 11.4431 8.39703 11.4218C8.40398 11.2195 8.47911 11.0255 8.61004 10.8719L12.882 6.23788L8.86167 1.87699C8.81606 1.82565 8.76023 1.78458 8.69781 1.75646C8.63539 1.72835 8.5678 1.71381 8.49943 1.71381C8.43107 1.71381 8.36348 1.72835 8.30106 1.75646C8.23864 1.78458 8.18339 1.82565 8.13778 1.87699ZM17.3078 8.61391L22.2487 13.9755L26.2696 9.61696C26.3659 9.50948 26.4193 9.36976 26.4193 9.22488C26.4193 9.08001 26.3659 8.94029 26.2696 8.83281L19.8611 1.87699C19.8155 1.82575 19.7597 1.78476 19.6973 1.7567C19.6349 1.72864 19.5674 1.71414 19.4991 1.71414C19.4308 1.71414 19.3633 1.72864 19.3009 1.7567C19.2386 1.78476 19.1828 1.82575 19.1372 1.87699L14.5726 6.82849L14.5574 6.84619L14.5393 6.86448L10.4599 11.2897L12.5004 12.6184L16.1872 8.61627C16.2576 8.53723 16.3437 8.47402 16.44 8.43075C16.5362 8.38748 16.6404 8.36512 16.7458 8.36512C16.8511 8.36512 16.9553 8.38748 17.0516 8.43075C17.1478 8.47402 17.2339 8.53723 17.3043 8.61627L17.3078 8.61391Z" fill="black"/>
+                            </g>
+                            <defs>
+                              <clipPath id="clip0_1_1116">
+                                <rect width="28" height="25" fill="white"/>
+                              </clipPath>
+                            </defs>
+                        </svg>
+                      </div>
+                      <div class="earn-content-box-title-text">
+                        Refiere a un amigo
+                        <div class="small-text">Obtén hasta 3000 EcoCredits</div>
+                      </div>
+                    </div>
+                    <div class="earn-content-box-content" x-bind:class="{ 'open': showContent5 }">Obtendrás 100 EcoCredits por cada referencia de registro exitoso.</div>
+                </div>
+
+                <div class="earn-content-box" x-bind:class="{ 'open': showContent3 }">
+                  <div class="arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                      <path d="M10 8L6.14132 4.14142C6.06321 4.06332 5.93658 4.06332 5.85848 4.14142L2 8" stroke="black" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                  <div class="earn-content-box-title" @click="
+                    showContent3 = ! showContent3;
+                    checkPopupBoxScrollbar();
+                  ">
+                    <div class="earn-content-icon">
+                      <svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24.6741 22.1351C25.1505 20.9869 25.4136 19.7297 25.4136 18.4119V7.47008L15.416 4.25L5.41912 7.47008V18.4119C5.35505 26.902 15.8448 31.3771 22.0896 25.7432" stroke="black" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18.1924 11.5418C16.5776 9.9182 14.1534 9.6076 12.2269 10.6073L14.2604 12.6519L12.0577 14.8665L10.0242 12.8219C9.02996 14.7582 9.33956 17.1963 10.9537 18.8199C12.4717 20.3455 14.7043 20.7103 16.5667 19.9183L22.9878 26.3751C23.7386 27.1301 24.9559 27.1294 25.7067 26.3751C26.4575 25.6202 26.4575 24.3963 25.7067 23.6414L19.2856 17.1854C20.0726 15.3129 19.7104 13.0681 18.1924 11.5418Z" stroke="black" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                    <div class="earn-content-box-title-text">
+                        Registro de Garantía
+                      <div class="small-text">1000 EcoCredits</div>
+                    </div>
+                  </div>
+                  <div class="earn-content-box-content" x-bind:class="{ 'open': showContent3 }">Registra la información de tu producto para la garantía y podrás obtener 1000 puntos por cada producto registrado.</div>
+                </div>
+                <div class="earn-content-box" x-bind:class="{ 'open': showContent4 }">
+                  <div class="arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                      <path d="M10 8L6.14132 4.14142C6.06321 4.06332 5.93658 4.06332 5.85848 4.14142L2 8" stroke="black" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                  <div class="earn-content-box-title" @click="
+                    showContent4 = ! showContent4;
+                    checkPopupBoxScrollbar();
+                  ">
+                    <div class="earn-content-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+                        <path d="M24.9999 11.0667C24.9999 6.13335 20.9332 2.06665 15.9998 2.06665C11.0664 2.06665 6.99973 6.13335 6.99973 11.0667C6.99973 14.7334 9.19975 17.8668 12.3331 19.2668C8.19974 20.5335 4.86638 24.0669 3.73303 28.5336C3.66636 28.9336 3.86637 29.2669 4.26637 29.3336H4.3997C4.73304 29.3336 4.99971 29.1336 5.06638 28.8002C6.33306 23.6668 10.7998 20.0001 15.7998 20.0001H15.9998C20.9332 20.0668 24.9999 16.0001 24.9999 11.0667ZM8.33307 11.0667C8.33307 6.86669 11.7998 3.4 15.9998 3.4C20.1999 3.4 23.6665 6.86669 23.6665 11.0667C23.6665 15.2668 20.1999 18.7335 15.9998 18.7335C11.7998 18.7335 8.33307 15.2668 8.33307 11.0667ZM26.9999 20.6668H19.6665C18.5332 20.6668 17.6665 21.5335 17.6665 22.6668V28.0002C17.6665 29.1336 18.5332 30.0002 19.6665 30.0002H26.9999C28.1333 30.0002 28.9999 29.1336 28.9999 28.0002V22.6668C28.9999 21.6002 28.0666 20.6668 26.9999 20.6668ZM27.6666 28.0002C27.6666 28.4002 27.3999 28.6669 26.9999 28.6669H19.6665C19.2665 28.6669 18.9998 28.4002 18.9998 28.0002V22.6668C18.9998 22.2668 19.2665 22.0002 19.6665 22.0002H26.9999C27.3999 22.0002 27.6666 22.2668 27.6666 22.6668V28.0002Z" fill="black" stroke="black" stroke-width="0.1"/>
+                        <path d="M21.0663 24.6001H22.333C22.733 24.6001 22.9997 24.3334 22.9997 23.9334C22.9997 23.5334 22.733 23.2667 22.333 23.2667H21.0663C20.6663 23.2667 20.3997 23.5334 20.3997 23.9334C20.3997 24.3334 20.6663 24.6001 21.0663 24.6001ZM25.6663 26.0001H21.0663C20.6663 26.0001 20.3997 26.2667 20.3997 26.6667C20.3997 27.0667 20.6663 27.3334 21.0663 27.3334H25.6663C26.0663 27.3334 26.333 27.0667 26.333 26.6667C26.333 26.2667 25.9997 26.0001 25.6663 26.0001Z" fill="black"/>
+                      </svg>
+                    </div>
+                    <div class="earn-content-box-title-text">
+                        Completa tu Perfil
+                      <div class="small-text">1000 EcoCredits</div>
+                    </div>
+                  </div>
+                  <div class="earn-content-box-content" x-bind:class="{ 'open': showContent4 }">Agrega tu información, como la fecha de tu cumpleaños.</div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="ecocredits-section-content ecocredits-popup-reward-content" x-bind:class="{ 'active': selectedIndex == 2 }">
+              <div class="title-row">
+                <div class="back-btn" x-on:click="
+                  [selectedIndex=0];
+                  checkPopupBoxScrollbar();
+                ">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M12.9167 3.33325L6.25 9.99992L12.9167 16.6666" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div class="title">Obtén recompensas</div>
+                <div class="ecocredits-popup-close" x-on:click="[selectedIndex=0, show=!show];">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M5 4.16666L15.8333 15M15.8333 4.16666L5 15" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="reward-content-box">
+                <div class="title">Cupones</div>
+                <div class="reward-coupon-boxes">
+                  <div class="reward-coupon-box">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="27" viewBox="0 0 48 27" fill="none">
+                      <path d="M47 26.5H1C0.851381 26.5 0.718081 26.4464 0.627376 26.3647C0.538406 26.2847 0.5 26.1881 0.5 26.1V18.9C0.5 18.8119 0.538408 18.7153 0.627376 18.6353C0.718079 18.5536 0.851379 18.5 1 18.5C3.98342 18.5 6.5 16.3047 6.5 13.5C6.5 10.6953 3.98342 8.5 1 8.5C0.851384 8.5 0.718083 8.44639 0.627376 8.36475C0.538407 8.28468 0.5 8.18807 0.5 8.1V0.9C0.5 0.855236 0.509713 0.809412 0.530325 0.764627C0.551026 0.719647 0.583037 0.675155 0.627376 0.635251C0.671817 0.595254 0.72735 0.561102 0.791971 0.537012C0.856618 0.512912 0.927444 0.5 1 0.5H47C47.0726 0.5 47.1434 0.512912 47.208 0.537013C47.2726 0.5611 47.3282 0.595248 47.3726 0.635249L47.707 0.263694L47.3726 0.635255C47.417 0.675167 47.449 0.71966 47.4697 0.764627C47.4903 0.809397 47.5 0.85522 47.5 0.9V8.1C47.5 8.18807 47.4616 8.28467 47.3726 8.36475L47.7071 8.7364L47.3726 8.36475C47.2819 8.44639 47.1486 8.5 47 8.5C44.0166 8.5 41.5 10.6953 41.5 13.5C41.5 16.3047 44.0166 18.5 47 18.5C47.1486 18.5 47.2819 18.5536 47.3726 18.6352C47.4616 18.7153 47.5 18.8119 47.5 18.9V26.1C47.5 26.1881 47.4616 26.2847 47.3726 26.3647C47.2819 26.4464 47.1486 26.5 47 26.5Z" stroke="black"/>
+                    </svg>
+                    <span>5 €</span>
+                    <div class="text">100 EcoCredits</div>
+                  </div>
+                  <div class="reward-coupon-box">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="27" viewBox="0 0 48 27" fill="none">
+                      <path d="M47 26.5H1C0.851381 26.5 0.718081 26.4464 0.627376 26.3647C0.538406 26.2847 0.5 26.1881 0.5 26.1V18.9C0.5 18.8119 0.538408 18.7153 0.627376 18.6353C0.718079 18.5536 0.851379 18.5 1 18.5C3.98342 18.5 6.5 16.3047 6.5 13.5C6.5 10.6953 3.98342 8.5 1 8.5C0.851384 8.5 0.718083 8.44639 0.627376 8.36475C0.538407 8.28468 0.5 8.18807 0.5 8.1V0.9C0.5 0.855236 0.509713 0.809412 0.530325 0.764627C0.551026 0.719647 0.583037 0.675155 0.627376 0.635251C0.671817 0.595254 0.72735 0.561102 0.791971 0.537012C0.856618 0.512912 0.927444 0.5 1 0.5H47C47.0726 0.5 47.1434 0.512912 47.208 0.537013C47.2726 0.5611 47.3282 0.595248 47.3726 0.635249L47.707 0.263694L47.3726 0.635255C47.417 0.675167 47.449 0.71966 47.4697 0.764627C47.4903 0.809397 47.5 0.85522 47.5 0.9V8.1C47.5 8.18807 47.4616 8.28467 47.3726 8.36475L47.7071 8.7364L47.3726 8.36475C47.2819 8.44639 47.1486 8.5 47 8.5C44.0166 8.5 41.5 10.6953 41.5 13.5C41.5 16.3047 44.0166 18.5 47 18.5C47.1486 18.5 47.2819 18.5536 47.3726 18.6352C47.4616 18.7153 47.5 18.8119 47.5 18.9V26.1C47.5 26.1881 47.4616 26.2847 47.3726 26.3647C47.2819 26.4464 47.1486 26.5 47 26.5Z" stroke="black"/>
+                    </svg>
+                    <span>10 €</span>
+                    <div class="text">200 EcoCredits</div>
+                  </div>
+                  <div class="reward-coupon-box">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="27" viewBox="0 0 48 27" fill="none">
+                      <path d="M47 26.5H1C0.851381 26.5 0.718081 26.4464 0.627376 26.3647C0.538406 26.2847 0.5 26.1881 0.5 26.1V18.9C0.5 18.8119 0.538408 18.7153 0.627376 18.6353C0.718079 18.5536 0.851379 18.5 1 18.5C3.98342 18.5 6.5 16.3047 6.5 13.5C6.5 10.6953 3.98342 8.5 1 8.5C0.851384 8.5 0.718083 8.44639 0.627376 8.36475C0.538407 8.28468 0.5 8.18807 0.5 8.1V0.9C0.5 0.855236 0.509713 0.809412 0.530325 0.764627C0.551026 0.719647 0.583037 0.675155 0.627376 0.635251C0.671817 0.595254 0.72735 0.561102 0.791971 0.537012C0.856618 0.512912 0.927444 0.5 1 0.5H47C47.0726 0.5 47.1434 0.512912 47.208 0.537013C47.2726 0.5611 47.3282 0.595248 47.3726 0.635249L47.707 0.263694L47.3726 0.635255C47.417 0.675167 47.449 0.71966 47.4697 0.764627C47.4903 0.809397 47.5 0.85522 47.5 0.9V8.1C47.5 8.18807 47.4616 8.28467 47.3726 8.36475L47.7071 8.7364L47.3726 8.36475C47.2819 8.44639 47.1486 8.5 47 8.5C44.0166 8.5 41.5 10.6953 41.5 13.5C41.5 16.3047 44.0166 18.5 47 18.5C47.1486 18.5 47.2819 18.5536 47.3726 18.6352C47.4616 18.7153 47.5 18.8119 47.5 18.9V26.1C47.5 26.1881 47.4616 26.2847 47.3726 26.3647C47.2819 26.4464 47.1486 26.5 47 26.5Z" stroke="black"/>
+                    </svg>
+                    <span>25 €</span>
+                    <div class="text">500 EcoCredits</div>
+                  </div>
+                  <div class="reward-coupon-box">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="27" viewBox="0 0 48 27" fill="none">
+                      <path d="M47 26.5H1C0.851381 26.5 0.718081 26.4464 0.627376 26.3647C0.538406 26.2847 0.5 26.1881 0.5 26.1V18.9C0.5 18.8119 0.538408 18.7153 0.627376 18.6353C0.718079 18.5536 0.851379 18.5 1 18.5C3.98342 18.5 6.5 16.3047 6.5 13.5C6.5 10.6953 3.98342 8.5 1 8.5C0.851384 8.5 0.718083 8.44639 0.627376 8.36475C0.538407 8.28468 0.5 8.18807 0.5 8.1V0.9C0.5 0.855236 0.509713 0.809412 0.530325 0.764627C0.551026 0.719647 0.583037 0.675155 0.627376 0.635251C0.671817 0.595254 0.72735 0.561102 0.791971 0.537012C0.856618 0.512912 0.927444 0.5 1 0.5H47C47.0726 0.5 47.1434 0.512912 47.208 0.537013C47.2726 0.5611 47.3282 0.595248 47.3726 0.635249L47.707 0.263694L47.3726 0.635255C47.417 0.675167 47.449 0.71966 47.4697 0.764627C47.4903 0.809397 47.5 0.85522 47.5 0.9V8.1C47.5 8.18807 47.4616 8.28467 47.3726 8.36475L47.7071 8.7364L47.3726 8.36475C47.2819 8.44639 47.1486 8.5 47 8.5C44.0166 8.5 41.5 10.6953 41.5 13.5C41.5 16.3047 44.0166 18.5 47 18.5C47.1486 18.5 47.2819 18.5536 47.3726 18.6352C47.4616 18.7153 47.5 18.8119 47.5 18.9V26.1C47.5 26.1881 47.4616 26.2847 47.3726 26.3647C47.2819 26.4464 47.1486 26.5 47 26.5Z" stroke="black"/>
+                    </svg>
+                    <span>50 €</span>
+                    <div class="text">1000 EcoCredits</div>
+                  </div>
+                  <div class="reward-coupon-box">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="27" viewBox="0 0 48 27" fill="none">
+                      <path d="M47 26.5H1C0.851381 26.5 0.718081 26.4464 0.627376 26.3647C0.538406 26.2847 0.5 26.1881 0.5 26.1V18.9C0.5 18.8119 0.538408 18.7153 0.627376 18.6353C0.718079 18.5536 0.851379 18.5 1 18.5C3.98342 18.5 6.5 16.3047 6.5 13.5C6.5 10.6953 3.98342 8.5 1 8.5C0.851384 8.5 0.718083 8.44639 0.627376 8.36475C0.538407 8.28468 0.5 8.18807 0.5 8.1V0.9C0.5 0.855236 0.509713 0.809412 0.530325 0.764627C0.551026 0.719647 0.583037 0.675155 0.627376 0.635251C0.671817 0.595254 0.72735 0.561102 0.791971 0.537012C0.856618 0.512912 0.927444 0.5 1 0.5H47C47.0726 0.5 47.1434 0.512912 47.208 0.537013C47.2726 0.5611 47.3282 0.595248 47.3726 0.635249L47.707 0.263694L47.3726 0.635255C47.417 0.675167 47.449 0.71966 47.4697 0.764627C47.4903 0.809397 47.5 0.85522 47.5 0.9V8.1C47.5 8.18807 47.4616 8.28467 47.3726 8.36475L47.7071 8.7364L47.3726 8.36475C47.2819 8.44639 47.1486 8.5 47 8.5C44.0166 8.5 41.5 10.6953 41.5 13.5C41.5 16.3047 44.0166 18.5 47 18.5C47.1486 18.5 47.2819 18.5536 47.3726 18.6352C47.4616 18.7153 47.5 18.8119 47.5 18.9V26.1C47.5 26.1881 47.4616 26.2847 47.3726 26.3647C47.2819 26.4464 47.1486 26.5 47 26.5Z" stroke="black"/>
+                    </svg>
+                    <span>100 €</span>
+                    <div class="text">2000 EcoCredits</div>
+                  </div>
+                  <div class="reward-coupon-box">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="27" viewBox="0 0 48 27" fill="none">
+                      <path d="M47 26.5H1C0.851381 26.5 0.718081 26.4464 0.627376 26.3647C0.538406 26.2847 0.5 26.1881 0.5 26.1V18.9C0.5 18.8119 0.538408 18.7153 0.627376 18.6353C0.718079 18.5536 0.851379 18.5 1 18.5C3.98342 18.5 6.5 16.3047 6.5 13.5C6.5 10.6953 3.98342 8.5 1 8.5C0.851384 8.5 0.718083 8.44639 0.627376 8.36475C0.538407 8.28468 0.5 8.18807 0.5 8.1V0.9C0.5 0.855236 0.509713 0.809412 0.530325 0.764627C0.551026 0.719647 0.583037 0.675155 0.627376 0.635251C0.671817 0.595254 0.72735 0.561102 0.791971 0.537012C0.856618 0.512912 0.927444 0.5 1 0.5H47C47.0726 0.5 47.1434 0.512912 47.208 0.537013C47.2726 0.5611 47.3282 0.595248 47.3726 0.635249L47.707 0.263694L47.3726 0.635255C47.417 0.675167 47.449 0.71966 47.4697 0.764627C47.4903 0.809397 47.5 0.85522 47.5 0.9V8.1C47.5 8.18807 47.4616 8.28467 47.3726 8.36475L47.7071 8.7364L47.3726 8.36475C47.2819 8.44639 47.1486 8.5 47 8.5C44.0166 8.5 41.5 10.6953 41.5 13.5C41.5 16.3047 44.0166 18.5 47 18.5C47.1486 18.5 47.2819 18.5536 47.3726 18.6352C47.4616 18.7153 47.5 18.8119 47.5 18.9V26.1C47.5 26.1881 47.4616 26.2847 47.3726 26.3647C47.2819 26.4464 47.1486 26.5 47 26.5Z" stroke="black"/>
+                    </svg>
+                    <span>200 €</span>
+                    <div class="text">4000 EcoCredits</div>
+                  </div>
+                </div>
+              </div>
+              <div class="reward-content-box">
+                <div class="title">Regalos</div>
+                <div class="reward-gift-boxes">
+                  <div class="reward-gift-box">
+                    <div class="reward-gift-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect x="0.5" y="0.5" width="31" height="31" rx="3.5" stroke="black"/>
+                            <path d="M12.4234 14H15.7148V14.4936H12.4234V14Z" fill="#030408"/>
+                            <path d="M13.2734 17.3694H12.4234V17.2433H13.2734V17.3694Z" fill="#030408"/>
+                            <path d="M13.2722 17.6847H12.4234V17.5584H13.2722V17.6847Z" fill="#030408"/>
+                            <path d="M13.2722 17.8738V17.9999H12.4234V17.8738L13.2722 17.8738Z" fill="#030408"/>
+                            <path d="M14.1887 17.3706L13.8858 17.3712C13.683 17.3709 13.5877 17.4545 13.5877 17.6218C13.5877 17.7892 13.6829 17.8731 13.8852 17.8731H14.31V17.9988L13.8857 17.9994C13.6028 17.9999 13.4614 17.8744 13.4614 17.6231C13.4614 17.3718 13.6018 17.2458 13.8827 17.2451H14.31V17.3709L14.1887 17.3706Z" fill="#030408"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.3477 17.6218C15.3476 17.3707 15.2052 17.2451 14.9203 17.2451C14.6393 17.2458 14.4988 17.3718 14.4987 17.6231C14.4987 17.8744 14.6402 17.9999 14.9231 17.9994C15.2062 17.9989 15.3477 17.873 15.3477 17.6218ZM14.9233 17.3712C15.1253 17.3708 15.2202 17.4544 15.2202 17.6218C15.2202 17.7894 15.1251 17.873 14.9228 17.873C14.7204 17.873 14.6268 17.7891 14.6268 17.6218C14.6268 17.4544 14.7205 17.3708 14.9233 17.3712Z" fill="#030408"/>
+                            <path d="M19.3785 17.2445V17.8727H19.1357V17.2448L19.0142 17.2445V17.8728H18.7714V17.2438L18.65 17.2435V18H19.379C19.4699 18 19.4999 17.9517 19.4999 17.8748V17.2445H19.3785Z" fill="#030408"/>
+                            <path d="M16.7863 17.8731H17.4241V17.9994H16.7575C16.709 17.9994 16.6625 17.9801 16.6281 17.9457C16.5938 17.9113 16.5745 17.8646 16.5744 17.8159V17.2437H16.6959V17.7823C16.6959 17.8063 16.7054 17.8294 16.7224 17.8465C16.7393 17.8635 16.7623 17.8731 16.7863 17.8731Z" fill="#030408"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M18.0331 17.2451C18.318 17.2451 18.4604 17.3707 18.4605 17.6218C18.4605 17.873 18.319 17.9989 18.0359 17.9994C17.753 17.9999 17.6115 17.8744 17.6115 17.6231C17.6116 17.3718 17.7521 17.2458 18.0331 17.2451ZM18.333 17.6218C18.333 17.4544 18.2381 17.3708 18.0361 17.3712C17.8333 17.3708 17.7396 17.4544 17.7396 17.6218C17.7396 17.7891 17.8332 17.873 18.0356 17.873C18.2379 17.873 18.333 17.7894 18.333 17.6218Z" fill="#030408"/>
+                            <path d="M15.5368 17.2451H16.3867V17.3709H15.5368V17.2451Z" fill="#030408"/>
+                            <path d="M16.3857 17.6855H15.6582V17.9987H15.5368V17.5595H16.3857V17.6855Z" fill="#030408"/>
+                            <path d="M19.5 14H16.2086V14.4936H19.5V14Z" fill="#030408"/>
+                            <path d="M12.4234 15.1191H15.7148V15.6127H12.4234V15.1191Z" fill="#030408"/>
+                            <path d="M16.2086 16.732H16.7022V15.613H19.5V15.1191H16.2086V16.732Z" fill="#030408"/>
+                            <path d="M12.4234 16.2382H15.7148V16.7318H12.4234V16.2382Z" fill="#030408"/>
+                            <circle cx="16" cy="16" r="9.5" stroke="black"/>
+                            <circle cx="16" cy="16" r="7" stroke="black" stroke-dasharray="5 1"/>
+                        </svg>
+                    </div>
+                    <div class="reward-gift-box-title-text">
+                        Broche EcoFlow
+                      <div class="blue-text">1199 EcoCredits</div>
+                    </div>
+                  </div>
+                  <div class="reward-gift-box">
+                    <div class="reward-gift-icon">
+                        <svg width="32" height="32" viewBox="0 5 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_21_902)">
+                            <path d="M8.18015 24.3369L7.77873 24.5749L8.18015 24.3369ZM15.5145 22.0721L15.9459 21.894L15.5145 22.0721ZM12.8596 24.5892C13.0873 24.7099 13.3697 24.6232 13.4904 24.3955C13.6112 24.1678 13.5244 23.8853 13.2967 23.7646L12.8596 24.5892ZM10.9657 16.2127C9.61909 16.3742 8.0808 17.1997 7.24855 18.6421C6.39711 20.1177 6.33667 22.1425 7.77873 24.5749L8.58158 24.0989C7.27112 21.8885 7.41022 20.2294 8.05696 19.1085C8.72289 17.9544 9.98142 17.2708 11.0769 17.1394L10.9657 16.2127ZM7.77873 24.5749C9.56247 27.5836 12.2293 28.7588 14.2339 28.1615C15.2453 27.8601 16.0367 27.1116 16.3813 26.006C16.7219 24.9134 16.6151 23.5154 15.9459 21.894L15.0831 22.2501C15.698 23.74 15.7465 24.9061 15.4903 25.7283C15.238 26.5375 14.6805 27.0545 13.9674 27.267C12.5229 27.6974 10.2385 26.8937 8.58158 24.0989L7.77873 24.5749ZM15.9459 21.894C15.3053 20.342 14.4007 19.4243 13.4437 19.0386C12.486 18.6526 11.5154 18.8212 10.8504 19.3698C10.1798 19.9231 9.85799 20.8342 10.1529 21.8193C10.4428 22.7881 11.3053 23.7653 12.8596 24.5892L13.2967 23.7646C11.8678 23.0071 11.2394 22.1943 11.047 21.5517C10.8595 20.9253 11.0639 20.4036 11.4444 20.0898C11.8304 19.7713 12.4357 19.6386 13.0949 19.9043C13.7548 20.1703 14.5083 20.8572 15.0831 22.2501L15.9459 21.894Z" fill="black"/>
+                            <path d="M10.3851 16.8037L34.3756 12.7182C34.3881 12.7161 34.4004 12.7161 34.4129 12.7185C36.404 13.1046 40.4749 14.7767 40.9763 18.4158C41.605 22.9788 38.0028 25.2816 36.4109 25.4935L15.8174 29.7371C17.3111 28.6935 19.8035 25.4818 17.8232 20.9843C15.8429 16.4868 12.0393 16.3233 10.3851 16.8037Z" stroke="black" stroke-width="0.933333"/>
+                            <path d="M6.99673 24.8471C6.92507 24.5995 6.66628 24.4569 6.41871 24.5285C6.17114 24.6002 6.02854 24.859 6.1002 25.1066L6.99673 24.8471ZM6.1002 25.1066C6.41738 26.2023 7.35529 27.8834 9.11493 29.0568C10.8942 30.2433 13.4712 30.8823 16.9959 29.9403L16.7549 29.0386C13.464 29.9181 11.1678 29.3039 9.63274 28.2803C8.07801 27.2435 7.26028 25.7576 6.99673 24.8471L6.1002 25.1066Z" fill="black"/>
+                            <path d="M18.0539 21.5099L40.8974 17.6192" stroke="black" stroke-width="0.933333"/>
+                            </g>
+                            <rect x="0.44" y="4.44" width="31.12" height="31.12" rx="3.56" stroke="black" stroke-width="0.88"/>
+                            <defs>
+                            <clipPath id="clip0_21_902">
+                            <rect x="3" width="29" height="32" rx="2.66667" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="reward-gift-box-title-text">
+                        Colchoneta para camping EcoFlow
+                      <div class="blue-text">5499 EcoCredits</div>
+                    </div>
+                  </div>
+                  <div class="reward-gift-box">
+                    <div class="reward-gift-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.348 21.1789C10.2529 21.1798 10.1614 21.2159 10.0914 21.2803C10.0214 21.3447 9.97778 21.4328 9.96902 21.5275L9.46373 27.5907C9.46057 27.643 9.46788 27.6954 9.48524 27.7449C9.50259 27.7943 9.52964 27.8398 9.56479 27.8787C9.59967 27.9177 9.64254 27.9487 9.6905 27.9696C9.73846 27.9906 9.79038 28.0009 9.84269 27.9999H21.9697C22.022 28.0009 22.0739 27.9906 22.1219 27.9696C22.1699 27.9487 22.2127 27.9177 22.2476 27.8787C22.2827 27.8398 22.3098 27.7943 22.3272 27.7449C22.3445 27.6954 22.3518 27.643 22.3487 27.5907L21.8434 21.5275C21.8346 21.4328 21.791 21.3447 21.721 21.2803C21.651 21.2159 21.5595 21.1798 21.4644 21.1789H20.8328V12.3368H20.9591C21.0596 12.3368 21.156 12.2969 21.2271 12.2258C21.2982 12.1548 21.3381 12.0584 21.3381 11.9579V9.93683C21.3368 9.83673 21.2964 9.7411 21.2256 9.67032C21.1548 9.59953 21.0592 9.55919 20.9591 9.55788H20.8126C20.7271 8.64874 20.3271 7.79793 19.6813 7.15224C19.0356 6.50654 18.1847 6.10647 17.2755 6.02105V5.38947C17.2755 5.02096 17.1291 4.66754 16.8685 4.40697C16.608 4.14639 16.2545 4 15.886 4C15.5174 4 15.164 4.14639 14.9034 4.40697C14.6428 4.66754 14.4964 5.02096 14.4964 5.38947V6.04126C13.5872 6.12669 12.7364 6.52676 12.0906 7.17245C11.4449 7.81814 11.0448 8.66895 10.9594 9.57809H10.8533C10.7532 9.5794 10.6575 9.61974 10.5868 9.69053C10.516 9.76131 10.4756 9.85694 10.4743 9.95704V11.9781C10.4743 12.0786 10.5142 12.175 10.5853 12.246C10.6564 12.3171 10.7528 12.357 10.8533 12.357H10.9796V21.1991L10.348 21.1789ZM14.8956 6.77894H16.9168C17.6883 6.78157 18.4323 7.06513 19.0099 7.57661C19.5874 8.08808 19.9588 8.79242 20.0546 9.55788H11.7578C11.8536 8.79242 12.225 8.08808 12.8025 7.57661C13.38 7.06513 14.1241 6.78157 14.8956 6.77894ZM11.2322 11.5789V10.3158H20.5801V11.5789H11.2322ZM11.7375 12.3368H20.0749V21.1789H17.801V20.5473C17.8016 20.3425 17.7566 20.14 17.6692 19.9548C17.5818 19.7695 17.4542 19.606 17.2957 19.4762C17.6093 19.2546 17.8648 18.9607 18.0407 18.6195C18.2166 18.2783 18.3077 17.8997 18.3063 17.5158C18.3063 16.2728 16.3862 14.4185 16.1689 14.2113C16.0995 14.1492 16.0095 14.1148 15.9163 14.1148C15.8231 14.1148 15.7331 14.1492 15.6636 14.2113C15.4464 14.4185 13.5263 16.2728 13.5263 17.5158C13.5249 17.8997 13.616 18.2783 13.7919 18.6195C13.9678 18.9607 14.2233 19.2546 14.5369 19.4762C14.3784 19.606 14.2508 19.7695 14.1634 19.9548C14.076 20.14 14.031 20.3425 14.0316 20.5473V21.1789H11.7578L11.7375 12.3368ZM10.257 27.242L10.6966 21.9368H21.1158L21.5554 27.242H10.257ZM14.7693 20.5473C14.7693 20.3798 14.8358 20.2192 14.9543 20.1007C15.0727 19.9823 15.2334 19.9157 15.4009 19.9157H16.4115C16.579 19.9157 16.7397 19.9823 16.8581 20.1007C16.9766 20.2192 17.0431 20.3798 17.0431 20.5473V21.1789H14.7693V20.5473ZM16.2852 19.1124V18.021C16.2852 17.9205 16.2452 17.8241 16.1742 17.7531C16.1031 17.682 16.0067 17.6421 15.9062 17.6421C15.8057 17.6421 15.7093 17.682 15.6382 17.7531C15.5672 17.8241 15.5272 17.9205 15.5272 18.021V19.1124C15.1678 19.0271 14.8475 18.8232 14.6183 18.5334C14.3891 18.2437 14.2643 17.8852 14.264 17.5158C14.264 16.9044 15.1836 15.7574 15.9062 15.0198C16.6288 15.7574 17.5484 16.8993 17.5484 17.5158C17.5481 17.8852 17.4233 18.2437 17.1941 18.5334C16.9649 18.8232 16.6446 19.0271 16.2852 19.1124ZM15.2746 5.38947C15.2746 5.22197 15.3411 5.06132 15.4596 4.94288C15.578 4.82443 15.7387 4.75789 15.9062 4.75789C16.0737 4.75789 16.2344 4.82443 16.3528 4.94288C16.4713 5.06132 16.5378 5.22197 16.5378 5.38947V6.02105H15.2746V5.38947Z" fill="black"/>
+                            <path d="M15.9057 23.2001C15.6308 23.2001 15.3622 23.2816 15.1337 23.4343C14.9052 23.5869 14.7271 23.804 14.6219 24.0578C14.5167 24.3117 14.4892 24.5911 14.5428 24.8606C14.5964 25.1302 14.7288 25.3778 14.9231 25.5721C15.1174 25.7664 15.365 25.8987 15.6346 25.9523C15.9041 26.006 16.1835 25.9784 16.4374 25.8733C16.6913 25.7681 16.9084 25.59 17.061 25.3615C17.2137 25.133 17.2952 24.8644 17.2952 24.5896C17.2952 24.2211 17.1488 23.8676 16.8882 23.6071C16.6276 23.3465 16.2742 23.2001 15.9057 23.2001ZM15.9057 25.2211C15.7808 25.2211 15.6586 25.1841 15.5548 25.1147C15.4509 25.0453 15.3699 24.9467 15.3221 24.8313C15.2743 24.7159 15.2618 24.5889 15.2862 24.4664C15.3106 24.3438 15.3707 24.2313 15.4591 24.143C15.5474 24.0547 15.6599 23.9945 15.7824 23.9701C15.905 23.9458 16.032 23.9583 16.1474 24.0061C16.2628 24.0539 16.3614 24.1348 16.4308 24.2387C16.5002 24.3425 16.5373 24.4647 16.5373 24.5896C16.5373 24.7571 16.4707 24.9177 16.3523 25.0362C16.2338 25.1546 16.0732 25.2211 15.9057 25.2211Z" fill="black"/>
+                            <rect x="0.44" y="0.44" width="31.12" height="31.12" rx="3.56" stroke="black" stroke-width="0.88"/>
+                        </svg>
+                    </div>
+                    <div class="reward-gift-box-title-text">
+                        Lámpara para camping EcoFlow
+                      <div class="blue-text">4599 EcoCredits</div>
+                    </div>
+                  </div>
+                  <div class="reward-gift-box">
+                    <div class="reward-gift-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect x="0.5" y="0.5" width="31" height="31" rx="3.5" stroke="black"/>
+                            <path d="M12 6C12 5.44772 12.4477 5 13 5V5C13.5523 5 14 5.44772 14 6V10H12V6Z" stroke="black"/>
+                            <path d="M18 6C18 5.44772 18.4477 5 19 5V5C19.5523 5 20 5.44772 20 6V10H18V6Z" stroke="black"/>
+                            <path d="M9 12.3062C9 11.0325 10.0325 10 11.3062 10H20.6938C21.9675 10 23 11.0325 23 12.3062V15H9V12.3062Z" stroke="black"/>
+                            <path d="M7 17.3062C7 16.0325 8.03254 15 9.30624 15H22.6938C23.9675 15 25 16.0325 25 17.3062V24.6938C25 25.9675 23.9675 27 22.6938 27H9.30624C8.03254 27 7 25.9675 7 24.6938V17.3062Z" stroke="black"/>
+                            <rect x="15" y="17.4537" width="2" height="4" rx="1" stroke="black" stroke-width="0.5"/>
+                        </svg>
+                    </div>
+                    <div class="reward-gift-box-title-text">
+                        Enchufe inteligente EcoFlow
+                      <div class="blue-text">5999 EcoCredits</div>
+                    </div>
+                  </div>
+                  <div class="reward-gift-box">
+                    <div class="reward-gift-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect x="0.5" y="0.5" width="31" height="31" rx="3.5" stroke="black"/>
+                            <rect x="6.06287" y="13.9394" width="22.0047" height="8.93942" rx="0.827257" stroke="black" stroke-width="0.687648"/>
+                            <path d="M4 5L6.06294 7.54717V21.5035" stroke="black" stroke-width="0.687648" stroke-linecap="round"/>
+                            <circle cx="24.6345" cy="24.947" r="2.06814" stroke="black" stroke-width="0.343824"/>
+                            <circle cx="24.6346" cy="24.947" r="0.714435" stroke="black" stroke-width="0.343824"/>
+                            <path d="M24.6937 22.997V24.1197" stroke="black" stroke-width="0.343824" stroke-linecap="round"/>
+                            <path d="M24.6937 25.8333V26.956" stroke="black" stroke-width="0.343824" stroke-linecap="round"/>
+                            <path d="M22.6847 25.0061H23.8074" stroke="black" stroke-width="0.343824" stroke-linecap="round"/>
+                            <path d="M25.521 25.0061H26.6437" stroke="black" stroke-width="0.343824" stroke-linecap="round"/>
+                            <path d="M23.2755 26.3874L24.0694 25.5935" stroke="black" stroke-width="0.343824" stroke-linecap="round"/>
+                            <path d="M25.2811 24.3818L26.075 23.5879" stroke="black" stroke-width="0.343824" stroke-linecap="round"/>
+                            <path d="M23.1573 23.5879L23.9779 24.3542" stroke="black" stroke-width="0.343824" stroke-linecap="round"/>
+                            <path d="M25.2302 25.5238L26.0507 26.2901" stroke="black" stroke-width="0.343824" stroke-linecap="round"/>
+                            <circle cx="10.1941" cy="24.947" r="2.06814" stroke="black" stroke-width="0.343824"/>
+                            <circle cx="10.1941" cy="24.947" r="0.714435" stroke="black" stroke-width="0.343824"/>
+                            <path d="M10.2531 22.997V24.1197" stroke="black" stroke-width="0.343824" stroke-linecap="round"/>
+                            <path d="M10.2531 25.8333V26.956" stroke="black" stroke-width="0.343824" stroke-linecap="round"/>
+                            <path d="M8.24414 25.0061H9.36685" stroke="black" stroke-width="0.343824" stroke-linecap="round"/>
+                            <path d="M11.0803 25.0061H12.203" stroke="black" stroke-width="0.343824" stroke-linecap="round"/>
+                            <path d="M8.83496 26.3874L9.62883 25.5935" stroke="black" stroke-width="0.343824" stroke-linecap="round"/>
+                            <path d="M10.8406 24.3818L11.6344 23.5879" stroke="black" stroke-width="0.343824" stroke-linecap="round"/>
+                            <path d="M8.7168 23.5879L9.53732 24.3542" stroke="black" stroke-width="0.343824" stroke-linecap="round"/>
+                            <path d="M10.7897 25.5238L11.6102 26.2901" stroke="black" stroke-width="0.343824" stroke-linecap="round"/>
+                            <path d="M6.75049 22.8788L16.7156 14.6271L27.3799 22.8788" stroke="black" stroke-width="0.687648" stroke-linecap="round"/>
+                            <rect x="6.06287" y="13.9394" width="22.0047" height="2.75059" rx="0.827257" fill="white" stroke="black" stroke-width="0.687648"/>
+                            <path d="M6.75049 13.9394L16.7156 22.8788L27.3799 13.9394" stroke="black" stroke-width="0.687648" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="reward-gift-box-title-text">
+                        Carrito plano EcoFlow
+                      <div class="blue-text">7449 EcoCredits</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ecocredits-section-content ecocredits-popup-learn-content" x-bind:class="{ 'active': selectedIndex == 3 }">
+              <div class="title-row">
+                <div class="back-btn" x-on:click="
+                  [selectedIndex=0];
+                  checkPopupBoxScrollbar();
+                ">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M12.9167 3.33325L6.25 9.99992L12.9167 16.6666" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div class="title">Semana de EcoCredits</div>
+                <div class="ecocredits-popup-close" x-on:click="[selectedIndex=0, show=!show];">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M5 4.16666L15.8333 15M15.8333 4.16666L5 15" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="learn-more-box-content">
+                <div class="title">Puntos destacados del evento de la Semana de Agradecimiento de EcoCredits:</div>
+                <div class="learn-more-boxes">
+                  <div class="learn-more-box">
+                    <div class="learn-more-icon">
+                      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.70296 17.0732L17.1777 24.974C17.8151 25.5707 18.8428 25.5629 19.4683 24.9563L25.0376 19.5558C25.6531 18.9589 25.665 17.9757 25.0641 17.3615L14.862 6.93269L15.2323 7.08845H8.2359C7.37874 7.08845 6.68562 7.78323 6.68562 8.64615V15.3762C6.68562 15.6622 6.45371 15.8942 6.16764 15.8942C5.88157 15.8942 5.64966 15.6622 5.64966 15.3762V8.64615C5.64966 7.21164 6.80604 6.05249 8.2359 6.05249H15.2323C15.3717 6.05249 15.5051 6.10864 15.6026 6.20825L25.8047 16.6371C26.8065 17.6612 26.7867 19.3027 25.7588 20.2995L20.1895 25.7C19.1668 26.6918 17.5102 26.7043 16.4705 25.731L7.99653 17.8309C7.78728 17.6359 7.77579 17.3081 7.97087 17.0988C8.16594 16.8896 8.49371 16.8781 8.70296 17.0732ZM11.0885 13.8222C9.80114 13.8222 8.75755 12.7786 8.75755 11.4913C8.75755 10.204 9.80114 9.16038 11.0885 9.16038C12.3758 9.16038 13.4194 10.204 13.4194 11.4913C13.4194 12.7786 12.3758 13.8222 11.0885 13.8222ZM11.0885 12.7863C11.8036 12.7863 12.3834 12.2065 12.3834 11.4913C12.3834 10.7761 11.8036 10.1963 11.0885 10.1963C10.3733 10.1963 9.79351 10.7761 9.79351 11.4913C9.79351 12.2065 10.3733 12.7863 11.0885 12.7863Z" fill="black" stroke="black" stroke-width="0.2"/>
+                        <path d="M22 17.2L17.2 22" stroke="black" stroke-width="1.2" stroke-linecap="round"/>
+                        <rect x="0.5" y="0.5" width="31" height="31" rx="3.5" stroke="black"/>
+                      </svg>
+                    </div>
+                    <div class="learn-more-text">7 días de descuentos exclusivos para miembros;</div>
+                  </div>
+                  <div class="learn-more-box">
+                    <div class="learn-more-icon">
+                      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.30174 24.75H23.1159C23.4612 24.75 23.7438 24.4675 23.7438 24.1221V17.843C23.7438 17.4977 23.4612 17.2151 23.1159 17.2151C22.7705 17.2151 22.488 17.4977 22.488 17.843V23.4942H9.92966V17.843C9.92966 17.4977 9.64709 17.2151 9.30174 17.2151C8.95639 17.2151 8.67382 17.4977 8.67382 17.843V24.1221C8.67382 24.4675 8.95639 24.75 9.30174 24.75ZM8.04591 15.9593H24.3717C24.7171 15.9593 24.9996 15.6768 24.9996 15.3314V12.1919C24.9996 11.8465 24.7171 11.564 24.3717 11.564H8.04591C7.70056 11.564 7.41799 11.8465 7.41799 12.1919V15.3314C7.41799 15.6768 7.70056 15.9593 8.04591 15.9593ZM23.7438 14.7035H8.67382V12.8198H23.7438V14.7035Z" fill="black"/>
+                        <path d="M16.2084 24.7498C16.5538 24.7498 16.8364 24.4672 16.8364 24.1219V12.1916C16.8364 11.8463 16.5538 11.5637 16.2084 11.5637C15.8631 11.5637 15.5805 11.8463 15.5805 12.1916V24.1219C15.5805 24.4672 15.8631 24.7498 16.2084 24.7498Z" fill="black"/>
+                        <path d="M15.547 12.7779C15.9865 12.7779 16.3633 12.6523 16.6458 12.3698C17.8703 11.1453 15.9551 8.1314 15.3272 7.47209C14.8563 7.03256 14.2284 6.75 13.5377 6.75C12.8783 6.75 12.2504 7.00116 11.7481 7.47209C10.7748 8.44535 10.7748 10.0465 11.7481 11.0198C12.2504 11.5221 14.1656 12.7779 15.547 12.7779ZM13.5377 8.00581C13.883 8.00581 14.197 8.1314 14.4167 8.38256C15.1388 9.10465 16.0179 11.114 15.7354 11.4907C15.3586 11.7419 13.3807 10.8942 12.6272 10.1407C12.1248 9.63837 12.1248 8.85349 12.6272 8.35116C12.9097 8.1314 13.2237 8.00581 13.5377 8.00581Z" fill="black"/>
+                        <path d="M17.087 12.8201C18.4998 12.8201 20.3835 11.5642 20.8859 11.0933C21.3568 10.6224 21.608 9.99448 21.608 9.30378C21.608 8.64448 21.3568 8.01657 20.8859 7.51424C19.9126 6.54099 18.3114 6.54099 17.3381 7.51424C17.087 7.76541 17.087 8.14215 17.3381 8.39331C17.5893 8.64448 17.9661 8.64448 18.2172 8.39331C18.7196 7.89099 19.5045 7.89099 20.0068 8.39331C20.258 8.64448 20.3835 8.95843 20.3835 9.27238C20.3835 9.61773 20.258 9.93169 20.0068 10.1515C19.2847 10.8735 17.2754 11.7526 16.8986 11.4701C16.6474 11.2189 16.2707 11.2189 16.0195 11.4701C15.7684 11.7212 15.7684 12.1294 16.0195 12.3491C16.2707 12.6945 16.6474 12.8201 17.087 12.8201Z" fill="black"/>
+                        <rect x="0.5" y="0.5" width="31" height="31" rx="3.5" stroke="black"/>
+                      </svg>
+                    </div>
+                    <div class="learn-more-text">Canjea cupones y regalos con EcoCredits;</div>
+                  </div>
+                  <div class="learn-more-box">
+                    <div class="learn-more-icon">
+                      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.25051 12.1526L20.5 7.5802L22.3 12.1526M12.8495 16.4432H15.5505M12.8495 19.1864H19.1505M7 12.1526H25V14.8959C23.6505 14.8959 22.3 15.81 22.3 17.4101C22.3 19.0103 23.6505 20.3824 25 20.3824V23.1256H7V20.3824C8.35051 20.3824 9.7 19.4683 9.7 17.6391C9.7 15.81 8.34949 14.8959 7 14.8959V12.1526Z" stroke="#010101" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <rect x="0.5" y="0.5" width="31" height="31" rx="3.5" stroke="black"/>
+                      </svg>
+                    </div>
+                    <div class="learn-more-text">¡Te esperan más descuentos exclusivos! ¡No vuelvas a perderte una oferta o promoción!</div>
+                  </div>
+                </div>
+                <div class="learn-more-form emarsys__form">
+                  <div
+                    name="ProfileForm"
+                    class="form"
+                    x-data="{
+                      email: '',
+                      errMsg: '',
+                      isSuccess: false,
+                      loading: false,
+                      async onSubmit() {
+                        this.errMsg = '';
+
+                        // from subscription-form-common.js
+                        const isEmailValid = validateEmail(this.email);
+
+                        if (this.email === '') {
+                          this.errMsg = 'Email: missing data!';
+                          return;
+                        }
+                        if (!isEmailValid) {
+                          this.errMsg = 'Email: invalid format!';
+                          return;
+                        }
+
+                        const { apiUrl, acceptedLanguage, apiKey, xAppid } = theme.emailSubscription;
+
+                        const apiBody = {
+                          email: this.email,
+                          contactListId: '376217394',
+                          fields: [
+                            {
+                              id: '4426',
+                              type: 'single',
+                              value: 1,
+                              overwrite: false,
+                            },
+                            {
+                              id: '31',
+                              type: 'single',
+                              value: 1,
+                              overwrite: false,
+                            },
+                            {
+                              id: '7596',
+                              type: 'multiple',
+                              value: [11],
+                              overwrite: false,
+                            },
+                          ],
+                        };
+                        this.loading = true;
+
+                        try {
+                          const response = await fetch(
+                            apiUrl,
+                            {
+                              method: 'POST',
+                              headers: {
+                                'Content-Type': 'application/json',
+                                apiKey: apiKey,
+                                // from subscription-form-common.js
+                                traceId: traceId,
+                                'X-appid': xAppid,
+                                'Accepted-Language': acceptedLanguage,
+                              },
+                              body: JSON.stringify(apiBody),
+                            }
+                          );
+
+                          const data = await response.json();
+
+                          if (data.message === 'Success') {
+                            this.isSuccess = true;
+                          }
+                        } catch (error) {
+                          this.errMsg =
+                            'Oops... Something went wrong, please refresh and try again.';
+                        } finally {
+                          this.loading = false;
+                        }
+                      },
+                      // Remove all data when switching tabs
+                      destroy() {
+                        this.email = '';
+                        this.errMsg = '';
+                        this.isSuccess = false;
+                        this.loading = false;
+                      }
+                    }"
+                    x-init="$watch('selectedIndex', value => {
+                      if (value !== 3) {
+                        destroy();
+                      }
+                    })"
+                  >
+                    <div class="contact-form">
+                      <input
+                        type="email"
+                        maxlength="255"
+                        placeholder="Dirección de correo"
+                        class="Form__Input"
+                        required
+                        x-model="email"
+                      >
+                      <div class="input-group__btn-wrapper klaviyo_form_actions">
+                        <button
+                          aria-label="Submit"
+                          tabindex="993"
+                          type="button"
+                          class="btn emarsys-form-btn"
+                          @click="() => onSubmit()"
+                          x-text="loading ? 'Loading...' : 'Suscribirse'"
+                          :disabled="loading"
+                        ></button>
+                      </div>
+                    </div>
+                    <div id="successMessage" style="text-align:center;margin-top:6px;" x-show="isSuccess">¡Éxito!</div>
+                    <div class="blank-email-error" x-text="errMsg"></div>
+                  </div>
+                  <div class="t_c">* Acepto la Política de privacidad y los Términos de servicio de EcoFlow.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ecocredits-section-content ecocredits-popup-refer-content" x-bind:class="{ 'active': selectedIndex == 4 }">
+              <div class="title-row">
+                <div class="back-btn" x-on:click="
+                  [selectedIndex=0];
+                  checkPopupBoxScrollbar();
+                ">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M12.9167 3.33325L6.25 9.99992L12.9167 16.6666" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div class="title">Recompensas por<br/>recomendaciones</div>
+                <div class="ecocredits-popup-close" x-on:click="[selectedIndex=0, show=!show];">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M5 4.16666L15.8333 15M15.8333 4.16666L5 15" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="refer-box-content">
+                <div class="earn-content-boxes">
+                  <div class="earn-content-box">
+                    <div class="earn-content-box-title">
+                      <div class="earn-content-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect x="0.5" y="0.5" width="31" height="31" rx="3.5" stroke="black"/>
+                          <path d="M15.0063 23.3735V16.2554C15.0063 14.7577 17.3687 13.6287 20.5041 13.6287C20.753 13.6287 20.9963 13.6354 21.2343 13.6489C21.1543 13.5923 21.0893 13.5189 21.0446 13.4346C20.9999 13.3502 20.9766 13.2571 20.9766 13.1628V11.7907C19.5542 12.8035 17.0727 13.4468 14.1325 13.4468C11.1922 13.4468 8.71089 12.8031 7.28855 11.7907V15.2746C7.28855 16.4588 10.6749 17.8198 14.592 17.8198C14.7629 17.8198 14.9268 17.8838 15.0476 17.9978C15.1684 18.1117 15.2363 18.2663 15.2363 18.4275C15.2363 18.5886 15.1684 18.7432 15.0476 18.8571C14.9268 18.9711 14.7629 19.0351 14.592 19.0351C11.6518 19.0359 8.71089 18.3559 7.28855 17.3432V20.7137C7.28855 21.8972 10.6542 22.9048 14.5714 22.9048C14.7423 22.9048 14.9062 22.9688 15.027 23.0827C15.1478 23.1967 15.2157 23.3513 15.2157 23.5124C15.2157 23.6736 15.1478 23.8282 15.027 23.9421C14.9062 24.0561 14.7423 24.1201 14.5714 24.1201C9.93501 24.1203 6 22.8361 6 20.7133V9.72339C6 7.60019 9.49626 6 14.1325 6C18.7687 6 22.2654 7.60019 22.2654 9.72339C22.2654 9.73291 22.2654 9.74243 22.2654 9.75195C22.2654 9.75722 22.2654 9.76248 22.2654 9.76795V13.1636C22.2654 13.2768 22.232 13.3878 22.1688 13.484C22.1055 13.5803 22.0151 13.6579 21.9076 13.7083C24.3167 13.99 26 14.9915 26 16.2554C26 16.2631 26 16.2708 26 16.2783V23.3735C26 24.871 23.6377 26 20.5035 26C17.3693 26 15.0063 24.871 15.0063 23.3735ZM16.2949 23.3735C16.2949 23.9353 17.9734 24.7847 20.5041 24.7847C23.0348 24.7847 24.7123 23.9353 24.7123 23.3735V21.5436C23.7199 22.1008 22.2286 22.4429 20.5041 22.4429C18.7796 22.4429 17.2881 22.1008 16.2949 21.5436V23.3735ZM16.2949 19.8162C16.2949 20.3781 17.9734 21.2276 20.5041 21.2276C23.0348 21.2276 24.7123 20.3781 24.7123 19.8162V17.9828C23.7188 18.5399 22.2278 18.8826 20.503 18.8826C18.7783 18.8826 17.287 18.5405 16.2938 17.9832V19.8168L16.2949 19.8162ZM16.2949 16.2552C16.2949 16.8171 17.9734 17.6664 20.503 17.6664C23.0327 17.6664 24.7112 16.8165 24.7112 16.2554C24.7112 15.6943 23.0329 14.844 20.503 14.844C17.9732 14.844 16.2949 15.6933 16.2949 16.2552ZM7.28855 9.72339C7.28855 10.9073 10.2155 12.2314 14.1325 12.2314C18.0494 12.2314 20.9766 10.9073 20.9766 9.72339C20.9766 8.53945 18.0499 7.21534 14.1325 7.21534C10.2151 7.21534 7.28855 8.53945 7.28855 9.72339Z" fill="black"/>
+                        </svg>
+                      </div>
+
+                      <div class="earn-content-box-title-text">
+                        Obtendrás 100 EcoCredits por cada<br/>
+                        amigo recomendado que se registre.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="earn-content-box">
+                    <div class="earn-content-box-title">
+                      <div class="earn-content-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect x="0.5" y="0.5" width="31" height="31" rx="3.5" stroke="black"/>
+                          <path d="M17.6533 16.0536C20.9818 16.0536 23.68 13.3553 23.68 10.0268C23.68 6.69829 20.9818 4 17.6533 4C14.3248 4 11.6265 6.69829 11.6265 10.0268C11.6265 13.3553 14.3248 16.0536 17.6533 16.0536Z" stroke="black" stroke-width="1.2106" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M21.0309 21.3218L25.6534 18.6484C26.3051 18.2711 27.1343 18.4627 27.556 19.0862C27.9959 19.7379 27.8284 20.6216 27.1807 21.0676L20.4175 25.7163L13.2144 23.6582L11.2976 24.6691" stroke="black" stroke-width="1.2106" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M14.8447 21.4246L19.1282 22.6494C19.905 22.8713 20.7161 22.4214 20.9381 21.6446C21.16 20.8677 20.7101 20.0566 19.9333 19.8347L15.9766 18.7048C15.9766 18.7048 11.5418 14.8874 8.16418 19.0236" stroke="black" stroke-width="1.2106" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M11.832 25.647L7.43591 17.7327L5.00004 19.0857L9.39608 27L11.832 25.647Z" stroke="black" stroke-width="1.2106" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </div>
+
+                      <div class="earn-content-box-title-text">
+                        Disfruta de un reembolso en efectivo<br/>
+                        del 5 % en cada pedido recomendado.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="earn-content-box">
+                    <div class="earn-content-box-title">
+                      <div class="earn-content-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect x="0.5" y="0.5" width="31" height="31" rx="3.5" stroke="black"/>
+                          <path d="M12.4452 26H6.99586V16.4571H5V10.262H10.1898C9.90714 9.92696 9.69719 9.54042 9.57249 9.12539C9.44778 8.71037 9.41087 8.27535 9.46395 7.84626C9.51703 7.41717 9.65902 7.00278 9.88146 6.6278C10.1039 6.25282 10.4022 5.92492 10.7587 5.66363C11.1151 5.40234 11.5224 5.21301 11.9562 5.10692C12.39 5.00084 12.8415 4.98017 13.2838 5.04614C13.7261 5.11212 14.1501 5.26339 14.5305 5.49095C14.911 5.7185 15.2401 6.01768 15.4983 6.37066C15.7558 6.01616 16.0848 5.71547 16.4654 5.48657C16.8461 5.25768 17.2707 5.10529 17.7137 5.03851C18.1568 4.97174 18.6093 4.99195 19.0441 5.09795C19.4789 5.20395 19.8871 5.39355 20.2442 5.6554C20.6014 5.91726 20.9002 6.246 21.1227 6.62195C21.3452 6.9979 21.487 7.41333 21.5394 7.84339C21.5918 8.27345 21.5539 8.70931 21.4278 9.12488C21.3017 9.54044 21.0902 9.92719 20.8057 10.262H26V16.4571H23.9918V25.9995L12.4452 26ZM22.7556 24.8068V16.4571H18.4688V24.8068H22.7556ZM17.2327 24.8068V11.4671H13.6813V24.8068H17.2327ZM8.23153 24.8068H12.4452V16.4571H8.23202L8.23153 24.8068ZM24.7643 15.2639V11.4552H18.4688V15.2639H24.7643ZM6.23567 15.2639H12.4452V11.4552H6.23567V15.2639ZM16.1181 8.23255V10.262H18.2177C18.633 10.262 19.039 10.1431 19.3842 9.92027C19.7295 9.69749 19.9986 9.38083 20.1576 9.01035C20.3165 8.63988 20.3581 8.23221 20.277 7.83891C20.196 7.44561 19.9961 7.08435 19.7024 6.80079C19.4088 6.51724 19.0347 6.32414 18.6274 6.24591C18.2201 6.16768 17.7979 6.20783 17.4142 6.36128C17.0306 6.51474 16.7027 6.77461 16.4719 7.10804C16.2412 7.44146 16.1181 7.83346 16.1181 8.23446V8.23255ZM10.6777 8.23255C10.6779 8.77038 10.8992 9.28613 11.2928 9.66661C11.6865 10.0471 12.2204 10.2612 12.7773 10.262H14.877V8.23255C14.877 7.69457 14.6557 7.17862 14.2617 6.79821C13.8678 6.4178 13.3335 6.20409 12.7763 6.20409C12.2192 6.20409 11.6849 6.4178 11.291 6.79821C10.897 7.17862 10.6757 7.69457 10.6757 8.23255H10.6777Z" fill="black"/>
+                        </svg>
+                      </div>
+
+                      <div class="earn-content-box-title-text">
+                        Las 3 personas que más<br/>
+                        recomienden ganarán grandes premios.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+	    {% unless customer %}
+            <div
+              class="ecocredits-popup-footer"
+              :class="{'add-shadow': isPopupBoxHasScrollbar}"
+            >
+              <div class="title">¡Exploremos juntos las exclusivas recompensas!</div>
+              <a class="btn" x-show="selectedIndex != 4" href="https://www.ecoflow.com/es/register?redirect=https://www.ecoflow.com/es/ecocredits">Únete ahora</a>
+              <a class="btn" x-show="selectedIndex == 4" href="https://www.ecoflow.com/es/referral" >Recomendar ahora</a>
+              <div class="login-line">¿Ya tienes una cuenta? <a href="https://account.ecoflow.com/login?return_to=https://www.ecoflow/es/ecocredits">Iniciar sesión</a></div>
+            </div>
+  	    {% endunless %}
+            <div
+              class="ecocredits-popup-footer"
+              :class="{'add-shadow': isPopupBoxHasScrollbar}"
+              x-show="selectedIndex == 4 && customer"
+            >
+              <div class="title">¡Exploremos juntos las exclusivas recompensas!</div>
+              <a class="btn" href="https://www.ecoflow.com/es/referral" >Recomendar ahora</a>
+            </div>
+        </div>
+    </div>
+{% endif %}
+{{ 'subscription-form-common.js' | asset_url | script_tag }}
+
+{% schema %}
+  {
+    "name": "Ecocredits popup",
+    "settings": [
+      {
+        "id":"show",
+        "type":"checkbox",
+        "label":"Enable?",
+        "default": true
+      }
+	]
+  }
+{% endschema %}

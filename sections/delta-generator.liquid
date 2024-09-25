@@ -1,0 +1,461 @@
+{{ "sg-base.css" | asset_url | stylesheet_tag }}
+<script src="{{ 'jquery.min.js' | asset_url }}"></script>
+
+{% capture icon-1 %}
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="49" viewBox="0 0 48 49" fill="none" class="solar-icon">
+    <circle cx="24.0002" cy="24.5001" r="20.16" transform="rotate(90 24.0002 24.5001)" stroke="#E3E2E3"
+        stroke-width="7" />
+    <path
+        d="M24.0002 44.6601C26.6476 44.6601 29.2691 44.1386 31.7151 43.1255C34.161 42.1124 36.3834 40.6274 38.2554 38.7554C40.1275 36.8833 41.6124 34.6609 42.6256 32.215C43.6387 29.7691 44.1602 27.1475 44.1602 24.5001C44.1602 21.8526 43.6387 19.2311 42.6256 16.7852C41.6124 14.3393 40.1275 12.1168 38.2554 10.2448C36.3834 8.37279 34.161 6.88781 31.7151 5.87468C29.2691 4.86154 26.6476 4.34009 24.0002 4.34009"
+        stroke="#0ECFE2" stroke-width="7" />
+</svg>
+{% endcapture %}
+{% capture icon-2 %}
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="49" viewBox="0 0 48 49" fill="none" class="solar-icon">
+    <circle cx="23.9998" cy="24.5" r="20.16" transform="rotate(-90 23.9998 24.5)" stroke="url(#paint0_linear_35_39)"
+        stroke-width="7" />
+    <path
+        d="M23.9998 4.34003C27.9871 4.34003 31.8848 5.52239 35.2001 7.7376C38.5154 9.95281 41.0994 13.1014 42.6253 16.7851C44.1511 20.4689 44.5504 24.5224 43.7725 28.4331C42.9946 32.3437 41.0745 35.9359 38.2551 38.7553C35.4357 41.5747 31.8435 43.4948 27.9329 44.2727C24.0222 45.0505 19.9687 44.6513 16.2849 43.1254C12.6012 41.5996 9.45263 39.0156 7.23742 35.7003C5.02221 32.385 3.83984 28.4873 3.83984 24.5"
+        stroke="#0ECFE2" stroke-width="7" />
+    <defs>
+        <linearGradient id="paint0_linear_35_39" x1="23.9998" y1="4.34003" x2="23.9998" y2="44.66"
+            gradientUnits="userSpaceOnUse">
+            <stop offset="0.916667" stop-color="#E3E2E3" />
+            <stop offset="1" stop-color="#E3E2E3" stop-opacity="0" />
+        </linearGradient>
+    </defs>
+</svg>
+{% endcapture %}
+{% capture icon-3 %}
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="49" viewBox="0 0 48 49" fill="none" class="solar-icon">
+    <circle cx="23.9998" cy="24.5" r="20.16" stroke="#0ECFE2" stroke-width="7" />
+</svg>
+{% endcapture %}
+{% capture icon-add %}
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none" class="plus-icon">
+    <circle cx="10" cy="10.5791" r="10" fill="white" />
+    <path d="M5 10.5791H15" stroke="#0ECFE2" stroke-width="3" />
+    <path d="M10 5.5791L10 15.5791" stroke="#0ECFE2" stroke-width="3" />
+</svg>
+{% endcapture %}
+
+<div class="solar-generators">
+  <div class="h-screen relative section-1">
+    <img
+      src="https://cdn.shopify.com/s/files/1/1996/9707/files/delta--mobile.png?v=1656131998"
+      alt="GENERADORES SOLARES"
+      class="mobile"
+    >
+    <img
+      src="https://cdn.shopify.com/s/files/1/1996/9707/files/delta--tb.png?v=1656131967"
+      alt="GENERADORES SOLARES"
+      class="tablet"
+    >
+    <img
+      src="https://cdn.shopify.com/s/files/1/1996/9707/files/delta--desktop.png?v=1656131921"
+      alt="GENERADORES SOLARES"
+      class="desktop"
+    >
+    <div class="section-1-text">
+      <h1 class="mb-16px">Serie <span class="solar-highlight">EcoFlow</span> DELTA</h1>
+      <h2 class="section-1-text__secondary-text">Energía auxiliar para su hogar</h2>
+    </div>
+  </div>
+  <div class="section-px section-2">
+    <h1>Generadores solares para <span class="solar-highlight">proteger el suministro</span> de su hogar</h1>
+    <p class="max-w-1000 mx-auto">
+      Proteja el suministro eléctrico de su hogar con un generador solar EcoFlow DELTA. Los generadores de la serie
+      DELTA proporcionan entre 1024 Wh y 3600 Wh, por lo que se han diseñado para ofrecer energía suficiente para sus
+      electrodomésticos más potentes. Toda esa energía se puede recargar en cualquier momento con nuestra gama de
+      paneles solares portátiles.
+    </p>
+  </div>
+  <div class="section-px section-3">
+    <h1 class="special-title max-w-1000 mx-auto">
+      ¿Por qué elegir un <span class="solar-highlight">generador solar doméstico</span> de la serie EcoFlow DELTA?
+    </h1>
+  </div>
+  <div class="section-px section-4">
+    <img
+      src="https://cdn.shopifycdn.net/s/files/1/1996/9707/files/Mask_Group_161.jpg?v=1653533205"
+      alt="GENERADORES SOLARES"
+      class="mobile"
+    >
+    <img
+      src="https://cdn.shopifycdn.net/s/files/1/1996/9707/files/Mask_Group_63.jpg?v=1653533166"
+      alt="GENERADORES SOLARES"
+      class="desktop"
+    >
+    <div>
+      <h3>{{ icon-1 }}Prepárese para los apagones</h3>
+      <p>
+        Los apagones son cada vez más frecuentes en todo el mundo. Prepare su hogar para el próximo apagón con
+        suficiente capacidad para mantener en marcha durante horas incluso sus electrodomésticos de mayor tamaño.
+      </p>
+      <h3>{{ icon-2 }}Adquiera un generador solar para vivir sin depender de la red eléctrica</h3>
+      <p>
+        La independencia energética es la clave que nos permite vivir sin depender de la red eléctrica.Todos los
+        generadores solares de la serie DELTA admiten una elevada entrada de energía, lo que le permite unir varios
+        paneles solares y cargar su generador en cualquier lugar.
+      </p>
+      <h3>{{ icon-3 }}Energía para los dispositivos y electrodomésticos indispensables de su hogar</h3>
+      <p>
+        Los generadores solares DELTA producen de 1.800 W a 3.600 W (AC), según el tamaño elegido. De este modo, tendrá
+        cubiertas las necesidades básicas de su frigorífico, calentador, ordenador, aire acondicionado, etc.
+      </p>
+    </div>
+  </div>
+  <div class="section-px section-5">
+    <div>
+      <div class="square-image-container">
+        <img
+          src="https://cdn.shopifycdn.net/s/files/1/1996/9707/files/EcoFlow-AJRezac-17.jpg?v=1653535392"
+          class="mobile"
+          alt="GENERADORES SOLARES"
+        >
+      </div>
+      <img
+        src="https://cdn.shopifycdn.net/s/files/1/1996/9707/files/EcoFlow-AJRezac-17_1.jpg?v=1653535378"
+        alt="GENERADORES SOLARES"
+        class="desktop"
+      >
+      <h1>Eche un vistazo a los generadores solares <span class="solar-highlight">para uso doméstico</span></h1>
+      <p class="max-w-1000">
+        Independientemente del tamaño elegido, cualquier dispositivo de la gama DELTA puede ofrecerle la energía que
+        necesita en momentos de incertidumbre energética. Todos los generadores incluyen un panel solar plegable
+        EcoFlow, admitiendo incluso varios paneles al mismo tiempo.
+      </p>
+    </div>
+  </div>
+
+  <div class="section-p--bundle section-6">
+    <h1>Kits de generadores solares de la serie EcoFlow DELTA</h1>
+    <a class="btn-link view-all-btn" href="https://es.ecoflow.com/collections/delta-solar-generators">Adquirir Ahora</a>
+
+    <div class="section-6-items-wrapper">
+      <div class="section-6-item">
+        <div class="section-6-item-inner">
+          <h2>
+            EcoFlow DELTA 2 + <br>
+            Panel solar de 220W
+          </h2>
+          <a href="https://es.ecoflow.com/products/delta-2-220w-portable-solar-panel">
+            <img
+              src="{{ section.settings.product1.featured_image | img_url: '1200x' }}"
+              class="mobile"
+              alt="Bundles de generadores solares de la serie DELTA"
+            >
+          </a>
+          <div>
+            <p class="items-info">Entrada solar 500W</p>
+            <p class="items-info">Capacidad 1.024Wh</p>
+          </div>
+          <a
+            class="btn-link"
+            href="https://es.ecoflow.com/products/delta-2-220w-portable-solar-panel"
+            target="_blank"
+            rel="null noopener"
+            aria-describedby="a11y-new-window-message"
+            >Comprar Ahora</a
+          >
+        </div>
+        <a href="https://es.ecoflow.com/products/delta-2-220w-portable-solar-panel">
+          <img
+            src="{{ section.settings.product1.featured_image | img_url: '1200x' }}"
+            class="tablet"
+            alt="Bundles de generadores solares de la serie DELTA"
+          >
+        </a>
+      </div>
+    </div>
+    <div class="section-6-items-wrapper">
+      <div class="section-6-item">
+        <div class="section-6-item-inner">
+          <h2>
+            EcoFlow DELTA Max + <br>
+            Panel solar de 400W
+          </h2>
+          <a href="https://es.ecoflow.com/products/delta-max-solar-generator-400w-portable-solar-panel">
+            <img
+              src="{{ section.settings.product2.featured_image | img_url: '1200x' }}"
+              class="mobile"
+              alt="Bundles de generadores solares de la serie DELTA"
+            >
+          </a>
+          <div>
+            <p class="items-info">Entrada solar 800W</p>
+            <p class="items-info">Capacidad 2-6kWh</p>
+          </div>
+          <a
+            class="btn-link"
+            href="https://es.ecoflow.com/products/delta-max-solar-generator-400w-portable-solar-panel"
+            target="_blank"
+            rel="null noopener"
+            aria-describedby="a11y-new-window-message"
+            >Comprar Ahora</a
+          >
+        </div>
+        <a href="https://es.ecoflow.com/products/delta-max-solar-generator-400w-portable-solar-panel">
+          <img
+            src="{{ section.settings.product2.featured_image | img_url: '1200x' }}"
+            class="tablet"
+            alt="Bundles de generadores solares de la serie DELTA"
+          >
+        </a>
+      </div>
+    </div>
+    <div class="section-6-items-wrapper">
+      <div class="section-6-item">
+        <div class="section-6-item-inner">
+          <h2>
+            EcoFlow DELTA Max + <br>
+            Panel solar de 220W
+          </h2>
+          <a href="https://es.ecoflow.com/products/delta-max-solar-generator-220w-solar-panel">
+            <img
+              src="{{ section.settings.product3.featured_image | img_url: '1200x' }}"
+              class="mobile"
+              alt="Bundles de generadores solares de la serie DELTA"
+            >
+          </a>
+          <div>
+            <p class="items-info">Entrada solar 800W</p>
+            <p class="items-info">Capacidad 2-6kWh</p>
+          </div>
+          <a
+            class="btn-link"
+            href="https://es.ecoflow.com/products/delta-max-solar-generator-220w-solar-panel"
+            target="_blank"
+            rel="null noopener"
+            aria-describedby="a11y-new-window-message"
+            >Comprar Ahora</a
+          >
+        </div>
+        <a href="https://es.ecoflow.com/products/delta-max-solar-generator-220w-solar-panel">
+          <img
+            src="{{ section.settings.product3.featured_image | img_url: '1200x' }}"
+            class="tablet"
+            alt="Bundles de generadores solares de la serie DELTA"
+          >
+        </a>
+      </div>
+    </div>
+    <div class="section-6-items-wrapper">
+      <div class="section-6-item">
+        <div class="section-6-item-inner">
+          <h2>
+            EcoFlow DELTA Pro + <br>
+            Panel solar de 400W
+          </h2>
+          <a href="https://es.ecoflow.com/products/delta-pro-solar-generator-400w-portable-solar-panel">
+            <img
+              src="{{ section.settings.product4.featured_image | img_url: '1200x' }}"
+              class="mobile"
+              alt="Bundles de generadores solares de la serie DELTA"
+            >
+          </a>
+          <div>
+            <p class="items-info">Entrada solar 1.600W</p>
+            <p class="items-info">Capacidad 3.6kWh-25kWh</p>
+          </div>
+          <a
+            class="btn-link"
+            href="https://es.ecoflow.com/products/delta-pro-solar-generator-400w-portable-solar-panel"
+            target="_blank"
+            rel="null noopener"
+            aria-describedby="a11y-new-window-message"
+            >Comprar Ahora</a
+          >
+        </div>
+        <a href="https://es.ecoflow.com/products/delta-pro-solar-generator-400w-portable-solar-panel">
+          <img
+            src="{{ section.settings.product4.featured_image | img_url: '1200x' }}"
+            class="tablet"
+            alt="Bundles de generadores solares de la serie DELTA"
+          >
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-px section-7">
+    <img src="https://cdn.shopifycdn.net/s/files/1/1996/9707/files/1_6.jpg?v=1653621951" class="" alt="">
+    <!--
+      <img src="https://cdn.shopifycdn.net/s/files/1/1996/9707/files/Group_16.jpg?v=1653707383" class="custom_mobile_show" alt="">
+    -->
+    <div class="section-7-text">
+      <h1 class="">Los generadores de gas <span class="solar-highlight">pertenecen al pasado</span></h1>
+
+      <p>
+        Los generadores solares domésticos EcoFlow son la nueva opción de almacenamiento energético y sustituyen a los
+        antiguos generadores de gas. Sin ruido, humo ni mantenimiento, son perfectos tanto para usar en interiores como
+        para llevarlos de acampada. Por ello, los generadores solares son opciones perfectas para hogares, tiendas de
+        campaña y autocaravanas. Adéntrese en el futuro del almacenamiento energético y proporcione energía auxiliar a
+        su hogar.
+      </p>
+    </div>
+  </div>
+
+  <div class="section-px section-8">
+    <div class="bsection-container">
+      <div class="faq-block tc">
+        <div class="section-8__title mx-auto">PREGUNTAS FRECUENTES</div>
+        <button type="button" class="show-me-button mx-auto">
+          <svg
+            class="plus-icon active"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 1024 1024"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+                d="M696 480H544V328c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v152H328c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h152v152c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V544h152c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8z">
+            </path>
+            <path
+                d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z">
+            </path>
+          </svg>
+          <svg
+            class="minus-icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 1024 1024"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+                d="M696 480H328c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h368c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8z">
+            </path>
+            <path
+                d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z">
+            </path>
+          </svg>
+          MUÉSTRAME
+        </button>
+        <div class="show-me" style="display: none">
+          <div class="question">
+            <h3 class="title-h3 font-gotham-bold pr">¿Cuál es el mejor generador solar doméstico?</h3>
+            <div class="des">
+              <p>
+                Depende de sus necesidades energéticas. Si necesita un generador solar que proporcione solo la energía
+                esencial para cubrir apagones, los generadores DELTA 2 serán suficientes. Si necesita una
+                opción de energía auxiliar más potente para su hogar, DELTA Max le puede ayudar a afrontar apagones
+                prolongados. Todas las opciones ofrecen una potencia de salida de CA distinta, DELTA 2 con una impresionante potencia de 1800 W
+                y DELTA Max con una enorme potencia de 2400 W.
+              </p>
+            </div>
+          </div>
+          <div class="question">
+            <h3 class="title-h3 font-gotham-bold pr">
+              ¿Cuál es el mejor generador solar para vivir sin depender de la red eléctrica?
+            </h3>
+            <div class="des">
+              <p>
+                Si quiere tener independencia de la red eléctrica, probablemente usará un gran número de
+                kilovatios-hora. Por este motivo, una unidad DELTA Max y algunas baterías adicionales para llegar a los
+                6kWh deberían ser suficientes para alimentar todos sus electrodomésticos y dispositivos esenciales. La
+                unidad DELTA Pro de EcoFlow también le podría resultar interesante, al contar con una potencia de
+                partida de 3.6kWh, ampliable hasta 25kWh.
+              </p>
+            </div>
+          </div>
+          <div class="question">
+            <h3 class="title-h3 font-gotham-bold pr">
+              ¿Es suficiente un generador solar para ofrecer la alimentación eléctrica necesaria para un hogar?
+            </h3>
+            <div class="des">
+              <p>
+                Si necesita un generador solar que cubra todas las necesidades de su hogar, DELTA Pro es la mejor
+                opción. Puede integrarse con hasta 10 circuitos domésticos mediante el accesorio Smart Home Panel,
+                ofreciéndole la energía de emergencia que necesita en su hogar además de la capacidad de realizar una
+                gestión inteligente de esta.
+              </p>
+            </div>
+          </div>
+          <div class="question">
+            <h3 class="title-h3 font-gotham-bold pr">
+              ¿Funcionan como generadores solares para su uso en autocaravanas?
+            </h3>
+            <div class="des">
+              <p>
+                Sí. Son ideales para autocaravanas, e incluso pueden ser una alternativa a las baterías de 12V de estas
+                para alimentar sus electrodomésticos y dispositivos. Puede encontrar una publicación en el blog al
+                respecto.
+              </p>
+            </div>
+          </div>
+          <div class="question">
+            <h3 class="title-h3 font-gotham-bold pr">¿Funcionan como generadores solares auxiliares?</h3>
+            <div class="des">
+              <p>
+                Sí. Como no usan gas, a diferencia de los generadores tradicionales, puede cargarlos con paneles solares
+                y almacenar la energía para cuando la necesite.
+              </p>
+            </div>
+          </div>
+          <div class="question">
+            <h3 class="title-h3 font-gotham-bold pr">¿Son seguros?</h3>
+            <div class="des">
+              <p>
+                Todas las estaciones de energía portátiles de EcoFlow cuentan con un avanzado sistema BMS. La corriente,
+                el voltaje y la temperatura se regulan automáticamente mediante nuestro avanzado algoritmo. Esto
+                significa que incluso un niño podría usar un generador solar EcoFlow con facilidad. En resumen, son muy
+                seguros.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-px section-9" style="display: none;">
+    <h3>MOSTRADO EN</h3>
+    <img
+      class="tablet"
+      src="https://cdn.shopify.com/s/files/1/1996/9707/files/Collection-Page-Portable-Power-Station-Media-Logo.png?v=1641715228"
+    >
+    <img
+      class="mobile"
+      src="https://cdn.shopify.com/s/files/1/1996/9707/files/Collection-Page-Portable-Power-Station-Media-Logo-Mobile-1.png?v=1641666769"
+    >
+  </div>
+
+  
+  <p class="bottom-description">Los términos “DELTA” y “RIVER”, que se mencionan en esta página, se refieren a productos fabricados exclusivamente por ECOFLOW INC.</p>
+</div>
+
+{{ 'custom.js' | asset_url | script_tag }}
+
+{% schema %}
+{
+  "name": "delta generator",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product1",
+      "label": "Product 1"
+    },
+    {
+      "type": "product",
+      "id": "product2",
+      "label": "Product 2"
+    },
+    {
+      "type": "product",
+      "id": "product3",
+      "label": "Product 3"
+    },
+    {
+      "type": "product",
+      "id": "product4",
+      "label": "Product 4"
+    }
+  ]
+}
+{% endschema %}

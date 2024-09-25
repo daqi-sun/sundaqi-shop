@@ -1,0 +1,343 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "sticky-product-bar": {
+      "type": "sticky-product-bar",
+      "blocks": {
+        "588d25af-4d47-43ac-9697-b98aa2f65719": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Overview",
+            "tab_id": "product_information",
+            "section_class": ""
+          }
+        },
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "FAQ",
+            "tab_id": "faq",
+            "section_class": ""
+          }
+        },
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Reviews",
+            "tab_id": "section-reviews",
+            "section_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "588d25af-4d47-43ac-9697-b98aa2f65719",
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4",
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38"
+      ],
+      "settings": {
+        "enabled": true,
+        "enabled_tabs": true
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "11795adc-1afa-4833-a193-258f495901ef": {
+          "type": "sku_block",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e": {
+          "type": "product_title",
+          "settings": {
+          }
+        },
+        "judge_me_reviews_preview_badge_BHW789": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "0471109f-c130-454e-a9ba-c56412cc11f3": {
+          "type": "product_vendor",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185": {
+          "type": "product_price",
+          "settings": {
+          }
+        },
+        "d25a0285-4fb4-422d-b95b-ab67446120ad": {
+          "type": "product_description",
+          "settings": {
+            "desc_display": "default"
+          }
+        },
+        "919f9cdd-6184-4311-b675-742931504318": {
+          "type": "coupon_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Component_2_1.png",
+            "discount_off_text": "{{ product.metafields.custom.discount_off_text.value }}",
+            "code": "{{ product.metafields.custom.discount_code.value }}",
+            "show_copy_code_btn": true
+          }
+        },
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879": {
+          "type": "product_options_block",
+          "settings": {
+            "show_product_swatches": true,
+            "use_variant_image_for_swatches": true,
+            "button_content": ""
+          }
+        },
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe": {
+          "type": "quantity_block",
+          "settings": {
+          }
+        },
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0": {
+          "type": "accessories_section",
+          "settings": {
+            "title": "Accessories",
+            "metafield": "accessories"
+          }
+        },
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609": {
+          "type": "product_buttons",
+          "settings": {
+            "enable_payment_button": false,
+            "show_custom_icons": true,
+            "custom_payment_logo_1_svg": "",
+            "custom_payment_logo_2_svg": "",
+            "custom_payment_logo_3_svg": "",
+            "custom_payment_logo_4_svg": "",
+            "custom_payment_logo_5_svg": "",
+            "custom_payment_logo_6_svg": "",
+            "custom_payment_logo_7_svg": "",
+            "custom_payment_logo_8_svg": "",
+            "custom_payment_logo_9_svg": "",
+            "custom_payment_logo_10_svg": "",
+            "custom_payment_logo_11_svg": "",
+            "custom_payment_logo_12_svg": "",
+            "custom_payment_logo_13_svg": "",
+            "custom_payment_logo_14_svg": "",
+            "custom_payment_logo_15_svg": ""
+          }
+        },
+        "a6857d85-dbb6-41d1-9501-c01cf5bbe11f": {
+          "type": "back_in_stock",
+          "disabled": true,
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "11795adc-1afa-4833-a193-258f495901ef",
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e",
+        "judge_me_reviews_preview_badge_BHW789",
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774",
+        "0471109f-c130-454e-a9ba-c56412cc11f3",
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185",
+        "d25a0285-4fb4-422d-b95b-ab67446120ad",
+        "919f9cdd-6184-4311-b675-742931504318",
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879",
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe",
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0",
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609",
+        "a6857d85-dbb6-41d1-9501-c01cf5bbe11f"
+      ],
+      "settings": {
+        "section_id": "",
+        "show_breadcrumbs": false,
+        "show_pick_an_option": false,
+        "enable_linked_options": false,
+        "enabled_mobile_sticky_btns": true,
+        "media_size": "medium",
+        "enable_image_zoom": true,
+        "enable_video_looping": true,
+        "thumbnails_type": "grid",
+        "support_email": "",
+        "support_text": "",
+        "feature_1_show": true,
+        "feature_1_title": "Fast & Free Shipping",
+        "feature_1_content": "",
+        "feature_2_show": true,
+        "feature_2_title": "Warranty Protection",
+        "feature_2_content": "",
+        "feature_3_show": true,
+        "feature_3_title": "Secure Payments",
+        "feature_3_content": "",
+        "feature_4_show": true,
+        "feature_4_title": "Multi-channel Support",
+        "feature_4_content": ""
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "grid_mobile": "2",
+        "heading": "You may also like",
+        "show_vendor": false
+      }
+    },
+    "165728772697564e64": {
+      "type": "newsletter",
+      "disabled": true,
+      "settings": {
+        "section_bg_color": "",
+        "section_color": "",
+        "bg_image_opacity": 70,
+        "section_title": "Subscribe to our newsletter",
+        "subtitle": "",
+        "subheading": "<p>Promotions, new products and sales. Directly to your inbox.<\/p>",
+        "button_style": "primary",
+        "showFormLabels": true,
+        "removeBottomMargin": false
+      }
+    },
+    "705c586d-c6d2-4609-bba1-b868d0cbc03c": {
+      "type": "whats-in-the-box",
+      "disabled": true,
+      "settings": {
+        "section_id": "",
+        "title": "What's In The Box"
+      }
+    },
+    "2c26b2da-2a1e-4f36-910c-c3227a275ee1": {
+      "type": "quotes",
+      "blocks": {
+        "template--15039360893001__2c26b2da-2a1e-4f36-910c-c3227a275ee1-1666968004ce8303ac-0": {
+          "type": "quote",
+          "settings": {
+            "title": "Fast & Free Shipping",
+            "mobile_title": "",
+            "quote": "<p>All orders are processed within 3-5 business days. <\/p>",
+            "author": "",
+            "image_format": "image",
+            "svg_image": ""
+          }
+        },
+        "template--15039360893001__2c26b2da-2a1e-4f36-910c-c3227a275ee1-1666968004ce8303ac-1": {
+          "type": "quote",
+          "settings": {
+            "title": "Warranty Protection",
+            "mobile_title": "",
+            "quote": "<p>All products are covered by a warranty service.<\/p>",
+            "author": "",
+            "image_format": "image",
+            "svg_image": ""
+          }
+        },
+        "template--15039360893001__2c26b2da-2a1e-4f36-910c-c3227a275ee1-1666968004ce8303ac-2": {
+          "type": "quote",
+          "settings": {
+            "title": "Secure Payments",
+            "mobile_title": "",
+            "quote": "<p>Pay by debit or credit card, PayPal, or other secure payment platform.<\/p>",
+            "author": "",
+            "image_format": "image",
+            "svg_image": ""
+          }
+        },
+        "template--15039360893001__2c26b2da-2a1e-4f36-910c-c3227a275ee1-1666968004ce8303ac-3": {
+          "type": "quote",
+          "settings": {
+            "title": "Multi-channel Support",
+            "mobile_title": "",
+            "quote": "<p>Contact us via email, phone or online customer service.<\/p>",
+            "author": "",
+            "image_format": "image",
+            "svg_image": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15039360893001__2c26b2da-2a1e-4f36-910c-c3227a275ee1-1666968004ce8303ac-0",
+        "template--15039360893001__2c26b2da-2a1e-4f36-910c-c3227a275ee1-1666968004ce8303ac-1",
+        "template--15039360893001__2c26b2da-2a1e-4f36-910c-c3227a275ee1-1666968004ce8303ac-2",
+        "template--15039360893001__2c26b2da-2a1e-4f36-910c-c3227a275ee1-1666968004ce8303ac-3"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "image_style": "full",
+        "heading_style": "center",
+        "title": "Why buy from the EcoFlow Store?",
+        "subtitle": "",
+        "bg_color": "#ffffff",
+        "heading_color": "#000000",
+        "title_color": "#232323",
+        "text_color": "#757575",
+        "enable_carousel": false,
+        "show_dots": false,
+        "show_arrows": false,
+        "enable_autoplay": false,
+        "cycle_speed": 5
+      }
+    },
+    "2558a9d1-4c39-4696-80fb-48174af346b6": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "Palanca desmontable y ruedas",
+        "subtitle": "<p>Refrigeración en movimiento.<\/p>",
+        "content": "<p>Una palanca y un juego de ruedas, todas desmontables. Lleva la nevera-congelador allá donde te lleven tus aventuras. Desmonta los accesorios y coloca la GLACIER en la encimera de tu autocaravana, en el asiento del acompañante y en otros espacios compactos.<\/p>",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "video",
+        "video_type": "mp4",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/745be71b436c47ceb119653ad58f0440.mp4",
+        "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/b86e5187b5754b1e969646160f96c8fb.mp4",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "17141199400e80db08": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_e8xQmN": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_e8xQmN"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    }
+  },
+  "order": [
+    "sticky-product-bar",
+    "main",
+    "product-recommendations",
+    "165728772697564e64",
+    "705c586d-c6d2-4609-bba1-b868d0cbc03c",
+    "2c26b2da-2a1e-4f36-910c-c3227a275ee1",
+    "2558a9d1-4c39-4696-80fb-48174af346b6",
+    "17141199400e80db08"
+  ]
+}

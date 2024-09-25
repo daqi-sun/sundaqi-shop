@@ -1,0 +1,149 @@
+<div class="outdoor-section section-{{ section.id }}" id="{{ section.settings.section_id }}" style="background-color: {{ section.settings.section_background }};">
+    <div class="star-page-container {% unless section.settings.slider_mobile %}no-image-slider{% endunless %}">
+        {% if section.settings.section_title != blank %}
+            <div class="title_wrapper">
+                <img src="https://cdn.shopify.com/s/files/1/1996/9707/files/bkg.png?v=1684489902" alt="" />
+                <div class="title">{{ section.settings.section_title }}</div>
+            </div>
+            <div class="title_bg_image"><img src="https://cdn.shopify.com/s/files/1/1996/9707/files/bkg_1.png?v=1684489902" /></div>
+        {% endif %}
+
+        {% if section.blocks.size > 0 %}
+            <div class="block_wrapper">
+                <div class="block-content {% if section.settings.slider_mobile %}image-slider{% endif %}">
+                    {% for block in section.blocks %}
+                        {% if block.settings.block_image != blank %}
+                        <div class="block">
+                            {% if block.settings.link != blank %}<a href="{{ block.settings.link }}">{% endif %}
+                                <img src="{{ block.settings.block_image | img_url: 'master' }}" alt="" class="{% if block.settings.block_image_m != blank %}hideMobile{% endif %}" />
+                                {% if block.settings.block_image_m != blank %}<img src="{{ block.settings.block_image_m | img_url: 'master' }}" alt="" class="hideDesktop" />{% endif %}
+                            {% if block.settings.link != blank %}</a>{% endif %}
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {% if section.settings.slider_mobile %}
+                <div class="slide-button hideDesktop">
+                    <div class="next-btn">
+                        <svg width="19" height="32" viewBox="0 0 19 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.16504 2.76147L15.4282 15.7059L3.16504 28.6503" stroke="black" stroke-opacity="0.25" stroke-width="5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+</div>
+<style>
+    .section-{{ section.id }}{
+        padding: {{ section.settings.section_top_space }}px 0 {{ section.settings.section_bottom_space }}px 0;
+    }
+    @media screen and (max-width: 749px){
+        .section-{{ section.id }}{
+            padding: {{ section.settings.section_top_space_m }}px 0 {{ section.settings.section_bottom_space_m }}px 0;
+        }
+    }
+  </style>
+{% schema %}
+{
+    "name": "Image gallery - Outdoor",
+    "class": "outdoor-custom-section outdoor-image-gallery",
+    "max_blocks": 3,
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_id",
+        "label": "Section ID"
+      },
+      {
+        "type":"color",
+        "id":"section_background",
+        "label":"Section background color"
+      },
+      {
+        "type": "checkbox",
+        "id": "slider_mobile",
+        "label": "Use Slider on Mobile"
+      },
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section title"
+      },
+      {
+        "type": "header",
+        "content": "Section spacing"
+      },
+      {
+        "type": "range",
+        "id": "section_top_space",
+        "label": "Top space(Desktop)",
+        "min": 0,
+        "max": 150,
+        "step": 5,
+        "unit": "px",
+        "default": 120
+      },
+      {
+        "type": "range",
+        "id": "section_bottom_space",
+        "label": "Bottom space(Desktop)",
+        "min": 0,
+        "max": 150,
+        "step": 5,
+        "unit": "px",
+        "default": 40
+      },
+      {
+        "type": "range",
+        "id": "section_top_space_m",
+        "label": "Top space(Mobile)",
+        "min": 0,
+        "max": 80,
+        "step": 5,
+        "unit": "px",
+        "default": 40
+      },
+      {
+        "type": "range",
+        "id": "section_bottom_space_m",
+        "label": "Bottom space(Mobile)",
+        "min": 0,
+        "max": 80,
+        "step": 5,
+        "unit": "px",
+        "default": 40
+      }
+    ],
+    "blocks": [
+        {
+            "type": "image",
+            "name": "Image",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "block_image",
+                    "label": "Image"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "block_image_m",
+                    "label": "Image(Mobile)"
+                },
+                {
+                    "type": "url",
+                    "id": "link",
+                    "label": "Image link"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Image gallery - Outdoor",
+            "category": "Custom Sections"
+        }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,276 @@
+@font-face {
+  font-family: OpenSans-Bold;
+  src: url(OpenSans-Bold.ttf);
+}
+@media screen and (max-width: 768px) {
+    .container .title {
+      font-size: 24px;
+    }
+    .title-h2 {
+      font-size: 36px!important;
+    }
+    .subtitle {
+      font-size: 16px;
+    }
+    .subtitle-padding {
+      padding: 64px 10px 64px 40px;
+    }
+    .tick {
+      height: 20px;
+      width: 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 4px;
+
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      right: 0px;
+      top: 0px;
+    }
+    .tick_ {
+      height: 20px;
+      width: 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 4px;
+
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      right: 15px;
+      top: 0px;
+    }
+    .pt-6 {
+      padding-top: 48px;
+    }
+    .pb-6 {
+      padding-bottom: 64px;
+    }
+    .pb-7 {
+      padding-bottom: 64px;
+    }
+    .pb-8 {
+      padding-bottom: 48px;
+    }
+    .card {
+      flex-direction: row;
+    }
+    .textarea {
+      width: 192px;
+      height: 24px;
+    }
+    .nodisplay {
+      display: none;
+    }
+    .display {
+      display: flex;
+    }
+    .card-text-alignment {
+      text-align: left;
+    }
+    .center-right {
+      text-align: center;
+    }
+    .px-sm {
+      padding: 0px 15px;
+    }
+    .py-img-4 {
+      padding: 12px 0px;
+    }
+    .strong strong {
+      font-size: 16px;
+      color: #000000;
+    }
+    .h2 {
+      font-size: 24px !important;
+      text-transform: none;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .container .title {
+      font-size: 36px;
+    }
+    .title-h2 {
+      font-size: 36px!important;
+    }
+    .subtitle {
+      font-size: 18px;
+    }
+    .tick {
+      height: 32px;
+      width: 32px;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 4px;
+
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      right: 0px;
+      top: 0px;
+    }
+    .tick_ {
+      height: 32px;
+      width: 32px;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 4px;
+
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      right: 0px;
+      top: 0px;
+    }
+    .pt-6 {
+      padding-top: 96px;
+    }
+    .pb-6 {
+      padding-bottom: 96px;
+    }
+    .pb-7 {
+      padding-bottom: 120px;
+    }
+    .pb-8 {
+      padding-bottom: 72px;
+    }
+    .card {
+      flex-direction: column;
+    }
+    .content-padding {
+      padding: 0px 10px 16px 10px;
+    }
+    .nodisplay {
+      display: flex;
+    }
+    .display {
+      display: none;
+    }
+    .card-text-alignment {
+      text-align: center;
+    }
+    .spacing {
+      padding-right: 112px;
+    }
+    .pdbottom {
+      padding-bottom: 150px;
+    }
+    .center-right {
+      text-align: right;
+    }
+    .strong strong {
+      font-size: 24px;
+      color: #000000;
+    }
+    .h2 {
+      font-size: 32px !important;
+      text-transform: none;
+    }
+  }
+
+  .content {
+    font-size: 14px;
+  }
+  .back {
+    font-size: 14px;
+  }
+  .card-check-input {
+    position: absolute;
+  }
+  .card-check-label .tick {
+    display: none;
+  }
+  .card-check-label .tick_ {
+    display: none;
+  }
+
+  .card-check-input:checked + .card-check-label .tick {
+    display: block;
+  }
+  .card-check-input:checked + .card-check-label .tick_ {
+    display: block;
+  }
+  li a.nav-link.active {
+    border-bottom: solid #0ecfe2 4px !important;
+  }
+  .pt-5 {
+    padding-top: 40px;
+  }
+  .card-body {
+    padding: 0px;
+  }
+  #h3 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .start-over-css {
+    background-color: white !important;
+    box-shadow: none;
+    color: black !important;
+    font-weight: normal;
+    letter-spacing: 0px;
+  }
+  button .start-over-css:hover {
+    text-decoration: none;
+  }
+  .card-img-top {
+    width: 100%;
+    border-radius: 0;
+  }
+  .card {
+    border-radius: 0;
+  }
+  .btn {
+    text-transform: none;
+    padding: 4px 34px;
+  }
+  #start-over:hover {
+    text-decoration: none;
+    letter-spacing: 0px;
+  }
+  .start-button {
+    font-size: 18px;
+    font-weight: 700;
+    font-family: OpenSans-Bold !important;
+    color: #212121 !important;
+    letter-spacing: 0px;
+    line-height: 32px;
+  }
+  .fixed {
+    position: fixed;
+    bottom: 0;
+    z-index: 2000;
+    width: 100%;
+    background: rgba(255, 255, 255, 1);
+  }
+  h2 {
+    letter-spacing: 0px !important;
+  }
+  .mb_title {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  @media (hover: hover) {
+    .card-check-input + .define-border:hover {
+      background-color: rgba(14, 207, 226, 0.02);
+      border: 1px solid #0ecfe2 !important;
+    }
+    label .card:hover {
+      background-color: rgba(14, 207, 226, 0.02);
+      border: 1px solid #0ecfe2;
+    }
+  }
+  .card-check-input:checked + .card-check-label .card {
+    background-color: rgba(14, 207, 226, 0.02);
+    border: 1px solid #0ecfe2;
+  }
+
+  .card-check-input:checked + .define-border {
+    background-color: rgba(14, 207, 226, 0.02);
+    border: 1px solid #0ecfe2 !important;
+  }

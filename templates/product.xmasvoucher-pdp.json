@@ -1,0 +1,296 @@
+{
+  "sections": {
+    "daf26638-f596-4384-b150-72d380a3268d": {
+      "type": "product-atb-top",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "sticky-product-bar": {
+      "type": "sticky-product-bar",
+      "blocks": {
+        "588d25af-4d47-43ac-9697-b98aa2f65719": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Overview",
+            "tab_id": "product_information",
+            "section_class": ""
+          }
+        },
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "What's in the box",
+            "tab_id": "what_in_box",
+            "section_class": ""
+          }
+        },
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "FAQ",
+            "tab_id": "faq",
+            "section_class": ""
+          }
+        },
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Reviews",
+            "tab_id": "section-reviews",
+            "section_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "588d25af-4d47-43ac-9697-b98aa2f65719",
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02",
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4",
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38"
+      ],
+      "settings": {
+        "enabled": true,
+        "enabled_tabs": false
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "11795adc-1afa-4833-a193-258f495901ef": {
+          "type": "sku_block",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e": {
+          "type": "product_title",
+          "settings": {
+          }
+        },
+        "0be521b4-bac8-4e6f-a8ee-4d6bfa17ec65": {
+          "type": "shopify:\/\/apps\/growave-loyalty-wishlist\/blocks\/block.product.reviewAvgProfile\/b3d2efbe-110a-4e27-84a8-1f2ed63996a4",
+          "disabled": true,
+          "settings": {
+            "margin": "",
+            "textColor": "",
+            "fontSize": "",
+            "ratingIconColor": "",
+            "ratingIconSize": "",
+            "questionsIconColor": "",
+            "questionsIconSize": ""
+          }
+        },
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "0471109f-c130-454e-a9ba-c56412cc11f3": {
+          "type": "product_vendor",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185": {
+          "type": "product_price",
+          "settings": {
+          }
+        },
+        "7ffee8ad-9090-45b8-a8ef-2216a61b0a06": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=<span style=\"color: #AD1500\"pdp-custom-content\">Ahorra más en los regalos de Navidad:<br>\n- Compra un vale navideño de 550 € por solo 500 €. Al comprar productos físicos de EcoFlow, ¡suma un vale navideño a un código de descuento y podrás ahorrar más!<br>\n<b>- Solo 50 unidades disponibles asignadas por orden de compra.<br>\n- Límite de un vale por cliente.<br>- Válido hasta el 26 de diciembre de 2023.<br>- Los códigos de descuento no se pueden utilizar en la compra del vale navideño. <\/b><\/span>\n <\/div>"
+          }
+        },
+        "d25a0285-4fb4-422d-b95b-ab67446120ad": {
+          "type": "product_description",
+          "settings": {
+            "desc_display": "default"
+          }
+        },
+        "79e1b437-5bbd-4b8a-ac55-27c2f795ee99": {
+          "type": "coupon_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Component_2_1.png",
+            "discount_off_text": "{{ product.metafields.custom.discount_off_text.value }}",
+            "code": "{{ product.metafields.custom.discount_code.value }}",
+            "show_copy_code_btn": true
+          }
+        },
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879": {
+          "type": "product_options_block",
+          "settings": {
+            "show_product_swatches": true,
+            "use_variant_image_for_swatches": true
+          }
+        },
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe": {
+          "type": "quantity_block",
+          "settings": {
+          }
+        },
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0": {
+          "type": "accessories_section",
+          "settings": {
+            "title": "You may also like",
+            "metafield": "accessories"
+          }
+        },
+        "a96faac7-b2a0-4157-9b80-c757c18c6a89": {
+          "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/form-embed-block\/2632fe16-c075-4321-a88b-50b567f42507",
+          "disabled": true,
+          "settings": {
+            "formId": "UHSpKe"
+          }
+        },
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609": {
+          "type": "product_buttons",
+          "settings": {
+            "enable_payment_button": false,
+            "show_custom_icons": true,
+            "custom_payment_logo_1_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_08_7f374817-3a3e-42f2-95ce-077b67f293d2.svg?v=1672025209",
+            "custom_payment_logo_2_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_10_d8002835-e25f-4edb-9038-187f75f69a18.svg?v=1672025208",
+            "custom_payment_logo_3_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_02_a3ea7ab1-aa9a-4857-9ed6-01e62deccfce.svg?v=1672025208",
+            "custom_payment_logo_4_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_06_7c406d24-0983-49ff-ac8e-cf73032050d9.svg?v=1672025208",
+            "custom_payment_logo_5_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_07_be5959d4-9f22-4a31-8e40-285f8e3ac6e7.svg?v=1672025208",
+            "custom_payment_logo_6_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_04_7bff1113-0dc2-489f-8be8-d19dbe467a1a.svg?v=1672025208",
+            "custom_payment_logo_7_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_05_1c21f308-a0a3-4251-8641-87264da43d67.svg?v=1672025208",
+            "custom_payment_logo_8_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_01_96e6a30c-7908-4892-b6f1-75bce8657cd4.svg?v=1672025208",
+            "custom_payment_logo_9_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/sofort_icon_31ba2d5b-2c44-4960-8e80-645a7240c899.png?v=1679023017",
+            "custom_payment_logo_10_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/giropay_icon_c9d7e22e-cd7c-4bee-8de5-e50a4c6dc378.png?v=1679023017",
+            "custom_payment_logo_11_svg": "",
+            "custom_payment_logo_12_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/multibanco_icon_e3f9b26f-234c-4a06-9e48-adfd188e7deb.png?v=1679023016",
+            "custom_payment_logo_13_svg": "",
+            "custom_payment_logo_14_svg": "",
+            "custom_payment_logo_15_svg": ""
+          }
+        },
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% if product.metafields.custom.trade_message != blank %}\n          <div class=\"trade-message\">♻️{{product.metafields.custom.trade_message}} <a href=\"\/pages\/trade-in\" target=\"_blank\">Learn more<\/a><\/div>\n{% endif %}"
+          }
+        }
+      },
+      "block_order": [
+        "11795adc-1afa-4833-a193-258f495901ef",
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e",
+        "0be521b4-bac8-4e6f-a8ee-4d6bfa17ec65",
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774",
+        "0471109f-c130-454e-a9ba-c56412cc11f3",
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185",
+        "7ffee8ad-9090-45b8-a8ef-2216a61b0a06",
+        "d25a0285-4fb4-422d-b95b-ab67446120ad",
+        "79e1b437-5bbd-4b8a-ac55-27c2f795ee99",
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879",
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe",
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0",
+        "a96faac7-b2a0-4157-9b80-c757c18c6a89",
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609",
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a"
+      ],
+      "settings": {
+        "section_id": "",
+        "show_breadcrumbs": true,
+        "show_pick_an_option": false,
+        "enable_linked_options": false,
+        "enabled_mobile_sticky_btns": true,
+        "media_size": "medium",
+        "enable_image_zoom": true,
+        "enable_video_looping": true,
+        "thumbnails_type": "grid",
+        "support_email": "",
+        "support_text": "",
+        "feature_1_show": false,
+        "feature_1_title": "Fast & Free Shipping",
+        "feature_1_content": "",
+        "feature_2_show": false,
+        "feature_2_title": "Warranty Protection",
+        "feature_2_content": "",
+        "feature_3_show": false,
+        "feature_3_title": "Secure Payments",
+        "feature_3_content": "",
+        "feature_4_show": false,
+        "feature_4_title": "Multi-channel Support",
+        "feature_4_content": ""
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "grid_mobile": "2",
+        "heading": "You may also like",
+        "show_vendor": false
+      }
+    },
+    "d1bfa97a-a9f8-46fb-a483-ca8919fcd837": {
+      "type": "star_terms_conditions",
+      "settings": {
+        "section_background": "",
+        "section_id": "",
+        "show_mobile": true,
+        "section_top_space": 20,
+        "section_bottom_space": 40,
+        "section_top_space_m": 0,
+        "section_bottom_space_m": 25,
+        "tc_heading": "<p><strong>Términos y condiciones del vale navideño digitalde EcoFlow<\/strong><\/p>",
+        "heading_color": "#afafaf",
+        "tc": "<p><\/p><ol><li>El vale navideño («Vale») se puede comprar desde el 4 de diciembre de 2023 a las 9:00 hasta el 11 de diciembre de 2023 a las 9:00 (CET). Se trata de un vale electrónico que tiene un valor de 550 €. Se emitirá como un código de vale único a la dirección de correo electrónico registrada del comprador.<\/li><li>El número total de vales navideños está limitado a 50, asignados por orden de llegada. No se proporcionará ningún servicio de igualación de precios.<\/li><li>El vale navideño debe adquirirse antes de que se pueda aplicar a una compra. <strong>Los códigos de descuento no se pueden utilizar en la compra del vale navideño. Añade SÓLO UN vale navideño al carrito de la compra y paga 500 €. <\/strong>Los pedidos que utilizan un código de descuento para comprar el vale navideño y los pedidos que compran más de un vale no son reconocidos por el sistema de emisión del vale, lo que impide que el comprador reciba el código del vale.<\/li><li>Sólo se puede comprar y utilizar un vale por cliente. Cuando un cliente compre más de un vale, el sistema sólo emitirá un código de vale. Por favor, no compres más de un vale navideño.<\/li><li><strong>Ten en cuenta que el código del vale navideño caducará automáticamente el 26 de diciembre de 2023. Asegúrate de utilizar el saldo antes de esta fecha.<\/strong> No se enviará ningún aviso de vencimiento en el momento del vencimiento. Si queda saldo en el momento del vencimiento, se organizará un reembolso de conformidad con la «Política de reembolso» establecida en estos Términos y condiciones.<\/li><li>El importe del vale navideño sólo se puede utilizar para comprar los productos físicos disponibles en <a href=\"http:\/\/es.ecoflow.com\">es.ecoflow.com<\/a>, excepto los productos de ofertas relámpago, regalos y tarjetas regalo. Al comprar productos físicos con un vale navideño, los clientes pueden ingresar un código un vale navideño y un código de descuento en la página de pago para usarlos en el mismo pedido.<\/li><li>Si tienes alguna pregunta sobre el vale navideño, no dudes en ponerte en contacto con nuestro equipo de atención al cliente en support.eu@ecoflow.com.<\/li><\/ol><p><br\/><\/p><p><strong>Cómo utilizar el vale navideño de EcoFlow<\/strong><\/p><ol><li>Añade un vale navideño al carrito y registra la dirección de correo electrónico para recibir el código del vale en la página de pago. Pagas 500 € por un vale que tiene un valor de 550 €. Por favor, no utilices códigos de descuento ni compres más de un vale navideño.<\/li><li>Después de la compra, se enviará un correo electrónico con un código de vale único a la dirección de correo electrónico que tengas registrada. Si deseas enviar el vale a un amigo, no dudes en reenviar el correo electrónico. El vale se puede aplicar a compras en forma de código único en su totalidad. Mantén tu código único seguro para evitar perder dinero debido a filtración o robo de datos. EcoFlow no se responsabiliza de las pérdidas financieras ocasionadas por la filtración o el robo de códigos sufridos por los clientes.<\/li><li>Introduce el código del vale en la página de pago para pagar con el saldo del vale. El vale no será válido una vez agotado el saldo. Un vale se puede aplicar a varios pedidos y no se puede personalizar según el importe de cada crédito; el crédito predeterminado es el importe máximo del saldo del vale.<\/li><li>Si el correo electrónico con el código de tu vale navideño no está en tu bandeja de entrada, mira en la carpeta de correo no deseado. Si sigues sin encontrarlo, no dudes en contactar con nuestro equipo de atención al cliente en support.eu@ecoflow.com para verificar que el vale se ha emitido.<\/li><li>Una dirección de correo electrónico sólo puede recibir el código de un vale navideño. Si compras varios vales utilizando la misma dirección de correo electrónico, sólo se emitirá el primer vale que hayas comprado correctamente.<br\/><br\/><\/li><\/ol><p><strong>Política de reembolso<\/strong><\/p><ol><li>Por favor, no compres más de un vale navideño. Si accidentalmente compraste vales navideños adicionales y no los utilizaste, puedes ponerte en contacto con nuestro equipo de servicio posventa en support.eu@ecoflow.com utilizando la dirección de correo electrónico donde compraste el vale para solicitar un reembolso del coste de la compra y la desactivación del vale. Ten en cuenta que la tarifa de transacción* cobrada por la compra del vale se deducirá del reembolso. El código del vale correspondiente se desactivará automáticamente después del reembolso.<\/li><li>Si el vale navideño emitido no se aplica correctamente a ningún pedido antes de la fecha de vencimiento del 26 de diciembre de 2023, el coste de la compra del vale se reembolsará de forma predeterminada a la cuenta de pago original antes del 31 de enero de 2024. Ten en cuenta que la tarifa de transacción* cobrada por la compra del vale se deducirá del reembolso.<\/li><li>Con la compra del vale navideño se ofrece un descuento de 50 € (550 €-500 €=50 €). La parte descontada del valor del vale (50 €) no es reembolsable ni canjeable. La parte pagada** de un vale navideño es de 500 €. Si el vale navideño emitido se ha aplicado correctamente a algún pedido, pero sigue quedando saldo en la fecha de caducidad, es decir, el 26 de diciembre de 2023, la parte pagada del saldo** se reembolsará de forma predeterminada a la cuenta de pago original antes del 31 de enero de 2024. Ten en cuenta que la tarifa de transacción* cobrada por la compra del vale se deducirá del reembolso.<\/li><li>Si se emite un reembolso completo para un pedido de productos físicos en el que se utilizó un vale navideño y el vale no ha caducado en el momento del reembolso, el importe pagado con el vale se reembolsará de forma predeterminada. En caso de un reembolso parcial, el importe a reembolsar para el vale se calculará en función de la relación entre el importe total del reembolso y el importe total del pedido y se devolverá al vale de forma predeterminada. En los dos casos anteriores, si el vale ha caducado en el momento del reembolso, la parte pagada se reembolsará de manera predeterminada a la cuenta de pago desde la que se compró el vale. Ten en cuenta que la tarifa de transacción* cobrada por la compra del vale se deducirá del reembolso.<br\/><br\/><\/li><\/ol><p>*<a href=\"https:\/\/es.ecoflow.com\/policies\/refund-policy\">Tarifa de transacción<\/a> = La parte pagada del saldo × tasa de tarifa de transacción establecida por la plataforma de pago (1,5 % para usuarios de tarjetas de crédito, 2 % para usuarios de PayPal, 2,6 % para usuarios de Klarna).<br\/><\/p><p>**La parte pagada = Valor - (Valor÷550×50). Si un cliente utiliza 200 € de su vale navideño para comprar, la parte realmente pagada de estos 200 € es de 181,8 €. El saldo del valor es de 350 €, de los que la parte realmente pagada es 318,2 €.<br\/><br\/><\/p><p>EcoFlow se reserva el derecho a la interpretación final del evento del vale navideño. EcoFlow se reserva el derecho de modificar, ajustar o cancelar este evento. Cualquier cambio, ajuste o terminación se comunicará a través de los <a href=\"https:\/\/es.ecoflow.com\/products\/christmas-voucher\">Términos y Condiciones en la página del vale navideño.<\/a><\/p>",
+        "text_color": "#222222",
+        "highlight_color": "#000000",
+        "link_color": "#000000",
+        "text_alignment": "left",
+        "text_font_size": "medium",
+        "text_width": 1000,
+        "text_width_m": 800
+      }
+    },
+    "1676887592a3dc4fd0": {
+      "type": "apps",
+      "blocks": {
+        "6968de8d-ed22-4f9e-8856-9260bce48bd6": {
+          "type": "shopify:\/\/apps\/growave-loyalty-wishlist\/blocks\/block.product.reviewWidget\/b3d2efbe-110a-4e27-84a8-1f2ed63996a4",
+          "disabled": true,
+          "settings": {
+            "containerMaxWidth": "",
+            "containerMarginTop": "",
+            "containerMarginBottom": "",
+            "containerSidePadding": "",
+            "containerLineHeight": "",
+            "containerFontFamily": "",
+            "containerLetterSpacing": "",
+            "buttonsColor": "",
+            "buttonsColorOnHover": "",
+            "buttonsBackgroundColor": "",
+            "buttonsBackgroundColorOnHover": "",
+            "buttonsBorder": "",
+            "buttonsBorderColorOnHover": "",
+            "buttonsBoxShadow": "",
+            "buttonsBoxShadowOnHover": "",
+            "buttonsPaddings": "",
+            "buttonsTextTransform": "",
+            "tabTriggerSelector": "",
+            "tabContentSelector": ""
+          }
+        }
+      },
+      "block_order": [
+        "6968de8d-ed22-4f9e-8856-9260bce48bd6"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    }
+  },
+  "order": [
+    "daf26638-f596-4384-b150-72d380a3268d",
+    "sticky-product-bar",
+    "main",
+    "product-recommendations",
+    "d1bfa97a-a9f8-46fb-a483-ca8919fcd837",
+    "1676887592a3dc4fd0"
+  ]
+}

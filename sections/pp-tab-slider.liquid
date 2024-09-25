@@ -1,0 +1,282 @@
+<style>
+  .pp-tab-slider__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .pp-tab-slider__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+
+<div class="pp-tab-slider__section pp-tab-slider__section-{{ section.id }}">
+  <div class="container--default">
+    <div class="pp-tab-slider__text-container">
+      {% if section.settings.title != blank %}
+        <h2 class="pp-tab-slider__section-heading text--heading text--black">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+      {% if section.settings.subtitle != blank %}
+        <p class="pp-tab-slider__section-description text--description text--black">
+          {{ section.settings.subtitle }}
+        </p>
+      {% endif %}
+    </div>
+
+    <div x-data="{ activeTab: 1 }" class="pp-tab-slider__container">
+      <div class="display--desktop">
+        <div class="pp-tab-slider__flex-container">
+          <div class="pp-tab-slider__navigation-wrapper">
+            {%- comment %}<locksmith:b2d2>{% endcomment -%}
+              {%- assign locksmith_d4f3_forloop__size = 0 %}{% for block in section.blocks %}{% capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == 'true' %}{% assign locksmith_d4f3_forloop__size = locksmith_d4f3_forloop__size | plus: 1 %}{% endif %}{% endfor %}{% assign locksmith_d4f3_forloop__index = nil -%}
+            {%- comment %}</locksmith:b2d2>{% endcomment -%}
+            {% for block in section.blocks %}
+              {%- comment %}<locksmith:a5fb>{% endcomment -%}
+                {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% if locksmith_d4f3_forloop__index == nil %}{% assign locksmith_d4f3_forloop__index = 1 %}{% assign locksmith_d4f3_forloop__index0 = 0 %}{% else %}{% assign locksmith_d4f3_forloop__index = locksmith_d4f3_forloop__index | plus: 1 %}{% assign locksmith_d4f3_forloop__index0 = locksmith_d4f3_forloop__index0 | plus: 1 %}{% endif %}{% if locksmith_d4f3_forloop__index == 1 %}{% assign locksmith_d4f3_forloop__first = true %}{% else %}{% assign locksmith_d4f3_forloop__first = false %}{% endif %}{% if locksmith_d4f3_forloop__index == locksmith_d4f3_forloop__size %}{% assign locksmith_d4f3_forloop__last = true %}{% else %}{% assign locksmith_d4f3_forloop__last = false %}{% endif %}{% assign locksmith_d4f3_forloop__rindex = locksmith_d4f3_forloop__size | minus: locksmith_d4f3_forloop__index | minus: 1 %}{% assign locksmith_d4f3_forloop__rindex0 = locksmith_d4f3_forloop__size | minus: locksmith_d4f3_forloop__index0 | minus: 1 %}{% else %}{% continue %}{% endif -%}
+              {%- comment %}</locksmith:a5fb>{% endcomment -%}
+              <div
+                x-on:click="activeTab = {{ locksmith_d4f3_forloop__index }}"
+                :class="{ 'active': activeTab === {{ locksmith_d4f3_forloop__index }} }"
+                class="pp-tab-slider__navigation {% if locksmith_d4f3_forloop__index == 1 %} active {% endif %}"
+              >
+                <img
+                  class="pp-tab-slider__navigation-image"
+                  src="{{ block.settings.image | img_url: 'master' }}"
+                  alt="{{ block.settings.image.alt }}"
+                >
+                <h3 class="pp-tab-slider__title text--white">{{ block.settings.product_title }}</h3>
+                <div class="pp-tab-slider__overlay--dark"></div>
+                <div class="pp-tab-slider__overlay--light"></div>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="pp-tab-slider__main-content-wrapper">
+            {%- comment %}<locksmith:f92a>{% endcomment -%}
+              {%- assign locksmith_7341_forloop__size = 0 %}{% for block in section.blocks %}{% capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == 'true' %}{% assign locksmith_7341_forloop__size = locksmith_7341_forloop__size | plus: 1 %}{% endif %}{% endfor %}{% assign locksmith_7341_forloop__index = nil -%}
+            {%- comment %}</locksmith:f92a>{% endcomment -%}
+            {% for block in section.blocks %}
+              {%- comment %}<locksmith:f90e>{% endcomment -%}
+                {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% if locksmith_7341_forloop__index == nil %}{% assign locksmith_7341_forloop__index = 1 %}{% assign locksmith_7341_forloop__index0 = 0 %}{% else %}{% assign locksmith_7341_forloop__index = locksmith_7341_forloop__index | plus: 1 %}{% assign locksmith_7341_forloop__index0 = locksmith_7341_forloop__index0 | plus: 1 %}{% endif %}{% if locksmith_7341_forloop__index == 1 %}{% assign locksmith_7341_forloop__first = true %}{% else %}{% assign locksmith_7341_forloop__first = false %}{% endif %}{% if locksmith_7341_forloop__index == locksmith_7341_forloop__size %}{% assign locksmith_7341_forloop__last = true %}{% else %}{% assign locksmith_7341_forloop__last = false %}{% endif %}{% assign locksmith_7341_forloop__rindex = locksmith_7341_forloop__size | minus: locksmith_7341_forloop__index | minus: 1 %}{% assign locksmith_7341_forloop__rindex0 = locksmith_7341_forloop__size | minus: locksmith_7341_forloop__index0 | minus: 1 %}{% else %}{% continue %}{% endif -%}
+              {%- comment %}</locksmith:f90e>{% endcomment -%}
+              <div x-show="activeTab === {{ locksmith_7341_forloop__index }}" class="pp-tab-slider__main-content">
+                <img
+                  class="pp-tab-slider__main-content-image"
+                  src="{{ block.settings.image | img_url: 'master' }}"
+                  alt="{{ block.settings.image.alt }}"
+                >
+                <div class="pp-tab-slider__main-content__block">
+                  <div class="pp-tab-slider__title-wrapper">
+                    <p class="pp-tab-slider__vat text--red">{{ block.settings.vat }}</p>
+                    <h3 class="pp-tab-slider__main-title text--black">
+                      {{ block.settings.product_title }}
+                    </h3>
+                    <div class="pp-tab-slider__description">
+                      {{ block.settings.description }}
+                    </div>
+                  </div>
+                  <div class="pp-tab-slider__details-container">
+                    <div class="pp-tab-slider__price-wrapper">
+                      <p class="pp-tab-slider__price text--black">€{{ block.settings.product_price }}</p>
+                      <p class="pp-tab-slider__compare-price text--light-gray">
+                        €{{ block.settings.product_compare_price }}
+                      </p>
+                    </div>
+                    <div class="pp-tab-slider__button-wrapper">
+                      <a href="{{ block.settings.product_url }}" target="_blank" class="button--container ">
+                        <span class="button text--white background--dark-blue">
+                          {{- section.settings.button_label -}}
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="display--mobile">
+    <div class="pp-tab-slider__main-content-wrapper">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          {%- comment %}<locksmith:c9fb>{% endcomment -%}
+            {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+          {%- comment %}</locksmith:c9fb>{% endcomment -%}
+          <div class="pp-tab-slider__main-content swiper-slide">
+            <img
+              class="pp-tab-slider__main-content-image"
+              src="{{ block.settings.image_mobile | img_url: 'master' }}"
+              alt="{{ block.settings.image_mobile.alt }}"
+            >
+            <div class="pp-tab-slider__main-container">
+              <div class="pp-tab-slider__main-content__block">
+                <div class="pp-tab-slider__title-wrapper">
+                  <p class="pp-tab-slider__vat text--red">{{ block.settings.vat }}</p>
+                  <h3 class="pp-tab-slider__main-title text--black">
+                    {{ block.settings.product_title }}
+                  </h3>
+                  <div class="pp-tab-slider__description">
+                    {{ block.settings.description }}
+                  </div>
+                </div>
+                <div class="pp-tab-slider__details-container">
+                  <div class="pp-tab-slider__price-wrapper">
+                    <p class="pp-tab-slider__price text--black">€{{ block.settings.product_price }}</p>
+                    <p class="pp-tab-slider__compare-price text--light-gray">
+                      €{{ block.settings.product_compare_price }}
+                    </p>
+                  </div>
+                  <div class="pp-tab-slider__button-wrapper">
+                    <a href="{{ block.settings.product_url }}" target="_blank" class="button--container ">
+                      <span class="button text--white background--dark-blue">
+                        {{- section.settings.button_label -}}
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    new Swiper('.pp-tab-slider__main-content-wrapper', {
+      slidesPerView: 1,
+      spaceBetween: 24,
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "PP tab-slider",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "So funktioniert's"
+    },
+    {
+      "type": "html",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Wählen Sie das richtige für Ihr Zuhause"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Jetzt kaufen"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tab-slider",
+      "name": "tab-slider",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image Mobile"
+        },
+        {
+          "type": "text",
+          "id": "vat",
+          "label": "Vat",
+          "default": "0% Mwst."
+        },
+        {
+          "type": "text",
+          "id": "product_title",
+          "label": "Product Title",
+          "default": "Erweiterungskit"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Product Description"
+        },
+        {
+          "type": "text",
+          "id": "product_price",
+          "label": "Product Price",
+          "default": "2,202.52"
+        },
+        {
+          "type": "text",
+          "id": "product_compare_price",
+          "label": "Product Compare Price",
+          "default": "3,538.00"
+        },
+        {
+          "type": "url",
+          "id": "product_url",
+          "label": "Product URL"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

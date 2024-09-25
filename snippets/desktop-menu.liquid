@@ -1,0 +1,70 @@
+{%- comment -%}
+IMPLEMENTATION NOTE ABOUT MEGA MENUS: in Warehouse, on desktop, we have two different menu styles: one style where the first level is always
+visible, and a second style where the menu is displayed after hitting the "Menu" button.
+
+The mega menu logic is as a consequence quite difference: in the first style, the mega-menu is actually part of the second dropdown menu (as each level
+is displayed as a dropdown). However on the second style, the mega-menu is checked on the first level, as the first menu (which holds the mega-menu) is
+always visible.
+{%- endcomment -%}
+
+{%- assign mega_menus = section.blocks | map: 'settings' | map: 'menu_item' -%}
+
+{%- if section.settings.desktop_navigation_layout == 'condensed' -%}
+  {%- assign is_floating = true -%}
+{%- else -%}
+  {%- assign is_floating = false -%}
+{%- endif -%}
+
+
+{%- assign is_mega_menu = false -%}
+{%- assign downcase_title = menu.title | downcase | strip -%}
+
+{% for block in section.blocks %}
+  {% if block.type == 'mega_menu_image_links' or block.type == 'mega_menu_product_cards' or block.type == 'custom_mega_menu_alter' %}
+    {%- assign mega_menu_setting_downcase = block.settings.menu_item | downcase | strip -%}
+    {%- if mega_menu_setting_downcase == downcase_title -%}
+      {%- assign is_mega_menu = true -%}
+    {%- break -%}
+  {%- endif -%}
+{% endif %}
+{% endfor %}
+
+{%- if is_floating == false and is_mega_menu -%}
+  {%- capture index_mega_menu -%}{{ index }}-mega-menu-0{%- endcapture -%}
+  {%- render 'custom-mega-menu', is_floating: is_floating, mega_menu: menu, index: index_mega_menu, blocks: section.blocks -%}
+{%- else -%}
+<div id="dropdown-{{ index }}" class="mega-menu" data-type="menu" aria-hidden="true" {{ mega_menu_block.shopify_attributes }}>
+  <div class="mega-menu-wrapper">
+    <div class="header-container">
+      <div class="mega-menu__inner">
+        <div class="mega_menu_dropdown__wrapper">
+          <div class="mega-menu-image-blocks-wrap">
+            <div class="custom_menu_block_dropdown">
+              <div class="custom_menu_tab_content_inner">
+                {% for link in menu.links %}
+                  {%- comment %}<locksmith:fc7f>{% endcomment -%}
+                    {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: menu, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                  {%- comment %}</locksmith:fc7f>{% endcomment -%}
+                  <div class="menu_dropdown">
+                    <div class="menu_dropdown_link_title"><a {% if link.url != '#' %}href="{{ link.url }}"{% endif %}>{{ link.title }}</a></div>
+                    {% if link.links.size > 0 %}
+                      <div class="menu_dropdown_link_content">
+                        {% for child_link in link.links %}
+                          {%- comment %}<locksmith:af72>{% endcomment -%}
+                            {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: child_link, subject_parent: link, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                          {%- comment %}</locksmith:af72>{% endcomment -%}
+                          <div class="menu_dropdown_link_content_item"><a {% if child_link.url != '#' %}href="{{ child_link.url }}"{% endif %}>{{ child_link.title }}</a></div>
+                        {% endfor %}
+                      </div>
+                    {% endif %}
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{%- endif -%}

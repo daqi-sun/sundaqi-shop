@@ -1,0 +1,199 @@
+<div class="pdp pdp-image-text pdp-image-text--owl-carousel-{{ index_number }}">
+    <div class="pdp-image-text-container {% if layout == "owl-carousel owl-theme" %}pr-0{% endif%}">
+        <div class="stacked content-alignment-{{ alignment }} {% if layout == "owl-carousel owl-theme" %}d-sm-none{% endif %}">
+
+            {% comment %} Column 1 {% endcomment %}
+            {% if image_column_1 != blank or mobile_image_column_1 != blank %}
+            <div class="stack-content stack-content-{{ stacked_row }} mobile-stack-content-{{ mobile_stacked_row }}">
+                <picture>
+                    <source media="(min-width:750px)" srcset="{{ image_column_1 | image_url: width: 1000 }}">
+                    <source media="(max-width:749px)"  srcset="{{ mobile_image_column_1 | image_url: width: 749 }}">
+                    <img src="{{ image_column_1 | image_url: width: 1000 }}" alt="{{ image_alt_column_1 }}" style="width: 100%;">
+                </picture>
+                <div class="text-content">
+                    {% if subtext_top_column_1 != blank %}
+                        {{ subtext_top_column_1 }}
+                    {% endif %}
+                    {% if subtext_bottom_column_1 != blank %}
+                        {{ subtext_bottom_column_1 }}
+                    {% endif %}
+                </div>
+                {% if button_link_column_1 != blank and button_text_column_1 != blank %}
+                    <a href="{{ button_link_column_1 }}" class="pdp-button">{{ button_text_column_1 }}</a>
+                {% endif %}
+            </div>
+            {% endif %}
+
+            {% comment %} Column 2 {% endcomment %}
+            {% if image_column_2 != blank or mobile_image_column_2 != blank %}
+            <div class="stack-content stack-content-{{ stacked_row }} mobile-stack-content-{{ mobile_stacked_row }}">
+                <picture>
+                    <source media="(min-width:750px)" srcset="{{ image_column_2 | image_url: width: 1000 }}">
+                    <source media="(max-width:749px)"  srcset="{{ mobile_image_column_2 | image_url: width: 749 }}">
+                    <img src="{{ image_column_2 | image_url: width: 1000 }}" alt="{{ image_alt_column_2 }}" style="width: 100%;">
+                </picture>
+                <div class="text-content">
+                    {% if subtext_top_column_2 != blank %}
+                        {{ subtext_top_column_2 }}
+                    {% endif %}
+                    {% if subtext_bottom_column_2 != blank %}
+                        {{ subtext_bottom_column_2 }}
+                    {% endif %}
+                </div>
+                {% if button_link_column_2 != blank and button_text_column_2 != blank %}
+                    <a href="{{ button_link_column_2 }}" class="pdp-button">{{ button_text_column_2 }}</a>
+                {% endif %}
+            </div>
+            {% endif %}
+
+            {% comment %} Column 3 {% endcomment %}
+            {% if image_column_3 != blank or mobile_image_column_3 != blank %}
+            <div class="stack-content stack-content-{{ stacked_row }} mobile-stack-content-{{ mobile_stacked_row }}">
+                <picture>
+                    <source media="(min-width:750px)" srcset="{{ image_column_3 | image_url: width: 1000 }}">
+                    <source media="(max-width:749px)"  srcset="{{ mobile_image_column_3 | image_url: width: 749 }}">
+                    <img src="{{ image_column_3 | image_url: width: 1000 }}" alt="{{ image_alt_column_3 }}" style="width: 100%;">
+                </picture>
+                <div class="text-content">
+                    {% if subtext_top_column_3 != blank %}
+                        {{ subtext_top_column_3 }}
+                    {% endif %}
+                    {% if subtext_bottom_column_3 != blank %}
+                        {{ subtext_bottom_column_3 }}
+                    {% endif %}
+                </div>
+                {% if button_link_column_3 != blank and button_text_column_3 != blank %}
+                    <a href="{{ button_link_column_3 }}" class="pdp-button">{{ button_text_column_3 }}</a>
+                {% endif %}
+            </div>
+            {% endif %}
+
+            {% comment %} Column 4 {% endcomment %}
+            {% if image_column_4 != blank or mobile_image_column_4 != blank %}
+            <div class="stack-content stack-content-{{ stacked_row }} mobile-stack-content-{{ mobile_stacked_row }}">
+                <picture>
+                    <source media="(min-width:750px)" srcset="{{ image_column_4 | image_url: width: 1000 }}">
+                    <source media="(max-width:749px)"  srcset="{{ mobile_image_column_4 | image_url: width: 749 }}">
+                    <img src="{{ image_column_4 | image_url: width: 1000 }}" alt="{{ image_alt_column_4 }}" style="width: 100%;">
+                </picture>
+                <div class="text-content">
+                    {% if subtext_top_column_4 != blank %}
+                        {{ subtext_top_column_4 }}
+                    {% endif %}
+                    {% if subtext_bottom_column_4 != blank %}
+                        {{ subtext_bottom_column_4 }}
+                    {% endif %}
+                </div>
+                {% if button_link_column_4 != blank and button_text_column_4 != blank %}
+                    <a href="{{ button_link_column_4 }}" class="pdp-button">{{ button_text_column_4 }}</a>
+                {% endif %}
+            </div>
+            {% endif %}
+
+        </div>
+        {% if layout == "owl-carousel owl-theme" %}
+            <div class="owl-carousel owl-theme content-alignment-{{ alignment }}">
+
+                {% comment %} Column 1 {% endcomment %}
+                {% if image_column_1 != blank or mobile_image_column_1 != blank %}
+                <div class="stack-content item">
+                    <picture>
+                        <source media="(min-width:750px)" srcset="{{ image_column_1 | image_url: width: 1000 }}">
+                        <source media="(max-width:749px)"  srcset="{{ mobile_image_column_1 | image_url: width: 749 }}">
+                        <img src="{{ image_column_1 | image_url: width: 1000 }}" alt="{{ image_alt_column_1 }}" style="width: 100%;">
+                    </picture>
+                    <div class="text-content">
+                        {% if subtext_top_column_1 != blank %}
+                            {{ subtext_top_column_1 }}
+                        {% endif %}
+                        {% if subtext_bottom_column_1 != blank %}
+                            {{ subtext_bottom_column_1 }}
+                        {% endif %}
+                    </div>
+                    {% if button_link_column_1 != blank and button_text_column_1 != blank %}
+                        <a href="{{ button_link_column_1 }}" class="pdp-button">{{ button_text_column_1 }}</a>
+                    {% endif %}
+                </div>
+                {% endif %}
+
+                {% comment %} Column 2 {% endcomment %}
+                {% if image_column_2 != blank or mobile_image_column_2 != blank %}
+                <div class="stack-content item">
+                    <picture>
+                        <source media="(min-width:750px)" srcset="{{ image_column_2 | image_url: width: 1000 }}">
+                        <source media="(max-width:749px)"  srcset="{{ mobile_image_column_2 | image_url: width: 749 }}">
+                        <img src="{{ image_column_2 | image_url: width: 1000 }}" alt="{{ image_alt_column_2 }}" style="width: 100%;">
+                    </picture>
+                    <div class="text-content">
+                        {% if subtext_top_column_2 != blank %}
+                            {{ subtext_top_column_2 }}
+                        {% endif %}
+                        {% if subtext_bottom_column_2 != blank %}
+                            {{ subtext_bottom_column_2 }}
+                        {% endif %}
+                    </div>
+                    {% if button_link_column_2 != blank and button_text_column_2 != blank %}
+                        <a href="{{ button_link_column_2 }}" class="pdp-button">{{ button_text_column_2 }}</a>
+                    {% endif %}
+                </div>
+                {% endif %}
+
+                {% comment %} Column 3 {% endcomment %}
+                {% if image_column_3 != blank or mobile_image_column_3 != blank %}
+                <div class="stack-content item">
+                    <picture>
+                        <source media="(min-width:750px)" srcset="{{ image_column_3 | image_url: width: 1000 }}">
+                        <source media="(max-width:749px)"  srcset="{{ mobile_image_column_3 | image_url: width: 749 }}">
+                        <img src="{{ image_column_3 | image_url: width: 1000 }}" alt="{{ image_alt_column_3 }}" style="width: 100%;">
+                    </picture>
+                    <div class="text-content">
+                        {% if subtext_top_column_3 != blank %}
+                            {{ subtext_top_column_3 }}
+                        {% endif %}
+                        {% if subtext_bottom_column_3 != blank %}
+                            {{ subtext_bottom_column_3 }}
+                        {% endif %}
+                    </div>
+                    {% if button_link_column_3 != blank and button_text_column_3 != blank %}
+                        <a href="{{ button_link_column_3 }}" class="pdp-button">{{ button_text_column_3 }}</a>
+                    {% endif %}
+                </div>
+                {% endif %}
+
+                {% comment %} Column 4 {% endcomment %}
+                {% if image_column_4 != blank or mobile_image_column_4 != blank %}
+                <div class="stack-content item">
+                    <picture>
+                        <source media="(min-width:750px)" srcset="{{ image_column_4 | image_url: width: 1000 }}">
+                        <source media="(max-width:749px)"  srcset="{{ mobile_image_column_4 | image_url: width: 749 }}">
+                        <img src="{{ image_column_4 | image_url: width: 1000 }}" alt="{{ image_alt_column_4 }}" style="width: 100%;">
+                    </picture>
+                    <div class="text-content">
+                        {% if subtext_top_column_4 != blank %}
+                            {{ subtext_top_column_4 }}
+                        {% endif %}
+                        {% if subtext_bottom_column_4 != blank %}
+                            {{ subtext_bottom_column_4 }}
+                        {% endif %}
+                    </div>
+                    {% if button_link_column_4 != blank and button_text_column_4 != blank %}
+                        <a href="{{ button_link_column_4 }}" class="pdp-button">{{ button_text_column_4 }}</a>
+                    {% endif %}
+                </div>
+                {% endif %}
+
+            </div>
+        {% endif %}
+    </div>
+</div>
+<script>
+    $(".pdp-image-text--owl-carousel-{{ index_number }} .owl-carousel").owlCarousel({
+        margin:12,
+        dots:true,
+        stagePadding: 39,
+        responsive:{
+            0:{ items:{{ mobile_slider_row }} },
+            749:{ items: {{ slider_row }} }
+        }
+    })
+</script>

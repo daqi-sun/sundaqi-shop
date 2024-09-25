@@ -1,0 +1,725 @@
+{{ 'star-email-subscription-form.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="star-page-container star-email-subscription-{{ section.id }}"
+  x-data="{ checked: false, contact_email: '', isSuccess: false }"
+  x-init='
+    if (window.location.href.includes("form_type=customer") || window.location.href.includes("customer_posted=true#contact_form")) {
+      isSuccess = true;
+    } else {
+      isSuccess = false;
+    }
+  '
+>
+  {% form 'customer' %}
+    <input id="star-email-subscription-submit-hidden" type="submit" style="display: none">
+
+    <div
+      class="star-email-subscription__container"
+      :class="isSuccess ? 'star-email-subscription__background--success' : 'star-email-subscription__background'"
+    >
+      {% comment %} Successful Submit Form UI {% endcomment %}
+      <div class="star-email-subscription__wrapper--success" x-show="isSuccess">
+        <div class="star-email-subscription__success-icon-wrapper">
+          <img
+            class="star-email-subscription__success-icon"
+            src="{{ section.settings.successful_icon | image_url: width: 64 }}"
+            loading="eager"
+            alt="Star Subscription Form Icon"
+          >
+        </div>
+        <div class="star-email-subscription__text-wrapper">
+          <h2
+            class="star-email-subscription__form-title"
+            style="color: {{ section.settings.successful_form_title_color }}"
+          >
+            {{ section.settings.successful_form_title }}
+          </h2>
+          <p
+            class="star-email-subscription__form-description"
+            style="color: {{ section.settings.successful_form_description_color }}"
+          >
+            {{ section.settings.successful_form_description }}
+          </p>
+        </div>
+
+        <div class="star-email-subscription__success-button-wrapper">
+          <a
+            href="{{ section.settings.successful_button_link }}"
+            class="star-email-subscription__success-button-link"
+          >
+            <button
+              type="button"
+              class="star-email-subscription__success-button"
+              style="
+                color: {{ section.settings.successful_button_text_color }};
+                background-color: {{ section.settings.successful_button_background_color }};
+                border-color: {{ section.settings.successful_button_border_color }};
+              "
+            >
+              {{ section.settings.successful_button_text }}
+            </button>
+          </a>
+        </div>
+
+        <a
+          href="{{ section.settings.successful_link }}"
+          class="star-email-subscription__successful-link"
+          style="color: {{ section.settings.successful_link_text_color }}"
+        >
+          {{ section.settings.successful_link_text }}
+        </a>
+      </div>
+
+      {% comment %} Normal Form UI {% endcomment %}
+      <div class="star-email-subscription__wrapper" x-show="!isSuccess">
+        <div class="star-email-subscription__text-wrapper">
+          <h2
+            class="star-email-subscription__form-title"
+            style="color: {{ section.settings.form_title_color }}"
+          >
+            {{ section.settings.form_title }}
+          </h2>
+          <p
+            class="star-email-subscription__form-description"
+            style="color: {{ section.settings.form_description_color }}"
+          >
+            {{ section.settings.form_description }}
+          </p>
+        </div>
+
+        <div class="star-email-subscription__form">
+          <input
+            type="text"
+            class="star-email-subscription__input-field"
+            name="contact[email]"
+            id="contact_email"
+            placeholder="{{ section.settings.input_placeholder }}"
+            value="{{ form.email }}"
+            x-model="contact_email"
+            style="
+              background-color: {{ section.settings.input_background_color }};
+              color: {{ section.settings.input_text_color }};
+              border-color: {{ section.settings.input_border_color }};
+            "
+          >
+          <button
+            type="button"
+            id="star-subscription-submit-button"
+            class="star-email-subscription__input-button"
+            :disabled="!checked || contact_email === ''"
+            style="
+              background-color: {{ section.settings.form_button_background_color }};
+              color: {{ section.settings.form_button_text_color }};
+            "
+          >
+            {{ section.settings.form_button_text }}
+          </button>
+        </div>
+
+        <span id="star-email-subscription-error" class="star-email-subscription__error">
+          Oops... Something went wrong, please refresh and try again.
+        </span>
+
+        <div class="star-email-subscription__disclaimer-wrapper">
+          <label class="star-email-subscription__disclaimer" for="contact_disclaimer">
+            {{ section.settings.disclaimer_text }}
+            <input
+              type="checkbox"
+              class="star-email-subscription__disclaimer-checkbox"
+              name="disclaimer"
+              id="contact_disclaimer"
+              x-model="checked"
+            >
+            <span class="checkmark"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+  {% endform %}
+</section>
+
+<script>
+  // star email section settings will pass to below js file
+  var starSettingJsons = {{ section.settings | json }};
+</script>
+<script src="{{ 'subscription-form-common.js' |  asset_url }}"></script>
+<script src="{{ 'star-email-subscription-form.js' |  asset_url }}"></script>
+
+<style>
+  .star-email-subscription-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_desktop }}px;
+    padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+  }
+  .star-email-subscription__background {
+    background: url('{{ section.settings.background_image | image_url: width: 1200 }}') no-repeat;
+    background-size: contain;
+    background-color: {{ section.settings.background_color }};
+  }
+
+  .star-email-subscription__background--success {
+    background: url('{{ section.settings.background_image | image_url: width: 1200 }}') no-repeat;
+    background-size: contain;
+    background-color: {{ section.settings.background_color }};
+  }
+
+  .star-email-subscription__disclaimer p {
+    color: {{ section.settings.disclaimer_text_color }};
+  }
+
+  .star-email-subscription__disclaimer p>a {
+    color: {{ section.settings.disclaimer_link_color }} ;
+  }
+
+  @media (max-width: 1024px) {
+      .star-email-subscription-{{ section.id }} {
+        padding-top: {{ section.settings.padding_top_mobile }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+      }
+      .star-email-subscription__background {
+        background: url('{{ section.settings.background_image_mobile | image_url: width: 750 }}') no-repeat;
+        background-size: cover;
+        background-color: {{ section.settings.background_color }};
+      }
+      .star-email-subscription__background--success {
+        background-image: none;
+        background-color: {{ section.settings.background_color }};
+      }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Star Email Subscription",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Star Email Subscription API Settings",
+      "info": "Global Headers can be changed in the global theme settings - Star Email Subscription API Settings section"
+    },
+    {
+      "type": "text",
+      "id": "contact_list_id",
+      "label": "Contact List ID"
+    },
+    {
+      "type": "text",
+      "id": "single_1_id",
+      "label": "Single 1 ID"
+    },
+    {
+      "type": "text",
+      "id": "single_1_value",
+      "label": "Single 1 Value",
+      "info": "Please enter a single number for the value. e.g. 1 or 2 or 3"
+    },
+    {
+      "type": "radio",
+      "id": "single_1_overwrite",
+      "label": "Single 1 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "single_2_id",
+      "label": "Single 2 ID"
+    },
+    {
+      "type": "text",
+      "id": "single_2_value",
+      "label": "Single 2 Value",
+      "info": "Please enter a single number for the value. e.g. 1 or 2 or 3"
+    },
+    {
+      "type": "radio",
+      "id": "single_2_overwrite",
+      "label": "Single 2 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "single_3_id",
+      "label": "Single 3 ID"
+    },
+    {
+      "type": "text",
+      "id": "single_3_value",
+      "label": "Single 3 Value",
+      "info": "Please enter a single number for the value. e.g. 1 or 2 or 3"
+    },
+    {
+      "type": "radio",
+      "id": "single_3_overwrite",
+      "label": "Single 3 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "single_4_id",
+      "label": "Single 4 ID"
+    },
+    {
+      "type": "text",
+      "id": "single_4_value",
+      "label": "Single 4 Value",
+      "info": "Please enter a single number for the value. e.g. 1 or 2 or 3"
+    },
+    {
+      "type": "radio",
+      "id": "single_4_overwrite",
+      "label": "Single 4 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "subscription_text_1_id",
+      "label": "Text 1 ID"
+    },
+    {
+      "type": "text",
+      "id": "subscription_text_1_value",
+      "label": "Text 1 Value"
+    },
+    {
+      "type": "radio",
+      "id": "subscription_text_1_overwrite",
+      "label": "Text 1 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "subscription_text_2_id",
+      "label": "Text 2 ID"
+    },
+    {
+      "type": "text",
+      "id": "subscription_text_2_value",
+      "label": "Text 2 Value"
+    },
+    {
+      "type": "radio",
+      "id": "subscription_text_2_overwrite",
+      "label": "Text 2 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "multiple_1_id",
+      "label": "Multiple 1 ID"
+    },
+    {
+      "type": "text",
+      "id": "multiple_1_value",
+      "label": "Multiple 1 Value",
+      "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+    },
+    {
+      "type": "radio",
+      "id": "multiple_1_overwrite",
+      "label": "Multiple 1 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "multiple_2_id",
+      "label": "Multiple 2 ID"
+    },
+    {
+      "type": "text",
+      "id": "multiple_2_value",
+      "label": "Multiple 2 Value",
+      "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+    },
+    {
+      "type": "radio",
+      "id": "multiple_2_overwrite",
+      "label": "Multiple 2 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "multiple_3_id",
+      "label": "Multiple 3 ID"
+    },
+    {
+      "type": "text",
+      "id": "multiple_3_value",
+      "label": "Multiple 3 Value",
+      "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+    },
+    {
+      "type": "radio",
+      "id": "multiple_3_overwrite",
+      "label": "Multiple 3 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "multiple_4_id",
+      "label": "Multiple 4 ID"
+    },
+    {
+      "type": "text",
+      "id": "multiple_4_value",
+      "label": "Multiple 4 Value",
+      "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+    },
+    {
+      "type": "radio",
+      "id": "multiple_4_overwrite",
+      "label": "Multiple 4 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "multiple_5_id",
+      "label": "Multiple 5 ID"
+    },
+    {
+      "type": "text",
+      "id": "multiple_5_value",
+      "label": "Multiple 5 Value",
+      "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+    },
+    {
+      "type": "radio",
+      "id": "multiple_5_overwrite",
+      "label": "Multiple 5 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "header",
+      "content": "Star Email Subscription UI Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image_mobile",
+      "label": "Background Image Mobile"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color"
+    },
+    {
+      "type": "text",
+      "id": "form_title",
+      "label": "Form Title",
+      "default": "Enjoy 52% Off as an EcoCredits Member!"
+    },
+    {
+      "type": "color",
+      "id": "form_title_color",
+      "label": "Form Title Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "form_description",
+      "label": "Form Description",
+      "default": "Be first in line for EcoCredits Appreciation Week—subscribe & uncover a bonus!"
+    },
+    {
+      "type": "color",
+      "id": "form_description_color",
+      "label": "Form Description Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "input_placeholder",
+      "label": "Email Placeholder",
+      "default": "Enter your email"
+    },
+    {
+      "type": "color",
+      "id": "input_background_color",
+      "label": "Input Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "input_border_color",
+      "label": "Input Border Color",
+      "default": "#CCC"
+    },
+    {
+      "type": "color",
+      "id": "input_text_color",
+      "label": "Input Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "id": "form_button_text",
+      "label": "Button Text",
+      "default": "Sign Up"
+    },
+    {
+      "type": "color",
+      "id": "form_button_background_color",
+      "label": "Button Background Color",
+      "default": "#03060B"
+    },
+    {
+      "type": "color",
+      "id": "form_button_text_color",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "richtext",
+      "id": "disclaimer_text",
+      "label": "Disclaimer Text",
+      "default": "<p>I agree to EcoFlow's Terms of Use and Privacy Policy.</p>"
+    },
+    {
+      "type": "color",
+      "id": "disclaimer_text_color",
+      "label": "Disclaimer Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "disclaimer_link_color",
+      "label": "Disclaimer Link Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "image_picker",
+      "id": "successful_icon",
+      "label": "Successful Subscription Icon"
+    },
+    {
+      "type": "text",
+      "id": "successful_form_title",
+      "label": "Successful Form Title",
+      "default": "Thank you for subscribing!"
+    },
+    {
+      "type": "color",
+      "id": "successful_form_title_color",
+      "label": "Successful Form Title Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "successful_form_description",
+      "label": "Successful Form Description",
+      "default": "Join us to get an extra free 500 EcoCredits"
+    },
+    {
+      "type": "color",
+      "id": "successful_form_description_color",
+      "label": "Successful Form Description Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "successful_button_text",
+      "label": "Successful Button Text",
+      "default": "Button Text"
+    },
+    {
+      "type": "color",
+      "id": "successful_button_text_color",
+      "label": "Successful Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "successful_button_background_color",
+      "label": "Successful Button Background Color",
+      "default": "transparent"
+    },
+    {
+      "type": "color",
+      "id": "successful_button_border_color",
+      "label": "Successful Button Border Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "url",
+      "id": "successful_button_link",
+      "label": "Successful Button Link"
+    },
+    {
+      "type": "url",
+      "id": "successful_link",
+      "label": "Successful Link"
+    },
+    {
+      "type": "text",
+      "id": "successful_link_text",
+      "label": "Successful Link Text",
+      "default": "Discover EcoCredits Appreciation Week >"
+    },
+    {
+      "type": "color",
+      "id": "successful_link_text_color",
+      "label": "Successful Link Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 30
+    }
+  ],
+  "presets": [
+    {
+      "name": "Star Email Subscription"
+    }
+  ]
+}
+{% endschema %}

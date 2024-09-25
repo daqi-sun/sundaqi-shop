@@ -1,0 +1,87 @@
+.xmas-voucher__section {
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    background-color: #EBF3DD;
+}
+
+.xmas-voucher__card {
+    width: 100%;
+    padding: 40px 35px;
+}
+
+.xmas-voucher__card-inner {
+    max-width: 860px;
+    margin-left: 132px;
+}
+
+.xmas-voucher__card-title {
+    font-family: 'Helvetica Neue ForEco';
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 36px;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+.xmas-voucher__card-content {
+    margin-bottom: 12px;
+    width: 100%;
+}
+
+.xmas-voucher__card-content>p {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 36px;
+    margin-bottom: 12px;
+}
+
+.xmas-voucher__button-wrapper {
+    display: block;
+    width: fit-content;
+}
+
+.xmas-voucher__button {
+    border-radius: 27px;
+    padding: 12px 30px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18.2px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.xmas-voucher__button:hover {
+    outline: none;
+}
+
+@media (max-width: 749px) {
+    .xmas-voucher__card {
+        width: 100%;
+        padding: 32px 25px;
+    }
+    
+    .xmas-voucher__card-inner {
+        margin: auto;
+    }
+
+    .xmas-voucher__card-title {
+        font-size: 20px;
+        line-height: 22px;
+        margin-bottom: 8px;
+    }
+
+    .xmas-voucher__card-content>p {
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: -0.14px;
+        margin-bottom: 8px;
+    }
+
+    .xmas-voucher__button {
+        padding: 10px 24px;
+        font-size: 14px;
+        line-height: 18.2px;
+    }
+}

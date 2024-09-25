@@ -1,0 +1,156 @@
+<div class="outdoor-off-grid__product-card-with-img-text-wrapper">
+  <div class="outdoor-off-grid__product-card-with-img-text">
+    <div class="outdoor-off-grid__text-heading">
+      <span>{{ section.settings.text_heading }}</span>
+    </div>
+    <div class="outdoor-off-grid__text-subheading">
+      <span>{{ section.settings.text_subheading }}</span>
+    </div>
+    <div class="outdoor-off-grid__image outdoor-off-grid__image--desktop">
+      <img src="{{ section.settings.image | img_url: '1050x' }}" alt="">
+    </div>
+    <div class="outdoor-off-grid__image outdoor-off-grid__image--mobile">
+      <img src="{{ section.settings.image_mobile | img_url: '1050x' }}" alt="">
+    </div>
+  </div>
+  <div class="outdoor-off-grid__product-cards">
+    {% for block in section.blocks %}
+      {%- comment %}<locksmith:47c1>{% endcomment -%}
+        {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+      {%- comment %}</locksmith:47c1>{% endcomment -%}
+      <div class="outdoor-off-grid__product-items">
+        <div class="outdoor-off-grid__product-img__wrapper">
+          <a href="{{ block.settings.product_btn_link }}" target="_blank">
+            <img src="{{ block.settings.product_image | img_url: '550x' }}" alt="">
+          </a>
+        </div>
+        <div class="outdoor-off-grid__product-title">
+          <span>{{ block.settings.product_title }}</span>
+        </div>
+        <div class="outdoor-off-grid__product-subtitle">
+          <span>{{ block.settings.product_subtitle }}</span>
+        </div>
+        <div class="outdoor-off-grid__product-description product-description--space">
+          <p>{{ block.settings.product_description }}</p>
+        </div>
+        <div class="outdoor-off-grid__product-btn product-btn--bottom">
+          <a href="{{ block.settings.product_btn_link }}" target="_blank">{{- block.settings.product_btn_text -}}</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  {% if section.blocks != blank %}
+    <div class="swiper-block outdoor-off-grid__product-swiper">
+      <div class="swiper-container">
+        <div class="swiper-wrapper outdoor-off-grid__product-swiper-wrapper">
+          {% for block in section.blocks %}
+            {%- comment %}<locksmith:1436>{% endcomment -%}
+              {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+            {%- comment %}</locksmith:1436>{% endcomment -%}
+            <div class="swiper-slide outdoor-off-grid__product-items outdoor-off-grid__product-items--mobile">
+              <div class="outdoor-off-grid__product-img__wrapper">
+                <a href="{{ block.settings.product_btn_link }}" target="_blank">
+                  <img src="{{ block.settings.product_image | img_url: '550x' }}" alt="">
+                </a>
+              </div>
+              <div class="outdoor-off-grid__product-title">
+                <span>{{ block.settings.product_title }}</span>
+              </div>
+              <div class="outdoor-off-grid__product-subtitle">
+                <span>{{ block.settings.product_subtitle }}</span>
+              </div>
+              <div class="outdoor-off-grid__product-description product-description--space">
+                <p>{{ block.settings.product_description }}</p>
+              </div>
+              <div class="outdoor-off-grid__product-btn product-btn--bottom">
+                <a href="{{ block.settings.product_btn_link }}" target="_blank">
+                  {{- block.settings.product_btn_text -}}
+                </a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const swiper = new Swiper('.swiper-container', {
+      slidesPerView: 'auto',
+      cssMode: true,
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Product with Image Text",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_heading",
+      "label": "Text Heading"
+    },
+    {
+      "type": "html",
+      "id": "text_subheading",
+      "label": "Text Subheading"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image Desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image Mobile"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_image_text",
+      "name": "Product Image text",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "product_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "product_title",
+          "label": "Product title"
+        },
+        {
+          "type": "text",
+          "id": "product_subtitle",
+          "label": "Product sub-title"
+        },
+        {
+          "type": "text",
+          "id": "product_description",
+          "label": "Product dscription"
+        },
+        {
+          "type": "text",
+          "id": "product_btn_text",
+          "label": "Product button text"
+        },
+        {
+          "type": "url",
+          "id": "product_btn_link",
+          "label": "Product button link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product with Image Text"
+    }
+  ]
+}
+{% endschema %}

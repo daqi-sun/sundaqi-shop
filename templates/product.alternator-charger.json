@@ -1,0 +1,1449 @@
+{
+  "sections": {
+    "daf26638-f596-4384-b150-72d380a3268d": {
+      "type": "product-atb-top",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "sticky-product-bar": {
+      "type": "sticky-product-bar",
+      "blocks": {
+        "588d25af-4d47-43ac-9697-b98aa2f65719": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Overview",
+            "tab_id": "product_information",
+            "section_class": ""
+          }
+        },
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "What's in the box",
+            "tab_id": "what_in_box",
+            "section_class": ""
+          }
+        },
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "FAQ",
+            "tab_id": "faq",
+            "section_class": ""
+          }
+        },
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Reviews",
+            "tab_id": "reviews",
+            "section_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "588d25af-4d47-43ac-9697-b98aa2f65719",
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02",
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4",
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38"
+      ],
+      "settings": {
+        "enabled": true,
+        "enabled_tabs": false
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "11795adc-1afa-4833-a193-258f495901ef": {
+          "type": "sku_block",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e": {
+          "type": "product_title",
+          "settings": {
+          }
+        },
+        "judge_me_reviews_preview_badge_eB3Gnj": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "0471109f-c130-454e-a9ba-c56412cc11f3": {
+          "type": "product_vendor",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185": {
+          "type": "product_price",
+          "settings": {
+          }
+        },
+        "d25a0285-4fb4-422d-b95b-ab67446120ad": {
+          "type": "product_description",
+          "settings": {
+            "desc_display": "default"
+          }
+        },
+        "79e1b437-5bbd-4b8a-ac55-27c2f795ee99": {
+          "type": "coupon_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Component_2_1.png",
+            "discount_off_text": "{{ product.metafields.custom.discount_off_text.value }}",
+            "code": "{{ product.metafields.custom.discount_code.value }}",
+            "show_copy_code_btn": true
+          }
+        },
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879": {
+          "type": "product_options_block",
+          "settings": {
+            "show_product_swatches": true,
+            "use_variant_image_for_swatches": true,
+            "button_content": ""
+          }
+        },
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe": {
+          "type": "quantity_block",
+          "settings": {
+          }
+        },
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0": {
+          "type": "accessories_section",
+          "settings": {
+            "title": "You may also like",
+            "metafield": "accessories"
+          }
+        },
+        "9f863400-c572-447b-b273-93f1143583fa": {
+          "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/form-embed-block\/2632fe16-c075-4321-a88b-50b567f42507",
+          "disabled": true,
+          "settings": {
+            "formId": "UHSpKe"
+          }
+        },
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609": {
+          "type": "product_buttons",
+          "settings": {
+            "enable_payment_button": false,
+            "show_custom_icons": true,
+            "custom_payment_logo_1_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_08_7f374817-3a3e-42f2-95ce-077b67f293d2.svg?v=1672025209",
+            "custom_payment_logo_2_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_10_d8002835-e25f-4edb-9038-187f75f69a18.svg?v=1672025208",
+            "custom_payment_logo_3_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_02_a3ea7ab1-aa9a-4857-9ed6-01e62deccfce.svg?v=1672025208",
+            "custom_payment_logo_4_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_06_7c406d24-0983-49ff-ac8e-cf73032050d9.svg?v=1672025208",
+            "custom_payment_logo_5_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_07_be5959d4-9f22-4a31-8e40-285f8e3ac6e7.svg?v=1672025208",
+            "custom_payment_logo_6_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_04_7bff1113-0dc2-489f-8be8-d19dbe467a1a.svg?v=1672025208",
+            "custom_payment_logo_7_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_05_1c21f308-a0a3-4251-8641-87264da43d67.svg?v=1672025208",
+            "custom_payment_logo_8_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_01_96e6a30c-7908-4892-b6f1-75bce8657cd4.svg?v=1672025208",
+            "custom_payment_logo_9_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/sofort_icon_31ba2d5b-2c44-4960-8e80-645a7240c899.png?v=1679023017",
+            "custom_payment_logo_10_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/giropay_icon_c9d7e22e-cd7c-4bee-8de5-e50a4c6dc378.png?v=1679023017",
+            "custom_payment_logo_11_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/ideal_icon_8548c48a-3c4e-4052-95de-670062a453ce.png?v=1679023017",
+            "custom_payment_logo_12_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/multibanco_icon_e3f9b26f-234c-4a06-9e48-adfd188e7deb.png?v=1679023016",
+            "custom_payment_logo_13_svg": "",
+            "custom_payment_logo_14_svg": "",
+            "custom_payment_logo_15_svg": ""
+          }
+        },
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% if product.metafields.custom.trade_message != blank %}\n          <div class=\"trade-message\">♻️{{product.metafields.custom.trade_message}} <a href=\"\/pages\/trade-in\" target=\"_blank\">Learn more<\/a><\/div>\n{% endif %}"
+          }
+        }
+      },
+      "block_order": [
+        "11795adc-1afa-4833-a193-258f495901ef",
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e",
+        "judge_me_reviews_preview_badge_eB3Gnj",
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774",
+        "0471109f-c130-454e-a9ba-c56412cc11f3",
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185",
+        "d25a0285-4fb4-422d-b95b-ab67446120ad",
+        "79e1b437-5bbd-4b8a-ac55-27c2f795ee99",
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879",
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe",
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0",
+        "9f863400-c572-447b-b273-93f1143583fa",
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609",
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a"
+      ],
+      "settings": {
+        "section_id": "",
+        "show_breadcrumbs": true,
+        "show_pick_an_option": false,
+        "enable_linked_options": false,
+        "enabled_mobile_sticky_btns": true,
+        "media_size": "medium",
+        "enable_image_zoom": true,
+        "enable_video_looping": true,
+        "thumbnails_type": "grid",
+        "support_email": "",
+        "support_text": "",
+        "feature_1_show": false,
+        "feature_1_title": "Fast & Free Shipping",
+        "feature_1_content": "",
+        "feature_2_show": false,
+        "feature_2_title": "Warranty Protection",
+        "feature_2_content": "",
+        "feature_3_show": false,
+        "feature_3_title": "Secure Payments",
+        "feature_3_content": "",
+        "feature_4_show": false,
+        "feature_4_title": "Multi-channel Support",
+        "feature_4_content": ""
+      }
+    },
+    "5d8ff2e1-b470-4293-bb66-a665b232bc6b": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "320fbd98-1bfa-4cb8-a6c5-f2b90dea2ce0": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "<p>Los términos “DELTA” y “RIVER”, que se mencionan en esta página, se refieren a productos fabricados exclusivamente por ECOFLOW INC.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "e9e69704-b9b1-4d60-b46a-190106ce7c6f": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/PC_111aa680-e98d-4bf8-8418-8871943d9788.png",
+            "mobile_image": "shopify:\/\/shop_images\/MO_b03f0f5f-fc8a-4078-bfb2-5be7975b720f.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "320fbd98-1bfa-4cb8-a6c5-f2b90dea2ce0",
+        "e9e69704-b9b1-4d60-b46a-190106ce7c6f"
+      ],
+      "settings": {
+      }
+    },
+    "d893f17d-7a00-4113-9531-f983c796d90b": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "",
+        "subtitle": "<p>Recarga 1 kWh en solo 1,3 horas.<\/p>",
+        "content": "<p>Carga 8 veces más rápido mientras conduces con nuestro cargador mediante alternador EcoFlow de 800 W y recarga tu estación de energía en solo 1,3 horas. <br\/>Con el cargador mediante alternador EcoFlow de 800 W podrás cargar 8 veces más rápido que con las tomas tradicionales de corriente auxiliares para vehículos simplemente usando el exceso de energía generado por tu vehículo. El cargador utiliza un convertidor CC-CC integrado para restaurar la energía de tu estación de energía EcoFlow mientras conduces.<\/p>",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "video",
+        "video_type": "mp4",
+        "video_url": "",
+        "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/4dd94a35c40541dea3fc3554c4b35b49.mp4",
+        "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/24e8094d921d43b2bfe340fd9c8d53d7.mp4",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "87b8b32d-496a-4917-993e-d054806c8a80": {
+      "type": "pdp-slideshow",
+      "blocks": {
+        "17f23f43-5f12-4b63-ae50-abc64abad26c": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Modo de carga",
+            "title": "Triplica el valor con un diseño funcional tipo 3 en 1",
+            "subtitle": "",
+            "content": "<p>El cargador, el mantenedor y el arrancador tipo 3 en 1 ahorran tiempo, dinero y espacio en el vehículo.Gracias a sus capacidades de carga rápida, inteligente y eficiente, dispondrás de energía allá donde estés en la carretera.<\/p>",
+            "button_link": "",
+            "button_text": "",
+            "bottom_content": "<p>Utiliza el alternador de tu automóvil para recargar tu estación de energía portátil.<\/p>",
+            "bottom_button_link": "",
+            "bottom_button_text": "",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/PC_3-in-1_Function_1_ES.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/MO_3-in-1_Function_1_ES.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": false,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "35732589-2d6a-4aba-8ed3-210284e00999": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Modo de carga inversa",
+            "title": "Triplica el valor con un diseño funcional tipo 3 en 1",
+            "subtitle": "",
+            "content": "<p>El cargador, el mantenedor y el arrancador tipo 3 en 1 ahorran tiempo, dinero y espacio en el vehículo.Gracias a sus capacidades de carga rápida, inteligente y eficiente, dispondrás de energía allá donde estés en la carretera.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>Recarga la batería de arranque de tu vehículo o la batería de tu caravana con tu estación de energía portátil.<\/p>",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/PC_3-in-1_Function_2_ES.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/MO_3-in-1_Function_2_ES.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": false,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "7dee787a-9363-4a5c-9c9f-fd4b4800c0b5": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Modo de mantenimiento de la batería",
+            "title": "Triplica el valor con un diseño funcional tipo 3 en 1",
+            "subtitle": "",
+            "content": "<p>El cargador, el mantenedor y el arrancador tipo 3 en 1 ahorran tiempo, dinero y espacio en el vehículo.Gracias a sus capacidades de carga rápida, inteligente y eficiente, dispondrás de energía allá donde estés en la carretera.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>Amplía la duración de la batería de arranque de tu vehículo o de la batería de tu caravana mediante el uso de una corriente eléctrica más baja.   <\/p>",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/PC_3-in-1_Function_3_ES.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/MO_3-in-1_Function_3_ES.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": false,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "bd551675-370b-4bad-8c52-e8b62d4ef162": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "",
+            "title": "",
+            "subtitle": "",
+            "content": "",
+            "button_link": "",
+            "button_text": "",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "video",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": false,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        }
+      },
+      "block_order": [
+        "17f23f43-5f12-4b63-ae50-abc64abad26c",
+        "35732589-2d6a-4aba-8ed3-210284e00999",
+        "7dee787a-9363-4a5c-9c9f-fd4b4800c0b5",
+        "bd551675-370b-4bad-8c52-e8b62d4ef162"
+      ],
+      "settings": {
+        "section_id": ""
+      }
+    },
+    "pdp_slideshow_KeATRU": {
+      "type": "pdp-slideshow",
+      "blocks": {
+        "tab_PKntd4": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "",
+            "title": "Amplía la duración de la batería de tu casa rodante",
+            "subtitle": "",
+            "content": "<p>Se adapta cómodamente a baterías de casas rodantes de 12 V\/24 V.Se conecta a estaciones de energía portátiles EcoFlow y protege las baterías de casas rodantes al mismo tiempo que amplía la capacidad de almacenamiento de energía hasta 7,2 kWh*.<\/p>",
+            "button_link": "",
+            "button_text": "",
+            "bottom_content": "<p>*Con EcoFlow DELTA Pro y la Batería adicional DELTA Pro<\/p>",
+            "bottom_button_link": "",
+            "bottom_button_text": "",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/PC_3dfb2d9e-4e54-452e-b075-7c4ed954471c.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/MO.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": false,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "tab_y446YE": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "",
+            "title": "",
+            "subtitle": "",
+            "content": "",
+            "button_link": "",
+            "button_text": "",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "video",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": false,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        }
+      },
+      "block_order": [
+        "tab_PKntd4",
+        "tab_y446YE"
+      ],
+      "settings": {
+        "section_id": ""
+      }
+    },
+    "371e1e05-60fa-44bf-a03a-bc06dac9078d": {
+      "type": "pdp-video",
+      "custom_css": [
+        ".pdp-video {padding-bottom: 10px;}"
+      ],
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "Seguridad garantizada para cualquier viaje",
+        "subtitle": "",
+        "content": "<p>Con una resistencia térmica alta, la tecnología de nitruro de galio (GaN) garantiza siempre una carga segura.<br\/>El cargador mediante alternador de 800 W ofrece múltiples funciones de seguridad, incluida la protección contra subtensión que evita el uso excesivo de energía y el daño a la batería de arranque.Su garantía de 2 años te garantiza un buen uso y tranquilidad.<\/p>",
+        "button_link": "",
+        "button_text": "",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/PC_GAN_Chip.png",
+        "mobile_image": "shopify:\/\/shop_images\/MO_GAN_Chip.png",
+        "video_type": "mp4",
+        "video_url": "",
+        "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/b82f6f6d72dd4b4d91d9c0fb2ff25aaf.mp4",
+        "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/a168c7ee8f184962aa5aa6f414cff3a9.mp4",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "7626dfd1-0fe4-4156-a88e-850a531f39be": {
+      "type": "pdp-image-with-text",
+      "blocks": {
+        "718fa1ea-0508-41d0-9c45-95a4a5bc25fb": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/PC_icon_1.png",
+            "mobile_image": "shopify:\/\/shop_images\/MO_icon_1.png",
+            "image_height": 200,
+            "mobile_image_height": 150,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": false,
+            "subtext_top": "<p><strong>Protección contra la polaridad inversa<\/strong><\/p>",
+            "subtext_bottom": "",
+            "button_link": "",
+            "button_text": ""
+          }
+        },
+        "ad117762-7d02-42a6-a979-7b2dc145992b": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/PC_icon_2.png",
+            "mobile_image": "shopify:\/\/shop_images\/MO_icon_2.png",
+            "image_height": 200,
+            "mobile_image_height": 150,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": false,
+            "subtext_top": "<p><strong>Protección contra sobrecorriente<\/strong><\/p>",
+            "subtext_bottom": "",
+            "button_link": "",
+            "button_text": ""
+          }
+        },
+        "image_content_KdHrRf": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/PC_icon_3.png",
+            "mobile_image": "shopify:\/\/shop_images\/MO_icon_3.png",
+            "image_height": 200,
+            "mobile_image_height": 150,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "<p><strong>Protección contra cortocircuitos<\/strong><\/p>",
+            "subtext_bottom": "",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "image_content_wVCLbe": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/PC_icon_4.png",
+            "mobile_image": "shopify:\/\/shop_images\/MO_icon_4.png",
+            "image_height": 200,
+            "mobile_image_height": 150,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "<p><strong>Protección contra la sobretensión\/subtensión<\/strong><\/p>",
+            "subtext_bottom": "",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "718fa1ea-0508-41d0-9c45-95a4a5bc25fb",
+        "ad117762-7d02-42a6-a979-7b2dc145992b",
+        "image_content_KdHrRf",
+        "image_content_wVCLbe"
+      ],
+      "custom_css": [
+        ".pdp-image-text {padding-top: 10px;}"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "center",
+        "layout": "stacked",
+        "stacked_row": "4",
+        "mobile_stacked_row": "2",
+        "slider_row": "2",
+        "mobile_slider_row": "1"
+      }
+    },
+    "53b56ef3-353f-4a17-874a-1b976f57533d": {
+      "type": "pdp-slideshow",
+      "blocks": {
+        "eb106f4f-761a-48fd-97a5-4bbbda66e366": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Paso 1",
+            "title": "Instalación limpia y sencilla que no deja huella",
+            "subtitle": "",
+            "content": "<p>Conecta tu cargador mediante alternador de 800 W a la batería de arranque de tu vehículo o la batería de tu caravana para disfrutar de energía sin contratiempos durante tu viaje.<\/p>",
+            "button_link": "",
+            "button_text": "",
+            "bottom_content": "<p>Conecta el cable del fusible al cable de entrada en un extremo.<\/p>",
+            "bottom_button_link": "",
+            "bottom_button_text": "",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/PC_5_steps_1.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/MO_5_Steps_1.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "tab_pDWU4A": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Paso 2",
+            "title": "Instalación limpia y sencilla que no deja huella",
+            "subtitle": "",
+            "content": "<p>Conecta tu cargador mediante alternador de 800 W a la batería de arranque de tu vehículo o la batería de tu caravana para disfrutar de energía sin contratiempos durante tu viaje.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>Conectar el cable del fusible a la batería del vehículo en el otro extremo.<\/p>",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/PC_5_steps_2.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/MO_5_Steps_2.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "tab_qzmebX": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Paso 3",
+            "title": "Instalación limpia y sencilla que no deja huella",
+            "subtitle": "",
+            "content": "<p>Conecta tu cargador mediante alternador de 800 W a la batería de arranque de tu vehículo o la batería de tu caravana para disfrutar de energía sin contratiempos durante tu viaje.<\/p>",
+            "button_link": "",
+            "button_text": "",
+            "bottom_content": "<p>Conecta el cable negro al terminal del chasis.<\/p>",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/PC_5_steps_3.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/MO_5_Steps_3.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "tab_76YRif": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Paso 4",
+            "title": "Instalación limpia y sencilla que no deja huella",
+            "subtitle": "",
+            "content": "<p>Conecta tu cargador mediante alternador de 800 W a la batería de arranque de tu vehículo o la batería de tu caravana para disfrutar de energía sin contratiempos durante tu viaje.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>Pase el otro extremo del cable de entrada a través de la carrocería hacia el cargador. Si el cable de entrada es voluminoso o difícil de pasar, desconecte los extremos del cable antes de enhebrarlo.<\/p>",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/PC_5_steps_4.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/MO_5_Steps_4.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "tab_ffBrRN": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Paso 5",
+            "title": "Instalación limpia y sencilla que no deja huella",
+            "subtitle": "",
+            "content": "<p>Conecta tu cargador mediante alternador de 800 W a la batería de arranque de tu vehículo o la batería de tu caravana para disfrutar de energía sin contratiempos durante tu viaje.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>Enchufa el otro extremo del cable de entrada en el cargador mediante alternador EcoFlow de 800 W.<\/p>",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/PC_5_steps_5.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/MO_5_Steps_5.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "tab_GtDENV": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Paso 6",
+            "title": "Instalación limpia y sencilla que no deja huella",
+            "subtitle": "",
+            "content": "<p>Conecta tu cargador mediante alternador de 800 W a la batería de arranque de tu vehículo o la batería de tu caravana para disfrutar de energía sin contratiempos durante tu viaje.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>Enchufa el cable de entrada del cargador mediante alternador EcoFlow de 800 W a la estación de energía portátil.<\/p>",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/PC_5_steps_6.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/MO_5_Steps_6.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        }
+      },
+      "block_order": [
+        "eb106f4f-761a-48fd-97a5-4bbbda66e366",
+        "tab_pDWU4A",
+        "tab_qzmebX",
+        "tab_76YRif",
+        "tab_ffBrRN",
+        "tab_GtDENV"
+      ],
+      "settings": {
+        "section_id": ""
+      }
+    },
+    "pdp_rich_text_mGpmmf": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 0,
+        "section_bottom_spacing": 40,
+        "section_top_spacing_mobile": 20,
+        "section_bottom_spacing_mobile": 20,
+        "alignment": "center",
+        "title": "Compatible con estaciones de energía portátiles EcoFlow",
+        "subtitle": "",
+        "content": "",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "pdp_image_with_text_kEjqGk": {
+      "type": "pdp-image-with-text",
+      "blocks": {
+        "image_content_4nri4C": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/PC_DELTA_Pro_EU.png",
+            "mobile_image": "shopify:\/\/shop_images\/MO_DELTA_Pro_EU.png",
+            "image_height": 250,
+            "mobile_image_height": 150,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": false,
+            "subtext_top": "<h3>DELTA Pro<\/h3>",
+            "subtext_bottom": "<p><\/p><p>Capacidad: 3 600 Wh<br\/>Tiempo de carga(mediante puerto XT150): 4,8 horas<\/p>",
+            "button_link": "",
+            "button_text": ""
+          }
+        },
+        "image_content_qJciVP": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/PC_DELTA_2_Max.png",
+            "mobile_image": "shopify:\/\/shop_images\/MO_DELTA_2_Max.png",
+            "image_height": 250,
+            "mobile_image_height": 150,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": false,
+            "subtext_top": "<h3>DELTA 2 Max<\/h3>",
+            "subtext_bottom": "<p><br\/>Capacidad: 2 048Wh<br\/>Tiempo de carga(mediante puerto XT150): 2,6 horas<\/p>",
+            "button_link": "",
+            "button_text": ""
+          }
+        },
+        "image_content_AH3it3": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/PC_DELTA_Max_2000.png",
+            "mobile_image": "shopify:\/\/shop_images\/MO_DELTA_Max_2000.png",
+            "image_height": 250,
+            "mobile_image_height": 150,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "<h3>DELTA Max 2000<\/h3>",
+            "subtext_bottom": "<p><br\/>Capacidad: 2 016Wh<br\/>Tiempo de carga(mediante puerto XT150): 2,6 horas<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "image_content_kLTqVc": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/PC_DELTA_2.png",
+            "mobile_image": "shopify:\/\/shop_images\/MO_DELTA_2.png",
+            "image_height": 250,
+            "mobile_image_height": 150,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "<h3>DELTA 2<\/h3>",
+            "subtext_bottom": "<p><br\/>Capacidad: 1 024Wh<br\/>Tiempo de carga(mediante puerto XT150): 1,3 horas<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "image_content_7f6jEA": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/PC_DELTA_2_EB.png",
+            "mobile_image": "shopify:\/\/shop_images\/MO_DELTA_2_EB.png",
+            "image_height": 250,
+            "mobile_image_height": 150,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "<h3>DELTA 2 EB<\/h3>",
+            "subtext_bottom": "<p><br\/>Capacidad: 1 024Wh<br\/>Tiempo de carga(mediante puerto XT150): 1,3 horas<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "image_content_86B64F": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/PC_DELTA_2_Max_EB.png",
+            "mobile_image": "shopify:\/\/shop_images\/MO_DELTA_2_Max_EB.png",
+            "image_height": 250,
+            "mobile_image_height": 150,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "<h3>DELTA 2 Max EB<\/h3>",
+            "subtext_bottom": "<p><br\/>Capacidad: 2 048Wh<br\/>Tiempo de carga(mediante puerto XT150): 2,6 horas<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "image_content_4nri4C",
+        "image_content_qJciVP",
+        "image_content_AH3it3",
+        "image_content_kLTqVc",
+        "image_content_7f6jEA",
+        "image_content_86B64F"
+      ],
+      "custom_css": [
+        ".pdp-image-text .stack-content {margin-bottom: 15px;}"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "center",
+        "layout": "stacked",
+        "stacked_row": "3",
+        "mobile_stacked_row": "2",
+        "slider_row": "2",
+        "mobile_slider_row": "1"
+      }
+    },
+    "82f7f3bf-a9d8-4236-9823-651a58407999": {
+      "type": "pdp-whats-in-the-box",
+      "blocks": {
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Box_1.png",
+            "cta_label": "Cargador mediante alternador EcoFlow de 800 W",
+            "link": "",
+            "cta_width": 36,
+            "cta_image_width": "100%",
+            "custom_width": 280,
+            "custom_height": 300,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 200
+          }
+        },
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Box_2_aa879d83-e947-4601-91c8-caa1a85066e4.png",
+            "cta_label": "Placa de instalación",
+            "link": "",
+            "cta_width": 40,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 120,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 140
+          }
+        },
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Box_3.png",
+            "cta_label": "Herramienta de extracción de bujías",
+            "link": "",
+            "cta_width": 20,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 120,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 140
+          }
+        },
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Box_4.png",
+            "cta_label": "Tuerca M6",
+            "link": "",
+            "cta_width": 20,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 120,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 140
+          }
+        },
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-5": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Box_5.png",
+            "cta_label": "M5*40",
+            "link": "",
+            "cta_width": 20,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 120,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 140
+          }
+        },
+        "image_9k6M3c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Box_6.png",
+            "cta_label": "M5*12",
+            "link": "",
+            "cta_width": 20,
+            "cta_image_width": "50%",
+            "custom_width": 130,
+            "custom_height": 120,
+            "custom_width_mobile": 100,
+            "custom_height_mobile": 140
+          }
+        }
+      },
+      "block_order": [
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-0",
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-2",
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-3",
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-4",
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-5",
+        "image_9k6M3c"
+      ],
+      "custom_css": [
+        ".pdp-what-in-box {padding-bottom: 0px;}"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Contenido",
+        "bottom_content": "",
+        "cta_height": 465,
+        "cta_height_mobile": 360,
+        "cta_half_height_mobile": 200,
+        "gutter_width": 16
+      }
+    },
+    "pdp_whats_in_the_box_gdYbfj": {
+      "type": "pdp-whats-in-the-box",
+      "blocks": {
+        "image_dTACMz": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Box_7.png",
+            "cta_label": "Cable de entrada",
+            "link": "",
+            "cta_width": 36,
+            "cta_image_width": "50%",
+            "custom_width": 280,
+            "custom_height": 320,
+            "custom_width_mobile": 200,
+            "custom_height_mobile": 140
+          }
+        },
+        "image_hY8Qmy": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Box_8.png",
+            "cta_label": "Cable de salida XT150",
+            "link": "",
+            "cta_width": 40,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 120,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 140
+          }
+        },
+        "image_zXd9bw": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Box_9.png",
+            "cta_label": "M6*20",
+            "link": "",
+            "cta_width": 20,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 100,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 140
+          }
+        },
+        "image_i3xiqa": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Box_10.png",
+            "cta_label": "Cable del fusible",
+            "link": "",
+            "cta_width": 20,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 120,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 140
+          }
+        },
+        "image_68Xphp": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Box_11.png",
+            "cta_label": "ST5.5*25",
+            "link": "",
+            "cta_width": 20,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 120,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 140
+          }
+        },
+        "image_3tm8Ew": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Box_12.png",
+            "cta_label": "Manual y tarjeta de garantía",
+            "link": "",
+            "cta_width": 20,
+            "cta_image_width": "50%",
+            "custom_width": 130,
+            "custom_height": 120,
+            "custom_width_mobile": 100,
+            "custom_height_mobile": 140
+          }
+        }
+      },
+      "block_order": [
+        "image_dTACMz",
+        "image_hY8Qmy",
+        "image_zXd9bw",
+        "image_i3xiqa",
+        "image_68Xphp",
+        "image_3tm8Ew"
+      ],
+      "custom_css": [
+        ".pdp-what-in-box {padding-top: 0px;}"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "",
+        "bottom_content": "",
+        "cta_height": 465,
+        "cta_height_mobile": 360,
+        "cta_half_height_mobile": 200,
+        "gutter_width": 16
+      }
+    },
+    "445d25b8-a88b-4de2-811c-2cbe8505573e": {
+      "type": "pdp-specs",
+      "blocks": {
+        "47af9637-9c18-4189-ac35-f8a415f77098": {
+          "type": "contents",
+          "settings": {
+            "title": "Modelo",
+            "content": "<p>EF-FC-301-1<\/p>"
+          }
+        },
+        "contents_Qh8L89": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso neto",
+            "content": "<p>2,3 kg (5,1 lb)<\/p>"
+          }
+        },
+        "f3a1ff22-e1c2-499a-8610-4bc6dbcdf47b": {
+          "type": "contents",
+          "settings": {
+            "title": "Dimensiones (Ancho × Fondo × Alto)",
+            "content": "<p>9,5 × 7,6 × 1,4 pulgadas (242 × 194 × 35 mm)<\/p>"
+          }
+        },
+        "03cae209-41ad-43b9-ac45-d01ab3422542": {
+          "type": "contents",
+          "settings": {
+            "title": "Wi-Fi",
+            "content": "<p>Frecuencia: 2412 MHz - 2472 MHz <br\/>Potencia de salida máxima: &lt;20 dBm<\/p>"
+          }
+        },
+        "07c9b1a0-8f41-430f-a8b7-27b0d7cb41e9": {
+          "type": "contents",
+          "settings": {
+            "title": "Bluetooth",
+            "content": "<p>Frecuencia: 2402 MHz - 2480 MHz <br\/>Potencia de salida máxima: &lt;10 dBm<\/p>"
+          }
+        },
+        "9735a98e-fa4d-4712-9472-44c8d2a204d5": {
+          "type": "contents",
+          "settings": {
+            "title": "Modo de carga",
+            "content": "<p>Entrada: 11 V - 31 V, 76 A máx. Salida: 40 V - 60 V, 800 W máx.<\/p>"
+          }
+        },
+        "614680ef-24ec-4500-ab57-f0e4642ae896": {
+          "type": "contents",
+          "settings": {
+            "title": "Modo de mantenimiento de batería",
+            "content": "<p>Entrada: 40 V - 60 V, 3 A máx. <br\/>Salida: 13,8 V \/ 27,6 V, 100 W máx.<\/p>"
+          }
+        },
+        "49c84d99-7423-4469-81f4-3fde371be7e4": {
+          "type": "contents",
+          "settings": {
+            "title": "Modo de carga inversa",
+            "content": "<p>Entrada: 40 V - 60 V, 21 A máx. <br\/>Salida: 13,8 V \/ 27,6 V, 800 W máx.<\/p>"
+          }
+        },
+        "b2e4d52a-2d0f-4095-bff6-6359bbaf8688": {
+          "type": "contents",
+          "settings": {
+            "title": "Corriente nominal del fusible",
+            "content": "<p>125A<\/p>"
+          }
+        },
+        "c2cef391-c4fe-4607-a2e2-4c1fb601e58f": {
+          "type": "contents",
+          "settings": {
+            "title": "Tipo de protección",
+            "content": "<p>Protección contra polaridad inversa \/ Protección contra sobrecorriente \/ Protección contra cortocircuitos \/ Protección contra sobretensión \/ Protección contra subtensión<\/p>"
+          }
+        },
+        "007dec67-2841-4c16-b92b-449cb6c93308": {
+          "type": "contents",
+          "settings": {
+            "title": "Temperatura de funcionamiento",
+            "content": "<p>De -4 ℉ a 140 ℉ (de -20 ℃ a 60 ℃)<\/p>"
+          }
+        },
+        "72bcb0c3-9cc5-4252-a081-0bd13f013ef0": {
+          "type": "contents",
+          "settings": {
+            "title": "Temperatura de almacenamiento",
+            "content": "<p>De -22 ℉ a 158 ℉ (de -30 ℃ a 70 ℃)<\/p>"
+          }
+        },
+        "9094b1e4-de02-4869-b083-7ca28f305cda": {
+          "type": "contents",
+          "settings": {
+            "title": "Humedad de funcionamiento",
+            "content": "<p>≤ 95 %<\/p>"
+          }
+        },
+        "5e6f6e44-7544-4071-8a7e-25343ef62358": {
+          "type": "contents",
+          "settings": {
+            "title": "Humedad de almacenamiento",
+            "content": "<p>≤ 95 %<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "47af9637-9c18-4189-ac35-f8a415f77098",
+        "contents_Qh8L89",
+        "f3a1ff22-e1c2-499a-8610-4bc6dbcdf47b",
+        "03cae209-41ad-43b9-ac45-d01ab3422542",
+        "07c9b1a0-8f41-430f-a8b7-27b0d7cb41e9",
+        "9735a98e-fa4d-4712-9472-44c8d2a204d5",
+        "614680ef-24ec-4500-ab57-f0e4642ae896",
+        "49c84d99-7423-4469-81f4-3fde371be7e4",
+        "b2e4d52a-2d0f-4095-bff6-6359bbaf8688",
+        "c2cef391-c4fe-4607-a2e2-4c1fb601e58f",
+        "007dec67-2841-4c16-b92b-449cb6c93308",
+        "72bcb0c3-9cc5-4252-a081-0bd13f013ef0",
+        "9094b1e4-de02-4869-b083-7ca28f305cda",
+        "5e6f6e44-7544-4071-8a7e-25343ef62358"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Especificaciones"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "grid_mobile": "2",
+        "heading": "You may also like",
+        "show_vendor": false
+      }
+    },
+    "1676887592a3dc4fd0": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_a367dX": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_a367dX"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    },
+    "pdp_rich_text_9PgqGK": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 20,
+        "section_bottom_spacing": 20,
+        "section_top_spacing_mobile": 20,
+        "section_bottom_spacing_mobile": 20,
+        "alignment": "center",
+        "title": "",
+        "subtitle": "",
+        "content": "",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    }
+  },
+  "order": [
+    "daf26638-f596-4384-b150-72d380a3268d",
+    "sticky-product-bar",
+    "main",
+    "5d8ff2e1-b470-4293-bb66-a665b232bc6b",
+    "d893f17d-7a00-4113-9531-f983c796d90b",
+    "87b8b32d-496a-4917-993e-d054806c8a80",
+    "pdp_slideshow_KeATRU",
+    "371e1e05-60fa-44bf-a03a-bc06dac9078d",
+    "7626dfd1-0fe4-4156-a88e-850a531f39be",
+    "53b56ef3-353f-4a17-874a-1b976f57533d",
+    "pdp_rich_text_mGpmmf",
+    "pdp_image_with_text_kEjqGk",
+    "82f7f3bf-a9d8-4236-9823-651a58407999",
+    "pdp_whats_in_the_box_gdYbfj",
+    "445d25b8-a88b-4de2-811c-2cbe8505573e",
+    "product-recommendations",
+    "1676887592a3dc4fd0",
+    "pdp_rich_text_9PgqGK"
+  ]
+}

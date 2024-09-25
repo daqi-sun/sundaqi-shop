@@ -1,0 +1,157 @@
+<style>
+  .fsp-blog__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .fsp-blog__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+
+<div
+  class="fsp-blog__section fsp-blog__section-{{ section.id }}"
+  id="_{{ section.settings.id | downcase | remove: ' ' | replace: '&', '-' }}"
+>
+  <div class="container--default">
+    <div class="fsp-blog__blog-container">
+      {% if section.settings.title != blank %}
+        <h2 class="fsp-blog__heading text--heading text--white">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+    </div>
+    <div class="fsp-blog-scroll__wrapper">
+      <div class="fsp-blog__container">
+        {% for block in section.blocks %}
+          <div class="fsp-blog__item">
+            <div class="fsp-blog__image-wrapper">
+              <a href="{{ block.settings.url }}" target="_blank">
+                <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.image.alt }}">
+              </a>
+            </div>
+            <div class="fsp-blog__title-wrapper">
+              <h3 class="fsp-blog__title text--white">{{ block.settings.title }}</h3>
+            </div>
+            {% if block.settings.button_label %}
+              <a href="{{ block.settings.url }}" target="_blank" class="fsp-blog__link">
+                <span class="text--blue">{{ block.settings.button_label }}</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                  <path d="M5.74268 20.1572L19.8848 6.01509" stroke="#3F68E0" stroke-width="1.33333"/>
+                  <path d="M8.48486 5.92969H19.7985V17.2433" stroke="#3F68E0" stroke-width="1.33333"/>
+                </svg>
+              </a>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .fsp-blog__image-wrapper a img{
+    width: 454px;
+    height: 304.5px;
+    object-fit: cover;
+  }
+  @media (max-width: 768px){
+    .fsp-blog__image-wrapper a img{
+      width: 290px;
+      height: 194.5px;
+      object-fit: cover;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "FSP Blog",
+  "settings": [
+    {
+      "type": "text",
+      "id": "id",
+      "label": "Section ID",
+      "default": "Buyer’s Guides"
+    },
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title",
+      "default": "Discover the Right Solar Panel for You"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "blog",
+      "name": "Blog",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Blog Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Blog Title"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button Label",
+          "default": "Shop Now"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Button URL"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

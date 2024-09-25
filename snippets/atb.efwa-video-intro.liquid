@@ -1,0 +1,158 @@
+{% comment %}
+ATB-SCHEMA{
+"name": "EFWA Video Intro",
+"id": "efwa-video-intro",
+"banner": "",
+"icon": "",
+"tags": "",
+"description": "",
+"class": "efwa-video-intro",
+"settings": [
+{
+"type": "text",
+"id": "section_id",
+"label": "Section ID",
+"info": "Enter a unique ID with only letters and numbers, no spaces",
+"default": ""
+},
+{
+"type": "checkbox",
+"id": "atb_enable_checkbox",
+"label": "Enable section",
+"default": true,
+"info": ""
+},
+{
+"id": "block_subtitle",
+"type": "text",
+"label": "Subtitle",
+"default": "Product Intro Subtitle",
+"repeatable": "section",
+"info": ""
+},
+{
+"id": "block_title",
+"type": "text",
+"label": "Title",
+"default": "Product Intro Title",
+"repeatable": "section",
+"info": ""
+},
+{
+"id": "block_description",
+"type": "text",
+"label": "description",
+"default": "Product Intro Description",
+"repeatable": "section",
+"info": ""
+},
+{
+"type": "text",
+"id": "blocks",
+"label": "Block ID",
+"info": "Enter a unique ID with only letters and numbers, no spaces",
+"default": "",
+"repeatable": "section"
+},
+{
+"id": "block_video_link",
+"type": "text",
+"label": "Select Video",
+"repeatable": "section",
+"info": ""
+},
+{
+"id": "block_video_link_mobile",
+"type": "text",
+"label": "Select Video Mobile",
+"repeatable": "section",
+"info": ""
+},
+{
+"type": "checkbox",
+"id": "block_video_autoplay",
+"label": "Enable video autoplay",
+"repeatable": "section",
+"default": true,
+"info": ""
+},
+{
+"type": "checkbox",
+"id": "block_video_loop",
+"label": "Enable video loop",
+"repeatable": "section",
+"default": true,
+"info": ""
+},
+{
+"type": "checkbox",
+"id": "block_video_controls",
+"label": "Display video controls",
+"repeatable": "section",
+"default": true,
+"info": ""
+}
+],
+"warnings": [
+"repeating image fields may not be properly handled"
+]
+}ATB-SCHEMA
+{% endcomment %}
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_enable_checkbox' -%}
+{%- assign atb_enable_checkbox = val -%}
+{%- include 'atb-render' field:'block_title' -%}
+{%- assign block_title = val -%}
+{%- include 'atb-render' field:'block_subtitle' -%}
+{%- assign block_subtitle = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_video_link' -%}
+{%- assign block_video_link = val -%}
+{%- include 'atb-render' field:'block_video_link_mobile' -%}
+{%- assign block_video_link_mobile = val -%}
+{%- include 'atb-render' field:'block_video_autoplay' -%}
+{%- assign block_video_autoplay = val -%}
+{%- include 'atb-render' field:'block_video_loop' -%}
+{%- assign block_video_loop = val -%}
+{%- include 'atb-render' field:'block_video_controls' -%}
+{%- assign block_video_controls = val -%}
+{%- include 'atb-render' field:'block_description' -%}
+{%- assign block_description = val -%}
+{%- if atb_enable_checkbox == blank -%}
+{%- assign atb_enable_checkbox = false -%}
+{%- else -%}
+{%- assign atb_enable_checkbox = true -%}
+{%- endif -%}
+<section id="shopify-section-{{section_id}}" class="shopify-section efwa-section">
+	{% if atb_enable_checkbox %}
+	<section class="efwa-video-intro" id="efwa-video-intro">
+		<div class="efwa-page-80">
+			{% for block0 in blocks %}
+			<div class="efwa-container">
+				<div class="efwa-row">
+					<h3 class="efwa-subtitle">{{block_subtitle[forloop.index0]}}</h3>
+					<h2 class="efwa-title">{{block_title[forloop.index0]}}</h2>
+					<p class="efwa-description">{{block_description[forloop.index0]}}</p>
+				</div>
+				<div class="efwa-row">
+					<video class="desktop-image" {% if block_video_autoplay[forloop.index0] %}autoplay playsinline muted{% endif %} {% if block_video_controls[forloop.index0] %}controls{% endif %} {% if block_video_loop[forloop.index0] %}loop{% endif %}>
+						<source src="{{ block_video_link[forloop.index0] }}" type="video/mp4">
+						</source>
+					</video>
+					<video class="mobile-image" {% if block_video_autoplay[forloop.index0] %}autoplay playsinline muted{% endif %} {% if block_video_controls[forloop.index0] %}controls{% endif %} {% if block_video_loop[forloop.index0] %}loop{% endif %}>
+						<source src="{{ block_video_link_mobile[forloop.index0] }}" type="video/mp4">
+						</source>
+					</video>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</section>
+	{% endif %}
+	<style>
+	</style>
+	<script type="application/javascript">
+	</script>
+</section>

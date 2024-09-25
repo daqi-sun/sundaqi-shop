@@ -1,0 +1,2935 @@
+/* Custom Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+.custom {
+  width: 100%;
+  overflow: hidden;
+}
+
+.custom * {
+  outline: none;
+}
+
+.custom div {
+  border: none;
+}
+
+.custom h1,
+.custom h2,
+.custom h3,
+.custom h4,
+.custom p {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  color: #414141;
+}
+
+.custom a,
+.custom a:hover,
+.custom a:active,
+.custom a:visited,
+.custom a:link,
+.custom a:focus {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.custom .bg-light-grey {
+  background: #f6f6f6;
+}
+
+.custom .bg-dark-gray {
+  background: #e8e8e8;
+}
+
+.custom .bg-black {
+  background: #181818;
+}
+
+.custom img {
+  max-width: 100%;
+}
+
+.custom .overlay-img {
+  width: 100%;
+}
+
+.custom .pr {
+  position: relative;
+}
+
+.custom .pa {
+  position: absolute;
+}
+
+.custom .pa-cm {
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+}
+
+.custom .pa-c {
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.custom .pa-m {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.custom .fl {
+  float: left;
+}
+
+.custom .fr {
+  float: right;
+}
+
+.custom .tc {
+  text-align: center;
+}
+
+.custom .tl {
+  text-align: left;
+}
+
+.custom .tr {
+  text-align: right;
+}
+
+.custom .color-white {
+  color: #fff !important;
+}
+
+.custom .color-black {
+  color: #000000 !important;
+}
+
+.custom .a-button {
+  display: inline-block;
+  padding: 0 30px;
+  height: 50px;
+  line-height: 48px;
+  text-align: center;
+  font-size: 20px;
+  color: #ffffff;
+  cursor: pointer;
+  box-sizing: border-box;
+  background-color: #1d1d1d;
+  border-radius: 24px;
+}
+
+.custom .a-button:hover {
+  color: #ffffff !important;
+  background-color: #1d1d1d !important;
+}
+
+.custom .container {
+  width: 100%;
+  padding: 0;
+}
+
+.custom .pt100 {
+  padding-top: 100px;
+}
+
+.custom .pt60 {
+  padding-top: 60px;
+}
+
+.custom .mt48 {
+  margin-top: 48px;
+}
+
+.custom .mt100 {
+  margin-top: 100px;
+}
+
+.custom .pt150 {
+  padding-top: 150px;
+}
+
+.custom .mt150 {
+  margin-top: 150px;
+}
+
+.custom .img-visibility {
+  visibility: hidden;
+}
+
+.custom .custom_mobile_hidden {
+  display: block;
+}
+
+.custom .custom_mobile_show {
+  display: none;
+}
+
+.custom .title {
+  font-weight: 600 !important;
+}
+
+.custom .big-title {
+  font-size: 50px;
+  line-height: 1em;
+}
+
+.custom .title-h1 {
+  font-size: 50px;
+  line-height: 1em;
+}
+
+.custom .title-h2 {
+  font-size: 48px;
+  line-height: 1em;
+}
+
+.custom .title-h3 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.custom .des {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.custom .des-note {
+  display: block;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.custom .font14 {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.custom .font16 {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.custom .font18 {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.custom .font20 {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.custom .font24 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.custom .font30 {
+  font-size: 30px;
+  line-height: 40px;
+}
+
+.custom .font36 {
+  font-size: 36px;
+  line-height: 42px;
+}
+
+.custom .font60 {
+  font-size: 60px;
+  line-height: 1em;
+}
+
+.custom .text {
+  padding: 0 20px;
+}
+
+.custom .faq-table {
+  width: 100%;
+  line-height: 1.3em;
+}
+
+.custom .faq-table td {
+  padding: 8px 6px;
+}
+
+.custom .faq-table th {
+  padding: 8px 6px;
+  font-size: 18px;
+}
+
+@media (min-width: 799px) {
+  .custom .faq-table th {
+    font-size: 16px;
+  }
+}
+
+.custom .sidebar {
+  padding: 35px 30px 35px 18px;
+  background-color: #ffffff;
+  max-width: 320px;
+}
+
+.custom .sidebar .sidebar-wrap {
+  padding-right: 0;
+  border: none;
+}
+
+.custom .sidebar .sidebar-wrap .sidebar-block {
+  margin: 0;
+  border: none;
+}
+
+.custom .sidebar .sidebar-wrap .toggle {
+  padding-left: 10px;
+  border-bottom: solid 1px #bfbfbf;
+}
+
+.custom .sidebar .sidebar-wrap .toggle_list {
+  padding-left: 10px;
+}
+
+.custom .sidebar .sidebar-wrap .toggle_list li {
+  font-size: 16px;
+}
+
+.custom .sidebar .sidebar-wrap .toggle_list a.active {
+  padding-left: 0;
+  border: none;
+  color: #9cba1a;
+}
+
+@media (min-width: 799px) {
+  .custom .sidebar {
+    position: fixed;
+  }
+}
+
+.custom .page {
+  padding: 40px 40px 60px;
+  background-color: #f2f2f2;
+  margin-left: calc(25% + 20px);
+}
+
+.custom .page .title-h3 {
+  padding-bottom: 35px;
+}
+
+.custom .page p.font14 {
+  color: #717171;
+}
+
+.custom .page a {
+  color: #717171;
+}
+
+.custom .page a:hover {
+  color: #9cba1a;
+}
+
+.custom .page a.a-line {
+  font-weight: normal;
+  text-decoration: underline;
+}
+
+.custom .page .custom-content {
+  padding: 40px;
+  background: #fff;
+}
+
+.custom .page .section:first-child .font18 {
+  padding-top: 0;
+}
+
+.custom .page .section .font18 {
+  padding: 36px 0 24px;
+}
+
+.custom .page .section p.font14 {
+  padding-bottom: 24px;
+}
+
+.custom .page .section p.font14:last-child {
+  padding-bottom: 0;
+}
+
+.custom .page .section a {
+  font-weight: 600;
+}
+
+@media (max-width: 1199px) and (min-width: 799px) {
+  .custom .big-title {
+    font-size: 48px;
+  }
+  .custom .title-h1 {
+    font-size: 48px;
+  }
+  .custom .title-h2 {
+    font-size: 36px;
+  }
+  .custom .font60 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 798px) and (min-width: 768px) {
+  .custom .big-title {
+    font-size: 48px;
+  }
+  .custom .title-h1 {
+    font-size: 48px;
+  }
+  .custom .title-h2 {
+    font-size: 36px;
+  }
+  .custom .font60 {
+    font-size: 30px;
+  }
+  .custom .sidebar {
+    max-width: 100%;
+    margin-top: 60px;
+  }
+  .custom .page {
+    width: 100%;
+    margin-left: 0;
+    background: transparent;
+  }
+}
+
+@media (max-width: 767px) {
+  .portable-power-stations .section-content .show-products .section-product {
+    width: 100%;
+    margin-right: 0;
+  }
+  .custom .big-title {
+    font-size: 36px;
+  }
+  .custom .title-h1 {
+    font-size: 36px;
+  }
+  .custom .title-h2 {
+    font-size: 36px;
+  }
+  .custom .font60 {
+    font-size: 30px;
+  }
+  .custom .des-note {
+    font-size: 16px;
+    color: #414141;
+  }
+  .custom .des {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .custom .a-button {
+    display: inline-block;
+    padding: 0 30px;
+    height: 50px;
+    line-height: 48px;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: #1d1d1d;
+    border-radius: 24px;
+  }
+  .custom .a-button:hover {
+    color: #fff !important;
+    background-color: #1e1e20 !important;
+  }
+  .custom .custom_mobile_hidden {
+    display: none;
+  }
+  .custom .custom_mobile_show {
+    display: block;
+  }
+  .custom .sidebar {
+    max-width: 100%;
+    margin: 0;
+    position: relative;
+    bottom: 0;
+    display: block !important;
+    background: transparent;
+    opacity: 1 !important;
+  }
+  .custom .page {
+    width: 100%;
+    padding: 50px 20px;
+    margin-left: 0;
+  }
+  .custom .page .custom-content {
+    padding: 0;
+    background: transparent;
+  }
+}
+/* End Custom Styles */
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #000;
+}
+.icon-jiahao:before {
+  content: "\e616";
+}
+.icon-shangjiantou:before {
+  content: "\e60a";
+}
+
+.icon-xiajiantou:before {
+  content: "\e60c";
+}
+.icon-dayuhao:before {
+  content: "\e625";
+}
+.icon-jianhao:before {
+  content: "\e617";
+}
+.section-content {
+  position: relative;
+}
+.section-content .text {
+  padding: 48px 0 48px 50px;
+}
+.portable-power-stations .section-content .section-left,
+.portable-power-stations .section-content .section-right,
+.portable-power-stations .h-block .title-h2 {
+  max-width: 48%;
+}
+.portable-power-stations .big-title {
+  font-size: 80px;
+  line-height: 1.2;
+}
+.custom .banner--btn .banner-button.left {
+  margin-top: 48px;
+}
+.portable-power-stations .big-title-2 {
+  font-size: 80px;
+}
+
+.portable-power-stations .banner {
+  background-color: #1d1d1d;
+}
+.portable-power-stations .banner-new {
+  width: 100%;
+}
+.portable-power-stations .banner-new .text {
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  width: 100%;
+}
+.portable-power-stations .banner-new .text .title-h1 {
+  font-size: 100px;
+  line-height: 1.1em;
+  color: #ffffff !important;
+  text-align: center;
+}
+.portable-power-stations .banner .text {
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 55%;
+  width: 100%;
+}
+.portable-power-stations .banner .text .title-h1 {
+  color: #fff !important;
+  font-weight: 900;
+}
+
+.portable-power-stations .section-container-black {
+  background-color: #1d1d1d;
+}
+
+.portable-power-stations .section-2 {
+  max-width: 1600px;
+  margin: 0 auto;
+  background-color: #1d1d1d;
+}
+.portable-power-stations .new-section-2 {
+  width: 100%;
+  background-color: #1d1d1d;
+  padding-top: 40px;
+}
+.portable-power-stations .new-section-2 .text {
+  max-width: 1450px;
+  margin: 0 auto;
+}
+.portable-power-stations .new-section-2 .text .des {
+  font-size: 25px;
+  line-height: 1em;
+  max-width: 885px;
+  margin: 0 auto;
+}
+.portable-power-stations .new-section-2 .title-h2 {
+  font-size: 80px !important;
+  margin-bottom: 60px;
+  color: #ffffff !important;
+}
+
+.portable-power-stations .section-2 .text .title-h1 {
+  color: #fff !important;
+  font-weight: 900;
+}
+
+.portable-power-stations .section-3 {
+  max-width: 1600px;
+  margin: 36px auto 0;
+  padding-bottom: 120px;
+}
+
+.portable-power-stations .section-3 .text {
+  max-width: 926px;
+}
+
+.portable-power-stations .section-3 .text .des {
+  font-size: 18px;
+  line-height: 1.3em;
+  color: #fff !important;
+}
+
+.portable-power-stations .new-section-3 {
+  background-color: #1d1d1d;
+  padding: 0 0 164px;
+}
+.portable-power-stations .new-section-3 .flex-container {
+  max-width: 1374px;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+.portable-power-stations .new-section-3 .icon-block {
+  max-width: 180px;
+  margin: 0 auto;
+  width: 160px;
+}
+
+.portable-power-stations .new-section-3 .icon-img {
+  max-width: 120px;
+  margin: 0 auto;
+  height: 118px;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+}
+.portable-power-stations .new-section-3 img {
+  max-width: 120px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.portable-power-stations .new-section-3 .des {
+  font-weight: bold;
+  margin-top: 30px;
+  font-size: 25px;
+  line-height: 1.3em;
+  color: #b6b6b8;
+  padding-top: 20px;
+  border-top: 3px solid #ffffff;
+}
+
+.portable-power-stations .new-section-4 {
+  width: 100%;
+  background-color: #ffffff;
+}
+.portable-power-stations .new-section-4 .section-4-container {
+  max-width: 1586px;
+  margin: 0 auto;
+  padding-top: 65px;
+}
+.portable-power-stations .new-section-4 .section-text {
+  padding: 65px 0 68px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.portable-power-stations .new-section-4 .section-text .title-h2 {
+  color: #fff !important;
+  font-size: 46px !important;
+  line-height: 1em;
+}
+.portable-power-stations .new-section-4 .section-text .title-h3 {
+  color: #fff !important;
+  font-size: 36px;
+  line-height: 1em;
+  margin-bottom: 20px;
+}
+.portable-power-stations .new-section-4 .section-text .des {
+  color: #b6b6b8;
+  font-size: 20px;
+}
+.portable-power-stations .new-section-4 .section-text .des .color-white {
+  color: #b6b6b8;
+}
+.portable-power-stations .new-section-4 .section-text .section-text-left {
+  width: 54%;
+}
+.portable-power-stations .new-section-4 .section-text .section-text-right {
+  width: 46%;
+}
+.portable-power-stations .new-section-4 .section-text .section-text-right .a-button {
+  background: #ffffff;
+  color: #1d1d1d;
+  margin-top: 60px;
+  line-height: 46px;
+  border: 2px #1d1d1d solid;
+}
+.portable-power-stations .new-section-4 .section-text .section-text-right .a-button:hover {
+  background: #1d1d1d !important;
+  color: #ffffff !important;
+  border: 2px #ffffff solid;
+}
+
+.portable-power-stations .section-4 {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.portable-power-stations .section-4 .flex-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.portable-power-stations .section-4 img {
+  max-width: 88px;
+}
+.portable-power-stations .section-4 .des {
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 25px;
+  line-height: 1.3em;
+}
+.portable-power-stations .new-section-4 .section-content .section-left,
+.portable-power-stations .new-section-7 .section-content .section-left,
+.portable-power-stations .section-65 .section-content .section-left {
+  position: absolute;
+  height: 100%;
+  width: 48%;
+  top: 0;
+  left: 0;
+}
+
+.portable-power-stations .new-section-4 .section-content .section-left img,
+.portable-power-stations .new-section-7 .section-content .section-left img,
+.portable-power-stations .section-65 .section-content .section-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.section-65 .section-content .title-h4 {
+  display: flex;
+  align-items: center;
+}
+.section-65 .section-content .title-h4 svg {
+  margin-right: 24px;
+}
+.section-65 .section-content .des {
+  padding-bottom: 48px;
+}
+.section-65 .section-content .des:last-child {
+  padding-bottom: 0;
+}
+.portable-power-stations .section-65 .top-text {
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+.portable-power-stations .section-65 .h-block .title-h2 {
+  max-width: 100%;
+}
+.portable-power-stations .new-section-common {
+  width: 100%;
+}
+.portable-power-stations .new-section-common .flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+.portable-power-stations .new-section-common .product-serives {
+  width: 50%;
+}
+.portable-power-stations .new-section-common .product-serives .text {
+  bottom: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+.portable-power-stations .new-section-common .product-serives .text .a-button {
+  font-size: 24px;
+  padding: 0 40px;
+  line-height: 45px;
+  margin-top: 20px;
+  border: 2px #1d1d1d solid;
+  z-index: 5;
+}
+.portable-power-stations .new-section-common .product-serives .text .a-button:hover {
+  background-color: #fff !important;
+  color: #1d1d1d !important;
+}
+.portable-power-stations .new-section-common .product-serives .text .title-h3 {
+  font-size: 36px;
+  color: #1d1d1d !important;
+}
+.portable-power-stations .section-5 .show-products {
+  margin-bottom: 150px;
+}
+.portable-power-stations .section-5 .product-dropdown-swiper {
+  padding-bottom: 20px;
+}
+.portable-power-stations .section-5 .products-container {
+  max-width: 1460px;
+  margin: 0 auto;
+}
+.portable-power-stations .section-5 .swiper-button-prev {
+  background-image: url("https://cdn.shopify.com/s/files/1/0625/0718/8450/files/slider-prev-1.png?v=1662443109") !important;
+  color: transparent;
+  background-repeat: no-repeat;
+  width: 48px !important;
+  height: 48px !important;
+  left: -65px;
+  transition: all 0.3s ease;
+}
+.portable-power-stations .section-5 .swiper-button-next {
+  background-image: url("https://cdn.shopify.com/s/files/1/0625/0718/8450/files/slider-next-1.png?v=1662443420") !important;
+  color: transparent;
+  background-repeat: no-repeat;
+  width: 48px !important;
+  height: 48px !important;
+  right: -65px;
+}
+.portable-power-stations .section-5 .swiper-button-prev.swiper-button-disabled {
+  background-image: url("https://cdn.shopify.com/s/files/1/0625/0718/8450/files/slider-prev-disabled.png?v=1662443718") !important;
+}
+.portable-power-stations .section-5 .swiper-button-next.swiper-button-disabled {
+  background-image: url("https://cdn.shopify.com/s/files/1/0625/0718/8450/files/slider-next-disabled.png?v=1662444312") !important;
+}
+.portable-power-stations .section-5 .swiper-button-prev:hover {
+  background-image: url("https://cdn.shopify.com/s/files/1/0625/0718/8450/files/slider-prev-hover.png?v=1662444318") !important;
+  transition: all 0.3s ease;
+}
+.portable-power-stations .section-5 .swiper-button-next:hover {
+  background-image: url("https://cdn.shopify.com/s/files/1/0625/0718/8450/files/slider-next-hover.png?v=1662444318") !important;
+  transition: all 0.3s ease;
+}
+.portable-power-stations .section-5 .swiper-button-next:after,
+.portable-power-stations .section-5 .swiper-button-prev:after {
+  font-weight: 700;
+}
+.portable-power-stations .section-5 .product-swiper-container {
+  position: relative;
+}
+.portable-power-stations .section-5 .product-swiper-container .swiper-container {
+  position: unset !important;
+}
+.portable-power-stations
+  .section-5
+  .product-swiper-container
+  .swiper-container-horizontal
+  > .swiper-pagination-bullets {
+  bottom: -78px;
+}
+.portable-power-stations
+  .section-5
+  .product-swiper-container
+  .product-dropdown-swiper.swiper-container-horizontal
+  > .swiper-pagination-bullets {
+  bottom: -58px;
+}
+.portable-power-stations .section-5 .product-swiper-container .swiper-pagination-bullet {
+  background: #8e8e8e;
+}
+.portable-power-stations .section-5 .product-swiper-container .swiper-pagination-bullet-active {
+  background: #000000;
+}
+
+/* Start Section 6*/
+.portable-power-stations .new-section-6 .show-products {
+  margin-bottom: 65px;
+}
+.portable-power-stations .new-section-6 .product-dropdown-swiper {
+  padding-bottom: 20px;
+}
+.portable-power-stations .new-section-6 .products-container {
+  max-width: 1460px;
+  margin: 0 auto;
+}
+.portable-power-stations .new-section-6 .swiper-button-prev {
+  background-image: url("https://cdn.shopify.com/s/files/1/0625/0718/8450/files/slider-prev-1.png?v=1662443109") !important;
+  color: transparent;
+  background-repeat: no-repeat;
+  width: 48px !important;
+  height: 48px !important;
+  left: -65px;
+  transition: all 0.3s ease;
+}
+.portable-power-stations .new-section-6 .swiper-button-next {
+  background-image: url("https://cdn.shopify.com/s/files/1/0625/0718/8450/files/slider-next-1.png?v=1662443420") !important;
+  color: transparent;
+  background-repeat: no-repeat;
+  width: 48px !important;
+  height: 48px !important;
+  right: -65px;
+}
+.portable-power-stations .new-section-6 .swiper-button-prev.swiper-button-disabled {
+  background-image: url("https://cdn.shopify.com/s/files/1/0625/0718/8450/files/slider-prev-disabled.png?v=1662443718") !important;
+}
+.portable-power-stations .new-section-6 .swiper-button-next.swiper-button-disabled {
+  background-image: url("https://cdn.shopify.com/s/files/1/0625/0718/8450/files/slider-next-disabled.png?v=1662444312") !important;
+}
+.portable-power-stations .new-section-6 .swiper-button-prev:hover {
+  background-image: url("https://cdn.shopify.com/s/files/1/0625/0718/8450/files/slider-prev-hover.png?v=1662444318") !important;
+  transition: all 0.3s ease;
+}
+.portable-power-stations .new-section-6 .swiper-button-next:hover {
+  background-image: url("https://cdn.shopify.com/s/files/1/0625/0718/8450/files/slider-next-hover.png?v=1662444318") !important;
+  transition: all 0.3s ease;
+}
+.portable-power-stations .new-section-6 .swiper-button-next:after,
+.portable-power-stations .new-section-6 .swiper-button-prev:after {
+  font-weight: 700;
+}
+.portable-power-stations .new-section-6 .product-swiper-container {
+  position: relative;
+}
+.portable-power-stations .new-section-6 .product-swiper-container .swiper-container {
+  position: unset !important;
+}
+.portable-power-stations
+  .new-section-6
+  .product-swiper-container
+  .swiper-container-horizontal
+  > .swiper-pagination-bullets {
+  bottom: -78px;
+}
+.portable-power-stations
+  .new-section-6
+  .product-swiper-container
+  .product-dropdown-swiper.swiper-container-horizontal
+  > .swiper-pagination-bullets {
+  bottom: -58px;
+}
+.portable-power-stations .new-section-6 .product-swiper-container .swiper-pagination-bullet {
+  background: #8e8e8e;
+}
+.portable-power-stations .new-section-6 .product-swiper-container .swiper-pagination-bullet-active {
+  background: #ffffff;
+}
+/* end section 6 */
+
+.portable-power-stations .section-common {
+  margin-top: 150px;
+}
+.portable-power-stations .section-common .section-container {
+  max-width: 1586px;
+  margin: 0 auto;
+}
+.portable-power-stations .h-block {
+  margin-bottom: 30px;
+}
+.portable-power-stations .h-block .title-h2 {
+  font-size: 45px !important;
+  line-height: 1.2em;
+}
+
+.portable-power-stations .section-content .section-left {
+  max-width: 48%;
+}
+.portable-power-stations .section-content .section-right {
+  max-width: 48%;
+}
+.portable-power-stations .section-content .title-h4 {
+  font-size: 36px;
+  line-height: 1.2em;
+  margin-bottom: 35px;
+}
+.portable-power-stations .section-content .des {
+  font-size: 18px;
+  line-height: 1.2em;
+  color: #6e6e73;
+}
+.portable-power-stations .section-content .a-button {
+  margin-top: 36px;
+  font-weight: 600;
+}
+.portable-power-stations .show-products {
+  margin-top: 150px;
+}
+.portable-power-stations .show-products .flex-container {
+  display: flex;
+  justify-content: center;
+}
+.portable-power-stations .section-content .show-products .section-product {
+  width: calc(33.33% - 24px);
+  background-color: #f3f3f3;
+  border-radius: 32px;
+  padding: 48px 0 28px;
+  margin-right: 24px;
+  margin-bottom: 28px;
+}
+.portable-power-stations .section-content .show-products .section-product .img-block {
+  min-height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.portable-power-stations .section-content .show-products .section-product img {
+  max-width: 230px;
+  margin: 0 auto;
+  align-items: center;
+}
+.portable-power-stations .section-content .show-products .section-product .product-title {
+  font-size: 25px;
+  color: #6e6e73 !important;
+  margin-bottom: 0;
+}
+.portable-power-stations .show-products .flex-container .a-button {
+  margin-top: 23px;
+  max-width: 250px;
+  width: 250px;
+  font-size: 20px;
+  white-space: nowrap;
+  padding: 0;
+  line-height: 50px;
+}
+
+.portable-power-stations .section-show-product {
+  width: 100%;
+  background: #1d1d1d;
+  padding: 152px 0 167px;
+}
+.portable-power-stations .product-parameters .title-h3 {
+  font-size: 36px;
+  line-height: 1.1em;
+  color: #ffffff !important;
+}
+.portable-power-stations .product-parameters .show-me-button {
+  border: 2px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 28px;
+  font-size: 18px;
+  line-height: 1.3em;
+  font-weight: 600;
+  width: auto;
+  height: 48px;
+  padding: 0 15px;
+  background: #1d1d1d;
+  margin-top: 66px;
+  color: #ffffff;
+}
+
+.portable-power-stations .product-parameters .show-me-button .iconfont {
+  font-size: 24px;
+  position: relative;
+  color: #ffffff;
+}
+.portable-power-stations .product-parameters .show-me {
+  margin: 113px auto 0;
+  display: none;
+}
+.portable-power-stations .product-parameters .show-me .short-lines {
+  display: inline-block;
+  width: 106px;
+  border-bottom: 2px solid #000000;
+}
+.portable-power-stations .product-parameters .show-me .title-h4 {
+  font-size: 40px;
+  line-height: 1.2em;
+  margin: 57px auto 72px;
+}
+.portable-power-stations .product-parameters .show-me p {
+  line-height: 1.5em;
+}
+.portable-power-stations .product-parameters .show-me .flex-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1460px;
+  margin: 0 auto;
+}
+.portable-power-stations .product-parameters .show-me .bg-light-grey {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.portable-power-stations .product-parameters .show-me .bg-dark-gray {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.portable-power-stations .product-parameters .show-me .product-parameter {
+  border-radius: 32px;
+  padding-top: 46px;
+  width: calc(33.33% - 24px);
+  margin-left: 5px;
+  margin-right: 24px;
+}
+.portable-power-stations .product-parameters .show-me .title-h6 {
+  font-size: 18px;
+  color: #6e6e73 !important;
+  line-height: 1.2em;
+  margin-bottom: 16px;
+}
+.portable-power-stations .product-parameters .show-me .capacity {
+  font-size: 36px;
+  color: #1d1d1d;
+}
+.portable-power-stations .product-parameters .show-me .other-parameter {
+  font-size: 18px;
+}
+.portable-power-stations .product-parameters .show-me .parameter-spacing {
+  padding: 32px 0;
+}
+.portable-power-stations .product-parameters .show-me .divider {
+  position: relative;
+  padding: 20px 0;
+}
+.portable-power-stations .product-parameters .show-me .divider:after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #707070;
+  content: "";
+  height: 2px;
+  width: 80%;
+  opacity: 0.5;
+}
+.section-6 {
+  margin-bottom: 108px;
+}
+.question-container {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  align-items: baseline;
+  column-gap: 10px;
+}
+.plus,
+.minus {
+  display: none;
+}
+.plus.active,
+.minus.active {
+  display: inline;
+}
+.portable-power-stations .new-section-7 {
+  width: 100%;
+  margin-top: 60px;
+}
+.portable-power-stations .new-section-7 .section-7-container {
+  max-width: 1586px;
+  margin: 0 auto;
+}
+.portable-power-stations .new-section-7 .section-text {
+  padding: 65px 0 68px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.portable-power-stations .new-section-7 .section-text .title-h2 {
+  color: #1d1d1d !important;
+  font-size: 46px !important;
+  line-height: 1em;
+}
+.portable-power-stations .new-section-7 .section-text .title-h3 {
+  color: #1d1d1d !important;
+  font-size: 36px;
+  line-height: 1em;
+  margin-bottom: 20px;
+}
+.portable-power-stations .new-section-7 .section-text .des {
+  color: #505053;
+  font-size: 20px;
+}
+.portable-power-stations .new-section-7 .section-text .des .color-white {
+  color: #505053;
+}
+.portable-power-stations .new-section-7 .section-text .section-text-left {
+  width: 53%;
+}
+.portable-power-stations .new-section-7 .section-text .section-text-right {
+  width: 47%;
+}
+.portable-power-stations .new-section-7 .section-text .section-text-right .a-button {
+  background: #1d1d1d;
+  color: #ffffff;
+  margin-top: 60px;
+  line-height: 46px;
+  border: 2px #ffffff solid;
+}
+.portable-power-stations .new-section-7 .section-text .section-text-right .a-button:hover {
+  background: #ffffff !important;
+  color: #1d1d1d !important;
+  border: 2px #1d1d1d solid;
+}
+
+.section-75 {
+  width: 100%;
+}
+.section-75 .half-mask {
+  background-color: rgba(29, 29, 29, 0.7);
+  width: 44%;
+  height: 100%;
+  min-height: 100%;
+  top: 0;
+  left: 0;
+}
+.section-75 .half-mask .pr {
+  height: 100%;
+  min-height: 100%;
+}
+.section-75 .half-mask .text {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+  width: 77%;
+}
+.section-75 .title-h3 {
+  color: #fff !important;
+  opacity: 1;
+  font-size: 36px;
+  line-height: 1.1em;
+}
+.section-75 .show-content {
+  margin: 25px 0 0;
+}
+.section-75 .show-content .content-slide {
+  padding: 6px 0 4px 26px;
+  border-left: 1px solid rgba(255, 255, 255, 0.7);
+  margin-bottom: 34px;
+}
+.section-75 .show-content .content-slide.active-slide {
+  border-left: 3px solid rgba(255, 255, 255, 1);
+  padding: 22px 0 10px 26px;
+}
+.section-75 .half-mask .text .des {
+  opacity: 0.9;
+  line-height: 1.3;
+}
+.section-75 .text .show-content .title-h6 {
+  color: #fff !important;
+  opacity: 1;
+  font-size: 18px;
+  line-height: 1.3;
+  margin-bottom: 0;
+  opacity: 0.9;
+  cursor: pointer;
+}
+.section-75 .text .show-content .title-h6:hover {
+  opacity: 1;
+}
+.section-75 .show-content .content-slide.active-slide .title-h6 {
+  opacity: 1;
+  margin-bottom: 15px;
+}
+
+.section-7 {
+  width: 100%;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.section-7 .big-title {
+  font-size: 140px;
+  line-height: 1.2em;
+  color: #fff !important;
+}
+.bsection-container {
+  max-width: 1616px;
+  margin: 0 auto;
+}
+.swiper-container-outside {
+  margin: 110px auto 100px;
+}
+.protable-swiper-container {
+  width: 1616px;
+  margin: 0 auto;
+  padding-bottom: 71px;
+}
+.protable-swiper-container > .swiper-pagination-bullets,
+.protable-swiper-container .swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: 0px;
+}
+.protable-swiper-container > .swiper-pagination-bullets .swiper-pagination-bullet {
+  border: 1px solid #ffffff;
+  margin: 0 8px;
+}
+.protable-swiper-container .swiper-pagination-bullet-active {
+  background: #ffffff;
+}
+.protable-swiper-container .swiper-pagination-bullet {
+  width: 26px;
+  height: 26px;
+}
+
+.protable-swiper-container .swiper-slide .text {
+  margin-top: 80px;
+}
+.protable-swiper-container .swiper-slide .text .title-h3 {
+  font-size: 50px;
+  line-height: 1.1em;
+  color: #fff !important;
+}
+.protable-swiper-container .swiper-slide .text .des {
+  font-size: 35px;
+  line-height: 1.2em;
+  margin-top: 38px;
+  padding: 0 90px;
+}
+.section-7 .faq-block {
+  max-width: 1730px;
+  margin: 0 auto;
+}
+.faq-block .title-h2 {
+  font-size: 36px !important;
+  line-height: 1.1em;
+  color: #1d1d1d !important;
+}
+.faq-block .show-me-button {
+  border: 2px solid #1d1d1d;
+  box-sizing: border-box;
+  border-radius: 28px;
+  font-size: 25px;
+  line-height: 1.3em;
+  font-weight: 600;
+  width: 256px;
+  height: 55px;
+  background: #ffffff;
+  margin-top: 36px;
+  color: #1d1d1d;
+}
+
+.faq-block .show-me-button .iconfont {
+  font-size: 24px;
+  color: #1d1d1d;
+}
+.faq-block .show-me {
+  margin: 82px 0 0;
+  display: none;
+}
+.faq-block .question {
+  border-top: 2px solid #1d1d1d;
+  padding: 64px 40px;
+  text-align: left;
+}
+.faq-block .last-question {
+  border-bottom: 2px solid #1d1d1d;
+}
+.faq-block .question .title-h3 {
+  color: #1d1d1d !important;
+  font-size: 38px;
+  line-height: 1.3em;
+  cursor: pointer;
+}
+.faq-block .question .title-h3 .iconfont {
+  font-size: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  color: #1d1d1d;
+}
+.faq-block .question p {
+  line-height: 1.2em;
+  font-size: 20px;
+  color: #1d1d1d;
+}
+.faq-block .question .des {
+  padding-top: 30px;
+  display: none;
+}
+
+.section-8 {
+  padding: 0 0 158px;
+}
+.section-8 .big-title {
+  font-size: 80px !important;
+  line-height: 1.2em;
+  margin-bottom: 106px;
+}
+.section-8 .media-container {
+  display: block;
+  max-width: 1309px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1680px) {
+  .portable-power-stations .new-section-4 .section-4-container,
+  .portable-power-stations .new-section-7 .section-7-container {
+    max-width: 1500px;
+  }
+  .portable-power-stations .section-4 img {
+    max-width: 118px;
+  }
+  .portable-power-stations .section-4 .des {
+    font-size: 24px;
+  }
+  .portable-power-stations .section-common {
+    margin-top: 140px;
+  }
+  .portable-power-stations .section-common .section-container {
+    max-width: 1500px;
+  }
+  .portable-power-stations .h-block .title-h2 {
+    font-size: 45px !important;
+  }
+  .portable-power-stations .section-content .title-h4 {
+    font-size: 33px;
+  }
+  .portable-power-stations .section-content .des {
+    font-size: 18px;
+  }
+  .portable-power-stations .section-5 .products-container,
+  .portable-power-stations .product-parameters .show-me .flex-container {
+    max-width: 1400px;
+  }
+  .portable-power-stations .section-common .section-container {
+    max-width: 1500px;
+  }
+  .portable-power-stations .product-parameters .title-h3 {
+    font-size: 45px;
+  }
+  .portable-power-stations .product-parameters .show-me-button {
+    font-size: 22px;
+    line-height: 1em;
+    width: 228px;
+    height: 46px;
+    margin-top: 30px;
+  }
+  .portable-power-stations .product-parameters {
+    /*     margin-top: 99px; */
+  }
+  .portable-power-stations .product-parameters .show-me .title-h4 {
+    font-size: 35px;
+  }
+  .bsection-container {
+    max-width: 1500px;
+  }
+  .swiper-container-outside {
+    margin: 100px auto 90px;
+  }
+  .protable-swiper-container {
+    width: 1500px;
+  }
+  .protable-swiper-container .swiper-slide .text {
+    margin-top: 70px;
+  }
+  .protable-swiper-container .swiper-slide .text .title-h3 {
+    font-size: 46px;
+  }
+  .protable-swiper-container .swiper-slide .text .des {
+    font-size: 32px;
+    line-height: 1.2em;
+    margin-top: 34px;
+    padding: 0 90px;
+  }
+  .protable-swiper-container .swiper-pagination-bullet {
+    width: 24px;
+    height: 24px;
+  }
+  .faq-block .show-me-button {
+    margin-top: 64px;
+    font-size: 22px;
+    line-height: 1em;
+    width: 228px;
+    height: 45px;
+  }
+  .faq-block .question .title-h3 {
+    font-size: 34px;
+  }
+  .section-8 {
+    padding: 103px 0 138px;
+  }
+  .section-8 .big-title {
+    font-size: 70px !important;
+    margin-bottom: 96px;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .portable-power-stations .banner-new .text .title-h1 {
+    font-size: 80px;
+  }
+  .portable-power-stations .new-section-2 .title-h2 {
+    font-size: 70px !important;
+  }
+  .portable-power-stations .new-section-2 .text {
+    max-width: 1280px;
+  }
+}
+
+@media screen and (max-width: 1560px) {
+  .portable-power-stations .section-2 {
+    max-width: 1420px;
+  }
+  .portable-power-stations .section-3 {
+    max-width: 1420px;
+  }
+  .portable-power-stations .section-4 img {
+    max-width: 100px;
+  }
+  .portable-power-stations .section-4 .des {
+    font-size: 22px;
+  }
+  .portable-power-stations .section-common {
+    margin-top: 130px;
+  }
+  .portable-power-stations .section-5 .products-container,
+  .portable-power-stations .product-parameters .show-me .flex-container {
+    max-width: 1280px;
+  }
+  .portable-power-stations .section-common .section-container,
+  .portable-power-stations .new-section-4 .section-4-container,
+  .portable-power-stations .new-section-7 .section-7-container {
+    max-width: 1380px;
+  }
+  .portable-power-stations .section-65 {
+    margin-bottom: 130px;
+  }
+  .portable-power-stations .section-content .des {
+    font-size: 18px;
+  }
+  .portable-power-stations .h-block .title-h2 {
+    font-size: 45px !important;
+  }
+  .portable-power-stations .section-content .title-h4 {
+    font-size: 30px;
+  }
+  .portable-power-stations .product-parameters .title-h3 {
+    font-size: 40px;
+  }
+  .portable-power-stations .product-parameters .show-me-button {
+    font-size: 22px;
+    line-height: 1em;
+    width: 222px;
+    height: 46px;
+    margin-top: 30px;
+  }
+  .portable-power-stations .product-parameters {
+    /*     margin-top: 89px; */
+  }
+  .portable-power-stations .product-parameters .show-me .title-h4 {
+    font-size: 30px;
+  }
+  .swiper-container-outside {
+    margin: 100px auto 90px;
+  }
+  .protable-swiper-container {
+    width: 1380px;
+  }
+  .protable-swiper-container .swiper-slide .text {
+    margin-top: 70px;
+  }
+  .protable-swiper-container .swiper-slide .text .title-h3 {
+    font-size: 46px;
+  }
+  .protable-swiper-container .swiper-slide .text .des {
+    font-size: 32px;
+    line-height: 1.2em;
+    margin-top: 34px;
+    padding: 0 90px;
+  }
+  .protable-swiper-container .swiper-pagination-bullet {
+    width: 22px;
+    height: 22px;
+  }
+  .faq-block .show-me-button {
+    margin-top: 64px;
+    font-size: 22px;
+    line-height: 1em;
+    width: 222px;
+    height: 45px;
+  }
+  .faq-block .question .title-h3 {
+    font-size: 32px;
+  }
+  .faq-block .question p {
+    font-size: 20px;
+  }
+  .section-8 {
+    padding: 93px 0 128px;
+  }
+  .section-8 .big-title {
+    font-size: 60px !important;
+    margin-bottom: 86px;
+  }
+  .section-8 .media-container {
+    max-width: 1280px;
+  }
+}
+@media screen and (max-width: 1440px) {
+  .portable-power-stations .new-section-2 {
+    padding-top: 20px;
+  }
+  .portable-power-stations .new-section-2 .text {
+    max-width: 932px;
+  }
+  .portable-power-stations .new-section-2 .title-h2 {
+    font-size: 50px !important;
+  }
+  .portable-power-stations .new-section-2 .text .des {
+    font-size: 22px;
+    max-width: 778px;
+  }
+  .portable-power-stations .new-section-3 {
+    padding: 0 0 140px;
+  }
+  .portable-power-stations .new-section-3 .flex-container {
+    max-width: 1200px;
+  }
+  .portable-power-stations .new-section-3 .des {
+    font-size: 22px;
+    padding-top: 15px;
+    margin-top: 25px;
+  }
+  .portable-power-stations .new-section-3 .icon-block {
+    width: 140px;
+  }
+  .portable-power-stations .new-section-3 img {
+    max-width: 100px;
+  }
+  .portable-power-stations .new-section-4 .section-4-container {
+    max-width: 1290px;
+  }
+  .portable-power-stations .new-section-4 .section-text .title-h3 {
+    font-size: 32px;
+  }
+  .portable-power-stations .new-section-common .product-serives .text .title-h3 {
+    font-size: 32px;
+  }
+  .portable-power-stations .new-section-common .product-serives .text .a-button {
+    font-size: 22px;
+  }
+  .portable-power-stations .section-5 .products-container {
+    max-width: 1160px;
+  }
+  .portable-power-stations .product-parameters .show-me .flex-container {
+    max-width: 1160px;
+  }
+  .portable-power-stations .section-show-product {
+    padding: 132px 0 137px;
+  }
+  .portable-power-stations .new-section-7 .section-7-container {
+    max-width: 1200px;
+  }
+  .portable-power-stations .new-section-7 .section-text .title-h3 {
+    font-size: 32px;
+  }
+  .portable-power-stations .section-2 {
+    max-width: 1330px;
+  }
+  .portable-power-stations .section-3 {
+    max-width: 1330px;
+  }
+  .portable-power-stations .section-4 img {
+    max-width: 90px;
+  }
+  .portable-power-stations .section-4 .des {
+    font-size: 20px;
+  }
+  .portable-power-stations .section-common {
+    margin-top: 120px;
+  }
+  .portable-power-stations .section-common .section-container {
+    max-width: 1290px;
+  }
+  .portable-power-stations .section-content .des {
+    font-size: 18px;
+  }
+  .portable-power-stations .h-block .title-h2 {
+    font-size: 40px !important;
+  }
+  .portable-power-stations .section-content .title-h4 {
+    font-size: 28px;
+  }
+  .portable-power-stations .product-parameters .title-h3 {
+    font-size: 34px;
+  }
+  .portable-power-stations .product-parameters .show-me-button {
+    font-size: 20px;
+    line-height: 1em;
+    width: 220px;
+    height: 46px;
+  }
+  .portable-power-stations .product-parameters .show-me .title-h4 {
+    font-size: 30px;
+  }
+  .swiper-container-outside {
+    margin: 90px auto 80px;
+  }
+  .protable-swiper-container {
+    width: 1290px;
+  }
+  .protable-swiper-container .swiper-slide .text {
+    margin-top: 60px;
+  }
+  .protable-swiper-container .swiper-slide .text .title-h3 {
+    font-size: 44px;
+  }
+  .protable-swiper-container .swiper-slide .text .des {
+    font-size: 30px;
+    line-height: 1.2em;
+    margin-top: 30px;
+    padding: 0 90px;
+  }
+  .protable-swiper-container .swiper-pagination-bullet {
+    width: 20px;
+    height: 20px;
+  }
+  .faq-block .show-me {
+    margin: 72px 0;
+  }
+  .faq-block .show-me-button {
+    margin-top: 54px;
+    font-size: 22px;
+    line-height: 1em;
+    width: 220px;
+    height: 45px;
+  }
+  .faq-block .question {
+    padding: 44px 40px;
+  }
+  .faq-block .question .title-h3 {
+    font-size: 28px;
+  }
+  .faq-block .question p {
+    font-size: 18px;
+  }
+  .faq-block .question .des {
+    padding-top: 20px;
+  }
+  .section-8 .big-title {
+    font-size: 50px !important;
+    margin-bottom: 76px;
+  }
+  .section-8 .media-container {
+    max-width: 1220px;
+  }
+  .section-8 {
+    padding: 83px 0 118px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .portable-power-stations .big-title {
+    font-size: 68px;
+  }
+}
+
+@media screen and (max-width: 1360px) {
+  .portable-power-stations .section-2 {
+    max-width: 1260px;
+  }
+  .portable-power-stations .section-3 {
+    max-width: 1260px;
+  }
+  .portable-power-stations .new-section-4 .section-4-container,
+  .portable-power-stations .new-section-7 .section-7-container {
+    max-width: 1220px;
+  }
+  .portable-power-stations .section-4 img {
+    max-width: 86px;
+  }
+  .portable-power-stations .section-4 .des {
+    font-size: 20px;
+  }
+  .portable-power-stations .section-common {
+    margin-top: 110px;
+  }
+  .portable-power-stations .section-common .section-container {
+    max-width: 1220px;
+  }
+  .portable-power-stations .section-content .des {
+    font-size: 18px;
+  }
+  .portable-power-stations .h-block .title-h2 {
+    font-size: 35px !important;
+  }
+  .portable-power-stations .section-content .title-h4 {
+    font-size: 26px;
+  }
+  .portable-power-stations .product-parameters .show-me .title-h4 {
+    font-size: 28px;
+    margin: 47px auto 62px;
+  }
+  .portable-power-stations .product-parameters .show-me {
+    margin: 54px auto 100px;
+  }
+  .swiper-container-outside {
+    margin: 70px auto 60px;
+  }
+  .protable-swiper-container {
+    width: 1220px;
+  }
+  .protable-swiper-container .swiper-slide .text {
+    margin-top: 60px;
+  }
+  .protable-swiper-container .swiper-slide .text .title-h3 {
+    font-size: 40px;
+  }
+  .protable-swiper-container .swiper-slide .text .des {
+    font-size: 28px;
+    line-height: 1.2em;
+    margin-top: 26px;
+    padding: 0 90px;
+  }
+  .protable-swiper-container .swiper-pagination-bullet {
+    width: 20px;
+    height: 20px;
+  }
+  .section-8 {
+    padding: 73px 0 108px;
+  }
+  .section-8 .big-title {
+    font-size: 40px !important;
+    margin-bottom: 66px;
+  }
+  .section-8 .media-container {
+    max-width: 1200px;
+  }
+}
+
+@media screen and (max-width: 1320px) {
+  .portable-power-stations .section-5 .products-container,
+  .portable-power-stations .product-parameters .show-me .flex-container {
+    max-width: 1100px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .portable-power-stations .banner-new .text .title-h1 {
+    font-size: 50px;
+  }
+  .portable-power-stations .new-section-2 .text {
+    max-width: 747px;
+  }
+  .portable-power-stations .new-section-2 .title-h2 {
+    font-size: 36px !important;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .portable-power-stations .new-section-2 .text .des {
+    font-size: 20px;
+  }
+  .portable-power-stations .new-section-3 {
+    padding: 0 0 120px;
+  }
+  .portable-power-stations .new-section-3 .flex-container {
+    max-width: 960px;
+  }
+  .portable-power-stations .new-section-3 .icon-block {
+    width: 120px;
+  }
+  .portable-power-stations .new-section-3 img {
+    max-width: 80px;
+  }
+  .portable-power-stations .new-section-3 .icon-img {
+    height: 100px;
+  }
+  .portable-power-stations .new-section-3 .des {
+    font-size: 20px;
+    padding-top: 10px;
+    margin-top: 20px;
+  }
+  .portable-power-stations .new-section-4 .section-4-container {
+    max-width: 1220px;
+  }
+  .portable-power-stations .new-section-4 .section-text .title-h2 {
+    font-size: 34px !important;
+  }
+  .portable-power-stations .new-section-4 .section-text .title-h3 {
+    font-size: 30px;
+  }
+  .portable-power-stations .new-section-4 .section-text .des {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .portable-power-stations .new-section-4 .section-text .section-text-right .a-button {
+    margin-top: 40px;
+    height: 44px;
+    line-height: 40px;
+  }
+  .custom .a-button {
+    font-size: 18px;
+    height: 40px;
+    line-height: 40px;
+  }
+  .portable-power-stations .new-section-common .product-serives .text .title-h3 {
+    font-size: 30px;
+  }
+  .portable-power-stations .new-section-common .product-serives .text .a-button {
+    font-size: 20px;
+  }
+  .portable-power-stations .new-section-common .product-serives .text .a-button {
+    padding: 0 36px;
+    line-height: 36px;
+    margin-top: 20px;
+  }
+  .portable-power-stations .new-section-common .product-serives .text {
+    bottom: 60px;
+  }
+  .portable-power-stations .product-parameters .title-h3 {
+    font-size: 30px;
+  }
+  .portable-power-stations .product-parameters .show-me-button {
+    font-size: 18px;
+    width: 188px;
+  }
+  .portable-power-stations .product-parameters .show-me-button .iconfont {
+    font-size: 22px;
+  }
+  .portable-power-stations .section-show-product {
+    padding: 102px 0 107px;
+  }
+  .portable-power-stations .product-parameters .show-me .title-h6 {
+    font-size: 16px;
+  }
+  .portable-power-stations .product-parameters .show-me .product-parameter {
+    padding-top: 30px;
+  }
+  .portable-power-stations .product-parameters .show-me .parameter-spacing {
+    padding: 25px 0;
+  }
+  .portable-power-stations .product-parameters .show-me .product-parameter {
+    width: calc(33.33% - 24px);
+    margin-left: 5px;
+    margin-right: 24px;
+  }
+  .section-7 {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .portable-power-stations .new-section-7 .section-7-container {
+    max-width: 960px;
+  }
+  .portable-power-stations .new-section-7 .section-text .title-h2 {
+    font-size: 34px !important;
+  }
+  .portable-power-stations .new-section-7 .section-text .title-h3 {
+    font-size: 30px;
+  }
+  .portable-power-stations .new-section-7 .section-text .des {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .portable-power-stations .new-section-7 .section-text .section-text-right .a-button {
+    margin-top: 40px;
+    height: 44px;
+    line-height: 40px;
+  }
+  .section-75 .title-h3 {
+    font-size: 30px;
+  }
+  .section-75 .text .show-content .title-h6 {
+    font-size: 16px;
+  }
+  .section-75 .half-mask .text .des {
+    font-size: 14px;
+  }
+  .section-75 .half-mask {
+    width: 50%;
+  }
+  .section-75 .half-mask .text {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 1250px) {
+  .portable-power-stations .section-2 {
+    max-width: 1140px;
+  }
+  .portable-power-stations .section-3 {
+    max-width: 1140px;
+  }
+  .portable-power-stations .new-section-4 .section-4-container,
+  .portable-power-stations .new-section-7 .section-7-container {
+    max-width: 1100px;
+  }
+  .portable-power-stations .section-4 img {
+    max-width: 86px;
+  }
+  .portable-power-stations .section-4 .des {
+    font-size: 20px;
+  }
+  .portable-power-stations .section-common {
+    margin-top: 100px;
+  }
+  .portable-power-stations .section-5 .products-container {
+    max-width: 980px;
+  }
+  .portable-power-stations .product-parameters .show-me .flex-container {
+    max-width: 980px;
+  }
+  .portable-power-stations .section-common .section-container {
+    max-width: 1100px;
+  }
+  .portable-power-stations .section-content .a-button {
+    margin-top: 46px;
+  }
+  .custom .a-button {
+    font-size: 20px;
+    height: 44px;
+    line-height: 40px;
+  }
+  .portable-power-stations .show-products .flex-container .a-button {
+    width: 225px;
+    font-size: 16px;
+    padding: 0;
+    line-height: 45px;
+  }
+  .portable-power-stations .product-parameters .title-h3 {
+    font-size: 36px;
+  }
+  .portable-power-stations .product-parameters .show-me-button {
+    font-size: 20px;
+    line-height: 1em;
+    width: 212px;
+    height: 46px;
+  }
+  .portable-power-stations .product-parameters .show-me .title-h4 {
+    font-size: 26px;
+    margin: 40px auto 52px;
+  }
+  .portable-power-stations .product-parameters .show-me {
+    margin: 50px auto 95px;
+  }
+  .swiper-container-outside {
+    margin: 70px auto 60px;
+  }
+  .protable-swiper-container {
+    width: 1100px;
+  }
+  .protable-swiper-container .swiper-slide .text {
+    margin-top: 60px;
+  }
+  .protable-swiper-container .swiper-slide .text .title-h3 {
+    font-size: 40px;
+  }
+  .protable-swiper-container .swiper-slide .text .des {
+    font-size: 28px;
+    line-height: 1.2em;
+    margin-top: 26px;
+    padding: 0 90px;
+  }
+  .protable-swiper-container .swiper-pagination-bullet {
+    width: 18px;
+    height: 18px;
+  }
+  .faq-block .show-me {
+    margin: 62px 0;
+  }
+  .faq-block .show-me-button {
+    margin-top: 44px;
+    font-size: 20px;
+    line-height: 1em;
+    width: 212px;
+    height: 45px;
+  }
+  .faq-block .question {
+    padding: 40px 30px;
+  }
+  .faq-block .question .title-h3 {
+    font-size: 24px;
+  }
+  .section-8 {
+    padding: 63px 0 98px;
+  }
+  .section-8 .media-container {
+    max-width: 1134px;
+  }
+}
+@media screen and (max-width: 1150px) {
+  .custom .section-content .text {
+    padding: 24px 0 24px 25px;
+  }
+  .portable-power-stations .section-2 {
+    max-width: 1000px;
+  }
+  .portable-power-stations .section-3 {
+    max-width: 1000px;
+  }
+  .portable-power-stations .new-section-4 .section-4-container,
+  .portable-power-stations .new-section-7 .section-7-container {
+    max-width: 960px;
+  }
+  .portable-power-stations .section-4 img {
+    max-width: 80px;
+  }
+  .portable-power-stations .section-4 .des {
+    font-size: 18px;
+  }
+  .portable-power-stations
+    .section-5
+    .product-swiper-container
+    .swiper-container-horizontal
+    > .swiper-pagination-bullets {
+    bottom: -30px;
+  }
+  .portable-power-stations .section-common {
+    margin-top: 90px;
+  }
+  .portable-power-stations .section-common .section-container {
+    max-width: 960px;
+  }
+  .portable-power-stations .section-content .des {
+    font-size: 18px;
+  }
+  .portable-power-stations .h-block .title-h2 {
+    font-size: 30px !important;
+  }
+  .portable-power-stations .section-content .title-h4 {
+    font-size: 24px;
+    margin-bottom: 18px;
+  }
+  .portable-power-stations .section-content .a-button {
+    margin-top: 40px;
+  }
+  .custom .a-button {
+    font-size: 18px;
+    height: 44px;
+    line-height: 40px;
+  }
+  .portable-power-stations .show-products .flex-container {
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .portable-power-stations .section-content .show-products .section-product.river2 {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    flex: 0 0 48%;
+  }
+  .portable-power-stations .section-content .show-products .section-product {
+    margin-bottom: 28px;
+  }
+  .portable-power-stations .show-products .flex-container .a-button {
+    width: 210px;
+  }
+  .portable-power-stations .show-products {
+    margin-top: 70px;
+  }
+  .portable-power-stations .section-5 .show-products {
+    margin-bottom: 70px;
+  }
+  .swiper-container-outside {
+    margin: 60px auto 50px;
+  }
+  .protable-swiper-container {
+    width: 960px;
+  }
+  .protable-swiper-container .swiper-slide .text {
+    margin-top: 50px;
+  }
+  .protable-swiper-container .swiper-slide .text .title-h3 {
+    font-size: 36px;
+  }
+  .protable-swiper-container .swiper-slide .text .des {
+    font-size: 26px;
+    line-height: 1.2em;
+    margin-top: 22px;
+    padding: 0 30px;
+  }
+  .protable-swiper-container .swiper-pagination-bullet {
+    width: 16px;
+    height: 16px;
+  }
+  .section-8 {
+    padding: 53px 0 88px;
+  }
+  .section-8 .media-container {
+    max-width: 960px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .portable-power-stations .section-5 .products-container,
+  .portable-power-stations .product-parameters .show-me .flex-container {
+    max-width: 880px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .portable-power-stations .banner-new {
+    margin-bottom: -1px;
+  }
+  .portable-power-stations .new-section-2 {
+    margin-bottom: -1px;
+  }
+  .portable-power-stations .new-section-3 {
+    margin-bottom: -1px;
+  }
+  .portable-power-stations .new-section-4 {
+    margin-bottom: -1px;
+  }
+  .section-75 .half-mask {
+    width: 50%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .portable-power-stations .h-block .title-h2 {
+    max-width: 100%;
+  }
+  .section-content .text {
+    padding: 20px 0;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .portable-power-stations .big-title {
+    font-size: 50px;
+  }
+  .portable-power-stations .banner .text {
+    right: 49%;
+  }
+  .portable-power-stations .section-2 {
+    max-width: 890px;
+  }
+  .portable-power-stations .section-3 {
+    max-width: 890px;
+  }
+  .portable-power-stations .section-4 img {
+    max-width: 80px;
+  }
+  .portable-power-stations .section-4 .des {
+    font-size: 18px;
+  }
+  .portable-power-stations .section-common {
+    margin-top: 90px;
+  }
+  .portable-power-stations .section-5 .products-container,
+  .portable-power-stations .product-parameters .show-me .flex-container {
+    max-width: 800px;
+  }
+  .portable-power-stations .section-common .section-container {
+    max-width: 850px;
+  }
+  .portable-power-stations .section-content .des {
+    font-size: 18px;
+  }
+  .portable-power-stations .h-block .title-h2 {
+    font-size: 30px !important;
+  }
+  .portable-power-stations .section-content .title-h4 {
+    font-size: 23px;
+    margin-bottom: 18px;
+  }
+  .portable-power-stations .section-content .a-button {
+    margin-top: 40px;
+  }
+  .custom .a-button {
+    font-size: 18px;
+    height: 44px;
+    line-height: 40px;
+  }
+  .portable-power-stations .show-products .flex-container .a-button {
+    width: 200px;
+    font-size: 16px;
+  }
+  .portable-power-stations .show-products {
+    margin-top: 70px;
+  }
+  .portable-power-stations .product-parameters .title-h3 {
+    font-size: 34px;
+  }
+  .portable-power-stations .product-parameters .show-me-button {
+    font-size: 20px;
+    line-height: 1em;
+    width: 212px;
+    height: 46px;
+    margin-top: 30px;
+  }
+  .portable-power-stations .product-parameters {
+    /*     margin-top: 75px; */
+  }
+  .portable-power-stations .product-parameters .show-me .title-h4 {
+    font-size: 24px;
+    margin: 30px auto 42px;
+  }
+  .portable-power-stations .product-parameters .show-me .capacity {
+    font-size: 32px;
+  }
+  .portable-power-stations .product-parameters .show-me {
+    margin: 40px auto 85px;
+  }
+  .swiper-container-outside {
+    margin: 60px auto 50px;
+  }
+  .protable-swiper-container {
+    width: 850px;
+  }
+  .protable-swiper-container .swiper-slide .text {
+    margin-top: 40px;
+  }
+  .protable-swiper-container .swiper-slide .text .title-h3 {
+    font-size: 32px;
+  }
+  .protable-swiper-container .swiper-slide .text .des {
+    font-size: 20px;
+    line-height: 1.2em;
+    margin-top: 18px;
+    padding: 0 30px;
+  }
+  .protable-swiper-container .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+  }
+  .protable-swiper-container > .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 6px;
+  }
+  .faq-block .show-me {
+    margin: 52px 0;
+  }
+  .faq-block .show-me-button {
+    margin-top: 44px;
+    font-size: 20px;
+    line-height: 1em;
+    width: 212px;
+    height: 45px;
+  }
+  .faq-block .question {
+    padding: 30px 20px;
+  }
+  .faq-block .question .title-h3 {
+    font-size: 22px;
+  }
+  .section-8 {
+    padding: 43px 0 78px;
+  }
+  .section-8 .big-title {
+    font-size: 30px !important;
+    margin-bottom: 56px;
+  }
+  .section-8 .media-container {
+    max-width: 820px;
+  }
+  .portable-power-stations .banner-new .text .title-h1 {
+    font-size: 40px;
+  }
+  .portable-power-stations .new-section-2 .title-h2 {
+    font-size: 30px !important;
+    margin-bottom: 25px;
+  }
+  .portable-power-stations .new-section-2 .text .des {
+    font-size: 18px;
+  }
+  .portable-power-stations .new-section-2 .text {
+    max-width: 676px;
+  }
+  .portable-power-stations .new-section-3 {
+    padding: 0 0 100px;
+  }
+  .portable-power-stations .new-section-3 .flex-container {
+    max-width: 680px;
+  }
+  .portable-power-stations .new-section-3 .icon-block {
+    width: 100px;
+  }
+  .portable-power-stations .new-section-3 .icon-img {
+    height: 80px;
+  }
+  .portable-power-stations .new-section-3 img {
+    max-width: 65px;
+  }
+  .portable-power-stations .new-section-3 .des {
+    font-size: 16px;
+    margin-top: 15px;
+  }
+  .portable-power-stations .new-section-4 .section-4-container {
+    max-width: 850px;
+  }
+  .portable-power-stations .new-section-4 .section-text .title-h2 {
+    font-size: 32px !important;
+  }
+  .portable-power-stations .new-section-4 .section-text .title-h3 {
+    font-size: 24px;
+  }
+  .portable-power-stations .new-section-4 .section-text .des {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .portable-power-stations .new-section-4 .section-text {
+    padding: 45px 0 48px;
+  }
+  .portable-power-stations .new-section-4 .section-text .section-text-right .a-button {
+    margin-top: 30px;
+  }
+  .portable-power-stations .new-section-common .product-serives .text .title-h3 {
+    font-size: 24px;
+  }
+  .portable-power-stations .new-section-common .product-serives .text .a-button {
+    font-size: 18px;
+    margin-top: 15px;
+  }
+  .portable-power-stations .new-section-common .product-serives .text {
+    bottom: 40px;
+  }
+  .portable-power-stations .product-parameters .title-h3 {
+    font-size: 30px;
+  }
+  .portable-power-stations .section-show-product {
+    padding: 80px 0 87px;
+  }
+  .portable-power-stations .product-parameters .show-me-button {
+    font-size: 18px;
+    width: 190px;
+  }
+  .portable-power-stations .product-parameters .show-me-button .iconfont {
+    font-size: 18px;
+  }
+  .portable-power-stations .product-parameters .show-me .title-h6 {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .portable-power-stations .product-parameters .show-me .product-parameter img {
+    width: 140px;
+  }
+  .portable-power-stations .product-parameters .show-me .capacity {
+    font-size: 24px;
+  }
+  .portable-power-stations .product-parameters .show-me .divider {
+    padding: 10px 0;
+  }
+  .portable-power-stations .product-parameters .show-me .other-parameter {
+    font-size: 14px;
+    line-height: 1.2em;
+  }
+  .portable-power-stations .product-parameters .show-me .divider:after {
+    height: 1px;
+  }
+  .portable-power-stations .product-parameters .show-me .parameter-spacing {
+    padding: 15px 0;
+  }
+  .portable-power-stations .product-parameters .show-me .product-parameter {
+    padding-top: 30px;
+  }
+  .portable-power-stations .product-parameters .show-me {
+    margin: 40px auto 40px;
+  }
+  .section-7 {
+    padding-top: 41px;
+    padding-bottom: 41px;
+  }
+  .portable-power-stations .new-section-7 {
+    margin-top: 40px;
+  }
+  .portable-power-stations .new-section-7 .section-7-container {
+    max-width: 680px;
+  }
+  .portable-power-stations .new-section-7 .section-text .title-h2 {
+    font-size: 32px !important;
+  }
+  .portable-power-stations .new-section-7 .section-text .title-h3 {
+    font-size: 24px;
+  }
+  .portable-power-stations .new-section-7 .section-text {
+    padding: 45px 0 48px;
+  }
+  .portable-power-stations .new-section-7 .section-text .des {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .portable-power-stations .new-section-7 .section-text .section-text-right .a-button {
+    margin-top: 30px;
+  }
+  .section-75 .title-h3 {
+    font-size: 24px;
+  }
+  .section-75 .half-mask .text {
+    width: 90%;
+  }
+  .section-75 .show-content {
+    margin: 20px 0 0;
+  }
+  .section-75 .show-content .content-slide.active-slide .title-h6 {
+    margin-bottom: 10px;
+  }
+  .section-75 .show-content .content-slide {
+    margin-bottom: 20px;
+  }
+  .section-75 .show-content .content-slide.active-slide {
+    padding: 18px 0 8px 20px;
+  }
+}
+@media screen and (max-width: 970px) {
+  .portable-power-stations .section-5 .products-container,
+  .portable-power-stations .product-parameters .show-me .flex-container {
+    max-width: 720px !important;
+  }
+}
+@media screen and (max-width: 900px) {
+  .portable-power-stations .section-2 {
+    max-width: 750px;
+  }
+  .portable-power-stations .section-3 {
+    max-width: 750px;
+  }
+  .portable-power-stations .section-common .section-container {
+    max-width: 750px;
+    padding: 0 20px;
+  }
+
+  .portable-power-stations .h-block {
+    margin-bottom: 30px;
+  }
+  .portable-power-stations .h-block .title-h2 {
+    font-size: 30px !important;
+  }
+  .portable-power-stations .new-section-4 .section-4-container,
+  .portable-power-stations .new-section-7 .section-7-container {
+    padding-top: 65px;
+    padding-bottom: 0px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .portable-power-stations .new-section-4 .section-4-container,
+  .portable-power-stations .new-section-7 .section-7-container {
+    max-width: 750px;
+  }
+  .portable-power-stations .section-content .title-h4 {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+  .portable-power-stations .section-content .des {
+    font-size: 18px;
+  }
+  .portable-power-stations .section-content .a-button {
+    margin-top: 30px;
+  }
+  .portable-power-stations .show-products .flex-container .a-button {
+    font-size: 14px;
+    width: 160px;
+    padding: 0 20px;
+  }
+  .portable-power-stations .show-products {
+    margin-top: 50px;
+  }
+  .swiper-container-outside {
+    padding: 0 20px;
+  }
+  .protable-swiper-container {
+    width: 750px;
+  }
+}
+/* @media screen and (max-width: 850px) {
+  .portable-power-stations .section-5 .products-container,
+  .portable-power-stations .product-parameters .show-me .flex-container {
+    max-width: 620px !important;
+  }
+} */
+@media screen and (max-width: 767px) {
+  .portable-power-stations .big-title {
+    font-size: 48px;
+  }
+  .portable-power-stations .banner .text {
+    top: 20%;
+    left: 50%;
+    text-align: center;
+  }
+  .custom.portable-power-stations .banner--btn .banner-button.left {
+    justify-content: center;
+    margin-top: 32px;
+    padding: 0;
+  }
+  .portable-power-stations .section-left {
+    float: none;
+  }
+  .portable-power-stations .h-block .title-h2 {
+    max-width: 100%;
+  }
+  .portable-power-stations .section-content .title-h4 {
+    font-size: 24px;
+  }
+  .portable-power-stations .section-3 {
+    margin: 15px 24px 0;
+    padding-bottom: 26px;
+  }
+  .portable-power-stations .section-3 .text {
+    margin-left: 0;
+    padding: 0;
+  }
+  .portable-power-stations .section-3 .text .des {
+    font-size: 16px;
+  }
+  .portable-power-stations .new-section-3 .icon-block {
+    margin-top: 20px;
+  }
+  .portable-power-stations .section-4 {
+    padding: 0 20px;
+  }
+  .portable-power-stations .section-4 .flex-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .portable-power-stations .section-4 .flex-container .icon-block {
+    width: 50%;
+    margin-top: 20px;
+  }
+  .portable-power-stations .section-4 img {
+    max-width: 62px;
+  }
+  .portable-power-stations .section-4 .des {
+    font-size: 16px;
+  }
+  .portable-power-stations .section-5 .h-block {
+    margin-top: 48px;
+  }
+  .portable-power-stations .section-5 .products-container {
+    max-width: 1400px !important;
+  }
+  .portable-power-stations .section-6 .h-block {
+    margin-top: 48px;
+  }
+  .portable-power-stations .section-6 .section-content .show-products .section-product {
+    margin-bottom: 0;
+  }
+  .portable-power-stations .new-section-7 .section-7-container {
+    padding-bottom: 65px;
+  }
+  .portable-power-stations .h-block .title-h2 {
+    font-size: 30px !important;
+  }
+  .products-swiper {
+    padding-bottom: 56px;
+  }
+  .portable-power-stations .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: 0px;
+  }
+  .section-5 .show-products .swiper-pagination-bullet-active,
+  .section-6 .show-products .swiper-pagination-bullet-active,
+  .new-section-8 .swiper-pagination-bullet-active {
+    background: #000000 !important;
+  }
+  .section-5 .show-products .swiper-pagination-bullet-active,
+  .section-6 .show-products .swiper-pagination-bullet-active,
+  .new-section-8 .swiper-pagination-bullet-active {
+    background: #8e8e8e;
+  }
+
+  .portable-power-stations .section-common {
+    margin-top: 38px;
+  }
+  .portable-power-stations .section-content .section-left {
+    max-width: 100%;
+    float: none;
+  }
+  .portable-power-stations .section-content .section-right {
+    max-width: 100%;
+    float: none;
+    margin-top: 48px;
+  }
+  .portable-power-stations .section-content {
+    padding: 0;
+  }
+  .portable-power-stations .section-content .text {
+    text-align: left;
+    padding: 0;
+  }
+  .portable-power-stations .section-content .a-button {
+    margin-top: 30px;
+  }
+  .portable-power-stations .section-content .des {
+    font-size: 16px;
+    line-height: 1.4em;
+  }
+  .portable-power-stations .section-5 .show-products {
+    margin-bottom: 20px;
+  }
+  .portable-power-stations .show-products {
+    margin-top: 20px;
+  }
+  .portable-power-stations .h-block {
+    margin-top: 48px;
+    margin-bottom: 20px;
+  }
+  .portable-power-stations .section-content .show-products .section-product {
+    width: 100%;
+    margin-right: 0px;
+  }
+  .portable-power-stations .show-products .flex-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .portable-power-stations .show-products .flex-container .a-button {
+    width: 140px;
+    font-size: 12px;
+    padding: 0 14px;
+    height: 38px;
+    line-height: 34px;
+    margin-top: 15px;
+  }
+  .portable-power-stations .section-6 {
+    margin: 40px 0;
+  }
+
+  .section-7 {
+    padding-top: 41px;
+    padding-bottom: 41px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .section-7 .title-h1 {
+    text-align: center;
+    color: white !important;
+    font-size: 30px !important;
+    padding: 20px 0;
+  }
+  .swiper-container-outside {
+    margin: 18px auto 0;
+    padding: 0 20px;
+  }
+  .protable-swiper-container {
+    width: 100%;
+    padding-bottom: 35px;
+  }
+  .protable-swiper-container .swiper-slide .text .title-h3 {
+    font-size: 20px;
+  }
+  .protable-swiper-container .swiper-slide .text .des {
+    font-size: 14px;
+    line-height: 1.4em;
+    padding: 0;
+    margin-top: 13px;
+  }
+  .protable-swiper-container .swiper-slide .text {
+    margin-top: 25px;
+  }
+  .protable-swiper-container .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+  }
+  .protable-swiper-container > .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 4px;
+  }
+  .section-8 {
+    padding: 65px 0 60px;
+  }
+  .section-8 .big-title {
+    font-size: 24px !important;
+    margin-bottom: 18px;
+  }
+  .section-8 .media-container {
+    display: none;
+  }
+  .section-8 .mobile-media-container {
+    padding: 0 20px;
+  }
+  .portable-power-stations .banner-new .text {
+    top: 20%;
+  }
+  .portable-power-stations .banner-new .text .title-h1 {
+    font-size: 28px;
+  }
+  .portable-power-stations .new-section-2 {
+    padding-top: 10px;
+  }
+  .portable-power-stations .new-section-2 .text {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .portable-power-stations .new-section-2 .title-h2 {
+    font-size: 28px !important;
+  }
+  .portable-power-stations .new-section-2 .text .des {
+    font-size: 14px;
+    line-height: 1.2em;
+  }
+  .portable-power-stations .new-section-3 .des {
+    border: none;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  .portable-power-stations .new-section-3 img {
+    max-width: 50px;
+  }
+  .portable-power-stations .new-section-3 .icon-img {
+    height: 50px;
+  }
+  .portable-power-stations .new-section-3 .flex-container:first-child {
+    margin-top: 0;
+  }
+  .portable-power-stations .new-section-3 .flex-container {
+    margin-top: 50px;
+  }
+  .portable-power-stations .new-section-3 {
+    padding: 0 0 60px;
+  }
+  .portable-power-stations .new-section-4 .section-text .section-text-left {
+    float: none;
+    width: 100%;
+    margin-bottom: 18px;
+  }
+  .portable-power-stations .new-section-4 .section-text .section-text-right {
+    float: none;
+    width: 100%;
+  }
+  .portable-power-stations .new-section-4 .section-text {
+    padding: 0 20px 48px;
+  }
+  .portable-power-stations .new-section-4 .section-text .title-h2 {
+    font-size: 28px !important;
+  }
+  .portable-power-stations .new-section-4 .section-text .des {
+    font-size: 14px;
+    line-height: 18px;
+    color: #ffffff;
+  }
+  .portable-power-stations .new-section-4 .section-text .des .color-white {
+    color: #ffffff;
+  }
+  .portable-power-stations .new-section-4 .section-text {
+    padding: 0 0 35px;
+    max-width: 340px;
+    text-align: center;
+  }
+  .portable-power-stations .new-section-4 .section-text .section-text-right .a-button {
+    font-size: 14px;
+    margin-top: 26px;
+    line-height: 32px;
+    height: 36px;
+    padding: 0 24px;
+  }
+  .portable-power-stations .new-section-common .flex-container {
+    display: block;
+  }
+  .portable-power-stations .new-section-common .product-serives {
+    width: 100%;
+  }
+  .portable-power-stations .new-section-common .product-serives .text .title-h3 {
+    font-size: 16px;
+    line-height: 1em;
+    color: #6e6e73 !important;
+  }
+  .portable-power-stations .new-section-common .product-serives .text .a-button {
+    font-size: 14px;
+    margin-top: 10px;
+    line-height: 32px;
+    height: 36px;
+    padding: 0 24px;
+    color: #fff;
+    border: 2px solid #1d1d1d;
+    background: #1d1d1d;
+  }
+  .portable-power-stations .new-section-common .product-serives .text {
+    bottom: 18px;
+  }
+  .portable-power-stations .new-section-common.new-section-8 .product-serives .text {
+    bottom: 25px;
+  }
+  .portable-power-stations .new-section-7 {
+    background-color: #ffffff;
+    margin-top: 0;
+    margin-bottom: -10px;
+  }
+  .portable-power-stations .new-section-7 .section-text .section-text-left {
+    float: none;
+    width: 100%;
+    margin-bottom: 18px;
+  }
+  .portable-power-stations .new-section-7 .section-text .section-text-right {
+    float: none;
+    width: 100%;
+  }
+  .portable-power-stations .new-section-7 .section-text {
+    padding: 0 20px 48px;
+  }
+  .portable-power-stations .new-section-7 .section-text .title-h2 {
+    font-size: 28px !important;
+    color: #ffffff !important;
+  }
+  .portable-power-stations .new-section-7 .section-text .des {
+    font-size: 14px;
+    line-height: 18px;
+    color: #ffffff;
+  }
+  .portable-power-stations .new-section-7 .section-text .des .color-white {
+    color: #ffffff;
+  }
+  .portable-power-stations .new-section-7 .section-text {
+    padding: 0 0 35px;
+    max-width: 340px;
+    text-align: center;
+  }
+  .portable-power-stations .new-section-7 .section-text .section-text-right .a-button {
+    font-size: 14px;
+    margin-top: 26px;
+    line-height: 32px;
+    height: 36px;
+    padding: 0 24px;
+    color: #1d1d1d;
+    background: #fff;
+  }
+
+  .portable-power-stations .section-65 .section-content .section-left {
+    position: unset;
+    height: 100%;
+    width: 100%;
+  }
+
+  .portable-power-stations .section-75-mb {
+    background: #1d1d1d;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .portable-power-stations .section-75-mb .section-title {
+    padding: 0 30px;
+  }
+  .portable-power-stations .section-75-mb .section-title .title-h2 {
+    font-size: 28px !important;
+    color: #ffffff !important;
+    line-height: 1.1em;
+    text-align: center;
+  }
+  .portable-power-stations .section-75-mb .section-text {
+    width: 100%;
+    margin-top: 26px;
+  }
+  .portable-power-stations .section-75-mb .title-h6 {
+    color: #ffffff !important;
+    font-size: 14px;
+    line-height: 1.2em;
+    text-align: center;
+  }
+  .portable-power-stations .section-75-mb .section-text .des {
+    font-size: 12px;
+    color: #ffffff;
+    line-height: 1.1em;
+    text-align: center;
+  }
+  .portable-power-stations .section-75-mb .section-text .text {
+    margin-bottom: 26px;
+    padding: 0 23px;
+  }
+  .section-8 .media-logo {
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+.product-serives.pr .text.tc {
+  display: block;
+  transform: translate(0) !important;
+  bottom: unset !important;
+  left: unset !important;
+}
+@media (min-width: 568px) {
+  .product-serives.pr .text.tc {
+    padding-bottom: 100px;
+  }
+}
+@media (max-width: 567px) {
+  .product-serives.pr .text.tc {
+    padding-bottom: 50px;
+  }
+}
+@media (max-width: 500px) {
+  .portable-power-stations .banner .text {
+    top: 35%;
+  }
+}

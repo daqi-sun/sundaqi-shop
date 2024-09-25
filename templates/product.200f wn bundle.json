@@ -1,0 +1,809 @@
+{
+  "sections": {
+    "daf26638-f596-4384-b150-72d380a3268d": {
+      "type": "product-atb-top",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "sticky-product-bar": {
+      "type": "sticky-product-bar",
+      "blocks": {
+        "588d25af-4d47-43ac-9697-b98aa2f65719": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Overview",
+            "tab_id": "product_information",
+            "section_class": ""
+          }
+        },
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "What's in the box",
+            "tab_id": "what_in_box",
+            "section_class": ""
+          }
+        },
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "FAQ",
+            "tab_id": "faq",
+            "section_class": ""
+          }
+        },
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Reviews",
+            "tab_id": "reviews",
+            "section_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "588d25af-4d47-43ac-9697-b98aa2f65719",
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02",
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4",
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38"
+      ],
+      "settings": {
+        "enabled": true,
+        "enabled_tabs": false
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "11795adc-1afa-4833-a193-258f495901ef": {
+          "type": "sku_block",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e": {
+          "type": "product_title",
+          "settings": {
+          }
+        },
+        "judge_me_reviews_preview_badge_eB3Gnj": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "0471109f-c130-454e-a9ba-c56412cc11f3": {
+          "type": "product_vendor",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185": {
+          "type": "product_price",
+          "settings": {
+          }
+        },
+        "d25a0285-4fb4-422d-b95b-ab67446120ad": {
+          "type": "product_description",
+          "settings": {
+            "desc_display": "default"
+          }
+        },
+        "79e1b437-5bbd-4b8a-ac55-27c2f795ee99": {
+          "type": "coupon_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Component_2_1.png",
+            "discount_off_text": "{{ product.metafields.custom.discount_off_text.value }}",
+            "code": "{{ product.metafields.custom.discount_code.value }}",
+            "show_copy_code_btn": true
+          }
+        },
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879": {
+          "type": "product_options_block",
+          "settings": {
+            "show_product_swatches": true,
+            "use_variant_image_for_swatches": true,
+            "button_content": ""
+          }
+        },
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe": {
+          "type": "quantity_block",
+          "settings": {
+          }
+        },
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0": {
+          "type": "accessories_section",
+          "settings": {
+            "title": "You may also like",
+            "metafield": "accessories"
+          }
+        },
+        "9f863400-c572-447b-b273-93f1143583fa": {
+          "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/form-embed-block\/2632fe16-c075-4321-a88b-50b567f42507",
+          "disabled": true,
+          "settings": {
+            "formId": "UHSpKe"
+          }
+        },
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609": {
+          "type": "product_buttons",
+          "settings": {
+            "enable_payment_button": false,
+            "show_custom_icons": true,
+            "custom_payment_logo_1_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_08_7f374817-3a3e-42f2-95ce-077b67f293d2.svg?v=1672025209",
+            "custom_payment_logo_2_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_10_d8002835-e25f-4edb-9038-187f75f69a18.svg?v=1672025208",
+            "custom_payment_logo_3_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_02_a3ea7ab1-aa9a-4857-9ed6-01e62deccfce.svg?v=1672025208",
+            "custom_payment_logo_4_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_06_7c406d24-0983-49ff-ac8e-cf73032050d9.svg?v=1672025208",
+            "custom_payment_logo_5_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_07_be5959d4-9f22-4a31-8e40-285f8e3ac6e7.svg?v=1672025208",
+            "custom_payment_logo_6_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_04_7bff1113-0dc2-489f-8be8-d19dbe467a1a.svg?v=1672025208",
+            "custom_payment_logo_7_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_05_1c21f308-a0a3-4251-8641-87264da43d67.svg?v=1672025208",
+            "custom_payment_logo_8_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_01_96e6a30c-7908-4892-b6f1-75bce8657cd4.svg?v=1672025208",
+            "custom_payment_logo_9_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/sofort_icon_31ba2d5b-2c44-4960-8e80-645a7240c899.png?v=1679023017",
+            "custom_payment_logo_10_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/giropay_icon_c9d7e22e-cd7c-4bee-8de5-e50a4c6dc378.png?v=1679023017",
+            "custom_payment_logo_11_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/ideal_icon_8548c48a-3c4e-4052-95de-670062a453ce.png?v=1679023017",
+            "custom_payment_logo_12_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/multibanco_icon_e3f9b26f-234c-4a06-9e48-adfd188e7deb.png?v=1679023016",
+            "custom_payment_logo_13_svg": "",
+            "custom_payment_logo_14_svg": "",
+            "custom_payment_logo_15_svg": ""
+          }
+        },
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% if product.metafields.custom.trade_message != blank %}\n          <div class=\"trade-message\">♻️{{product.metafields.custom.trade_message}} <a href=\"\/pages\/trade-in\" target=\"_blank\">Learn more<\/a><\/div>\n{% endif %}"
+          }
+        }
+      },
+      "block_order": [
+        "11795adc-1afa-4833-a193-258f495901ef",
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e",
+        "judge_me_reviews_preview_badge_eB3Gnj",
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774",
+        "0471109f-c130-454e-a9ba-c56412cc11f3",
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185",
+        "d25a0285-4fb4-422d-b95b-ab67446120ad",
+        "79e1b437-5bbd-4b8a-ac55-27c2f795ee99",
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879",
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe",
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0",
+        "9f863400-c572-447b-b273-93f1143583fa",
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609",
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a"
+      ],
+      "settings": {
+        "section_id": "",
+        "show_breadcrumbs": true,
+        "show_pick_an_option": false,
+        "enable_linked_options": false,
+        "enabled_mobile_sticky_btns": true,
+        "media_size": "medium",
+        "enable_image_zoom": true,
+        "enable_video_looping": true,
+        "thumbnails_type": "grid",
+        "support_email": "",
+        "support_text": "",
+        "feature_1_show": false,
+        "feature_1_title": "Fast & Free Shipping",
+        "feature_1_content": "",
+        "feature_2_show": false,
+        "feature_2_title": "Warranty Protection",
+        "feature_2_content": "",
+        "feature_3_show": false,
+        "feature_3_title": "Secure Payments",
+        "feature_3_content": "",
+        "feature_4_show": false,
+        "feature_4_title": "Multi-channel Support",
+        "feature_4_content": ""
+      }
+    },
+    "pdp_rich_text_gWmMVY": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 20,
+        "section_bottom_spacing": 20,
+        "section_top_spacing_mobile": 20,
+        "section_bottom_spacing_mobile": 20,
+        "alignment": "center",
+        "title": "",
+        "subtitle": "",
+        "content": "<p>Los términos “DELTA” y “RIVER”, que se mencionan en esta página, se refieren a productos fabricados exclusivamente por ECOFLOW INC.<\/p>",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "pdp_video_XpkGGt": {
+      "type": "pdp-video",
+      "custom_css": [
+        ".pdp-video {padding-top: 60px;}",
+        ".pdp-video {padding-bottom: 40px;}"
+      ],
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "",
+        "subtitle": "",
+        "content": "",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/01_PC_ES.png",
+        "mobile_image": "shopify:\/\/shop_images\/01_M_ES.png",
+        "video_type": "youtube",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "mp4_video_url": "",
+        "mp4_video_url_m": "",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "pdp_rich_text_QFcjAf": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 0,
+        "section_bottom_spacing": 50,
+        "section_top_spacing_mobile": 0,
+        "section_bottom_spacing_mobile": 30,
+        "alignment": "center",
+        "title": "",
+        "subtitle": "",
+        "content": "<p>Crea tu sistema de estación de energía para balcones con EcoFlow PowerStream<\/p>",
+        "button_link": "https:\/\/es.ecoflow.com\/pages\/powerstream",
+        "button_text": "Más Información"
+      }
+    },
+    "pdp_video_dFyzc9": {
+      "type": "pdp-video",
+      "custom_css": [
+        ".pdp-video {padding-top: 40px;}",
+        ".pdp-video {padding-bottom: 60px;}"
+      ],
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "Disfruta de tu kit solar para balcones",
+        "subtitle": "<p>Instalación y fijación en un balcón con EcoFlow PowerStream<\/p>",
+        "content": "<p> Crea una solución de energía para tu hogar sostenible y rentable con la ayuda de EcoFlow PowerStream y una estación de energía Portátil EcoFlow y podrás alimentar tu hogar de manera permanente.<\/p>",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/02_PC_EU.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/02_M_EU.jpg",
+        "video_type": "youtube",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "mp4_video_url": "",
+        "mp4_video_url_m": "",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "pdp_image_with_text_horizontal_new_nVqwbW": {
+      "type": "pdp-image-with-text-horizontal-new",
+      "blocks": {
+        "image_rgHKWT": {
+          "type": "image",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/03_PC_ES.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/03_M_ES.jpg",
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "image_alignment": "right",
+            "title": "Ligero y flexible",
+            "subtitle": "<p>Solo pesa 4.5 kg y se dobla para adaptarse a bordes curvados<\/p>",
+            "content": "<p> Excepcionalmente ligero y un 70 % menos pesado que los paneles solares tradicionales, por lo que es muy cómodo de transportar y montar. Se dobla fácilmente hasta 213 grados y se adapta a la forma única de tu balcón sin que ello afecte a la entrada solar.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "image_hT7hC7": {
+          "type": "image",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/04_PC_ES.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/04_M_ES.jpg",
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "image_alignment": "left",
+            "title": "Duradero e impermeable, resiste cualquier condición meteorológica",
+            "subtitle": "<p>Recubierto con fibra de vidrio avanzada con un grado de impermeabilidad IP67<\/p>",
+            "content": "<p>Gracias a una película protectora de ETFE, las celdas solares del panel pueden resistir diversas condiciones climáticas, a la vez que protegen el panel y mejoran su rendimiento. Úsalo todo el año en tu balcón y despreocúpate de él.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "image_rgHKWT",
+        "image_hT7hC7"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "left"
+      }
+    },
+    "pdp_video_ezhjHL": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "Carga más rápida con una alta conversión solar",
+        "subtitle": "<p>Fabricado con células monocristalinas altamente eficaces<\/p>",
+        "content": "<p>Excelente tasa de eficiencia de hasta el 23 %. Carga más rápido con un panel más compacto.<\/p>",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/02_PC_EU.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/02_M_EU.jpg",
+        "video_type": "youtube",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "mp4_video_url": "",
+        "mp4_video_url_m": "",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "pdp_video_7GnDXM": {
+      "type": "pdp-video",
+      "custom_css": [
+        ".pdp-video {padding-bottom: 40px;}"
+      ],
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "Instalación flexible",
+        "subtitle": "<p>Orificios precortados para montar nuestros paneles en cualquier lugar<\/p>",
+        "content": "<p> Los orificios precortados permiten colgar el panel solar flexible con ganchos o fijarlo de forma segura a una superficie con un adhesivo para que quede perfectamente instalado y estable en tu balcón.<\/p>",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/06_PC_EU.png",
+        "mobile_image": "shopify:\/\/shop_images\/06_M_EU.png",
+        "video_type": "youtube",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "mp4_video_url": "",
+        "mp4_video_url_m": "",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "82f7f3bf-a9d8-4236-9823-651a58407999": {
+      "type": "pdp-whats-in-the-box",
+      "blocks": {
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/EF_SL_200WFSP_2_Bundle_GL_01_RGB.png",
+            "cta_label": "Panel solar flexible de 200 W × 2",
+            "link": "",
+            "cta_width": 40,
+            "cta_image_width": "100%",
+            "custom_width": 300,
+            "custom_height": 400,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 300
+          }
+        },
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ecoflow-ecoflow-solar-parallel-connection.webp",
+            "cta_label": "Cable de conexión en paralelo para panel solar × 2",
+            "link": "",
+            "cta_width": 30,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 150,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 140
+          }
+        },
+        "image_RGeJLX": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Metal_Zip_Tie_1_-Photoroom.png-Photoroom.png",
+            "cta_label": "Bridas metálicas × 8",
+            "link": "",
+            "cta_width": 30,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 130,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 140
+          }
+        },
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/VELCRO_Strap_2_-Photoroom.png-Photoroom.png",
+            "cta_label": "Correa autoajustable × 4",
+            "link": "",
+            "cta_width": 30,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 150,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 140
+          }
+        },
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-5": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PC_-_19-5-User_manual_warranty_card.png",
+            "cta_label": "Instrucciones de seguridad",
+            "link": "",
+            "cta_width": 30,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 150,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 140
+          }
+        }
+      },
+      "block_order": [
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-0",
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-2",
+        "image_RGeJLX",
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-4",
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-5"
+      ],
+      "custom_css": [
+        ".pdp-what-in-box {padding-top: 100px;}",
+        ".pdp-what-in-box {padding-bottom: 0px;}"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Contenu de la boîte",
+        "bottom_content": "",
+        "cta_height": 500,
+        "cta_height_mobile": 360,
+        "cta_half_height_mobile": 200,
+        "gutter_width": 16
+      }
+    },
+    "pdp_whats_in_the_box_8PDniN": {
+      "type": "pdp-whats-in-the-box",
+      "blocks": {
+        "image_NEpxXM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/WN_EU.png",
+            "cta_label": "Microinversor EcoFlow PowerStream",
+            "link": "",
+            "cta_width": 55,
+            "cta_image_width": "100%",
+            "custom_width": 300,
+            "custom_height": 300,
+            "custom_width_mobile": 220,
+            "custom_height_mobile": 300
+          }
+        },
+        "image_tjCbEV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/AC_Cable_EU.png",
+            "cta_label": "Cable de CA",
+            "link": "",
+            "cta_width": 45,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 160,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 140
+          }
+        },
+        "image_E8c9DP": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Solar_cable_EU.png",
+            "cta_label": "Cable solar BKW",
+            "link": "",
+            "cta_width": 45,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 160,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 140
+          }
+        }
+      },
+      "block_order": [
+        "image_NEpxXM",
+        "image_tjCbEV",
+        "image_E8c9DP"
+      ],
+      "custom_css": [
+        ".pdp-what-in-box {padding-top: 5px;}"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "",
+        "bottom_content": "",
+        "cta_height": 500,
+        "cta_height_mobile": 360,
+        "cta_half_height_mobile": 200,
+        "gutter_width": 16
+      }
+    },
+    "445d25b8-a88b-4de2-811c-2cbe8505573e": {
+      "type": "pdp-specs",
+      "blocks": {
+        "47af9637-9c18-4189-ac35-f8a415f77098": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso neto",
+            "content": "<p> 4,5 kg<\/p>"
+          }
+        },
+        "a6725352-6830-4493-aba9-a2094cf75982": {
+          "type": "contents",
+          "settings": {
+            "title": "Dimensiones",
+            "content": "<p> 1083 × 1104 × 2,5 mm<\/p>"
+          }
+        },
+        "f3a1ff22-e1c2-499a-8610-4bc6dbcdf47b": {
+          "type": "contents",
+          "settings": {
+            "title": "Tipo de celda",
+            "content": "<p> Silíceo monocristalino<\/p>"
+          }
+        },
+        "03cae209-41ad-43b9-ac45-d01ab3422542": {
+          "type": "contents",
+          "settings": {
+            "title": "Eficiencia",
+            "content": "<p> 23 %<\/p>"
+          }
+        },
+        "07c9b1a0-8f41-430f-a8b7-27b0d7cb41e9": {
+          "type": "contents",
+          "settings": {
+            "title": "Resistente al agua y al polvo",
+            "content": "<p> IP67<\/p>"
+          }
+        },
+        "9735a98e-fa4d-4712-9472-44c8d2a204d5": {
+          "type": "contents",
+          "settings": {
+            "title": "Potencia nominal",
+            "content": "<p> 200 W (TOL ± 5 %)<\/p>"
+          }
+        },
+        "614680ef-24ec-4500-ab57-f0e4642ae896": {
+          "type": "contents",
+          "settings": {
+            "title": "Tensión del circuito abierto",
+            "content": "<p> 49,2 V (TOL ± 5 %)<\/p>"
+          }
+        },
+        "49c84d99-7423-4469-81f4-3fde371be7e4": {
+          "type": "contents",
+          "settings": {
+            "title": "Corriente de cortocircuito",
+            "content": "<p> 5,1 A (TOL ± 5 %)<\/p>"
+          }
+        },
+        "b2e4d52a-2d0f-4095-bff6-6359bbaf8688": {
+          "type": "contents",
+          "settings": {
+            "title": "Coeficiente de temperatura de la potencia nominal",
+            "content": "<p> -0,45 %\/C<\/p>"
+          }
+        },
+        "c2cef391-c4fe-4607-a2e2-4c1fb601e58f": {
+          "type": "contents",
+          "settings": {
+            "title": "Tipo de conector",
+            "content": "<p> Conector Solar (Adaptable a MC4)<\/p>"
+          }
+        },
+        "007dec67-2841-4c16-b92b-449cb6c93308": {
+          "type": "contents",
+          "settings": {
+            "title": "Certificación",
+            "content": "<p> CE, FCC, TUV, RoHS, REACH<\/p>"
+          }
+        },
+        "72bcb0c3-9cc5-4252-a081-0bd13f013ef0": {
+          "type": "contents",
+          "settings": {
+            "title": "Garantía",
+            "content": "<p> 12 meses<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "47af9637-9c18-4189-ac35-f8a415f77098",
+        "a6725352-6830-4493-aba9-a2094cf75982",
+        "f3a1ff22-e1c2-499a-8610-4bc6dbcdf47b",
+        "03cae209-41ad-43b9-ac45-d01ab3422542",
+        "07c9b1a0-8f41-430f-a8b7-27b0d7cb41e9",
+        "9735a98e-fa4d-4712-9472-44c8d2a204d5",
+        "614680ef-24ec-4500-ab57-f0e4642ae896",
+        "49c84d99-7423-4469-81f4-3fde371be7e4",
+        "b2e4d52a-2d0f-4095-bff6-6359bbaf8688",
+        "c2cef391-c4fe-4607-a2e2-4c1fb601e58f",
+        "007dec67-2841-4c16-b92b-449cb6c93308",
+        "72bcb0c3-9cc5-4252-a081-0bd13f013ef0"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Especificaciones - Panel Solar Flexible de 200W"
+      }
+    },
+    "pdp_specs_GXr8zk": {
+      "type": "pdp-specs",
+      "blocks": {
+        "contents_JEkadR": {
+          "type": "contents",
+          "settings": {
+            "title": "Dimensiones",
+            "content": "<p>242*169*33 (mm)<\/p>"
+          }
+        },
+        "contents_XaLiWX": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso",
+            "content": "<p>Aproximadamente 3 kg<\/p>"
+          }
+        },
+        "contents_XDWp7w": {
+          "type": "contents",
+          "settings": {
+            "title": "Potencia de entrada FV",
+            "content": "<p>400 W x 2<\/p>"
+          }
+        },
+        "contents_LYbXDW": {
+          "type": "contents",
+          "settings": {
+            "title": "Salida \/ Entrada de CC",
+            "content": "<p>600W<\/p>"
+          }
+        },
+        "contents_GyWHyC": {
+          "type": "contents",
+          "settings": {
+            "title": "Tensión máxima de entrada",
+            "content": "<p>55V CC (Puerto FV)\/ 59V CC (Puerto CC)<\/p>"
+          }
+        },
+        "contents_yLXtUP": {
+          "type": "contents",
+          "settings": {
+            "title": "Corriente de entrada máxima",
+            "content": "<p>13 A<\/p>"
+          }
+        },
+        "contents_mJKn9F": {
+          "type": "contents",
+          "settings": {
+            "title": "Salida de CA (conectada a la red)",
+            "content": "<p>800W\/600W<\/p>"
+          }
+        },
+        "contents_VE46zQ": {
+          "type": "contents",
+          "settings": {
+            "title": "Corriente de salida máxima de CA",
+            "content": "<p>3.7A\/2.8A<\/p>"
+          }
+        },
+        "contents_NacLx9": {
+          "type": "contents",
+          "settings": {
+            "title": "Potencia máxima de carga y descarga",
+            "content": "<p>600W<\/p>"
+          }
+        },
+        "contents_VYypVg": {
+          "type": "contents",
+          "settings": {
+            "title": "Tensión de carga",
+            "content": "<p>30 - 58 Vd.c.<\/p>"
+          }
+        },
+        "contents_RqGQya": {
+          "type": "contents",
+          "settings": {
+            "title": "Impermeable",
+            "content": "<p>IP67<\/p>"
+          }
+        },
+        "contents_GkTRmz": {
+          "type": "contents",
+          "settings": {
+            "title": "Wi-Fi (2.4G)",
+            "content": "<p>Gama de frecuencias: 20M: 2412 - 2472 MHz \/ 40M: 2422- 2462 MHz<br\/>Potencia máxima de salida: ≤ 20 dBm<\/p>"
+          }
+        },
+        "contents_fn7h3r": {
+          "type": "contents",
+          "settings": {
+            "title": "Bluetooth®",
+            "content": "<p>Gama de frecuencias: 2402-2480MHz<br\/>Potencia máxima de salida: ≤ 20 dBm<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "contents_JEkadR",
+        "contents_XaLiWX",
+        "contents_XDWp7w",
+        "contents_LYbXDW",
+        "contents_GyWHyC",
+        "contents_yLXtUP",
+        "contents_mJKn9F",
+        "contents_VE46zQ",
+        "contents_NacLx9",
+        "contents_VYypVg",
+        "contents_RqGQya",
+        "contents_GkTRmz",
+        "contents_fn7h3r"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Especificaciones - Inversor"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "grid_mobile": "2",
+        "heading": "You may also like",
+        "show_vendor": false
+      }
+    },
+    "1676887592a3dc4fd0": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_a367dX": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_a367dX"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    }
+  },
+  "order": [
+    "daf26638-f596-4384-b150-72d380a3268d",
+    "sticky-product-bar",
+    "main",
+    "pdp_rich_text_gWmMVY",
+    "pdp_video_XpkGGt",
+    "pdp_rich_text_QFcjAf",
+    "pdp_video_dFyzc9",
+    "pdp_image_with_text_horizontal_new_nVqwbW",
+    "pdp_video_ezhjHL",
+    "pdp_video_7GnDXM",
+    "82f7f3bf-a9d8-4236-9823-651a58407999",
+    "pdp_whats_in_the_box_8PDniN",
+    "445d25b8-a88b-4de2-811c-2cbe8505573e",
+    "pdp_specs_GXr8zk",
+    "product-recommendations",
+    "1676887592a3dc4fd0"
+  ]
+}

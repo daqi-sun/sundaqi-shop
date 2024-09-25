@@ -1,0 +1,268 @@
+<style>
+  .sp-product-1__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .sp-product-1__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+
+<div class="sp-product-1__section sp-product-1__section-{{ section.id }} background--white">
+  <div class="container--default">
+    <div class="sp-product-1__container">
+      {% for block in section.blocks %}
+        {%- comment %}<locksmith:babe>{% endcomment -%}
+          {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+        {%- comment %}</locksmith:babe>{% endcomment -%}
+        <div class="sp-product-1__item background--dark-white {% if block.settings.position == 'left' %} sp-product-1__item--left {% else %} sp-product-1__item--right {% endif %}">
+          <div class="sp-product-1__image-wrapper">
+            <a href="{{ block.settings.url }}" target="_blank">
+              <img
+                class="display--desktop sp-product-1__image-desktop"
+                src="{{ block.settings.image | img_url: 'master' }}"
+                alt="{{ block.settings.image.alt }}"
+              >
+              <img
+                class="display--mobile"
+                src="{{ block.settings.image_mobile | img_url: 'master' }}"
+                alt="{{ block.settings.image_mobile.alt }}"
+              >
+              <img
+                class="sp-prodcut-1__image"
+                src="{{ block.settings.product_image | img_url: 'master' }}"
+                alt="{{ block.settings.product_image.alt }}"
+              >
+            </a>
+          </div>
+          <div class="sp-product-1__item-description">
+            <div class="sp-product-1__title-wrapper">
+              <h3 class="sp-product-1__title text--black">{{ block.settings.title }}</h3>
+            </div>
+            <div class="sp-product-1__specification-container">
+              <div class="sp-product-1__specification-wrapper">
+                <p class="sp-product-1__specification-title sp-product-1__specification-text text--gray">
+                  Potencia nominal
+                </p>
+                <p class="sp-product-1__specigfication-value sp-product-1__specification-text text--black text--right">
+                  {{ block.settings.rated_power }}
+                </p>
+              </div>
+              <div class="sp-product-1__specification-wrapper">
+                <p class="sp-product-1__specification-title sp-product-1__specification-text text--gray">
+                  Tipo de célula
+                </p>
+                <p class="sp-product-1__specigfication-value sp-product-1__specification-text text--black text--right">
+                  {{ block.settings.cell_type }}
+                </p>
+              </div>
+              <div class="sp-product-1__specification-wrapper">
+                <p class="sp-product-1__specification-title sp-product-1__specification-text text--gray">Eficiencia</p>
+                <p class="sp-product-1__specigfication-value sp-product-1__specification-text text--black text--right">
+                  {{ block.settings.efficiency }}
+                </p>
+              </div>
+              <div class="sp-product-1__specification-wrapper">
+                <p class="sp-product-1__specification-title sp-product-1__specification-text text--gray">Peso</p>
+                <p class="sp-product-1__specigfication-value sp-product-1__specification-text text--black text--right">
+                  {{ block.settings.weight }}
+                </p>
+              </div>
+
+              <div class="sp-product-1__specification-wrapper {% if block.settings.dimensions.size >= 50 %} sp-product-1__specification-wrapper-column {% endif %}">
+                <p class="sp-product-1__specification-title sp-product-1__specification-text text--gray">Dimensiones</p>
+                <p class="sp-product-1__specigfication-value sp-product-1__specification-text text--black text--right">
+                  {{ block.settings.dimensions }}
+                </p>
+              </div>
+              <div class="sp-product-1__specification-wrapper">
+                <p class="sp-product-1__specification-title sp-product-1__specification-text text--gray">
+                  Tensión del circuito abierto
+                </p>
+                <p class="sp-product-1__specigfication-value sp-product-1__specification-text text--black text--right">
+                  {{ block.settings.open_circuit_voltage }}
+                </p>
+              </div>
+              <div class="sp-product-1__specification-wrapper {% if block.settings.short_circuit_current.size >= 50 %} sp-product-1__specification-wrapper-column {% endif %}">
+                <p class="sp-product-1__specification-title sp-product-1__specification-text text--gray">
+                  Corriente de cortocircuito
+                </p>
+                <p class="sp-product-1__specigfication-value sp-product-1__specification-text text--black text--right">
+                  {{ block.settings.short_circuit_current }}
+                </p>
+              </div>
+              <div class="sp-product-1__specification-wrapper">
+                <p class="sp-product-1__specification-title sp-product-1__specification-text text--gray">Garantía</p>
+                <p class="sp-product-1__specigfication-value sp-product-1__specification-text text--black text--right">
+                  {{ block.settings.warranty }}
+                </p>
+              </div>
+            </div>
+            {% if block.settings.button_label %}
+              <div class="sp-product-1__button-wrapper">
+                <a href="{{ block.settings.url }}" target="_blank" class="button--container ">
+                  <span class="button text--white">{{ block.settings.button_label }}</span>
+                </a>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "SP Product 1",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "select",
+          "id": "position",
+          "label": "Image Position",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Product Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Product Image Mobile"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_image",
+          "label": "Product Image (Solar Panel)"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Product Title"
+        },
+        {
+          "type": "html",
+          "id": "rated_power",
+          "label": "Rated Power",
+          "default": "160W(+/-5W)"
+        },
+        {
+          "type": "html",
+          "id": "cell_type",
+          "label": "Cell Type",
+          "default": "Monocrystalline Silicon"
+        },
+        {
+          "type": "html",
+          "id": "efficiency",
+          "label": "Efficiency",
+          "default": "22%"
+        },
+        {
+          "type": "html",
+          "id": "weight",
+          "label": "Weight",
+          "default": "Approx. 12.3lbs (5.6kg)"
+        },
+        {
+          "type": "html",
+          "id": "dimensions",
+          "label": "Dimensions",
+          "default": "62.6×27.0×0.98 inch (Unfolded) 16.9×27.0×0.98 inch (Folded )%"
+        },
+        {
+          "type": "html",
+          "id": "open_circuit_voltage",
+          "label": "Open Circuit Voltage",
+          "default": "21.4V(Vmp 18.2V)"
+        },
+        {
+          "type": "html",
+          "id": "short_circuit_current",
+          "label": "Short Circuit Current",
+          "default": "9.6A(Imp 8.8A)"
+        },
+        {
+          "type": "html",
+          "id": "warranty",
+          "label": "Warranty",
+          "default": "12 months"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button Label",
+          "default": "Shop Now"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Button URL"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

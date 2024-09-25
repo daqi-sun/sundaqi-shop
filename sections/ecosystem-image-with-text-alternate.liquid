@@ -1,0 +1,65 @@
+<div class="ecosystem-container">
+    <div class="home-ecosystem-image-with-text-alternate">
+        {% if section.settings.image_1 != blank %}
+            <div class="alternate-image--with-text-image-1">
+              <img loading="lazy"
+                srcset="{%- if section.settings.image_1.width >= 375 -%}{{ section.settings.image_1 | img_url: '375x' }} 375w,{%- endif -%}
+                {%- if section.settings.image_1.width >= 720 -%}{{ section.settings.image_1 | img_url: '720x' }} 750w,{%- endif -%}
+                {%- if section.settings.image_1.width >= 1066 -%}{{ section.settings.image_1 | img_url: '1066x' }} 1066w,{%- endif -%}
+                {%- if section.settings.image_1.width >= 1500 -%}{{ section.settings.image_1 | img_url: '1500x' }} 1500w,{%- endif -%}
+                {%- if section.settings.image_1.width >= 2000 -%}{{ section.settings.image_1 | img_url: '2000x' }} 2000w{%- endif -%}"
+                src="{{ section.settings.image_1 | img_url: '535x' }}"
+                sizes="auto"
+                alt="{{ section.settings.image_1.alt }}" />
+            </div>
+        {% endif %}
+
+        {% if section.settings.quote != blank %}
+            <div class="alternate-image--with-text-content">
+                <div class="quote">{{ section.settings.quote }}</div>
+                <div class="author">{{ section.settings.author }}</div>
+            </div>
+        {% endif %}
+
+        {% if section.settings.image_2 != blank %}
+            <div class="alternate-image--with-text-image-2">
+              <img loading="lazy"
+                srcset="{%- if section.settings.image_2.width >= 375 -%}{{ section.settings.image_2 | img_url: '375x' }} 375w,{%- endif -%}
+                {%- if section.settings.image_2.width >= 720 -%}{{ section.settings.image_2 | img_url: '720x' }} 750w,{%- endif -%}
+                {%- if section.settings.image_2.width >= 1066 -%}{{ section.settings.image_2 | img_url: '1066x' }} 1066w,{%- endif -%}
+                {%- if section.settings.image_2.width >= 1500 -%}{{ section.settings.image_2 | img_url: '1500x' }} 1500w,{%- endif -%}
+                {%- if section.settings.image_2.width >= 2000 -%}{{ section.settings.image_2 | img_url: '2000x' }} 2000w{%- endif -%}"
+                src="{{ section.settings.image_2 | img_url: '535x' }}"
+                sizes="auto"
+                alt="{{ section.settings.image_2.alt }}" />
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% schema %}
+  {
+    "name": "Image with text",
+    "settings": [
+      {
+        "id":"quote",
+        "type":"richtext",
+        "label":"Quote"
+      },
+      {
+        "id":"author",
+        "type":"text",
+        "label":"Author"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_1",
+        "label": "Image 1"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_2",
+        "label": "Image 2"
+      }
+	]
+  }
+{% endschema %}

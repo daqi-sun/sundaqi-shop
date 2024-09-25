@@ -1,0 +1,163 @@
+<style>
+  .sp-banner-2__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .sp-banner-2__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+<div
+  class="sp-banner-2 sp-banner-2__section-{{ section.id }}"
+  id="_{{ section.settings.id | downcase | remove: ' ' | replace: '&', '-' }}"
+>
+  {% assign image = section.settings.mobileImage %}
+  {% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+  <div
+    class="custom-img__wrapper display--mobile"
+    style="padding-top: {{ pt }}%;"
+  >
+    <img
+      class="custom-img"
+      srcset="
+        {{ image | img_url: '500x' }} 500w,
+        {{ image | img_url: '600x' }} 600w,
+        {{ image | img_url: 'master' }} 700w,
+      "
+      alt="{{ image.alt }}"
+    >
+    <div class="sp-banner__image--overlay"></div>
+  </div>
+
+  {% assign image = section.settings.image %}
+  {% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+  <div
+    class="custom-img__wrapper display--desktop"
+    style="padding-top: {{ pt }}%;"
+  >
+    <img
+      class="custom-img"
+      srcset="
+        {{ image | img_url: '1000x' }} 1000w,
+        {{ image | img_url: '1200x' }} 1200w,
+        {{ image | img_url: '1400x' }} 1400w,
+        {{ image | img_url: 'master' }} 1600w,
+      "
+      alt="{{ image.alt }}"
+      loading="lazy"
+    >
+    <div class="sp-banner__image--overlay"></div>
+  </div>
+  <div class="sp-banner-2__content__container container--default">
+    <div class="sp-banner-2__content {% if section.settings.black_font_mobile %} custom_font_color {% endif %}">
+      {% if section.settings.title != blank %}
+        <h2 class="sp-banner-2__title text--heading text--white">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+      {% if section.settings.subtitle != blank %}
+        <p class="sp-banner-2__description text--description text--white">
+          {{ section.settings.subtitle }}
+        </p>
+      {% endif %}
+      {% if section.settings.button_label %}
+        <div class="sp-banner-2__button-wrapper">
+          <a href="{{ section.settings.url }}" target="_blank" class="button--container ">
+            <span class="button text--white">{{ section.settings.button_label }}</span>
+          </a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "SP Banner 2",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobileImage",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "checkbox",
+      "id": "black_font_mobile",
+      "label": "Black Font Mobile",
+      "default": false
+    },
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title",
+      "default": "Load Shedding Sale"
+    },
+    {
+      "type": "html",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Up to 30% OFF"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Learn More"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "URL"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ]
+}
+{% endschema %}

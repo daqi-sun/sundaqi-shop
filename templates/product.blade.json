@@ -1,0 +1,1155 @@
+{
+  "sections": {
+    "daf26638-f596-4384-b150-72d380a3268d": {
+      "type": "product-atb-top",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "sticky-product-bar": {
+      "type": "sticky-product-bar",
+      "blocks": {
+        "588d25af-4d47-43ac-9697-b98aa2f65719": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Overview",
+            "tab_id": "product_information",
+            "section_class": ""
+          }
+        },
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "What's in the box",
+            "tab_id": "what_in_box",
+            "section_class": ""
+          }
+        },
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "FAQ",
+            "tab_id": "faq",
+            "section_class": ""
+          }
+        },
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Reviews",
+            "tab_id": "reviews",
+            "section_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "588d25af-4d47-43ac-9697-b98aa2f65719",
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02",
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4",
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38"
+      ],
+      "settings": {
+        "enabled": true,
+        "enabled_tabs": false
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "11795adc-1afa-4833-a193-258f495901ef": {
+          "type": "sku_block",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e": {
+          "type": "product_title",
+          "settings": {
+          }
+        },
+        "0be521b4-bac8-4e6f-a8ee-4d6bfa17ec65": {
+          "type": "shopify:\/\/apps\/growave-loyalty-wishlist\/blocks\/block.product.reviewAvgProfile\/b3d2efbe-110a-4e27-84a8-1f2ed63996a4",
+          "settings": {
+            "margin": "",
+            "textColor": "",
+            "fontSize": "",
+            "ratingIconColor": "",
+            "ratingIconSize": "",
+            "questionsIconColor": "",
+            "questionsIconSize": ""
+          }
+        },
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "0471109f-c130-454e-a9ba-c56412cc11f3": {
+          "type": "product_vendor",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185": {
+          "type": "product_price",
+          "settings": {
+          }
+        },
+        "d25a0285-4fb4-422d-b95b-ab67446120ad": {
+          "type": "product_description",
+          "settings": {
+            "desc_display": "default"
+          }
+        },
+        "919f9cdd-6184-4311-b675-742931504318": {
+          "type": "coupon_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Component_2_1.png",
+            "discount_off_text": "{{ product.metafields.custom.discount_off_text.value }}",
+            "code": "{{ product.metafields.custom.discount_code.value }}",
+            "show_copy_code_btn": true
+          }
+        },
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879": {
+          "type": "product_options_block",
+          "settings": {
+            "show_product_swatches": true,
+            "use_variant_image_for_swatches": true
+          }
+        },
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe": {
+          "type": "quantity_block",
+          "settings": {
+          }
+        },
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0": {
+          "type": "accessories_section",
+          "settings": {
+            "title": "You may also like",
+            "metafield": "accessories"
+          }
+        },
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609": {
+          "type": "product_buttons",
+          "settings": {
+            "enable_payment_button": false,
+            "show_custom_icons": true,
+            "custom_payment_logo_1_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_08_7f374817-3a3e-42f2-95ce-077b67f293d2.svg?v=1672025209",
+            "custom_payment_logo_2_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_10_d8002835-e25f-4edb-9038-187f75f69a18.svg?v=1672025208",
+            "custom_payment_logo_3_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_02_a3ea7ab1-aa9a-4857-9ed6-01e62deccfce.svg?v=1672025208",
+            "custom_payment_logo_4_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_06_7c406d24-0983-49ff-ac8e-cf73032050d9.svg?v=1672025208",
+            "custom_payment_logo_5_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_07_be5959d4-9f22-4a31-8e40-285f8e3ac6e7.svg?v=1672025208",
+            "custom_payment_logo_6_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_04_7bff1113-0dc2-489f-8be8-d19dbe467a1a.svg?v=1672025208",
+            "custom_payment_logo_7_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_05_1c21f308-a0a3-4251-8641-87264da43d67.svg?v=1672025208",
+            "custom_payment_logo_8_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_01_96e6a30c-7908-4892-b6f1-75bce8657cd4.svg?v=1672025208",
+            "custom_payment_logo_9_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/sofort_icon_31ba2d5b-2c44-4960-8e80-645a7240c899.png?v=1679023017",
+            "custom_payment_logo_10_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/giropay_icon_c9d7e22e-cd7c-4bee-8de5-e50a4c6dc378.png?v=1679023017",
+            "custom_payment_logo_11_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/ideal_icon_8548c48a-3c4e-4052-95de-670062a453ce.png?v=1679023017",
+            "custom_payment_logo_12_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/multibanco_icon_e3f9b26f-234c-4a06-9e48-adfd188e7deb.png?v=1679023016",
+            "custom_payment_logo_13_svg": "",
+            "custom_payment_logo_14_svg": "",
+            "custom_payment_logo_15_svg": ""
+          }
+        },
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% if product.metafields.custom.trade_message != blank %}\n          <div class=\"trade-message\">♻️{{product.metafields.custom.trade_message}} <a href=\"\/pages\/trade-in\" target=\"_blank\">Learn more<\/a><\/div>\n{% endif %}"
+          }
+        }
+      },
+      "block_order": [
+        "11795adc-1afa-4833-a193-258f495901ef",
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e",
+        "0be521b4-bac8-4e6f-a8ee-4d6bfa17ec65",
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774",
+        "0471109f-c130-454e-a9ba-c56412cc11f3",
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185",
+        "d25a0285-4fb4-422d-b95b-ab67446120ad",
+        "919f9cdd-6184-4311-b675-742931504318",
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879",
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe",
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0",
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609",
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a"
+      ],
+      "settings": {
+        "section_id": "",
+        "show_breadcrumbs": true,
+        "show_pick_an_option": false,
+        "enable_linked_options": false,
+        "enabled_mobile_sticky_btns": true,
+        "media_size": "medium",
+        "enable_image_zoom": true,
+        "enable_video_looping": true,
+        "thumbnails_type": "grid",
+        "support_email": "",
+        "support_text": "",
+        "feature_1_show": false,
+        "feature_1_title": "Fast & Free Shipping",
+        "feature_1_content": "",
+        "feature_2_show": false,
+        "feature_2_title": "Warranty Protection",
+        "feature_2_content": "",
+        "feature_3_show": false,
+        "feature_3_title": "Secure Payments",
+        "feature_3_content": "",
+        "feature_4_show": false,
+        "feature_4_title": "Multi-channel Support",
+        "feature_4_content": ""
+      }
+    },
+    "f342e7e1-0811-4d16-bf58-7b2d0fac77a4": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--18569356837207__f342e7e1-0811-4d16-bf58-7b2d0fac77a4-1681726275edc80900-0": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/BLADE-01-KV.png",
+            "mobile_image": "shopify:\/\/shop_images\/BLADE-M-01-KV.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "EcoFlow BLADE",
+            "title_color": "#232323",
+            "content": "<p><strong>Jardín bien cortado sin sudar.<\/strong><\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "eae260e7-155b-4aa0-bdd8-92444cd488a2": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/BLADE-02.png",
+            "mobile_image": "shopify:\/\/shop_images\/BLADE-M-02.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "a31999a4-f3d1-43c4-8a88-5f55acc2dd8d": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/BLADE-03.png",
+            "mobile_image": "shopify:\/\/shop_images\/BLADE-M-03.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--18569356837207__f342e7e1-0811-4d16-bf58-7b2d0fac77a4-1681726275edc80900-0",
+        "eae260e7-155b-4aa0-bdd8-92444cd488a2",
+        "a31999a4-f3d1-43c4-8a88-5f55acc2dd8d"
+      ],
+      "settings": {
+      }
+    },
+    "dc8afadd-9d6c-48c2-b3e1-9dc370427f31": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "El primer robot cortacésped barredora del sector",
+        "subtitle": "<p>Déjanos el trabajo duro a nosotros.<\/p>",
+        "content": "<p>El Blade ofrece un tratamiento completo del césped, desde una poda rápida hasta una renovación total. Coloca el kit de barrido de césped para eliminar los residuos no deseados, como hojas, palos y basura, de tu jardín. Tendrás el césped mejor cuidado del barrio sin esfuerzo alguno.<\/p>",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/04-video-2.png",
+        "mobile_image": "shopify:\/\/shop_images\/M-04-video-3.png",
+        "video_type": "mp4",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/b50685d182184d34806565a553077b01.mp4",
+        "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/2675c0d35f1e4356adad60a2233affa4.mp4",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "64276981-f029-4cb7-ad96-90a5ae49d413": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "Límites sin cables",
+        "subtitle": "<p>Prácticamente magia.<\/p>",
+        "content": "<p>Con nuestra tecnología de fijación de límites virtuales, ahorra tiempo y energía sin necesidad de colocar molestas barreras de cable. Establece los límites de corte del Blade con la aplicación EcoFlow en cuestión de minutos, ya sea para mantenerlo dentro de los límites de tu jardín, esquivar objetos concretos o incluso unir dos zonas de césped. Podemos ayudarte incluso si te mudas de casa o haces cambios en tu jardín gracias a los límites fáciles de editar con solo pulsar un botón.<\/p>",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/05-video-2.png",
+        "mobile_image": "shopify:\/\/shop_images\/M-05-video-2.png",
+        "video_type": "mp4",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/dac565a1008c49d68b2f1e0a8331e29a.mp4",
+        "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/a7d8502dc72b4c7a9e917c9cbc493196.mp4",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "0e8e1c17-66f0-4a1a-8d3c-8cfa9a3da36a": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 20,
+        "section_bottom_spacing": 0,
+        "section_top_spacing_mobile": 20,
+        "section_bottom_spacing_mobile": 0,
+        "alignment": "center",
+        "title": "Sigue cortando el césped con la tecnología X-Vision",
+        "subtitle": "",
+        "content": "",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "144ffd8b-b4ee-4468-9c8f-31aa15c5f786": {
+      "type": "pdp-image-with-text-horizontal-new",
+      "blocks": {
+        "58859457-64ea-474a-a77a-40292bcc8759": {
+          "type": "image",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/06-video-2.png",
+            "mobile_image": "shopify:\/\/shop_images\/M-06-video-2.png",
+            "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/935ec66ca4474f33a2dcc6f227278d60.mp4",
+            "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/4a24816b1f2a4c7a80546a0354e8c46f.mp4",
+            "autoplay_video": true,
+            "image_alignment": "left",
+            "title": "",
+            "subtitle": "<p>Evita obstáculos de forma inteligente. <\/p>",
+            "content": "<p>El Blade utiliza la última tecnología punta de EcoFlow, X-Vision. Gracias a la combinación de sensores visuales y LiDAR, el Blade reconoce y esquiva de forma inteligente obstáculos grandes y pequeños, desde tus muebles de jardín hasta las preciadas begonias del vecino.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "5b5e6005-2940-44e3-b67c-0b6db4f297b2": {
+          "type": "image",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/07-video-2.png",
+            "mobile_image": "shopify:\/\/shop_images\/M-07-video-2.png",
+            "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/db05f0ebd0b3459cafc1c77d247f5783.mp4",
+            "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/31e844be24514d2a9aacb4890763ca2e.mp4",
+            "autoplay_video": true,
+            "image_alignment": "right",
+            "title": "",
+            "subtitle": "<p>Planificación automática de rutas.<\/p>",
+            "content": "<p>Con la tecnología de posicionamiento cinemático en tiempo real (RTK), el Blade cambia la ruta alrededor de residuos a menos de un centímetro del plan original, para que nunca se atasque ni falle un corte.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "58859457-64ea-474a-a77a-40292bcc8759",
+        "5b5e6005-2940-44e3-b67c-0b6db4f297b2"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "center"
+      }
+    },
+    "87b8b32d-496a-4917-993e-d054806c8a80": {
+      "type": "pdp-slideshow",
+      "blocks": {
+        "17f23f43-5f12-4b63-ae50-abc64abad26c": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Ruedas delanteras omnidireccionales de 20 cm",
+            "title": "Diseño pionero en el sector para un rendimiento de corte mejorado",
+            "subtitle": "",
+            "content": "",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>Gracias a su diseño amplio y robusto, el Blade atraviesa sin esfuerzo terrenos irregulares, sorteando rocas de hasta 40 mm. y ascendiendo pendientes del 27°. <\/p>",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/08-1-2.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/M-08-1-2.png",
+            "mp4_video_url_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/2ad8c4d019f04059b6588036abed129c.mp4",
+            "mp4_video_url_m_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/c83a65552cfe4dce9eba30a224932b90.mp4",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "35732589-2d6a-4aba-8ed3-210284e00999": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Amplia anchura de corte",
+            "title": "Diseño pionero en el sector para un rendimiento de corte mejorado",
+            "subtitle": "",
+            "content": "",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>La anchura adicional del Blade ofrece una distancia de corte de más de 26 cm, lo que permite cortar más en menos tiempo. <\/p>",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/08-2-2.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/M-08-2-2.png",
+            "mp4_video_url_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/3c6b3db6a6c640e39ff5399ff2561db7.mp4",
+            "mp4_video_url_m_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/1e9c4bc1fb9344b39b36f46bc7e5516b.mp4",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "bd551675-370b-4bad-8c52-e8b62d4ef162": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Cortes entre 20-76 mm",
+            "title": "Diseño pionero en el sector para un rendimiento de corte mejorado",
+            "subtitle": "",
+            "content": "",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>Por si fuera poco, Blade además tiene un amplio rango de corte de hierba de 20-76 mm que se puede ajustar en segundos desde la aplicación.<\/p>",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/08-3-2.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/M-08-3-2.png",
+            "mp4_video_url_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e414cf5206ea4778b3df501c9dd49a2d.mp4",
+            "mp4_video_url_m_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/4d1a94afb0ab4b5298f4fc333c67af6e.mp4",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        }
+      },
+      "block_order": [
+        "17f23f43-5f12-4b63-ae50-abc64abad26c",
+        "35732589-2d6a-4aba-8ed3-210284e00999",
+        "bd551675-370b-4bad-8c52-e8b62d4ef162"
+      ],
+      "settings": {
+        "section_id": ""
+      }
+    },
+    "9755dabe-f9c8-4ad0-ab89-62efb21f28f9": {
+      "type": "pdp-slideshow",
+      "blocks": {
+        "a9dbc246-33d0-4407-8b04-9b894241d313": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Antirrobo",
+            "title": "Antirrobo y resistente al agua",
+            "subtitle": "<p>Diseñado para durar.<\/p>",
+            "content": "",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>Con 4G, GPS y una eSIM integrada, puedes realizar un seguimiento de la ubicación del Blade dondequiera que vaya. <\/p>",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/BLADE-09-1.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/BLADE-M-09-1.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "f372f39d-7df6-4d72-9a89-3a2eb433f689": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Sensor de lluvia",
+            "title": "Antirrobo y resistente al agua",
+            "subtitle": "<p>Diseñado para durar.<\/p>",
+            "content": "",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>Su sensor de lluvia integrado detecta chubascos o condiciones meteorológicas adversas y envía automáticamente el Blade de vuelta al cargador para mantener el césped libre de barro y surcos. <\/p>",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/09-2-2.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/M-09-2-2.png",
+            "mp4_video_url_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/5b8b656ccafa437c99f8e986a49f739e.mp4",
+            "mp4_video_url_m_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/498074fc1e99442bad7f34ab66b9d440.mp4",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "a598c7b1-7ea3-466e-a552-ff34f902d391": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Fácil de limpiar <br>y de mantener",
+            "title": "Antirrobo y resistente al agua",
+            "subtitle": "<p>Diseñado para durar.<\/p>",
+            "content": "",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>Gracias al índice de resistencia al agua IPX5, puedes lavar el Blade con un chorro de agua a baja presión para desprender los residuos o la suciedad de las ruedas.<\/p>",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/BLADE-09-3.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/BLADE-M-09-3.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        }
+      },
+      "block_order": [
+        "a9dbc246-33d0-4407-8b04-9b894241d313",
+        "f372f39d-7df6-4d72-9a89-3a2eb433f689",
+        "a598c7b1-7ea3-466e-a552-ff34f902d391"
+      ],
+      "settings": {
+        "section_id": ""
+      }
+    },
+    "b14a2373-e248-4220-82a7-2375360e2e68": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 20,
+        "section_bottom_spacing": 0,
+        "section_top_spacing_mobile": 20,
+        "section_bottom_spacing_mobile": 0,
+        "alignment": "center",
+        "title": "Paquete completo de servicios",
+        "subtitle": "",
+        "content": "",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "7626dfd1-0fe4-4156-a88e-850a531f39be": {
+      "type": "pdp-image-with-text",
+      "blocks": {
+        "718fa1ea-0508-41d0-9c45-95a4a5bc25fb": {
+          "type": "image_content",
+          "disabled": true,
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/BLADE-10-1.png",
+            "mobile_image": "shopify:\/\/shop_images\/BLADE-M-10-1.png",
+            "image_height": 310,
+            "mobile_image_height": 250,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "<p>Amplia garantía de hasta 4 años<\/p>",
+            "subtext_bottom": "",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "ad117762-7d02-42a6-a979-7b2dc145992b": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/BLADE-10-2.png",
+            "mobile_image": "shopify:\/\/shop_images\/BLADE-M-10-2.png",
+            "image_height": 310,
+            "mobile_image_height": 250,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "<p>Equipo de servicio de atención personalizada<\/p>",
+            "subtext_bottom": "",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "402460e8-3f1c-4486-ba74-1cf356383474": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/BLADE-10-3.png",
+            "mobile_image": "shopify:\/\/shop_images\/BLADE-M-10-3.png",
+            "image_height": 310,
+            "mobile_image_height": 250,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "<p>Sustituciones en lugar de reparación<\/p>",
+            "subtext_bottom": "",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "8dd2479b-4cf1-491d-b5a6-851883ea9901": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/BLADE-10-4.png",
+            "mobile_image": "shopify:\/\/shop_images\/BLADE-M-10-4.png",
+            "image_height": 310,
+            "mobile_image_height": 250,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "<p>Accesorios gratuitos de por vida<\/p>",
+            "subtext_bottom": "",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "718fa1ea-0508-41d0-9c45-95a4a5bc25fb",
+        "ad117762-7d02-42a6-a979-7b2dc145992b",
+        "402460e8-3f1c-4486-ba74-1cf356383474",
+        "8dd2479b-4cf1-491d-b5a6-851883ea9901"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "center",
+        "layout": "stacked",
+        "stacked_row": "3",
+        "mobile_stacked_row": "1",
+        "slider_row": "2",
+        "mobile_slider_row": "2"
+      }
+    },
+    "cca72781-9977-445a-be75-d16e9fe7f46e": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--18569356837207__cca72781-9977-445a-be75-d16e9fe7f46e-1681892017094c60b0-0": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/BLADE-11.png",
+            "mobile_image": "shopify:\/\/shop_images\/BLADE-M-11.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "<p><strong>Con el kit de barredora de césped EcoFlow*, el Blade puede barrer el césped mientras corta y recoger hojas\/residuos\/palos, etc. automáticamente.<\/strong><\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "7a202054-da5f-421b-8de0-77423ac99349": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/BLADE-12.png",
+            "mobile_image": "shopify:\/\/shop_images\/BLADE-M-12.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "<p><strong>¿No hay ninguna toma de CA cerca? No hay problema. Utiliza la batería adicional inteligente para alimentar tu estación de carga Blade allí donde estés. Conecta los paneles solares y utiliza el Blade con energía limpia y renovable.<\/strong><\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--18569356837207__cca72781-9977-445a-be75-d16e9fe7f46e-1681892017094c60b0-0",
+        "7a202054-da5f-421b-8de0-77423ac99349"
+      ],
+      "settings": {
+      }
+    },
+    "82f7f3bf-a9d8-4236-9823-651a58407999": {
+      "type": "pdp-whats-in-the-box",
+      "blocks": {
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/BLADE-13-1.png",
+            "cta_label": "EcoFlow BLADE",
+            "link": "",
+            "cta_width": 40,
+            "cta_image_width": "100%",
+            "custom_width": 300,
+            "custom_height": 400,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 200
+          }
+        },
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/BLADE-13-2.png",
+            "cta_label": "Estación de carga",
+            "link": "",
+            "cta_width": 20,
+            "cta_image_width": "100%",
+            "custom_width": 300,
+            "custom_height": 130,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 200
+          }
+        },
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/BLADE-13-3.png",
+            "cta_label": "Adaptador de alimentación (varía según la región)",
+            "link": "",
+            "cta_width": 20,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 150,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 150
+          }
+        },
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/BLADE-13-4.png",
+            "cta_label": "Antena GNSS",
+            "link": "",
+            "cta_width": 20,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 170,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 200
+          }
+        },
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/BLADE-13-5.png",
+            "cta_label": "Guía de inicio rápido",
+            "link": "",
+            "cta_width": 30,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 180,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 200
+          }
+        },
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-5": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/BLADE-13-6.png",
+            "cta_label": "Otros accesorios",
+            "link": "",
+            "cta_width": 30,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 180,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 200
+          }
+        }
+      },
+      "block_order": [
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-0",
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-1",
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-2",
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-3",
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-4",
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-5"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Contenido de la caja",
+        "bottom_content": "",
+        "cta_height": 465,
+        "cta_height_mobile": 245,
+        "cta_half_height_mobile": 200,
+        "gutter_width": 12
+      }
+    },
+    "445d25b8-a88b-4de2-811c-2cbe8505573e": {
+      "type": "pdp-specs",
+      "blocks": {
+        "47af9637-9c18-4189-ac35-f8a415f77098": {
+          "type": "contents",
+          "settings": {
+            "title": "Tipo de producto",
+            "content": "<p>Cortacésped robótico<\/p>"
+          }
+        },
+        "a6725352-6830-4493-aba9-a2094cf75982": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso neto",
+            "content": "<p>16,2 kg<\/p>"
+          }
+        },
+        "f3a1ff22-e1c2-499a-8610-4bc6dbcdf47b": {
+          "type": "contents",
+          "settings": {
+            "title": "Dimensiones",
+            "content": "<p>&lt;660*440*310 mm<\/p>"
+          }
+        },
+        "03cae209-41ad-43b9-ac45-d01ab3422542": {
+          "type": "contents",
+          "settings": {
+            "title": "Clasificación IP",
+            "content": "<p>IPX5<\/p>"
+          }
+        },
+        "9735a98e-fa4d-4712-9472-44c8d2a204d5": {
+          "type": "contents",
+          "settings": {
+            "title": "Sensor",
+            "content": "<p>Sensor IMU, sensor de elevación, sensor de lluvia, codificador de rueda, lidar, cámara<\/p>"
+          }
+        },
+        "614680ef-24ec-4500-ab57-f0e4642ae896": {
+          "type": "contents",
+          "settings": {
+            "title": "Tiempo de trabajo completamente cargado",
+            "content": "<p>240 minutos<\/p>"
+          }
+        },
+        "49c84d99-7423-4469-81f4-3fde371be7e4": {
+          "type": "contents",
+          "settings": {
+            "title": "Ancho de corte",
+            "content": "<p>260 mm<\/p>"
+          }
+        },
+        "b2e4d52a-2d0f-4095-bff6-6359bbaf8688": {
+          "type": "contents",
+          "settings": {
+            "title": "Altura de corte",
+            "content": "<p>20-76 mm<\/p>"
+          }
+        },
+        "c2cef391-c4fe-4607-a2e2-4c1fb601e58f": {
+          "type": "contents",
+          "settings": {
+            "title": "Capacidad de escalada",
+            "content": "<p>27°<\/p>"
+          }
+        },
+        "007dec67-2841-4c16-b92b-449cb6c93308": {
+          "type": "contents",
+          "settings": {
+            "title": "Escalada de obstáculos verticales",
+            "content": "<p>40 mm<\/p>"
+          }
+        },
+        "72bcb0c3-9cc5-4252-a081-0bd13f013ef0": {
+          "type": "contents",
+          "settings": {
+            "title": "Tiempo de recarga",
+            "content": "<p>130 min<\/p>"
+          }
+        },
+        "9094b1e4-de02-4869-b083-7ca28f305cda": {
+          "type": "contents",
+          "settings": {
+            "title": "Modo de trabajo GNSS",
+            "content": "<p>GPS, Beidou, Galileo, GLONASS<\/p>"
+          }
+        },
+        "b473c30f-3305-4eb8-9d40-7b5810d3808c": {
+          "type": "contents",
+          "settings": {
+            "title": "Canal Bluetooth",
+            "content": "<p>2400-2483,5MHz<\/p>"
+          }
+        },
+        "5e6f6e44-7544-4071-8a7e-25343ef62358": {
+          "type": "contents",
+          "settings": {
+            "title": "Voltaje de entrada de la estación de carga",
+            "content": "<p>36V<\/p>"
+          }
+        },
+        "60da6132-c27f-4fda-988e-32e461b798f9": {
+          "type": "contents",
+          "settings": {
+            "title": "Corriente de entrada de la estación de carga",
+            "content": "<p>5A<\/p>"
+          }
+        },
+        "0fdb2858-640f-4cf3-b1f6-f1a9c71bab2b": {
+          "type": "contents",
+          "settings": {
+            "title": "Voltaje de salida de la estación de carga",
+            "content": "<p>25,2 V CC máx.<\/p>"
+          }
+        },
+        "1385fcb8-c23b-4801-8ae3-e0f3716cf98d": {
+          "type": "contents",
+          "settings": {
+            "title": "Corriente de salida de la estación de carga",
+            "content": "<p>7A máx.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "47af9637-9c18-4189-ac35-f8a415f77098",
+        "a6725352-6830-4493-aba9-a2094cf75982",
+        "f3a1ff22-e1c2-499a-8610-4bc6dbcdf47b",
+        "03cae209-41ad-43b9-ac45-d01ab3422542",
+        "9735a98e-fa4d-4712-9472-44c8d2a204d5",
+        "614680ef-24ec-4500-ab57-f0e4642ae896",
+        "49c84d99-7423-4469-81f4-3fde371be7e4",
+        "b2e4d52a-2d0f-4095-bff6-6359bbaf8688",
+        "c2cef391-c4fe-4607-a2e2-4c1fb601e58f",
+        "007dec67-2841-4c16-b92b-449cb6c93308",
+        "72bcb0c3-9cc5-4252-a081-0bd13f013ef0",
+        "9094b1e4-de02-4869-b083-7ca28f305cda",
+        "b473c30f-3305-4eb8-9d40-7b5810d3808c",
+        "5e6f6e44-7544-4071-8a7e-25343ef62358",
+        "60da6132-c27f-4fda-988e-32e461b798f9",
+        "0fdb2858-640f-4cf3-b1f6-f1a9c71bab2b",
+        "1385fcb8-c23b-4801-8ae3-e0f3716cf98d"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Especificaciones"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "grid_mobile": "2",
+        "heading": "You may also like",
+        "show_vendor": false
+      }
+    },
+    "1676887592a3dc4fd0": {
+      "type": "apps",
+      "blocks": {
+        "6968de8d-ed22-4f9e-8856-9260bce48bd6": {
+          "type": "shopify:\/\/apps\/growave-loyalty-wishlist\/blocks\/block.product.reviewWidget\/b3d2efbe-110a-4e27-84a8-1f2ed63996a4",
+          "settings": {
+            "containerMaxWidth": "",
+            "containerMarginTop": "",
+            "containerMarginBottom": "",
+            "containerSidePadding": "",
+            "containerLineHeight": "",
+            "containerFontFamily": "",
+            "containerLetterSpacing": "",
+            "buttonsColor": "",
+            "buttonsColorOnHover": "",
+            "buttonsBackgroundColor": "",
+            "buttonsBackgroundColorOnHover": "",
+            "buttonsBorder": "",
+            "buttonsBorderColorOnHover": "",
+            "buttonsBoxShadow": "",
+            "buttonsBoxShadowOnHover": "",
+            "buttonsPaddings": "",
+            "buttonsTextTransform": "",
+            "tabTriggerSelector": "",
+            "tabContentSelector": ""
+          }
+        }
+      },
+      "block_order": [
+        "6968de8d-ed22-4f9e-8856-9260bce48bd6"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    }
+  },
+  "order": [
+    "daf26638-f596-4384-b150-72d380a3268d",
+    "sticky-product-bar",
+    "main",
+    "f342e7e1-0811-4d16-bf58-7b2d0fac77a4",
+    "dc8afadd-9d6c-48c2-b3e1-9dc370427f31",
+    "64276981-f029-4cb7-ad96-90a5ae49d413",
+    "0e8e1c17-66f0-4a1a-8d3c-8cfa9a3da36a",
+    "144ffd8b-b4ee-4468-9c8f-31aa15c5f786",
+    "87b8b32d-496a-4917-993e-d054806c8a80",
+    "9755dabe-f9c8-4ad0-ab89-62efb21f28f9",
+    "b14a2373-e248-4220-82a7-2375360e2e68",
+    "7626dfd1-0fe4-4156-a88e-850a531f39be",
+    "cca72781-9977-445a-be75-d16e9fe7f46e",
+    "82f7f3bf-a9d8-4236-9823-651a58407999",
+    "445d25b8-a88b-4de2-811c-2cbe8505573e",
+    "product-recommendations",
+    "1676887592a3dc4fd0"
+  ]
+}

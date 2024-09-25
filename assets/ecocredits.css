@@ -1,0 +1,1527 @@
+/*Global Page Style */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 50px;
+}
+
+body {
+  background: #000000;
+}
+
+.ec__text--heading {
+  font-size: 32px;
+}
+
+@media (min-width: 768px) {
+  .ec__text--heading {
+    font-size: 32px;
+  }
+}
+
+@media (min-width: 1023px) {
+  .ec__text--heading {
+    font-size: 48px;
+  }
+}
+
+.ec__text--white {
+  color: #ffffff;
+}
+
+.ec__text--gold {
+  color: #eeaf45;
+}
+
+.ec__text--gray {
+  color: #757575;
+}
+
+.ec__text--dark-gray {
+  color: #666666;
+}
+
+.ec__text--dusty-gray {
+  color: #939393;
+}
+
+.ec__text--black {
+  color: #000000;
+}
+
+.ec__text--orange {
+  color: #ff6500;
+}
+
+.ec__text--left {
+  text-align: left;
+}
+
+.ec__text--center {
+  text-align: center;
+}
+
+.ec__text--capitalize {
+  text-transform: capitalize;
+}
+
+.ec__text--uppercase {
+  text-transform: uppercase;
+}
+
+.ec__relative {
+  position: relative;
+}
+
+.container--normal {
+  max-width: 980px;
+  width: 100%;
+  margin: auto;
+}
+
+.container--short {
+  max-width: 845px;
+  width: 100%;
+  margin: auto;
+}
+
+.container--flex {
+  display: flex;
+}
+
+.background--white {
+  background: #ffffff;
+}
+
+.background--light-black {
+  background: #252525;
+}
+
+.background--jet-black {
+  background: #090909;
+}
+
+.background--black {
+  background: #000000;
+}
+
+.background--dark-gray {
+  background: #1c1c1c;
+}
+
+.background--gray {
+  background: #8e8e8e;
+}
+
+.background--gold {
+  background: #eeaf45;
+}
+
+.background--light-orange {
+  background: #38281e;
+}
+
+.display--hidden {
+  opacity: 0;
+}
+
+.display--desktop {
+  display: none;
+}
+@media (min-width: 768px) {
+  .display--desktop {
+    display: block;
+  }
+
+  .display--mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .display--tablet {
+    display: none;
+  }
+}
+.custom-img__wrapper {
+  position: relative;
+}
+
+.custom-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.ecocredits__flex-block {
+  flex: 1;
+}
+
+@media (max-width: 1023px) {
+  .ecocredits__flex-block {
+    flex: 0 1 48%;
+  }
+}
+
+@media (max-width: 767px) {
+  .ecocredits__flex-block {
+    height: 100%;
+  }
+  .ecocredits__mobile-slider-container.slick-dotted.slick-slider {
+    margin-bottom: 0;
+  }
+  .ecocredits__mobile-slider-container .slick-slide {
+    margin: 0 10px;
+    height: inherit !important;
+  }
+  .ecocredits__mobile-slider-container .slick-slide div:not([class]) {
+    height: 100%;
+  }
+  .ecocredits__mobile-slider-container .slick-list {
+    margin: 0 -10px;
+  }
+  .ecocredits__mobile-slider-container .slick-track {
+    display: flex !important;
+  }
+  .ecocredits__mobile-slider-container .slick-dots {
+    position: relative;
+    bottom: 5px;
+  }
+  .ecocredits__mobile-slider-container .slick-dots {
+    bottom: 0;
+    line-height: 0;
+    line-height: 0;
+    transform: translate(-50%, 0);
+    left: 50%;
+  }
+  .ecocredits__mobile-slider-container .slick-dots li.slick-active {
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background: #ffffff;
+  }
+  .ecocredits__mobile-slider-container .slick-dots li button:before {
+    content: none;
+    width: 8px;
+    height: 8px;
+  }
+  .ecocredits__mobile-slider-container .slick-dots li.slick-active button:before {
+    content: none;
+    width: 8px;
+    height: 8px;
+  }
+  .ecocredits__mobile-slider-container .slick-dots li button {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+  }
+  .ecocredits__mobile-slider-container .slick-dots li {
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background: #707070;
+    margin: 0 6.5px;
+  }
+  .ecocredits__mobile-slider-container .slick-dots li button:before {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/*End Global Page Style */
+
+/* Start ecocredits-banner.liquid Style */
+
+.ecocredits-banner {
+  position: relative;
+  padding-bottom: 126px;
+  top: 0;
+}
+
+@media (min-width: 768px) {
+  .ecocredits-banner {
+    padding-bottom: 150px;
+  }
+}
+
+@media (min-width: 1240px) {
+  .ecocredits-banner {
+    padding-bottom: 200px;
+  }
+}
+
+.ecocredits-banner__content {
+  text-align: center;
+  padding-top: 40px;
+  padding-right: 24px;
+  padding-bottom: 40px;
+  padding-left: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+@media (min-width: 368px) {
+  .ecocredits-banner__content {
+    padding-top: 72px;
+  }
+}
+
+@media (min-width: 768px) {
+  .ecocredits-banner__content {
+    padding-top: 32px;
+    text-align: left;
+    padding-left: 80px;
+  }
+}
+
+@media (min-width: 1250px) {
+  .ecocredits-banner__content {
+    padding-top: 74px;
+    padding-left: 150px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .ecocredits-banner__content {
+    padding-top: 100px;
+    padding-left: 300px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .ecocredits-banner__content {
+    padding-top: 133px;
+    padding-left: 422px;
+  }
+}
+
+.ecocredits-banner__content__h1 {
+  line-height: 1;
+  font-size: 40px;
+  margin-bottom: 24px;
+}
+
+.ecocredits-banner__content__desc {
+  font-size: 18px;
+  line-height: 1;
+  margin-bottom: 19px;
+}
+
+@media (min-width: 320px) {
+  .ecocredits-banner__content__h1 {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .ecocredits-banner__content__h1 {
+    font-size: 38px;
+  }
+}
+
+@media (min-width: 1023px) {
+  .ecocredits-banner__content__h1 {
+    font-size: 48px;
+    margin-bottom: 25px;
+  }
+  .ecocredits-banner__content__desc {
+    font-size: 24px;
+  }
+}
+
+.ecocredits-banner__btn {
+  font-weight: 700;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+@media (min-width: 768px) {
+  .ecocredits-banner__btn {
+    font-size: 20px;
+  }
+}
+
+.ecocredits-banner--flex-style .ecocredits-banner-btn {
+  color: #000;
+}
+
+@media (min-width: 768px) {
+  .ecocredits-banner--flex-style .ecocredits-banner__content {
+    padding-top: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: left;
+    max-width: 760px;
+  }
+  .ecocredits-banner--flex-style .ecocredits-banner-btn {
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 1400px) {
+  .ecocredits-banner--flex-style .ecocredits-banner__content {
+    padding-left: 100px;
+  }
+}
+
+/* End ecocredits-banner.liquid Style */
+
+/* Start ecocredits-ral.liquid Style */
+
+.ecocredits-ral__section {
+  padding-bottom: 110px;
+}
+
+.ecocredits-nav__container {
+  padding-top: 20px;
+}
+
+.ecocredits-nav__container.fixed {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: top 0.5s ease-out;
+  border-bottom: 1px solid #979797;
+  top: 0;
+}
+
+.ecocredits-nav__placeholder {
+  height: 70px;
+}
+
+.ecocredits-nav__container.fixed .ecocredits-nav__flex-nav-container {
+  border-bottom: unset;
+}
+
+.ecocredits-nav__flex-nav-container {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #979797;
+}
+
+.ecocredits-nav__flex-nav-container li {
+  font-size: 19px;
+  padding-bottom: 20px;
+}
+
+.ecocredits-nav__flex-nav-container li:hover {
+  border-bottom: 1px solid #ffffff;
+  color: #ffffff;
+}
+.ecocredits-nav__flex-nav-container .ec__nav__li.active {
+  border-bottom: 1px solid #ffffff;
+}
+.ecocredits-nav__flex-nav-container .ec__nav__li.active {
+  color: #ffffff;
+}
+.ecocredits-nav__flex-nav-container .ec__nav__li a:hover {
+  color: #ffffff;
+}
+
+.ecocredits-nav__flex-nav-container li:active {
+  padding-bottom: 20px;
+  margin-bottom: -1px;
+}
+
+.ecocredits-ral__heading__wrapper {
+  margin-top: 120px;
+  margin-bottom: 40px;
+}
+
+.ecocredits-ral__section-heading {
+  margin-bottom: 0;
+}
+
+.ecocredits-ral__popup__container {
+  position: absolute;
+  bottom: 10px;
+  right: -20px;
+  height: 33.64px;
+}
+
+.ecocredits-ral__popup__icon {
+  padding: 0;
+  background-color: transparent;
+  height: 100%;
+  border: none;
+}
+.ecocredits-ral__popup__icon:focus {
+  border: none;
+  outline: none;
+}
+
+.ecocredits-ral__popup__container:hover .ecocredits-ral__popup-content {
+  opacity: 1;
+  display: block;
+}
+
+.ecocredits-ral__button--link {
+  display: block;
+  width: fit-content;
+  margin: auto;
+}
+
+.ecocredits-ral__button__container {
+  width: fit-content;
+  margin: auto;
+  padding-top: 10px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  padding-left: 40px;
+  border-radius: 8px;
+  border: 3px solid;
+  border-image-slice: 3;
+  border-image-source: url(https://cdn.shopify.com/s/files/1/0431/3789/2516/files/4_3_2.png?v=1678777358);
+  font-size: 17px;
+}
+
+.ecocredits--btn {
+  font-size: 17px;
+}
+
+.ecocredits-ral__product__container {
+  display: flex;
+  gap: 12px;
+  margin-top: 60px;
+  flex-wrap: wrap;
+}
+
+.ecocredits-ral__product__block {
+  flex: 1 0 49%;
+  display: flex;
+  border-radius: 10px;
+}
+
+.ecocredits-ral__product__image {
+  flex: 1 0 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ecocredits-ral__product__image img {
+  height: unset;
+}
+
+.ecocredits-ral__product__details {
+  flex: 1 0 55%;
+  padding-top: 33px;
+  padding-right: 34px;
+  padding-bottom: 33px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ecocredits-ral__heading {
+  font-size: 17px;
+  margin-bottom: 0;
+}
+
+.ecocredits-ral__specification {
+  font-size: 13px;
+  margin-bottom: 17px;
+}
+
+.ecocredits-ral__product--value {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.ecocredits-ral__price__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  margin-top: auto;
+}
+
+.ecocredits-ral__price--discounted {
+  font-size: 19px;
+}
+
+.ecocredits-ral__price {
+  font-size: 13px;
+  text-decoration: line-through;
+}
+
+.ecocredits-ral__description {
+  font-size: 12px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 15px !important;
+}
+
+.ecocredits-ral__product__button-wrapper {
+  display: flex;
+  gap: 9px;
+}
+
+.ecocredits__btn {
+  padding-top: 11px;
+  padding-right: 0;
+  padding-bottom: 11px;
+  padding-left: 0;
+  border-radius: 24px;
+  font-size: 12px;
+  min-width: 132px;
+  text-align: center;
+}
+
+.ecocredits__btn--atc .loader svg {
+  height: 17px;
+}
+
+.ecocredits__btn--atc {
+  background: #ff4d35;
+  border: 1px solid #ff4d35;
+}
+
+.ecocredits__btn--lm {
+  background: transparent;
+  border: 1px solid #ffffff;
+}
+.ecocredits__btn--lm:hover {
+  color: #ffffff;
+}
+
+.ecocredits-link__clp {
+  margin-top: 24px;
+  text-align: center;
+}
+.ecocredits-link__clp a:hover {
+  color: #666666;
+}
+
+.ecocredits-link__clp a {
+  font-size: 17px;
+}
+
+@media (max-width: 1240px) {
+  .ecocredits-ral__section {
+    padding-bottom: 60px;
+  }
+  .ecocredits-nav__container {
+    padding-left: 60px;
+    padding-right: 60px;
+    overflow: auto;
+    overflow-y: hidden;
+  }
+  .ecocredits-ral__container {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  .ecocredits-ral__product__container {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .ecocredits-nav__container {
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .ecocredits-nav__container::-webkit-scrollbar {
+    display: none;
+  }
+  .ecocredits-nav__flex-nav-container {
+    width: max-content;
+    gap: 40px;
+  }
+  .ecocredits-ral__product__block {
+    flex-wrap: wrap;
+  }
+  .ecocredits-ral__product__image {
+    flex: 1 0 100%;
+  }
+  .ecocredits-ral__product__details {
+    flex: 1 0 100%;
+    padding-left: 12px;
+    padding-right: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .ecocredits-ral__product__button-wrapper {
+    align-self: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .ecocredits-ral__section {
+    padding-bottom: 40px;
+  }
+  .ecocredits-nav__flex-nav-container li {
+    font-size: 17px;
+  }
+  .ecocredits-ral__heading__wrapper {
+    margin-top: 60px;
+    margin-bottom: 32px;
+  }
+  .ecocredits-ral__section-heading {
+    text-align: left;
+  }
+  .ecocredits-ral__popup__container {
+    right: 0;
+    bottom: 5px;
+  }
+  .ecocredits-ral__button--link {
+    margin: unset;
+  }
+  .ecocredits-ral__button__container {
+    padding-top: 10px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    font-size: 15px;
+  }
+  .ecocredits-ral__container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .ecocredits-ral__product__container {
+    padding-left: 12px;
+    padding-right: 12px;
+    gap: 11px;
+    margin-top: 40px;
+  }
+
+  .ecocredits-ral__product--height {
+    height: 135px;
+  }
+  .ecocredits-ral__product__block {
+    flex: 1 0 48%;
+    position: relative;
+    display: block;
+  }
+
+  .ecocredits-ral__product__image {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+  }
+  .ecocredits-ral__product__details {
+    align-items: flex-start;
+    padding-top: 0;
+    padding-bottom: 20px;
+  }
+  .ecocredits-ral__product--value {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+  .ecocredits-ral__product__button-wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+  }
+  .ecocredits__btn {
+    min-width: 146px;
+    width: 100%;
+  }
+  .ecocredits__btn--atc,
+  .ecocredits__btn--lm {
+    color: #cccccc !important;
+  }
+  .ecocredits__btn--lm:hover {
+    color: #cccccc;
+  }
+  .ecocredits-ral__heading {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  .ecocredits-ral__specification {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+  .ecocredits-ral__price__wrapper {
+    margin-bottom: 12px;
+  }
+  .ecocredits-ral__price--discounted {
+    font-size: 18px;
+  }
+  .ecocredits-ral__price {
+    font-size: 12px;
+  }
+  .ecocredits-link__clp {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 550px) {
+  .ecocredits-ral__popup__container {
+    width: 16px;
+    height: 16px;
+    bottom: 15px;
+    right: 5px;
+  }
+  .ecocredits-ral__popup__container svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* End ecocredits-ral.liquid Style */
+
+/* Start ecocredits-redeem.liquid Style */
+
+.ecocredits-redeem__section {
+  padding-top: 110px;
+  padding-bottom: 128px;
+  position: relative;
+}
+
+.ecocredits-redeem__container {
+  position: relative;
+}
+
+.ecocredits-redeem__section-heading {
+  margin-bottom: 60px;
+}
+
+.ecocredits-redeem__slider__container {
+  min-height: 100%;
+}
+
+.ecocredits-redeem__slider__wrapper .flickity-button {
+  background: transparent;
+}
+
+.ecocredits-redeem__slider__wrapper .flickity-prev-next-button {
+  width: 48px;
+  height: 48px;
+}
+
+.ecocredits-redeem__slider__wrapper .flickity-button-icon {
+  fill: transparent;
+}
+
+.ecocredits-redeem__slider__wrapper .flickity-button:disabled {
+  display: none;
+}
+
+.ecocredits-redeem__slider__wrapper .flickity-prev-next-button.previous {
+  background-image: url(https://cdn.shopify.com/s/files/1/1996/9707/files/arrow-left.png?v=1672154875) !important;
+  color: transparent;
+  background-repeat: no-repeat;
+
+  transition: all 0.3s ease;
+  z-index: 1;
+  left: unset;
+  top: -30%;
+  right: 380px;
+}
+
+.ecocredits-redeem__slider__wrapper .flickity-prev-next-button.previous:hover {
+  background-image: url(https://cdn.shopify.com/s/files/1/0625/0718/8450/files/slider-prev-hover.png?v=1662444318) !important;
+  transition: all 0.3s ease;
+}
+
+.ecocredits-redeem__slider__wrapper .flickity-prev-next-button.next {
+  background-image: url(https://cdn.shopify.com/s/files/1/1996/9707/files/arrow-right.png?v=1672154875) !important;
+  color: transparent;
+  background-repeat: no-repeat;
+  z-index: 1;
+  right: 300px;
+  top: -30%;
+}
+
+.ecocredits-redeem__slider__wrapper .flickity-prev-next-button.next:hover {
+  background-image: url(https://cdn.shopify.com/s/files/1/0625/0718/8450/files/slider-next-hover.png?v=1663044318) !important;
+  transition: all 0.3s ease;
+}
+
+.ecocredits-redeem__slider--block {
+  width: 241px;
+  margin-right: 7.5px;
+  margin-left: 7.5px;
+  border-radius: 12px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 40px;
+  min-height: 100%;
+}
+.ecocredits-redeem__slider__container:last-child .ecocredits-redeem__slider--block {
+  margin-right: 15px;
+}
+
+.ecocredits-redeem__slider__container:first-child {
+  padding-left: calc(max(980px, 100vw) / 2 - 490px);
+  margin-left: 0px;
+}
+.ecocredits-redeem__slider__container:first-child .ecocredits-redeem__slider--block {
+  margin-left: 0px;
+}
+
+.ecocredits-redeem__product__image {
+  aspect-ratio: 1/1;
+}
+
+.ecocredits-redeem__product__image img {
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+}
+
+.ecocredits-redeem__product__heading {
+  font-size: 15px;
+  margin-bottom: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.ecocredits-redeem__points {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-top: 4px;
+  padding-right: 17px;
+  padding-bottom: 8px;
+  padding-left: 17px;
+  border-top-right-radius: 12px;
+  border-bottom-left-radius: 24px;
+}
+
+.ecocredits-redeem__points--value {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.ecocredits-redeem__points--text {
+  font-size: 11px;
+  line-height: 1;
+}
+
+@media (max-width: 1240px) {
+  .ecocredits-redeem__section {
+    padding-top: 60px;
+    padding-bottom: 78px;
+  }
+  .ecocredits-redeem__container {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  .ecocredits-redeem__slider__container:first-child {
+    padding-left: calc(max(980px, 100vw) / 2 - 432px);
+  }
+}
+
+@media (max-width: 1023px) {
+  .ecocredits-redeem__slider__wrapper .flickity-prev-next-button.next {
+    right: 50px;
+  }
+  .ecocredits-redeem__slider__wrapper .flickity-prev-next-button.previous {
+    right: 150px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ecocredits-redeem__section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .ecocredits-redeem__container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .ecocredits-redeem__section-heading {
+    margin-bottom: 40px;
+  }
+  .ecocredits-redeem__slider__container:first-child {
+    padding-left: calc(max(980px, 100vw) / 2 - 460px);
+  }
+  .ecocredits-redeem__slider__wrapper .flickity-prev-next-button.next {
+    top: unset;
+    right: 20px;
+    bottom: 120px;
+  }
+  .ecocredits-redeem__slider__wrapper .flickity-prev-next-button.previous {
+    top: unset;
+    right: unset;
+    left: 20px;
+    bottom: 120px;
+  }
+}
+/* End ecocredits-redeem.liquid Style */
+
+/* Start ecocredits-programme.liquid Style */
+
+.ecocredits-programme__section {
+  padding-top: 128px;
+  padding-bottom: 140px;
+}
+
+.ecocredits-programme__text__container {
+  margin-bottom: 60px;
+  width: 80%;
+}
+
+.ecocredits-programme__title {
+  font-size: 17px;
+  margin-bottom: 12px;
+}
+
+.ecocredits-programme__subtitle {
+  font-size: 48px;
+  margin-bottom: 24px;
+}
+
+.ecocredits-programme__description {
+  font-size: 17px;
+  margin-bottom: 0;
+}
+
+@media (max-width: 1240px) {
+  .ecocredits-programme__section {
+    padding-top: 50px;
+    padding-bottom: 90px;
+  }
+  .ecocredits-programme__text__container {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ecocredits-programme__section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .ecocredits-programme__text__container {
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  .ecocredits-programme__title {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+  .ecocredits-programme__subtitle {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+  .ecocredits-programme__description {
+    font-size: 15px;
+    color: #757575;
+  }
+}
+
+/* End ecocredits-programme.liquid Style */
+
+/* Start ecocredits-benefits.liquid Style */
+
+.ecocredits-benefits__section {
+  padding-top: 140px;
+  padding-bottom: 110px;
+}
+
+.ecocredits-benefits__container {
+  display: flex;
+  gap: 80px;
+  justify-content: center;
+  align-items: center;
+}
+
+.ecocredits-benefits__container.image--right {
+  flex-direction: row-reverse;
+}
+
+.ecocredits-benefits__image__container {
+  flex: 1 0 45%;
+}
+
+.ecocredits-benefits__text__container {
+  flex: 1 0 45%;
+}
+
+.ecocredits-benefits__title {
+  font-size: 17px;
+  margin-bottom: 20px;
+}
+
+.ecocredits-benefits__subtitle {
+  font-size: 36px;
+  margin-bottom: 32px;
+}
+
+.ecocredits-benefits__description__wrapper p {
+  font-size: 17px;
+  margin-bottom: 0;
+  color: #ffffff;
+}
+
+.ecocredits-benefits__button__container {
+  display: flex;
+  align-items: center;
+  gap: 8.5px;
+  width: fit-content;
+  padding-top: 10px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  border-radius: 8px;
+  border: 3px solid #ffffff;
+  border-image-slice: 3;
+  border-image-source: url(https://cdn.shopify.com/s/files/1/0431/3789/2516/files/4_3_2.png?v=1678777358);
+
+  margin-top: 52px;
+  font-size: 17px;
+}
+
+@media (max-width: 1240px) {
+  .ecocredits-benefits__section {
+    padding-top: 90px;
+    padding-bottom: 60px;
+  }
+  .ecocredits-benefits__container {
+    gap: 40px;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ecocredits-benefits__section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .ecocredits-benefits__container {
+    flex-direction: column;
+    gap: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .ecocredits-benefits__container.image--right {
+    flex-direction: column-reverse;
+  }
+  .ecocredits-benefits__container.image--left {
+    flex-direction: column-reverse;
+  }
+  .ecocredits-benefits__image__container {
+    margin-left: -10px;
+    margin-right: -10px;
+    background-color: #111111;
+  }
+  .ecocredits-benefits__title {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+  .ecocredits-benefits__subtitle {
+    font-size: 24px;
+    margin-bottom: 50px;
+  }
+  .ecocredits-benefits__description__wrapper p {
+    font-size: 15px;
+    margin-bottom: 0;
+    color: #757575;
+  }
+  .ecocredits-benefits__button__container {
+    margin-top: 32px;
+    font-size: 15px;
+    padding-top: 10px;
+    padding-right: 21px;
+    padding-bottom: 10px;
+    padding-left: 21px;
+  }
+}
+
+/* End ecocredits-benefits.liquid Style */
+
+/* Start ecocredits-earn.liquid Style */
+
+.ecocredits-earn__section {
+  padding-top: 110px;
+  padding-bottom: 140px;
+}
+
+.ecocredits-earn__title {
+  font-size: 48px;
+  margin-bottom: 60px;
+}
+
+.ecocredits-earn__steps__container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ecocredits-earn__steps--wide {
+  flex: 1 0 64%;
+  border-radius: 20px;
+  background: url("https://cdn.shopify.com/s/files/1/0431/3789/2516/files/appflow.png?v=1678864105")
+      center right / contain no-repeat,
+    linear-gradient(
+      230deg,
+      rgba(249, 141, 228, 1) 0%,
+      rgba(40, 96, 255, 1) 50%,
+      rgba(255, 84, 0, 1) 100%
+    );
+  padding-top: 40px;
+  padding-right: 40px;
+  padding-bottom: 57px;
+  padding-left: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+.ecocredits-earn__steps--short {
+  flex: 1 0 30%;
+  border-radius: 20px;
+  border: 1px solid rgba(151, 151, 151, 0.5);
+  padding-top: 40px;
+  padding-right: 25px;
+  padding-bottom: 40px;
+  padding-left: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+
+.ecocredits-earn__image__container img {
+  width: 89px;
+}
+
+.ecocredits-earn__steps__container .ecocredits-earn__steps--short:nth-child(2) {
+  justify-content: space-between;
+}
+
+.ecocredits-earn__steps--wide h3 {
+  font-size: 24px;
+  margin-bottom: 0;
+}
+
+.ecocredits-earn__steps--short h3 {
+  font-size: 19px;
+  margin-bottom: 0;
+}
+
+@media (max-width: 1240px) {
+  .ecocredits-earn__section {
+    padding-top: 60px;
+    padding-bottom: 90px;
+  }
+  .ecocredits-earn__container {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  .ecocredits-earn__steps--wide {
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-bottom: 47px;
+    padding-left: 30px;
+    gap: 50px;
+  }
+  .ecocredits-earn__steps--short {
+    padding-top: 30px;
+    padding-right: 15px;
+    padding-bottom: 30px;
+    padding-left: 15px;
+    gap: 35px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ecocredits-earn__section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .ecocredits-earn__container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .ecocredits-earn__title {
+    font-size: 36px;
+    margin-bottom: 62px;
+  }
+  .ecocredits-earn__steps--wide {
+    background: unset;
+    flex-direction: row;
+    gap: 28px;
+    flex: 1 0 100%;
+    padding: 0;
+    padding-bottom: 36px;
+    border-bottom: 1px solid;
+    border-color: rgba(255, 255, 255, 0.3);
+    border-radius: 0;
+  }
+  .ecocredits-earn__steps--wide h3,
+  .ecocredits-earn__steps--short h3 {
+    font-size: 17px;
+    font-weight: 500;
+    flex: 1 0 75%;
+  }
+  .ecocredits-earn__steps--short {
+    border: unset;
+    flex-direction: row;
+    gap: 28px;
+    flex: 1 0 100%;
+    padding: 0;
+    padding-top: 14px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid;
+    border-color: rgba(255, 255, 255, 0.3);
+    border-radius: 0;
+  }
+  .ecocredits-earn__steps--short:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .ecocredits-earn__steps__container .ecocredits-earn__steps--short:nth-child(2) {
+    justify-content: unset;
+  }
+
+  .ecocredits-earn__wrapper {
+    background: url("https://cdn.shopify.com/s/files/1/0431/3789/2516/files/appflow-mobile.png?v=1678868218")
+        no-repeat,
+      linear-gradient(
+        230deg,
+        rgba(249, 141, 228, 1) 0%,
+        rgba(40, 96, 255, 1) 50%,
+        rgba(255, 84, 0, 1) 100%
+      );
+    background-position: 100% 0%;
+    border-radius: 20px;
+    padding-top: 40px;
+    padding-right: 25px;
+    padding-bottom: 50px;
+    padding-left: 25px;
+  }
+  .ecocredits-earn__steps__container {
+    gap: 0;
+  }
+  .ecocredits-earn__image__container {
+    flex: 1 0 15%;
+  }
+  .ecocredits-earn__image__container img {
+    width: 50px;
+  }
+}
+
+/* End ecocredits-earn.liquid Style */
+
+/* Start ecocredits-use.liquid Style */
+
+.ecocredits-use__section {
+  padding-top: 140px;
+  padding-bottom: 135px;
+}
+
+.ecocredits-use__steps__container {
+  display: flex;
+  gap: 20px;
+  max-width: 980px;
+  width: 100%;
+  margin: auto;
+}
+
+.ecocredits-use__block__image img {
+  border-radius: 20px;
+}
+
+.ecocredits-use__title {
+  font-size: 48px;
+  margin-bottom: 60px;
+}
+
+.ecocredits-use__block__title {
+  font-size: 19px;
+  margin-top: 18px;
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+.ecocredits-use__button__container {
+  display: flex;
+  align-items: center;
+  gap: 8.5px;
+  width: fit-content;
+  padding-top: 10px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  border-radius: 8px;
+  border: 3px solid #ffffff;
+  border-image-slice: 3;
+  border-image-source: url(https://cdn.shopify.com/s/files/1/0431/3789/2516/files/4_3_2.png?v=1678777358);
+  margin-top: 34px;
+  font-size: 17px;
+}
+
+@media (max-width: 1240px) {
+  .ecocredits-use__section {
+    padding-top: 60px;
+    padding-bottom: 90px;
+  }
+  .ecocredits-use__container {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  .ecocredits-use__steps__container {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ecocredits-use__section {
+    padding-top: 40px;
+    padding-bottom: 80px;
+  }
+  .ecocredits-use__container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .ecocredits-use__steps__container {
+    width: 788px;
+    padding-left: 30px;
+    padding-right: 30px;
+    gap: 16px;
+  }
+  .ecocredits-use__title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+  .ecocredits-use__block__title {
+    font-size: 15px;
+    margin-top: 12px;
+  }
+  .ecocredits-user__wrapper {
+    overflow: auto;
+  }
+  .ecocredits-user__wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  .ecocredits-use__button__container {
+    margin-top: 48px;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    font-size: 15px;
+  }
+}
+
+/* End ecocredits-use.liquid Style */
+
+/* Start ecocredits-stay.liquid Style */
+
+.ecocredits-stay__section {
+  padding-top: 129px;
+  padding-bottom: 107px;
+}
+
+.ecocredits-stay__image__container {
+  margin-bottom: 24px;
+}
+
+.ecocredits-stay__image__container img {
+  width: 85px;
+}
+
+.ecocredits-stay__title {
+  font-size: 48px;
+  margin-bottom: 24px;
+}
+
+.ecocredits-stay__content {
+  font-size: 17px;
+  margin-bottom: 40px;
+}
+
+.ecocredits-stay__button__container {
+  display: flex;
+  align-items: center;
+  gap: 8.5px;
+  width: fit-content;
+  padding-top: 10px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  padding-left: 40px;
+  border-radius: 8px;
+  border: 3px solid #ffffff;
+  border-image-slice: 3;
+  border-image-source: url(https://cdn.shopify.com/s/files/1/0431/3789/2516/files/4_3_2.png?v=1678777358);
+  margin: auto;
+  font-size: 17px;
+}
+
+.ecocredits-stay__login {
+  font-size: 15px;
+  margin-top: 13px;
+  margin-bottom: 0;
+}
+.ecocredits-stay__login a:hover {
+  color: #666666;
+}
+
+@media (max-width: 1240px) {
+  .ecocredits-stay__section {
+    padding-top: 90px;
+    padding-bottom: 60px;
+  }
+  .ecocredits-stay__container {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ecocredits-stay__section {
+    padding-top: 33px;
+    padding-bottom: 39px;
+  }
+  .ecocredits-stay__container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .ecocredits-stay__image__container {
+    margin-bottom: 28px;
+  }
+  .ecocredits-stay__image__container img {
+    width: 67px;
+  }
+  .ecocredits-stay__title {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+  .ecocredits-stay__content {
+    font-size: 15px;
+  }
+  .ecocredits-stay__button__container {
+    font-size: 15px;
+    padding-top: 10px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+  }
+  .ecocredits-stay__login {
+    margin-top: 12px;
+  }
+}

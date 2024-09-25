@@ -1,0 +1,513 @@
+<div
+  class="clp-products"
+  x-data="
+    {
+      addToCart(variantID) {
+        fetch('/cart/add.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            items: [
+              {
+                id: variantID,
+                quantity: 1,
+              },
+            ],
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            theme.Cart.prototype._onProductAdded();
+          });
+      },
+    }
+  "
+>
+  <div class="clp-title">{{ section.settings.title }}</div>
+  <div class="swiper mobile-only">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        {%- comment %}<locksmith:3587>{% endcomment -%}
+          {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+        {%- comment %}</locksmith:3587>{% endcomment -%}
+        {% if block.type == 'primary' %}
+          {% assign product = block.settings.product %}
+          {% assign current_variant = product.first_available_variant %}
+          {% assign variantID = block.settings.variantID | plus: 0 %}
+          {% if variantID != blank %}
+            {% for variant in product.variants %}
+              {% if variantID == variant.id %}
+                {% assign current_variant = variant %}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+          <div class="swiper-slide">
+            <a
+              href="{{ current_variant.url }}"
+              target="_blank"
+              class="relative clp-products-mobile-image-wrapper"
+            >
+              <img
+                class="clp-products-mobile-image"
+                src="{{ block.settings.image_mobile | img_url: '500x' }}"
+                alt="{{ block.settings.image_mobile.alt }}"
+                loading="lazy"
+              >
+              <div class="clp-product-title-wrapper">
+                <div class="clp-product-title">
+                  {{ block.settings.title }}
+                </div>
+                <div class="clp-product-watts">
+                  {{ block.settings.watts }}
+                </div>
+              </div>
+            </a>
+            {% if current_variant.compare_at_price != blank
+              and current_variant.compare_at_price != current_variant.price
+            %}
+              <div class="clp-product-discount">
+                {%
+                  render 'ht-responsive-image',
+                  image: section.settings.badge,
+                  image_mobile: section.settings.badge.
+                %}
+                <div class="clp-product-discount-text">
+                  {% assign priceDiff = current_variant.compare_at_price
+                    | minus: current_variant.price
+                  %}
+                  <div>Save</div>
+                  <div class="clp-product-discount-text__diff">
+                    {{ priceDiff | money_without_trailing_zeros | remove: ',' }}
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+            <div class="clp-product-lower">
+              <div class="clp-product-subtitle">
+                {{ block.settings.subtitle }}
+              </div>
+              <div class="clp-product-desc">{{ block.settings.desc }}</div>
+              <div class="clp-product-price-wrapper">
+                <div class="clp-product-price">
+                  {{
+                    current_variant.price
+                    | money_without_trailing_zeros
+                    | remove: ','
+                  }}
+                </div>
+                {% if current_variant.compare_at_price != blank
+                  and current_variant.compare_at_price != current_variant.price
+                %}
+                  <div class="clp-product-compare-at-price">
+                    {{
+                      current_variant.compare_at_price
+                      | money_without_trailing_zeros
+                      | remove: ','
+                    }}
+                  </div>
+                {% endif %}
+              </div>
+              <div class="clp-products-cta-wrapper">
+                <button
+                  class="clp-cta"
+                  type="button"
+                  @click="addToCart('{{ current_variant.id }}')"
+                >
+                  Add to Cart
+                </button>
+                <a
+                  class="clp-cta"
+                  target="_blank"
+                  href="{{ block.settings.amazonURL }}"
+                >
+                  {% render 'buy-on-amazon' %}
+                </a>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <div class="desktop-only clp-primary-desktop-grid">
+    {% for block in section.blocks %}
+      {%- comment %}<locksmith:a1fb>{% endcomment -%}
+        {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+      {%- comment %}</locksmith:a1fb>{% endcomment -%}
+      {% if block.type == 'primary' %}
+        {% assign product = block.settings.product %}
+        {% assign current_variant = product.first_available_variant %}
+        {% assign variantID = block.settings.variantID | plus: 0 %}
+        {% if variantID != blank %}
+          {% for variant in product.variants %}
+            {% if variantID == variant.id %}
+              {% assign current_variant = variant %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+        <div class="clp-primary-desktop-grid-item">
+          <a
+            href="{{ current_variant.url }}"
+            target="_blank"
+            class="clp-products-desktop-image-wrapper"
+          >
+            <img
+              class="clp-products-desktop-image"
+              src="{{ block.settings.image | img_url: '1000x' }}"
+              alt="{{ block.settings.image.alt }}"
+              loading="lazy"
+            >
+            {% assign hover_image = product.images[0] %}
+            {% if hover_image == blank %}
+              {% assign hover_image = block.settings.product.images[0] %}
+            {% endif %}
+            <img
+              class="clp-products-desktop-image clp-products-desktop-image--hover"
+              src="{{ hover_image | img_url: '1000x' }}"
+              alt="{{ hover_image.alt }}"
+              loading="lazy"
+            >
+          </a>
+          {% if current_variant.compare_at_price != blank
+            and current_variant.compare_at_price != current_variant.price
+          %}
+            <div class="clp-product-discount">
+              <img
+                class="clp-products-desktop-image"
+                src="{{ section.settings.badge_desktop | img_url: '200x' }}"
+                alt="{{ section.settings.badge_desktop.alt }}"
+                loading="lazy"
+              >
+              <div class="clp-product-discount-text">
+                {% assign priceDiff = current_variant.compare_at_price
+                  | minus: current_variant.price
+                %}
+                <div>Save</div>
+                <div class="clp-product-discount-text__diff">
+                  {{ priceDiff | money_without_trailing_zeros | remove: ',' }}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+          <div class="clp-primary-desktop-grid-item-content">
+            <div class="clp-pdgic-top">
+              <a
+                href="{{ current_variant.url }}"
+                target="_blank"
+                class="clp-pdgic-title"
+              >
+                {{- block.settings.title -}}
+              </a>
+              <div class="clp-pdgic-subtitle">
+                {{ block.settings.subtitle }}
+              </div>
+              <div class="clp-pdgic-watts">{{ block.settings.watts }}</div>
+              <div class="clp-pdgic-desc">{{ block.settings.desc }}</div>
+            </div>
+
+            <div>
+              <div class="clp-pdgic-price-wrapper">
+                <div class="clp-pdgic-price">
+                  {{
+                    current_variant.price
+                    | money_without_trailing_zeros
+                    | remove: ','
+                  }}
+                </div>
+                {% if current_variant.compare_at_price != blank
+                  and current_variant.compare_at_price != current_variant.price
+                %}
+                  <div class="clp-pdgic-compare-at-price">
+                    {{
+                      current_variant.compare_at_price
+                      | money_without_trailing_zeros
+                      | remove: ','
+                    }}
+                  </div>
+                {% endif %}
+              </div>
+              <div class="clp-cta-wrapper">
+                <button
+                  class="clp-cta"
+                  type="button"
+                  @click="addToCart('{{ current_variant.id }}')"
+                >
+                  Add to Cart
+                </button>
+                <a
+                  class="clp-cta"
+                  target="_blank"
+                  href="{{ block.settings.amazonURL }}"
+                >
+                  {% render 'buy-on-amazon' %}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="clp-secondary-grid-wrapper">
+    <div class="clp-secondary-grid">
+      {% for block in section.blocks %}
+        {%- comment %}<locksmith:566a>{% endcomment -%}
+          {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+        {%- comment %}</locksmith:566a>{% endcomment -%}
+        {% if block.type == 'secondary' %}
+          {% assign product = block.settings.product %}
+          {% assign current_variant = product.first_available_variant %}
+          {% assign variantID = block.settings.variantID | plus: 0 %}
+          {% if variantID != blank %}
+            {% for variant in product.variants %}
+              {% if variantID == variant.id %}
+                {% assign current_variant = variant %}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+          <div class="relative clp-secondary-grid-item">
+            {% assign image = block.settings.image_mobile %}
+            <img
+              class="clp-secondary-image mobile-only"
+              src="{{ image | img_url: '400x' }}"
+              srcset="
+                {{ image | img_url: '300x' }} 400w,
+                {{ image | img_url: '400x' }} 500w,
+                {{ image | img_url: '500x' }} 600w,
+                {{ image | img_url: 'master' }} 700w
+              "
+              alt="{{ image.alt }}"
+              loading="lazy"
+            >
+            {% assign image = block.settings.image %}
+            <img
+              class="clp-secondary-image desktop-only"
+              src="{{ image | img_url: '1000x' }}"
+              srcset="
+                {{ image | img_url: '600x' }} 1000w,
+                {{ image | img_url: '800x' }} 1200w,
+                {{ image | img_url: '900x' }} 1400w,
+                {{ image | img_url: 'master' }} 1600w
+              "
+              alt="{{ image.alt }}"
+              loading="lazy"
+            >
+            <a
+              class="clp-secondary-grid-item-image-link"
+              href="{{ current_variant.url }}"
+            ></a>
+            {% if current_variant.compare_at_price != blank
+              and current_variant.compare_at_price != current_variant.price
+            %}
+              <div class="clp-product-discount">
+                <img
+                  class="clp-products-desktop-image"
+                  src="{{ section.settings.badge_desktop | img_url: '200x' }}"
+                  alt="{{ section.settings.badge_desktop.alt }}"
+                  loading="lazy"
+                >
+                <div class="clp-product-discount-text">
+                  {% assign priceDiff = current_variant.compare_at_price
+                    | minus: current_variant.price
+                  %}
+                  <div>Save</div>
+                  <div class="clp-product-discount-text__diff">
+                    {{ priceDiff | money_without_trailing_zeros | remove: ',' }}
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+            <div class="clp-secondary-item-pos">
+              <div class="clp-pdgic-price-wrapper">
+                <div class="clp-pdgic-price">
+                  {{
+                    current_variant.price
+                    | money_without_trailing_zeros
+                    | remove: ','
+                  }}
+                </div>
+                {% if current_variant.compare_at_price != blank
+                  and current_variant.compare_at_price != current_variant.price
+                %}
+                  <div class="clp-pdgic-compare-at-price">
+                    {{
+                      current_variant.compare_at_price
+                      | money_without_trailing_zeros
+                      | remove: ','
+                    }}
+                  </div>
+                {% endif %}
+              </div>
+              <div class="clp-cta-wrapper">
+                <button
+                  class="clp-cta"
+                  type="button"
+                  @click="addToCart('{{ current_variant.id }}')"
+                >
+                  Add to Cart
+                </button>
+                {% if block.settings.amazonURL != blank %}
+                  <a
+                    class="clp-cta"
+                    target="_blank"
+                    href="{{ block.settings.amazonURL }}"
+                  >
+                    {% render 'buy-on-amazon' %}
+                  </a>
+                {% else %}
+                  <a
+                    class="clp-cta"
+                    target="_blank"
+                    href="{{ current_variant.url }}"
+                  >
+                    Learn More
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <a
+    class="clp-products-shop-all"
+    href="{{ section.settings.url }}"
+    >Shop the Entire Sale >></a
+  >
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    new Swiper('.clp-products .swiper', {
+      slidesPerView: 1.2,
+      spaceBetween: 10,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Products",
+  "settings": [
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "badge",
+      "label": "Badge Image (Mobile)"
+    },
+    {
+      "type": "image_picker",
+      "id": "badge_desktop",
+      "label": "Badge Image (Desktop)"
+    },
+    {
+      "type": "text",
+      "id": "url",
+      "label": "Shop sale URL"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "primary",
+      "name": "Primary",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "variantID",
+          "label": "VariantID",
+          "info": "For overwrite the price"
+        },
+        {
+          "type": "text",
+          "id": "amazonURL",
+          "label": "Amazon URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image Mobile"
+        },
+        {
+          "type": "html",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "watts",
+          "label": "Watts",
+          "default": "7200Wh | 7200W"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Whole Home Backup Power Solution"
+        },
+        {
+          "type": "html",
+          "id": "desc",
+          "label": "Description"
+        }
+      ]
+    },
+    {
+      "type": "secondary",
+      "name": "Secondary",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "variantID",
+          "label": "VariantID",
+          "info": "For overwrite the price"
+        },
+        {
+          "type": "text",
+          "id": "amazonURL",
+          "label": "Amazon URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image (Mobile)"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

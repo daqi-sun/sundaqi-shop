@@ -1,0 +1,167 @@
+<div class="outdoor-off-grid__product-card-flex-wrapper">
+  <div class="outdoor-off-grid__product-card-block">
+    {% for block in section.blocks %}
+      {%- comment %}<locksmith:d922>{% endcomment -%}
+        {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+      {%- comment %}</locksmith:d922>{% endcomment -%}
+      {% liquid
+        assign product = block.settings.product
+        if block.settings.product_url != blank
+          assign productUrl = block.settings.product_url
+        else
+          assign productUrl = product.url
+        endif
+        assign productImage = product.featured_image
+        if block.settings.title != blank
+          assign productTitle = block.settings.title
+        else
+          assign productTitle = product.title
+        endif
+        assign productSubtitle = block.settings.subtitle
+        assign productDescription = block.settings.description
+        if block.settings.image != blank
+          assign productImage = block.settings.image
+        else
+          assign productImage = product.featured_image
+        endif
+      %}
+      <div class="outdoor-off-grid__product-card-items">
+        <div class="outdoor-off-grid__product-img">
+          <a href="{{ productUrl }}" target="_blank">
+            <img src="{{ productImage | img_url: 'master' }}" alt="">
+          </a>
+        </div>
+        <div class="outdoor-off-grid__product-details">
+          <div class="outdoor-off-grid__product-title">
+            <span>{{ productTitle }}</span>
+          </div>
+          <div class="outdoor-off-grid__product-subtitle">
+            <span>{{ productSubtitle }}</span>
+          </div>
+          <div class="outdoor-off-grid__product_description">
+            <p>{{ productDescription }}</p>
+          </div>
+          <div class="outdoor-off-grid__product-btn">
+            <a href="{{ productUrl }}" target="_blank">{{- section.settings.btn_label -}}</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="swiper-block outdoor-off-grid__product-swiper">
+    <div class="swiper-container">
+      <div class="swiper-wrapper outdoor-off-grid__product-swiper-flex-wrapper">
+        {% for block in section.blocks %}
+          {%- comment %}<locksmith:d134>{% endcomment -%}
+            {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+          {%- comment %}</locksmith:d134>{% endcomment -%}
+          {% liquid
+            assign product = block.settings.product
+            if block.settings.product_url != blank
+              assign productUrl = block.settings.product_url
+            else
+              assign productUrl = product.url
+            endif
+            assign productImage = product.featured_image
+            if block.settings.title != blank
+              assign productTitle = block.settings.title
+            else
+              assign productTitle = product.title
+            endif
+            assign productSubtitle = block.settings.subtitle
+            assign productDescription = block.settings.description
+            if block.settings.image != blank
+              assign productImage = block.settings.image
+            else
+              assign productImage = product.featured_image
+            endif
+          %}
+          <div class="swiper-slide outdoor-off-grid__product-card-items--mobile">
+            <div class="outdoor-off-grid__product-img">
+              <a href="{{ productUrl }}" target="_blank">
+                <img src="{{ productImage | img_url: 'master' }}" alt="">
+              </a>
+            </div>
+            <div class="outdoor-off-grid__product-details">
+              <div class="outdoor-off-grid__product-title">
+                <span>{{ productTitle }}</span>
+              </div>
+              <div class="outdoor-off-grid__product-subtitle">
+                <span>{{ productSubtitle }}</span>
+              </div>
+              <div class="outdoor-off-grid__product_description">
+                <p>{{ productDescription }}</p>
+              </div>
+              <div class="outdoor-off-grid__product-btn">
+                <a href="{{ productUrl }}" target="_blank">{{- section.settings.btn_label -}}</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const swiper = new Swiper('.swiper-container', {
+      slidesPerView: 'auto',
+      cssMode: true,
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Product Flex",
+  "settings": [
+    {
+      "type": "text",
+      "id": "btn_label",
+      "label": "Button Text",
+      "default": "Shop Now"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Product Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "EcoFlow Smart Home Panel"
+        },
+        {
+          "type": "html",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Perfekt abgesichert und unschlagbar effizient!"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Geben wir es doch einfach zu: beim Gedanken an Stromausfälle überkommt uns alle ein mulmiges Gefühl. Niemand möchte im Dunkeln sitzen. Zu unserer Beruhigung gibt es das EcoFlow Smart Home Panel. Damit integrieren Sie Ihren Stromspeicher in Ihre Heimstromkreise. So bekommen Sie von einem Stromausfall gar nichts mehr mit – denn Ihre Notstromversorgung springt einfach automatisch ein. Außerdem eröffnet uns das Smart Home Panel noch andere tolle Möglichkeiten: Eine Überwachung unseres Stromverbrauchs und eine effiziente Optimierung werden damit ein Kinderspiel!"
+        },
+        {
+          "type": "url",
+          "id": "product_url",
+          "label": "Product Url"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

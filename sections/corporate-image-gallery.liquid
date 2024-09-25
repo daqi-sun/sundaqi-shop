@@ -1,0 +1,97 @@
+<section class="corporate-section section-{{ section.id }}">
+    <div class="corporate-image-gallery-wrap">
+        <div class="page-width-small">
+            <div class="text-content">
+                {% if section.settings.title != blank %}
+                    <div class="title">{{ section.settings.title }}</div>
+                {% endif %}
+                {% if section.settings.content != blank %}
+                    <div class="small-content">{{ section.settings.content }}</div>
+                {% endif %}
+            </div>
+
+            {% if section.blocks.size > 0 %}
+                <div class="corporate-image-gallery">
+                {% for block in section.blocks %}
+                    <div class="corporate-image">
+                        {% if block.settings.image != blank %}
+                            <img class="{% if block.settings.image_m != blank %}hideMobile{% endif %}" loading="lazy" srcset="{{ block.settings.image | img_url: 'small' | replace: '_small', '' }}" />
+                        {% endif %}
+                        {% if block.settings.image_m != blank %}
+                            <img class="hideDesktop" loading="lazy" srcset="{{ block.settings.image_m | img_url: 'small' | replace: '_small', '' }}" />
+                        {% endif %}
+                    </div>
+                {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+<style>
+    .section-{{ section.id }} .corporate-image-gallery-wrap .text-content .title{ font-size: {{ section.settings.title_font_size }}px; }
+    @media screen and (max-width: 749px){
+        .section-{{ section.id }} .corporate-image-gallery-wrap .text-content .title{ font-size: {{ section.settings.title_font_size_m }}px; }
+    }
+</style>
+
+  {% schema %}
+  {
+    "name": "Image Gallery",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading"
+      },
+      {
+        "type": "richtext",
+        "id": "content",
+        "label": "Content"
+      },
+      {
+        "type": "range",
+        "id": "title_font_size",
+        "label": "Heading font size",
+        "min": 20,
+        "max": 50,
+        "step": 1,
+        "default": 36,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "title_font_size_m",
+        "label": "Heading font size(Mobile)",
+        "min": 18,
+        "max": 40,
+        "step": 1,
+        "default": 36,
+        "unit": "px"
+      }
+    ],
+    "blocks": [
+        {
+            "type": "image",
+            "name": "Image",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image_m",
+                    "label": "Mobile Image"
+                }
+            ]
+        }
+    ],
+    "presets": [
+      {
+        "name": "Image Gallery",
+        "category": "Custom Sections"
+      }
+    ]
+  }
+  {% endschema %}

@@ -1,0 +1,64 @@
+{% if section.settings.title != blank %}
+    <div class="camping-image-with-text-two-col">
+      <div class="content--wrapper">
+        <div class="text-container">
+          <h2>{{ section.settings.title }}</h2>
+        </div>
+        <div class="content--flex content-slider">
+          {% for block in section.blocks %}
+            <div class="flex-item">
+              <img
+                class="image-block"
+                srcset="{{ block.settings.image | img_url: 'master' }}"
+                alt="{{ block.settings.image.alt }}"
+                loading="lazy"
+              >
+              <h2>{{ block.settings.content_title }}</h2>
+              <p>{{ block.settings.p }}</p>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  {% schema %}
+  {
+    "name": "Camping IWT 2",
+    "max_blocks": 2,
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "What is the difference between a portable power station and a solar generator for camping?"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "content_title",
+            "label": "Title",
+            "default": "A portable power station"
+          },
+          {
+            "type": "textarea",
+            "id": "p",
+            "label": "Content Description",
+            "default": "also known as a battery pack, is a device that stores energy, typically using a lithium-ion, LFP, or LiFeP04 battery. A PPS provides electrical power on the go when traditional on-grid power is unavailable. Portable power stations are invaluable for camping and other outdoor activities, making it effortless to charge personal electronic devices like smartphones and laptops and run small appliances while off-grid.",
+            "placeholder": "Content Description"
+          }
+        ]
+      }
+    ]
+  }
+  {% endschema %}

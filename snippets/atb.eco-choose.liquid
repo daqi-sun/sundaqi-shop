@@ -1,0 +1,130 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "Power Station",
+  "id": "eco-choose",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "class": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "blocks",
+      "label": "Block ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": "",
+      "repeatable": "gallery"
+    },
+    {
+      "id": "block_background_image",
+      "type": "image_picker",
+      "label": "Background image",
+      "repeatable": "gallery",
+      "info": ""
+    },
+    {
+      "id": "block_background_image_mobile",
+      "type": "image_picker",
+      "label": "Background image Mobile",
+      "repeatable": "gallery",
+      "info": ""
+    },
+    {
+      "id": "block_title",
+      "type": "text",
+      "label": "Heading",
+      "default": "Slideshow",
+      "repeatable": "gallery",
+      "info": ""
+    },
+    {
+      "id": "block_description",
+      "type": "text",
+      "label": "Description",
+      "default": "Slideshow",
+      "repeatable": "gallery",
+      "info": ""
+    },
+    {
+      "id": "block_link_label",
+      "type": "text",
+      "label": "Link label",
+      "default": "learn more",
+      "repeatable": "gallery",
+      "info": ""
+    },
+    {
+      "id": "block_button_link",
+      "type": "text",
+      "label": "Link Url",
+      "repeatable": "gallery",
+      "info": ""
+    }
+  ],
+  "warnings": [
+    "repeating image fields may not be properly handled"
+  ]
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_background_image' -%}
+{%- assign block_background_image = val -%}
+{%- include 'atb-render' field:'block_background_image_mobile' -%}
+{%- assign block_background_image_mobile = val -%}
+{%- include 'atb-render' field:'block_title' -%}
+{%- assign block_title = val -%}
+{%- include 'atb-render' field:'block_description' -%}
+{%- assign block_description = val -%}
+{%- include 'atb-render' field:'block_link_label' -%}
+{%- assign block_link_label = val -%}
+{%- include 'atb-render' field:'block_button_link' -%}
+{%- assign block_button_link = val -%}
+{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section ">
+<section class="eco-choose-pdp">
+  <div class="container-fluid">
+    <div class="row my-1 mx-minus">
+      {% for block0 in blocks %}
+{%- assign my_image_key1 = block_background_image_mobile[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image1 = images[my_image_key1] -%}
+{%- assign my_image_key0 = block_background_image[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image0 = images[my_image_key0] -%}
+        <div class="col-md-6 p-1">
+          <div class="text-center choose-block">
+            <img class="lazyload desktop-image" data-src="{{my_image0 | img_url: '1800x'}}">
+            <img class="lazyload mobile-image" data-src="{{my_image0 | img_url: '1200x'}}">
+            <div class="inner">
+              <h3>{{block_title[forloop.index0]}}</h3>
+              <p class="mb-2">{{block_description[forloop.index0]}}</p>
+              {% if block_link_label[forloop.index0] != blank %}
+              	<p><a href="{{block_button_link[forloop.index0]}}" class="learnmore-link" style="color: #212121 !important;">{{block_link_label[forloop.index0]}}</a></p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+<style>
+</style>
+
+<script type="application/javascript">
+</script>
+</section>

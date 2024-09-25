@@ -1,0 +1,115 @@
+<script>
+  // select the target node to observe
+  const targetNode = document.body;
+
+  // create a new MutationObserver instance
+  const observer = new MutationObserver((mutationsList) => {
+    // loop through each mutation in the list
+    for (let mutation of mutationsList) {
+      // check if the mutation added a new node
+      if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+        // loop through each added node
+        for (let node of mutation.addedNodes) {
+          // check if the node is the microsoftChatWidgetIframe element
+          if (node.id === 'Microsoft_Omnichannel_LCWidget_Chat_Iframe_Window') {
+
+            const microsoftChatWidgetIframe = document.getElementById("Microsoft_Omnichannel_LCWidget_Chat_Iframe_Window");
+            const showChatWidgetButton = document.querySelector("[data-icon-microsoft-chat-widget]");
+
+            node.style.display = 'none';
+
+            setTimeout(() => {
+              showChatWidgetButton.style.display = "flex";
+            }, 5000)
+
+            function contextProvider() {
+              return {
+                'SiteUrl': {
+                  'value': '{{ shop.url }}',
+                  'isDisplayable': true
+                },
+                'SiteName': {
+                  'value': '6',
+                  'isDisplayable': true
+                },
+                'Origin': {
+                  'value': 'Shopify',
+                  'isDisplayable': true
+                }
+              };
+            }
+
+            function clickchat() {
+              Microsoft.Omnichannel.LiveChatWidget.SDK.startChat();
+  
+              // Set the display property
+              microsoftChatWidgetIframe.style.setProperty('display', 'block');
+  
+              function updateChatWidgetStyles() {
+                // Check if the device is a mobile device
+                const isMobileDevice = window.matchMedia('(max-width: 767px)').matches;
+  
+                // Set the height and width properties based on the device type
+                microsoftChatWidgetIframe.style.setProperty('height', isMobileDevice ? '100%' : '570px');
+                microsoftChatWidgetIframe.style.setProperty('width', isMobileDevice ? '100%' : '370px');
+              }
+  
+              // Call the function to set the initial styles
+              updateChatWidgetStyles();
+  
+              // Update the styles when the window is resized
+              window.onresize = function() {
+                microsoftChatWidgetIframe.style.setProperty('display', 'none');
+                updateChatWidgetStyles();
+              };
+            }
+
+            window.addEventListener("lcw:ready", function handleLivechatReadyEvent() {
+              console.log("lcw:ready");
+              Microsoft.Omnichannel.LiveChatWidget.SDK.setContextProvider(contextProvider);
+              microsoftChatWidgetIframe.style.display = "none";
+            });
+
+            window.addEventListener("lcw:onMinimize", function handleWidgetMinimizeEvent() {
+              console.log("onMinimize");
+              microsoftChatWidgetIframe.style.display = "none";
+            });
+
+            // when showChatWidgetButton is clicked, start chat
+            showChatWidgetButton.addEventListener("click", clickchat);
+
+          }
+        }
+      }
+    }
+  });
+
+  // configure the observer to watch for changes to the body element
+  const observerConfig = {
+    childList: true,
+    subtree: true
+  };
+
+  // start observing the target node
+  observer.observe(targetNode, observerConfig);
+  </script>
+
+  <style>
+  #Microsoft_Omnichannel_LCWidget_Chat_Iframe_Window { display: none; z-index: 9999999999!important; }
+  .icon-microsoft-chat-widget { width: 48px; height: 48px; z-index: 999999999; position: fixed; bottom: 128px; right: 56px; border-radius: 50%; box-shadow: rgb(36 36 36 / 15%) 0px 20px 30px 0px; display: none; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; background-color: #fff !important; overflow: hidden; cursor: pointer; }
+  .icon-microsoft-chat-widget img { position: absolute; display: block; }
+  @media (max-width: 1023px) { .icon-microsoft-chat-widget { width: 40px; height: 40px; right: 24px; bottom: 84px; } }
+  @media (max-width: 767px) { .icon-microsoft-chat-widget { z-index: 5; } }
+  /* Make sure icons are not covered by Sticky PDP Form */
+  @media screen and (max-width: 749px) {
+    .icon-microsoft-chat-widget { right: 24px!important; bottom: 84px;}
+    {% comment %} body.enabled-mobile-sticky .icon-microsoft-chat-widget { bottom: 237px!important; } {% endcomment %}
+  }
+  </style>
+
+  <div class="icon-microsoft-chat-widget" data-icon-microsoft-chat-widget>
+    <img src="{{ 'live-chat-icon.png' | file_url }}">
+  </div>
+
+  <script id="Microsoft_Omnichannel_LCWidget" src="https://oc-cdn-public-eur.azureedge.net/livechatwidget/scripts/LiveChatBootstrapper.js" data-app-id="138afb66-1a6d-4c6d-af3b-164fd1c77279" data-lcw-version="prod" data-org-id="9ae05e11-c6d8-ed11-aed0-000d3a64d144" data-org-url="https://unq9ae05e11c6d8ed11aed0000d3a64d-crm4.omnichannelengagementhub.com"></script>
+

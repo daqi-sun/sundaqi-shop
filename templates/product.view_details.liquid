@@ -1,0 +1,21 @@
+{% layout none %}
+<div class="product-images-wrapper">
+    {% for image in product.images limit: 3 %} ​
+        <img src="{{ image.src | img_url: 'small' | replace: '_small', '' }}" loading="lazy" /> ​
+    {% endfor %}
+</div>
+<h3 class="product-title">{{ product.title }}</h3>
+{% if product.description != blank %}
+    <h4 class="desc-title">Description</h4>
+    <div class="product-description">
+        {{ product.description }}
+    </div>
+{% endif %}
+{% if product.metafields.custom.specifications != blank %}
+    <h4 class="desc-title">Specifications</h4>
+    <div class="product-specifications">
+        {% for spec in product.metafields.custom.specifications.value -%}
+            <div><img srcset="{{ spec | img_url: 'small' | replace: '_small', '' }}" loading="lazy" /></div>
+        {%- endfor %}
+    </div>
+{% endif %}

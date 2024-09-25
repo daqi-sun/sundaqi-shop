@@ -1,0 +1,157 @@
+{% include 'atb' zone:'Top' %}
+<div class="page-width page-sitemap">
+	<div class="grid">
+		<div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
+			<div class="section-header text-center">
+				<h1>{{ page.title }}</h1>
+			</div>
+			<div class="rte">
+				{%- comment -%} Start of HTML SiteMap code {%- endcomment -%}
+				<div class="row">
+					<div class="col-md-6">
+						<h2>Collections</h2>
+						<ul>
+							{% for c in collections %}
+							{% if c.url contains 'portable-power-stations' or c.url contains 'extra-batter' or c.url contains 'solar-generators' or c.url contains 'solar-panels' or c.url contains 'cables' or c.url contains 'delta' or c.url contains 'river' or c.url contains 'accessories' %}
+							{% if c.url contains 'all-products-' or c.url contains 'collection-' or c.url contains '-accessories' %}{% continue %}{% endif %}
+							<li style="width: 100%">
+								<a href="{{ c.url }}">{{ c.title }}</a>
+							</li>
+							{% endif %}
+							{% endfor %}
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<h2>Portable Power Stations</h2>
+						<ul>
+							{% paginate collections.all.products by 1000 %}
+							{% for product in collections.all.products %}
+							{%- comment %}<locksmith:1f81>{% endcomment -%}
+							  {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: collections.all, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+							{%- comment %}</locksmith:1f81>{% endcomment -%}
+							{% if product.url contains 'kickstarter' %}
+							{% continue %}
+							{% endif %}
+							{% if product.url contains 'portable-power-station' %}
+							<li style="width: 100%">
+								<a href="{{ product.url }}">{{ product.title }}</a>
+							</li>
+							{% endif %}
+							{% endfor %}
+							{% endpaginate %}
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<h2>Solar Generators</h2>
+						<ul>
+							{% paginate collections.all.products by 1000 %}
+							{% for product in collections.all.products %}
+							{%- comment %}<locksmith:506e>{% endcomment -%}
+							  {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: collections.all, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+							{%- comment %}</locksmith:506e>{% endcomment -%}
+							{% if product.url contains 'delta-' and product.url contains 'w-portable-solar-panel' %}
+							<li style="width: 100%">
+								<a href="{{ product.url }}">{{ product.title }}</a>
+							</li>
+							{% elsif product.url contains 'river-' and product.url contains 'w-portable-solar-panel' %}
+							<li style="width: 100%">
+								<a href="{{ product.url }}">{{ product.title }}</a>
+							</li>
+							{% endif %}
+							{% endfor %}
+							{% endpaginate %}
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<h2>Solar Panels</h2>
+						<ul>
+							{% paginate collections.all.products by 1000 %}
+							{% for product in collections.all.products %}
+							{%- comment %}<locksmith:f787>{% endcomment -%}
+							  {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: collections.all, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+							{%- comment %}</locksmith:f787>{% endcomment -%}
+							{% if product.url contains 'w-portable-solar-panel' or product.url contains 'bifacial-portable-solar-panel' or product.url contains 'rigid-solar-panel' or product.url contains 'flexible-solar-panel' %}
+							{% if product.url contains 'delta-' or product.url contains 'river-' %}{% continue %}{% endif %}
+							<li style="width: 100%">
+								<a href="{{ product.url }}">{{ product.title }}</a>
+							</li>
+							{% endif %}
+							{% endfor %}
+							{% endpaginate %}
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<h2>Accessories</h2>
+						<ul>
+							{% paginate collections.all.products by 1000 %}
+							{% for product in collections.all.products %}
+							{%- comment %}<locksmith:c63f>{% endcomment -%}
+							  {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: collections.all, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+							{%- comment %}</locksmith:c63f>{% endcomment -%}
+							{% if product.url contains 'kickstarter' or product.url contains 'test' or product.url contains 'bundle' or product.url contains 'portable-power-station' or product.url contains 'portable-solar-panel' or product.url contains 'bifacial-portable-solar-panel' or product.url contains 'rigid-solar-panel' or product.url contains 'flexible-solar-panel' %}
+							{% continue %}
+							{% endif %}
+							<li style="width: 100%">
+								<a href="{{ product.url }}">{{ product.title }}</a>
+							</li>
+							{% endfor %}
+							{% endpaginate %}
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<h2>Pages</h2>
+						<ul>
+                          {% paginate pages by 3000 -%}
+							{% for c in pages %}
+							{% if c.url contains 'lithium' or c.url contains 'electronic-devices' or c.url contains 'policy' or c.url contains 'terms' or c.url contains 'sitemap' or c.url contains 'staff-discounts' or c.url contains 'power-kits' or c.title == 'Edit Notifications' or c.title contains 'Profil' or c.title contains 'Review' or c.title contains 'Password' or c.title contains 'Mot de passe' or c.title == 'Ma Liste de Voeux' or c.title == 'Global Sections' %}
+							{% continue %}
+							{% endif %}
+							<li style="width: 100%">
+								<a href="{{ c.url }}">{{ c.title }}</a>
+							</li>
+							{% endfor %}
+                            {% endpaginate %}
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<h2>Extra Battery Bundles</h2>
+						<ul>
+							{% paginate collections.all.products by 1000 %}
+							{% for product in collections.all.products %}
+							{%- comment %}<locksmith:4a60>{% endcomment -%}
+							  {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: collections.all, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+							{%- comment %}</locksmith:4a60>{% endcomment -%}
+							{% if product.url contains 'extra-battery-bundle' %}
+							{% if product.url contains 'solar-generator' %}{% continue %}{% endif %}
+							<li style="width: 100%">
+								<a href="{{ product.url }}">{{ product.title }}</a>
+							</li>
+							{% endif %}
+							{% endfor %}
+							{% endpaginate %}
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<h2>Policies</h2>
+						<ul>
+                          {% paginate pages by 1000 -%}
+							{% for c in pages %}
+							{% if c.url contains 'lithium' or c.url contains 'electronic-devices' or c.url contains 'policy' or c.url contains 'terms' %}
+							<li style="width: 100%">
+								<a href="{{ c.url }}">{{ c.title }}</a>
+							</li>
+							{% endif %}
+							{% endfor %}
+                            {% endpaginate %}
+						</ul>
+					</div>
+				</div>
+			</div>
+			{%- comment -%}
+			End of HTML SiteMap code {%- endcomment -%
+{%- endcomment -%}
+		</div>
+	</div>
+</div>
+</div>
+{% include 'atb' zone:'Bottom' %}

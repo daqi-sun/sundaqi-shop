@@ -1,0 +1,12 @@
+{% assign tag_shown = false %}
+{% for tag in product.tags %}
+    {% if tag contains 'label__sale' and tag_shown == false %}
+      <div class="new-label sale-badge">{{ 'products.product.on_sale' | t }}</div>
+      {% assign tag_shown = true %}
+    {% elsif tag contains 'label__hot' and tag_shown == false %}
+      <div class="new-label hot-badge">{{ 'products.product.hot' | t }}</div>
+      {% assign tag_shown = true %}
+    {% elsif tag contains 'label__new' and tag_shown == false %}
+      <div class="new-label new-badge">{{ 'products.product.new' | t }}</div>
+    {% endif %}
+{% endfor %}

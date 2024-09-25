@@ -1,0 +1,150 @@
+<section class="dp3-image-text-section section-{{ section.id }}">
+    <div class="star-page-container">
+        <div class="dp3-image-text-wrapper" style="--block-height: {{ section.settings.block_height }}px; --block-height-m: {{ section.settings.block_height_m }}px;">
+            {% for block in section.blocks %}
+                <div class="dp3-image-text-block" style="--block-width: {{ block.settings.block_width }}%;">
+                    <div class="dp3-image-text-content">
+                        <div class="dp3-image-text-image">
+                            <img srcset="{{ block.settings.image | img_url: 'master' }}" loading="lazy" class="hideMobile" alt="{{ block.settings.title }}">
+                            <img srcset="{{ block.settings.image_m | img_url: 'master' }}" loading="lazy" class="hideDesktop" alt="{{ block.settings.title }}">
+                        </div>
+                        <div class="dp3-image-text-text">
+                            <h3>{{ block.settings.title }}</h3>
+                            <div class="content">{{ block.settings.content }}</div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <style>
+        .section-{{ section.id }}{
+            padding: {{ section.settings.section_top_space }}px 0 {{ section.settings.section_bottom_space }}px 0;
+        }
+        @media screen and (max-width: 749px){
+            .section-{{ section.id }}{
+                padding: {{ section.settings.section_top_space_m }}px 0 {{ section.settings.section_bottom_space_m }}px 0;
+            }
+        }
+    </style>
+</section>
+
+{% schema %}
+  {
+    "name": "DP3 Image & text",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Section spacing"
+        },
+        {
+            "type": "range",
+            "id": "section_top_space",
+            "label": "Top space(Desktop)",
+            "min": 0,
+            "max": 150,
+            "step": 5,
+            "unit": "px",
+            "default": 120
+        },
+        {
+            "type": "range",
+            "id": "section_bottom_space",
+            "label": "Bottom space(Desktop)",
+            "min": 0,
+            "max": 150,
+            "step": 5,
+            "unit": "px",
+            "default": 40
+        },
+        {
+            "type": "range",
+            "id": "section_top_space_m",
+            "label": "Top space(Mobile)",
+            "min": 0,
+            "max": 80,
+            "step": 5,
+            "unit": "px",
+            "default": 40
+        },
+        {
+            "type": "range",
+            "id": "section_bottom_space_m",
+            "label": "Bottom space(Mobile)",
+            "min": 0,
+            "max": 80,
+            "step": 5,
+            "unit": "px",
+            "default": 40
+        },
+        {
+            "type": "header",
+            "content": "Blocks"
+        },
+        {
+            "type": "range",
+            "id": "block_height",
+            "label": "Block height",
+            "min": 200,
+            "max": 500,
+            "step": 10,
+            "unit": "px",
+            "default": 320
+        },
+        {
+            "type": "range",
+            "id": "block_height_m",
+            "label": "Block height - Mobile",
+            "min": 200,
+            "max": 500,
+            "step": 10,
+            "unit": "px",
+            "default": 360
+        }
+    ],
+    "blocks": [
+        {
+            "type": "image",
+            "name": "Image",
+            "settings": [
+                {
+                    "type": "range",
+                    "id": "block_width",
+                    "label": "Block width",
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "%",
+                    "default": 50
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image_m",
+                    "label": "Image mobile"
+                },
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Title"
+                },
+                {
+                    "type": "textarea",
+                    "id": "content",
+                    "label": "Content"
+                }
+            ]
+        }
+    ],
+    "presets": [
+    {
+        "name": "DP3 Image & text Version 1",
+        "category":"Custom Sections"
+    }
+    ]
+  }
+  {% endschema %}

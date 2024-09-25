@@ -1,0 +1,236 @@
+{{ 'upsell-accessories-modal.css' | asset_url | stylesheet_tag }}
+
+<div
+  class="upsell-accessories-modal"
+  style="display: none;"
+  data-upsell-modal-enabled="{{ settings.upsell_accessories_feature }}"
+  data-upsell-modal-close="false"
+>
+  <div class="upsell-accessories-modal__overlay">
+    <div class="upsell-accessories-modal__container">
+      <button type="button" class="upsell-accessories-modal__close-button">
+        <svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="13.5903" cy="12.5913" r="12.5913" fill="#919191"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1443 17.9609C18.9061 18.18 18.6765 18.3443 18.4554 18.4539C18.2342 18.5634 17.9989 18.5034 17.7495 18.2739L12.999 13.9035L8.23158 18.2896C7.99344 18.5087 7.76381 18.5634 7.54267 18.4539C7.32154 18.3443 7.0919 18.18 6.85376 17.9609C6.61562 17.7418 6.43701 17.5306 6.31794 17.3271C6.19887 17.1237 6.25841 16.9124 6.49655 16.6933L11.264 12.3073L6.51356 7.93689C6.26407 7.70736 6.19887 7.49088 6.31794 7.28744C6.43701 7.084 6.61562 6.87273 6.85376 6.65364C7.0919 6.43455 7.32154 6.27023 7.54267 6.16069C7.76381 6.05114 7.99911 6.11113 8.24859 6.34066L12.999 10.7111L17.7495 6.34065C17.9876 6.12156 18.2201 6.06418 18.4469 6.16851C18.6737 6.27284 18.9061 6.43455 19.1443 6.65364C19.3824 6.87273 19.5582 7.08661 19.6716 7.29526C19.785 7.50392 19.7226 7.71779 19.4845 7.93689L14.7341 12.3073L19.4845 16.6777C19.734 16.9072 19.7992 17.1237 19.6801 17.3271C19.561 17.5306 19.3824 17.7418 19.1443 17.9609Z" fill="white"/>
+        </svg>
+      </button>
+      <div class="upsell-accessories-modal__title-wrapper">
+        <h2 class="upsell-accessories-modal__title">
+          {{- section.settings.modal_title -}}
+          {% comment %}
+            <span class="upsell-accessories-modal__title upsell-accessories-modal__title--price">
+              {{- section.settings.modal_title_price -}}
+            </span>
+          {% endcomment %}
+        </h2>
+      </div>
+
+      {% comment %}
+        This grid wrapper is to fix safari overflow issue
+        https://stackoverflow.com/a/63197330
+      {% endcomment %}
+      <div class="upsell-accessories-modal__grid-wrapper">
+        <div class="upsell-accessories-modal__card-grid">
+          {% for block in section.blocks %}
+            {%- comment %}<locksmith:af36>{% endcomment -%}
+              {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+            {%- comment %}</locksmith:af36>{% endcomment -%}
+            <div class="upsell-accessories-modal__card">
+              <div class="upsell-accessories-modal__card-top">
+                <div class="upsell-accessories-modal__card-image-wrapper">
+                  <img
+                    src="{{ block.settings.product.featured_image |  image_url: width: 140  }}"
+                    alt=""
+                    class="upsell-accessories-modal__card-image"
+                  >
+                </div>
+              </div>
+
+              <div class="upsell-accessories-modal__card-text-wrapper">
+                <div class="upsell-accessories-modal__card-price-wrapper card-price--mobile">
+                  <span class="upsell-accessories-modal__card-discounted-price">
+                    {{- block.settings.discounted_price | times: 100 | money_with_currency | replace: ',00', '' -}}
+                  </span>
+                  <span class="upsell-accessories-modal__card-compared-price">
+                    {{- block.settings.product.compare_at_price | money_with_currency | replace: '.00', '' -}}
+                  </span>
+                </div>
+                <p class="upsell-accessories-modal__card-product-name">{{ block.settings.product_name }}</p>
+                <p class="upsell-accessories-modal__card-product-description hideMobile">
+                  {{ block.settings.product_description }}
+                </p>
+                <div class="upsell-accessories-modal__card-tooltips hideDesktop">
+                  <p class="upsell-accessories-modal__card-product-description">
+                    {{ block.settings.product_description }}
+                  </p>
+                </div>
+                <div class="upsell-accessories-modal__card-price-wrapper card-price--desktop">
+                  <span class="upsell-accessories-modal__card-discounted-price">
+                    {{- block.settings.discounted_price | times: 100 | money_with_currency | replace: ',00', '' -}}
+                  </span>
+                  <span class="upsell-accessories-modal__card-compared-price">
+                    {{- block.settings.product.compare_at_price | money_with_currency | replace: '.00', '' -}}
+                  </span>
+                </div>
+              </div>
+
+              <div class="upsell-accessories-modal__card-button-wrapper">
+                <a href="" class="atcButton atc_link" data-variant-id="{{ block.settings.product_variant_id }}">
+                  <button type="button" class="upsell-accessories-modal__card-button">
+                    {{ section.settings.button_text }}
+                  </button>
+                </a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .upsell-accessories-modal__container {
+    background: url({{ section.settings.modal_bg_image | image_url: width: 1200 }}) no-repeat;
+    background-size: cover;
+  }
+  .upsell-accessories-modal__title p {
+    color: {{ section.settings.modal_title_color }};
+  }
+  .upsell-accessories-modal__title strong {
+    color: {{ section.settings.modal_title_highlight_color }};
+  }
+  .upsell-accessories-modal__card-discounted-price {
+    color: {{ section.settings.discounted_price_color }};
+  }
+  .upsell-accessories-modal__card-button {
+    background: {{ section.settings.button_bg_color }};
+    color: {{ section.settings.button_text_color }};
+  }
+  @media (max-width: 1024px) {
+      .upsell-accessories-modal__container {
+        background: url({{ section.settings.modal_bg_image_mobile | image_url: width: 1000 }}) no-repeat;
+        background-size: cover;
+      }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const modal = document.querySelector('.upsell-accessories-modal');
+    const closeButton = document.querySelector('.upsell-accessories-modal__close-button');
+    closeButton.addEventListener('click', function () {
+      modal.style.display = 'none';
+      modal.setAttribute('data-upsell-modal-close', 'true');
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Upsell Accessories Popup",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Upsell Accessories Popup Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "modal_bg_image",
+      "label": "Popup Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "modal_bg_image_mobile",
+      "label": "Popup Mobile Background Image"
+    },
+    {
+      "type": "header",
+      "content": "Upsell Accessories Title"
+    },
+    {
+      "type": "richtext",
+      "id": "modal_title",
+      "label": "Popup Title"
+    },
+    {
+      "type": "color",
+      "id": "modal_title_color",
+      "label": "Popup Title Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "modal_title_highlight_color",
+      "label": "Popup Title Highlight Color",
+      "default": "#FFA801"
+    },
+    {
+      "type": "header",
+      "content": "Upsell Accessories Popup Price"
+    },
+    {
+      "type": "color",
+      "id": "discounted_price_color",
+      "label": "Discounted Price Color",
+      "default": "#FFA801"
+    },
+    {
+      "type": "header",
+      "content": "Upsell Accessories Popup Button"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "In den Warenkorb"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button Background Color",
+      "default": "#3F68E0"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#FFFFFF"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Product Card",
+      "type": "product_card",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "product_variant_id",
+          "label": "Product Variant ID"
+        },
+        {
+          "type": "text",
+          "id": "product_name",
+          "label": "Product Name"
+        },
+        {
+          "type": "text",
+          "id": "product_description",
+          "label": "Product Description"
+        },
+        {
+          "type": "text",
+          "id": "discounted_price",
+          "label": "Discount Price"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 8
+}
+{% endschema %}

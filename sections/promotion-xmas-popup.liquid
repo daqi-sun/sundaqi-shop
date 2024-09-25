@@ -1,0 +1,590 @@
+{% if section.settings.show %}
+<div class="promotion_common_section promotion_xmas_popup">
+    <a class="promotion_common_popup_trigger">
+        <div class="promotion_common_section__inner">
+            {% if section.settings.icon != blank %}
+                <img srcset="{{ section.settings.icon | img_url: 'master' }}" class="hideMobile" loading="lazy" alt="icon image" style="width: {{ section.settings.popup_size | default: '179' }}px" />
+            {% endif %}
+            {% if section.settings.mobile_icon != blank %}
+                <img srcset="{{ section.settings.mobile_icon | img_url: 'master' }}" class="hideDesktop" loading="lazy" alt="icon image" style="width: {{ section.settings.popup_size_m | default: '90' }}px"  />
+            {% endif %}
+            <div class="promotion_popup_close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2.79999C14.5403 2.79999 16.8403 3.82987 18.5052 5.4948C20.1702 7.15973 21.2001 9.45972 21.2001 12C21.2001 14.5403 20.1702 16.8402 18.5052 18.5052C16.8403 20.1701 14.5403 21.2 12 21.2C9.45978 21.2 7.15979 20.1701 5.49486 18.5052C3.82993 16.8402 2.80005 14.5403 2.80005 12C2.80005 9.45972 3.82993 7.15973 5.49486 5.4948C7.15979 3.82987 9.45978 2.79999 12 2.79999Z" stroke="#ACACAC" stroke-width="1.6"></path>
+                    <path d="M8.5 8.5L15.5 15.5M15.5 8.5L8.5 15.5" stroke="#ACACAC" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+        </div>
+    </a>
+    <div class="promotion_common_popup_wrapper promotion_common_popup_frame1" id="promotion_common_popup_frame1">
+        <div class="promotion_common_popup_wrapper_inner">
+            <div class="promotion_common_popup_inner">
+                <div class='title'>
+                    {{ section.settings.popup1_title }}
+                </div>
+                <div class="desc">{{ section.settings.popup1_desc }}</div>
+                <div class="subscribe_content__submit">
+                    <input id="subscribe-content-input" class="subscribe_content_input" type="text" value="" placeholder="{{ section.settings.popup1_placeholder }}">
+                    <div class="subscribe_content_button" id="promotion-subcrition-button">{{ section.settings.popup1_button }}</div>
+                </div>
+                <div class="subscribe_content_checkbox">
+                    <input type="checkbox" id="promotion_common_popup_checkbox" name="subscribe" checked />
+                    <label for="subscribe">{{ section.settings.popup1_checkbox_text}}</a></label>
+                </div>
+                <div class="site-link">
+                    {{ section.settings.popup1_link }}
+                </div>
+
+                <div class='promotion_common_popup_close_button' data-target="promotion_common_popup_frame1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 36 36" fill="none">
+                        <path d="M18 33C26.2843 33 33 26.2843 33 18C33 9.71573 26.2843 3 18 3C9.71573 3 3 9.71573 3 18C3 26.2843 9.71573 33 18 33Z" fill="#054634" fill-opacity="0.3"/>
+                        <path d="M22.5 13.5L13.5 22.5" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M13.5 13.5L22.5 22.5" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="promotion_common_popup_wrapper promotion_common_popup_frame2"  id="promotion_common_popup_frame2" data-value="">
+        <div class="promotion_common_popup_wrapper_inner">
+            <div class="promotion_common_popup_inner">
+            <div class="promotion_common_popup_content_wrapper">
+                <div class="title">{{ section.settings.popup2_title }}</div>
+                <div class="desc">
+                    {{ section.settings.popup2_desc }}
+                    {% comment %} <p>Thanks for subscribing!</p>
+                    <p>Fancy boosting your discount to €50 </p>
+                    <p>on orders over €1000? Join the EcoFlow text club!</p> {% endcomment %}
+                </div>
+                <div class="subscribe_content__submit">
+                    <div class="phone_areacode_select">
+                        <span class="nation-select-search">
+                            <input type="text" placeholder="País/Región" id="nation-search">
+                        </span>
+                        <span class="nation-select-value">
+                            <input class="nation-select-name" name="nation-name" data-value="" value="" placeholder="País/Región" readonly>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8" fill="none">
+                                <path d="M1 1L7 7L13 1" stroke="#C5C5C5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                    </div>
+                    <input id="signup-content-input" class="subscribe_content_input" type="text" value="" placeholder="{{ section.settings.popup2_placeholder }}">
+                    <div class="subscribe_content_button" id="promotion-signup-button">{{ section.settings.popup2_button }}</div>
+                    <div class="nation-select-container" id="nation-select-container"></div>
+                </div>
+                <div class="subscribe_content_checkbox">
+                    <input type="checkbox" id="promotion_common_popup_checkbox2" name="signup" checked />
+                    <label for="signup">{{ section.settings.popup2_checkbox_text }}</label>
+                </div>
+            </div>
+            <div class='promotion_common_popup_close_button' data-target="promotion_common_popup_frame2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 36 36" fill="none">
+                    <path d="M18 33C26.2843 33 33 26.2843 33 18C33 9.71573 26.2843 3 18 3C9.71573 3 3 9.71573 3 18C3 26.2843 9.71573 33 18 33Z" fill="#054634" fill-opacity="0.3"/>
+                    <path d="M22.5 13.5L13.5 22.5" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M13.5 13.5L22.5 22.5" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="promotion_common_popup_wrapper promotion_common_popup_frame3"  id="promotion_common_popup_frame3">
+        <div class="promotion_common_popup_wrapper_inner">
+            <div class="promotion_common_popup_inner">
+                <div class='title'>
+                    {{ section.settings.popup3_title }}
+                </div>
+                <div class='desc'>
+                    {{ section.settings.popup3_desc }}
+                </div>
+                <div class='desc2'>
+                    {{ section.settings.popup3_desc2 }}
+                </div>
+                <div>
+                    <a class='lint_to_outer' href="{{ section.settings.popup3_link }}">{{ section.settings.popup3_link_name }}</a>
+                </div>
+                <div class='promotion_common_popup_close_button' data-target="promotion_common_popup_frame3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 36 36" fill="none">
+                        <path d="M18 33C26.2843 33 33 26.2843 33 18C33 9.71573 26.2843 3 18 3C9.71573 3 3 9.71573 3 18C3 26.2843 9.71573 33 18 33Z" fill="#054634" fill-opacity="0.3"/>
+                        <path d="M22.5 13.5L13.5 22.5" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M13.5 13.5L22.5 22.5" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .promotion_common_popup_inner { background-size: 100% 100%; text-align: left;}
+        #promotion_common_popup_frame1 .promotion_common_popup_inner{ background-image: url({{ section.settings.popup_bg | img_url: 'master' }}); }
+        #promotion_common_popup_frame2 .promotion_common_popup_inner{ background-image: url({{ section.settings.popup_bg_2 | img_url: 'master' }}); }
+        #promotion_common_popup_frame3 .promotion_common_popup_inner{ background-image: url({{ section.settings.popup_bg | img_url: 'master' }}); }
+        .promotion_common_popup_inner.success{ background-image: url({{ section.settings.success_popup_bg | img_url: 'master' }}); }
+        @media screen and (max-width: 749px){
+            #promotion_common_popup_frame1 .promotion_common_popup_inner{ background-image: url({{ section.settings.popup_bg_m | img_url: 'master' }}); }
+            #promotion_common_popup_frame2 .promotion_common_popup_inner{ background-image: url({{ section.settings.popup_bg_2_m | img_url: 'master' }}); }
+            #promotion_common_popup_frame3 .promotion_common_popup_inner{ background-image: url({{ section.settings.popup_bg_m | img_url: 'master' }}); }
+            .promotion_common_popup_inner.success{ background-image: url({{ section.settings.success_popup_bg_m | img_url: 'master' }}); }
+        }
+    </style>
+</div>
+{% endif %}
+
+<script type="text/javascript">
+$(function(){
+    var emailPending = false;
+    var smsPending = false;
+
+    $('.promotion_common_popup_trigger').on('click', function(evt){
+        evt.stopPropagation();
+        $('body').addClass('overflow-hidden');
+        $('#promotion_common_popup_frame1').fadeIn();
+    });
+
+    $('.promotion_popup_close').on('click', function(evt) {
+        evt.stopPropagation();
+        $('.promotion_common_section').remove();
+    })
+
+    $('.promotion_common_popup_close_button').on('click', function(){
+        const target = $(this).attr('data-target')
+        $(`#${target}`).fadeOut('fast')
+        $('body').removeClass('overflow-hidden');
+    })
+
+    $('#promotion-subcrition-button').on('click', function(){
+        var email = $('#subscribe-content-input').val();
+        var isChecked = $('#promotion_common_popup_checkbox').is(':checked');
+        if(!email || !isChecked) {
+            return;
+        }
+
+        if(emailPending) return false;
+
+        emailPending = true;
+
+        getRequest(email, '', '', function(){
+            $('#promotion_common_popup_frame2').attr('data-value', email);
+            $('#promotion_common_popup_frame1').fadeOut('fast', function(){
+                $('body').addClass('overflow-hidden');
+                $('#promotion_common_popup_frame2').fadeIn('fast');
+            });
+        }, function(){
+            emailPending = false;
+        })
+    });
+
+    $('#promotion-signup-button').on('click', function(){
+        var email = $('#promotion_common_popup_frame2').attr('data-value');
+        var phone = $('#signup-content-input').val();
+        var phoneAreaCode = $('.nation-select-name').data('value');
+        var isChecked = $('#promotion_common_popup_checkbox2').is(':checked');
+        var regx = /^[0-9]+$/;
+
+        if(!phone || !isChecked || !email || !phoneAreaCode) {
+            return;
+        }
+
+        if(smsPending) return false;
+        if(!regx.test(phone)) return inputShowTip($('.subscribe_content__submit'), true);
+
+        smsPending = true;
+
+        getRequest(email, phone, phoneAreaCode, function(){
+            $('#promotion_common_popup_frame2').attr('data-value', '');
+            $('#promotion_common_popup_frame2').fadeOut('fast', function(){
+                $('body').addClass('overflow-hidden');
+                $('#promotion_common_popup_frame3').fadeIn('fast');
+            });
+        }, function(){
+            smsPending = false;
+        });
+    });
+
+    $('#promotion_common_popup_checkbox').on('change', function(){
+        if($(this).is(':checked')){
+            $('#promotion-subcrition-button').removeClass('disabled')
+        } else {
+            $('#promotion-subcrition-button').addClass('disabled')
+        }
+    });
+
+    $('#promotion_common_popup_checkbox2').on('change', function(){
+        if($(this).is(':checked')){
+            $('#promotion-signup-button').removeClass('disabled')
+        } else {
+            $('#promotion-signup-button').addClass('disabled')
+        }
+    });
+
+    function genTraceId (){
+        var str = '';
+        var date = new Date();
+        var year = ("00" + date?.getFullYear()).slice(-2);
+        var month = ("00" + (date.getMonth() + 1)).slice(-2);
+        var day = ("00" + date.getDay()).slice(-2);
+        var hour = ("00" + date.getHours()).slice(-2);
+        var minute = ("00" + date.getMinutes()).slice(-2);
+        var second = ("00" + date.getSeconds()).slice(-2);
+        var millSecond = ("000" + date.getMilliseconds()).slice(-3);
+        str = year + month + day + hour + minute + second + millSecond;
+        for (let i = 0; i < 17; i++) {
+        str += Math.floor(Math.random() * 10);
+        }
+        return str;
+    }
+
+    function getRequest(email, value, phoneAreaCode, successCallback, finallyCallback){
+        var data;
+        if(value) {
+            var phoneNum = `${phoneAreaCode}${value}`
+            data = {
+                "email": email,
+                "contactListId": "593025348",
+                "fields": [
+                    {
+                        "id": "3511",
+                        "type": "single",
+                        "value": 1,
+                        "overwrite": true
+                    },  {
+                        "id": "37",
+                        "type": "text",
+                        "value": phoneNum,
+                        "overwrite": true
+                    }
+                ]
+            }
+        } else {
+            data = {
+                "email": email,
+                "contactListId": "129599037" ,
+                "fields": [
+                    {
+                        "id": "31",
+                        "type": "single",
+                        "value": 1,
+                        "overwrite": true
+                    }
+                ]
+            }
+        }
+
+        data.fields = data.fields.concat([
+            {
+                "id": "4426",
+                "type": "single",
+                "value": 1,
+                "overwrite": false
+            },
+            {
+                "id": "7596",
+                "type": "multiple",
+                "value": [9],
+                "overwrite": false
+            },
+            {
+                "id": "5910",
+                "type": "single",
+                "value": 1,
+                "overwrite": false,
+            }
+        ]);
+
+        $.ajax({
+            type: 'post',
+            url: 'https://api-e.ecoflow.com/website/subscribe/shopify',
+            data: JSON.stringify(data),
+            contentType: 'application/json;charset=utf-8',
+            dataType: 'json',
+            headers: {
+                traceId: genTraceId(),
+                'X-appid': 52,
+                apiKey: '527760f6df93c0d6e98609fa8e8a1f4a'
+            },
+            success: function(res){
+                if (res.code === '0') {
+                    successCallback && successCallback()
+                }
+            },
+            complete: function(){
+                finallyCallback && finallyCallback()
+            }
+        })
+    }
+
+    var nationOptionList = []
+
+    function getNationList() {
+        $.ajax({
+            type: 'get',
+            url: 'https://api-e.ecoflow.com/website/address/countriesList?page=1&size=999',
+            contentType: 'application/json;charset=utf-8',
+            dataType: 'json',
+            success: function(res){
+                if(res.code === '0') {
+                    if (res.data.content) {
+                        nationOptionList = res.data.content;
+                        renderOptionContainer(nationOptionList)
+                        setDefaultAreacode()
+                    }
+
+                } else {
+                    // alert(res.message || 'error')
+                }
+            },
+            error: function(){
+            }
+        })
+    }
+    getNationList()
+
+    function setDefaultAreacode() {
+        $('.nation-select-item').removeClass('active')
+        var defaultEle = $('.nation-select-item[data-name=Spain]')
+        defaultEle.addClass('active')
+        var phoneCode = defaultEle.data('code')
+        $('.nation-select-name').attr('value', defaultEle.data('code'))
+        $('.nation-select-name').data('value', phoneCode)
+    }
+
+    function renderOptionContainer(data) {
+        $('#nation-select-container').off('click', '.nation-select-item')
+        var nationChild = ``;
+        var dataList = data || [];
+        dataList.forEach(element => {
+            nationChild = nationChild +
+                `<div class="nation-select-item" data-code="${element.phoneCode}"       data-name="${element.name}">
+                    <span class="nation-name">${element.name}</span><span class="nation-code">${element.phoneCode}</span>
+                </div>`
+        });
+        $('#nation-select-container').html(nationChild)
+        $('#nation-select-container').css('bottom', `-${$('#nation-select-container').innerHeight() + 1}px`)
+
+        $('#nation-select-container').on('click', '.nation-select-item', function (e) {
+            $('.nation-select-item').removeClass('active')
+            $(this).addClass('active')
+            var phoneCode = $(this).data('code')
+            handleBlurNation();
+            $('.nation-select-name').attr('value', $(this).data('code'))
+            $('.nation-select-name').data('value', phoneCode)
+        })
+    }
+
+    function getFilterNation(e) {
+        var searchKey = e.target.value || '';
+        if (!nationOptionList.length) {
+            return []
+        }
+        const filtOptions = nationOptionList.filter((item) => {
+            return item.name && item.name.toUpperCase().includes(searchKey.toUpperCase())
+        })
+        renderOptionContainer(filtOptions)
+    }
+
+    var debounceGetFilterNation = debounce(getFilterNation, 500)
+
+    $('#nation-search').on('input', function (e) {
+        debounceGetFilterNation(e)
+    })
+
+    $('#nation-search').on('blur', handleBlurNation)
+
+    $('.phone_areacode_select').on('click', function () {
+        $('#signup-content-input').css('display', 'none')
+        $('.nation-select-value').css('display', 'none')
+        $('#nation-select-container').css('bottom', `-${$('#nation-select-container').innerHeight() + 1}px`)
+        $('#nation-select-container').addClass('active')
+        $('.phone_areacode_select').css('width', '412px')
+        $('.nation-select-search').css('display', 'block')
+       setTimeout(() => {
+        $('#nation-search').focus()
+       }, 10);
+    })
+
+    function handleBlurNation () {
+        if ($('#nation-select-container').hasClass('active')) {
+            setTimeout(() => {
+                $('#nation-select-container').removeClass('active')
+                $('.nation-select-search').attr('value', '')
+                $('.nation-select-search').css('display', 'none')
+                $('#signup-content-input').css('display', 'inline-block')
+                $('.nation-select-value').css('display', 'flex')
+                $('.phone_areacode_select').css('width', '70px')
+            }, 300);
+        }
+    }
+
+    function debounce(fn, wait) {
+        var timer = null;
+        return function () {
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                fn.apply(this, arguments)
+            }, wait);
+        }
+    }
+
+    function inputShowTip($container, isShow){
+      var tip = '<div class="input-error-text">Ingresa solamente números. Vuelve a intentarlo.</div>';
+      $container.find('.input-error-text').remove();
+      if(isShow) {
+        $container.append(tip)
+      }
+    }
+
+});
+</script>
+{% schema %}
+  {
+    "name": "Promotion xmas popup",
+    "settings": [
+        {
+            "type":"checkbox",
+            "id":"show",
+            "label":"Show?"
+        },
+        {
+            "type":"number",
+            "id":"popup_size",
+            "label":"icon size(PC)",
+            "default": 179
+        },
+        {
+            "type":"number",
+            "id":"popup_size_m",
+            "label":"icon size(Mobile)",
+            "default": 90
+        },
+        {
+            "type":"checkbox",
+            "id":"popup_width",
+            "label":"Show?"
+        },
+        {
+            "type":"image_picker",
+            "id":"icon",
+            "label":"PC Image"
+        },
+        {
+            "type":"image_picker",
+            "id":"mobile_icon",
+            "label":"Mobile Image"
+        },
+        {
+            "type":"image_picker",
+            "id":"popup_bg",
+            "label":"Popup background image(PC)"
+        },
+        {
+            "type":"image_picker",
+            "id":"popup_bg_m",
+            "label":"Popup background image(Mobile)"
+        },
+        {
+            "type":"image_picker",
+            "id":"popup_bg_2",
+            "label":"Second Popup background image(PC)"
+        },
+        {
+            "type":"image_picker",
+            "id":"popup_bg_2_m",
+            "label":"Second Popup background image(Mobile)"
+        },
+        {
+            "type":"text",
+            "id":"popup1_title",
+            "label": "popup1 title",
+            "default": "Extra €25 Off Hot Black Friday Deals"
+        },
+        {
+            "type":"text",
+            "id":"popup1_desc",
+            "label":"popup1 description",
+            "default": "Subscribe to our emails to stay up-to-date on Black Friday deals and take an extra €25 off orders over €1000."
+        },
+        {
+            "type":"text",
+            "id":"popup1_placeholder",
+            "label": "popup1 input placeholder",
+            "default": "Enter your Email"
+        },
+        {
+            "type":"text",
+            "id":"popup1_button",
+            "label": "popup1 button",
+            "default": "Sumbit"
+        },
+        {
+            "type":"richtext",
+            "id":"popup1_link",
+            "label": "popup1 link",
+            "default": "<p></p>"
+        },
+        {
+            "type":"richtext",
+            "id":"popup1_checkbox_text",
+            "label": "popup step1 checkbox text",
+            "default": "<p></p>"
+        },
+        {
+            "type":"text",
+            "id":"popup2_title",
+            "label":"popup2 title",
+            "default":"Boost Your Discount to €50"
+        },
+        {
+            "type":"richtext",
+            "id":"popup2_desc",
+            "label":"popup2 description",
+            "default": "<p></p>"
+        },
+        {
+            "type":"text",
+            "id":"popup2_placeholder",
+            "label":"popup2 input placeholder",
+            "default":"Phone Number"
+        },
+        {
+            "type":"text",
+            "id":"popup2_button",
+            "label":"popup2 button",
+            "default":"Sign Up"
+        },
+        {
+            "type":"text",
+            "id":"popup3_title",
+            "label":"popup3 title",
+            "default":"You've subscribed to EcoFlow emails & text messages for Black Friday!"
+        },
+        {
+            "type":"text",
+            "id":"popup3_desc",
+            "label":"popup3 description",
+            "default":"Please check your inbox or text messages for your €50 coupon."
+        },
+        {
+            "type":"text",
+            "id":"popup3_desc2",
+            "label":"popup3 description line2",
+            "default":"Want to get up to 2000 EcoCredits for free?"
+        },
+        {
+            "type":"text",
+            "id":"popup3_link_name",
+            "label":"popup3 link name",
+            "default":"Create EcoFlow Account >"
+        },
+        {
+            "type":"text",
+            "id":"popup3_link",
+            "label":"popup3 link",
+            "default":"https://www.ecoflow.com/it/ecocredits"
+        },
+        {
+            "type":"richtext",
+            "id":"popup2_checkbox_text",
+            "label": "popup step2 checkbox text",
+            "default": "<p></p>"
+        }
+    ]
+  }
+{% endschema %}

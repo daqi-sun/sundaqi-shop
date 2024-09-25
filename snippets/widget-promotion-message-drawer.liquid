@@ -1,0 +1,165 @@
+<style>
+  .promotion-message-wrapper {
+    color: #818181;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 21px 0 0;
+    margin-bottom: 0;
+    line-height: 1.36;
+  }
+  .promotion-message-wrapper strong { color: #fa4500; font-weight: 500; }
+  .promotion-message-wrapper.promotion-message--cart {
+    text-transform: none;
+  }
+  .promotion-message-wrapper img,
+  .promotion-message-wrapper svg {
+    width: 20px;
+    margin-right: 20px;
+  }
+  .promotion-message-wrapper.show {
+    display: flex!important;
+    align-items: center;
+  }
+  .promotion-message-wrapper.promotion-message--drawer {
+    padding: 0;
+  }
+  .promotion-message-wrapper.promotion-message--drawer.show {
+    display: flex!important;
+    align-items: center;
+    border-bottom: 1px solid #ebe9e9;
+    padding-bottom: 18px;
+  }
+  .promotion-message-wrapper.promotion-message--drawer img,
+  .promotion-message-wrapper.promotion-message--drawer svg {
+    margin-right: 6px;
+  }
+  .Cart-Drawer .Drawer__Content .Drawer__Footer {
+    box-shadow: 0 -4px 14px 0 rgba(0, 0, 0, 0.05);
+  }
+  .Cart-Drawer .Drawer__Content .Drawer__Footer:before { display: none; }
+  @media (max-width: 767px) {
+    .Cart_ContentSide--box-promotion-message {
+      margin-bottom: 12px!important;
+    }
+  }
+  @media (min-width: 768px) {
+    .promotion-message-wrapper {
+      font-size: 14px;
+      padding: 21px 23px;
+    }
+    .promotion-message-wrapper.promotion-message--drawer.show {
+      padding-top: 13px;
+    }
+  }
+</style>
+
+<script>
+  {% comment %} Promotion Message (pm) Criteria {% endcomment %}
+  {%- liquid
+    assign pm_enable_tier1 = settings.pm_enable_tier1
+    assign pm_pricefrom_tier1 = settings.pm_pricefrom_tier1 | default: 0
+    assign pm_priceto_tier1 = settings.pm_priceto_tier1 | default: 0
+    assign pm_tier1 = settings.pm_tier1
+    assign pm_success_tier1 = settings.pm_success_tier1
+    assign pm_enable_tier2 = settings.pm_enable_tier2
+    assign pm_pricefrom_tier2 = settings.pm_pricefrom_tier2 | default: 0
+    assign pm_priceto_tier2 = settings.pm_priceto_tier2 | default: 0
+    assign pm_tier2 = settings.pm_tier2
+    assign pm_success_tier2 = settings.pm_success_tier2
+    assign pm_enable_tier3 = settings.pm_enable_tier3
+    assign pm_pricefrom_tier3 = settings.pm_pricefrom_tier3 | default: 0
+    assign pm_priceto_tier3 = settings.pm_priceto_tier3 | default: 0
+    assign pm_tier3 = settings.pm_tier3
+    assign pm_success_tier3 = settings.pm_success_tier3
+  -%}
+  window.promotionMessage = {
+    tier1: {
+      enable: {{ pm_enable_tier1 }},
+      priceFrom: {{ pm_pricefrom_tier1 }},
+      priceTo: {{ pm_priceto_tier1 }},
+      message: "{{ pm_tier1 }}",
+      successMessage: "{{ pm_success_tier1 }}"
+    },
+    tier2: {
+      enable: {{ pm_enable_tier2 }},
+      priceFrom: {{ pm_pricefrom_tier2 }},
+      priceTo: {{ pm_priceto_tier2 }},
+      message: "{{ pm_tier2 }}",
+      successMessage: "{{ pm_success_tier2 }}"
+    },
+    tier3: {
+      enable: {{ pm_enable_tier3 }},
+      priceFrom: {{ pm_pricefrom_tier3 }},
+      priceTo: {{ pm_priceto_tier3 }},
+      message: "{{ pm_tier3 }}",
+      successMessage: "{{ pm_success_tier3 }}"
+    }
+  }
+  function moneyFormat(money) {
+    return theme.Currency.formatMoney(money, theme.moneyFormat)
+  }
+  function moneyFormatWithCurrency(money) {
+    return theme.Currency.formatMoney(money, theme.moneyFormatWithCurrency)
+  }
+  function togglePromotionMessage(className) {
+    const dataPromotionMessage = document.querySelector('[data-promotion-message-container]')
+    if(className == 'show') {
+      if(dataPromotionMessage) dataPromotionMessage.classList.remove('hide')
+      if(dataPromotionMessage) dataPromotionMessage.classList.add('show')
+    }
+    else {
+      if(dataPromotionMessage) dataPromotionMessage.classList.add('hide')
+      if(dataPromotionMessage) dataPromotionMessage.classList.remove('show')
+    }
+  }
+  function updatePromotionMessage(subtotal) {
+
+    const cartSubTotal = Number(moneyFormat(subtotal).replaceAll('.','').replace('€','').replace(',','.'))
+    const dataPromotionMessage = document.querySelector('[data-promotion-message]')
+
+    let message = ''
+    const enableTier1 = promotionMessage.tier1.enable,
+      priceFromTier1 = Number(promotionMessage.tier1.priceFrom),
+      priceToTier1 = Number(promotionMessage.tier1.priceTo),
+      messageTier1 = promotionMessage.tier1.message,
+      successMessageTier1 = promotionMessage.tier1.successMessage
+    const enableTier2 = promotionMessage.tier2.enable,
+      priceFromTier2 = Number(promotionMessage.tier2.priceFrom),
+      priceToTier2 = Number(promotionMessage.tier2.priceTo),
+      messageTier2 = promotionMessage.tier2.message,
+      successMessageTier2 = promotionMessage.tier2.successMessage
+    const enableTier3 = promotionMessage.tier3.enable,
+      priceFromTier3 = Number(promotionMessage.tier3.priceFrom),
+      priceToTier3 = Number(promotionMessage.tier3.priceTo),
+      messageTier3 = promotionMessage.tier3.message,
+      successMessageTier3 = promotionMessage.tier3.successMessage
+    const isTier1Range = enableTier1 && cartSubTotal >= priceFromTier1 && cartSubTotal <= priceToTier1,
+      isTier2Range = enableTier2 && cartSubTotal >= priceFromTier2 && cartSubTotal <= priceToTier2,
+      isTier3Range = enableTier3 && cartSubTotal >= priceFromTier3 && cartSubTotal <= priceToTier3,
+      isTier1Success = (enableTier1 && !enableTier2 && !enableTier3 && cartSubTotal > priceToTier1) || (enableTier1 && enableTier3 && cartSubTotal < priceFromTier3),
+      isTier2Success = enableTier2 && !enableTier3 && cartSubTotal > priceToTier2,
+      isTier3Success = enableTier3 && cartSubTotal > priceToTier3
+    togglePromotionMessage('show')
+    if(isTier1Range) {
+      const amount = priceToTier1 - cartSubTotal
+      message = messageTier1.replace('[amount]', moneyFormat(amount.toFixed(2)))
+    }
+    else if(isTier2Range) {
+      const amount = priceToTier2 - cartSubTotal
+      message = messageTier2.replace('[amount]', moneyFormat(amount.toFixed(2)))
+    }
+    else if(isTier3Range) {
+      const amount = priceToTier3 - cartSubTotal
+      message = messageTier3.replace('[amount]', moneyFormat(amount.toFixed(2)))
+    }
+    else if(isTier1Success) message = successMessageTier1
+    else if(isTier2Success) message = successMessageTier2
+    else if(isTier3Success) message = successMessageTier3
+    else {
+      if(dataPromotionMessage) dataPromotionMessage.innerHTML = ''
+      togglePromotionMessage('hide')
+    }
+
+    if(dataPromotionMessage) dataPromotionMessage.innerHTML = message
+  }
+</script>

@@ -1,0 +1,287 @@
+
+<section id="section-{{ section.id }}" data-section-id="{{ section.id }}" class='fade-in-animation' >
+
+  {% if section.settings.heading_style == 'left' %}
+    {% capture header_classes_alignment %}section-header text-left{% endcapture %}
+    {% capture subtitle_class_alignment %}h5{% endcapture %}
+    {% else %}
+    {% capture header_classes_alignment %}section-header section-title{% endcapture %}
+    {% capture subtitle_class_alignment %}section-header--subtitle{% endcapture %}
+  {% endif %}
+
+      <div class="{% if section.settings.full_width %}page-width{% else %}page-width-small{% endif %}" >
+        {% if section.settings.title != blank %}
+        <div class="{{ header_classes_alignment }} homepage_subtitle_style_{{settings.homepage_subtitle_color}}">
+            {% if section.settings.title != blank %}
+            <h2>{{ section.settings.title  }}</h2>
+            {% endif %}
+            {% if section.settings.subtitle != blank  %}
+            <span class='{{ subtitle_class_alignment }}'>{{ section.settings.subtitle  }}</span>
+            {% endif %}
+        </div>
+        {% endif %}
+      </div>
+
+    <div class='{% if section.settings.full_width %}page-width{% else %}page-width-small{% endif %}'>
+
+      <div class='zoom-fade-animation benefit_section per-row-{{ section.settings.per_row }}'>
+        {% for block in section.blocks %}
+        <div class='benefit_block zoom-fade-animation-element-wrapper'>
+          {% if block.settings.image != blank %}
+          <div class='author_image'>
+              {% assign block_image = block.settings.image %}
+              <img src='{{ block_image | img_url:"200x"}}'
+                srcset="{{ block_image | img_url: '200x' }} 1x, {{ block_image | img_url: '200x', scale: 2 }} 2x"
+                loading="lazy"
+                class='zoom-fade-animation-element'
+                alt='{{ block.settings.title }}' />
+          </div>
+          {% endif %}
+          {% if block.settings.title != blank %}
+            <span class='title h4 {% if block.settings.mobile_title != blank %}hideMobile{% endif %}'>{{ block.settings.title }} </span>
+          {% endif %}
+          {% if block.settings.mobile_title != blank %}
+            <span class='title h4 hideDesktop'>{{ block.settings.mobile_title }} </span>
+          {% endif %}
+          {% if block.settings.quote != blank %}
+          <div class='quote'> {{ block.settings.quote }}</div>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+
+      {% assign hideBtns = false %}
+      {% if section.settings.hide_btns and customer %}
+        {% assign hideBtns = true %}
+      {% endif %}
+
+      {% unless hideBtns %}
+        {% if section.settings.btn_text != blank %}
+        <div class='text-center'>
+          <a href='{{ section.settings.btn_link }}' class='btn btn-primary' style='background:{{ section.settings.btn_bg_color }}; color:{{ section.settings.btn_text_color }}'>{{ section.settings.btn_text }}</a>
+        </div>
+        {% endif %}
+
+        {% if section.settings.content != blank %}
+        <div class='text-center content'>{{ section.settings.content }}</div>
+        {% endif %}
+      {% endunless %}
+    </div>
+    <style>
+      #section-{{ section.id }}{
+          padding: {{ section.settings.section_top_space }}px 0 {{ section.settings.section_bottom_space }}px 0;
+      }
+      #section-{{ section.id }} .section-header  h2, #section-{{ section.id }} .homepage_subtitle_style_match_header .h5 {
+        color: {{ section.settings.heading_color }};
+      }
+      #section-{{ section.id }}  .homepage_subtitle_style_match_header .h5:before {
+        background: {{ section.settings.heading_color }};
+      }
+      #section-{{ section.id }} .benefit_section .benefit_block .title {
+        color: {{ section.settings.title_color }};
+      }
+      #section-{{ section.id }} .benefit_section .benefit_block .quote p, #section-{{ section.id }} .benefit_section .benefit_block .quote a{
+        color: {{ section.settings.text_color }};
+      }
+      #section-{{ section.id }} .content *{ color: {{ section.settings.content_color }}; }
+
+      @media screen and (max-width: 749px){
+          #section-{{ section.id }}{
+              padding: {{ section.settings.section_top_space_m }}px 0 {{ section.settings.section_bottom_space_m }}px 0;
+          }
+      }
+    </style>
+
+  </section>
+
+
+  {% schema %}
+  {
+    "name": "Benefits section",
+    "class": "membership-section",
+    "settings": [
+      {
+          "type":"checkbox",
+          "id":"full_width",
+          "label":"Full width"
+      },
+      {
+          "type": "select",
+          "id": "heading_style",
+          "label": "Heading alignment",
+          "options": [
+          {
+              "label": "Left",
+              "value":"left"
+          },
+          {
+              "label": "Center",
+              "value":"center"
+          }
+          ],
+          "default":"left"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading"
+      },
+      {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default":"Subtitle"
+      },
+      {
+          "type": "color",
+          "id": "bg_color",
+          "label": "Background color",
+          "default":"rgba(0,0,0,0)"
+      },
+      {
+          "type": "color",
+          "id": "heading_color",
+          "label": "t:sections.quotes.settings.title_color.label",
+          "default":"#000"
+      },
+      {
+        "type": "header",
+        "content": "Blocks"
+      },
+      {
+        "type": "range",
+        "id": "per_row",
+        "label": "Blocks Per row",
+        "default":5,
+        "min": 3,
+        "max": 6,
+        "step": 1
+      },
+      {
+        "type": "color",
+        "id": "title_color",
+        "label": "Title color",
+        "default":"#757575"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color",
+        "default":"#757575"
+      },
+      {
+        "type": "checkbox",
+        "id": "hide_btns",
+        "label": "Hide button and content when user is logged in"
+      },
+      {
+        "type": "text",
+        "id": "btn_text",
+        "label": "Button text"
+      },
+      {
+        "type": "url",
+        "id": "btn_link",
+        "label": "Button URL"
+      },
+      {
+        "type": "color_background",
+        "id": "btn_bg_color",
+        "label": "Button background color"
+      },
+      {
+        "type": "color",
+        "id": "btn_text_color",
+        "label": "Button Text color"
+      },
+      {
+        "type": "richtext",
+        "id": "content",
+        "label": "Content"
+      },
+      {
+        "type": "color",
+        "id": "content_color",
+        "label": "Content color"
+      },
+      {
+          "type": "header",
+          "content": "Section spacing"
+      },
+      {
+          "type": "range",
+          "id": "section_top_space",
+          "label": "Top space(Desktop)",
+          "min": 0,
+          "max": 150,
+          "step": 5,
+          "unit": "px",
+          "default": 120
+      },
+      {
+          "type": "range",
+          "id": "section_bottom_space",
+          "label": "Bottom space(Desktop)",
+          "min": 0,
+          "max": 150,
+          "step": 5,
+          "unit": "px",
+          "default": 40
+      },
+      {
+          "type": "range",
+          "id": "section_top_space_m",
+          "label": "Top space(Mobile)",
+          "min": 0,
+          "max": 80,
+          "step": 5,
+          "unit": "px",
+          "default": 40
+      },
+      {
+          "type": "range",
+          "id": "section_bottom_space_m",
+          "label": "Bottom space(Mobile)",
+          "min": 0,
+          "max": 80,
+          "step": 5,
+          "unit": "px",
+          "default": 40
+      }
+    ],
+    "blocks": [
+      {
+        "type": "block",
+        "name": "Block",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "Heading"
+          },
+          {
+            "type": "textarea",
+            "id": "mobile_title",
+            "label": "Heading(Mobile)"
+          },
+          {
+            "type": "richtext",
+            "id": "quote",
+            "label": "Content"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Benefits section",
+        "category": "Custom Sections"
+      }
+    ]
+  }
+  {% endschema %}

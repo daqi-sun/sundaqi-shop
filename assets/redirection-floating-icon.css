@@ -1,0 +1,48 @@
+.redirection-floating-icon__section {
+  position: fixed;
+  bottom: 56px;
+  right: 56px;
+  color: #fff;
+  font-family: "Helvetica Neue ForEco";
+  z-index: 9999999999;
+  cursor: pointer;
+}
+
+.redirection-floating-icon__trigger-close {
+  position: absolute;
+  top: 0;
+  right: -12px;
+  cursor: pointer;
+}
+
+.redirection-floating-icon__trigger-close svg {
+  display: block;
+}
+
+@media (max-width: 1023px) {
+  .redirection-floating-icon__section {
+    bottom: 20px;
+    right: 24px;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .redirection-floating-icon__section {
+      bottom: 20px;
+      right: 24px;
+  }
+
+  .redirection-floating-icon__trigger-close {
+      top: -10px;
+      right: -10px;
+  }
+
+  .redirection-floating-icon__trigger-close svg {
+      width: 18px;
+      height: 18px;
+  }
+}
+
+[x-cloak] {
+  display: none !important;
+}

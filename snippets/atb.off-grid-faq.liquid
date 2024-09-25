@@ -1,0 +1,255 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "FAQ Section - Off Grid",
+  "id": "off-grid-faq",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "class": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "id": "atb_title",
+      "type": "text",
+      "label": "Heading",
+      "default": "Frequently Asked Questions",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "blocks",
+      "label": "Block ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": "",
+      "repeatable": "Question-Block"
+    },
+    {
+      "id": "block_title",
+      "type": "text",
+      "label": "Question",
+      "repeatable": "Question-Block",
+      "info": ""
+    },
+    {
+      "id": "block_answer",
+      "type": "wysiwyg",
+      "label": "Answer",
+      "repeatable": "Question-Block",
+      "info": ""
+    }
+  ],
+  "warnings": []
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_title' -%}
+{%- assign atb_title = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_title' -%}
+{%- assign block_title = val -%}
+{%- include 'atb-render' field:'block_answer' -%}
+{%- assign block_answer = val -%}
+{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section ">
+<div class="faq-section">
+  <div class="faq-container">
+    <div class="faq-block">
+      <h2>{{ atb_title }}</h2>
+      {% for block0 in blocks %}
+        <div class="faq-question">
+          <div class="faq-question-container">
+            <h3>{{ block_title[forloop.index0] }}</h3>
+            <img
+              class="
+                plus {% if forloop.index0 != 0 %}
+                  active
+                {% endif %}
+              "
+              src="https://cdn.shopify.com/s/files/1/0625/0718/8450/files/plus.png?v=1659531704"
+              width="20"
+              height="20"
+            >
+            <img
+              class="
+                minus {% if forloop.index0 == 0 %}
+                  active
+                {% endif %}
+              "
+              src="https://cdn.shopify.com/s/files/1/0625/0718/8450/files/minus.png?v=1659531704"
+              width="20"
+              height="20"
+            >
+          </div>
+          <div
+            class="des"
+            {% if forloop.index0 == 0 %}
+              style="display: block;"
+            {% else %}
+              style="display: none;"
+            {% endif %}
+          >
+            <p>
+              {{ block_answer[forloop.index0] }}
+            </p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+
+{% style %}
+  .faq-section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: #ffffff;
+  }
+
+  .faq-section .plus,
+  .faq-section .minus {
+    display: none;
+  }
+
+  .faq-section .plus.active,
+  .faq-section .minus.active {
+    display: inline;
+  }
+
+  .faq-section .faq-container {
+    max-width: 1000px;
+    width: 100%;
+    margin: auto;
+  }
+
+  .faq-section .faq-container h2 {
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 1;
+    text-align: center;
+    text-transform: capitalize;
+    color: #020202;
+    margin-bottom: 72px;
+  }
+
+  .faq-section .faq-container h3 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.3;
+    color: #000000;
+    margin-bottom: 0;
+  }
+
+  .faq-section .faq-container p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.3;
+    color: #212121 !important;
+    margin-top: 24.5px;
+  }
+
+  .faq-section .faq-container ul {
+    padding-left: 25px;
+  }
+  .faq-section .faq-container ul li {
+    font-size: 18px;
+    list-style: unset;
+  }
+  .faq-section .faq-container ul li:before {
+    unicode-bidi: isolate;
+    font-variant-numeric: tabular-nums;
+    text-transform: none;
+    text-indent: 0px !important;
+    text-align: start !important;
+    text-align-last: start !important;
+  }
+
+  .faq-section .faq-container .faq-question {
+    border-top: 1px solid #bebebe;
+    padding-top: 53.5px;
+    padding-bottom: 56.5px;
+    padding-left: 66.5px;
+    padding-right: 33.5px;
+    text-align: left;
+  }
+  .faq-section .faq-container .faq-question:last-child {
+    border-bottom: 1px solid #bebebe;
+  }
+
+  .faq-section .faq-container .faq-question-container {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    align-items: center;
+    column-gap: 20px;
+  }
+
+  @media (max-width: 1329px) {
+    .faq-section {
+      padding-left: 65px;
+      padding-right: 65px;
+    }
+  }
+  @media (max-width: 1239px) {
+    .faq-section {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+  @media (max-width: 767px) {
+    .faq-section {
+      padding-top: 21px;
+      padding-bottom: 21px;
+    }
+    .faq-section .faq-container h2 {
+      font-size: 30px;
+      margin-bottom: 26px;
+    }
+    .faq-section .faq-container .faq-question {
+      padding-top: 27.5px;
+      padding-bottom: 27.5px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .faq-section .faq-container h3 {
+      font-size: 20px;
+    }
+    .faq-section .faq-container p {
+      font-size: 16px;
+      margin-top: 24px;
+    }
+    .faq-section .faq-container ul li {
+      font-size: 16px;
+    }
+  }
+{% endstyle %}
+
+<script>
+  $('.faq-question-container').click(function () {
+    $(this).next('.des').stop(true, true).slideToggle('slow');
+
+    if ($(this).children('.plus').hasClass('active')) {
+      $(this).children('.plus').removeClass('active');
+      $(this).children('.minus').addClass('active');
+    } else if ($(this).children('.minus').hasClass('active')) {
+      $(this).children('.minus').removeClass('active');
+      $(this).children('.plus').addClass('active');
+    }
+  });
+</script>
+</section>

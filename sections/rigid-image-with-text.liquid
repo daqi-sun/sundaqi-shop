@@ -1,0 +1,152 @@
+{{ 'rigid-image-with-text.css' | asset_url | stylesheet_tag }}
+
+<style>
+  @media (min-width: 768px) {
+    #shopify-section-{{ section.id }} .rigid-image-with-text h2 {
+      width: {{ section.settings.titleMaxWidthDesktop }}px;
+    }
+  }
+</style>
+
+<div class="rigid-container" id="{{ section.settings.sectionId }}">
+  <div class="rigid-image-with-text">
+    {% assign image = section.settings.mobileImage %}
+    {% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+    <div
+      class="custom-img-wrapper mobile-only"
+      style="padding-top: {{ pt }}%;"
+    >
+      <img
+        class="custom-img"
+        srcset="
+          {{ image | img_url: '500x' }} 500w,
+          {{ image | img_url: '600x' }} 600w,
+          {{ image | img_url: 'master' }} 700w
+        "
+        loading="lazy"
+      >
+    </div>
+
+    {% assign image = section.settings.image %}
+    {% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+    <div
+      class="custom-img-wrapper desktop-only max-w-750px"
+      style="padding-top: {{ pt }}%;"
+    >
+      <img
+        class="custom-img"
+        srcset="
+          {{ image | img_url: '750x' }} 1000w,
+          {{ image | img_url: '1000x' }} 1200w,
+          {{ image | img_url: 'master' }} 1400w
+        "
+        alt="{{ image.alt }}"
+        loading="lazy"
+      >
+    </div>
+
+    <div
+      {% if section.settings.textLeft %}
+        class="rigid-grid-item--start-desktop"
+      {% endif %}
+    >
+      {% assign image = section.settings.productImage %}
+      <div class="custom-img-wrapper desktop-only rigid-image-with-text-product-image">
+        <img
+          class="custom-img"
+          srcset="
+            {{ image | img_url: '300x' }} 1000w,
+            {{ image | img_url: 'master' }} 1600w
+          "
+          loading="lazy"
+        >
+      </div>
+      <div class="rigid-image-with-text-subtitle">
+        {{ section.settings.subtitle }}
+      </div>
+      <h2>
+        {{ section.settings.title }}
+      </h2>
+      <div class="rigid-image-with-text-p">
+        {{ section.settings.p }}
+      </div>
+      {% if section.settings.btnText != blank %}
+        <a class="rigid-image-with-text-btn" href="{{ section.settings.url }}">
+          {{ section.settings.btnText }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Image with text",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "textLeft",
+      "label": "Text on the left (Desktop)",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "sectionId",
+      "label": "Section ID",
+      "placeholder": "Setion ID"
+    },
+    {
+      "type": "image_picker",
+      "id": "productImage",
+      "label": "Product Image (desktop only)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobileImage",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Solar Panels for RVs or Tiny Homes"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "range",
+      "id": "titleMaxWidthDesktop",
+      "label": "Title max width desktop",
+      "unit": "px",
+      "min": 400,
+      "max": 500,
+      "step": 1,
+      "default": 450
+    },
+    {
+      "type": "richtext",
+      "id": "p",
+      "label": "paragraph",
+      "default": "<p>With a compact design and high-efficiency rating, string together several 100W rigid solar panels to quickly charge your LFP batteries and power your RV for days.</p>"
+    },
+    {
+      "type": "text",
+      "id": "btnText",
+      "label": "Button text",
+      "default": "Buy Now"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "URL"
+    }
+  ]
+}
+{% endschema %}

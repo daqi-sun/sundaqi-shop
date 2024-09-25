@@ -1,0 +1,184 @@
+<div class="off-grid-outdoor-offer__section">
+  <div class="container--normal ">
+    {% if section.settings.hide_main_section == false %}
+      <div class="off-grid-outdoor-offer__text-container hb__text--center">
+        {% assign image = section.settings.image_mobile %}
+        {% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+        <div
+          class="custom-img__wrapper display--mobile"
+          style="padding-top: {{ pt }}%;"
+        >
+          <img
+            class="custom-img hb__border-radius--8"
+            srcset="
+              {{ image | img_url: '500x' }} 500w,
+              {{ image | img_url: '600x' }} 600w,
+              {{ image | img_url: 'master' }} 700w,
+            "
+            alt="{{ image.alt }}"
+          >
+        </div>
+
+        {% assign image = section.settings.image %}
+        {% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+        <div
+          class="custom-img__wrapper display--desktop"
+          style="padding-top: {{ pt }}%;"
+        >
+          <img
+            class="custom-img hb__border-radius--8"
+            srcset="
+              {{ image | img_url: '1000x' }} 1000w,
+              {{ image | img_url: '1200x' }} 1200w,
+              {{ image | img_url: '1400x' }} 1400w,
+              {{ image | img_url: 'master' }} 1600w,
+            "
+            alt="{{ image.alt }}"
+            loading="lazy"
+          >
+        </div>
+        <div class="off-grid-outdoor-offer__heading__container background--white hb__border-radius--8">
+          {% if section.settings.title != blank %}
+            <h2 class="off-grid-outdoor-offer__heading hb__text--heading hb__text--black">
+              {{ section.settings.title }}
+            </h2>
+          {% endif %}
+          {% if section.settings.description != blank %}
+            <p class="hb__text--description">{{ section.settings.description }}</p>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+    <div class="off-grid-outdoor-offer__product__wrapper">
+      <div class="off-grid-outdoor-offer__flex-container container--flex">
+        {% for block in section.blocks %}
+          {%- comment %}<locksmith:bf23>{% endcomment -%}
+            {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+          {%- comment %}</locksmith:bf23>{% endcomment -%}
+          {% liquid
+            assign product = block.settings.product
+            assign productUrl = product.url
+            assign productImage = product.featured_image
+            if block.settings.title != blank
+              assign productTitle = block.settings.title
+            else
+              assign productTitle = product.title
+            endif
+            assign productSubtitle = block.settings.subtitle
+            assign productDescription = block.settings.description
+            if block.settings.image != blank
+              assign productImage = block.settings.image
+            else
+              assign productImage = product.featured_image
+            endif
+          %}
+          <div class="off-grid-outdoor-offer__block-container background--white">
+            <div class="off-grid-outdoor-offer__image__wrapper ">
+              <a href="{{ productUrl }}" target="_blank">
+                <img
+                  class="off-grid-outdoor-offer__image"
+                  loading="lazy"
+                  src="{{ productImage | img_url: 'master' }}"
+                  alt="{{ productImage.alt }}"
+                >
+              </a>
+            </div>
+            <div class="off-grid-outdoor-offer__content">
+              {% if condition %}
+              {% endif %}
+              <h3 class="off-grid-outdoor-offer__title hb__text--subheading">
+                {{ productTitle }}
+              </h3>
+              <p class="off-grid-outdoor-offer__subtitle hb__text--blue ">{{ productSubtitle }}</p>
+              <p class="off-grid-outdoor-offer__description hb__text--description">{{ productDescription }}</p>
+              <a class="btn--container" href="{{ productUrl }}" target="_blank">
+                <div class="off-grid-outdoor-offer__btn hb__btn hb__text--white background--blue">
+                  {{ section.settings.btn_label }}
+                </div>
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Outdoor Offer",
+  "max_blocks": 2,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "hide_main_section",
+      "label": "Hide Main Section",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Section Image Desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Section Image Mobile"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "EcoFlow bietet uns für jede Situation den passenden Stromspeicher"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description",
+      "default": "Wir gehen zusammen Schritt für Schritt den Weg in die Stromunabhängigkeit! Nutzen Sie die intelligenten Kommunikationssystemen und verschiedenen Erweiterungsmöglichkeiten. die mit unseren Powerstationen kompatibel sind. Das Ergebnis: Das passende Solar-Ökosystem für jedes Zuhause!"
+    },
+    {
+      "type": "text",
+      "id": "btn_label",
+      "label": "Button Text",
+      "default": "Shop Now"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Le panneau solaire EcoFlow rigide 400W"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Die solide Lösung für Ihr Zuhause."
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Die EcoFlow DELTA Pro ist der perfekte Stromspeicher für alle, die den Einstieg in die Welt der Solarenergie wagen wollen. Mit 1-3 kWh erweiterbarer Kapazität ist sie perfekt dafür geeignet, unsere wichtigen Haushaltsgeräte bei Bedarf mit Energie zu versorgen. Angst vor einem Stromausfall gehört damit der Vergangenheit an. Die EcoFlow DELTA Pro versorgt 90 % unserer Haushaltsgeräte und lädt innerhalb von 50 Minuten um 80 % auf. Die Bedienung ist besonders einfach: Eine praktische App hilft uns dabei, den Überblick zu behalten."
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

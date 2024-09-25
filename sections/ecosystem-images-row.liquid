@@ -1,0 +1,90 @@
+{% if section.blocks.size > 0 %}
+    <div class="home-ecosystem-bundles">
+        {% if section.settings.heading != blank %}
+          <h2>{{ section.settings.heading | newline_to_br }}</h2>
+        {% endif %}
+
+      <div class="home-ecosystem-bundles-inner">
+        {% for block in section.blocks %}
+        {% cycle '<div class="home-ecosystem-bundles-row">', '', '</div><div class="home-ecosystem-bundles-row">', '' %}
+            <div class="bundle-box box--{{ block.id }} {% cycle 'odd', 'even', 'even', 'odd' %}">
+              {% if block.settings.main_heading != blank %}
+                <div class="bundle-title">{{ block.settings.main_heading | newline_to_br }}</div>
+              {% endif %}
+              <div class="bundle-content">
+                {% if block.settings.bundle_subheading != blank %}
+                  <div class="bundle-subtitle">{{ block.settings.bundle_subheading }}</div>
+                {% endif %}
+                {% if block.settings.bundle_description != blank %}
+                  <div class="bundle-desc">{{ block.settings.bundle_description }}</div>
+                {% endif %}
+                {% if block.settings.btn_text != blank and block.settings.btn_url != blank %}
+                  <a href="{{ block.settings.btn_url  }}" class="btn">{{ block.settings.btn_text }}</a>
+                {% endif %}
+              </div>
+            </div>
+            <style>
+                .box--{{ block.id }}{ background: url({{ block.settings.slide_image | img_url: '1000x' }}) no-repeat center center; }
+            </style>
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  {% schema %}
+    {
+      "name": "Bundles",
+      "settings": [
+        {
+          "id":"heading",
+          "type":"richtext",
+          "label":"Heading",
+          "default": "<p>Home ecosystem</p>"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "bundle",
+          "name": "Bundle",
+          "settings": [
+            {
+              "type": "richtext",
+              "id": "main_heading",
+              "label": "Bundle Heading"
+            },
+            {
+              "type": "image_picker",
+              "id": "slide_image",
+              "label": "Image for PC"
+            },
+            {
+              "type": "image_picker",
+              "id": "slide_image_mobile",
+              "label": "Image for Mobile"
+            },
+            {
+              "type": "text",
+              "id": "bundle_subheading",
+              "label": "Bundle Subheading"
+            },
+            {
+              "type": "richtext",
+              "id": "bundle_description",
+              "label": "Description"
+            },
+            {
+              "type": "text",
+              "id": "btn_text",
+              "label": "Button text"
+            },
+            {
+              "type": "url",
+              "id": "btn_url",
+              "label": "Button URL"
+            }
+          ]
+        }
+      ]
+    }
+  {% endschema %}

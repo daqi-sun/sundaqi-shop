@@ -1,0 +1,78 @@
+{{ "referral-process.css" | asset_url | stylesheet_tag }}
+<div
+  class="referral-process"
+  data-section-id="{{ section.id }}"
+  data-section-type="referral-process">
+  {% if section.settings.title != blank %}
+    <div class="title-wrapper">
+      <h2 class="title">{{ section.settings.title }}</h2>
+    </div>
+  {% endif %}
+  <div class="referral-process-wrapper">
+    {% for block in section.blocks %}
+      <div class="process-wrapper">
+        {% if block.settings.icon != blank %}
+          <div class="process-header">
+            <div class="process-icon">
+              {{ block.settings.icon }}
+            </div>
+            <div class="process-content">
+              <div class="step">Step {{ forloop.index }}</div>
+              <div class="step-title">{{ block.settings.title }}</div>
+            </div>
+          </div>
+        {% endif %}
+        {% if block.settings.content != blank %}
+          <div class="process-description">
+            <div class="step-subtitle">{{ block.settings.content }}</div>
+          </div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Referral process",
+    "class": "referral-process--section",
+    "settings": [
+      {
+        "id": "title",
+        "type": "text",
+        "label": "Title"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Process",
+        "type": "process",
+        "settings": [
+          {
+            "id": "icon",
+            "type": "html",
+            "label": "Icon",
+            "info": "Add svg code of icon"
+          }, {
+            "id": "title",
+            "type": "text",
+            "label": "Title"
+          }, {
+            "id": "content",
+            "type": "html",
+            "label": "Content"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": {
+          "en": "Referral process"
+        },
+        "category": {
+          "en": "Ecoflow"
+        }
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,289 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "t:sections.timeline.name",
+  "class": "index-section bg_image_with_custom_content timeline_section",
+  "max_blocks": 6,
+  "id": "timeline",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "type": "image_picker",
+      "id": "atb_image",
+      "label": "t:sections.timeline.settings.image.label",
+      "info": ""
+    },
+    {
+      "type": "image_picker",
+      "id": "atb_mobile_image",
+      "label": "t:sections.timeline.settings.mobile_image.label",
+      "info": ""
+    },
+    {
+      "type": "color",
+      "id": "atb_text_color",
+      "label": "t:sections.timeline.settings.text_color.label",
+      "default": "#fff",
+      "info": ""
+    },
+    {
+      "type": "select",
+      "id": "atb_content_side",
+      "label": "t:sections.timeline.settings.content_side.label",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.timeline.settings.content_side.options__1.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.timeline.settings.content_side.options__2.label"
+        }
+      ],
+      "default": "left",
+      "info": ""
+    },
+    {
+      "type": "range",
+      "id": "atb_blocks_height",
+      "min": 300,
+      "max": 800,
+      "step": 50,
+      "unit": "t:sections.timeline.settings.blocks_height.unit",
+      "label": "t:sections.timeline.settings.blocks_height.label",
+      "default": 400,
+      "info": ""
+    },
+    {
+      "type": "color",
+      "id": "atb_color_image_overlay",
+      "label": "t:sections.timeline.settings.color_image_overlay.label",
+      "info": ""
+    },
+    {
+      "type": "range",
+      "id": "atb_image_overlay_opacity",
+      "label": "t:sections.timeline.settings.image_overlay_opacity.label",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "t:sections.timeline.settings.image_overlay_opacity.unit",
+      "default": 70,
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "blocks",
+      "label": "Block ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": "",
+      "repeatable": "t:sections.timeline.blocks.block.name"
+    },
+    {
+      "type": "text",
+      "id": "block_year",
+      "label": "t:sections.timeline.blocks.block.settings.year.label",
+      "repeatable": "t:sections.timeline.blocks.block.name",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "block_title",
+      "label": "t:sections.timeline.blocks.block.settings.title.label",
+      "default": "Heading",
+      "repeatable": "t:sections.timeline.blocks.block.name",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "block_subtitle",
+      "label": "t:sections.timeline.blocks.block.settings.subtitle.label",
+      "default": "Subtitle",
+      "repeatable": "t:sections.timeline.blocks.block.name",
+      "info": ""
+    },
+    {
+      "type": "wysiwyg",
+      "id": "block_content",
+      "label": "t:sections.timeline.blocks.block.settings.content.label",
+      "default": "<p>Content text</p>",
+      "repeatable": "t:sections.timeline.blocks.block.name",
+      "info": ""
+    }
+  ],
+  "warnings": []
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_image' -%}
+{%- assign atb_image = val -%}
+{%- include 'atb-render' field:'atb_mobile_image' -%}
+{%- assign atb_mobile_image = val -%}
+{%- include 'atb-render' field:'atb_text_color' -%}
+{%- assign atb_text_color = val -%}
+{%- include 'atb-render' field:'atb_content_side' -%}
+{%- assign atb_content_side = val -%}
+{%- include 'atb-render' field:'atb_blocks_height' -%}
+{%- assign atb_blocks_height = val -%}
+{%- include 'atb-render' field:'atb_color_image_overlay' -%}
+{%- assign atb_color_image_overlay = val -%}
+{%- include 'atb-render' field:'atb_image_overlay_opacity' -%}
+{%- assign atb_image_overlay_opacity = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_year' -%}
+{%- assign block_year = val -%}
+{%- include 'atb-render' field:'block_title' -%}
+{%- assign block_title = val -%}
+{%- include 'atb-render' field:'block_subtitle' -%}
+{%- assign block_subtitle = val -%}
+{%- include 'atb-render' field:'block_content' -%}
+{%- assign block_content = val -%}
+{%- assign atb_blocks_height = atb_blocks_height | plus: 0 -%}
+{%- assign atb_image_overlay_opacity = atb_image_overlay_opacity | plus: 0 -%}
+{%- assign atb_image_key = atb_image| split: '/files/' | last -%}{%- assign atb_image = images[atb_image_key] -%}{%- assign atb_mobile_image_key = atb_mobile_image| split: '/files/' | last -%}{%- assign atb_mobile_image = images[atb_mobile_image_key] -%}{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section index-section bg_image_with_custom_content timeline_section">
+<section id="section-{{ section_id }}" data-section-id="{{ section_id }}" data-section-type="timeline" class="fade-in-animation" 
+         data-blocks_height="{{ atb_blocks_height }}">
+
+  {% assign image = atb_image %}
+  {% assign mobile_image = atb_mobile_image %}
+  {% assign content_side = atb_content_side %}
+
+
+
+ 
+  <div class='section_bg'>
+ 	{% if image != blank %}
+        <img 
+             class="section_bg_image {% if mobile_image != blank %} small--hide {% endif %}"
+             srcset="{%- if image.width >= 375 -%}{{ image | img_url: '375x' }} 375w,{%- endif -%}
+                {%- if image.width >= 720 -%}{{ image | img_url: '720x' }} 750w,{%- endif -%}
+                {%- if image.width >= 1066 -%}{{ image | img_url: '1066x' }} 1066w,{%- endif -%}
+             	{%- if image.width >= 1500 -%}{{ image | img_url: '1500x' }} 1500w,{%- endif -%}
+                {%- if image.width >= 1780 -%}{{ image | img_url: '1780x' }} 1780w,{%- endif -%}
+                {%- if image.width >= 2000 -%}{{ image | img_url: '2000x' }} 2000w,{%- endif -%}
+                {%- if image.width >= 2800 -%}{{ image | img_url: '2800x' }} 2800w{%- endif -%}"
+             src="{{ image | img_url: '750x' }}"
+             sizes="100vw"
+             loading="lazy"
+             width="{{ image.width }}"
+        	 height="{{ image.height }}"
+             alt="{{ image.alt  }}">
+      
+      {% if mobile_image != blank %}
+        <img 
+             class="section_bg_image mobile_image medium-up--hide"
+             srcset="{%- if mobile_image.width >= 375 -%}{{ mobile_image | img_url: '375x' }} 375w,{%- endif -%}
+                {%- if mobile_image.width >= 720 -%}{{ mobile_image | img_url: '720x' }} 750w,{%- endif -%}
+                {%- if mobile_image.width >= 1066 -%}{{ mobile_image | img_url: '1066x' }} 1066w,{%- endif -%}
+             	{%- if mobile_image.width >= 1500 -%}{{ mobile_image | img_url: '1500x' }} 1500w{%- endif -%}"
+             src="{{ mobile_image | img_url: '535x' }}"
+             sizes="100vw"
+             loading="lazy"
+             width="{{ mobile_image.width }}"
+        	 height="{{ mobile_image.height }}"
+             alt=" {{ mobile_image.alt   }}">
+      {% endif %}
+           
+        {% else %}
+    <div class='section_bg_image'>
+      {% capture current %}{% cycle 1, 2 %}{% endcapture %}
+      {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+    </div>
+  {% endif %}
+  </div>
+
+
+  <div class='section_content'>
+    <div class="page-width content_side_{{content_side}}">
+      <div class='section_content__wrapper text-left '>
+        <div class='section_main_content'>
+          <div class='timeline_wrapper'>
+            <ul class='timeline_nav'>
+              {% for block0 in blocks %}
+              <li class='timeline_nav_item {% if forloop.first %} active {% endif %}' data-year="{{block_year[forloop.index0]}}">{{block_year[forloop.index0]}}</li>
+              {% endfor %}
+            </ul>
+            <div class='timeline_blocks'>
+              {% for block0 in blocks %}
+              <div id='block_{{section_id}}_{{block_year[forloop.index0]}}' class='timeline_block {% if forloop.first %} active {% endif %}' data-year="{{block_year[forloop.index0]}}">
+
+                {% if block_subtitle[forloop.index0] != blank  %}
+                <h5>{{ block_subtitle[forloop.index0] }}</h5>
+                {% endif %}
+                {% if block_title[forloop.index0] != blank  %}
+                <h3>{{ block_title[forloop.index0] }}</h3>
+                {% endif %}
+
+                {% if block_content[forloop.index0] != blank  %}
+                <div class='content'>{{ block_content[forloop.index0] }}</div>
+                {% endif %}
+
+
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+     
+
+
+      </div>
+    </div>
+  </div>
+
+  <style>
+    #section-{{ section_id }} * {
+      color: {{ atb_text_color }};
+    }
+    {% if settings.homepage_subtitle_color == 'match_header' %}
+
+    #section-{{ section_id }}  .section-header .h5 {
+      color: {{ atb_text_color }};
+    }
+    #section-{{ section_id }}  .section-header .h5:before {
+      background: {{ atb_text_color }};
+    }
+
+    {% endif %}
+     #section-{{ section_id }} .timeline_blocks {
+       height:{{ atb_blocks_height }}px;
+     }
+     
+  </style>
+  
+    {% assign color_image_overlay = atb_color_image_overlay %}
+
+  {% if color_image_overlay == 'rgba(0,0,0,0)' or color_image_overlay == blank %}
+  {% assign color_image_overlay = settings.color_button %}
+  {% endif %}
+  
+     <div class='section_overlay content_side_{{content_side}}'></div>
+    <div class='section_overlay_border_top content_side_{{content_side}}'></div>
+  <div class='section_overlay_border_bottom content_side_{{content_side}}'></div>
+
+  <style>
+    #section-{{ section_id }} .section_overlay {
+      opacity: {{ atb_image_overlay_opacity }}% ;
+      background-color: {{ color_image_overlay }};
+    }
+  </style>
+</section>
+
+
+
+</section>

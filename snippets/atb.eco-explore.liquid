@@ -1,0 +1,211 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "Explore",
+  "id": "eco-explore",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "class": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "id": "atb_main_heading",
+      "type": "text",
+      "label": "Main Heading",
+      "default": "Explore #DoWhatYouCant",
+      "info": ""
+    },
+    {
+      "id": "atb_heading_link",
+      "type": "text",
+      "label": "Heading Url",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "blocks",
+      "label": "Block ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": "",
+      "repeatable": "slide"
+    },
+    {
+      "id": "block_desktop_img",
+      "type": "image_picker",
+      "label": "Desktop image",
+      "info": "400x400 recommended",
+      "repeatable": "slide"
+    },
+    {
+      "id": "block_mobile_img",
+      "type": "image_picker",
+      "label": "Mobile image",
+      "info": "400x400 recommended",
+      "repeatable": "slide"
+    },
+    {
+      "id": "block_title",
+      "type": "text",
+      "label": "Heading",
+      "default": "Unbox & Discover",
+      "repeatable": "slide",
+      "info": ""
+    },
+    {
+      "id": "block_link_label",
+      "type": "text",
+      "label": "Link label",
+      "default": "learn more",
+      "repeatable": "slide",
+      "info": ""
+    },
+    {
+      "id": "block_slide_link",
+      "type": "text",
+      "label": "Link Url",
+      "repeatable": "slide",
+      "info": ""
+    }
+  ],
+  "warnings": [
+    "repeating image fields may not be properly handled"
+  ]
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_main_heading' -%}
+{%- assign atb_main_heading = val -%}
+{%- include 'atb-render' field:'atb_heading_link' -%}
+{%- assign atb_heading_link = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_desktop_img' -%}
+{%- assign block_desktop_img = val -%}
+{%- include 'atb-render' field:'block_mobile_img' -%}
+{%- assign block_mobile_img = val -%}
+{%- include 'atb-render' field:'block_title' -%}
+{%- assign block_title = val -%}
+{%- include 'atb-render' field:'block_link_label' -%}
+{%- assign block_link_label = val -%}
+{%- include 'atb-render' field:'block_slide_link' -%}
+{%- assign block_slide_link = val -%}
+{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section ">
+<div id="wrap">
+  <div id="content" role="main">
+    <div class="root responsivegrid">
+      <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+        <div class="pd-g-product-promotion-bar aem-GridColumn aem-GridColumn--default--12">
+        </div>
+        <div class="responsivegrid aem-GridColumn aem-GridColumn--default--12">
+          <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+            <div class="cm-g-half-teaser-list aem-GridColumn aem-GridColumn--default--12">
+              <section class="half-teaser-list
+                              bg-white
+                              text-color--black
+                              desktop-layout--image-left">
+                <div class="half-teaser-list__inner">
+                  <div class="half-teaser-list__head-text">
+                    <h2 class="half-teaser-list__head-title">
+                      <span class="half-teaser-list__head-link" an-tr="co15_half teaser list-home-text-headline" an-ca="home content click" an-ac="explore" an-la="explore:explore  dowhatyoucant" href="{{atb_heading_link}}" title="Samsung.com Explore">{{atb_main_heading}}</span>
+                    </h2>
+                  </div>
+                  <div class="half-teaser-list__content swiper-container basic-swiper" data-swiper-option='{
+                                                                                                           &quot;viewMode&quot;:&quot;mobile&quot;,
+                                                                                                           &quot;keepWrapper&quot;:true,
+                                                                                                           &quot;slidesPerView&quot;:&quot;1&quot;,
+                                                                                                           &quot;pagination&quot;:true,
+                                                                                                           &quot;componentEl&quot;:&quot;.half-teaser-list&quot;}'>
+                    <div class="swiper-wrapper">
+                      {% for block0 in blocks %}
+{%- assign my_image_key1 = block_mobile_img[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image1 = images[my_image_key1] -%}
+{%- assign my_image_key0 = block_desktop_img[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image0 = images[my_image_key0] -%}
+                        <div class="half-teaser-list__item swiper-slide {% if forloop.index == 1 %} half-teaser-list__item--active {% endif %}" style="order:{{forloop.index}};" an-tr="co15_half teaser list-home-image-swipe" an-ca="indication" an-ac="carousel" an-la="carousel:swipe:explore1">
+                          <div class="half-teaser-list__text" tabindex="0">
+                            <div class="half-teaser-list__title-wrap">
+                              <span class="half-teaser-list__number">{{ forloop.index }}</span>
+                              <div class="half-teaser-list__title">
+                                <a class="half-teaser-list__title-link" href="{{block_slide_link[forloop.index0]}}" title="Learn more">
+                                  {{block_title[forloop.index0]}}
+                                </a>
+                              </div>
+                            </div>
+                            <div class="half-teaser-list__button">
+                              <a class="cta cta--underline cta--black" href="{{block_slide_link[forloop.index0]}}" title="Learn more" an-tr="co15_half teaser list-home-cta-button" an-ca="home content click" an-ac="explore" an-la="explore:unbox and discover:learn more">{{block_link_label[forloop.index0]}}</a>
+                            </div>
+                          </div>
+                          <div class="half-teaser-list__image-wrap">
+                            <a class="half-teaser-list__image-link" href="{{block_slide_link[forloop.index0]}}" title="Learn more">
+                              <div class="half-teaser-list__image">
+                                <div class="image">
+  <!--                                 <img class="image__preview lazy-load responsive-img" data-desktop-src="https://images.samsung.com/is/image/samsung/assets/pk/p6_gro2/p6_initial_explore_detail/experiences/unbox-part2-image/vd0035_home-explore-banner_pc_684x684.jpg?$LazyLoad_Home_JPG$" data-mobile-src="https://images.samsung.com/is/image/samsung/assets/pk/p6_gro2/p6_initial_explore_detail/experiences/unbox-part2-image/vd0035_home-explore-banner_mo_624x624.jpg?$LazyLoad_Home_JPG$" alt="A girl peers down into a box with a surprised expression."/> -->
+                                  <img class="image__main lazy-load responsive-img" data-desktop-src="{{my_image0 | img_url: '1200x'}}" data-mobile-src="{{my_image1 | img_url: '800x'}}"/>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      {% endfor %}
+                    </div>
+                    <div class="indicator" data-indicator-data='{
+                                                                &quot;type&quot;: &quot;dot-indicator&quot;,
+                                                                &quot;autoRolling&quot;: false,
+                                                                &quot;infiniteRolling&quot;: false}'>
+                      <div class="indicator-wrap">
+                        <div class="indicator__list-wrap">
+                          <div class="indicator__list" role="tablist">
+							{% for block0 in blocks %}
+{%- assign my_image_key1 = block_mobile_img[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image1 = images[my_image_key1] -%}
+{%- assign my_image_key0 = block_desktop_img[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image0 = images[my_image_key0] -%}
+                              <button class="indicator__item" role="tab" data-indicator-delay="" an-tr="co15_half teaser list-home-image-index" an-ca="indication" an-ac="carousel" an-la="carousel:index:explore1">
+                                <span class="indicator__dot-wrap">
+                                  <span class="indicator__dot">
+                                    <span class="indicator__dot-inner"></span>
+                                  </span>
+                                </span>
+                              </button>
+                          	{% endfor %}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<style>
+</style>
+
+<script type="application/javascript">
+</script>
+<link rel="stylesheet" href="{{ 'bottom-slider1.css' | asset_url }}" type="text/css" media="print" onload="this.media='all';onLoadStylesheet()">
+<link rel="stylesheet" href="{{ 'bottom-slider2.css' | asset_url }}" type="text/css" media="print" onload="this.media='all';onLoadStylesheet()">
+<link rel="stylesheet" href="{{ 'bottom-slider3.css' | asset_url }}" type="text/css" media="print" onload="this.media='all';onLoadStylesheet()">
+
+<script src="{{ 'bottom-slider1.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'bottom-slider2.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'bottom-slider3.js' | asset_url }}" defer="defer"></script>
+</section>

@@ -1,0 +1,733 @@
+{
+  "sections": {
+    "daf26638-f596-4384-b150-72d380a3268d": {
+      "type": "product-atb-top",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "sticky-product-bar": {
+      "type": "sticky-product-bar",
+      "blocks": {
+        "588d25af-4d47-43ac-9697-b98aa2f65719": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Overview",
+            "tab_id": "product_information",
+            "section_class": ""
+          }
+        },
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "What's in the box",
+            "tab_id": "what_in_box",
+            "section_class": ""
+          }
+        },
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "FAQ",
+            "tab_id": "faq",
+            "section_class": ""
+          }
+        },
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Reviews",
+            "tab_id": "reviews",
+            "section_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "588d25af-4d47-43ac-9697-b98aa2f65719",
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02",
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4",
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38"
+      ],
+      "settings": {
+        "enabled": true,
+        "enabled_tabs": false
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "11795adc-1afa-4833-a193-258f495901ef": {
+          "type": "sku_block",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e": {
+          "type": "product_title",
+          "settings": {
+          }
+        },
+        "0be521b4-bac8-4e6f-a8ee-4d6bfa17ec65": {
+          "type": "shopify:\/\/apps\/growave-loyalty-wishlist\/blocks\/block.product.reviewAvgProfile\/b3d2efbe-110a-4e27-84a8-1f2ed63996a4",
+          "settings": {
+            "margin": "",
+            "textColor": "",
+            "fontSize": "",
+            "ratingIconColor": "",
+            "ratingIconSize": "",
+            "questionsIconColor": "",
+            "questionsIconSize": ""
+          }
+        },
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "0471109f-c130-454e-a9ba-c56412cc11f3": {
+          "type": "product_vendor",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185": {
+          "type": "product_price",
+          "settings": {
+          }
+        },
+        "d25a0285-4fb4-422d-b95b-ab67446120ad": {
+          "type": "product_description",
+          "settings": {
+            "desc_display": "default"
+          }
+        },
+        "79e1b437-5bbd-4b8a-ac55-27c2f795ee99": {
+          "type": "coupon_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Component_2_1.png",
+            "discount_off_text": "{{ product.metafields.custom.discount_off_text.value }}",
+            "code": "{{ product.metafields.custom.discount_code.value }}",
+            "show_copy_code_btn": true
+          }
+        },
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879": {
+          "type": "product_options_block",
+          "settings": {
+            "show_product_swatches": true,
+            "use_variant_image_for_swatches": true,
+            "button_content": ""
+          }
+        },
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe": {
+          "type": "quantity_block",
+          "settings": {
+          }
+        },
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0": {
+          "type": "accessories_section",
+          "settings": {
+            "title": "You may also like",
+            "metafield": "accessories"
+          }
+        },
+        "9f863400-c572-447b-b273-93f1143583fa": {
+          "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/form-embed-block\/2632fe16-c075-4321-a88b-50b567f42507",
+          "disabled": true,
+          "settings": {
+            "formId": "UHSpKe"
+          }
+        },
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609": {
+          "type": "product_buttons",
+          "settings": {
+            "enable_payment_button": false,
+            "show_custom_icons": true,
+            "custom_payment_logo_1_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_08_7f374817-3a3e-42f2-95ce-077b67f293d2.svg?v=1672025209",
+            "custom_payment_logo_2_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_10_d8002835-e25f-4edb-9038-187f75f69a18.svg?v=1672025208",
+            "custom_payment_logo_3_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_02_a3ea7ab1-aa9a-4857-9ed6-01e62deccfce.svg?v=1672025208",
+            "custom_payment_logo_4_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_06_7c406d24-0983-49ff-ac8e-cf73032050d9.svg?v=1672025208",
+            "custom_payment_logo_5_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_07_be5959d4-9f22-4a31-8e40-285f8e3ac6e7.svg?v=1672025208",
+            "custom_payment_logo_6_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_04_7bff1113-0dc2-489f-8be8-d19dbe467a1a.svg?v=1672025208",
+            "custom_payment_logo_7_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_05_1c21f308-a0a3-4251-8641-87264da43d67.svg?v=1672025208",
+            "custom_payment_logo_8_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_01_96e6a30c-7908-4892-b6f1-75bce8657cd4.svg?v=1672025208",
+            "custom_payment_logo_9_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/sofort_icon_31ba2d5b-2c44-4960-8e80-645a7240c899.png?v=1679023017",
+            "custom_payment_logo_10_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/giropay_icon_c9d7e22e-cd7c-4bee-8de5-e50a4c6dc378.png?v=1679023017",
+            "custom_payment_logo_11_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/ideal_icon_8548c48a-3c4e-4052-95de-670062a453ce.png?v=1679023017",
+            "custom_payment_logo_12_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/multibanco_icon_e3f9b26f-234c-4a06-9e48-adfd188e7deb.png?v=1679023016",
+            "custom_payment_logo_13_svg": "",
+            "custom_payment_logo_14_svg": "",
+            "custom_payment_logo_15_svg": ""
+          }
+        },
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% if product.metafields.custom.trade_message != blank %}\n          <div class=\"trade-message\">♻️{{product.metafields.custom.trade_message}} <a href=\"\/pages\/trade-in\" target=\"_blank\">Learn more<\/a><\/div>\n{% endif %}"
+          }
+        }
+      },
+      "block_order": [
+        "11795adc-1afa-4833-a193-258f495901ef",
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e",
+        "0be521b4-bac8-4e6f-a8ee-4d6bfa17ec65",
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774",
+        "0471109f-c130-454e-a9ba-c56412cc11f3",
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185",
+        "d25a0285-4fb4-422d-b95b-ab67446120ad",
+        "79e1b437-5bbd-4b8a-ac55-27c2f795ee99",
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879",
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe",
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0",
+        "9f863400-c572-447b-b273-93f1143583fa",
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609",
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a"
+      ],
+      "settings": {
+        "section_id": "",
+        "show_breadcrumbs": true,
+        "show_pick_an_option": false,
+        "enable_linked_options": false,
+        "enabled_mobile_sticky_btns": true,
+        "media_size": "medium",
+        "enable_image_zoom": true,
+        "enable_video_looping": true,
+        "thumbnails_type": "grid",
+        "support_email": "",
+        "support_text": "",
+        "feature_1_show": false,
+        "feature_1_title": "Fast & Free Shipping",
+        "feature_1_content": "",
+        "feature_2_show": false,
+        "feature_2_title": "Warranty Protection",
+        "feature_2_content": "",
+        "feature_3_show": false,
+        "feature_3_title": "Secure Payments",
+        "feature_3_content": "",
+        "feature_4_show": false,
+        "feature_4_title": "Multi-channel Support",
+        "feature_4_content": ""
+      }
+    },
+    "d893f17d-7a00-4113-9531-f983c796d90b": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "Sinergia perfecta con PowerOcean",
+        "subtitle": "<p>Sinergia PowerOcean<\/p>",
+        "content": "<p>Dile adiós a las limitaciones de la carga convencional. PowerPulse se adapta a tus necesidades. Ya sea que funcione de forma aislada o que se sincronice con las soluciones PowerOcean, PowerPulse eleva tu experiencia de   carga de vehículos eléctricos a la perfección.<\/p>",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/PowerPulse_Shopify_PC_1_81707b46-aba1-412e-8fa1-8f19ffea27a0.png",
+        "mobile_image": "shopify:\/\/shop_images\/PowerPulse_Shopify_MOB_1_e3d0dde1-f652-460e-ae01-184a0997ab9f.png",
+        "video_type": "mp4",
+        "video_url": "",
+        "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/67aad57fcd344327aa0feb7912c3f976.mp4",
+        "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/823b546f0a744a7ab453025dfe5a4d8c.mp4",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "144ffd8b-b4ee-4468-9c8f-31aa15c5f786": {
+      "type": "pdp-image-with-text-horizontal-new",
+      "blocks": {
+        "58859457-64ea-474a-a77a-40292bcc8759": {
+          "type": "image",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/PowerPulse_Shopify_PC_2_e84ee090-54b2-4629-ab9f-aeb887a8d4da.png",
+            "mobile_image": "shopify:\/\/shop_images\/PowerPulse_Shopify_MOB_2_03a959b8-f9e6-49d9-b5b3-9d2553c70da7.png",
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": false,
+            "image_alignment": "left",
+            "title": "",
+            "subtitle": "<p><strong>Energía solar al instante<\/strong><\/p>",
+            "content": "<p>PowerOcean aprovecha instantáneamente la energía fotovoltaica, optimiza   el consumo de energía, proporciona una gestión de carga excepcional y provee   a tu vehículo eléctrico con energía inmediata a través de PowerPulse.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "5b5e6005-2940-44e3-b67c-0b6db4f297b2": {
+          "type": "image",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/PowerPulse_Shopify_PC_3_317c9f67-b166-4b17-b91d-d7c0c2834f22.png",
+            "mobile_image": "shopify:\/\/shop_images\/PowerPulse_Shopify_MOB_3_e691b512-ef44-4999-a955-2765e676602e.png",
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": false,
+            "image_alignment": "right",
+            "title": "",
+            "subtitle": "<p><strong>Visibilidad energética<\/strong><\/p>",
+            "content": "<p>PowerInsight proporciona visibilidad en tiempo real de la generación y usos de energía solar, simplificando la gestión de energía con solo un toque en tu teléfono.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "58859457-64ea-474a-a77a-40292bcc8759",
+        "5b5e6005-2940-44e3-b67c-0b6db4f297b2"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "left"
+      }
+    },
+    "pdp_video_yQgy4F": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "Flexibilidad e independencia",
+        "subtitle": "",
+        "content": "<p>Poder cargar en casa es cuestión de comodidad. Es por eso que diseñamos   PowerPulse para cargar tu vehículo eléctrico sin problemas, incluso sin   integración con nuestro sistema PowerOcean.<\/p>",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/PowerPulse_Shopify_PC_5_fcd7e37d-f544-40fa-bad9-b4a77ff079ab.png",
+        "mobile_image": "shopify:\/\/shop_images\/PowerPulse_Shopify_MOB_5_4585d74b-891f-4357-805a-6d221b810299.png",
+        "video_type": "mp4",
+        "video_url": "",
+        "mp4_video_url": "",
+        "mp4_video_url_m": "",
+        "autoplay_video": false,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "pdp_video_BaTTFa": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "",
+        "subtitle": "",
+        "content": "",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/PowerPulse_Shopify_ES_PC_6.png",
+        "mobile_image": "shopify:\/\/shop_images\/PowerPulse_Shopify_ES_MOB_6.png",
+        "video_type": "mp4",
+        "video_url": "",
+        "mp4_video_url": "",
+        "mp4_video_url_m": "",
+        "autoplay_video": false,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "pdp_video_eE6Diy": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "Eficiencia en cada centímetro",
+        "subtitle": "",
+        "content": "<p>Gracias a su diseño (más pequeño que una hoja tamaño A4), PowerPulse cabe   fácilmente en cualquier espacio, lo que hace que la carga sea sencilla y   cómoda.<\/p>",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/PowerPulse_Shopify_ES_PC_7.png",
+        "mobile_image": "shopify:\/\/shop_images\/PowerPulse_Shopify_ES_MOB_7.png",
+        "video_type": "mp4",
+        "video_url": "",
+        "mp4_video_url": "",
+        "mp4_video_url_m": "",
+        "autoplay_video": false,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "pdp_video_jipH8F": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "Cableado elegante. Diseño ingenioso.",
+        "subtitle": "",
+        "content": "<p>Con una carcasa elegante y liviana, PowerPulse promete una fácil instalación, ya sea en interiores o exteriores. Los canales de cable   incorporados hacen que la estación de carga se vea limpia y ordenada.<\/p>",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/PowerPulse_Shopify_PC_8_28a4dd2d-b73c-45e8-a500-5ff2f1634f1e.png",
+        "mobile_image": "shopify:\/\/shop_images\/PowerPulse_Shopify_MOB_8_640eded4-8e06-4d1f-9c8a-05e81378e909.png",
+        "video_type": "mp4",
+        "video_url": "",
+        "mp4_video_url": "",
+        "mp4_video_url_m": "",
+        "autoplay_video": false,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "7626dfd1-0fe4-4156-a88e-850a531f39be": {
+      "type": "pdp-image-with-text",
+      "blocks": {
+        "718fa1ea-0508-41d0-9c45-95a4a5bc25fb": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/PowerPulse_Shopify_PC_9_a4f333c1-7d1a-465e-a56b-50b941bc249c.png",
+            "mobile_image": "shopify:\/\/shop_images\/PowerPulse_Shopify_MOB_9_b8d6eb2c-5a6d-4049-b6e7-65b238cf71f5.png",
+            "image_height": 310,
+            "mobile_image_height": 170,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": false,
+            "subtext_top": "<h3>Seguridad y protección sin compromisos<\/h3>",
+            "subtext_bottom": "<p><\/p><p>La seguridad sigue siendo primordial para nosotros. Los sensores térmicos   de PowerPulse rastrean persistentemente las condiciones operativas para   evitar cualquier sobrecalentamiento. Además, el sistema se apaga   automáticamente una vez que la batería del vehículo eléctrico está   completamente cargada.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "ad117762-7d02-42a6-a979-7b2dc145992b": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/PowerPulse_Shopify_PC_10_300594dd-d777-41c4-96f0-3e74401351fa.png",
+            "mobile_image": "shopify:\/\/shop_images\/PowerPulse_Shopify_MOB_10_c6d621d3-10f6-458b-a1e3-0ae6611d98b2.png",
+            "image_height": 310,
+            "mobile_image_height": 170,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": false,
+            "subtext_top": "<h3>Conduce tu viaje solar<\/h3>",
+            "subtext_bottom": "<p><\/p><p>Navega la energía solar sin esfuerzo con la aplicación EcoFlow. Podrás   realizar un seguimiento del consumo, establecer horarios de carga, dar   prioridad a los vehículos, administrar las reservas de energía y más. Obtén   el máximo control sobre el rendimiento de tu carga solar.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "image_content_MnUhHD": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/PowerPulse_Shopify_PC_11_f3ecc12b-284e-4ea5-adc0-68bc3e94a913.png",
+            "mobile_image": "shopify:\/\/shop_images\/PowerPulse_Shopify_MOB_11_8e4e328b-0648-4e67-920c-2c71da7dbf0b.png",
+            "image_height": 310,
+            "mobile_image_height": 170,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": false,
+            "subtext_top": "<h3><strong>Se recomienda   instalación por parte de un experto<\/strong><\/h3>",
+            "subtext_bottom": "<p><\/p><p>Para un rendimiento óptimo y seguridad garantizada, lo mejor es que un   electricista cualificado instale el cargador de vehículos eléctricos   PowerPulse. Si bien EcoFlow se especializa en brindar soluciones de carga de   primer nivel, te recomendamos que te comuniques con un electricista local de   confianza para la instalación. Esto garantiza el cumplimiento de los códigos   locales sobre electricidad y la máxima eficiencia. <\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "718fa1ea-0508-41d0-9c45-95a4a5bc25fb",
+        "ad117762-7d02-42a6-a979-7b2dc145992b",
+        "image_content_MnUhHD"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "center",
+        "layout": "stacked",
+        "stacked_row": "3",
+        "mobile_stacked_row": "1",
+        "slider_row": "2",
+        "mobile_slider_row": "1"
+      }
+    },
+    "82f7f3bf-a9d8-4236-9823-651a58407999": {
+      "type": "pdp-whats-in-the-box",
+      "blocks": {
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PowerPulse_Shopify_PC_box1_4c9804c1-dc69-49f2-ae0f-7a62200f1438.png",
+            "cta_label": "EcoFlow PowerPulse",
+            "link": "",
+            "cta_width": 60,
+            "cta_image_width": "100%",
+            "custom_width": 300,
+            "custom_height": 350,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 300
+          }
+        },
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PowerPulse_Shopify_PC_box2_0399dc75-9056-4be7-810e-6dde080338f9.png",
+            "cta_label": "Base portacables",
+            "link": "",
+            "cta_width": 35,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 140,
+            "custom_width_mobile": 190,
+            "custom_height_mobile": 140
+          }
+        },
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PowerPulse_Shopify_PC_box4_1455dae6-55e5-468c-babe-d98aa02f7af6.png",
+            "cta_label": "Manual del usuario y tarjeta de garantía",
+            "link": "",
+            "cta_width": 35,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 130,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 120
+          }
+        }
+      },
+      "block_order": [
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-0",
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-2",
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-3"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Contenido de la caja",
+        "bottom_content": "",
+        "cta_height": 500,
+        "cta_height_mobile": 360,
+        "cta_half_height_mobile": 200,
+        "gutter_width": 12
+      }
+    },
+    "445d25b8-a88b-4de2-811c-2cbe8505573e": {
+      "type": "pdp-specs",
+      "blocks": {
+        "47af9637-9c18-4189-ac35-f8a415f77098": {
+          "type": "contents",
+          "settings": {
+            "title": "Voltaje:",
+            "content": "<p>230 V (monofásico), 400 V (trifásico) <\/p>"
+          }
+        },
+        "contents_K9LJbU": {
+          "type": "contents",
+          "settings": {
+            "title": "Velocidad de carga:",
+            "content": "<p>3,6 kW máx. (monofásico), 11 kW máx. (trifásico) <\/p>"
+          }
+        },
+        "contents_WfeCCd": {
+          "type": "contents",
+          "settings": {
+            "title": "Corriente:",
+            "content": "<p>Enchufe 16 A  <\/p>"
+          }
+        },
+        "contents_EzMzNE": {
+          "type": "contents",
+          "settings": {
+            "title": "Frecuencia:",
+            "content": "<p>50 Hz<\/p>"
+          }
+        },
+        "a6725352-6830-4493-aba9-a2094cf75982": {
+          "type": "contents",
+          "settings": {
+            "title": "Características del firmware:",
+            "content": "<p>Plataforma abierta compatible con OCPP (Protocolo de punto de carga abierto) 1.6J y actualizaciones de firmware inalámbricas (OTA) MODBUS-RTU<\/p>"
+          }
+        },
+        "f3a1ff22-e1c2-499a-8610-4bc6dbcdf47b": {
+          "type": "contents",
+          "settings": {
+            "title": "Carga programada:",
+            "content": "<p>Configura la corriente y el tiempo de carga a través de la aplicación EcoFlow<\/p>"
+          }
+        },
+        "03cae209-41ad-43b9-ac45-d01ab3422542": {
+          "type": "contents",
+          "settings": {
+            "title": "Interacción:",
+            "content": "<p>Aplicación EcoFlow<\/p>"
+          }
+        },
+        "07c9b1a0-8f41-430f-a8b7-27b0d7cb41e9": {
+          "type": "contents",
+          "settings": {
+            "title": "Equilibrio de carga dinámico:",
+            "content": "<p>Ajusta la potencia de carga dinámicamente según la potencia del hogar<\/p>"
+          }
+        },
+        "9735a98e-fa4d-4712-9472-44c8d2a204d5": {
+          "type": "contents",
+          "settings": {
+            "title": "Dimensiones (ancho x altura x profundidad):",
+            "content": "<p>178 mm x 283 mm x 99 mm (sin cable) <\/p>"
+          }
+        },
+        "614680ef-24ec-4500-ab57-f0e4642ae896": {
+          "type": "contents",
+          "settings": {
+            "title": "Modo de conexión fotovoltaica y PowerOcean:",
+            "content": "<p>Almacena, carga y utiliza energía solar de forma inteligente según el uso de energía del hogar.<\/p>"
+          }
+        },
+        "49c84d99-7423-4469-81f4-3fde371be7e4": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso:",
+            "content": "<p>3,3 kg (con cable) <\/p>"
+          }
+        },
+        "b2e4d52a-2d0f-4095-bff6-6359bbaf8688": {
+          "type": "contents",
+          "settings": {
+            "title": "Protección de seguridad:",
+            "content": "<p>Sobretensión, baja tensión, sobrecorriente, sobrecalentamiento, cortocircuito, corriente residual, rayos<\/p>"
+          }
+        },
+        "c2cef391-c4fe-4607-a2e2-4c1fb601e58f": {
+          "type": "contents",
+          "settings": {
+            "title": "Cable:",
+            "content": "<p>Cable de 5 m IEC 62196-2 Tipo 2<\/p>"
+          }
+        },
+        "007dec67-2841-4c16-b92b-449cb6c93308": {
+          "type": "contents",
+          "settings": {
+            "title": "Protección RCD:",
+            "content": "<p>6 mA CC, 30 mA CA TIPO A<\/p>"
+          }
+        },
+        "72bcb0c3-9cc5-4252-a081-0bd13f013ef0": {
+          "type": "contents",
+          "settings": {
+            "title": "Soporte del cargador (ancho x altura x profundidad):",
+            "content": "<p>120 mm x 172 mm x 80 mm <\/p>"
+          }
+        },
+        "9094b1e4-de02-4869-b083-7ca28f305cda": {
+          "type": "contents",
+          "settings": {
+            "title": "Conectividad:",
+            "content": "<p>Wi-Fi IEEE 802.11 b\/g\/n de 2.4 GHz<br\/>Bluetooth<br\/>RS485<\/p>"
+          }
+        },
+        "5e6f6e44-7544-4071-8a7e-25343ef62358": {
+          "type": "contents",
+          "settings": {
+            "title": "Carcasa:",
+            "content": "<p>Clasificación IP65 para instalación en interiores y exteriores. Clasificación IK08<\/p>"
+          }
+        },
+        "60da6132-c27f-4fda-988e-32e461b798f9": {
+          "type": "contents",
+          "settings": {
+            "title": "Conformidad",
+            "content": "<p>EN IEC61851-1:2019, EN IEC61851-21-2:2021, EN300328 V2.2.2, EN300330 V2.1.1, EN301489-1 V2.2.3, EN301489-17 V3.2.4, EN301489-3 V2.3.2, EN IEC61000-6-1:2019, EN IEC61000-6-3:2021, EN IEC62311:2020, IEC62955:2018EN60529:1991+A1:2000+A2:2013, EN62196-1:2014, EN IEC62196-2:2022, EN50620:2017+A1:2019, EN61984:2009 EN60529:1991+A1:2000+A2:2013, 2011\/65\/EU+2015\/863, 1907\/2006, 1907\/2006, 1907\/2006, 2019\/1021, 2012\/19\/EU, (EU) 2022\/30, EN303645<\/p>"
+          }
+        },
+        "0fdb2858-640f-4cf3-b1f6-f1a9c71bab2b": {
+          "type": "contents",
+          "settings": {
+            "title": "Luz LED:",
+            "content": "<p>LED de colores para indicar el estado del cargador y la condición de falla tanto en el cargador de pared como en el conector del vehículo eléctrico  <\/p>"
+          }
+        },
+        "8de015d7-0f4a-4f9a-94b7-3a20d169cd58": {
+          "type": "contents",
+          "settings": {
+            "title": "Garantía",
+            "content": "<p>36 meses<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "47af9637-9c18-4189-ac35-f8a415f77098",
+        "contents_K9LJbU",
+        "contents_WfeCCd",
+        "contents_EzMzNE",
+        "a6725352-6830-4493-aba9-a2094cf75982",
+        "f3a1ff22-e1c2-499a-8610-4bc6dbcdf47b",
+        "03cae209-41ad-43b9-ac45-d01ab3422542",
+        "07c9b1a0-8f41-430f-a8b7-27b0d7cb41e9",
+        "9735a98e-fa4d-4712-9472-44c8d2a204d5",
+        "614680ef-24ec-4500-ab57-f0e4642ae896",
+        "49c84d99-7423-4469-81f4-3fde371be7e4",
+        "b2e4d52a-2d0f-4095-bff6-6359bbaf8688",
+        "c2cef391-c4fe-4607-a2e2-4c1fb601e58f",
+        "007dec67-2841-4c16-b92b-449cb6c93308",
+        "72bcb0c3-9cc5-4252-a081-0bd13f013ef0",
+        "9094b1e4-de02-4869-b083-7ca28f305cda",
+        "5e6f6e44-7544-4071-8a7e-25343ef62358",
+        "60da6132-c27f-4fda-988e-32e461b798f9",
+        "0fdb2858-640f-4cf3-b1f6-f1a9c71bab2b",
+        "8de015d7-0f4a-4f9a-94b7-3a20d169cd58"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Especificaciones"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "grid_mobile": "2",
+        "heading": "You may also like",
+        "show_vendor": false
+      }
+    },
+    "1676887592a3dc4fd0": {
+      "type": "apps",
+      "blocks": {
+        "6968de8d-ed22-4f9e-8856-9260bce48bd6": {
+          "type": "shopify:\/\/apps\/growave-loyalty-wishlist\/blocks\/block.product.reviewWidget\/b3d2efbe-110a-4e27-84a8-1f2ed63996a4",
+          "settings": {
+            "containerMaxWidth": "",
+            "containerMarginTop": "",
+            "containerMarginBottom": "",
+            "containerSidePadding": "",
+            "containerLineHeight": "",
+            "containerFontFamily": "",
+            "containerLetterSpacing": "",
+            "buttonsColor": "",
+            "buttonsColorOnHover": "",
+            "buttonsBackgroundColor": "",
+            "buttonsBackgroundColorOnHover": "",
+            "buttonsBorder": "",
+            "buttonsBorderColorOnHover": "",
+            "buttonsBoxShadow": "",
+            "buttonsBoxShadowOnHover": "",
+            "buttonsPaddings": "",
+            "buttonsTextTransform": "",
+            "tabTriggerSelector": "",
+            "tabContentSelector": ""
+          }
+        }
+      },
+      "block_order": [
+        "6968de8d-ed22-4f9e-8856-9260bce48bd6"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    }
+  },
+  "order": [
+    "daf26638-f596-4384-b150-72d380a3268d",
+    "sticky-product-bar",
+    "main",
+    "d893f17d-7a00-4113-9531-f983c796d90b",
+    "144ffd8b-b4ee-4468-9c8f-31aa15c5f786",
+    "pdp_video_yQgy4F",
+    "pdp_video_BaTTFa",
+    "pdp_video_eE6Diy",
+    "pdp_video_jipH8F",
+    "7626dfd1-0fe4-4156-a88e-850a531f39be",
+    "82f7f3bf-a9d8-4236-9823-651a58407999",
+    "445d25b8-a88b-4de2-811c-2cbe8505573e",
+    "product-recommendations",
+    "1676887592a3dc4fd0"
+  ]
+}

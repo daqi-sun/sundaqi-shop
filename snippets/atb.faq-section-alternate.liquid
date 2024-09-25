@@ -1,0 +1,229 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "FAQ Section - Alternate",
+  "id": "faq-section-alternate",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "class": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "id": "atb_title",
+      "type": "text",
+      "label": "Heading",
+      "default": "Frequently Asked Questions",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "blocks",
+      "label": "Block ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": "",
+      "repeatable": "Question-Block"
+    },
+    {
+      "id": "block_title",
+      "type": "text",
+      "label": "Question",
+      "repeatable": "Question-Block",
+      "info": ""
+    },
+    {
+      "id": "block_answer",
+      "type": "wysiwyg",
+      "label": "Answer",
+      "repeatable": "Question-Block",
+      "info": ""
+    }
+  ],
+  "warnings": []
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_title' -%}
+{%- assign atb_title = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_title' -%}
+{%- assign block_title = val -%}
+{%- include 'atb-render' field:'block_answer' -%}
+{%- assign block_answer = val -%}
+{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section ">
+<div class="faq-section">
+    <div class="faq-container">
+      <div class="faq-block">
+        <h2>{{ atb_title }}</h2>
+        {% for block0 in blocks %}
+          <div class="question">
+            <div class="question-container">
+              <h3>{{ block_title[forloop.index0] }}</h3>
+              <img
+                class="
+                  plus {% if forloop.index0 != 0 %}
+                    active
+                  {% endif %}
+                "
+                src="https://cdn.shopify.com/s/files/1/0625/0718/8450/files/plus.png?v=1659531704"
+                width="12"
+                height="12"
+              >
+              <img
+                class="
+                  minus {% if forloop.index0 == 0 %}
+                    active
+                  {% endif %}
+                "
+                src="https://cdn.shopify.com/s/files/1/0625/0718/8450/files/minus.png?v=1659531704"
+                width="12"
+                height="12"
+              >
+            </div>
+            <div
+              class="des"
+              {% if forloop.index0 == 0 %}
+                style="display: block;"
+              {% else %}
+                style="display: none;"
+              {% endif %}
+            >
+              <p>
+                {{ block_answer[forloop.index0] }}
+              </p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  
+
+  {% style %}
+    .faq-section {
+      padding-top: 100px;
+      padding-bottom: 166px;
+    }
+
+    .faq-section .plus,
+    .faq-section .minus {
+      display: none;
+    }
+
+    .faq-section .plus.active,
+    .faq-section .minus.active {
+      display: inline;
+    }
+
+    .faq-section .faq-container {
+      max-width: 1000px;
+      width: 100%;
+      margin: auto;
+    }
+
+    .faq-section .faq-container h2 {
+      font-style: normal;
+      font-size: 45px !important;
+      line-height: 1.3;
+      text-align: center;
+      text-transform: capitalize;
+      color: #212121 !important;
+      margin-bottom: 48px;
+    }
+
+    .faq-section .faq-container h3 {
+      font-style: normal;
+      font-size: 18px;
+      line-height: 1.3;
+      color: #212121 !important;
+      margin-bottom: 0;
+    }
+
+    .faq-section .faq-container p {
+      font-style: normal;
+      font-weight: 350;
+      font-size: 18px;
+      line-height: 1.3;
+      color: #212121 !important;
+      margin-top: 24.5px;
+    }
+
+    .faq-section .faq-container .question {
+      border-top: 1px solid rgba(161, 161, 166, 0.5);
+      padding: 32.5px 0;
+      text-align: left;
+      display: block;
+    }
+    .faq-section .faq-container .question:last-child {
+      border-bottom: 1px solid rgba(161, 161, 166, 0.5);
+    }
+
+    .faq-section .faq-container .question-container {
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+      align-items: baseline;
+      column-gap: 10px;
+    }
+
+    @media (max-width: 1329px) {
+      .faq-section {
+        padding-left: 65px;
+        padding-right: 65px;
+      }
+    }
+    @media (max-width: 1023px) {
+      .faq-section {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+    }
+    @media (max-width: 767px) {
+      .faq-section {
+        padding-top: 48px;
+        padding-bottom: 48px;
+      }
+      .faq-section .faq-container h2 {
+        font-size: 28px !important;
+      }
+      .faq-section .faq-container .question {
+        padding-top: 32px;
+        padding-bottom: 32px;
+      }
+      .faq-section .faq-container h3 {
+        font-size: 16px;
+      }
+      .faq-section .faq-container p {
+        font-size: 16px;
+        margin-top: 24px;
+      }
+    }
+  {% endstyle %}
+
+  <script>
+    $('.question-container').click(function () {
+      $(this).next('.des').stop(true, true).slideToggle('slow');
+
+      if ($(this).children('.plus').hasClass('active')) {
+        $(this).children('.plus').removeClass('active');
+        $(this).children('.minus').addClass('active');
+      } else if ($(this).children('.minus').hasClass('active')) {
+        $(this).children('.minus').removeClass('active');
+        $(this).children('.plus').addClass('active');
+      }
+    });
+  </script>
+</section>

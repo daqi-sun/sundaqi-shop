@@ -1,0 +1,192 @@
+<style>
+  .ppsp-scenario__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .ppsp-scenario__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+
+<div
+  class="ppsp-scenario__section ppsp-scenario__section-{{ section.id }} background--white"
+  data-id="_{{ section.settings.id | downcase | remove: ' ' | replace: '&', '-' }}"
+>
+  <div class="container--default">
+    <div class="ppsp-scenario__text-container">
+      {% if section.settings.title != blank %}
+        <h2 class="ppsp-scenario__heading text--heading text--black">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+      {% if section.settings.subtitle != blank %}
+        <p class="ppsp-scenario__description text--gray">
+          {{ section.settings.subtitle }}
+        </p>
+      {% endif %}
+    </div>
+
+    <div class="ppsp-scenario__block-container">
+      {% for block in section.blocks %}
+        <div class="ppsp-scenario__block-wrapper">
+          <div class="ppsp-scenario__image-wrapper">
+            <img
+              class="ppsp-scenario__image"
+              src="{{ block.settings.image | img_url: 'master' }}"
+              alt="{{ block.settings.image.alt }}"
+            >
+            {% if block.settings.scenario_layout == 'dark' %}
+              <div class="ppsp-scenario__block-content-wrapper">
+                <div class="ppsp-scenario__title-wrapper">
+                  <div class="ppsp-scenario__title text--white">
+                    {{ block.settings.title }}
+                  </div>
+                </div>
+                <div class="ppsp-scenario__description-wrapper">
+                  <p class="ppsp-scenario__description text--white">
+                    {{ block.settings.description }}
+                  </p>
+                </div>
+                <div class="ppsp-scenario__url-wrapper background--white">
+                  <div class="ppsp-scenario__url button">
+                    <a href="{{ block.settings.url }}" target="_blank" class="text--black">Learn More</a>
+                  </div>
+                </div>
+              </div>
+            {% else %}
+              <div class="ppsp-scenario__block-content-wrapper">
+                <div class="ppsp-scenario__title-wrapper">
+                  <div class="ppsp-scenario__title text--black">
+                    {{ block.settings.title }}
+                  </div>
+                </div>
+                <div class="ppsp-scenario__description-wrapper">
+                  <p class="ppsp-scenario__description text--black">
+                    {{ block.settings.description }}
+                  </p>
+                </div>
+                <div class="ppsp-scenario__url-wrapper background--black">
+                  <div class="ppsp-scenario__url button ">
+                    <a href="{{ block.settings.url }}" target="_blank" class="text--white">Learn More</a>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "PPSP Scenario",
+  "settings": [
+    {
+      "type": "text",
+      "id": "id",
+      "label": "Section ID",
+      "default": "FAQ"
+    },
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "html",
+      "id": "subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "scenario",
+      "name": "Scenario",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Scenario Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Scenario Title"
+        },
+        {
+          "type": "html",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Scenario URL"
+        },
+        {
+          "type": "select",
+          "id": "scenario_layout",
+          "label": "Scenario Layout",
+          "options": [
+            {
+              "value": "dark",
+              "label": "Dark"
+            },
+            {
+              "value": "light",
+              "label": "Light"
+            }
+          ],
+          "default": "dark"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

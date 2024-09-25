@@ -1,0 +1,582 @@
+{
+  "sections": {
+    "daf26638-f596-4384-b150-72d380a3268d": {
+      "type": "product-atb-top",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "sticky-product-bar": {
+      "type": "sticky-product-bar",
+      "blocks": {
+        "588d25af-4d47-43ac-9697-b98aa2f65719": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Overview",
+            "tab_id": "product_information",
+            "section_class": ""
+          }
+        },
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "What's in the box",
+            "tab_id": "what_in_box",
+            "section_class": ""
+          }
+        },
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "FAQ",
+            "tab_id": "faq",
+            "section_class": ""
+          }
+        },
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Reviews",
+            "tab_id": "section-reviews",
+            "section_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "588d25af-4d47-43ac-9697-b98aa2f65719",
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02",
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4",
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38"
+      ],
+      "settings": {
+        "enabled": true,
+        "enabled_tabs": false
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "11795adc-1afa-4833-a193-258f495901ef": {
+          "type": "sku_block",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e": {
+          "type": "product_title",
+          "settings": {
+          }
+        },
+        "judge_me_reviews_preview_badge_4Fembf": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "0471109f-c130-454e-a9ba-c56412cc11f3": {
+          "type": "product_vendor",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185": {
+          "type": "product_price",
+          "settings": {
+          }
+        },
+        "d25a0285-4fb4-422d-b95b-ab67446120ad": {
+          "type": "product_description",
+          "settings": {
+            "desc_display": "default"
+          }
+        },
+        "919f9cdd-6184-4311-b675-742931504318": {
+          "type": "coupon_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Component_2_1.png",
+            "discount_off_text": "{{ product.metafields.custom.discount_off_text.value }}",
+            "code": "{{ product.metafields.custom.discount_code.value }}",
+            "show_copy_code_btn": true
+          }
+        },
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879": {
+          "type": "product_options_block",
+          "settings": {
+            "show_product_swatches": true,
+            "use_variant_image_for_swatches": true,
+            "button_content": ""
+          }
+        },
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe": {
+          "type": "quantity_block",
+          "settings": {
+          }
+        },
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0": {
+          "type": "accessories_section",
+          "settings": {
+            "title": "También te puede interesar",
+            "metafield": "accessories"
+          }
+        },
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609": {
+          "type": "product_buttons",
+          "settings": {
+            "enable_payment_button": false,
+            "show_custom_icons": true,
+            "custom_payment_logo_1_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_08_7f374817-3a3e-42f2-95ce-077b67f293d2.svg?v=1672025209",
+            "custom_payment_logo_2_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_10_d8002835-e25f-4edb-9038-187f75f69a18.svg?v=1672025208",
+            "custom_payment_logo_3_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_02_a3ea7ab1-aa9a-4857-9ed6-01e62deccfce.svg?v=1672025208",
+            "custom_payment_logo_4_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_06_7c406d24-0983-49ff-ac8e-cf73032050d9.svg?v=1672025208",
+            "custom_payment_logo_5_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_07_be5959d4-9f22-4a31-8e40-285f8e3ac6e7.svg?v=1672025208",
+            "custom_payment_logo_6_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_01_96e6a30c-7908-4892-b6f1-75bce8657cd4.svg?v=1672025208",
+            "custom_payment_logo_7_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/apple_pay_icon_14953f11-2673-4162-8f1b-99c8a65b4610.png?v=1678448779",
+            "custom_payment_logo_8_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0649\/2533\/5793\/files\/googlepay_icon_6235bed6-fedf-42d2-8d0a-4854ccc3bdc2.png?v=1678450994",
+            "custom_payment_logo_9_svg": "",
+            "custom_payment_logo_10_svg": "",
+            "custom_payment_logo_11_svg": "",
+            "custom_payment_logo_12_svg": "",
+            "custom_payment_logo_13_svg": "",
+            "custom_payment_logo_14_svg": "",
+            "custom_payment_logo_15_svg": ""
+          }
+        },
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% if product.metafields.custom.trade_message != blank %}\n          <div class=\"trade-message\">♻️{{product.metafields.custom.trade_message}} <a href=\"\/pages\/trade-in\" target=\"_blank\">Learn more<\/a><\/div>\n{% endif %}"
+          }
+        }
+      },
+      "block_order": [
+        "11795adc-1afa-4833-a193-258f495901ef",
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e",
+        "judge_me_reviews_preview_badge_4Fembf",
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774",
+        "0471109f-c130-454e-a9ba-c56412cc11f3",
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185",
+        "d25a0285-4fb4-422d-b95b-ab67446120ad",
+        "919f9cdd-6184-4311-b675-742931504318",
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879",
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe",
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0",
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609",
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a"
+      ],
+      "settings": {
+        "section_id": "",
+        "show_breadcrumbs": true,
+        "show_pick_an_option": false,
+        "enable_linked_options": false,
+        "enabled_mobile_sticky_btns": true,
+        "media_size": "medium",
+        "enable_image_zoom": true,
+        "enable_video_looping": true,
+        "thumbnails_type": "grid",
+        "support_email": "",
+        "support_text": "",
+        "feature_1_show": false,
+        "feature_1_title": "Fast & Free Shipping",
+        "feature_1_content": "",
+        "feature_2_show": false,
+        "feature_2_title": "Warranty Protection",
+        "feature_2_content": "",
+        "feature_3_show": false,
+        "feature_3_title": "Secure Payments",
+        "feature_3_content": "",
+        "feature_4_show": false,
+        "feature_4_title": "Multi-channel Support",
+        "feature_4_content": ""
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "grid_mobile": "2",
+        "heading": "You may also like",
+        "show_vendor": false
+      }
+    },
+    "db0991a5-7e55-4492-b1df-ada34edf44e9": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 0,
+        "section_bottom_spacing": 17,
+        "section_top_spacing_mobile": 0,
+        "section_bottom_spacing_mobile": 10,
+        "alignment": "center",
+        "title": "",
+        "subtitle": "",
+        "content": "",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "e3ed9abe-6951-404b-b912-23d6cf1c5f96": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--18975480283483__e3ed9abe-6951-404b-b912-23d6cf1c5f96-168448527280a12fc4-0": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/pc_110w_1_634979ac-24bc-4669-8c82-3d936eda7b17.png",
+            "mobile_image": "shopify:\/\/shop_images\/m_110w_1_4cfcaccf-1b65-4e1e-aaf1-ff98fc4387a6.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "<p>Toma el control sin importar donde estés. El panel solar EcoFlow de 160 W proporciona una potencia amplia y ecológica en cualquier parte.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "0a4ce6be-e7e2-4b01-95e2-eaa97e7ffafc": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/PC_160wSP_01.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/m_160wSP_01.jpg",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Portátil y autoportante",
+            "title_color": "#232323",
+            "content": "<p>Lleva este panel de 7 kg en una funda que funciona también como soporte y te proporciona el mejor ángulo para la carga solar.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--18975480283483__e3ed9abe-6951-404b-b912-23d6cf1c5f96-168448527280a12fc4-0",
+        "0a4ce6be-e7e2-4b01-95e2-eaa97e7ffafc"
+      ],
+      "settings": {
+      }
+    },
+    "7e64a86f-d95b-428c-9e85-06693e37093c": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "9cdb5aa4-1d1c-44c3-8007-c4e14e0f825d": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/PC_160wSP_02.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/m_160wSP_02.jpg",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Mucho más Sol",
+            "title_color": "#232323",
+            "content": "<p>Las celdas de silicio monocristalino de primera calidad proporcionan una alta eficiencia de conversión del 21-22 %. Recarga aún más rápido encadenando varios paneles en una serie o en paralelo.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "9cdb5aa4-1d1c-44c3-8007-c4e14e0f825d"
+      ],
+      "settings": {
+      }
+    },
+    "be2e731c-2b34-426d-b149-dabdb6bfb3ad": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--18975480283483__be2e731c-2b34-426d-b149-dabdb6bfb3ad-168448527280a12fc4-0": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/PC_160wSP_03.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/m_160wSP_03.jpg",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Construido para soportar la tormenta.",
+            "title_color": "#232323",
+            "content": "<p>Nuestro panel solar portátil de 160 W puede seguir recogiendo energía incluso durante un chaparrón. Con una película protectora de ETFE y un alto nivel de resistencia IP de 68, las células solares pueden soportar entornos desde húmedos y mojados hasta secos y polvorientos.<\/p>",
+            "content_color": "#444444",
+            "notification_message": "",
+            "message_color": "#848484",
+            "notification_message_font_size": "body-3",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--18975480283483__be2e731c-2b34-426d-b149-dabdb6bfb3ad-168448527280a12fc4-0"
+      ],
+      "settings": {
+      }
+    },
+    "1c1765df-002b-4f0c-9c13-cfabbec85a14": {
+      "type": "pdp-whats-in-the-box",
+      "blocks": {
+        "template--20490444374359__38f9b846-322a-468d-8bfc-c2bf7457b9ed-image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PC_160W_01.png",
+            "cta_label": "Panel solar de 160 W",
+            "link": "",
+            "cta_width": 50,
+            "cta_image_width": "100%",
+            "custom_width": 300,
+            "custom_height": 365,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 225
+          }
+        },
+        "template--20490444374359__38f9b846-322a-468d-8bfc-c2bf7457b9ed-image-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PC_XT_60.png",
+            "cta_label": "Cable a XT60 de EcoFlow de Conexión de Paneles Solares",
+            "link": "",
+            "cta_width": 25,
+            "cta_image_width": "100%",
+            "custom_width": 265,
+            "custom_height": 90,
+            "custom_width_mobile": 135,
+            "custom_height_mobile": 160
+          }
+        },
+        "template--20490444374359__38f9b846-322a-468d-8bfc-c2bf7457b9ed-image-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PC_160W_bag.png",
+            "cta_label": "Funda del panel solar de 160 W",
+            "link": "",
+            "cta_width": 25,
+            "cta_image_width": "100%",
+            "custom_width": 250,
+            "custom_height": 100,
+            "custom_width_mobile": 170,
+            "custom_height_mobile": 155
+          }
+        },
+        "template--20490444374359__38f9b846-322a-468d-8bfc-c2bf7457b9ed-image-4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PC_Snap_Hook_4.png",
+            "cta_label": "Mosquetones*4",
+            "link": "",
+            "cta_width": 25,
+            "cta_image_width": "100%",
+            "custom_width": 255,
+            "custom_height": 100,
+            "custom_width_mobile": 135,
+            "custom_height_mobile": 165
+          }
+        },
+        "template--20490444374359__38f9b846-322a-468d-8bfc-c2bf7457b9ed-image-5": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PC_User_manual_Warranty_card.png",
+            "cta_label": "Manual de usuario",
+            "link": "",
+            "cta_width": 25,
+            "cta_image_width": "100%",
+            "custom_width": 285,
+            "custom_height": 100,
+            "custom_width_mobile": 155,
+            "custom_height_mobile": 170
+          }
+        }
+      },
+      "block_order": [
+        "template--20490444374359__38f9b846-322a-468d-8bfc-c2bf7457b9ed-image-1",
+        "template--20490444374359__38f9b846-322a-468d-8bfc-c2bf7457b9ed-image-2",
+        "template--20490444374359__38f9b846-322a-468d-8bfc-c2bf7457b9ed-image-3",
+        "template--20490444374359__38f9b846-322a-468d-8bfc-c2bf7457b9ed-image-4",
+        "template--20490444374359__38f9b846-322a-468d-8bfc-c2bf7457b9ed-image-5"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Contenido",
+        "bottom_content": "",
+        "cta_height": 400,
+        "cta_height_mobile": 255,
+        "cta_half_height_mobile": 200,
+        "gutter_width": 12
+      }
+    },
+    "1837b947-0f0d-479d-99e6-412d1fac70a8": {
+      "type": "pdp-specs",
+      "blocks": {
+        "1138f1f3-5c0e-45b0-a267-c932c5b7adcf": {
+          "type": "contents",
+          "settings": {
+            "title": "Dimensiones (sin plegar)",
+            "content": "<p>157 x 68 x 2.4 cm<\/p>"
+          }
+        },
+        "210b9ea6-f628-4292-9d3b-92c935bc6b46": {
+          "type": "contents",
+          "settings": {
+            "title": "Dimensiones (plegado)",
+            "content": "<p>42 x 68 x 2.4 cm<\/p>"
+          }
+        },
+        "fe09e1ec-a30b-4229-bdfb-4a27985ded3c": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso",
+            "content": "<p>7 kg (panel solar de 5 kg)<\/p>"
+          }
+        },
+        "4233cdd3-1502-4d3f-ba00-06a3c130707c": {
+          "type": "contents",
+          "settings": {
+            "title": "Garantía",
+            "content": "<p>24 meses<\/p>"
+          }
+        },
+        "46824e87-bb24-4833-94d4-89193cf92599": {
+          "type": "contents",
+          "settings": {
+            "title": "Potencia nominal",
+            "content": "<p>160 W (±5 W)<\/p>"
+          }
+        },
+        "8c17a968-7eea-43f1-a7e5-88547a5734eb": {
+          "type": "contents",
+          "settings": {
+            "title": "Eficiencia",
+            "content": "<p>21%–22%<\/p>"
+          }
+        },
+        "ae3610fc-e9ba-43be-8ce1-ec5be978d925": {
+          "type": "contents",
+          "settings": {
+            "title": "Tensión de circuito abierto",
+            "content": "<p>21.4V (Vmp 18.2V)<\/p>"
+          }
+        },
+        "1c240e4e-aeeb-4f50-b60c-51ce482acef3": {
+          "type": "contents",
+          "settings": {
+            "title": "Corriente de cortocircuito",
+            "content": "<p>9.6A (Imp 8.8A)<\/p>"
+          }
+        },
+        "a89121ac-f988-458e-ac84-1cef257e3593": {
+          "type": "contents",
+          "settings": {
+            "title": "Tipo de celda",
+            "content": "<p>Silicio monocristalino<\/p>"
+          }
+        },
+        "7b91491b-4994-4b61-a5a6-315628e304d7": {
+          "type": "contents",
+          "settings": {
+            "title": "Temperatura de funcionamiento y almacenamiento",
+            "content": "<p>Entre −20 °C y 85 °C<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1138f1f3-5c0e-45b0-a267-c932c5b7adcf",
+        "210b9ea6-f628-4292-9d3b-92c935bc6b46",
+        "fe09e1ec-a30b-4229-bdfb-4a27985ded3c",
+        "4233cdd3-1502-4d3f-ba00-06a3c130707c",
+        "46824e87-bb24-4833-94d4-89193cf92599",
+        "8c17a968-7eea-43f1-a7e5-88547a5734eb",
+        "ae3610fc-e9ba-43be-8ce1-ec5be978d925",
+        "1c240e4e-aeeb-4f50-b60c-51ce482acef3",
+        "a89121ac-f988-458e-ac84-1cef257e3593",
+        "7b91491b-4994-4b61-a5a6-315628e304d7"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Especificaciones"
+      }
+    },
+    "1714118379d80384ff": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_d4DMJ9": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_d4DMJ9"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    }
+  },
+  "order": [
+    "daf26638-f596-4384-b150-72d380a3268d",
+    "sticky-product-bar",
+    "main",
+    "product-recommendations",
+    "db0991a5-7e55-4492-b1df-ada34edf44e9",
+    "e3ed9abe-6951-404b-b912-23d6cf1c5f96",
+    "7e64a86f-d95b-428c-9e85-06693e37093c",
+    "be2e731c-2b34-426d-b149-dabdb6bfb3ad",
+    "1c1765df-002b-4f0c-9c13-cfabbec85a14",
+    "1837b947-0f0d-479d-99e6-412d1fac70a8",
+    "1714118379d80384ff"
+  ]
+}

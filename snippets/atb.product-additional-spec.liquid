@@ -1,0 +1,97 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "Product Additional Spec",
+  "id": "product-additional-spec",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "class": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "type": "checkbox",
+      "id": "atb_enable_checkbox",
+      "label": "Enable section",
+      "default": true,
+      "info": ""
+    },
+    {
+      "id": "atb_inatallment_plan",
+      "type": "wysiwyg",
+      "label": "Spec Name",
+      "default": "<p>AT&T INSTALLMENT PLAN: Credit approval required. Show More <br>Promotions, pricing, plan options, products and services, availability, terms & restr’s subject to change & may be modified or terminated at any time without notice. **</p>",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "blocks",
+      "label": "Block ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": "",
+      "repeatable": "additional_spec"
+    },
+    {
+      "id": "block_spec_name",
+      "type": "text",
+      "label": "Spec Name",
+      "default": "Screen Size",
+      "repeatable": "additional_spec",
+      "info": ""
+    },
+    {
+      "id": "block_spec_link",
+      "type": "text",
+      "label": "Show More link",
+      "repeatable": "additional_spec",
+      "info": ""
+    }
+  ],
+  "warnings": []
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_enable_checkbox' -%}
+{%- assign atb_enable_checkbox = val -%}
+{%- include 'atb-render' field:'atb_inatallment_plan' -%}
+{%- assign atb_inatallment_plan = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_spec_name' -%}
+{%- assign block_spec_name = val -%}
+{%- include 'atb-render' field:'block_spec_link' -%}
+{%- assign block_spec_link = val -%}
+{%- if atb_enable_checkbox == blank -%}
+{%- assign atb_enable_checkbox = false -%}
+{%- else -%}
+{%- assign atb_enable_checkbox = true -%}
+{%- endif -%}
+{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section ">
+{% if atb_enable_checkbox %}
+  <section class="product-intro" id="product-additional-spec">
+    <div class="gray-bg detail-pdp-section">
+      <div class="container">
+        {{atb_inatallment_plan}}
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+
+<style>
+</style>
+
+<script type="application/javascript">
+</script>
+</section>

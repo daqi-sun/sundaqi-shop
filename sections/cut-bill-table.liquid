@@ -1,0 +1,109 @@
+{% liquid
+  assign product_name = 'cut-bill.table.product_name' | t
+  assign p1_name = 'cut-bill.table.p1_name' | t
+  assign p2_name = 'cut-bill.table.p2_name' | t
+  assign p3_name = 'cut-bill.table.p3_name' | t
+  assign p4_name = 'cut-bill.table.p4_name' | t
+  assign line1 = 'cut-bill.table.120w' | t
+  assign electric_blanket = 'cut-bill.table.electric_blanket' | t
+  assign p1_1 = 'cut-bill.table.p1_1' | t
+  assign p2_1 = 'cut-bill.table.p1_2' | t
+  assign p3_1 = 'cut-bill.table.p1_3' | t
+  assign p4_1 = 'cut-bill.table.p1_4' | t
+  assign line2 = 'cut-bill.table.1500w' | t
+  assign electric_heater = 'cut-bill.table.electric_heater' | t
+  assign p1_2 = 'cut-bill.table.p2_1' | t
+  assign p2_2 = 'cut-bill.table.p2_2' | t
+  assign p3_2 = 'cut-bill.table.p2_3' | t
+  assign p4_2 = 'cut-bill.table.p2_4' | t
+%}
+<div class="cut-bill-table-wrapper">
+  <table class="cut-bill-table">
+    <thead>
+      <tr class="tr-first">
+        <th>
+          {% if hideProductNameTag == false %}
+            {{ product_name }}
+          {% endif %}
+        </th>
+        <th>{{ p1_name }}</th>
+        <th>{{ p2_name }}</th>
+        <th>
+          {% comment %} {{ p3_name }} {% endcomment %}
+          {% assign words = p3_name | split: '+' %}
+          {% for word in words %}
+            {% if forloop.first == false %} + {% endif %}
+            {{ word }}
+            <br>
+          {% endfor %}
+        </th>
+        <th>
+          {%- comment -%}
+            <div class="mobile-only">{{ p4_name }}</div>
+          {%- endcomment -%}
+          <div>
+            {% assign words = p4_name | split: '+' %}
+            {% for word in words %}
+              {% if forloop.first == false %} + {% endif %}
+              {{ word }}
+              <br>
+            {% endfor %}
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div>
+            <div class="table-product-name" style="color: #2C9EFF;">{{ line1 }}</div>
+            <div class="table-product-name">{{ electric_blanket }}</div>
+          </div>
+        </td>
+        <td>{{ p1_1 }}</td>
+        <td>{{ p2_1 }}</td>
+        <td>{{ p3_1 }}</td>
+        <td>{{ p4_1 }}</td>
+      </tr>
+      <tr class="tr-last">
+        <td>
+          <div>
+            <div class="table-product-name" style="color: #2988FF;">{{ line2 }}</div>
+            <div class="table-product-name">{{ electric_heater }}</div>
+          </div>
+        </td>
+        <td>{{ p1_2 }}</td>
+        <td>{{ p2_2 }}</td>
+        <td>{{ p3_2 }}</td>
+        <td>{{ p4_2 }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  {% comment %}
+    <div class="table-right-icon">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="44"
+        height="44"
+        viewBox="0 0 44 44"
+      >
+        <g transform="translate(-315 -4952)"><circle cx="22" cy="22" r="22" transform="translate(315 4952)" fill="#2988ff"/><g transform="translate(8673.34 -37.302)"><line x2="24.106" transform="translate(-8348.394 5011.301)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/><line x2="10.831" y2="9.801" transform="translate(-8335.118 5001.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/><line y1="9.803" x2="10.831" transform="translate(-8335.118 5011.301)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/></g></g>
+      </svg>
+    </div>
+  {% endcomment %}
+</div>
+
+{% schema %}
+{
+  "name": "Table",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "hideProductNameTag",
+      "label": "Hide product name tag",
+      "default": false
+    }
+  ]
+}
+{% endschema %}

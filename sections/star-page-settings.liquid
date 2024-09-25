@@ -1,0 +1,44 @@
+<style>
+  .page-container{
+    background-color: {{ section.settings.page_background }};
+    {% if section.settings.star_page_background_image != blank %}
+    background-image: url({{ section.settings.star_page_background_image | img_url: 'small' | replace: '_small','' }});
+    background-repeat: no-repeat;
+    background-size: contain;
+    {% endif %}
+  }
+  {% if section.settings.use_helvetica_font %}
+    .page-container *:not(path):not(svg){
+      font-family: "Helvetica Neue ForEco";
+      --font-stack-header: "Helvetica Neue ForEco";
+    }
+  {% endif %}
+</style>
+{% schema %}
+{
+  "name": "Star page settings",
+  "settings": [
+    {
+      "type":"color",
+      "id":"page_background",
+      "label":"Page background color"
+    },
+    {
+      "type": "image_picker",
+      "id": "star_page_background_image",
+      "label": "Page background image"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_helvetica_font",
+      "label": "Use Helvetica font?"
+    }
+  ],
+  "presets": [
+      {
+          "name": "Star page settings",
+          "category":"Custom Sections"
+      }
+  ]
+}
+{% endschema %}

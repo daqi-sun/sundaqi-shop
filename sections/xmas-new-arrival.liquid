@@ -1,0 +1,464 @@
+{{ 'xmas-new-arrival.css' | asset_url | stylesheet_tag }}
+
+<div class="new-arrival-section">
+  <div class="section-container">
+    <div class="section-heading-wrapper">
+      <h3 class="title-h3 color-white gotham-bold text-center">
+        {{ section.settings.heading }}
+      </h3>
+    </div>
+    <div class="show_mobile_image">
+      <div class="filter-button-container ">
+        <a href="#river-2-series"><span class="gotham-bold">RIVER 2 SERIES</span></a>
+        <a href="#delta-2-series"><span class="gotham-bold">DELTA 2 SERIES</span></a>
+      </div>
+    </div>
+    <div class="new-arrival-container">
+      <div class="product-block flex-container">
+        {% for block in section.blocks %}
+          {%- comment %}<locksmith:34ea>{% endcomment -%}
+            {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+          {%- comment %}</locksmith:34ea>{% endcomment -%}
+          {% if block.type == 'product_block' %}
+            <div class="product--wrapper section-relative text-center grid-item" id="{{ block.settings.product_id }}">
+              {%- assign productBundle = block.settings.product_handle -%}
+              {%- assign product = all_products[productBundle] -%}
+              {%- assign current_variant = product.selected_or_first_available_variant -%}
+              {%- assign savePrice = current_variant.compare_at_price
+                | minus: current_variant.price
+                | money_without_currency
+                | replace: ',00', ''
+              -%}
+              {%- if current_variant.compare_at_price > current_variant.price -%}
+                <div class="save-container">
+                  <img
+                    class="discount-icon"
+                    src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/popular-discount-icon.png?v=1669197577"
+                    alt=""
+                  >
+                  <p class="discount-price gotham-medium color-white">
+                    <span class="minus-sign">-</span>{{ savePrice -}}
+                    <span class="currency">€</span>
+                  </p>
+                </div>
+              {%- endif -%}
+              <a href="{{ shop.url }}{{ product.url }}" target="_blank">
+                <div class="product-name-image--wrapper">
+                  <img src="{{ block.settings.product_img_title | img_url: 'master' }}" alt="">
+                </div>
+                {% if block.settings.product_bundle != blank %}
+                  <div class="product-bundle--wrapper">
+                    <p class="product-bundle gotham-medium">{{ block.settings.product_bundle }}</p>
+                  </div>
+                {% endif %}
+                <div class="product-image--wrapper">
+                  <img src="{{ block.settings.product_image | img_url: 'master' }}" alt="">
+                </div>
+              </a>
+              <div class="product-bundle-specification--wrapper">
+                <p class="product-bundle-specs gotham-book color-black text-center">
+                  {{ block.settings.product_description }}
+                </p>
+              </div>
+              <div class="product-price-container">
+                <div class="product-price--wrapper">
+                  <p class="product-discounted-price gotham-bold color-black">
+                    {{ current_variant.price | money_without_currency | replace: ',00', '' -}}
+                    <span>€ </span>
+                    {%- if current_variant.compare_at_price > current_variant.price -%}
+                      <span class="product-price color-gray">
+                        {{- current_variant.compare_at_price | money_without_currency | replace: ',00', '' }}€</span
+                      >
+                    {%- endif -%}
+                  </p>
+                </div>
+                <div class="button--wrapper flex-container">
+                  <a class="product-btn" href="{{ shop.url }}{{ product.url }}" target="_blank">
+                    <div class="shop-now-btn--wrapper mx-auto">
+                      <span class="product-btn gotham-bold color-white">Comprar Ahora</span>
+                    </div>
+                  </a>
+                  <!-- Swym Wishlist Plus EPI Button -->
+                  <div class="wishlist-btn--wrapper wishlist-disabled">
+                    <button
+                      data-with-epi="true"
+                      class="swym-button swym-add-to-wishlist-view-product product_{{product.id}}"
+                      data-swaction="addToWishlist" disabled
+                      data-product-id="{{product.id | json}}"
+                      data-variant-id="{{product.variants[0].id}}"
+                      data-product-url="{{ shop.url }}{{ product.url }}"
+                    >
+                      Añadir a la lista de deseos
+                    </button>
+                  </div>
+                  <!-- Swym Wishlist Plus EPI Button -->
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <div class="product-container flex-container flex-wrap-mobile" id="delta-2-series">
+        {%- assign product = all_products['delta-2-portable-power-station'] -%}
+        {%- assign current_variant = product.selected_or_first_available_variant -%}
+        {%- assign savePrice = current_variant.compare_at_price
+          | minus: current_variant.price
+          | money_without_currency
+          | replace: ',00', ''
+        -%}
+        {%- if current_variant.compare_at_price > current_variant.price -%}
+          <div class="save-container">
+            <img
+              class="discount-icon"
+              src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/popular-discount-icon.png?v=1669197577"
+              alt=""
+            >
+            <p class="discount-price gotham-medium color-white">
+              <span class="minus-sign">-</span>{{ savePrice -}}
+              <span class="currency">€</span>
+            </p>
+          </div>
+        {%- endif -%}
+        <div class="product-image--container hide_mobile_image">
+          <a href="{{ shop.url }}{{ product.url }}" target="_blank">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/ecoflow-delta-2-product.png?v=1669208631"
+              alt=""
+            >
+          </a>
+        </div>
+        <div class="product-details--container flex-container flex-column flex-align-center">
+          <div class="product-name-image--wrapper">
+            <img src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/delta2.png?v=1669208915" alt="">
+          </div>
+          <div class="product-image--container show_mobile_image">
+            <a href="{{ shop.url }}{{ product.url }}" target="_blank">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/ecoflow-delta-2-product_032b4719-9b36-4427-8eda-ce5653dbbfb5.png?v=1669261156"
+                alt=""
+              >
+            </a>
+          </div>
+          <div class="product-specs-container">
+            <p class="product-specs gotham-book color-black text-center">
+              ¡DELTA 2 te asegura estar preparado con la <br>
+              estación de energía hecha para tu <br>
+              familia en casi cualquier situación!
+            </p>
+          </div>
+          <div class="product-price--wrapper">
+            <p class="product-discounted-price gotham-bold color-black">
+              {{ current_variant.price | money_without_currency | replace: ',00', '' -}}
+              <span>€ </span>
+              {%- if current_variant.compare_at_price > current_variant.price -%}
+                <span class="product-price color-gray">
+                  {{- current_variant.compare_at_price | money_without_currency | replace: ',00', '' }}€</span
+                >
+              {%- endif -%}
+            </p>
+          </div>
+          <div class="button--wrapper flex-container">
+            <a class="product-btn" href="{{ shop.url }}{{ product.url }}" target="_blank">
+              <div class="shop-now-btn--wrapper">
+                <span class="product-btn gotham-bold color-white">Comprar Ahora</span>
+              </div>
+            </a>
+            <!-- Swym Wishlist Plus EPI Button -->
+            <div class="wishlist-btn--wrapper wishlist-disabled">
+              <button
+                data-with-epi="true"
+                class="swym-button swym-add-to-wishlist-view-product product_{{product.id}}"
+                data-swaction="addToWishlist"
+                data-product-id="{{product.id | json}}"
+                data-variant-id="{{product.variants[0].id}}"
+                data-product-url="{{ shop.url }}{{ product.url }}"
+              >
+                Añadir a la lista de deseos
+              </button>
+            </div>
+            <!-- Swym Wishlist Plus EPI Button -->
+          </div>
+        </div>
+      </div>
+
+      <div class="product-block flex-container">
+        <div class="product--wrapper with-variant section-relative text-center grid-item">
+          {%- assign product = all_products['delta-2-220w-portable-solar-panel'] -%}
+          {%- assign current_variant = product.selected_or_first_available_variant -%}
+          {%- assign savePrice = current_variant.compare_at_price
+            | minus: current_variant.price
+            | money_without_currency
+            | replace: ',00', ''
+          -%}
+          {%- if current_variant.compare_at_price > current_variant.price -%}
+            <div class="save-container">
+              <img
+                class="discount-icon"
+                src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/popular-discount-icon.png?v=1669197577"
+                alt=""
+              >
+              <p class="discount-price gotham-medium color-white">
+                <span class="minus-sign">-</span>{{ savePrice -}}
+                <span class="currency">€</span>
+              </p>
+            </div>
+          {%- endif -%}
+          <a href="{{ shop.url }}{{ product.url }}" target="_blank">
+            <div class="product-name-image--wrapper">
+              <img src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/delta2-2.png?v=1669209553" alt="">
+            </div>
+            <div class="product-bundle--wrapper">
+              <p class="product-bundle gotham-medium">+ Panel Solar Bifacial de 220W</p>
+            </div>
+            <div class="product-image--wrapper">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/ecoflow-delta-2-220w-product.png?v=1669209677"
+                alt=""
+              >
+            </div>
+          </a>
+          <div class="product-bundle-specification--wrapper">
+            <p class="product-bundle-specs gotham-book color-black text-center">
+              Consigue el DELTA 2 con el <br>
+              Panel Solar Portátil Bifacial de 220W de EcoFlow,<br>
+              y carga tu estación de energía portátil<br>
+              de forma ecológica y más rápida.
+            </p>
+          </div>
+          <div class="product-variant--wrapper">
+            <p class="product-variant-title gotham-book text-center">Elige la cantidad de paneles solares</p>
+            <ul class="variant-list">
+              {%- assign current_variant = product.selected_or_first_available_variant -%}
+              {%- assign savePrice = current_variant.compare_at_price
+                | minus: current_variant.price
+                | money_without_currency
+                | replace: ',00', ''
+              -%}
+              <li
+                class="gotham-medium variant active"
+                data-price="{{ current_variant.price | money_without_currency | replace: ',00','' }}€"
+                data-discount="{{ current_variant.compare_at_price | money_without_currency | replace: ',00','' }}€"
+                data-variant-id="{{ current_variant.id }}"
+                data-shop-link="{{ shop.url }}{{ product.url }}?variant={{product.variants[0].id}}"
+                data-price-save="{{ savePrice }}"
+                onclick="updateVariant({{ product.variants[0].id }}, {{ product.id }})"
+              >
+                1
+              </li>
+              {%- assign current_variant = product.variants[1] -%}
+              {%- assign savePrice = current_variant.compare_at_price
+                | minus: current_variant.price
+                | money_without_currency
+                | replace: ',00', ''
+              -%}
+              <li
+                class="gotham-medium variant"
+                data-price="{{ current_variant.price | money_without_currency | replace: ',00','' }}€"
+                data-discount="{{ current_variant.compare_at_price | money_without_currency | replace: ',00','' }}€"
+                data-variant-id="{{ current_variant.id }}"
+                data-shop-link="{{ shop.url }}{{ product.url }}?variant={{product.variants[1].id}}"
+                data-price-save="{{ savePrice }}"
+                onclick="updateVariant({{ product.variants[1].id }}, {{ product.id }})"
+              >
+                2
+              </li>
+            </ul>
+          </div>
+          <div class="product-price-container">
+            <div class="product-price--wrapper">
+              {%- assign current_variant = product.selected_or_first_available_variant -%}
+              <p class="product-discounted-price gotham-bold color-black">
+                {{ current_variant.price | money_without_currency | replace: ',00', '' -}}
+                <span>€ </span>
+                {%- if current_variant.compare_at_price > current_variant.price -%}
+                  <span class="product-price color-gray">
+                    {{- current_variant.compare_at_price | money_without_currency | replace: ',00', '' }}€</span
+                  >
+                {%- endif -%}
+              </p>
+            </div>
+            <div class="button--wrapper flex-container">
+              <a class="product-btn product-shop-btn" href="{{ shop.url }}{{ product.url }}" target="_blank">
+                <div class="shop-now-btn--wrapper mx-auto">
+                  <span class="product-btn gotham-bold color-white">Comprar Ahora</span>
+                </div>
+              </a>
+              <!-- Swym Wishlist Plus EPI Button -->
+              <div class="wishlist-btn--wrapper wishlist-disabled">
+                <button
+                  id="custom-{{ product.variants[0].id }}"
+                  data-with-epi="true"
+                  class="is-active-variant-{{product.id}} swym-button swym-add-to-wishlist-view-product product_{{product.id}}"
+                  data-swaction="addToWishlist"
+                  data-product-id="{{product.id | json}}"
+                  data-variant-id="{{product.variants[0].id}}"
+                  data-product-url="{{ shop.url }}{{ product.url }}"
+                >
+                  Añadir a la lista de deseos
+                </button>
+
+                {% for item in product.variants %}
+                  {% if forloop.index != 0 %}
+                    <button
+                      id="custom-{{item.id}}"
+                      data-with-epi="true"
+                      class="hidden swym-button swym-add-to-wishlist-view-product product_{{product.id}} "
+                      data-swaction="addToWishlist"
+                      data-product-id="{{product.id | json}}"
+                      data-variant-id="{{item.id}}"
+                      data-product-url="{{ shop.url }}{{ product.url }}"
+                    >
+                      Añadir a la lista de deseos
+                    </button>
+                  {% endif %}
+                {% endfor %}
+              </div>
+              <!-- Swym Wishlist Plus EPI Button -->
+            </div>
+          </div>
+        </div>
+
+        <div class="product--wrapper with-variant section-relative text-center grid-item">
+          {%- assign product = all_products['delta-2-400w-portable-solar-panel'] -%}
+          {%- assign current_variant = product.selected_or_first_available_variant -%}
+          {%- assign savePrice = current_variant.compare_at_price
+            | minus: current_variant.price
+            | money_without_currency
+            | replace: ',00', ''
+          -%}
+          {%- if current_variant.compare_at_price > current_variant.price -%}
+            <div class="save-container">
+              <img
+                class="discount-icon"
+                src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/popular-discount-icon.png?v=1669197577"
+                alt=""
+              >
+              <p class="discount-price gotham-medium color-white">
+                <span class="minus-sign">-</span>{{ savePrice -}}
+                <span class="currency">€</span>
+              </p>
+            </div>
+          {%- endif -%}
+
+          <a href="{{ shop.url }}{{ product.url }}" target="_blank">
+            <div class="product-name-image--wrapper">
+              <img src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/delta2-2.png?v=1669209553" alt="">
+            </div>
+            <div class="product-bundle--wrapper">
+              <p class="product-bundle gotham-medium">+ Panel Solar de 400W</p>
+            </div>
+            <div class="product-image--wrapper">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/ecoflow-delta-2-400w-product.png?v=1669210337"
+                alt=""
+              >
+            </div>
+          </a>
+          <div class="product-bundle-specification--wrapper">
+            <p class="product-bundle-specs gotham-book color-black text-center">
+              Con una mayor eficiencia de <br>
+              conversión solar de hasta el 22-23%,<br>
+              obtienes más energía para <br>
+              recargar tu estación de energía portátil.
+            </p>
+          </div>
+          <div class="product-price-container">
+            <div class="product-price--wrapper">
+              <p class="product-discounted-price gotham-bold color-black">
+                {{ current_variant.price | money_without_currency | replace: ',00', '' -}}
+                <span>€ </span>
+                {%- if current_variant.compare_at_price > current_variant.price -%}
+                  <span class="product-price color-gray">
+                    {{- current_variant.compare_at_price | money_without_currency | replace: ',00', '' }}€</span
+                  >
+                {%- endif -%}
+              </p>
+            </div>
+            <div class="button--wrapper flex-container">
+              <a class="product-btn" href="{{ shop.url }}{{ product.url }}" target="_blank">
+                <div class="shop-now-btn--wrapper mx-auto">
+                  <span class="product-btn gotham-bold color-white">Comprar Ahora</span>
+                </div>
+              </a>
+              <!-- Swym Wishlist Plus EPI Button -->
+              <div class="wishlist-btn--wrapper wishlist-disabled">
+                <button
+                  data-with-epi="true"
+                  class="swym-button swym-add-to-wishlist-view-product product_{{product.id}}"
+                  data-swaction="addToWishlist"
+                  data-product-id="{{product.id | json}}"
+                  data-variant-id="{{product.variants[0].id}}"
+                  data-product-url="{{ shop.url }}{{ product.url }}"
+                >
+                  Añadir a la lista de deseos
+                </button>
+              </div>
+              <!-- Swym Wishlist Plus EPI Button -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Xmas New Arrival",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "New Arrival"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_block",
+      "name": "Product Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "product_handle",
+          "label": "Product Handle",
+          "default": "Product Handle",
+          "placeholder": "Product Handle"
+        },
+        {
+          "type": "text",
+          "id": "product_id",
+          "label": "Product ID",
+          "default": "Product ID",
+          "placeholder": "Product ID"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_img_title",
+          "label": "Product Image Title"
+        },
+        {
+          "type": "text",
+          "id": "product_bundle",
+          "label": "Product Bundle",
+          "default": "Product Bundle",
+          "placeholder": "Product Bundle"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_image",
+          "label": "Product Image"
+        },
+        {
+          "type": "textarea",
+          "id": "product_description",
+          "label": "Product Description",
+          "default": "Product Description",
+          "placeholder": "Product Description"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,129 @@
+<style>
+  .sp-steps__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .sp-steps__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+
+<div class="sp-steps__section sp-steps__section-{{ section.id }} background--light-gray">
+  <div class="container--default">
+    <div class="sp-steps__container">
+      <div class="sp-steps__text-container">
+        {% if section.settings.title != blank %}
+          <h2 class="sp-steps__section-heading text--heading text--black">
+            {{ section.settings.title }}
+          </h2>
+        {% endif %}
+      </div>
+      <div class="sp-steps__image-wrapper">
+        <img
+          class="display--desktop"
+          src="{{ section.settings.image | img_url: 'master' }}"
+          alt="{{ section.settings.image.alt }}"
+        >
+        <img
+          class="display--mobile"
+          src="{{ section.settings.image_mobile | img_url: 'master' }}"
+          alt="{{ section.settings.image_mobile.alt }}"
+        >
+      </div>
+      <div class="sp-steps__content-container">
+        {% for block in section.blocks %}
+          <div class="sp-steps__content-wrapper">
+            <div class="sp-steps__list-wrapper background--blue text--white text--center">
+              {{ forloop.index }}
+            </div>
+            <div class="sp-steps__title-wrapper">
+              <p class="sp-steps__title text--light-black">{{ block.settings.title }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "SP Steps",
+  "settings": [
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title",
+      "default": "ERFAHREN SIE, WAS UNSERE ECOFLOW-NUTZER DENKEN"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image Desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image Mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "steps",
+      "name": "Steps",
+      "settings": [
+        {
+          "type": "html",
+          "id": "title",
+          "label": "Tab Title",
+          "default": "DELTA Series"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

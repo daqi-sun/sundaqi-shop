@@ -1,0 +1,108 @@
+{{ 'camping-rv-3.css' | asset_url | stylesheet_tag }}
+
+<div class="camping-rv-banner">
+  {% assign image = section.settings.mobileImage %}
+  {% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+  <div
+    class="custom-img__wrapper display--mobile"
+    style="padding-top: {{ pt }}%;"
+  >
+    <img
+      class="custom-img"
+      srcset="
+        {{ image | img_url: '500x' }} 500w,
+        {{ image | img_url: '600x' }} 600w,
+        {{ image | img_url: 'master' }} 700w,
+      "
+      alt="{{ image.alt }}"
+    >
+    <div class="camping-rv-banner__image--overlay"></div>
+  </div>
+
+  {% assign image = section.settings.image %}
+  {% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+  <div
+    class="custom-img__wrapper display--desktop"
+    style="padding-top: {{ pt }}%;"
+  >
+    <img
+      class="custom-img"
+      srcset="
+        {{ image | img_url: '1000x' }} 1000w,
+        {{ image | img_url: '1200x' }} 1200w,
+        {{ image | img_url: '1400x' }} 1400w,
+        {{ image | img_url: 'master' }} 1600w,
+      "
+      alt="{{ image.alt }}"
+      loading="lazy"
+    >
+    <div class="camping-rv-banner__image--overlay"></div>
+  </div>
+
+  <div class="camping-rv-banner__content container--normal">
+    {% if section.settings.title != blank %}
+      <h1 class="camping-rv-banner__content__h1 hb__text--black">
+        {{ section.settings.title }}
+      </h1>
+    {% endif %}
+    {% if section.settings.buttonText != blank %}
+      <a id="btn-scroll-section" class="btn--container" href="#">
+        <div class="camping-rv-banner__btn hb__btn hb__text--white background--blue">
+          {{ section.settings.buttonText }}
+          <svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 1L7 7L1 1" stroke="white" stroke-width="1.5"/>
+          </svg>
+        </div>
+      </a>
+    {% endif %}
+  </div>
+</div>
+
+<script>
+  var btnLink = document.querySelector('#btn-scroll-section');
+
+  btnLink.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    var currentSection = this.closest('.shopify-section');
+    var nextSection = currentSection.nextElementSibling;
+    if (nextSection) {
+      var nextSectionTop = nextSection.offsetTop;
+
+      window.scroll({
+        top: nextSectionTop,
+        behavior: 'smooth',
+      });
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Camping RV Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobileImage",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title",
+      "default": "Stromspeicher – Solarspeicher und Batteriespeicher von EcoFlow"
+    },
+    {
+      "type": "text",
+      "id": "buttonText",
+      "label": "Button text",
+      "default": "Weiter lesen"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,176 @@
+<style>
+  .ppsp-content-slider__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .ppsp-content-slider__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+
+<div
+  class="ppsp-content-slider__section ppsp-content-slider__section-{{ section.id }}"
+  data-id="_{{ section.settings.id | downcase | remove: ' ' | replace: '&', '-' }}"
+>
+  <div class="container--default">
+    <div class="ppsp-content-slider__text-container">
+      {% if section.settings.title != blank %}
+        <h2 class="ppsp-content-slider__heading text--heading text--black">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+      {% if section.settings.subtitle != blank %}
+        <p class="ppsp-content-slider__description text--description text--gray">
+          {{ section.settings.subtitle }}
+        </p>
+      {% endif %}
+    </div>
+
+    <div class="ppsp-content-slider__images-container ppsp-content-slider__images-container-slider">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="swiper-slide">
+            <div class="ppsp-content-slider__image-wrapper">
+              <img
+                class="display--desktop"
+                src="{{ block.settings.image | img_url: 'master' }}"
+                alt="{{ block.settings.image.alt }}"
+              >
+              <img
+                class="display--mobile"
+                src="{{ block.settings.image_mobile | img_url: 'master' }}"
+                alt="{{ block.settings.image_mobile.alt }}"
+              >
+              <div class="ppsp-content-slider__tag-wrapper">
+                <div class="ppsp-content-slider__tag text--white">
+                  {{ block.settings.tag }}
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var swiperImages = new Swiper('.ppsp-content-slider__images-container-slider', {
+      spaceBetween: 30,
+      slidesPerView: 1,
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      autoplay: {
+        delay: 5000,
+      },
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "PPSP Content Slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "id",
+      "label": "Section ID",
+      "default": "Buyer’s Guides"
+    },
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title",
+      "default": "Was ist das EcoFlow Balkonkraftwerk?"
+    },
+    {
+      "type": "html",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Das EcoFlow Balkonkraftwerk ist eine innovative Kombination aus Wechselrichter, Solarpanel und einer Powerstation. Den Mikro-Wechselrichter für Ihr Balkonkraftwerk mit 600 oder 800 Watt können Sie direkt an Ihre Solarpanels anschließen. Anschließend verbinden Sie ihn mit einer Wandsteckdose – und damit dem öffentlichen Stromnetz – oder mit einer Powerstation. Tagsüber können Sie nun gleichzeitig Solarstrom und Netzstrom nutzen oder Ihre Powerstation aufladen, um auch nachts und unterwegs Solarstrom zur Verfügung zu haben."
+    },
+    {
+      "type": "header",
+      "content": "Section Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image Mobile"
+        },
+        {
+          "type": "text",
+          "id": "tag",
+          "label": "Tag"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

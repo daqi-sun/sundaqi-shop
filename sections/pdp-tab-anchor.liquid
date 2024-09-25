@@ -1,0 +1,114 @@
+<style>
+    .pdp-tab-anchor .pdp-tab-anchor-head .pdp-anchor-head {
+        background-color: {{ section.settings.head_background_color }};
+        color: {{ section.settings.head_text_color }};
+    }
+    .pdp-tab-anchor .pdp-tab-anchor-head .pdp-anchor-head.active {
+        background-color: {{ section.settings.active_head_background_color }};
+        color: {{ section.settings.active_head_text_color }};
+    }
+</style>
+<section id="{{ section.id }}" class="pdp pdp-tab-anchor">
+    <div class="pdp-tab-anchor-container">
+        <div class="pdp-tab-anchor-head">
+            {% for block in section.blocks %}
+                {% if block.settings.pdp_tab_anchor_text_id != blank and block.settings.pdp_tab_anchor_text != blank %}
+                <div class="pdp-anchor-head {% if forloop.first %}active{% endif %}" data-href="{{ block.settings.pdp_tab_anchor_text_id }}">
+                    {{ block.settings.pdp_tab_anchor_text }}
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<script>
+    document.querySelectorAll("#{{ section.id }} .pdp-anchor-head").forEach(function (el) {
+        el.addEventListener("click", function (e) {
+            let href = el.getAttribute("data-href");
+            e.preventDefault();
+            document.querySelectorAll("#{{ section.id }} .pdp-anchor-head").forEach(function (els) {
+                els.classList.remove("active");
+            });
+            this.classList.add("active");
+
+            let offset = 24;
+            let stickyBar = document.querySelector('.product-sticky-bar');
+            if(stickyBar && getComputedStyle(stickyBar).display !== 'none') offset = 200;
+
+            if(href) {
+                let element = document.getElementById(href);
+                let elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                let offsetPosition = elementPosition - offset;
+
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: offsetPosition
+                }, 1000);
+            }
+        });
+    })
+</script>
+{% schema %}
+{
+    "name": "PDP Tab Anchor",
+    "presets": [
+        {
+            "name": "PDP Tab Anchor",
+            "category": "PDP"
+        }
+    ],
+    "settings": [
+        {
+            "type": "header",
+            "content": "PDP Tab Anchor"
+        },
+        {
+            "type": "checkbox",
+            "id": "full_width",
+            "label": "Full Width",
+            "default": false
+        },
+        {
+            "type": "color",
+            "id": "head_background_color",
+            "label": "Head Background Color",
+            "default": "#DBDBDB"
+        },
+        {
+            "type": "color",
+            "id": "head_text_color",
+            "label": "Head Text Color",
+            "default": "#000000"
+        },
+        {
+            "type": "color",
+            "id": "active_head_text_color",
+            "label": "Active Head Text Color",
+            "default": "#ffffff"
+        },
+        {
+            "type": "color",
+            "id": "active_head_background_color",
+            "label": "Active Head Background Color",
+            "default": "#000000"
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Anchor Text",
+            "type": "anchor",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "pdp_tab_anchor_text",
+                    "label": "PDP Tab Anchor Text"
+                },
+                {
+                    "type": "text",
+                    "id": "pdp_tab_anchor_text_id",
+                    "label": "PDP Tab Anchor Text ID"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

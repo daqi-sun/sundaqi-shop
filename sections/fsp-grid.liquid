@@ -1,0 +1,166 @@
+<style>
+  .fsp-grid__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .fsp-grid__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+
+<div
+  class="fsp-grid__section fsp-grid__section-{{ section.id }}"
+  id="_{{ section.settings.id | downcase | remove: ' ' | replace: '&', '-' }}"
+>
+  <div class="container--default">
+    <div class="fsp-grid__grid-container">
+      {% if section.settings.title != blank %}
+        <h2 class="fsp-grid__heading text--heading text--white">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+      {% if section.settings.subtitle != blank %}
+        <p class="fsp-grid__description text--description text--gray">
+          {{ section.settings.subtitle }}
+        </p>
+      {% endif %}
+      {% if section.settings.button_label %}
+        <div class="fsp-grid__button-wrapper">
+          <a href="{{ section.settings.url }}" target="_blank" class="button--container ">
+            <span class="button text--white">{{ section.settings.button_label }}</span>
+          </a>
+        </div>
+      {% endif %}
+    </div>
+    <div
+      x-data="{ scrollWidth: 0 }"
+      x-init="($refs.content).addEventListener('scroll', () => { scrollWidth = (($refs.content).scrollLeft / (($refs.content).scrollWidth - ($refs.content).clientWidth)) * 100 })"
+    >
+      <div
+        class="fsp-grid-scroll__wrapper"
+        x-ref="content"
+      >
+        <div
+          class="fsp-grid__container"
+        >
+          {% for block in section.blocks %}
+            <div class="fsp-grid__item fsp-grid__item--default fsp-grid__item__item--{{ forloop.index }} ecore">
+              <img
+                src="{{ block.settings.image | img_url: 'master' }}"
+                alt="{{ block.settings.image.alt }}"
+              >
+              <div class="grid__container_text">{{ block.settings.grid__container_text }}</div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="fsp-grid__progress-bar">
+        <div class="fsp-grid__progress-bar-scroll" :style="'width: ' + scrollWidth + '%'"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+
+</style>
+
+{% schema %}
+{
+  "name": "FSP Grid",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "text",
+      "id": "id",
+      "label": "Section ID",
+      "default": "EcoFlow Flexible Solar Panels"
+    },
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title",
+      "default": "Why Choose EcoFlow Flexible Solar Panels?"
+    },
+    {
+      "type": "html",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Our 100W flexible solar panel absorbs more light than similar panels in the industry, competing with rigid solar panels for a solar conversion rating of up to 23%. Made from durable fiberglass and with an IP68 waterproof level, the 100W flexible solar panel is built to weather any storm."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "EcoFlow 100W Flexible Solar Panels"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "Button URL"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "grid",
+      "name": "Grid",
+      "settings": [
+        {
+          "type": "text",
+          "id": "grid__container_text",
+          "label": "图片左上角文案"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Grid Image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

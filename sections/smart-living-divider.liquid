@@ -1,0 +1,41 @@
+<div class="smart-living-divider background--dark-blue smart-living-divider-{{ section.id }}"></div>
+
+<style>
+    .smart-living-divider-{{ section.id }} {
+        height: {{ section.settings.height }}px;
+    }
+
+    @media (max-width: 767px) {
+    .smart-living-divider-{{ section.id }} {
+        height: {{ section.settings.height_mobile }}px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Smart Living Divider",
+  "settings": [
+    {
+      "type": "range",
+      "id": "height",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Section Spacing Desktop",
+      "default": 198
+    },
+    {
+      "type": "range",
+      "id": "height_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Section Spacing Mobile",
+      "default": 0
+    }
+  ]
+}
+{% endschema %}

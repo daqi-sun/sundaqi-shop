@@ -1,0 +1,84 @@
+<div class="recommendations-banner">
+  {% if section.settings.banner_image != blank %}
+      <img class="{% if section.settings.banner_image_mobile != blank %} desktop-image{% endif %}"
+           loading="lazy"
+           srcset="{%- if section.settings.banner_image.width >= 375 -%}{{ section.settings.banner_image | img_url: '375x' }} 375w,{%- endif -%}
+                   {%- if section.settings.banner_image.width >= 720 -%}{{ section.settings.banner_image | img_url: '720x' }} 750w,{%- endif -%}
+                   {%- if section.settings.banner_image.width >= 1066 -%}{{ section.settings.banner_image | img_url: '1066x' }} 1066w,{%- endif -%}
+                   {%- if section.settings.banner_image.width >= 1500 -%}{{ section.settings.banner_image | img_url: '1500x' }} 1500w,{%- endif -%}
+                   {%- if section.settings.banner_image.width >= 2000 -%}{{ section.settings.banner_image | img_url: '2000x' }} 2000w{%- endif -%}"
+                   src="{{ section.settings.banner_image | img_url: '535x' }}"
+                   alt="{{ section.settings.banner_image.alt }}"
+           />
+      {% if section.settings.banner_image_mobile != blank %}
+        <img class="mobile-image" loading="lazy"
+            srcset="{%- if section.settings.banner_image_mobile.width >= 375 -%}{{ section.settings.banner_image_mobile | img_url: '375x' }} 375w,{%- endif -%}
+            {%- if section.settings.banner_image_mobile.width >= 720 -%}{{ section.settings.banner_image_mobile | img_url: '720x' }} 750w,{%- endif -%}
+            {%- if section.settings.banner_image_mobile.width >= 1066 -%}{{ section.settings.banner_image_mobile | img_url: '1066x' }} 1066w,{%- endif -%}
+            {%- if section.settings.banner_image_mobile.width >= 1500 -%}{{ section.settings.banner_image_mobile | img_url: '1500x' }} 1500w{%- endif -%}"
+            src="{{ section.settings.banner_image_mobile | img_url: '535x' }}"
+            alt="{{ section.settings.banner_image_mobile.alt }}" />
+      {% endif %}
+  {% endif %}
+  {% if section.settings.subtitle != blank or section.settings.content != blank or section.settings.title != blank %}
+    <div class="header-container recommendations-banner-text-content">
+      {% if section.settings.subtitle != blank %}
+        <div class="subtitle" style="color: {{ section.settings.subtitle_color }};">{{ section.settings.subtitle }}</div>
+      {% endif %}
+      {% if section.settings.content != blank %}
+        <div class="content" style="color: {{ section.settings.content_color }};">{{ section.settings.content }}</div>
+      {% endif %}
+      {% if section.settings.title != blank %}
+        <div class="title" style="color: {{ section.settings.title_color }};">{{ section.settings.title }}</div>
+      {% endif %}
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Banner",
+  "settings": [
+    {
+      "id":"banner_image",
+      "type":"image_picker",
+      "label":"Image for PC"
+    },
+    {
+      "id":"banner_image_mobile",
+      "type":"image_picker",
+      "label":"Image for Mobile"
+    },
+    {
+      "id":"subtitle",
+      "type":"textarea",
+      "label":"Subtitle"
+    },
+    {
+      "id":"subtitle_color",
+      "type":"color",
+      "label":"Text color"
+    },
+    {
+      "id":"content",
+      "type":"textarea",
+      "label":"Content"
+    },
+    {
+      "id":"content_color",
+      "type":"color",
+      "label":"Text color"
+    },
+    {
+      "id":"title",
+      "type":"textarea",
+      "label":"Title"
+    },
+    {
+      "id":"title_color",
+      "type":"color",
+      "label":"Text color"
+    }
+]
+}
+{% endschema %}

@@ -1,0 +1,135 @@
+<style>
+  .pp-faq__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .pp-faq__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+
+<div
+  class="pp-faq__section pp-faq__section-{{ section.id }}"
+  data-id="_{{ section.settings.id | downcase | remove: ' ' | replace: '&', '-' }}"
+>
+  <div class="container--default">
+    <h2 class="pp-faq__heading text--heading text--black">
+      {{ section.settings.title }}
+    </h2>
+
+    <div class="pp-faq__container">
+      {% for block in section.blocks %}
+        <div class="pp-faq__wrapper">
+          <div class="pp-faq__question-wrapper {% if forloop.index == 1 %} open {% endif %}">
+            <h3 class="pp-faq__question text--black">
+              {{ block.settings.title }}
+            </h3>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M17 15L12 10L7 15" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div
+            class="pp-faq__answer"
+            {% if forloop.index == 1 %}
+              style="display: block;"
+            {% endif %}
+          >
+            {{ block.settings.answer }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <p class="bottom-description">Los términos “DELTA” y “RIVER”, que se mencionan en esta página, se refieren a productos fabricados exclusivamente por ECOFLOW INC.</p>
+  </div>
+</div>
+<script>
+  $('.pp-faq__question-wrapper').click(function () {
+    $(this).toggleClass('open');
+    $(this).siblings('.pp-faq__answer').slideToggle();
+  });
+</script>
+
+{% schema %}
+{
+  "name": "PP FAQ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "id",
+      "label": "Section ID",
+      "default": "FAQ"
+    },
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title",
+      "default": "Let’s Answer Your Questions"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Question",
+          "default": "ppat is a rigid solar panel?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "label",
+          "default": "<p>Our rigid solar panels are made from highly efficient monocrystalline solar cells that convert up to 23% of solar into usable energy. The cells are protected by a robust, anti-corrosive aluminum frame, making them perfect for outdoor use.</p>"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

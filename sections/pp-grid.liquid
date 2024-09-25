@@ -1,0 +1,243 @@
+<style>
+  .pp-grid__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+
+
+  @media (min-width: 768px) {
+    .pp-grid__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+
+<div class="pp-grid__section pp-grid__section-{{ section.id }}">
+  <div class="container--default">
+    <div class="pp-grid__container">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'grid' %}
+            <div class="pp-grid__item pp-grid__item--default pp-grid__item__item--{{ forloop.index }} pp-grid__item--{{ block.id }}">
+              <img
+                class="display--desktop"
+                src="{{ block.settings.image | img_url: 'master' }}"
+                alt="{{ block.settings.image.alt }}"
+              >
+              <img
+                class="display--mobile"
+                src="{{ block.settings.image_mobile | img_url: 'master' }}"
+                alt="{{ block.settings.image_mobile.alt }}"
+              >
+
+              <h3
+                class="pp-grid__item-heading {% if block.settings.text_align == 'left' %} text--left {% elsif block.settings.text_align == 'center' %} text--center {% else %} text--right {% endif %} {% if block.settings.text_size == 'default' %} text--default {% else %} text--small {% endif %}"
+                style="color:{{ block.settings.text_color }};"
+              >
+                {{ block.settings.title }}
+              </h3>
+            </div>
+          {% when 'grid_wide' %}
+            <div class="pp-grid__item pp-grid__item--wide pp-grid__item__item--{{ forloop.index }} pp-grid__item--{{ block.id }}">
+              <img
+                class="display--desktop"
+                src="{{ block.settings.image | img_url: 'master' }}"
+                alt="{{ block.settings.image.alt }}"
+              >
+              <img
+                class="display--mobile"
+                src="{{ block.settings.image_mobile | img_url: 'master' }}"
+                alt="{{ block.settings.image_mobile.alt }}"
+              >
+              <h3
+                class="pp-grid__item-heading {% if block.settings.text_align == 'left' %} text--left {% elsif block.settings.text_align == 'center' %} text--center {% else %} text--right {% endif %} {% if block.settings.text_size == 'default' %} text--default {% else %} text--small {% endif %}"
+                style="color:{{ block.settings.text_color }};"
+              >
+                {{ block.settings.title }}
+              </h3>
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "PP Grid",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "grid",
+      "name": "Grid",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Grid Image Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Grid Image Mobile"
+        },
+        {
+          "type": "html",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#000000"
+        },
+        {
+          "type": "select",
+          "id": "text_align",
+          "label": "Text Alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "select",
+          "id": "text_size",
+          "label": "Text Size",
+          "options": [
+            {
+              "value": "default",
+              "label": "Default"
+            },
+            {
+              "value": "small",
+              "label": "Small"
+            }
+          ],
+          "default": "default"
+        }
+      ]
+    },
+    {
+      "type": "grid_wide",
+      "name": "Grid Wide",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Grid Image Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Grid Image Mobile"
+        },
+        {
+          "type": "html",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#000000"
+        },
+        {
+          "type": "select",
+          "id": "text_align",
+          "label": "Text Alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "select",
+          "id": "text_size",
+          "label": "Text Size",
+          "options": [
+            {
+              "value": "default",
+              "label": "Default"
+            },
+            {
+              "value": "small",
+              "label": "Small"
+            }
+          ],
+          "default": "default"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,98 @@
+<div class="ecocredits-use__section background--black" id="_{{- section.settings.nav_1 | downcase | remove: ' ' -}}">
+  <div class="ecocredits-use__container container--normal">
+    {% if section.settings.title != blank %}
+      <h2 class="ecocredits-use__title ec__text--white">{{ section.settings.title }}</h2>
+    {% endif %}
+  </div>
+  <div class="ecocredits-user__wrapper">
+    <div class="ecocredits-use__steps__container">
+      {% for block in section.blocks %}
+        <div class="ecocredits-use__block">
+          <div class="ecocredits-use__block__image">
+            {% if block.settings.image != blank %}
+              <img
+                src="{{ block.settings.image | img_url: 'master' }}"
+                alt="{{ block.settings.image.alt }}"
+              >
+            {% endif %}
+          </div>
+          {% if block.settings.title != blank %}
+            <div class="ecocredits-use__block__title__wrapper">
+              <h3 class="ecocredits-use__block__title ec__text--white">{{ block.settings.title }}</h3>
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="ecocredits-use__container container--normal">
+    {% if section.settings.button_text != blank %}
+      <a class="ecocredits-use__button--link" href="{{ section.settings.button_link }}">
+        <div class="ecocredits-use__button__container">
+          <span
+            class="ec__text--white"
+          >
+            {{- section.settings.button_text -}}
+          </span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="17.364" height="11.802" viewBox="0 0 17.364 11.802">
+            <g id="编组_5" data-name="编组 5" transform="translate(1 2.04)">
+              <path id="直线_3" data-name="直线 3" d="M14,.5H0" transform="translate(0 3.361)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+              <path id="路径" d="M0,0,6.23-.77,5.46,5.46" transform="translate(10 0) rotate(45)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+            </g>
+          </svg>
+        </div>
+      </a>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Ecocredits Use",
+  "max_blocks": 3,
+  "settings": [
+    {
+      "type": "text",
+      "id": "nav_1",
+      "label": "Section ID Should be the same on the navigation on RAL section",
+      "default": "How to use"
+    },
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Section Title",
+      "default": "How to use EcoCredits?"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Go and Use"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "steps",
+      "name": "Steps",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image Desktop"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Redeem for coupons"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,269 @@
+.page-tradein-online__section .container {
+    font-family: Gotham;
+}
+
+.page-tradein-online__section .form-box-outline {
+    padding: 60px;
+    border: 2px solid #E4E4E4;
+    border-radius: 20px;
+}
+
+.page-tradein-online__section .select-box{
+    background-color: #F3F3F3;
+    color: #212121;
+    border: 1px #000 solid;
+    background-clip: padding-box;
+    border-radius: 100px;
+    overflow: hidden;
+}
+
+.page-tradein-online__section .select-box select {
+    width: 100%;
+    height: 100%;
+    border: none;
+    appearance: none;
+    font-weight: 400;
+    font-size: 13px;
+    background-color: transparent;
+}
+
+.page-tradein-online__section .step-controls__center{
+    width: 100%;
+}
+
+.page-tradein-online__section .steps > .step.is-active:last-child > span{
+    display: none;
+}
+
+.page-tradein-online__section .no-padding{
+    padding: 0px !important;
+}
+
+.page-tradein-online__section .input-file-label input[type=file]{
+    display:none;
+}
+
+.page-tradein-online__section .field .field__input-wrapper p,
+.page-tradein-online__section .field .field__input-wrapper label{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18.2px;
+    color: #6E6E72;
+}
+
+.page-tradein-online__section .field .field__input-wrapper label a{
+    text-decoration: underline;
+}
+
+.page-tradein-online__section .upload-image-area,
+.page-tradein-online__section .uploaded-images,
+.page-tradein-online__section .select-style, .field__input{
+    font-size: 13px;
+    font-weight: bold;
+    font-family: 'Gotham';
+}
+
+.page-tradein-online__section .form-info p,
+.page-tradein-online__section .gift-card-summary p{
+    font-weight: 500;
+    font-size: 18px;
+    color: #212121;
+}
+
+.page-tradein-online__section .steps{
+    max-width: none;
+}
+
+.page-tradein-online__section .field-label{
+    margin-bottom: 32px;
+}
+
+.page-tradein-online__section .form-box-no-outline .field{
+    margin-bottom: 48px;
+}
+
+.page-tradein-online__section .steps.steps__compact{
+    max-width: 500px;
+}
+
+
+.page-tradein-online__section .gift-card-summary p.gray,
+.page-tradein-online__section .form-info p.gray,
+.page-tradein-online__section .upload-image-area p{
+    color: #6E6E72;
+}
+
+.page-tradein-online__section .form-info p.gray strong,
+.page-tradein-online__section .form-info p strong,
+.page-tradein-online__section .gift-card-summary p strong{
+    color: #212121;
+}
+
+.page-tradein-online__section .form-info.md-b-margin{
+    margin-bottom: 32px;
+}
+
+.page-tradein-online__section .form-info.sm-b-margin{
+    margin-bottom: 24px;
+}
+
+.option-circle-style {
+    display: inline-block;
+}
+.option-circle-style input {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.option-circle-style label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #F3F3F3;
+    border-radius: 20px;
+    padding: 20px;
+    font-size: 18px;
+    line-height: 1;
+    font-weight: bold;
+    position: relative;
+    height: 80px;
+}
+.option-circle-style .ala-option {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #C1C1C1;
+    position: relative;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.option-circle-style .ala-option::before {
+    content: '';
+    display: block;
+    width: 14px;
+    height: 14px;
+    background-color: transparent;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.option-circle-style input:checked+.ala-option::before {
+    background-color: #212121;
+}
+.option-agree {
+    display: flex;
+    align-items: center;
+}
+
+.page-tradein-online__section.floating-labels .field__label {
+    padding: 0 8px;
+}
+.page-tradein-online__section .field.field--show-floating-label .upload-image-area,
+.page-tradein-online__section .field.field--show-floating-label .uploaded-images,
+.page-tradein-online__section .field.field--show-floating-label .select-style,
+.page-tradein-online__section .field.field--show-floating-label .field__input {
+    padding-top: 26px;
+}
+
+
+.gift-card-img {
+    position: relative;
+    max-width: 518px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.gift-card-img img {
+    width: 100%;
+}
+.gift-card-img.gift-card-img--level-3 {
+    color: #0ECFE2;
+}
+.gift-card-img.gift-card-img--level-2 {
+    color: #ED7D7D;
+}
+.gift-card-img.gift-card-img--level-1 {
+    color: #E5A932;
+}
+.gift-card-img__amount {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    z-index: 9;
+    font-size: 62px;
+    line-height: 62px;
+    font-weight: 400;
+    padding-left: 22px;
+}
+.gift-card-img__amount i {
+    font-style: normal;
+    font-size: 32px;
+    line-height: 32px;
+    display: inline-block;
+    position: absolute;
+    top: 2px;
+    left: 0;
+}
+
+@media (max-width: 767px){
+    .page-tradein-online__section .form-box-outline {
+        padding: 20px;
+    }
+    .page-tradein-online__section .gift-card-summary p,
+    .page-tradein-online__section .form-info p{
+        font-size: 16px;
+    }
+    .page-tradein-online__section .step-controls .step-controls__right a.btn-pill,
+    .page-tradein-online__section .gift-card-btn a.btn-pill,
+    .page-tradein-online__section .download-btn a.btn-pill{
+        padding: 14px 30px;
+    }
+    .page-tradein-online__section .gift-card-img{
+        margin-bottom: 32px;
+    }
+    .page-tradein-online__section .step-controls__right {
+        margin-bottom: 24px;
+    }
+    .page-tradein-online__section .step-controls > .btn {
+        order: 2;
+    }
+    .page-tradein-online__section .step-header {
+        margin: 0 -30px;
+        padding: 0 14px;
+        overflow: hidden;
+    }
+    .page-tradein-online__section .step-controls [data-back-button] {
+        margin-top: 0;
+    }
+    .page-tradein-online__section .form-box-no-outline .field,
+    .page-tradein-online__section .form-info {
+        margin-bottom: 32px;
+    }
+    .page-tradein-online__section .step-controls {
+        margin: 32px 0;
+    }
+}
+
+@media (max-width: 559px){
+    .gift-card-img__amount {
+        font-size: 10vw;
+        line-height: 10vw;
+        padding-left: 4vw;
+        left: 3vw;
+        bottom: 3vw;
+    }
+    .gift-card-img__amount i {
+        font-size: 6vw;
+        line-height: 6vw;
+        top: 0;
+    }
+}
+@media (max-width: 500px){
+    .page-tradein-online__section .step-container .steps:not(.steps__compact) {
+        max-width: none;
+        position: static;
+        width: 560px;
+    }
+}

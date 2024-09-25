@@ -1,0 +1,105 @@
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+  >
+
+  {{ 'rigid-panels-slider.css' | asset_url | stylesheet_tag }}
+
+  <div class="rigid-panels-slider rigid-container">
+    <h2>{{ section.settings.title }}</h2>
+    <div class="rigid-panels-slider-grid">
+      <div class="swiper mobile-only">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            <div class="swiper-slide">
+              {% assign image = block.settings.image %}
+              {% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+              <div
+                class="custom-img-wrapper"
+                style="padding-top: {{ pt }}%;"
+              >
+                <img
+                  class="custom-img"
+                  srcset="
+                    {{ image | img_url: '500x' }} 500w,
+                    {{ image | img_url: '600x' }} 600w,
+                    {{ image | img_url: 'master' }} 700w
+                  "
+                  loading="lazy"
+                >
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="swiper-pagination mobile-only"></div>
+
+      {% for block in section.blocks %}
+        <div class="rigid-panels-slider-grid__item desktop-only">
+          {% assign image = block.settings.desktopImage %}
+          {% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+          <div
+            class="custom-img-wrapper"
+            style="padding-top: {{ pt }}%;"
+          >
+            <img
+              class="custom-img"
+              srcset="
+                {{ image | img_url: '750x' }} 1000w,
+                {{ image | img_url: '800x' }} 1200w,
+                {{ image | img_url: 'master' }} 1400w
+              "
+              alt="{{ image.alt }}"
+              loading="lazy"
+            >
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <script type="module">
+    import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js';
+
+    (function () {
+      const swiper = new Swiper('#shopify-section-{{ section.id }} .swiper', {
+        slidesPerView: 1,
+        spaceBetween: 24,
+        pagination: {
+          el: '#shopify-section-{{ section.id }} .swiper-pagination',
+        },
+      });
+    })();
+  </script>
+
+  {% schema %}
+  {
+    "name": "Rigid Panels Slider",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Why Choose EcoFlow Rigid Solar Panels?"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "slide",
+        "name": "Slide",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "desktopImage",
+            "label": "Desktop Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Mobile Image"
+          }
+        ]
+      }
+    ]
+  }
+  {% endschema %}

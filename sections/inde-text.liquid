@@ -1,0 +1,64 @@
+<div id="power-independence" class="cut-bill-section-wrapper{% if section.settings.video %} has-video{% endif %}">
+  <div class="cut-bill-text">
+    {% assign title = section.settings.title %}
+    {% assign desc = section.settings.desc %}
+
+    {% if title != blank %}
+      <h2>{{ title }}</h2>
+    {% endif %}
+    {% if desc != blank %}
+      <div>
+        {{ desc }}
+      </div>
+    {% endif %}
+  </div>
+  {% if section.settings.video %}
+    <div class="cut-bill-video-wrapper video-wrapper-{{ section.id }}">
+      {{ section.settings.video | video_tag: controls: true, image_size: '1080x', autoplay: true, loop: true }}
+    </div>
+    <script>
+      document.querySelector(".video-wrapper-{{ section.id }} video").addEventListener("click", event => {
+        const element = event.target;
+        if (element.requestFullscreen) {
+          element.requestFullscreen();
+        } else if (element.mozRequestFullScreen) {
+          element.mozRequestFullScreen();
+        } else if (element.webkitRequestFullscreen) {
+          element.webkitRequestFullscreen();
+        } else if (element.msRequestFullscreen) {
+          element.msRequestFullscreen();
+        } else if (element.webkitEnterFullScreen) {
+          element.webkitEnterFullScreen();
+        }
+      });
+    </script>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Text",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Text",
+      "info": "By default we are using locale to get the title. If you want to override it, you can do it here."
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "desc",
+      "label": "Description"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video"
+    }
+  ]
+}
+{% endschema %}

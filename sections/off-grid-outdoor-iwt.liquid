@@ -1,0 +1,91 @@
+<div class="off-grid-outdoor-iwt__section">
+  <div class="off-grid-outdoor-iwt__wrapper container--normal">
+    {% for block in section.blocks %}
+      <div
+        class="
+            off-grid-outdoor-iwt__container
+          {% if block.settings.image_position == 'right' %}
+            image--right
+            {% else %}
+            image--left
+          {% endif %}
+        "
+      >
+        <div class="off-grid-outdoor-iwt__text__container">
+          {% if block.settings.title != blank %}
+            <h3 class="off-grid-outdoor-iwt__title hb__text--subheading">{{ block.settings.title }}</h3>
+          {% endif %}
+          {% if block.settings.subtitle != blank %}
+            <span class="hb__text--description">{{ block.settings.subtitle }}</span>
+          {% endif %}
+        </div>
+        <div class="off-grid-outdoor-iwt__image__container">
+          {% if block.settings.image != blank %}
+            <img
+              class="display--desktop hb__border-radius--8"
+              src="{{ block.settings.image | img_url: 'master' }}"
+              alt="{{ block.settings.image.alt }}"
+            >
+            <img
+              class="display--mobile hb__border-radius--8"
+              src="{{ block.settings.image_mobile | img_url: 'master' }}"
+              alt="{{ block.settings.image_mobile.alt }}"
+            >
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Outdoor IWT",
+  "blocks": [
+    {
+      "type": "iwt",
+      "name": "Image with Text",
+      "settings": [
+        {
+          "type": "select",
+          "id": "image_position",
+          "label": "Set Section Image Position",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "right",
+          "info": "Set Section Image Position"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Section Image Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Section Image Mobile"
+        },
+        {
+          "type": "html",
+          "id": "title",
+          "label": "Section Title",
+          "default": "Leise, sicher und emissionsfrei – Solaranlagen mit Stromspeicher für Ihr Zuhause"
+        },
+        {
+          "type": "richtext",
+          "id": "subtitle",
+          "label": "Subtitle"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

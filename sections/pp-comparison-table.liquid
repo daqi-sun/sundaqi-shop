@@ -1,0 +1,446 @@
+<style>
+  .pp-comparison-table__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .pp-comparison-table__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+
+<div class="pp-comparison-table__section pp-comparison-table__section-{{ section.id }}">
+  <div class="container--default">
+    <div class="pp-comparison-table__content-container">
+      <div class="pp-comparison-table__text-container">
+        {% if section.settings.title != blank %}
+          <h2 class="pp-comparison-table__section-heading text--heading text--black">
+            {{ section.settings.title }}
+          </h2>
+        {% endif %}
+        {% if section.settings.subtitle != blank %}
+          <p class="pp-comparison-table__section-description text--description text--gray">
+            {{ section.settings.subtitle }}
+          </p>
+        {% endif %}
+        {% if section.settings.description != blank %}
+          <p class="pp-comparison-table__section-description text--description text--gray">
+            {{ section.settings.description }}
+          </p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <feature-chart class="pp-comparison-table__wrapper ">
+    <div class="pp-comparison-table__container background--white scroll-area">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'table_head' %}
+            <div class="pp-comparison-table__table-row pp-comparison-table__table-row--product">
+              {% comment %} First Product Column {% endcomment %}
+              <div class="pp-comparison-table__column-heading text--center text--black">
+                <div class="pp-comparison-table__image-wrapper">
+                  <a href="{{ block.settings.first_column_url }}" target="_blank">
+                    <img
+                      src="{{ block.settings.first_column_image | img_url: 'master' }}"
+                      alt="{{ block.settings.first_column_image.alt }}"
+                    >
+                  </a>
+                </div>
+                <div class="pp-comparison-table__title-wrapper">
+                  <h4 class="pp-comparison-table__column__title">{{ block.settings.first_column_title }}</h4>
+                </div>
+                <div class="pp-comparison-table__column_price-container">
+                  <p class="pp-comparison-table__column__price">{{ block.settings.first_column_price }} €</p>
+                  <p class="pp-comparison-table__column__compare-price">
+                    {{ block.settings.first_column_compare_price }} €
+                  </p>
+                </div>
+                <div class="pp-comparison-table__column__button-wrapper">
+                  <a href="{{ block.settings.first_column_url }}" target="_blank" class="button--container ">
+                    <span class="button text--white background--dark-blue">
+                      {{- section.settings.button_label -}}
+                    </span>
+                  </a>
+                </div>
+              </div>
+
+              {% comment %} Second Product Column {% endcomment %}
+              <div class="pp-comparison-table__column-heading text--center text--black">
+                <div class="pp-comparison-table__image-wrapper">
+                  <a href="{{ block.settings.second_column_url }}" target="_blank">
+                    <img
+                      src="{{ block.settings.second_column_image | img_url: 'master' }}"
+                      alt="{{ block.settings.second_column_image.alt }}"
+                    >
+                  </a>
+                </div>
+                <div class="pp-comparison-table__title-wrapper">
+                  <h4 class="pp-comparison-table__column__title">{{ block.settings.second_column_title }}</h4>
+                </div>
+                <div class="pp-comparison-table__column_price-container">
+                  <p class="pp-comparison-table__column__price">{{ block.settings.second_column_price }} €</p>
+                  <p class="pp-comparison-table__column__compare-price">
+                    {{ block.settings.second_column_compare_price }} €
+                  </p>
+                </div>
+                <div class="pp-comparison-table__column__button-wrapper">
+                  <a href="{{ block.settings.second_column_url }}" target="_blank" class="button--container ">
+                    <span class="button text--white background--dark-blue">
+                      {{- section.settings.button_label -}}
+                    </span>
+                  </a>
+                </div>
+              </div>
+
+              {% comment %} Third Product Column {% endcomment %}
+              <div class="pp-comparison-table__column-heading text--center text--black">
+                <div class="pp-comparison-table__image-wrapper">
+                  <a href="{{ block.settings.third_column_url }}" target="_blank">
+                    <img
+                      src="{{ block.settings.third_column_image | img_url: 'master' }}"
+                      alt="{{ block.settings.third_column_image.alt }}"
+                    >
+                  </a>
+                </div>
+                <div class="pp-comparison-table__title-wrapper">
+                  <h4 class="pp-comparison-table__column__title">{{ block.settings.third_column_title }}</h4>
+                </div>
+                <div class="pp-comparison-table__column_price-container">
+                  <p class="pp-comparison-table__column__price">{{ block.settings.third_column_price }} €</p>
+                  <p class="pp-comparison-table__column__compare-price">
+                    {{ block.settings.third_column_compare_price }} €
+                  </p>
+                </div>
+                <div class="pp-comparison-table__column__button-wrapper">
+                  <a href="{{ block.settings.third_column_url }}" target="_blank" class="button--container ">
+                    <span class="button text--white background--dark-blue">
+                      {{- section.settings.button_label -}}
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          {% when 'table_details' %}
+            <div class="pp-comparison-table__table-row">
+              <div class="pp-comparison-table__row__heading  pp-comparison-table__title text--gray">
+                {{ block.settings.row_title }}
+              </div>
+              <div class="pp-comparison-table__row__value">
+                {% if block.settings.first_column_image_1 != blank %}
+                  <div class="pp-comparison-table__row__image--wrapper">
+                    <img
+                      src="{{ block.settings.first_column_image_1 | img_url: 'master' }}"
+                      alt="{{ block.settings.first_column_image_1.alt }}"
+                    >
+                    {% if block.settings.first_column_image_2 != blank %}
+                      <p>or</p>
+                      <img
+                        src="{{ block.settings.first_column_image_2 | img_url: 'master' }}"
+                        alt="{{ block.settings.first_column_image_2.alt }}"
+                      >
+                    {% endif %}
+                  </div>
+                {% endif %}
+                {{ block.settings.first_column_data }}
+              </div>
+              <div class="pp-comparison-table__row__value">
+                {% if block.settings.second_column_image_1 != blank %}
+                  <div class="pp-comparison-table__row__image--wrapper">
+                    <img
+                      src="{{ block.settings.second_column_image_1 | img_url: 'master' }}"
+                      alt="{{ block.settings.second_column_image_1.alt }}"
+                    >
+                    {% if block.settings.second_column_image_2 != blank %}
+                      <p>or</p>
+                      <img
+                        src="{{ block.settings.second_column_image_2 | img_url: 'master' }}"
+                        alt="{{ block.settings.second_column_image_2.alt }}"
+                      >
+                    {% endif %}
+                  </div>
+                {% endif %}
+                {{ block.settings.second_column_data }}
+              </div>
+              <div class="pp-comparison-table__row__value">
+                {% if block.settings.third_column_image_1 != blank %}
+                  <div class="pp-comparison-table__row__image--wrapper">
+                    <img
+                      src="{{ block.settings.third_column_image_1 | img_url: 'master' }}"
+                      alt="{{ block.settings.third_column_image_1.alt }}"
+                    >
+                    {% if block.settings.third_column_image_2 != blank %}
+                      <p>or</p>
+                      <img
+                        src="{{ block.settings.third_column_image_2 | img_url: 'master' }}"
+                        alt="{{ block.settings.third_column_image_2.alt }}"
+                      >
+                    {% endif %}
+                  </div>
+                {% endif %}
+                {{ block.settings.third_column_data }}
+              </div>
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </feature-chart>
+</div>
+
+<div class="flex">
+  <div class="text--wrapper">
+    <p></p>
+  </div>
+  <div class="image--wrapper">
+    <img src="" alt="">
+    <img src="" alt="">
+  </div>
+</div>
+{% schema %}
+{
+  "name": "PP Comparison Table",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Wählen Sie Ihre Lösung"
+    },
+    {
+      "type": "html",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Der Power Stream-Mikrowechselrichter ist mit allen tragbaren EcoFlow-Powerstations kompatibel. Mit Batteriekapazitäten von 1kWh bis 3,6kWh können Sie die optimale Option für Ihr Zuhause wählen. Darüber hinaus bieten wir eine Vielzahl von Solarmodulen an, um die Installationsanforderungen von Wohnungen und Häusern in verschiedenen Szenarien zu erfüllen."
+    },
+    {
+      "type": "html",
+      "id": "description",
+      "label": "Description",
+      "default": "Hier finden Sie eine Referenztabelle, die Ihnen bei der Auswahl der richtigen Lösung hilft:"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Jetzt bestellen"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "table_details",
+      "name": "Table Details",
+      "settings": [
+        {
+          "type": "html",
+          "id": "row_title",
+          "label": "Row Title",
+          "default": "Notstromversorgung"
+        },
+        {
+          "type": "header",
+          "content": "1st Column"
+        },
+        {
+          "type": "image_picker",
+          "id": "first_column_image_1",
+          "label": "1st Column Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "first_column_image_2",
+          "label": "1st Column Image 2"
+        },
+        {
+          "type": "richtext",
+          "id": "first_column_data",
+          "label": "1st Column Data"
+        },
+        {
+          "type": "header",
+          "content": "2nd Column"
+        },
+        {
+          "type": "image_picker",
+          "id": "second_column_image_1",
+          "label": "2nd Column Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "second_column_image_2",
+          "label": "2nd Column Image 2"
+        },
+        {
+          "type": "richtext",
+          "id": "second_column_data",
+          "label": "2nd Column Data"
+        },
+        {
+          "type": "header",
+          "content": "3rd Column"
+        },
+        {
+          "type": "image_picker",
+          "id": "third_column_image_1",
+          "label": "3rd Column Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "third_column_image_2",
+          "label": "3rd Column Image 2"
+        },
+        {
+          "type": "richtext",
+          "id": "third_column_data",
+          "label": "3rd Column Data"
+        }
+      ]
+    },
+    {
+      "type": "table_head",
+      "name": "Table Head",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "1st Column Heading"
+        },
+        {
+          "type": "image_picker",
+          "id": "first_column_image",
+          "label": "1st Column Image"
+        },
+        {
+          "type": "html",
+          "id": "first_column_title",
+          "label": "1st Column Title",
+          "default": "2 kWh Speicherkeit"
+        },
+        {
+          "type": "text",
+          "id": "first_column_price",
+          "label": "1st Column Price",
+          "default": "2240,34"
+        },
+        {
+          "type": "text",
+          "id": "first_column_compare_price",
+          "label": "1st Column Compare Price",
+          "default": "3674,00"
+        },
+        {
+          "type": "url",
+          "id": "first_column_url",
+          "label": "1st Column URL"
+        },
+        {
+          "type": "header",
+          "content": "2nd Column Heading"
+        },
+        {
+          "type": "image_picker",
+          "id": "second_column_image",
+          "label": "2nd Column Image"
+        },
+        {
+          "type": "html",
+          "id": "second_column_title",
+          "label": "2nd Column Title",
+          "default": "1 kWh Speicherkit"
+        },
+        {
+          "type": "text",
+          "id": "second_column_price",
+          "label": "2nd Column Price",
+          "default": "980,67"
+        },
+        {
+          "type": "text",
+          "id": "second_column_compare_price",
+          "label": "2nd Column Compare Price",
+          "default": "1167,00"
+        },
+        {
+          "type": "url",
+          "id": "second_column_url",
+          "label": "2nd Column URL"
+        },
+        {
+          "type": "header",
+          "content": "3rd Column Heading"
+        },
+        {
+          "type": "image_picker",
+          "id": "third_column_image",
+          "label": "3rd Column Image"
+        },
+        {
+          "type": "html",
+          "id": "third_column_title",
+          "label": "3rd Column Title",
+          "default": "Ohne Speicher-Kit"
+        },
+        {
+          "type": "text",
+          "id": "third_column_price",
+          "label": "3rd Column Price",
+          "default": "827,46"
+        },
+        {
+          "type": "text",
+          "id": "third_column_compare_price",
+          "label": "3rd Column Compare Price",
+          "default": "1200,00"
+        },
+        {
+          "type": "url",
+          "id": "third_column_url",
+          "label": "3rd Column URL"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

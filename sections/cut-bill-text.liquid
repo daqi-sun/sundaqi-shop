@@ -1,0 +1,44 @@
+<div class="cut-bill-section-wrapper">
+  <div class="cut-bill-text">
+    {% assign title = 'cut-bill.text.title' | t %}
+    {% if section.settings.title != blank %}
+      {% assign title = section.settings.title %}
+    {% endif %}
+    {% assign desc = 'cut-bill.text.description' | t %}
+    {% if section.settings.desc != blank %}
+      {% assign desc = section.settings.desc %}
+    {% endif %}
+
+    <h2>{{ title }}</h2>
+    <div>
+      {{ desc }}
+      {% assign desc2 = 'cut-bill.text.description_2' | t %}
+      {% if desc2 != blank %}
+        {{ desc2 }}
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Text",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Text",
+      "info": "By default we are using locale to get the title. If you want to override it, you can do it here."
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "desc",
+      "label": "Description"
+    }
+  ]
+}
+{% endschema %}

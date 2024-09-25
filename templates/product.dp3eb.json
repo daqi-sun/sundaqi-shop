@@ -1,0 +1,503 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "daf26638-f596-4384-b150-72d380a3268d": {
+      "type": "product-atb-top",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "sticky-product-bar": {
+      "type": "sticky-product-bar",
+      "blocks": {
+        "588d25af-4d47-43ac-9697-b98aa2f65719": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Overview",
+            "tab_id": "product_information",
+            "section_class": ""
+          }
+        },
+        "tab_XdnN3k": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Specs",
+            "tab_id": "specs",
+            "section_class": ""
+          }
+        },
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "FAQ",
+            "tab_id": "faq",
+            "section_class": ""
+          }
+        },
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Compatibility",
+            "tab_id": "Compatibility",
+            "section_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "588d25af-4d47-43ac-9697-b98aa2f65719",
+        "tab_XdnN3k",
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4",
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38"
+      ],
+      "disabled": true,
+      "settings": {
+        "enabled": true,
+        "enabled_tabs": true
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "11795adc-1afa-4833-a193-258f495901ef": {
+          "type": "sku_block",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e": {
+          "type": "product_title",
+          "settings": {
+          }
+        },
+        "judge_me_reviews_preview_badge_eB3Gnj": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "0471109f-c130-454e-a9ba-c56412cc11f3": {
+          "type": "product_vendor",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185": {
+          "type": "product_price",
+          "settings": {
+          }
+        },
+        "d25a0285-4fb4-422d-b95b-ab67446120ad": {
+          "type": "product_description",
+          "settings": {
+            "desc_display": "default"
+          }
+        },
+        "79e1b437-5bbd-4b8a-ac55-27c2f795ee99": {
+          "type": "coupon_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Component_2_1.png",
+            "discount_off_text": "{{ product.metafields.custom.discount_off_text.value }}",
+            "code": "{{ product.metafields.custom.discount_code.value }}",
+            "show_copy_code_btn": true
+          }
+        },
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879": {
+          "type": "product_options_block",
+          "settings": {
+            "show_product_swatches": true,
+            "use_variant_image_for_swatches": true,
+            "button_content": ""
+          }
+        },
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe": {
+          "type": "quantity_block",
+          "settings": {
+          }
+        },
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0": {
+          "type": "accessories_section",
+          "settings": {
+            "title": "Puede que también necesites:",
+            "metafield": "accessories"
+          }
+        },
+        "9f863400-c572-447b-b273-93f1143583fa": {
+          "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/form-embed-block\/2632fe16-c075-4321-a88b-50b567f42507",
+          "disabled": true,
+          "settings": {
+            "formId": "UHSpKe"
+          }
+        },
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609": {
+          "type": "product_buttons",
+          "settings": {
+            "enable_payment_button": false,
+            "show_custom_icons": true,
+            "custom_payment_logo_1_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_08_7f374817-3a3e-42f2-95ce-077b67f293d2.svg?v=1672025209",
+            "custom_payment_logo_2_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_10_d8002835-e25f-4edb-9038-187f75f69a18.svg?v=1672025208",
+            "custom_payment_logo_3_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_02_a3ea7ab1-aa9a-4857-9ed6-01e62deccfce.svg?v=1672025208",
+            "custom_payment_logo_4_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_06_7c406d24-0983-49ff-ac8e-cf73032050d9.svg?v=1672025208",
+            "custom_payment_logo_5_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_07_be5959d4-9f22-4a31-8e40-285f8e3ac6e7.svg?v=1672025208",
+            "custom_payment_logo_6_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_04_7bff1113-0dc2-489f-8be8-d19dbe467a1a.svg?v=1672025208",
+            "custom_payment_logo_7_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_05_1c21f308-a0a3-4251-8641-87264da43d67.svg?v=1672025208",
+            "custom_payment_logo_8_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_01_96e6a30c-7908-4892-b6f1-75bce8657cd4.svg?v=1672025208",
+            "custom_payment_logo_9_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/sofort_icon_31ba2d5b-2c44-4960-8e80-645a7240c899.png?v=1679023017",
+            "custom_payment_logo_10_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/giropay_icon_c9d7e22e-cd7c-4bee-8de5-e50a4c6dc378.png?v=1679023017",
+            "custom_payment_logo_11_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/ideal_icon_8548c48a-3c4e-4052-95de-670062a453ce.png?v=1679023017",
+            "custom_payment_logo_12_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/multibanco_icon_e3f9b26f-234c-4a06-9e48-adfd188e7deb.png?v=1679023016",
+            "custom_payment_logo_13_svg": "",
+            "custom_payment_logo_14_svg": "",
+            "custom_payment_logo_15_svg": ""
+          }
+        },
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% if product.metafields.custom.trade_message != blank %}\n          <div class=\"trade-message\">♻️{{product.metafields.custom.trade_message}} <a href=\"\/pages\/trade-in\" target=\"_blank\">Learn more<\/a><\/div>\n{% endif %}"
+          }
+        }
+      },
+      "block_order": [
+        "11795adc-1afa-4833-a193-258f495901ef",
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e",
+        "judge_me_reviews_preview_badge_eB3Gnj",
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774",
+        "0471109f-c130-454e-a9ba-c56412cc11f3",
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185",
+        "d25a0285-4fb4-422d-b95b-ab67446120ad",
+        "79e1b437-5bbd-4b8a-ac55-27c2f795ee99",
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879",
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe",
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0",
+        "9f863400-c572-447b-b273-93f1143583fa",
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609",
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a"
+      ],
+      "settings": {
+        "section_id": "product_information",
+        "show_breadcrumbs": true,
+        "show_pick_an_option": false,
+        "enable_linked_options": false,
+        "enabled_mobile_sticky_btns": true,
+        "media_size": "medium",
+        "enable_image_zoom": true,
+        "enable_video_looping": true,
+        "thumbnails_type": "grid",
+        "support_email": "",
+        "support_text": "",
+        "feature_1_show": false,
+        "feature_1_title": "Fast & Free Shipping",
+        "feature_1_content": "",
+        "feature_2_show": false,
+        "feature_2_title": "Warranty Protection",
+        "feature_2_content": "",
+        "feature_3_show": false,
+        "feature_3_title": "Secure Payments",
+        "feature_3_content": "",
+        "feature_4_show": false,
+        "feature_4_title": "Multi-channel Support",
+        "feature_4_content": ""
+      }
+    },
+    "5d8ff2e1-b470-4293-bb66-a665b232bc6b": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "320fbd98-1bfa-4cb8-a6c5-f2b90dea2ce0": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "<p>Los términos “DELTA” y “RIVER”, que se mencionan en esta página, se refieren a productos fabricados exclusivamente por ECOFLOW INC.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "320fbd98-1bfa-4cb8-a6c5-f2b90dea2ce0"
+      ],
+      "settings": {
+      }
+    },
+    "82f7f3bf-a9d8-4236-9823-651a58407999": {
+      "type": "pdp-whats-in-the-box",
+      "blocks": {
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/sl_DP3EB.png",
+            "cta_label": "Batería adicional inteligente EcoFlow DELTA Pro 3",
+            "link": "",
+            "cta_width": 40,
+            "cta_image_width": "100%",
+            "custom_width": 300,
+            "custom_height": 400,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 160
+          }
+        },
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/20240827-161831.png",
+            "cta_label": "Cable de enlace plano de batería adicional EcoFlow (0,85 m)",
+            "link": "",
+            "cta_width": 30,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 170,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 105
+          }
+        },
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-5": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Safety_Guide_621062a5-38d6-42ca-8c04-258751f6ec96.png",
+            "cta_label": "Guía de inicio rápido",
+            "link": "",
+            "cta_width": 30,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 180,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 130
+          }
+        },
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Quick_Start_Guide_e9c9c050-cbea-44ab-ae25-64cf988987cc.png",
+            "cta_label": "Guía de seguridad",
+            "link": "",
+            "cta_width": 30,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 170,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 130
+          }
+        },
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Warranty_Card_0fabeec4-b834-42f4-85c5-23e522208eaf.png",
+            "cta_label": "Tarjeta de garantía",
+            "link": "",
+            "cta_width": 30,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 180,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 130
+          }
+        }
+      },
+      "block_order": [
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-0",
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-2",
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-5",
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-3",
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-4"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Contenido de la caja",
+        "bottom_content": "",
+        "cta_height": 500,
+        "cta_height_mobile": 200,
+        "cta_half_height_mobile": 170,
+        "gutter_width": 8
+      }
+    },
+    "445d25b8-a88b-4de2-811c-2cbe8505573e": {
+      "type": "pdp-specs",
+      "blocks": {
+        "47af9637-9c18-4189-ac35-f8a415f77098": {
+          "type": "contents",
+          "settings": {
+            "title": "Capacidad",
+            "content": "<p>4096 Wh<\/p>"
+          }
+        },
+        "f3a1ff22-e1c2-499a-8610-4bc6dbcdf47b": {
+          "type": "contents",
+          "settings": {
+            "title": "Puerto de salida",
+            "content": "<p>40 V - 58,4 V = 100 A máx.<\/p>"
+          }
+        },
+        "9735a98e-fa4d-4712-9472-44c8d2a204d5": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso",
+            "content": "<p>33 kg<\/p>"
+          }
+        },
+        "a6725352-6830-4493-aba9-a2094cf75982": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso",
+            "content": "<p>EcoFlow DELTA Pro 3<\/p>"
+          }
+        },
+        "03cae209-41ad-43b9-ac45-d01ab3422542": {
+          "type": "contents",
+          "settings": {
+            "title": "Temperatura de descarga",
+            "content": "<p>-10°C ~ 45°C<\/p>"
+          }
+        },
+        "5e6f6e44-7544-4071-8a7e-25343ef62358": {
+          "type": "contents",
+          "settings": {
+            "title": "Temperatura de almacenamiento",
+            "content": "<p>-10°C ~ 45°C<\/p>"
+          }
+        },
+        "07c9b1a0-8f41-430f-a8b7-27b0d7cb41e9": {
+          "type": "contents",
+          "settings": {
+            "title": "Puerto de entrada",
+            "content": "<p>40 V - 58,4 V = 80 A máx.<\/p>"
+          }
+        },
+        "614680ef-24ec-4500-ab57-f0e4642ae896": {
+          "type": "contents",
+          "settings": {
+            "title": "Dimensiones",
+            "content": "<p>694 mm x 295 mm x 215 mm<\/p>"
+          }
+        },
+        "49c84d99-7423-4469-81f4-3fde371be7e4": {
+          "type": "contents",
+          "settings": {
+            "title": "Contenido de la caja",
+            "content": "<p>1. Batería adicional inteligente EcoFlow DELTA Pro 3 <br\/>2. Guía de inicio rápido <br\/>3. Guía de seguridad <br\/>4. Tarjeta de garantía <br\/>5. Cable de batería adicional EcoFlow<\/p>"
+          }
+        },
+        "b2e4d52a-2d0f-4095-bff6-6359bbaf8688": {
+          "type": "contents",
+          "settings": {
+            "title": "Pantalla",
+            "content": "<p> Matriz LED<\/p>"
+          }
+        },
+        "c2cef391-c4fe-4607-a2e2-4c1fb601e58f": {
+          "type": "contents",
+          "settings": {
+            "title": "Temperatura de carga",
+            "content": "<p>0°C ~ 45°C<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "47af9637-9c18-4189-ac35-f8a415f77098",
+        "f3a1ff22-e1c2-499a-8610-4bc6dbcdf47b",
+        "9735a98e-fa4d-4712-9472-44c8d2a204d5",
+        "a6725352-6830-4493-aba9-a2094cf75982",
+        "03cae209-41ad-43b9-ac45-d01ab3422542",
+        "5e6f6e44-7544-4071-8a7e-25343ef62358",
+        "07c9b1a0-8f41-430f-a8b7-27b0d7cb41e9",
+        "614680ef-24ec-4500-ab57-f0e4642ae896",
+        "49c84d99-7423-4469-81f4-3fde371be7e4",
+        "b2e4d52a-2d0f-4095-bff6-6359bbaf8688",
+        "c2cef391-c4fe-4607-a2e2-4c1fb601e58f"
+      ],
+      "settings": {
+        "section_id": "specs",
+        "title": "Especificaciones"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "grid_mobile": "2",
+        "heading": "You may also like",
+        "show_vendor": false
+      }
+    },
+    "star_terms_conditions_twgncT": {
+      "type": "star_terms_conditions",
+      "disabled": true,
+      "settings": {
+        "section_background": "",
+        "section_id": "",
+        "show_mobile": true,
+        "section_top_space": 120,
+        "section_bottom_space": 40,
+        "section_top_space_m": 40,
+        "section_bottom_space_m": 40,
+        "tc_heading": "<p><strong>EcoFlow DELTA Pro 3 Solar Home Battery System Preheat Campaign Terms & Conditions<\/strong><\/p>",
+        "heading_color": "#afafaf",
+        "tc": "<p>The EcoFlow DELTA Pro 3 Solar Home Battery System Preheat Campaign runs from 12 August 2024, 9 AM (CET) to 6 September 2024, 9 AM (CET). EcoFlow reserves the right to shorten or extend the campaign period at its sole discretion without prior notice.<\/p><p><strong>Eligibility<\/strong><\/p><p>The campaign is open to all European citizens 18 years old and above as of 9 AM on 12 August, 2024, 9 AM (CET).<\/p><p><\/p><p><strong>Campaign Details<\/strong><\/p><p>1. By entering your email address and subscribing, you agree to email marketing Terms & Conditions, subscribe to EcoFlow marketing emails, and receive updates from EcoFlow.<\/p><p>2. The first 200 purchases of EcoFlow DELTA Pro 3 and its bundles from 6 Sep at 9 AM to 6 Oct at 9 AM receive an EcoFlow Single Axis Solar Tracker as a gift. Of these first 200 orders for the DELTA Pro 3 and its bundle mentioned above, if the purchaser has subscribed to marketing emails about the EcoFlow DELTA Pro 3 on this preheat event page <a href=\"https:\/\/eu.ecoflow.com\/pages\/delta-pro-3-portable-power-station-preheat\" target=\"_blank\">https:\/\/eu.ecoflow.com\/pages\/delta-pro-3-portable-power-station-preheat<\/a> from 9 AM on 12 Aug to 8:59 AM on 6 Sep and remains as subscriber when the order is placed, the purchaser will be eligible to the exclusive benefits for subscribers: a FREE EcoFlow Single Axis Solar Tracker and a two-year extended warranty for the purchased EcoFlow DELTA Pro 3.<\/p><p><strong>When the number of orders meeting the above conditions reaches 200, the special offer for the first 200 purchases will be discontinued without further notification from the website.<\/strong><\/p><p>3. If a refund is issued on the original order, the gift (EcoFlow Single Axis Solar Tracker) must be returned and the two-year extended warranty for EcoFlow DELTA Pro 3 (exclusively for subscribers during the preheat campaign) will be invalidated upon refund.<\/p>",
+        "text_color": "#666666",
+        "highlight_color": "#000000",
+        "link_color": "#000000",
+        "text_alignment": "left",
+        "text_font_size": "medium",
+        "text_width": 1000,
+        "text_width_m": 800
+      }
+    },
+    "1676887592a3dc4fd0": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_a367dX": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_a367dX"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    }
+  },
+  "order": [
+    "daf26638-f596-4384-b150-72d380a3268d",
+    "sticky-product-bar",
+    "main",
+    "5d8ff2e1-b470-4293-bb66-a665b232bc6b",
+    "82f7f3bf-a9d8-4236-9823-651a58407999",
+    "445d25b8-a88b-4de2-811c-2cbe8505573e",
+    "product-recommendations",
+    "star_terms_conditions_twgncT",
+    "1676887592a3dc4fd0"
+  ]
+}

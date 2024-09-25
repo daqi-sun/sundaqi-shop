@@ -1,0 +1,93 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "Smart Home Panel Video",
+  "id": "shp-video-power",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "class": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "type": "checkbox",
+      "id": "atb_enable_checkbox",
+      "label": "Enable section",
+      "default": true,
+      "info": ""
+    },
+    {
+      "id": "block_title",
+      "type": "text",
+      "label": "Heading",
+      "default": "Product Intro Copy",
+      "info": ""
+    },
+    {
+      "id": "block_description",
+      "type": "text",
+      "label": "Description",
+      "default": "Long lasting life span",
+      "info": ""
+    },
+    {
+      "id": "atb_video_url",
+      "type": "text",
+      "label": "Video URL",
+      "info": ""
+    }
+  ],
+  "warnings": []
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_enable_checkbox' -%}
+{%- assign atb_enable_checkbox = val -%}
+{%- include 'atb-render' field:'block_title' -%}
+{%- assign block_title = val -%}
+{%- include 'atb-render' field:'block_description' -%}
+{%- assign block_description = val -%}
+{%- include 'atb-render' field:'atb_video_url' -%}
+{%- assign atb_video_url = val -%}
+{%- if atb_enable_checkbox == blank -%}
+{%- assign atb_enable_checkbox = false -%}
+{%- else -%}
+{%- assign atb_enable_checkbox = true -%}
+{%- endif -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section ">
+{% if atb_enable_checkbox %}
+  <section class="product-intro" id="shp-video-power">
+    <div class="container my-md-5 py-md-3 my-4">
+      <div class="row">
+        <div class="col-lg-7 mx-auto">
+          <div class="intro-heading">
+            <h2>{{ block_title }}</h2>
+            <p class="my-3">{{ block_description }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="pdp-big-img mt-4">
+        <div class="video-rd">
+          <video autoplay="autoplay" muted loop="loop" src="{{atb_video_url}}" width="100%"></video>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+<style>
+</style>
+
+<script type="application/javascript">
+</script>
+</section>

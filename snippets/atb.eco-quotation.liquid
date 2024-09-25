@@ -1,0 +1,111 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "Quotes",
+  "id": "eco-quotation",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "class": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "blocks",
+      "label": "Block ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": "",
+      "repeatable": "quote"
+    },
+    {
+      "id": "block_company_logo",
+      "type": "image_picker",
+      "label": "Background image",
+      "info": "180x100 recommended",
+      "repeatable": "quote"
+    },
+    {
+      "id": "block_quote",
+      "type": "text",
+      "label": "Quote",
+      "default": "EcoFlow DELTA will even top-up a Tesla, putting an extra five miles between you and the marauding zombies of the apocalypse.",
+      "repeatable": "quote",
+      "info": ""
+    },
+    {
+      "id": "block_company_info",
+      "type": "text",
+      "label": "Info",
+      "default": "From Forbes. © 2020 Forbes. Used under license.",
+      "repeatable": "quote",
+      "info": ""
+    }
+  ],
+  "warnings": [
+    "repeating image fields may not be properly handled"
+  ]
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_company_logo' -%}
+{%- assign block_company_logo = val -%}
+{%- include 'atb-render' field:'block_quote' -%}
+{%- assign block_quote = val -%}
+{%- include 'atb-render' field:'block_company_info' -%}
+{%- assign block_company_info = val -%}
+{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section ">
+<section class="eco-banner pb-4 feedback-main my-2">
+  <div class="container-fluid">
+    <div class="explainer-slider">
+      {% for block0 in blocks %}
+{%- assign my_image_key0 = block_company_logo[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image0 = images[my_image_key0] -%}
+      	<div class="feedback-block">
+            <h2>"{{ block_quote[forloop.index0] }}"</h2>
+            <p class="mt-5"><img class="lazyload" data-src="{{my_image0 | img_url: '400x'}}" width="60"></p>
+            <p><strong>{{ block_company_info[forloop.index0] }}</strong></p>
+          </div>
+      {% endfor %}
+    </div>
+<!--     <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        {% for block0 in blocks %}
+{%- assign my_image_key0 = block_company_logo[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image0 = images[my_image_key0] -%}
+          <li data-target="#carouselExampleIndicators1" data-slide-to="{{forloop.index | minus: 1}}" class="{% if forloop.index == 1 %}active {% endif %}"></li>
+        {% endfor %}
+      </ol>
+      <div class="carousel-inner pb-5">
+        {% for block0 in blocks %}
+{%- assign my_image_key0 = block_company_logo[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image0 = images[my_image_key0] -%}
+        <div class="carousel-item {% if forloop.index == 1 %}active {% endif %}">
+          <div class="feedback-block">
+            <h2>"{{ block_quote[forloop.index0] }}"</h2>
+            <p class="mt-5"><img class="lazyload" data-src="{{my_image0 | img_url: '400x'}}" width="60"></p>
+            <p><strong>{{ block_company_info[forloop.index0] }}</strong></p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div> -->
+  </div>
+</section>
+
+
+<style>
+</style>
+</section>

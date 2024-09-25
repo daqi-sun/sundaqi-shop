@@ -1,0 +1,164 @@
+<div class="clp-ytb">
+  <div class="clp-title">{{ section.settings.title }}</div>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        <div
+          class="swiper-slide"
+          x-data="
+            {
+              hideCover: false,
+              sectionId: 'ytb-{{ block.id }}',
+              videoId: '{{ block.settings.video_id }}',
+              playVideo() {
+                this.hideCover = true;
+                if(this.player && this.player.playVideo) 
+                    this.player.playVideo();
+                else {
+                  this.ytbInit()
+                  setTimeout(() => {
+                    this.player.playVideo()
+                  }, 1000);
+                }
+              },
+              player: null,
+              ytbInit() {
+                try {
+                  this.player = new YT.Player($refs.video, {
+                    videoId: this.videoId,
+                  });
+                } catch (e) {
+                  // console.warn('Ytb init warning: ', e)
+                }
+                if(!this.player) {
+                  const ytbScript = document.querySelector('#ytb-iframe-api-script')
+                  ytbScript.addEventListener('load', () => {
+                    window.YT.ready(() => {
+                      this.player = new YT.Player($refs.video, {
+                        videoId: this.videoId,
+                      });
+                    })
+                  })
+                }
+              },
+              pauseVideo() {
+                this.hideCover = false
+                if(this.player && this.player.pauseVideo)
+                    this.player.pauseVideo();
+              }
+            }
+          "
+          x-init="ytbInit"
+          @click="playVideo"
+          @click.outside="pauseVideo"
+        >
+          <div x-ref="video" class="clp-ytb-video"></div>
+          <div
+            class="clp-ytb-cover"
+            x-show="!hideCover"
+          >
+            {% render 'ht-responsive-image',
+              image: block.settings.image,
+              image_mobile: block.settings.image
+            %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="57"
+        height="57"
+        viewBox="0 0 57 57"
+        style="transform: rotate(180deg);"
+      >
+        <g transform="translate(-315 -4952)">
+          <circle cx="28.5" cy="28.5" r="28.5" transform="translate(315 4952)" fill="#fff"/>
+          <g transform="translate(340.222 4972.757)">
+            <line x2="8.556" y2="7.742" fill="none" stroke="#000" stroke-linecap="round" stroke-width="3"/>
+            <line y1="7.744" x2="8.556" transform="translate(0 7.743)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="3"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div class="swiper-button-next">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="57"
+        height="57"
+        viewBox="0 0 57 57"
+      >
+        <g transform="translate(-315 -4952)"><circle cx="28.5" cy="28.5" r="28.5" transform="translate(315 4952)" fill="#fff"/><g transform="translate(340.222 4972.757)"><line x2="8.556" y2="7.742" fill="none" stroke="#000" stroke-linecap="round" stroke-width="3"/><line y1="7.744" x2="8.556" transform="translate(0 7.743)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="3"/></g></g>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    let prevSlide;
+    new Swiper('.clp-ytb .swiper', {
+      slidesPerView: 1.2,
+      spaceBetween: 10,
+      loop: true,
+      shortSwipes: false,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2.3,
+        },
+      },
+      on: {
+        init: function () {
+          prevSlide = document.querySelector(".clp-ytb .swiper-slide-duplicate.swiper-slide-prev")
+          if(prevSlide)
+            prevSlide.classList.add("swiper-slide-prev--hide")
+        },
+        activeIndexChange: function () {
+          if(prevSlide)
+            prevSlide.classList.remove("swiper-slide-prev--hide")
+        },
+      }
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Youtube",
+  "settings": [
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video",
+      "name": "Video",
+      "settings": [
+        {
+          "type": "text",
+          "id": "video_id",
+          "label": "Youtube Video ID"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

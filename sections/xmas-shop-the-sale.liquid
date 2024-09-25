@@ -1,0 +1,102 @@
+{{ "xmas-shop-the-sale.css" | asset_url | stylesheet_tag }}
+
+<div class="shop-the-sale-section">
+    <div class="section-container">
+        <div class="section-heading-wrapper" id="most-popular-products">
+            <h3 class="title-h3 color-white gotham-bold text-center">
+                <a href="{{ section.settings.url }}">{{ section.settings.heading }}</a>
+            </h3>
+        </div>
+    </div>
+
+    <div class="sale--section">
+        <div class="section-container">
+          <div class="heading--wrapper">
+              <h2 class="best-deal--heading title-h2 gotham-bold text-center">{{ section.settings.subheading }}</h2>
+          </div>
+        </div>
+
+        <div class="sale-icons--wrapper">
+          <div class="section-container">
+            <div class="icon-flex-container flex-justify-center text-center">
+
+              {% for block in section.blocks %}
+
+                <div class="icon-flex--item">
+                  <div class="icon--wrapper">
+                  <img src="{{ block.settings.icon | img_url: 'master' }}" alt="">
+                  </div>
+                  <div class="mobile-flex-container">
+                    <div class="icon-heading--wrapper">
+                      <h3 class="icon-heading gotham-bold color-white">{{ block.settings.heading }}</h3>
+                    </div>
+                    <div class="icon-description--wrapper">
+                      <p class="icon-description gotham-medium color-white">{{ block.settings.content }}</p>
+                    </div>
+                  </div>
+                </div>
+
+              {% endfor %}
+
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Xmas Shop The Sale",
+    "max_blocks": 3,
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Section Heading",
+            "default": "Section Heading",
+            "placeholder": "Section Heading"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Heading Url"
+        },
+        {
+          "type": "textarea",
+          "id": "subheading",
+          "label": "Sub Heading",
+          "default": "Sub Heading",
+
+          "placeholder": "Sub Heading"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "steps",
+            "name": "Sale Info",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "icon",
+                    "label": "Sale Icon"
+                },
+                {
+                    "type": "text",
+                    "id": "heading",
+                    "label": "Steps Heading",
+                    "default": "Heading",
+                    "placeholder": "Heading"
+                },
+                {
+                    "type": "textarea",
+                    "id": "content",
+                    "label": "Content",
+                    "default": "Contents"
+                }
+            ]
+        }
+    ]
+}
+
+{% endschema %}

@@ -1,0 +1,58 @@
+<section id="{{ section.settings.section_id }}" class="pdp pdp-specs">
+    {% if section.settings.title != blank %}
+        <h2>{{ section.settings.title }}</h2>
+    {% endif %}
+    <div class="pdp-specs-container">
+        {% for block in section.blocks %}
+            <div class="pdp-specs-block">
+                {% if block.settings.title != blank %}
+                    <p class="pdp-specs-title">{{ block.settings.title }}</p>
+                {% endif %}
+                {% if block.settings.content != blank %}
+                    <div class="pdp-specs-content">{{ block.settings.content }}</div>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% schema %}
+{
+    "name": "PDP Specs",
+    "settings": [
+        {
+            "type": "text",
+            "id": "section_id",
+            "label": "Section ID"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Section Title",
+            "default": "Specs"
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Contents",
+            "type": "contents",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Title"
+                },
+                {
+                    "type": "richtext",
+                    "id": "content",
+                    "label": "Contents"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "PDP Specs"
+        }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,307 @@
+{{ 'summer-sale-form.css' | asset_url | stylesheet_tag }}
+
+<div
+  id="{{ section.settings.section_id }}"
+  class="summer-sale-form__section"
+  x-data="SummerSaleForm"
+  x-cloak
+  style="background-color: {{ section.settings.section_background_color }};"
+>
+    <div class="summer-sale-form-container">
+        <div class="summer-sale-header">
+            <div class="summer-sale-header__content">
+                <h2 class="summer-sale-header__title">{{ section.settings.title }}</h2>
+                <div class="summer-sale-header__content">{{ section.settings.content }}</div>
+            </div>
+
+            {% if section.blocks.size > 0 %}
+                <div class="summer-sale-voting-options">
+                    {% for block in section.blocks %}
+                        <div class="summer-sale-voting-option block-{{ block.id }}">
+                            <div class="summer-sale-voting-option__image">
+                                <div class="summer-sale-voting-option__image_wrap">
+                                    <img
+                                        class="summer-sale-voting-option__icon"
+                                        srcset="{{ block.settings.icon | img_url: 'master' }}"
+                                        alt="{{ block.settings.option }}"
+                                        loading="lazy"
+                                    />
+                                </div>
+                                <input type="radio" x-model="answer" value="{{ forloop.index }}" name="voting_option" {% if forloop.first %}checked{% endif %}/>
+                            </div>
+                            <div class="summer-sale-voting-option__content">{{ block.settings.option }}</div>
+                            <style>
+                                .block-{{ block.id }} .summer-sale-voting-option__icon{ width: {{ block.settings.icon_width }}px; }
+                                @media screen and (max-width: 749px){
+                                    .block-{{ block.id }} .summer-sale-voting-option__icon{ width: {{ block.settings.icon_width_m }}px; }
+                                }
+                            </style>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="summer-sale-form-wrap">
+            <div class="summer-sale-form-content" x-show="step === 1">
+                <div class="summer-sale-form-content__title">{{ section.settings.form_title }}</div>
+                <div class="summer-sale-form-content__content">{{ section.settings.form_content }}</div>
+                <div class="summer-sale-form-input-wrapper">
+                    <input
+                      type="text"
+                      class="summer-sale-form-input"
+                      placeholder="{{ section.settings.email_placeholder }}"
+                      x-model="email"
+                      @keydown.enter="submitStepOneEmail"
+                    >
+                    <button
+                      class="summer-sale-input-button"
+                      type="button"
+                      @click="submitResult"
+                    >
+                      <span x-text="loading ? `Loading...` : `{{ section.settings.submit_btn_text }}`"></span>
+                    </button>
+
+                    <p
+                        class="summer-sale-form-error-message"
+                        x-text="stepOneErrMsg"
+                        x-show="stepOneErrMsg !== ''"
+                    ></p>
+                  </div>
+
+                  <div class="summer-sale-form-disclaimer-wrapper">
+                    <label
+                      class="summer-sale-form-disclaimer"
+                      for="summer_form_disclaimer"
+                    >
+                      {{ section.settings.t_c_text }}
+                      <input
+                        type="checkbox"
+                        class="summer-sale-form-disclaimer-checkbox"
+                        name="disclaimer"
+                        id="summer_form_disclaimer"
+                        x-model="agreeToMarketing"
+                      >
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+            </div>
+
+            <div class="summer-sale-form-content summer-sale-success-content" x-show="step === 2">
+                <div class="summer-sale-success-icon">
+                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="64" height="64" rx="32" fill="white"/>
+                        <path d="M43.6673 26L29.0007 40.6667L21.5 33.5" stroke="#30BF00" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="summer-sale-success-message">
+                    {{ section.settings.success_msg }}
+                </div>
+                <div class="summer-sale-success-content">
+                    {{ section.settings.success_content }}
+                </div>
+
+                <div class="summer-sale-form-input-wrapper">
+                    <input
+                      type="text"
+                      class="summer-sale-form-input"
+                      readonly="readonly"
+                      data-coupon="{{ section.settings.coupon_code }}"
+                      value="{{ section.settings.code_text }}: {{ section.settings.coupon_code }}"
+                    >
+                    <button
+                        class="summer-sale-input-button"
+                        type="button"
+                        @click="copyCodeToClipboard('{{ section.settings.coupon_code }}')"
+                        >
+                        <span
+                            x-text="showSuccessCopyMessage ? '{{ section.settings.copied_text }}' : '{{ section.settings.copy_text }}'"
+                        ></span>
+                    </button>
+                </div>
+
+                <div class="summer-sale-infoline">{{ section.settings.infoline }}</div>
+            </div>
+        </div>
+        <style>
+            .summer-sale-form-wrap{ background: url({{ section.settings.background_image | img_url: 'master' }}) no-repeat; background-size: cover; background-position: center; border-radius: 8px; }
+            @media screen and (max-width: 749px){
+                .summer-sale-form-wrap{ background: {{ section.settings.background_color_m }} url({{ section.settings.background_image_m | img_url: 'master' }}) no-repeat; background-size: contain; background-position: top; border-radius: 4px; }
+            }
+        </style>
+    </div>
+</div>
+
+<script>
+  // star email section settings will pass to below js file
+  var SpringSaleFormSettingJsons = {{ section.settings | json }};
+
+  /*document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector(".spring-sale-form__step-3-tooltip-icon").addEventListener("mouseenter", function() {
+      document.querySelector('.spring-sale-form__step-3-tooltip').classList.add('hovered');
+    });
+
+    document.querySelector(".spring-sale-form__step-3-tooltip-icon").addEventListener("mouseleave", function() {
+      document.querySelector('.spring-sale-form__step-3-tooltip').classList.remove('hovered');
+    });
+  });*/
+</script>
+{{ 'subscription-form-common.js' | asset_url | script_tag }}
+<script src="{{ 'summer-sale-form-alpine.js' | asset_url }}"></script>
+
+{% schema %}
+{
+  "name": "Summer Sale Form",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID"
+    },
+    {
+      "type": "header",
+      "content": "API Settings"
+    },
+    {
+      "type": "text",
+      "id": "contact_list_id",
+      "label": "Contact list ID"
+    },
+    {
+      "type": "color",
+      "id": "section_background_color",
+      "label": "Section background color",
+      "default": "#FFF29B"
+    },
+    {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+    },
+    {
+        "type": "textarea",
+        "id": "content",
+        "label": "Content"
+    },
+    {
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Background image"
+    },
+    {
+        "type": "image_picker",
+        "id": "background_image_m",
+        "label": "Background image(Mobile)"
+    },
+    {
+        "type": "color",
+        "id": "background_color_m",
+        "label": "Background color(Mobile)"
+    },
+    {
+        "type": "textarea",
+        "id": "form_title",
+        "label": "Form Title"
+    },
+    {
+        "type": "textarea",
+        "id": "form_content",
+        "label": "Form Content"
+    },
+    {
+        "type": "text",
+        "id": "email_placeholder",
+        "label": "Email placeholder"
+    },
+    {
+        "type": "text",
+        "id": "submit_btn_text",
+        "label": "Submit button text"
+    },
+    {
+        "type": "richtext",
+        "id": "t_c_text",
+        "label": "Terms & conditions text"
+    },
+    {
+        "type": "textarea",
+        "id": "success_msg",
+        "label": "Success message"
+    },
+    {
+        "type": "textarea",
+        "id": "success_content",
+        "label": "Success Content"
+    },
+    {
+        "type": "text",
+        "id": "code_text",
+        "label": "Code text"
+    },
+    {
+        "type": "text",
+        "id": "coupon_code",
+        "label": "Coupon code"
+    },
+    {
+        "type": "text",
+        "id": "copy_text",
+        "label": "Copy text"
+    },
+    {
+        "type": "text",
+        "id": "copied_text",
+        "label": "Copied text"
+    },
+    {
+        "type": "text",
+        "id": "infoline",
+        "label": "Info line"
+    }
+  ],
+  "blocks": [
+    {
+        "type": "block",
+        "name": "Vote option",
+        "settings": [
+            {
+                "type": "textarea",
+                "id": "option",
+                "label": "Option"
+            },
+            {
+                "type": "image_picker",
+                "id": "icon",
+                "label": "Icon"
+            },
+            {
+                "type": "range",
+                "id": "icon_width",
+                "label": "Icon width",
+                "min": 30,
+                "max": 60,
+                "step": 5,
+                "default": 45,
+                "unit": "px"
+            },
+            {
+                "type": "range",
+                "id": "icon_width_m",
+                "label": "Icon width(Mobile)",
+                "min": 20,
+                "max": 50,
+                "step": 2,
+                "default": 28,
+                "unit": "px"
+            }
+        ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Summer Sale Form",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}

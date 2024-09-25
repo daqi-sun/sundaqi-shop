@@ -1,0 +1,142 @@
+{{ 'rigid-features.css' | asset_url | stylesheet_tag }}
+
+<div class="rigid-container rigid-features">
+  {% assign image = section.settings.mobileImage %}
+  {% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+  <div
+    class="custom-img-wrapper mobile-only"
+    style="padding-top: {{ pt }}%;"
+  >
+    <img
+      class="custom-img"
+      srcset="
+        {{ image | img_url: '500x' }} 500w,
+        {{ image | img_url: '600x' }} 600w,
+        {{ image | img_url: 'master' }} 700w,
+      "
+      alt="{{ image.alt }}"
+      loading="lazy"
+    >
+  </div>
+
+  {% assign image = section.settings.image %}
+  {% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+  <div
+    class="custom-img-wrapper desktop-only"
+    style="padding-top: {{ pt }}%;"
+  >
+    <img
+      class="custom-img"
+      srcset="
+        {{ image | img_url: '1000x' }} 1000w,
+        {{ image | img_url: '1200x' }} 1200w,
+        {{ image | img_url: '1400x' }} 1400w,
+        {{ image | img_url: 'master' }} 1600w,
+      "
+      alt="{{ image.alt }}"
+      loading="lazy"
+    >
+  </div>
+
+  <div class="rigid-features-content">
+    <h2>
+      {{ section.settings.title }}
+    </h2>
+    <div class="rigid-features-points">
+    {% for block in section.blocks %}
+        <div>
+
+        <div class="rigid-feature-point-title">
+          {% if forloop.index0 == 0 %}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              viewBox="0 0 30 30"
+              fill="none"
+            >
+              <circle cx="15.0001" cy="15" r="11.76" transform="rotate(90 15.0001 15)" stroke="#E3E2E3" stroke-width="5"/>
+              <path d="M15.0001 26.76C16.5444 26.76 18.0736 26.4558 19.5004 25.8648C20.9272 25.2738 22.2236 24.4076 23.3156 23.3156C24.4077 22.2235 25.2739 20.9271 25.8649 19.5003C26.4559 18.0736 26.7601 16.5443 26.7601 15C26.7601 13.4556 26.4559 11.9264 25.8649 10.4996C25.2739 9.07284 24.4077 7.77643 23.3156 6.68441C22.2236 5.5924 20.9272 4.72616 19.5004 4.13517C18.0736 3.54417 16.5444 3.23999 15.0001 3.23999" stroke="#0ECFE2" stroke-width="5"/>
+            </svg>
+          {% elsif forloop.index0 == 1 %}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              viewBox="0 0 30 30"
+              fill="none"
+            >
+              <circle cx="15.0001" cy="15" r="11.76" transform="rotate(-90 15.0001 15)" stroke="url(#paint0_linear_37_367)" stroke-width="5"/>
+              <path d="M15.0001 3.24001C17.326 3.24001 19.5997 3.92972 21.5336 5.22193C23.4675 6.51413 24.9748 8.35079 25.8649 10.4997C26.755 12.6485 26.9879 15.0131 26.5341 17.2943C26.0803 19.5755 24.9603 21.6709 23.3157 23.3156C21.671 24.9603 19.5756 26.0803 17.2943 26.534C15.0131 26.9878 12.6486 26.7549 10.4997 25.8648C8.35086 24.9747 6.5142 23.4674 5.22199 21.5335C3.92979 19.5996 3.24008 17.3259 3.24008 15" stroke="#0ECFE2" stroke-width="5"/>
+              <defs>
+              <linearGradient id="paint0_linear_37_367" x1="15.0001" y1="3.24001" x2="15.0001" y2="26.76" gradientUnits="userSpaceOnUse">
+              <stop offset="0.916667" stop-color="#E3E2E3"/>
+              <stop offset="1" stop-color="#E3E2E3" stop-opacity="0"/>
+              </linearGradient>
+              </defs>
+            </svg>
+          {% elsif forloop.index0 == 2 %}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              viewBox="0 0 30 30"
+              fill="none"
+            >
+              <circle cx="15" cy="15" r="11.76" stroke="#0ECFE2" stroke-width="5"/>
+            </svg>
+          {% endif %}
+          {{ block.settings.title }}
+        </div>
+        <p>
+          {{ block.settings.p }}
+        </p>
+        </div>
+    {% endfor %}
+  </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Features",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobileImage",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "How Do Rigid Solar Panels Work?"
+    }
+  ],
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "type": "point",
+      "name": "Point",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Collect"
+        },
+        {
+          "type": "textarea",
+          "id": "p",
+          "label": "Paragraph",
+          "default": "Solar panels absorb sunshine within their cells."
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

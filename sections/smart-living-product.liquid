@@ -1,0 +1,182 @@
+<div class="smart-living-product">
+  {% assign image = section.settings.mobileImage %}
+  {% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+  <div
+    class="custom-img__wrapper display--mobile"
+    style="padding-top: {{ pt }}%;"
+  >
+    <img
+      class="custom-img"
+      srcset="
+        {{ image | img_url: '500x' }} 500w,
+        {{ image | img_url: '600x' }} 600w,
+        {{ image | img_url: 'master' }} 700w,
+      "
+      alt="{{ image.alt }}"
+    >
+  </div>
+
+  {% assign image = section.settings.image %}
+  {% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+  <div
+    class="custom-img__wrapper display--desktop"
+    style="padding-top: {{ pt }}%;"
+  >
+    <img
+      class="custom-img"
+      srcset="
+        {{ image | img_url: '1000x' }} 1000w,
+        {{ image | img_url: '1200x' }} 1200w,
+        {{ image | img_url: '1400x' }} 1400w,
+        {{ image | img_url: 'master' }} 1600w,
+      "
+      alt="{{ image.alt }}"
+      loading="lazy"
+    >
+  </div>
+
+  <div class="smart-living-product__content container--normal">
+    {% if section.settings.title != blank %}
+      <h2 class="smart-living-product__content__h2 {% if section.settings.custom_section %} sl__text--black {% else %} sl__text--white {% endif %}">
+        {{ section.settings.title }}
+      </h2>
+    {% endif %}
+  </div>
+  <div class="smart-living-product__content__details container--normal">
+    <div class="smart-living-product__btn__container">
+      {% liquid
+        assign product = section.settings.product
+        assign productUrl = product.url
+      %}
+      {% if section.settings.hide_shop_now != true %}
+        <a class="smart-living-product__btn__wrapper" href="{{ productUrl }}" target="_blank">
+          <div class="smart-living-product__btn sl__btn sl__text--black background--white">
+            {{ section.settings.btn_text }}
+          </div>
+        </a>
+      {% endif %}
+      {% if section.settings.hide_wishlist != true %}
+        {% assign beforeWishlist = section.settings.btn_text_add %}
+        {% assign afterWishlist = section.settings.btn_text_added %}
+        <div class="smart-living-product__btn__wrapper">
+          <button
+            data-with-epi="true"
+            class="swym-button swym-add-to-wishlist-view-product product_{{ product.id }} smart-living-product__btn sl__btn sl__text--black background--white"
+            data-swaction="addToWishlist"
+
+            data-product-id="{{ product.id | json }}"
+            data-variant-id="{{ product.variants[0].id }}"
+            data-product-url="{{ shop.url }}{{ product.url }}"
+            data-section-id="{{ section.id }}"
+          >
+            {{ section.settings.btn_text_add }}
+          </button>
+        </div>
+      {% endif %}
+    </div>
+    <div class="smart-living-product__description__wrapper">
+      {% if section.settings.subtitle != blank %}
+        {{ section.settings.subtitle }}
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('button[data-section-id="{{ section.id }}"]').forEach((button) => {
+    let observer = new MutationObserver(() => {
+      if (!button.classList.contains('swym-added')) {
+        button.innerHTML = '{{ beforeWishlist }}';
+      }
+    });
+    observer.observe(button, { attributes: true });
+
+    let intervalId = setInterval(() => {
+      if (button.classList.contains('swym-loaded')) {
+        clearInterval(intervalId);
+        if (button.classList.contains('swym-added')) {
+          button.innerHTML = '{{ afterWishlist }}';
+        } else {
+          button.innerHTML = '{{ beforeWishlist }}';
+        }
+      }
+    }, 100);
+    button.addEventListener('click', () => {
+      if (button.classList.contains('swym-added')) {
+        button.innerHTML = '{{ beforeWishlist }}';
+      } else {
+        button.innerHTML = '{{ afterWishlist }}';
+      }
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Smart Living Product",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "custom_section",
+      "label": "Enable Custom Heading",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background Image Desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobileImage",
+      "label": "Background Image Mobile"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title",
+      "default": "Smart Living Innovations EcoFlow Smart Devices Launch"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_shop_now",
+      "label": "Hide 1st Button",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "1st Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_wishlist",
+      "label": "Hide 2nd Button",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "btn_text_add",
+      "label": "Before Adding to Wishlist",
+      "default": "Add to Wishlist"
+    },
+    {
+      "type": "text",
+      "id": "btn_text_added",
+      "label": "After Adding to Wishlist",
+      "default": "Added to Wishlist"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Subtitle"
+    }
+  ]
+}
+{% endschema %}

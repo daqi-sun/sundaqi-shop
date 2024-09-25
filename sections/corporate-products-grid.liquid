@@ -1,0 +1,189 @@
+<section class="corporate-section section-{{ section.id }}" id="{{ section.settings.section_id }}">
+    <div class="corporate-product-grid-wrap">
+        <div class="page-width-small">
+            <div class="text-content">
+                {% if section.settings.title != blank %}
+                    <div class="title">{{ section.settings.title }}</div>
+                {% endif %}
+                {% if section.settings.content != blank %}
+                    <div class="small-content">{{ section.settings.content }}</div>
+                {% endif %}
+            </div>
+
+            {% if section.blocks.size > 0 %}
+                <div class="corporate-product-grid">
+                    {%- comment %}<locksmith:8ba4>{% endcomment -%}
+                      {%- assign locksmith_890b_forloop__size = 0 %}{% for block in section.blocks %}{% capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == 'true' %}{% assign locksmith_890b_forloop__size = locksmith_890b_forloop__size | plus: 1 %}{% endif %}{% endfor %}{% assign locksmith_890b_forloop__index = nil -%}
+                    {%- comment %}</locksmith:8ba4>{% endcomment -%}
+                    {% for block in section.blocks %}
+                        {%- comment %}<locksmith:de39>{% endcomment -%}
+                          {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% if locksmith_890b_forloop__index == nil %}{% assign locksmith_890b_forloop__index = 1 %}{% assign locksmith_890b_forloop__index0 = 0 %}{% else %}{% assign locksmith_890b_forloop__index = locksmith_890b_forloop__index | plus: 1 %}{% assign locksmith_890b_forloop__index0 = locksmith_890b_forloop__index0 | plus: 1 %}{% endif %}{% if locksmith_890b_forloop__index == 1 %}{% assign locksmith_890b_forloop__first = true %}{% else %}{% assign locksmith_890b_forloop__first = false %}{% endif %}{% if locksmith_890b_forloop__index == locksmith_890b_forloop__size %}{% assign locksmith_890b_forloop__last = true %}{% else %}{% assign locksmith_890b_forloop__last = false %}{% endif %}{% assign locksmith_890b_forloop__rindex = locksmith_890b_forloop__size | minus: locksmith_890b_forloop__index | minus: 1 %}{% assign locksmith_890b_forloop__rindex0 = locksmith_890b_forloop__size | minus: locksmith_890b_forloop__index0 | minus: 1 %}{% else %}{% continue %}{% endif -%}
+                        {%- comment %}</locksmith:de39>{% endcomment -%}
+                        {% if block.settings.product != blank %}
+                            {% assign counter = locksmith_890b_forloop__index0 %}
+                            {% assign product = block.settings.product %}
+                            {% assign item_number = locksmith_890b_forloop__index0 | modulo: 4 %}
+                            {% if item_number == 0 %}<div class="corporate-product-grid-inner">{% endif %}
+                            <div class="corporate-product">
+                                <div
+data-limoniapps-discountninja-product-handle="{{ product.handle }}"
+data-limoniapps-discountninja-product-collections="{{ product.collections | map: 'handle' | join: ',' | default: '[[--NONE--]]' }}"
+data-limoniapps-discountninja-product-collectionids="{{ product.collections | map: 'id' | join: ',' | default: '[[--NONE--]]' }}"
+data-limoniapps-discountninja-product-available="{{ product.available}}"
+data-limoniapps-discountninja-product-price="{{ product.first_available_variant.price | default: product.price }}"
+data-limoniapps-discountninja-product-compareatprice="{{ product.first_available_variant.compare_at_price | default: product.first_available_variant.price | default: product.compare_at_price | default: product.price }}"
+data-limoniapps-discountninja-product-pricevaries="{{ product.price_varies}}"
+data-limoniapps-discountninja-product-pricemin="{{ product.price_min}}"
+data-limoniapps-discountninja-product-tags="{{ product.tags | join: ',' | escape | default: '[[--NONE--]]' }}"
+class="corporate-product-inner">
+                                    <div class="corporate-product-image">
+                                        {% if block.settings.product_image != blank %}
+                                            <img src="{{ block.settings.product_image | img_url: 'master' }}" alt="{{ block.settings.product_title }}">
+                                        {% else %}
+                                            <img src="{{ product.featured_image.src | img_url: 'master' }}" alt="{{ block.settings.product_title }}">
+                                        {% endif %}
+                                    </div>
+                                    <div class="corporate-product-title-price">
+                                        {% if block.settings.product_title != blank %}
+                                            <div class="corporate-product-title">{{ block.settings.product_title }}</div>
+                                        {% endif %}
+                                        <div class="corporate-product-price">{{ product.price | money }}</div>
+                                    </div>
+                                    <div class="corporate-product-discounts">
+                                        {% if block.settings.discount_qty_1 != blank %}
+                                            <div class="corporate-product-discount">
+                                                <div class="corporate-product-discount-qty">{{ block.settings.discount_qty_1 }}</div>
+                                                <div class="corporate-product-discount-percent">{{ block.settings.discount_percent_1 }}</div>
+                                            </div>
+                                        {% endif %}
+                                        {% if block.settings.discount_qty_2 != blank %}
+                                            <div class="corporate-product-discount">
+                                                <div class="corporate-product-discount-qty">{{ block.settings.discount_qty_2 }}</div>
+                                                <div class="corporate-product-discount-percent">{{ block.settings.discount_percent_2 }}</div>
+                                            </div>
+                                        {% endif %}
+                                        {% if block.settings.discount_qty_3 != blank %}
+                                            <div class="corporate-product-discount">
+                                                <div class="corporate-product-discount-qty">{{ block.settings.discount_qty_3 }}</div>
+                                                <div class="corporate-product-discount-percent">{{ block.settings.discount_percent_3 }}</div>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="corporate-product-atc">
+                                        {% if block.settings.atc_btn_text != blank %}
+                                            <button class="btn corporate-btn corporate-atc-btn" data-min-qty="{{ block.settings.min_qty }}" aria-controls="corporate-atc-modal" data-product-url="{{ product.url }}?variant={{ block.settings.variant_id }}" data-title="{{ block.settings.product_title }}">{{ block.settings.atc_btn_text }}</button>
+                                        {% else %}
+                                            <button class="btn corporate-btn corporate-atc-btn" data-min-qty="{{ block.settings.min_qty }}" aria-controls="corporate-atc-modal" data-product-url="{{ product.url }}?variant={{ block.settings.variant_id }}" data-title="{{ block.settings.product_title }}">Add to cart</button>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            {% if item_number == 3 %}</div>{% endif %}
+                        {% endif %}
+                    {% endfor %}
+                    {% if item_number < 3 %}</div>{% endif %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% schema %}
+  {
+    "name": "Corporate products",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_id",
+        "label": "Section ID"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading"
+      },
+      {
+        "type": "richtext",
+        "id": "content",
+        "label": "Content"
+      }
+    ],
+    "blocks": [
+        {
+            "type": "product",
+            "name": "Product",
+            "settings": [
+                {
+                    "type": "product",
+                    "id": "product",
+                    "label": "Product"
+                },
+                {
+                    "type": "text",
+                    "id": "variant_id",
+                    "label": "Variant ID"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "product_image",
+                    "label": "Product image"
+                },
+                {
+                    "type": "text",
+                    "id": "product_title",
+                    "label": "Product title"
+                },
+                {
+                    "type": "text",
+                    "id": "atc_btn_text",
+                    "label": "ATC button text"
+                },
+                {
+                    "type": "text",
+                    "id": "min_qty",
+                    "label": "Minimum quantity number"
+                },
+                {
+                    "type": "header",
+                    "content": "Product discounts"
+                },
+                {
+                    "type": "text",
+                    "id": "discount_qty_1",
+                    "label": "Discount quantity text 1"
+                },
+                {
+                    "type": "text",
+                    "id": "discount_percent_1",
+                    "label": "Discount percentage text 1"
+                },
+                {
+                    "type": "text",
+                    "id": "discount_qty_2",
+                    "label": "Discount quantity text 2"
+                },
+                {
+                    "type": "text",
+                    "id": "discount_percent_2",
+                    "label": "Discount percentage text 2"
+                },
+                {
+                    "type": "text",
+                    "id": "discount_qty_3",
+                    "label": "Discount quantity text 3"
+                },
+                {
+                    "type": "text",
+                    "id": "discount_percent_3",
+                    "label": "Discount percentage text 3"
+                }
+            ]
+        }
+    ],
+    "presets": [
+      {
+        "name": "Corporate products",
+        "category": "Custom Sections"
+      }
+    ]
+  }
+{% endschema %}

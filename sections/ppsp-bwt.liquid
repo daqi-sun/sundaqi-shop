@@ -1,0 +1,172 @@
+<style>
+  .ppsp-bwt__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  .ppsp-bwt__wrapper--{{ section.id }} {
+    background: {{ section.settings.background_color }};
+  }
+
+  .ppsp-bwt__content__wrapper--{{ section.id }} {
+      background: {{ section.settings.background_color }};
+  }
+
+  @media (min-width: 768px) {
+    .ppsp-bwt__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+<div
+  class="ppsp-bwt ppsp-bwt__section-{{ section.id }}"
+  data-id="_{{ section.settings.id | downcase | remove: ' ' | replace: '&', '-' }}"
+>
+  <div class="ppsp-bwt__wrapper ppsp-bwt__wrapper--{{ section.id }} {% if section.settings.position == 'right' %} ppsp-bwt__wrapper--right {% else %} ppsp-bwt__wrapper--left {% endif %}">
+    <div class="ppsp-bwt__image__wrapper">
+      <img
+        class="display--desktop"
+        src=" {{ section.settings.image | img_url: 'master' }} "
+        alt="{{ section.settings.image.alt }}"
+      >
+      <img
+        class="display--mobile"
+        src=" {{ section.settings.mobileImage | img_url: 'master' }} "
+        alt="{{ section.settings.mobileImage.alt }}"
+      >
+    </div>
+    <div class="ppsp-bwt__content__wrapper ppsp-bwt__content__wrapper--{{ section.id }}">
+      <div class="ppsp-bwt__content {% if section.settings.position == 'right' %} ppsp-bwt__content--right {% else %} ppsp-bwt__content--left {% endif %}">
+        {% if section.settings.title != blank %}
+          <h2 class="ppsp-bwt__title text--heading text--white">
+            {{ section.settings.title }}
+          </h2>
+        {% endif %}
+        {% if section.settings.subtitle != blank %}
+          <p class="ppsp-bwt__description text--description text--white">
+            {{ section.settings.subtitle }}
+          </p>
+        {% endif %}
+        <div class="ppsp-bwt__url-wrapper">
+          <div class="ppsp-bwt__url">
+            <a href="{{ section.settings.button_url }}" target="_blank" class="button  background--white text--black">
+              {{- section.settings.button_text -}}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "PPSP Banner 2",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color"
+    },
+    {
+      "type": "text",
+      "id": "id",
+      "label": "Section ID",
+      "default": "Buyer’s Guides"
+    },
+    {
+      "type": "select",
+      "id": "position",
+      "label": "Content Position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobileImage",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title",
+      "default": "Load Shedding Sale"
+    },
+    {
+      "type": "html",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Up to 30% OFF"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "header",
+      "content": "Section Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ]
+}
+{% endschema %}

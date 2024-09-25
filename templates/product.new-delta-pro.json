@@ -1,0 +1,1141 @@
+{
+  "sections": {
+    "sticky-product-bar": {
+      "type": "sticky-product-bar",
+      "blocks": {
+        "588d25af-4d47-43ac-9697-b98aa2f65719": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "General",
+            "tab_id": "product_information",
+            "section_class": ""
+          }
+        },
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Specs",
+            "tab_id": "specs",
+            "section_class": ""
+          }
+        },
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Reseñas",
+            "tab_id": "section-reviews",
+            "section_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "588d25af-4d47-43ac-9697-b98aa2f65719",
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4",
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38"
+      ],
+      "settings": {
+        "enabled": true,
+        "enabled_tabs": true
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e": {
+          "type": "product_title",
+          "settings": {
+          }
+        },
+        "judge_me_reviews_preview_badge_GNBCVP": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185": {
+          "type": "product_price",
+          "settings": {
+          }
+        },
+        "d25a0285-4fb4-422d-b95b-ab67446120ad": {
+          "type": "product_description",
+          "settings": {
+            "desc_display": "default"
+          }
+        },
+        "919f9cdd-6184-4311-b675-742931504318": {
+          "type": "coupon_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Component_2_1.png",
+            "discount_off_text": "{{ product.metafields.custom.discount_off_text.value }}",
+            "code": "{{ product.metafields.custom.discount_code.value }}",
+            "show_copy_code_btn": true
+          }
+        },
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879": {
+          "type": "product_options_block",
+          "settings": {
+            "show_product_swatches": true,
+            "use_variant_image_for_swatches": true,
+            "button_content": ""
+          }
+        },
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe": {
+          "type": "quantity_block",
+          "settings": {
+          }
+        },
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0": {
+          "type": "accessories_section",
+          "settings": {
+            "title": "You may also like",
+            "metafield": "accessories"
+          }
+        },
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609": {
+          "type": "product_buttons",
+          "settings": {
+            "enable_payment_button": false,
+            "show_custom_icons": true,
+            "custom_payment_logo_1_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_01_96e6a30c-7908-4892-b6f1-75bce8657cd4.svg?v=1672025208",
+            "custom_payment_logo_2_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_02_a3ea7ab1-aa9a-4857-9ed6-01e62deccfce.svg?v=1672025208",
+            "custom_payment_logo_3_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_09_0e42666a-bb58-481b-9e1b-11246e1ca80e.svg?v=1672025208",
+            "custom_payment_logo_4_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_04_7bff1113-0dc2-489f-8be8-d19dbe467a1a.svg?v=1672025208",
+            "custom_payment_logo_5_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_05_1c21f308-a0a3-4251-8641-87264da43d67.svg?v=1672025208",
+            "custom_payment_logo_6_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_06_7c406d24-0983-49ff-ac8e-cf73032050d9.svg?v=1672025208",
+            "custom_payment_logo_7_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_07_be5959d4-9f22-4a31-8e40-285f8e3ac6e7.svg?v=1672025208",
+            "custom_payment_logo_8_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_08_7f374817-3a3e-42f2-95ce-077b67f293d2.svg?v=1672025209",
+            "custom_payment_logo_9_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_03_c59b0e06-bb78-446c-a798-1d6a078228d5.svg?v=1672025208",
+            "custom_payment_logo_10_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_10_d8002835-e25f-4edb-9038-187f75f69a18.svg?v=1672025208",
+            "custom_payment_logo_11_svg": "",
+            "custom_payment_logo_12_svg": "",
+            "custom_payment_logo_13_svg": "",
+            "custom_payment_logo_14_svg": "",
+            "custom_payment_logo_15_svg": ""
+          }
+        },
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% if product.metafields.custom.trade_message != blank %}\n          <div class=\"trade-message\">♻️{{product.metafields.custom.trade_message}} <a href=\"\/pages\/trade-in\" target=\"_blank\">Learn more<\/a><\/div>\n{% endif %}"
+          }
+        }
+      },
+      "block_order": [
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e",
+        "judge_me_reviews_preview_badge_GNBCVP",
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185",
+        "d25a0285-4fb4-422d-b95b-ab67446120ad",
+        "919f9cdd-6184-4311-b675-742931504318",
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879",
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe",
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0",
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609",
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a"
+      ],
+      "settings": {
+        "section_id": "",
+        "show_breadcrumbs": true,
+        "show_pick_an_option": false,
+        "enable_linked_options": false,
+        "enabled_mobile_sticky_btns": true,
+        "media_size": "medium",
+        "enable_image_zoom": true,
+        "enable_video_looping": true,
+        "thumbnails_type": "grid",
+        "support_email": "",
+        "support_text": "",
+        "feature_1_show": false,
+        "feature_1_title": "Fast & Free Shipping",
+        "feature_1_content": "",
+        "feature_2_show": false,
+        "feature_2_title": "Warranty Protection",
+        "feature_2_content": "",
+        "feature_3_show": false,
+        "feature_3_title": "Secure Payments",
+        "feature_3_content": "",
+        "feature_4_show": false,
+        "feature_4_title": "Multi-channel Support",
+        "feature_4_content": ""
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "grid_mobile": "2",
+        "heading": "You may also like",
+        "show_vendor": false
+      }
+    },
+    "1dd45600-4133-4b1b-9dee-0661bf18d46e": {
+      "type": "pdp-mosaic",
+      "blocks": {
+        "template--15146112581705__1dd45600-4133-4b1b-9dee-0661bf18d46e-1679881402b727478e-0": {
+          "type": "image",
+          "settings": {
+            "background_type": "image",
+            "video_url": "",
+            "mobile_video_url": "",
+            "cta_label": "",
+            "cta_sublabel": "",
+            "cta_link": "",
+            "link": "",
+            "cta_width": 100,
+            "custom_height": 355,
+            "custom_height_mobile": 410,
+            "cta_image_width": "100%",
+            "caption_align": "center",
+            "caption_position": "bottom",
+            "caption_size": "h3",
+            "caption_color": "#000000",
+            "text_max_width": 340
+          }
+        }
+      },
+      "block_order": [
+        "template--15146112581705__1dd45600-4133-4b1b-9dee-0661bf18d46e-1679881402b727478e-0"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_id": "product_information",
+        "full_width": false,
+        "title": "",
+        "subtitle": "Introducing the world's first portable home battery with an expandable ecosystem for home backup, outdoor recreations, professional production, smart energy management, lower energy bills, and more. The EcoFlow DELTA Pro is the next leap in portable power technology, offering you power security and independence, wherever you are.",
+        "btn_text": "",
+        "btn_link": "",
+        "use_stacked_layout": false,
+        "use_lightbox": false,
+        "overlay_opacity": 0,
+        "overlay_color": "#000000",
+        "gutter_width": "15",
+        "title_transform": "none",
+        "hover_animation": "none",
+        "use_mobile_redability": false,
+        "removeBottomMargin": false
+      }
+    },
+    "pdp_rich_text_yK87kB": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 20,
+        "section_bottom_spacing": 20,
+        "section_top_spacing_mobile": 20,
+        "section_bottom_spacing_mobile": 20,
+        "alignment": "center",
+        "title": "",
+        "subtitle": "",
+        "content": "<p>Los términos “DELTA” y “RIVER”, que se mencionan en esta página, se refieren a productos fabricados exclusivamente por ECOFLOW INC.<\/p>",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "e2d7d0a6-2bba-4524-8b68-7aec017158fb": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "",
+        "subtitle": "",
+        "content": "",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "image",
+        "video_type": "youtube",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "mp4_video_url": "",
+        "mp4_video_url_m": "",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "ca4f68a4-8359-4e4b-81a8-852d457a0459": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "09d362ea-99de-4346-940e-3777d0bd04ee": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/KSP.png",
+            "mobile_image": "shopify:\/\/shop_images\/KSP.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "<p>Presentamos la primera batería portátil doméstica del mundo con un ecosistema ampliable que ofrece energía auxiliar para el hogar, zonas de recreo exteriores, trabajos profesionales y gestión de energía inteligente, y que es capaz de reducir las facturas eléctricas y mucho más. DELTA Pro de EcoFlow es nuestro siguiente gran salto en el ámbito de la tecnología de la energía portátil, y además ofrece seguridad e independencia energética, en cualquier lugar en el que te encuentres.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Más Información",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "template--15146112581705__ca4f68a4-8359-4e4b-81a8-852d457a0459-1679881616c29aa613-0": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/new_dp-1-pc.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/new_dp-1-m.jpg",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Potencia para cualquier situación.",
+            "title_color": "#232323",
+            "content": "<p>Desde la alimentación del portón trasero del coche hasta un apagón de días, DELTA Pro ofrece hasta 25 kWh de capacidad. Con eso, estarás cubierto ante cualquier situación. Es el estándar de referencia del sector.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Más Información",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "80bc2f11-ba82-4e0d-b5af-fe8524b4e3c1": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/new_dp-2-pc.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/new_dp-2-m.jpg",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Toda la salida de CA que necesites.",
+            "title_color": "#232323",
+            "content": "<p>Una sola unidad DELTA Pro ofrece una potencia de salida de 3600 W de CA, que se puede ampliar hasta 4500 W con la tecnología X-Boost. Suministra alimentación para el 99,99 % de dispositivos de alto rendimiento en casa, al aire libre o en el trabajo. Incluso puedes emparejar dos unidades para conseguir 7200 W con el panel inteligente Smart Home.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Más Información",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "579cc5ba-19ea-491c-ab73-a7e39c250233": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/new_dp-3-pc.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/new_dp-3-m.jpg",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "El generador de energía portátil con la carga más rápida del mundo.",
+            "title_color": "#232323",
+            "content": "<p>La multicarga ofrece velocidades récord a 6500 W. Para alcanzar los 6500 W, puedes optar por uno de estos métodos de carga.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Más Información",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "47f1afb9-dcb5-4feb-a4b8-c08527ada79f": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/new_dp-4-pc.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/new_dp-4-m.jpg",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Una batería que dura años.",
+            "title_color": "#232323",
+            "content": "<p>El DELTA Pro cuenta con una nueva batería LFP con 6500 ciclos, lo que significa que puedes utilizar el DELTA Pro durante años y años antes de que la unidad alcance el 50 % de su capacidad original. El sistema de gestión de baterías de EcoFlow proporciona análisis y regulación de tensión, corriente y temperatura en tiempo real. Este exclusivo mecanismo de protección convierte al DELTA Pro en una batería doméstica increíblemente segura y eficaz.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Más Información",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "09d362ea-99de-4346-940e-3777d0bd04ee",
+        "template--15146112581705__ca4f68a4-8359-4e4b-81a8-852d457a0459-1679881616c29aa613-0",
+        "80bc2f11-ba82-4e0d-b5af-fe8524b4e3c1",
+        "579cc5ba-19ea-491c-ab73-a7e39c250233",
+        "47f1afb9-dcb5-4feb-a4b8-c08527ada79f"
+      ],
+      "settings": {
+      }
+    },
+    "4dbc5374-2d50-4cc2-9684-6d17b94f059c": {
+      "type": "pdp-image-with-text",
+      "blocks": {
+        "c682dfff-445b-49cc-b9d7-a264668ffb8c": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image_height": 310,
+            "mobile_image_height": 250,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "<p><strong>Traveller Kit <\/strong><\/p>",
+            "subtext_bottom": "<p>3600W | 3.6kWh<\/p><p>DELTA Pro + Grounding Adapter<\/p>",
+            "button_link": "",
+            "button_text": ""
+          }
+        },
+        "54e69b75-d7e6-4d02-8f06-173181103075": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image_height": 310,
+            "mobile_image_height": 250,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "<p><strong>Overlander Kit<\/strong><\/p>",
+            "subtext_bottom": "<p>7200W | 7.2 kWh<\/p><p>DELTA Pro + DELTA Pro Extra Battery + Grounding Adapter<\/p>",
+            "button_link": "",
+            "button_text": ""
+          }
+        },
+        "93fc840e-78a7-40de-8e7b-a1a8a8bb7018": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image_height": 310,
+            "mobile_image_height": 250,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "<p><strong>EV Backup Charging Solution<\/strong><\/p>",
+            "subtext_bottom": "<p>3600W｜3.6 kWh<\/p><p>DELTA Pro + Grounding Adapter + EV X-Stream Adapter<\/p>",
+            "button_link": "",
+            "button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "c682dfff-445b-49cc-b9d7-a264668ffb8c",
+        "54e69b75-d7e6-4d02-8f06-173181103075",
+        "93fc840e-78a7-40de-8e7b-a1a8a8bb7018"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_id": "",
+        "alignment": "center",
+        "layout": "owl-carousel owl-theme",
+        "stacked_row": "3",
+        "mobile_stacked_row": "2",
+        "slider_row": "1",
+        "mobile_slider_row": "1"
+      }
+    },
+    "1fdc9238-b7f9-4063-ba45-8353bf34c5ce": {
+      "type": "pdp-slideshow",
+      "blocks": {
+        "c228307f-4fd4-460c-81b4-89b7e4aa4ec3": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "",
+            "title": "Trabaja sincronizado con el Kit solar para balcones EcoFlow PowerStream",
+            "subtitle": "",
+            "content": "<p>Transforma tu estación de energía en una solución de energía solar <strong>conectada a la red<\/strong> que combine paneles solares, una estación de energía y un inversor. Suministra electricidad a tu hogar y ahorra en las facturas eléctricas tanto de día como de noche.<\/p>",
+            "button_link": "https:\/\/es.ecoflow.com\/pages\/powerstream",
+            "button_text": "Más información",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/pc-2.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/m-2.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        }
+      },
+      "block_order": [
+        "c228307f-4fd4-460c-81b4-89b7e4aa4ec3"
+      ],
+      "settings": {
+        "section_id": ""
+      }
+    },
+    "4b7b8054-2978-4cfe-b968-2664ea85c206": {
+      "type": "pdp-tabs",
+      "blocks": {
+        "64a00023-23e5-4fd6-954f-b3d8d821cdc1": {
+          "type": "tabs",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home_backup-5-pc.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/home_backup-5-m.jpg",
+            "show_actual_mobile_image_size": false,
+            "image_alt": "",
+            "tab_title": "Soluciones de energía auxiliar para el hogar",
+            "title": "Ecosistema de batería para el hogar inteligente.",
+            "content": "<p>El ecosistema ampliable de DELTA Pro proporciona energía ininterrumpida durante los apagones así como energía inteligente personalizable en todo momento para cargas críticas y para reducir las facturas eléctricas. <\/p>",
+            "notification_message": "",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Más Información",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "64052139-4ace-4116-bae8-65ba4dfd282c": {
+          "type": "tabs",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home_backup-6-pc.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/home_backup-6-m.jpg",
+            "show_actual_mobile_image_size": false,
+            "image_alt": "",
+            "tab_title": "Soluciones de energía auxiliar para el hogar",
+            "title": "Prepara tu hogar para los apagones.",
+            "content": "<p>Cuando se produce un apagón, el panel inteligente Smart Home cambia inmediatamente a los 10 circuitos integrados y obtiene energía de las DELTA Pro. Apenas te darás cuenta de que no hay suministro ya que los circuitos seleccionados se mantienen conectados con un tiempo de conmutación rápido de tan solo 20 ms.<\/p>",
+            "notification_message": "",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Más Información",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "07fc3a10-a411-4484-a0ad-c9aaa0b70034": {
+          "type": "tabs",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home_backup-7-pc.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/home_backup-7-m.jpg",
+            "show_actual_mobile_image_size": false,
+            "image_alt": "",
+            "tab_title": "Soluciones de energía auxiliar para el hogar",
+            "title": "Amplía la capacidad y la salida de energía.",
+            "content": "<p>El panel inteligente Smart Home admite y carga de manera rápida hasta dos DELTA Pro a la vez, además de sus baterías adicionales y los Smart Generators. Todo ello pone bajo tu control un suministro potencial de 7200 W y una capacidad de 25 kWh. Tendrás electricidad para prácticamente todo lo que necesites en el hogar y además te ofrece la posibilidad de contar con suministro eléctrico durante días cuando haya apagones.<\/p>",
+            "notification_message": "",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Más Información",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "467359e5-7afa-4567-81ed-603399d8145a": {
+          "type": "tabs",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home_backup-8-pc.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/home_backup-8-m.jpg",
+            "show_actual_mobile_image_size": false,
+            "image_alt": "",
+            "tab_title": "Soluciones de energía auxiliar para el hogar",
+            "title": "Gestión de energía inteligente.",
+            "content": "<p>Controla todos tus circuitos domésticos integrados a través de la app de EcoFlow y obtén una visión integral de tus hábitos de consumo de energía. Descubre las funciones para personalizar el uso de la energía. Puedes optimizarlas para obtener energía auxiliar, ahorrar dinero o personalizar las opciones para programar el uso de la energía con arreglo a tus necesidades. Una vez configuradas, puedes controlar la fuente de energía que utiliza tu hogar, y todo ello desde tu teléfono.<\/p>",
+            "notification_message": "",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Más Información",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "066baf9b-c70a-45c6-82e0-4dbec298bae9": {
+          "type": "tabs",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home_backup-9-pc.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/home_backup-9-m.jpg",
+            "show_actual_mobile_image_size": false,
+            "image_alt": "",
+            "tab_title": "Soluciones de energía auxiliar para el hogar",
+            "title": "Ahorra dinero en tus facturas eléctricas.",
+            "content": "<p>Obtén energía de tus DELTA Pro para suministrar electricidad a tu hogar durante las horas pico de consumo energético; esto hará que tus facturan se abaraten y reducirá la presión en la red eléctrica durante las horas pico. Durante las horas valle, usa energía renovable y de bajo coste para volver a cargar tus DELTA Pro por completo.<\/p>",
+            "notification_message": "",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Más Información",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "0b330f79-917b-4996-ba18-03d072c81904": {
+          "type": "tabs",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home_backup-10-pc.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/home_backup-10-pc.jpg",
+            "show_actual_mobile_image_size": false,
+            "image_alt": "",
+            "tab_title": "Soluciones de energía auxiliar para el hogar",
+            "title": "Logra la autosuficiencia energética.",
+            "content": "<p>Reduce tu dependencia de la red y prepárate para los apagones. Opta por la gama de paneles solares portátiles de EcoFlow para almacenar energía en cualquier momento, o carga desde los paneles solares acoplados para CA situados en el tejado mientras la red eléctrica está activada. ¿No hace sol? Estamos trabajando en una turbina eólica. ¿No hace sol ni hay viento? Carga utilizando la red. ¿Qué no hace sol, ni viento y además hay un apagón? No importa. Obtén más información sobre el Smart Generator EcoFlow como último recurso para cargar las baterías.<\/p>",
+            "notification_message": "",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Más Información",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "672e452c-5cce-4b33-872f-eff6df3cd58d": {
+          "type": "tabs",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/RV_EV-1.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/RV_EV-1.jpg",
+            "show_actual_mobile_image_size": false,
+            "image_alt": "",
+            "tab_title": "Energía portátil para coches eléctricos y autocaravanas",
+            "title": "Viaja sin límites.",
+            "content": "<p>Disfruta de la libertad sin límites que supone poder vivir sin estar conectado a la red eléctrica con una fuente de energía limpia y silenciosa, sin necesidad de ir a un camping. Gracias a las ruedas, al asa extensible y al exclusivo puerto Anderson de 30 amperios, puedes llevarte la energía a cualquier parte, tanto si estás en la autocaravana, de acampada o si solamente quieres contar con una fuente de energía fiable sobre la marcha. Incluso puedes cargar tu coche eléctrico en la carretera. Eso sí que es libertad.<\/p>",
+            "notification_message": "",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Más Información",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "1dd12217-d806-4ce2-92a3-557b89c9d238": {
+          "type": "tabs",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/20230329-103311.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/20230329-103311.jpg",
+            "show_actual_mobile_image_size": false,
+            "image_alt": "",
+            "tab_title": "Energía portátil para coches eléctricos y autocaravanas",
+            "title": "",
+            "content": "<p><a href=\"https:\/\/es.ecoflow.com\/products\/portable-rv-ev-power-with-delta-pro?variant=43547678474432\" title=\"https:\/\/es.ecoflow.com\/products\/portable-rv-ev-power-with-delta-pro?variant=43547678474432\"><strong>Kit para viajeros  - Comprar Ahora<\/strong><\/a><strong><br\/><\/strong><a href=\"https:\/\/es.ecoflow.com\/products\/portable-rv-ev-power-with-delta-pro?variant=43547678507200\" title=\"https:\/\/es.ecoflow.com\/products\/portable-rv-ev-power-with-delta-pro?variant=43547678507200\"><strong>Kit Overlander - Comprar Ahora<\/strong><\/a><strong><br\/><\/strong><a href=\"https:\/\/es.ecoflow.com\/products\/portable-rv-ev-power-with-delta-pro?variant=46467509027155\" title=\"https:\/\/es.ecoflow.com\/products\/portable-rv-ev-power-with-delta-pro?variant=46467509027155\"><strong>Solución de carga auxiliar para coche eléctrico - Comprar Ahora<\/strong><\/a><\/p>",
+            "notification_message": "",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Más Información",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "fe325399-12dc-439d-aff5-ddf7a79f76eb": {
+          "type": "tabs",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/RV_EV-2.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/RV_EV-2.jpg",
+            "show_actual_mobile_image_size": false,
+            "image_alt": "",
+            "tab_title": "Energía portátil para coches eléctricos y autocaravanas",
+            "title": "Viaja sin conexión a la red eléctrica y alarga tus aventuras.",
+            "content": "<p>Conecta DELTA Pro a una batería adicional para disfrutar de unos excelentes 7,2 kWh y podrás disponer de energía durante más de una semana*. Puedes tener suministro eléctrico para que funcionen los electrodomésticos que usas a diario, como tu frigorífico, ordenador portátil, cafetera y hasta el aire acondicionado. Tendrás energía suficiente para disfrutar de todo lo que la naturaleza puede ofrecerte.<\/p><p><em>*Suministro de energía para caravana \/ Clase B \/ autocaravana Clase C con un consumo diario de 4 kWh usando DELTA Pro + Batería adicional (7,2 kWh)<\/em><\/p>",
+            "notification_message": "",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Más Información",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "48c57ece-82e6-4f58-8003-23d0ae1df363": {
+          "type": "tabs",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/RV_EV-3.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/RV_EV-3.jpg",
+            "show_actual_mobile_image_size": false,
+            "image_alt": "",
+            "tab_title": "Energía portátil para coches eléctricos y autocaravanas",
+            "title": "Sin ruido, sin humos, sin mantenimiento",
+            "content": "<p>Despídete de los ruidos y del humo de los generadores de gas y disfruta de una energía silenciosa, ecológica y que no necesita mantenimiento en cualquier lugar al que te lleve tu autocaravana a vivir aventuras. Carga los dispositivos esenciales de tu autocaravana usando DELTA Pro o enchúfala a una toma de corriente externa para suministrar alimentación directamente al sistema eléctrico de la autocaravana.<\/p>",
+            "notification_message": "",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Más Información",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "d1483c6a-5921-4551-8aff-913f48ede86a": {
+          "type": "tabs",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/RV_EV-4.png",
+            "mobile_image": "shopify:\/\/shop_images\/RV_EV-4.png",
+            "show_actual_mobile_image_size": false,
+            "image_alt": "",
+            "tab_title": "Energía portátil para coches eléctricos y autocaravanas",
+            "title": "Carga rápida en cualquier momento y en cualquier lugar",
+            "content": "<p>Tanto si estás en la carretera o de acampad,a como si te encuentras en el jardín de tu casa, nunca te quedarás sin electricidad. Puedes recargar usando la opción de multicarga en lo que se tarda en ver una película. Se carga por completo en solo 1,7 horas en una estación de carga para coches eléctricos (3400 W), 1,9 horas con carga CA doble + solar (3000 W), 2,7 horas desde una salida de CA (1800 W) y 3,5 horas usando carga solar (1600 W).<\/p>",
+            "notification_message": "",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Más Información",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "9105af99-fee3-4888-8211-59cf2aae7c5a": {
+          "type": "tabs",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/RV_EV-5.png",
+            "mobile_image": "shopify:\/\/shop_images\/RV_EV-5.png",
+            "show_actual_mobile_image_size": false,
+            "image_alt": "",
+            "tab_title": "Energía portátil para coches eléctricos y autocaravanas",
+            "title": "Solución de carga auxiliar para coche eléctrico",
+            "content": "<p>¿Te has quedado sin batería en la carretera? Amplía la autonomía de tu coche eléctrico otros 22,5 Km* para que puedas llegar seguro a tu destino.  <\/p><p>*Kilómetros por kWh para TESLA MODELO Y: 5,3-6,1 Km\/kWh, DELTA Pro (3,6 kWh). Se puede ampliar la autonomía del MODELO Y aproximadamente 22,01 Km.<\/p>",
+            "notification_message": "",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Más Información",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "10858f34-d71c-484f-a12a-80af1f62e53b": {
+          "type": "tabs",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/RV_EV-6.png",
+            "mobile_image": "shopify:\/\/shop_images\/RV_EV-6.png",
+            "show_actual_mobile_image_size": false,
+            "image_alt": "",
+            "tab_title": "Energía portátil para coches eléctricos y autocaravanas",
+            "title": "Carga en estaciones para coches eléctricos en todo el mundo",
+            "content": "<p>Por primera vez, ofrecemos una carga rápida de 1,7 horas en miles de estaciones de carga para coches eléctricos en todo el mundo. Este método de carga exclusivo te ofrece una carga rápida de hasta 3400 W sobre la marcha.<\/p>",
+            "notification_message": "",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Más Información",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "ba0de6a3-1fa3-4185-8414-8c445c9410d1": {
+          "type": "tabs",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/professional-1-pc.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/professional-1-m.jpg",
+            "show_actual_mobile_image_size": false,
+            "image_alt": "",
+            "tab_title": "Trabajo profesional",
+            "title": "Energía al servicio de tu negocio.",
+            "content": "<p>DELTA Pro te proporciona una fuente de energía segura y fiable para cualquier trabajo profesional. Tanto si estás trabajando en casa como fuera, desde proyectos de bricolaje a proyectos profesionales, DELTA Pro te ayuda a realizar tu trabajo.<\/p>",
+            "notification_message": "",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Más Información",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "d8ee27ba-577d-44c4-bf9d-44fa7b241eb7": {
+          "type": "tabs",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/professional-2.png",
+            "mobile_image": "shopify:\/\/shop_images\/professional-2.png",
+            "show_actual_mobile_image_size": false,
+            "image_alt": "",
+            "tab_title": "Trabajo profesional",
+            "title": "Aprovecha al máximo tu creatividad",
+            "content": "<p>Lleva energía mientras viajas y deja que fluya tu creatividad. Tanto si eres un director de cine al que le gusta capturar e inmortalizar los mejores momentos como si solo quieres trabajar sobre la marcha, la impresionante capacidad y salida de energía de DELTA Pro te permitirá alimentar o cargar todo tu equipo, garantizándote de este modo un flujo de trabajo sin contratiempos, independientemente de donde te encuentres.<\/p>",
+            "notification_message": "",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Más Información",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "64a00023-23e5-4fd6-954f-b3d8d821cdc1",
+        "64052139-4ace-4116-bae8-65ba4dfd282c",
+        "07fc3a10-a411-4484-a0ad-c9aaa0b70034",
+        "467359e5-7afa-4567-81ed-603399d8145a",
+        "066baf9b-c70a-45c6-82e0-4dbec298bae9",
+        "0b330f79-917b-4996-ba18-03d072c81904",
+        "672e452c-5cce-4b33-872f-eff6df3cd58d",
+        "1dd12217-d806-4ce2-92a3-557b89c9d238",
+        "fe325399-12dc-439d-aff5-ddf7a79f76eb",
+        "48c57ece-82e6-4f58-8003-23d0ae1df363",
+        "d1483c6a-5921-4551-8aff-913f48ede86a",
+        "9105af99-fee3-4888-8211-59cf2aae7c5a",
+        "10858f34-d71c-484f-a12a-80af1f62e53b",
+        "ba0de6a3-1fa3-4185-8414-8c445c9410d1",
+        "d8ee27ba-577d-44c4-bf9d-44fa7b241eb7"
+      ],
+      "settings": {
+        "section_id": "",
+        "tab_title_layout": "horizontal",
+        "alignment": "center",
+        "full_width": false,
+        "content_order": "3"
+      }
+    },
+    "38bc93a5-55b6-4e66-95e9-597f8368c9aa": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--18487861641563__38bc93a5-55b6-4e66-95e9-597f8368c9aa-16802666560c9f05e9-0": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/DP_what_s_in_the_box-pc.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/DP_what_s_in_the_box-m.jpg",
+            "show_actual_mobile_image_size": false,
+            "content_order": "1",
+            "image_alt": "",
+            "title": "Contenido",
+            "title_color": "#232323",
+            "content": "<p>1. DELTA Pro 2. Cable de carga CA 3. Cable de carga para coche 4. Cable de DC5521 a DC5525 5. Funda del asa 6. Manual del usuario<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--18487861641563__38bc93a5-55b6-4e66-95e9-597f8368c9aa-16802666560c9f05e9-0"
+      ],
+      "settings": {
+      }
+    },
+    "5acacf98-d383-4f32-9591-6b9428264c19": {
+      "type": "index-accordion",
+      "blocks": {
+        "template--15146112581705__5acacf98-d383-4f32-9591-6b9428264c19-16798861970cd62422-0": {
+          "type": "block",
+          "settings": {
+            "question": "¿Cuál es la potencia de entrada máxima que puede lograr el DELTA Pro?",
+            "answer": "<p>Al cargar el DELTA Pro y su batería adicional juntos, puedes alcanzar una velocidad de carga máxima de 6500 W mediante la combinación de los métodos de CA, energía solar y el generador inteligente Smart Generator. Para una unidad DELTA Pro, puedes cargarla en tomas de pared estándar (2900 W como máx.), en la estación de vehículo eléctrico (3400 W como máx.)\/panel inteligente Smart Home (3000 W como máx.).<\/p>"
+          }
+        },
+        "template--15146112581705__5acacf98-d383-4f32-9591-6b9428264c19-16798861970cd62422-1": {
+          "type": "block",
+          "settings": {
+            "question": "¿Cuántos paneles solares puedo usar a la vez?",
+            "answer": "<p>Depende de la combinación de tensión y corriente de los paneles solares que elijas. Sí, siempre que los paneles solares utilicen conectores MC4 y su tensión y corriente combinadas estén dentro del intervalo de 11-150 voltios y bajo 15 A.<\/p>"
+          }
+        },
+        "template--15146112581705__5acacf98-d383-4f32-9591-6b9428264c19-16798861970cd62422-2": {
+          "type": "block",
+          "settings": {
+            "question": "¿Cómo actualizo el firmware?",
+            "answer": "<p>En primer lugar, asegúrate de que DELTA Pro está conectado a la aplicación EcoFlow mediante el modo Internet. En segundo lugar, ve a la sección de firmware de la configuración del DELTA Pro que deseas actualizar. Busca el firmware más reciente y sigue los pasos para finalizar la actualización.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--15146112581705__5acacf98-d383-4f32-9591-6b9428264c19-16798861970cd62422-0",
+        "template--15146112581705__5acacf98-d383-4f32-9591-6b9428264c19-16798861970cd62422-1",
+        "template--15146112581705__5acacf98-d383-4f32-9591-6b9428264c19-16798861970cd62422-2"
+      ],
+      "settings": {
+        "section_id": "",
+        "content_side": "full_width",
+        "title": "FAQ",
+        "subtitle": "",
+        "text_color": "#03060b",
+        "color_image_overlay": "",
+        "color_bgcolor": "",
+        "image_overlay_opacity": 0
+      }
+    },
+    "f5e8ee6e-5b49-40e3-8e72-7e4236f2065f": {
+      "type": "pdp-specs",
+      "blocks": {
+        "be659b74-8e0a-4077-8cd9-0285553ecb6a": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso neto",
+            "content": "<p>Aprox. 45kg<\/p>"
+          }
+        },
+        "b04cad8f-0719-4120-85d7-7fd45d776a3c": {
+          "type": "contents",
+          "settings": {
+            "title": "Dimensión",
+            "content": "<p>63.5*28.4*42cm<\/p>"
+          }
+        },
+        "17782f5c-d927-451c-b282-bfac66072737": {
+          "type": "contents",
+          "settings": {
+            "title": "Capacidad",
+            "content": "<p>3600Wh<\/p>"
+          }
+        },
+        "9d05491c-a2bb-481d-b646-45057b298939": {
+          "type": "contents",
+          "settings": {
+            "title": "Batería adicional",
+            "content": "<p>Admite hasta dos baterías adicionales inteligentes DELTA Pro\/generador inteligente Smart Generator<\/p>"
+          }
+        },
+        "b5cbaa78-23f3-4ec6-9643-23ef5a6d9ce5": {
+          "type": "contents",
+          "settings": {
+            "title": "Salida de CA",
+            "content": "<p>4 salidas, 230 V\/16 A, 3600 W en total (máximo: 7200 W)<\/p>"
+          }
+        },
+        "094a58d1-04bf-43c0-b06f-184bc639a65b": {
+          "type": "contents",
+          "settings": {
+            "title": "Potencia máxima de los dispositivos compatibles con X-Boost",
+            "content": "<p>4500W<\/p>"
+          }
+        },
+        "f030d0fa-ad59-46c7-821f-7c1e1f5bd4a9": {
+          "type": "contents",
+          "settings": {
+            "title": "Salida USB-A",
+            "content": "<p>2 puertos, 5 V, 2,4 A, 12 W como máx. por puerto<\/p>"
+          }
+        },
+        "1d5a8dd4-eb07-4148-a711-53c9b45cf972": {
+          "type": "contents",
+          "settings": {
+            "title": "Carga rápida USB-A",
+            "content": "<p>2 puerto, 5 V, 2,4 A\/9 V, 2 A\/12 V, 1,5 A, 18 W como máx. por puerto<\/p>"
+          }
+        },
+        "53a11dd1-99c7-4ebe-8f25-0b438f1615ac": {
+          "type": "contents",
+          "settings": {
+            "title": "Salida USB-C",
+            "content": "<p>2 puerto, 5\/9\/12\/15\/20 V, 5 A, 100 W como máx. por puerto<\/p>"
+          }
+        },
+        "7aafc455-e078-4e14-bcdd-f51aafb2e594": {
+          "type": "contents",
+          "settings": {
+            "title": "Salida de alimentación para coche",
+            "content": "<p>12,6 V, 10 A, 126 W máx.<\/p>"
+          }
+        },
+        "5ed9cf39-c0d4-4a22-a20e-818b137f7ba6": {
+          "type": "contents",
+          "settings": {
+            "title": "Salida DC5521",
+            "content": "<p>2 puertos, 12,6V, 3A, 38W como máx. por puerto<\/p>"
+          }
+        },
+        "802c2605-5905-4f8e-8741-eb537ef3b872": {
+          "type": "contents",
+          "settings": {
+            "title": "Puerto Anderson",
+            "content": "<p>12.6V, 30A<\/p>"
+          }
+        },
+        "fa1e5a6c-7e15-4a96-b03b-6007ee30e295": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de carga de CA",
+            "content": "<p>2900 W máx., 230 V~ 12,5 A<\/p>"
+          }
+        },
+        "bc351e5f-85f7-467a-afea-a4ce97d72213": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de carga solar",
+            "content": "<p>1600 W máx., 11-150 V, 15 A<\/p>"
+          }
+        },
+        "1e84f291-04d9-4ff3-a4b0-b09098726571": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de carga para coche",
+            "content": "<p>Admite batería de 12 V\/24 V, 8 A<\/p>"
+          }
+        },
+        "9178ebf1-89da-4a0c-8c9f-4a99bd0dd9a5": {
+          "type": "contents",
+          "settings": {
+            "title": "Química de la batería",
+            "content": "<p>LFP<\/p>"
+          }
+        },
+        "69e4d709-dc68-4879-a0a8-91b880547237": {
+          "type": "contents",
+          "settings": {
+            "title": "Ciclos de vida útil",
+            "content": "<p>6500 ciclos al 50 % de la capacidad, 3500 ciclos al 80 % de la capacidad<\/p>"
+          }
+        },
+        "c08bbbff-31b8-49a8-8c7a-935483739ca1": {
+          "type": "contents",
+          "settings": {
+            "title": "Conexión",
+            "content": "<p>Wi-Fi, Bluetooth<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "be659b74-8e0a-4077-8cd9-0285553ecb6a",
+        "b04cad8f-0719-4120-85d7-7fd45d776a3c",
+        "17782f5c-d927-451c-b282-bfac66072737",
+        "9d05491c-a2bb-481d-b646-45057b298939",
+        "b5cbaa78-23f3-4ec6-9643-23ef5a6d9ce5",
+        "094a58d1-04bf-43c0-b06f-184bc639a65b",
+        "f030d0fa-ad59-46c7-821f-7c1e1f5bd4a9",
+        "1d5a8dd4-eb07-4148-a711-53c9b45cf972",
+        "53a11dd1-99c7-4ebe-8f25-0b438f1615ac",
+        "7aafc455-e078-4e14-bcdd-f51aafb2e594",
+        "5ed9cf39-c0d4-4a22-a20e-818b137f7ba6",
+        "802c2605-5905-4f8e-8741-eb537ef3b872",
+        "fa1e5a6c-7e15-4a96-b03b-6007ee30e295",
+        "bc351e5f-85f7-467a-afea-a4ce97d72213",
+        "1e84f291-04d9-4ff3-a4b0-b09098726571",
+        "9178ebf1-89da-4a0c-8c9f-4a99bd0dd9a5",
+        "69e4d709-dc68-4879-a0a8-91b880547237",
+        "c08bbbff-31b8-49a8-8c7a-935483739ca1"
+      ],
+      "settings": {
+        "section_id": "specs",
+        "title": "Especificaciones"
+      }
+    },
+    "b17186ae-9a87-421c-b923-6eea2f7858f7": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 20,
+        "section_bottom_spacing": 20,
+        "section_top_spacing_mobile": 20,
+        "section_bottom_spacing_mobile": 20,
+        "alignment": "left",
+        "title": "",
+        "subtitle": "",
+        "content": "<p>*Versión internacional (2900 W a 1,9 horas) Versión estadounidense (1800 W a 2,7 horas\/3000 W a 1,8 horas)<\/p><p>Utiliza el cable de carga de CA incluido en el paquete para una carga rápida. No utilices otros cables para cargar. Conéctalo directamente a una toma de pared de CA y asegúrate de que la corriente de salida de la pared sea superior a 15 A. De lo contrario, reduce la velocidad de carga de la unidad con el interruptor de carga rápida de CA. EcoFlow no asume ninguna responsabilidad por las consecuencias derivadas de no seguir debidamente las instrucciones, incluido, entre otros, no cargar con otros cables de carga de CA.<\/p>",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "1703560199d883bf0c": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_VW4eKB": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_VW4eKB"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    }
+  },
+  "order": [
+    "sticky-product-bar",
+    "main",
+    "product-recommendations",
+    "1dd45600-4133-4b1b-9dee-0661bf18d46e",
+    "pdp_rich_text_yK87kB",
+    "e2d7d0a6-2bba-4524-8b68-7aec017158fb",
+    "ca4f68a4-8359-4e4b-81a8-852d457a0459",
+    "4dbc5374-2d50-4cc2-9684-6d17b94f059c",
+    "1fdc9238-b7f9-4063-ba45-8353bf34c5ce",
+    "4b7b8054-2978-4cfe-b968-2664ea85c206",
+    "38bc93a5-55b6-4e66-95e9-597f8368c9aa",
+    "5acacf98-d383-4f32-9591-6b9428264c19",
+    "f5e8ee6e-5b49-40e3-8e72-7e4236f2065f",
+    "b17186ae-9a87-421c-b923-6eea2f7858f7",
+    "1703560199d883bf0c"
+  ]
+}

@@ -1,0 +1,82 @@
+{%- if section.blocks.size > 0 -%}
+    <section class="submenu-wrapper {% if section.settings.hide_in_mobile %}hideLaptop{% endif %}">
+        <div class="submenu-wrapper-inner">
+            {%- for block in section.blocks -%}
+                <div class="submenu-block">
+                    {%- if block.settings.block_link != blank -%}
+                        <a href="{{ block.settings.block_link }}">
+                    {%- endif -%}
+                        {%- if block.settings.image != blank -%}
+                            <div class="submenu-block-image">
+                                <img src="{{ block.settings.image | img_url: '200x' }}" style="max-height: {{ block.settings.image_height }}px;" />
+                            </div>
+                        {%- endif -%}
+                        {%- if block.settings.heading != blank -%}
+                            <h3>{{ block.settings.heading }}</h3>
+                        {%- endif -%}
+                    {%- if block.settings.block_link != blank -%}
+                        </a>
+                    {%- endif -%}
+                </div>
+            {%- endfor -%}
+        </div>
+    </section>
+{%- endif -%}
+
+{% schema %}
+{
+    "name": "Submenu",
+	"settings": [
+        {
+            "type":"checkbox",
+            "id":"hide_in_mobile",
+            "label":"Hide in Mobile"
+        },
+        {
+            "type":"checkbox",
+            "id":"hide_in_laptop",
+            "label":"Hide in Small screens"
+        }
+    ],
+    "blocks": [
+        {
+            "name":"Block",
+            "type":"Block",
+            "settings": [
+                {
+                    "type":"text",
+                    "id":"heading",
+                    "label":"Heading",
+                    "default":"Heading"
+                },
+                {
+                    "type":"url",
+                    "id":"block_link",
+                    "label":"Link"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label":"Image"
+                },
+                {
+                    "type": "range",
+                    "id": "image_height",
+                    "label":"Image height",
+                    "min": 20,
+                    "max": 52,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 52
+                }
+            ]
+        }
+    ],
+	"presets": [
+        {
+            "name": "Submenu",
+            "category":"Custom Sections"
+        }
+	]
+}
+{% endschema %}

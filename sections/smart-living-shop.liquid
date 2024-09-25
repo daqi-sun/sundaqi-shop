@@ -1,0 +1,70 @@
+<div class="smart-living-shop__section background--dark-blue">
+  <div class="smart-living-heading__wrapper container--short ">
+    {% if section.settings.heading != blank %}
+      <h2 class="smart-living-heading sl__text--gold sl__text--center">
+        <a href="{{ section.settings.url }}">{{ section.settings.heading }}</a>
+      </h2>
+    {% endif %}
+
+    <div class="smart-living-icons__container">
+      {% for block in section.blocks %}
+        <div class="smart-living-icons__block sl__text--center">
+          <div class="smart-living-icon__wrapper">
+            <img src="{{ block.settings.icon | img_url: 'master' }}" alt="">
+          </div>
+          <div class="smart-living-icons__details__wrapper">
+            <h3 class="smart-living-icons__heading sl__text--white">{{ block.settings.heading }}</h3>
+            <p class="smart-living-icons__description sl__text--white">{{ block.settings.content }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Smart Living Sale",
+  "max_blocks": 3,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Section Heading",
+      "placeholder": "Section Heading"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "Heading Url"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "steps",
+      "name": "Sale Info",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Sale Icon"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Steps Heading",
+          "default": "Heading",
+          "placeholder": "Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "Content",
+          "default": "Contents"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

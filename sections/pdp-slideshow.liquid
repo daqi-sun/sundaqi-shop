@@ -1,0 +1,435 @@
+{% if section.blocks.size > 0 %}
+    <section id="{{ section.id }}" class="pdp pdp-slideshow">
+        <div class="pdp-slideshow-container" id="{{ section.settings.section_id }}">
+            <div class="pdp-slideshow-container-inner">
+                {% for block in section.blocks %}
+                    <div class="pdp-slideshow-item {% if forloop.first %}active{% endif %} content-alignment-center" data-block="block-{{block.id}}">
+                        <div class="text-content content-align-m-{{ block.settings.content_alignment_m }}">
+                            {% if block.settings.title != blank %}
+                                <h1>{{ block.settings.title }}</h1>
+                            {% endif %}
+                            {% if block.settings.subtitle != blank %}
+                                <div class="subtitle">{{ block.settings.subtitle }}</div>
+                            {% endif %}
+                            {% if block.settings.content != blank %}
+                                <div class="content">{{ block.settings.content }}</div>
+                            {% endif %}
+                            {% if block.settings.button_link != blank and block.settings.button_text != blank %}
+                                <a href="{{ block.settings.button_link }}" class="pdp-button">{{ block.settings.button_text }}</a>
+                            {% endif %}
+                        </div>
+                        <div class="pdp-slideshow-block-images-container">
+                                <div class="pdp-slideshow-block-images">
+                                    {% assign image_length = 0 %}
+                                    {% for i in (1..5) %}
+                                        {% capture media_type %}media_{{i}}_type{% endcapture %}
+                                        {% capture image %}image_{{i}}{% endcapture %}
+                                        {% capture mobile_image %}mobile_image_{{i}}{% endcapture %}
+                                        {% capture video %}mp4_video_url_{{i}}{% endcapture %}
+                                        {% capture mobile_video %}mp4_video_url_m_{{i}}{% endcapture %}
+                                        {% capture autoplay_video %}autoplay_video_{{i}}{% endcapture %}
+                                        {% if block.settings[media_type] == 'video' %}
+                                            {% if block.settings[video] != blank or block.settings[mobile_video] != blank %}
+                                            {% assign image_length = image_length | plus: 1 %}
+                                            <div class="pdp-slideshow-block-image-wrapper">
+                                                <div class="video-parent {% if block.settings[mobile_video] != blank %}hideMobile{% endif %} video-autoplay-{{block.settings[autoplay_video]}}">
+                                                    <video muted loop playsinline>
+                                                        <source src="{{ block.settings[video] }}#t=0.001" type="video/mp4">
+                                                    </video>
+                                                    {% if block.settings[autoplay_video] == false %}
+                                                    <div class="play-video">
+                                                        {% render 'video-play-icon' %}
+                                                        {% render 'video-pause-icon' %}
+                                                    </div>
+                                                    {% endif %}
+                                                </div>
+                                                {% if block.settings[mobile_video] != blank %}
+                                                    <div class="video-parent hideDesktop video-autoplay-{{block.settings[autoplay_video]}}">
+                                                        <video autoplay muted loop playsinline>
+                                                            <source src="{{ block.settings[mobile_video] }}#t=0.001" type="video/mp4">
+                                                        </video>
+                                                        {% if block.settings[autoplay_video] == false %}
+                                                        <div class="play-video">
+                                                            {% render 'video-play-icon' %}
+                                                            {% render 'video-pause-icon' %}
+                                                        </div>
+                                                        {% endif %}
+                                                    </div>
+                                                {% endif %}
+                                            </div>
+                                            {% endif %}
+                                        {% else %}
+                                            {% if block.settings[image] != blank or block.settings[mobile_image] != blank %}
+                                            {% assign image_length = image_length | plus: 1 %}
+                                            <div class="pdp-slideshow-block-image-wrapper">
+                                                {% if block.settings[image] != blank %}
+                                                    <div class="hideMobile">
+                                                        <img src="{{ block.settings[image] | img_url: 'master' }}" alt="{{ block.settings.title }}">
+                                                    </div>
+                                                {% endif %}
+                                                {% if block.settings[mobile_image] != blank %}
+                                                    <div class="hideDesktop">
+                                                        <img src="{{ block.settings[mobile_image] | img_url: 'master' }}" alt="{{ block.settings.title }}">
+                                                    </div>
+                                                {% endif %}
+                                            </div>
+                                            {% endif %}
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                                {% if image_length > 1 %}
+                                <div class="slider-buttons">
+                                    <button class="slider-button slider-button-prev">
+                                        <svg width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_787_2596)">
+                                            <circle opacity="0.2" cx="24" cy="24" r="24" transform="matrix(-1 0 0 1 48.5 0)" fill="black"/>
+                                            <path d="M26.5 30L20.5 24L26.5 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </g>
+                                            <defs>
+                                            <clipPath id="clip0_787_2596">
+                                            <rect width="48" height="48" fill="white" transform="matrix(-1 0 0 1 48.5 0)"/>
+                                            </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </button>
+                                    <button class="slider-button slider-button-next">
+                                        <svg width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_787_2593)">
+                                            <circle opacity="0.2" cx="24.5" cy="24" r="24" fill="black"/>
+                                            <path d="M22.5 30L28.5 24L22.5 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </g>
+                                            <defs>
+                                            <clipPath id="clip0_787_2593">
+                                            <rect width="48" height="48" fill="white" transform="translate(0.5)"/>
+                                            </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </button>
+                                </div>
+                                {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+
+                <div class="pdp-slideshow-tabs alignment--center">
+                    <div class="pdp-slideshow-tabs-inner">
+                        {% for block in section.blocks %}
+                            <div class="pdp-slideshow-tab-title {% if forloop.first %}active{% endif %}" data-target-block="block-{{block.id}}">
+                                {{ block.settings.tab_title }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                {% for block in section.blocks %}
+                    <div class="pdp-slideshow-bottom-item {% if forloop.first %}active{% endif %} content-alignment-center" data-block="block-{{block.id}}">
+                        <div class="text-content content-align-m-{{ block.settings.bottom_content_alignment_m }}">
+                            {% if block.settings.bottom_content != blank %}
+                                <div class="content">{{ block.settings.bottom_content }}</div>
+                            {% endif %}
+                            {% if block.settings.bottom_button_link != blank and block.settings.bottom_button_text != blank %}
+                                <a href="{{ block.settings.bottom_button_link }}" class="pdp-button">{{ block.settings.bottom_button_text }}</a>
+                            {% endif %}
+                        </div>
+                        <style>
+                            .pdp .pdp-slideshow-container [data-block="block-{{block.id}}"] .pdp-button{ background-color: {{ block.settings.bottom_button_bg_color }}; color: {{ block.settings.bottom_button_text_color }}; }
+                            .pdp .pdp-slideshow-container [data-block="block-{{block.id}}"] .pdp-button:hover{ background-color: {{ block.settings.bottom_button_bg_color }}; opacity: 0.8; }
+                        </style>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endif %}
+{% schema %}
+{
+    "name": "PDP Slideshow",
+    "presets": [
+        {
+            "name": "PDP Slideshow"
+        }
+    ],
+    "settings": [
+        {
+            "type": "text",
+            "id": "section_id",
+            "label": "Section ID"
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Tab",
+            "type": "tab",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "tab_title",
+                    "label": "Tab Title"
+                },
+                {
+                    "type": "header",
+                    "content": "Tab Content"
+                },
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Title"
+                },
+                {
+                    "type": "richtext",
+                    "id": "subtitle",
+                    "label": "Subtitle"
+                },
+                {
+                    "type": "richtext",
+                    "id": "content",
+                    "label": "Content"
+                },
+                {
+                    "type": "select",
+                    "id": "content_alignment_m",
+                    "label": "Mobile - Content text alignment",
+                    "options": [
+                        { "value": "left", "label": "Left" },
+                        { "value": "center", "label": "Center" }
+                    ],
+                    "default": "center"
+                },
+                {
+                    "type": "url",
+                    "id": "button_link",
+                    "label": "Button Link"
+                },
+                {
+                    "type": "text",
+                    "id": "button_text",
+                    "label": "Button Text",
+                    "default": "Learn More"
+                },
+                {
+                    "type": "header",
+                    "content": "Tab Content - Bottom"
+                },
+                {
+                    "type": "richtext",
+                    "id": "bottom_content",
+                    "label": "Content"
+                },
+                {
+                    "type": "select",
+                    "id": "bottom_content_alignment_m",
+                    "label": "Mobile - Content text alignment",
+                    "options": [
+                        { "value": "left", "label": "Left" },
+                        { "value": "center", "label": "Center" }
+                    ],
+                    "default": "center"
+                },
+                {
+                    "type": "url",
+                    "id": "bottom_button_link",
+                    "label": "Button Link"
+                },
+                {
+                    "type": "text",
+                    "id": "bottom_button_text",
+                    "label": "Button Text",
+                    "default": "Learn More"
+                },
+                {
+                    "type": "color",
+                    "id": "bottom_button_bg_color",
+                    "label": "Button background color",
+                    "default": "#2164ff"
+                },
+                {
+                    "type": "color",
+                    "id": "bottom_button_text_color",
+                    "label": "Button text color",
+                    "default": "#ffffff"
+                },
+                {
+                    "type": "header",
+                    "content": "Tab media"
+                },
+                {
+                    "type": "radio",
+                    "id": "media_1_type",
+                    "label": "Media 1 type",
+                    "options": [
+                        { "value": "image", "label": "Image" },
+                        { "value": "video", "label": "Video" }
+                    ]
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image_1",
+                    "label": "Image"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "mobile_image_1",
+                    "label": "Mobile Image"
+                },
+                {
+                    "type": "text",
+                    "id": "mp4_video_url_1",
+                    "label": "Mp4 video URL"
+                },
+                {
+                    "type": "text",
+                    "id": "mp4_video_url_m_1",
+                    "label": "Mobile - Mp4 video URL"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "autoplay_video_1",
+                    "label": "Autoplay MP4 video",
+                    "default": true
+                },
+                {
+                    "type": "radio",
+                    "id": "media_2_type",
+                    "label": "Media 2 type",
+                    "options": [
+                        { "value": "image", "label": "Image" },
+                        { "value": "video", "label": "Video" }
+                    ]
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image_2",
+                    "label": "Image"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "mobile_image_2",
+                    "label": "Mobile Image"
+                },
+                {
+                    "type": "text",
+                    "id": "mp4_video_url_2",
+                    "label": "Mp4 video URL"
+                },
+                {
+                    "type": "text",
+                    "id": "mp4_video_url_m_2",
+                    "label": "Mobile - Mp4 video URL"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "autoplay_video_2",
+                    "label": "Autoplay MP4 video",
+                    "default": true
+                },
+                {
+                    "type": "radio",
+                    "id": "media_3_type",
+                    "label": "Media 3 type",
+                    "options": [
+                        { "value": "image", "label": "Image" },
+                        { "value": "video", "label": "Video" }
+                    ]
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image_3",
+                    "label": "Image"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "mobile_image_3",
+                    "label": "Mobile Image"
+                },
+                {
+                    "type": "text",
+                    "id": "mp4_video_url_3",
+                    "label": "Mp4 video URL"
+                },
+                {
+                    "type": "text",
+                    "id": "mp4_video_url_m_3",
+                    "label": "Mobile - Mp4 video URL"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "autoplay_video_3",
+                    "label": "Autoplay MP4 video",
+                    "default": true
+                },
+                {
+                    "type": "radio",
+                    "id": "media_4_type",
+                    "label": "Media 4 type",
+                    "options": [
+                        { "value": "image", "label": "Image" },
+                        { "value": "video", "label": "Video" }
+                    ]
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image_4",
+                    "label": "Image"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "mobile_image_4",
+                    "label": "Mobile Image"
+                },
+                {
+                    "type": "text",
+                    "id": "mp4_video_url_4",
+                    "label": "Mp4 video URL"
+                },
+                {
+                    "type": "text",
+                    "id": "mp4_video_url_m_4",
+                    "label": "Mobile - Mp4 video URL"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "autoplay_video_4",
+                    "label": "Autoplay MP4 video",
+                    "default": true
+                },
+                {
+                    "type": "radio",
+                    "id": "media_5_type",
+                    "label": "Media 5 type",
+                    "options": [
+                        { "value": "image", "label": "Image" },
+                        { "value": "video", "label": "Video" }
+                    ]
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image_5",
+                    "label": "Image"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "mobile_image_5",
+                    "label": "Mobile Image"
+                },
+                {
+                    "type": "text",
+                    "id": "mp4_video_url_5",
+                    "label": "Mp4 video URL"
+                },
+                {
+                    "type": "text",
+                    "id": "mp4_video_url_m_5",
+                    "label": "Mobile - Mp4 video URL"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "autoplay_video_5",
+                    "label": "Autoplay MP4 video",
+                    "default": true
+                }
+            ]
+        }
+    ]
+}
+
+{% endschema %}

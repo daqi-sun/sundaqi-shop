@@ -1,0 +1,831 @@
+<div 
+    class="prime-day-flash-section fall-sale-flash-section section-{{ section.id }} {% if section.settings.text_position == 'top' %}text-in-top{% else %}text-in-side{% endif %}"
+    id="{{ section.settings.section_id }}"
+>
+    <div class="prime-day-container">
+        <div class="text-part" x-data="fallSaleFlash" x-cloak>
+            {% if section.settings.flash_img != blank %}
+                <div class="flash-img"><img loading="lazy" srcset="{{ section.settings.flash_img | img_url: 'small' | replace: '_small', '' }}" /></div>
+            {% endif %}
+            <div class="flash-text-box emarsys__form">
+                <div class="form_text_content" x-show="!submitSuccess">
+                    {% if section.settings.subtitle != blank %}
+                        <div class="flash-subtitle">{{ section.settings.subtitle }}</div>
+                    {% endif %}
+                    {% if section.settings.title != blank %}
+                        <div class="flash-title">{{ section.settings.title }}</div>
+                    {% endif %}
+                    {% if section.settings.description != blank %}
+                        <div class="flash-description">{{ section.settings.description }}</div>
+                    {% endif %}
+                    {% if section.settings.show_coundown and section.settings.timer_end_date != blank %}
+                        <div class="countdown_wrapper flash-sale-countdown custom_countdown" data-countdown-end-date="{{ section.settings.timer_end_date }}">
+                            <div class="star_countdown">
+                                <div class="hours">
+                                    <div><span class="block hours_num"></span><span>horas</span></div>
+                                    <span class="dots">:</span>
+                                </div>
+                                <div class="mins">
+                                    <div><span class="block mins_num"></span><span>minutos</span></div>
+                                    <span class="dots">:</span>
+                                </div>
+                                <div class="sec">
+                                    <div><span class="block sec_num"></span><span>segundos</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+                {% if section.settings.show_subscription_form %}
+                <div>
+                    {% form 'customer', class: 'klaviyo_signup' %}
+                        <input id="fall-sale-flash-subscription-submit-hidden" type="submit" style="display: none">
+                        <div class="klaviyo_field_group" x-show="!submitSuccess">
+                            <input
+                                type="email"
+                                name="contact[email]"
+                                maxlength="255"
+                                :value="email"
+                                x-model="email"
+                                placeholder="{{ section.settings.input_placeholder }}"
+                                class="Form__Input form__input"
+                                required
+                                style="
+                                    background-color: {{ section.settings.form_input_bg_color }}; 
+                                    border-color: {{ section.settings.form_input_border_color }};
+                                    color: {{ section.settings.form_input_text_color }};
+                                "
+                            >
+    
+                            <button
+                                aria-label="Submit"
+                                tabindex="993"
+                                type="button"
+                                class="btn klaviyo_submit_button"
+                                style="
+                                    background-color: {{ section.settings.form_btn_bg_color }};
+                                    color: {{ section.settings.form_btn_text_color }};
+                                "
+                                @click="postEcoflowSubscribeApiAndSubmitForm"
+                            >
+                                {{ section.settings.btn_text | default: 'Subscribe' }}
+                            </button>
+    
+                        </div>
+                        <div id="successMessage" class="success_message text--white" x-show="submitSuccess">{{ section.settings.emarsys_success_text }}</div>
+                        <div class="email-error" x-show="errMsg !== ''" x-text="errMsg"></div>
+                    {% endform %}
+                </div>
+                {% endif %}
+
+                {% if section.settings.info_line != blank %}
+                    <div class="flash-info-line">{{ section.settings.info_line }}</div>
+                {% endif %}
+            </div>
+        </div>
+        {% if section.blocks.size > 0 %}
+            <div class="products-part">
+                <div class="products-grid {% if section.blocks.size < 4 %}desktop-slider-disabled{% endif %}">
+                    {% assign collection = collections[section.settings.collection] %}
+                    {% for block in section.blocks %}
+                        {%- comment %}<locksmith:7109>{% endcomment -%}
+                          {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                        {%- comment %}</locksmith:7109>{% endcomment -%}
+                        <div class="product-block block-{{block.id}}">
+                            <div class="product-block-inner" style="background-color: {{ section.settings.product_card_bg_color }}; border-color: {{ section.settings.product_card_border_color }}">
+                                {% assign product = block.settings.product %}
+                                {% assign variant = product.first_available_variant %}
+                                {% assign inventory = 0.2 | times: variant.inventory_quantity | floor %}
+                                {% if block.settings.show_inventory %}
+                                    <div class="inventory-badge" style="background-color: {{section.settings.badge_bg_color}}">
+                                        {{ inventory }}PCS LEFT
+                                    </div>
+                                {% endif %}
+                                {% if section.settings.show_discount_tag and block.settings.product_discount != blank %}
+                                    <div class="discount_tag_wrapper {% if section.settings.discount_badge_image == blank %}discount-non-image{% endif %} {% unless block.settings.show_inventory %}align_right{% endunless %}" style="background-color: {{section.settings.badge_bg_color}}">
+                                        {% if section.settings.discount_badge_image != blank %}<img loading="lazy" srcset="{{ section.settings.discount_badge_image | img_url: 'small' | replace: '_small', '' }}" />{% endif %}
+                                        <div class="discount_tag_text">
+                                            {{ block.settings.product_discount }}
+                                        </div>
+                                    </div>
+                                {% endif %}
+                                <div class="product-image">
+                                    <img loading="lazy" srcset="{{ block.settings.product_image | default: product.featured_image | img_url: 'small' | replace: '_small', '' }}" />
+                                </div>
+                                <div class="product-title" style="color: {{ section.settings.product_card_title_color }}">
+                                    {{ block.settings.product_title | default: product.title }}
+                                </div>
+
+                                {% if block.settings.product_price != blank %}
+                                    <div class="product-price" style="color: {{ section.settings.product_card_price_color }}">{{ block.settings.product_price }}</div>
+                                {% else %}
+                                <div class="product-price">
+                                    <span class="sale-price" style="color: {{ section.settings.product_card_price_color }}">{{ variant.price | money | replace: '.00', '' }}</span>
+                                    {% if variant.compare_at_price > variant.price %}
+                                        <span class="original-price">{{ variant.compare_at_price | money | replace: '.00', '' }}</span>
+                                    {% endif %}
+                                </div>
+                                {% endif %}
+
+                                {% if block.settings.show_atc_btn %}
+                                    <button
+                                        style="color: {{ section.settings.btn_text_color }}; background-color: {{ section.settings.btn_bg_color }}" 
+                                        class="btn {% if product.available %}checkoutButton{% else %}sold-out-btn{% endif %}" 
+                                        data-variant-id="{{ variant.id }}">{% if product.available %}Comprar Ahora{% else %}Sold Out{% endif %}</button>
+                                {% endif %}
+
+                                {% if block.settings.show_amazon_btn %}
+                                    <a href="{{ block.settings.amazon_url }}" class="btn amazon_btn">
+                                        <span><svg width="51" height="36" viewbox="0 0 51 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.0568 13.7972V5.15724H10.4528C11.0008 5.15724 11.4608 5.26924 11.8328 5.49324C12.2048 5.71724 12.4848 6.00724 12.6728 6.36324C12.8608 6.71524 12.9548 7.08724 12.9548 7.47924C12.9548 7.95524 12.8368 8.36324 12.6008 8.70324C12.3688 9.04324 12.0548 9.27524 11.6588 9.39924L11.6468 9.10524C12.1988 9.24124 12.6228 9.50724 12.9188 9.90324C13.2148 10.2952 13.3628 10.7532 13.3628 11.2772C13.3628 11.7852 13.2608 12.2272 13.0568 12.6032C12.8568 12.9792 12.5628 13.2732 12.1748 13.4852C11.7908 13.6932 11.3248 13.7972 10.7768 13.7972H7.0568ZM8.3288 12.6032H10.5848C10.8688 12.6032 11.1228 12.5492 11.3468 12.4412C11.5748 12.3332 11.7528 12.1792 11.8808 11.9792C12.0128 11.7752 12.0788 11.5332 12.0788 11.2532C12.0788 10.9932 12.0208 10.7592 11.9048 10.5512C11.7928 10.3392 11.6288 10.1732 11.4128 10.0532C11.2008 9.92924 10.9508 9.86724 10.6628 9.86724H8.3288V12.6032ZM8.3288 8.68524H10.4348C10.6668 8.68524 10.8748 8.63924 11.0588 8.54724C11.2468 8.45124 11.3948 8.31524 11.5028 8.13924C11.6148 7.95924 11.6708 7.74324 11.6708 7.49124C11.6708 7.15524 11.5588 6.87924 11.3348 6.66324C11.1108 6.44724 10.8108 6.33924 10.4348 6.33924H8.3288V8.68524ZM16.9988 13.9712C16.5508 13.9712 16.1748 13.8992 15.8708 13.7552C15.5668 13.6112 15.3188 13.4232 15.1268 13.1912C14.9388 12.9552 14.7948 12.6992 14.6948 12.4232C14.5948 12.1472 14.5268 11.8772 14.4908 11.6132C14.4548 11.3492 14.4368 11.1172 14.4368 10.9172V7.31724H15.7088V10.5032C15.7088 10.7552 15.7288 11.0152 15.7688 11.2832C15.8128 11.5472 15.8928 11.7932 16.0088 12.0212C16.1288 12.2492 16.2948 12.4332 16.5068 12.5732C16.7228 12.7132 17.0028 12.7832 17.3468 12.7832C17.5708 12.7832 17.7828 12.7472 17.9828 12.6752C18.1828 12.5992 18.3568 12.4792 18.5048 12.3152C18.6568 12.1512 18.7748 11.9352 18.8588 11.6672C18.9468 11.3992 18.9908 11.0732 18.9908 10.6892L19.7708 10.9832C19.7708 11.5712 19.6608 12.0912 19.4408 12.5432C19.2208 12.9912 18.9048 13.3412 18.4928 13.5932C18.0808 13.8452 17.5828 13.9712 16.9988 13.9712ZM19.1408 13.7972V11.9252H18.9908V7.31724H20.2568V13.7972H19.1408ZM22.8156 16.6772L24.0696 13.2632L24.0876 14.2712L21.2616 7.31724H22.5696L24.6816 12.6872H24.2976L26.3136 7.31724H27.5856L24.0096 16.6772H22.8156ZM33.7419 13.9772C33.0939 13.9772 32.5319 13.8312 32.0559 13.5392C31.5799 13.2472 31.2119 12.8452 30.9519 12.3332C30.6959 11.8172 30.5679 11.2232 30.5679 10.5512C30.5679 9.87524 30.6999 9.28124 30.9639 8.76924C31.2279 8.25324 31.5979 7.85324 32.0739 7.56924C32.5499 7.28124 33.1059 7.13724 33.7419 7.13724C34.3899 7.13724 34.9519 7.28324 35.4279 7.57524C35.9039 7.86724 36.2719 8.26924 36.5319 8.78124C36.7919 9.29324 36.9219 9.88324 36.9219 10.5512C36.9219 11.2272 36.7899 11.8232 36.5259 12.3392C36.2659 12.8512 35.8979 13.2532 35.4219 13.5452C34.9459 13.8332 34.3859 13.9772 33.7419 13.9772ZM33.7419 12.7952C34.3619 12.7952 34.8239 12.5872 35.1279 12.1712C35.4359 11.7512 35.5899 11.2112 35.5899 10.5512C35.5899 9.87524 35.4339 9.33524 35.1219 8.93124C34.8139 8.52324 34.3539 8.31924 33.7419 8.31924C33.3219 8.31924 32.9759 8.41524 32.7039 8.60724C32.4319 8.79524 32.2299 9.05724 32.0979 9.39324C31.9659 9.72524 31.8999 10.1112 31.8999 10.5512C31.8999 11.2312 32.0559 11.7752 32.3679 12.1832C32.6799 12.5912 33.1379 12.7952 33.7419 12.7952ZM42.7884 13.7972V10.6112C42.7884 10.3592 42.7664 10.1012 42.7224 9.83724C42.6824 9.56924 42.6024 9.32124 42.4824 9.09324C42.3664 8.86524 42.2004 8.68124 41.9844 8.54124C41.7724 8.40124 41.4944 8.33124 41.1504 8.33124C40.9264 8.33124 40.7144 8.36924 40.5144 8.44524C40.3144 8.51724 40.1384 8.63524 39.9864 8.79924C39.8384 8.96324 39.7204 9.17924 39.6324 9.44724C39.5484 9.71524 39.5064 10.0412 39.5064 10.4252L38.7264 10.1312C38.7264 9.54324 38.8364 9.02524 39.0564 8.57724C39.2764 8.12524 39.5924 7.77324 40.0044 7.52124C40.4164 7.26924 40.9144 7.14324 41.4984 7.14324C41.9464 7.14324 42.3224 7.21524 42.6264 7.35924C42.9304 7.50324 43.1764 7.69324 43.3644 7.92924C43.5564 8.16124 43.7024 8.41524 43.8024 8.69124C43.9024 8.96724 43.9704 9.23724 44.0064 9.50124C44.0424 9.76524 44.0604 9.99724 44.0604 10.1972V13.7972H42.7884ZM38.2344 13.7972V7.31724H39.3564V9.18924H39.5064V13.7972H38.2344Z" fill="white"></path><g clip-path="url(#clip0_1_14249)"><path fill-rule="evenodd" clip-rule="evenodd" d="M31.6401 31.627C28.6776 33.9614 24.3803 35.1975 20.6819 35.1975C15.7419 35.2228 10.9708 33.2789 7.30279 29.7465C7.02406 29.4847 7.26457 29.1191 7.59904 29.3231C11.6774 31.8123 16.2946 33.12 20.9925 33.1164C24.5023 33.0977 27.9741 32.339 31.2084 30.884C31.7118 30.6612 32.1306 31.2393 31.6401 31.627Z" fill="#FF9900"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M32.8729 30.124C32.4938 29.614 30.3675 29.8792 29.4119 30.0016C29.122 30.039 29.0774 29.7687 29.3386 29.5732C31.0349 28.3014 33.8142 28.6686 34.1376 29.0937C34.4609 29.5188 34.0516 32.4942 32.462 33.9173C32.2167 34.1349 31.9842 34.0193 32.0941 33.7302C32.4508 32.7764 33.252 30.6426 32.8729 30.124Z" fill="#FF9900"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M29.4815 20.5891V19.353C29.4806 19.3117 29.4876 19.2706 29.502 19.2322C29.5165 19.1938 29.538 19.1589 29.5654 19.1297C29.5928 19.1005 29.6255 19.0775 29.6614 19.0621C29.6974 19.0467 29.7359 19.0392 29.7746 19.0401H34.9606C34.9996 19.0385 35.0386 19.0454 35.0751 19.0604C35.1116 19.0753 35.1448 19.098 35.1728 19.1271C35.2009 19.1562 35.223 19.1911 35.238 19.2297C35.253 19.2682 35.2605 19.3096 35.26 19.3513V20.4105C35.26 20.5806 35.1183 20.8203 34.8698 21.1892L32.1892 25.2851C33.1863 25.2596 34.2423 25.4194 35.1485 25.9652C35.2302 26.0127 35.2986 26.0824 35.347 26.1672C35.3954 26.2519 35.422 26.3488 35.4241 26.4481V27.7675C35.4241 27.9494 35.2377 28.1585 35.0418 28.0497C34.1934 27.5846 33.2531 27.3429 32.2993 27.345C31.3456 27.3471 30.4062 27.5928 29.5596 28.0616C29.3796 28.1636 29.19 27.9562 29.19 27.7743V26.5178C29.1732 26.2202 29.2404 25.9241 29.3828 25.6677L32.4966 20.907H29.7889C29.7487 20.9099 29.7083 20.9037 29.6704 20.8889C29.6325 20.8741 29.598 20.8509 29.569 20.821C29.54 20.791 29.5173 20.7549 29.5022 20.7149C29.4871 20.675 29.4801 20.6321 29.4815 20.5891Z" fill="white"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M10.5535 28.3031H8.97509C8.90385 28.2994 8.83621 28.2685 8.78447 28.2161C8.73273 28.1637 8.70034 28.0932 8.69318 28.0174V19.3734C8.694 19.3317 8.70253 19.2905 8.71827 19.2523C8.73401 19.214 8.75665 19.1795 8.7849 19.1506C8.81315 19.1217 8.84646 19.099 8.88292 19.0839C8.91938 19.0687 8.95828 19.0614 8.99739 19.0623H10.4675C10.5404 19.0646 10.61 19.0955 10.6629 19.1491C10.7159 19.2028 10.7483 19.2754 10.7542 19.353V20.482H10.7845C11.1667 19.3904 11.8898 18.8804 12.855 18.8804C13.8203 18.8804 14.4605 19.3904 14.9033 20.482C15.0504 20.0713 15.2968 19.7095 15.6174 19.4334C15.9381 19.1574 16.3215 18.9769 16.7287 18.9104C17.1358 18.8439 17.5522 18.8937 17.9355 19.0548C18.3188 19.2159 18.6553 19.4824 18.9107 19.8274C19.4108 20.5551 19.3089 21.611 19.3089 22.5393V27.997C19.306 28.0793 19.2734 28.1571 19.2178 28.2142C19.1623 28.2713 19.0881 28.3031 19.011 28.3031H17.4342C17.3587 28.2996 17.2873 28.2655 17.2346 28.2076C17.1819 28.1498 17.1519 28.0726 17.1507 27.9919V23.4013C17.1507 23.0375 17.181 22.1278 17.1061 21.7827C16.9882 21.1995 16.6283 21.0363 16.1775 21.0363C15.9726 21.0428 15.7739 21.1135 15.6063 21.2396C15.4387 21.3656 15.3094 21.5415 15.2346 21.7453C15.0753 22.1822 15.0881 22.9099 15.0881 23.4013V27.9919C15.0873 28.0337 15.0787 28.0749 15.063 28.1131C15.0473 28.1514 15.0246 28.1859 14.9964 28.2148C14.9681 28.2437 14.9348 28.2664 14.8983 28.2815C14.8619 28.2967 14.823 28.304 14.7839 28.3031H13.207C13.1309 28.3014 13.0584 28.2684 13.0044 28.2111C12.9504 28.1539 12.9192 28.0766 12.9172 27.9953V23.4047C12.9172 22.4407 13.0637 21.0244 11.9456 21.0244C10.8275 21.0244 10.8545 22.4067 10.8545 23.4047V27.9953C10.852 28.0785 10.8191 28.1573 10.7629 28.2148C10.7066 28.2723 10.6314 28.304 10.5535 28.3031Z" fill="white"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M39.7265 18.8804C42.0647 18.8804 43.3389 21.0278 43.3389 23.7567C43.3389 26.3954 41.9389 28.4884 39.7297 28.4884C37.4314 28.4884 36.1779 26.341 36.1779 23.6665C36.1779 20.9921 37.4457 18.8804 39.7265 18.8804ZM39.7409 20.652C38.5766 20.652 38.5033 22.3523 38.5033 23.3996C38.5033 24.4469 38.489 26.7117 39.7265 26.7117C40.9641 26.7117 41.0007 24.8924 41.0007 23.7822C41.0007 23.0545 40.9705 22.1805 40.765 21.4885C40.5962 20.8816 40.2426 20.652 39.7409 20.652Z" fill="white"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M46.3751 28.3032H44.803C44.7275 28.2997 44.6561 28.2656 44.6034 28.2077C44.5507 28.1499 44.5207 28.0727 44.5195 27.992V19.3412C44.5282 19.2625 44.564 19.19 44.6199 19.1379C44.6758 19.0857 44.7479 19.0576 44.8222 19.059H46.2859C46.3508 19.0613 46.4133 19.0861 46.4639 19.1297C46.5144 19.1732 46.5504 19.2332 46.5662 19.3004V20.6232H46.5965C47.0393 19.433 47.6573 18.8754 48.7467 18.8754C49.4539 18.8754 50.1467 19.1474 50.5879 19.8955C51.0005 20.5875 51.0004 21.7522 51.0004 22.5887V28.0294C50.9896 28.1063 50.9529 28.1763 50.8972 28.2264C50.8415 28.2765 50.7706 28.3032 50.6978 28.3015H49.1162C49.0472 28.2979 48.9815 28.2688 48.9303 28.2192C48.8792 28.1695 48.8458 28.1025 48.8359 28.0294V23.3385C48.8359 22.3915 48.9394 21.0092 47.8484 21.0092C47.6498 21.0185 47.4579 21.0887 47.2958 21.2114C47.1336 21.3342 47.0081 21.5042 46.9341 21.7012C46.7128 22.2299 46.6841 22.757 46.6841 23.3402V27.9954C46.6804 28.0796 46.646 28.1589 46.5882 28.2164C46.5305 28.2739 46.454 28.3051 46.3751 28.3032Z" fill="white"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M25.3403 24.1764C25.3403 24.8327 25.3546 25.3801 25.044 25.9633C24.7924 26.4377 24.3942 26.7284 23.9514 26.7284C23.3461 26.7284 22.9957 26.2354 22.9957 25.506C22.9957 24.071 24.2014 23.8057 25.3434 23.8057L25.3403 24.1764ZM26.933 28.2842C26.8827 28.3318 26.8196 28.3613 26.7526 28.3683C26.6857 28.3754 26.6183 28.3596 26.5603 28.3233C26.0363 27.8574 25.9423 27.6432 25.6556 27.2011C24.7892 28.143 24.176 28.4253 23.0531 28.4253C21.7247 28.4253 20.691 27.5496 20.691 25.7984C20.6722 25.2102 20.8238 24.6301 21.1251 24.1372C21.4263 23.6443 21.8627 23.2626 22.3746 23.044C23.2315 22.6428 24.4276 22.5697 25.3434 22.4608V22.2432C25.3434 21.8419 25.3721 21.3676 25.1507 21.0207C25.0472 20.8768 24.9126 20.7618 24.7584 20.6854C24.6042 20.609 24.435 20.5736 24.2652 20.5821C23.6631 20.5821 23.1279 20.9119 22.9909 21.6022C22.9827 21.6785 22.9516 21.7498 22.9022 21.8056C22.8528 21.8614 22.7878 21.8986 22.717 21.9117L21.1864 21.7416C21.1488 21.7361 21.1126 21.7225 21.0801 21.7016C21.0476 21.6806 21.0195 21.6528 20.9974 21.6199C20.9754 21.5869 20.9598 21.5495 20.9518 21.5099C20.9437 21.4704 20.9433 21.4294 20.9506 21.3897C21.3026 19.4089 22.9782 18.8104 24.4802 18.8104C25.2479 18.8104 26.2513 19.0298 26.8582 19.6486C27.6259 20.4137 27.5526 21.4356 27.5526 22.5492V25.1608C27.5526 25.9514 27.86 26.2966 28.1483 26.7216C28.2486 26.8747 28.2709 27.0617 28.1483 27.1688C27.8297 27.4578 27.2532 27.9883 26.9378 28.2876L26.933 28.2842Z" fill="white"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M4.65102 24.1768C4.65102 24.8331 4.66536 25.3806 4.35636 25.9637C4.1063 26.4381 3.70652 26.7288 3.26373 26.7288C2.65849 26.7288 2.30808 26.2358 2.30808 25.5064C2.30808 24.0714 3.51379 23.8061 4.6558 23.8061L4.65102 24.1768ZM6.24378 28.2846C6.19348 28.3323 6.13033 28.3617 6.06338 28.3688C5.99642 28.3758 5.9291 28.36 5.87107 28.3237C5.34706 27.8578 5.25308 27.6436 4.96639 27.2015C4.09993 28.1434 3.48672 28.4257 2.36383 28.4257C1.03547 28.4257 0.00177167 27.5501 0.00177167 25.7988C-0.0170196 25.2106 0.134548 24.6305 0.435819 24.1376C0.737091 23.6447 1.17341 23.263 1.68531 23.0444C2.54221 22.6432 3.73837 22.5701 4.65261 22.4613V22.2436C4.65261 21.8424 4.68288 21.368 4.46148 21.0212C4.35793 20.8772 4.22332 20.7622 4.06912 20.6858C3.91493 20.6094 3.74572 20.574 3.57591 20.5825C2.97385 20.5825 2.43869 20.9123 2.30171 21.6026C2.29323 21.6788 2.26201 21.75 2.21267 21.8057C2.16333 21.8614 2.09849 21.8987 2.02776 21.9121L0.498711 21.7421C0.461116 21.7366 0.424967 21.7229 0.392481 21.702C0.359994 21.6811 0.331854 21.6533 0.309785 21.6203C0.287715 21.5874 0.27218 21.5499 0.264132 21.5104C0.256085 21.4708 0.255694 21.4299 0.262983 21.3901C0.616575 19.3957 2.29375 18.7972 3.79571 18.7972C4.56342 18.7972 5.56686 19.0166 6.1737 19.6355C6.93981 20.4023 6.86495 21.4224 6.86495 22.5361V25.1612C6.86495 25.9518 7.17235 26.297 7.46064 26.722C7.56098 26.8751 7.58488 27.0621 7.46064 27.1692C7.14209 27.4583 6.56551 27.9887 6.25015 28.288L6.24378 28.2846Z" fill="white"></path></g><defs><clippath id="clip0_1_14249"><rect width="51" height="16.4056" fill="white" transform="translate(0 18.7972)"></rect></clippath></defs></svg></span>
+                                    </a>
+                                {% endif %}
+                            </div>
+                            <style>
+                                .block-{{block.id}} .product-image img{ width: {{ block.settings.image_width }}px; }
+                                .block-{{ block.id }} .discount_tag_wrapper .discount_tag_text, .block-{{ block.id }} .discount_tag_wrapper .discount_tag_text span{ color: {{ section.settings.discount_color }}; }
+                                @media screen and (max-width: 749px){
+                                    .block-{{block.id}} .product-image img{ width: {{ block.settings.image_width_m }}px; }
+                                }
+                            </style>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="prev-btn">
+                    <svg class="hideDesktop" width="10" height="17" viewBox="0 0 10 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.25" d="M8.41504 1.66846L1.68796 8.76926L8.41504 15.8701" stroke="#002055" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="next-btn">
+                    <span class="{% if section.blocks.size <= 2 %}hideDesktop{% endif %}">
+                        <svg class="hideMobile" width="22" height="37" viewBox="0 0 22 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.25" d="M3.43164 3.40771L17.8672 18.6452L3.43164 33.8828" stroke="#002055" stroke-width="6" stroke-linecap="round"/>
+                        </svg>
+                    </span>
+                    <svg class="hideDesktop" width="10" height="17" viewBox="0 0 10 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.25" d="M1.10547 1.66846L7.83255 8.76926L1.10547 15.8701" stroke="#002055" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+<style>
+    .section-{{ section.id }}{
+        padding-top: {{ section.settings.section_top_space }}px;
+        padding-bottom: {{ section.settings.section_bottom_space }}px;
+    }
+
+    .prime-day-flash-section .flash-title p {
+        color: {{ section.settings.title_color }};
+    }
+
+    .fall-sale-flash-section.prime-day-flash-section .flash-subtitle p {
+        color: {{ section.settings.subtitle_color }};
+    }
+
+    .email-error {
+        color: #ff1f33;
+    }
+
+    [x-cloak] {
+        display: none !important;
+    }
+
+    @media screen and (max-width: 749px){
+        .section-{{ section.id }}{
+            padding-top: {{ section.settings.section_top_space_m }}px;
+            padding-bottom: {{ section.settings.section_bottom_space_m }}px;
+        }
+    }
+</style>
+
+<script>
+  // fallsale section settings will pass to below js file
+  var fallSaleSettingJsons = {{ section.settings | json }};
+</script>
+<script src="{{ 'subscription-form-common.js' |  asset_url }}"></script>
+<script src="{{ 'fall-sale-flash-section-alpine.js' | asset_url }}"></script>
+
+{% schema %}
+{
+"name": "Fall sale flash section",
+"settings": [
+{
+    "type": "text",
+    "id": "section_id",
+    "label": "Section ID"
+},
+{
+    "type": "header",
+    "content": "Section spacing"
+},
+  {
+    "type": "range",
+    "id": "section_top_space",
+    "label": "Top space(Desktop)",
+    "min": 0,
+    "max": 150,
+    "step": 5,
+    "unit": "px",
+    "default": 20
+  },
+  {
+    "type": "range",
+    "id": "section_bottom_space",
+    "label": "Bottom space(Desktop)",
+    "min": 0,
+    "max": 150,
+    "step": 5,
+    "unit": "px",
+    "default": 120
+  },
+  {
+    "type": "range",
+    "id": "section_top_space_m",
+    "label": "Top space(Mobile)",
+    "min": 0,
+    "max": 80,
+    "step": 5,
+    "unit": "px",
+    "default": 20
+  },
+  {
+    "type": "range",
+    "id": "section_bottom_space_m",
+    "label": "Bottom space(Mobile)",
+    "min": 0,
+    "max": 80,
+    "step": 5,
+    "unit": "px",
+    "default": 40
+  },
+  {
+    "type": "header",
+    "content": "Subscription Form API Settings",
+    "info": "Global Headers can be changed in the global theme settings - Email Subscription API Settings section"
+  },
+  {
+      "type": "text",
+      "id": "contact_list_id",
+      "label": "Contact List ID"
+    },
+    {
+      "type": "text",
+      "id": "single_1_id",
+      "label": "Single 1 ID"
+    },
+    {
+      "type": "text",
+      "id": "single_1_value",
+      "label": "Single 1 Value",
+      "info": "Please enter a single number for the value. e.g. 1 or 2 or 3"
+    },
+    {
+      "type": "radio",
+      "id": "single_1_overwrite",
+      "label": "Single 1 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "single_2_id",
+      "label": "Single 2 ID"
+    },
+    {
+      "type": "text",
+      "id": "single_2_value",
+      "label": "Single 2 Value",
+      "info": "Please enter a single number for the value. e.g. 1 or 2 or 3"
+    },
+    {
+      "type": "radio",
+      "id": "single_2_overwrite",
+      "label": "Single 2 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "single_3_id",
+      "label": "Single 3 ID"
+    },
+    {
+      "type": "text",
+      "id": "single_3_value",
+      "label": "Single 3 Value",
+      "info": "Please enter a single number for the value. e.g. 1 or 2 or 3"
+    },
+    {
+      "type": "radio",
+      "id": "single_3_overwrite",
+      "label": "Single 3 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "single_4_id",
+      "label": "Single 4 ID"
+    },
+    {
+      "type": "text",
+      "id": "single_4_value",
+      "label": "Single 4 Value",
+      "info": "Please enter a single number for the value. e.g. 1 or 2 or 3"
+    },
+    {
+      "type": "radio",
+      "id": "single_4_overwrite",
+      "label": "Single 4 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "subscription_text_1_id",
+      "label": "Text 1 ID"
+    },
+    {
+      "type": "text",
+      "id": "subscription_text_1_value",
+      "label": "Text 1 Value"
+    },
+    {
+      "type": "radio",
+      "id": "subscription_text_1_overwrite",
+      "label": "Text 1 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "subscription_text_2_id",
+      "label": "Text 2 ID"
+    },
+    {
+      "type": "text",
+      "id": "subscription_text_2_value",
+      "label": "Text 2 Value"
+    },
+    {
+      "type": "radio",
+      "id": "subscription_text_2_overwrite",
+      "label": "Text 2 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "multiple_1_id",
+      "label": "Multiple 1 ID"
+    },
+    {
+      "type": "text",
+      "id": "multiple_1_value",
+      "label": "Multiple 1 Value",
+      "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+    },
+    {
+      "type": "radio",
+      "id": "multiple_1_overwrite",
+      "label": "Multiple 1 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "multiple_2_id",
+      "label": "Multiple 2 ID"
+    },
+    {
+      "type": "text",
+      "id": "multiple_2_value",
+      "label": "Multiple 2 Value",
+      "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+    },
+    {
+      "type": "radio",
+      "id": "multiple_2_overwrite",
+      "label": "Multiple 2 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "multiple_3_id",
+      "label": "Multiple 3 ID"
+    },
+    {
+      "type": "text",
+      "id": "multiple_3_value",
+      "label": "Multiple 3 Value",
+      "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+    },
+    {
+      "type": "radio",
+      "id": "multiple_3_overwrite",
+      "label": "Multiple 3 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "multiple_4_id",
+      "label": "Multiple 4 ID"
+    },
+    {
+      "type": "text",
+      "id": "multiple_4_value",
+      "label": "Multiple 4 Value",
+      "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+    },
+    {
+      "type": "radio",
+      "id": "multiple_4_overwrite",
+      "label": "Multiple 4 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "multiple_5_id",
+      "label": "Multiple 5 ID"
+    },
+    {
+      "type": "text",
+      "id": "multiple_5_value",
+      "label": "Multiple 5 Value",
+      "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+    },
+    {
+      "type": "radio",
+      "id": "multiple_5_overwrite",
+      "label": "Multiple 5 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+  {
+    "type": "header",
+    "content": "Flash sale UI settings"
+  },
+{
+    "type": "select",
+    "id": "text_position",
+    "label": "Text position",
+    "options": [
+        { "value": "top", "label": "Top" },
+        { "value": "side", "label": "Left side" }
+    ]
+},
+{
+    "type": "image_picker",
+    "id": "flash_img",
+    "label": "Flash sale image"
+},
+{
+    "type": "richtext",
+    "id": "subtitle",
+    "label": "Subtitle"
+},
+{
+    "type": "color",
+    "id": "subtitle_color",
+    "label": "Subtitle color",
+    "default": "#03060b"
+},
+{
+    "type": "richtext",
+    "id": "title",
+    "label": "Title"
+},
+{
+    "type": "color",
+    "id": "title_color",
+    "label": "Title color",
+    "default": "#03060b"
+},
+{
+    "type": "richtext",
+    "id": "description",
+    "label": "Description"
+},
+{
+    "type": "checkbox",
+    "id": "show_subscription_form",
+    "label": "Show subscription form",
+    "default": true
+},
+{
+    "type": "textarea",
+    "id": "emarsys_success_text",
+    "label": "Emarsys form success message"
+},
+{
+    "type": "text",
+    "id": "input_placeholder",
+    "label": "Input placeholder",
+    "default": "Enter your email"
+},
+{
+    "type": "color",
+    "id": "form_input_bg_color",
+    "label": "Form input background color",
+    "default": "#ffffff"
+},
+{
+    "type": "color",
+    "id": "form_input_border_color",
+    "label": "Form input border color",
+    "default": "#DAE0E6"
+},
+{
+    "type": "color",
+    "id": "form_input_text_color",
+    "label": "Form input text color",
+    "default": "#000000"
+},
+{
+    "type": "color",
+    "id": "form_btn_text_color",
+    "label": "Form button text color",
+    "default": "#ffffff"
+},
+{
+    "type": "color",
+    "id": "form_btn_bg_color",
+    "label": "Form button background color",
+    "default": "#E08734"
+},
+{
+    "type": "text",
+    "id": "btn_text",
+    "label": "Button text"
+},
+{
+    "type": "header",
+    "content": "Countdown timer"
+},
+{
+    "type": "checkbox",
+    "id": "show_coundown",
+    "label": "Show countdown timer"
+},
+{
+    "type": "text",
+    "id": "timer_end_date",
+    "label": "Countdown timer end date"
+},
+{
+    "type": "header",
+    "content": "Info line"
+},
+{
+    "type": "text",
+    "id": "info_line",
+    "label": "Info line"
+},
+{
+    "type": "checkbox",
+    "id": "show_discount_tag",
+    "label": "Show Discount Badge"
+},
+{
+    "type": "image_picker",
+    "id": "discount_badge_image",
+    "label": "Badge background image"
+},
+{
+    "type": "color",
+    "id": "badge_bg_color",
+    "label": "Badge background color"
+},
+{
+    "type": "color",
+    "id": "discount_color",
+    "label": "Discount tag text color"
+},
+{
+    "type": "header",
+    "content": "Product Cards"
+},
+{
+    "type": "color",
+    "id": "product_card_bg_color",
+    "label": "Product card background color",
+    "default": "#f3edd3"
+},
+{
+    "type": "color",
+    "id": "product_card_border_color",
+    "label": "Product card border color",
+    "default": "#E08734"
+},
+{
+    "type": "color",
+    "id": "product_card_title_color",
+    "label": "Product card title color",
+    "default": "#03060b"
+},
+{
+    "type": "color",
+    "id": "product_card_price_color",
+    "label": "Product card price color",
+    "default": "#03060b"
+},
+{
+    "type": "color",
+    "id": "btn_text_color",
+    "label": "Button text color",
+    "default": "#ffffff"
+},
+{
+    "type": "color",
+    "id": "btn_bg_color",
+    "label": "Button background color",
+    "default": "#ffbe34"
+}
+],
+"blocks": [
+{
+    "type": "product",
+    "name": "Product",
+    "settings": [
+        {
+            "type": "product",
+            "id": "product",
+            "label": "Choose product"
+        },
+        {
+            "type": "image_picker",
+            "id": "product_image",
+            "label": "Product image"
+        },
+        {
+            "type": "range",
+            "id": "image_width",
+            "label": "Image width",
+            "min": 150,
+            "max": 240,
+            "step": 5,
+            "default": 240,
+            "unit": "px"
+        },
+        {
+            "type": "range",
+            "id": "image_width_m",
+            "label": "Image width(Mobile)",
+            "min": 100,
+            "max": 200,
+            "step": 5,
+            "default": 140,
+            "unit": "px"
+        },
+        {
+            "type": "textarea",
+            "id": "product_discount",
+            "label": "Discount text",
+            "info": "Wrap percentage amount in <span> tag. For ex. <span>30%</span>OFF"
+        },
+        {
+            "type": "text",
+            "id": "product_title",
+            "label": "Product title"
+        },
+        {
+            "type": "text",
+            "id": "product_price",
+            "label": "Product price"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_inventory",
+            "label": "Show inventory badge",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "show_atc_btn",
+            "label": "Show ATC button"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_amazon_btn",
+            "label": "Show Amazon button"
+        },
+        {
+            "type": "url",
+            "id": "amazon_url",
+            "label": "Amazon button URL"
+        }
+    ]
+}
+],
+"presets": [
+{
+    "name": "Fall sale flash section",
+    "category":"Custom Sections"
+}
+]
+}
+{% endschema %}

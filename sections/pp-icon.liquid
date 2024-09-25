@@ -1,0 +1,119 @@
+<style>
+  .pp-icon__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .pp-icon__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+
+<div class="pp-icon__section pp-icon__section-{{ section.id }}">
+  <div class="container--default">
+    <div class="pp-icon__text-container">
+      {% if section.settings.title != blank %}
+        <h2 class="pp-icon__heading text--heading text--black">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+    </div>
+    <div class="pp-icon__image__container">
+      <div class="pp-icon__grid-container">
+        {% for block in section.blocks %}
+          <div class="pp-icon__block background--dark-white">
+            {% if block.settings.image != blank %}
+              <div class="pp-icon__block__image-wrapper">
+                <img
+                  src="{{ block.settings.image | img_url: 'master' }}"
+                  alt="{{ block.settings.image.alt }}"
+                >
+              </div>
+            {% endif %}
+            {% if block.settings.title != blank %}
+              <p class="pp-icon__title text--black text--center ">
+                {{ block.settings.title }}
+              </p>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "PP Icon",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Vielfältige Einsatzmöglichkeiten für Ihren Solarstrom"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block",
+      "name": "Icon",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Block Icon"
+        },
+        {
+          "type": "html",
+          "id": "title",
+          "label": "Block Title",
+          "default": "Unabhängigkeit von Netzversorgern"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

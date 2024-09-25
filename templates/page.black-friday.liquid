@@ -1,0 +1,682 @@
+{{ "es-black-friday.css" | asset_url | stylesheet_tag }}
+
+<div class="black-friday-preheat-page background-black">
+  <div class="black-friday-preheat">
+    <div class="hero--section">
+      <div class="black-friday-preheat--hero section-relative">
+        <div class="section-container section-absolute-top">
+          <div class="hero--heading-wrapper text-center">
+            {% comment %} <h1 class="hero--heading title-h1 color-white gotham-medium text-center"><span class="banner-text gotham-book">Comienza el 14 de noviembre.</span><br>Mejor opción, Mejores ofertas.</h1> {% endcomment %}
+          </div>
+
+        </div>
+        {% comment %} <div class="section-container section-absolute-bottom">
+          <div class="hero--heading-wrapper text-center">
+            <p class="hero--heading color-white gotham-medium text-center">Get ready for the best sale of the year. Leave your email for a chance to win a RIVER Mini wireless (one winner per site)</p>
+          </div>
+          <div class="klaviyo-form-RDjNHt section-relative">
+            {% comment %} <img class="form-icon" src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/email.png?v=1667379556" alt=""> {% endcomment %}
+          </div>
+        </div> {% endcomment %}
+      </div>
+    </div>
+    <div class="amazon-link-section">
+        <a href=" https://www.amazon.es/stores/page/E412CCFA-9B50-4158-B793-65F82FCBE209?channel=website">
+            <img src="https://cdn.shopify.com/s/files/1/0651/6922/7998/files/Group_14219.png?v=1668152822">
+        </a>
+    </div>
+    <div class="discount-countdown--container">
+      <div class="section-container">
+        <img class="hide_mobile_image" src="https://cdn.shopify.com/s/files/1/0651/6922/7998/files/Group_14199.png?v=1668153270" alt="">
+        <img class="show_mobile_image" src="https://cdn.shopify.com/s/files/1/0651/6922/7998/files/Group_14200.png?v=1668153398" alt="">
+      </div>
+    </div>
+
+    <div class="best-deal--section">
+      <div class="section-container">
+        <div class="heading--wrapper">
+            <h2 class="best-deal--heading title-h2 color-white gotham-bold text-center" >¡La mejor oferta del año! ¡300 € de descuento!</h2>
+        </div>
+      </div>
+      <div class="section-container">
+        <div class="product-container flex-container flex-wrap-mobile">
+          {%- assign product = all_products['delta-160w-portable-solar-panel'] -%}
+          {%- assign current_variant = product.selected_or_first_available_variant -%}
+          {%- assign savePrice = current_variant.compare_at_price | minus: current_variant.price | money_without_currency | replace: ',00', '' -%}
+          <div class="product-image--container section-relative text-center">
+            <a href="https://es.ecoflow.com/products/delta-solar-generator-160w-solar-panel?variant=39436345770148" target="_blank">
+              <div class="product-name-image--wrapper">
+                <img src="https://cdn.shopify.com/s/files/1/0576/3668/3974/files/ecoflow-delta_651b4e1c-be4d-4945-8156-31d20b9d02e6.png?v=1666952559" alt="">
+              </div>
+              <div class="product-bundle--wrapper">
+                <p class="product-bundle gotham-medium color-black"> + 160W Solar Panel</p>
+              </div>
+              <div class="product-image--wrapper">
+                <img src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/ecoflow-delta-160-solar-panel.png?v=1667284885" alt="">
+              </div>
+            </a>
+            </div>
+          <div class="product-details--container flex-container flex-column flex-align-center flex-justify-center">
+            <div class="discount-heading--wrapper">
+              <span class="discount-price gotham-bold">{%- if current_variant.compare_at_price > current_variant.price -%}Ahorra {{ savePrice }}€ {%- else -%}Ahorra ???€{%- endif -%}</span>
+            </div>
+            <div class="product-specification--wrapper flex-container">
+              <div class="product-specs-container">
+                <p class="product-specs gotham-book color-black text-center">Capacidad de<br>1260Wh</p>
+              </div>
+              <div class="product-specs-container">
+                <p class="product-specs gotham-book color-black text-center">21-22%<br>de eficiencia</p>
+              </div>
+              <div class="product-specs-container">
+                <p class="product-specs gotham-book color-black text-center">Carga solar en<br> 3-7 horas</p>
+              </div>
+            </div>
+            <div class="product-price--wrapper">
+              <p class="product-discounted-price gotham-bold color-black"> {{ current_variant.price | money_without_currency | replace: ',00','' }}€ <span class="product-price color-gray">{%- if current_variant.compare_at_price > current_variant.price -%}{{ current_variant.compare_at_price | money_without_currency | replace: ',00','' }}€{%- else -%} {{ current_variant.price | money_without_currency | replace: ',00','' }}€ {%- endif -%}</span> </p>
+            </div>
+            <div class="amazon-btn-container amazon-row">
+                <div class="button--wrapper flex-container">
+                  <a class="product-btn" href="https://es.ecoflow.com/products/delta-solar-generator-160w-solar-panel?variant=39436345770148" target="_blank">
+                    <div class="shop-now-btn--wrapper">
+                      <span class="product-btn gotham-bold color-white">Comprar Ahora</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="button--wrapper flex-container">
+                    <a class="product-btn" href="https://www.amazon.es/dp/B0BJKM91HK" target="_blank">
+                      <div class="shop-now-btn--wrapper">
+                        <img src="https://cdn.shopify.com/s/files/1/0651/6922/7998/files/ES_72f76206-078b-4b81-b81e-d855e447a0cb.png?v=1668152096">
+                      </div>
+                    </a>
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap--section">
+      <div class="section-container">
+        <div class="heading--wrapper">
+          <h2 class="wrap--heading title-h2 color-white gotham-bold text-center">Que tengas un invierno cálido</h2>
+        </div>
+        <div class="description--wrapper text-center">
+          <p class="description color-white gotham-medium text-center">Regístrate en la garantía para tener la oportunidad de ganar una manta eléctrica de calefacción. </p>
+          <p class="description color-white gotham-medium text-center">Solo para compras del 14 al 28 de noviembre. Disponible para compras en Amazon, Shopify y otros canales de venta.</p>
+        </div>
+        <div class="terms--wrapper">
+          <div class="terms-container">
+            <p class="terms-heading gotham-book color-gray">Condiciones:</p>
+            <ul class="terms-details">
+              <li class="term-items gotham-book color-gray">1) Compra una DELTA o un bundle de DELTA durante las rebajas del Black Friday. </li>
+              <li class="term-items gotham-book color-gray">2) Después de recibir el producto, registra la garantía antes del 11 de diciembre para tener la oportunidad de ganar (promoción solo disponible para las 1000 primeras garantías que se registren). </li>
+              <li class="term-items gotham-book color-gray">3) Los resultados se anunciarán el 15 de diciembre en nuestro grupo de Facebook y a través del correo electrónico.</li>
+              <li class="term-items gotham-book color-gray">4) Si resultas ganador, recibirás una manta eléctrica.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="banner-section background-black">
+      <div class="section-container">
+        <img src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/banner-1.png?v=1667294471" alt="" class="hide_mobile_image">
+        <img src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/banner-1-mobile.png?v=1667294656" alt="" class="show_mobile_image">
+      </div>
+    </div>
+
+    <div class="best-deal--section product-block">
+      <div class="section-container">
+        <div class="product-container flex-container flex-wrap-mobile">
+          <div class="product-image--container section-relative text-center">
+            <a href="https://es.ecoflow.com/products/delta-max-solar-generator-220w-solar-panel?variant=42356909408420" target="_blank">
+              <div class="product-name-image--wrapper">
+                <img src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/ecoflo-delta-max.png?v=1667306494" alt="">
+              </div>
+              <div class="product-bundle--wrapper">
+                <p class="product-bundle gotham-medium color-black">+ Panel Solar Portátil 220 W</p>
+              </div>
+              <div class="product-image--wrapper">
+                <img src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/ecoflow-delta-max-220-solar-panel.png?v=1667360588" alt="">
+              </div>
+            </a>
+            </div>
+          <div class="product-details--container flex-container flex-column flex-align-center flex-justify-center">
+            {%- assign product = all_products['delta-max-220w-portable-solar-panel'] -%}
+            {%- assign current_variant = product.variants[4] -%}
+            {%- assign savePrice = current_variant.compare_at_price | minus: current_variant.price | money_without_currency | replace: ',00', '' -%}
+            <div class="discount-heading--wrapper">
+              <span class="discount-price gotham-bold">{%- if current_variant.compare_at_price > current_variant.price -%}Ahorra {{ savePrice }}€ {%- else -%}Ahorra ???€{%- endif -%}</span>
+            </div>
+            <div class="product-specification--wrapper flex-container">
+              <div class="product-block-info">
+                <div class="product-specs-container">
+                  {%- assign product = all_products['delta-max-220w-portable-solar-panel'] -%}
+                  {%- assign current_variant = product.selected_or_first_available_variant -%}
+                  {%- assign savePrice = current_variant.compare_at_price | minus: current_variant.price | money_without_currency | replace: ',00', '' -%}
+                  <p class="product-specs gotham-book color-black text-center">DELTA MAX 1600</p>
+                </div>
+                <div class="product-price--wrapper">
+                  <p class="product-discounted-price gotham-bold color-black"> {{ current_variant.price | money_without_currency | replace: ',00','' }}€ <br class="show_mobile_image"><span class="product-price color-gray">{%- if current_variant.compare_at_price > current_variant.price -%}{{ current_variant.compare_at_price | money_without_currency | replace: ',00','' }}€{%- else -%} {{ current_variant.price | money_without_currency | replace: ',00','' }}€ {%- endif -%}</span> </p>
+                </div>
+                <div class="amazon-btn-container amazon-column">
+                    <div class="button--wrapper hide_mobile_image">
+                        <a class="product-btn" href="https://es.ecoflow.com/products/delta-max-solar-generator-220w-solar-panel?variant=42356909408420" target="_blank">
+                          <div class="shop-now-btn--wrapper">
+                            <span class="product-btn gotham-bold color-white">Comprar Ahora</span>
+                          </div>
+                        </a>
+                      </div>
+                    <div class="button--wrapper hide_mobile_image">
+                        <a class="product-btn" href="https://www.amazon.es/dp/B0B5FY67RS" target="_blank">
+                          <div class="shop-now-btn--wrapper">
+                            <img src="https://cdn.shopify.com/s/files/1/0651/6922/7998/files/ES_72f76206-078b-4b81-b81e-d855e447a0cb.png?v=1668152096">
+                          </div>
+                        </a>
+                    </div>
+                </div>
+
+              </div>
+              <div class="product-block-info">
+                {%- assign product = all_products['delta-max-220w-portable-solar-panel'] -%}
+                {%- assign current_variant = product.variants[4] -%}
+                {%- assign savePrice = current_variant.compare_at_price | minus: current_variant.price | money_without_currency | replace: ',00', '' -%}
+                <div class="product-specs-container">
+                  <p class="product-specs gotham-book color-black text-center">DELTA MAX 2000</p>
+                </div>
+                <div class="product-price--wrapper">
+                  <p class="product-discounted-price gotham-bold color-black"> {{ current_variant.price | money_without_currency | replace: ',00','' }}€ <br class="show_mobile_image"><span class="product-price color-gray">{%- if current_variant.compare_at_price > current_variant.price -%}{{ current_variant.compare_at_price | money_without_currency | replace: ',00','' }}€{%- else -%} {{ current_variant.price | money_without_currency | replace: ',00','' }}€ {%- endif -%}</span> </p>
+                </div>
+                <div class="amazon-btn-container amazon-column">
+                    <div class="button--wrapper hide_mobile_image">
+                        <a class="product-btn" href="https://es.ecoflow.com/products/delta-max-solar-generator-220w-solar-panel?variant=42356909539492" target="_blank">
+                            <div class="shop-now-btn--wrapper">
+                            <span class="product-btn gotham-bold color-white">Comprar Ahora</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="button--wrapper hide_mobile_image">
+                        <a class="product-btn" href="https://www.amazon.es/dp/B0B7JF85QJ" target="_blank">
+                            <div class="shop-now-btn--wrapper">
+                                <img src="https://cdn.shopify.com/s/files/1/0651/6922/7998/files/ES_72f76206-078b-4b81-b81e-d855e447a0cb.png?v=1668152096">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="amazon-btn-container amazon-column ">
+                <div class="button--wrapper show_mobile_image">
+                    <a class="product-btn" href="https://es.ecoflow.com/products/delta-max-solar-generator-220w-solar-panel?variant=42356909539492" target="_blank">
+                        <div class="shop-now-btn--wrapper">
+                        <span class="product-btn gotham-bold color-white">Comprar Ahora</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="button--wrapper show_mobile_image">
+                    <a class="product-btn" href="https://www.amazon.es/dp/B0B7JF85QJ" target="_blank">
+                        <div class="shop-now-btn--wrapper">
+                            <img src="https://cdn.shopify.com/s/files/1/0651/6922/7998/files/ES_72f76206-078b-4b81-b81e-d855e447a0cb.png?v=1668152096">
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="delta-product-bundle-section background-black">
+      <div class="section-container">
+        <div class="delta-product-bundle--container grid-masonry-container hide_mobile_image" >
+          <div class="image--wrapper grid-item">
+            <img class="hide_mobile_image" src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/grid-image-1.png?v=1667986089" alt=""/>
+          </div>
+          <div class="product--wrapper section-relative text-center grid-item">
+            {%- assign product = all_products['delta-max-portable-power-station'] -%}
+            {%- assign current_variant = product.selected_or_first_available_variant -%}
+            {%- assign savePrice = current_variant.compare_at_price | minus: current_variant.price | money_without_currency | replace: ',00', '' -%}
+            <div class="product-discount--wrapper">
+              <span class="discount-price gotham-medium color-white">{%- if current_variant.compare_at_price > current_variant.price -%}Ahorra {{ savePrice }}€ {%- else -%}Ahorra ???€{%- endif -%}</span>
+            </div>
+            <a href="https://es.ecoflow.com/products/delta-max-portable-power-station?variant=41602659221668" target="_blank">
+              <div class="product-name-image--wrapper">
+                <img src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/ecoflo-delta-max.png?v=1667306494" alt="" />
+              </div>
+              <div class="product-image--wrapper">
+                <img src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/ecoflow-delta-max.png?v=1667307412" alt="" />
+              </div>
+            </a>
+            <div class="product-bundle-specification--wrapper">
+              <p class="product-bundle-specs gotham-book color-black text-center">Carga 0-80% en 1 hora<br>Capacidad ampliable hasta 6048 Wh<br>Salida de CA 2400W</p>
+            </div>
+            <div class="product-specification--wrapper custom-grid-product flex-container">
+              <div class="product-block-info">
+                <div class="product-specs-container">
+                  {%- assign product = all_products['delta-max-portable-power-station'] -%}
+                  {%- assign current_variant = product.selected_or_first_available_variant -%}
+                  {%- assign savePrice = current_variant.compare_at_price | minus: current_variant.price | money_without_currency | replace: ',00', '' -%}
+                  <p class="product-specs gotham-book color-black text-center">DELTA MAX 1600</p>
+                </div>
+                <div class="product-price--wrapper">
+                  <p class="product-discounted-price gotham-bold color-black"> {{ current_variant.price | money_without_currency | replace: ',00','' }}€ <br class="show_tablet"><span class="product-price color-gray">{%- if current_variant.compare_at_price > current_variant.price -%}{{ current_variant.compare_at_price | money_without_currency | replace: ',00','' }}€{%- else -%} {{ current_variant.price | money_without_currency | replace: ',00','' }}€ {%- endif -%}</span> </p>
+                </div>
+                <div class="amazon-btn-container amazon-column">
+                    <div class="button--wrapper hide_mobile_image">
+                      <a class="product-btn" href="https://es.ecoflow.com/products/delta-max-portable-power-station?variant=41602659254436" target="_blank">
+                        <div class="shop-now-btn--wrapper">
+                          <span class="product-btn gotham-bold color-white">Comprar Ahora</span>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="button--wrapper hide_mobile_image">
+                        <a class="product-btn" href="https://www.amazon.es/dp/B09PFZRVQ9" target="_blank">
+                          <div class="shop-now-btn--wrapper">
+                            <img src="https://cdn.shopify.com/s/files/1/0651/6922/7998/files/ES_72f76206-078b-4b81-b81e-d855e447a0cb.png?v=1668152096">
+                          </div>
+                        </a>
+                    </div>
+                </div>
+              </div>
+              <div class="product-block-info">
+                {%- assign product = all_products['delta-max-portable-power-station'] -%}
+                {%- assign current_variant = product.variants[1] -%}
+                {%- assign savePrice = current_variant.compare_at_price | minus: current_variant.price | money_without_currency | replace: ',00', '' -%}
+                <div class="product-specs-container">
+                  <p class="product-specs gotham-book color-black text-center">DELTA MAX 2000</p>
+                </div>
+                <div class="product-price--wrapper">
+                  <p class="product-discounted-price gotham-bold color-black"> {{ current_variant.price | money_without_currency | replace: ',00','' }}€ <br class="show_tablet"><span class="product-price color-gray">{%- if current_variant.compare_at_price > current_variant.price -%}{{ current_variant.compare_at_price | money_without_currency | replace: ',00','' }}€{%- else -%} {{ current_variant.price | money_without_currency | replace: ',00','' }}€ {%- endif -%}</span> </p>
+                </div>
+                <div class="amazon-btn-container amazon-column">
+                    <div class="button--wrapper hide_mobile_image">
+                      <a class="product-btn" href="https://es.ecoflow.com/products/delta-max-portable-power-station?variant=42386682511607" target="_blank">
+                        <div class="shop-now-btn--wrapper">
+                          <span class="product-btn gotham-bold color-white">Comprar Ahora</span>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="button--wrapper hide_mobile_image">
+                        <a class="product-btn" href="https://www.amazon.es/dp/B09GXY2QZ3" target="_blank">
+                          <div class="shop-now-btn--wrapper">
+                            <img src="https://cdn.shopify.com/s/files/1/0651/6922/7998/files/ES_72f76206-078b-4b81-b81e-d855e447a0cb.png?v=1668152096">
+                          </div>
+                        </a>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="product--wrapper section-relative text-center grid-item">
+            {%- assign product = all_products['220w-bifacial-portable-solar-panel'] -%}
+            {%- assign current_variant = product.selected_or_first_available_variant -%}
+            {%- assign savePrice = current_variant.compare_at_price | minus: current_variant.price | money_without_currency | replace: ',00', '' -%}
+            <div class="product-discount--wrapper">
+              <span class="discount-price gotham-medium color-white">{%- if current_variant.compare_at_price > current_variant.price -%}Ahorra {{ savePrice }}€ {%- else -%}Ahorra ???€{%- endif -%}</span>
+            </div>
+            <a href="https://es.ecoflow.com/products/220w-bifacial-portable-solar-panel" target="_blank">
+              <div class="product-bundle--wrapper">
+                <p class="product-bundle gotham-medium color-black">Panel Solar 220 W</p>
+              </div>
+              <div class="product-image--wrapper">
+                <img src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/220w-solar-panel.png?v=1667307877" alt="" />
+              </div>
+            </a>
+            <div class="product-bundle-specification--wrapper">
+              <p class="product-bundle-specs gotham-book color-black text-center" >Potente y portátil. <br>23% de alta tasa de conversión
+              <br>Resistente al agua y duradero</p>
+            </div>
+            <div class="product-price--wrapper">
+              <p class="product-discounted-price gotham-bold color-black"> {{ current_variant.price | money_without_currency | replace: ',00','' }}€ <br class="show_mobile_image"><span class="product-price color-gray">{%- if current_variant.compare_at_price > current_variant.price -%}{{ current_variant.compare_at_price | money_without_currency | replace: ',00','' }}€{%- else -%} {{ current_variant.price | money_without_currency | replace: ',00','' }}€ {%- endif -%}</span> </p>
+            </div>
+            <div class="amazon-btn-container amazon-row">
+                <div class="button--wrapper flex-justify-center">
+                    <a class="product-btn" href="https://es.ecoflow.com/products/220w-bifacial-portable-solar-panel" target="_blank" >
+                      <div class="shop-now-btn--wrapper mx-auto">
+                        <span class="product-btn gotham-bold color-white" >Comprar Ahora</span >
+                      </div>
+                    </a>
+                </div>
+                <div class="button--wrapper flex-justify-center">
+                    <a class="product-btn" href="https://www.amazon.es/dp/B0B12CKM3C" target="_blank" >
+                        <div class="shop-now-btn--wrapper mx-auto">
+                            <img src="https://cdn.shopify.com/s/files/1/0651/6922/7998/files/ES_72f76206-078b-4b81-b81e-d855e447a0cb.png?v=1668152096">
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+          </div>
+
+          <div class="product--wrapper section-relative text-center grid-item">
+            {%- assign product = all_products['delta-portable-power-station'] -%}
+            {%- assign current_variant = product.selected_or_first_available_variant -%}
+            {%- assign savePrice = current_variant.compare_at_price | minus: current_variant.price | money_without_currency | replace: ',00', '' -%}
+            <div class="product-discount--wrapper">
+              <span class="discount-price gotham-medium color-white">{%- if current_variant.compare_at_price > current_variant.price -%}Ahorra {{ savePrice }}€ {%- else -%}Ahorra ???€{%- endif -%}</span>
+            </div>
+            <a href="https://es.ecoflow.com/products/delta-portable-power-station" target="_blank">
+              <div class="product-name-image--wrapper">
+                <img src="https://cdn.shopify.com/s/files/1/0576/3668/3974/files/ecoflow-delta_651b4e1c-be4d-4945-8156-31d20b9d02e6.png?v=1666952559" alt="" />
+              </div>
+              <div class="product-image--wrapper">
+                <img src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/DELTA_MINI.png?v=1667308202" alt="" />
+              </div>
+            </a>
+            <div class="product-bundle-specification--wrapper">
+              <p class="product-bundle-specs gotham-book color-black text-center" >Carga 0-80% en 1 hora <br>4 tomas de CA <br>Capacidad de 1260Wh</p>
+            </div>
+            <div class="product-price--wrapper">
+              <p class="product-discounted-price gotham-bold color-black"> {{ current_variant.price | money_without_currency | replace: ',00','' }}€ <br class="show_mobile_image"><span class="product-price color-gray">{%- if current_variant.compare_at_price > current_variant.price -%}{{ current_variant.compare_at_price | money_without_currency | replace: ',00','' }}€{%- else -%} {{ current_variant.price | money_without_currency | replace: ',00','' }}€ {%- endif -%}</span> </p>
+            </div>
+            <div class="amazon-btn-container amazon-row">
+                <div class="button--wrapper flex-justify-center">
+                  <a class="product-btn" href="https://es.ecoflow.com/products/delta-portable-power-station" target="_blank" >
+                    <div class="shop-now-btn--wrapper mx-auto">
+                      <span class="product-btn gotham-bold color-white" >Comprar Ahora</span >
+                    </div>
+                  </a>
+                </div>
+                <div class="button--wrapper flex-justify-center">
+                    <a class="product-btn" href="https://www.amazon.es/dp/B08HRN6MFM" target="_blank" >
+                      <div class="shop-now-btn--wrapper mx-auto">
+                        <img src="https://cdn.shopify.com/s/files/1/0651/6922/7998/files/ES_72f76206-078b-4b81-b81e-d855e447a0cb.png?v=1668152096">
+                    </div>
+                    </a>
+                  </div>
+            </div>
+          </div>
+
+          <div class="product--wrapper section-relative text-center grid-item">
+            {%- assign product = all_products['110w-portable-solar-panel'] -%}
+            {%- assign current_variant = product.selected_or_first_available_variant -%}
+            {%- assign savePrice = current_variant.compare_at_price | minus: current_variant.price | money_without_currency | replace: ',00', '' -%}
+            <div class="product-discount--wrapper">
+              <span class="discount-price gotham-medium color-white">{%- if current_variant.compare_at_price > current_variant.price -%}Ahorra {{ savePrice }}€ {%- else -%}Ahorra ???€{%- endif -%}</span>
+            </div>
+            <a href="https://es.ecoflow.com/products/110w-portable-solar-panel" target="_blank">
+              <div class="product-bundle--wrapper">
+                <p class="product-bundle gotham-medium color-black">Panel Solar 110 W</p>
+              </div>
+              <div class="product-image--wrapper solar-panel">
+                <img src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/110w-solar-panel.png?v=1667308497" alt="" />
+              </div>
+            </a>
+            <div class="product-bundle-specification--wrapper">
+              <p class="product-bundle-specs gotham-book color-black text-center" >Portátil<br>Hasta un 23% de alta tasa de conversión<br>Enchufe universal</p>
+            </div>
+            <div class="product-price--wrapper">
+              <p class="product-discounted-price gotham-bold color-black"> {{ current_variant.price | money_without_currency | replace: ',00','' }}€ <br class="show_mobile_image"><span class="product-price color-gray">{%- if current_variant.compare_at_price > current_variant.price -%}{{ current_variant.compare_at_price | money_without_currency | replace: ',00','' }}€{%- else -%} {{ current_variant.price | money_without_currency | replace: ',00','' }}€ {%- endif -%}</span> </p>
+            </div>
+            <div class="amazon-btn-container amazon-row">
+                <div class="button--wrapper flex-justify-center">
+                  <a class="product-btn" href="https://es.ecoflow.com/products/110w-portable-solar-panel" target="_blank" >
+                    <div class="shop-now-btn--wrapper mx-auto">
+                      <span class="product-btn gotham-bold color-white" >Comprar Ahora</span >
+                    </div>
+                  </a>
+                </div>
+                <div class="button--wrapper flex-justify-center">
+                    <a class="product-btn" href="https://www.amazon.es/dp/B0915J8CF9" target="_blank" >
+                        <div class="shop-now-btn--wrapper mx-auto">
+                            <img src="https://cdn.shopify.com/s/files/1/0651/6922/7998/files/ES_72f76206-078b-4b81-b81e-d855e447a0cb.png?v=1668152096">
+                        </div>
+                    </a>
+                </div>
+            </div>
+          </div>
+
+          <div class="image--wrapper grid-item">
+            <img class="hide_mobile_image" src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/grid-image-2.png?v=1667986091" alt="" />
+          </div>
+        </div>
+
+        <div class="delta-product-bundle--container grid-masonry-container show_mobile_image" >
+
+          <div class="image--wrapper grid-item">
+            <img class="show_mobile_image" src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/bundle-image-2-mobile.png?v=1667363836" alt=""/>
+          </div>
+
+          <div class="product--wrapper section-relative text-center grid-item">
+            {%- assign product = all_products['delta-portable-power-station'] -%}
+            {%- assign current_variant = product.selected_or_first_available_variant -%}
+            {%- assign savePrice = current_variant.compare_at_price | minus: current_variant.price | money_without_currency | replace: ',00', '' -%}
+            <div class="product-discount--wrapper">
+              <span class="discount-price gotham-medium color-white">{%- if current_variant.compare_at_price > current_variant.price -%}Ahorra {{ savePrice }}€ {%- else -%}Ahorra ???€{%- endif -%}</span>
+            </div>
+            <a href="https://es.ecoflow.com/products/delta-portable-power-station" target="_blank">
+              <div class="product-name-image--wrapper">
+                <img src="https://cdn.shopify.com/s/files/1/0576/3668/3974/files/ecoflow-delta_651b4e1c-be4d-4945-8156-31d20b9d02e6.png?v=1666952559" alt="" />
+              </div>
+              <div class="product-image--wrapper">
+                <img src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/ecoflow-delta.png?v=1667372289" alt="" />
+              </div>
+            </a>
+            <div class="product-bundle-specification--wrapper">
+              <p class="product-bundle-specs gotham-book color-black text-center" >Carga 0-80% en 1 hora <br>4 tomas de CA <br>Capacidad de 1260Wh</p>
+            </div>
+            <div class="product-price--wrapper">
+              <p class="product-discounted-price gotham-bold color-black"> {{ current_variant.price | money_without_currency | replace: ',00','' }}€ <br class="show_mobile_image"><span class="product-price color-gray">{%- if current_variant.compare_at_price > current_variant.price -%}{{ current_variant.compare_at_price | money_without_currency | replace: ',00','' }}€{%- else -%} {{ current_variant.price | money_without_currency | replace: ',00','' }}€ {%- endif -%}</span> </p>
+            </div>
+            <div class="amazon-btn-container amazon-row">
+                <div class="button--wrapper flex-justify-center">
+                  <a class="product-btn" href="https://es.ecoflow.com/products/delta-portable-power-station" target="_blank" >
+                    <div class="shop-now-btn--wrapper mx-auto">
+                      <span class="product-btn gotham-bold color-white" >Comprar Ahora</span >
+                    </div>
+                  </a>
+                </div>
+                <div class="button--wrapper flex-justify-center">
+                    <a class="product-btn" href="https://www.amazon.es/dp/B08HRN6MFM" target="_blank" >
+                      <div class="shop-now-btn--wrapper mx-auto">
+                        <img src="https://cdn.shopify.com/s/files/1/0651/6922/7998/files/ES_72f76206-078b-4b81-b81e-d855e447a0cb.png?v=1668152096">
+                      </div>
+                    </a>
+                  </div>
+            </div>
+          </div>
+
+          <div class="product--wrapper section-relative text-center grid-item">
+            {%- assign product = all_products['delta-max-portable-power-station'] -%}
+            {%- assign current_variant = product.selected_or_first_available_variant -%}
+            {%- assign savePrice = current_variant.compare_at_price | minus: current_variant.price | money_without_currency | replace: ',00', '' -%}
+            <div class="product-discount--wrapper">
+              <span class="discount-price gotham-medium color-white">{%- if current_variant.compare_at_price > current_variant.price -%}Ahorra {{ savePrice }}€ {%- else -%}Ahorra ???€{%- endif -%}</span>
+            </div>
+            <a href="https://es.ecoflow.com/products/delta-max-portable-power-station?variant=41602659221668" target="_blank">
+              <div class="product-name-image--wrapper">
+                <img src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/ecoflo-delta-max.png?v=1667306494" alt="" />
+              </div>
+              <div class="product-image--wrapper">
+                <img src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/ecoflow-delta-max_e5505f10-3371-4678-ac43-6cd3000660c9.png?v=1667372289" alt="" />
+              </div>
+            </a>
+            <div class="product-bundle-specification--wrapper">
+                <p class="product-bundle-specs gotham-book color-black text-center">Carga 0-80% en 1 hora<br>Capacidad ampliable hasta 6048 wh<br>Salida de CA 2400W</p>
+            </div>
+            <div class="product-specification--wrapper custom-grid-product flex-container">
+              <div class="product-block-info">
+                <div class="product-specs-container">
+                  {%- assign product = all_products['delta-max-portable-power-station'] -%}
+                  {%- assign current_variant = product.selected_or_first_available_variant -%}
+                  {%- assign savePrice = current_variant.compare_at_price | minus: current_variant.price | money_without_currency | replace: ',00', '' -%}
+                  <p class="product-specs gotham-book color-black text-center">DELTA MAX 1600</p>
+                </div>
+                <div class="product-price--wrapper">
+                  <p class="product-discounted-price gotham-bold color-black"> {{ current_variant.price | money_without_currency | replace: ',00','' }}€ <br class="show_tablet"><span class="product-price color-gray">{%- if current_variant.compare_at_price > current_variant.price -%}{{ current_variant.compare_at_price | money_without_currency | replace: ',00','' }}€{%- else -%} {{ current_variant.price | money_without_currency | replace: ',00','' }}€ {%- endif -%}</span> </p>
+                </div>
+              </div>
+              <div class="product-block-info">
+                {%- assign product = all_products['delta-max-portable-power-station'] -%}
+                {%- assign current_variant = product.variants[1] -%}
+                {%- assign savePrice = current_variant.compare_at_price | minus: current_variant.price | money_without_currency | replace: ',00', '' -%}
+                <div class="product-specs-container">
+                  <p class="product-specs gotham-book color-black text-center">DELTA MAX 2000</p>
+                </div>
+                <div class="product-price--wrapper">
+                  <p class="product-discounted-price gotham-bold color-black"> {{ current_variant.price | money_without_currency | replace: ',00','' }}€ <br class="show_tablet"><span class="product-price color-gray">{%- if current_variant.compare_at_price > current_variant.price -%}{{ current_variant.compare_at_price | money_without_currency | replace: ',00','' }}€{%- else -%} {{ current_variant.price | money_without_currency | replace: ',00','' }}€ {%- endif -%}</span> </p>
+                </div>
+              </div>
+            </div>
+            <div class="amazon-btn-container amazon-column">
+                <div class="button--wrapper flex-justify-center hide_mobile_image">
+                  <a class="product-btn" href="https://es.ecoflow.com/products/delta-max-portable-power-station?variant=41602659221668" target="_blank">
+                    <div class="shop-now-btn--wrapper">
+                      <span class="product-btn gotham-bold color-white">Comprar Ahora</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="button--wrapper flex-justify-center hide_mobile_image">
+                    <a class="product-btn" href="https://www.amazon.es/dp/B09PFZRVQ9" target="_blank">
+                      <div class="shop-now-btn--wrapper">
+                        <img src="https://cdn.shopify.com/s/files/1/0651/6922/7998/files/ES_72f76206-078b-4b81-b81e-d855e447a0cb.png?v=1668152096">
+                      </div>
+                    </a>
+                </div>
+            </div>
+          </div>
+
+          <div class="product--wrapper section-relative text-center grid-item">
+            {%- assign product = all_products['110w-portable-solar-panel'] -%}
+            {%- assign current_variant = product.selected_or_first_available_variant -%}
+            {%- assign savePrice = current_variant.compare_at_price | minus: current_variant.price | money_without_currency | replace: ',00', '' -%}
+            <div class="product-discount--wrapper">
+              <span class="discount-price gotham-medium color-white">{%- if current_variant.compare_at_price > current_variant.price -%}Ahorra {{ savePrice }}€ {%- else -%}Ahorra ???€{%- endif -%}</span>
+            </div>
+            <a href="https://es.ecoflow.com/products/110w-portable-solar-panel" target="_blank">
+              <div class="product-bundle--wrapper ">
+                <p class="product-bundle gotham-medium color-black">Panel Solar 110 W</p>
+              </div>
+              <div class="product-image--wrapper solar-panel">
+                <img src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/110-solar-panel.png?v=1667372289" alt="" />
+              </div>
+            </a>
+            <div class="product-bundle-specification--wrapper">
+              <p class="product-bundle-specs gotham-book color-black text-center" >Portátil<br>Hasta un 23% de alta tasa de conversión<br>Enchufe universal</p>
+            </div>
+            <div class="product-price--wrapper">
+              <p class="product-discounted-price gotham-bold color-black"> {{ current_variant.price | money_without_currency | replace: ',00','' }}€ <br class="show_mobile_image"><span class="product-price color-gray">{%- if current_variant.compare_at_price > current_variant.price -%}{{ current_variant.compare_at_price | money_without_currency | replace: ',00','' }}€{%- else -%} {{ current_variant.price | money_without_currency | replace: ',00','' }}€ {%- endif -%}</span> </p>
+            </div>
+            <div class="amazon-btn-container amazon-row">
+                <div class="button--wrapper flex-justify-center">
+                  <a class="product-btn" href="https://es.ecoflow.com/products/110w-portable-solar-panel" target="_blank" >
+                    <div class="shop-now-btn--wrapper mx-auto">
+                      <span class="product-btn gotham-bold color-white" >Comprar Ahora</span >
+                    </div>
+                  </a>
+                </div>
+                <div class="button--wrapper flex-justify-center">
+                    <a class="product-btn" href="https://www.amazon.es/dp/B0915J8CF9" target="_blank" >
+                        <div class="shop-now-btn--wrapper mx-auto">
+                            <img src="https://cdn.shopify.com/s/files/1/0651/6922/7998/files/ES_72f76206-078b-4b81-b81e-d855e447a0cb.png?v=1668152096">
+                        </div>
+                    </a>
+                </div>
+            </div>
+          </div>
+
+          <div class="product--wrapper section-relative text-center grid-item">
+            {%- assign product = all_products['220w-bifacial-portable-solar-panel'] -%}
+            {%- assign current_variant = product.selected_or_first_available_variant -%}
+            {%- assign savePrice = current_variant.compare_at_price | minus: current_variant.price | money_without_currency | replace: ',00', '' -%}
+            <div class="product-discount--wrapper">
+              <span class="discount-price gotham-medium color-white">{%- if current_variant.compare_at_price > current_variant.price -%}Ahorra {{ savePrice }}€ {%- else -%}Ahorra ???€{%- endif -%}</span>
+            </div>
+            <a href="https://es.ecoflow.com/products/220w-bifacial-portable-solar-panel" target="_blank">
+              <div class="product-bundle--wrapper">
+                <p class="product-bundle gotham-medium color-black">Panel Solar 220 W</p>
+              </div>
+              <div class="product-image--wrapper solar-panel">
+                <img src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/220-solar-panel.png?v=1667372289" alt="" />
+              </div>
+            </a>
+            <div class="product-bundle-specification--wrapper">
+              <p class="product-bundle-specs gotham-book color-black text-center" >Potente y portátil. <br>23% de alta tasa de conversión <br>Resistente al agua y duradero</p>
+            </div>
+            <div class="product-price--wrapper">
+              <p class="product-discounted-price gotham-bold color-black"> {{ current_variant.price | money_without_currency | replace: ',00','' }}€ <br class="show_mobile_image"><span class="product-price color-gray">{%- if current_variant.compare_at_price > current_variant.price -%}{{ current_variant.compare_at_price | money_without_currency | replace: ',00','' }}€{%- else -%} {{ current_variant.price | money_without_currency | replace: ',00','' }}€ {%- endif -%}</span> </p>
+            </div>
+            <div class="amazon-btn-container amazon-column">
+                <div class="button--wrapper flex-justify-center">
+                    <a class="product-btn" href="https://es.ecoflow.com/products/220w-bifacial-portable-solar-panel" target="_blank" >
+                      <div class="shop-now-btn--wrapper mx-auto">
+                        <span class="product-btn gotham-bold color-white" >Comprar Ahora</span >
+                      </div>
+                    </a>
+                </div>
+                <div class="button--wrapper flex-justify-center">
+                    <a class="product-btn" href="https://www.amazon.es/dp/B0B12CKM3C" target="_blank" >
+                        <div class="shop-now-btn--wrapper mx-auto">
+                            <img src="https://cdn.shopify.com/s/files/1/0651/6922/7998/files/ES_72f76206-078b-4b81-b81e-d855e447a0cb.png?v=1668152096">
+                        </div>
+                    </a>
+                </div>
+            </div>
+          </div>
+
+          <div class="image--wrapper grid-item">
+            <img class="show_mobile_image" src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/bundle-image-3-mobile.png?v=1667370238" alt="" />
+          </div>
+        </div>
+
+        </div>
+      </div>
+
+      <div class="sale--section">
+        <div class="section-container">
+          <div class="heading--wrapper">
+              <h2 class="best-deal--heading title-h2 color-white gotham-bold text-center">Además de los grandes descuentos, <br>aquí tienes otras razones para comprar en las rebajas del Black Friday.</h2>
+          </div>
+        </div>
+
+        <div class="sale-icons--wrapper">
+          <div class="section-container">
+            <div class="icon-flex-container flex-justify-center text-center">
+
+              <div class="icon-flex--item">
+                <div class="icon--wrapper">
+                <img src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/free-shipping.png?v=1667361626" alt="">
+                </div>
+                <div class="icon-heading--wrapper">
+                  <h3 class="icon-heading gotham-bold color-white">Envío gratis</h3>
+                </div>
+                <div class="icon-description--wrapper">
+                  <p class="icon-description gotham-medium color-white">Disfrute de envíos gratis en todos los pedidos.</p>
+                </div>
+              </div>
+
+              <div class="icon-flex--item">
+                <div class="icon--wrapper">
+                <img src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/installment-plans.png?v=1667361626" alt="">
+                </div>
+                <div class="icon-heading--wrapper">
+                  <h3 class="icon-heading gotham-bold color-white">Planes de pagos a plazos</h3>
+                </div>
+                <div class="icon-description--wrapper">
+                  <p class="icon-description gotham-medium color-white">Empiece a pagar más adelante en plazos mensuales con Paypal, Klarna.</p>
+                </div>
+              </div>
+
+              <div class="icon-flex--item">
+                <div class="icon--wrapper">
+                <img src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/membership.png?v=1667361626" alt="">
+                </div>
+                <div class="icon-heading--wrapper">
+                  <h3 class="icon-heading gotham-bold color-white">Membresía</h3>
+                </div>
+                <div class="icon-description--wrapper">
+                  <p class="icon-description gotham-medium color-white">Consiga el doble de EcoCredits durante las <br class="show_mobile_image">rebajas del Black Friday.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </div>
+</div>
+
+

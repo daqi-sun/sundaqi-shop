@@ -1,0 +1,121 @@
+<div class="balcony-solar-bwt__section">
+  <div class="container--normal hb__text--center">
+    <div class="balcony-solar-bwt__text-container">
+      {% if section.settings.subtitle != blank %}
+        <h3 class="balcony-solar-bwt__subheading hb__text--black">
+          {{ section.settings.subtitle }}
+        </h3>
+      {% endif %}
+      {% if section.settings.title != blank %}
+        <h2 class="balcony-solar-bwt__heading hb__text--heading hb__text--black">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+      {% if section.settings.description != blank %}
+        <div class="balcony-solar-bwt__description hb__text--description hb__text--black">
+          {{ section.settings.description }}
+        </div>
+      {% endif %}
+    </div>
+    <div class="display--desktop">
+      <div class="balcony-solar-bwt__image__container">
+        <div class="balcony-solar-bwt__flex-container container--flex">
+          {% for block in section.blocks %}
+            <div class="balcony-solar-bwt__image__wrapper ">
+              <img
+                class="balcony-solar-bwt__image"
+                loading="lazy"
+                src="{{ block.settings.image | img_url: 'master' }}"
+                alt="{{ block.settings.image.alt }}"
+              >
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    {% assign count = 0 %}
+    {% for block in section.blocks %}
+      {% assign count = count | plus: 1 %}
+    {% endfor %}
+    {% if count > 1 %}
+      <div class="display--mobile">
+        <div class="swiper-container-mobile balcony-solar-bwt__image__container">
+          <div class="swiper-wrapper balcony-solar-bwt__flex-container">
+            {% for block in section.blocks %}
+              <div class="swiper-slide balcony-solar-bwt__image__wrapper ">
+                <img
+                  class="balcony-solar-bwt__image"
+                  loading="lazy"
+                  src="{{ block.settings.image_mobile | img_url: 'master' }}"
+                  alt="{{ block.settings.image_mobile.alt }}"
+                >
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    {% else %}
+      <div class="display--mobile">
+        <div class="balcony-solar-bwt__image__container">
+          <div class="balcony-solar-bwt__flex-container">
+            {% for block in section.blocks %}
+              <div class="balcony-solar-bwt__image__wrapper ">
+                <img
+                  class="balcony-solar-bwt__image"
+                  loading="lazy"
+                  src="{{ block.settings.image_mobile | img_url: 'master' }}"
+                  alt="{{ block.settings.image_mobile.alt }}"
+                >
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Balcony Solar BWT",
+  "max_blocks": 2,
+  "settings": [
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Das PowerStream Balcony System bietet uns die Vorteile aller drei Technologien – in einem Gerät!"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Stromspeicher von EcoFlow – stets mit Energie versorgt"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Storage Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Section Image Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Section Image Mobile"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

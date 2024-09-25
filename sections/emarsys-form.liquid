@@ -1,0 +1,296 @@
+{% assign showFormLabels = section.settings.showFormLabels %}
+
+<section id="section-{{ section.id }}" data-section-id="{{ section.id }}" class='fade-in-animation'>
+
+  <div class="newsletter-section">
+    <div class="page-width-small emarsys__form">
+      <div class="section-header text-center homepage_subtitle_style_{{settings.homepage_subtitle_color}}">
+
+
+        {% if section.settings.subtitle != blank %}
+       <span class='h5'>{{ section.settings.subtitle  }}</span>
+        {% endif %}
+        {% if section.settings.section_title != blank %}
+        <h2 class="h2">{{ section.settings.section_title | escape }}</h2>
+        {% endif %}
+
+        {% if section.settings.subheading != blank %}
+        <div class="rte">{{ section.settings.subheading }}</div>
+        {% endif %}
+      </div>
+
+      <form
+        id="profileForm"
+        name="ProfileForm"
+        onsubmit="return false;"
+        action="https://media.ecoflow.com/u/register.php"
+        method="get"
+        class="ls-solution-banner__form"
+      >
+        <input type="hidden" name="CID" value="1046301189">
+        <input type="hidden" name="f" value="892">
+        <input type="hidden" name="p" value="2">
+        <input type="hidden" name="a" value="r">
+        <input type="hidden" name="SID" value="">
+        <input type="hidden" name="el" value="">
+        <input type="hidden" name="llid" value="">
+        <input type="hidden" name="counted" value="">
+        <input type="hidden" name="c" value="">
+        <input type="hidden" name="inp_7596" value="1">
+        <input class="opt-in hide" tabindex="882" type="checkbox" name="optin" value="y" CHECKED>
+        <div class="contact-form">
+            <input
+                type="email"
+                name="inp_3"
+                maxlength="255"
+                value="{{ inp_3 }}"
+                placeholder="{{ section.settings.email_placeholder_text }}"
+                class="Form__Input"
+                required
+            >
+            <select class="opt-in hide" name="inp_4426" size="1">
+            <option value="1" SELECTED>Yes</option>
+            </select>
+            <div class="input-group__btn-wrapper klaviyo_form_actions">
+                <button
+                    aria-label="Submit"
+                    tabindex="993"
+                    type="button"
+                    onclick="javascript:SubmitIt()"
+                    name="submit1"
+                    class="btn"
+                >
+                    {{ section.settings.btn_text | default: 'Subscribe' }}
+                </button>
+            </div>
+        </div>
+      </form>
+      <div id="successMessage" class="text--white" style="text-align:center;margin-top:10px;"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+    var error;
+    var form_language = 'en';
+
+    function is_0_valid() {
+      count = 0;
+      if (document.ProfileForm.optin) {
+        if (document.ProfileForm.optin.checked) {
+          if (document.getElementsByName('interest[]')) {
+            if (document.getElementsByName('interest[]').length > 0) {
+              Interest = document.getElementsByName('interest[]');
+              for (i = 0; i < Interest.length; i++) {
+                if (Interest[i].checked) ++count;
+              }
+              if (count == 0) {
+                error += 'Interests:';
+                return false;
+              }
+            }
+          }
+        }
+      }
+      return true;
+    }
+
+    function is_3_valid(input) {
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (input === '') {
+        error += 'Email: missing data!\n';
+        return false;
+      }
+      if (!emailRegex.test(input)) {
+        error += 'Email: invalid format!\n';
+        return false;
+      }
+      return true;
+    }
+
+    function CheckInputs() {
+      var check_ok = true;
+      error = 'Wrong input!\n';
+
+      check_ok = is_0_valid('null') && check_ok;
+      check_ok = is_3_valid(document.ProfileForm.inp_3.value) && check_ok;
+      if (check_ok == false) alert(error);
+      return check_ok;
+    }
+
+    function SubmitIt() {
+      if (CheckInputs() == true) {
+        if (window.onbeforesubmit) onbeforesubmit();
+        var successMessage = document.getElementById('successMessage');
+
+        // Set the target of the form to the hidden iframe
+        document.ProfileForm.target = 'hidden_iframe';
+
+        // Display the success message before submitting the form
+        successMessage.textContent = 'Submitting...';
+
+        // Submit the form
+        document.ProfileForm.submit();
+
+        // Reset the target and clear the form after a short delay
+        setTimeout(function () {
+          document.ProfileForm.target = '';
+          document.ProfileForm.reset();
+          successMessage.textContent = 'Success!';
+        }, 1000); // Adjust the delay as needed
+      }
+    }
+</script>
+
+{% assign removeBottomMargin = section.settings.removeBottomMargin %}
+
+{% if section.settings.section_bg_color != blank %}
+<style>
+  #shopify-section-{{ section.id }} {
+    background-color: {{section.settings.section_bg_color}};
+    padding-top:35px;
+    margin-bottom:35px;
+  }
+
+  {% if section.settings.section_color != blank %}
+  #shopify-section-{{ section.id }} p,
+  #shopify-section-{{ section.id }} h2,
+  #shopify-section-{{ section.id }} #successMessage {
+    color: {{section.settings.section_color }};
+  }
+
+   {% if settings.homepage_subtitle_color == 'match_header' %}
+      #section-{{ section.id }}  .section-header .h5 {
+      color: {{ section.settings.section_color }};
+    }
+    #section-{{ section.id }}  .section-header .h5:before {
+      background: {{ section.settings.section_color }};
+    }
+    {% endif %}
+
+  {% endif %}
+
+  #shopify-section-{{ section.id }} .Form__Input  {
+    background-color: var(--color-body);
+    color: {{section.settings.section_color }};
+      }
+  @media only screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} {
+    	padding-top:55px;
+      margin-bottom:55px;
+    }
+  }
+</style>
+{% endif %}
+{% if removeBottomMargin %}
+<style>
+  #shopify-section-{{ section.id }} {
+    margin-bottom:0;
+  }
+</style>
+  {% endif %}
+
+
+{% schema %}
+{
+  "name": "Emarsys form",
+  "class": "index-section index-section--flush index-newsletter klaviyo-form-section",
+  "settings": [
+  {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "t:sections.newsletter.settings.section_bg_color.label"
+},
+  {
+      "type": "color",
+      "id": "section_color",
+      "label": "t:sections.newsletter.settings.section_color.label"
+},
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "t:sections.newsletter.settings.section_title.label",
+      "default": {
+        "cs": "Přihlaste se k odběru novinek",
+        "da": "Tilmeld dig vores nyhedsbrev",
+        "de": "Unseren Newsletter abonnieren",
+		 "en": "Subscribe to our newsletter",
+
+        "es": "Suscríbete a nuestro boletín de noticias",
+        "fi": "Tilaa uutiskirjeemme",
+        "fr": "S'inscrire à la newsletter",
+        "it": "Iscriviti alla nostra newsletter",
+        "ja": "ストアからのお知らせを受け取る",
+        "ko": "뉴스 레터 구독",
+        "nb": "Abonner på nyhetsbrevet vårt",
+        "nl": "Abonneren op onze nieuwsbrief",
+        "pl": "Zapisz się do naszego newslettera",
+        "pt-BR": "Assine a nossa newsletter",
+        "pt-PT": "Subscreva a nossa newsletter",
+        "sv": "Prenumerera på vårt nyhetsbrev",
+        "th": "สมัครรับจดหมายข่าวของเรา",
+        "tr": "Bültenimize abone olun",
+        "vi": "Đăng ký nhận bản tin",
+        "zh-CN": "订阅我们的新闻通讯",
+        "zh-TW": "訂閱我們的電子報"
+      }
+    },
+  {
+      "type": "text",
+      "id": "subtitle",
+      "label": "t:sections.newsletter.settings.subtitle.label"
+},
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "t:sections.newsletter.settings.subheading.label",
+      "default": {
+        "cs": "<p>Získejte informace o propagačních akcích, nových produktech a slevách – přímo do své schránky.</p>",
+        "da": "<p>Reklamer, nye produkter og salg. Direkte i din indbakke.</p>",
+        "de": "<p>Werbeaktionen, neue Produkte und Sonderangebote. Direkt in deinem Posteingang.</p>",
+		 "en": "<p>Promotions, new products and sales. Directly to your inbox.</p>",
+        "es": "<p>Promociones, nuevos productos y ofertas. Directamente a tu bandeja de entrada.</p>",
+        "fi": "<p>Kampanjat, uudet tuotteet ja myynti. Suoraan saapuneet-kansioosi</p>",
+        "fr": "<p>Promotions, nouveaux produits et soldes. Directement dans votre boîte de réception.</p>",
+        "it": "<p>Promozioni, nuovi prodotti e offerte. Direttamente nella tua casella di posta.</p>",
+        "ja": "<p>新商品やセール情報などのお得な情報をお届けします。</p>",
+        "ko": "<p>프로모션, 신제품, 판매. 받은 편지함으로 바로 이동.</p>",
+        "nb": "<p>Kampanjer, nye produkter og salg. Direkte i innboksen din.</p>",
+        "nl": "<p>Promoties, nieuwe producten en uitverkoop rechtstreeks in je inbox.</p>",
+        "pl": "<p>Promocje, nowe produkty i wyprzedaże. Bezpośrednio do Twojej skrzynki odbiorczej.</p>",
+        "pt-BR": "<p>Promoções, novos produtos e vendas. Diretamente para sua caixa de entrada.</p>",
+        "pt-PT": "<p>Promoções, novos produtos e ofertas. Diretamente na sua caixa de entrada.</p>",
+        "sv": "<p>Kampanjer, nya produkter och försäljning. Direkt till din inkorg.</p>",
+        "th": "<p>โปรโมชัน สินค้าใหม่ และการลดราคา ตรงสู่กล่องจดหมายเข้าของคุณ</p>",
+        "tr": "<p>Promosyonlar, yeni ürünler ve indirimler. Doğrudan gelen kutunuzda.</p>",
+        "vi": "<p>Khuyến mãi, sản phẩm mới và chương trình giảm giá. Trực tiếp vào hộp thư đến của bạn.</p>",
+        "zh-CN": "<p>促销、新产品和销售。直接发送到您的收件箱。</p>",
+        "zh-TW": "<p>讓您直接在收件匣內收取促銷活動、最新產品和特賣活動訊息。</p>"
+      }
+    },
+    {
+        "type": "text",
+        "id": "email_placeholder_text",
+        "label": "Email placeholder text",
+        "default": "Email address*"
+  },
+    {
+        "type": "text",
+        "id": "btn_text",
+        "label": "Button text"
+  },
+    {
+		"type":"checkbox",
+		"id":"removeBottomMargin",
+		"label": "t:sections.newsletter.settings.removeBottomMargin.label",
+		"info": "t:sections.newsletter.settings.removeBottomMargin.info"
+	}
+  ],
+  "presets": [
+    {
+      "name": "Emarsys form",
+      "category":"Custom Sections"
+    }
+  ]
+}
+{% endschema %}

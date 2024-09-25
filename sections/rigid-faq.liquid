@@ -1,0 +1,74 @@
+{{ 'rigid-faq.css' | asset_url | stylesheet_tag }}
+{{ 'jquery.min.js' | asset_url | script_tag }}
+
+<div class="rigid-container rigid-faq">
+  <h2>
+    {{ section.settings.title }}
+  </h2>
+
+  <div class="rf-container">
+    {% for block in section.blocks %}
+      {% assign defaultState = 'false' %}
+
+      <div>
+        {%- comment -%}We are not using button here to avoid the focus outline with !important{%- endcomment -%}
+        <div class="rf-question">
+          {{ block.settings.title }}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="12"
+            height="12"
+            viewBox="0 0 12 12"
+            fill="none"
+          >
+            <path d="M0 6H12" stroke="#212121" stroke-width="3"/>
+            <path class="arrow-temp" d="M6 0L6 12" stroke="#212121" stroke-width="3"/>
+          </svg>
+        </div>
+        <div class="rf-answer">
+          {{ block.settings.answer }}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+<script>
+  $('.rf-question').click(function(){
+    $(this).toggleClass('open');
+    $(this).siblings('.rf-answer').slideToggle();
+  });
+</script>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Let’s Answer Your Questions"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Question",
+          "default": "What is a rigid solar panel?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "label",
+          "default": "<p>Our rigid solar panels are made from highly efficient monocrystalline solar cells that convert up to 23% of solar into usable energy. The cells are protected by a robust, anti-corrosive aluminum frame, making them perfect for outdoor use.</p>"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

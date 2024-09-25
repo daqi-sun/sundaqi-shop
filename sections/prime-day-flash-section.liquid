@@ -1,0 +1,375 @@
+<div class="prime-day-flash-section section-{{ section.id }} {% if section.settings.text_position == 'top' %}text-in-top{% else %}text-in-side{% endif %}"  id="{{ section.settings.section_id }}">
+    <div class="prime-day-container">
+        <div class="text-part">
+            {% if section.settings.flash_img != blank %}
+                <div class="flash-img"><img loading="lazy" srcset="{{ section.settings.flash_img | img_url: 'small' | replace: '_small', '' }}" /></div>
+            {% endif %}
+            <div class="flash-text-box">
+                {% if section.settings.subtitle != blank %}
+                    <div class="flash-subtitle">{{ section.settings.subtitle }}</div>
+                {% endif %}
+                {% if section.settings.title != blank %}
+                    <div class="flash-title">{{ section.settings.title }}</div>
+                {% endif %}
+                {% if section.settings.description != blank %}
+                    <div class="flash-description">{{ section.settings.description }}</div>
+                {% endif %}
+                {% if section.settings.show_coundown and section.settings.timer_end_date != blank %}
+                    <div class="countdown_wrapper flash-sale-countdown custom_countdown" data-countdown-end-date="{{ section.settings.timer_end_date }}">
+                        <div class="star_countdown">
+                            <div class="hours">
+                                <div><span class="block hours_num"></span><span>Hours</span></div>
+                                <span class="dots">:</span>
+                            </div>
+                            <div class="mins">
+                                <div><span class="block mins_num"></span><span>Minutes</span></div>
+                                <span class="dots">:</span>
+                            </div>
+                            <div class="sec">
+                                <div><span class="block sec_num"></span><span>Seconds</span></div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+                {% if section.settings.klaviyo_id != blank %}
+                    <form id="klaviyo_signup_flash" class="klaviyo_signup klaviyo_gdpr_embed_{{ section.settings.klaviyo_id }}" action="//manage.kmail-lists.com/subscriptions/subscribe" data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe" method="GET" target="_blank" novalidate="novalidate">
+                        <input type="hidden" name="g" value="{{ section.settings.klaviyo_id }}">
+                        <input type="hidden" name="$fields" value="$consent">
+                        <input type="hidden" name="$list_fields" value="$consent">
+                        <div class="klaviyo_form_fields">
+                            <div class="klaviyo_field_group">
+                                <input class="" type="email" value="" name="email" id="k_id_email" placeholder="Enter your email" />
+                                <div class="klaviyo_form_actions"><button type="submit" class="btn klaviyo_submit_button">Submit</button></div>
+                            </div>
+                        </div>
+                        <div class="klaviyo_messages">
+                            <div class="success_message" style="display:none;">
+                                {% if section.settings.klaviyo_success_text != blank %}{{ section.settings.klaviyo_success_text }}{% endif %}
+                            </div>
+                            <div class="error_message" style="display:none;"></div>
+                        </div>
+                    </form>
+
+                    <script type="text/javascript">
+                        KlaviyoSubscribe.attachToForms('#klaviyo_signup_flash', {
+                            hide_form_on_success: true{% if section.settings.klaviyo_success_text != blank %}, custom_success_message: true{% endif %}
+                        });
+                    </script>
+                {% endif %}
+                {% if section.settings.info_line != blank %}
+                    <div class="flash-info-line">{{ section.settings.info_line }}</div>
+                {% endif %}
+            </div>
+        </div>
+        {% if section.blocks.size > 0 %}
+            <div class="products-part">
+                <div class="products-grid">
+                    {% assign collection = collections[section.settings.collection] %}
+                    {% for block in section.blocks %}
+                        {%- comment %}<locksmith:e5a8>{% endcomment -%}
+                          {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                        {%- comment %}</locksmith:e5a8>{% endcomment -%}
+                        <div class="product-block block-{{block.id}}">
+                            <div class="product-block-inner">
+                                {% assign product = block.settings.product %}
+                                {% assign variant = product.first_available_variant %}
+                                {% assign inventory = 0.2 | times: variant.inventory_quantity | floor %}
+                                {% if block.settings.show_inventory and inventory > 0 %}
+                                    <div class="inventory-badge">
+                                        {{ inventory }}PCS LEFT
+                                    </div>
+                                {% endif %}
+                                {% if section.settings.show_discount_tag and block.settings.product_discount != blank %}
+                                    <div class="discount_tag_wrapper">
+                                        {% if section.settings.discount_badge_image != blank %}<img loading="lazy" srcset="{{ section.settings.discount_badge_image | img_url: 'small' | replace: '_small', '' }}" />{% endif %}
+                                        <div class="discount_tag_text">
+                                            {{ block.settings.product_discount }}
+                                        </div>
+                                    </div>
+                                {% endif %}
+                                <div class="product-image">
+                                    <img loading="lazy" srcset="{{ block.settings.product_image | default: product.featured_image | img_url: 'small' | replace: '_small', '' }}" />
+                                </div>
+                                <div class="product-title">
+                                    {{ block.settings.product_title | default: product.title }}
+                                </div>
+
+                                {% if block.settings.product_price != blank %}
+                                    <div class="product-price">{{ block.settings.product_price }}</div>
+                                {% else %}
+                                <div class="product-price">
+                                    <span class="sale-price">{{ variant.price | money | replace: '.00', '' }}</span>
+                                    {% if variant.compare_at_price > variant.price %}
+                                        <span class="original-price">{{ variant.compare_at_price | money | replace: '.00', '' }}</span>
+                                    {% endif %}
+                                </div>
+                                {% endif %}
+
+                                {% if block.settings.show_atc_btn %}
+                                        <button class="btn {% if product.available %}checkoutButton{% else %}sold-out-btn{% endif %}" data-variant-id="{{ variant.id }}">{% if product.available %}Buy Now{% else %}Sold Out{% endif %}</button>
+                                {% endif %}
+
+                                {% if block.settings.show_amazon_btn %}
+                                    <a href="{{ block.settings.amazon_url }}" class="btn amazon_btn">
+                                        <span>{% render 'amazon_btn' %}</span>
+                                    </a>
+                                {% endif %}
+                            </div>
+                            <style>
+                                .block-{{block.id}} .product-image img{ width: {{ block.settings.image_width }}px; }
+                                .block-{{ block.id }} .discount_tag_wrapper .discount_tag_text, .block-{{ block.id }} .discount_tag_wrapper .discount_tag_text span{ color: {{ section.settings.discount_color }}; }
+                                @media screen and (max-width: 749px){
+                                    .block-{{block.id}} .product-image img{ width: {{ block.settings.image_width_m }}px; }
+                                }
+                            </style>
+                        </div>
+                    {% endfor %}
+                </div>
+                {% if section.blocks.size > 2 %}
+                    <div class="prev-btn">
+                        <svg class="hideDesktop" width="10" height="17" viewBox="0 0 10 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.25" d="M8.41504 1.66846L1.68796 8.76926L8.41504 15.8701" stroke="#002055" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="next-btn">
+                        <svg class="hideMobile" width="22" height="37" viewBox="0 0 22 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.25" d="M3.43164 3.40771L17.8672 18.6452L3.43164 33.8828" stroke="#002055" stroke-width="6" stroke-linecap="round"/>
+                        </svg>
+                        <svg class="hideDesktop" width="10" height="17" viewBox="0 0 10 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.25" d="M1.10547 1.66846L7.83255 8.76926L1.10547 15.8701" stroke="#002055" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+<style>
+    .section-{{ section.id }}{
+        padding-top: {{ section.settings.section_top_space }}px;
+        padding-bottom: {{ section.settings.section_bottom_space }}px;
+    }
+
+    @media screen and (max-width: 749px){
+        .section-{{ section.id }}{
+            padding-top: {{ section.settings.section_top_space_m }}px;
+            padding-bottom: {{ section.settings.section_bottom_space_m }}px;
+        }
+    }
+</style>
+
+{% schema %}
+{
+"name": "Prime day flash section",
+"settings": [
+{
+    "type": "text",
+    "id": "section_id",
+    "label": "Section ID"
+},
+{
+    "type": "header",
+    "content": "Section spacing"
+},
+  {
+    "type": "range",
+    "id": "section_top_space",
+    "label": "Top space(Desktop)",
+    "min": 0,
+    "max": 150,
+    "step": 5,
+    "unit": "px",
+    "default": 20
+  },
+  {
+    "type": "range",
+    "id": "section_bottom_space",
+    "label": "Bottom space(Desktop)",
+    "min": 0,
+    "max": 150,
+    "step": 5,
+    "unit": "px",
+    "default": 120
+  },
+  {
+    "type": "range",
+    "id": "section_top_space_m",
+    "label": "Top space(Mobile)",
+    "min": 0,
+    "max": 80,
+    "step": 5,
+    "unit": "px",
+    "default": 20
+  },
+  {
+    "type": "range",
+    "id": "section_bottom_space_m",
+    "label": "Bottom space(Mobile)",
+    "min": 0,
+    "max": 80,
+    "step": 5,
+    "unit": "px",
+    "default": 40
+  },
+{
+    "type": "select",
+    "id": "text_position",
+    "label": "Text position",
+    "options": [
+        { "value": "top", "label": "Top" },
+        { "value": "side", "label": "Left side" }
+    ]
+},
+{
+    "type": "image_picker",
+    "id": "flash_img",
+    "label": "Flash sale image"
+},
+{
+    "type": "richtext",
+    "id": "subtitle",
+    "label": "Subtitle"
+},
+{
+    "type": "richtext",
+    "id": "title",
+    "label": "Title"
+},
+{
+    "type": "richtext",
+    "id": "description",
+    "label": "Description"
+},
+{
+    "type": "text",
+    "id": "klaviyo_id",
+    "label": "Klaviyo form ID"
+},
+{
+    "type": "richtext",
+    "id": "klaviyo_success_text",
+    "label": "Klaviyo form success message"
+},
+{
+    "type": "header",
+    "content": "Countdown timer"
+},
+{
+    "type": "checkbox",
+    "id": "show_coundown",
+    "label": "Show countdown timer"
+},
+{
+    "type": "text",
+    "id": "timer_end_date",
+    "label": "Countdown timer end date"
+},
+{
+    "type": "header",
+    "content": "Info line"
+},
+{
+    "type": "text",
+    "id": "info_line",
+    "label": "Info line"
+},
+{
+    "type": "checkbox",
+    "id": "show_discount_tag",
+    "label": "Show Discount Badge"
+},
+{
+    "type": "image_picker",
+    "id": "discount_badge_image",
+    "label": "Badge background image"
+},
+{
+    "type": "color",
+    "id": "discount_color",
+    "label": "Discount tag text color"
+}
+],
+"blocks": [
+{
+    "type": "product",
+    "name": "Product",
+    "settings": [
+        {
+            "type": "product",
+            "id": "product",
+            "label": "Choose product"
+        },
+        {
+            "type": "image_picker",
+            "id": "product_image",
+            "label": "Product image"
+        },
+        {
+            "type": "range",
+            "id": "image_width",
+            "label": "Image width",
+            "min": 150,
+            "max": 240,
+            "step": 5,
+            "default": 240,
+            "unit": "px"
+        },
+        {
+            "type": "range",
+            "id": "image_width_m",
+            "label": "Image width(Mobile)",
+            "min": 100,
+            "max": 200,
+            "step": 5,
+            "default": 140,
+            "unit": "px"
+        },
+        {
+            "type": "textarea",
+            "id": "product_discount",
+            "label": "Discount text",
+            "info": "Wrap percentage amount in <span> tag. For ex. <span>30%</span>OFF"
+        },
+        {
+            "type": "text",
+            "id": "product_title",
+            "label": "Product title"
+        },
+        {
+            "type": "text",
+            "id": "product_price",
+            "label": "Product price"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_inventory",
+            "label": "Show inventory badge",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "show_atc_btn",
+            "label": "Show ATC button"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_amazon_btn",
+            "label": "Show Amazon button"
+        },
+        {
+            "type": "url",
+            "id": "amazon_url",
+            "label": "Amazon button URL"
+        }
+    ]
+}
+],
+"presets": [
+{
+    "name": "Prime day flash section",
+    "category":"Custom Sections"
+}
+]
+}
+{% endschema %}

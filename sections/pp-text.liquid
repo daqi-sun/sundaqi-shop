@@ -1,0 +1,36 @@
+<div class="pp-text__section">
+  <div class="container--default">
+    <div class="pp-text__text-container">
+      {% if section.settings.title != blank %}
+        <h2 class="pp-text__heading text--heading text--black">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+      {% if section.settings.subtitle != blank %}
+        <p class="pp-text__description text--description text--gray">
+          {{ section.settings.subtitle }}
+        </p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "PP Text",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Was ist das EcoFlow Balkonkraftwerk?"
+    },
+    {
+      "type": "html",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Das EcoFlow Balkonkraftwerk ist eine innovative Kombination aus Wechselrichter, Solarpanel und einer Powerstation. Den Mikro-Wechselrichter für Ihr Balkonkraftwerk mit 600 oder 800 Watt können Sie direkt an Ihre Solarpanels anschließen. Anschließend verbinden Sie ihn mit einer Wandsteckdose – und damit dem öffentlichen Stromnetz – oder mit einer Powerstation. Tagsüber können Sie nun gleichzeitig Solarstrom und Netzstrom nutzen oder Ihre Powerstation aufladen, um auch nachts und unterwegs Solarstrom zur Verfügung zu haben."
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,90 @@
+<div class="outdoor-off-grid__column-images-section">
+  <div class="outdoor-off-grid__column-images-text-wrapper">
+    <div class="outdoor-off-grid__column-images-heading">
+      <span>{{ section.settings.text_heading }}</span>
+    </div>
+    {% if section.settings.text_subheading != blank %}
+      <div class="outdoor-off-grid__column-images-subheading">
+        <p>{{ section.settings.text_subheading }}</p>
+      </div>
+    {% endif %}
+  </div>
+  <div class="outdoor-off-grid__column-images-blocks">
+    {% for block in section.blocks %}
+      <div class="outdoor-off-grid__column-images-items">
+        <div class="outdoor-off-grid__img">
+          <img src="{{ block.settings.image | img_url: '850x' }}" alt="">
+        </div>
+        <div class="outdoor-off-grid__img-text">
+          <span>{{ block.settings.text_content }}</span>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="swiper-block">
+    <div class="swiper-container">
+      <div class="swiper-wrapper" id="outdoor-off-grid__gap">
+        {% for block in section.blocks %}
+          <div class="swiper-slide outdoor-off-grid__column-images-items">
+            <div class="outdoor-off-grid__img">
+              <img src="{{ block.settings.image | img_url: '1550x' }}" alt="">
+            </div>
+            <div class="outdoor-off-grid__img-text">
+              <span>{{ block.settings.text_content }}</span>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const swiper = new Swiper('.swiper-container', {
+      slidesPerView: 'auto',
+      cssMode: true,
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Column Images",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_heading",
+      "label": "Text Heading"
+    },
+    {
+      "type": "text",
+      "id": "text_subheading",
+      "label": "Text Subheading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_image_text",
+      "name": "Column images",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image Desktop"
+        },
+        {
+          "type": "text",
+          "id": "text_content",
+          "label": "Text Content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Column Images"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,391 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "PDP Text with Image",
+  "class": "pdp-text-with-image-section",
+  "id": "pdp-text-with-image",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "blocks",
+      "label": "Block ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": "",
+      "repeatable": "Section"
+    },
+    {
+      "type": "text",
+      "id": "block_anchor_id",
+      "label": "Section ID",
+      "info": "This is the ID that will be used for the anchor link.",
+      "repeatable": "Section"
+    },
+    {
+      "type": "select",
+      "id": "block_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ],
+      "default": "center",
+      "repeatable": "Section",
+      "info": ""
+    },
+    {
+      "type": "checkbox",
+      "id": "block_full_width",
+      "label": "Full Width",
+      "default": false,
+      "repeatable": "Section",
+      "info": ""
+    },
+    {
+      "type": "image_picker",
+      "id": "block_image",
+      "label": "Image",
+      "repeatable": "Section",
+      "info": ""
+    },
+    {
+      "type": "image_picker",
+      "id": "block_mobile_image",
+      "label": "Mobile Image",
+      "repeatable": "Section",
+      "info": ""
+    },
+    {
+      "type": "checkbox",
+      "id": "block_show_actual_mobile_image_size",
+      "label": "Show actual image size in mobile",
+      "default": false,
+      "repeatable": "Section",
+      "info": ""
+    },
+    {
+      "type": "select",
+      "id": "block_content_order",
+      "label": "Content Order",
+      "options": [
+        {
+          "value": "1",
+          "label": "Title, Image, Content"
+        },
+        {
+          "value": "2",
+          "label": "Image, Title, Content"
+        },
+        {
+          "value": "3",
+          "label": "Title, Content, Image"
+        }
+      ],
+      "default": "3",
+      "repeatable": "Section",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "block_image_alt",
+      "label": "Image Alt",
+      "repeatable": "Section",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "block_title",
+      "label": "Title",
+      "repeatable": "Section",
+      "info": ""
+    },
+    {
+      "type": "wysiwyg",
+      "id": "block_content",
+      "label": "Content",
+      "repeatable": "Section",
+      "info": ""
+    },
+    {
+      "type": "wysiwyg",
+      "id": "block_notification_message",
+      "label": "Notification message",
+      "repeatable": "Section",
+      "info": ""
+    },
+    {
+      "type": "select",
+      "id": "block_notification_message_font_size",
+      "label": "Notification message: Font size",
+      "options": [
+        {
+          "value": "heading-1",
+          "label": "Heading 1"
+        },
+        {
+          "value": "heading-2",
+          "label": "Heading 2"
+        },
+        {
+          "value": "heading-3",
+          "label": "Heading 3"
+        },
+        {
+          "value": "heading-4",
+          "label": "Heading 4"
+        },
+        {
+          "value": "heading-5",
+          "label": "Heading 5"
+        },
+        {
+          "value": "heading-6",
+          "label": "Heading 6"
+        },
+        {
+          "value": "body-1",
+          "label": "Body 1"
+        },
+        {
+          "value": "body-2",
+          "label": "Body 2"
+        },
+        {
+          "value": "body-3",
+          "label": "Body 3"
+        },
+        {
+          "value": "body-4",
+          "label": "Body 4"
+        }
+      ],
+      "default": "heading-6",
+      "repeatable": "Section",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "block_button_link",
+      "label": "Button Link",
+      "repeatable": "Section",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "block_button_text",
+      "label": "Button Text",
+      "default": "Learn More",
+      "repeatable": "Section",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "block_button_link_2",
+      "label": "Button Link",
+      "repeatable": "Section",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "block_button_text_2",
+      "label": "Button Text",
+      "default": "Learn More",
+      "repeatable": "Section",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "block_button_link_3",
+      "label": "Button Link",
+      "repeatable": "Section",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "block_button_text_3",
+      "label": "Button Text",
+      "default": "Learn More",
+      "repeatable": "Section",
+      "info": ""
+    }
+  ],
+  "warnings": [
+    "repeating checkbox fields may not be properly handled",
+    "repeating image fields may not be properly handled"
+  ]
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_anchor_id' -%}
+{%- assign block_anchor_id = val -%}
+{%- include 'atb-render' field:'block_alignment' -%}
+{%- assign block_alignment = val -%}
+{%- include 'atb-render' field:'block_full_width' -%}
+{%- assign block_full_width = val -%}
+{%- include 'atb-render' field:'block_image' -%}
+{%- assign block_image = val -%}
+{%- include 'atb-render' field:'block_mobile_image' -%}
+{%- assign block_mobile_image = val -%}
+{%- include 'atb-render' field:'block_show_actual_mobile_image_size' -%}
+{%- assign block_show_actual_mobile_image_size = val -%}
+{%- include 'atb-render' field:'block_content_order' -%}
+{%- assign block_content_order = val -%}
+{%- include 'atb-render' field:'block_image_alt' -%}
+{%- assign block_image_alt = val -%}
+{%- include 'atb-render' field:'block_title' -%}
+{%- assign block_title = val -%}
+{%- include 'atb-render' field:'block_content' -%}
+{%- assign block_content = val -%}
+{%- include 'atb-render' field:'block_notification_message' -%}
+{%- assign block_notification_message = val -%}
+{%- include 'atb-render' field:'block_notification_message_font_size' -%}
+{%- assign block_notification_message_font_size = val -%}
+{%- include 'atb-render' field:'block_button_link' -%}
+{%- assign block_button_link = val -%}
+{%- include 'atb-render' field:'block_button_text' -%}
+{%- assign block_button_text = val -%}
+{%- include 'atb-render' field:'block_button_link_2' -%}
+{%- assign block_button_link_2 = val -%}
+{%- include 'atb-render' field:'block_button_text_2' -%}
+{%- assign block_button_text_2 = val -%}
+{%- include 'atb-render' field:'block_button_link_3' -%}
+{%- assign block_button_link_3 = val -%}
+{%- include 'atb-render' field:'block_button_text_3' -%}
+{%- assign block_button_text_3 = val -%}
+{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section pdp-text-with-image-section">
+{% for block0 in blocks %}
+{%- if block_show_actual_mobile_image_size[forloop.index0] == blank -%}
+{%- assign my_checkbox1 = false -%}
+{%- else -%}
+{%- assign my_checkbox1 = true -%}
+{%- endif -%}
+{%- if block_full_width[forloop.index0] == blank -%}
+{%- assign my_checkbox0 = false -%}
+{%- else -%}
+{%- assign my_checkbox0 = true -%}
+{%- endif -%}
+{%- assign my_image_key1 = block_mobile_image[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image1 = images[my_image_key1] -%}
+{%- assign my_image_key0 = block_image[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image0 = images[my_image_key0] -%}
+{%-liquid
+
+    assign title_order = "order-1"
+    assign content_order = "order-2"
+    assign image_order = "order-3"
+
+    if block_content_order[forloop.index0] == "1"
+        assign title_order = "order-1"
+        assign content_order = "order-3"
+        assign image_order = "order-2"
+    elsif block_content_order[forloop.index0] == "2"
+        assign title_order = "order-2"
+        assign content_order = "order-3"
+        assign image_order = "order-1"
+    elsif block_content_order[forloop.index0] == "3"
+        assign title_order = "order-1"
+        assign content_order = "order-2"
+        assign image_order = "order-3"
+    endif
+%}
+
+{% style %}
+@media screen and (max-width:749px) {
+    {% if my_checkbox1 %}
+        .pdp-image-{{ blocks[forloop.index0] }} picture {
+            overflow-x: auto;
+            display: block;
+        }
+
+        .pdp-image-{{ blocks[forloop.index0] }} picture img {
+            width: auto !important;
+            max-width: inherit !important;
+        }
+    {% endif %}
+}
+{% endstyle %}
+<section id="{{ section_id }}" class="pdp pdp-image-text-one-column">
+    <div class="pdp-image-text-container {% if my_checkbox0 %} pdp-full-width {% endif%}">
+        <div class="content-alignment-{{ block_alignment[forloop.index0] }} pdp-image-text-container__flex" id="{{ block_anchor_id[forloop.index0] }}">
+            {% if block_title[forloop.index0] != blank %}
+                <div class="{{ title_order }} pdp-title">
+                    <p class="h1">{{ block_title[forloop.index0] }}</p>
+                </div>
+            {% endif %}
+            {% if block_content[forloop.index0] != blank or block_notification_message[forloop.index0] != blank %}
+            <div class="{{ content_order }} pdp-content">
+                {{ block_content[forloop.index0] }}
+                {% if block_notification_message[forloop.index0] != blank %}
+                    <div class="{{ block_notification_message_font_size[forloop.index0] }}">
+                    {{ block_notification_message[forloop.index0] }}
+                    </div>
+                {% endif %}
+            </div>
+            {% endif %}
+            {% if my_image0 != blank or my_image1 != blank %}
+            <div class="{{ image_order }} pdp-image pdp-image-{{ blocks[forloop.index0] }}">
+                {% capture image_content %}
+                    <picture class="draggable-image-container">
+                        <source media="(min-width:750px)" srcset="{{ my_image0 | image_url: width: 1000 }}">
+                        <source media="(max-width:749px)"  srcset="{{ my_image1 | image_url: width: 749 }}">
+                        <img src="{{ my_image0 | image_url: width: 1000 }}" alt="{{ block_image_alt[forloop.index0] }}" style="width: 100%;">
+                    </picture>
+                {% endcapture %}
+
+                {% if my_checkbox1 %}
+                    <scroll-draggable-image>
+                        {{ image_content }}
+                    </scroll-draggable-image>
+                {% else %}
+                    {{ image_content }}
+                {% endif %}
+            </div>
+            {% endif %}
+            {% if block_button_link[forloop.index0] != blank and block_button_text[forloop.index0] != blank or block_button_link_2[forloop.index0] != blank and block_button_text_2[forloop.index0] != blank or block_button_link_3[forloop.index0] != blank and block_button_text_3[forloop.index0] != blank %}
+                <div class="pdp-button-div order-4">
+                    {% if block_button_link[forloop.index0] != blank and block_button_text[forloop.index0] != blank %}
+                        <a href="{{ block_button_link[forloop.index0] }}" class="pdp-button">{{ block_button_text[forloop.index0] }}</a>
+                    {% endif %}
+
+                    {% if block_button_link_2[forloop.index0] != blank and block_button_text_2[forloop.index0] != blank %}
+                        <a href="{{ block_button_link_2[forloop.index0] }}" class="pdp-button">{{ block_button_text_2[forloop.index0] }}</a>
+                    {% endif %}
+
+                    {% if block_button_link_3[forloop.index0] != blank and block_button_text_3[forloop.index0] != blank %}
+                        <a href="{{ block_button_link_3[forloop.index0] }}" class="pdp-button">{{ block_button_text_3[forloop.index0] }}</a>
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endfor %}
+
+
+</section>

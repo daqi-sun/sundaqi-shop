@@ -1,0 +1,68 @@
+<div class="disaster-faq">
+  <h2 class="disaster-blue-heading">{{ section.settings.title }}</h2>
+  {% for block in section.blocks %}
+    <div
+      class="disaster-faq-item {% if forloop.first %} disaster-faq-item--first{% endif %}"
+      x-data="{open: false}"
+    >
+      <button
+        class="disaster-faq-toggle-button"
+        :class="{ 'disaster-faq-toggle-button--open': open }"
+        type="button"
+        @click="open = !open"
+      >
+        {{ block.settings.question }}
+        <svg
+          class="disaster-faq-toggle-button__svg"
+          stroke="currentColor"
+          fill="none"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      <div x-show="open" class="disaster-faq-answer">
+        {{ block.settings.answer }}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Power Outage FAQ"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "What Are The Causes Of Power Outages?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

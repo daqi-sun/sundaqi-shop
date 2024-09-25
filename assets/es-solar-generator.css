@@ -1,0 +1,1799 @@
+
+/* Custom Styles */
+
+.custom {
+  width: 100%;
+  overflow: hidden;
+}
+
+.custom * {
+  outline: none;
+}
+
+.custom div {
+  line-height: 0;
+  border: none;
+}
+
+.custom h1,
+.custom h2,
+.custom h3,
+.custom h4,
+.custom p {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  color: #414141;
+}
+
+.custom a,
+.custom a:hover,
+.custom a:active,
+.custom a:visited,
+.custom a:link,
+.custom a:focus {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.custom .bg-light-grey {
+  background: #F6F6F6;
+}
+
+.custom .bg-dark-gray {
+  background: #E8E8E8;
+}
+
+.custom .bg-black {
+  background: #181818;
+}
+
+.custom img {
+  max-width: 100%;
+}
+
+.custom .overlay-img {
+  width: 100%;
+}
+
+.custom .pr {
+  position: relative;
+}
+
+.custom .pa {
+  position: absolute;
+}
+
+.custom .pa-cm {
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+}
+
+.custom .pa-c {
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.custom .pa-m {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.custom .fl {
+  float: left;
+}
+
+.custom .fr {
+  float: right;
+}
+
+.custom .tc {
+  text-align: center;
+}
+
+.custom .tl {
+  text-align: left;
+}
+
+.custom .tr {
+  text-align: right;
+}
+
+.custom .color-white {
+  color: #fff;
+}
+.custom .color-teal {
+  color: #0ECFE2;
+}
+
+.custom .a-button {
+  display: inline-block;
+  padding: 0 30px;
+  height: 50px;
+  line-height: 44px;
+  text-align: center;
+  font-size: 20px;
+  color: #FFFFFF;
+  cursor: pointer;
+  box-sizing: border-box;
+  background-color: #1D1D1D;
+  border-radius: 24px;
+}
+
+.custom .a-button:hover {
+  color: #FFFFFF !important;
+  background-color: #1D1D1D !important;
+}
+
+.custom .container {
+  width: 100%;
+  padding: 0;
+}
+
+.custom .pt100 {
+  padding-top: 100px;
+}
+
+.custom .pt60 {
+  padding-top: 60px;
+}
+
+.custom .mt100 {
+  margin-top: 100px;
+}
+
+.custom .pt150 {
+  padding-top: 150px;
+}
+
+.custom .mt150 {
+  margin-top: 150px;
+}
+
+.custom .img-visibility {
+  visibility: hidden;
+}
+
+.custom .custom_mobile_hidden {
+  display: block;
+}
+
+.custom .custom_mobile_show {
+  display: none;
+}
+
+.custom_mobile_hidden_inline {
+  display: inline-block;
+}
+.custom_mobile_show_inline {
+  display: none;
+}
+
+.custom .title {
+  font-weight: 600 !important;
+}
+
+.custom .big-title {
+  font-size: 50px;
+  line-height: 1em;
+}
+
+.custom .title-h1 {
+  font-size: 50px;
+  line-height: 1em;
+}
+
+.custom .title-h2 {
+  font-size: 48px;
+  line-height: 1em;
+}
+
+.custom .title-h3 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.custom .des {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.custom .des-note {
+  display: block;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.custom .font14 {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.custom .font16 {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.custom .font18 {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.custom .font20 {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.custom .font24 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.custom .font30 {
+  font-size: 30px;
+  line-height: 40px;
+}
+
+.custom .font36 {
+  font-size: 36px;
+  line-height: 42px;
+}
+
+.custom .font60 {
+  font-size: 60px;
+  line-height: 1em;
+}
+
+.custom .faq-table {
+  width: 100%;
+  line-height: 1.3em;
+}
+
+.custom .faq-table td {
+  padding: 8px 6px;
+}
+
+.custom .faq-table th {
+  padding: 8px 6px;
+  font-size: 18px;
+}
+
+@media(min-width: 799px) {
+  .custom .faq-table th {
+    font-size: 16px;
+  }
+}
+
+.custom .sidebar {
+  padding: 35px 30px 35px 18px;
+  background-color: #ffffff;
+  max-width: 320px;
+}
+
+.custom .sidebar .sidebar-wrap {
+  padding-right: 0;
+  border: none;
+}
+
+.custom .sidebar .sidebar-wrap .sidebar-block {
+  margin: 0;
+  border: none;
+}
+
+.custom .sidebar .sidebar-wrap .toggle {
+  padding-left: 10px;
+  border-bottom: solid 1px #bfbfbf;
+}
+
+.custom .sidebar .sidebar-wrap .toggle_list {
+  padding-left: 10px;
+}
+
+.custom .sidebar .sidebar-wrap .toggle_list li {
+  font-size: 16px;
+}
+
+.custom .sidebar .sidebar-wrap .toggle_list a.active {
+  padding-left: 0;
+  border: none;
+  color: #9cba1a;
+}
+
+@media(min-width: 799px) {
+  .custom .sidebar {
+    position: fixed;
+  }
+}
+
+.custom .page {
+  padding: 40px 40px 60px;
+  background-color: #f2f2f2;
+  margin-left: calc(25% + 20px);
+}
+
+.custom .page .title-h3 {
+  padding-bottom: 35px;
+}
+
+.custom .page p.font14 {
+  color: #717171;
+}
+
+.custom .page a {
+  color: #717171;
+}
+
+.custom .page a:hover {
+  color: #9cba1a;
+}
+
+.custom .page a.a-line {
+  font-weight: normal;
+  text-decoration: underline;
+}
+
+.custom .page .custom-content {
+  padding: 40px;
+  background: #fff;
+}
+
+.custom .page .section:first-child .font18 {
+  padding-top: 0;
+}
+
+.custom .page .section .font18 {
+  padding: 36px 0 24px;
+}
+
+.custom .page .section p.font14 {
+  padding-bottom: 24px;
+}
+
+.custom .page .section p.font14:last-child {
+  padding-bottom: 0;
+}
+
+.custom .page .section a {
+  font-weight: 600;
+}
+
+@media(max-width: 1199px) and (min-width: 799px) {
+  .custom .big-title {
+    font-size: 48px;
+  }
+  .custom .title-h1 {
+    font-size: 48px;
+  }
+  .custom .title-h2 {
+    font-size: 36px;
+  }
+  .custom .font60 {
+    font-size: 30px;
+  }
+}
+
+@media(max-width: 798px) and (min-width: 768px) {
+  .custom .big-title {
+    font-size: 48px;
+  }
+  .custom .title-h1 {
+    font-size: 48px;
+  }
+  .custom .title-h2 {
+    font-size: 36px;
+  }
+  .custom .font60 {
+    font-size: 30px;
+  }
+  .custom .sidebar {
+    max-width: 100%;
+    margin-top: 60px;
+  }
+  .custom .page {
+    width: 100%;
+    margin-left: 0;
+    background: transparent;
+  }
+}
+
+@media(max-width: 767px) {
+  .custom .big-title {
+    font-size: 36px;
+  }
+  .custom .title-h1 {
+    font-size: 36px;
+  }
+  .custom .title-h2 {
+    font-size: 36px;
+  }
+  .custom .font60 {
+    font-size: 30px;
+  }
+  .custom .des-note {
+    font-size: 16px;
+    color: #414141;
+  }
+  .custom .des {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .custom .a-button {
+    display: inline-block;
+    padding: 0 30px;
+    height: 50px;
+    line-height: 44px;
+    text-align: center;
+    font-size: 20px;
+    color: #1E1E20;
+    cursor: pointer;
+    border: 2px solid #1E1E20;
+    box-sizing: border-box;
+    background-color: #fff;
+  }
+  .custom .a-button:hover {
+    color: #fff !important;
+    background-color: #1E1E20 !important;
+  }
+  .custom .custom_mobile_hidden {
+    display: none;
+  }
+  .custom .custom_mobile_show {
+    display: block;
+  }
+  .custom .sidebar {
+    max-width: 100%;
+    margin: 0;
+    position: relative;
+    bottom: 0;
+    display: block !important;
+    background: transparent;
+    opacity: 1 !important;
+  }
+  .custom .page {
+    width: 100%;
+    padding: 50px 20px;
+    margin-left: 0;
+  }
+  .custom .page .custom-content {
+    padding: 0;
+    background: transparent;
+  }
+}
+
+/* End Custom Styles */
+
+html {
+  scroll-behavior: smooth;
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #000;
+}
+
+.icon-jiahao:before {
+  content: "\e616";
+}
+
+.icon-shangjiantou:before {
+  content: "\e60a";
+}
+
+.icon-xiajiantou:before {
+  content: "\e60c";
+}
+
+.icon-dayuhao:before {
+  content: "\e625";
+}
+
+.icon-jianhao:before {
+  content: "\e617";
+}
+
+
+.solar-generator .font-gotham {
+  font-weight: 500;
+}
+.solar-generator .font-gotham-bold {
+  font-weight: 700;
+}
+
+.custom_mobile_hidden_inline {
+  display: inline-block;
+}
+.custom_mobile_show_inline {
+  display: none;
+}
+
+.solar-generator {
+  width: 100%;
+  max-width: 1920px;
+  background-image: url("https://cdn.shopify.com/s/files/1/1996/9707/files/Collection-Page-Solar-Generator-Bg.jpg?v=1644284345");
+  background-color: #1D1D1D;
+  background-position: 0 15%;
+  background-repeat: no-repeat;
+}
+
+.solar-generator .banner {
+  width: 100%;
+}
+
+.solar-generator .banner .text {
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 55%;
+  width: 100%;
+}
+
+.solar-generator .banner .text .title-h1 {
+  font-size: 80px;
+  line-height: 1.2;
+  color: #FFFFFF !important;
+  margin-bottom: 48px;
+}
+
+.solar-generator .banner .text .banner-button {
+  display: flex;
+  align-items: center;
+  column-gap: 7px;
+}
+.solar-generator .banner .text .banner-button p {
+  font-size: 16px;
+}
+
+.solar-generator .section-2 {
+  width: 100%;
+  padding: 150px 24px;
+}
+
+.solar-generator .section-2 .text {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0;
+}
+.solar-generator .section-2 .text .title-h2 {
+  font-size: 45px !important;
+  line-height: 1.3;
+  color: #ffffff !important;
+  margin-bottom: 48px;
+}
+.solar-generator .section-2 .text .des {
+  font-size: 18px;
+  color: #A1A1A6;
+  line-height: 1.3;
+}
+.solar-generator .section-3 {
+  padding-bottom: 200px;
+}
+.solar-generator .section-3 .flex-container {
+  max-width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  column-gap: 100px
+}
+.solar-generator .section-3 .icon-block {
+  max-width: 266px;
+  margin: 0;
+  width: 266px;
+}
+.solar-generator .section-3 .icon-img {
+  max-width: 120px;
+  margin: 0 auto;
+  height: 118px;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+}
+.solar-generator .section-3 img {
+  max-width: 90px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.solar-generator .section-3 .des {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.3;
+  text-align: center;
+  color: #fff;
+  padding-top: 24px;
+  border-top: 1px solid #A1A1A6;
+}
+.solar-generator .section-4 {
+  max-width: 1600px;
+  margin: auto;
+}
+.solar-generator .section-4 .text {
+  padding: 0 0 200px;
+}
+.solar-generator .section-4 .text .flex-container {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 100px;
+}
+.solar-generator .section-4 .text .flex-container .text-container {
+  width: 750px;
+}
+.solar-generator .section-4 .image-block {
+  padding-bottom: 100px;
+}
+.solar-generator .section-4 .text .list-content {
+  margin-top: 72px;
+}
+.solar-generator .section-4 .text .title-h2 {
+  font-size: 45px !important;
+  color: #FFFFFF !important;
+  line-height: 1.3;
+  margin-bottom: 48px;
+}
+.solar-generator .section-4 .text .text-list {
+  margin-top: 32px;
+}
+.solar-generator .section-4 .text .text-list .title-h3 {
+  padding: 20px 0;
+  font-size: 36px;
+  color: #FFFFFF !important;
+  line-height: 1em;
+}
+.solar-generator .section-4 .text .des {
+  font-size: 18px;
+  color: #B5B5BB;
+  line-height: 1.1em;
+  margin-bottom: 32px;
+}
+.solar-generator .section-4 .text .des:last-child {
+  margin-bottom: 0;
+}
+.solar-generator .section-4 .text .text-list .des {
+  font-size: 18px;
+  color: #FFFFFF;
+  line-height: 1.1em;
+}
+.solar-generator .section-4 .text .text-list li {
+  margin-bottom: 12px;
+}
+
+.solar-generator .section-common {
+  width: 100%;
+  padding: 0 0 138px;
+}
+.solar-generator .section-common .section-container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+.solar-generator .section-common .section-container.section-solar-energy {
+  padding-bottom: 200px;
+}
+.solar-generator .section-common .section-container.section-solar-energy .flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 100px;
+}
+.solar-generator .section-common .section-container.section-solar-energy .flex-container .section-solar-energy-content {
+  width: 750px;
+}
+.solar-generator .section-6.section-common .section-container .flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 100px;
+}
+.solar-generator .section-6.section-common .section-container .flex-container .section-solar-energy-content {
+  width: 750px;
+}
+
+.solar-generator .section-common .section-left {
+  max-width: 50%;
+}
+.solar-generator .section-common .section-right {
+  max-width: 48%;
+}
+.solar-generator .section-common .section-left .text {
+  max-width: 677px;
+  width: 100%;
+}
+.solar-generator .section-common .section-content .text .fu-title {
+  font-size: 25px;
+  line-height: 1.2em;
+  color: #FFFFFF;
+}
+.solar-generator .section-common .section-content .text .title-h2 {
+  font-size: 45px !important;
+  line-height: 1.3em;
+  color: #FFFFFF !important;
+  margin-bottom: 48px;
+}
+.solar-generator .section-common .section-content .text .title-h3 {
+  font-size: 24px !important;
+  line-height: 1.3em;
+  color: #FFFFFF !important;
+  margin-bottom: 24px;
+}
+
+.solar-generator .section-common .section-content .text .des {
+  font-size: 18px;
+  line-height: 1.3em;
+  color: #6E6E72;
+}
+.solar-generator .section-common .solar-energy-2 .section-content .text .des {
+  color: #B5B5BB;
+}
+.solar-generator .section-6.section-common .text .des {
+  color: #B5B5BB;
+}
+.solar-generator .section-common .section-solar-energy .section-content .text .des {
+  margin-top: 24px;
+  margin-bottom: 48px;
+}
+.solar-generator .section-common .section-solar-energy .section-content .text .des:last-child {
+  margin-bottom: 0;
+}
+.solar-generator .section-common .section-solar-energy .section-content .text img {
+  float: left;
+  width: 32px;
+  height: 32px;
+  margin-right: 27px;
+}
+.solar-generator .section-common .section-content .text .a-button {
+  color: #1D1D1D;
+  background-color: #FFFFFF;
+  margin-top: 48px;
+  line-height: 48px;
+  border: 1px solid #1D1D1D;
+  font-size: 16px;
+  border-radius: 100px;
+}
+.solar-generator .section-common .section-content .text .a-button:hover {
+  border: 1px solid #FFFFFF;
+}
+
+.solar-generator .section-common .section-img-right {
+  margin-left: 50%;
+}
+.solar-generator .section-common .section-text-left {
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+}
+.solar-generator .section-common .section-text-right {
+  top: 50%;
+  right: 20%;
+  transform: translate(50%, -50%);
+}
+/* .solar-generator .section-common .section-content .section-text-left .text .des {
+    max-width: 531px;
+  }
+  .solar-generator .section-common .section-content .section-text-right .text .des {
+    max-width: 531px;
+  } */
+.solar-generator .section-common .show-products .flex-container {
+  display: flex;
+  justify-content: space-around;
+}
+.solar-generator .section-common .show-products .section-product {
+  width: 388px;
+  /*   height: 387px; */
+}
+.solar-generator .section-common .show-products .section-product img {
+  height: 548px;
+  object-fit: contain;
+}
+.solar-generator .section-common .show-products .section-product .title-h6 {
+  font-size: 20px;
+  line-height: 1.2em;
+  color: #FFFFFF !important;
+  margin-bottom: 0;
+}
+.solar-generator .section-common .show-products .a-button {
+  color: #1D1D1D;
+  background-color: #FFFFFF;
+  margin-top: 20px;
+  line-height: 48px;
+  border: 1px solid #1D1D1D;
+}
+.solar-generator .section-common .show-products .a-button:hover {
+  border: 1px solid #FFFFFF;
+}
+
+.solar-generator .section-common .product-parameters {
+  margin-top: 150px;
+}
+.solar-generator .section-common .product-parameters .title-h3 {
+  font-size: 40px;
+  line-height: 1.3em;
+  color: #FFFFFF !important;
+}
+.solar-generator .section-common .product-parameters .show-me-button {
+  border: 2px solid #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 28px;
+  font-size: 18px;
+  line-height: 1.3em;
+  font-weight: 600;
+  width: 240px;
+  height: 48px;
+  background: #1D1D1D;
+  margin-top: 32px;
+  color: #FFFFFF;
+}
+.solar-generator .section-common .product-parameters .show-me-button .iconfont {
+  color: #FFFFFF;
+}
+.solar-generator .section-common .product-parameters .show-me {
+  margin: 113px auto 0;
+  display: none;
+}
+.solar-generator .section-common .product-parameters .show-me .flex-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.solar-generator .section-common .product-parameters .show-me .product-parameter {
+  max-width: 345px;
+  border-radius: 32px;
+  padding: 46px 30px;
+}
+.solar-generator .section-common .product-parameters .show-me .product-parameter .parameter-title {
+  font-size: 18px;
+  line-height: 1.3em;
+  color: #6E6E73;
+  margin-bottom: 36px;
+}
+.solar-generator .section-common .product-parameters .show-me .divider {
+  position: relative;
+}
+.solar-generator .section-common .product-parameters .show-me .other-parameter {
+  font-size: 18px;
+  line-height: 1.5em;
+  color: #6E6E73;
+}
+.solar-generator .section-common .product-parameters .show-me .divider:after {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  background: #707070;
+  content: "";
+  height: 2px;
+  width: 100%;
+  opacity: 0.5;
+}
+.solar-generator .section-common .product-parameters .show-me .parameter-spacing {
+  padding: 33px 0 20px;
+}
+.solar-generator .section-common .product-parameters .show-me .last-spacing {
+  padding: 33px 0 0;
+}
+.solar-generator .section-common .product-parameters .show-me .product-parameter img {
+  margin-bottom: 32px;
+}
+
+.solar-generator .section-7 {
+  width: 100%;
+  padding: 100px 0 200px;
+  /*   background: #1D1D1D; */
+}
+.solar-generator .section-7 .flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 100px;
+}
+.solar-generator .section-7 .flex-container-img {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 10px;
+  margin-bottom: 10px;
+}
+.solar-generator .section-7 .flex-container .section-solar-energy-content {
+  width: 750px;
+}
+.solar-generator .section-7 .text {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+.solar-generator .section-7 .text.ecoflow-solar-kit-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.solar-generator .section-7 .text .title-h1 {
+  font-size: 120px;
+  color: #FFFFFF !important;
+  line-height: 1.2em;
+}
+.solar-generator .section-7 .text .title-h2 {
+  font-size: 45px !important;
+  color: #FFFFFF !important;
+  line-height: 1.3em;
+  margin-bottom: 48px;
+}
+.solar-generator .section-7 .text .title-h1 .title-span {
+  display: block;
+}
+.solar-generator .section-7 .text .title-h1 .tr {
+  text-align: right;
+}
+.solar-generator .section-7 .text .title-h1 .tl {
+  text-align: left;
+}
+.solar-generator .section-7 .text .des {
+  font-size: 18px;
+  line-height: 1.2em;
+  color: #A1A1A6;
+  margin-bottom: 32px;
+}
+.solar-generator .section-7 .single-crystal-wrapper {
+  margin-top: 300px;
+  margin-bottom: 300px;
+}
+.solar-generator .section-7 .text .single-crystal {
+  border-right: 1px solid #A1A1A6;
+  width: 800px;
+}
+.solar-generator .section-7 .text .single-crystal .title-h2 {
+  text-align: right;
+  margin-bottom: 0;
+  margin-right: 100px;
+  letter-spacing: -0.1px !important;
+}
+.solar-generator .section-7 .text .single-crystal-percent {
+  width: 700px;
+  margin-bottom: 0;
+}
+.solar-generator .section-7 .text .single-crystal-percent .title-h2 {
+  font-size: 140px !important;
+}
+.solar-generator .section-7 .text .flex-column {
+  display: flex;
+  flex-direction: column;
+  row-gap: 48px;
+}
+.solar-generator .section-7 .text .flex-column .title-h2 {
+  margin-bottom: 0;
+}
+.solar-generator .section-7 .text .flex-column .des {
+  margin-bottom: 0;
+  color: #A1A1A6;
+  margin-top: auto;
+}
+.solar-generator .section-7 .text .flex-column .des {
+  margin-bottom: 0;
+  color: #A1A1A6;
+  margin-top: auto;
+}
+.solar-generator .section-7 .text .psp--container.flex-start .flex-container {
+  align-items: flex-start;
+}
+.solar-generator .section-7 .text .ecoflow-solar-kit-content-container {
+  margin-top: 300px;
+}
+.solar-generator .section-7 .text .ecoflow-solar-kit-content-container .des {
+  font-size: 36px;
+  line-height: 1.3;
+  color: #a1a1a6;
+  margin-bottom: 0;
+}
+
+.solar-generator .section-8 {
+  width: 100%;
+  padding: 120px 100px;
+  background: #FFFFFF;
+  margin-bottom: -2px;
+}
+.solar-generator .section-8 .bsection-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.solar-generator .section-8 .faq-block .title-h2 {
+  font-size: 45px !important;
+  line-height: 1.1em;
+  color: #212121 !important;
+}
+.solar-generator .section-8 .faq-block .show-me-button {
+  border: 2px solid #1D1D1D;
+  box-sizing: border-box;
+  border-radius: 28px;
+  font-size: 25px;
+  line-height: 1.3em;
+  font-weight: 600;
+  width: 256px;
+  height: 55px;
+  background: #ffffff;
+  margin-top: 36px;
+  color: #1d1d1d;
+}
+.solar-generator .section-8 .faq-block .show-me {
+  margin: 48px 0 0;
+  display: none;
+}
+.solar-generator .section-8 .question-container {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  align-items: baseline;
+  column-gap: 10px;
+}
+.plus,
+.minus {
+  display: none;
+}
+.plus.active,
+.minus.active {
+  display: inline;
+}
+.solar-generator .section-8 .faq-block .question {
+  border-top: 1px solid rgba(161, 161, 166, 0.5);
+  padding: 32.5px 0;
+  text-align: left;
+  display: block;
+}
+.solar-generator .section-8 .faq-block .last-question {
+  border-bottom: 1px solid rgba(161, 161, 166, 0.5);
+}
+.solar-generator .section-8 .faq-block .question .title-h3 {
+  color: #212121 !important;
+  font-size: 18px;
+  line-height: 1.3em;
+  cursor: pointer;
+}
+.solar-generator .section-8 .faq-block .question .des {
+  padding-top: 30px;
+  display: none;
+}
+.solar-generator .section-8 .faq-block .question p {
+  font-size: 18px;
+  line-height: 1.2em;
+  color: #6E6E72;
+  font-weight: 500;
+}
+
+.solar-generator .section-9 {
+  width: 100%;
+  padding: 0 0 311px;
+  background: #FFFFFF;
+}
+.solar-generator .section-9 .title-h3 {
+  font-size: 35px;
+  line-height: 1.2em;
+  color: #1D1D1F;
+  margin-bottom: 102px;
+}
+.solar-generator .section-9 .media-container {
+  display: block;
+  max-width: 1276px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width:1800px) {
+  .solar-generator {
+    background-position: 0 13%;
+  }
+}
+@media screen and (max-width: 1680px) {
+  .solar-generator .section-4 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .solar-generator .section-common .section-container.section-solar-energy {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .solar-generator .section-6.section-common .section-container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .solar-generator .section-common .product-parameters {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .solar-generator .section-7 .text {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .solar-generator .section-common .section-text-right {
+    right: 25%;
+  }
+
+}
+@media screen and (max-width:1650px) {
+  .solar-generator {
+    background-position: 0 13%;
+    background-size: 90%;
+  }
+  .solar-generator .section-4 .text .text-list .title-h3 {
+    font-size: 32px;
+  }
+  .solar-generator .section-common .section-content .text .fu-title {
+    font-size: 22px;
+  }
+  .solar-generator .section-common .product-parameters .title-h3 {
+    font-size: 36px;
+  }
+  .solar-generator .section-7 .text .title-h1 {
+    font-size: 100px;
+  }
+  .solar-generator .section-8 .faq-block .show-me-button {
+    border-radius: 25px;
+    font-size: 22px;
+    width: 220px;
+    height: 50px;
+    margin-top: 25px;
+  }
+  .solar-generator .section-9 .title-h3 {
+    font-size: 32px;
+    margin-bottom: 80px;
+  }
+  .solar-generator .section-9 {
+    padding: 0 0 250px;
+  }
+  .solar-generator .section-9 .media-container {
+    max-width: 1100px;
+  }
+}
+@media screen and (max-width:1500px) {
+  .solar-generator {
+    background-position: 0 12%;
+  }
+}
+@media screen and (max-width:1400px) {
+  .solar-generator {
+    background-position: 0 13%;
+    background-size: 100%;
+  }
+  .solar-generator .banner .text .title-h1 {
+    font-size: 68px;
+  }
+  .solar-generator .section-3 {
+    padding: 0 0 160px;
+  }
+  .solar-generator .section-4 .text .list-content {
+    margin-top: 52px;
+  }
+  .solar-generator .section-4 .text .text-list .title-h3 {
+    font-size: 28px;
+    padding: 15px 0;
+  }
+  .solar-generator .section-common .section-content .text .fu-title {
+    font-size: 20px;
+  }
+  .custom .a-button {
+    padding: 0 24px;
+    height: 44px;
+    font-size: 18px;
+    border-radius: 22px;
+    line-height: 42px;
+  }
+  .solar-generator .section-common .section-content .text .a-button {
+    line-height: 42px;
+    margin-top: 40px;
+  }
+  .solar-generator .section-common .show-products .section-product img {
+    height: 460px;
+  }
+  .solar-generator .section-common .show-products .section-product .title-h6 {
+    font-size: 18px;
+    margin-top: 24px;
+  }
+  .solar-generator .section-common .show-products .a-button {
+    margin-top: 15px;
+    line-height: 42px;
+  }
+  .solar-generator .section-common .product-parameters .title-h3 {
+    font-size: 32px;
+  }
+  .solar-generator .section-common .product-parameters {
+    margin-top: 100px;
+  }
+  .solar-generator .section-common .product-parameters .show-me-button {
+    border-radius: 22px;
+    font-size: 18px;
+    width: 160px;
+    height: 44px;
+    margin-top: 24px;
+  }
+  .solar-generator .section-common .product-parameters .show-me {
+    margin: 80px auto 0;
+  }
+  .solar-generator .section-common .product-parameters .show-me .product-parameter .parameter-title {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+  .solar-generator .section-common .product-parameters .show-me .product-parameter {
+    max-width: 310px;
+    padding: 40px 25px;
+    border-radius: 26px;
+  }
+  .solar-generator .section-common .product-parameters .show-me .other-parameter {
+    font-size: 16px;
+  }
+  .solar-generator .section-common .product-parameters .show-me .parameter-spacing {
+    padding: 26px 0 16px;
+  }
+  .solar-generator .section-common .product-parameters .show-me .last-spacing {
+    padding: 26px 0 0;
+  }
+  .solar-generator .section-common {
+    padding: 0 0 100px;
+  }
+  .solar-generator .section-7 {
+    padding: 75px 0 150px;
+  }
+  .solar-generator .section-7 .single-crystal-wrapper {
+    margin-top: 120px;
+    margin-bottom: 120px;
+  }
+  .solar-generator .section-8 .faq-block .show-me-button {
+    border-radius: 25px;
+    font-size: 22px;
+    width: 220px;
+    height: 50px;
+    margin-top: 25px;
+  }
+  .solar-generator .section-9 .title-h3 {
+    font-size: 28px;
+    margin-bottom: 60px;
+  }
+  .solar-generator .section-8 .faq-block .show-me-button {
+    border-radius: 24px;
+    font-size: 18px;
+    width: 200px;
+    height: 48px;
+    margin-top: 20px;
+  }
+  .solar-generator .section-9 .media-container {
+    max-width: 1020px;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .solar-generator .section-8 {
+    padding: 100px 50px;
+  }
+  .solar-generator .section-7 .text .single-crystal .title-h2 {
+    font-size: 35px !important;
+  }
+  .solar-generator .section-7 .text .single-crystal-percent .title-h2 {
+    font-size: 100px !important;
+  }
+}
+@media screen and (max-width:1200px) {
+  .solar-generator {
+    background-position: 0 12%;
+    background-size: 110%;
+  }
+  .solar-generator .section-3 {
+    padding-bottom: 120px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .solar-generator .section-4 .text .flex-container {
+    column-gap: 50px;
+  }
+  .solar-generator .section-common .section-container.section-solar-energy .flex-container {
+    column-gap: 50px;
+  }
+  .solar-generator .section-6.section-common .section-container .flex-container {
+    column-gap: 50px;
+  }
+  .solar-generator .section-7 .flex-container {
+    column-gap: 50px;
+  }
+  .solar-generator .section-7 .text .single-crystal .title-h2 {
+    margin-right: 50px;
+  }
+  .solar-generator .section-4 .text .text-list {
+    margin-top: 20px;
+  }
+  .solar-generator .section-4 .text .text-list .title-h3 {
+    font-size: 24px;
+    padding: 10px 0;
+  }
+  .solar-generator .section-4 .text {
+    padding-bottom: 100px;
+  }
+  .solar-generator .section-common .section-container.section-solar-energy {
+    padding-bottom: 100px;
+  }
+  .solar-generator .section-common .show-products .section-product img {
+    height: 380px;
+  }
+  .solar-generator .section-common .show-products .section-product .title-h6 {
+    font-size: 16px;
+    margin-top: 16px;
+  }
+  .solar-generator .section-common .product-parameters .title-h3 {
+    font-size: 28px;
+  }
+  .solar-generator .section-common .product-parameters .show-me-button {
+    font-size: 16px;
+  }
+  .solar-generator .section-common .product-parameters .show-me .product-parameter {
+    max-width: 250px;
+  }
+  .solar-generator .section-7 .text .title-h1 {
+    font-size: 80px;
+  }
+  .solar-generator .section-7 {
+    padding: 60px 0 120px;
+  }
+  .solar-generator .section-8 .faq-block .show-me-button {
+    width: 170px;
+    height: 44px;
+  }
+  .solar-generator .section-9 .title-h3 {
+    font-size: 26px;
+    margin-bottom: 40px;
+  }
+  .solar-generator .section-9 .media-container {
+    max-width: 900px;
+  }
+  .solar-generator .section-9 {
+    padding: 0 0 200px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .solar-generator .banner .text .title-h1 {
+    font-size: 50px;
+  }
+  .solar-generator .section-8 {
+    padding-top: 49px;
+    padding-bottom: 49px;
+  }
+}
+@media screen and (max-width: 960px) {
+  .solar-generator {
+    background-position: 0 10%;
+    background-size: 120%;
+  }
+  .solar-generator .section-3 .flex-container {
+    column-gap: 50px;
+  }
+  .solar-generator .section-3 .des {
+    font-size: 16px;
+    margin-top: 15px;
+    padding-top: 10px;
+  }
+  .solar-generator .section-4 .text .text-list .title-h3 {
+    font-size: 22px;
+  }
+  .solar-generator .section-4 .text .list-content {
+    margin-top: 40px;
+  }
+  .solar-generator .section-common .section-content .text .fu-title {
+    font-size: 18px;
+  }
+  .custom .a-button {
+    padding: 0 20px;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 20px;
+    line-height: 40px;
+  }
+  .solar-generator .section-common .section-content .text .a-button {
+    margin-top: 30px;
+    line-height: 40px;
+  }
+  .solar-generator .section-common .show-products .section-product img {
+    height: 300px;
+  }
+  .solar-generator .section-common .show-products .section-product .title-h6 {
+    font-size: 13px;
+  }
+  .solar-generator .section-common .show-products .a-button {
+    line-height: 40px;
+  }
+  .solar-generator .section-common .product-parameters {
+    margin-top: 80px;
+  }
+  .solar-generator .section-common .product-parameters .show-me {
+    margin: 60px auto 0;
+  }
+  .solar-generator .section-common .product-parameters .show-me .product-parameter {
+    max-width: 215px;
+    padding: 30px 15px;
+    border-radius: 20px;
+  }
+  .solar-generator .section-common .product-parameters .show-me .product-parameter .parameter-title {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  .solar-generator .section-common {
+    padding: 0 0 80px;
+  }
+  .solar-generator .section-7 .flex-container {
+    flex-wrap: wrap;
+  }
+  .solar-generator .section-7 .text .psp--container.flex-start .flex-container {
+    row-gap: 48px;
+  }
+  .solar-generator .section-7 .flex-container .section-solar-energy-content {
+    width: 1000px;
+  }
+  .solar-generator .section-7 .text .single-crystal {
+    width: 1000px;
+    border-right: unset;
+  }
+  .solar-generator .section-7 .text .single-crystal .title-h2 {
+    margin-right: 0;
+    text-align: left;
+  }
+  .solar-generator .section-7 .single-crystal-wrapper {
+    margin-top: 129px;
+    margin-bottom: 129px;
+  }
+  .solar-generator .section-7 .text .single-crystal-percent {
+    width: 1000px;
+  }
+  .solar-generator .section-7 .text .single-crystal-percent .title-h2 {
+    margin-top: 24px;
+  }
+  .solar-generator .section-7 .text .title-h1 {
+    font-size: 60px;
+  }
+  .solar-generator .section-7 {
+    padding: 40px 0 100px;
+  }
+  .solar-generator .section-8 .faq-block .question .des {
+    padding-top: 20px;
+  }
+  .solar-generator .section-9 .title-h3 {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  .solar-generator .section-9 .media-container {
+    max-width: 720px;
+  }
+  .solar-generator .section-9 {
+    padding: 0 0 160px;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .solar-generator {
+    background-position: 0 9%;
+    background-size: 110%;
+  }
+  .solar-generator .slick-dots li {
+    margin: 0;
+  }
+  .custom_mobile_hidden_inline {
+    display: none !important;
+  }
+  .custom_mobile_show_inline {
+    display: inline !important;
+  }
+  .solar-generator .banner {
+    margin-top: 250px;
+  }
+  .solar-generator .banner .text {
+    top: -17%;
+    left: 50%;
+  }
+  .solar-generator .banner .text .title-h1 {
+    font-size: 48px;
+    margin-bottom: 32px;
+  }
+  .solar-generator .section-2 {
+    padding-bottom: 60px;
+  }
+  .solar-generator .section-2 .text .title-h2 {
+    font-size: 28px !important;
+  }
+  .solar-generator .section-2 .text .des {
+    font-size: 16px;
+  }
+  .solar-generator .section-3 {
+    padding-bottom: 97px;
+  }
+  .solar-generator .section-4 .image-block {
+    padding-bottom: 48px;
+  }
+  .solar-generator .section-4 .text {
+    padding-bottom: 97px;
+  }
+  .solar-generator .section-4 .text .flex-container {
+    flex-wrap: wrap;
+  }
+  .solar-generator .section-common .section-solar-energy .section-content .text .title-h3 {
+    font-size: 16px !important;
+    margin-top: 48px;
+  }
+  .solar-generator .section-common .section-container .show-products {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .section-7-slider {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .solar-generator .section-common .section-container.section-solar-energy {
+    padding-bottom: 97px;
+  }
+  .solar-generator .section-common .section-container.section-solar-energy .flex-container {
+    flex-wrap: wrap;
+  }
+  .solar-generator .section-6.section-common .section-container .flex-container {
+    flex-wrap: wrap;
+  }
+  .solar-generator .section-common .section-container.section-solar-energy .show-products .flex-container {
+    flex-wrap: nowrap;
+  }
+  .solar-generator .section-common .section-container.section-solar-energy.solar-energy-2 .flex-container {
+    flex-direction: column-reverse;
+  }
+  .solar-generator .section-common .section-container.section-solar-energy .flex-container .section-solar-energy-content {
+    width: unset;
+  }
+  .solar-generator .section-common .show-products .section-product {
+    padding-top: 0;
+    padding-bottom: 32px;
+    border-radius: 20px;
+  }
+  .solar-generator .section-common .show-products .slick-dots {
+    bottom: -44px !important;
+  }
+  .solar-generator .section-7 .slick-dots {
+    bottom: -65px !important;
+  }
+  .solar-generator .section-7 .product-container-slider .slick-dots {
+    bottom: -44px !important;
+  }
+  .slick-dots li {
+    width: 20px;
+    height: 20px;
+    background: transparent;
+  }
+  .slick-dots li.slick-active {
+    background: transparent;
+  }
+  .slick-dots li button:before {
+    font-size: 35px;
+  }
+  .slick-dots li button {
+    opacity: 1;
+    width: 100%;
+  }
+  .solar-generator .section-4 .text .des {
+    font-size: 16px;
+    line-height: 1.3;
+  }
+  .solar-generator .section-4 .text .title-h2 {
+    font-size: 28px !important;
+    line-height: 1.3;
+    margin-bottom: 24px;
+  }
+  .solar-generator .section-4 .text .des {
+    margin-bottom: 24px;
+  }
+  .solar-generator .section-4 .text .text-list {
+    margin-bottom: 24px;
+  }
+  .solar-generator .section-4 .text .text-list .title-h3 {
+    font-size: 18px;
+    padding: 0 0 27px;
+  }
+  .solar-generator .section-4 .text .text-list .des {
+    font-size: 16px;
+  }
+  .solar-generator .section-common .section-solar-energy .section-content .text .title-h2 {
+    font-size: 28px !important;
+    margin-top: 48px;
+    margin-bottom: 0;
+  }
+  .solar-generator .section-6.section-common .section-content .text .title-h2 {
+    font-size: 28px !important;
+    margin-top: 48px;
+    margin-bottom: 0;
+  }
+  .solar-generator .section-6.section-common {
+    margin-top: 136px;
+  }
+  .solar-generator .section-common .section-solar-energy .section-content .text .des {
+    margin-bottom: 0;
+  }
+  .solar-generator .section-common .section-content .text .a-button {
+    margin-top: 48px;
+    height: 50px;
+    line-height: 50px;
+  }
+  .solar-generator .section-common .section-content .text .des {
+    font-size: 16px;
+  }
+  .solar-generator .section-6.section-common .section-container {
+    padding-bottom: 97px;
+  }
+  .solar-generator .section-6.section-common .section-content .text .des {
+    margin-top: 24px;
+  }
+  .solar-generator .section-7 .text .title-h2 {
+    margin-top: 103px;
+    font-size: 28px !important;
+    margin-bottom: 24px;
+  }
+  .solar-generator .section-7 .text .product-container .title-h2 {
+    margin-top: 48px;
+    text-align: left;
+  }
+  .solar-generator .section-7 .text .product-container .des {
+    text-align: left;
+    margin-bottom: 0;
+  }
+  .solar-generator .section-7 .single-crystal-wrapper {
+    margin-top: 129px;
+  }
+  .solar-generator .section-7 .text .single-crystal .title-h2 {
+    font-size: 28px !important;
+    margin-top: 0;
+    margin-bottom: 24px;
+    letter-spacing: 1px !important;
+  }
+  .solar-generator .section-7 .text .single-crystal-percent .title-h2 {
+    font-size: 80px !important;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .solar-generator .section-7 .text .des {
+    font-size: 16px;
+  }
+  .solar-generator .section-common .section-left .text {
+    max-width: 387px;
+    margin: 0 auto;
+  }
+  .solar-generator .section-common .section-container {
+    max-width: 100%;
+  }
+  .solar-generator .section-common .section-img-right {
+    margin-left: 0;
+  }
+  .solar-generator .section-common .section-text-left {
+    position: static;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+  }
+  .solar-generator .section-common .section-left,
+  .solar-generator .section-common .section-right {
+    max-width: 100%;
+  }
+  .solar-generator .section-common {
+    padding: 0;
+  }
+  .solar-generator .section-common .section-left .text {
+    margin-top: 40px;
+  }
+  .solar-generator .section-common .section-content .text .fu-title {
+    font-size: 16px;
+  }
+  .solar-generator .section-common .show-products .flex-container {
+    display: block;
+  }
+  .solar-generator .section-common .show-products .sc-bg-white {
+    background: #FFFFFF;
+  }
+  .solar-generator .section-common .show-products .sc-bg-gray {
+    background: #F3F3F3;
+  }
+  .solar-generator .section-common .show-products .section-product .title-h6 {
+    font-size: 16px;
+    color: #212121 !important;
+    margin-top: 0;
+    margin-bottom: 32px;
+  }
+  .solar-generator .section-common .show-products .a-button {
+    background: #1D1D1D;
+    color: #FFFFFF;
+    height: 50px;
+    border-radius: 100px;
+    line-height: 50px;
+  }
+  .solar-generator .section-common .section-text-right {
+    position: static;
+    right: 0;
+    top: 0;
+    transform: translate(0, 0);
+  }
+  .solar-generator .section-common .section-text-right .text {
+    /*     margin-top: 40px; */
+    max-width: 387px;
+    margin: 40px auto 0;
+  }
+  .solar-generator .section-7 {
+    padding-top: 136px;
+    padding-bottom: 81px;
+  }
+  .solar-generator .section-7 .text .title-h1 {
+    font-size: 30px;
+  }
+  .solar-generator .section-7 .text .ecoflow-solar-kit-content-container {
+    margin-top: 184px;
+  }
+  .solar-generator .section-7 .text .ecoflow-solar-kit-content-container .des {
+    font-size: 24px;
+  }
+  .solar-generator .section-8 {
+    padding: 48px 24px;
+  }
+  .solar-generator .section-8 .faq-block .title-h2 {
+    font-size: 28px !important;
+  }
+  .solar-generator .section-8 .faq-block .question {
+    padding: 32px 0;
+  }
+  .solar-generator .section-8 .faq-block .question .title-h3 {
+    font-size: 16px;
+  }
+  .solar-generator .section-8 .faq-block .question p {
+    font-size: 16px;
+  }
+  .solar-generator .section-9 .media-container {
+    display: none;
+  }
+  .solar-generator .section-9 .mobile-media-container {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  .solar-generator .section-9 {
+    padding: 70px 20px 100px;
+  }
+  .solar-generator .section-9 .title-h3 {
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .solar-generator .section-3 .flex-container {
+    justify-content: center;
+    row-gap: 48px;
+    flex-wrap: wrap;
+  }
+  .solar-generator .section-3 .icon-block {
+    width: 366px;
+    margin: auto;
+  }
+  .solar-generator .section-3 .des {
+    border-top: unset;
+    margin-top: 32px;
+    padding-top: 0;
+  }
+}
+@media screen and (max-width: 630px) {
+  .solar-generator .section-3 .icon-block {
+    width: 200px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .solar-generator .banner .text {
+    top: -30%;
+  }
+  .solar-generator .section-3 .icon-block {
+    width: 130px;
+  }
+}
+@media screen and (max-width: 380px) {
+  .solar-generator .banner .text {
+    top: -45%;
+  }
+  .solar-generator .banner .text .title-h1 {
+    font-size: 38px;
+  }
+  .solar-generator .section-3 .icon-block {
+    width: 250px;
+  }
+}

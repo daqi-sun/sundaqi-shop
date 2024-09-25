@@ -1,0 +1,333 @@
+/* Power Bundles Grid Section */
+
+.popular-products-section {
+    background: #541409;
+    padding-bottom: 58px;
+}
+
+.popular-products-section .section-heading-wrapper {
+    margin-bottom: 49px;
+}
+
+.banner-section {
+    padding-top: 7px;
+    padding-bottom: 11px;
+}
+
+.popular-products-container {
+    max-width: 1153px;
+    width: 100%;
+    margin: auto;
+}
+
+.popular-products-container .product--wrapper {
+    background: #ffffff;
+    border-radius: 15px;
+    flex-grow: 1;
+    flex-basis: 0;
+    position: relative;
+}
+
+.popular-products-container .save-container {
+    background: rgb(178,95,43);
+    background: linear-gradient(90deg, rgba(178,95,43,1) 0%, rgba(163,41,18,1) 100%);
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-top: 10px;
+    padding-left: 53px;
+    padding-right: 37px;
+    padding-bottom: 15px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 150px;
+}
+
+.popular-products-container .save-container .minus-sign {
+    font-size: 35px;
+    line-height: 1;
+}
+
+.popular-products-container .save-container .discount-price {
+    font-size: 40px;
+    line-height: 1;
+}
+
+.popular-products-container .save-container .currency {
+    font-size: 30px;
+    line-height: 1;
+}
+
+.popular-products-container .save-container .discount-icon {
+    width: 64px;
+    position: absolute;
+    left: 75%;
+    top: 60%;
+}
+
+.popular-products-container .product--wrapper .button--wrapper {
+    display: flex;
+    column-gap: 17px;
+    row-gap: 23px;
+    justify-content: center;
+    margin-bottom: 50px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.popular-products-container .product--wrapper.grid-second-column .button--wrapper {
+    margin-bottom: 63px;
+}
+
+.popular-products-container .button--wrapper .product-btn {
+    font-size: 20px;
+    color: #212121;
+    line-height: 48px;
+}
+.popular-products-container .product-image--wrapper.no-padding {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.popular-products-container .product-image--wrapper.product-solar-panel {
+    padding-top: 53px;
+    padding-bottom: 50px;
+}
+
+.popular-products-container .product-bundle-specification--wrapper.product-solar-panel {
+    margin-top: 30px;
+}
+
+.popular-products-container .product-bundle--wrapper {
+    margin-top: 16px;
+}
+
+
+.popular-products-container .product-bundle--wrapper .product-bundle {
+    font-size: 20px;
+    color: #666666;
+    line-height: 1;
+}
+
+.popular-products-container .product-bundle-specification--wrapper .product-bundle-specs {
+    font-size: 21px;
+    line-height: 1.2;
+}
+
+.popular-products-container .product-variant--wrapper {
+    margin-top: 26px;
+}
+
+.popular-products-container .product-variant--wrapper .variant-list.solar-generator {
+    display: flex;
+    justify-content: center;
+    column-gap: 50px;
+}
+
+.popular-products-container .product-variant--wrapper .variant-list.solar-generator .variant {
+    border: 1px solid #505050;
+    border-radius: 4px;
+    background: #ffffff;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-right: 32px;
+    padding-left: 32px;
+    color: #3A3C42;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.popular-products-container .product-variant--wrapper .variant-list .variant.active {
+    border: 1px solid #505050;
+    border-radius: 4px;
+    background: #505050;
+    color: #ffffff;
+}
+
+
+.popular-products-container .product-price--wrapper {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.popular-products-container .product-price--wrapper .product-discounted-price {
+    font-size: 42px;
+    line-height: .7;
+    color: #1d1d1d;
+}
+
+.popular-products-container .product-price--wrapper .product-discounted-price .product-price {
+    font-size: 22px;
+    text-decoration: line-through;
+}
+
+.popular-products-container .product--wrapper .product-name-image--wrapper {
+    margin-top: 96px;
+}
+
+.popular-products-container .product-name-bundle--wrapper  {
+    margin-top: 85px;
+    margin-bottom: 30px;
+}
+
+.popular-products-container .product-name-bundle--wrapper .product-bundle {
+    font-size: 30px;
+}
+
+
+.grid-masonry-container {
+    column-count: 2;
+    column-gap: 12px;
+}
+
+.grid-masonry-container .grid-item {
+    margin: 0;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    margin-bottom: 17px;
+    break-inside: avoid;
+}
+
+@media (max-width: 1200px) {
+    .popular-products-container .product--wrapper {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+    .popular-products-container .product-variant--wrapper .variant-list.solar-generator .variant {
+        font-size: 15px;
+    }
+    .popular-products-container .product--wrapper .button--wrapper {
+        row-gap: 7px;
+    }
+    .popular-products-container .product-bundle-specification--wrapper .product-bundle-specs br {
+        display: none;
+    }
+}
+
+@media (max-width: 1023px) {
+    .popular-products-container .product--wrapper .button--wrapper {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    .popular-products-container .product--wrapper.custom-product .button--wrapper .shop-now-btn--wrapper,
+    .popular-products-container .product--wrapper.custom-product .button--wrapper .amazon-btn--wrapper {
+        width: 160px;
+    }
+    .popular-products-container .save-container {
+        padding-left: 36px;
+        padding-right: 24px;
+        padding-bottom: 10px;
+    }
+    .popular-products-container .save-container .discount-price {
+        font-size: 21px;
+    }
+    .popular-products-container .save-container .minus-sign {
+        font-size: 21px;
+    }
+    .popular-products-container .save-container .currency {
+        font-size: 21px;
+    }
+    .popular-products-container .save-container .discount-icon {
+        left: 58%;
+        top: 43%;
+    }
+    .popular-products-container .product-variant--wrapper .variant-list.solar-generator {
+        column-gap: 20px;
+    }
+    .popular-products-container .product--wrapper.grid-second-column .button--wrapper {
+        row-gap: 7px;
+    }
+}
+
+@media (max-width: 850px) {
+    .popular-products-section {
+        padding-bottom: 13px;
+    }
+    .popular-products-section .section-heading-wrapper {
+        margin-bottom: 25px;
+    }
+    .popular-products-section .section-heading-wrapper .title-h3 {
+        font-size: 16px!important;
+    }
+    .grid-masonry-container {
+        column-count: 1;
+        column-gap: 12px;
+        display: grid;
+    }
+    .grid-masonry-container .grid-item {
+        margin-bottom: 12px;
+    }
+    .grid-masonry-container .grid-item.order-1 {
+        order: 1;
+    }
+    .grid-masonry-container .grid-item.order-2 {
+        order: 2;
+    }
+    .grid-masonry-container .grid-item.order-3 {
+        order: 3;
+    }
+    .grid-masonry-container .grid-item.order-4 {
+        order: 4;
+    }
+    .grid-masonry-container .grid-item.order-5 {
+        order: 5;
+    }
+    .popular-products-container .product-bundle--wrapper {
+        margin-top: 12px;
+    }
+    .popular-products-container .product-bundle--wrapper .product-bundle {
+        font-size: 17px;
+    }
+    .popular-products-container .product--wrapper .product-name-image--wrapper {
+        margin-top: 60px;
+    }
+    .popular-products-container .product-price--wrapper .product-discounted-price {
+        font-size: 40px;
+    }
+    .popular-products-container .product--wrapper .button--wrapper {
+        row-gap: 7px;
+    }
+    .popular-products-container .product-variant--wrapper .variant-list.solar-generator {
+        column-gap: 31px;
+    }
+    .popular-products-container .product-variant--wrapper {
+        margin-top: 13px;
+    }
+    .popular-products-container .product-price--wrapper {
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+    .popular-products-container .product-bundle--wrapper {
+        margin-top: 12px;
+    }
+
+}
+
+@media (max-width: 650px) {
+    .popular-products-container .product-bundle-specification--wrapper .product-bundle-specs {
+        font-size: 15px;
+    }
+    .popular-products-container .product-variant--wrapper .variant-list.solar-generator .variant {
+        font-size: 11px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .popular-products-container .product-variant--wrapper .variant-list.solar-generator {
+        column-gap: 30px;
+    }
+}
+
+.btn-disable {
+    pointer-events: none !important;
+}
+.btn-disable .shop-now-btn--wrapper,.btn-disable .amazon-btn--wrapper, .wishlist-btn--wrapper.btn-grey {
+    background: #505050 !important;
+}
+/* End Power Bundles Grid Section */
+
+.wishlist-btn--wrapper.wishlist-disabled {
+  background: #e0e0e0 !important;
+}
+.wishlist-btn--wrapper.wishlist-disabled button {
+  cursor: pointer;
+  pointer-events: none;
+}

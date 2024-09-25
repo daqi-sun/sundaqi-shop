@@ -1,0 +1,81 @@
+{% if section.settings.image != blank %}
+    <div class="camping-image-with-text">
+      <div class="content--wrapper image-{{ section.settings.position }}">
+        <div
+          class="
+            flex-item image--wrapper {% if section.settings.custom %}
+              desktop-only
+            {% endif %}
+          "
+        >
+          <img
+            class="image-block"
+            srcset="{{ section.settings.image | img_url: 'master' }}"
+            alt="{{ section.settings.image.alt }}"
+            loading="lazy"
+          >
+        </div>
+        <div class="flex-item text--wrapper">
+          <h2
+            {% if section.settings.custom %}
+              class="custom-style"
+            {% endif %}
+          >
+            {{ section.settings.title }}
+          </h2>
+          <p>
+            {{ section.settings.p }}
+          </p>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  {% schema %}
+  {
+    "name": "Camping IWT",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "checkbox",
+        "id": "custom",
+        "label": "Custom Section",
+        "default": false,
+        "info": "Check if the section is custom"
+      },
+      {
+        "type": "select",
+        "id": "position",
+        "label": "Image Position",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "left",
+        "info": "Select Image position"
+      },
+      {
+        "type": "html",
+        "id": "title",
+        "label": "Title",
+        "default": "What is a portable power station for camping?"
+      },
+      {
+        "type": "textarea",
+        "id": "p",
+        "label": "Paragraph",
+        "default": "EcoFlow portable power stations and solar generators are the perfect, sustainable energy solution for camping trips, offering a variety of sizes, power outputs, and charging options to ensure you never run out of electricity when camping again.."
+      }
+    ]
+  }
+  {% endschema %}

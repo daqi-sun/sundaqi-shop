@@ -1,0 +1,65 @@
+<div class="disaster-3-col">
+  <h2 class="disaster-blue-heading">{{ section.settings.title }}</h2>
+  <div class="disaster-subheading">{{ section.settings.richtext }}</div>
+  <div class="disaster-3-col-grid">
+    {% for block in section.blocks %}
+      <div>
+        {% render 'ht-responsive-image',
+          image: block.settings.image,
+          image_mobile: block.settings.image_mobile
+        %}
+        <h3>{{ block.settings.title }}</h3>
+        <div>{{ block.settings.richtext }}</div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Image with text 3 Col",
+  "settings": [
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title",
+      "default": "What Are The Causes Of Power Outages?"
+    },
+    {
+      "type": "richtext",
+      "id": "richtext",
+      "label": "Richtext"
+    }
+  ],
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "type": "block",
+      "name": "Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image mobile"
+        },
+        {
+          "type": "html",
+          "id": "title",
+          "label": "Title",
+          "default": "What Are The Causes Of Power Outages?"
+        },
+        {
+          "type": "richtext",
+          "id": "richtext",
+          "label": "Richtext"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

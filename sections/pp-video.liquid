@@ -1,0 +1,184 @@
+<style>
+  .pp-video__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .pp-video__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+
+<div class="pp-video__section pp-video__section-{{ section.id }}">
+  <div class="container--default">
+    <div class="pp-video__text-container">
+      {% if section.settings.title != blank %}
+        <h2 class="pp-video__section-heading text--heading text--black">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+      {% if section.settings.subtitle != blank %}
+        <p class="pp-video__section-description text--description text--gray">
+          {{ section.settings.subtitle }}
+        </p>
+      {% endif %}
+    </div>
+    <div class="pp-video__container">
+      <div class="pp-video__wrapper">
+        {% for block in section.blocks %}
+          <div class="pp-video__column-wrapper">
+            <div class="pp-video__image-wrapper">
+              <img
+                class="pp-video__thumbnail"
+                src="{{ block.settings.image | img_url: 'master' }}"
+                alt="{{ block.settings.image.alt }}"
+              >
+              <div class="pp-video__iframe-wrapper hidden">
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 512 512"
+                  class="close-btn"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M256 48C140.559 48 48 140.559 48 256c0 115.436 92.559 208 208 208 115.435 0 208-92.564 208-208 0-115.441-92.564-208-208-208zm104.002 282.881l-29.12 29.117L256 285.117l-74.881 74.881-29.121-29.117L226.881 256l-74.883-74.881 29.121-29.116L256 226.881l74.881-74.878 29.12 29.116L285.119 256l74.883 74.881z"></path>
+                </svg>
+                <iframe
+                  class="pp-video__iframe"
+                  id="pp-video__{{ block.id }}"
+                  src="//www.youtube.com/embed/{{ block.settings.video_url.id }}?autoplay=0&showinfo=0&controls=1&rel=0&modestbranding=1&enablejsapi=1"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const thumbnails = document.querySelectorAll('.pp-video__thumbnail');
+
+    thumbnails.forEach(function(thumbnail) {
+      thumbnail.addEventListener('click', function(event) {
+        const iframeWrapper = thumbnail.parentElement.querySelector('.pp-video__iframe-wrapper');
+
+        if(iframeWrapper) {
+          iframeWrapper.classList.remove('hidden');
+          void iframeWrapper.offsetWidth;
+        }
+      });
+    });
+
+    const closeButtons = document.querySelectorAll('.close-btn');
+
+    closeButtons.forEach(function(closeButton) {
+      closeButton.addEventListener('click', function(event) {
+        const iframeWrapper = closeButton.parentElement;
+        const iframe = iframeWrapper.querySelector('.pp-video__iframe');
+
+        if(iframeWrapper) {
+          iframeWrapper.classList.add('hidden');
+          if (iframe) {
+            const src = iframe.src;
+            iframe.src = src;
+          }
+        }
+      });
+    });
+  });
+</script>
+
+
+
+
+{% schema %}
+{
+  "name": "PP Video",
+  "max_blocks": 5,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "ERFAHREN SIE, WAS UNSERE ECOFLOW-NUTZER DENKEN"
+    },
+    {
+      "type": "html",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Entdecken Sie echte Nutzer- und Expertenerfahrungen, um zu erfahren, wie das EcoFlow PowerStream Balcony Solar System funktioniert."
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video",
+      "name": "Video",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Thumbnail"
+        },
+        {
+          "type": "video_url",
+          "accept": ["youtube", "vimeo"],
+          "id": "video_url",
+          "label": "Video URL",
+          "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

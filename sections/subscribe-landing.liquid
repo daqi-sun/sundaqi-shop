@@ -1,0 +1,1003 @@
+<section class="subscribe">
+  <div class="subscribe-wenan">
+    <span class="subscribe-title">{{ section.settings.subscribe_title }}</span>
+    <span class="subscribe-text">{{ section.settings.subscribe_subtitle }}</span>
+  </div>
+  <div class="subscribe-form">
+    {%- assign formId = 'ContactFooter_' | append: section.id -%}
+    <div class="subscribe-form-one-title">{{ section.settings.email_title }}</div>
+
+    {% form 'customer', id: formId, class: 'subscribe-shopify-form' %}
+      <input id="subscription-submit-hidden" type="submit" style="display: none">
+
+      {% comment %} 邮箱 {% endcomment %}
+      <input
+        class="subscribe-form-email"
+        type="text"
+        id="subscription-email"
+        name="contact[email]"
+        placeholder="{{ section.settings.email_placeholder }}"
+      >
+      <input type="hidden" name="contact[tags]" value="landing">
+    {% endform %}
+
+    {% comment %} 邮箱异常文本容器 {% endcomment %}
+    <div id="subscription-email-error" class="subscribe-phone-err" style="display: none"></div>
+
+    <div id="subscription-email-opt-in-box" class="subscribe-check-box" style="display: none">
+      <input
+        id="subscription-email-opt-in"
+        type="checkbox"
+        class="subscribe-checkbox"
+        onchange=""
+        {%- if section.settings.email_opt_in -%}
+          checked
+        {%- endif -%}
+      >
+      <label class="email-title">{{ section.settings.email_consent }}</label>
+    </div>
+    {% comment %} 电话号码 {% endcomment %}
+    <div class="subscribe-form-two-title">{{ section.settings.sms_title }}</div>
+    <div class="subscribeSelect">
+      <input
+        class="subscribe-form-phone"
+        type="text"
+        id="subscription-phone"
+        name="name"
+        placeholder="{{ section.settings.sms_placeholder }}"
+      >
+      <select
+        class="subscribeSelectAb"
+        name="languages"
+        id="subscription-phone-code"
+        data-url="{{ 'countries.json' | asset_url }}"
+        data-iso="{{ section.settings.sms_phone_code | default: localization.country.iso_code }}"
+      ></select>
+    </div>
+
+    {% comment %} 订阅成功 或者 短信异常 {% endcomment %}
+    <div id="subscription-phone-error" class="subscribe-phone-err" style="display: none"></div>
+
+    <button id="subscription-submit-button" class="subscribe-btn" type="button">
+      {{ section.settings.submit_btn_text }}
+      <span class="bf-btn__atc loader hide button" data-loader="">
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          role="presentation"
+          class="icon icon-spinner"
+          viewBox="0 0 25 24"
+        >
+          <path style="transform: translate(3px, 3px)" d="M7.229 1.173a9.25 9.25 0 1 0 11.655 11.412 1.25 1.25 0 1 0-2.4-.698 6.75 6.75 0 1 1-8.506-8.329 1.25 1.25 0 1 0-.75-2.385z" fill="#919EAB"></path>
+        </svg>
+      </span>
+    </button>
+    <div class="subscribe-checkbox-phone">
+      <input
+        id="subscription-phone-opt-in"
+        list="appNamelist"
+        type="checkbox"
+        class="subscribe-checkbox-phone-input"
+        {%- if section.settings.sms_opt_in -%}
+          checked
+        {%- endif -%}
+      >
+      <label class="phone-title">{{ section.settings.sms_consent }}</label>
+    </div>
+  </div>
+</section>
+
+<style>
+  .subscribe-wenan {
+    width: 100%;
+  }
+  .subscribe-title {
+    width: 570px;
+    font-size: 40px;
+    font-weight: 500;
+    font-family: 'Helvetica Neue ForEco';
+    display: block;
+    text-align: center;
+    margin: auto;
+    margin-top: 68px;
+  }
+  .subscribe-text {
+    width: 574px;
+    height: 56px;
+    font-family: 'Helvetica Neue ForEco';
+    font-weight: 400;
+    line-height: 28px;
+    display: block;
+    margin: auto;
+    margin-top: 22px;
+    text-align: center;
+    font-size: 20px;
+  }
+  .subscribe-form {
+    width: 474px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    margin-bottom: 90px;
+  }
+  .subscribeSelect {
+    position: relative;
+  }
+  .subscribeSelectAb {
+    --bs-form-select-bg-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+    position: absolute;
+    left: 1px;
+    padding-left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: -1px;
+    width: 32px;
+    outline: none;
+    font-family: manrope;
+    border: none;
+    font-weight: 400;
+    font-size: 14px;
+    color: #212529;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    background-image: none;
+    border-radius: 4px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  }
+  .subscribeSelectAb option {
+    color: #000000;
+    background: #fff;
+    line-height: 20px;
+  }
+  .subscribe-form-one-title {
+    font-family: 'Helvetica Neue ForEco';
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 31.2px;
+    margin-bottom: 27px;
+  }
+  .subscribe-shopify-form {
+    width: 100%;
+  }
+  .subscribe-form-email {
+    width: 100%;
+    border-radius: 4px;
+  }
+  .subscribe-form-email[type='text']:focus {
+    border: 1px solid #1598fd;
+    outline: none;
+  }
+  .subscribe-check-box {
+    margin-top: 10px;
+    white-space: nowrap;
+  }
+  .email-title {
+    display: inline-block;
+    margin-left: 14px;
+    color: #000000;
+    font-size: 16px;
+    font-family: 'Helvetica Neue ForEco';
+    white-space: normal;
+  }
+  .subscribe-checkbox {
+    margin-top: 2px;
+    display: inline-block;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    width: 18px;
+    height: 18px;
+    background: #ffffff;
+    position: relative;
+    transition: background 0.1s;
+    padding: 0;
+    border: 1px solid #000000;
+    vertical-align: top;
+  }
+  .subscribe-checkbox[type='checkbox']:focus {
+    border: 1px solid #000000;
+    outline: none;
+  }
+  .subscribe-checkbox:checked {
+    background: #ffffff;
+  }
+  .subscribe-checkbox:checked::after {
+    content: '';
+    height: 6px;
+    width: 10px;
+    border: #000000 solid 1px;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    border-top: none;
+    border-right: none;
+    transform: rotate(-45deg);
+  }
+  .subscribe-form-two-title {
+    font-family: 'Helvetica Neue ForEco';
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 31.2px;
+    margin-bottom: 27px;
+    white-space: nowrap;
+    margin-top: 41px;
+  }
+  .subscribe-form-phone {
+    border-radius: 4px;
+    width: 100%;
+    padding-left: 44px;
+  }
+  .subscribe-form-phone[type='text']:focus {
+    border: 1px solid #1598fd;
+    outline: none;
+  }
+  .subscribe-phone-err {
+    width: 100%;
+    font-family: 'Helvetica Neue ForEco';
+    font-weight: 500;
+    font-size: 16px;
+    white-space: nowrap;
+    margin-top: 27px;
+    text-align: center;
+    color: red;
+  }
+  .subscribe-phone-err > p {
+    color: #e64943;
+  }
+  .subscribe-btn {
+    width: 323px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #3f68e0;
+    font-family: 'Helvetica Neue ForEco';
+    font-size: 22.34px;
+    text-align: center;
+    line-break: 25.78px;
+    color: #ffffff;
+    font-weight: 500;
+    border: 0px;
+    margin: 10px auto 0;
+  }
+  button:focus {
+    outline: 0px auto -webkit-focus-ring-color !important;
+  }
+  .subscribe-checkbox-phone {
+    margin-top: 20px;
+    white-space: nowrap;
+  }
+  .phone-title {
+    display: inline-block;
+    white-space: normal;
+    margin-left: 14px;
+    color: #000000;
+    font-size: 16px;
+    font-family: 'Helvetica Neue ForEco';
+  }
+  .subscribe-checkbox-phone-input {
+    margin-top: 2px;
+    display: inline-block;
+    vertical-align: top;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    width: 18px;
+    height: 18px;
+    background: #ffffff;
+    position: relative;
+    transition: background 0.1s;
+    padding: 0;
+    border: 1px solid #000000;
+  }
+  .subscribe-checkbox-phone-input[type='checkbox']:focus {
+    border: 1px solid #000000;
+    outline: none;
+  }
+  .subscribe-checkbox-phone-input:checked {
+    background: #ffffff;
+  }
+  .subscribe-checkbox-phone-input:checked::after {
+    content: '';
+    height: 6px;
+    width: 10px;
+    border: #000000 solid 1px;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    border-top: none;
+    border-right: none;
+    transform: rotate(-45deg);
+  }
+  @media (max-width: 749px) {
+    .subscribe-title {
+      font-size: 24px;
+      width: 80%;
+    }
+    .subscribe-text {
+      width: 260px;
+      font-size: 14px;
+      margin-top: 17px;
+      line-height: 20px;
+      height: auto;
+    }
+    .subscribe-form {
+      width: 330px;
+    }
+    .subscribe-form-two-title {
+      white-space: normal;
+    }
+    .subscribe-form {
+      margin-top: 48px;
+    }
+    .subscribe-form-one-title {
+      font-size: 20px;
+    }
+    .subscribe-form-one-title {
+      font-size: 20px;
+      margin-bottom: 17px;
+    }
+    .subscribe-form-email {
+      width: 335px;
+      height: 50px;
+    }
+    .subscribe-check-box {
+      margin-top: 12px;
+    }
+    .email-title {
+      font-size: 12px;
+    }
+    .subscribe-checkbox:checked::after {
+      content: '';
+      height: 6px;
+      width: 10px;
+      border: #000000 solid 1px;
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      border-top: none;
+      border-right: none;
+      transform: rotate(-45deg);
+    }
+    .email-title {
+      margin-left: 7px;
+    }
+    .subscribe-form-two-title {
+      margin-top: 31px;
+      margin-bottom: 12px;
+      font-size: 20px;
+    }
+    .subscribeSelect {
+      margin-top: 12px;
+    }
+    .subscribe-form-phone {
+      width: 335px;
+      height: 50px;
+    }
+    .subscribe-phone-err {
+      font-size: 12px;
+      margin-top: 12px;
+      margin-bottom: 5px;
+    }
+    .subscribe-btn {
+      width: 335px;
+    }
+    .subscribe-checkbox-phone {
+      margin-top: 19px;
+    }
+    .phone-title {
+      font-size: 12px;
+      margin-left: 9px;
+    }
+    .subscribe-checkbox-phone-input:checked::after {
+      content: '';
+      height: 4px;
+      width: 6px;
+      top: 2px;
+      left: 2px;
+    }
+    .subscribe-phone-err > p {
+      color: #e64943;
+    }
+    .subscribe-btn {
+      width: 323px;
+      height: 50px;
+      border-radius: 10px;
+      background-color: #3f68e0;
+      font-family: 'Helvetica Neue ForEco';
+      font-size: 22.34px;
+      text-align: center;
+      line-break: 25.78px;
+      color: #ffffff;
+      margin-top: 10px;
+      font-weight: 500;
+      border: 0px;
+    }
+    button:focus {
+      outline: 0px auto -webkit-focus-ring-color !important;
+    }
+    .subscribe-checkbox-phone-input[type='checkbox']:focus {
+      border: 1px solid #000000;
+      outline: none;
+    }
+    .subscribe-checkbox-phone-input:checked {
+      background: #ffffff;
+    }
+    .subscribe-checkbox-phone-input:checked::after {
+      content: '';
+      height: 6px;
+      width: 10px;
+      border: #000000 solid 1px;
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      border-top: none;
+      border-right: none;
+      transform: rotate(-45deg);
+    }
+  }
+</style>
+<script>
+  // footer section settings will pass to below js file
+  window.subscribeLandingSettingJsons = {{ section.settings | json }};
+</script>
+<script src="{{ 'subscription-form-common.js' |  asset_url }}" defer></script>
+<script src="{{ 'shopify-object-api.js' |  asset_url }}" defer></script>
+<script src="{{ "subscribe-landing.js" | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Subscribe Landing SMS",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Subscription Form API Settings"
+    },
+    {
+      "type": "text",
+      "id": "contact_list_id",
+      "label": "EDM Contact List ID"
+    },
+    {
+      "type": "text",
+      "id": "single_1_id",
+      "label": "Single 1 ID"
+    },
+    {
+      "type": "text",
+      "id": "single_1_value",
+      "label": "Single 1 Value",
+      "info": "Please enter a single number for the value. e.g. 1 or 2 or 3"
+    },
+    {
+      "type": "radio",
+      "id": "single_1_overwrite",
+      "label": "Single 1 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "single_2_id",
+      "label": "Single 2 ID"
+    },
+    {
+      "type": "text",
+      "id": "single_2_value",
+      "label": "Single 2 Value",
+      "info": "Please enter a single number for the value. e.g. 1 or 2 or 3"
+    },
+    {
+      "type": "radio",
+      "id": "single_2_overwrite",
+      "label": "Single 2 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "single_3_id",
+      "label": "Single 3 ID"
+    },
+    {
+      "type": "text",
+      "id": "single_3_value",
+      "label": "Single 3 Value",
+      "info": "Please enter a single number for the value. e.g. 1 or 2 or 3"
+    },
+    {
+      "type": "radio",
+      "id": "single_3_overwrite",
+      "label": "Single 3 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "single_4_id",
+      "label": "Single 4 ID"
+    },
+    {
+      "type": "text",
+      "id": "single_4_value",
+      "label": "Single 4 Value",
+      "info": "Please enter a single number for the value. e.g. 1 or 2 or 3"
+    },
+    {
+      "type": "radio",
+      "id": "single_4_overwrite",
+      "label": "Single 4 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "subscription_text_1_id",
+      "label": "Text 1 ID"
+    },
+    {
+      "type": "text",
+      "id": "subscription_text_1_value",
+      "label": "Text 1 Value"
+    },
+    {
+      "type": "radio",
+      "id": "subscription_text_1_overwrite",
+      "label": "Text 1 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "subscription_text_2_id",
+      "label": "Text 2 ID"
+    },
+    {
+      "type": "text",
+      "id": "subscription_text_2_value",
+      "label": "Text 2 Value"
+    },
+    {
+      "type": "radio",
+      "id": "subscription_text_2_overwrite",
+      "label": "Text 2 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "multiple_1_id",
+      "label": "Multiple 1 ID"
+    },
+    {
+      "type": "text",
+      "id": "multiple_1_value",
+      "label": "Multiple 1 Value",
+      "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+    },
+    {
+      "type": "radio",
+      "id": "multiple_1_overwrite",
+      "label": "Multiple 1 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "multiple_2_id",
+      "label": "Multiple 2 ID"
+    },
+    {
+      "type": "text",
+      "id": "multiple_2_value",
+      "label": "Multiple 2 Value",
+      "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+    },
+    {
+      "type": "radio",
+      "id": "multiple_2_overwrite",
+      "label": "Multiple 2 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "multiple_3_id",
+      "label": "Multiple 3 ID"
+    },
+    {
+      "type": "text",
+      "id": "multiple_3_value",
+      "label": "Multiple 3 Value",
+      "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+    },
+    {
+      "type": "radio",
+      "id": "multiple_3_overwrite",
+      "label": "Multiple 3 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "multiple_4_id",
+      "label": "Multiple 4 ID"
+    },
+    {
+      "type": "text",
+      "id": "multiple_4_value",
+      "label": "Multiple 4 Value",
+      "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+    },
+    {
+      "type": "radio",
+      "id": "multiple_4_overwrite",
+      "label": "Multiple 4 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "multiple_5_id",
+      "label": "Multiple 5 ID"
+    },
+    {
+      "type": "text",
+      "id": "multiple_5_value",
+      "label": "Multiple 5 Value",
+      "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+    },
+    {
+      "type": "radio",
+      "id": "multiple_5_overwrite",
+      "label": "Multiple 5 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "header",
+      "content": "SMS Subscription Form API Settings"
+    },
+    {
+      "type": "text",
+      "id": "sms_contact_list_id",
+      "label": "SMS Contact List ID"
+    },
+
+    {
+      "type": "text",
+      "id": "sms_single_1_id",
+      "label": "SMS Single 1 ID"
+    },
+    {
+      "type": "text",
+      "id": "sms_single_1_value",
+      "label": "SMS Single 1 Value",
+      "info": "Please enter a single number for the value. e.g. 1 or 2 or 3"
+    },
+    {
+      "type": "radio",
+      "id": "sms_single_1_overwrite",
+      "label": "SMS Single 1 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "sms_subscription_text_1_id",
+      "label": "SMS Text 1 ID"
+    },
+    {
+      "type": "text",
+      "id": "sms_subscription_text_1_value",
+      "label": "SMS Text 1 Value"
+    },
+    {
+      "type": "radio",
+      "id": "sms_subscription_text_1_overwrite",
+      "label": "SMS Text 1 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "sms_multiple_1_id",
+      "label": "SMS Multiple 1 ID"
+    },
+    {
+      "type": "text",
+      "id": "sms_multiple_1_value",
+      "label": "SMS Multiple 1 Value",
+      "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+    },
+    {
+      "type": "radio",
+      "id": "sms_multiple_1_overwrite",
+      "label": "SMS Multiple 1 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "sms_multiple_2_id",
+      "label": "SMS Multiple 2 ID"
+    },
+    {
+      "type": "text",
+      "id": "sms_multiple_2_value",
+      "label": "SMS Multiple 2 Value",
+      "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+    },
+    {
+      "type": "radio",
+      "id": "sms_multiple_2_overwrite",
+      "label": "SMS Multiple 2 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "header",
+      "content": "UI Settings"
+    },
+    {
+      "type": "text",
+      "id": "subscribe_title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "subscribe_subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "text",
+      "id": "email_title",
+      "label": "Email title"
+    },
+    {
+      "type": "text",
+      "id": "email_placeholder",
+      "label": "Email placeholder"
+    },
+    {
+      "type": "text",
+      "id": "email_consent",
+      "label": "Email consent"
+    },
+    {
+      "type": "checkbox",
+      "id": "email_opt_in",
+      "label":"Email Consent",
+      "info": "By enabling this, the checkbox for email consent will be automatically selected as default."
+    },
+    {
+      "type": "header",
+      "content": "SMS UI Settings"
+    },
+    {
+      "type": "text",
+      "id": "sms_title",
+      "label": "SMS title"
+    },
+    {
+      "type": "text",
+      "id": "sms_placeholder",
+      "label": "SMS placeholder"
+    },
+    {
+      "type": "richtext",
+      "id": "sms_consent",
+      "label": "SMS consent"
+    },
+    {
+      "type": "checkbox",
+      "id": "sms_opt_in",
+      "label":"SMS Consent",
+      "info": "By enabling this, the checkbox for SMS consent will be automatically selected as default."
+    },
+    {
+      "type": "text",
+      "id": "submit_btn_text",
+      "label": "Submit button text"
+    },
+    {
+      "type": "text",
+      "id": "sms_phone_code",
+      "label": "Default Phone Code",
+      "info": "Use localization language iso code as default phone code"
+    },
+  
+    {
+      "type": "header",
+      "content": "Hint Text"
+    },
+    {
+      "type": "text",
+      "id": "hint_email_empty",
+      "label": "Hint Email Empty"
+    },
+    {
+      "type": "text",
+      "id": "hint_email_valid",
+      "label": "Hint Email Validate"
+    },
+    {
+      "type": "text",
+      "id": "hint_email_opt_in",
+      "label": "Hint Email Consent"
+    },
+    {
+      "type": "text",
+      "id": "hint_phone_empty",
+      "label": "Hint Phone Empty"
+    },
+    {
+      "type": "text",
+      "id": "hint_phone_valid",
+      "label": "Hint Phone Validate"
+    },
+    {
+      "type": "text",
+      "id": "hint_phone_opt_in",
+      "label": "Hint Phone Consent"
+    },
+    {
+      "type": "text",
+      "id": "hint_phone_signed",
+      "label": "Hint Phone Signed"
+    },
+    {
+      "type": "text",
+      "id": "hint_email_sms_subscribed",
+      "label": "Hint Email SMS Subscribed"
+    },
+    {
+      "type": "text",
+      "id": "subcribe_success_text",
+      "label": "Subcribe Success Text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Subscription Landing SMS",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,1382 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "sticky-product-bar": {
+      "type": "sticky-product-bar",
+      "blocks": {
+        "588d25af-4d47-43ac-9697-b98aa2f65719": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Overview",
+            "tab_id": "product_information",
+            "section_class": ""
+          }
+        },
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "FAQ",
+            "tab_id": "faq",
+            "section_class": ""
+          }
+        },
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Reviews",
+            "tab_id": "section-reviews",
+            "section_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "588d25af-4d47-43ac-9697-b98aa2f65719",
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4",
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38"
+      ],
+      "settings": {
+        "enabled": true,
+        "enabled_tabs": false
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "11795adc-1afa-4833-a193-258f495901ef": {
+          "type": "sku_block",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e": {
+          "type": "product_title",
+          "settings": {
+          }
+        },
+        "judge_me_reviews_preview_badge_bJmMjH": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "0471109f-c130-454e-a9ba-c56412cc11f3": {
+          "type": "product_vendor",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185": {
+          "type": "product_price",
+          "settings": {
+          }
+        },
+        "d25a0285-4fb4-422d-b95b-ab67446120ad": {
+          "type": "product_description",
+          "settings": {
+            "desc_display": "default"
+          }
+        },
+        "919f9cdd-6184-4311-b675-742931504318": {
+          "type": "coupon_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Component_2_1.png",
+            "discount_off_text": "{{ product.metafields.custom.discount_off_text.value }}",
+            "code": "{{ product.metafields.custom.discount_code.value }}",
+            "show_copy_code_btn": true
+          }
+        },
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879": {
+          "type": "product_options_block",
+          "settings": {
+            "show_product_swatches": true,
+            "use_variant_image_for_swatches": true,
+            "button_content": ""
+          }
+        },
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe": {
+          "type": "quantity_block",
+          "settings": {
+          }
+        },
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0": {
+          "type": "accessories_section",
+          "settings": {
+            "title": "Accessories",
+            "metafield": "accessories"
+          }
+        },
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609": {
+          "type": "product_buttons",
+          "settings": {
+            "enable_payment_button": false,
+            "show_custom_icons": true,
+            "custom_payment_logo_1_svg": "",
+            "custom_payment_logo_2_svg": "",
+            "custom_payment_logo_3_svg": "",
+            "custom_payment_logo_4_svg": "",
+            "custom_payment_logo_5_svg": "",
+            "custom_payment_logo_6_svg": "",
+            "custom_payment_logo_7_svg": "",
+            "custom_payment_logo_8_svg": "",
+            "custom_payment_logo_9_svg": "",
+            "custom_payment_logo_10_svg": "",
+            "custom_payment_logo_11_svg": "",
+            "custom_payment_logo_12_svg": "",
+            "custom_payment_logo_13_svg": "",
+            "custom_payment_logo_14_svg": "",
+            "custom_payment_logo_15_svg": ""
+          }
+        },
+        "a6857d85-dbb6-41d1-9501-c01cf5bbe11f": {
+          "type": "back_in_stock",
+          "disabled": true,
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "11795adc-1afa-4833-a193-258f495901ef",
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e",
+        "judge_me_reviews_preview_badge_bJmMjH",
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774",
+        "0471109f-c130-454e-a9ba-c56412cc11f3",
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185",
+        "d25a0285-4fb4-422d-b95b-ab67446120ad",
+        "919f9cdd-6184-4311-b675-742931504318",
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879",
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe",
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0",
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609",
+        "a6857d85-dbb6-41d1-9501-c01cf5bbe11f"
+      ],
+      "settings": {
+        "section_id": "",
+        "show_breadcrumbs": false,
+        "show_pick_an_option": false,
+        "enable_linked_options": false,
+        "enabled_mobile_sticky_btns": true,
+        "media_size": "medium",
+        "enable_image_zoom": true,
+        "enable_video_looping": true,
+        "thumbnails_type": "grid",
+        "support_email": "",
+        "support_text": "",
+        "feature_1_show": false,
+        "feature_1_title": "Fast & Free Shipping",
+        "feature_1_content": "",
+        "feature_2_show": false,
+        "feature_2_title": "Warranty Protection",
+        "feature_2_content": "",
+        "feature_3_show": false,
+        "feature_3_title": "Secure Payments",
+        "feature_3_content": "",
+        "feature_4_show": false,
+        "feature_4_title": "Multi-channel Support",
+        "feature_4_content": ""
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "grid_mobile": "2",
+        "heading": "You may also like",
+        "show_vendor": false
+      }
+    },
+    "0e9907ea-a84f-4e7e-8a59-2e7d785bec7e": {
+      "type": "pdp-image-with-text-horizontal-new",
+      "blocks": {
+        "c48f6605-b28d-437e-b75f-413d73de448f": {
+          "type": "image",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/GLACIER-01.png",
+            "mobile_image": "shopify:\/\/shop_images\/M-GLACIER-01.png",
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "image_alignment": "left",
+            "title": "",
+            "subtitle": "",
+            "content": "",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "c48f6605-b28d-437e-b75f-413d73de448f"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "center",
+        "space_bw_blocks": 0
+      }
+    },
+    "7b208bcb-6373-4aba-8faa-003541d3f988": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "",
+        "subtitle": "",
+        "content": "",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "video",
+        "video_type": "youtube",
+        "video_url": "https:\/\/youtu.be\/G-e5FkjsW8k",
+        "mp4_video_url": "",
+        "mp4_video_url_m": "",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "6817ee58-ad06-4e53-9e01-c63ddd19bed4": {
+      "type": "pdp-slideshow",
+      "blocks": {
+        "a6e2b651-5611-472a-bbe8-c5898926c204": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Camionetas pick-up",
+            "title": "Allá donde te lleven tus aventuras.",
+            "subtitle": "",
+            "content": "",
+            "button_link": "#",
+            "button_text": "",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/GLACIER-03-1-Pick-up_trucks.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/M-GLACIER-03-1-Pick-up_trucks.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": false,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": false,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": false,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": false,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": false
+          }
+        },
+        "985260f6-d14f-4812-9095-3f744b440da7": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Caravanas",
+            "title": "Allá donde te lleven tus aventuras.",
+            "subtitle": "",
+            "content": "",
+            "button_link": "",
+            "button_text": "",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/GLACIER-03-2-RVs.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/M-GLACIER-03-2-RVs.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "d157ee3f-f2ea-461b-a2ef-8e9616b44a71": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Cabinas de camiones",
+            "title": "Allá donde te lleven tus aventuras.",
+            "subtitle": "",
+            "content": "",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/GLACIER-03-3-Truck_sleeper_cabs.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/M-GLACIER-03-3-Truck_sleeper_cabs.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "888a0250-e074-47d6-8183-47cde14a5298": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Barcos",
+            "title": "Allá donde te lleven tus aventuras.",
+            "subtitle": "",
+            "content": "",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/GLACIER-03-4-Boats.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/M-GLACIER-03-4-Boats.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "996cc300-316c-41f7-b9eb-77b1ab82fcab": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Sistemas sin conexión a la red eléctrica",
+            "title": "Allá donde te lleven tus aventuras.",
+            "subtitle": "",
+            "content": "",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/GLACIER-03-5-outdoors.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/M-GLACIER-03-5-outdoors.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        }
+      },
+      "block_order": [
+        "a6e2b651-5611-472a-bbe8-c5898926c204",
+        "985260f6-d14f-4812-9095-3f744b440da7",
+        "d157ee3f-f2ea-461b-a2ef-8e9616b44a71",
+        "888a0250-e074-47d6-8183-47cde14a5298",
+        "996cc300-316c-41f7-b9eb-77b1ab82fcab"
+      ],
+      "settings": {
+        "section_id": ""
+      }
+    },
+    "71c12763-f62e-4e50-80ee-860ec46a57a0": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "La primera máquina de hielo integrada del sector.",
+        "subtitle": "<p>Compresor de 120 W<\/p>",
+        "content": "<p>Equipada con un potente compresor de 120 W, te proporcionará 18 cubitos de hielo en 12 minutos.[1] Acompaña todas las aventuras de tu viaje con refrescos fríos.<\/p>",
+        "button_link": "",
+        "button_text": "",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/PC_b1978e3f-6bcd-43ce-a92d-d2a3da6c93a4.png",
+        "mobile_image": "shopify:\/\/shop_images\/M.png",
+        "video_type": "mp4",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/3b04fb35048c4b2e91c1ef6cee00a3ef.mp4",
+        "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/d460fe78722548a9a2364f8198aa64bd.mp4",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": ""
+      }
+    },
+    "b6b9efb2-d5ae-4979-a419-a2f171a832a3": {
+      "type": "pdp-video",
+      "disabled": true,
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "Lo mejor de una nevera-congelador.",
+        "subtitle": "<p>Bizona, doble control.<\/p>",
+        "content": "<p>Equipada con un divisor extraíble que la separa en dos zonas y un control de temperatura independiente, ambas secciones pueden refrigerar y congelar desde 50 °F (10 °C) hasta -13 °F (-25 °C). Carne, queso o refrescos... independientemente de lo que quieras almacenar, se adapta a tus necesidades.<\/p>",
+        "button_link": "",
+        "button_text": "",
+        "media_type": "video",
+        "video_type": "mp4",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/9eeb9e93246d4885a1a4bab783ad6bed.mp4",
+        "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e289d6d0d79d4cb686240cbde7e6d66b.mp4",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": ""
+      }
+    },
+    "8bdf56fd-0318-4a56-89aa-7b948beb7b49": {
+      "type": "pdp-slideshow",
+      "blocks": {
+        "5df13373-e407-426d-8a8a-48b858eb2c45": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Single-zone",
+            "title": "Lo mejor de una nevera-congelador.",
+            "subtitle": "<p>Bizona, doble control.<\/p>",
+            "content": "<p>Equipada con un divisor extraíble que la separa en dos zonas y un control de temperatura independiente, ambas secciones pueden refrigerar y congelar desde 50 °F (10 °C) hasta -13 °F (-25 °C). Carne, queso o refrescos... independientemente de lo que quieras almacenar, se adapta a tus necesidades.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/PC_celsius_single_zone.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/M_celsius_single_zone.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "65fee46b-fe73-43b5-b2cb-b941d7d3f329": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Dual-zone",
+            "title": "Lo mejor de una nevera-congelador.",
+            "subtitle": "<p>Bizona, doble control.<\/p>",
+            "content": "<p>Equipada con un divisor extraíble que la separa en dos zonas y un control de temperatura independiente, ambas secciones pueden refrigerar y congelar desde 50 °F (10 °C) hasta -13 °F (-25 °C). Carne, queso o refrescos... independientemente de lo que quieras almacenar, se adapta a tus necesidades.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/PC_celsius_dual_zone.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/M_celsius_dual_zone.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        }
+      },
+      "block_order": [
+        "5df13373-e407-426d-8a8a-48b858eb2c45",
+        "65fee46b-fe73-43b5-b2cb-b941d7d3f329"
+      ],
+      "settings": {
+        "section_id": ""
+      }
+    },
+    "e3d0db1f-1fbc-4e5f-9d1b-a3b046c5fddf": {
+      "type": "pdp-image-with-text-horizontal-new",
+      "blocks": {
+        "ca1df3eb-1694-49cc-a635-6fb0983365f8": {
+          "type": "image",
+          "settings": {
+            "media_type": "video",
+            "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/1bdec4349bfa4916a1d28e338634e0c4.mp4",
+            "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/1bdec4349bfa4916a1d28e338634e0c4.mp4",
+            "autoplay_video": true,
+            "image_alignment": "left",
+            "title": "La refrigeración más rápida del sector.",
+            "subtitle": "",
+            "content": "<p>La nevera Glacier enfría a la velocidad óptima cuando está vacía, de 86 °F (30 °C) a 32 °F (0 °C) en unos 15 minutos.<\/p>",
+            "button_link": "",
+            "button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "ca1df3eb-1694-49cc-a635-6fb0983365f8"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "center",
+        "space_bw_blocks": 0
+      }
+    },
+    "ababe0db-33fa-4189-b4c6-39adb6b02a12": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--18574753005911__ababe0db-33fa-4189-b4c6-39adb6b02a12-1681806168d7092dc2-0": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/GLACIER-07-battery.png",
+            "mobile_image": "shopify:\/\/shop_images\/M-GLACIER-07-battery.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Refrigeración hasta 40 horas sin cables.",
+            "title_color": "#232323",
+            "content": "<p><strong>Batería enchufable de 298 Wh<\/strong><\/p>",
+            "content_color": "#757575",
+            "notification_message": "<p>Diseñada para proporcionar una portabilidad absoluta, la nevera GLACIER puede obtener alimentación mediante una batería enchufable[2], por lo que no se verá limitada por la longitud de los cables. Con una batería de gran capacidad de 298 Wh, podrás disfrutar de hasta 40 horas[3] de fácil acceso a comidas congeladas, fruta fresca y bebidas heladas.<\/p>",
+            "message_color": "#757575",
+            "notification_message_font_size": "body-2",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "063a090b-d7ec-475b-a8d0-91ac13679590": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/GLACIER-08.png",
+            "mobile_image": "shopify:\/\/shop_images\/M-GLACIER-08.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Carga tu portátil y mucho más sobre la marcha.",
+            "title_color": "#232323",
+            "content": "<p><strong>USB-C de 100 W máx.<\/strong><\/p>",
+            "content_color": "#757575",
+            "notification_message": "<p>Con un puerto de carga USB-C de 100 W como máximo, incluso puede cargar tus teléfonos y portátiles para que nunca pierdas el contacto con tus seres queridos.<\/p>",
+            "message_color": "#757575",
+            "notification_message_font_size": "body-2",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--18574753005911__ababe0db-33fa-4189-b4c6-39adb6b02a12-1681806168d7092dc2-0",
+        "063a090b-d7ec-475b-a8d0-91ac13679590"
+      ],
+      "settings": {
+      }
+    },
+    "a4f0c9ee-0094-4561-86ab-fa513557b67b": {
+      "type": "pdp-image-with-text-horizontal-new",
+      "blocks": {
+        "2ed71092-4eb7-4668-ba87-7321f9805121": {
+          "type": "image",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/GLACIER-09-Capacity.png",
+            "mobile_image": "shopify:\/\/shop_images\/M-GLACIER-09-Capacity.png",
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "image_alignment": "right",
+            "title": "Gran capacidad de 38 l<br>Maximiza el uso del espacio.",
+            "subtitle": "<p>60 × 330 ml<\/p>",
+            "content": "<p>Elige la opción de nevera completa para guardar verduras y fruta cuando salgas de pícnic. Si estás de ruta por el desierto, los 38 l de capacidad te permitirán transportar chuletas para que no te falte energía para tus aventuras.<\/p>",
+            "button_link": "#",
+            "button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "2ed71092-4eb7-4668-ba87-7321f9805121"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "left",
+        "space_bw_blocks": 0
+      }
+    },
+    "023c4a39-a261-4b93-ac14-cd8bf44daa18": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "Palanca desmontable y ruedas",
+        "subtitle": "<p>Refrigeración en movimiento.<\/p>",
+        "content": "<p>Una palanca y un juego de ruedas, todas desmontables.[4] Lleva la nevera-congelador allá donde te lleven tus aventuras. Desmonta los accesorios y coloca la Glacier en la encimera de tu autocaravana, en el asiento del acompañante y en otros espacios compactos.<br\/><br\/><em>* Los accesorios de GLACIER (<\/em><a href=\"https:\/\/es.ecoflow.com\/products\/glacier-plug-in-battery\" target=\"_blank\" title=\"https:\/\/es.ecoflow.com\/products\/glacier-plug-in-battery\"><em>batería enchufable<\/em><\/a><em>, <\/em><a href=\"https:\/\/es.ecoflow.com\/products\/glacier-detachable-wheels-and-lever\" target=\"_blank\" title=\"https:\/\/es.ecoflow.com\/products\/glacier-detachable-wheels-and-lever\"><em>ruedas desmontables y empuñadura telescópica<\/em><\/a><em>) se venden por separado.<\/em><\/p>",
+        "button_link": "",
+        "button_text": "",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/PC_89c45c28-0b3f-4a6d-9145-1acf84d0780f.png",
+        "mobile_image": "shopify:\/\/shop_images\/M_75bee8d2-3e14-4dc1-bc97-714473b7dda5.png",
+        "video_type": "mp4",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/745be71b436c47ceb119653ad58f0440.mp4",
+        "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/b86e5187b5754b1e969646160f96c8fb.mp4",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "f2919e09-7ddf-4a25-b431-14410a082df1": {
+      "type": "pdp-slideshow",
+      "blocks": {
+        "f8859b05-7245-475f-8c00-26db8bee8383": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Nevera",
+            "title": "Control al alcance de tu mano.",
+            "subtitle": "<p>Aplicación EcoFlow<\/p>",
+            "content": "<p>La aplicación EcoFlow permite controlar de forma inteligente la temperatura de la Glacier mediante Wi-Fi o Bluetooth. <\/p>",
+            "button_link": "#",
+            "button_text": "",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/GLACIER-11-1-Freezer-Fridge.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/M-GLACIER-11-1-Freezer-Fridge.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "video",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "5908ecbe-d1e0-43fb-ad1c-6cb3094e7325": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Congelador",
+            "title": "Control al alcance de tu mano.",
+            "subtitle": "<p>Aplicación EcoFlow<\/p>",
+            "content": "<p>La aplicación EcoFlow permite controlar de forma inteligente la temperatura de la Glacier mediante Wi-Fi o Bluetooth. <\/p>",
+            "button_link": "",
+            "button_text": "",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/GLACIER-11-2-Fridge-Freezer.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/M-GLACIER-11-2-Fridge-Freezer.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "d7b80c32-e5f3-4082-a2e9-d8c1c7da0144": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Nevera-congelador",
+            "title": "Control al alcance de tu mano.",
+            "subtitle": "<p>Aplicación EcoFlow<\/p>",
+            "content": "<p>La aplicación EcoFlow permite controlar de forma inteligente la temperatura de la Glacier mediante Wi-Fi o Bluetooth. <\/p>",
+            "button_link": "",
+            "button_text": "",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/GLACIER-11-3-Freezer.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/M-GLACIER-11-3-Freezer.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "cb9fb8ff-005f-484c-8cc6-ad0fe6e34210": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Congelador-nevera",
+            "title": "Control al alcance de tu mano.",
+            "subtitle": "<p>Aplicación EcoFlow<\/p>",
+            "content": "<p>La aplicación EcoFlow permite controlar de forma inteligente la temperatura de la Glacier mediante Wi-Fi o Bluetooth. <\/p>",
+            "button_link": "",
+            "button_text": "",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/GLACIER-11-4-Fridge.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/M-GLACIER-11-4-Fridge.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        }
+      },
+      "block_order": [
+        "f8859b05-7245-475f-8c00-26db8bee8383",
+        "5908ecbe-d1e0-43fb-ad1c-6cb3094e7325",
+        "d7b80c32-e5f3-4082-a2e9-d8c1c7da0144",
+        "cb9fb8ff-005f-484c-8cc6-ad0fe6e34210"
+      ],
+      "settings": {
+        "section_id": ""
+      }
+    },
+    "ee5603d6-6794-4aae-aab8-d1be46b1e96b": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 20,
+        "section_bottom_spacing": 0,
+        "section_top_spacing_mobile": 20,
+        "section_bottom_spacing_mobile": 20,
+        "alignment": "center",
+        "title": "No hay nada tan refrescante como proteger el medioambiente.",
+        "subtitle": "",
+        "content": "<p>Nuestro objetivo es proteger tanto el planeta como tu experiencia de usuario. <\/p>",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "c2ef71a1-76f2-45ca-93ca-c4c87d37e77b": {
+      "type": "pdp-image-with-text-horizontal-new",
+      "blocks": {
+        "fefdd775-9a5c-455b-8dac-8277026284fb": {
+          "type": "image",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/GLACIER-12-VIP_technology.png",
+            "mobile_image": "shopify:\/\/shop_images\/M-GLACIER-12-VIP_technology.png",
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "image_alignment": "right",
+            "title": "La tecnología VIP.",
+            "subtitle": "",
+            "content": "<p>La Glacier cuenta con paneles de aislamiento por vacío (VIP). Con una baja conductividad térmica, estos paneles ayudan a optimizar la eficiencia energética, reduciendo el consumo de energía, la huella de carbono y el impacto medioambiental de la producción y eliminación de refrigerante.<\/p>",
+            "button_link": "#",
+            "button_text": ""
+          }
+        },
+        "bbfe6178-b791-4cd1-837a-b941384a090c": {
+          "type": "image",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/GLACIER-13-compressor.png",
+            "mobile_image": "shopify:\/\/shop_images\/M-GLACIER-13-compressor.png",
+            "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/a1cf642e888c421b88352e200d639d75.mp4",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "image_alignment": "left",
+            "title": "Modo Eco.",
+            "subtitle": "",
+            "content": "<p>En el modo Eco, el modo de ahorro de energía, la nevera Glacier utiliza solo 0,18 kWh al día[5].<\/p>",
+            "button_link": "#",
+            "button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "fefdd775-9a5c-455b-8dac-8277026284fb",
+        "bbfe6178-b791-4cd1-837a-b941384a090c"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "left",
+        "space_bw_blocks": 0
+      }
+    },
+    "21c9e63f-0d2b-4a2d-a7b6-97da3cfe73ca": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 20,
+        "section_bottom_spacing": 0,
+        "section_top_spacing_mobile": 20,
+        "section_bottom_spacing_mobile": 20,
+        "alignment": "center",
+        "title": "Varios métodos de carga",
+        "subtitle": "<p>Carga en cualquier lugar.<\/p>",
+        "content": "",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "263deaee-ea55-4837-97cb-32667d459719": {
+      "type": "pdp-image-with-text",
+      "blocks": {
+        "5f788c61-e8e3-4272-80bd-24fdae7079e4": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/GLACIER-14-1-Solar_Charging.png",
+            "mobile_image": "shopify:\/\/shop_images\/M-GLACIER-14-1-Solar_Charging.png",
+            "image_height": 500,
+            "mobile_image_height": 250,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "",
+            "subtext_bottom": "<p>Carga completa mediante energía solar [6] (hasta 240 W) en solo 2,1 h<\/p>",
+            "button_link": "",
+            "button_text": ""
+          }
+        },
+        "ec486dd3-576a-4582-8a18-cbc32033be47": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/GLACIER-14-2-AC_Charging.png",
+            "mobile_image": "shopify:\/\/shop_images\/M-GLACIER-14-2-AC_Charging.png",
+            "image_height": 500,
+            "mobile_image_height": 250,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "",
+            "subtext_bottom": "<p>Carga completa mediante CA en 2,2 h<\/p>",
+            "button_link": "",
+            "button_text": ""
+          }
+        },
+        "685c4845-bffa-4c62-aab9-17bdcdd1df20": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/GLACIER-14-3-DC_Charging.png",
+            "mobile_image": "shopify:\/\/shop_images\/M-GLACIER-14-3-DC_Charging.png",
+            "image_height": 500,
+            "mobile_image_height": 250,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "",
+            "subtext_bottom": "<p>Carga completa medianteCC (12 V) en 4 hCC (24 V) en 2,1 h<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "5f788c61-e8e3-4272-80bd-24fdae7079e4",
+        "ec486dd3-576a-4582-8a18-cbc32033be47",
+        "685c4845-bffa-4c62-aab9-17bdcdd1df20"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "left",
+        "layout": "owl-carousel owl-theme",
+        "stacked_row": "3",
+        "mobile_stacked_row": "1",
+        "slider_row": "2",
+        "mobile_slider_row": "1"
+      }
+    },
+    "46b1fdfa-2483-457a-b5d9-1057a7b835a7": {
+      "type": "pdp-whats-in-the-box",
+      "blocks": {
+        "template--18574753005911__46b1fdfa-2483-457a-b5d9-1057a7b835a7-1681813427f2c9a7f1-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/GLACIER-15-1.png",
+            "cta_label": "EcoFlow GLACIER",
+            "link": "",
+            "cta_width": 35,
+            "cta_image_width": "100%",
+            "custom_width": 300,
+            "custom_height": 300,
+            "custom_width_mobile": 160,
+            "custom_height_mobile": 160
+          }
+        },
+        "template--18574753005911__46b1fdfa-2483-457a-b5d9-1057a7b835a7-1681813427f2c9a7f1-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/GLACIER-15-2-ice_shovel.png",
+            "cta_label": "Pala para hielo",
+            "link": "",
+            "cta_width": 21,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 130,
+            "custom_width_mobile": 130,
+            "custom_height_mobile": 120
+          }
+        },
+        "template--18574753005911__46b1fdfa-2483-457a-b5d9-1057a7b835a7-1681813427f2c9a7f1-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/GLACIER-15-3-Left_zone_basket.png",
+            "cta_label": "Cesta para la zona izquierda",
+            "link": "",
+            "cta_width": 21,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 130,
+            "custom_width_mobile": 130,
+            "custom_height_mobile": 120
+          }
+        },
+        "template--18574753005911__46b1fdfa-2483-457a-b5d9-1057a7b835a7-1681813427f2c9a7f1-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/GLACIER-15-4-Power_adapter_cable.png",
+            "cta_label": "Adaptador y cable de CA (varía según la región)",
+            "link": "",
+            "cta_width": 21,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 130,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 120
+          }
+        },
+        "template--18574753005911__46b1fdfa-2483-457a-b5d9-1057a7b835a7-1681813427f2c9a7f1-4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/GLACIER-15-5-Car_charging_cable.png",
+            "cta_label": "Cable de carga para vehículo",
+            "link": "",
+            "cta_width": 21,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 130,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 120
+          }
+        },
+        "template--18574753005911__46b1fdfa-2483-457a-b5d9-1057a7b835a7-1681813427f2c9a7f1-5": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/GLACIER-15-6-Quick_Start_Guide.png",
+            "cta_label": "Guía de inicio rápido",
+            "link": "",
+            "cta_width": 21,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 130,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 120
+          }
+        },
+        "a3a1a553-c75a-4e7d-8480-84e501809dba": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/GLACIER-15-7-Warranty_Card.png",
+            "cta_label": "Tarjeta de garantía",
+            "link": "",
+            "cta_width": 21,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 130,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 120
+          }
+        }
+      },
+      "block_order": [
+        "template--18574753005911__46b1fdfa-2483-457a-b5d9-1057a7b835a7-1681813427f2c9a7f1-0",
+        "template--18574753005911__46b1fdfa-2483-457a-b5d9-1057a7b835a7-1681813427f2c9a7f1-1",
+        "template--18574753005911__46b1fdfa-2483-457a-b5d9-1057a7b835a7-1681813427f2c9a7f1-2",
+        "template--18574753005911__46b1fdfa-2483-457a-b5d9-1057a7b835a7-1681813427f2c9a7f1-3",
+        "template--18574753005911__46b1fdfa-2483-457a-b5d9-1057a7b835a7-1681813427f2c9a7f1-4",
+        "template--18574753005911__46b1fdfa-2483-457a-b5d9-1057a7b835a7-1681813427f2c9a7f1-5",
+        "a3a1a553-c75a-4e7d-8480-84e501809dba"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Contenido de la caja",
+        "bottom_content": "<p>* Los accesorios de GLACIER (<a href=\"https:\/\/es.ecoflow.com\/products\/glacier-plug-in-battery\" target=\"_blank\" title=\"https:\/\/es.ecoflow.com\/products\/glacier-plug-in-battery\">batería enchufable<\/a>, <a href=\"https:\/\/es.ecoflow.com\/products\/glacier-detachable-wheels-and-lever\" target=\"_blank\" title=\"https:\/\/es.ecoflow.com\/products\/glacier-detachable-wheels-and-lever\">ruedas desmontables y empuñadura telescópica<\/a>) se venden por separado.<\/p>",
+        "cta_height": 465,
+        "cta_height_mobile": 245,
+        "cta_half_height_mobile": 200,
+        "gutter_width": 12
+      }
+    },
+    "2cfe5100-0b38-4add-b97f-e78f7e8a2be0": {
+      "type": "pdp-specs",
+      "blocks": {
+        "2b808955-1da4-4329-820c-2eb1deb37f27": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de CA",
+            "content": "<p>100-240 V, 50\/60 Hz, 180 W<\/p>"
+          }
+        },
+        "9aaa0c31-0db1-4238-bc9c-2f36a1f5a70b": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de carga mediante energía solar",
+            "content": "<p>240 W (11-60 V, 13 A MÁX.)<\/p>"
+          }
+        },
+        "d4ab195f-554c-4f22-b918-50cab895f7e4": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de carga de coche",
+            "content": "<p>96W\/192 W (12\/24 V, 8 A MÁX.)<\/p>"
+          }
+        },
+        "e9d71ed4-8c50-4636-810c-861346f8ffb8": {
+          "type": "contents",
+          "settings": {
+            "title": "Potencia del paquete de baterías",
+            "content": "<p>100 W (USB-C)<\/p>"
+          }
+        },
+        "79196c9b-dab4-47e8-8579-7fae8a24213e": {
+          "type": "contents",
+          "settings": {
+            "title": "Volumen operativo",
+            "content": "<p>Una zona: 38 L; Bizona: 36 L<\/p>"
+          }
+        },
+        "225d6930-ae75-4a1e-8a1f-82c83489cbcd": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso neto",
+            "content": "<p>23 kg<\/p>"
+          }
+        },
+        "979d5640-8755-49d2-b57a-624c593f89a7": {
+          "type": "contents",
+          "settings": {
+            "title": "Dimensiones (ruedas y asas no incluidas)",
+            "content": "<p>776x385x445 mm<\/p>"
+          }
+        },
+        "2980d8a5-5409-4688-940b-6478d0db196d": {
+          "type": "contents",
+          "settings": {
+            "title": "Clasificación IP",
+            "content": "<p>IPX4<\/p>"
+          }
+        },
+        "3516448f-e5d1-47d2-8012-52b2e0355f3f": {
+          "type": "contents",
+          "settings": {
+            "title": "Rango de temperatura de refrigeración",
+            "content": "<p> -25 °C a 10 °C (temperatura ambiente a 25° C)<\/p>"
+          }
+        },
+        "e663e007-7fe2-41d7-9497-18a9e8be3be6": {
+          "type": "contents",
+          "settings": {
+            "title": "Nivel acústico (funcionamiento estable)",
+            "content": "<p>máquina de hielo: &lt;52 dB; Refrigeración: &lt;42 dB<\/p>"
+          }
+        },
+        "b312f8e5-a979-4bb4-9722-d117f7504308": {
+          "type": "contents",
+          "settings": {
+            "title": "Cantidad\/Tipo de refrigeración",
+            "content": "<p>R600a, 32 g<\/p>"
+          }
+        },
+        "f0f86f4d-b3e2-40f2-9a11-428b9ebc3ec5": {
+          "type": "contents",
+          "settings": {
+            "title": "Modo de congelación rápida (30℃ a 0℃)",
+            "content": "<p>15 minutos<\/p>"
+          }
+        },
+        "f10c04de-02c4-4885-8e23-35041576e2fb": {
+          "type": "contents",
+          "settings": {
+            "title": "Potencia nominal de refrigeración",
+            "content": "<p>120 W<\/p>"
+          }
+        },
+        "6a69073f-8821-4e95-bf3f-965e62431253": {
+          "type": "contents",
+          "settings": {
+            "title": "Bluetooth",
+            "content": "<p>√<\/p>"
+          }
+        },
+        "611fc21b-62c4-40df-95d7-51a175ea9db7": {
+          "type": "contents",
+          "settings": {
+            "title": "Wi-Fi",
+            "content": "<p>este producto solamente es compatible con las redes Wi-Fi de 2,4G<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "2b808955-1da4-4329-820c-2eb1deb37f27",
+        "9aaa0c31-0db1-4238-bc9c-2f36a1f5a70b",
+        "d4ab195f-554c-4f22-b918-50cab895f7e4",
+        "e9d71ed4-8c50-4636-810c-861346f8ffb8",
+        "79196c9b-dab4-47e8-8579-7fae8a24213e",
+        "225d6930-ae75-4a1e-8a1f-82c83489cbcd",
+        "979d5640-8755-49d2-b57a-624c593f89a7",
+        "2980d8a5-5409-4688-940b-6478d0db196d",
+        "3516448f-e5d1-47d2-8012-52b2e0355f3f",
+        "e663e007-7fe2-41d7-9497-18a9e8be3be6",
+        "b312f8e5-a979-4bb4-9722-d117f7504308",
+        "f0f86f4d-b3e2-40f2-9a11-428b9ebc3ec5",
+        "f10c04de-02c4-4885-8e23-35041576e2fb",
+        "6a69073f-8821-4e95-bf3f-965e62431253",
+        "611fc21b-62c4-40df-95d7-51a175ea9db7"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Especificaciones"
+      }
+    },
+    "fd133f9a-67c5-4b10-bb28-7842c52d6595": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--18574753005911__fd133f9a-67c5-4b10-bb28-7842c52d6595-16818182450a7202e7-0": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "left",
+            "full_width": false,
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "<p>1. El resultado de la prueba se obtuvo con una temperatura ambiente de 77 °F (25 °C) y una temperatura del agua de 59 °F (15 °C). El primer ciclo para hacer hielo puede tardar más de 12 minutos. <br\/>2. La batería enchufable se vende por separado.<br\/>3. El resultado de la prueba se obtuvo con la nevera vacía, la temperatura ajustada a 39 °F (4 °C) y una temperatura ambiente de 77 °F (25 °C).<br\/>4. Las ruedas y la barra desmontables se venden por separado.<br\/>5. El resultado de la prueba se obtuvo con una temperatura ambiente de 77 °F (25 °C) y la temperatura de la nevera Glacier ajustada en 39 °F (4 °C). <br\/>6. La carga mediante energía solar solo se aplica cuando la Glacier está conectada a la batería enchufable.<\/p>",
+            "message_color": "#757575",
+            "notification_message_font_size": "body-3",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--18574753005911__fd133f9a-67c5-4b10-bb28-7842c52d6595-16818182450a7202e7-0"
+      ],
+      "settings": {
+      }
+    },
+    "1714120032b7aa5105": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_XAh8ce": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_XAh8ce"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    }
+  },
+  "order": [
+    "sticky-product-bar",
+    "main",
+    "product-recommendations",
+    "0e9907ea-a84f-4e7e-8a59-2e7d785bec7e",
+    "7b208bcb-6373-4aba-8faa-003541d3f988",
+    "6817ee58-ad06-4e53-9e01-c63ddd19bed4",
+    "71c12763-f62e-4e50-80ee-860ec46a57a0",
+    "b6b9efb2-d5ae-4979-a419-a2f171a832a3",
+    "8bdf56fd-0318-4a56-89aa-7b948beb7b49",
+    "e3d0db1f-1fbc-4e5f-9d1b-a3b046c5fddf",
+    "ababe0db-33fa-4189-b4c6-39adb6b02a12",
+    "a4f0c9ee-0094-4561-86ab-fa513557b67b",
+    "023c4a39-a261-4b93-ac14-cd8bf44daa18",
+    "f2919e09-7ddf-4a25-b431-14410a082df1",
+    "ee5603d6-6794-4aae-aab8-d1be46b1e96b",
+    "c2ef71a1-76f2-45ca-93ca-c4c87d37e77b",
+    "21c9e63f-0d2b-4a2d-a7b6-97da3cfe73ca",
+    "263deaee-ea55-4837-97cb-32667d459719",
+    "46b1fdfa-2483-457a-b5d9-1057a7b835a7",
+    "2cfe5100-0b38-4add-b97f-e78f7e8a2be0",
+    "fd133f9a-67c5-4b10-bb28-7842c52d6595",
+    "1714120032b7aa5105"
+  ]
+}

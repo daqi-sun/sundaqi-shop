@@ -1,0 +1,170 @@
+.summer-sale-form__section{ padding: 100px 20px 120px; }
+.summer-sale-form__section *:not(path):not(svg){ font-family: "Helvetica Neue ForEco"; }
+.summer-sale-form-container{ padding: 0 20px; max-width: 1240px; margin: 0 auto; }
+.summer-sale-header__content{ text-align: center; margin-bottom: 60px; }
+.summer-sale-header__title{ font-size: 40px; font-weight: 700; color: #084D24; line-height: 1; margin-bottom: 20px; }
+.summer-sale-header__content, .summer-sale-voting-option__content{ font-size: 20px; font-weight: 400; color: #707070; line-height: 1.1; }
+.summer-sale-voting-options{ display: flex; justify-content: space-between; flex-wrap: wrap; }
+.summer-sale-voting-option{ width: 25%; padding: 10px; }
+.summer-sale-voting-option__image{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 30px;
+    position: relative;
+}
+.summer-sale-voting-option__image .summer-sale-voting-option__image_wrap{
+    width: 100%;
+    height: 100%;
+    background: #92FFA333;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.summer-sale-voting-option__image input{
+    position: absolute;
+    right: -30px;
+    bottom: -10px;
+    width: 28px;
+    height: 28px;
+    -webkit-appearance: none;
+    border: 1px solid #CCCCCC;
+    border-radius: 8px;
+}
+.summer-sale-voting-option__image input:checked{
+    background: url(https://cdn.shopify.com/s/files/1/0431/3789/2516/files/checkmark.png?v=1716294576) no-repeat center center;
+    background-size: 15px;
+}
+.summer-sale-form-wrap{ margin-top: 60px; }
+.summer-sale-form-content{ width: 50%; max-width: 570px; margin-left: auto; padding: 70px 40px; }
+.summer-sale-form-content__title{
+    font-size: 24px;
+    line-height: 1.1;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 12px;
+}
+.summer-sale-form-content__content{
+    font-size: 14px;
+    line-height: 1.1;
+    font-weight: 400;
+    color: #fff;
+}
+.summer-sale-form-input-wrapper{ display: flex; margin-top: 40px; font-size: 0; position: relative; }
+.summer-sale-form-error-message{
+    position: absolute;
+    font-size: 14px;
+    top: -24px;
+    color: #d21111;
+}
+.summer-sale-form-input{
+    width: 296px;
+    padding: 14px 12px;
+    font-size: 14px;
+    color: #707070;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    outline: 0;
+}
+.summer-sale-input-button{
+    font-size: 14px;
+    padding: 14px;
+    border: 0;
+    background: #000;
+    color: #fff;
+    line-height: 1.35;
+    min-width: 160px;
+    font-weight: 500;
+    border-radius: 0 4px 4px 0;
+    outline: 0 !important;
+}
+.summer-sale-form-disclaimer{
+    display: block;
+    position: relative;
+    padding-left: 20px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #fff;
+    margin-top: 20px;
+}
+.summer-sale-form-disclaimer p{ color: #fff; margin-bottom: 0; }
+.summer-sale-form-disclaimer-checkbox{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.summer-sale-form-disclaimer .checkmark{
+    position: absolute;
+    top: 1.5px;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}
+.summer-sale-form-disclaimer .checkmark:after{
+    content: '';
+    width: 7px;
+    height: 5px;
+    background: url(https://cdn.shopify.com/s/files/1/0431/3789/2516/files/checkmark.png?v=1716294576) no-repeat center center;
+    background-size: 7px;
+    position: absolute;
+    top: 4px;
+    left: 3px;
+    display: none;
+}
+.summer-sale-form-disclaimer input:checked~.checkmark {
+    background-color: #fff;
+}
+.summer-sale-form-disclaimer input:checked~.checkmark:after { display: block; }
+.summer-sale-success-content{ text-align: center; }
+.summer-sale-success-message{ margin-top: 20px; font-size: 24px; color: #fff; font-weight: 500; line-height: 1.2; }
+.summer-sale-success-content{ margin-top: 10px; font-size: 14px; color: #fff; font-weight: 400; line-height: 1.2; }
+.summer-sale-success-content .summer-sale-form-input-wrapper{ text-align: left; }
+.summer-sale-infoline{
+    text-align: left;
+    font-size: 14px;
+    color: #E6E6E6;
+    text-decoration: underline;
+    margin-top: 22px;
+}
+.summer-sale-success-content .summer-sale-form-input-wrapper{ text-align: left; }
+.summer-sale-success-content .summer-sale-form-input{
+    font-size: 24px;
+    font-weight: 500;
+    padding: 8px 12px;
+}
+@media screen and (min-width: 750px) and (max-width: 1023px){
+    .summer-sale-input-button{ min-width: 100px; }
+}
+@media screen and (max-width: 749px){
+    .summer-sale-form__section{ padding: 15px 0px 25px; }
+    .summer-sale-header__title{ font-size: 20px; }
+    .summer-sale-header__content{ font-size: 18px; color: #000; margin-bottom: 25px; }
+    .summer-sale-voting-options{ flex-direction: column; }
+    .summer-sale-voting-option{ width: 100%; display: flex; align-items: flex-start; gap: 18px; padding: 0; margin-bottom: 12px; }
+    .summer-sale-voting-option__image{ width: 75px; height: auto; display: flex; gap: 15px; flex-direction: row-reverse; margin: 0; }
+    .summer-sale-voting-option__image .summer-sale-voting-option__image_wrap{ width: 40px; height: 40px; }
+    .summer-sale-voting-option__image input{ position: relative; right: unset; bottom: unset; width: 20px; height: 20px; border-radius: 2px; }
+    .summer-sale-voting-option__content{ font-size: 16px; }
+    .summer-sale-form-wrap{ margin-top: 40px; }
+    .summer-sale-form-content{ width: 100%; padding: 150px 24px 40px; }
+    .summer-sale-form-content__title{ font-size: 14px; text-align: center; }
+    .summer-sale-form-content__content{ font-size: 11px; text-align: center; }
+    .summer-sale-form-input-wrapper{ margin-top: 20px; flex-direction: column; align-items: center; gap: 12px; }
+    .summer-sale-form-input, .summer-sale-input-button{ width: 278px; height: 44px; border-radius: 4px; }
+    .summer-sale-form-disclaimer{ line-height: 16px; }
+    .summer-sale-form-content.summer-sale-success-content{ background-color: inherit; border-radius: 4px; padding-top: 40px; }
+    .summer-sale-success-message{ margin-top: 40px; font-size: 20px; }
+    .summer-sale-success-content .summer-sale-form-input{ font-size: 20px; text-align: center; }
+    .summer-sale-infoline{ font-size: 12px; }
+    .summer-sale-voting-option__image input:checked{ background-size: 10px; }
+    .summer-sale-form-error-message{ top: -16px; font-size: 10px; }
+}

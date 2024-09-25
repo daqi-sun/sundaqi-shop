@@ -1,0 +1,623 @@
+.new-section-5 .swiper-container-horizontal>.swiper-pagination-bullets {
+    margin-bottom: 20px;
+  }
+  .new-section-5 .protable-swiper-container .swiper-pagination-bullet-active {
+    background: #1d1d1d;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .new-section-5 .protable-swiper-container {
+      padding-bottom: 0;
+    }
+  
+    .new-section-5 .protable-swiper-container .product-serives.pr .text.tc {
+      margin-top: 0;
+      padding-bottom: 50px;
+    }
+  }
+
+.section-6 .show-me {
+    display: none;
+}
+
+@media screen and (min-width:1480px) {
+  .portable-power-stations .banner-new .text .title-h1 {
+    font-size: 120px;
+
+  }
+}
+
+.portable-power-stations.river-portable-power-stations .new-section-3 .flex-container {
+    max-width: 1000px;
+
+}
+
+.portable-power-stations.river-portable-power-stations .new-section-3 .icon-block {
+    width: unset;
+    max-width: unset;
+}
+
+.portable-power-stations.river-portable-power-stations .new-section-3 .des.text {
+    margin-top: 0px;
+    border-top: none;
+    font-weight: 500;
+    padding-top: 10px;
+    color: white;
+}
+
+.portable-power-stations.river-portable-power-stations .new-section-3 .des.borders{
+    width: 125px;
+    /* margin: 0 auto; */
+    margin-left: auto;
+    margin-right: auto;
+}
+.section-6{
+    background: #1d1d1d;
+    overflow: hidden;
+    padding-bottom: 96px;
+}
+
+.section-6 .title-h2.font-gotham-bold{
+
+    font-size: 36px !important;
+    font-weight: 700;
+    font-stretch: normal;
+    line-height: 51px;
+    letter-spacing: 0px;
+    padding-top: 155px;
+    color: #fff !important;
+}
+.section-6 .title-container button {
+        width: 211px;
+    height: 49px;
+    border-radius: 25px;
+    border: solid 2px #fff;
+    margin-left: auto;
+    margin-left: calc(50% - 105px);
+    margin-top: 53px;
+    background: #1d1d1d;
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.section-6 .iconfont {
+
+    color: #fff;
+}
+.section-6 .items-title{
+    font-weight: 700;
+    font-size: 18px;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #6e6e73;
+    line-height: 27px;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+.section-6 .items-title2{
+    font-size: 36px;
+	font-weight: 700;
+	font-stretch: normal;
+	line-height: 23px;
+	letter-spacing: 0px;
+	color: #1d1d1d;
+        text-align: center;
+    margin: 45px;
+}
+
+.section-6 .item-container{
+    width: 85%;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+/*         margin-top: 6.5em; */
+}
+.items-img{
+    width: calc(33.33% - 24px);
+    float: left;
+    background-color: #f3f3f3;
+    border-radius: 32px;
+    margin-left: 5px;
+    margin-right: 24px;
+}
+
+.items-img.huise{
+    background-color: #e8e8e8;
+}
+
+.items-img:last-child
+{
+     margin-right: 0px;
+}
+
+.item-content{
+    width: calc(100% - 80px);
+    font-size: 18px;
+    font-weight: 700;
+    font-stretch: normal;
+    line-height: 27px;
+    letter-spacing: 0px;
+    color: #6e6e73;
+    margin: 14px !important;
+    padding-top: 14px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center;
+    border-top: solid 2px #707070;
+    opacity: 0.5;
+}
+
+.item-container{
+/*     margin-top: 42px; */
+}
+
+.items-img img{
+    width: 60% !important;
+    margin: 0 auto;
+}
+@media (min-width: 768px) and (max-width: 1000px){
+   .section-6 .item-container {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6.5em;
+}
+.section-6 .items-title2 {
+    font-size: 1.8em;
+    font-weight: 700;
+    font-stretch: normal;
+    line-height: 23px;
+    letter-spacing: 0px;
+    color: #1d1d1d;
+    text-align: center;
+    margin: unset;
+    margin-top: 0.9em;
+    margin-bottom: 0.9em;
+}
+.item-content {
+    font-size: 17px;
+}
+}
+.river-portable-power-stations .section-left-right{
+    position: relative;
+}
+
+  .river-portable-power-stations  .half-text{
+    width: 50%;
+    position: absolute;
+    top: 40%;
+    right: 0%;
+    transform: translateY(-50%);
+    /* width: 763px; */
+    /* height: 326px; */
+    font-size: 80px;
+    font-weight: 700;
+    font-stretch: normal;
+    line-height: 88px;
+    letter-spacing: 0px;
+    color: #1d1d1d;
+}
+
+.portable-power-stations .half-img-left{
+    width: 50%;
+    left: 3%;
+    margin-left: 8%;
+}
+.portable-power-stations .half-text.half-text-right .des {
+    width: 99%;
+    height: 326px;
+    font-size: 80px;
+    font-weight: 700;
+    font-stretch: normal;
+    line-height: 88px;
+    letter-spacing: 0px;
+    color: #1d1d1d;
+    text-align: left;
+}
+
+.portable-power-stations .ch .half-img.half-img-right{
+    margin-left: 41%;
+    width: 50%;
+    margin-top: -127px;
+}
+
+.river-portable-power-stations .half-text.half-text-left {
+    width: 30%;
+    position: absolute;
+    top: 47%;
+    left: 7%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    font-weight: 500;
+    font-stretch: normal;
+    line-height: 23px;
+    letter-spacing: 0px;
+    color: #6e6e73;
+}
+
+.river-portable-power-stations .pr{
+  position: relative;
+}
+.river-portable-power-stations .section-left-text.pr{
+  margin-bottom: 11px;
+}
+
+.mbt{
+  margin-bottom: 125px;
+}
+
+.section-7,.section-left-right{
+    clear: both;
+}
+
+/* left */
+.river-portable-power-stations .pr .half-img.half-img-right{
+    margin-left: 50%;
+    width: 50%;
+}
+
+.half-text.half-text-left .title-h2,.half-text-right-t .title-h2{
+    font-size: 36px !important;
+    font-weight: 700;
+    font-stretch: normal;
+    line-height: 40px;
+    padding-left: 20px;
+/*     width: 245px; */
+    letter-spacing: 0px;
+    color: #1d1d1d;
+    margin-bottom: 20px;
+}
+
+.river-portable-power-stations .pr .half-text.half-text-left {
+
+    top: 50%;
+    left: 7%;
+
+}
+
+/* righht */
+
+.portable-power-stations .pr .half-img-left {
+    width: 50%;
+    left: 0%;
+    margin-left: 0%;
+}
+
+.river-portable-power-stations .half-text.half-text-right-t{
+    max-width: 575px;
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    right: 9%;
+    transform: translateY(-50%);
+}
+
+.half-text-right-t .title-h2{
+   width: unset;
+}
+
+@media screen and (max-width:767px) {
+.river-portable-power-stations .section-left-right{
+    background: #1d1d1d;
+}
+.text-top .title-1{
+    font-size: 28px;
+    font-weight: 700;
+    font-stretch: normal;
+    line-height: 30px;
+    letter-spacing: 0px;
+    color: #ffffff;
+    padding-top: 39px;
+    padding-bottom: 25px;
+    text-align: left;
+}
+.section-left-right .des {
+    font-size: 12px;
+    line-height: 17px;
+    text-align: left;
+    margin-right: 35px;
+    color: white;
+}
+.section-left-right.ch:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.river-portable-power-stations  .half.text-top img{
+    padding: 20px;
+    padding-right: 50px;
+    margin-bottom: 31px;
+}
+.custom_mobile.section-container  .title-1{
+    font-size: 13px;
+	font-weight: 700;
+	font-stretch: normal;
+	line-height: 16px;
+	letter-spacing: 0px;
+	color: #ffffff;
+        margin-bottom: 21px;
+  }
+
+  .custom_mobile.section-container .des{
+    font-size: 13px;
+    font-weight: 500;
+    font-stretch: normal;
+    line-height: 17px;
+    letter-spacing: 0px;
+    color: white;
+    margin-right: 35px;
+    margin-bottom: 50px;
+    margin-top: 5px;
+}
+  .custom_mobile.section-container{
+    background: #1d1d1d;
+    margin-top: -2px;
+  }
+  .section-left-text.pr{
+    display: none;
+  }
+ .banner-new .smoll-title{
+    font-size: 24px;
+    line-height: 41px;
+  }
+}
+
+.river-portable-power-stations .faq-block .question .title-h3{
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    align-items: baseline;
+    column-gap: 10px
+}
+
+.river-portable-power-stations .faq-block .iconfont img{
+    max-width: inherit;
+}
+
+.river-portable-power-stations .faq-block .question .iconfont:before {
+    display: none;
+}
+
+.river-portable-power-stations .faq-block .question .icon-xiajiantou .plus {
+    display: none;
+}
+.river-portable-power-stations .faq-block .question .icon-xiajiantou .minus {
+    display: block;
+}
+
+.river-portable-power-stations .faq-block .question .icon-shangjiantou .plus {
+    display: block;
+}
+.river-portable-power-stations .faq-block .question .icon-shangjiantou .minus {
+    display: none;
+}
+
+@media (min-width: 1400px) and (max-width: 1500px){
+    .river-portable-power-stations .pr .half-text.half-text-left {
+        width: 40%;
+    }
+    .river-portable-power-stations .half-text.half-text-left {
+        top: 65%;
+    }
+    .river-portable-power-stations .half-text.half-text-right-t {
+        right: 4%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1400px){
+    .portable-power-stations .half-img-left {
+    width: 38%;
+    left: 3%;
+    margin-left: 0;
+}
+.portable-power-stations .half-text.half-text-right .des {
+    width: 99%;
+    height: 326px;
+    font-size: 0.77em;
+    font-weight: 700;
+    font-stretch: normal;
+    line-height: 1.1em;
+    letter-spacing: 0px;
+    color: #1d1d1d;
+    text-align: left;
+}
+.river-portable-power-stations .half-text {
+    top: 43%;
+}
+.river-portable-power-stations .half-text.half-text-left {
+    top: 70%;
+    left: 6%;
+}
+.river-portable-power-stations .half-text.half-text-right-t {
+    right: 2%;
+}
+.portable-power-stations .ch .half-img.half-img-right {
+    margin-left: 50%;
+}
+.river-portable-power-stations .section-left-text.pr {
+    margin-bottom: 120px;
+}
+.section-7 {
+    padding: 100px 50px;
+}
+
+.river-portable-power-stations .faq-block .question {
+    padding: 30px 20px;
+}
+}
+
+@media (min-width: 768px) and (max-width: 1200px){
+.portable-power-stations .half-text.half-text-right .des {
+    font-size: 0.57em;
+}
+.section-left-right.ch.mbt .des {
+    font-size: 14px;
+    line-height: 24px;
+}
+.river-portable-power-stations .half-text {
+    top: 46%;
+}
+.portable-power-stations .ch .half-img.half-img-right {
+    width: 50%;
+    margin-top: -74px;
+}
+.river-portable-power-stations .pr .half-text.half-text-left {
+    left: 0;
+}
+.river-portable-power-stations .half-text.half-text-left {
+    width: 45%;
+}
+.river-portable-power-stations .mbt .half-text.half-text-left {
+    width: 35%;
+    left: 0;
+}
+.portable-power-stations .section-left-text .des{
+    font-size: 15px;
+    line-height: 24px;
+}
+.half-text.half-text-left .title-h2, .half-text-right-t .title-h2 {
+    font-size: 26px!important;
+    line-height: 30px;
+
+}
+.river-portable-power-stations .half-text.half-text-right-t {
+
+    width: 49%;
+
+    right: 0%;
+
+}
+}
+@media (min-width: 1200px) and (max-width: 1400px){
+.river-portable-power-stations .pr .half-text.half-text-left {
+    left: 6%;
+}
+.river-portable-power-stations .half-text.half-text-left {
+  width: 36%;
+}
+}
+
+@media (min-width: 767px) and (max-width: 1200px) {
+    .river-portable-power-stations .half-text.half-text-left {
+        top: 75%;
+    }
+}
+
+@media (min-width: 767px) and (max-width: 830px){
+.river-portable-power-stations .mbt .half-text.half-text-left {
+    width: 239px;
+}
+}
+.portable-power-stations .new-section-common .product-serives .text .a-button {
+
+    margin-top: 18px;
+}
+
+@media (min-width: 850px) and (max-width: 1100px){
+  .river-portable-power-stations .half-text.half-text-left {
+    width: 388px;
+}
+}
+
+@media (min-width: 1200px) and (max-width: 1300px){
+  .river-portable-power-stations .section-left-text .half-text.half-text-left {
+    width: 461px;
+}
+}
+
+@media (min-width: 768px) and (max-width: 1000px){
+.river-portable-power-stations .mbt .half-text.half-text-left {
+    width: 45%;
+}
+}
+
+@media (min-width: 1000px) and (max-width: 1200px){
+.river-portable-power-stations .mbt .half-text.half-text-left {
+    width: 365px;
+}
+}
+@media (min-width: 767px) and (max-width: 1000px){
+.river-portable-power-stations .tiaoz .half-text-right-t .title-h2{
+    padding-left: 10px;
+    letter-spacing: 0px;
+    color: #1d1d1d;
+    margin-bottom: 10px;
+}
+
+.river-portable-power-stations .tiaoz  .text {
+    padding: 0 10px;
+}
+}
+@media (min-width: 987px) and (max-width: 970px){
+.river-portable-power-stations .tiaoz .half-text.half-text-right-t {
+    width: 420px;
+    right: 1%;
+}
+}
+
+.portable-power-stations .new-section-common .product-serives .text {
+    bottom: 176px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100%;
+}
+
+@media screen and (max-width: 800px){
+.portable-power-stations .new-section-common .product-serives .text {
+    bottom: 40px;
+}
+.river-portable-power-stations .section-7 {
+    padding: 41px 24px;
+}
+}
+@media screen and (max-width: 430px){
+.portable-power-stations .new-section-common .product-serives .text {
+    bottom: 18px;
+}}
+@media (min-width: 800px)  and (max-width: 900px){
+.portable-power-stations .new-section-common .product-serives .text {
+    bottom: 4em;
+}
+}
+
+@media (min-width: 900px)  and (max-width: 1280px){
+.portable-power-stations .new-section-common .product-serives .text {
+    bottom: 6em;
+}
+}
+@media (min-width: 300px)  and (max-width: 380px){
+.portable-power-stations .new-section-common .product-serives .text .a-button {
+    margin-top: 10px;
+}
+}
+
+.product-serives.pr .text.tc {
+    display: block;
+    transform: translate(0) !important;
+    bottom: unset !important;
+    left: unset !important;
+  }
+
+  @media (min-width: 568px) and (max-width: 768px){
+    .product-serives.pr .text.tc {
+      margin-top: -100px;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 800px) {
+    .product-serives.pr .text.tc {
+        padding-bottom: 50px !important;
+        margin-top: -25px !important;
+    }
+  }
+  @media (min-width: 568px) {
+    .product-serives.pr .text.tc {
+        padding-bottom: 100px;
+    }
+  }
+  @media (max-width: 567px) {
+    .product-serives.pr .text.tc {
+        padding-bottom: 50px;
+    }
+  }

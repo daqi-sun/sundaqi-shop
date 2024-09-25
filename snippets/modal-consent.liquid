@@ -1,0 +1,92 @@
+<section class="modal-consent" id="{{ id }}" style="display: none">
+  <div class="modal-consent-tan">
+
+    <svg class="modal-consent-svg close" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" > <g opacity="0.4"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2.79999C14.5403 2.79999 16.8402 3.82987 18.5052 5.4948C20.1701 7.15973 21.2 9.45972 21.2 12C21.2 14.5403 20.1701 16.8402 18.5052 18.5052C16.8402 20.1701 14.5403 21.2 12 21.2C9.45972 21.2 7.15973 20.1701 5.4948 18.5052C3.82987 16.8402 2.79999 14.5403 2.79999 12C2.79999 9.45972 3.82987 7.15973 5.4948 5.4948C7.15973 3.82987 9.45972 2.79999 12 2.79999Z" stroke="black" stroke-width="1.6"/> <path d="M8.5 8.5L15.5 15.5M15.5 8.5L8.5 15.5" stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/> </g> </svg>
+
+    <span class="modal-consent-text">{{ text }}</span>
+    <button class="modal-consent-btn confirm" type="button">{{ confirm }}</button>
+  </div>
+</section>
+
+<style>
+  .modal-consent {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 999999999;
+  }
+  .modal-consent-tan {
+    width: 600px;
+    padding: 51px 21px 41px 41px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 12px;
+  }
+  .modal-consent-text {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Helvetica Neue ForEco';
+    width: 535px;
+    display: block;
+    line-height: 24px;
+  }
+  .modal-consent .modal-consent-tan .modal-consent-text p {
+    color: rgba(0, 0, 0, 0.8);
+  }
+  .modal-consent-btn {
+    width: 260px;
+    height: 49px;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    font-family: 'Helvetica Neue ForEco';
+    font-weight: 500;
+    line-height: 26px;
+    background-color: #3f68e0;
+    border-radius: 44px;
+    margin: 27px 0 0;
+    border: 0px;
+  }
+  .modal-consent-svg {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    cursor: pointer;
+  }
+  @media (max-width: 749px) {
+    .modal-consent-tan {
+      width: 300px;
+      padding: 47px 0 29px;
+      height: auto;
+    }
+    .modal-consent-text {
+      width: 100%;
+      padding: 0 13px 0 18px;
+      height: auto;
+      margin: 0;
+      font-size: 13px;
+      line-height: 15px;
+    }
+    .modal-consent-btn {
+      margin: auto;
+      width: 246px;
+      height: 49px;
+      margin-top: 14px;
+      display: block;
+    }
+    .modal-consent-svg {
+      position: absolute;
+      top: 11px;
+      right: 11px;
+      cursor: pointer;
+    }
+  }
+</style>

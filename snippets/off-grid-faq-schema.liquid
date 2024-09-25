@@ -1,0 +1,106 @@
+{%- comment -%}
+This file has been modified by the Yoast SEO for Shopify app.
+You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+{% comment %} {%- liquid
+	assign disabled_by_yoast_seo = true
+	if content_for_header contains 'yoast-active-script'
+		assign disabled_by_yoast_seo = false
+	endif
+-%} {% endcomment %}
+{%- comment -%}Yoast SEO schema control block: start.{%- endcomment -%}
+{% comment %} {%- assign yoast_seo_settings = shop.metafields.yoast_seo.settings.value | default: shop.metafields.yoast_seo.settings -%} {% endcomment %}
+{%- comment -%}Yoast SEO schema control block: start.{%- endcomment -%}
+{%- assign yoast_seo_settings = shop.metafields.yoast_seo.settings.value | default: shop.metafields.yoast_seo.settings -%}
+{%- if disabled_by_yoast_seo or yoast_seo_settings.schema.useTheme.schema or yoast_seo_settings.schema.useTheme.webpage -%}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is an Off-Grid Solar System Worth It?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "<p>Having an off-grid solar system means you don't need to rely on aging infrastructure that could go down at any minute. You have your own green and renewable solar power supply right in your home."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What Is the Difference Between Off-Grid and On-Grid Solar Systems?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An off-grid system is not connected to the utility grid. An on-grid — or tied — system is. With an on-grid system, your solar system diverts any excess power you generate to the utility grid. You may receive energy credits for this excess energy through a net metering program, but you don’t get to store off-grid energy in reserve. An off-grid system lets you use the energy you have generated, with any excess stored in your solar generator or portable power station."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How Do You Build an Off-Grid Solar System?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "By assembling all the required components! You will need a power station/generator, PV solar panels, and a way to balance the system. EcoFlow provides a wide range of solar generators, portable, rigid, and flexible solar panels, and Power Kits. You can even build a customized smart home ecosystem to meet your energy independence needs. Whether you’re just starting with solar or going for complete off-grid energy independence, EcoFlow can help."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How Many Solar Panels Do You Need to Run a House Off-Grid?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "How many solar panels you will need depends on how much power you consume on average and the panels’ rated wattage. The average American household uses 886kWh per month, which amounts to around 30kWh per day. If you used a 400W solar panel and received 6 hours of direct sunlight per day, you’d generate approximately 2.4kWh per panel per day. You’d need around 13 PV panels to run a house off-grid."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How Much Does an Off-Grid Solar System Cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The cost can range from $4,500 to $50,000, depending on your equipment, required capacity, and labor costs. A solar system is more than panels—it requires a balance of system, and every component adds to the price. Your energy consumption also matters, with the cost typically increasing in proportion to the capacity. Finally, any labor required for installation adds to the system cost. You can reduce costs by installing a Power Kits system, which has all the components needed for off-grid solar and allows for easy DIY installation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How Many Batteries Do You Need for an Off-Grid Solar System?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Solar panels need to store the energy they create somewhere. Storage takes place in solar batteries or a portable power station. A single battery should suffice if you want a backup for personal devices and essential appliances when the grid goes down. However, if you want to go off-grid entirely, you could need as many as twelve solar batteries (or more, depending on capacity) to ensure you have enough power to keep you going. The right number ultimately depends on your energy consumption needs and the capacity of the batteries."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which Is Better? An Off-Grid or an On-Grid Solar System?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Whether an on-grid or off-grid solar system is the best choice for you depends on your personal needs and where you live. Rural areas could benefit more from off-grid than on-grid, for instance, as their power supply tends to be less reliable or nonexistent. The biggest downfall of on-grid systems is that they can't protect you from grid power outages. But they are a handy way to offset electricity costs and provide electricity when your solar power generation falls short of your needs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How Big Should My Off-Grid System Be?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "As big as you need it to be. There is no one-size-fits-all approach. To answer this accurately, you need to calculate your total energy consumption by checking the wattage of all the devices and appliances you know you'll need, multiplying by the estimated run times, and adding the total for each item. The PV solar panels, power station, and Smart Extra Batteries that comprise your off-grid system should have enough power to meet your energy needs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What Are the Advantages and Disadvantages of an Off-Grid Solar System?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The most significant advantage of an off-grid solar system is energy independence. You don't need to worry about relying on the aging electrical grid or vulnerable power lines. You have your very own electricity supply right at home! The downside is that you must stay on top of energy generation and storage. EcoFlow makes monitoring your usage and storage from anywhere easy with the EcoFlow smartphone app. Your solar system will need to be more expensive than an on-grid system to keep your household reliably powered."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where's the Best Place to Install an Off-Grid Solar System?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The best place for your solar panels is where they will receive the most peak hours of sunlight, which tends to be facing south. You can set up the rest of the solar system, such as your solar generator or portable power station, as close as it needs to be to the solar panels. However, solar panels don't require direct sunlight to generate energy; options like bifacial solar panels can still provide electricity by making the most of ambient lighting."
+        }
+      }
+    ]
+  }
+{%- comment -%}Yoast SEO schema control block: end.{%- endcomment -%}
+</script>
+{%- endif -%}
+{%- comment -%}Yoast SEO schema control block: end.{%- endcomment -%}

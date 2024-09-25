@@ -1,0 +1,107 @@
+<div class="off-grid-ssw-section">
+  <div class="off-grid-ssw-container">
+    <div class="off-grid-ssw-text-container">
+      {% if section.settings.title != blank %}
+        <h2>{{ section.settings.title }}</h2>
+      {% endif %}
+    </div>
+  </div>
+  <div class="off-grid-info--container">
+    {% if section.settings.img != blank %}
+      <img loading="lazy" src="{{ section.settings.img | img_url: 'master' }}" alt="{{ section.settings.img.alt }}">
+    {% endif %}
+    <div class="off-grid-ssw-details-container title-container">
+      {% for block in section.blocks %}
+        <div class="off-grid-ssw-details-flex-item">
+          {% if block.settings.title != blank %}
+            <p>{{ block.settings.title }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+    <div class="off-grid-ssw-details-container line-divider">
+      {% for block in section.blocks %}
+        <div class="desktop-only">
+          <div class="off-grid-ssw-flex-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="2" height="34.323" viewBox="0 0 2 34.323">
+              <line id="Line_11" data-name="Line 11" y2="34.323" transform="translate(1)" fill="none" stroke="#8e8e8e" stroke-width="2" stroke-dasharray="5"/>
+            </svg>
+          </div>
+        </div>
+        <div class="mobile-only">
+          <div class="off-grid-ssw-flex-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1.5" height="13.537" viewBox="0 0 1.5 13.537">
+              <line id="Line_11" data-name="Line 11" y2="13.537" transform="translate(0.75)" fill="none" stroke="#8e8e8e" stroke-width="1.5" stroke-dasharray="5"/>
+            </svg>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="off-grid-ssw-details-container">
+      {% for block in section.blocks %}
+        <div class="off-grid-flex-item-block">
+          {% if block.settings.subtitle != blank %}
+            <p class="subtitle">{{ block.settings.subtitle }}</p>
+          {% endif %}
+          {% if block.settings.description != blank %}
+            <p class="description">{{ block.settings.description }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="tablet-only">
+    <div class="off-grid-ssw-scroll-container">
+      <svg xmlns="http://www.w3.org/2000/svg" width="47.812" height="12.117" viewBox="0 0 47.812 12.117">
+        <path id="Intersection_1" data-name="Intersection 1" d="M-6367.143-12040.629l6.059-6.059.961.95-5.124,5.108,5.124,5.109-.961.949Zm-11.869,0,6.059-6.059.962.95-5.124,5.108,5.124,5.109-.962.949Zm-11.869,0,6.059-6.059.962.95-5.124,5.108,5.124,5.109-.962.949Zm-11.869,0,6.059-6.059.962.95-5.124,5.108,5.124,5.109-.962.949Zm47.476,0,.336-.336v.672Z" transform="translate(6402.75 12046.688)"/>
+      </svg>
+      <p>Scroll to see more</p>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Off Grid SSW",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title",
+      "default": "What is off grid solar system?"
+    },
+    {
+      "type": "image_picker",
+      "id": "img",
+      "label": "Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "details",
+      "name": "Details",
+      "settings": [
+        {
+          "type": "html",
+          "id": "title",
+          "label": "Title",
+          "default": "Solar Panels"
+        },
+        {
+          "type": "html",
+          "id": "subtitle",
+          "label": "Sub-Title",
+          "default": "Collects"
+        },
+        {
+          "type": "html",
+          "id": "description",
+          "label": "Description",
+          "default": "Solar panels capture solar energy using high-converting solar cells."
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

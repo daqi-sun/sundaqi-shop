@@ -1,0 +1,102 @@
+{{ 'ppsp.css' | asset_url | stylesheet_tag }}
+{{ 'jquery.min.js' | asset_url | script_tag }}
+
+<div class="ppsp-banner">
+  {% assign image = section.settings.mobileImage %}
+  {% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+  <div
+    class="custom-img__wrapper display--mobile"
+    style="padding-top: {{ pt }}%;"
+  >
+    <img
+      class="custom-img"
+      srcset="
+        {{ image | img_url: '500x' }} 500w,
+        {{ image | img_url: '600x' }} 600w,
+        {{ image | img_url: 'master' }} 700w,
+      "
+      alt="{{ image.alt }}"
+    >
+  </div>
+
+  {% assign image = section.settings.image %}
+  {% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+  <div
+    class="custom-img__wrapper display--desktop"
+    style="padding-top: {{ pt }}%;"
+  >
+    <img
+      class="custom-img"
+      srcset="
+        {{ image | img_url: '1000x' }} 1000w,
+        {{ image | img_url: '1200x' }} 1200w,
+        {{ image | img_url: '1400x' }} 1400w,
+        {{ image | img_url: 'master' }} 1600w,
+      "
+      alt="{{ image.alt }}"
+      loading="lazy"
+    >
+  </div>
+
+  <div class="ppsp-banner__content container--short">
+    {% if section.settings.title != blank %}
+      <h1 class="ppsp-banner__content__h1 text--white">
+        {{ section.settings.title }}
+      </h1>
+    {% endif %}
+    {% if section.settings.subtitle != blank %}
+      <div class="ppsp-banner__content__h2 text--white">
+        {{ section.settings.subtitle }}
+      </div>
+    {% endif %}
+  </div>
+  {% if section.settings.coupon_image != blank %}
+    <div class="ppsp-banner__coupon-container">
+      <a href="{{ section.settings.coupon_url }}">
+        <img
+          src="{{ section.settings.coupon_image | img_url: 'master' }}"
+          alt="{{ section.settings.coupon_image.alt }}"
+        >
+      </a>
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "PPSP Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobileImage",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "coupon_image",
+      "label": "Coupon Image"
+    },
+    {
+      "type": "url",
+      "id": "coupon_url",
+      "label": "Coupon URL"
+    },
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title",
+      "default": "Load Shedding Sale"
+    },
+    {
+      "type": "html",
+      "id": "subtitle",
+      "label": "Subtitle"
+    }
+  ]
+}
+{% endschema %}

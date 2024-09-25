@@ -1,0 +1,159 @@
+{% assign count = 0 %}
+{% for block in section.blocks %}
+  {% assign count = count | plus: 1 %}
+{% endfor %}
+
+{% if count < 4 %}
+  <style>
+    @media (min-width: 768px) {
+      .balcony-solar-blog__flex-container {
+        gap: 15px;
+      }
+    }
+  </style>
+{% endif %}
+
+<div class="balcony-solar-blog__section background--white">
+  <div class="container--normal ">
+    {% if count > 3 %}
+      <div class="display--desktop">
+        <div class="swiper-container-blog balcony-solar-blog__content__wrapper">
+          <div class="swiper-wrapper balcony-solar-blog__flex-container">
+            {% for block in section.blocks %}
+              <div class="swiper-slide balcony-solar-blog__block-container background--white hb__border-radius--8">
+                <div class="balcony-solar-blog__image__wrapper ">
+                  <img
+                    class="balcony-solar-blog__image"
+                    loading="lazy"
+                    src="{{ block.settings.image | img_url: 'master' }}"
+                    alt="{{ block.settings.image.alt }}"
+                  >
+                </div>
+                <div class="balcony-solar-blog__content">
+                  <p class="balcony-solar-blog__title hb__text--black">
+                    {{ block.settings.title }}
+                  </p>
+                  <a href="{{ block.settings.url }}" target="_blank" class="balcony-solar-blog__link hb__text--blue">
+                    {{- section.settings.button_text -}}
+                  </a>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+
+    {% else %}
+      <div class="display--desktop">
+        <div class="balcony-solar-blog__content__wrapper">
+          <div class="balcony-solar-blog__flex-container">
+            {% for block in section.blocks %}
+              <div class="balcony-solar-blog__block-container background--white hb__border-radius--8">
+                <div class="balcony-solar-blog__image__wrapper ">
+                  <img
+                    class="balcony-solar-blog__image"
+                    loading="lazy"
+                    src="{{ block.settings.image | img_url: 'master' }}"
+                    alt="{{ block.settings.image.alt }}"
+                  >
+                </div>
+                <div class="balcony-solar-blog__content">
+                  <p class="balcony-solar-blog__title">
+                    {{ block.settings.title }}
+                  </p>
+                  <a href="{{ block.settings.url }}" target="_blank" class="balcony-solar-blog__link hb__text--blue">
+                    {{- section.settings.button_text -}}
+                  </a>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    <div class="display--mobile">
+      <div class="swiper-container-blog balcony-solar-blog__content__wrapper">
+        <div class="swiper-wrapper balcony-solar-blog__flex-container">
+          {% for block in section.blocks %}
+            <div class="swiper-slide balcony-solar-blog__block-container background--white hb__border-radius--8">
+              <div class="balcony-solar-blog__image__wrapper ">
+                <img
+                  class="balcony-solar-blog__image"
+                  loading="lazy"
+                  src="{{ block.settings.image | img_url: 'master' }}"
+                  alt="{{ block.settings.image.alt }}"
+                >
+              </div>
+              <div class="balcony-solar-blog__content">
+                <p class="balcony-solar-blog__title hb__text--black">
+                  {{ block.settings.title }}
+                </p>
+                <a href="{{ block.settings.url }}" target="_blank" class="balcony-solar-blog__link hb__text--blue">
+                  {{- section.settings.button_text -}}
+                </a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var swiper = new Swiper('.swiper-container-blog', {
+      slidesPerView: 'auto',
+      freeMode: true,
+      autoHeight: true,
+      grabCursor: true,
+      spaceBetween: 15,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Balcony Solar Blog",
+  "settings": [
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Mehr erfahren >"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "blog",
+      "name": "Blog",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "steps Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Blog Title",
+          "default": "Balkonkraftwerke mit 1200 Watt – Was ist ab 2023 erlaubt?"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "URL"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

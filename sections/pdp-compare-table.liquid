@@ -1,0 +1,673 @@
+
+{% if section.blocks.size > 0 %}
+    <section id="{{ section.settings.section_id }}" class="{% if section.settings.is_popup %}is-popup hide{% endif %}">
+        <div class="pdp pdp-comparison-table">
+            <div class="pdp-compare-table-container">
+                <div class="pdp-compare-table-header">
+                    {% if section.settings.title != blank %}
+                        <h1>{{ section.settings.title }}</h1>
+                    {% endif %}
+
+                </div>
+
+                {% assign products_length = 0 %}
+                {% if section.settings.product_1_show != blank %}
+                    {% assign products_length = products_length | plus: 1 %}
+                {% endif %}
+                {% if section.settings.product_2_show != blank %}
+                    {% assign products_length = products_length | plus: 1 %}
+                {% endif %}
+                {% if section.settings.product_3_show != blank %}
+                    {% assign products_length = products_length | plus: 1 %}
+                {% endif %}
+                {% if section.settings.product_4_show != blank %}
+                    {% assign products_length = products_length | plus: 1 %}
+                {% endif %}
+                {% if section.settings.product_5_show != blank %}
+                    {% assign products_length = products_length | plus: 1 %}
+                {% endif %}
+                {% if section.settings.product_6_show != blank %}
+                    {% assign products_length = products_length | plus: 1 %}
+                {% endif %}
+
+                <div class="comparison_table_wrapper">
+                <div class="comparison_table_inner">
+                    <div class="comparison_table">
+                        <div class="comparison_feature_row comparison_title_row products-per-row-{{ products_length }}" style="--products-length: {% if products_length > 4 %}4{% else %}{{ products_length }}{% endif %};">
+                            <div class="compare_column compare_feature_title"></div>
+                            <div class="compare_column_wrapper {% if products_length > 4 %}compare_column_slider compare_column_slider_title{% endif %}">
+
+                            {% for i in (1..6) %}
+                                {% capture show_product %}product_{{i}}_show{% endcapture %}
+                                {% capture product %}product_{{i}}{% endcapture %}
+                                {% capture product_image %}product_image_{{i}}{% endcapture %}
+                                {% capture product_title %}product_title_{{i}}{% endcapture %}
+                                {% capture product_subtitle %}product_subtitle_{{i}}{% endcapture %}
+                                {% capture product_btn %}product_btn_{{i}}{% endcapture %}
+                                {% capture btn_url %}product_url_{{i}}{% endcapture %}
+                                {% if section.settings[show_product] %}
+                                <div class="compare_column">
+                                    {% assign product_1 = section.settings[product] %}
+                                        <div class="compare_table_product_inner">
+                                            <div class="compare_table_product_image">
+                                                {% if section.settings[product_image] != blank %}
+                                                    <img src="{{ section.settings[product_image] | img_url: 'medium' }}" alt="{{ product_1.title }}">
+                                                {% else %}
+                                                    <img src="{{ product_1.featured_image | img_url: 'medium' }}" alt="{{ product_1.title }}">
+                                                {% endif %}
+                                            </div>
+                                            <div class="compare_table_product_content">
+                                                <div class="compare_table_product_title">
+                                                    {% if section.settings[product_title] != blank %}
+                                                        <h3>{{ section.settings[product_title] }}</h3>
+                                                    {% else %}
+                                                        <h3>{{ product_1.title }}</h3>
+                                                    {% endif %}
+                                                    {% if section.settings[product_subtitle] != blank %}
+                                                        <div class="compare_table_product_subtitle">{{ section.settings[product_subtitle] }}</div>
+                                                    {% endif %}
+                                                </div>
+                                                <div class="compare_table_product_btn">
+                                                    {% if section.settings[product_btn] != blank and section.settings[btn_url] != blank %}
+                                                        <a href="{{ section.settings[btn_url] }}" class="btn btn-primary">{{ section.settings[product_btn] }}</a>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                        {% endfor %}
+                        </div>
+                    </div>
+                        {% assign block_length = 0 %}
+                        {% for block in section.blocks %}
+                            {% if block.settings.feature_title != blank %}
+                                {% assign block_length = block_length | plus: 1 %}
+                                <div class="comparison_feature_row comparison_content_row products-per-row-{{ products_length }}" style="--products-length: {% if products_length > 4 %}4{% else %}{{ products_length }}{% endif %};">
+                                    <div class="compare_column compare_feature_title">
+                                        <a href="{{ block.settings.feature_title_link }}">
+                                            {% if block.settings.feature_title_image != blank %}
+                                                <img src="{{ block.settings.feature_title_image | img_url: 'small' | replace: '_small', '' }}" alt="{{ block.settings.feature_title_image.alt }}" />
+                                            {% endif %}
+                                            <span>{{ block.settings.feature_title }}</span>
+                                        </a>
+                                    </div>
+                                    <div class="compare_column_wrapper hideMobile {% if products_length > 4 %}compare_column_slider{% endif %}">
+                                        {% assign column_span = '' %}
+                                        {% if section.settings.product_1_show %}
+                                            {% if section.settings.product_2_show and block.settings.merge_feature_value_2 %}
+                                                {% assign column_span = '2' %}
+                                                {% if section.settings.product_3_show and block.settings.merge_feature_value_3 %}
+                                                    {% assign column_span = '3' %}
+                                                    {% if section.settings.product_4_show and block.settings.merge_feature_value_4 %}
+                                                        {% assign column_span = '4' %}
+                                                        {% if section.settings.product_5_show and block.settings.merge_feature_value_5 %}
+                                                            {% assign column_span = '5' %}
+                                                            {% if section.settings.product_6_show and block.settings.merge_feature_value_6 %}
+                                                                {% assign column_span = '6' %}
+                                                            {% endif %}
+                                                        {% endif %}
+                                                    {% endif %}
+                                                {% endif %}
+                                            {% endif %}
+                                            <div class="compare_column" colspan="{{column_span}}">{{ block.settings.feature_value_1 }}</div>
+                                        {% endif %}
+                                        {% assign column_span = '' %}
+                                        {% if section.settings.product_2_show and block.settings.merge_feature_value_2 == false %}
+                                            {% if section.settings.product_3_show and block.settings.merge_feature_value_3 %}
+                                                {% assign column_span = '2' %}
+                                                {% if section.settings.product_4_show and block.settings.merge_feature_value_4 %}
+                                                    {% assign column_span = '3' %}
+                                                    {% if section.settings.product_5_show and block.settings.merge_feature_value_5 %}
+                                                        {% assign column_span = '4' %}
+                                                        {% if section.settings.product_6_show and block.settings.merge_feature_value_6 %}
+                                                            {% assign column_span = '5' %}
+                                                        {% endif %}
+                                                    {% endif %}
+                                                {% endif %}
+                                            {% endif %}
+                                            <div class="compare_column" colspan="{{column_span}}">{{ block.settings.feature_value_2 }}</div>
+                                        {% endif %}
+                                        {% assign column_span = '' %}
+                                        {% if block.settings.merge_feature_value_3 == false and section.settings.product_3_show %}
+                                            {% if section.settings.product_4_show and block.settings.merge_feature_value_4 %}
+                                                {% assign column_span = '2' %}
+                                                {% if section.settings.product_5_show and block.settings.merge_feature_value_5 %}
+                                                    {% assign column_span = '3' %}
+                                                    {% if section.settings.product_6_show and block.settings.merge_feature_value_6 %}
+                                                        {% assign column_span = '4' %}
+                                                    {% endif %}
+                                                {% endif %}
+                                            {% endif %}
+                                            <div class="compare_column" colspan="{{column_span}}">{{ block.settings.feature_value_3 }}</div>
+                                        {% endif %}
+                                        {% assign column_span = '' %}
+                                        {% if block.settings.merge_feature_value_4 == false and section.settings.product_4_show %}
+                                            {% if section.settings.product_5_show and block.settings.merge_feature_value_5 %}
+                                                {% assign column_span = '2' %}
+                                                {% if section.settings.product_6_show and block.settings.merge_feature_value_6 %}
+                                                    {% assign column_span = '3' %}
+                                                {% endif %}
+                                            {% endif %}
+                                            <div class="compare_column" colspan="{{column_span}}">{{ block.settings.feature_value_4 }}</div>
+                                        {% endif %}
+                                        {% assign column_span = '' %}
+                                        {% if block.settings.merge_feature_value_5 == false and section.settings.product_5_show %}
+                                            {% if section.settings.product_6_show and block.settings.merge_feature_value_6 %}
+                                                {% assign column_span = '2' %}
+                                            {% endif %}
+                                            <div class="compare_column" colspan="{{column_span}}">{{ block.settings.feature_value_5 }}</div>
+                                        {% endif %}
+                                        {% if block.settings.merge_feature_value_6 == false and section.settings.product_6_show %}
+                                            <div class="compare_column" colspan="{{column_span}}">{{ block.settings.feature_value_6 }}</div>
+                                        {% endif %}
+                                    </div>
+
+                                    <div class="compare_column_wrapper hideDesktop">
+                                        {% assign column_span = '' %}
+                                        {% if section.settings.product_1_show %}
+                                            {% if section.settings.product_2_show and block.settings.merge_feature_value_2_m %}
+                                                {% assign column_span = '2' %}
+                                                {% if section.settings.product_3_show and block.settings.merge_feature_value_3_m %}
+                                                    {% assign column_span = '3' %}
+                                                    {% if section.settings.product_4_show and block.settings.merge_feature_value_4_m %}
+                                                        {% assign column_span = '4' %}
+                                                        {% if section.settings.product_5_show and block.settings.merge_feature_value_5_m %}
+                                                            {% assign column_span = '5' %}
+                                                            {% if section.settings.product_6_show and block.settings.merge_feature_value_6_m %}
+                                                                {% assign column_span = '6' %}
+                                                            {% endif %}
+                                                        {% endif %}
+                                                    {% endif %}
+                                                {% endif %}
+                                            {% endif %}
+                                            <div class="compare_column" colspan="{{column_span}}">{{ block.settings.feature_value_1 }}</div>
+                                        {% endif %}
+                                        {% assign column_span = '' %}
+                                        {% if section.settings.product_2_show and block.settings.merge_feature_value_2_m == false %}
+                                            {% if section.settings.product_3_show and block.settings.merge_feature_value_3_m %}
+                                                {% assign column_span = '2' %}
+                                                {% if section.settings.product_4_show and block.settings.merge_feature_value_4_m %}
+                                                    {% assign column_span = '3' %}
+                                                    {% if section.settings.product_5_show and block.settings.merge_feature_value_5_m %}
+                                                        {% assign column_span = '4' %}
+                                                        {% if section.settings.product_6_show and block.settings.merge_feature_value_6_m %}
+                                                            {% assign column_span = '5' %}
+                                                        {% endif %}
+                                                    {% endif %}
+                                                {% endif %}
+                                            {% endif %}
+                                            <div class="compare_column" colspan="{{column_span}}">{{ block.settings.feature_value_2 }}</div>
+                                        {% endif %}
+                                        {% assign column_span = '' %}
+                                        {% if block.settings.merge_feature_value_3_m == false and section.settings.product_3_show %}
+                                            {% if section.settings.product_4_show and block.settings.merge_feature_value_4_m %}
+                                                {% assign column_span = '2' %}
+                                                {% if section.settings.product_5_show and block.settings.merge_feature_value_5_m %}
+                                                    {% assign column_span = '3' %}
+                                                    {% if section.settings.product_6_show and block.settings.merge_feature_value_6_m %}
+                                                        {% assign column_span = '4' %}
+                                                    {% endif %}
+                                                {% endif %}
+                                            {% endif %}
+                                            <div class="compare_column" colspan="{{column_span}}">{{ block.settings.feature_value_3 }}</div>
+                                        {% endif %}
+                                        {% assign column_span = '' %}
+                                        {% if block.settings.merge_feature_value_4_m == false and section.settings.product_4_show %}
+                                            {% if section.settings.product_5_show and block.settings.merge_feature_value_5_m %}
+                                                {% assign column_span = '2' %}
+                                                {% if section.settings.product_6_show and block.settings.merge_feature_value_6_m %}
+                                                    {% assign column_span = '3' %}
+                                                {% endif %}
+                                            {% endif %}
+                                            <div class="compare_column" colspan="{{column_span}}">{{ block.settings.feature_value_4 }}</div>
+                                        {% endif %}
+                                        {% assign column_span = '' %}
+                                        {% if block.settings.merge_feature_value_5_m == false and section.settings.product_5_show %}
+                                            {% if section.settings.product_6_show and block.settings.merge_feature_value_6_m %}
+                                                {% assign column_span = '2' %}
+                                            {% endif %}
+                                            <div class="compare_column" colspan="{{column_span}}">{{ block.settings.feature_value_5 }}</div>
+                                        {% endif %}
+                                        {% if block.settings.merge_feature_value_6_m == false and section.settings.product_6_show %}
+                                            <div class="compare_column" colspan="{{column_span}}">{{ block.settings.feature_value_6 }}</div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                {% if block_length > 3 %}
+                    <button class="view_features_link" data-view-more-text="{{ 'sections.product.view_more' | t }} ({{ block_length | minus: 3 }})" data-view-less-text="{{ 'sections.product.view_less' | t }}">
+                        <span>{{ 'sections.product.view_more' | t }} ({{ block_length | minus: 3 }})</span>
+                        <svg width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.2998 1L5.7998 5.5L1.2998 0.999999" stroke="#2164FF"/>
+                        </svg>
+                    </button>
+                {% endif %}
+            </div>
+            </div>
+        </div>
+    </section>
+    <style>
+        .comparison_table .comparison_feature_row{ background-color: {{section.settings.table_cell_color}}; }
+        .comparison_table .comparison_feature_row > div:first-child{ background-color: {{section.settings.table_first_column_color | default: '#fff' }}; }
+        {% unless section.settings.fill_first_row %}
+            .comparison_table .comparison_feature_row:first-child div{ background-color: #fff; }
+        {% endunless %}
+    </style>
+{% endif %}
+
+{% schema %}
+{
+    "name": "PDP Comparison table",
+    "max_blocks": 30,
+    "settings": [
+        {
+            "type": "text",
+            "id": "section_id",
+            "label": "Section ID"
+        },
+        {
+            "type": "checkbox",
+            "id": "is_popup",
+            "label": "Is popup?"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "header",
+            "content": "Table colors"
+        },
+        {
+            "type": "color",
+            "id": "table_first_column_color",
+            "label": "First column color"
+        },
+        {
+            "type": "color",
+            "id": "table_cell_color",
+            "label": "Other columns color"
+        },
+        {
+            "type": "checkbox",
+            "id": "fill_first_row",
+            "label": "Fill first row?"
+        },
+        {
+            "type": "header",
+            "content": "Product 1"
+        },
+        {
+            "type": "checkbox",
+            "id": "product_1_show",
+            "label": "Show"
+        },
+        {
+            "type": "product",
+            "id": "product_1",
+            "label": "Choose product"
+        },
+        {
+            "type": "image_picker",
+            "id": "product_image_1",
+            "label": "Product image"
+        },
+        {
+            "type": "text",
+            "id": "product_title_1",
+            "label": "Product title"
+        },
+        {
+            "type": "richtext",
+            "id": "product_subtitle_1",
+            "label": "Product subtitle"
+        },
+        {
+            "type": "text",
+            "id": "product_btn_1",
+            "label": "Product button text"
+        },
+        {
+            "type": "url",
+            "id": "product_url_1",
+            "label": "Product button url"
+        },
+        {
+            "type": "header",
+            "content": "Product 2"
+        },
+        {
+            "type": "checkbox",
+            "id": "product_2_show",
+            "label": "Show"
+        },
+        {
+            "type": "product",
+            "id": "product_2",
+            "label": "Choose product"
+        },
+        {
+            "type": "image_picker",
+            "id": "product_image_2",
+            "label": "Product image"
+        },
+        {
+            "type": "text",
+            "id": "product_title_2",
+            "label": "Product title"
+        },
+        {
+            "type": "richtext",
+            "id": "product_subtitle_2",
+            "label": "Product subtitle"
+        },
+        {
+            "type": "text",
+            "id": "product_btn_2",
+            "label": "Product button text"
+        },
+        {
+            "type": "url",
+            "id": "product_url_2",
+            "label": "Product button url"
+        },
+        {
+            "type": "header",
+            "content": "Product 3"
+        },
+        {
+            "type": "checkbox",
+            "id": "product_3_show",
+            "label": "Show"
+        },
+        {
+            "type": "product",
+            "id": "product_3",
+            "label": "Choose product"
+        },
+        {
+            "type": "image_picker",
+            "id": "product_image_3",
+            "label": "Product image"
+        },
+        {
+            "type": "text",
+            "id": "product_title_3",
+            "label": "Product title"
+        },
+        {
+            "type": "richtext",
+            "id": "product_subtitle_3",
+            "label": "Product subtitle"
+        },
+        {
+            "type": "text",
+            "id": "product_btn_3",
+            "label": "Product button text"
+        },
+        {
+            "type": "url",
+            "id": "product_url_3",
+            "label": "Product button url"
+        },
+        {
+            "type": "header",
+            "content": "Product 4"
+        },
+        {
+            "type": "checkbox",
+            "id": "product_4_show",
+            "label": "Show"
+        },
+        {
+            "type": "product",
+            "id": "product_4",
+            "label": "Choose product"
+        },
+        {
+            "type": "image_picker",
+            "id": "product_image_4",
+            "label": "Product image"
+        },
+        {
+            "type": "text",
+            "id": "product_title_4",
+            "label": "Product title"
+        },
+        {
+            "type": "richtext",
+            "id": "product_subtitle_4",
+            "label": "Product subtitle"
+        },
+        {
+            "type": "text",
+            "id": "product_btn_4",
+            "label": "Product button text"
+        },
+        {
+            "type": "url",
+            "id": "product_url_4",
+            "label": "Product button url"
+        },
+        {
+            "type": "header",
+            "content": "Product 5"
+        },
+        {
+            "type": "checkbox",
+            "id": "product_5_show",
+            "label": "Show"
+        },
+        {
+            "type": "product",
+            "id": "product_5",
+            "label": "Choose product"
+        },
+        {
+            "type": "image_picker",
+            "id": "product_image_5",
+            "label": "Product image"
+        },
+        {
+            "type": "text",
+            "id": "product_title_5",
+            "label": "Product title"
+        },
+        {
+            "type": "richtext",
+            "id": "product_subtitle_5",
+            "label": "Product subtitle"
+        },
+        {
+            "type": "text",
+            "id": "product_btn_5",
+            "label": "Product button text"
+        },
+        {
+            "type": "url",
+            "id": "product_url_5",
+            "label": "Product button url"
+        },
+        {
+            "type": "header",
+            "content": "Product 6"
+        },
+        {
+            "type": "checkbox",
+            "id": "product_6_show",
+            "label": "Show"
+        },
+        {
+            "type": "product",
+            "id": "product_6",
+            "label": "Choose product"
+        },
+        {
+            "type": "image_picker",
+            "id": "product_image_6",
+            "label": "Product image"
+        },
+        {
+            "type": "text",
+            "id": "product_title_6",
+            "label": "Product title"
+        },
+        {
+            "type": "richtext",
+            "id": "product_subtitle_6",
+            "label": "Product subtitle"
+        },
+        {
+            "type": "text",
+            "id": "product_btn_6",
+            "label": "Product button text"
+        },
+        {
+            "type": "url",
+            "id": "product_url_6",
+            "label": "Product button url"
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Block",
+            "type": "block",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "Feature Title"
+                },
+                {
+                    "type": "text",
+                    "id": "feature_title",
+                    "label": "Title"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "feature_title_image",
+                    "label": "Title Image"
+                },
+                {
+                    "type": "url",
+                    "id": "feature_title_link",
+                    "label": "Title Link"
+                },
+                {
+                    "type": "header",
+                    "content": "Product 1"
+                },
+                {
+                    "type": "text",
+                    "id": "feature_value_1",
+                    "label": "Feature value for product 1"
+                },
+                {
+                    "type": "header",
+                    "content": "Product 2"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "merge_feature_value_2",
+                    "label": "Combine Feature value for product 2(Desktop)"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "merge_feature_value_2_m",
+                    "label": "Combine Feature value for product 2(Mobile)"
+                },
+                {
+                    "type": "text",
+                    "id": "feature_value_2",
+                    "label": "Feature value for product 2"
+                },
+                {
+                    "type": "header",
+                    "content": "Product 3"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "merge_feature_value_3",
+                    "label": "Combine Feature value for product 3(Desktop)"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "merge_feature_value_3_m",
+                    "label": "Combine Feature value for product 3(Mobile)"
+                },
+                {
+                    "type": "text",
+                    "id": "feature_value_3",
+                    "label": "Feature value for product 3"
+                },
+                {
+                    "type": "header",
+                    "content": "Product 4"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "merge_feature_value_4",
+                    "label": "Combine Feature value for product 4(Desktop)"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "merge_feature_value_4_m",
+                    "label": "Combine Feature value for product 4(Mobile)"
+                },
+                {
+                    "type": "text",
+                    "id": "feature_value_4",
+                    "label": "Feature value for product 4"
+                },
+                {
+                    "type": "header",
+                    "content": "Product 5"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "merge_feature_value_5",
+                    "label": "Combine Feature value for product 5(Desktop)"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "merge_feature_value_5_m",
+                    "label": "Combine Feature value for product 5(Mobile)"
+                },
+                {
+                    "type": "text",
+                    "id": "feature_value_5",
+                    "label": "Feature value for product 5"
+                },
+                {
+                    "type": "header",
+                    "content": "Product 6"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "merge_feature_value_6",
+                    "label": "Combine Feature value for product 6(Desktop)"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "merge_feature_value_6_m",
+                    "label": "Combine Feature value for product 6(Mobile)"
+                },
+                {
+                    "type": "text",
+                    "id": "feature_value_6",
+                    "label": "Feature value for product 6"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "PDP Comparison table"
+        }
+    ]
+}
+{% endschema %}

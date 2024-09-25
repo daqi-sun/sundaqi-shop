@@ -1,0 +1,55 @@
+{% if section.settings.image != blank %}
+    <section id="{{ section.settings.section_id }}" class="image-section">
+        <div class="star-page-container">
+            <div class="image-wrapper">
+                <img class="{% if section.settings.custom_width_mobile %}custom-width{% endif %} {% if section.settings.image_m != blank %}hideMobile{% endif %}" style="--mobile-width: {{ section.settings.custom_width }}px;" srcset="{{ section.settings.image | img_url: 'master' }}" alt="{{ section.settings.image.alt }}">
+                {% if section.settings.image_m != blank %}
+                    <img class="hideDesktop {% if section.settings.custom_width_mobile %}custom-width{% endif %}" style="--mobile-width: {{ section.settings.custom_width }}px;" srcset="{{ section.settings.image_m | img_url: 'master' }}" alt="{{ section.settings.image_m.alt }}">
+                {% endif %}
+            </div>
+        </div>
+    </section>
+{% endif %}
+{% schema %}
+{
+    "name": "Image",
+    "presets": [
+        {
+            "name": "Image"
+        }
+    ],
+    "settings": [
+        {
+            "type": "text",
+            "id": "section_id",
+            "label": "Section ID"
+        },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_m",
+            "label": "Mobile Image"
+        },
+        {
+            "type": "checkbox",
+            "id": "custom_width_mobile",
+            "label": "Custom width of image for mobile?"
+        },
+        {
+            "type": "range",
+            "id": "custom_width",
+            "label": "Choose Custom width",
+            "min": 250,
+            "max": 1200,
+            "step": 10,
+            "unit": "px",
+            "default": 1200
+        }
+    ]
+}
+
+{% endschema %}

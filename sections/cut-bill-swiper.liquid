@@ -1,0 +1,348 @@
+{% liquid
+  assign title = 'cut-bill.swiper.title' | t
+  assign subtitle = 'cut-bill.swiper.subtitle' | t
+%}
+
+{% style %}
+  .swiper-right-icon {
+    width: 44px;
+  }
+  @media (max-width: 1023px) {
+    .cut-bill-swiper .cut-bill-btn {
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 900px) {
+    .cut-bill-swiper .cut-bill-btn {
+      font-size: 13px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .cut-bill-swiper .cut-bill-btn {
+      font-size: 20px;
+    }
+    .cut-bill-swiper .swiper-right-icon {
+      width: 44px;
+    }
+    .cut-bill-swiper .swiper-button-next {
+      top: 98%;
+    }
+    .cut-bill-swiper .swiper-button-next:after {
+      content: none;
+    }
+  }
+{% endstyle %}
+
+<div class="cut-bill-section-wrapper w-90">
+  <div id="ind_swiper" class="cut-bill-swiper">
+    <h2>{{ title }}</h2>
+    <h4>{{ subtitle }}</h4>
+
+    <div
+      class="cb-swiper-containter mobile-only"
+      x-data="
+        {
+          initSwiper() {
+            const swiper1 = new Swiper('.cut-bill-swiper .swiper--1', {
+                slidesPerView: 1,
+                spaceBetween: 15,
+                navigation: {
+                  nextEl: '.swiper-button-next',
+                },
+                breakpoints: {
+                  768: {
+                    slidesPerView: 2,
+                    spaceBetween: 15
+                  },
+                  1000: {
+                    slidesPerView: 3,
+                    spaceBetween: 15
+                  },
+                  1200: {
+                    slidesPerView: 4,
+                    spaceBetween: 15
+                  },
+                },
+                pagination: {
+                  el: '.swiper-pagination--1',
+                  type: 'bullets',
+                  clickable: true,
+                },
+              });
+              const swiper2 = new Swiper('.cut-bill-swiper .swiper--2', {
+                slidesPerView: 1,
+                spaceBetween: 15,
+                navigation: {
+                  nextEl: '.swiper-button-next',
+                },
+                breakpoints: {
+                  768: {
+                    slidesPerView: 2,
+                    spaceBetween: 15
+                  },
+                  1000: {
+                    slidesPerView: 3,
+                    spaceBetween: 15
+                  },
+                  1200: {
+                    slidesPerView: 4,
+                    spaceBetween: 15
+                  },
+                },
+                pagination: {
+                  el: '.swiper-pagination--2',
+                  type: 'bullets',
+                  clickable: true,
+                },
+              });
+            function updatePaginationActiveState(swiper) {
+              const activeIndex = swiper.activeIndex;
+              const pagination = swiper.pagination.el;
+              const paginationBullets = pagination.querySelectorAll('.swiper-pagination-bullet');
+              paginationBullets.forEach((bullet, index) => {
+                if (index === activeIndex) {
+                  bullet.classList.add('swiper-pagination-bullet-active');
+                } else {
+                  bullet.classList.remove('swiper-pagination-bullet-active');
+                }
+              });
+            }
+            swiper1.on('slideChange', () => {
+              updatePaginationActiveState(swiper1);
+            });
+            swiper2.on('slideChange', () => {
+              updatePaginationActiveState(swiper2);
+            });
+          },
+          init() {
+            if(typeof Swiper !== 'undefined') {
+              this.initSwiper();
+            } else {
+              setTimeout(() => {
+                this.init();
+              }, 100);
+            }
+          }
+        }
+      "
+      x-init="init"
+    >
+      <div class="swiper swiper--1">
+        <div class="swiper-wrapper">
+          {%- comment %}<locksmith:e055>{% endcomment -%}
+            {%- assign locksmith_494a_forloop__size = 0 %}{% for block in section.blocks %}{% capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == 'true' %}{% assign locksmith_494a_forloop__size = locksmith_494a_forloop__size | plus: 1 %}{% endif %}{% endfor %}{% assign locksmith_494a_forloop__index = nil -%}
+          {%- comment %}</locksmith:e055>{% endcomment -%}
+          {% for block in section.blocks %}
+            {%- comment %}<locksmith:cca3>{% endcomment -%}
+              {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% if locksmith_494a_forloop__index == nil %}{% assign locksmith_494a_forloop__index = 1 %}{% assign locksmith_494a_forloop__index0 = 0 %}{% else %}{% assign locksmith_494a_forloop__index = locksmith_494a_forloop__index | plus: 1 %}{% assign locksmith_494a_forloop__index0 = locksmith_494a_forloop__index0 | plus: 1 %}{% endif %}{% if locksmith_494a_forloop__index == 1 %}{% assign locksmith_494a_forloop__first = true %}{% else %}{% assign locksmith_494a_forloop__first = false %}{% endif %}{% if locksmith_494a_forloop__index == locksmith_494a_forloop__size %}{% assign locksmith_494a_forloop__last = true %}{% else %}{% assign locksmith_494a_forloop__last = false %}{% endif %}{% assign locksmith_494a_forloop__rindex = locksmith_494a_forloop__size | minus: locksmith_494a_forloop__index | minus: 1 %}{% assign locksmith_494a_forloop__rindex0 = locksmith_494a_forloop__size | minus: locksmith_494a_forloop__index0 | minus: 1 %}{% else %}{% continue %}{% endif -%}
+            {%- comment %}</locksmith:cca3>{% endcomment -%}
+            {% if locksmith_494a_forloop__index < 4 %}
+              <div class="swiper-slide cb-swiper-product-card relative">
+                <a
+                  class="cb-swiper-product-img"
+                  target="_blank"
+                  href="{{ block.settings.url }}"
+                >
+                  {% assign image = block.settings.image %}
+                  {% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+                  <div
+                    class="custom-img-wrapper"
+                    style="padding-top: {{ pt }}%;"
+                  >
+                    <img
+                      class="custom-img"
+                      src="{{ image | img_url: '500x' }}"
+                      srcset="
+                        {{ image | img_url: '500x' }} 500w,
+                        {{ image | img_url: '600x' }} 600w,
+                        {{ image | img_url: 'master' }} 700w
+                      "
+                      alt="{{ image.alt }}"
+                      loading="lazy"
+                    >
+                  </div>
+                </a>
+
+                <div class="cut-bill-swiper-product-title">
+                  {{ block.settings.product_info }}
+                  {% comment %} {% render 'cut-bill-swiper-product-title', index: locksmith_494a_forloop__index %} {% endcomment %}
+                </div>
+                <a
+                  class="cut-bill-btn mx-auto"
+                  type="button"
+                  target="_blank"
+                  href="{{ block.settings.url }}"
+                >
+                  {{ 'cut-bill.buttons.atc' | t }}
+                </a>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="swiper-pagination swiper-pagination--1"></div>
+        <div class="swiper-button-next">
+          <div class="swiper-right-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="44"
+              height="44"
+              viewBox="0 0 44 44"
+            >
+              <g transform="translate(-315 -4952)"><circle cx="22" cy="22" r="22" transform="translate(315 4952)" fill="#2988ff"/><g transform="translate(8673.34 -37.302)"><line x2="24.106" transform="translate(-8348.394 5011.301)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/><line x2="10.831" y2="9.801" transform="translate(-8335.118 5001.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/><line y1="9.803" x2="10.831" transform="translate(-8335.118 5011.301)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/></g></g>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="swiper swiper--2">
+        <div class="swiper-wrapper">
+          {%- comment %}<locksmith:2579>{% endcomment -%}
+            {%- assign locksmith_049f_forloop__size = 0 %}{% for block in section.blocks %}{% capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == 'true' %}{% assign locksmith_049f_forloop__size = locksmith_049f_forloop__size | plus: 1 %}{% endif %}{% endfor %}{% assign locksmith_049f_forloop__index = nil -%}
+          {%- comment %}</locksmith:2579>{% endcomment -%}
+          {% for block in section.blocks %}
+            {%- comment %}<locksmith:d1f3>{% endcomment -%}
+              {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% if locksmith_049f_forloop__index == nil %}{% assign locksmith_049f_forloop__index = 1 %}{% assign locksmith_049f_forloop__index0 = 0 %}{% else %}{% assign locksmith_049f_forloop__index = locksmith_049f_forloop__index | plus: 1 %}{% assign locksmith_049f_forloop__index0 = locksmith_049f_forloop__index0 | plus: 1 %}{% endif %}{% if locksmith_049f_forloop__index == 1 %}{% assign locksmith_049f_forloop__first = true %}{% else %}{% assign locksmith_049f_forloop__first = false %}{% endif %}{% if locksmith_049f_forloop__index == locksmith_049f_forloop__size %}{% assign locksmith_049f_forloop__last = true %}{% else %}{% assign locksmith_049f_forloop__last = false %}{% endif %}{% assign locksmith_049f_forloop__rindex = locksmith_049f_forloop__size | minus: locksmith_049f_forloop__index | minus: 1 %}{% assign locksmith_049f_forloop__rindex0 = locksmith_049f_forloop__size | minus: locksmith_049f_forloop__index0 | minus: 1 %}{% else %}{% continue %}{% endif -%}
+            {%- comment %}</locksmith:d1f3>{% endcomment -%}
+            {% if locksmith_049f_forloop__index > 3 %}
+              <div class="swiper-slide cb-swiper-product-card relative">
+                <a
+                  class="cb-swiper-product-img"
+                  target="_blank"
+                  href="{{ block.settings.url }}"
+                >
+                  {% assign image = block.settings.image %}
+                  {% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+                  <div
+                    class="custom-img-wrapper"
+                    style="padding-top: {{ pt }}%;"
+                  >
+                    <img
+                      class="custom-img"
+                      src="{{ image | img_url: '500x' }}"
+                      srcset="
+                        {{ image | img_url: '500x' }} 500w,
+                        {{ image | img_url: '600x' }} 600w,
+                        {{ image | img_url: 'master' }} 700w
+                      "
+                      alt="{{ image.alt }}"
+                      loading="lazy"
+                    >
+                  </div>
+                </a>
+
+                <div class="cut-bill-swiper-product-title">
+                  {{ block.settings.product_info }}
+                  {% comment %} {% render 'cut-bill-swiper-product-title', index: locksmith_049f_forloop__index %} {% endcomment %}
+                </div>
+                <a
+                  class="cut-bill-btn mx-auto"
+                  type="button"
+                  target="_blank"
+                  href="{{ block.settings.url }}"
+                >
+                  {{ 'cut-bill.buttons.atc' | t }}
+                </a>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="swiper-pagination swiper-pagination--2"></div>
+        <div class="swiper-button-next">
+          <div class="swiper-right-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="44"
+              height="44"
+              viewBox="0 0 44 44"
+            >
+              <g transform="translate(-315 -4952)"><circle cx="22" cy="22" r="22" transform="translate(315 4952)" fill="#2988ff"/><g transform="translate(8673.34 -37.302)"><line x2="24.106" transform="translate(-8348.394 5011.301)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/><line x2="10.831" y2="9.801" transform="translate(-8335.118 5001.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/><line y1="9.803" x2="10.831" transform="translate(-8335.118 5011.301)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/></g></g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cb-swiper-product-grid">
+      {%- comment %}<locksmith:2d86>{% endcomment -%}
+        {%- assign locksmith_32e3_forloop__size = 0 %}{% for block in section.blocks %}{% capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == 'true' %}{% assign locksmith_32e3_forloop__size = locksmith_32e3_forloop__size | plus: 1 %}{% endif %}{% endfor %}{% assign locksmith_32e3_forloop__index = nil -%}
+      {%- comment %}</locksmith:2d86>{% endcomment -%}
+      {% for block in section.blocks %}
+        {%- comment %}<locksmith:087b>{% endcomment -%}
+          {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% if locksmith_32e3_forloop__index == nil %}{% assign locksmith_32e3_forloop__index = 1 %}{% assign locksmith_32e3_forloop__index0 = 0 %}{% else %}{% assign locksmith_32e3_forloop__index = locksmith_32e3_forloop__index | plus: 1 %}{% assign locksmith_32e3_forloop__index0 = locksmith_32e3_forloop__index0 | plus: 1 %}{% endif %}{% if locksmith_32e3_forloop__index == 1 %}{% assign locksmith_32e3_forloop__first = true %}{% else %}{% assign locksmith_32e3_forloop__first = false %}{% endif %}{% if locksmith_32e3_forloop__index == locksmith_32e3_forloop__size %}{% assign locksmith_32e3_forloop__last = true %}{% else %}{% assign locksmith_32e3_forloop__last = false %}{% endif %}{% assign locksmith_32e3_forloop__rindex = locksmith_32e3_forloop__size | minus: locksmith_32e3_forloop__index | minus: 1 %}{% assign locksmith_32e3_forloop__rindex0 = locksmith_32e3_forloop__size | minus: locksmith_32e3_forloop__index0 | minus: 1 %}{% else %}{% continue %}{% endif -%}
+        {%- comment %}</locksmith:087b>{% endcomment -%}
+        <div class="cb-swiper-product-card relative">
+          <a
+            class="cb-swiper-product-img"
+            target="_blank"
+            href="{{ block.settings.url }}"
+          >
+            {% assign image = block.settings.image %}
+            {% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+            <div
+              class="custom-img-wrapper"
+              style="padding-top: {{ pt }}%;"
+            >
+              <img
+                class="custom-img"
+                src="{{ image | img_url: '500x' }}"
+                srcset="
+                  {{ image | img_url: '500x' }} 500w,
+                  {{ image | img_url: '600x' }} 600w,
+                  {{ image | img_url: 'master' }} 700w
+                "
+                alt="{{ image.alt }}"
+                loading="lazy"
+              >
+            </div>
+          </a>
+
+          <div class="cut-bill-swiper-product-title">
+            {{ block.settings.product_info }}
+            {% comment %} {% render 'cut-bill-swiper-product-title', index: locksmith_32e3_forloop__index %} {% endcomment %}
+          </div>
+          <a
+            class="cut-bill-btn mx-auto"
+            type="button"
+            target="_blank"
+            href="{{ block.settings.url }}"
+          >
+            {{ 'cut-bill.buttons.atc' | t }}
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Product grid with swiper",
+  "class": "cut-bill-swiper",
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "product_info",
+          "label": "Text"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "URL"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

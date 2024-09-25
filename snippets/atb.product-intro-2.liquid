@@ -1,0 +1,141 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "Product Intro 2",
+  "id": "product-intro-2",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "class": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "type": "checkbox",
+      "id": "atb_enable_checkbox",
+      "label": "Enable section",
+      "default": true,
+      "info": ""
+    },
+    {
+      "id": "atb_title",
+      "type": "text",
+      "label": "Title",
+      "default": "Product Intro Copy",
+      "info": ""
+    },
+    {
+      "id": "atb_heading",
+      "type": "text",
+      "label": "Heading",
+      "default": "Product Intro Copy",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "blocks",
+      "label": "Block ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": "",
+      "repeatable": "section"
+    },
+    {
+      "id": "block_img_link",
+      "type": "image_picker",
+      "label": "Select Image",
+      "repeatable": "section",
+      "info": ""
+    },
+    {
+      "id": "block_img_link_mobile",
+      "type": "image_picker",
+      "label": "Select Image Mobile",
+      "repeatable": "section",
+      "info": ""
+    },
+    {
+      "id": "block_description",
+      "type": "text",
+      "label": "description",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+      "repeatable": "section",
+      "info": ""
+    }
+  ],
+  "warnings": [
+    "repeating image fields may not be properly handled"
+  ]
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_enable_checkbox' -%}
+{%- assign atb_enable_checkbox = val -%}
+{%- include 'atb-render' field:'atb_title' -%}
+{%- assign atb_title = val -%}
+{%- include 'atb-render' field:'atb_heading' -%}
+{%- assign atb_heading = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_img_link' -%}
+{%- assign block_img_link = val -%}
+{%- include 'atb-render' field:'block_img_link_mobile' -%}
+{%- assign block_img_link_mobile = val -%}
+{%- include 'atb-render' field:'block_description' -%}
+{%- assign block_description = val -%}
+{%- if atb_enable_checkbox == blank -%}
+{%- assign atb_enable_checkbox = false -%}
+{%- else -%}
+{%- assign atb_enable_checkbox = true -%}
+{%- endif -%}
+{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section ">
+{% if atb_enable_checkbox %}
+  <section class="product-intro" id="product-intro-2">
+    <div class="white-bg my-md-5 py-md-3 my-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7 mx-auto">
+            <div class="intro-heading">
+              <p class="blue-link mb-0">{{atb_title}}</p>
+              <h2>{{atb_heading}}</h2>
+            </div>
+          </div>
+        </div>
+        {% for block0 in blocks %}
+{%- assign my_image_key1 = block_img_link_mobile[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image1 = images[my_image_key1] -%}
+{%- assign my_image_key0 = block_img_link[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image0 = images[my_image_key0] -%}
+            <div class="pdp-big-img mt-4">
+              <img class="lazyload desktop-image" data-src="{{ my_image0 | img_url: '1800x' }}">
+              <img class="lazyload mobile-image" data-src="{{ my_image1 | img_url: '1200x' }}">
+            </div>
+            <div class="row">
+              <div class="col-lg-7 mx-auto">
+                <div class="intro-heading">
+                  <p class="mt-4 mb-0">{{block_description[forloop.index0]}}</p>
+                </div>
+              </div>
+            </div>
+         {% endfor %}  
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+
+<style>
+</style>
+
+<script type="application/javascript">
+</script>
+</section>

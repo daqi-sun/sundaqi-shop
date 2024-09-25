@@ -1,0 +1,58 @@
+<div
+  class="ecocredits-programme__section background--black"
+  id="_{{- section.settings.nav_1 | downcase | remove: ' ' -}}"
+>
+  <div class="ecocredits-programme__container container--normal">
+    <div class="ecocredits-programme__text__container">
+      {% if section.settings.title != blank %}
+        <h3 class="ecocredits-programme__title ec__text--white">{{ section.settings.title }}</h3>
+      {% endif %}
+      {% if section.settings.subtitle != blank %}
+        <h2 class="ecocredits-programme__subtitle ec__text--white">{{ section.settings.subtitle }}</h2>
+      {% endif %}
+      {% if section.settings.description != blank %}
+        <p class="ecocredits-programme__description ec__text--white">{{ section.settings.description }}</p>
+      {% endif %}
+    </div>
+    {% if section.settings.image != blank %}
+      <img src="{{ section.settings.image | img_url: 'master' }}" alt="{{ section.settings.image.alt }}">
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Ecocredits Programme",
+  "settings": [
+    {
+      "type": "text",
+      "id": "nav_1",
+      "label": "Section ID Should be the same on the navigation on RAL section",
+      "default": "What is the EcoCredits Programme"
+    },
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Section Title",
+      "default": "What is EcoCredits Programme?"
+    },
+    {
+      "type": "html",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "EcoCredits Programme: The Ultimate EcoFlow Experience"
+    },
+    {
+      "type": "html",
+      "id": "description",
+      "label": "Description",
+      "default": "The EcoCredits rewards programme is set up by EcoFlow as a way to give back to every EcoFlow lover. We offer the ultimate benefits, excellent services, and latest updates to our members. Being an EcoCredits member, you are on top of the latest power trends and invited to a variety of special events."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Section Image"
+    }
+  ]
+}
+{% endschema %}

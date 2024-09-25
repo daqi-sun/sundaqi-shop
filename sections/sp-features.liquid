@@ -1,0 +1,133 @@
+<style>
+  .sp-features__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .sp-features__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+
+<div class="sp-features__section sp-features__section-{{ section.id }}">
+  <div class="container--default">
+    <div class="sp-features__text-container">
+      {% if section.settings.title != blank %}
+        <h2 class="sp-features__section-heading text--heading text--white">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+    </div>
+    <div class="sp-features__container">
+      {% for block in section.blocks %}
+        <div class="sp-features__item">
+          <div class="sp-features__image-wrapper">
+            <img
+              class="display--desktop"
+              src="{{ block.settings.image | img_url: 'master' }}"
+              alt="{{ block.settings.image.alt }}"
+            >
+            <img
+              class="display--mobile"
+              src="{{ block.settings.image_mobile | img_url: 'master' }}"
+              alt="{{ block.settings.image_mobile.alt }}"
+            >
+          </div>
+          <div class="sp-features__text-wrapper">
+            <div class="sp-features__title-wrapper">
+              <h3 class="sp-features__title text--white">{{ block.settings.title }}</h3>
+            </div>
+            <div class="sp-features__description-wrapper">
+              <p class="sp-features__description text--dark-white">{{ block.settings.description }}</p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "SP Features",
+  "settings": [
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title",
+      "default": "Why Choose EcoFlow Solar Panels"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image Mobile"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "html",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

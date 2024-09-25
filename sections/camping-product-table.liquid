@@ -1,0 +1,257 @@
+<div class="camping-product-table">
+    <div class="content--wrapper">
+      <div class="heading--wrapper">
+        <h2>{{ section.settings.title }}</h2>
+      </div>
+      <div class="btn--wrapper">
+        <button class="show-more-button">
+          <span>{{ section.settings.button_text }}</span>
+          <img
+            src="https://cdn.shopify.com/s/files/1/1996/9707/files/plus_circled_icon_bbc6f995-666b-4728-b6b2-d058ed120ebd.png?v=1665071205"
+            width="21"
+          >
+        </button>
+      </div>
+      <div class="products-table">
+        <table>
+          <tr>
+            <th class="table-column sticky-col-mob background-gray"></th>
+            <th class="table-column description--primary text-center gotham background-black">
+              <a href="{{ section.settings.url_1 }}" target="_blank"
+                ><img
+                  srcset="{{ section.settings.image_1 | img_url: 'master' }}"
+                  loading="lazy"
+                  alt="{{ section.settings.image_1.alt }}"
+                >
+                <p class="color-teal">
+                  {{ section.settings.title_1 -}}
+                </p>
+              </a>
+            </th>
+            <th class="table-column description--primary text-center gotham background-black">
+              <a href="{{ section.settings.url_2 }}" target="_blank"
+                ><img
+                  srcset="{{ section.settings.image_2 | img_url: 'master' }}"
+                  loading="lazy"
+                  alt="{{ section.settings.image_2.alt }}"
+                >
+                <p class="color-teal">
+                  {{ section.settings.title_2 -}}
+                </p>
+              </a>
+            </th>
+            <th class="table-column description--primary text-center gotham background-black">
+              <a href="{{ section.settings.url_3 }}" target="_blank"
+                ><img
+                  srcset="{{ section.settings.image_3 | img_url: 'master' }}"
+                  loading="lazy"
+                  alt="{{ section.settings.image_3.alt }}"
+                >
+                <p class="color-teal">
+                  {{ section.settings.title_3 -}}
+                </p>
+              </a>
+            </th>
+          </tr>
+          {% for block in section.blocks %}
+            <tr>
+              <td class="description--primary color-white background-black sticky-col-mob first-column">
+                {% if block.settings.image != blank %}
+                  <img
+                    class="desktop-only-inline"
+                    srcset="{{ block.settings.image | img_url: 'master' }}"
+                    loading="lazy"
+                    alt="{{ block.settings.image.alt }}"
+                  >
+                {% endif -%}
+                <p>
+                  <span>{{ block.settings.device_title }}</span>
+                </p>
+              </td>
+              <td class="description--primary-table text-center color-white">
+                {% if block.settings.info_2 == blank %}
+                  <p><span class="empty">N.A.</span></p>
+                {% else %}
+                  <p>{{ block.settings.info_2 }}</p>
+                {% endif %}
+              </td>
+              <td class="description--primary-table text-center color-white">
+                {% if block.settings.info_3 == blank %}
+                  <p><span class="empty">N.A.</span></p>
+                {% else %}
+                  <p>{{ block.settings.info_3 }}</p>
+                {% endif %}
+              </td>
+              <td class="description--primary-table text-center color-white">
+                {% if block.settings.info_4 == blank %}
+                  <p><span class="empty">N.A.</span></p>
+                {% else %}
+                  <p>{{ block.settings.info_4 }}</p>
+                {% endif %}
+              </td>
+            </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $('.show-more-button').click(function () {
+      $(this).parent('.btn--wrapper').next('.products-table').stop(true, true).slideToggle('slow');
+      $(this).toggleClass('open');
+      console.log(this);
+
+      if ($(this).hasClass('open')) {
+        $(this)
+          .html('<span>{{ section.settings.button_text }}</span>  ')
+          .append(
+            '<img src="https://cdn.shopify.com/s/files/1/1996/9707/files/minus_circled_icon_6797c5e0-827b-4a49-a963-4a9fa5019aa0.png?v=1665071205" width="21">'
+          );
+      } else {
+        $(this)
+          .html('<span>{{ section.settings.button_text }}</span>  ')
+          .append(
+            '<img src="https://cdn.shopify.com/s/files/1/1996/9707/files/plus_circled_icon_bbc6f995-666b-4728-b6b2-d058ed120ebd.png?v=1665071205" width="21">'
+          );
+      }
+    });
+  </script>
+
+  {% schema %}
+  {
+    "name": "Camping Product Table",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Section Title",
+        "default": "Portable Power Stations For Camping Comparison",
+        "placeholder": "Section Title"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "Compare",
+        "placeholder": "Button Text"
+      },
+      {
+        "type": "header",
+        "content": "1st Product Column"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_1",
+        "label": "1st Column Product Image"
+      },
+      {
+        "type": "html",
+        "id": "title_1",
+        "label": "1st Product Title",
+        "default": "RIVER 2 <br>256Wh",
+        "placeholder": "1st Product Title"
+      },
+      {
+        "type": "url",
+        "id": "url_1",
+        "label": "1st Product Link"
+      },
+      {
+        "type": "header",
+        "content": "2nd Product Column"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_2",
+        "label": "2nd Column Product Image"
+      },
+      {
+        "type": "html",
+        "id": "title_2",
+        "label": "2nd Product Title",
+        "default": "RIVER 2 <br>256Wh",
+        "placeholder": "2nd Product Title"
+      },
+      {
+        "type": "url",
+        "id": "url_2",
+        "label": "2nd Product Link"
+      },
+      {
+        "type": "header",
+        "content": "3rd Product Column"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_3",
+        "label": "3rd Column Product Image"
+      },
+      {
+        "type": "html",
+        "id": "title_3",
+        "label": "3rd Product Title",
+        "default": "RIVER 2 <br>256Wh",
+        "placeholder": "3rd Product Title"
+      },
+      {
+        "type": "url",
+        "id": "url_3",
+        "label": "3rd Product Link"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product",
+        "name": "Product Specification",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Product Image"
+          },
+          {
+            "type": "text",
+            "id": "device_title",
+            "label": "Device Title",
+            "default": "Phone 11Wh",
+            "placeholder": "Device Title"
+          },
+          {
+            "type": "header",
+            "content": "2nd Column Info"
+          },
+          {
+            "type": "text",
+            "id": "info_2",
+            "label": "2nd Info",
+            "default": "20 charges",
+            "placeholder": "2nd Info"
+          },
+          {
+            "type": "header",
+            "content": "3rd Column Info"
+          },
+          {
+            "type": "text",
+            "id": "info_3",
+            "label": "3rd Info",
+            "default": "20 charges",
+            "placeholder": "3rd Info"
+          },
+          {
+            "type": "header",
+            "content": "4th Column Info"
+          },
+          {
+            "type": "text",
+            "id": "info_4",
+            "label": "4th Info",
+            "default": "20 charges",
+            "placeholder": "4th Info"
+          }
+        ]
+      }
+    ]
+  }
+  {% endschema %}

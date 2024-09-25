@@ -1,0 +1,100 @@
+{%- liquid
+  assign section_id = section.settings.section_id | default: section.id
+  assign section_title = section.settings.title
+  assign in_the_box_deskop_image = section.settings.in_the_box_deskop_image
+-%}
+<section id="section-{{ section_id }}" class="whats-in-the-box__section" data-section-id="{{ section.id }}" class="fade-in-animation">
+  <div class="page-width-small">
+    {% if section_title != blank %}
+    <div class="section-title">
+      <h2>{{ section_title }}</h2>
+    </div>
+    {% endif %}
+    {% if in_the_box_deskop_image != blank %}
+    <div class="whats-in-the-box__image-container">
+      <img class="whats-in-the-box__image" src="{{ in_the_box_deskop_image | image_url }}" loading="lazy" width="{{ in_the_box_deskop_image.width }}" height="{{ in_the_box_deskop_image.height }}" alt="{{ in_the_box_deskop_image.alt }}">
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+.whats-in-the-box__image {
+  -khtml-user-select: none;
+  -o-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.whats-in-the-box__image-container {
+  background-color: #f8f8f8;
+  border-radius: 16px;
+  padding: 0;
+}
+.whats-in-the-box__image {
+  display: block;
+  margin: auto;
+  height: auto;
+}
+
+@media (max-width: 749px) {
+  .whats-in-the-box__slider-item {
+    width: 41vw;
+    margin-right: 19px;
+  }
+  .whats-in-the-box__slider-image {
+    background-color: #f8f8f8;
+    position: relative;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+  }
+  .whats-in-the-box__slider-image img {
+    border-radius: 8px;
+  }
+  .whats-in-the-box__slider-details {
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    padding-right: 16px;
+  }
+  .whats-in-the-box__slider .flickity-page-dots {
+    padding-top: 32px;
+  }
+  .whats-in-the-box__slider .flickity-page-dots .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "What's In The Box (PDP)",
+  "class": "index-section",
+  "settings": [
+    {
+      "type":"text",
+      "id":"section_id",
+      "label":"Section id"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "What's In The Box"
+    },
+    {
+      "type": "image_picker",
+      "id": "in_the_box_deskop_image",
+      "label": "Image (Desktop)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "What's In The Box (PDP)",
+      "category": "Product"
+    }
+  ]
+}
+{% endschema %}

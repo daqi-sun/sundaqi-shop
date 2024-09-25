@@ -1,0 +1,98 @@
+
+<section id="section-{{ section.id }}" class="section-{{ section.id }} {% unless section.settings.show_mobile %}hideMobile{% endunless %}" data-section-id="{{ section.id }}" data-section-type="custom-content" style="background-color: {{ section.settings.section_background }};">
+
+<div class="star-page-container">
+   {% if section.settings.custom_liquid != blank %}
+    {{ section.settings.custom_liquid }}
+  {% endif %}
+</div>
+</section>
+
+<style>
+    .section-{{ section.id }}{
+        padding: {{ section.settings.section_top_space }}px 0 {{ section.settings.section_bottom_space }}px 0;
+    }
+    @media screen and (max-width: 749px){
+        .section-{{ section.id }}{
+          padding: {{ section.settings.section_top_space_m }}px 0 {{ section.settings.section_bottom_space_m }}px 0;
+        }
+    }
+</style>
+{% schema %}
+  {
+    "name": "Star_custom_liquid",
+    "settings": [
+        {
+            "type":"color",
+            "id":"section_background",
+            "label":"Section background color"
+        },
+        {
+            "type": "text",
+            "id": "section_id",
+            "label": "Section ID"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_mobile",
+            "label": "Show in Mobile"
+        },
+        {
+            "type": "header",
+            "content": "Section spacing"
+        },
+        {
+            "type": "range",
+            "id": "section_top_space",
+            "label": "Top space(Desktop)",
+            "min": 0,
+            "max": 150,
+            "step": 5,
+            "unit": "px",
+            "default": 120
+        },
+        {
+            "type": "range",
+            "id": "section_bottom_space",
+            "label": "Bottom space(Desktop)",
+            "min": 0,
+            "max": 150,
+            "step": 5,
+            "unit": "px",
+            "default": 40
+        },
+        {
+            "type": "range",
+            "id": "section_top_space_m",
+            "label": "Top space(Mobile)",
+            "min": 0,
+            "max": 80,
+            "step": 5,
+            "unit": "px",
+            "default": 40
+        },
+        {
+            "type": "range",
+            "id": "section_bottom_space_m",
+            "label": "Bottom space(Mobile)",
+            "min": 0,
+            "max": 80,
+            "step": 5,
+            "unit": "px",
+            "default": 40
+        },
+        {
+            "type": "liquid",
+            "id": "custom_liquid",
+            "label": "Custom liquid"
+        }
+  ],
+  "presets": [
+    {
+      "name": "Star_custom_liquid",
+      "category":"Custom Sections"
+    }
+  ]
+  }
+{% endschema %}
+

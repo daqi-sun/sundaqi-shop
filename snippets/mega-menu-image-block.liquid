@@ -1,0 +1,26 @@
+{% for j in (1..6) %}
+    {% capture block_image %}block_{{i}}_image_{{j}}{% endcapture %}
+    {% capture block_image_content %}block_{{i}}_image_{{j}}_content{% endcapture %}
+    {% capture block_image_link %}block_{{i}}_image_{{j}}_link{% endcapture %}
+    {% capture block_text_color %}block_{{i}}_image_{{j}}_color{% endcapture %}
+    {% if mega_menu_block.settings[block_image] != blank %}
+    <div class="mega_menu_image_box">
+      <div style="position: relative;">
+      {% if mega_menu_block.settings[block_image_link] != blank %}
+        <a href="{{ mega_menu_block.settings[block_image_link] }}">
+      {% endif %}
+        <div class="mega_menu_image_box_image">
+          <img src="{{ mega_menu_block.settings[block_image] | img_url: 'master' }}" alt="{{ mega_menu_block.settings[block_title] | escape }}" />
+        </div>
+        {% if mega_menu_block.settings[block_image_content] != blank %}
+          <div class="mega_menu_image_box_content" style="color: {{ mega_menu_block.settings[block_text_color] }};">
+            {{ mega_menu_block.settings[block_image_content] }}
+          </div>
+        {% endif %}
+      {% if mega_menu_block.settings[block_image_link] != blank %}
+        </a>
+      {% endif %}
+      </div>
+    </div>
+    {% endif %}
+{% endfor %}

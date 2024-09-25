@@ -1,0 +1,52 @@
+{% comment %} Promotion Message Criteria {% endcomment %}
+{%- liquid
+  assign pm_enable_tier1 = settings.pm_enable_tier1
+  assign pm_pricefrom_tier1 = settings.pm_pricefrom_tier1 | append: '00' | default: 0 | plus: 0
+  assign pm_priceto_tier1 = settings.pm_priceto_tier1 | append: '00' | default: 0 | plus: 0
+  assign pm_tier1 = settings.pm_tier1
+  assign pm_success_tier1 = settings.pm_success_tier1
+  assign pm_enable_tier2 = settings.pm_enable_tier2
+  assign pm_pricefrom_tier2 = settings.pm_pricefrom_tier2 | append: '00' | default: 0 | plus: 0
+  assign pm_priceto_tier2 = settings.pm_priceto_tier2 | append: '00' | default: 0 | plus: 0
+  assign pm_tier2 = settings.pm_tier2
+  assign pm_success_tier2 = settings.pm_success_tier2
+  assign pm_enable_tier3 = settings.pm_enable_tier3
+  assign pm_pricefrom_tier3 = settings.pm_pricefrom_tier3 | append: '00' | default: 0 | plus: 0
+  assign pm_priceto_tier3 = settings.pm_priceto_tier3 | append: '00' | default: 0 | plus: 0
+  assign pm_tier3 = settings.pm_tier3
+  assign pm_success_tier3 = settings.pm_success_tier3
+  assign cart_total_price = cart.total_price
+
+  if pm_enable_tier1 and cart_total_price >= pm_pricefrom_tier1 and cart_total_price <= pm_priceto_tier1
+    assign toggle_pm = 'show'
+    assign amount = pm_priceto_tier1 | minus: cart_total_price | replace: '.' , '' | money_with_currency
+    assign promotion_message = pm_tier1 | replace: '[amount]' , amount
+  elsif pm_enable_tier2 and cart_total_price >= pm_pricefrom_tier2 and cart_total_price <= pm_priceto_tier2
+    assign toggle_pm = 'show'
+    assign amount = pm_priceto_tier2 | minus: cart_total_price | replace: '.' , '' | money_with_currency
+    assign promotion_message = pm_tier2 | replace: '[amount]' , amount
+  elsif pm_enable_tier3 and cart_total_price >= pm_pricefrom_tier3 and cart_total_price <= pm_priceto_tier3
+    assign toggle_pm = 'show'
+    assign amount = pm_priceto_tier3 | minus: cart_total_price | replace: '.' , '' | money_with_currency
+    assign promotion_message = pm_tier3 | replace: '[amount]' , amount
+  elsif pm_enable_tier1 and pm_enable_tier2 == false and pm_enable_tier3 == false and cart_total_price > pm_priceto_tier1
+    assign toggle_pm = 'show'
+    assign promotion_message = pm_success_tier1
+  elsif pm_enable_tier1 and pm_enable_tier3 and cart_total_price < pm_priceto_tier3
+    assign toggle_pm = 'show'
+    assign promotion_message = pm_success_tier1
+  elsif pm_enable_tier2 and pm_enable_tier3 == false and cart_total_price > pm_priceto_tier2
+    assign toggle_pm = 'show'
+    assign promotion_message = pm_success_tier2
+  elsif pm_enable_tier3 and cart_total_price > pm_priceto_tier3
+    assign toggle_pm = 'show'
+    assign promotion_message = pm_success_tier3
+  else
+    assign promotion_message = ''
+    assign toggle_pm = 'hide'
+  endif
+-%}
+
+<div class="promotion-message-wrapper promotion-message--cart small--text-center {{ toggle_pm }}">
+  <img src="{{ 'icon-gift.png' | asset_url }}" /> {{ promotion_message }}
+</div>

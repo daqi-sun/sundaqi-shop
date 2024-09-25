@@ -1,0 +1,199 @@
+{% assign showFormLabels = section.settings.showFormLabels %}
+
+<section id="section-{{ section.id }}" data-section-id="{{ section.id }}" class='fade-in-animation'>
+
+  <div class="newsletter-section">
+    <div class="page-width-small">
+      <div class="section-header text-center homepage_subtitle_style_{{settings.homepage_subtitle_color}}">
+
+
+        {% if section.settings.subtitle != blank %}
+       <span class='h5'>{{ section.settings.subtitle  }}</span>
+        {% endif %}
+        {% if section.settings.section_title != blank %}
+        <h2 class="h2">{{ section.settings.section_title | escape }}</h2>
+        {% endif %}
+
+        {% if section.settings.subheading != blank %}
+        <div class="rte">{{ section.settings.subheading }}</div>
+        {% endif %}
+      </div>
+
+      {% if section.settings.form_id != blank %}
+      <form id="klaviyo_signup" class="klaviyo_gdpr_embed_Udst7w" action="//manage.kmail-lists.com/subscriptions/subscribe" data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe" method="GET" target="_blank" novalidate="novalidate">
+        <input type="hidden" name="g" value="{{ section.settings.form_id }}">
+        <input type="hidden" name="$fields" value="$consent">
+        <input type="hidden" name="$list_fields" value="$consent">
+        <div class="klaviyo_form_fields">
+            <div class="klaviyo_messages">
+              <div class="success_message" style="display:none;"></div>
+              <div class="error_message" style="display:none;"></div>
+            </div>
+            <div class="contact-form klaviyo_field_group">
+                <input class="Form__Input" type="email" value="" name="email" id="k_id_email" placeholder="Email address*" />
+                <div class="input-group__btn-wrapper klaviyo_form_actions"><button type="submit" class="btn klaviyo_submit_button">{{ section.settings.btn_text | default: 'Subscribe' }}</button></div>
+            </div>
+        </div>
+        </form>
+
+        <script type="text/javascript" src="//www.klaviyo.com/media/js/public/klaviyo_subscribe.js"></script>
+        <script type="text/javascript">
+            KlaviyoSubscribe.attachToForms('#klaviyo_signup', {
+                hide_form_on_success: true
+            });
+        </script>
+        {% endif %}
+    </div>
+  </div>
+</section>
+
+{% assign removeBottomMargin = section.settings.removeBottomMargin %}
+
+{% if section.settings.section_bg_color != blank %}
+<style>
+  #shopify-section-{{ section.id }} {
+    background-color: {{section.settings.section_bg_color}};
+    padding-top:35px;
+    margin-bottom:35px;
+  }
+
+  {% if section.settings.section_color != blank %}
+  #shopify-section-{{ section.id }} p,
+  #shopify-section-{{ section.id }} h2,
+  #shopify-section-{{ section.id }} .klaviyo_messages {
+    color: {{section.settings.section_color }};
+  }
+
+   {% if settings.homepage_subtitle_color == 'match_header' %}
+      #section-{{ section.id }}  .section-header .h5 {
+      color: {{ section.settings.section_color }};
+    }
+    #section-{{ section.id }}  .section-header .h5:before {
+      background: {{ section.settings.section_color }};
+    }
+    {% endif %}
+
+  {% endif %}
+
+  #shopify-section-{{ section.id }} .Form__Input  {
+    background-color: var(--color-body);
+      }
+  @media only screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} {
+    	padding-top:55px;
+      margin-bottom:55px;
+    }
+  }
+</style>
+{% endif %}
+{% if removeBottomMargin %}
+<style>
+  #shopify-section-{{ section.id }} {
+    margin-bottom:0;
+  }
+</style>
+  {% endif %}
+
+
+{% schema %}
+{
+  "name": "Klaviyo form",
+  "class": "index-section index-section--flush index-newsletter klaviyo-form-section",
+  "settings": [
+  {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "t:sections.newsletter.settings.section_bg_color.label"
+},
+  {
+      "type": "color",
+      "id": "section_color",
+      "label": "t:sections.newsletter.settings.section_color.label"
+},
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "t:sections.newsletter.settings.section_title.label",
+      "default": {
+        "cs": "Přihlaste se k odběru novinek",
+        "da": "Tilmeld dig vores nyhedsbrev",
+        "de": "Unseren Newsletter abonnieren",
+		 "en": "Subscribe to our newsletter",
+
+        "es": "Suscríbete a nuestro boletín de noticias",
+        "fi": "Tilaa uutiskirjeemme",
+        "fr": "S'inscrire à la newsletter",
+        "it": "Iscriviti alla nostra newsletter",
+        "ja": "ストアからのお知らせを受け取る",
+        "ko": "뉴스 레터 구독",
+        "nb": "Abonner på nyhetsbrevet vårt",
+        "nl": "Abonneren op onze nieuwsbrief",
+        "pl": "Zapisz się do naszego newslettera",
+        "pt-BR": "Assine a nossa newsletter",
+        "pt-PT": "Subscreva a nossa newsletter",
+        "sv": "Prenumerera på vårt nyhetsbrev",
+        "th": "สมัครรับจดหมายข่าวของเรา",
+        "tr": "Bültenimize abone olun",
+        "vi": "Đăng ký nhận bản tin",
+        "zh-CN": "订阅我们的新闻通讯",
+        "zh-TW": "訂閱我們的電子報"
+      }
+    },
+  {
+      "type": "text",
+      "id": "subtitle",
+      "label": "t:sections.newsletter.settings.subtitle.label"
+},
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "t:sections.newsletter.settings.subheading.label",
+      "default": {
+        "cs": "<p>Získejte informace o propagačních akcích, nových produktech a slevách – přímo do své schránky.</p>",
+        "da": "<p>Reklamer, nye produkter og salg. Direkte i din indbakke.</p>",
+        "de": "<p>Werbeaktionen, neue Produkte und Sonderangebote. Direkt in deinem Posteingang.</p>",
+		 "en": "<p>Promotions, new products and sales. Directly to your inbox.</p>",
+        "es": "<p>Promociones, nuevos productos y ofertas. Directamente a tu bandeja de entrada.</p>",
+        "fi": "<p>Kampanjat, uudet tuotteet ja myynti. Suoraan saapuneet-kansioosi</p>",
+        "fr": "<p>Promotions, nouveaux produits et soldes. Directement dans votre boîte de réception.</p>",
+        "it": "<p>Promozioni, nuovi prodotti e offerte. Direttamente nella tua casella di posta.</p>",
+        "ja": "<p>新商品やセール情報などのお得な情報をお届けします。</p>",
+        "ko": "<p>프로모션, 신제품, 판매. 받은 편지함으로 바로 이동.</p>",
+        "nb": "<p>Kampanjer, nye produkter og salg. Direkte i innboksen din.</p>",
+        "nl": "<p>Promoties, nieuwe producten en uitverkoop rechtstreeks in je inbox.</p>",
+        "pl": "<p>Promocje, nowe produkty i wyprzedaże. Bezpośrednio do Twojej skrzynki odbiorczej.</p>",
+        "pt-BR": "<p>Promoções, novos produtos e vendas. Diretamente para sua caixa de entrada.</p>",
+        "pt-PT": "<p>Promoções, novos produtos e ofertas. Diretamente na sua caixa de entrada.</p>",
+        "sv": "<p>Kampanjer, nya produkter och försäljning. Direkt till din inkorg.</p>",
+        "th": "<p>โปรโมชัน สินค้าใหม่ และการลดราคา ตรงสู่กล่องจดหมายเข้าของคุณ</p>",
+        "tr": "<p>Promosyonlar, yeni ürünler ve indirimler. Doğrudan gelen kutunuzda.</p>",
+        "vi": "<p>Khuyến mãi, sản phẩm mới và chương trình giảm giá. Trực tiếp vào hộp thư đến của bạn.</p>",
+        "zh-CN": "<p>促销、新产品和销售。直接发送到您的收件箱。</p>",
+        "zh-TW": "<p>讓您直接在收件匣內收取促銷活動、最新產品和特賣活動訊息。</p>"
+      }
+    },
+    {
+        "type": "text",
+        "id": "btn_text",
+        "label": "Button text"
+  },
+  {
+      "type": "text",
+      "id": "form_id",
+      "label": "Klaviyo form ID"
+},
+    {
+		"type":"checkbox",
+		"id":"removeBottomMargin",
+		"label": "t:sections.newsletter.settings.removeBottomMargin.label",
+		"info": "t:sections.newsletter.settings.removeBottomMargin.info"
+	}
+  ],
+  "presets": [
+    {
+      "name": "Klaviyo form",
+      "category":"Custom Sections"
+    }
+  ]
+}
+{% endschema %}

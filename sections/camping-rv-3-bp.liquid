@@ -1,0 +1,194 @@
+<div class="camping-rv-bp__section">
+  <div class="container--normal hb__text--center">
+    <div class="camping-rv-bp__text-container">
+      {% if section.settings.title != blank %}
+        <h2 class="camping-rv-bp__heading hb__text--heading hb__text--black">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+      {% if section.settings.subtitle != blank %}
+        <p class="camping-rv-bp__description hb__text--description hb__text--black">
+          {{ section.settings.subtitle }}
+        </p>
+      {% endif %}
+    </div>
+    <div class="camping-rv-bp__image__container">
+      <div class="camping-rv-bp__flex-container container--flex">
+        <div class="camping-rv-bp__image__wrapper ">
+          <img
+            class="camping-rv-bp__image display--desktop"
+            loading="lazy"
+            src="{{ section.settings.image | img_url: 'master' }}"
+            alt="{{ section.settings.image.alt }}"
+          >
+          <img
+            class="camping-rv-bp__image display--mobile"
+            loading="lazy"
+            src="{{ section.settings.image_mobile | img_url: 'master' }}"
+            alt="{{ section.settings.image_mobile.alt }}"
+          >
+        </div>
+      </div>
+    </div>
+    {% for block in section.blocks %}
+      <div
+        class="
+            camping-rv-bp__container
+          {% if block.settings.image_position == 'right' %}
+            image--right
+            {% else %}
+            image--left
+          {% endif %}
+          hb__border-radius--8
+        "
+      >
+        <div class="camping-rv-bp__text__container">
+          {% if block.settings.title != blank %}
+            <h2 class="camping-rv-bp__title {% if block.settings.heading_size == 'heading' %} hb__text--heading {% else %} hb__text--subheading {% endif %}">
+              {{ block.settings.title }}
+            </h2>
+          {% endif %}
+          {% if block.settings.subtitle != blank %}
+            <p class="camping-rv-bp__subtitle">{{ block.settings.subtitle }}</p>
+          {% endif %}
+          {% if block.settings.description != blank %}
+            <span class="hb__text--description hb__text--black hb__text--left">{{ block.settings.description }}</span>
+          {% endif %}
+          {% if block.settings.url != blank %}
+            <a
+              class="btn--container"
+              href="{{ block.settings.url }}"
+              target="_blank"
+            >
+              <div class="balcony-solar-bwp__btn hb__btn hb__text--white background--blue">
+                {{ section.settings.button_text }}
+              </div>
+            </a>
+          {% endif %}
+        </div>
+        <div class="camping-rv-bp__image__container">
+          {% if block.settings.image != blank %}
+            <a href="{{ block.settings.url }}" target="_blank">
+              <img
+                class="display--desktop"
+                src="{{ block.settings.image | img_url: 'master' }}"
+                alt="{{ block.settings.image.alt }}"
+            ></a>
+            <a href="{{ block.settings.url }}" target="_blank">
+              <img
+                class="display--mobile"
+                src="{{ block.settings.image_mobile | img_url: 'master' }}"
+                alt="{{ block.settings.image_mobile.alt }}"
+              >
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Camping RV BP",
+  "max_blocks": 2,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Stromspeicher von EcoFlow – stets mit Energie versorgt "
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Hat Ihnen schon einmal jemand gesagt, dass sich Solaranlagen und Stromspeicher gar nicht lohnen würden und dabei zu viel Strom verschwendet werde? Bitte schenken Sie diesem Gerücht keinen Glauben! EcoFlow beweist Ihnen gerne das Gegenteil: Unsere Solar- und Batteriespeicher machen möglich, wovon wir vor einigen Jahren nur träumen konnten. Nachhaltiger, selbst erzeugter Strom kann in unseren Solaranlagen mit Speicher nicht nur effizient erzeugt werden – er wird auch so lange gespeichert, bis wir ihn in unseren Haushaltsgeräten benötigen."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Section Image Desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Section Image Mobile"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "pwt",
+      "name": "Product with Text",
+      "settings": [
+        {
+          "type": "select",
+          "id": "image_position",
+          "label": "Set Section Image Position",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "right",
+          "info": "Set Section Image Position"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "label": "Set Section Heading Size",
+          "options": [
+            {
+              "value": "heading",
+              "label": "Heading"
+            },
+            {
+              "value": "subheading",
+              "label": "Subheading"
+            }
+          ],
+          "default": "heading",
+          "info": "Set Section Heading Size"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Section Image Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Section Image Mobile"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Section Title",
+          "default": "Leise, sicher und emissionsfrei – Solaranlagen mit Stromspeicher für Ihr Zuhause"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Section Subtitle",
+          "default": "Leise, sicher und emissionsfrei – Solaranlagen mit Stromspeicher für Ihr Zuhause"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Button Link"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

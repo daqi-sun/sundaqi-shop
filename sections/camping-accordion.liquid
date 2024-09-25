@@ -1,0 +1,131 @@
+<div class="camping-accordion">
+    <div class="desktop-only">
+      <div class="content--flex">
+        <div class="content--wrapper flex-item">
+          <h2>{{ section.settings.title }}</h2>
+          <div class="show-content">
+            {% for block in section.blocks %}
+              <div
+                class="
+                  content-slide {% if forloop.index0 == 0 %}
+                      active-slide
+                  {% endif %}
+                "
+              >
+                <h3 class="accordion-title">{{ block.settings.title }}</h3>
+                <p
+                  class="accordion-desc"
+                  {% if forloop.index0 != 0 %}
+                    style="display:none;"
+                  {% endif %}
+                >
+                  {{ block.settings.p }}
+                </p>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="image--wrapper">
+          <img
+            class="image-block"
+            srcset="{{ section.settings.image | img_url: 'master' }}"
+            alt="{{ section.settings.image.alt }}"
+            loading="lazy"
+          >
+        </div>
+      </div>
+    </div>
+    <div class="mobile-only">
+      <h2>{{ section.settings.title }}</h2>
+      <div class="image--wrapper">
+        <img
+          class="image-block"
+          srcset="{{ section.settings.image | img_url: 'master' }}"
+          alt="{{ section.settings.image.alt }}"
+          loading="lazy"
+        >
+      </div>
+      <div class="mobile-content--wrapper">
+        <div class="mobile-content-slider">
+          {% for block in section.blocks %}
+            <div
+              class="content-slide"
+            >
+              <h3 class="slider-title">{{ block.settings.title }}</h3>
+              <p
+                class="slider-desc"
+              >
+                {{ block.settings.p }}
+              </p>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $('.accordion-title').click(function () {
+      if ($(this).parent('.content-slide').hasClass('active-slide')) {
+        return false;
+      }
+      $(this)
+        .parents('.show-content')
+        .children('.content-slide')
+        .each(function () {
+          if ($(this).hasClass('active-slide')) {
+            $(this).children('.accordion-desc').slideToggle('slow');
+            $(this).removeClass('active-slide');
+          }
+        });
+      $(this).next('.accordion-desc').slideToggle('slow');
+      $(this).parent('.content-slide').addClass('active-slide');
+    });
+
+    $('.mobile-content-slider').slick({
+      dots: true,
+      slidesToShow: 1,
+      adaptiveHeight: false,
+      arrows: false,
+    });
+  </script>
+
+  {% schema %}
+  {
+    "name": "Camping Accordion",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "What is the difference between a portable power station and a solar generator for camping?"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "accordion",
+        "name": "Accordion Content",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "A portable power station"
+          },
+          {
+            "type": "textarea",
+            "id": "p",
+            "label": "Content Description",
+            "default": "also known as a battery pack, is a device that stores energy, typically using a lithium-ion, LFP, or LiFeP04 battery. A PPS provides electrical power on the go when traditional on-grid power is unavailable. Portable power stations are invaluable for camping and other outdoor activities, making it effortless to charge personal electronic devices like smartphones and laptops and run small appliances while off-grid.",
+            "placeholder": "Content Description"
+          }
+        ]
+      }
+    ]
+  }
+  {% endschema %}

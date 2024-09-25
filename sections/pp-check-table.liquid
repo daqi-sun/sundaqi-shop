@@ -1,0 +1,284 @@
+<style>
+  .pp-check-table__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .pp-check-table__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+
+<div class="pp-check-table__section pp-check-table__section-{{ section.id }} background--dark-white">
+  <div class="container--default">
+    <div class="pp-check-table__content-container">
+      <div class="pp-check-table__text-container">
+        {% if section.settings.title != blank %}
+          <h2 class="pp-check-table__section-heading text--heading text--black">
+            {{ section.settings.title }}
+          </h2>
+        {% endif %}
+        {% if section.settings.subtitle != blank %}
+          <p class="pp-check-table__section-description text--description text--gray">
+            {{ section.settings.subtitle }}
+          </p>
+        {% endif %}
+      </div>
+      <div class="pp-check-table__image-wrapper">
+        <img
+          class="display--desktop"
+          src="{{ section.settings.image | img_url: 'master' }}"
+          alt="{{ section.settings.image.alt }}"
+        >
+        <img
+          class="display--mobile"
+          src="{{ section.settings.image_mobile | img_url: 'master' }}"
+          alt="{{ section.settings.image_mobile.alt }}"
+        >
+      </div>
+    </div>
+  </div>
+  <div class="pp-check-table__wrapper ">
+    <div class="pp-check-table__container background--white">
+      <table class="pp-check-table">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'table_head' %}
+              <thead>
+                <tr>
+                  <th class="sticky-col-mob background--white">
+                    <div class="sticky-content" style="height: 98px;"></div>
+                  </th>
+                  <th class="pp-check-table__column__title pp-check-table__column-heading text--center text--black">
+                    {{ block.settings.first_row_title }}
+                  </th>
+                  <th class="pp-check-table__column__title pp-check-table__column-heading text--center text--black">
+                    {{ block.settings.second_row_title }}
+                  </th>
+                  <th class="pp-check-table__column__title pp-check-table__column-heading text--center text--black">
+                    {{ block.settings.third_row_title }}
+                  </th>
+                  <th class="pp-check-table__column__title pp-check-table__column-heading text--center text--black">
+                    {{ block.settings.fourth_row_title }}
+                  </th>
+                </tr>
+              </thead>
+          {% endcase %}
+        {% endfor %}
+
+        <tbody>
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'table_details' %}
+                {% assign loop_index = forloop.index | modulo: 2 %}
+                {% if loop_index == 1 %}
+                  {% assign row_color = 'background--white' %}
+                {% else %}
+                  {% assign row_color = 'background--light-gray-table' %}
+                {% endif %}
+                <tr class="pp-check-table__details">
+                  <td class="pp-check-table__row__title  pp-check-table__title {{ row_color }} sticky-col-mob text--black">
+                    <div class="sticky-content">{{ block.settings.row_title }}</div>
+                  </td>
+                  <td class="text--center {{ row_color }}">
+                    {% if block.settings.first_column %}
+                      {% render 'icon-colored-check' %}
+                    {% else %}
+                      {% render 'icon-colored-cross' %}
+                    {% endif %}
+                  </td>
+                  <td class="text--center {{ row_color }}">
+                    {% if block.settings.second_column %}
+                      {% render 'icon-colored-check' %}
+                    {% else %}
+                      {% render 'icon-colored-cross' %}
+                    {% endif %}
+                  </td>
+                  <td class="text--center {{ row_color }}">
+                    {% if block.settings.third_column %}
+                      {% render 'icon-colored-check' %}
+                    {% else %}
+                      {% render 'icon-colored-cross' %}
+                    {% endif %}
+                  </td>
+                  <td class="text--center {{ row_color }}">
+                    {% if block.settings.fourth_column %}
+                      {% render 'icon-colored-check' %}
+                    {% else %}
+                      {% render 'icon-colored-cross' %}
+                    {% endif %}
+                  </td>
+                </tr>
+            {% endcase %}
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="container--default">
+    <div class="pp-check-table__footnote-container">
+      <h3 class="pp-check-table__footnote-heading text--black">
+        <a href="{{ section.settings.footnote_title_url }}" target="_blank">{{ section.settings.footnote_title }}</a>
+      </h3>
+      {{ section.settings.footnote_description }}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "PP Check Table",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": " Was macht das EcoFlow-Balkonkraftwerk mit 600 und 800 W Wechselrichtern so besonders?"
+    },
+    {
+      "type": "html",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Die Vorteile unseres Balkonkraftwerks und unseres PowerStream Balkon-Solarsystem werden am deutlichsten, wenn wir es mit den bisher am Markt verfügbaren Lösungen vergleichen. Das Balkonkraftwerk mit Netzanschluss speist den erzeugten Solarstrom in das öffentliche Stromnetz ein. Sie haben jedoch keine Speichermöglichkeit und funktionieren daher nicht als Notstromaggregat. Es gibt auch Solarbatterien für unterwegs oder zu Hause. Die mobilen Lösungen können wir während des Betriebs nicht aufladen. Heimlösungen müssen in der Regel von einem Fachmann installiert werden."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image Desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image Mobile"
+    },
+    {
+      "type": "text",
+      "id": "footnote_title",
+      "label": "Footnote Title",
+      "default": "Was sind die Vorteile eines Balkonkraftwerks mit 600W?"
+    },
+    {
+      "type": "url",
+      "id": "footnote_title_url",
+      "label": "Footnote Title URL"
+    },
+    {
+      "type": "richtext",
+      "id": "footnote_description",
+      "label": "Footnote Description"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "table_details",
+      "name": "Table Details",
+      "settings": [
+        {
+          "type": "html",
+          "id": "row_title",
+          "label": "Row Title",
+          "default": "Notstromversorgung"
+        },
+        {
+          "type": "checkbox",
+          "id": "first_column",
+          "label": "Enable Check Icon 1st Column",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "second_column",
+          "label": "Enable Check Icon 2nd Column",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "third_column",
+          "label": "Enable Check Icon 3rd Column",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "fourth_column",
+          "label": "Enable Check Icon 4th Column",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "table_head",
+      "name": "Table Head",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "html",
+          "id": "first_row_title",
+          "label": "1st Row Title",
+          "default": "Notstromversorgung"
+        },
+        {
+          "type": "html",
+          "id": "second_row_title",
+          "label": "2nd Row Title",
+          "default": "Notstromversorgung"
+        },
+        {
+          "type": "html",
+          "id": "third_row_title",
+          "label": "3rd Row Title",
+          "default": "Notstromversorgung"
+        },
+        {
+          "type": "html",
+          "id": "fourth_row_title",
+          "label": "4th Row Title",
+          "default": "Notstromversorgung"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

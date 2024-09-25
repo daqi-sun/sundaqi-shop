@@ -1,0 +1,286 @@
+<style>
+  .pp-comparison__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .pp-comparison__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+
+<div class="pp-comparison__section pp-comparison__section-{{ section.id }}">
+  <div class="container--default">
+    <div class="pp-comparison__container">
+      <div class="pp-comparison__text-container">
+        {% if section.settings.title != blank %}
+          <h2 class="pp-comparison__section-heading text--heading text--black">
+            {{ section.settings.title }}
+          </h2>
+        {% endif %}
+        {% if section.settings.subtitle != blank %}
+          <p class="pp-comparison__section-description text--description text--gray">
+            {{ section.settings.subtitle }}
+          </p>
+        {% endif %}
+      </div>
+      {% for block in section.blocks %}
+        {% if block.type == 'percentage' %}
+          <div class="pp-comparison__percentage-container">
+            <div class="pp-comparison__percentage-wrapper">
+              <div class="pp-comparison__percentage-flex-container">
+                <h3 class="pp-comparison__percentage-heading">{{ block.settings.first_percentage }}</h3>
+                <p class="pp-comparison__percentage-description">{{ block.settings.first_description }}</p>
+              </div>
+              <div class="pp-comparison__percentage-flex-container">
+                <h3 class="pp-comparison__percentage-heading">{{ block.settings.second_percentage }}</h3>
+                <p class="pp-comparison__percentage-description">{{ block.settings.second_description }}</p>
+              </div>
+              <div class="pp-comparison__percentage-flex-container">
+                <h3 class="pp-comparison__percentage-heading">{{ block.settings.third_percentage }}</h3>
+                <p class="pp-comparison__percentage-description">{{ block.settings.third_description }}</p>
+              </div>
+            </div>
+            <div class="pp-comparison__image-wrapper">
+              <img
+                class="display--desktop"
+                src="{{ block.settings.image | img_url: 'master' }}"
+                alt="{{ block.settings.image.alt }}"
+              >
+              <img
+                class="display--mobile"
+                src="{{ block.settings.image_mobile | img_url: 'master' }}"
+                alt="{{ block.settings.image_mobile.alt }}"
+              >
+            </div>
+          </div>
+        {% else %}
+          <div class="pp-comparison__progress-container background--dark-white">
+            <div class="pp-comparison__progress-wrapper">
+              <div class="pp-comparison__progress-bar-wrapper" style="width: {{ block.settings.first_progress_bar }}%;">
+                <div class="pp-comparison__progress-value">
+                  <h3 class="pp-comparison__value text--blue">
+                    {{ block.settings.first_price }}
+                    <span>{{ block.settings.first_tag }}</span>
+                  </h3>
+                </div>
+                <div class="pp-comparison__progress--first pp-comparison__progress--first-{{ block.id }}"></div>
+              </div>
+              <p class="pp-comparison__progress-title">{{ block.settings.first_title }}</p>
+            </div>
+            <div class="pp-comparison__progress-wrapper">
+              <div
+                class="pp-comparison__progress-bar-wrapper"
+                style="width: {{ block.settings.second_progress_bar }}%;"
+              >
+                <div class="pp-comparison__progress-value">
+                  <h3 class="pp-comparison__value text--dark-gray">
+                    {{ block.settings.second_price }}
+                    <span>{{ block.settings.second_tag }}</span>
+                  </h3>
+                </div>
+                <div class="pp-comparison__progress--second pp-comparison__progress--second-{{ block.id }}"></div>
+              </div>
+              <p class="pp-comparison__progress-title">{{ block.settings.second_title }}</p>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="pp-comparison__footnote-container">
+      {{ section.settings.footnote }}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "PP Comparison",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "ERFAHREN SIE, WAS UNSERE ECOFLOW-NUTZER DENKEN"
+    },
+    {
+      "type": "html",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Entdecken Sie echte Nutzer- und Expertenerfahrungen, um zu erfahren, wie das EcoFlow PowerStream Balcony Solar System funktioniert."
+    },
+    {
+      "type": "richtext",
+      "id": "footnote",
+      "label": "Footnote"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "percentage",
+      "name": "Percentage",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image Mobile"
+        },
+        {
+          "type": "text",
+          "id": "first_percentage",
+          "label": "First Percentage",
+          "default": "33%"
+        },
+        {
+          "type": "html",
+          "id": "first_description",
+          "label": "First Description",
+          "default": "ige Reduzierung der jährlichen Energierechnung"
+        },
+        {
+          "type": "text",
+          "id": "second_percentage",
+          "label": "Second Percentage",
+          "default": "3.5x"
+        },
+        {
+          "type": "html",
+          "id": "second_description",
+          "label": "Second Description",
+          "default": "höhere Einsparungen als bei anderen Balkonsolarsystemen ohne Batterien"
+        },
+        {
+          "type": "text",
+          "id": "third_percentage",
+          "label": "Third Percentage",
+          "default": "100%"
+        },
+        {
+          "type": "html",
+          "id": "third_description",
+          "label": "Third Description",
+          "default": "der Energie wird genutzt"
+        }
+      ]
+    },
+    {
+      "type": "progress",
+      "name": "Progress",
+      "settings": [
+        {
+          "type": "header",
+          "content": "First Progress Bar"
+        },
+        {
+          "type": "range",
+          "id": "first_progress_bar",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Progress Bar",
+          "default": 80
+        },
+        {
+          "type": "text",
+          "id": "first_title",
+          "label": "First Title",
+          "default": "PowerStream Balkonkraftwerk (mit Speicher)"
+        },
+        {
+          "type": "text",
+          "id": "first_price",
+          "label": "First Price",
+          "default": "415€"
+        },
+        {
+          "type": "text",
+          "id": "first_tag",
+          "label": "First Tag",
+          "default": "Saved"
+        },
+        {
+          "type": "header",
+          "content": "Second Progress Bar"
+        },
+        {
+          "type": "range",
+          "id": "second_progress_bar",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Progress Bar",
+          "default": 80
+        },
+        {
+          "type": "text",
+          "id": "second_title",
+          "label": "Second Title",
+          "default": "PowerStream Balkonkraftwerk (mit Speicher)"
+        },
+        {
+          "type": "text",
+          "id": "second_price",
+          "label": "Second Price",
+          "default": "415€"
+        },
+        {
+          "type": "text",
+          "id": "second_tag",
+          "label": "Second Tag",
+          "default": "Saved"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

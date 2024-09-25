@@ -1,0 +1,102 @@
+<div
+  class="product-ecocredits-message__wrapper"
+  data-product-id="{{ product.id }}"
+  x-data="ecoCreditsSnippnet"
+  x-show="maxPoints !== ''"
+  x-cloak
+>
+  <img src="{{ 'ecocredit-msg.svg' | asset_url }}" alt="" class="product-ecocredits-message__logo">
+  <p class="product-ecocredits-message__text">
+    Hasta <strong x-text="maxPoints" class="product-ecocredits-message__price"></strong> en deducciones en efectivo. {% unless customer %}<a target="_self" href="https://account.ecoflow.com/login?return_to={{ request.host }}{{ request.path }}">{{ settings.login_btn_text }}</a>{% endunless %}
+  </p>
+</div>
+
+<style>
+  .product-ecocredits-message__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 6px 10px;
+    background: #f7a40a1a;
+    gap: 4px;
+    border-radius: 4px;
+    width: fit-content;
+    margin-top: 6px;
+  }
+
+  .product-ecocredits-message__logo {
+    width: 24px;
+    height: 24px;
+  }
+
+  .product-ecocredits-message__text,
+  .product-ecocredits-message__text a {
+    color: #f7a40a;
+    margin: 0;
+    font-family: Manrope;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19.12px;
+    text-align: left;
+  }
+
+  .product-ecocredits-message__text > strong {
+    font-weight: 700;
+  }
+</style>
+
+<script>
+  document.addEventListener('alpine:init', () => {
+    Alpine.data('ecoCreditsSnippnet', () => ({
+      maxPoints: '',
+      createTraceId() {
+        const date = new Date();
+        const year = `00${date?.getFullYear()}`.slice(-2);
+        const month = `00${date.getMonth() + 1}`.slice(-2);
+        const day = `00${date.getDay()}`.slice(-2);
+        const hour = `00${date.getHours()}`.slice(-2);
+        const minute = `00${date.getMinutes()}`.slice(-2);
+        const second = `00${date.getSeconds()}`.slice(-2);
+        const millSecond = `000${date.getMilliseconds()}`.slice(-3);
+        const randomStr1 = `${Math.random()}`;
+        const randomStr2 = `${Math.random()}`;
+        return year + month + day + hour + minute + second + millSecond + randomStr1.slice(-8) + randomStr2.slice(-9);
+      },
+      async init() {
+        const { apiDomain, acceptedLanguage, apiKey, xAppid } = theme.emailSubscription;
+        try {
+          const response = await fetch(`${apiDomain}/integral/web/pointsCashRule/getRule`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'x-appid': xAppid,
+              traceId: this.createTraceId(),
+              'Accept-Language': acceptedLanguage,
+            },
+            body: JSON.stringify({
+              productList: [
+                {
+                  productId: '{{ product.id }}',
+                  variantId: '{{ product.selected_or_first_available_variant.id }}',
+                  quantity: 1,
+                  price: '{{ product.selected_or_first_available_variant.price | divided_by: 100 }}',
+                },
+              ],
+              source: 'CART',
+            }),
+          });
+          const data = await response.json();
+          if (data.code === '0' && data.data && data.data.maxPoints) {
+            const cash = Number(data.data.maxPoints * data.data.ratio).toFixed(2);
+            this.maxPoints =
+              (Number(cash) >= 10000
+                ? Number(cash).toLocaleString('de').replace('.', ' ')
+                : Number(cash).toLocaleString('de').replace('.', '')) + '€';
+          }
+        } catch (error) {
+          console.error(error.message);
+        }
+      },
+    }));
+  });
+</script>

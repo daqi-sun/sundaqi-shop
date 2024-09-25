@@ -1,0 +1,202 @@
+<style>
+  .section-{{ section.id }}{
+      padding: {{ section.settings.section_top_space }}px 0 {{ section.settings.section_bottom_space }}px 0;
+  }
+  .section-{{ section.id }} .t-c * {
+    margin-bottom: 0;
+    color: var(--text-color, #afafaf);
+  }
+  .section-{{ section.id }} .t-c strong{
+    color: var(--highlight-color, #000000);
+  }
+  .section-{{ section.id }} .t-c * a{ color: var(--link-color, #000); }
+
+  .section-{{ section.id }} .t-c-wrapper{ max-width: {{ section.settings.text_width }}px; margin: 0 auto; }
+  @media screen and (max-width: 749px){
+    .section-{{ section.id }}{
+        padding: {{ section.settings.section_top_space_m }}px 0 {{ section.settings.section_bottom_space_m }}px 0;
+    }
+    .section-{{ section.id }} .t-c-wrapper{ max-width: {{ section.settings.text_width_m }}px; }
+}
+</style>
+<div class="star-t-c-section section-{{ section.id }} {% unless section.settings.show_mobile %}hideMobile{% endunless %}" id="{{ section.settings.section_id }}" style="background-color: {{ section.settings.section_background }};">
+  <div class="star-page-container">
+      <div class="t-c-wrapper font--{{ section.settings.text_font_size }} text-align--{{ section.settings.text_alignment }}">
+          {% if section.settings.tc_heading != blank %}
+              <div class="t-c-heading" style="color: {{ section.settings.heading_color }};">{{ section.settings.tc_heading }}</div>
+          {% endif %}
+          <div
+           class="t-c"
+           style="--text-color: {{ section.settings.text_color }}; --highlight-color: {{ section.settings.highlight_color }}; --link-color: {{ section.settings.link_color }}; margin-top: {{ section.settings.margin_top }}px; margin-bottom: {{ section.settings.margin_bottom }}px;">
+              {{ section.settings.tc }}
+          </div>
+      </div>
+  </div>
+</div>
+
+{% schema %}
+{
+"name": "Star_T&C",
+"settings": [
+  {
+  "type":"color",
+  "id":"section_background",
+  "label":"Section background color"
+  },
+  {
+  "type": "text",
+  "id": "section_id",
+  "label": "Section ID"
+  },
+  {
+    "type": "checkbox",
+    "id": "show_mobile",
+    "label": "Show in Mobile"
+  },
+  {
+  "type": "header",
+  "content": "Section spacing"
+  },
+  {
+  "type": "range",
+  "id": "section_top_space",
+  "label": "Top space(Desktop)",
+  "min": 0,
+  "max": 150,
+  "step": 5,
+  "unit": "px",
+  "default": 120
+  },
+  {
+  "type": "range",
+  "id": "section_bottom_space",
+  "label": "Bottom space(Desktop)",
+  "min": 0,
+  "max": 150,
+  "step": 5,
+  "unit": "px",
+  "default": 40
+  },
+  {
+  "type": "range",
+  "id": "section_top_space_m",
+  "label": "Top space(Mobile)",
+  "min": 0,
+  "max": 80,
+  "step": 5,
+  "unit": "px",
+  "default": 40
+  },
+  {
+  "type": "range",
+  "id": "section_bottom_space_m",
+  "label": "Bottom space(Mobile)",
+  "min": 0,
+  "max": 80,
+  "step": 5,
+  "unit": "px",
+  "default": 40
+  },
+  {
+  "type": "richtext",
+  "id": "tc_heading",
+  "label": "Heading"
+  },
+  {
+  "type": "color",
+  "id": "heading_color",
+  "label": "Heading Color",
+  "default": "#afafaf"
+  },
+  {
+  "type": "richtext",
+  "id": "tc",
+  "label": "Description"
+  },
+  {
+  "type": "color",
+  "id": "text_color",
+  "label": "Text Color",
+  "default": "#afafaf"
+  },
+  {
+  "type": "color",
+  "id": "highlight_color",
+  "label": "Highlight Color",
+  "default": "#000000"
+  },
+  {
+  "type": "color",
+  "id": "link_color",
+  "label": "Link Color",
+  "default": "#000000"
+  },
+  {
+  "type": "select",
+  "id": "text_alignment",
+  "label": "Text alignment",
+  "default": "left",
+  "options": [
+      {
+      "value": "left",
+      "label": "Left"
+      },
+      {
+      "value": "center",
+      "label": "Center"
+      },
+      {
+      "value": "right",
+      "label": "Right"
+      }
+  ]
+  },
+  {
+    "type": "select",
+    "id": "text_font_size",
+    "label": "Font size",
+    "default": "medium",
+    "options": [
+      {
+        "label": "Small",
+        "value": "small"
+      },
+      {
+        "label": "Medium",
+        "value": "medium"
+      },
+      {
+        "label": "Large",
+        "value": "large"
+      }
+    ]
+  },
+  {
+    "type": "range",
+    "id": "text_width",
+    "label": "Text width(Desktop)",
+    "min": 500,
+    "max": 1200,
+    "step": 10,
+    "unit": "px",
+    "default": 1000
+  },
+  {
+    "type": "range",
+    "id": "text_width_m",
+    "label": "Text width(Mobile)",
+    "min": 300,
+    "max": 800,
+    "step": 10,
+    "unit": "px",
+    "default": 800
+  }
+],
+"presets": [
+  {
+  "name": "Star_T&C",
+  "category": "TC"
+  }
+]
+}
+{% endschema %}

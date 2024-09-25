@@ -1,0 +1,273 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "Accessories Showcase",
+  "id": "accessories-showcase",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "class": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_title",
+      "label": "Section title",
+      "info": ""
+    },
+    {
+      "type": "checkbox",
+      "id": "atb_show_last_image_on_hover",
+      "label": "Show alternate image ",
+      "default": true,
+      "info": ""
+    },
+    {
+      "type": "select",
+      "id": "atb_image_position",
+      "label": "Product image position",
+      "options": [
+        {
+          "label": "Top",
+          "value": "top"
+        },
+        {
+          "label": "Bottom",
+          "value": "bottom"
+        }
+      ],
+      "default": "top",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "blocks",
+      "label": "Block ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": "",
+      "repeatable": "Accessories-block"
+    },
+    {
+      "type": "collection",
+      "id": "block_main_collection",
+      "label": "Parent Collection",
+      "repeatable": "Accessories-block",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "block_tab_1_title",
+      "label": "Title",
+      "repeatable": "Accessories-block",
+      "info": ""
+    },
+    {
+      "type": "collection",
+      "id": "block_tab_1_collection",
+      "label": "Collection",
+      "repeatable": "Accessories-block",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "block_tab_2_title",
+      "label": "Title",
+      "repeatable": "Accessories-block",
+      "info": ""
+    },
+    {
+      "type": "collection",
+      "id": "block_tab_2_collection",
+      "label": "Collection",
+      "repeatable": "Accessories-block",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "block_tab_3_title",
+      "label": "Title",
+      "repeatable": "Accessories-block",
+      "info": ""
+    },
+    {
+      "type": "collection",
+      "id": "block_tab_3_collection",
+      "label": "Collection",
+      "repeatable": "Accessories-block",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "block_tab_4_title",
+      "label": "Title",
+      "repeatable": "Accessories-block",
+      "info": ""
+    },
+    {
+      "type": "collection",
+      "id": "block_tab_4_collection",
+      "label": "Collection",
+      "repeatable": "Accessories-block",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "block_tab_5_title",
+      "label": "Title",
+      "repeatable": "Accessories-block",
+      "info": ""
+    },
+    {
+      "type": "collection",
+      "id": "block_tab_5_collection",
+      "label": "Collection",
+      "repeatable": "Accessories-block",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "block_tab_6_title",
+      "label": "Title",
+      "repeatable": "Accessories-block",
+      "info": ""
+    },
+    {
+      "type": "collection",
+      "id": "block_tab_6_collection",
+      "label": "Collection",
+      "repeatable": "Accessories-block",
+      "info": ""
+    }
+  ],
+  "warnings": []
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_title' -%}
+{%- assign atb_title = val -%}
+{%- include 'atb-render' field:'atb_show_last_image_on_hover' -%}
+{%- assign atb_show_last_image_on_hover = val -%}
+{%- include 'atb-render' field:'atb_image_position' -%}
+{%- assign atb_image_position = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_main_collection' -%}
+{%- assign block_main_collection = val -%}
+{%- include 'atb-render' field:'block_tab_1_title' -%}
+{%- assign block_tab_1_title = val -%}
+{%- include 'atb-render' field:'block_tab_1_collection' -%}
+{%- assign block_tab_1_collection = val -%}
+{%- include 'atb-render' field:'block_tab_2_title' -%}
+{%- assign block_tab_2_title = val -%}
+{%- include 'atb-render' field:'block_tab_2_collection' -%}
+{%- assign block_tab_2_collection = val -%}
+{%- include 'atb-render' field:'block_tab_3_title' -%}
+{%- assign block_tab_3_title = val -%}
+{%- include 'atb-render' field:'block_tab_3_collection' -%}
+{%- assign block_tab_3_collection = val -%}
+{%- include 'atb-render' field:'block_tab_4_title' -%}
+{%- assign block_tab_4_title = val -%}
+{%- include 'atb-render' field:'block_tab_4_collection' -%}
+{%- assign block_tab_4_collection = val -%}
+{%- include 'atb-render' field:'block_tab_5_title' -%}
+{%- assign block_tab_5_title = val -%}
+{%- include 'atb-render' field:'block_tab_5_collection' -%}
+{%- assign block_tab_5_collection = val -%}
+{%- include 'atb-render' field:'block_tab_6_title' -%}
+{%- assign block_tab_6_title = val -%}
+{%- include 'atb-render' field:'block_tab_6_collection' -%}
+{%- assign block_tab_6_collection = val -%}
+{%- if atb_show_last_image_on_hover == blank -%}
+{%- assign atb_show_last_image_on_hover = false -%}
+{%- else -%}
+{%- assign atb_show_last_image_on_hover = true -%}
+{%- endif -%}
+{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section ">
+{%- if blocks.size > 0 -%}
+    {%- assign collection_found = false -%}
+    {%- for block0 in blocks -%}
+        {% if collections[block_main_collection[forloop.index0]].handle == collection.handle %}
+            {%- assign collection_found = true -%}
+        {% endif %}
+    {%- endfor -%}
+
+    {%- if collection_found -%}
+    <div class="accessories-wrapper accessories-template">
+        <div class="page-width-small">
+            {%- if atb_title != blank -%}<h2>{{ atb_title }}</h2>{%- endif -%}
+
+            {%- assign tab_count = 0 -%}
+            {%- for block0 in blocks -%}
+                {%- if collections[block_main_collection[forloop.index0]].handle == collection.handle -%}
+                    {%- for i in (1..6) -%}
+                        {%- capture title -%}tab_{{i}}_title{%- endcapture -%}
+                        {%- if block_title[forloop.index0]] != blank -%}
+                            {%- assign tab_count = tab_count | plus: 1 -%}
+                        {%- endif -%}
+                    {%- endfor -%}
+                {%- endif -%}
+            {%- endfor -%}
+
+            {%- if tab_count > 1 -%}
+            <div class="accessories-tab-wrapper">
+                {%- assign tab_shown = false -%}
+                {%- for block0 in blocks -%}
+                    {%- if collections[block_main_collection[forloop.index0]].handle == collection.handle -%}
+                        {%- for i in (1..6) -%}
+                            {%- capture title -%}tab_{{i}}_title{%- endcapture -%}
+                            {%- if block_title[forloop.index0]] != blank -%}
+                                <div class="accessories-tab-title {% unless tab_shown %}tab-active{% endunless %}" data-tab-title="{{ block_title[forloop.index0]] | handleize }}">{{ block_title[forloop.index0]] }}</div>
+                                {%- assign tab_shown = true -%}
+                            {%- endif -%}
+                        {%- endfor -%}
+                    {%- endif -%}
+                {%- endfor -%}
+            </div>
+            {%- endif -%}
+
+            <div class="accessories-tab-content-wrapper">
+                {%- assign tab_shown = false -%}
+                {%- assign grid_item_width = 'medium-up--one-third' -%}
+                {%- assign grid_item_mobile_width = 'small--one-half' -%}
+                {%- assign max_height = 345 -%}
+                {%- for block0 in blocks -%}
+                    {%- if block_main_collection[forloop.index0] == collection.handle -%}
+                        {%- for i in (1..6) -%}
+                            {%- capture title -%}tab_{{i}}_title{%- endcapture -%}
+                            {%- capture tab_collection -%}tab_{{i}}_collection{%- endcapture -%}
+                            {%- capture products_count -%}tab_{{i}}_max_products_count{%- endcapture -%}
+                            {%- if block_title[forloop.index0]] != blank -%}
+                                {%- assign tab_collection = block_tab_collection[forloop.index0]] -%}
+
+                                <div class="accessories-tab-content {% unless tab_shown %}tab-content-active{% endunless %}" data-tab-title="{{ block_title[forloop.index0]] | handleize }}">
+                                    <div class="grid {% if settings.align_height %} use_align_height {% else %} use_image_height {% endif %} Collection-wrapper grid--uniform" >
+                                        {% for product in collections[tab_collection].products %}
+                                            {%- comment %}<locksmith:d265>{% endcomment -%}
+                                              {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: collections[tab_collection], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                                            {%- comment %}</locksmith:d265>{% endcomment -%}
+                                            {% include 'atb-product-card-item' , list: false, show_alternate_image: true, image_position: atb_image_position, max_height: max_height, product: product, show_vendor: false  %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                {%- assign tab_shown = true -%}
+                            {%- endif -%}
+                        {%- endfor -%}
+                    {%- endif -%}
+                {%- endfor -%}
+            </div>
+        </div>
+    </div>
+    {%- endif -%}
+{%- endif -%}
+</section>

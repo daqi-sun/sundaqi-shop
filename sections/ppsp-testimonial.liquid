@@ -1,0 +1,163 @@
+<style>
+  .ppsp-testimonial-slider__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .ppsp-testimonial-slider__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+
+<div
+  class="ppsp-testimonial-slider__section ppsp-testimonial-slider__section-{{ section.id }}"
+  data-id="_{{ section.settings.id | downcase | remove: ' ' | replace: '&', '-' }}"
+>
+  <div class="container--default">
+    <div class="ppsp-testimonial-slider__text-container">
+      {% if section.settings.title != blank %}
+        <h2 class="ppsp-testimonial-slider__heading text--heading text--black">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+      {% if section.settings.subtitle != blank %}
+        <p class="ppsp-testimonial-slider__description text--description text--gray">
+          {{ section.settings.subtitle }}
+        </p>
+      {% endif %}
+    </div>
+
+    <div class="ppsp-testimonial-slider__container ppsp-testimonial__container-slider">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="swiper-slide">
+            <div class="ppsp-testimonial-slider__testimonial-wrapper">
+              <p class="ppsp-testimonial-slider__testimonial text--gray">
+                {{ block.settings.testimonial }}
+              </p>
+            </div>
+            <div class="ppsp-testimonial-slider__name-wrapper">
+              <div class="ppsp-testimonial-slider__name text--black">
+                {{ block.settings.name }}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="display--desktop">
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+      <div class="swiper-scrollbar"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var swiper = new Swiper('.ppsp-testimonial__container-slider', {
+      spaceBetween: 30,
+      slidesPerView: 1,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      scrollbar: {
+        el: '.swiper-scrollbar',
+        draggable: true,
+        dragSize: 32,
+      },
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "PPSP Testimonial Slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "id",
+      "label": "Section ID",
+      "default": "Buyer’s Guides"
+    },
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title",
+      "default": "Was ist das EcoFlow Balkonkraftwerk?"
+    },
+    {
+      "type": "html",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Das EcoFlow Balkonkraftwerk ist eine innovative Kombination aus Wechselrichter, Solarpanel und einer Powerstation. Den Mikro-Wechselrichter für Ihr Balkonkraftwerk mit 600 oder 800 Watt können Sie direkt an Ihre Solarpanels anschließen. Anschließend verbinden Sie ihn mit einer Wandsteckdose – und damit dem öffentlichen Stromnetz – oder mit einer Powerstation. Tagsüber können Sie nun gleichzeitig Solarstrom und Netzstrom nutzen oder Ihre Powerstation aufladen, um auch nachts und unterwegs Solarstrom zur Verfügung zu haben."
+    },
+    {
+      "type": "header",
+      "content": "Section Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "html",
+          "id": "testimonial",
+          "label": "Testimonial"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

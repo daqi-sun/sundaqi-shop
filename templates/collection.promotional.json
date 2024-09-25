@@ -1,0 +1,340 @@
+{
+  "sections": {
+    "star_email_subscription_form_UgW3zt": {
+      "type": "star-email-subscription-form",
+      "disabled": true,
+      "settings": {
+        "contact_list_id": "376217394",
+        "single_1_id": "4426",
+        "single_1_value": "1",
+        "single_1_overwrite": "false",
+        "single_2_id": "31",
+        "single_2_value": "1",
+        "single_2_overwrite": "false",
+        "single_3_id": "",
+        "single_3_value": "",
+        "single_3_overwrite": "false",
+        "single_4_id": "",
+        "single_4_value": "",
+        "single_4_overwrite": "false",
+        "subscription_text_1_id": "",
+        "subscription_text_1_value": "",
+        "subscription_text_1_overwrite": "false",
+        "subscription_text_2_id": "",
+        "subscription_text_2_value": "",
+        "subscription_text_2_overwrite": "false",
+        "multiple_1_id": "7596",
+        "multiple_1_value": "5",
+        "multiple_1_overwrite": "false",
+        "multiple_2_id": "",
+        "multiple_2_value": "",
+        "multiple_2_overwrite": "false",
+        "multiple_3_id": "",
+        "multiple_3_value": "",
+        "multiple_3_overwrite": "false",
+        "multiple_4_id": "",
+        "multiple_4_value": "",
+        "multiple_4_overwrite": "false",
+        "multiple_5_id": "",
+        "multiple_5_value": "",
+        "multiple_5_overwrite": "false",
+        "background_image": "shopify:\/\/shop_images\/EU_pc_Success_Page.png",
+        "background_image_mobile": "shopify:\/\/shop_images\/UK_m_Collection_Page.png",
+        "background_color": "#efd55c",
+        "form_title": "Semana de EcoCredits: Venta Flash con 900 € de descuento",
+        "form_title_color": "#000000",
+        "form_description": "Suscríbete a las novedades sobre las ofertas de la Venta Flash del 23 al 27 de mayo.",
+        "form_description_color": "#000000",
+        "input_placeholder": "Correo electrónico",
+        "input_background_color": "#ffffff",
+        "input_border_color": "#cccccc",
+        "input_text_color": "#000000",
+        "form_button_text": "Subscribirse",
+        "form_button_background_color": "#03060b",
+        "form_button_text_color": "#ffffff",
+        "disclaimer_text": "<p>Acepto la <a href=\"\/policies\/privacy-policy\" title=\"Privacy Policy\">Política de privacidad <\/a>y los <a href=\"\/policies\/terms-of-service\" title=\"Terms of Service\">Términos de servicio<\/a> de EcoFlow.<\/p>",
+        "disclaimer_text_color": "#000000",
+        "disclaimer_link_color": "#000000",
+        "successful_icon": "shopify:\/\/shop_images\/Frame_128720864.png",
+        "successful_form_title": "¡Gracias por suscribirte!",
+        "successful_form_title_color": "#000000",
+        "successful_form_description": "Descubre recompensas adicionales para la Semana de Agradecimiento de EcoCredits.",
+        "successful_form_description_color": "#000000",
+        "successful_button_text": "Descubrir ahora",
+        "successful_button_text_color": "#000000",
+        "successful_button_background_color": "rgba(0,0,0,0)",
+        "successful_button_border_color": "#000000",
+        "successful_button_link": "https:\/\/www.ecoflow.com\/es\/ecocredits-monthly-madness",
+        "successful_link": "",
+        "successful_link_text": "",
+        "successful_link_text_color": "#000000",
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 20,
+        "padding_top_mobile": 10,
+        "padding_bottom_mobile": 30
+      }
+    },
+    "sticky_bar": {
+      "type": "collection-sticky-bar",
+      "settings": {
+        "top_menu": "collection-menu",
+        "comparison_link": "",
+        "calculator_link": ""
+      }
+    },
+    "main": {
+      "type": "collection-template",
+      "settings": {
+        "default_view_layout": "grid",
+        "image": "{{ collection.metafields.custom.banner_image.value }}",
+        "image_m": "{{ collection.metafields.custom.mobile_banner_image.value }}",
+        "collection_image_mode": "banner",
+        "show_breadcrumbs": true,
+        "image_overlay_color": "#000000",
+        "image_overlay_opacity": 0,
+        "grid": 3,
+        "grid_mobile": "1",
+        "rows": 50,
+        "image_position": "top",
+        "show_collection_description": "top",
+        "show_last_image_on_hover": true,
+        "show_vendor": false,
+        "sort_enable": true,
+        "collection_layout": "no_sidebar",
+        "collection_sidebar_filters": "none",
+        "group_array": "",
+        "collection_linklist": "",
+        "show_sidebar_vendors": false,
+        "show_collection_sidebar_sale": false,
+        "sidebar_collection_sale_collection": "",
+        "collection_sidebar_sale_title": "On Sale",
+        "sidebar_collection_product_count": 4,
+        "pagination_mode": "standart"
+      }
+    },
+    "accessories": {
+      "type": "accessories-showcase",
+      "blocks": {
+        "6d478bf7-27fe-4a9e-bdda-1c683448715b": {
+          "type": "block",
+          "settings": {
+            "main_collection": "delta-series-portable-power-stations",
+            "tab_1_title": "DELTA 2",
+            "tab_1_collection": "delta-2-accessories",
+            "tab_2_title": "DELTA",
+            "tab_2_collection": "delta-accessories",
+            "tab_3_title": "DELTA Pro",
+            "tab_3_collection": "delta-pro-accessories",
+            "tab_4_title": "DELTA Max",
+            "tab_4_collection": "delta-max-accessories",
+            "tab_5_title": "DELTA mini",
+            "tab_5_collection": "delta-mini-accessories",
+            "tab_6_title": "",
+            "tab_6_collection": ""
+          }
+        },
+        "dd04c8e3-e901-4d73-b935-4d9bd044073c": {
+          "type": "block",
+          "settings": {
+            "main_collection": "river-series-portable-power-stations",
+            "tab_1_title": "RIVER",
+            "tab_1_collection": "river-accessories",
+            "tab_2_title": "RIVER 2",
+            "tab_2_collection": "river-2-accessories",
+            "tab_3_title": "RIVER 2 Max",
+            "tab_3_collection": "river-2-max-accessories",
+            "tab_4_title": "RIVER 2 Pro",
+            "tab_4_collection": "river-2-pro-accessories",
+            "tab_5_title": "",
+            "tab_5_collection": "",
+            "tab_6_title": "",
+            "tab_6_collection": ""
+          }
+        },
+        "6fc90931-887a-44bb-9d08-a649ba486abe": {
+          "type": "block",
+          "settings": {
+            "main_collection": "portable-solar-panels",
+            "tab_1_title": "Portable Solar Panels",
+            "tab_1_collection": "solar-panel-accessories",
+            "tab_2_title": "",
+            "tab_2_collection": "",
+            "tab_3_title": "",
+            "tab_3_collection": "",
+            "tab_4_title": "",
+            "tab_4_collection": "",
+            "tab_5_title": "",
+            "tab_5_collection": "",
+            "tab_6_title": "",
+            "tab_6_collection": ""
+          }
+        },
+        "5b1990b6-59bd-4c2f-8576-eb88bc25157b": {
+          "type": "block",
+          "settings": {
+            "main_collection": "mountable-solar-panels",
+            "tab_1_title": "Mountable Solar Panels",
+            "tab_1_collection": "solar-panel-accessories",
+            "tab_2_title": "",
+            "tab_2_collection": "",
+            "tab_3_title": "",
+            "tab_3_collection": "",
+            "tab_4_title": "",
+            "tab_4_collection": "",
+            "tab_5_title": "",
+            "tab_5_collection": "",
+            "tab_6_title": "",
+            "tab_6_collection": ""
+          }
+        },
+        "69650849-6333-4f8e-9d79-0e40a29d701a": {
+          "type": "block",
+          "settings": {
+            "main_collection": "power-kits",
+            "tab_1_title": "Accesorios",
+            "tab_1_collection": "power-kits-components",
+            "tab_2_title": "",
+            "tab_2_collection": "",
+            "tab_3_title": "",
+            "tab_3_collection": "",
+            "tab_4_title": "",
+            "tab_4_collection": "",
+            "tab_5_title": "",
+            "tab_5_collection": "",
+            "tab_6_title": "",
+            "tab_6_collection": ""
+          }
+        },
+        "f97e344a-5e0f-429a-96ca-d6b96bfdf51a": {
+          "type": "block",
+          "settings": {
+            "main_collection": "whole-home-backup-power-solutions",
+            "tab_1_title": "DELTA Pro Ecosystem",
+            "tab_1_collection": "delta-pro-ecosystem-accessories",
+            "tab_2_title": "",
+            "tab_2_collection": "",
+            "tab_3_title": "",
+            "tab_3_collection": "",
+            "tab_4_title": "",
+            "tab_4_collection": "",
+            "tab_5_title": "",
+            "tab_5_collection": "",
+            "tab_6_title": "",
+            "tab_6_collection": ""
+          }
+        },
+        "d171a5a4-3d65-48f9-9e3c-0ae70ce3dcc3": {
+          "type": "block",
+          "settings": {
+            "main_collection": "wave",
+            "tab_1_title": "Ecoflow Wave",
+            "tab_1_collection": "wave-accessories",
+            "tab_2_title": "",
+            "tab_2_collection": "",
+            "tab_3_title": "",
+            "tab_3_collection": "",
+            "tab_4_title": "",
+            "tab_4_collection": "",
+            "tab_5_title": "",
+            "tab_5_collection": "",
+            "tab_6_title": "",
+            "tab_6_collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "6d478bf7-27fe-4a9e-bdda-1c683448715b",
+        "dd04c8e3-e901-4d73-b935-4d9bd044073c",
+        "6fc90931-887a-44bb-9d08-a649ba486abe",
+        "5b1990b6-59bd-4c2f-8576-eb88bc25157b",
+        "69650849-6333-4f8e-9d79-0e40a29d701a",
+        "f97e344a-5e0f-429a-96ca-d6b96bfdf51a",
+        "d171a5a4-3d65-48f9-9e3c-0ae70ce3dcc3"
+      ],
+      "settings": {
+        "title": "Accesorios",
+        "show_last_image_on_hover": true,
+        "image_position": "top"
+      }
+    },
+    "5eb3dcce-065e-4d1b-a91f-e37b7754358d": {
+      "type": "quotes",
+      "blocks": {
+        "template--14886228033609__5eb3dcce-065e-4d1b-a91f-e37b7754358d-1665162978f5d885f6-0": {
+          "type": "quote",
+          "settings": {
+            "title": "Fast & Free Shipping",
+            "mobile_title": "",
+            "quote": "<p>All orders are processed within 3-5 business days.<\/p>",
+            "author": "",
+            "image_format": "image",
+            "svg_image": ""
+          }
+        },
+        "template--14886228033609__5eb3dcce-065e-4d1b-a91f-e37b7754358d-1665162978f5d885f6-1": {
+          "type": "quote",
+          "settings": {
+            "title": "Warranty Protection",
+            "mobile_title": "",
+            "quote": "<p>All products are covered by a warranty service.<\/p>",
+            "author": "",
+            "image_format": "image",
+            "svg_image": ""
+          }
+        },
+        "template--14886228033609__5eb3dcce-065e-4d1b-a91f-e37b7754358d-1665162978f5d885f6-2": {
+          "type": "quote",
+          "settings": {
+            "title": "Secure Payments",
+            "mobile_title": "",
+            "quote": "<p>Pay by debit or credit card, PayPal, or other secure payment platform.<\/p>",
+            "author": "",
+            "image_format": "image",
+            "svg_image": ""
+          }
+        },
+        "template--14886228033609__5eb3dcce-065e-4d1b-a91f-e37b7754358d-1665162978f5d885f6-3": {
+          "type": "quote",
+          "settings": {
+            "title": "Multi-channel Support",
+            "mobile_title": "Multiple Scenarios",
+            "quote": "<p>Contact us via email, phone or online customer service.<\/p>",
+            "author": "",
+            "image_format": "image",
+            "svg_image": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--14886228033609__5eb3dcce-065e-4d1b-a91f-e37b7754358d-1665162978f5d885f6-0",
+        "template--14886228033609__5eb3dcce-065e-4d1b-a91f-e37b7754358d-1665162978f5d885f6-1",
+        "template--14886228033609__5eb3dcce-065e-4d1b-a91f-e37b7754358d-1665162978f5d885f6-2",
+        "template--14886228033609__5eb3dcce-065e-4d1b-a91f-e37b7754358d-1665162978f5d885f6-3"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "image_style": "right",
+        "heading_style": "left",
+        "title": "Why. buy from the Ecoflow Store?",
+        "subtitle": "",
+        "bg_color": "#ffffff",
+        "heading_color": "#000000",
+        "title_color": "#03060b",
+        "text_color": "#757575",
+        "enable_carousel": false,
+        "show_dots": false,
+        "show_arrows": false,
+        "enable_autoplay": false,
+        "cycle_speed": 5
+      }
+    }
+  },
+  "order": [
+    "star_email_subscription_form_UgW3zt",
+    "sticky_bar",
+    "main",
+    "accessories",
+    "5eb3dcce-065e-4d1b-a91f-e37b7754358d"
+  ]
+}

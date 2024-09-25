@@ -1,0 +1,155 @@
+<style>
+  .pp-upgrade-banner__section-{{ section.id }} {
+    margin-top: {{ section.settings.padding_top_mobile }}px;
+    margin-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .pp-upgrade-banner__section-{{ section.id }} {
+      margin-top: {{ section.settings.padding_top_desktop }}px;
+      margin-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+<div
+  class="pp-upgrade-banner pp-upgrade-banner__section-{{ section.id }}"
+  id="_{{ section.settings.id | downcase | remove: ' ' | replace: '&', '-' }}"
+>
+  <div class="pp-upgrade-banner__container container--default">
+    {% assign image = section.settings.mobileImage %}
+    {% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+    <div
+      class="custom-img__wrapper custom-img__wrapper-mobile display--mobile"
+      style="padding-top: {{ pt }}%;"
+    >
+      <img
+        class="custom-img"
+        srcset="
+          {{ image | img_url: '500x' }} 500w,
+          {{ image | img_url: '600x' }} 600w,
+          {{ image | img_url: 'master' }} 700w,
+        "
+        alt="{{ image.alt }}"
+      >
+    </div>
+
+    {% assign image = section.settings.image %}
+    {% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+    <div
+      class="custom-img__wrapper custom-img__wrapper-mobile display--desktop"
+      style="padding-top: {{ pt }}%;"
+    >
+      <img
+        class="custom-img"
+        srcset="
+          {{ image | img_url: '1000x' }} 1000w,
+          {{ image | img_url: '1200x' }} 1200w,
+          {{ image | img_url: '1400x' }} 1400w,
+          {{ image | img_url: 'master' }} 1600w,
+        "
+        alt="{{ image.alt }}"
+        loading="lazy"
+      >
+    </div>
+    <div class="pp-upgrade-banner__content">
+      {% if section.settings.title != blank %}
+        <h2 class="pp-upgrade-banner__title text--black">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+      {% if section.settings.subtitle != blank %}
+        <p class="pp-upgrade-banner__description text--black">
+          {{ section.settings.subtitle }}
+        </p>
+      {% endif %}
+      {% if section.settings.button_label %}
+        <div class="pp-upgrade-banner__button-wrapper">
+          <a href="{{ section.settings.url }}" target="_blank" class="button--container ">
+            <span class="button text--white background--dark-blue">{{ section.settings.button_label }}</span>
+          </a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "PP Upgrade Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobileImage",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title",
+      "default": "Load Shedding Sale"
+    },
+    {
+      "type": "html",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Up to 30% OFF"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Learn More"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "URL"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,219 @@
+<!--
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+  >
+-->
+{{ 'rigid-panels.css' | asset_url | stylesheet_tag }}
+
+<div class="rigid-panels rigid-container" x-data="{open: true}">
+  <h2>
+    {{ section.settings.title }}
+  </h2>
+  <p>
+    {{ section.settings.subtitle }}
+  </p>
+  <button class="rigid-panel-btn" type="button" @click="open = !open">
+    <span x-text="open ? 'Mostrar menos' : 'Muéstrame' "></span>
+    <svg
+      x-show="!open"
+      style="display: none;"
+      stroke="currentColor"
+      fill="currentColor"
+      stroke-width="0"
+      viewBox="0 0 20 20"
+      height="1em"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd"></path>
+    </svg>
+    <svg
+      x-show="open"
+      stroke="currentColor"
+      fill="currentColor"
+      stroke-width="0"
+      viewBox="0 0 20 20"
+      height="1em"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 000 2h6a1 1 0 100-2H7z" clip-rule="evenodd"></path>
+    </svg>
+  </button>
+
+  <div class="swiper" x-show="open" x-collapse>
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        <div class="swiper-slide">
+          <div class="swiper-slide-inner">
+            {% assign image = block.settings.image %}
+            <div class="rp-img-wrapper">
+              <div
+                class="custom-img-wrapper"
+                style="padding-top: 100%;"
+              >
+                <img
+                  class="custom-img"
+                  srcset="
+                    {{ image | img_url: '400x' }} 500w,
+                    {{ image | img_url: '500x' }} 600w
+                  "
+                  alt="{{ image.alt }}"
+                  loading="lazy"
+                >
+              </div>
+            </div>
+            <div class="rp-product-title">
+              {{ block.settings.title }}
+            </div>
+            <div class="rp-features-grid">
+              <div>
+                <div class="rp-tag">{{ block.settings.f1Title }}</div>
+                <div class="rp-data">{{ block.settings.f1 }}</div>
+              </div>
+              <div>
+                <div class="rp-tag">{{ block.settings.f2Title }}</div>
+                <div class="rp-data">{{ block.settings.f2 }}</div>
+              </div>
+              <div>
+                <div class="rp-tag">{{ block.settings.f3Title }}</div>
+                <div class="rp-data">{{ block.settings.f3 }}</div>
+              </div>
+              <div>
+                <div class="rp-tag">{{ block.settings.f4Title }}</div>
+                <div class="rp-data">{{ block.settings.f4 }}</div>
+              </div>
+            </div>
+            <a
+              class="rigid-panel-btn rigid-panel-btn--black"
+              href="{{ block.settings.url }}"
+            >
+              {{ block.settings.btnText }}
+            </a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="swiper-pagination" x-show="open"></div>
+</div>
+
+<script type="module">
+  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js';
+
+  (function () {
+    const swiper = new Swiper('#shopify-section-{{ section.id }} .swiper', {
+      slidesPerView: 1,
+      spaceBetween: 24,
+      pagination: {
+        el: '#shopify-section-{{ section.id }} .swiper-pagination',
+      },
+      breakpoints: {
+        1000: {
+          slidesPerView: {{ section.blocks.size }},
+          spaceBetween: 30,
+        },
+      },
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Panels",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Discover the Best Solar Panel for You"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Compare our solar panels to find the one that fits your needs."
+    }
+  ],
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Product title",
+          "default": "EcoFlow 400W Rigid Solar Panel"
+        },
+        {
+          "type": "text",
+          "id": "f1Title",
+          "label": "Feature 1 title",
+          "default": "Power Rating"
+        },
+        {
+          "type": "text",
+          "id": "f1",
+          "label": "Feature 1 title",
+          "default": "100W"
+        },
+        {
+          "type": "text",
+          "id": "f2Title",
+          "label": "Feature 2 title",
+          "default": "Cell Type"
+        },
+        {
+          "type": "text",
+          "id": "f2",
+          "label": "Feature 2",
+          "default": "Monocrystalline Silicon"
+        },
+        {
+          "type": "text",
+          "id": "f3Title",
+          "label": "Feature 3 title",
+          "default": "Maximum Operating Current"
+        },
+        {
+          "type": "text",
+          "id": "f3",
+          "label": "Feature 3",
+          "default": "5.9 A"
+        },
+        {
+          "type": "text",
+          "id": "f4Title",
+          "label": "Feature 4 title",
+          "default": "Maximum Operating Voltage"
+        },
+        {
+          "type": "text",
+          "id": "f4",
+          "label": "Feature 4",
+          "default": "17.1 V"
+        },
+        {
+          "type": "text",
+          "id": "btnText",
+          "label": "Button text",
+          "default": "Shop Now"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Button URL"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

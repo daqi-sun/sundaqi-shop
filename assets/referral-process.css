@@ -1,0 +1,122 @@
+.referral-process {
+  max-width: 1120px;
+  margin: 0 auto;
+  width: calc(100% - 48px);
+  text-align: center;
+  margin-bottom: 110px;
+}
+.referral-page main .title {
+  font-size: 28px;
+  letter-spacing: 1px;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  text-align: left;
+}
+.referral-process .title {
+  font-family: 'Gotham';
+  font-weight: bold;
+}
+.referral-process-wrapper {
+  display: flex;
+}
+.referral-process .process-wrapper {
+  flex: 1;
+  padding: 32px;
+  background: #FFFFFF;
+  text-align: left;
+  border-radius: 8px;
+}
+.referral-process .process-header {
+  display: flex;
+  padding-bottom: 25px;
+  align-items: center;
+  border-bottom: 1px solid #EDEDED;
+  margin-bottom: 25px;
+}
+.referral-process .step {
+  font-size: 14px;
+  line-height: 19px;
+  color: #2164FF;
+  margin-bottom: 4px;
+  font-weight: 400;
+}
+.referral-process .process-content {
+  margin-left: 16px;
+  font-family: 'Manrope';
+}
+.referral-process .process-icon {
+  width: 48px;
+  height: 48px;
+}
+.referral-process .step-title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+}
+.referral-process .process-description {
+  font-size: 14px;
+  line-height: 21px;
+}
+.referral-process .title-wrapper {
+  margin-bottom: 24px;
+}
+.referral-process .process-wrapper {
+  flex: 1;
+}
+.referral-process-wrapper .slick-dots {
+  position: unset;
+}
+.referral-process-wrapper .slick-dots li {
+  height: 7px;
+  width: 7px;
+  border-radius: 50px;
+}
+.slick-dots li {
+  background: #000;
+  opacity: 0.5;
+}
+.slick-dots li.slick-active {
+  background: #000;
+  opacity: 1;
+}
+
+.referral-process-wrapper .step-wrapper {
+  font-family: 'Gotham';
+}
+@media screen and (min-width: 990px) {
+  .referral-process .process-wrapper:first-child {
+    margin-left: 0;
+  }
+  .referral-process .process-wrapper {
+    margin-left: 15px;
+  }
+}
+@media screen and (max-width: 989px) {
+  .referral-process {
+    margin-bottom: 60px;
+  }
+  .referral-process-wrapper {
+    flex-direction: column;
+  }
+  .referral-page main .title {
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+  }
+  .referral-process .process-wrapper:last-child {
+    margin-bottom: 0;
+  }
+  .referral-process .process-wrapper {
+    margin-bottom: 15px;
+    padding: 20px;
+  }
+  .referral-process .process-header {
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+  }
+  .referral-process .step-title {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}

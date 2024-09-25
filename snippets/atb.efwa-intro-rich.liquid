@@ -1,0 +1,113 @@
+{% comment %}
+ATB-SCHEMA{
+"name": "EFWA Intro Rich",
+"id": "efwa-intro-rich",
+"banner": "",
+"icon": "",
+"tags": "",
+"description": "",
+"class": "efwa-intro-rich",
+"settings": [
+{
+"type": "text",
+"id": "section_id",
+"label": "Section ID",
+"info": "Enter a unique ID with only letters and numbers, no spaces",
+"default": ""
+},
+{
+"type": "checkbox",
+"id": "atb_enable_checkbox",
+"label": "Enable section",
+"default": true,
+"info": ""
+},
+{
+"id": "block_subtitle",
+"type": "text",
+"label": "Subtitle",
+"default": "Product Intro Subtitle",
+"repeatable": "section",
+"info": ""
+},
+{
+"id": "block_title",
+"type": "text",
+"label": "Title",
+"default": "Product Intro Title",
+"repeatable": "section",
+"info": ""
+},
+{
+"id": "block_description",
+"type": "text",
+"label": "description",
+"default": "Product Intro Description",
+"repeatable": "section",
+"info": ""
+},
+{
+"type": "text",
+"id": "blocks",
+"label": "Block ID",
+"info": "Enter a unique ID with only letters and numbers, no spaces",
+"default": "",
+"repeatable": "section"
+},
+{
+"id": "block_rich",
+"type": "wysiwyg",
+"label": "Content",
+"default": "Product Intro Content",
+"repeatable": "section",
+"info": ""
+}
+],
+"warnings": [
+"repeating image fields may not be properly handled"
+]
+}ATB-SCHEMA
+{% endcomment %}
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_enable_checkbox' -%}
+{%- assign atb_enable_checkbox = val -%}
+{%- include 'atb-render' field:'block_title' -%}
+{%- assign block_title = val -%}
+{%- include 'atb-render' field:'block_subtitle' -%}
+{%- assign block_subtitle = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_rich' -%}
+{%- assign block_rich = val -%}
+{%- include 'atb-render' field:'block_description' -%}
+{%- assign block_description = val -%}
+{%- if atb_enable_checkbox == blank -%}
+{%- assign atb_enable_checkbox = false -%}
+{%- else -%}
+{%- assign atb_enable_checkbox = true -%}
+{%- endif -%}
+<section id="shopify-section-{{section_id}}" class="shopify-section efwa-section">
+	{% if atb_enable_checkbox %}
+	<section class="efwa-intro-rich" id="efwa-intro-rich">
+		<div class="efwa-page-80">
+			{% for block0 in blocks %}
+			<div class="efwa-container">
+				<div class="efwa-row">
+					<h3 class="efwa-subtitle">{{block_subtitle[forloop.index0]}}</h3>
+					<h2 class="efwa-title">{{block_title[forloop.index0]}}</h2>
+					<p class="efwa-description">{{block_description[forloop.index0]}}</p>
+				</div>
+				<div class="efwa-row">
+					{{block_rich[forloop.index0]}}
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</section>
+	{% endif %}
+	<style>
+	</style>
+	<script type="application/javascript">
+	</script>
+</section>

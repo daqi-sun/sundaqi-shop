@@ -1,0 +1,41 @@
+<div class="recommendations-banner">
+    {% if section.settings.banner_image != blank %}
+        <img class="{% if section.settings.banner_image_mobile != blank %} desktop-image{% endif %}"
+             loading="lazy"
+             srcset="{%- if section.settings.banner_image.width >= 375 -%}{{ section.settings.banner_image | img_url: '375x' }} 375w,{%- endif -%}
+                     {%- if section.settings.banner_image.width >= 720 -%}{{ section.settings.banner_image | img_url: '720x' }} 750w,{%- endif -%}
+                     {%- if section.settings.banner_image.width >= 1066 -%}{{ section.settings.banner_image | img_url: '1066x' }} 1066w,{%- endif -%}
+                     {%- if section.settings.banner_image.width >= 1500 -%}{{ section.settings.banner_image | img_url: '1500x' }} 1500w,{%- endif -%}
+                     {%- if section.settings.banner_image.width >= 2000 -%}{{ section.settings.banner_image | img_url: '2000x' }} 2000w{%- endif -%}"
+                     src="{{ section.settings.banner_image | img_url: '535x' }}"
+                     alt="{{ section.settings.banner_image.alt }}"
+             />
+        {% if section.settings.banner_image_mobile != blank %}
+          <img class="mobile-image" loading="lazy"
+              srcset="{%- if section.settings.banner_image_mobile.width >= 375 -%}{{ section.settings.banner_image_mobile | img_url: '375x' }} 375w,{%- endif -%}
+              {%- if section.settings.banner_image_mobile.width >= 720 -%}{{ section.settings.banner_image_mobile | img_url: '720x' }} 750w,{%- endif -%}
+              {%- if section.settings.banner_image_mobile.width >= 1066 -%}{{ section.settings.banner_image_mobile | img_url: '1066x' }} 1066w,{%- endif -%}
+              {%- if section.settings.banner_image_mobile.width >= 1500 -%}{{ section.settings.banner_image_mobile | img_url: '1500x' }} 1500w{%- endif -%}"
+              src="{{ section.settings.banner_image_mobile | img_url: '535x' }}"
+              alt="{{ section.settings.banner_image_mobile.alt }}" />
+        {% endif %}
+    {% endif %}
+</div>
+
+{% schema %}
+  {
+    "name": "Banner",
+    "settings": [
+      {
+        "id":"banner_image",
+        "type":"image_picker",
+        "label":"Image for PC"
+      },
+      {
+        "id":"banner_image_mobile",
+        "type":"image_picker",
+        "label":"Image for Mobile"
+      }
+	]
+  }
+{% endschema %}

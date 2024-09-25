@@ -1,0 +1,474 @@
+{{ 'xmas-take-guess-form.css' | asset_url | stylesheet_tag }}
+
+<div class="xmas-take-guess-form__section" x-data="xmasTakeGuess" x-cloak>
+  <div class="star-page-container">
+    {% comment %} Step 1 Form start here {% endcomment %}
+    <div class="xmas-take-guess-form__step-1-title-wrapper">
+      <div class="xmas-take-guess-form__step-1-title-icon-wrapper">
+        <img
+          src="{{ section.settings.step_1_title_icon |  image_url: width: 60 }}"
+          alt=""
+          class="xmas-take-guess-form__step-1-title-icon"
+          loading="eager"
+        >
+      </div>
+      <h2
+        class="xmas-take-guess-form__step-1-title"
+        style="color: {{ section.settings.step_1_title_color }};"
+      >
+        {{ section.settings.step_1_title }}
+      </h2>
+    </div>
+    <div class="xmas-take-guess-form__form-container form-container--step-1" x-show="step === 1">
+      <div class="xmas-take-guess-form__step-1-content-wrapper">
+        <div class="xmas-take-guess-form__step-1-description-wrapper">
+          <p
+            class="xmas-take-guess-form__step-1-description"
+            style="color: {{ section.settings.step_1_description_color }};"
+          >
+            {{ section.settings.step_1_description }}
+          </p>
+
+          <p
+            class="xmas-take-guess-form__step-1-tips"
+            style="color: {{ section.settings.step_1_tips_color }}"
+          >
+            {{ section.settings.step_1_tips }}
+          </p>
+        </div>
+
+        <div class="xmas-take-guess-form__step-1-input-section">
+          <div class="xmas-take-guess-form__step-1-input-wrapper">
+            <input
+              type="text"
+              class="xmas-take-guess-form__step-1-input"
+              placeholder="{{ section.settings.step_1_input_placeholder }}"
+              style="
+                color: {{ section.settings.step_1_input_color }};
+                background-color: {{ section.settings.step_1_input_background_color }};
+              "
+              x-model="email"
+            >
+            <button
+              class="xmas-take-guess-form__step-1-input-button"
+              type="button"
+              style="
+                color: {{ section.settings.step_1_input_button_color }};
+                background-color: {{ section.settings.step_1_input_button_background_color }};
+              "
+              @click="submitStepOneEmail"
+            >
+              <span x-text="loading ? 'Loading...' : '{{ section.settings.step_1_input_button_text }}'"> </span>
+            </button>
+          </div>
+
+          <p
+            class="xmas-take-guess-form__step-1-error-message"
+            style="color: {{ section.settings.step_1_error_message_color }}"
+            x-text="stepOneErrMsg"
+            x-show="stepOneErrMsg !== ''"
+          ></p>
+
+          <div class="xmas-take-guess-form__step-1-disclaimer-wrapper">
+            <label
+              class="xmas-take-guess-form__step-1-disclaimer"
+              style="color: {{ section.settings.step_1_disclaimer_text_color }}"
+              for="bf_take_guess_disclaimer"
+            >
+              {{ section.settings.step_1_disclaimer_text }}
+              <input
+                type="checkbox"
+                checked
+                class="xmas-take-guess-form__step-1-disclaimer-checkbox"
+                name="disclaimer"
+                id="bf_take_guess_disclaimer"
+                x-model="agreeToMarketing"
+              >
+              <span class="checkmark"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% comment %} Step 1 Form end here {% endcomment %}
+
+    {% comment %} Step 2 Form start here {% endcomment %}
+    <div class="xmas-take-guess-form__form-container form-container--step-2" x-show="step === 2">
+      {% comment %} Do not show cross button after submission to prevent resubmission in the same form {% endcomment %}
+      <div class="xmas-take-guess-form__close-button-wrapper" x-show="!successSubmit">
+        <button
+          type="button"
+          class="xmas-take-guess-form__close-button"
+          @click="setStep(1)"
+        ></button>
+      </div>
+      <div class="xmas-take-guess-form__step-2-content-container">
+        <h2
+          class="xmas-take-guess-form__step-2-title"
+          style="color: {{ section.settings.step_2_question_color }}"
+        >
+          {{- section.settings.step_2_question -}}
+        </h2>
+        <div class="xmas-take-guess-form__step-2-answers-wrapper">
+          {% for block in section.blocks %}
+            <div class="xmas-take-guess-form__step-2-answer">
+              {% comment %} Disable radio select after submission {% endcomment %}
+              <input
+                type="radio"
+                name=""
+                id="step-2-answer-{{ forloop.index }}"
+                value="{{ forloop.index }}"
+                x-model="answer"
+                :aria-disabled="successSubmit || loading"
+                :disabled="successSubmit || loading"
+                hidden
+              >
+              <label
+                class="xmas-take-guess-form__step-2-answer-label"
+                for="step-2-answer-{{ forloop.index }}"
+              >
+                {% comment %}
+                  Use hollow checkmark to show selected answer
+                  Use solid yellow checkmark to show correct answer when submitted
+                {% endcomment %}
+                <div
+                  :class="
+                    {
+                      'step-2-answer-checkmark': true,
+                      'active': answer === '{{ forloop.index }}',
+                      'correct-answer': '{{ forloop.index }}' === '{{ section.settings.step_2_correct_answer }}' && successSubmit,
+                    }
+                  "
+                ></div>
+                <p :class="{
+                  'step-2-answer-text': true,
+                  'correct-answer': '{{ forloop.index }}' === '{{ section.settings.step_2_correct_answer }}' && successSubmit
+                }">
+                  {{ block.settings.option_label }}
+                </p>
+              </label>
+            </div>
+          {% endfor %}
+
+          <div class="xmas-take-guess-form__step-2-answer">
+            <button
+              type="button"
+              class="xmas-take-guess-form__button"
+              style="
+                color: {{ section.settings.step_2_button_text_color }};
+                background-color: {{ section.settings.step_2_button_background_color }};
+              "
+              @click="submitResult"
+              x-show="!successSubmit"
+            >
+              <span x-text="loading ? 'Loading...' : '{{ section.settings.step_2_button_text }}'"> </span>
+            </button>
+          </div>
+        </div>
+
+        <p
+          class="xmas-take-guess-form__step-2-error-message"
+          style="color: {{ section.settings.step_2_error_message_color }}"
+          x-text="stepTwoErrMsg"
+          x-show="stepTwoErrMsg !== ''"
+        ></p>
+
+        <p
+          class="xmas-take-guess-form__step-2-success-message"
+          style="color: {{ section.settings.step_2_success_submit_text_color }}"
+          x-show="successSubmit"
+        >
+          {{- section.settings.step_2_success_submit_text -}}
+        </p>
+      </div>
+    </div>
+    {% comment %} Step 2 Form end here {% endcomment %}
+  </div>
+</div>
+
+<style>
+  .form-container--step-1 {
+    background: url({{ section.settings.step_1_background_image | image_url: width: 1200 }});
+    background-repeat: no-repeat;
+    background-color: {{ section.settings.step_1_background_color }};
+    background-size: 100% 100%;
+  }
+
+  .form-container--step-2 {
+    background: url({{ section.settings.step_2_background_image | image_url: width: 1200 }});
+    background-repeat: no-repeat;
+    background-color: {{ section.settings.step_2_background_color }};
+    background-size: contain;
+    background-position: top right;
+  }
+
+  .xmas-take-guess-form__step-1-tips {
+      color: {{ section.settings.step_1_tips_color }}
+  }
+
+  @media (max-width: 749px) {
+    .xmas-take-guess-form__step-1-tips {
+        color: {{ section.settings.step_1_tips_color_mobile }}
+    }
+
+    .form-container--step-1 {
+      background: url({{ section.settings.step_1_background_image_mobile | image_url: width: 700 }}) no-repeat center;
+      background-color: {{ section.settings.step_1_background_color }};
+      background-size: 100% 100%;
+  }
+
+    .form-container--step-2 {
+      background: url({{ section.settings.step_2_background_image_mobile | image_url: width: 700 }});
+      background-repeat: no-repeat;
+      background-color: {{ section.settings.step_2_background_color }};
+      background-size: contain;
+      background-position: top right;
+    }
+  }
+</style>
+
+<script>
+  // star email section settings will pass to below js file
+  var xmasTakeGuessSettingJsons = {{ section.settings | json }};
+
+  // REMARKS: Specific field for xmas preheat 2023
+  // Xmas 2023 take a guess event has 6 round of questions, each question has one ID for every store
+  // The ID is used to identify which store and which round of question the user is guessing, and send to emarsys api to record
+  // e.g. first round - EU: 1, DE: 2, UK: 3
+  //      second round - EU: 4, DE: 5, UK: 6
+  let xmas23GuessID = xmasTakeGuessSettingJsons.xmas23_guess;
+</script>
+{{ 'subscription-form-common.js' | asset_url | script_tag }}
+<script src="{{ 'xmas-take-guess-form-alpine.js' | asset_url }}"></script>
+
+{% schema %}
+{
+  "name": "Take a guess form",
+  "settings": [
+    {
+      "type": "header",
+      "content": "API Settings"
+    },
+    {
+      "type": "text",
+      "id": "xmas23_guess",
+      "label": "Xmas 23 Guess ID",
+      "info": "Six rounds of questions, One ID for each question"
+    },
+    {
+      "type": "text",
+      "id": "contact_list_id",
+      "label": "Contact list ID"
+    },
+    {
+      "type": "header",
+      "content": "Step 1 Settings"
+    },
+    {
+      "type": "color",
+      "id": "step_1_background_color",
+      "label": "Step 1 background color",
+      "default": "#111F34"
+    },
+    {
+      "type": "image_picker",
+      "id": "step_1_background_image",
+      "label": "Step 1 background image"
+    },
+    {
+      "type": "image_picker",
+      "id": "step_1_background_image_mobile",
+      "label": "Step 1 mobile background image"
+    },
+    {
+      "type": "text",
+      "id": "step_1_title",
+      "label": "Step 1 form title",
+      "default": "Take a Wild Guess"
+    },
+    {
+      "type": "color",
+      "id": "step_1_title_color",
+      "label": "Step 1 title color",
+      "default": "#FFC24D"
+    },
+    {
+      "type": "image_picker",
+      "id": "step_1_title_icon",
+      "label": "Step 1 title icon"
+    },
+    {
+      "type": "text",
+      "id": "step_1_description",
+      "label": "Step 1 description",
+      "default": "Drop your email and guess what's our most recommended EcoFlow Christmas gift.  And stuff 100 EcoCredits in your stocking!"
+    },
+    {
+      "type": "color",
+      "id": "step_1_description_color",
+      "label": "Step 1 description color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "text",
+      "id": "step_1_tips",
+      "label": "Step 1 tips",
+      "default": "Rules: Share your guess with us and claim 100 EcoCredits, which will be sent to you on 5 Dec."
+    },
+    {
+      "type": "color",
+      "id": "step_1_tips_color",
+      "label": "Step 1 Tips color",
+      "default": "#A5ACBA"
+    },
+    {
+      "type": "color",
+      "id": "step_1_tips_color_mobile",
+      "label": "Step 1 Tips mobile color",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "id": "step_1_input_placeholder",
+      "label": "Step 1 input placeholder"
+    },
+    {
+      "type": "color",
+      "id": "step_1_input_color",
+      "label": "Step 1 input color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "step_1_input_background_color",
+      "label": "Step 1 input background color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "text",
+      "id": "step_1_input_button_text",
+      "label": "Step 1 input button text",
+      "default": "Join Now"
+    },
+    {
+      "type": "color",
+      "id": "step_1_input_button_color",
+      "label": "Step 1 input button color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "step_1_input_button_background_color",
+      "label": "Step 1 input button background color",
+      "default": "#FFC24D"
+    },
+    {
+      "type": "text",
+      "id": "step_1_disclaimer_text",
+      "label": "Step 1 Disclaimer text",
+      "default": "By signing up, you agree to receive marketing emails from EcoFlow."
+    },
+    {
+      "type": "color",
+      "id": "step_1_disclaimer_text_color",
+      "label": "Step 1 Disclaimer text color",
+      "default": "#A5ACBA"
+    },
+    {
+      "type": "color",
+      "id": "step_1_error_message_color",
+      "label": "Step 1 error message color",
+      "default": "#FF4D42"
+    },
+    {
+      "type": "header",
+      "content": "Step 2 Settings"
+    },
+    {
+      "type": "color",
+      "id": "step_2_background_color",
+      "label": "Step 2 background color",
+      "default": "#0A4700"
+    },
+    {
+      "type": "image_picker",
+      "id": "step_2_background_image",
+      "label": "Step 2 background image"
+    },
+    {
+      "type": "image_picker",
+      "id": "step_2_background_image_mobile",
+      "label": "Step 2 mobile background image"
+    },
+    {
+      "type": "textarea",
+      "id": "step_2_question",
+      "label": "Step 2 form question",
+      "default": "256Wh Capacity\nSolar charging: 0-100% in 3 hours (1 set)."
+    },
+    {
+      "type": "color",
+      "id": "step_2_question_color",
+      "label": "Step 2 form question color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "text",
+      "id": "step_2_correct_answer",
+      "label": "Step 2 correct answer",
+      "info": "Please write 1 or 2 for correct answer."
+    },
+    {
+      "type": "text",
+      "id": "step_2_button_text",
+      "label": "Step 2 button text",
+      "default": "Take a Guess"
+    },
+    {
+      "type": "color",
+      "id": "step_2_button_text_color",
+      "label": "Step 2 button text color",
+      "default": "#040D1C"
+    },
+    {
+      "type": "color",
+      "id": "step_2_button_background_color",
+      "label": "Step 2 button background color",
+      "default": "#FFC24D"
+    },
+    {
+      "type": "color",
+      "id": "step_2_error_message_color",
+      "label": "Step 2 error message color",
+      "default": "#FF0000"
+    },
+    {
+      "type": "textarea",
+      "id": "step_2_success_submit_text",
+      "label": "Step 2 success submit message",
+      "default": "Thank you for your participation. \n100 Ecocredits will be sent to your account on 12.5."
+    },
+    {
+      "type": "color",
+      "id": "step_2_success_submit_text_color",
+      "label": "Step 2 success submit message color",
+      "default": "#FFC24D"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Xmas Take a guess option",
+      "type": "xmas-take-a-guess-option",
+      "settings": [
+        {
+          "type": "text",
+          "id": "option_label",
+          "label": "Option label",
+          "info": "Option Text, please include A. or B. at the beginning"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 2
+}
+{% endschema %}

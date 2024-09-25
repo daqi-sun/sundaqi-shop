@@ -1,0 +1,72 @@
+<div
+  id="NewsletterConfirmationModal"
+  class="modal"
+  role="dialog"
+  aria-modal="true"
+  tabindex="-1"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content newsletter-confirmation-modal__content">
+      <button
+        type="button"
+        class="modal__close js-modal-close close text-link"
+        data-dismiss="modal"
+        aria-label="Close"
+      >
+        {% render 'icon-close-2' %}
+      </button>
+
+      <div class="modal__centered">
+        <div class="modal-body p-0">
+          <strong class="newsletter-confirmation-modal__heading">{{ title }}</strong>
+
+          <div class="newsletter-confirmation-modal__text">{{ message }}</div>
+
+          <button class="btn newsletter-confirmation-modal__confirm">{{ submit_label }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% style %}
+  #NewsletterConfirmationModal .newsletter-confirmation-modal__content {
+    background: white;
+    max-width: 100%;
+    width: 500px;
+    padding: 30px;
+    border-radius: 8px;
+    font-size: 14px;
+    position: relative;
+  }
+
+  #NewsletterConfirmationModal .modal__close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+  #NewsletterConfirmationModal .btn {
+    display: flex;
+    text-transform: uppercase;
+    background: #0270e3;
+    border-radius: 100px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 12px;
+    height: 36px;
+    color: white;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .newsletter-confirmation-modal__heading {
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .newsletter-confirmation-modal__text {
+    margin-bottom: 10px;
+  }
+{% endstyle %}

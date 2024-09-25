@@ -1,0 +1,74 @@
+{{ "tabs-and-details.css" | asset_url | stylesheet_tag }}
+<div class="tabs-and-details-wrapper">
+  {% if section.settings.title != blank %}
+    <div class="title-wrapper">
+      <h2 class="title">{{ section.settings.title }}</h2>
+    </div>
+  {% endif %}
+  <div class="tabs-and-details">
+    <div class="tab-wrapper">
+      {% for block in section.blocks %}
+        <style>
+          input[data-tab="{{ forloop.index }}"]:checked {
+            border-bottom: 1px solid #212121;
+          }
+          input[data-tab="{{ forloop.index }}"]:before {
+            content: '{{ block.settings.title }}';
+          }
+        </style>
+        <input type="radio" name="tab" class="tabs-and-details__tab" data-tab="{{ forloop.index }}"{% if forloop.first %} checked="checked"{% endif %}>
+      {% endfor %}
+    </div>
+    <div class="tabs-and-details__details">
+      {% for block in section.blocks %}
+        <div class="tabs-and-details__detail{% if forloop.first %} show{% endif %}" data-tab="{{ forloop.index }}">
+          {{ block.settings.content }}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<script>
+  var tabsAndDetails = document.querySelectorAll('.tabs-and-details input');
+  tabsAndDetails.forEach(function(tab) {
+    tab.addEventListener("click", function(e) {
+      var selectedTab = e.target.dataset.tab;
+      document.querySelector(".tabs-and-details__detail.show").classList.remove("show")
+      document.querySelector('.tabs-and-details__detail[data-tab="'+selectedTab+'"]').classList.add("show")
+    })
+  })
+</script>
+{% schema %}
+  {
+    "name": "Tabs and details",
+    "settings": [
+      {
+        "id": "title",
+        "type": "text",
+        "label": "Title"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Tab",
+        "type": "tab",
+        "settings": [
+          {
+            "id": "title",
+            "type": "text",
+            "label": "Title"
+          }, {
+            "id": "content",
+            "type": "richtext",
+            "label": "Content"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Tabs and details"
+      }
+    ]
+  }
+{% endschema %}

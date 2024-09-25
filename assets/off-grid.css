@@ -1,0 +1,1368 @@
+/* Off Grid Banner Style */
+
+html {
+	scroll-behavior: smooth
+}
+
+.desktop-only {
+	display: none;
+}
+
+@media (min-width: 768px) {
+	.desktop-only {
+		display: block;
+	}
+
+	.mobile-only {
+		display: none;
+	}
+
+}
+
+@media (min-width: 1024px) {
+	.tablet-only {
+		display: none;
+	}
+}
+.custom-img-wrapper {
+	position: relative;
+}
+
+.custom-img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%
+}
+
+.off-grid-container {
+	padding: 48px 24px;
+	max-width: 1920px;
+	margin: 0 auto;
+	background: #1d1d1d;
+}
+
+@media (min-width: 768px) {
+	.off-grid-container {
+		padding: 100px 24px;
+	}
+}
+
+@media (min-width: 1000px) {
+	.off-grid-container {
+		padding: 100px 80px;
+	}
+}
+
+@media (min-width: 1350px) {
+	.off-grid-container {
+		padding: 100px 160px;
+	}
+}
+
+.off-grid-banner {
+	position: relative;
+}
+
+.off-grid-banner__content {
+	text-align: center;
+	padding: 40px 24px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+@media (min-width: 368px) {
+	.off-grid-banner__content {
+		padding-top: 80px;
+	}
+}
+
+@media (min-width: 768px) {
+	.off-grid-banner__content {
+		padding-top: 60px;
+	}
+}
+
+@media (min-width: 1250px) {
+	.off-grid-banner__content {
+		padding-top: 100px;
+	}
+}
+
+@media (min-width: 1500px) {
+	.off-grid-banner__content {
+		padding-top: 150px;
+	}
+}
+
+.off-grid-banner__content h1 {
+	font-weight: 700;
+	margin-bottom: 16px;
+	line-height: 1;
+	font-size: 40px;
+	margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+	.off-grid-banner__content h1 {
+		font-size: 80px;
+		margin-bottom: 40px;
+	}
+}
+
+
+.btn--container {
+    display: flex;
+    justify-content: center;
+    height: 48px;
+    background: #000000;
+    width: 282px;
+    margin: auto;
+    border-radius: 25px;
+}
+
+@media (min-width: 768px) {
+	.btn--container {
+		height: 50px;
+		width: 248px;
+	}
+}
+
+
+.off-grid-banner-btn {
+	color: #ffffff;
+	font-weight: 700;
+	text-transform: capitalize;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    font-size: 18px;
+}
+@media (min-width: 768px) {
+	.off-grid-banner-btn {
+		font-size: 20px;
+	}
+}
+
+.off-grid-banner-btn:hover {
+	color: #ffffff;
+}
+
+.off-grid-banner-btn svg {
+	margin-left: 6px;
+}
+
+.off-grid-banner--flex-style .off-grid-banner-btn {
+	color: #000;
+}
+
+@media (min-width: 768px) {
+	.off-grid-banner--flex-style .off-grid-banner__content {
+		padding-top: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		text-align: left;
+		max-width: 760px;
+	}
+	.off-grid-banner--flex-style .off-grid-banner-btn {
+		justify-content: flex-start;
+	}
+}
+
+@media (min-width: 1400px) {
+	.off-grid-banner--flex-style .off-grid-banner__content {
+		padding-left: 100px;
+	}
+}
+
+/* End Off Grid Banner Stlye */
+
+/* What is off grid solar system Style */
+
+.off-grid-ss-section {
+	padding-top: 88px;
+	padding-bottom: 93px;
+	background-color: #ffffff;
+}
+.off-grid-ss-container {
+	max-width: 970px;
+    width: 100%;
+    margin: auto;
+	text-align: center;
+}
+
+.off-grid-ss-text-container h2 {
+	font-size: 56px;
+	line-height: 1.2;
+	margin-bottom: 50px;
+}
+.off-grid-ss-text-container p {
+	font-size: 24px;
+	line-height: 1.5;
+	margin-bottom: 50px;
+
+}
+
+.off-grid-ss-details-container {
+	display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.off-grid-ss-flex-item {
+	flex-basis: 0;
+	flex-grow: 1;
+}
+.off-grid-ss-flex-item img {
+	height: 88px;
+}
+.off-grid-ss-flex-item p {
+	font-size: 24px;
+	line-height: 1.25;
+	font-weight: 500;
+	margin-top: 24px;
+}
+
+@media (max-width: 1239px) {
+	.off-grid-ss-section {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+}
+
+@media (max-width: 767px) {
+	.off-grid-ss-section {
+		padding-top: 44px;
+		padding-bottom: 47px;
+	}
+	.off-grid-ss-text-container h2 {
+		font-size: 30px;
+		margin-bottom: 24px;
+	}
+	.off-grid-ss-text-container p {
+		font-size: 18px;
+		margin-bottom: 33px;
+	}
+	.off-grid-ss-flex-item img {
+		height: 51px;
+	}
+	.off-grid-ss-flex-item p {
+		font-size: 14px;
+		margin-top: 26px;
+	}
+}
+/* End What is off grid solar system Style */
+
+/* How Does Off Grid Solar System Work? */
+
+.off-grid-ssw-section {
+	background: #F6F6F6;
+	padding-top: 118px;
+	padding-bottom: 97px;
+}
+.off-grid-ssw-container {
+	max-width: 1140px;
+	width: 100%;
+	margin: auto;
+	text-align: center;
+}
+
+.off-grid-ssw-text-container h2 {
+	font-size: 56px;
+	line-height: 1.2;
+	margin-bottom: 50px;
+}
+
+.off-grid-info--container {
+	max-width: 1140px;
+	width: 100%;
+    margin: auto;
+}
+
+.off-grid-ssw-details-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	text-align: center;
+	gap: 10px;
+}
+
+.off-grid-ssw-details-container.title-container {
+	align-items: center;
+}
+
+.off-grid-ssw-details-container.line-divider {
+	margin-bottom: 16px;
+}
+
+.off-grid-ssw-details-flex-item p {
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 1.25;
+	margin-bottom: 10px;
+	color: #9A9A9A;
+}
+
+.off-grid-flex-item-block {
+	background: #FFFFFF;
+    border-radius: 20px;
+	padding-top: 40px;
+	padding-left: 18px;
+	padding-right: 18px;
+	padding-bottom: 60px;
+}
+
+.off-grid-flex-item-block .subtitle {
+	font-size: 24px;
+	font-weight: 500;
+	line-height: 1.25;
+	color: #000000;
+	margin-bottom: 17px;
+}
+
+.off-grid-flex-item-block .description {
+	font-size: 24px;
+	color: #7E7E7E;
+	line-height: 1.25;
+}
+
+@media (max-width: 1239px) {
+	.off-grid-ssw-container {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+	.off-grid-info--container {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+	.off-grid-flex-item-block .description {
+		font-size: 20px
+	}
+}
+@media (max-width: 1023px) {
+	.off-grid-info--container {
+		overflow: auto;
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+	.off-grid-info--container img {
+		max-width: 1140px;
+	}
+	.off-grid-ssw-details-container {
+		width: 1140px;
+	}
+	.off-grid-ssw-scroll-container {
+		margin-top: 16px;
+		padding-left: 16px;
+		padding-right: 16px;
+		display: flex;
+		align-items: center;
+		gap: 12px;
+	}
+	.off-grid-ssw-scroll-container p {
+		font-size: 16px;
+
+	}
+}
+@media (max-width: 767px) {
+	.off-grid-ssw-section {
+		padding-top: 32px;
+		padding-bottom: 58px;
+	}
+	.off-grid-ssw-text-container h2 {
+		font-size: 30px;
+		margin-bottom: 0;
+	}
+	.off-grid-info--container img {
+		max-width: 877px;
+	}
+	.off-grid-ssw-details-container {
+		width: 877px;
+	}
+	.off-grid-ssw-details-container.line-divider {
+		margin-bottom: 8px;
+	}
+	.off-grid-flex-item-block {
+		padding-left: 15px;
+		padding-right: 15px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	.off-grid-flex-item-block .subtitle {
+		font-size: 20px;
+		margin-bottom: 13px;
+	}
+	.off-grid-flex-item-block .description {
+		font-size: 18px;
+	}
+}
+
+/* End How Does Off Grid Solar System Work? */
+
+/* What’s in Off Grid Solar System? */
+
+.off-grid-sc-section {
+	padding-top: 88px;
+	padding-bottom: 57px;
+	background-color: #ffffff;
+}
+
+.off-grid-sc-content--container {
+	max-width: 916px;
+	width: 100%;
+	margin: auto;
+	text-align: center;
+}
+
+.off-grid-sc-component-menu {
+	background-color: #F2F2F2;
+}
+
+#ogsc-section-menu {
+	background-color: #ffffff;
+}
+
+.off-grid-sc-component-menu.fixed {
+	position: fixed;
+	z-index: 3;
+	top: 0;
+	left: 0;
+	width: 100%;
+	transition: top 0.5s ease-in-out;
+  }
+
+.off-grid-sc-content--container h2 {
+	font-size: 56px;
+	line-height: 1.2;
+	margin-bottom: 26px;
+}
+
+.off-grid-sc-content--container p {
+	font-size: 24px;
+	line-height: 1.45;
+}
+
+
+
+.off-grid-sc-menu--container {
+	max-width: 1140px;
+	width: 100%;
+	margin: auto;
+}
+
+.off-grid-sc-menu {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+}
+.off-grid-sc-menu .ogsc-menu-item {
+	font-size: 24px;
+	font-weight: 500;
+	padding-bottom: 24px;
+    padding-top: 24px;
+	flex-basis: 0;
+	flex-grow: 1;
+	cursor: pointer;
+    border-bottom: solid 2px transparent;
+}
+
+.off-grid-sc-menu .ogsc-menu-item.active {
+    border-bottom: solid 2px #707070;
+}
+
+.off-grid-sc-menu .ogsc-menu-item:hover {
+    border-bottom: solid 2px #707070;
+}
+.off-grid-sc-component-section {
+	padding-top: 48px;
+	padding-bottom: 108px;
+	background-color: #ffffff;
+}
+.off-grid-sc-component--container {
+	max-width: 1252px;
+	width: 100%;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	row-gap: 20px;
+	column-gap: 10px;
+}
+.off-grid-sc-component-full-width {
+	background-color: #F8F8F8;
+	border-radius: 25px;
+	flex: 1 0 100%;
+	position: relative;
+}
+.off-grid-sc-component-full-width img {
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+	right: 0;
+	height: 100%;
+}
+.off-grid-sc-component-full-width-2 {
+	background-color: #F8F8F8;
+	border-radius: 25px;
+	flex: 1 0 100%;
+	position: relative;
+}
+.off-grid-sc-component-full-width-2 img {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    object-fit: contain;
+    height: 100%;
+	z-index: 1;
+
+}
+
+.off-grid-sc-component-half-width {
+	background-color: #F8F8F8;
+	border-radius: 25px;
+	flex-basis: 0;
+	flex-grow: 1;
+	padding-left: 56px;
+    padding-top: 92px;
+    padding-bottom: 60px;
+    padding-right: 56px;
+	display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.off-grid-sc-component-full-width .off-grid-sc-component-full-width-content {
+	width: 50%;
+	padding-left: 56px;
+    padding-top: 90px;
+    padding-bottom: 106px;
+    padding-right: 34px;
+	z-index: 2;
+    position: inherit;
+}
+.off-grid-sc-component-full-width-2 .off-grid-sc-component-full-width-content {
+	width: 50%;
+	margin-left: auto;
+	padding-left: 56px;
+    padding-top: 90px;
+    padding-bottom: 106px;
+    padding-right: 34px;
+	position: inherit;
+	z-index: 2;
+}
+
+.off-grid-sc-component--container h3 {
+	font-size: 40px;
+}
+
+.off-grid-sc-component--container p {
+	font-size: 24px;
+	line-height: 1.3;
+	color: #7E7E7E;
+}
+
+.off-grid-sc-component-full-width-content .ogsc-content--wrapper {
+	margin-bottom: 55px;
+}
+
+.ogsc-button--wrapper {
+	display: flex;
+	gap: 32px;
+}
+
+.ogsc-button--wrapper .btn--wrapper {
+	background: #000000;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    border-radius: 24px;
+    padding: 15px 0;
+    width: 218px;
+}
+
+.off-grid-sc-component-full-width-2 .off-grid-sc-component-full-width-content {
+    padding-left: 56px;
+    padding-top: 90px;
+    padding-bottom: 106px;
+    padding-right: 34px;
+}
+
+@media (max-width: 1239px) {
+	.off-grid-sc-section {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+	.off-grid-sc-component-section {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+}
+
+@media (max-width: 1023px) {
+	.off-grid-sc-menu .ogsc-menu-item {
+		font-size: 20px;
+	}
+	.off-grid-sc-component-full-width .off-grid-sc-component-full-width-content {
+		padding-right: 56px;
+	}
+	.off-grid-sc-component--container h3 {
+		font-size: 30px;
+	}
+	.off-grid-sc-component--container p {
+		font-size: 20px;
+	}
+}
+@media (max-width: 900px) {
+	.off-grid-sc-component-full-width .off-grid-sc-component-full-width-content {
+		width: 80%;
+	}
+	.off-grid-sc-component-full-width-2 {
+		background-position: -15vw 0vw;
+	}
+}
+
+@media (max-width: 767px) {
+	.off-grid-sc-section {
+		padding-top: 36px;
+		padding-bottom: 13px;
+	}
+	.off-grid-sc-component-section {
+		padding-top: 13px;
+		padding-bottom: 22px;
+	}
+	.off-grid-sc-content--container h2 {
+		font-size: 30px;
+		margin-bottom: 24px;
+	}
+	.off-grid-sc-content--container p {
+		font-size: 18px;
+	}
+	.off-grid-sc-component-full-width .off-grid-sc-component-full-width-content {
+		width: 100%;
+		padding-top: 25px;
+		padding-left: 38px;
+		padding-right: 38px;
+		padding-bottom: 0;
+	}
+	.off-grid-sc-component--container {
+		row-gap: 8px;
+	}
+	.off-grid-sc-component-full-width-content .ogsc-content--wrapper {
+		margin-bottom: 24px;
+	}
+	.off-grid-sc-component--container h3 {
+		font-size: 20px;
+		margin-bottom: 12px;
+	}
+	.off-grid-sc-component--container p {
+		font-size: 18px;
+	}
+	.ogsc-button--wrapper .btn--wrapper {
+		width: 282px;
+		padding: 14.5px 0;
+		font-size: 19px;
+	}
+	.off-grid-sc-component-full-width img {
+		position: unset;
+		height: unset;
+	}
+	.ogsc-content--wrapper {
+		text-align: center;
+	}
+	.ogsc-button--wrapper {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 8px;
+	}
+	.off-grid-sc-component-half-width {
+		padding-top: 25px;
+		padding-left: 38px;
+		padding-right: 38px;
+		padding-bottom: 34px;
+		gap: 17px;
+	}
+	.off-grid-sc-component-full-width-2 {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+	.off-grid-sc-component-full-width-2 img {
+		position: unset;
+		height: unset;
+	}
+	.off-grid-sc-component-full-width-2 .off-grid-sc-component-full-width-content {
+		width: 100%;
+		padding-top: 25px;
+		padding-left: 38px;
+		padding-right: 38px;
+		padding-bottom: 0;
+	}
+}
+@media (max-width: 500px) {
+	.off-grid-sc-component-full-width-2 {
+		gap: 10px;
+	}
+}
+
+/* End What’s in Off Grid Solar System? */
+
+/* Start Ecoflow's Off Grid Solar System */
+
+.off-grid-hotspot-section {
+	width: 100%;
+	margin: auto;
+	background-color: #000000;
+	padding-top: 90px;
+	padding-bottom: 0;
+	position: relative;
+}
+.off-grid-hotspot-section .off-grid-hotspot-content--container {
+	max-width: 1140px;
+	width: 100%;
+	margin: auto;
+	text-align: center;
+}
+.off-grid-hotspot-section .off-grid-hotspot-content--container h2 {
+	font-size: 56px;
+	line-height: 1.2;
+	color: #ffffff;
+	margin-bottom: 26px;
+}
+.off-grid-hotspot-section .off-grid-hotspot-content--container p {
+	font-size: 24px;
+	line-height: 1.45;
+	color: #ffffff;
+}
+
+.off-grid-hotspot-section .off-grid-hotspot-image-hotspot--container {
+	max-width: 1920px;
+    margin: auto;
+    text-align: center;
+    position: relative;
+}
+
+
+
+.ogh-hotspot {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    cursor: pointer;
+}
+
+.ogh-hotspot__button svg {
+    pointer-events: none;
+}
+
+.ogh-hotspot--selected {
+    z-index: 999;
+}
+
+.ogh-hotspot--selected .ogh-hotspot__label {
+    display: flex;
+	column-gap: 50px;
+}
+
+.ogh-hotspot--selected .ogh-hotspot__button .hotspot-minus-button,
+.ogh-hotspot__button .hotspot-plus-button {
+    display: block;
+}
+
+.ogh-hotspot__button .hotspot-minus-button,
+.ogh-hotspot--selected .ogh-hotspot__button .hotspot-plus-button {
+    display: none;
+}
+
+.ogh-hotspot__button {
+    height: 25px;
+    width: 25px;
+}
+
+.ogh-hotspot__label {
+    position: absolute;
+    transform: translate(-50%, 0);
+    background-color: #ffffff;
+    z-index: -1;
+    transition: all 0.1s linear;
+	max-width: 50vw;
+    width: 54.5em;
+    display: none;
+    border-radius: 20px;
+    padding-top: 46px;
+    padding-bottom: 46px;
+    padding-left: 46px;
+    padding-right: 46px;
+    align-items: center;
+    cursor: auto;
+}
+
+.ogh-hotspot__label .ogh-hotspot__label--image-flex {
+    flex: 1 0 30%;
+}
+
+.ogh-hotspot__label .ogh-hotspot__label--content-flex {
+    flex: 1 0 60%;
+    text-align: left;
+}
+
+.ogh-hotspot__label .ogh-hotspot__label--content-flex h3 {
+    font-size: 24px;
+    line-height: 1;
+    margin-bottom: 16px;
+}
+
+.ogh-hotspot__label .ogh-hotspot__label--content-flex p {
+    font-size: 16px;
+	color: #7E7E7E;
+    line-height: 1.5;
+	margin-bottom: 0;
+}
+
+.off-grid-hotspot-section .ogsc-button--wrapper {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    bottom: 5%;
+	gap: 55.5px;
+}
+
+.off-grid-hotspot-section .ogsc-button--wrapper .btn--wrapper {
+	color: #000000;
+    background: #ffffff;
+}
+
+.off-grid-hotspot-section .ogh-hotspot__label .ogsc-button--wrapper .btn--wrapper {
+	background: #000000;
+    color: #ffffff;
+}
+
+.off-grid-hotspot-section .ogh-hotspot__label .ogsc-button--wrapper {
+	position: unset;
+	transform: unset;
+	margin-top: 30px;
+}
+
+
+  @media (max-width: 1300px) {
+	.ogh-hotspot__button {
+		height: 15px;
+    	width: 15px;
+	}
+	.ogh-hotspot__button svg {
+		height: 15px;
+    	width: 15px;
+	}
+	.ogh-hotspot--selected .ogh-hotspot__label {
+		column-gap: 25px;
+	}
+	.ogh-hotspot__label {
+		padding-top: 30px;
+		padding-bottom: 30px;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+  }
+  @media (max-width: 1239px) {
+	.off-grid-hotspot-section .off-grid-hotspot-content--container {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+  }
+  @media (max-width: 1023px) {
+	.off-grid-hotspot-section .off-grid-hotspot-content--container h2 {
+		font-size: 46px;
+	}
+	.off-grid-hotspot-section .off-grid-hotspot-content--container p {
+		font-size: 20px;
+	}
+	.ogh-hotspot__label .ogh-hotspot__label--content-flex h3 {
+		font-size: 20px;
+	}
+	.ogh-hotspot__label .ogh-hotspot__label--content-flex p {
+		font-size: 14px;
+		margin-bottom: 15px;
+	}
+	.ogh-hotspot__label {
+		padding-top: 20px;
+		padding-bottom: 20px;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.off-grid-hotspot-section .off-grid-hotspot-image-hotspot--container .ogsc-button--wrapper .btn--wrapper {
+		width: fit-content;
+		padding-left: 24px;
+		padding-right: 24px;
+		font-size: 16px;
+	}
+  }
+  @media (max-width: 767px) {
+	.off-grid-hotspot-section {
+		padding-top: 35px;
+		padding-bottom: 90px;
+	}
+	.off-grid-hotspot-section .off-grid-hotspot-content--container h2 {
+		font-size: 30px;
+		margin-bottom: 24px;
+	}
+	.off-grid-hotspot-section .off-grid-hotspot-content--container p {
+		font-size: 18px;
+	}
+	.ogh-expand-button {
+		background: unset;
+		color: #ffffff;
+		border: unset;
+		font-size: 19px;
+	}
+	.ogh-expand-button:focus {
+		outline: unset;
+	}
+	.ogh-expand-button.-open svg {
+		transform: rotate(180deg);
+	}
+	.ogh-section-desc {
+		position: relative;
+		max-height: 80px;
+		overflow: hidden;
+		transition: max-height 0.3s ease;
+   }
+	.ogh-section-desc.-expanded {
+		max-height: 100vh;
+   }
+	.ogh-section-desc:not(.-expanded)::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+   }
+	.ogh-hotspot__product--block img {
+		margin: auto;
+
+	}
+	.off-grid-hotspot-section .off-grid-hotspot-image-hotspot--container .ogsc-button--wrapper .btn--wrapper {
+		width: 282px;
+		font-size: 19px;
+	}
+	.ogh-product--block-title-container {
+		/* display: flex; */
+		justify-content: center;
+	}
+	.ogh-product--count {
+		display: inline-block;
+		background: #707070;
+		border-radius: 100px;
+		height: 25px;
+		width: 25px;
+		color: #ffffff;
+		font-size: 19px;
+		font-weight: 700;
+		margin-right: 10px;
+	}
+	.ogh-product--block-title-container .product-title {
+		font-size: 20px;
+		margin-bottom: 15px;
+	}
+	.ogh-hotspot__product--block p {
+		font-size: 18px;
+		margin-bottom: 20px;
+		line-height: 1.3;
+	}
+	.mobile-content--wrapper .ogsc-button--wrapper {
+		position: unset;
+		transform: unset;
+		margin-top: -40px;
+		margin-bottom: 50px;
+		gap: 8px;
+	}
+	.ogh-hotspot__product--block-slider.slick-dotted.slick-slider {
+		margin-bottom: 0;
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+	 /* the slides */
+	.slick-slide {
+		margin: 0 12px;
+	}
+	/* the parent */
+	.slick-list {
+		margin: 0 -12px;
+	}
+	.ogh-hotspot__product--block-slider .slick-track {
+		display: flex !important;
+		overflow: hidden;
+	}
+	.ogh-hotspot__product--block-slider .slick-slide {
+		height: inherit !important;
+		background: #ffffff;
+		border-radius: 24px;
+		padding-top: 50px;
+		padding-left: 15px;
+		padding-right: 15px;
+		padding-bottom: 28px;
+	}
+	.ogh-hotspot__product--block-slider .slick-slide > div:first-child {
+		height: 100%;
+	}
+	.ogh-hotspot__product--block {
+		height: 100%;
+		display: flex!important;
+		flex-direction: column;
+		background: #ffffff;
+		border-radius: 24px;
+		padding-top: 50px;
+		padding-left: 15px;
+		padding-right: 15px;
+		padding-bottom: 28px;
+		margin-bottom: 10px;
+	}
+	.slick-slide .ogh-hotspot__product--block {
+		height: 100%;
+		display: flex!important;
+		flex-direction: column;
+		background: #ffffff;
+		border-radius: 24px;
+		padding-top: unset;
+		padding-left: unset;
+		padding-right: unset;
+		padding-bottom: unset;
+		margin-bottom: unset;
+		justify-content: space-between;
+	}
+
+	.ogh-hotspot__product--block-slider .slick-dots {
+		bottom: -24px!important;
+		line-height: 0;
+		line-height: 0;
+		transform: translate(-50%, 0);
+		left: 50%;
+	}
+	.ogh-hotspot__product--block-slider .slick-dots li.slick-active {
+		width: 16px;
+		height: 4px;
+		border-radius: 2px;
+		background: #ffffff;
+	}
+	.ogh-hotspot__product--block-slider .slick-dots li.slick-active button:before {
+		content: none;
+		width: 16px;
+    	height: 4px;
+	}
+	.ogh-hotspot__product--block-slider .slick-dots li button {
+		width: 16px;
+    	height: 4px;
+		padding: 0;
+	}
+	.ogh-hotspot__product--block-slider .slick-dots li {
+		width: 16px;
+		height: 4px;
+		border-radius: 2px;
+		background: #979797;
+	}
+	.ogh-hotspot__product--block-slider .slick-dots li button:before {
+		width: 16px;
+		height: 4px;
+	}
+	.off-grid-hotspot-section .ogh-hotspot__product--block .ogsc-button--wrapper {
+		position: unset;
+		transform: unset;
+		margin-top: auto;
+		margin-bottom: 20px;
+	}
+	.off-grid-hotspot-section .ogh-hotspot__product--block .ogsc-button--wrapper .btn--wrapper {
+		background: #000000;
+		color: #ffffff;
+	}
+  }
+  @media (max-width: 500px) {
+	.ogh-hotspot__product--block img {
+		height: 196px;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+  }
+
+
+/* End Ecoflow's Off Grid Solar System */
+
+/* Start Ecoflow Solar Generators */
+
+.off-grid-products-section {
+	padding-top: 91px;
+	padding-bottom: 93px;
+	background-color: #F6F6F6;
+}
+.off-grid-products-container {
+	max-width: 1140px;
+    width: 100%;
+    margin: auto;
+	text-align: center;
+}
+
+.off-grid-products-text-container {
+	margin-bottom: 50px;
+}
+
+.off-grid-products-text-container h2 {
+	font-size: 56px;
+	line-height: 1.2;
+	margin-bottom: 26px;
+}
+.off-grid-products-text-container p {
+	font-size: 24px;
+	line-height: 1.5;
+	margin-bottom: 50px;
+
+}
+
+.off-grid-products-text-container .ogsc-button--wrapper {
+	justify-content: center;
+}
+
+.off-grid-products-details-container {
+	display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+	gap: 10px;
+}
+
+.off-grid-products-flex-item {
+	flex-basis: 0;
+	flex-grow: 1;
+	background-color: #FEFEFE;
+	border-radius: 20px;
+	padding-top: 34px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 50px;
+}
+.off-grid-products-flex-item p {
+	font-size: 24px;
+	line-height: 1.25;
+	font-weight: 500;
+	margin-top: 30px;
+}
+.off-grid-products-flex-item .ogsc-button--wrapper {
+	justify-content: center;
+	margin-top: 16px;
+}
+.off-grid-products-flex-item h3 {
+	font-size: 20px;
+	margin-bottom: 0;
+}
+
+@media (max-width: 1239px) {
+	.off-grid-products-text-container {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+}
+
+@media (max-width: 1023px) {
+	.off-grid-products-flex-item h3 {
+		font-size: 16px;
+	}
+}
+@media (max-width: 767px) {
+	.off-grid-products-section {
+		padding-top: 40px;
+		padding-bottom: 66px;
+	}
+	.off-grid-products-text-container {
+		margin-bottom: 26px;
+	}
+	.off-grid-products-text-container h2 {
+		font-size: 30px;
+		margin-bottom: 24px;
+	}
+	.off-grid-products-text-container p {
+		font-size: 18px;
+		margin-bottom: 26px;
+	}
+	.off-grid-products-details-container.slick-dotted.slick-slider {
+		margin-bottom: 0;
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+	.off-grid-products-flex-item p {
+		font-size: 14px;
+		margin-top: 26px;
+	}
+	.off-grid-products-flex-item h3 {
+		font-size: 20px;
+	}
+	.off-grid-products-flex-item img {
+		margin: auto;
+	}
+	.off-grid-products-flex-item .ogsc-button--wrapper .btn--wrapper {
+		width: 218px;
+	}
+	.off-grid-products-details-container .slick-dots {
+		bottom: -24px!important;
+		line-height: 0;
+	}
+	.off-grid-products-details-container .slick-dots li.slick-active {
+		width: 16px;
+		height: 4px;
+		border-radius: 2px;
+		background: #000000;
+	}
+	.off-grid-products-details-container .slick-dots li.slick-active button:before {
+		content: none;
+		width: 16px;
+    	height: 4px;
+	}
+	.off-grid-products-details-container .slick-dots li button {
+		width: 16px;
+    	height: 4px;
+		padding: 0;
+	}
+	.off-grid-products-details-container .slick-dots li {
+		width: 16px;
+		height: 4px;
+		border-radius: 2px;
+		background: #707070;
+	}
+	.off-grid-products-details-container .slick-dots li button:before {
+		width: 16px;
+		height: 4px;
+	}
+}
+
+/* End Ecoflow Solar Generators */
+
+/* Start Off grid benefits section */
+
+.off-grid-benefits-section {
+	padding-top: 91px;
+	padding-bottom: 50px;
+	background-color: #ffffff;
+}
+.off-grid-benefits-container {
+	max-width: 1140px;
+    width: 100%;
+    margin: auto;
+	text-align: center;
+}
+
+.off-grid-benefits-text-container h2 {
+	font-size: 56px;
+	line-height: 1.2;
+	margin-bottom: 26px;
+}
+.off-grid-benefits-text-container p {
+	font-size: 24px;
+	line-height: 1.5;
+	margin-bottom: 72px;
+
+}
+
+.off-grid-benefits-details-container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
+	grid-template-areas:
+	  "item1 item2"
+	  "item3 item3"; /* Assign areas to grid items */
+	  column-gap: 10px;
+	  row-gap: 8px;
+}
+
+.off-grid-benefits-flex-item {
+	background: #F9F9F9;
+	border-radius: 20px;
+	padding-top: 53px;
+    padding-bottom: 35px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.off-grid-benefits-flex-item:nth-child(1) {
+	grid-area: item1;
+}
+
+.off-grid-benefits-flex-item:nth-child(2) {
+	grid-area: item2;
+}
+
+.off-grid-benefits-flex-item:nth-child(3) {
+	grid-area: item3;
+}
+
+
+.off-grid-benefits-flex-item h3 {
+	font-size: 24px;
+	margin-top: 34px;
+	margin-bottom: 37px;
+
+}
+
+.off-grid-benefits-flex-item p {
+	font-size: 24px;
+	line-height: 1.58;
+	font-weight: 400;
+}
+
+@media (max-width: 1239px) {
+	.off-grid-benefits-section {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+}
+
+@media (max-width: 767px) {
+	.off-grid-benefits-section {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+	.off-grid-benefits-text-container h2 {
+		font-size: 30px;
+		margin-bottom: 24px;
+	}
+	.off-grid-benefits-text-container p {
+		font-size: 18px;
+		margin-bottom: 20px;
+	}
+	.off-grid-benefits-details-container {
+		display: flex;
+		flex-direction: column;
+		row-gap: 7px;
+	}
+	.off-grid-benefits-flex-item {
+		padding-top: 42px;
+		padding-bottom: 30px;
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+	.off-grid-benefits-flex-item h3 {
+		font-size: 20px;
+		margin-top: 33px;
+		margin-bottom: 12px;
+	}
+	.off-grid-benefits-flex-item p {
+		font-size: 18px;
+	}
+}
+
+@media (max-width: 500px) {
+	.off-grid-benefits-flex-item {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+/* End Off grid benefits */
+
+.faq-section .faq-container ul li::before {
+    unicode-bidi: isolate;
+    font-variant-numeric: tabular-nums;
+    text-transform: none;
+    text-indent: 0px !important;
+    text-align: start !important;
+    text-align-last: start !important;
+  }

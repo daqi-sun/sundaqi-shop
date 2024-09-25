@@ -1,0 +1,493 @@
+
+  .iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #000;
+  }
+
+  .icon-jiahao:before {
+    content: "\e616";
+  }
+
+  .icon-shangjiantou:before {
+    content: "\e60a";
+  }
+
+  .icon-xiajiantou:before {
+    content: "\e60c";
+  }
+
+  .icon-dayuhao:before {
+    content: "\e625";
+  }
+
+  .icon-jianhao:before {
+    content: "\e617";
+  }
+  .solar-powered-generator .font-gotham, .solar-powered-generator .des {
+    font-weight: 500;
+  }
+  .solar-powered-generator .font-gotham-bold {
+    font-weight: 700
+  }
+
+  .solar-powered-generator {
+      width: 100%;
+  }
+  .solar-powered-generator .banner {
+      width: 100%;
+      background-color: #FFFFFF;
+      padding-top: 110px;
+      margin-bottom: 66px;
+  }
+  .solar-powered-generator .banner .text {
+      width: 100%;
+      margin-bottom: 33px;
+  }
+  .solar-powered-generator .banner .title-h1 {
+      font-size: 80px;
+      line-height: 1.2em;
+      font-weight: bold;
+      color: #1D1D1D;
+      width: 100%;
+      margin-bottom: 40px;
+  }
+  .solar-powered-generator .banner .des {
+      font-size: 20px;
+      font-weight: 500;
+      color: #6E6E73;
+      line-height: 1.5em;
+      max-width: 800px;
+      margin: 0 auto;
+  }
+  .solar-powered-generator .banner .product-img-banner {
+      width: 100%;
+      padding: 0 20px;
+      text-align: center;
+  }
+  .solar-powered-generator .banner .product-img-banner img {
+      max-width: 100%;
+  }
+  .solar-powered-generator .section-common {
+      width: 100%;
+  }
+  .solar-powered-generator .section-common .flex-container {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+  }
+  .solar-powered-generator .section-common .flex-container .flex-block {
+      width: 50%;
+  }
+  .solar-powered-generator .section-common .text-content {
+      max-width: 790px;
+      margin: 0 auto;
+  }
+  .solar-powered-generator .section-common .text-content .text {
+      width: 100%;
+  }
+  .solar-powered-generator .section-common .text-content .title-h2 {
+      font-size: 56px!important;
+      font-weight: bold;
+      line-height: 1.2em;
+      color: #1D1D1D!important;
+  }
+  .solar-powered-generator .section-common .text-content .fu-title {
+      font-size: 30px;
+      font-weight: bold;
+      line-height: 1em;
+      color: #6E6E73!important;
+      margin: 20px 0 42px;
+      font-family: 'Gotham-Medium';
+  }
+  .solar-powered-generator .section-common .text-content .product-img {
+      text-align: center;
+  }
+  .solar-powered-generator .section-common .text-content .des {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.5em;
+      color: #6E6E73;
+      margin: 50px auto 42px;
+  }
+  .custom .a-button {
+      width: 209px;
+      height: 59px;
+      background: #1D1D1D;
+      border-radius: 24px;
+      color: #FFFFFF;
+      line-height: 59px;
+  }
+
+  .section-10 {
+      width: 100%;
+      padding-top: 120px;
+      padding-bottom: 120px;
+      padding-left: 100px;
+      padding-right: 100px;
+  }
+  .question-container {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    align-items: baseline;
+    column-gap: 10px;
+  }
+  .plus, .minus {
+    display: none;
+  }
+  .plus.active, .minus.active {
+    display: inline;
+  }
+  .bsection-container {
+      max-width: 1616px;
+      margin: 0 auto;
+  }
+  .section-10 .faq-block {
+      max-width: 1730px;
+      margin: 0 auto;
+  }
+  .faq-block .title-h2 {
+      font-size: 36px!important;
+      line-height: 1.1em;
+      color: #1d1d1d!important;
+  }
+  .faq-block .show-me-button {
+      border: 2px solid #1D1D1D;
+      box-sizing: border-box;
+      border-radius: 28px;
+      font-size: 25px;
+      line-height: 1.3em;
+      font-weight: 600;
+      width: 256px;
+      height: 55px;
+      background: #ffffff;
+      margin-top: 36px;
+      color: #1d1d1d;
+  }
+  .faq-block .show-me-button .iconfont {
+      font-size: 24px;
+      color: #1d1d1d;
+  }
+  .faq-block .show-me {
+      margin: 82px 0 0;
+      display: none;
+  }
+  .faq-block .question {
+      border-top: 2px solid #1D1D1D;
+      padding: 64px 40px;
+      text-align: left;
+      display: block;
+  }
+  .faq-block .last-question {
+      border-bottom: 2px solid #707070;
+  }
+  .faq-block .question .title-h3 {
+      color: #1d1d1d!important;
+      font-size: 38px;
+      line-height: 1.3em;
+      cursor: pointer;
+  }
+  .faq-block .question .title-h3 .iconfont {
+      font-size: 25px;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      color: #1d1d1d;
+  }
+  .faq-block .question .des {
+      padding-top: 30px;
+      display: none;
+  }
+  .faq-block .question p {
+    font-size: 20px;
+    line-height: 1.2em;
+    color: #1d1d1d;
+    font-family: Gotham-Medium;
+  }
+  .faq-block .question .blue-span {
+    color: #196B89;
+  }
+
+  @media screen and (max-width: 1780px) {
+    .solar-powered-generator .banner .title-h1 {
+      font-size: 70px;
+    }
+    .solar-powered-generator .banner {
+      padding-top: 90px;
+    }
+    .solar-powered-generator .section-common .text-content .title-h2 {
+      font-size: 48px!important;
+    }
+    .solar-powered-generator .section-common .text-content .fu-title {
+      font-size: 26px;
+      margin: 16px 0 32px;
+    }
+    .solar-powered-generator .section-common .text-content .des {
+      margin: 35px auto 32px;
+    }
+  }
+  @media screen and (max-width: 1680px) {
+    .faq-block .show-me-button {
+        margin-top: 64px;
+        font-size: 22px;
+        line-height: 1em;
+        width: 228px;
+        height: 45px;
+    }
+    .faq-block .question {
+        padding: 54px 40px;
+    }
+    .faq-block .question .title-h3 {
+        font-size: 34px;
+    }
+  }
+  @media screen and (max-width: 1620px) {
+    .solar-powered-generator .banner .title-h1 {
+      font-size: 60px;
+      margin-bottom: 30px;
+    }
+    .solar-powered-generator .banner {
+      padding-top: 70px;
+    }
+    .solar-powered-generator .banner .des {
+      font-size: 18px;
+      line-height: 1.3em;
+      max-width: 700px;
+    }
+    .solar-powered-generator .banner .text {
+      margin-bottom: 24px;
+    }
+    .solar-powered-generator .section-common .text-content .title-h2 {
+      font-size: 40px!important;
+    }
+    .solar-powered-generator .section-common .text-content .fu-title {
+      font-size: 22px;
+      margin: 16px 0 32px;
+    }
+    .solar-powered-generator .section-common .text-content .des {
+      margin: 30px auto 28px;
+      font-size: 18px;
+      line-height: 1.3em;
+      max-width: 90%;
+    }
+    .solar-powered-generator .section-common .text-content .product-img {
+      width: 50%;
+      margin: 0 auto;
+    }
+    .custom .a-button {
+      width: 180px;
+      height: 50px;
+      background: #1D1D1D;
+      border-radius: 20px;
+      color: #fff;
+      line-height: 50px;
+    }
+  }
+  @media screen and (max-width: 1560px) {
+    .faq-block .show-me-button {
+        margin-top: 40px;
+        font-size: 20px;
+        width: 210px;
+    }
+    .faq-block .question {
+        padding: 54px 40px;
+    }
+    .faq-block .question .title-h3 {
+        font-size: 32px;
+    }
+    .faq-block .question p {
+        font-size: 20px;
+    }
+  }
+  @media screen and (max-width: 1440px) {
+    .faq-block .show-me {
+        margin: 72px 0 0;
+    }
+    .faq-block .question {
+        padding: 44px 40px;
+    }
+    .faq-block .question .title-h3 {
+        font-size: 28px;
+    }
+    .faq-block .question .des {
+        padding-top: 20px;
+    }
+    .faq-block .question p {
+        font-size: 18px;
+    }
+  }
+  @media screen and (max-width: 1250px) {
+    .section-10 {
+      padding-top: 100px;
+      padding-bottom: 100px;
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+    .faq-block .show-me {
+        margin: 62px 0 0;
+    }
+    .faq-block .question {
+        padding: 40px 30px;
+    }
+    .faq-block .question .title-h3 {
+        font-size: 24px;
+    }
+    .faq-block .question .des {
+        padding-top: 20px;
+    }
+    .faq-block .question p {
+        font-size: 18px;
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    .solar-powered-generator .banner .title-h1 {
+      font-size: 50px;
+      margin-bottom: 15px;
+    }
+    .solar-powered-generator .banner .des {
+      font-size: 16px;
+      line-height: 1.2em;
+      max-width: 650px;
+    }
+    .solar-powered-generator .banner {
+      padding-top: 50px;
+      margin-bottom: 55px;
+    }
+    .solar-powered-generator .section-common .text-content .title-h2 {
+      font-size: 28px!important;
+    }
+    .solar-powered-generator .section-common .text-content .fu-title {
+      font-size: 18px;
+      margin: 10px 0 20px;
+    }
+    .solar-powered-generator .section-common .text-content .des {
+      margin: 20px auto 25px;
+      font-size: 16px;
+      line-height: 1.2em;
+      max-width: 86%;
+    }
+    .custom .a-button {
+      width: 150px;
+      height: 44px;
+      border-radius: 16px;
+      line-height: 44px;
+    }
+  }
+
+  @media screen and (max-width: 1023px) {
+    .solar-powered-generator .section-common .text-content .title-h2 {
+      font-size: 24px!important;
+    }
+    .solar-powered-generator .section-common .text-content .fu-title {
+      font-size: 16px;
+    }
+    .solar-powered-generator .section-common .text-content .product-img {
+      width: 42%;
+    }
+    .solar-powered-generator .section-common .text-content .des {
+      margin: 15px auto 20px;
+      font-size: 14px;
+      max-width: 94%;
+    }
+    .custom .a-button {
+      font-size: 18px;
+      padding: 0 25px;
+      width: 145px;
+    }
+    .section-10 {
+      padding-top: 41px;
+      padding-bottom: 41px;
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+    .faq-block .show-me {
+      margin: 52px 0 0;
+    }
+    .faq-block .question {
+      padding: 30px 20px;
+    }
+    .faq-block .question .title-h3 {
+      font-size: 22px;
+    }
+    .faq-block .question .des {
+      padding-top: 20px;
+    }
+    .faq-block .question p {
+      font-size: 18px;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .solar-powered-generator .banner {
+      margin-bottom: 40px;
+    }
+    .solar-powered-generator .banner .title-h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .solar-powered-generator .banner .des {
+      margin-top: 40px;
+      line-height: 1.3em;
+    }
+    .solar-powered-generator .banner .product-img-banner {
+      padding: 0;
+    }
+    .solar-powered-generator .section-common .text-content .product-img {
+      width: 100%;
+    }
+    .solar-powered-generator .section-common .flex-container {
+      display: block;
+      padding: 0 20px;
+    }
+    .solar-powered-generator .section-common .flex-container .flex-block {
+      width: 100%;
+    }
+    .solar-powered-generator .section-common .short-line {
+      width: 80px;
+      height: 1px;
+      border: 1px solid #6E6E73;
+      display: inline-block;
+    }
+    .solar-powered-generator .section-common .text-content .text {
+      margin: 20px 0;
+    }
+    .solar-powered-generator .section-common .text-content .fu-title {
+      font-size: 14px;
+      margin: 9px 0;
+    }
+    .solar-powered-generator .section-common .text-content .des {
+      max-width: 100%;
+      margin: 20px auto;
+      line-height: 1.3em;
+    }
+    .solar-powered-generator .section-common .text-content {
+      margin-bottom: 25px;
+    }
+    .custom .a-button {
+      font-size: 18px;
+      padding: 0 20px;
+      width: 140px;
+      height: 40px;
+      border-radius: 20px;
+      line-height: 36px;
+    }
+    .solar-powered-generator .section-common {
+      margin-bottom: 60px;
+    }
+    .solar-powered-generator .section-9.section-common {
+      margin-bottom: 0;
+    }
+    .faq-block .show-me-button {
+      display: none;
+    }
+    .faq-block .show-me {
+      display: block!important;
+      margin: 52px 0 0;
+    }
+  }

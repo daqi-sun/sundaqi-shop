@@ -1,0 +1,128 @@
+<style>
+  .pp-app__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .pp-app__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+
+<div class="pp-app__section pp-app__section-{{ section.id }}">
+  <div class="container--default">
+    <div class="pp-app__content-container">
+      {% for block in section.blocks %}
+        <div class="pp-app__content-wrapper">
+          <div class="pp-app__text-container">
+            {% if block.settings.title != blank %}
+              <h2 class="pp-app__section-heading text--heading text--black">
+                {{ block.settings.title }}
+              </h2>
+            {% endif %}
+            {% if block.settings.subtitle != blank %}
+              <p class="pp-app__section-description text--description text--gray">
+                {{ block.settings.subtitle }}
+              </p>
+            {% endif %}
+          </div>
+          <div class="pp-app__container">
+            <div class="pp-app__image-wrapper">
+              <img
+                class="display--desktop"
+                src="{{ block.settings.image | img_url: 'master' }}"
+                alt="{{ block.settings.image.alt }}"
+              >
+              <img
+                class="display--mobile"
+                src="{{ block.settings.image_mobile | img_url: 'master' }}"
+                alt="{{ block.settings.image_mobile.alt }}"
+              >
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "PP APP",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "app",
+      "name": "App Feature",
+      "settings": [
+        {
+          "type": "html",
+          "id": "title",
+          "label": "Title",
+          "default": "Intelligente Energie. Intelligent sparen."
+        },
+        {
+          "type": "html",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Smart Home Energiesystem mit den Smart Plugs & EcoFlow App"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image Mobile"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

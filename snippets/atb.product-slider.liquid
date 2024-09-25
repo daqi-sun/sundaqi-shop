@@ -1,0 +1,173 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "Product Slider",
+  "id": "product-slider",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "class": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "type": "checkbox",
+      "id": "atb_enable_checkbox",
+      "label": "Enable section",
+      "default": true,
+      "info": ""
+    },
+    {
+      "id": "atb_title",
+      "type": "text",
+      "label": "Title",
+      "default": "Product Intro copy",
+      "info": ""
+    },
+    {
+      "id": "atb_heading",
+      "type": "text",
+      "label": "Heading",
+      "default": "Product Intro copy",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "blocks",
+      "label": "Block ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": "",
+      "repeatable": "slider"
+    },
+    {
+      "id": "block_background_image",
+      "type": "image_picker",
+      "label": "Background image",
+      "repeatable": "slider",
+      "info": ""
+    },
+    {
+      "id": "block_background_image_mobile",
+      "type": "image_picker",
+      "label": "Background Image Mobile",
+      "repeatable": "slider",
+      "info": ""
+    },
+    {
+      "id": "block_quote",
+      "type": "text",
+      "label": "Quote",
+      "default": "Product Intro Copy",
+      "repeatable": "slider",
+      "info": ""
+    },
+    {
+      "id": "block_name",
+      "type": "text",
+      "label": "Name",
+      "default": "Long lasting life span",
+      "repeatable": "slider",
+      "info": ""
+    }
+  ],
+  "warnings": [
+    "repeating image fields may not be properly handled"
+  ]
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_enable_checkbox' -%}
+{%- assign atb_enable_checkbox = val -%}
+{%- include 'atb-render' field:'atb_title' -%}
+{%- assign atb_title = val -%}
+{%- include 'atb-render' field:'atb_heading' -%}
+{%- assign atb_heading = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_background_image' -%}
+{%- assign block_background_image = val -%}
+{%- include 'atb-render' field:'block_background_image_mobile' -%}
+{%- assign block_background_image_mobile = val -%}
+{%- include 'atb-render' field:'block_quote' -%}
+{%- assign block_quote = val -%}
+{%- include 'atb-render' field:'block_name' -%}
+{%- assign block_name = val -%}
+{%- if atb_enable_checkbox == blank -%}
+{%- assign atb_enable_checkbox = false -%}
+{%- else -%}
+{%- assign atb_enable_checkbox = true -%}
+{%- endif -%}
+{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section ">
+{% if atb_enable_checkbox %}
+  <section class="product-intro" id="product-slider-1">
+    <div class="back-bg pdp-intro-slider">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7 mx-auto">
+            <div class="intro-heading">
+              <p class="text-center blue-link m-0">{{atb_title}}</p>
+              <h2>{{atb_heading}}</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="owl-carousel pdp-center-slider pdp-center-slider-first">
+        {% for block0 in blocks %}
+{%- assign my_image_key1 = block_background_image_mobile[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image1 = images[my_image_key1] -%}
+{%- assign my_image_key0 = block_background_image[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image0 = images[my_image_key0] -%}
+          <div class="slide-pdp">
+            <span>
+              <img class="lazyload desktop-image" data-src="{{ my_image0 | img_url: '1800x' }}" />
+              <img class="lazyload mobile-image" data-src="{{ my_image1 | img_url: '1200x' }}" />
+            </span>
+            <div class="inner-content text-center text-white">
+              <p>{{ block_quote[forloop.index0]}}</p>
+              <p class="mb-0"><strong>{{ block_name[forloop.index0]}}</strong></p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{%endif %}
+
+
+<style>
+</style>
+
+<script type="application/javascript">
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
+<script>
+  $(document).ready(function(){
+    $(".pdp-center-slider-first").owlCarousel({
+      center:true,
+      items:1,
+      nav:true,
+      loop: false,
+      margin:10,
+      autoplay: true,
+      singleItem: true,
+      responsive:{
+        600:{
+          margin:60,
+          items:2
+        }
+      }
+    });
+  });
+</script></section>

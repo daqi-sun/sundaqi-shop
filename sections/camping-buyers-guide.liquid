@@ -1,0 +1,130 @@
+<div class="buyers-container">
+    <div class="buyers-section-container-text">
+      <h2>{{ section.settings.title }}</h2>
+    </div>
+    <div class="buyers-container-slider">
+      <div class="buyers-guides-slider-container">
+        {% for block in section.blocks %}
+          <div class="blog-slides swiper-slide">
+            <div class="blog-image-wrapper">
+              <a
+                href="{{ block.settings.url }}"
+                target="_blank"
+                >
+              <img
+                srcset="{{ block.settings.image | img_url: 'master' }}"
+                alt="{{ block.settings.image.alt }}"
+                loading="lazy"
+              >
+            </div>
+            <h2>{{ block.settings.title }}</h2></a
+          >
+            <div class="btn--wrapper">
+              <a
+                class="a-button font-gotham"
+                href="{{ block.settings.url }}"
+                target="_blank"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $('.buyers-guides-slider-container').slick({
+      centerMode: true,
+      centerPadding: '440px',
+      slidesToShow: 2,
+      responsive: [
+        {
+          breakpoint: 1820,
+          settings: {
+            centerPadding: '330px',
+          },
+        },
+        {
+          breakpoint: 1720,
+          settings: {
+            centerPadding: '220px',
+          },
+        },
+        {
+          breakpoint: 1220,
+          settings: {
+            centerPadding: '110px',
+          },
+        },
+        {
+          breakpoint: 1023,
+          settings: {
+            centerPadding: '270px',
+            slidesToShow: 1,
+          },
+        },
+        {
+          breakpoint: 850,
+          settings: {
+            centerPadding: '170px',
+            slidesToShow: 1,
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            centerPadding: '100px',
+            slidesToShow: 1,
+            dots: true,
+          },
+        },
+        {
+          breakpoint: 558,
+          settings: {
+            centerPadding: '40px',
+            slidesToShow: 1,
+            dots: true,
+          },
+        },
+      ],
+    });
+  </script>
+
+  {% schema %}
+  {
+    "name": "Camping Buyers Guide",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "What is the difference between a portable power station and a solar generator for camping?"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "blog",
+        "name": "Slider Content",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "A portable power station"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "Blog Url"
+          }
+        ]
+      }
+    ]
+  }
+  {% endschema %}

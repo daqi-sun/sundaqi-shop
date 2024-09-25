@@ -1,0 +1,160 @@
+<style>
+  .ppsp-sticky-bar__section-{{ section.id }} {
+
+    background: {{ section.settings.background_color }};
+  }
+</style>
+<div class="sticky-placeholder"></div>
+<div class="ppsp-sticky-bar__section ppsp-sticky-bar__section-{{ section.id }}">
+  <div class="ppsp-sticky-bar__wrapper container--default">
+    <ul class="ppsp-sticky-bar__block-container">
+      {% for block in section.blocks %}
+        <a
+          class="ppsp-sticky-bar__block {% if forloop.index == 1 %} active {% endif %}"
+          href="#_{{ block.settings.title | downcase | remove: ' ' | replace: '&', '-' }}"
+          data-target="_{{ block.settings.title | downcase | remove: ' ' | replace: '&', '-' }}"
+        >
+          <li
+            title="{{ block.settings.title }}"
+          >
+            <span>{{ block.settings.title }}</span>
+          </li>
+        </a>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const targetSection = document.querySelector('.ppsp-sticky-bar__section');
+    let targetSectionPosition;
+    let placeholder = document.querySelector('.sticky-placeholder');
+    const anchors = document.querySelectorAll('.ppsp-sticky-bar__block-container a');
+    const shopifySections = document.querySelectorAll('.shopify-section');
+    let lastActive = null;
+
+    function scrollStickyBarToCenterActiveTab() {
+      const activeTab = document.querySelector('.ppsp-sticky-bar__block.active');
+      if (activeTab) {
+        const stickyBarWrapper = document.querySelector('.ppsp-sticky-bar__wrapper');
+        const activeTabLeftOffset = activeTab.offsetLeft;
+        const activeTabWidth = activeTab.offsetWidth;
+        const stickyBarWidth = stickyBarWrapper.offsetWidth;
+        const centerPosition = activeTabLeftOffset - (stickyBarWidth / 2) + (activeTabWidth / 2);
+
+        stickyBarWrapper.scrollTo({
+          left: centerPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+
+    anchors.forEach((anchor) => {
+      anchor.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        const targetDataId = anchor.getAttribute('data-target');
+        const targetChild = document.querySelector(`.shopify-section > [data-id="${targetDataId}"]`);
+
+        if (targetChild) {
+          window.scrollTo({
+            top: targetChild.offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    function updateStickySection() {
+      targetSectionPosition = placeholder.getBoundingClientRect().top + window.pageYOffset;
+      handleScroll();
+    }
+
+    function handleScroll() {
+      const scrollPosition = window.pageYOffset;
+      const totalHeight = targetSectionPosition;
+
+      // Sticky logic
+      if (scrollPosition > totalHeight) {
+        placeholder.style.height = `${targetSection.offsetHeight}px`;
+        targetSection.classList.add('sticky');
+      } else {
+        placeholder.style.height = '0';
+        targetSection.classList.remove('sticky');
+      }
+
+      updateActiveTab();
+    }
+
+    function updateActiveTab() {
+      let closest = null;
+      let smallestDistance = Infinity;
+
+      // Active tab logic
+      shopifySections.forEach((section) => {
+        const childWithDataId = section.querySelector('[data-id]');
+        if (childWithDataId) {
+          const box = childWithDataId.getBoundingClientRect();
+          const distance = Math.abs(box.top);
+
+          if (distance < smallestDistance) {
+            smallestDistance = distance;
+            closest = childWithDataId;
+          }
+        }
+      });
+
+      if (closest) {
+        const targetDataId = closest.getAttribute('data-id');
+        const correspondingAnchor = document.querySelector(
+          `.ppsp-sticky-bar__block-container a[data-target="${targetDataId}"]`
+        );
+
+        if (correspondingAnchor) {
+          anchors.forEach((a) => a.classList.remove('active'));
+          correspondingAnchor.classList.add('active');
+          lastActive = closest;
+
+          // Scroll sticky bar to center active tab
+          scrollStickyBarToCenterActiveTab();
+        }
+      }
+    }
+
+    updateStickySection();
+    window.addEventListener('resize', updateStickySection);
+    window.addEventListener('scroll', handleScroll);
+    updateStickySection();
+    window.addEventListener('resize', updateStickySection);
+    window.addEventListener('scroll', handleScroll);
+  });
+</script>
+
+{% schema %}
+{
+  "name": "PPSP Sticky Bar",
+  "class": "ppsp-sticky-bar-section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "sticky",
+      "name": "Sticky Bar",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Tab Title",
+          "default": "DELTA Series"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

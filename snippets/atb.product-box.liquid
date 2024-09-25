@@ -1,0 +1,110 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "Product Box",
+  "id": "product-box",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "class": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "type": "checkbox",
+      "id": "atb_enable_checkbox",
+      "label": "Enable section",
+      "default": true,
+      "info": ""
+    },
+    {
+      "id": "atb_title",
+      "type": "text",
+      "label": "Heading",
+      "default": "Product Intro copy",
+      "info": ""
+    },
+    {
+      "id": "atb_background_image",
+      "type": "image_picker",
+      "label": "Background image",
+      "info": ""
+    },
+    {
+      "id": "atb_background_image_mobile",
+      "type": "image_picker",
+      "label": "Background image mobile",
+      "info": ""
+    },
+    {
+      "id": "atb_description",
+      "type": "text",
+      "label": "Description",
+      "default": "1. Galaxy S21 5G   2. C to C Data Cable   3. Ejection Pin",
+      "info": ""
+    }
+  ],
+  "warnings": []
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_enable_checkbox' -%}
+{%- assign atb_enable_checkbox = val -%}
+{%- include 'atb-render' field:'atb_title' -%}
+{%- assign atb_title = val -%}
+{%- include 'atb-render' field:'atb_background_image' -%}
+{%- assign atb_background_image = val -%}
+{%- include 'atb-render' field:'atb_background_image_mobile' -%}
+{%- assign atb_background_image_mobile = val -%}
+{%- include 'atb-render' field:'atb_description' -%}
+{%- assign atb_description = val -%}
+{%- if atb_enable_checkbox == blank -%}
+{%- assign atb_enable_checkbox = false -%}
+{%- else -%}
+{%- assign atb_enable_checkbox = true -%}
+{%- endif -%}
+{%- assign atb_background_image_key = atb_background_image| split: '/files/' | last -%}{%- assign atb_background_image = images[atb_background_image_key] -%}{%- assign atb_background_image_mobile_key = atb_background_image_mobile| split: '/files/' | last -%}{%- assign atb_background_image_mobile = images[atb_background_image_mobile_key] -%}{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section ">
+{% if atb_enable_checkbox %}
+  <section class="product-intro" id="what-in-the-box">
+    <div class="white-bg my-md-5 py-md-3 my-4 bordertop">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7 mx-auto">
+            <div class="intro-heading">
+              <h2>{{ atb_title }}</h2>
+            </div>
+          </div>
+        </div>
+        <div class="pdp-big-img mt-4">
+          <img class="desktop-image" src="{{ atb_background_image | img_url: '2400x' }}">
+          <img class="mobile-image" src="{{ atb_background_image_mobile | img_url: '1200x' }}">
+        </div>
+        <div class="row">
+          <div class="col-lg-7 mx-auto">
+            <div class="intro-heading">
+              <p class="mt-4 mb-0"><small>{{ atb_description }}</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+
+<style>
+</style>
+
+<script type="application/javascript">
+</script>
+</section>

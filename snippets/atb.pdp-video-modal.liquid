@@ -1,0 +1,108 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "Product Video Modal",
+  "id": "pdp-video-modal",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "class": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "type": "checkbox",
+      "id": "atb_enable_checkbox",
+      "label": "Enable section",
+      "default": true,
+      "info": ""
+    },
+    {
+      "id": "atb_img_link",
+      "type": "image_picker",
+      "label": "Select Image",
+      "info": ""
+    },
+    {
+      "id": "atb_video_url",
+      "type": "text",
+      "label": "Video URL",
+      "info": ""
+    }
+  ],
+  "warnings": []
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_enable_checkbox' -%}
+{%- assign atb_enable_checkbox = val -%}
+{%- include 'atb-render' field:'atb_img_link' -%}
+{%- assign atb_img_link = val -%}
+{%- include 'atb-render' field:'atb_video_url' -%}
+{%- assign atb_video_url = val -%}
+{%- if atb_enable_checkbox == blank -%}
+{%- assign atb_enable_checkbox = false -%}
+{%- else -%}
+{%- assign atb_enable_checkbox = true -%}
+{%- endif -%}
+{%- assign atb_img_link_key = atb_img_link| split: '/files/' | last -%}{%- assign atb_img_link = images[atb_img_link_key] -%}{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section ">
+{% if atb_enable_checkbox %}
+  <section class="product-intro" id="product-video-modal">
+    <div class="container my-md-5 py-md-3 my-4">
+      <div class="video-rd" data-toggle="modal" data-target="#videoModal">
+        <img class="lazyload" data-src="{{ atb_img_link | img_url: '1800x'}}" data-video-link="{{ atb_video_link | asset_url}}">
+        <span class="play" >
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M64 0H0V64H64V0Z" fill="white" fill-opacity="0.01"/>
+            <path d="M31.9999 58.6668C46.7275 58.6668 58.6666 46.7278 58.6666 32.0002C58.6666 17.2726 46.7275 5.3335 31.9999 5.3335C17.2723 5.3335 5.33325 17.2726 5.33325 32.0002C5.33325 46.7278 17.2723 58.6668 31.9999 58.6668Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M26.6667 31.9998V22.7622L34.6667 27.381L42.6668 31.9998L34.6667 36.6186L26.6667 41.2374V31.9998Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal fade pdp-modal video-img-modal" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
+    <div class="full-height">
+      <div class="modal-dialog modal-lg w-100" role="document">
+        <div class="modal-content">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"> <title>x</title> <path d="M6.616 8.384l6.616 6.616-6.616 6.616c-0.489 0.489-0.489 1.28 0 1.768s1.28 0.489 1.768 0l6.616-6.616 6.616 6.616c0.489 0.489 1.28 0.489 1.768 0s0.489-1.28 0-1.768l-6.616-6.616 6.616-6.616c0.489-0.489 0.489-1.28 0-1.768s-1.28-0.489-1.768 0l-6.616 6.616-6.616-6.616c-0.489-0.489-1.28-0.489-1.768 0s-0.489 1.28 0 1.768z"></path> </svg>
+          </button>
+          <div class="modal-body p-md-5 py-5">
+            <div class="col-md-12">
+            <iframe width="600" height="500" class="youtube-video"
+            src="{{atb_video_url}}">
+            </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+<script>
+  $(".video-img-modal").on("hide.bs.modal",function(){
+  	$('.youtube-video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+  });
+</script> 
+
+
+
+<style>
+</style>
+
+<script type="application/javascript">
+</script>
+</section>

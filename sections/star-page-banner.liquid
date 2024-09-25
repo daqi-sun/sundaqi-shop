@@ -1,0 +1,341 @@
+
+<div data-section-id="{{ section.id }}" class="fade-in-animation">
+  <div class='slideshow-section-wrapper {{ section.settings.custom_class }}'>
+    <div id="SlideshowWrapper-{{ section.id }}" class="slideshow-wrapper" role="region" aria-label="slideshow" aria-describedby="slideshow-info" tabindex="-1" data-slider>
+      <div class="slideshow"
+           id="Slideshow-{{ section.id }}"
+           data-slider-container
+           >
+        {%- assign block_image = section.settings.image -%}
+        {%- assign block_mobile_image = section.settings.mobile_image -%}
+
+        {% assign videoSlide = false %}
+        {% if section.settings.banner_type == 'video' %}
+          {% assign videoSlide = true %}
+        {% endif %}
+
+        <div id="slickSlide-{{ section.id }}"
+             class=" slideshow__slide slideshow__slide--active slideshow__slide--{{ section.id }}
+                    block_type__{{section.settings.banner_type}}
+                    {% if videoSlide %} video-section  {% endif %}"
+             >
+
+            {% if videoSlide %}
+
+              {% assign html5_video_url = section.settings.html5_video_url %}
+              {% assign video_url = section.settings.youtube_video_url %}
+              {% assign mobile_html5_video_url = section.settings.html5_video_url_m %}
+
+              {%- if html5_video_url != blank or video_url != blank -%}
+              <div class="video-section-wrapper
+                          video-background-wrapper
+                          video-section-wrapper--{{ section.id }}"
+                 >
+                <div class="slideshow__overlay video__overlay" id='slideshow__overlay_{{section.id}}'></div>
+
+                {%- if video_url != blank -%}
+                  <div id="Video-{{ section.id }}"
+                       class="video video--background slideshow_video"
+                       data-id="{{ video_url.id }}"
+                       data-type="background"></div>
+                {% elsif html5_video_url != blank %}
+                  <video  id="VideoModal_{{section.id}}" muted  loop  webkit-playsinline playsinline {% if forloop.first %}  autoplay {% endif %} class='slideshow_video {% if mobile_html5_video_url != blank %}hideMobile{% endif %}'>
+                    <source src="{{html5_video_url}}" type="video/mp4">
+                  </video>
+                {% endif %}
+                {% if mobile_html5_video_url != blank %}
+                  <video  id="mobile_VideoModal_{{section.id}}" muted  loop  webkit-playsinline playsinline {% if forloop.first %}  autoplay {% endif %} class='slideshow_video hideDesktop'>
+                    <source src="{{mobile_html5_video_url}}" type="video/mp4">
+                  </video>
+                {% endif %}
+              </div>
+              {%- else -%}
+              <div class="placeholder-noblocks">
+                {{ 'homepage.onboarding.no_content' | t }}
+              </div>
+              {%- endif -%}
+
+            {% else %}
+
+              {% if block_image == blank %}
+              <div class="slideshow__image">
+                <div class="placeholder-background">
+                  {% capture current %}{% cycle 1, 2 %}{% endcapture %}
+                  {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                </div>
+               <div class="slideshow__overlay" id='slideshow__overlay_{{section.id}}'></div>
+              </div>
+              {% else %}
+              <div class="{% if block_mobile_image != blank %}hideMobile{% endif %} slideshow__image_wrapper">
+                <img
+                     class="slideshow__image box"
+                     srcset="{{ block_image | img_url: 'small' | replace: '_small', '' }}"
+                     sizes="auto"
+                     loading="lazy"
+                     aria-label="{{ block_image.alt | default: block.settings.slide_title }}"
+                     alt="{{ block_image.alt | default: block.settings.slide_title  }}"
+                     >
+
+              <div class="slideshow__overlay" id='slideshow__overlay_{{section.id}}'></div>
+              </div>
+
+              {% if block_mobile_image != blank %}
+              <div class=" slideshow__image_wrapper hideDesktop">
+                <img
+                     class="slideshow__image box"
+                     srcset="{{ block_mobile_image | img_url: 'small' | replace: '_small', '' }}"
+                     sizes="auto"
+                     loading="lazy"
+                     aria-label="{{ block_mobile_image.alt | default: block.settings.slide_title }}"
+                     alt="{{ block_mobile_image.alt | default: block.settings.slide_title }}"
+                     >
+
+                <div class="slideshow__overlay" id='slideshow__overlay_{{section.id}}'></div>
+              </div>
+              {% endif %}
+              <noscript>
+                <div class="slideshow__image"{% if block_image %}{% unless block_image.alt == blank %} role="img" aria-label="{{ block_image.alt | escape }}"{% endunless %} style="background-image: url('{{ block_image | img_url: '2048x' }}'); background-position: {{ block.settings.alignment }};"{% endif %}>
+                  {% if block_image == blank %}
+                  <div class="placeholder-background">
+                    {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                  </div>
+                  {% endif %}
+                </div>
+              </noscript>
+              {% endif %}
+            {% endif %}
+
+            <div class="slideshow__text-wrap slideshow__text-wrap--desktop text-placement-{{ section.settings.text_placement }} text-align-{{ section.settings.text_alignment }}">
+              <div class="slideshow__text-content">
+                  <div class="slideshow_text_wrapper">
+                    <ul class="slideshow__text-content-list">
+                      {%- unless section.settings.banner_top_title == blank -%}
+                      <li class="mega-subtitle slideshow__top__subtitle">
+                          {{ section.settings.banner_top_title }}
+                      </li>
+                      {%- endunless -%}
+                      {%- unless section.settings.banner_title == blank -%}
+                        <li>
+                          <h2 class="h1 mega-title slideshow__title">
+                            {{ section.settings.banner_title }}
+                          </h2>
+                        </li>
+                      {%- endunless -%}
+                      {%- unless section.settings.banner_bottom_title == blank -%}
+                        <li class="mega-subtitle slideshow__bottom__subtitle">
+                            {{ section.settings.banner_bottom_title }}
+                        </li>
+                      {%- endunless -%}
+                    </ul>
+                  </div>
+              </div>
+            </div>
+
+            <style>
+              #slideshow__overlay_{{ section.id }}::before {
+                opacity: {{ section.settings.image_overlay_opacity }}% ;
+                background-color: {{ section.settings.color_image_overlay }};
+              }
+              #slickSlide-{{ section.id }} .slideshow__top__subtitle *{
+                color: {{ section.settings.banner_top_title_color }};
+              }
+              #slickSlide-{{ section.id }} .slideshow__title *{
+                color: {{ section.settings.banner_title_color }};
+              }
+              #slickSlide-{{ section.id }} .slideshow__title p b, #slickSlide-{{ section.id }} .slideshow__title p strong{ color: {{ section.settings.banner_title_highlight_color }}; }
+              #slickSlide-{{ section.id }} .slideshow__bottom__subtitle *{
+                color: {{ section.settings.banner_bottom_title_color }};
+              }
+            </style>
+            <script>
+              {% if section.settings.banner_type == 'video' %}
+                {% if html5_video_url != blank %}
+                  document.getElementById('VideoModal_{{section.id}}').play();
+                {% endif %}
+                {% if mobile_html5_video_url != blank %}
+                  document.getElementById('mobile_VideoModal_{{section.id}}').play();
+                {% endif %}
+              {% endif %}
+            </script>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>
+
+<style>
+    #shopify-section-{{ section.id }} {
+      --slideshow-height: 640px;
+      --slideshow-mobile-height: 500px;
+    }
+</style>
+
+
+{% schema %}
+{
+  "name": "Star_banner",
+  "class": "star-page-banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom class"
+    },
+    {
+      "type": "radio",
+      "id": "banner_type",
+      "label": "Banner type",
+      "default": "image",
+	    "options": [
+        {
+          "label": "Image",
+          "value": "image"
+        },
+        {
+          "label": "Video",
+          "value": "video"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile image"
+    },
+    {
+      "type": "header",
+      "content": "Video"
+    },
+    {
+      "type": "video_url",
+      "id": "youtube_video_url",
+      "accept": ["youtube"],
+      "label": "Youtube video url",
+      "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+    },
+    {
+      "type": "text",
+      "id": "html5_video_url",
+      "label": "Video URL"
+    },
+    {
+      "type": "text",
+      "id": "html5_video_url_m",
+      "label": "Mobile video URL"
+    },
+    {
+      "type": "color",
+      "id": "color_image_overlay",
+      "label": "Overlay color",
+      "default": "#000"
+    },
+    {
+      "type": "range",
+      "id": "image_overlay_opacity",
+      "label": "Opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 40
+    },
+    {
+      "type": "select",
+      "id": "text_placement",
+      "label": "Text placement",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left side"
+        },
+        {
+          "value": "right",
+          "label": "Right side"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Subtitle 1"
+    },
+    {
+      "type": "richtext",
+      "id": "banner_top_title",
+      "label": "Text"
+    },
+    {
+      "type": "color",
+      "id": "banner_top_title_color",
+      "label": "Text color"
+    },
+    {
+      "type": "header",
+      "content": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "banner_title",
+      "label": "Text"
+    },
+    {
+      "type": "color",
+      "id": "banner_title_color",
+      "label": "Text color"
+    },
+    {
+      "type": "color",
+      "id": "banner_title_highlight_color",
+      "label": "Text highlight color"
+    },
+    {
+      "type": "header",
+      "content": "Subtitle 2"
+    },
+    {
+      "type": "richtext",
+      "id": "banner_bottom_title",
+      "label": "Text"
+    },
+    {
+      "type": "color",
+      "id": "banner_bottom_title_color",
+      "label": "Text color"
+    }
+  ],
+	"presets": [
+    {
+        "name": "Star_banner",
+        "category":"Custom Sections"
+    }
+	]
+}
+{% endschema %}

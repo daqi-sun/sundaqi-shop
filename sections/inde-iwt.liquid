@@ -1,0 +1,100 @@
+{% liquid
+  assign top_title = section.settings.top_title
+  assign title = section.settings.title
+  assign text = section.settings.text
+%}
+
+{% style %}
+  .cut-bill-iwt .cut-bill-btn {
+    font-size: 20px;
+    width: fit-content;
+    padding: 7px 30px;
+  }
+  @media (max-width: 550px) {
+    .cut-bill-iwt .cut-bill-btn {
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 440px) {
+    .cut-bill-iwt .cut-bill-btn {
+      font-size: 13px;
+    }
+  }
+  @media (max-width: 387px) {
+    .cut-bill-iwt .cut-bill-btn {
+      font-size: 10px;
+    }
+  }
+{% endstyle %}
+<div class="cut-bill-section-wrapper w-90 cut-bill-iwt">
+  {% if top_title != blank %}
+    <div class="iwt-title-with-divider">
+      <div class="iwt-title-with-divider__divider"></div>
+      <div>{{ top_title }}</div>
+      <div class="iwt-title-with-divider__divider"></div>
+    </div>
+  {% endif %}
+
+  <h2>{{ title }}</h2>
+  <div class="iwt-text">{{ text }}</div>
+
+  {% assign btnText = section.settings.btnText %}
+  {% if btnText != blank %}
+    <a class="cut-bill-btn mx-auto" href="#{{ section.settings.url }}">
+      {{- btnText -}}
+    </a>
+  {% endif %}
+
+  <div class="iwt-img-wrapper">
+    {% assign image = section.settings.mobileImage %}
+    {% render 'th-image--mobile', image: image %}
+
+    {% assign image = section.settings.image %}
+    {% render 'th-image--desktop', image: image %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Image with text(INDE)",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobileImage",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "text",
+      "id": "top_title",
+      "label": "Top title",
+      "info": "The title with divider"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "btnText",
+      "label": "Button text",
+      "default": "Energielösungen ansehen"
+    },
+    {
+      "type": "text",
+      "id": "url",
+      "label": "URL"
+    }
+  ]
+}
+{% endschema %}

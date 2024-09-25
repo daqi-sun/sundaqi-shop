@@ -1,0 +1,149 @@
+<div class="mobile-nav__dropdown" data-parent="{{ mega_menu_block.settings.block_4_title }}" data-level="2">
+    <div class="mobile-nav-product-row">
+        <div class="mobile-nav-product-row-title">
+            <span>{{ mega_menu_block.settings.tab_1_block_4_row_1_title }}</span>
+            {% if mega_menu_block.settings.tab_1_block_4_row_1_btn_url != blank %}
+            <a class="block_btn" href="{{ mega_menu_block.settings.tab_1_block_4_row_1_btn_url }}">
+                {{ mega_menu_block.settings.tab_1_block_4_row_1_btn_title }}
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="14" viewBox="0 0 13 14" fill="none">
+                    <path d="M5.08329 2.41669L9.41663 6.75002L5.08329 11.0834" stroke="#444444" stroke-width="1.1375" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+            {% endif %}
+        </div>
+        <div class="mobile-menu-products-container block-{{mega_menu_block.settings.tab_1_block_4_row_1_block_limit}}">
+            {% assign products_criteria = mega_menu_block.settings.tab_1_block_4_row_1_products %}
+            {% if products_criteria == 'collection' %}
+                {% for custom_product in collections[mega_menu_block.settings.tab_1_block_4_row_1_coll].products limit: mega_menu_block.settings.tab_1_block_4_row_1_product_limit %}
+                    {%- comment %}<locksmith:7303>{% endcomment -%}
+                      {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: custom_product, subject_parent: collections[mega_menu_block.settings.tab_1_block_4_row_1_coll], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                    {%- comment %}</locksmith:7303>{% endcomment -%}
+                    {% render 'mega-menu-product' with link: child_child_link, mega_menu_block: mega_menu_block, custom_product: custom_product %}
+                {% endfor %}
+            {% else %}
+                {% for i in (1..5) %}
+                    {% capture image %}tab_1_block_4_row_1_item_{{i}}{% endcapture %}
+                    {% capture link %}tab_1_block_4_row_1_item_{{i}}_url{% endcapture %}
+                    {% capture text %}tab_1_block_4_row_1_item_{{i}}_text{% endcapture %}
+                    {% if mega_menu_block.settings[image] != blank %}
+                        <div class="swiper-slide custom_menu_product">
+                            {% if mega_menu_block.settings[link] != blank %}<a href="{{ mega_menu_block.settings[link] }}">{% endif %}
+                                <div class="image">
+                                    <img loading="lazy"
+                                        srcset="{{ mega_menu_block.settings[image] | img_url: 'small' | replace: '_small', '' }}"
+                                    />
+                                </div>
+                                <div class="product_content">
+                                    {% assign mega_menu_max_savings = 0 %}
+                                    {% for variant in custom_product.variants %}
+                                      {% if variant.metafields.custom.for_member_only != false %}
+                                        {% assign savings = variant.compare_at_price | minus: variant.price %}
+                                        {% if savings > mega_menu_max_savings %}
+                                          {% assign mega_menu_max_savings = savings %}
+                                        {% endif %}
+                                      {% endif %}
+                                    {% endfor %}
+                                    {% if mega_menu_max_savings != 0 %}
+                                      <div class="discount-label">
+                                            {% if custom_product.variants.size <= 1 %}
+                                          {% assign variant = custom_product.variants.first %}
+                                          {% if variant.compare_at_price > variant.price %}
+                                            Ahorrar {{ variant.compare_at_price | minus: variant.price | money_without_currency | replace: ',00', '' }} €
+                                          {% endif %}
+                                        {% else %}
+                                        Hasta -{{ mega_menu_max_savings | money_without_currency | replace: ',00', '' }} €
+                                        {% endif %}
+                                      </div>
+                                    {% else %}
+                                      <div class="discount-label discount-label-placeholder" style="opacity: 0;">
+                                          Label
+                                      </div>
+                                    {% endif %}
+                                    {% if mega_menu_block.settings[text] != blank %}
+                                        <div class="title">
+                                            {{ mega_menu_block.settings[text] }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            {% if mega_menu_block.settings[link] != blank %}</a>{% endif %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="mobile-nav-product-row">
+        <div class="mobile-nav-product-row-title">
+            <span>{{ mega_menu_block.settings.tab_1_block_4_row_2_title }}</span>
+            {% if mega_menu_block.settings.tab_1_block_4_row_2_btn_url != blank %}
+            <a class="block_btn" href="{{ mega_menu_block.settings.tab_1_block_4_row_2_btn_url }}">
+                {{ mega_menu_block.settings.tab_1_block_4_row_2_btn_title }}
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="14" viewBox="0 0 13 14" fill="none">
+                    <path d="M5.08329 2.41669L9.41663 6.75002L5.08329 11.0834" stroke="#444444" stroke-width="1.1375" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+            {% endif %}
+        </div>
+        <div class="mobile-menu-products-container block-{{mega_menu_block.settings.tab_1_block_4_row_2_block_limit}}">
+            {% assign products_criteria = mega_menu_block.settings.tab_1_block_4_row_2_products %}
+            {% if products_criteria == 'collection' %}
+                {% for custom_product in collections[mega_menu_block.settings.tab_1_block_4_row_2_coll].products limit: mega_menu_block.settings.tab_1_block_4_row_2_product_limit %}
+                    {%- comment %}<locksmith:bef9>{% endcomment -%}
+                      {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: custom_product, subject_parent: collections[mega_menu_block.settings.tab_1_block_4_row_2_coll], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                    {%- comment %}</locksmith:bef9>{% endcomment -%}
+                    {% render 'mega-menu-product' with link: child_child_link, mega_menu_block: mega_menu_block, custom_product: custom_product %}
+                {% endfor %}
+            {% else %}
+                {% for i in (1..5) %}
+                    {% capture image %}tab_1_block_4_row_2_item_{{i}}{% endcapture %}
+                    {% capture link %}tab_1_block_4_row_2_item_{{i}}_url{% endcapture %}
+                    {% capture text %}tab_1_block_4_row_2_item_{{i}}_text{% endcapture %}
+                    {% if mega_menu_block.settings[image] != blank %}
+                        <div class="swiper-slide custom_menu_product">
+                            {% if mega_menu_block.settings[link] != blank %}<a href="{{ mega_menu_block.settings[link] }}">{% endif %}
+                                <div class="image">
+                                    <img loading="lazy"
+                                        srcset="{{ mega_menu_block.settings[image] | img_url: 'small' | replace: '_small', '' }}"
+                                    />
+                                </div>
+                                <div class="product_content">
+                                    {% assign mega_menu_max_savings = 0 %}
+                                    {% for variant in custom_product.variants %}
+                                      {% if variant.metafields.custom.for_member_only != false %}
+                                        {% assign savings = variant.compare_at_price | minus: variant.price %}
+                                        {% if savings > mega_menu_max_savings %}
+                                          {% assign mega_menu_max_savings = savings %}
+                                        {% endif %}
+                                      {% endif %}
+                                    {% endfor %}
+                                    {% if mega_menu_max_savings != 0 %}
+                                      <div class="discount-label">
+                                            {% if custom_product.variants.size <= 1 %}
+                                          {% assign variant = custom_product.variants.first %}
+                                          {% if variant.compare_at_price > variant.price %}
+                                            Ahorrar {{ variant.compare_at_price | minus: variant.price | money_without_currency | replace: ',00', '' }} €
+                                          {% endif %}
+                                        {% else %}
+                                        Hasta -{{ mega_menu_max_savings | money_without_currency | replace: ',00', '' }} €
+                                        {% endif %}
+                                      </div>
+                                    {% else %}
+                                      <div class="discount-label discount-label-placeholder" style="opacity: 0;">
+                                          Label
+                                      </div>
+                                    {% endif %}
+                                    {% if mega_menu_block.settings[text] != blank %}
+                                        <div class="title">
+                                            {{ mega_menu_block.settings[text] }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            {% if mega_menu_block.settings[link] != blank %}</a>{% endif %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>

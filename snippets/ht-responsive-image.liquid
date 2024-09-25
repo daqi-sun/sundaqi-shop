@@ -1,0 +1,43 @@
+{%- comment -%}
+  Only used in the page with CSS styles
+  @param image
+  @param image_mobile
+{%- endcomment -%}
+{% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+<div
+  class="custom-img-wrapper desktop-only"
+  style="padding-top: {{ pt }}%;"
+>
+  <img
+    class="custom-img"
+    src="{{ image | img_url: '1000x' }}"
+    srcset="
+      {{ image | img_url: '1000x' }} 1000w,
+      {{ image | img_url: '1200x' }} 1200w,
+      {{ image | img_url: '1400x' }} 1400w,
+      {{ image | img_url: 'master' }} 1600w
+    "
+    alt="{{ image.alt }}"
+    loading="lazy"
+  >
+</div>
+
+{% assign image = image_mobile %}
+{% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+<div
+  class="custom-img-wrapper mobile-only"
+  style="padding-top: {{ pt }}%;"
+>
+  <img
+    class="custom-img"
+    src="{{ image | img_url: '500x' }}"
+    srcset="
+      {{ image | img_url: '400x' }} 400w,
+      {{ image | img_url: '500x' }} 500w,
+      {{ image | img_url: '600x' }} 600w,
+      {{ image | img_url: 'master' }} 700w
+    "
+    alt="{{ image.alt }}"
+    loading="lazy"
+  >
+</div>

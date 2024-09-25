@@ -1,0 +1,693 @@
+.email-subscription-popup__section {
+    position: fixed;
+    bottom: 56px;
+    left: 56px;
+    color: #fff;
+    font-family: "Helvetica Neue ForEco";
+    z-index: 9999999999;
+    cursor: pointer;
+}
+
+.email-subscription-popup__trigger-close {
+    position: absolute;
+    top: 0;
+    right: -12px;
+    cursor: pointer;
+}
+
+.email-subscription-popup__trigger-close svg {
+    display: block;
+}
+
+.email-subscription-popup__wrapper-inner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    display: block;
+    cursor: default;
+}
+
+.email-subscription-popup__wrapper-inner:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.email-subscription-popup__body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    width: 600px;
+    min-height: 400px;
+    border-radius: 12px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    font-family: "Helvetica Neue ForEco";
+}
+
+.email-subscription-popup__body-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 48px 65px;
+}
+
+.email-subscription-popup__body-close-button {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.email-subscription-popup__body-close-button:focus {
+    outline: none;
+}
+
+/* Subscription section Start */
+.email-subscription-popup__title-wrapper {
+    margin-bottom: 17px;
+}
+
+.email-subscription-popup__title--subscription {
+    text-align: center;
+    font-family: "Helvetica Neue ForEco";
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28.8px;
+    margin-bottom: 11px;
+}
+
+.email-subscription-popup__title--subscription>em {
+    font-style: normal;
+    color: #FFB5B9;
+}
+
+.email-subscription-popup__desc--subscription {
+    text-align: center;
+    font-family: "Helvetica Neue ForEco";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    margin: 0;
+}
+
+.email-subscription-popup__input-wrapper {
+    margin-bottom: 10px;
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    max-width: 400px;
+}
+
+.email-subscription-popup__input {
+    flex: 1;
+    border-radius: 4px 0 0 4px;
+    padding: 10px 12px;
+    font-family: "Helvetica Neue ForEco";
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20.8px;
+    outline: none;
+}
+
+.email-subscription-popup__input:focus {
+    outline: none;
+}
+
+.email-subscription-popup__input::placeholder {
+    color: #E1E1E1;
+    font-family: "Helvetica Neue ForEco";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20.8px;
+}
+
+.email-subscription-popup__button--subscription {
+    border-radius: 0px 4px 4px 0px;
+    text-align: center;
+    font-family: "Helvetica Neue ForEco";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20.8px;
+    padding: 10px 22.5px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.email-subscription-popup__button--subscription:focus {
+    outline: none;
+}
+
+.email-subscription-popup__disclaimer-wrapper {
+    width: 100%;
+    display: grid;
+    place-content: center;
+}
+
+.email-subscription-popup__disclaimer {
+    display: block;
+    position: relative;
+    padding-left: 24px;
+    padding-top: 4px;
+    cursor: pointer;
+    user-select: none;
+    width: fit-content;
+}
+
+.email-subscription-popup__disclaimer p,
+.email-subscription-popup__disclaimer span {
+    margin: 0;
+    font-family: "Helvetica Neue ForEco";
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+/* Hide the default checkbox */
+.email-subscription-popup__disclaimer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    outline: none;
+}
+
+/* Create a custom checkbox */
+.email-subscription-popup__disclaimer .checkmark {
+    position: absolute;
+    top: 7px;
+    left: 6px;
+    height: 10px;
+    width: 10px;
+    background-color: transparent;
+    /* border: 1px solid #fff; */
+    border: 1px solid;
+    opacity: 0.7;
+    /* This is the border color */
+}
+
+/* When the checkbox is checked, add a black background */
+.email-subscription-popup__disclaimer input:checked~.checkmark {
+    background-color: transparent;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.email-subscription-popup__disclaimer .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.email-subscription-popup__disclaimer input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.email-subscription-popup__disclaimer .checkmark:after {
+    left: 3.1px;
+    top: 0.3px;
+    width: 2px;
+    height: 7px;
+    /* border: solid #fff; */
+    border: solid;
+    border-width: 0 1px 1px 0;
+    transform: rotate(45deg);
+}
+
+.email-subscription-popup__error-message {
+    color: #FF0000;
+    font-family: 'Helvetica Neue ForEco';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+/* Subscription section End */
+
+/* SMS section Start */
+.email-subscription-popup__title-wrapper--sms {
+    margin-bottom: 8px;
+}
+
+.email-subscription-popup__desc--sms {
+    text-align: center;
+    font-family: "Helvetica Neue ForEco";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 18.5px;
+    margin-bottom: 10px;
+}
+
+.email-subscription-popup__title--sms {
+    text-align: center;
+    font-family: "Helvetica Neue ForEco";
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 26.4px;
+    margin: 0;
+}
+
+.email-subscription-popup__input-wrapper--sms {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    max-width: 400px;
+    width: 100%;
+    margin-inline: auto;
+    margin-bottom: 10px;
+}
+
+.email-subscription-popup__dropdown-wrapper {
+    position: relative;
+}
+
+.email-subscription-popup__dropdown-hidden {
+    opacity: 0;
+    position: absolute;
+    inset: 0;
+}
+
+.email-subscription-popup__dropdown-visible {
+    border-radius: 4px 0px 0px 4px;
+    padding-left: 13px;
+    padding-right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    height: 100%;
+}
+
+.email-subscription-popup__phone-code {
+    text-align: center;
+    font-family: "Helvetica Neue ForEco";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20.8px;
+    margin: 0;
+    pointer-events: none;
+}
+
+.email-subscription-popup__input--sms {
+    flex: 1;
+    border-radius: 0px;
+    border-left: none;
+    border-right: none;
+    padding: 9px 11px 10px;
+    font-family: "Helvetica Neue ForEco";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20.8px;
+    outline: none;
+}
+
+.email-subscription-popup__input--sms:focus {
+    outline: none;
+}
+
+.email-subscription-popup__button--sms {
+    border-radius: 0px 4px 4px 0px;
+    padding: 9px 30.5px 10px;
+    font-family: "Helvetica Neue ForEco";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20.8px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+.email-subscription-popup__button--sms:focus {
+    outline: none;
+}
+
+.email-subscription-popup__disclaimer--sms div {
+    text-align: left;
+}
+
+.email-subscription-popup__disclaimer--sms p,
+.email-subscription-popup__disclaimer--sms span {
+    display: inline;
+}
+
+.email-subscription-popup__disclaimer--view-more {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* SMS section End */
+
+/* Thank you section Start */
+.email-subscription-popup__title-wrapper--thankyou {
+    margin-bottom: 24px;
+}
+
+.email-subscription-popup__title--thankyou {
+    text-align: center;
+    font-family: "Helvetica Neue ForEco";
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 33.6px;
+    margin-bottom: 11px;
+}
+
+.email-subscription-popup__desc--thankyou {
+    margin: 0;
+    text-align: center;
+    font-family: "Helvetica Neue ForEco";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 18.4px;
+}
+
+.email-subscription-popup__thankyou-box {
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+    padding: 28px 9px 36px;
+    margin-inline: auto;
+    margin-bottom: 30px;
+}
+
+.email-subscription-popup__thankyou-box-intro {
+    text-align: center;
+    font-family: "Helvetica Neue ForEco";
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30px;
+    margin-bottom: 26px;
+}
+
+.email-subscription-popup__thankyou-box-button {
+    font-family: "Helvetica Neue ForEco";
+    padding: 10px 32px;
+    border-radius: 4px;
+    font-size: 16.118px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+}
+
+.email-subscription-popup__thankyou-box-button:focus {
+    outline: none;
+}
+
+.email-subscription-popup__disclaimer--thankyou>p {
+    text-align: center;
+    font-family: "Helvetica Neue ForEco";
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+/* Thank you section End */
+
+/* Member Thank you section Start */
+.email-subscription-popup__title--thankyou-member {
+    text-align: center;
+    font-family: "Helvetica Neue ForEco";
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 33.6px;
+    margin-bottom: 17px;
+}
+
+.email-subscription-popup__desc--thankyou-member,
+.email-subscription-popup__desc--thankyou-member p {
+    text-align: center;
+    font-family: "Helvetica Neue ForEco";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20px;
+    margin: 0;
+}
+
+.email-subscription-popup__desc--thankyou-member p {
+    display: inline;
+}
+
+/* SMS Thank you section Start */
+.email-subscription-popup__title--thankyou-sms {
+    text-align: center;
+    font-family: "Helvetica Neue ForEco";
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 36px;
+    margin-bottom: 17px;
+}
+
+.email-subscription-popup__desc--thankyou-sms,
+.email-subscription-popup__desc--thankyou-sms p {
+    text-align: center;
+    font-family: "Helvetica Neue ForEco";
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+    margin: 0;
+}
+
+.email-subscription-popup__desc--thankyou-sms p {
+    display: inline;
+}
+
+/* SMS Thank you section End */
+
+
+@media screen and (max-width: 749px) {
+    .email-subscription-popup__section {
+        bottom: 24px;
+        left: 24px;
+        width: 90px;
+    }
+
+    .email-subscription-popup__trigger-close {
+        top: 0;
+        right: 0;
+    }
+
+    .email-subscription-popup__trigger-close svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .email-subscription-popup__body {
+        width: 90%;
+        max-width: 300px;
+        min-height: 350px;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        background-size: 100% 100%;
+        margin-inline: auto;
+    }
+
+    .email-subscription-popup__body-inner {
+        padding: 44px 16px;
+    }
+
+    .email-subscription-popup__body-close-button {
+        top: 13px;
+        right: 13px;
+    }
+
+    /* Subscription section Start */
+    .email-subscription-popup__title-wrapper {
+        margin-bottom: 10px;
+    }
+
+    .email-subscription-popup__title--subscription {
+        font-size: 17px;
+        line-height: 20.4px;
+        margin-bottom: 9px;
+    }
+
+    .email-subscription-popup__desc--subscription {
+        font-size: 14px;
+        line-height: 16.8px;
+    }
+
+    .email-subscription-popup__input-wrapper {
+        width: 100%;
+        margin-bottom: 10px;
+        margin-inline: auto;
+        max-width: 400px;
+    }
+
+    .email-subscription-popup__input,
+    .email-subscription-popup__input::placeholder {
+        font-size: 12px;
+        line-height: 14.4px;
+    }
+
+    .email-subscription-popup__button--subscription {
+        padding: 9px 13px;
+        font-size: 14px;
+        line-height: 18.2px;
+    }
+
+    .email-subscription-popup__disclaimer {
+        padding-top: 0px;
+    }
+
+    .email-subscription-popup__disclaimer p {
+        font-size: 12px;
+        line-height: 14.4px;
+    }
+
+    .email-subscription-popup__disclaimer .checkmark {
+        top: 4px;
+        left: 8px;
+        height: 12px;
+        width: 12px;
+    }
+
+    .email-subscription-popup__disclaimer .checkmark:after {
+        left: 3.1px;
+        top: 1px;
+        width: 4px;
+        height: 7px;
+    }
+
+    /* Subscription section End */
+
+    /* SMS section Start */
+    .email-subscription-popup__title-wrapper--sms {
+        margin-bottom: 9px;
+    }
+
+    .email-subscription-popup__desc--sms {
+        font-size: 14px;
+        line-height: 16.8px;
+        margin-bottom: 5px;
+    }
+
+    .email-subscription-popup__title--sms {
+        font-size: 18px;
+        line-height: 21.6px;
+        white-space: pre-wrap;
+    }
+
+    .email-subscription-popup__input-wrapper--sms {
+        max-width: 260px;
+        margin-bottom: 11px;
+    }
+
+    .email-subscription-popup__dropdown-visible {
+        padding-left: 7px;
+        padding-right: 6px;
+        gap: 5px;
+    }
+
+    .email-subscription-popup__phone-code {
+        font-size: 12px;
+        line-height: 15.6px;
+    }
+
+    .email-subscription-popup__input--sms {
+        padding: 10px 6px 11px;
+        font-size: 12px;
+        line-height: 14.4px;
+    }
+
+    .email-subscription-popup__button--sms {
+        padding: 8px 16px;
+        font-size: 12px;
+        line-height: 15.6px;
+        text-wrap: nowrap;
+    }
+
+    .email-subscription-popup__disclaimer--sms div {
+        line-height: 14.4px;
+    }
+
+    /* SMS section End */
+
+    /* Thank you section Start */
+    .email-subscription-popup__title-wrapper--thankyou {
+        margin-bottom: 20px;
+    }
+
+    .email-subscription-popup__title--thankyou {
+        font-size: 16px;
+        line-height: 19.2px;
+    }
+
+    .email-subscription-popup__desc--thankyou {
+        font-size: 13px;
+        line-height: 15.6px;
+    }
+
+    .email-subscription-popup__thankyou-box {
+        padding: 23px 13px 37px;
+        max-width: 245px;
+        margin-bottom: 26px;
+    }
+
+    .email-subscription-popup__thankyou-box-intro {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .email-subscription-popup__thankyou-box-button {
+        padding: 8px 18px;
+        font-size: 14px;
+    }
+
+    .email-subscription-popup__disclaimer--thankyou>p {
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    /* Thank you section End */
+
+    /* Member Thank you section Start */
+    .email-subscription-popup__title--thankyou-member {
+        font-size: 26px;
+        line-height: 31.2px;
+        margin-bottom: 14px;
+    }
+
+    .email-subscription-popup__desc--thankyou-member,
+    .email-subscription-popup__desc--thankyou-member p {
+        font-size: 14px;
+        line-height: 16.8px;
+    }
+
+    /* Member Thank you section End */
+
+    /* SMS Thank you section Start */
+    .email-subscription-popup__title--thankyou-sms {
+        font-size: 26px;
+        line-height: 31.2px;
+        margin-bottom: 14px;
+    }
+
+    .email-subscription-popup__desc--thankyou-sms,
+    .email-subscription-popup__desc--thankyou-sms p {
+        font-size: 14px;
+        line-height: 16.8px;
+    }
+
+    /* SMS Thank you section End */
+
+}
+
+[x-cloak] {
+    display: none !important;
+}

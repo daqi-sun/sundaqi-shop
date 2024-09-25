@@ -1,0 +1,1406 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "sticky-product-bar": {
+      "type": "sticky-product-bar",
+      "blocks": {
+        "588d25af-4d47-43ac-9697-b98aa2f65719": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Overview",
+            "tab_id": "product_information",
+            "section_class": ""
+          }
+        },
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "FAQ",
+            "tab_id": "faq",
+            "section_class": ""
+          }
+        },
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Reviews",
+            "tab_id": "section-reviews",
+            "section_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "588d25af-4d47-43ac-9697-b98aa2f65719",
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4",
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38"
+      ],
+      "settings": {
+        "enabled": true,
+        "enabled_tabs": false
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "11795adc-1afa-4833-a193-258f495901ef": {
+          "type": "sku_block",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e": {
+          "type": "product_title",
+          "settings": {
+          }
+        },
+        "judge_me_reviews_preview_badge_FURRET": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "0471109f-c130-454e-a9ba-c56412cc11f3": {
+          "type": "product_vendor",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185": {
+          "type": "product_price",
+          "settings": {
+          }
+        },
+        "d25a0285-4fb4-422d-b95b-ab67446120ad": {
+          "type": "product_description",
+          "settings": {
+            "desc_display": "default"
+          }
+        },
+        "919f9cdd-6184-4311-b675-742931504318": {
+          "type": "coupon_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Component_2_1.png",
+            "discount_off_text": "{{ product.metafields.custom.discount_off_text.value }}",
+            "code": "{{ product.metafields.custom.discount_code.value }}",
+            "show_copy_code_btn": true
+          }
+        },
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879": {
+          "type": "product_options_block",
+          "settings": {
+            "show_product_swatches": true,
+            "use_variant_image_for_swatches": true,
+            "button_content": ""
+          }
+        },
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe": {
+          "type": "quantity_block",
+          "settings": {
+          }
+        },
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0": {
+          "type": "accessories_section",
+          "settings": {
+            "title": "Accessories",
+            "metafield": "accessories"
+          }
+        },
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609": {
+          "type": "product_buttons",
+          "settings": {
+            "enable_payment_button": false,
+            "show_custom_icons": true,
+            "custom_payment_logo_1_svg": "",
+            "custom_payment_logo_2_svg": "",
+            "custom_payment_logo_3_svg": "",
+            "custom_payment_logo_4_svg": "",
+            "custom_payment_logo_5_svg": "",
+            "custom_payment_logo_6_svg": "",
+            "custom_payment_logo_7_svg": "",
+            "custom_payment_logo_8_svg": "",
+            "custom_payment_logo_9_svg": "",
+            "custom_payment_logo_10_svg": "",
+            "custom_payment_logo_11_svg": "",
+            "custom_payment_logo_12_svg": "",
+            "custom_payment_logo_13_svg": "",
+            "custom_payment_logo_14_svg": "",
+            "custom_payment_logo_15_svg": ""
+          }
+        },
+        "a6857d85-dbb6-41d1-9501-c01cf5bbe11f": {
+          "type": "back_in_stock",
+          "disabled": true,
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "11795adc-1afa-4833-a193-258f495901ef",
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e",
+        "judge_me_reviews_preview_badge_FURRET",
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774",
+        "0471109f-c130-454e-a9ba-c56412cc11f3",
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185",
+        "d25a0285-4fb4-422d-b95b-ab67446120ad",
+        "919f9cdd-6184-4311-b675-742931504318",
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879",
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe",
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0",
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609",
+        "a6857d85-dbb6-41d1-9501-c01cf5bbe11f"
+      ],
+      "settings": {
+        "section_id": "",
+        "show_breadcrumbs": false,
+        "show_pick_an_option": false,
+        "enable_linked_options": false,
+        "enabled_mobile_sticky_btns": true,
+        "media_size": "medium",
+        "enable_image_zoom": true,
+        "enable_video_looping": true,
+        "thumbnails_type": "grid",
+        "support_email": "",
+        "support_text": "",
+        "feature_1_show": false,
+        "feature_1_title": "Fast & Free Shipping",
+        "feature_1_content": "",
+        "feature_2_show": false,
+        "feature_2_title": "Warranty Protection",
+        "feature_2_content": "",
+        "feature_3_show": false,
+        "feature_3_title": "Secure Payments",
+        "feature_3_content": "",
+        "feature_4_show": false,
+        "feature_4_title": "Multi-channel Support",
+        "feature_4_content": ""
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "grid_mobile": "2",
+        "heading": "You may also like",
+        "show_vendor": false
+      }
+    },
+    "165728772697564e64": {
+      "type": "newsletter",
+      "disabled": true,
+      "settings": {
+        "section_bg_color": "",
+        "section_color": "",
+        "bg_image_opacity": 70,
+        "section_title": "Subscribe to our newsletter",
+        "subtitle": "",
+        "subheading": "<p>Promotions, new products and sales. Directly to your inbox.<\/p>",
+        "button_style": "primary",
+        "showFormLabels": true,
+        "removeBottomMargin": false
+      }
+    },
+    "2f1d351d-19fe-4ce8-adb7-323077ec4a00": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--18582195437911__2f1d351d-19fe-4ce8-adb7-323077ec4a00-1681891053d97ff5f2-0": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/WAVE_2-01.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/M-WAVE_2-01.jpg",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "<h4><em>El aire acondicionado portátil más potente y compactoque puede utilizarse en cualquier lugar y en cualquier momento<\/em><\/h4>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--18582195437911__2f1d351d-19fe-4ce8-adb7-323077ec4a00-1681891053d97ff5f2-0"
+      ],
+      "settings": {
+      }
+    },
+    "0af4d846-0130-402c-9e23-f84bb26d6073": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 0,
+        "section_bottom_spacing": 20,
+        "section_top_spacing_mobile": 20,
+        "section_bottom_spacing_mobile": 20,
+        "alignment": "center",
+        "title": "",
+        "subtitle": "<h1>\"Mejor aparato de aire acondicionado portátil <br\/>de la CES 2023\" <\/h1><p><br\/><em>——según MakeUseOf <\/em><\/p><p><\/p>",
+        "content": "",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "6817ee58-ad06-4e53-9e01-c63ddd19bed4": {
+      "type": "pdp-slideshow",
+      "blocks": {
+        "a6e2b651-5611-472a-bbe8-c5898926c204": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Caravanas",
+            "title": "Temperatura perfecta. Estés donde estés.",
+            "subtitle": "",
+            "content": "",
+            "button_link": "#",
+            "button_text": "",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/WAVE_2-03-1-RV.jpg",
+            "mobile_image_1": "shopify:\/\/shop_images\/WAVE_2-03-1-RV.jpg",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": false,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "video",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "985260f6-d14f-4812-9095-3f744b440da7": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Camiones",
+            "title": "Temperatura perfecta. Estés donde estés.",
+            "subtitle": "",
+            "content": "",
+            "button_link": "",
+            "button_text": "",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/WAVE_2-03-2-Trucks.jpg",
+            "mobile_image_1": "shopify:\/\/shop_images\/WAVE_2-03-2-Trucks.jpg",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "61c5b39b-2ca3-464d-96cd-47b0988686cf": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Casas sin conexión a la red eléctrica",
+            "title": "Temperatura perfecta. Estés donde estés.",
+            "subtitle": "",
+            "content": "",
+            "button_link": "",
+            "button_text": "",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/WAVE_2-03-3-Off_out_grid_houses.jpg",
+            "mobile_image_1": "shopify:\/\/shop_images\/WAVE_2-03-3-Off_out_grid_houses.jpg",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "d3241880-1475-4184-9861-cc64f1a18bea": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Exteriores",
+            "title": "Temperatura perfecta. Estés donde estés.",
+            "subtitle": "",
+            "content": "",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/WAVE_2-03-4-Outdoors.jpg",
+            "mobile_image_1": "shopify:\/\/shop_images\/WAVE_2-03-4-Outdoors.jpg",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "c934c441-eeb5-4d13-b3c8-4dc253bcc3fc": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Tiendas de campaña",
+            "title": "Temperatura perfecta. Estés donde estés.",
+            "subtitle": "",
+            "content": "",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/WAVE_2-03-5-Tents.jpg",
+            "mobile_image_1": "shopify:\/\/shop_images\/WAVE_2-03-5-Tents.jpg",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": false,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "74fffbde-e837-4a17-9add-c5a9bc66d4ad": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Barcos",
+            "title": "Temperatura perfecta. Estés donde estés.",
+            "subtitle": "",
+            "content": "",
+            "button_link": "",
+            "button_text": "",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/WAVE_2-03-6-Boats.jpg",
+            "mobile_image_1": "shopify:\/\/shop_images\/WAVE_2-03-6-Boats.jpg",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        }
+      },
+      "block_order": [
+        "a6e2b651-5611-472a-bbe8-c5898926c204",
+        "985260f6-d14f-4812-9095-3f744b440da7",
+        "61c5b39b-2ca3-464d-96cd-47b0988686cf",
+        "d3241880-1475-4184-9861-cc64f1a18bea",
+        "c934c441-eeb5-4d13-b3c8-4dc253bcc3fc",
+        "74fffbde-e837-4a17-9add-c5a9bc66d4ad"
+      ],
+      "settings": {
+        "section_id": ""
+      }
+    },
+    "422c0f8a-0fd8-4119-a999-89923f91a9a4": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "La refrigeración y la calefacción más rápidas",
+        "subtitle": "<h4>El primer aparato de aire acondicionado portátil e inalámbrico del mundo con calefactor.El compresor personalizado de EcoFlow permite al WAVE 2 proporcionar un rendimiento de refrigeración de 5100 BTU y un rendimiento de calefacción de 6100 BTU. ¡Prepárate para disfrutar de la máxima comodidad con el WAVE 2!<\/h4>",
+        "content": "<p><br\/>* Baja la temperatura 10 °C desde una temperatura de 30 °C en un espacio de 10 m³ en 5 minutos con un rendimiento de refrigeración de 5100 BTU, y aumenta la temperatura de 10°C desde una temperatura de 20 °C en un espacio de 10 m³ en 5 minutos con un rendimiento de calefacción de 6100 BTU en condiciones de funcionamiento óptimas. <\/p>",
+        "button_link": "#",
+        "button_text": "",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/WAVE_2-04.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/WAVE_2-04.jpg",
+        "video_type": "mp4",
+        "video_url": "",
+        "mp4_video_url": "",
+        "mp4_video_url_m": "",
+        "autoplay_video": true,
+        "button_2_link": "#",
+        "button_2_text": ""
+      }
+    },
+    "c1ef607e-7071-40e5-9368-50d542c1ab7e": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "¡Sin instalación! Cabe en cualquier lugar",
+        "subtitle": "<h4>El aire acondicionado perfecto para cualquier espacio compacto. Es extremadamente fácil de usar, no requiere instalación ni drenaje*. Hay adaptadores para conductos de aire que se adaptan a cualquier espacio. Disfruta de la comodidad de la refrigeración y la calefacción sin complicaciones.<\/h4>",
+        "content": "<p><\/p><p>* No se necesita drenaje en el modo de refrigeración cuando la humedad es inferior al 70 %, pero sigue siendo necesario en el modo de calefacción.<\/p>",
+        "button_link": "#",
+        "button_text": "",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/WAVE_2-05.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/WAVE_2-05.jpg",
+        "video_type": "mp4",
+        "video_url": "",
+        "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/25377f61e0e94734b7e6b22c62c724e9.mp4",
+        "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/25377f61e0e94734b7e6b22c62c724e9.mp4",
+        "autoplay_video": true,
+        "button_2_link": "#",
+        "button_2_text": ""
+      }
+    },
+    "f52537aa-abc1-42d4-b344-7526d4c9dcd1": {
+      "type": "pdp-slideshow",
+      "blocks": {
+        "6fbbef18-4f93-462b-b805-208242a6fdc5": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Modo Eco (8 horas de funcionamiento)",
+            "title": "Descansos largos y tranquilos",
+            "subtitle": "",
+            "content": "<p><strong>Con el algoritmo de software avanzado de EcoFlow, el WAVE 2 ofrece varios modos y control mediante la aplicación. El sistema funciona de forma silenciosa (44 dB) en el modo noche y hasta 8 horas en el modo Eco. Disfruta de una comodidad duradera en tu tienda de campaña, caravana o casa gracias a su diseño potente y portátil.<\/strong><\/p>",
+            "button_link": "",
+            "button_text": "",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/WAVE_2-06-1.jpg",
+            "mobile_image_1": "shopify:\/\/shop_images\/M-WAVE_2-06-1.jpg",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "b0466c00-9cdf-4d88-b3b9-d7de1c63a702": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Modo noche (solo 44 dB)",
+            "title": "Descansos largos y tranquilos",
+            "subtitle": "",
+            "content": "<p><strong>Con el algoritmo de software avanzado de EcoFlow, el WAVE 2 ofrece varios modos y control mediante la aplicación. El sistema funciona de forma silenciosa (44 dB) en el modo noche y hasta 8 horas en el modo Eco. Disfruta de una comodidad duradera en tu tienda de campaña, caravana o casa gracias a su diseño potente y portátil.<\/strong><\/p>",
+            "button_link": "",
+            "button_text": "",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/WAVE_2-06-2.jpg",
+            "mobile_image_1": "shopify:\/\/shop_images\/M-WAVE_2-06-2.jpg",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "video",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        }
+      },
+      "block_order": [
+        "6fbbef18-4f93-462b-b805-208242a6fdc5",
+        "b0466c00-9cdf-4d88-b3b9-d7de1c63a702"
+      ],
+      "settings": {
+        "section_id": ""
+      }
+    },
+    "b78cdbf4-b859-4b4a-82a2-b655be42e110": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "4275bdf1-b1c1-4edf-b7d1-502038fb4010": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/WAVE_2-07.jpg",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Con el refrigerante R290: una forma más ecológica de combatir el calor.",
+            "title_color": "#232323",
+            "content": "<h6>En EcoFlow, el respeto por el medio ambiente se une a la máxima comodidad. El WAVE 2 utiliza el R290, un refrigerante natural limpio, ecológico y perfecto para disfrutar de una relajante experiencia de refrigeración. Con un menor potencial de calentamiento global y sin emisiones de ozono, es la forma ideal de mantenerte fresco y cómodo en comparación con los refrigerantes tradicionales, a la vez que reduces tu huella de carbono.<\/h6>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "4275bdf1-b1c1-4edf-b7d1-502038fb4010"
+      ],
+      "settings": {
+      }
+    },
+    "718c8753-f057-4353-8a1e-e9cf23c54a59": {
+      "type": "pdp-slideshow",
+      "blocks": {
+        "b1ec82e1-987a-4ed3-b408-fc9824ef4721": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "CA",
+            "title": "Cárgalo rápidamente en casa o en la carretera",
+            "subtitle": "<h4>WAVE 2: lo último en aire acondicionado y calefacción con batería intercambiable opcional. <br\/>Cárgalo rápidamente con CA, energía solar, en el coche o en estaciones de energía.<br\/> Disfruta de aire frío o caliente en cualquier momento <br\/>y lugar con la flexibilidad de las múltiples opciones de carga.<\/h4>",
+            "content": "",
+            "button_link": "#",
+            "button_text": "",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/WAVE_2-08-1-AC.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/M-WAVE_2-08-1-AC.jpg",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "video",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "7d0fd6fe-5c2f-4aff-b009-5ca7d09eb484": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Estación de energía",
+            "title": "Cárgalo rápidamente en casa o en la carretera",
+            "subtitle": "<h4>WAVE 2: lo último en aire acondicionado y calefacción que incluye una batería intercambiable. <br\/>Cárgalo rápidamente con CA, energía solar, en el coche o en estaciones de energía.<br\/> Disfruta de aire frío o caliente en cualquier momento <br\/>y lugar con la flexibilidad de las múltiples opciones de carga.<\/h4>",
+            "content": "",
+            "button_link": "",
+            "button_text": "",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/WAVE_2-08-2-Power_Station.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/M-WAVE_2-08-2-Power_Station.jpg",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "1e194beb-95e4-4d03-9da9-a672516237c3": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Solar",
+            "title": "Cárgalo rápidamente en casa o en la carretera",
+            "subtitle": "<h4>WAVE 2: lo último en aire acondicionado y calefacción que incluye una batería intercambiable. <br\/>Cárgalo rápidamente con CA, energía solar, en el coche o en estaciones de energía.<br\/> Disfruta de aire frío o caliente en cualquier momento <br\/>y lugar con la flexibilidad de las múltiples opciones de carga.<\/h4>",
+            "content": "",
+            "button_link": "",
+            "button_text": "",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/WAVE_2-08-3-Solar.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/M-WAVE_2-08-3-Solar.jpg",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "0d328cff-17a1-48c6-92c9-0269838ad215": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Coche",
+            "title": "Cárgalo rápidamente en casa o en la carretera",
+            "subtitle": "<h4>WAVE 2: lo último en aire acondicionado y calefacción que incluye una batería intercambiable. <br\/>Cárgalo rápidamente con CA, energía solar, en el coche o en estaciones de energía.<br\/> Disfruta de aire frío o caliente en cualquier momento <br\/>y lugar con la flexibilidad de las múltiples opciones de carga.<\/h4>",
+            "content": "",
+            "button_link": "",
+            "button_text": "",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/WAVE_2-08-4-Car.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/M-WAVE_2-08-4-Car.jpg",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        }
+      },
+      "block_order": [
+        "b1ec82e1-987a-4ed3-b408-fc9824ef4721",
+        "7d0fd6fe-5c2f-4aff-b009-5ca7d09eb484",
+        "1e194beb-95e4-4d03-9da9-a672516237c3",
+        "0d328cff-17a1-48c6-92c9-0269838ad215"
+      ],
+      "settings": {
+        "section_id": ""
+      }
+    },
+    "69f596ca-17c6-4846-8383-317f4f2e470d": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "3d1289c2-6d16-4448-a845-1be478e96598": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/WAVE-09.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/M-WAVE-09.jpg",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Parte de un ecosistema en constante crecimiento.",
+            "title_color": "#232323",
+            "content": "<h6>WAVE 2 es solo el principio. Vincúlalo con un EcoFlow DELTA 2\/DELTA Max o con sus baterías adicionales y disfruta de un increíble tiempo de funcionamiento de 7 a 14 horas en modo Eco. En comparación con otras estaciones de energía portátiles, es un 28 % más eficiente. También puedes utilizar cualquier estación de energía portátil con una entrada de 820 W para cargar el WAVE 2.<\/h6>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "3d1289c2-6d16-4448-a845-1be478e96598"
+      ],
+      "settings": {
+      }
+    },
+    "2379e8ca-5c92-4d08-b9d9-90fa678f43d9": {
+      "type": "pdp-slideshow",
+      "blocks": {
+        "9b3748f7-293e-4fe5-9723-e60689beee83": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Conducto de salida<br>de aire (simple)",
+            "title": "Potente portabilidad, según tus necesidades.",
+            "subtitle": "<h4>Se trata del acondicionador de aire más potente de su tamaño con diferencia. <br\/>Llévalo a cualquier parte y conecta los conductos para obtener una refrigeración dirigida y eficiente. <br\/>Ideal para tiendas de campaña, ventanas de autocaravanas o para colocar la unidad a distancia.<\/h4>",
+            "content": "",
+            "button_link": "#",
+            "button_text": "",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/WAVE_2-07-1.jpg",
+            "mobile_image_1": "shopify:\/\/shop_images\/WAVE_2-07-1.jpg",
+            "mp4_video_url_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/aa1c5d2e05434b3190d0515b95e9d4f4.mp4",
+            "mp4_video_url_m_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/aa1c5d2e05434b3190d0515b95e9d4f4.mp4",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "video",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "bbe00514-d04f-4cd6-941a-83cb7bd0db0f": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Conductos de aire<br>de escape (dobles)",
+            "title": "Potente portabilidad, según tus necesidades.",
+            "subtitle": "<h4>Se trata del acondicionador de aire más potente de su tamaño con diferencia. <br\/>Llévalo a cualquier parte y conecta los conductos para obtener una refrigeración dirigida y eficiente. <br\/>Ideal para tiendas de campaña, ventanas de autocaravanas o para colocar la unidad a distancia.<\/h4>",
+            "content": "",
+            "button_link": "",
+            "button_text": "",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/WAVE_2-07-2.jpg",
+            "mobile_image_1": "shopify:\/\/shop_images\/WAVE_2-07-2.jpg",
+            "mp4_video_url_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/a772c7c21ba841fd999f798e9eb8f398.mp4",
+            "mp4_video_url_m_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/a772c7c21ba841fd999f798e9eb8f398.mp4",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "933dd2f0-a82d-4ab5-895c-2422cad60384": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Conductos de aire<br>de escape (dobles) con panel<br>de ventilación de ventana",
+            "title": "Potente portabilidad, según tus necesidades.",
+            "subtitle": "<h4>Se trata del acondicionador de aire más potente de su tamaño con diferencia. <br\/>Llévalo a cualquier parte y conecta los conductos para obtener una refrigeración dirigida y eficiente. <br\/>Ideal para tiendas de campaña, ventanas de autocaravanas o para colocar la unidad a distancia.<\/h4>",
+            "content": "",
+            "button_link": "",
+            "button_text": "",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/WAVE_2-07-3.jpg",
+            "mobile_image_1": "shopify:\/\/shop_images\/WAVE_2-07-3.jpg",
+            "mp4_video_url_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/d1dc345db69f4823b54999019ec693ea.mp4",
+            "mp4_video_url_m_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/d1dc345db69f4823b54999019ec693ea.mp4",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "268fb04d-0e6c-49f6-be71-06f8b403998d": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "O sin accesorios<br>en cualquier lugar",
+            "title": "Potente portabilidad, según tus necesidades.",
+            "subtitle": "<h4>Se trata del acondicionador de aire más potente de su tamaño con diferencia. <br\/>Llévalo a cualquier parte y conecta los conductos para obtener una refrigeración dirigida y eficiente. <br\/>Ideal para tiendas de campaña, ventanas de autocaravanas o para colocar la unidad a distancia.<\/h4>",
+            "content": "",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/WAVE_2-07-4.jpg",
+            "mobile_image_1": "shopify:\/\/shop_images\/WAVE_2-07-4.jpg",
+            "mp4_video_url_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/d6024d69cdbe43f7b269e04054251d8e.mp4",
+            "mp4_video_url_m_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/d6024d69cdbe43f7b269e04054251d8e.mp4",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        }
+      },
+      "block_order": [
+        "9b3748f7-293e-4fe5-9723-e60689beee83",
+        "bbe00514-d04f-4cd6-941a-83cb7bd0db0f",
+        "933dd2f0-a82d-4ab5-895c-2422cad60384",
+        "268fb04d-0e6c-49f6-be71-06f8b403998d"
+      ],
+      "settings": {
+        "section_id": ""
+      }
+    },
+    "b28a0b5a-5a51-4e4d-ae79-595643746131": {
+      "type": "pdp-whats-in-the-box",
+      "blocks": {
+        "template--18574420509015__b28a0b5a-5a51-4e4d-ae79-595643746131-1681799676bf0aa017-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/WAVE_2-11-1.png",
+            "cta_label": "EcoFlow WAVE 2",
+            "link": "",
+            "cta_width": 32,
+            "cta_image_width": "100%",
+            "custom_width": 300,
+            "custom_height": 300,
+            "custom_width_mobile": 160,
+            "custom_height_mobile": 160
+          }
+        },
+        "template--18574420509015__b28a0b5a-5a51-4e4d-ae79-595643746131-1681799676bf0aa017-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/WAVE_2-11-2-Exhaust_ducts_E.png",
+            "cta_label": "Conducto de escape E",
+            "link": "",
+            "cta_width": 17,
+            "cta_image_width": "50%",
+            "custom_width": 140,
+            "custom_height": 120,
+            "custom_width_mobile": 120,
+            "custom_height_mobile": 120
+          }
+        },
+        "1019b80c-78a8-490d-9957-1ec40ee4b552": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/WAVE_2-11-3-Exhaust_ducts_D.png",
+            "cta_label": "Conducto de escape D",
+            "link": "",
+            "cta_width": 17,
+            "cta_image_width": "50%",
+            "custom_width": 140,
+            "custom_height": 120,
+            "custom_width_mobile": 120,
+            "custom_height_mobile": 120
+          }
+        },
+        "e60aa394-d5fe-4394-8036-e834c1a8a794": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/WAVE_2-11-4-Exhaust_duct_adapter_covers_C.png",
+            "cta_label": "Tapa del adaptador del conducto de escape C",
+            "link": "",
+            "cta_width": 17,
+            "cta_image_width": "100%",
+            "custom_width": 140,
+            "custom_height": 120,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 200
+          }
+        },
+        "d9fb059c-f315-490d-9523-92799b1532a3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/WAVE_2-11-5-Exhaust_duct_adapter_covers_A.png",
+            "cta_label": "Tapa del adaptador del conducto de escape A",
+            "link": "",
+            "cta_width": 17,
+            "cta_image_width": "50%",
+            "custom_width": 140,
+            "custom_height": 120,
+            "custom_width_mobile": 120,
+            "custom_height_mobile": 120
+          }
+        },
+        "ae721087-5834-4c71-a1ab-633c4d113711": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/WAVE_2-11-5-Exhaust_duct_adapter_covers_B.png",
+            "cta_label": "Tapa del adaptador del conducto de escape B",
+            "link": "",
+            "cta_width": 17,
+            "cta_image_width": "50%",
+            "custom_width": 140,
+            "custom_height": 120,
+            "custom_width_mobile": 120,
+            "custom_height_mobile": 120
+          }
+        },
+        "16f5ab4a-d0e0-48a8-9dcb-7c1926f8d98c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/WAVE_2-11-7-Window_vent_board.png",
+            "cta_label": "Panel de ventilación de ventana",
+            "link": "",
+            "cta_width": 17,
+            "cta_image_width": "50%",
+            "custom_width": 140,
+            "custom_height": 120,
+            "custom_width_mobile": 120,
+            "custom_height_mobile": 120
+          }
+        },
+        "1313766f-a430-4c23-9557-2491ba52fd3f": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/WAVE_2-11-8-Winder_and_Drain_pipe.png",
+            "cta_label": "Enrollador y tubo de desagüe",
+            "link": "",
+            "cta_width": 17,
+            "cta_image_width": "50%",
+            "custom_width": 140,
+            "custom_height": 120,
+            "custom_width_mobile": 120,
+            "custom_height_mobile": 120
+          }
+        },
+        "f05731fe-0e0a-454b-8f77-90a1ee032907": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/WAVE_2-11-9-Safety_Instructions_Quick_Start_Guide_and_Warranty_Card.png",
+            "cta_label": "Instrucciones de seguridad, guía de inicio rápido y tarjeta de garantía",
+            "link": "",
+            "cta_width": 17,
+            "cta_image_width": "50%",
+            "custom_width": 140,
+            "custom_height": 110,
+            "custom_width_mobile": 120,
+            "custom_height_mobile": 105
+          }
+        }
+      },
+      "block_order": [
+        "template--18574420509015__b28a0b5a-5a51-4e4d-ae79-595643746131-1681799676bf0aa017-0",
+        "template--18574420509015__b28a0b5a-5a51-4e4d-ae79-595643746131-1681799676bf0aa017-1",
+        "1019b80c-78a8-490d-9957-1ec40ee4b552",
+        "e60aa394-d5fe-4394-8036-e834c1a8a794",
+        "d9fb059c-f315-490d-9523-92799b1532a3",
+        "ae721087-5834-4c71-a1ab-633c4d113711",
+        "16f5ab4a-d0e0-48a8-9dcb-7c1926f8d98c",
+        "1313766f-a430-4c23-9557-2491ba52fd3f",
+        "f05731fe-0e0a-454b-8f77-90a1ee032907"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Contenido de la caja",
+        "bottom_content": "",
+        "cta_height": 465,
+        "cta_height_mobile": 245,
+        "cta_half_height_mobile": 200,
+        "gutter_width": 12
+      }
+    },
+    "a845089b-9aa1-48f5-b5e7-1717911f8822": {
+      "type": "pdp-specs",
+      "blocks": {
+        "29fa1e1d-142e-4339-a5fa-09a4652edad7": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de CA",
+            "content": "<p>100\/240V, 50\/60Hz, 820W Máx<\/p>"
+          }
+        },
+        "5a89e04f-7c33-4b22-adcb-630c99c5391e": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de carga mediante energía solar",
+            "content": "<p>11-60V, 13A, 400W Máx<\/p>"
+          }
+        },
+        "6c7afc2c-145b-4546-86c6-321ed339c70d": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de carga del coche",
+            "content": "<p>96W\/192W (12V\/24V, 8A Máx)<\/p>"
+          }
+        },
+        "08e7faa7-8a42-4450-a2b9-6678f9ccf73c": {
+          "type": "contents",
+          "settings": {
+            "title": "Potencia de batería adicional",
+            "content": "<p>700W Máx<\/p>"
+          }
+        },
+        "3481793e-c2e3-4eb3-9f91-19d011899a86": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso neto",
+            "content": "<p>14.5 kg aproximadamente<\/p>"
+          }
+        },
+        "dbe3a06c-ebcf-4c69-9e8a-3d8456ef8476": {
+          "type": "contents",
+          "settings": {
+            "title": "Dimensiones",
+            "content": "<p>518 x 297 x 336 mm<\/p>"
+          }
+        },
+        "4cbc0509-1273-40c5-b987-2788ec4ddde6": {
+          "type": "contents",
+          "settings": {
+            "title": "Bluetooth",
+            "content": "<p>√<\/p>"
+          }
+        },
+        "cec29a64-c49e-4973-b08d-21bd600a92f3": {
+          "type": "contents",
+          "settings": {
+            "title": "Wi-Fi",
+            "content": "<p>este producto solamente es compatible con las redes Wi-Fi de 2,4G<\/p>"
+          }
+        },
+        "7ae0bb8a-ea1c-43e5-b41d-487250cef6c6": {
+          "type": "contents",
+          "settings": {
+            "title": "Nivel acústico",
+            "content": "<p>44-56dB<\/p>"
+          }
+        },
+        "99172e1b-0e9e-45c7-a093-fbf68f88b141": {
+          "type": "contents",
+          "settings": {
+            "title": "Refrigerante \/ Cantidad",
+            "content": "<p>R290\/130g<\/p>"
+          }
+        },
+        "5cc0af3f-4bcf-41d0-86af-f7416c18ad8e": {
+          "type": "contents",
+          "settings": {
+            "title": "Función sin drenaje",
+            "content": "<p>compatible (en estado de refrigeración)<\/p>"
+          }
+        },
+        "14ccf8ef-ec40-4072-9f22-4372faefc269": {
+          "type": "contents",
+          "settings": {
+            "title": "Área de refrigeración",
+            "content": "<p>≤ 10 ㎡<\/p>"
+          }
+        },
+        "f3f9e14b-9c83-4282-9481-19037631aeee": {
+          "type": "contents",
+          "settings": {
+            "title": "Clasificación IP",
+            "content": "<p>IPX4<\/p>"
+          }
+        },
+        "59af2b5f-2399-447c-b240-68434c84402e": {
+          "type": "contents",
+          "settings": {
+            "title": "Potencia nominal de entrada de refrigeración (CA \/ CC)",
+            "content": "<p>550W\/495W<\/p>"
+          }
+        },
+        "444f181d-2a69-4d3d-b2ee-1e3a833f401c": {
+          "type": "contents",
+          "settings": {
+            "title": "Potencia de refrigeración máxima (CA \/ CC)",
+            "content": "<p>820W\/700W<\/p>"
+          }
+        },
+        "e79061f5-5be0-47a0-af27-f3adf99e6157": {
+          "type": "contents",
+          "settings": {
+            "title": "Capacidad de refrigeración",
+            "content": "<p>1500W\/5100BTU<\/p>"
+          }
+        },
+        "8e371af7-ae1c-4d72-8fbc-5759d7c547b2": {
+          "type": "contents",
+          "settings": {
+            "title": "Potencia nominal de entrada de calefacción (CA \/ CC)",
+            "content": "<p>600W\/540W<\/p>"
+          }
+        },
+        "a91428d2-ba88-4653-927e-ba47aed73c5d": {
+          "type": "contents",
+          "settings": {
+            "title": "Potencia de calefacción máxima (CA \/ CC)",
+            "content": "<p>820W\/700W<\/p>"
+          }
+        },
+        "1758c478-c2cb-4a45-a851-22606c54e34c": {
+          "type": "contents",
+          "settings": {
+            "title": "Capacidad de calefacción",
+            "content": "<p>1800W \/ 6100BTU<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "29fa1e1d-142e-4339-a5fa-09a4652edad7",
+        "5a89e04f-7c33-4b22-adcb-630c99c5391e",
+        "6c7afc2c-145b-4546-86c6-321ed339c70d",
+        "08e7faa7-8a42-4450-a2b9-6678f9ccf73c",
+        "3481793e-c2e3-4eb3-9f91-19d011899a86",
+        "dbe3a06c-ebcf-4c69-9e8a-3d8456ef8476",
+        "4cbc0509-1273-40c5-b987-2788ec4ddde6",
+        "cec29a64-c49e-4973-b08d-21bd600a92f3",
+        "7ae0bb8a-ea1c-43e5-b41d-487250cef6c6",
+        "99172e1b-0e9e-45c7-a093-fbf68f88b141",
+        "5cc0af3f-4bcf-41d0-86af-f7416c18ad8e",
+        "14ccf8ef-ec40-4072-9f22-4372faefc269",
+        "f3f9e14b-9c83-4282-9481-19037631aeee",
+        "59af2b5f-2399-447c-b240-68434c84402e",
+        "444f181d-2a69-4d3d-b2ee-1e3a833f401c",
+        "e79061f5-5be0-47a0-af27-f3adf99e6157",
+        "8e371af7-ae1c-4d72-8fbc-5759d7c547b2",
+        "a91428d2-ba88-4653-927e-ba47aed73c5d",
+        "1758c478-c2cb-4a45-a851-22606c54e34c"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Especificaciones"
+      }
+    },
+    "17141201639a0863b9": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_8RpGwC": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_8RpGwC"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    }
+  },
+  "order": [
+    "sticky-product-bar",
+    "main",
+    "product-recommendations",
+    "165728772697564e64",
+    "2f1d351d-19fe-4ce8-adb7-323077ec4a00",
+    "0af4d846-0130-402c-9e23-f84bb26d6073",
+    "6817ee58-ad06-4e53-9e01-c63ddd19bed4",
+    "422c0f8a-0fd8-4119-a999-89923f91a9a4",
+    "c1ef607e-7071-40e5-9368-50d542c1ab7e",
+    "f52537aa-abc1-42d4-b344-7526d4c9dcd1",
+    "b78cdbf4-b859-4b4a-82a2-b655be42e110",
+    "718c8753-f057-4353-8a1e-e9cf23c54a59",
+    "69f596ca-17c6-4846-8383-317f4f2e470d",
+    "2379e8ca-5c92-4d08-b9d9-90fa678f43d9",
+    "b28a0b5a-5a51-4e4d-ae79-595643746131",
+    "a845089b-9aa1-48f5-b5e7-1717911f8822",
+    "17141201639a0863b9"
+  ]
+}

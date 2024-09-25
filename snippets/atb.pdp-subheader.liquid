@@ -1,0 +1,182 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "PDP Subheader",
+  "id": "pdp-subheader",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "class": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "id": "atb_button",
+      "type": "text",
+      "label": "Button Label",
+      "default": "Button",
+      "info": ""
+    },
+    {
+      "id": "atb_url",
+      "type": "text",
+      "label": "Button Url",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "blocks",
+      "label": "Block ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": "",
+      "repeatable": "link"
+    },
+    {
+      "id": "block_navigation_name",
+      "type": "text",
+      "label": "Link Name",
+      "repeatable": "link",
+      "info": ""
+    },
+    {
+      "type": "select",
+      "id": "block_section_id",
+      "options": [
+        {
+          "value": "product-video-modal",
+          "label": "Video Section"
+        },
+        {
+          "value": "product-journey",
+          "label": "Journey"
+        },
+        {
+          "value": "product-intro",
+          "label": "Intro"
+        },
+        {
+          "value": "product-tabs",
+          "label": "Tabs"
+        },
+        {
+          "value": "product-slider-1",
+          "label": "Slider 1"
+        },
+        {
+          "value": "product-slider-2",
+          "label": "Slider 2"
+        },
+        {
+          "value": "product-intro-2",
+          "label": "Intro 2"
+        },
+        {
+          "value": "what-in-the-box",
+          "label": "Box"
+        },
+        {
+          "value": "product-compare",
+          "label": "Comparison"
+        },
+        {
+          "value": "product-faq",
+          "label": "Faqs"
+        },
+        {
+          "value": "product-spec",
+          "label": "Spec"
+        },
+        {
+          "value": "product-additional-spec",
+          "label": "Additional spec"
+        }
+      ],
+      "label": "Section Id",
+      "repeatable": "link",
+      "info": ""
+    }
+  ],
+  "warnings": []
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_button' -%}
+{%- assign atb_button = val -%}
+{%- include 'atb-render' field:'atb_url' -%}
+{%- assign atb_url = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_navigation_name' -%}
+{%- assign block_navigation_name = val -%}
+{%- include 'atb-render' field:'block_section_id' -%}
+{%- assign block_section_id = val -%}
+{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section ">
+<div class="subheader">
+  <div class="container">
+    <div class="eco-river">
+      <span class="m-0 eco-river-title">{{product.title}}</span>
+      <ul class="m-0 p-0 d-flex align-items-center">
+        {% for block0 in blocks %}
+        	<li class="{% if forloop.index == 1%} active  {% endif %}"><a href="#{{block_section_id[forloop.index0]}}">{{block_navigation_name[forloop.index0]}}</a></li>
+        {% endfor %}
+        {% if atb_button != blank %}
+<!--         	Event listener for this  buy-now-btn__subheader button is in product_template.liquid file-->
+        	<li><a href="" class="blue-btn px-4 buy-now-btn__subheader">{{atb_button}}</a></li>
+		{% endif %}      
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  
+ $(document).ready(function(){
+     
+    $(".eco-river-title").click(function(){
+      const parentli = $(this).parents('.eco-river')
+      if (parentli.hasClass("open")){
+        parentli.removeClass("open")
+      }
+      else{
+        parentli.addClass("open");
+      }
+    });
+ });
+ 
+</script>  
+
+
+
+<style>
+</style>
+
+<script type="application/javascript">
+
+$(function() {
+    $('.subheader a[href*="#"]:not([href="#"])').click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html, body').animate({
+            scrollTop: target.offset().top
+          }, 1000);
+          return false;
+        }
+      }
+    });
+  });
+
+</script>
+
+</section>

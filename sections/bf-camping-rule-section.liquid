@@ -1,0 +1,497 @@
+{% if section.blocks.size > 0 %}
+  <div class="prime-day-section camping-rule-section bf-prime-day-section bf-prime-day-section-{{ section.id }}">
+    <div class="prime-day-container">
+      {% for block in section.blocks %}
+        <div class="prime-day-block block-{{block.id}}">
+          <div class="prime-day-block-content">
+            <div class="prime-day-block-content-title">
+              <div
+                {% comment %} class="hideMobile" {% endcomment %}
+              >
+                {{ block.settings.title }}
+                {% if block.settings.show_info_box %}
+                  <div class="product-info-svg">
+                    <div class="question-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" viewBox="0 0 9 14" fill="none">
+                        <path d="M3.3075 9.6C2.7825 6.6775 6.895 5.9075 6.895 3.9125C6.895 2.705 6.0375 1.83 4.2525 1.83C3.045 1.83 1.9425 2.355 0.9275 3.405L0 2.5475C1.155 1.3225 2.52 0.5 4.41 0.5C6.8775 0.5 8.47 1.7775 8.47 3.79C8.47 6.4325 4.2875 6.975 4.7425 9.6H3.3075ZM4.06 13.905C3.43 13.905 2.94 13.4675 2.94 12.7675C2.94 12.0675 3.4475 11.595 4.06 11.595C4.6725 11.595 5.18 12.0675 5.18 12.7675C5.18 13.4675 4.6725 13.905 4.06 13.905Z" fill="white"/>
+                      </svg>
+                    </div>
+                    <div class="product_info">
+                      <div class="product_info_inner">
+                        <div class="info-close">
+                          <img src="{{ 'popup_close.png' | asset_url }}" alt="close">
+                        </div>
+                        {{ block.settings.info_content }}
+                      </div>
+                    </div>
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+            <div class="prime-day-block-content-subtitle hideDesktop">
+              {{ block.settings.subtitle }}
+            </div>
+            <div class="hideDesktop">
+              <div class="prime-day-block-content-title">{{ block.settings.title }}</div>
+            </div>
+            <div class="prime-day-block-content-yellow">
+              {{ block.settings.yellow_text }}
+            </div>
+            <div class="prime-day-block-content-subtitle hideMobile">
+              {{ block.settings.subtitle }}
+            </div>
+            <div class="prime-day-block-image">
+              <img loading="lazy" srcset="{{ block.settings.block_img | img_url: 'master' }}" alt="">
+            </div>
+          </div>
+          <style>
+            .block-{{block.id}} .prime-day-block-image img{ width: {{ block.settings.image_width }}px; }
+            @media screen and (max-width: 749px){
+                .block-{{block.id}} .prime-day-block-image img{ width: {{ block.settings.image_width_m }}px; }
+            }
+            .prime-day-section .prime-day-block.block-{{block.id}}::after,
+            .prime-day-section .prime-day-block.block-{{block.id}}::before {
+                display: none; /* hide dotted line */
+            }
+            @media screen and (max-width: 749px){
+                .prime-day-section .block-{{block.id}} .prime-day-block-image {
+                    order: -1;
+                    margin-top: 10px;
+                    width: auto;
+                }
+            }
+          </style>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
+<style>
+  .prime-day-section .prime-day-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .bf-prime-day-section.camping-rule-section {
+    margin-top: 120px;
+  }
+  @media screen and (max-width: 749px) {
+    .bf-prime-day-section.camping-rule-section {
+      margin-top: 40px;
+    }
+  }
+  .bf-prime-day-section.camping-rule-section .prime-day-block-content {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%),
+      linear-gradient(148deg, #fff 14.9%, #bebebe 47.3%, #adadad 60.71%, #f4f4f4 101.5%);
+    border: unset;
+    padding-top: 26px;
+    padding-bottom: 12px;
+    height: 100%;
+  }
+  @media screen and (max-width: 749px) {
+    .bf-prime-day-section.camping-rule-section .prime-day-block-content {
+      padding-top: 18px;
+      padding-bottom: 10px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .bf-prime-day-section.camping-rule-section .prime-day-block-content {
+      padding-top: 26px;
+    }
+  }
+
+  .bf-prime-day-section.camping-rule-section .prime-day-block-content-yellow {
+    background: transparent;
+    box-shadow: none;
+  }
+  .bf-prime-day-section.camping-rule-section .prime-day-block-content-yellow p {
+    color: black;
+  }
+  .bf-prime-day-section.camping-rule-section .product-info-svg .question-icon {
+    background: rgba(0, 0, 0, 0.4);
+  }
+  .bf-prime-day-section.camping-rule-section .product_info .product_info_inner {
+    border-radius: 6px;
+    background: rgba(207, 209, 212, 1);
+    box-shadow: 0px 4px 19px 0px rgba(0, 0, 0, 0.1);
+    color: #000;
+    padding: 21px 26px 32px 27px;
+  }
+  .camping-rule-section .prime-day-block .product_info {
+    top: unset;
+    bottom: 0px;
+    right: -25px;
+  }
+  .prime-day-block .product_info .info-close {
+    display: none;
+  }
+  @media screen and (max-width: 749px) {
+    .bf-prime-day-section.camping-rule-section .product_info .product_info_inner {
+      padding: 18px 15px;
+    }
+    .bf-prime-day-section.camping-rule-section .prime-day-block-image img {
+      height: 74px;
+      width: 90%;
+    }
+  }
+  @media screen and (max-width: 1023px) {
+    .bf-prime-day-section.camping-rule-section .prime-day-block {
+      padding: 6px;
+    }
+    .bf-prime-day-section.camping-rule-section {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+  }
+
+  .bf-prime-day-section.camping-rule-section .prime-day-block-content-yellow {
+    width: fit-content;
+    padding: 12px 30px;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+  }
+  @media screen and (max-width: 1150px) {
+    .bf-prime-day-section.camping-rule-section .prime-day-block-content-yellow {
+      transform: scale(0.8);
+    }
+  }
+  @media screen and (max-width: 749px) {
+    .bf-prime-day-section.camping-rule-section .prime-day-block-content-yellow {
+      padding: 4px 10px;
+      margin-bottom: 10px;
+      transform: unset;
+    }
+  }
+
+  .camping-rule-section .prime-day-container {
+    max-width: 1200px;
+  }
+  .camping-rule-section .prime-day-block-content-subtitle p {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .camping-rule-section .prime-day-block-content-yellow p {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .prime-day-block .product_info {
+    min-width: unset;
+    width: 270px;
+  }
+  @media screen and (max-width: 749px) {
+    .camping-rule-section .product-info-svg {
+      position: absolute;
+      top: calc(6px + 12px);
+      right: 12px;
+      z-index: 1;
+    }
+    .camping-rule-section .prime-day-block:nth-child(odd) .product_info {
+      width: 50vw;
+      right: -40px;
+      left: unset;
+    }
+    .camping-rule-section .prime-day-block:nth-child(even) .product_info {
+      right: -20px;
+    }
+    .camping-rule-section .prime-day-block-content-subtitle p {
+      font-size: 12px;
+    }
+    .camping-rule-section .prime-day-block-content-yellow p {
+      font-size: 16px;
+    }
+    .camping-rule-section .prime-day-block .product_info .product_info_inner {
+      padding: 18px 15px;
+      font-size: 12px;
+    }
+  }
+
+  {% comment %} Card {% endcomment %}
+  .bf-prime-day-section-{{ section.id }} .prime-day-block-content {
+    background: {{ section.settings.background_color }} !important;
+    {% if section.settings.enable_background_gradient %}
+      background: linear-gradient(148deg, {{ section.settings.gradient_color_1 }} 14.9%, {{ section.settings.gradient_color_2 }} 47.3%, {{ section.settings.gradient_color_3 }} 60.71%, {{ section.settings.gradient_color_4 }} 101.5%) !important;
+    {% endif %}
+    {% if section.settings.enable_border %}
+      border: {{ section.settings.border_size }}px solid {{ section.settings.border_color }} !important;
+    {% endif %}
+  }
+  {% comment %} Heading {% endcomment %}
+  .bf-prime-day-section-{{ section.id }} .prime-day-block-content-title p {
+    font-size: {{ section.settings.heading_font_size }}px !important;
+    color: {{ section.settings.heading_color }} !important;
+  }
+  {% comment %} Title {% endcomment %}
+  {% if section.settings.enable_title_background %}
+  .bf-prime-day-section-{{ section.id }} .prime-day-block-content-yellow {
+    background: {{ section.settings.title_background_color }} !important;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
+  }
+  {% endif %}
+  .bf-prime-day-section-{{ section.id }} .prime-day-block-content-yellow p {
+    font-size: {{ section.settings.title_font_size }}px !important;
+    color: {{ section.settings.title_color }} !important;
+  }
+  {% comment %} Description {% endcomment %}
+  .bf-prime-day-section-{{ section.id }} .prime-day-block-content-subtitle p {
+    font-size: {{ section.settings.description_font_size }}px !important;
+    color: {{ section.settings.description_color }} !important;
+  }
+  {% comment %} Information box {% endcomment %}
+  .bf-prime-day-section-{{ section.id }} .prime-day-block .product_info .product_info_inner {
+    font-size: {{ section.settings.information_box_font_size }}px !important;
+    color: {{ section.settings.information_box_color }} !important;
+    background: {{ section.settings.information_box_background_color }} !important;
+  }
+  .bf-prime-day-section-{{ section.id }} .product-info-svg .question-icon {
+    background: {{ section.settings.information_box_icon_background_color }} !important;
+  }
+</style>
+{% schema %}
+{
+  "name": "BF Camping rule section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Card Block Style Settings",
+      "info": "Define styles for the block"
+    },
+    {
+      "type": "header",
+      "content": "Card"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#fff"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_background_gradient",
+      "label": "Enable linear-gradient background",
+      "default": true
+    },
+    {
+      "type": "paragraph",
+      "content": "Note: When linear-gradient background is enabled, background color will be ignored and linear-gradient background will be used instead."
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_1",
+      "label": "Gradient color 1",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_2",
+      "label": "Gradient color 2",
+      "default": "#f1f0f1"
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_3",
+      "label": "Gradient color 3",
+      "default": "#d8d8d8"
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_4",
+      "label": "Gradient color 4",
+      "default": "#f6f5f6"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_border",
+      "label": "Enable border",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "border_size",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "label": "Border size",
+      "default": 2
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#c94552"
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size",
+      "default": 35
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Font color",
+      "default": "#361B14"
+    },
+    {
+      "type": "header",
+      "content": "Title"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Font color",
+      "default": "#000"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_title_background",
+      "label": "Enable background color",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "title_background_color",
+      "label": "Background color",
+      "default": "#ffc24d"
+    },
+    {
+      "type": "header",
+      "content": "Description"
+    },
+    {
+      "type": "range",
+      "id": "description_font_size",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Font color",
+      "default": "#361B14"
+    },
+    {
+      "type": "header",
+      "content": "Information box"
+    },
+    {
+      "type": "range",
+      "id": "information_box_font_size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size",
+      "default": 13
+    },
+    {
+      "type": "color",
+      "id": "information_box_color",
+      "label": "Font color",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "information_box_background_color",
+      "label": "Background color",
+      "default": "#cfd1d4"
+    },
+    {
+      "type": "color",
+      "id": "information_box_icon_background_color",
+      "label": "Icon background color",
+      "default": "#a3a3a3"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block",
+      "name": "Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "block_img",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "image_width",
+          "label": "Image width",
+          "min": 100,
+          "max": 200,
+          "step": 2,
+          "default": 116,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "image_width_m",
+          "label": "Image width(Mobile)",
+          "min": 30,
+          "max": 100,
+          "step": 2,
+          "default": 40,
+          "unit": "px"
+        },
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Heading"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_info_box",
+          "label": "Show information box"
+        },
+        {
+          "type": "textarea",
+          "id": "info_content",
+          "label": "Information box content"
+        },
+        {
+          "type": "richtext",
+          "id": "yellow_text",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "subtitle",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BF Camping rule section",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}

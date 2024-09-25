@@ -1,0 +1,341 @@
+{%- liquid
+  assign section_id = section.settings.section_id
+  assign section_background = section.settings.section_background
+  assign background_image = section.settings.background_image
+-%}
+{% if section.blocks.size > 0 %}
+    <div
+      class="prime-day-section camping-rule-section bf-prime-day-section valentine-lp-section section-{{ section.id }}" id="{{ section_id }}" style="background-color: {{ section_background }}; {%- if background_image != blank -%}background-image: url({{ background_image | img_url: 'master' }});{%- endif -%}">
+      <div class="star-page-container valentine-lp-container" style="--text-color: {{ section.settings.text_color }}; --outline-color: {{ section.settings.outline_color }}; --highlight-color: {{ section.settings.highlight_color }}">
+            {% if section.settings.title != blank %}
+                <div class="star-page-title-wrapper">
+                    <div class="title icon--before">
+                        {% if section.settings.icon != blank %}
+                          <img
+                            loading="lazy"
+                            srcset="{{ section.settings.icon | img_url: 'small' | replace: '_small', '' }}"
+                          >
+                        {% endif %}
+                        <span>{{ section.settings.title }}</span>
+                    </div>
+                </div>
+            {% endif %}
+            <div class="prime-day-container" >
+            {% for block in section.blocks %}
+            <div class="prime-day-block block-{{block.id}}" style="background-color: {{ section.settings.block_bg_color }}">
+                <div class="prime-day-block-content">
+                    {% if block.settings.show_info_box %}
+                        <div class="product-info-svg">
+                          <div class="question-icon" style="background: {{ section.settings.icon_bg_color }};">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" viewBox="0 0 9 14" fill="none">
+                              <path d="M3.3075 9.6C2.7825 6.6775 6.895 5.9075 6.895 3.9125C6.895 2.705 6.0375 1.83 4.2525 1.83C3.045 1.83 1.9425 2.355 0.9275 3.405L0 2.5475C1.155 1.3225 2.52 0.5 4.41 0.5C6.8775 0.5 8.47 1.7775 8.47 3.79C8.47 6.4325 4.2875 6.975 4.7425 9.6H3.3075ZM4.06 13.905C3.43 13.905 2.94 13.4675 2.94 12.7675C2.94 12.0675 3.4475 11.595 4.06 11.595C4.6725 11.595 5.18 12.0675 5.18 12.7675C5.18 13.4675 4.6725 13.905 4.06 13.905Z" fill="white"/>
+                            </svg>
+                          </div>
+                          <div class="product_info">
+                            <div class="product_info_inner" style="background-color: {{ section.settings.info_box_bg_color }};">
+                              <div class="info-close">
+                                <img src="{{ 'popup_close.png' | asset_url }}" alt="close">
+                              </div>
+                              {{ block.settings.info_content }}
+                            </div>
+                          </div>
+                        </div>
+                    {% endif %}
+                    <div class="prime-day-block-content-title">
+                        <div>
+                            {{ block.settings.title }}
+                        </div>
+                    </div>
+                    {% if customer %}
+                      {% if block.settings.content_when_log_in != blank %}
+                        <div class="prime-day-block-desc">
+                            {{ block.settings.content_when_log_in | replace: '<a href="#claw-my-offer" title="#claw-my-offer">', '<a href="#claw-my-offer" class="claw-link-start-interaction claw-animation-confetti">' }}
+                        </div>
+                      {% endif %}
+                    {% else %}
+                      {% if block.settings.content != blank %}
+                      <div class="prime-day-block-desc">
+                          {{ block.settings.content | replace: '<a href="#claw-my-offer" title="#claw-my-offer">', '<a href="#claw-my-offer" class="claw-link-start-interaction claw-animation-confetti">' }}
+                      </div>
+                      {% endif %}
+                    {% endif %}
+                    <div class="prime-day-block-image">
+                        <img loading="lazy" srcset="{{ block.settings.block_img | img_url: 'master' }}" alt="">
+                    </div>
+                </div>
+                <style>
+                    .block-{{block.id}} .prime-day-block-image img{ width: {{ block.settings.image_width }}px; height: auto; }
+                    @media screen and (max-width: 749px){
+                        .block-{{block.id}} .prime-day-block-image img{ width: {{ block.settings.image_width_m }}px; }
+                    }
+                </style>
+            </div>
+            {% endfor %}
+            </div>
+        {% if section.settings.infoline != blank %}
+            <div class="prime-day-section-title-text">
+                {{ section.settings.infoline }}
+            </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+  <style>
+    .section-{{ section.id }}{
+      padding-top: {{ section.settings.section_top_space }}px;
+      padding-bottom: {{ section.settings.section_bottom_space }}px;
+    }
+    .section-{{ section.id }} .title{ font-size: {{ section.settings.title_font_size }}px; }
+    @media screen and (max-width: 749px) {
+      .bf-prime-day-section.camping-rule-section .prime-day-block-content {
+        padding-top: 18px;
+        padding-bottom: 10px;
+      }
+      .section-{{ section.id }}{
+        padding-top: {{ section.settings.section_top_space_m }}px;
+        padding-bottom: {{ section.settings.section_bottom_space_m }}px;
+      }
+    }
+    @media screen and (max-width: 480px) {
+      .bf-prime-day-section.camping-rule-section .prime-day-block-content {
+        padding-top: 26px;
+      }
+    }
+
+    .prime-day-section .prime-day-block::after,
+    .prime-day-section .prime-day-block::before {
+        display: none; /* hide dotted line */
+    }
+    .bf-prime-day-section.camping-rule-section .product-info-svg .question-icon {
+      background: rgba(0, 0, 0, 0.4);
+    }
+    .bf-prime-day-section.camping-rule-section .product_info .product_info_inner {
+      border-radius: 6px;
+      background: rgba(207, 209, 212, 1);
+      box-shadow: 0px 4px 19px 0px rgba(0, 0, 0, 0.1);
+      color: #000;
+      padding: 21px 26px 32px 27px;
+    }
+    .camping-rule-section .prime-day-block .product_info {
+      top: unset;
+      bottom: 0px;
+      right: -25px;
+    }
+    .prime-day-block .product_info .info-close {
+      display: none;
+    }
+    @media screen and (max-width: 749px) {
+      .bf-prime-day-section.camping-rule-section .product_info .product_info_inner {
+        padding: 18px 15px;
+      }
+      .prime-day-section .prime-day-block .prime-day-block-image {
+        order: -1;
+        margin-top: 14px;
+        width: auto;
+      }
+    }
+    @media screen and (max-width: 1023px) {
+      .bf-prime-day-section.camping-rule-section {
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+    }
+  </style>
+  {% schema %}
+  {
+    "name": "Custom section-Valentine",
+    "settings": [
+        {
+          "type": "text",
+          "id": "section_id",
+          "label": "Section ID"
+        },
+        {
+          "type": "header",
+          "content": "Section spacing"
+        },
+        {
+          "type": "range",
+          "id": "section_top_space",
+          "label": "Top space(Desktop)",
+          "min": 0,
+          "max": 150,
+          "step": 5,
+          "unit": "px",
+          "default": 120
+        },
+        {
+          "type": "range",
+          "id": "section_bottom_space",
+          "label": "Bottom space(Desktop)",
+          "min": 0,
+          "max": 150,
+          "step": 5,
+          "unit": "px",
+          "default": 40
+        },
+        {
+          "type": "range",
+          "id": "section_top_space_m",
+          "label": "Top space(Mobile)",
+          "min": 0,
+          "max": 80,
+          "step": 5,
+          "unit": "px",
+          "default": 40
+        },
+        {
+          "type": "range",
+          "id": "section_bottom_space_m",
+          "label": "Bottom space(Mobile)",
+          "min": 0,
+          "max": 80,
+          "step": 5,
+          "unit": "px",
+          "default": 40
+        },
+        {
+            "type": "color_background",
+            "id": "section_background",
+            "label": "Section Background"
+        },
+        {
+            "type": "image_picker",
+            "id": "background_image",
+            "label": "Section background image"
+        },
+        {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon"
+        },
+        {
+            "type": "textarea",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "range",
+            "id": "title_font_size",
+            "label": "Title Font size(Desktop)",
+            "min": 20,
+            "max": 80,
+            "step": 1,
+            "unit": "px",
+            "default": 60
+        },
+        {
+            "type": "range",
+            "id": "title_font_size_m",
+            "label": "Title Font size(Mobile)",
+            "min": 15,
+            "max": 40,
+            "step": 1,
+            "unit": "px",
+            "default": 24
+        },
+        {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text color",
+            "default": "#C01F32"
+        },
+        {
+            "type": "color",
+            "id": "highlight_color",
+            "label": "Highlight color"
+        },
+        {
+            "type": "color",
+            "id": "outline_color",
+            "label": "Outline color",
+            "default": "#C01F32"
+        },
+        {
+            "type": "color",
+            "id": "block_bg_color",
+            "label": "Block background color"
+        },
+        {
+            "type": "color",
+            "id": "icon_bg_color",
+            "label": "Icon background color"
+        },
+        {
+            "type": "color",
+            "id": "info_box_bg_color",
+            "label": "Information box background color",
+            "default": "#ccc"
+        },
+        {
+            "type": "richtext",
+            "id": "infoline",
+            "label": "Grey text"
+        }
+    ],
+    "blocks": [
+      {
+        "type": "block",
+        "name": "Block",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "block_img",
+            "label": "Image"
+          },
+          {
+            "type": "range",
+            "id": "image_width",
+            "label": "Image width",
+            "min": 100,
+            "max": 200,
+            "step": 2,
+            "default": 116,
+            "unit": "px"
+          },
+          {
+            "type": "range",
+            "id": "image_width_m",
+            "label": "Image width(Mobile)",
+            "min": 30,
+            "max": 100,
+            "step": 2,
+            "default": 40,
+            "unit": "px"
+          },
+          {
+            "type": "richtext",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content when user is not logged in"
+          },
+          {
+            "type": "richtext",
+            "id": "content_when_log_in",
+            "label": "Content when user is logged in"
+          },
+          {
+            "type": "checkbox",
+            "id": "show_info_box",
+            "label": "Show information box"
+          },
+          {
+            "type": "textarea",
+            "id": "info_content",
+            "label": "Information box content"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom section - Valentine LP",
+        "category": "Custom Sections"
+      }
+    ]
+  }
+  {% endschema %}

@@ -1,0 +1,466 @@
+{{ 'xmas-popular-product.css' | asset_url | stylesheet_tag }}
+<style>
+  @media screen and (min-width: 849px) {
+    .grid-second-column {
+      gap: 3.5px;
+    }
+    .popular-products-container {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media screen and (min-width: 1105px) {
+    .grid-second-column {
+      gap: 9px;
+    }
+  }
+</style>
+
+<div class="popular-products-section">
+  <div class="section-container">
+    <div class="section-heading-wrapper" id="most-popular-products">
+      <h3 class="title-h3 color-white gotham-bold text-center">
+        {{ section.settings.heading }}
+      </h3>
+    </div>
+
+    <div class="popular-products-container grid-masonry-container">
+      {%- assign product = all_products['delta-max-portable-power-station'] -%}
+
+      <div style="display: flex; flex-direction: column;">
+        <div class="image--wrapper grid-item ">
+          <img
+            class="hide_mobile_image"
+            src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/grid-image-1_5ccd204c-fe1d-4326-bce5-e63351a613b0.png?v=1669195253"
+            alt=""
+          >
+        </div>
+        <div class="product--wrapper with-variant section-relative text-center grid-item">
+          {%- assign current_variant = product.variants[1] -%}
+          {%- assign savePrice = current_variant.compare_at_price
+            | minus: current_variant.price
+            | money_without_currency
+            | replace: ',00', ''
+          -%}
+          {%- if current_variant.compare_at_price > current_variant.price -%}
+            <div class="save-container">
+              <img
+                class="discount-icon"
+                src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/popular-discount-icon.png?v=1669197577"
+                alt=""
+              >
+              <p class="discount-price gotham-medium color-white">
+                <span class="minus-sign">-</span>{{ savePrice -}}
+                <span class="currency">€</span>
+              </p>
+            </div>
+          {%- endif -%}
+          <a href="{{ shop.url }}{{ product.url }}" target="_blank">
+            <div class="product-name-image--wrapper">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/popular-ecoflow-delta-max.png?v=1669195602"
+                alt=""
+              >
+            </div>
+            <div class="product-image--wrapper">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/delta-max-product-image-popular.png?v=1669195933"
+                alt=""
+              >
+            </div>
+          </a>
+          <div class="product-bundle-specification--wrapper">
+            <p class="product-bundle-specs gotham-book text-center">
+              Con una capacidad ampliable<br>
+              que alcanza hasta los 6kWh, <br>
+              DELTA Max tiene una carga dual y las<br>
+              capacidad de alimentar tus dispositivos <br>
+              domésticos en cualquier situación.
+            </p>
+          </div>
+          <div class="product-variant--wrapper">
+            <ul class="variant-list solar-generator">
+              {%- assign current_variant = product.selected_or_first_available_variant -%}
+              {% comment %}
+                 <li
+                  class="gotham-medium variant active"
+                  data-price="{{ current_variant.price | money_without_currency | replace: ',00','' }}€"
+                  data-discount="{{ current_variant.compare_at_price | money_without_currency | replace: ',00','' }}€"
+                  data-variant-id="{{ current_variant.id }}"
+                  data-shop-link="{{ shop.url }}{{ product.url }}?variant={{product.variants[0].id}}"
+                  data-price-save="{{ savePrice }}"
+                  onclick="updateVariant({{ product.variants[0].id }}, {{product.id}})"
+                >
+                  DELTA Max 1600
+                </li>
+              {% endcomment %}
+              {%- assign current_variant = product.variants[1] -%}
+              <li
+                class="gotham-medium variant active"
+                data-price="{{ current_variant.price | money_without_currency | replace: ',00','' }}€"
+                data-discount="{{ current_variant.compare_at_price | money_without_currency | replace: ',00','' }}€"
+                data-variant-id="{{ current_variant.id }}"
+                data-shop-link="{{ shop.url }}{{ product.url }}?variant={{product.variants[1].id}}"
+                data-price-save="{{ savePrice }}"
+                onclick="updateVariant({{ product.variants[1].id }}, {{product.id}})"
+              >
+                DELTA Max 2000
+              </li>
+            </ul>
+          </div>
+          <div class="product-price--wrapper">
+            {%- assign current_variant = product.variants[1] -%}
+            <p class="product-discounted-price gotham-bold">
+              {{ current_variant.price | money_without_currency | replace: ',00', '' -}}
+              <span>€ </span>
+              {%- if current_variant.compare_at_price > current_variant.price -%}
+                <span class="product-price color-gray">
+                  {{- current_variant.compare_at_price | money_without_currency | replace: ',00', '' -}}
+                  €</span
+                >
+              {%- endif -%}
+            </p>
+          </div>
+          <div class="button--wrapper flex-container">
+            <a
+              class="product-btn product-shop-btn"
+              href="{{ shop.url }}{{ product.url }}?variant={{ current_variant.id }}"
+              target="_blank"
+            >
+              <div class="shop-now-btn--wrapper mx-auto">
+                <span class="product-btn gotham-bold color-white">Comprar Ahora</span>
+              </div>
+            </a>
+            <!-- Swym Wishlist Plus EPI Button -->
+            <div class="wishlist-btn--wrapper wishlist-disabled">
+              <button
+                id="custom-{{ product.variants[0].id }}"
+                data-with-epi="true"
+                class="is-active-variant-{{product.id}} swym-button swym-add-to-wishlist-view-product product_{{product.id}}"
+                data-swaction="addToWishlist" disabled
+                data-product-id="{{product.id | json}}"
+                data-variant-id="{{product.variants[0].id}}"
+                data-product-url="{{ shop.url }}{{ product.url }}"
+              >
+                Añadir a la lista de deseos
+              </button>
+              {% for item in product.variants %}
+                {% if forloop.index != 0 %}
+                  <button
+                    id="custom-{{item.id}}"
+                    data-with-epi="true"
+                    class="hidden swym-button swym-add-to-wishlist-view-product product_{{product.id}} "
+                    data-swaction="addToWishlist" disabled
+                    data-product-id="{{product.id | json}}"
+                    data-variant-id="{{item.id}}"
+                    data-product-url="{{ shop.url }}{{ product.url }}"
+                  >
+                    Añadir a la lista de deseos
+                  </button>
+                {% endif %}
+              {% endfor %}
+            </div>
+            <!-- Swym Wishlist Plus EPI Button -->
+          </div>
+        </div>
+        <div class="product--wrapper section-relative text-center grid-item">
+          {%- assign product = all_products['220w-bifacial-portable-solar-panel'] -%}
+          {%- assign current_variant = product.selected_or_first_available_variant -%}
+          {%- assign savePrice = current_variant.compare_at_price
+            | minus: current_variant.price
+            | money_without_currency
+            | replace: ',00', ''
+          -%}
+          {%- if current_variant.compare_at_price > current_variant.price -%}
+            <div class="save-container">
+              <img
+                class="discount-icon"
+                src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/popular-discount-icon.png?v=1669197577"
+                alt=""
+              >
+              <p class="discount-price gotham-medium color-white">
+                <span class="minus-sign">-</span>{{ savePrice -}}
+                <span class="currency">€</span>
+              </p>
+            </div>
+          {%- endif -%}
+          <a href="{{ shop.url }}{{ product.url }}" target="_blank">
+            <div class="product-name-image--wrapper">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/ecoflow-product-title.png?v=1669200114"
+                alt=""
+              >
+            </div>
+            <div class="product-bundle--wrapper">
+              <p class="product-bundle gotham-medium">Panel solar de 220W</p>
+            </div>
+            <div class="product-image--wrapper">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/220w-solar-panel-product.png?v=1669200501"
+                alt=""
+              >
+            </div>
+          </a>
+          <div class="product-bundle-specification--wrapper">
+            <p class="product-bundle-specs gotham-book text-center">
+              Con una estructura bifacial y una alta <br>
+              eficiencia de conversión, <br>
+              te ayuda a capturar más energía<br>
+              solar y a cargar<br>
+              tu estación de energía solar <br>
+              y a cargar tu estación de <br>
+              energía portátil mucho más rápido.
+            </p>
+          </div>
+          <div class="product-price--wrapper">
+            <p class="product-discounted-price gotham-bold">
+              {{ current_variant.price | money_without_currency | replace: ',00', '' -}}
+              <span>€ </span>
+              {%- if current_variant.compare_at_price > current_variant.price -%}
+                <span class="product-price color-gray">
+                  {{- current_variant.compare_at_price | money_without_currency | replace: ',00', '' -}}
+                  €</span
+                >
+              {%- endif -%}
+            </p>
+          </div>
+          <div class="button--wrapper">
+            <a
+              class="product-btn"
+              href="{{ shop.url }}{{ product.url }}"
+              target="_blank"
+            >
+              <div class="shop-now-btn--wrapper mx-auto">
+                <span class="product-btn gotham-bold color-white">Comprar Ahora</span>
+              </div>
+            </a>
+            <!-- Swym Wishlist Plus EPI Button -->
+            <div class="wishlist-btn--wrapper wishlist-disabled">
+              <button
+                data-with-epi="true"
+                class="swym-button swym-add-to-wishlist-view-product product_{{product.id}}"
+                data-swaction="addToWishlist" disabled
+                data-product-id="{{product.id | json}}"
+                data-variant-id="{{product.variants[0].id}}"
+                data-product-url="{{ shop.url }}{{ product.url }}"
+              >
+                Añadir a la lista de deseos
+              </button>
+            </div>
+            <!-- Swym Wishlist Plus EPI Button -->
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <div class="product--wrapper section-relative text-center grid-item grid-second-column">
+          {%- assign product = all_products['110w-portable-solar-panel'] -%}
+          {%- assign current_variant = product.selected_or_first_available_variant -%}
+          {%- assign savePrice = current_variant.compare_at_price
+            | minus: current_variant.price
+            | money_without_currency
+            | replace: ',00', ''
+          -%}
+          {%- if current_variant.compare_at_price > current_variant.price -%}
+            <div class="save-container">
+              <img
+                class="discount-icon"
+                src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/popular-discount-icon.png?v=1669197577"
+                alt=""
+              >
+              <p class="discount-price gotham-medium color-white">
+                <span class="minus-sign">-</span>{{ savePrice -}}
+                <span class="currency">€</span>
+              </p>
+            </div>
+          {%- endif -%}
+          <a href="{{ shop.url }}{{ product.url }}" target="_blank">
+            <div class="product-name-image--wrapper">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/ecoflow-product-title.png?v=1669200114"
+                alt=""
+              >
+            </div>
+            <div class="product-bundle--wrapper">
+              <p class="product-bundle gotham-medium">Panel solar de 110W</p>
+            </div>
+            <div class="product-image--wrapper">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/110W-solar-panel-product.png?v=1669201058"
+                alt=""
+              >
+            </div>
+          </a>
+          <div class="product-bundle-specification--wrapper">
+            <p class="product-bundle-specs gotham-book text-center">
+              Líder en la industria con una <br>
+              tasa de conversión del 23%, <br>
+              es mucho más ligero y aproximadamente <br>
+              10% más pequeño que otros paneles solares <br>
+              portátiles similares en el mercado.
+            </p>
+          </div>
+          <div class="product-price--wrapper">
+            <p class="product-discounted-price gotham-bold">
+              {{ current_variant.price | money_without_currency | replace: ',00', '' -}}
+              <span>€ </span>
+              {%- if current_variant.compare_at_price > current_variant.price -%}
+                <span class="product-price color-gray">
+                  {{- current_variant.compare_at_price | money_without_currency | replace: ',00', '' -}}
+                  €</span
+                >
+              {%- endif -%}
+            </p>
+          </div>
+          <div class="button--wrapper">
+            <a
+              class="product-btn"
+              href="{{ shop.url }}{{ product.url }}"
+              target="_blank"
+            >
+              <div class="shop-now-btn--wrapper mx-auto">
+                <span class="product-btn gotham-bold color-white">Comprar Ahora</span>
+              </div>
+            </a>
+            <!-- Swym Wishlist Plus EPI Button -->
+            <div class="wishlist-btn--wrapper wishlist-disabled">
+              <button
+                data-with-epi="true"
+                class="swym-button swym-add-to-wishlist-view-product product_{{product.id}}"
+                data-swaction="addToWishlist" disabled
+                data-product-id="{{product.id | json}}"
+                data-variant-id="{{product.variants[0].id}}"
+                data-product-url="{{ shop.url }}{{ product.url }}"
+              >
+                Añadir a la lista de deseos
+              </button>
+            </div>
+            <!-- Swym Wishlist Plus EPI Button -->
+            <a
+              class="product-btn product-amazon-btn"
+              href="https://www.amazon.es/dp/B0915J8CF9?maas=maas_adg_7E9C2C0D5A834A9A887AC50CFE5707CA_afap_abs&ref_=aa_maas&tag=maas&th=1"
+              target="_blank"
+            >
+              <div class="amazon-btn--wrapper mx-auto">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0651/6922/7998/files/es-amazon.png?v=1669866951"
+                  alt=""
+                >
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="product--wrapper section-relative text-center grid-item grid-second-column">
+          {%- assign product = all_products['delta-portable-power-station'] -%}
+          {%- assign current_variant = product.selected_or_first_available_variant -%}
+          {%- assign savePrice = current_variant.compare_at_price
+            | minus: current_variant.price
+            | money_without_currency
+            | replace: ',00', ''
+          -%}
+          {%- if current_variant.compare_at_price > current_variant.price -%}
+            <div class="save-container">
+              <img
+                class="discount-icon"
+                src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/popular-discount-icon.png?v=1669197577"
+                alt=""
+              >
+              <p class="discount-price gotham-medium color-white">
+                <span class="minus-sign">-</span>{{ savePrice -}}
+                <span class="currency">€</span>
+              </p>
+            </div>
+          {%- endif -%}
+          <!-- href="{{ shop.url }}{{ product.url }}" target="_blank" -->
+          <a>
+            <div class="product-name-image--wrapper">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/ecoflow-delta-popular.png?v=1669201236"
+                alt=""
+              >
+            </div>
+            <div class="product-image--wrapper">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/ecoflow-delta-product-popular.png?v=1669201325"
+                alt=""
+              >
+            </div>
+          </a>
+          <div class="product-bundle-specification--wrapper">
+            <p class="product-bundle-specs gotham-book text-center">
+              La enorme capacidad de 1260Wh de DELTA <br>
+              y la posibilidad de alimentar 11 dispositivos <br>
+              simultáneamente lo hacen perfecto <br>
+              para los cortes de energía, <br>
+              las aventuras al aire libre,<br>
+              y el trabajo profesional.
+            </p>
+          </div>
+          <div class="product-price--wrapper">
+            <p class="product-discounted-price gotham-bold">
+              {{ current_variant.price | money_without_currency | replace: ',00', '' -}}
+              <span>€ </span>
+              {%- if current_variant.compare_at_price > current_variant.price -%}
+                <span class="product-price color-gray">
+                  {{- current_variant.compare_at_price | money_without_currency | replace: ',00', '' -}}
+                  €</span
+                >
+              {%- endif -%}
+            </p>
+          </div>
+          <div class="button--wrapper flex-container btn-disable">
+            <a
+              class="product-btn"
+              href="{{ shop.url }}{{ product.url }}"
+              target="_blank"
+            >
+              <div class="shop-now-btn--wrapper mx-auto">
+                <span class="product-btn gotham-bold color-white">Vendido</span>
+              </div>
+            </a>
+            <!-- Swym Wishlist Plus EPI Button -->
+            <div class="wishlist-btn--wrapper wishlist-disabled btn-grey">
+              <button
+                data-with-epi="true"
+                class="swym-button swym-add-to-wishlist-view-product product_{{product.id}}"
+                data-swaction="addToWishlist" disabled
+                data-product-id="{{product.id | json}}"
+                data-variant-id="{{product.variants[0].id}}"
+                data-product-url="{{ shop.url }}{{ product.url }}"
+              >
+                Añadir a la lista de deseos
+              </button>
+            </div>
+            <!-- Swym Wishlist Plus EPI Button -->
+            <a
+              class="product-btn product-amazon-btn btn-disable"
+              href="https://www.amazon.de/dp/B08ZS1PYQG?maas=maas_adg_684E8C57799A102C6C9B6D5A81BAFAE7_afap_abs&ref_=aa_maas&tag=maas"
+              target="_blank"
+            >
+              <div class="amazon-btn--wrapper mx-auto">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0651/6922/7998/files/es-amazon.png?v=1669866951"
+                  alt=""
+                >
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Xmas Popular Product",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Most Popular Products"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,294 @@
+.upsell-accessories-modal {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    /* pop over the announcement bar */
+    z-index: 10000000000;
+}
+
+.upsell-accessories-modal__overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(124, 124, 124, 0.50);
+    display: grid;
+    place-items: center;
+}
+
+.upsell-accessories-modal__container {
+    border-radius: 10px;
+    padding: 54px 33px 40px;
+    max-width: 900px;
+    min-height: 550px;
+    width: 80%;
+    margin: auto;
+    position: relative;
+}
+
+.upsell-accessories-modal__close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.upsell-accessories-modal__close-button:focus {
+    outline: none;
+}
+
+.upsell-accessories-modal__title-wrapper {
+    width: 100%;
+    margin-bottom: 23px;
+}
+
+.upsell-accessories-modal__title p {
+    font-family: "Helvetica Neue ForEco";
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
+}
+
+.upsell-accessories-modal__title strong {
+    color: #C01F32;
+    font-family: "Helvetica Neue ForEco";
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
+}
+
+.upsell-accessories-modal__grid-wrapper {
+    display: grid;
+    position: relative;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.upsell-accessories-modal__card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: 11px;
+    row-gap: 9px;
+    /* flex: 1;
+    overflow-y: auto; */
+    /* padding-bottom: 10px; */
+}
+
+.upsell-accessories-modal__card {
+    background-color: #ffffff;
+    border-radius: 7px;
+    padding: 16px 14px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.upsell-accessories-modal__card-top {
+    width: 100%;
+}
+
+.card-price--mobile {
+    display: none;
+}
+
+.card-price--desktop {
+    display: flex;
+}
+
+.upsell-accessories-modal__card-price-wrapper {
+    justify-content: center;
+    align-items: flex-end;
+    gap: 4px
+}
+
+.upsell-accessories-modal__card-discounted-price {
+    font-family: "Helvetica Neue ForEco";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19.2px;
+    margin: 0;
+}
+
+.upsell-accessories-modal__card-compared-price {
+    font-family: "Helvetica Neue ForEco";
+    color: #666;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.8px;
+    text-decoration: line-through;
+}
+
+.upsell-accessories-modal__card-image-wrapper {
+    width: 100%;
+    max-width: 135px;
+    margin: auto;
+}
+
+.upsell-accessories-modal__card-image {
+    width: 100%;
+    object-fit: contain;
+}
+
+.card-image-placeholder {
+    flex: 1;
+}
+
+.upsell-accessories-modal__card-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+    flex: 1;
+}
+
+.upsell-accessories-modal__card-product-name {
+    font-family: "Helvetica Neue ForEco";
+    color: #03060B;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 17.6px;
+    margin-bottom: 4px;
+}
+
+.upsell-accessories-modal__card-product-description {
+    font-family: "Helvetica Neue ForEco";
+    color: #03060B;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.upsell-accessories-modal__card-button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.upsell-accessories-modal__card-button {
+    font-family: "Helvetica Neue ForEco";
+    border-radius: 14.4px;
+    padding: 5px 14px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 15.4px;
+    border: none;
+    outline: none;
+}
+
+.upsell-accessories-modal__card-button:focus {
+    outline: none;
+}
+
+@media (max-width: 1024px) {
+    .upsell-accessories-modal__container {
+        max-height: 90vh;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .upsell-accessories-modal__card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card-price--mobile {
+        display: flex;
+    }
+
+    .card-price--desktop {
+        display: none;
+    }
+}
+
+@media (max-width: 749px) {
+    .upsell-accessories-modal__container {
+        padding: 24px;
+    }
+
+    .upsell-accessories-modal__title p {
+        font-size: 18px;
+        line-height: 22px;
+        max-width: 250px;
+        margin: auto;
+    }
+
+    .upsell-accessories-modal__title strong {
+        line-height: 22px;
+        font-size: 18px;
+    }
+
+    .upsell-accessories-modal__card-grid {
+        column-gap: 5px;
+        row-gap: 4px;
+    }
+
+    .upsell-accessories-modal__card {
+        padding: 12px 10px;
+        /* height: fit-content; */
+    }
+
+    .card-price--mobile {
+        display: flex;
+    }
+
+    .card-price--desktop {
+        display: none;
+    }
+
+    .upsell-accessories-modal__card-discounted-price {
+        font-size: 16px;
+        line-height: 19.2px;
+    }
+
+    .upsell-accessories-modal__card-compared-price {
+        font-size: 12px;
+        line-height: 14.4px;
+    }
+
+    .upsell-accessories-modal__card-text-wrapper {
+        margin-bottom: 6px;
+        position: relative;
+        flex: none;
+    }
+
+    .upsell-accessories-modal__card-product-name {
+        font-size: 14px;
+        line-height: 15.4px;
+        text-decoration-line: underline;
+    }
+
+    .upsell-accessories-modal__card-product-name:hover~.upsell-accessories-modal__card-tooltips {
+        opacity: 1;
+    }
+
+    .upsell-accessories-modal__card-tooltips {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 20px;
+        background-color: #D3D5D8;
+        border-radius: 4px;
+        padding: 11px 13px;
+        opacity: 0;
+        transition: opacity 0.2s ease-in;
+        pointer-events: none;
+    }
+
+    .upsell-accessories-modal__card-button {
+        padding: 4px 12px;
+    }
+}

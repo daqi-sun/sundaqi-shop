@@ -1,0 +1,201 @@
+<div class="balcony-solar-table__section">
+  <div class="container--normal hb__text--center">
+    <div class="balcony-solar-table__text-container">
+      {% if section.settings.title != blank %}
+        <h2 class="balcony-solar-table__heading hb__text--heading hb__text--black">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+      {% if section.settings.subtitle != blank %}
+        <p class="balcony-solar-table__description hb__text--description hb__text--black">
+          {{ section.settings.subtitle }}
+        </p>
+      {% endif %}
+    </div>
+    <div class="balcony-solar-table__image__container">
+      <div class="balcony-solar-table__flex-container container--flex">
+        <div class="balcony-solar-table__image__wrapper ">
+          <img
+            class="balcony-solar-table__image display--desktop"
+            loading="lazy"
+            src="{{ section.settings.image | img_url: 'master' }}"
+            alt="{{ section.settings.image.alt }}"
+          >
+          <img
+            class="balcony-solar-table__image display--mobile"
+            loading="lazy"
+            src="{{ section.settings.image_mobile | img_url: 'master' }}"
+            alt="{{ section.settings.image_mobile.alt }}"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="balcony-solar-table__wrapper background--white">
+    <div class="balcony-solar-table__container">
+      <table class="balcony-solar-table">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'table_head' %}
+              <thead>
+                <tr>
+                  <th class="sticky-col-mob background--white"></th>
+                  <th class="balcony-solar-table__column__title balcony-solar-table__column-heading hb__text--center hb__text--black">
+                    {{ block.settings.first_row_title }}
+                  </th>
+                  <th class="balcony-solar-table__column__title balcony-solar-table__column-heading hb__text--center hb__text--black">
+                    {{ block.settings.second_row_title }}
+                  </th>
+                  <th class="balcony-solar-table__column__title balcony-solar-table__column-heading hb__text--center hb__text--black">
+                    {{ block.settings.third_row_title }}
+                  </th>
+                  <th class="balcony-solar-table__column__title balcony-solar-table__column-heading hb__text--center hb__text--black">
+                    {{ block.settings.fourth_row_title }}
+                  </th>
+                </tr>
+              </thead>
+          {% endcase %}
+        {% endfor %}
+
+        <tbody>
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'table_details' %}
+                <tr class="balcony-solar-table__details">
+                  <td class="balcony-solar-table__row__title  balcony-solar-table__title background--light-gray sticky-col-mob hb__text--black">
+                    {{ block.settings.row_title }}
+                  </td>
+                  <td class="hb__text--center">
+                    {% if block.settings.first_column %}
+                      {% render 'icon-check' %}
+                    {% else %}
+                      {% render 'icon-cross' %}
+                    {% endif %}
+                  </td>
+                  <td class="hb__text--center">
+                    {% if block.settings.second_column %}
+                      {% render 'icon-check' %}
+                    {% else %}
+                      {% render 'icon-cross' %}
+                    {% endif %}
+                  </td>
+                  <td class="hb__text--center">
+                    {% if block.settings.third_column %}
+                      {% render 'icon-check' %}
+                    {% else %}
+                      {% render 'icon-cross' %}
+                    {% endif %}
+                  </td>
+                  <td class="hb__text--center">
+                    {% if block.settings.fourth_column %}
+                      {% render 'icon-check' %}
+                    {% else %}
+                      {% render 'icon-cross' %}
+                    {% endif %}
+                  </td>
+                </tr>
+            {% endcase %}
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Balcony Solar Table",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Stromspeicher von EcoFlow – stets mit Energie versorgt "
+    },
+    {
+      "type": "html",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Hat Ihnen schon einmal jemand gesagt, dass sich Solaranlagen und Stromspeicher gar nicht lohnen würden und dabei zu viel Strom verschwendet werde? Bitte schenken Sie diesem Gerücht keinen Glauben! EcoFlow beweist Ihnen gerne das Gegenteil: Unsere Solar- und Batteriespeicher machen möglich, wovon wir vor einigen Jahren nur träumen konnten. Nachhaltiger, selbst erzeugter Strom kann in unseren Solaranlagen mit Speicher nicht nur effizient erzeugt werden – er wird auch so lange gespeichert, bis wir ihn in unseren Haushaltsgeräten benötigen."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Section Image Desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Section Image Mobile"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "table_details",
+      "name": "Table Details",
+      "settings": [
+        {
+          "type": "html",
+          "id": "row_title",
+          "label": "Row Title",
+          "default": "Notstromversorgung"
+        },
+        {
+          "type": "checkbox",
+          "id": "first_column",
+          "label": "Enable Check Icon 1st Column",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "second_column",
+          "label": "Enable Check Icon 2nd Column",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "third_column",
+          "label": "Enable Check Icon 3rd Column",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "fourth_column",
+          "label": "Enable Check Icon 4th Column",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "table_head",
+      "name": "Table Head",
+      "settings": [
+        {
+          "type": "html",
+          "id": "first_row_title",
+          "label": "1st Row Title",
+          "default": "Notstromversorgung"
+        },
+        {
+          "type": "html",
+          "id": "second_row_title",
+          "label": "2nd Row Title",
+          "default": "Notstromversorgung"
+        },
+        {
+          "type": "html",
+          "id": "third_row_title",
+          "label": "3rd Row Title",
+          "default": "Notstromversorgung"
+        },
+        {
+          "type": "html",
+          "id": "fourth_row_title",
+          "label": "4th Row Title",
+          "default": "Notstromversorgung"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,1210 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "daf26638-f596-4384-b150-72d380a3268d": {
+      "type": "product-atb-top",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "sticky-product-bar": {
+      "type": "sticky-product-bar",
+      "blocks": {
+        "588d25af-4d47-43ac-9697-b98aa2f65719": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Overview",
+            "tab_id": "product_information",
+            "section_class": ""
+          }
+        },
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "What's in the box",
+            "tab_id": "what_in_box",
+            "section_class": ""
+          }
+        },
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "FAQ",
+            "tab_id": "faq",
+            "section_class": ""
+          }
+        },
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Reviews",
+            "tab_id": "section-reviews",
+            "section_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "588d25af-4d47-43ac-9697-b98aa2f65719",
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02",
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4",
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38"
+      ],
+      "settings": {
+        "enabled": true,
+        "enabled_tabs": false
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "11795adc-1afa-4833-a193-258f495901ef": {
+          "type": "sku_block",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e": {
+          "type": "product_title",
+          "settings": {
+          }
+        },
+        "judge_me_reviews_preview_badge_MpcrCQ": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "0471109f-c130-454e-a9ba-c56412cc11f3": {
+          "type": "product_vendor",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185": {
+          "type": "product_price",
+          "settings": {
+          }
+        },
+        "d25a0285-4fb4-422d-b95b-ab67446120ad": {
+          "type": "product_description",
+          "settings": {
+            "desc_display": "default"
+          }
+        },
+        "79e1b437-5bbd-4b8a-ac55-27c2f795ee99": {
+          "type": "coupon_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Component_2_1.png",
+            "discount_off_text": "{{ product.metafields.custom.discount_off_text.value }}",
+            "code": "{{ product.metafields.custom.discount_code.value }}",
+            "show_copy_code_btn": true
+          }
+        },
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879": {
+          "type": "product_options_block",
+          "settings": {
+            "show_product_swatches": true,
+            "use_variant_image_for_swatches": true,
+            "button_content": ""
+          }
+        },
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe": {
+          "type": "quantity_block",
+          "settings": {
+          }
+        },
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0": {
+          "type": "accessories_section",
+          "settings": {
+            "title": "You may also like",
+            "metafield": "accessories"
+          }
+        },
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609": {
+          "type": "product_buttons",
+          "settings": {
+            "enable_payment_button": false,
+            "show_custom_icons": true,
+            "custom_payment_logo_1_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_08_7f374817-3a3e-42f2-95ce-077b67f293d2.svg?v=1672025209",
+            "custom_payment_logo_2_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_10_d8002835-e25f-4edb-9038-187f75f69a18.svg?v=1672025208",
+            "custom_payment_logo_3_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_02_a3ea7ab1-aa9a-4857-9ed6-01e62deccfce.svg?v=1672025208",
+            "custom_payment_logo_4_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_06_7c406d24-0983-49ff-ac8e-cf73032050d9.svg?v=1672025208",
+            "custom_payment_logo_5_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_07_be5959d4-9f22-4a31-8e40-285f8e3ac6e7.svg?v=1672025208",
+            "custom_payment_logo_6_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_04_7bff1113-0dc2-489f-8be8-d19dbe467a1a.svg?v=1672025208",
+            "custom_payment_logo_7_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_05_1c21f308-a0a3-4251-8641-87264da43d67.svg?v=1672025208",
+            "custom_payment_logo_8_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_01_96e6a30c-7908-4892-b6f1-75bce8657cd4.svg?v=1672025208",
+            "custom_payment_logo_9_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/sofort_icon_31ba2d5b-2c44-4960-8e80-645a7240c899.png?v=1679023017",
+            "custom_payment_logo_10_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/giropay_icon_c9d7e22e-cd7c-4bee-8de5-e50a4c6dc378.png?v=1679023017",
+            "custom_payment_logo_11_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/ideal_icon_8548c48a-3c4e-4052-95de-670062a453ce.png?v=1679023017",
+            "custom_payment_logo_12_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/multibanco_icon_e3f9b26f-234c-4a06-9e48-adfd188e7deb.png?v=1679023016",
+            "custom_payment_logo_13_svg": "",
+            "custom_payment_logo_14_svg": "",
+            "custom_payment_logo_15_svg": ""
+          }
+        },
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% if product.metafields.custom.trade_message != blank %}\n          <div class=\"trade-message\">♻️{{product.metafields.custom.trade_message}} <a href=\"\/pages\/trade-in\" target=\"_blank\">Learn more<\/a><\/div>\n{% endif %}"
+          }
+        }
+      },
+      "block_order": [
+        "11795adc-1afa-4833-a193-258f495901ef",
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e",
+        "judge_me_reviews_preview_badge_MpcrCQ",
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774",
+        "0471109f-c130-454e-a9ba-c56412cc11f3",
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185",
+        "d25a0285-4fb4-422d-b95b-ab67446120ad",
+        "79e1b437-5bbd-4b8a-ac55-27c2f795ee99",
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879",
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe",
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0",
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609",
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a"
+      ],
+      "settings": {
+        "section_id": "",
+        "show_breadcrumbs": true,
+        "show_pick_an_option": false,
+        "enable_linked_options": false,
+        "enabled_mobile_sticky_btns": true,
+        "media_size": "medium",
+        "enable_image_zoom": true,
+        "enable_video_looping": true,
+        "thumbnails_type": "grid",
+        "support_email": "",
+        "support_text": "",
+        "feature_1_show": false,
+        "feature_1_title": "Fast & Free Shipping",
+        "feature_1_content": "",
+        "feature_2_show": false,
+        "feature_2_title": "Warranty Protection",
+        "feature_2_content": "",
+        "feature_3_show": false,
+        "feature_3_title": "Secure Payments",
+        "feature_3_content": "",
+        "feature_4_show": false,
+        "feature_4_title": "Multi-channel Support",
+        "feature_4_content": ""
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "grid_mobile": "2",
+        "heading": "You may also like",
+        "show_vendor": false
+      }
+    },
+    "7d2d6ce9-8ab9-402f-8cbd-15543ddc7fb4": {
+      "type": "pdp-slideshow",
+      "blocks": {
+        "58a00131-88da-4208-a3b6-1b5bf669d061": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "",
+            "title": "",
+            "subtitle": "",
+            "content": "",
+            "content_alignment_m": "center",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "",
+            "bottom_content_alignment_m": "center",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/ES_PC_be17a704-c48a-46e7-9542-9e4787416d1a.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/ES_M_f7a29c01-571d-43eb-b2e3-c368b20ff737.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        }
+      },
+      "block_order": [
+        "58a00131-88da-4208-a3b6-1b5bf669d061"
+      ],
+      "settings": {
+        "section_id": ""
+      }
+    },
+    "df8d05ea-b32a-4f9d-8d63-80b7f3e007e6": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--19005091250519__df8d05ea-b32a-4f9d-8d63-80b7f3e007e6-1684922582e6b0b130-0": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/pc_es_9c881b20-c013-4d12-b1f6-5aae4a81fc07.png",
+            "mobile_image": "shopify:\/\/shop_images\/m_es_43dbc098-aabf-4a79-b308-5f1c03f6ac24.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "<p>Kit solar para balcones EcoFlow PowerStream con una estación de energía portátil que te permite utilizar la energía solar de día y de noche y reducir tus facturas de la luz. EcoFlow Smart Plug y la aplicación EcoFlow permiten controlar y optimizar el uso de la energía en tiempo real.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--19005091250519__df8d05ea-b32a-4f9d-8d63-80b7f3e007e6-1684922582e6b0b130-0"
+      ],
+      "settings": {
+      }
+    },
+    "dacd02e9-a34d-4d8c-b184-2f1004233d80": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 0,
+        "section_bottom_spacing": 50,
+        "section_top_spacing_mobile": 0,
+        "section_bottom_spacing_mobile": 30,
+        "alignment": "center",
+        "title": "",
+        "subtitle": "",
+        "content": "<p>* Debido a las variaciones en las regulaciones eléctricas entre los países europeos, le sugerimos amablemente que se familiarice con los requisitos legales locales y consulte a profesionales eléctricos calificados en su área antes de realizar una compra. Asegúrese de que el producto pueda instalarse y utilizarse de acuerdo con los requisitos regulatorios de su país\/región.<\/p>",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "pdp_rich_text_bBwfFp": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 50,
+        "section_bottom_spacing": 50,
+        "section_top_spacing_mobile": 30,
+        "section_bottom_spacing_mobile": 30,
+        "alignment": "center",
+        "title": "Kit solar para balcones EcoFlow PowerStream",
+        "subtitle": "",
+        "content": "<h3>Primer kit solar inteligente para balcones con estaciones de energía portátiles<\/h3>",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "pdp_image_with_text_horizontal_new_xaVmVb": {
+      "type": "pdp-image-with-text-horizontal-new",
+      "blocks": {
+        "image_d4Jb9J": {
+          "type": "image",
+          "settings": {
+            "media_type": "video",
+            "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/c86a8d8936024ea8908ff5cb59a1e90e.mp4",
+            "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/2867199aeb914dd1a456df8121d923ac.mp4",
+            "autoplay_video": true,
+            "image_alignment": "left",
+            "title": "",
+            "subtitle": "<p>0 % de energía desperdiciada<\/p>",
+            "content": "<p>El sistema almacena el excedente de energía en una estación de energía durante el día para que puedas tener energía de reserva cuando la necesites. Con una alimentación eléctrica para el hogar de hasta 1039 kWh al año, puedes ahorrar un máximo de 415 €. [1]<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "image_6CmwBd": {
+          "type": "image",
+          "settings": {
+            "media_type": "video",
+            "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/cec14417e7654a75b03a420b8daa6ee5.mp4",
+            "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/cec14417e7654a75b03a420b8daa6ee5.mp4",
+            "autoplay_video": true,
+            "image_alignment": "right",
+            "title": "",
+            "subtitle": "<p>Triplica tu energía con Carga doble solar<\/p>",
+            "content": "<p>Aprovecha la energía verde con Carga doble solar*, conectando paneles solares al inversor y la estación de energía de manera simultánea y aumentando la energía solar hasta 2400 W. Ahorra hasta 1246 € al año.[2]<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "image_y7ceYe": {
+          "type": "image",
+          "settings": {
+            "media_type": "video",
+            "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/5332a2163dd74f25b7ada175647dd5ab.mp4",
+            "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/a288ea7dbe734d94b62081e207f13e37.mp4",
+            "autoplay_video": true,
+            "image_alignment": "left",
+            "title": "",
+            "subtitle": "<p>Energía para la noche<\/p>",
+            "content": "<p>Cuando la demanda de electricidad comienza a subir por la noche, tu hogar obtiene energía de la estación de energía y sigue ahorrando. Te ayuda a ser menos dependiente de la red eléctrica.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "image_7U8g4r": {
+          "type": "image",
+          "settings": {
+            "media_type": "video",
+            "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/9e99a0ab63a34fcfa855c6c8e43b0921.mp4",
+            "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/9e99a0ab63a34fcfa855c6c8e43b0921.mp4",
+            "autoplay_video": true,
+            "image_alignment": "right",
+            "title": "",
+            "subtitle": "<p>Doble potencia, doble eficiencia<\/p>",
+            "content": "<p>El inversor inyecta hasta 800 W a tu hogar, mientras que la energía sobrante almacenada en la estación de energía puede lograr hasta 3600 W*, que se pueden suministrar a aparatos que consumen mucha energía a diario y también garantizar energía de respaldo para los electrodomésticos durante los cortes en el suministro de la red eléctrica.[3]<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "image_d4Jb9J",
+        "image_6CmwBd",
+        "image_y7ceYe",
+        "image_7U8g4r"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "left",
+        "space_bw_blocks": 85
+      }
+    },
+    "pdp_rich_text_CgQ7U3": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 0,
+        "section_bottom_spacing": 50,
+        "section_top_spacing_mobile": 0,
+        "section_bottom_spacing_mobile": 20,
+        "alignment": "center",
+        "title": "",
+        "subtitle": "",
+        "content": "<p>[1] Y tu ahorro en la factura de la luz es 3,5 veces mayor en comparación con otros sistemas solares para el hogar sin baterías.<\/p><p>[2] *Carga doble solar solo está disponible para EcoFlow DELTA 2, DELTA Max (1600\/2000), DELTA 2 Max y DELTA Pro.<\/p><p>[3] *La potencia de salida de CA de 3600 W se basa en EcoFlow DELTA Pro.<\/p>",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "pdp_rich_text_C6kDty": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 50,
+        "section_bottom_spacing": 50,
+        "section_top_spacing_mobile": 30,
+        "section_bottom_spacing_mobile": 30,
+        "alignment": "center",
+        "title": "",
+        "subtitle": "",
+        "content": "",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "pdp_slideshow_n7WXQ6": {
+      "type": "pdp-slideshow",
+      "blocks": {
+        "tab_hjh7Uy": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Monitorización en tiempo real",
+            "title": "Energía inteligente. Ahorro inteligente.",
+            "subtitle": "",
+            "content": "<h3>Sistema de energía doméstica inteligente con Smart Plug y aplicación EcoFlow<\/h3>",
+            "content_alignment_m": "center",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>Haz el seguimiento de la energía solar capturada y del dinero ahorrado y disfruta a la vez de una visión completa de tu consumo energético.<\/p>",
+            "bottom_content_alignment_m": "center",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/powerstream_microinverter_pc_4.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/powerstream_microinverter_mb_4.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "tab_tRCzrC": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Control remoto de los electrodomésticos",
+            "title": "Energía inteligente. Ahorro inteligente.",
+            "subtitle": "",
+            "content": "<h3>Sistema de energía doméstica inteligente con Smart Plug y aplicación EcoFlow<\/h3>",
+            "content_alignment_m": "center",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>Enciende y apaga los dispositivos conectados haciendo clic en la aplicación. Puedes programarlos para que empiecen a hacer las tareas domésticas automáticamente incluso cuando no estás en casa.<\/p>",
+            "bottom_content_alignment_m": "center",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/powerstream_microinverter_pc_5.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/powerstream_microinverter_mb_5.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "tab_YdPhWz": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Distribución automática de la energía",
+            "title": "Energía inteligente. Ahorro inteligente.",
+            "subtitle": "",
+            "content": "<h3>Sistema de energía doméstica inteligente con Smart Plug y aplicación EcoFlow<\/h3>",
+            "content_alignment_m": "center",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>Los enchufes inteligentes controlan el consumo de energía de los electrodomésticos en tiempo real, de manera que el inversor puede distribuir la cantidad de energía justa para cada aparato, y el excedente se almacena en la estación de alimentación portátil. Durante las horas pico, prioriza el uso doméstico. La mayor parte de la energía se almacena en las horas valle.<\/p>",
+            "bottom_content_alignment_m": "center",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/powerstream_microinverter_pc_6.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/powerstream_microinverter_mb_6.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        }
+      },
+      "block_order": [
+        "tab_hjh7Uy",
+        "tab_tRCzrC",
+        "tab_YdPhWz"
+      ],
+      "settings": {
+        "section_id": ""
+      }
+    },
+    "pdp_text_with_image_jc3dAQ": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "text_with_image_t3Prx8": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/pc_43bab8d9-4021-49f5-a2d4-4d515e8b9b78.png",
+            "mobile_image": "shopify:\/\/shop_images\/mb_e2547255-edb2-4ad3-b004-21e7192d90eb.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Gestión inteligente de la energía con Shelly y Tibber",
+            "title_color": "#232323",
+            "content": "<p>Gracias a la perfecta integración con los productos Shelly o Tibber*, monitoriza y gestiona sin esfuerzo la energía de tu hogar en tiempo real a través de la aplicación EcoFlow. Disfruta de un control preciso de cada vatio de energía.<\/p>",
+            "content_color": "#000000",
+            "notification_message": "<p><\/p><p>*Productos compatibles Shelly 3EM, Shelly Pro 3EM, Tibber Pulse.<\/p>",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "text_with_image_t3Prx8"
+      ],
+      "settings": {
+      }
+    },
+    "rich_text_6zHgT7": {
+      "type": "rich-text",
+      "disabled": true,
+      "settings": {
+        "content_width": "100",
+        "bg_color": "",
+        "section_color": "",
+        "rte_icon_width": 100,
+        "section_title": "Gestión inteligente de la energía con Shelly y Tibber",
+        "subtitle": "",
+        "text": "<p>Gracias a la perfecta integración con los productos Shelly o Tibber*, monitoriza y gestiona sin esfuerzo la energía de tu hogar en tiempo real a través de la aplicación EcoFlow. Disfruta de un control preciso de cada vatio de energía.*Productos compatibles Shelly 3EM, Shelly Pro 3EM, Tibber Pulse.<\/p>",
+        "text_size": "medium"
+      }
+    },
+    "9a05b92d-be18-4c46-adcc-6f6b814d73e7": {
+      "type": "pdp-image-with-text-horizontal-new",
+      "blocks": {
+        "a20e5137-82a6-49f2-a7a6-a6a3b103c155": {
+          "type": "image",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/powerstream_microinverter_pc_7.png",
+            "mobile_image": "shopify:\/\/shop_images\/powerstream_microinverter_mb_7.png",
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "image_alignment": "right",
+            "title": "",
+            "subtitle": "<h2>Protocolo para dispositivos domésticos inteligentes Matter.<\/h2>",
+            "content": "<p>Los EcoFlow Smart Plugs pueden integrarse con Apple, Amazon, Google, Samsung y otros sistemas domésticos inteligentes compatibles con Matter.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "a20e5137-82a6-49f2-a7a6-a6a3b103c155"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "left",
+        "space_bw_blocks": 0
+      }
+    },
+    "8e344743-1c43-4f8a-a697-54e8cb8b7cde": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 20,
+        "section_bottom_spacing": 20,
+        "section_top_spacing_mobile": 20,
+        "section_bottom_spacing_mobile": 20,
+        "alignment": "center",
+        "title": "",
+        "subtitle": "<h2>Se integra a la perfección en tu hogar.<\/h2>",
+        "content": "<p>Ligero. Compacto. Elegante. <\/p>",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "aa3aee0c-52cc-4341-b3d4-d322ef933149": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "cad2b9af-89dd-4ff9-aa03-656f76ac8f13": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "left",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/powerstream_microinverter_pc_8.png",
+            "mobile_image": "shopify:\/\/shop_images\/powerstream_microinverter_mb_8.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "cad2b9af-89dd-4ff9-aa03-656f76ac8f13"
+      ],
+      "settings": {
+      }
+    },
+    "96163644-9393-462b-8a53-00858b6e3f71": {
+      "type": "pdp-image-with-text-horizontal-new",
+      "blocks": {
+        "4f71ec0f-fd6d-49f4-8f96-6a4de6c3b2e5": {
+          "type": "image",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/powerstream_microinverter_pc_9.png",
+            "mobile_image": "shopify:\/\/shop_images\/powerstream_microinverter_mb_9.png",
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "image_alignment": "right",
+            "title": "",
+            "subtitle": "<h2>Configúralo en un instante.<\/h2>",
+            "content": "<h4><strong>Mete este aparato en tu mochila y ponte en ruta.<\/strong><\/h4><p>¿Estás deseando tener electricidad sin conexión a la red para irte de acampada o para hacer un viaje en autocaravana? Desenchufa tu estación de alimentación portátil y llévala contigo donde vayas.<\/p><h4><strong>Sin perforaciones.<\/strong><\/h4><p>Hemos diseñado este cable superplano para eliminar todos los obstáculos y facilitar la instalación. Con este cable, puedes conectar los paneles solares al inversor dentro del hogar sin que sea necesario taladrar la pared.<\/p><h4><\/h4>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "4f71ec0f-fd6d-49f4-8f96-6a4de6c3b2e5"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "left",
+        "space_bw_blocks": 0
+      }
+    },
+    "7be99664-c074-43e0-b5c9-741046e44fa9": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 50,
+        "section_bottom_spacing": 50,
+        "section_top_spacing_mobile": 30,
+        "section_bottom_spacing_mobile": 30,
+        "alignment": "center",
+        "title": "Para mucho más que balcones.",
+        "subtitle": "",
+        "content": "<h3>Elije uno para tu casa<\/h3>",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "pdp_image_with_text_horizontal_new_LAqeCa": {
+      "type": "pdp-image-with-text-horizontal-new",
+      "blocks": {
+        "image_WhbRHb": {
+          "type": "image",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/teressa-pc.png",
+            "mobile_image": "shopify:\/\/shop_images\/teressa-mb.png",
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "image_alignment": "left",
+            "title": "",
+            "subtitle": "<p>Balcón<\/p>",
+            "content": "<p>Tenemos disponibles paneles solares rígidos de 100 W y 400 W para adaptarse a tus necesidades. Instálalos en tu balcón con el kit de enganche y empareja estos paneles con nuestro seguidor <strong>Solar Tracker <\/strong>de un solo eje para capturar un 60 % más de energía solar.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "image_cp348m": {
+          "type": "image",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/garden-pc.png",
+            "mobile_image": "shopify:\/\/shop_images\/garden-mb.png",
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "image_alignment": "right",
+            "title": "",
+            "subtitle": "<p>Terraza\/Jardín<\/p>",
+            "content": "<p>Gracias al grado de impermeabilidad IP68 y a una estructura de aluminio resistente anticorrosión, estos paneles solares son resistentes, duraderos e impermeables. En cuanto a su instalación, los montajes de sujeción ajustables resultan ideales para maximizar la captación de luz solar en los espacios antes mencionados.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "image_7TMFk9": {
+          "type": "image",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/balcony-pc.png",
+            "mobile_image": "shopify:\/\/shop_images\/balcony_mb.png",
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "image_alignment": "left",
+            "title": "",
+            "subtitle": "<p>Piso<\/p>",
+            "content": "<p>Plug-and-play, ahorra espacio y resulta práctico si eres inquilino. Este sistema va contigo en cada una de las etapas de tu vida. También cabe destacar que el panel solar flexible de 100 vatios del kit de inicio incluye bridas para cables de nylon fuerte para que puedas reforzar la instalación. <\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "image_WhbRHb",
+        "image_cp348m",
+        "image_7TMFk9"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "left",
+        "space_bw_blocks": 85
+      }
+    },
+    "d0dcc489-5b64-4ba8-8099-4ddc2106f3af": {
+      "type": "pdp-specs",
+      "blocks": {
+        "b4d8fb85-0b23-44d8-8656-684245a2a599": {
+          "type": "contents",
+          "settings": {
+            "title": "Dimensiones",
+            "content": "<p>242 ×169 ×33 mm<\/p>"
+          }
+        },
+        "2119b956-6e58-4cef-a4bb-7b465b20f46a": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso",
+            "content": "<p>Aproximadamente 3 kg<\/p>"
+          }
+        },
+        "a3bd2744-d3dc-45fd-95be-5d05648db277": {
+          "type": "contents",
+          "settings": {
+            "title": "Potencia de entrada FV",
+            "content": "<p>400 W x 2<\/p>"
+          }
+        },
+        "9b979bad-d1c0-45ef-8677-83686f63af95": {
+          "type": "contents",
+          "settings": {
+            "title": "Salida \/ Entrada de CC",
+            "content": "<p>600W<\/p>"
+          }
+        },
+        "c80546a5-5524-4679-ba1e-8cf6a91a978a": {
+          "type": "contents",
+          "settings": {
+            "title": "Tensión máxima de entrada",
+            "content": "<p>55V CC (Puerto FV)\/ 59V CC (Puerto CC)<\/p>"
+          }
+        },
+        "e7734f06-1e7d-464e-b8d2-4cf1920edaa2": {
+          "type": "contents",
+          "settings": {
+            "title": "Corriente de entrada máxima",
+            "content": "<p>13 A<\/p>"
+          }
+        },
+        "b6457078-3b30-416a-894b-d21c5d49ba24": {
+          "type": "contents",
+          "settings": {
+            "title": "AC Output-Grid TiedSalida de CA (conectada a la red)",
+            "content": "<p>600W\/800W<\/p>"
+          }
+        },
+        "d5b8a1f5-558e-4b1a-b2d2-4ee2c37ba37f": {
+          "type": "contents",
+          "settings": {
+            "title": "Corriente de salida máxima de CA",
+            "content": "<p>2.8A\/3.7A<\/p>"
+          }
+        },
+        "3dbe941f-487b-4679-9f47-de7778c68de8": {
+          "type": "contents",
+          "settings": {
+            "title": "Potencia máxima de carga y descarga",
+            "content": "<p>600W<\/p>"
+          }
+        },
+        "91614b8a-ee82-4f04-9213-addfb1851bfb": {
+          "type": "contents",
+          "settings": {
+            "title": "Tensión de carga",
+            "content": "<p>30 - 58 Vd.c.<\/p>"
+          }
+        },
+        "9baae041-ee54-4ece-9a56-1a0a624518f4": {
+          "type": "contents",
+          "settings": {
+            "title": "Impermeable",
+            "content": "<p>IP67<\/p>"
+          }
+        },
+        "19bf8124-9ab5-451d-994c-ec2e2a91285e": {
+          "type": "contents",
+          "settings": {
+            "title": "Wi-Fi (2.4G)",
+            "content": "<p>Gama de frecuencias: 20M: 2412 - 2472 MHz \/ 40M: 2422- 2462 MHz<br\/>Potencia máxima de salida: ≤ 20 dBm<\/p>"
+          }
+        },
+        "4e25810d-616f-4eeb-a47d-65b2ec18b77f": {
+          "type": "contents",
+          "settings": {
+            "title": "Bluetooth®",
+            "content": "<p>Gama de frecuencias: 2402-2480MHz<br\/>Potencia máxima de salida: ≤ 20 dBm<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "b4d8fb85-0b23-44d8-8656-684245a2a599",
+        "2119b956-6e58-4cef-a4bb-7b465b20f46a",
+        "a3bd2744-d3dc-45fd-95be-5d05648db277",
+        "9b979bad-d1c0-45ef-8677-83686f63af95",
+        "c80546a5-5524-4679-ba1e-8cf6a91a978a",
+        "e7734f06-1e7d-464e-b8d2-4cf1920edaa2",
+        "b6457078-3b30-416a-894b-d21c5d49ba24",
+        "d5b8a1f5-558e-4b1a-b2d2-4ee2c37ba37f",
+        "3dbe941f-487b-4679-9f47-de7778c68de8",
+        "91614b8a-ee82-4f04-9213-addfb1851bfb",
+        "9baae041-ee54-4ece-9a56-1a0a624518f4",
+        "19bf8124-9ab5-451d-994c-ec2e2a91285e",
+        "4e25810d-616f-4eeb-a47d-65b2ec18b77f"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Especificaciones de PowerStream"
+      }
+    },
+    "2b72997a-37c5-43a2-a13f-0f5f2fea5e31": {
+      "type": "pdp-specs",
+      "blocks": {
+        "a6321a6a-181c-4ed0-8665-8f11b5901b56": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso",
+            "content": "<p>Aproximadamente 113 g<\/p>"
+          }
+        },
+        "5ee633c2-ce3f-4854-b140-14f789d8cd78": {
+          "type": "contents",
+          "settings": {
+            "title": "Dimensiones",
+            "content": "<p>53 × 53 × 79 mm<\/p>"
+          }
+        },
+        "bbde9dce-a36f-4d09-bcc8-bc62da9cec9c": {
+          "type": "contents",
+          "settings": {
+            "title": "Tensión",
+            "content": "<p>110-250V<\/p>"
+          }
+        },
+        "e9761e7b-e630-4146-80a3-7c666311edf1": {
+          "type": "contents",
+          "settings": {
+            "title": "Corriente alterna",
+            "content": "<p>10A<\/p>"
+          }
+        },
+        "e7989073-9423-4d95-85f7-9c93dcd2a2a5": {
+          "type": "contents",
+          "settings": {
+            "title": "Frecuencia",
+            "content": "<p>50Hz<\/p>"
+          }
+        },
+        "db245aec-9b3e-4309-a3f6-7f009e678aa8": {
+          "type": "contents",
+          "settings": {
+            "title": "Temperatura de funcionamiento",
+            "content": "<p>-10°C - 40°C<\/p>"
+          }
+        },
+        "59f8cc0c-4d83-49dc-892b-4db1867f66e1": {
+          "type": "contents",
+          "settings": {
+            "title": "Wi-Fi (2.4G)",
+            "content": "<p>Rango de frecuencia：<br\/>20M: 2412 — 2472 MHz<br\/>40M: 2422 — 2462 MHz\"<br\/>Rango de frecuencia：<br\/>≤20 dBm<\/p>"
+          }
+        },
+        "14918e93-378c-424f-8f9e-556761482203": {
+          "type": "contents",
+          "settings": {
+            "title": "Bluetooth®",
+            "content": "<p>Rango de frecuencia：<br\/>2402 — 2480 MHz<br\/>Potencia de salida máxima：<br\/>≤20 dBm<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "a6321a6a-181c-4ed0-8665-8f11b5901b56",
+        "5ee633c2-ce3f-4854-b140-14f789d8cd78",
+        "bbde9dce-a36f-4d09-bcc8-bc62da9cec9c",
+        "e9761e7b-e630-4146-80a3-7c666311edf1",
+        "e7989073-9423-4d95-85f7-9c93dcd2a2a5",
+        "db245aec-9b3e-4309-a3f6-7f009e678aa8",
+        "59f8cc0c-4d83-49dc-892b-4db1867f66e1",
+        "14918e93-378c-424f-8f9e-556761482203"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Especificaciones de Smart Plug"
+      }
+    },
+    "0d623d47-e26f-4feb-9099-ae0c7fa68198": {
+      "type": "index-accordion",
+      "blocks": {
+        "77ee0351-03ec-41fd-a5b8-e4dded0acfbe": {
+          "type": "block",
+          "settings": {
+            "question": "Mi estación de energía portátil de la serie RIVER\/DELTA mini\/DELTA (1300) solo proporciona parte de su salida al microinversor. ¿Por qué sucede esto?",
+            "answer": "<p>En todas las estaciones de energía portátiles de la serie RIVER, DELTA mini y DELTA (1300), el puerto de carga del automóvil sirve para transmitir la salida al microinversor, mientras que el puerto de entrada solar es para la recarga solar.<br\/>Debido a la limitación del puerto de carga del automóvil y al hecho de que es el único puerto para la conexión con un microinversor, estas estaciones de energía portátiles mencionadas están sujetas a un límite de salida de 100W.<\/p>"
+          }
+        },
+        "34e634b0-d827-4cdd-b4a1-3d760b588d0e": {
+          "type": "block",
+          "settings": {
+            "question": "¿Es normal que el producto tenga una temperatura más alta durante su uso?",
+            "answer": "<p>Un ligero aumento de la temperatura durante el uso es normal, y este hecho no tendrá ninguna repercusión en la vida útil del producto. El producto se ha sometido a pruebas rigurosas y está equipado con protección contra sobrecalentamiento para garantizar su seguridad. Cuando esté en uso, debe estar fuera del alcance de niños y mascotas. Puede utilizar una funda resistente al calor para mayor protección.<\/p>"
+          }
+        },
+        "template--19006687838551__0d623d47-e26f-4feb-9099-ae0c7fa68198-1685084561bda6e2d8-0": {
+          "type": "block",
+          "settings": {
+            "question": "¿Qué estación de energía portátil de EcoFlow puede funcionar con el inversor PowerStream? ¿Puedo conectar el inversor con una batería adicional?",
+            "answer": "<p>El inversor PowerStream es compatible con todas las estaciones de energía portátiles de EcoFlow, pero requiere diferentes cables para la conexión:<br\/>1. DELTA 2, DELTA 2 Max, DELTA 2 Max Extra Battery y DELTA Max con el cable EcoFlow BKW-DELTA EB.<br\/>2. DELTA Pro y DELTA Pro Extra Battery con el cable EcoFlow BKW-DELTA Pro.<br\/>3. Las estaciones de energía de la serie RIVER con el cable EcoFlow BKW-RIVER.<\/p>"
+          }
+        },
+        "3e1791aa-505a-4ef2-b342-56698a8a0a5b": {
+          "type": "block",
+          "settings": {
+            "question": "Cuando la estación de energía está conectada al inversor EcoFlow PowerStream, ¿puedo usar paneles solares adicionales para conectar y recargar mi estación de energía?",
+            "answer": "<p>La versión V1.0.0.173 de EcoFlow PowerStream incorpora una nueva función que permite realizar la carga solar a través del inversor EcoFlow PowerStream y estaciones de energía de manera simultánea. Sin embargo, para utilizar esta función es necesario actualizar el firmware de las estaciones de energía.<br\/> Versiones de estaciones de energía que son compatibles con esta función:<br\/> EcoFlow DELTA 2 : V1.0.1.122 o versiones posteriores<br\/> EcoFlow DELTA Max 1600: V1.6.2.76 o versiones posteriores<br\/> EcoFlow DELTA 2 Max: V1.0.0.126 o versiones posteriores<br\/> EcoFlow DELTA Max 2000: V1.6.2.76 o versiones posteriores<br\/> EcoFlow DELTA Pro: V1.0.1.67 \/ V1.0.0.136 o versiones posteriores<br\/> Actualiza las versiones del firmware de EcoFlow PowerStream y de las estaciones de energía para poder disponer de esta función.<br\/> <br\/> *Actualiza tanto EcoFlow PowerStream como la estación de energía con la versión de firmware correspondiente para disfrutar de esta función.<br\/> <\/p>"
+          }
+        },
+        "ca7749c5-5c5a-4ab0-9cd5-db738c5f35a3": {
+          "type": "block",
+          "settings": {
+            "question": "Cuando mi estación de energía está conectada a PowerStream, ¿puedo conectar PowerStream y la estación de energía a paneles solares simultáneamente para cargar la estación de energía?",
+            "answer": "<p>La versión V1.0.0.165 de PowerStream incluye una nueva característica que permite la conexión de PowerStream y estaciones de energía a paneles solares para cargar al mismo tiempo. Sin embargo, para habilitar esta función es necesario actualizar el firmware de sus estaciones de energía. <br\/>Versiones de estaciones de energía que admiten esta función: <br\/>DELTA 2 Max: V1.0.0.126 o posterior <br\/>DELTA Max 2000: V1.6.2.71 o posterior Actualice las versiones de firmware tanto de PowerStream como de las estaciones de energía para disponer de esta función. <br\/>*Las versiones de firmware de DELTA Max1600, DELTA 2 y DELTA Pro que admiten esta función se lanzarán pronto; permanezca atento.<\/p>"
+          }
+        },
+        "template--19006687838551__0d623d47-e26f-4feb-9099-ae0c7fa68198-1685084561bda6e2d8-1": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "question": "In Germany, is it possible to upgrade the PowerStream Microinverter from 600W to 800W? How can it be done?",
+            "answer": "<p>With the upcoming adjustments in Germany's grid connection regulations, it is expected that the maximum grid limit will be upgraded to 800W in 2023 (refer to your local regulations and policies for specific information). PowerStream Microinverter is designed to support the transition from 600W to 800W, ensuring compliance with the local requirements of grid connection.Our EcoFlow customer service team is dedicated to assisting you in the upgrade when the new regulation is in effect.<\/p>"
+          }
+        },
+        "template--19006687838551__0d623d47-e26f-4feb-9099-ae0c7fa68198-1685084561bda6e2d8-2": {
+          "type": "block",
+          "settings": {
+            "question": "Cuando la entrada solar sea inferior a 600W, ¿la estación de energía portátil suministrará el resto del consumo?",
+            "answer": "<p>Cuando el sistema está en modo de prioridad de suministro de energía, la estación de energía suministra energía a los circuitos del hogar cuando la energía solar instantánea no es suficiente para cubrir las necesidades del hogar.Cuando se configura en modo de prioridad de almacenamiento de energía, se prioriza la carga de la estación de energía.<\/p>"
+          }
+        },
+        "template--19006687838551__0d623d47-e26f-4feb-9099-ae0c7fa68198-1685084561bda6e2d8-3": {
+          "type": "block",
+          "settings": {
+            "question": "¿Cómo puedo monitorizar la cantidad de electricidad generada por el Kit solar para balcones EcoFlow PowerStream en tiempo real?",
+            "answer": "<p>En la aplicación EcoFlow, puedes ver estadísticas en tiempo real de generación de energía, nivel de carga\/descarga de la estación de energía y el uso de los electrodomésticos conectados a los Smart Plugs.<\/p>"
+          }
+        },
+        "template--19006687838551__0d623d47-e26f-4feb-9099-ae0c7fa68198-1685084561bda6e2d8-4": {
+          "type": "block",
+          "settings": {
+            "question": "¿Puedo utilizar paneles solares de terceros?",
+            "answer": "<p>Siempre y cuando cumpla con los requisitos de entrada. Ten en cuenta que el voltaje de entrada que exceda el rango de entrada puede causar daños permanentes al inversor.<\/p>"
+          }
+        },
+        "71129120-93ec-4cbb-9164-b7567de4a8ea": {
+          "type": "block",
+          "settings": {
+            "question": "Deseo conectar múltiples paneles solares al inversor. ¿Cómo debo hacerlo?",
+            "answer": "<p>Conéctelos en serie o en paralelo.Este inversor tiene dos conjuntos independientes de entrada solar, cada uno con una tensión de circuito abierto en el rango de 11-55V. Por favor, no exceda este rango de voltaje.<\/p>"
+          }
+        },
+        "994d8f58-bdf9-4af4-84fe-6f8d8353c0e6": {
+          "type": "block",
+          "settings": {
+            "question": "¿Qué significan los diferentes colores del indicador del microinversor?",
+            "answer": "<p>Luz roja encendida constantemente: \"falla interna\".Luz amarilla encendida constantemente: \"falla externa\".Luz púrpura parpadeante: \"actualización en curso\".Luz azul parpadeante: \"conexión en red\".Luz verde respirando: indica que \"la salida de CA del microinversor está conectada al Smart Plug\".Luz verde encendida constantemente: indica que \"la salida de CA del microinversor no está conectada al Smart Plug\".Luz blanca respirando: indica que \"el microinversor no tiene salida de CA, pero está cargando la batería\".Luz blanca encendida constantemente: \"encendido, sin salida de CA y sin carga de batería\".<\/p>"
+          }
+        },
+        "7dcccb1e-1ef3-4963-bc3a-2265d92af9ba": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "question": "What do different colors of a Smart Plug's indicator mean?",
+            "answer": "<p>Red light on constantly indicates \"internal failure\".Purple light flashing indicates \"upgrading\".Blue light flashing indicates \"networking\".Green light breathing indicates that \"the AC output of the microinverter is connected to the Smart Plug\".Green light on constantly indicates that \"the AC output of the microinverter is not connected to the Smart Plug\".<\/p>"
+          }
+        },
+        "08062b4b-c03f-4d97-bcc3-126612551020": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "question": "What is the role of a Smart Plug in this Balcony Solar System? Is it a necessity?",
+            "answer": "<p>We recommend pairing 2 to 4 Smart Plugs with the system. Although not an aboslute necessity, a Smart Plug allows for remote and voice control of the connected appliances. Being part of a balcony solar system, it documents the usgae data of appliances and assists in optimised energy auto-allocation. To top up, it comes with schedules and timers so you can custimise its working time to your preference.<\/p>"
+          }
+        },
+        "453feddc-411b-4c52-8532-c8204694d699": {
+          "type": "block",
+          "settings": {
+            "question": "El indicador de mi microinversor no se enciende después de conectar una estación de energía. ¿Qué podría estar causando esto y qué puedo hacer para resolverlo?",
+            "answer": "<p>1. Conexión floja. Desconecta el cable del microinversor PowerStream y la estación de energía portátil y vuelve a conectarlos. La luz indicadora se pondrá blanca, lo que indica un contacto deficiente causado por problemas de cableado.2. Daño en el cable de la batería. Enchufa y desenchufa repetidamente el cable, pero la luz indicadora aún no se enciende. Sin embargo, DELTA aún se puede usar por separado. En ese momento, intenta conectar los paneles solares al microinversor cuando haya luz solar. Si la luz indicadora se enciende, sospecha de un daño en el cable.3. Falla en DELTA 2. Si se encuentra una falla al estar conectado solo a DELTA 2, por favor, comunícate con el servicio al cliente.4. Falla en la unidad del microinversor. Enchufa y desenchufa repetidamente el cable, pero la luz indicadora aún no se enciende. Sin embargo, DELTA aún se puede usar por separado. En ese momento, intenta conectar los paneles solares al microinversor cuando haya luz solar. Si la luz indicadora no se enciende, sospecha de una falla en la unidad del microinversor. Por favor, comunícate con el servicio al cliente.<\/p>"
+          }
+        },
+        "d1ffa396-20f4-4c66-8a0f-54e8ab35bc36": {
+          "type": "block",
+          "settings": {
+            "question": "Mi indicador de microinversor no se enciende después de conectar un panel solar. ¿Qué podría estar causando esto y qué puedo hacer para solucionarlo?",
+            "answer": "<p>1. Sobretensión en el terminal PV. Verifique si el panel solar cumple con las especificaciones y si está conectado en serie o en paralelo (no funcionará si el voltaje supera los 55V) cuando hay luz solar.2. Luz solar débil. Verifique si hay suficiente luz solar. Intente de nuevo cuando haya suficiente luz solar.3. Daño en el panel solar \/ Daño en el cable de extensión del panel solar. Cuando haya suficiente luz solar, mida si el voltaje de los puertos positivo y negativo del panel solar es normal.4. Anomalía en el monómero del microinversor. Cuando se mueva el almacenamiento y se conecte al microinversor, y el indicador no se encienda, después de verificar que no hay ningún problema con la configuración de límite de descarga de almacenamiento de energía en la configuración del sistema, comuníquese con el servicio al cliente si aún no funciona.<\/p>"
+          }
+        },
+        "bf84d6ba-9c29-4f63-bc5a-e93ca0d16e93": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "question": "Speaking as a German user, do I need to register this system with the power grid? Can you help me with it?",
+            "answer": "<p>A comprehensive guide for registration in the MaStR: <a href=\"https:\/\/blog.ecoflow.com\/de\/anmeldung-balkonkraftwerk\/\" target=\"_blank\">https:\/\/blog.ecoflow.com\/de\/anmeldung-balkonkraftwerk\/<\/a> . To register with your local grid operator, as the requirements and process may vary, please contact them for specific information. <\/p>"
+          }
+        },
+        "a34b5fc9-a531-4d97-8fb4-360e21e9fb73": {
+          "type": "block",
+          "settings": {
+            "question": "¿Puedo instalar el sistema por mí mismo?",
+            "answer": "<p>La instalación y el mantenimiento del sistema se pueden realizar de forma independiente. Si es necesario, puede ponerse en contacto con un instalador profesional o un electricista para obtener ayuda.<\/p>"
+          }
+        },
+        "23c2885a-7e67-4ba6-b173-079a82039438": {
+          "type": "block",
+          "settings": {
+            "question": "En caso de un corte de energía, ¿cómo puede el sistema seguir suministrando energía?",
+            "answer": "<p>Por razones de seguridad, el inversor PowerStream detendrá la salida de corriente después de un corte de energía en el hogar, pero la estación de energía portátil se puede utilizar como una fuente de energía de respaldo para conectar a los electrodomésticos.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "77ee0351-03ec-41fd-a5b8-e4dded0acfbe",
+        "34e634b0-d827-4cdd-b4a1-3d760b588d0e",
+        "template--19006687838551__0d623d47-e26f-4feb-9099-ae0c7fa68198-1685084561bda6e2d8-0",
+        "3e1791aa-505a-4ef2-b342-56698a8a0a5b",
+        "ca7749c5-5c5a-4ab0-9cd5-db738c5f35a3",
+        "template--19006687838551__0d623d47-e26f-4feb-9099-ae0c7fa68198-1685084561bda6e2d8-1",
+        "template--19006687838551__0d623d47-e26f-4feb-9099-ae0c7fa68198-1685084561bda6e2d8-2",
+        "template--19006687838551__0d623d47-e26f-4feb-9099-ae0c7fa68198-1685084561bda6e2d8-3",
+        "template--19006687838551__0d623d47-e26f-4feb-9099-ae0c7fa68198-1685084561bda6e2d8-4",
+        "71129120-93ec-4cbb-9164-b7567de4a8ea",
+        "994d8f58-bdf9-4af4-84fe-6f8d8353c0e6",
+        "7dcccb1e-1ef3-4963-bc3a-2265d92af9ba",
+        "08062b4b-c03f-4d97-bcc3-126612551020",
+        "453feddc-411b-4c52-8532-c8204694d699",
+        "d1ffa396-20f4-4c66-8a0f-54e8ab35bc36",
+        "bf84d6ba-9c29-4f63-bc5a-e93ca0d16e93",
+        "a34b5fc9-a531-4d97-8fb4-360e21e9fb73",
+        "23c2885a-7e67-4ba6-b173-079a82039438"
+      ],
+      "settings": {
+        "section_id": "",
+        "content_side": "left",
+        "title": "FAQ",
+        "subtitle": "",
+        "text_color": "#03060b",
+        "color_image_overlay": "",
+        "color_bgcolor": "",
+        "image_overlay_opacity": 0
+      }
+    }
+  },
+  "order": [
+    "daf26638-f596-4384-b150-72d380a3268d",
+    "sticky-product-bar",
+    "main",
+    "product-recommendations",
+    "7d2d6ce9-8ab9-402f-8cbd-15543ddc7fb4",
+    "df8d05ea-b32a-4f9d-8d63-80b7f3e007e6",
+    "dacd02e9-a34d-4d8c-b184-2f1004233d80",
+    "pdp_rich_text_bBwfFp",
+    "pdp_image_with_text_horizontal_new_xaVmVb",
+    "pdp_rich_text_CgQ7U3",
+    "pdp_rich_text_C6kDty",
+    "pdp_slideshow_n7WXQ6",
+    "pdp_text_with_image_jc3dAQ",
+    "rich_text_6zHgT7",
+    "9a05b92d-be18-4c46-adcc-6f6b814d73e7",
+    "8e344743-1c43-4f8a-a697-54e8cb8b7cde",
+    "aa3aee0c-52cc-4341-b3d4-d322ef933149",
+    "96163644-9393-462b-8a53-00858b6e3f71",
+    "7be99664-c074-43e0-b5c9-741046e44fa9",
+    "pdp_image_with_text_horizontal_new_LAqeCa",
+    "d0dcc489-5b64-4ba8-8099-4ddc2106f3af",
+    "2b72997a-37c5-43a2-a13f-0f5f2fea5e31",
+    "0d623d47-e26f-4feb-9099-ae0c7fa68198"
+  ]
+}

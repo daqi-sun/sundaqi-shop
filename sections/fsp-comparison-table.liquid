@@ -1,0 +1,337 @@
+<style>
+  .fsp-comparison-table__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .fsp-comparison-table__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+
+<div class="fsp-comparison-table__section fsp-comparison-table__section-{{ section.id }}">
+  <div class="container--default">
+    <div class="fsp-comparison-table__content-container">
+      <div class="fsp-comparison-table__text-container">
+        {% if section.settings.title != blank %}
+          <h2 class="fsp-comparison-table__section-heading text--heading text--white">
+            {{ section.settings.title }}
+          </h2>
+        {% endif %}
+        {% if section.settings.subtitle != blank %}
+          <p class="fsp-comparison-table__section-description text--description text--gray">
+            {{ section.settings.subtitle }}
+          </p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div
+    class="fsp-comparison-table__wrapper "
+    x-data="{ scrollWidth: 0 }"
+    x-init="($refs.content).addEventListener('scroll', () => { scrollWidth = (($refs.content).scrollLeft / (($refs.content).scrollWidth - ($refs.content).clientWidth)) * 100 })"
+  >
+    <div class="fsp-comparison-table__container background--white" x-ref="content">
+      <table class="fsp-comparison-table">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'table_head' %}
+              <thead>
+                <tr>
+                  <th class="sticky-col-mob background--white">
+                    <div class="sticky-content" style="height: 140px;"></div>
+                  </th>
+                  <th class="fsp-comparison-table__column__title fsp-comparison-table__column-heading text--center text--black">
+                    <div class="fsp-comparison-table__column__title-wrapper">
+                      <div class="fsp-comparison-table__column-image-wrapper">
+                        <a href="{{ block.settings.first_column_link }}" target="_blank">
+                          <img
+                            src="{{ block.settings.first_column_image | img_url: 'master' }}"
+                            alt="{{ block.settings.first_column_image.alt }}"
+                          >
+                        </a>
+                      </div>
+                      <div class="fsp-comparison-table__column-title">
+                        {{ block.settings.first_column_title }}
+                      </div>
+                    </div>
+                  </th>
+                  <th class="fsp-comparison-table__column__title fsp-comparison-table__column-heading text--center text--black">
+                    <div class="fsp-comparison-table__column__title-wrapper">
+                      <div class="fsp-comparison-table__column-image-wrapper">
+                        <a href="{{ block.settings.second_column_link }}" target="_blank">
+                          <img
+                            src="{{ block.settings.second_column_image | img_url: 'master' }}"
+                            alt="{{ block.settings.second_column_image.alt }}"
+                          >
+                        </a>
+                      </div>
+                      <div class="fsp-comparison-table__column-title">
+                        {{ block.settings.second_column_title }}
+                      </div>
+                    </div>
+                  </th>
+                  <th class="fsp-comparison-table__column__title fsp-comparison-table__column-heading text--center text--black">
+                    <div class="fsp-comparison-table__column__title-wrapper">
+                      <div class="fsp-comparison-table__column-image-wrapper">
+                        <a href="{{ block.settings.third_column_link }}" target="_blank">
+                          <img
+                            src="{{ block.settings.third_column_image | img_url: 'master' }}"
+                            alt="{{ block.settings.third_column_image.alt }}"
+                          >
+                        </a>
+                      </div>
+                      <div class="fsp-comparison-table__column-title">
+                        {{ block.settings.third_column_title }}
+                      </div>
+                    </div>
+                  </th>
+                  <th class="fsp-comparison-table__column__title fsp-comparison-table__column-heading text--center text--black">
+                    <div class="fsp-comparison-table__column__title-wrapper">
+                      <div class="fsp-comparison-table__column-image-wrapper">
+                        <a href="{{ block.settings.fourth_column_link }}" target="_blank">
+                          <img
+                            src="{{ block.settings.fourth_column_image | img_url: 'master' }}"
+                            alt="{{ block.settings.fourth_column_image.alt }}"
+                          >
+                        </a>
+                      </div>
+                      <div class="fsp-comparison-table__column-title">
+                        {{ block.settings.fourth_column_title }}
+                      </div>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+          {% endcase %}
+        {% endfor %}
+
+        <tbody>
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'table_details' %}
+                <tr class="fsp-comparison-table__details">
+                  <td class="fsp-comparison-table__row__title  fsp-comparison-table__title sticky-col-mob text--black background--white">
+                    <div class="sticky-content fsp-comparison-table__row-container">
+                      <div class="fsp-comparison-table__image-wrapper">
+                        <a href="{{ block.settings.row_link }}" target="_blank">
+                          <img
+                            src="{{ block.settings.row_image | img_url: 'master' }}"
+                            alt="{{ block.settings.row_image.alt }}"
+                          >
+                        </a>
+                      </div>
+                      <div class="fsp-comparison-table__row-title-wrapper">
+                        {{ block.settings.row_title }}
+                      </div>
+                    </div>
+                  </td>
+                  <td class="fsp-compariuson-table__data text--center text--black">
+                    {% if block.settings.first_column != blank %}
+                      {{ block.settings.first_column }}
+                    {% endif %}
+                  </td>
+                  <td class="fsp-compariuson-table__data text--center text--black">
+                    {% if block.settings.second_column != blank %}
+                      {{ block.settings.second_column }}
+                    {% endif %}
+                  </td>
+                  <td class="fsp-compariuson-table__data text--center text--black">
+                    {% if block.settings.third_column != blank %}
+                      {{ block.settings.third_column }}
+                    {% endif %}
+                  </td>
+                  <td class="fsp-compariuson-table__data text--center text--black">
+                    {% if block.settings.fourth_column != blank %}
+                      {{ block.settings.fourth_column }}
+                    {% endif %}
+                  </td>
+                </tr>
+            {% endcase %}
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class="fsp-grid__progress-bar">
+      <div class="fsp-grid__progress-bar-scroll" :style="'width: ' + scrollWidth + '%'"></div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "FSP Comparison Table",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "How Many EcoFlow 100W Flexible Solar Panels Do You Need?"
+    },
+    {
+      "type": "html",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Compare our solar panel kits to see what best fits your power needs."
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "table_details",
+      "name": "Table Details",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "row_image",
+          "label": "Row Image"
+        },
+        {
+          "type": "url",
+          "id": "row_link",
+          "label": "Row Product Link"
+        },
+        {
+          "type": "html",
+          "id": "row_title",
+          "label": "Row Title",
+          "default": "RIVER 2"
+        },
+        {
+          "type": "richtext",
+          "id": "first_column",
+          "label": "1st Column Data"
+        },
+        {
+          "type": "richtext",
+          "id": "second_column",
+          "label": "2nd Column Data"
+        },
+        {
+          "type": "richtext",
+          "id": "third_column",
+          "label": "3rd Column Data"
+        },
+        {
+          "type": "richtext",
+          "id": "fourth_column",
+          "label": "4th Column Data"
+        }
+      ]
+    },
+    {
+      "type": "table_head",
+      "name": "Table Head",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "first_column_image",
+          "label": "1st Column Image"
+        },
+        {
+          "type": "html",
+          "id": "first_column_title",
+          "label": "1st Column Title",
+          "default": "1  Panel"
+        },
+        {
+          "type": "url",
+          "id": "first_column_link",
+          "label": "1st Column Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "second_column_image",
+          "label": "2nd Column Image"
+        },
+        {
+          "type": "html",
+          "id": "second_column_title",
+          "label": "2nd Column Title",
+          "default": "2 Panels"
+        },
+        {
+          "type": "url",
+          "id": "second_column_link",
+          "label": "2nd Column Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "third_column_image",
+          "label": "3rd Column Image"
+        },
+        {
+          "type": "html",
+          "id": "third_column_title",
+          "label": "3rd Column Title",
+          "default": "3 Panels"
+        },
+        {
+          "type": "url",
+          "id": "third_column_link",
+          "label": "3rd Column Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "fourth_column_image",
+          "label": "4th Column Image"
+        },
+        {
+          "type": "html",
+          "id": "fourth_column_title",
+          "label": "4th Column Title",
+          "default": "4 Panels"
+        },
+        {
+          "type": "url",
+          "id": "fourth_column_link",
+          "label": "4th Column Link"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

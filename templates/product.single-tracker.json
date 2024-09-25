@@ -1,0 +1,997 @@
+{
+  "sections": {
+    "daf26638-f596-4384-b150-72d380a3268d": {
+      "type": "product-atb-top",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "sticky-product-bar": {
+      "type": "sticky-product-bar",
+      "blocks": {
+        "588d25af-4d47-43ac-9697-b98aa2f65719": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Overview",
+            "tab_id": "product_information",
+            "section_class": ""
+          }
+        },
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "What's in the box",
+            "tab_id": "what_in_box",
+            "section_class": ""
+          }
+        },
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "FAQ",
+            "tab_id": "faq",
+            "section_class": ""
+          }
+        },
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Reviews",
+            "tab_id": "section-reviews",
+            "section_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "588d25af-4d47-43ac-9697-b98aa2f65719",
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02",
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4",
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38"
+      ],
+      "settings": {
+        "enabled": true,
+        "enabled_tabs": false
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "11795adc-1afa-4833-a193-258f495901ef": {
+          "type": "sku_block",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e": {
+          "type": "product_title",
+          "settings": {
+          }
+        },
+        "judge_me_reviews_preview_badge_wCJjAW": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "0471109f-c130-454e-a9ba-c56412cc11f3": {
+          "type": "product_vendor",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185": {
+          "type": "product_price",
+          "settings": {
+          }
+        },
+        "d25a0285-4fb4-422d-b95b-ab67446120ad": {
+          "type": "product_description",
+          "settings": {
+            "desc_display": "default"
+          }
+        },
+        "79e1b437-5bbd-4b8a-ac55-27c2f795ee99": {
+          "type": "coupon_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Component_2_1.png",
+            "discount_off_text": "{{ product.metafields.custom.discount_off_text.value }}",
+            "code": "{{ product.metafields.custom.discount_code.value }}",
+            "show_copy_code_btn": true
+          }
+        },
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879": {
+          "type": "product_options_block",
+          "settings": {
+            "show_product_swatches": true,
+            "use_variant_image_for_swatches": true,
+            "button_content": ""
+          }
+        },
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe": {
+          "type": "quantity_block",
+          "settings": {
+          }
+        },
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0": {
+          "type": "accessories_section",
+          "settings": {
+            "title": "You may also like",
+            "metafield": "accessories"
+          }
+        },
+        "a96faac7-b2a0-4157-9b80-c757c18c6a89": {
+          "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/form-embed-block\/2632fe16-c075-4321-a88b-50b567f42507",
+          "disabled": true,
+          "settings": {
+            "formId": "UHSpKe"
+          }
+        },
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609": {
+          "type": "product_buttons",
+          "settings": {
+            "enable_payment_button": false,
+            "show_custom_icons": true,
+            "custom_payment_logo_1_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_08_7f374817-3a3e-42f2-95ce-077b67f293d2.svg?v=1672025209",
+            "custom_payment_logo_2_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_10_d8002835-e25f-4edb-9038-187f75f69a18.svg?v=1672025208",
+            "custom_payment_logo_3_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_02_a3ea7ab1-aa9a-4857-9ed6-01e62deccfce.svg?v=1672025208",
+            "custom_payment_logo_4_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_06_7c406d24-0983-49ff-ac8e-cf73032050d9.svg?v=1672025208",
+            "custom_payment_logo_5_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_07_be5959d4-9f22-4a31-8e40-285f8e3ac6e7.svg?v=1672025208",
+            "custom_payment_logo_6_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_04_7bff1113-0dc2-489f-8be8-d19dbe467a1a.svg?v=1672025208",
+            "custom_payment_logo_7_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_05_1c21f308-a0a3-4251-8641-87264da43d67.svg?v=1672025208",
+            "custom_payment_logo_8_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_01_96e6a30c-7908-4892-b6f1-75bce8657cd4.svg?v=1672025208",
+            "custom_payment_logo_9_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/sofort_icon_31ba2d5b-2c44-4960-8e80-645a7240c899.png?v=1679023017",
+            "custom_payment_logo_10_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/giropay_icon_c9d7e22e-cd7c-4bee-8de5-e50a4c6dc378.png?v=1679023017",
+            "custom_payment_logo_11_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/ideal_icon_8548c48a-3c4e-4052-95de-670062a453ce.png?v=1679023017",
+            "custom_payment_logo_12_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/multibanco_icon_e3f9b26f-234c-4a06-9e48-adfd188e7deb.png?v=1679023016",
+            "custom_payment_logo_13_svg": "",
+            "custom_payment_logo_14_svg": "",
+            "custom_payment_logo_15_svg": ""
+          }
+        },
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% if product.metafields.custom.trade_message != blank %}\n          <div class=\"trade-message\">♻️{{product.metafields.custom.trade_message}} <a href=\"\/pages\/trade-in\" target=\"_blank\">Learn more<\/a><\/div>\n{% endif %}"
+          }
+        }
+      },
+      "block_order": [
+        "11795adc-1afa-4833-a193-258f495901ef",
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e",
+        "judge_me_reviews_preview_badge_wCJjAW",
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774",
+        "0471109f-c130-454e-a9ba-c56412cc11f3",
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185",
+        "d25a0285-4fb4-422d-b95b-ab67446120ad",
+        "79e1b437-5bbd-4b8a-ac55-27c2f795ee99",
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879",
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe",
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0",
+        "a96faac7-b2a0-4157-9b80-c757c18c6a89",
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609",
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a"
+      ],
+      "settings": {
+        "section_id": "",
+        "show_breadcrumbs": true,
+        "show_pick_an_option": false,
+        "enable_linked_options": false,
+        "enabled_mobile_sticky_btns": true,
+        "media_size": "medium",
+        "enable_image_zoom": true,
+        "enable_video_looping": true,
+        "thumbnails_type": "grid",
+        "support_email": "",
+        "support_text": "",
+        "feature_1_show": false,
+        "feature_1_title": "Fast & Free Shipping",
+        "feature_1_content": "",
+        "feature_2_show": false,
+        "feature_2_title": "Warranty Protection",
+        "feature_2_content": "",
+        "feature_3_show": false,
+        "feature_3_title": "Secure Payments",
+        "feature_3_content": "",
+        "feature_4_show": false,
+        "feature_4_title": "Multi-channel Support",
+        "feature_4_content": ""
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "grid_mobile": "2",
+        "heading": "You may also like",
+        "show_vendor": false
+      }
+    },
+    "1b15ef12-7151-41be-b166-9dcc56820b5a": {
+      "type": "product-atb-bottom",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "a6296812-3a63-4732-a327-259c99a92d95": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 26,
+        "section_bottom_spacing": 26,
+        "section_top_spacing_mobile": 30,
+        "section_bottom_spacing_mobile": 30,
+        "alignment": "center",
+        "title": "",
+        "subtitle": "",
+        "content": "",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "bf07ad52-0f72-43c0-94ee-f75805bd7182": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--19068556018007__bf07ad52-0f72-43c0-94ee-f75805bd7182-1686833531bddde80e-0": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/ES-Axis-1-PC.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/ES-Axis-1-M.jpg",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--19068556018007__bf07ad52-0f72-43c0-94ee-f75805bd7182-1686833531bddde80e-0"
+      ],
+      "settings": {
+      }
+    },
+    "7f40b4cb-c2e1-4353-be14-e790eeb06711": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "dd02d6db-c9d9-4436-948d-c2a67cb3e934": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/ES-Axis-2-PC.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/ES-Axis-2-M.jpg",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "<h3>Consigue hasta un 60 % más de energía<br\/><br\/><\/h3><h4>Más energía, sin complicaciones<\/h4><p><\/p><p>El EcoFlow Single Axis Solar Tracker posibilita que con un espacio mínimo como es el balcón de cualquier apartamento u hogar pueda lograrse la independencia energética. Contribuye a maximizar el uso de la energía renovable gracias al seguimiento automático de la luz solar directa de 10 a 85 grados con un solo eje.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "fb955cde-e72a-42ec-a655-bacc80b12ff8": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "<p>* En latitudes medias a altas (30° - 60° de latitud), un solo eje proporciona una ganancia de generación de energía significativa en comparación con una instalación óptima vertical y fija. En condiciones ideales: <\/p><p>-El seguimiento del eje único ofrece una ganancia de al menos un 20 % más sobre la mejor instalación local, independientemente del rango de azimut sureste-suroeste.<\/p><p>-Las ganancias que se obtienen a partir del seguimiento de un eje único van del 60 % al 146 % sobre la instalación vertical, independientemente del rango de azimut sureste-suroeste.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "dd02d6db-c9d9-4436-948d-c2a67cb3e934",
+        "fb955cde-e72a-42ec-a655-bacc80b12ff8"
+      ],
+      "settings": {
+      }
+    },
+    "17a473c8-21bd-45fe-a9a3-0d647b5df5b7": {
+      "type": "pdp-slideshow",
+      "blocks": {
+        "99b22a59-d670-4d1c-8c54-b331425c7d7a": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Con sol",
+            "title": "",
+            "subtitle": "<h2>La experiencia de usuario más sencilla<br\/><br\/><\/h2><h4>Sensores avanzados para detectar la luz solar y las condiciones climatológicas<\/h4>",
+            "content": "<p><br\/>Hemos desarrollado un nuevo sensor de lluvia y luz que puede capturar los cambios más sensibles en el entorno natural y las condiciones meteorológicas, lo que garantiza una producción de energía óptima y un uso seguro de los paneles solares.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>El seguidor solar ajusta automáticamente su ángulo para garantizar la máxima producción de energía cuando hay una variación significativa de la luz solar. También se adapta a los árboles o edificios cercanos que proyectan sombras, optimizando la producción de energía.<\/p><p><\/p><p>* Equipado con un sensor de lluvia y luz, este seguidor solar dispone de funciones de ajuste automático, entre las que se incluyen un modo de seguimiento del sol (&gt;50000 lux cada 30 minutos), modo de búsqueda del sol (&gt;30000 lux), modo suspensión automático (≤30000 lux) y apagado automático durante avisos de lluvia o tifones (tifón de nivel 6).<\/p>",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "video",
+            "mp4_video_url_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e15d1658bbb84c7f80da662f77716949.mp4",
+            "mp4_video_url_m_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e15d1658bbb84c7f80da662f77716949.mp4",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "08bd4369-743e-49c8-9892-e882fb06f347": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Con lluvia",
+            "title": "",
+            "subtitle": "<h2>La experiencia de usuario más sencilla<br\/><br\/><\/h2><h4>Sensores avanzados para detectar la luz solar y las condiciones climatológicas<\/h4>",
+            "content": "<p><br\/>Hemos desarrollado un nuevo sensor de lluvia y luz que puede capturar los cambios más sensibles en el entorno natural y las condiciones meteorológicas, lo que garantiza una producción de energía óptima y un uso seguro de los paneles solares.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>Cuando haya fuertes lluvias, el seguidor solar ajustará su ángulo para lograr una producción de energía óptima y su autoprotección.<\/p><p><\/p><p>* Equipado con un sensor de lluvia y luz, este seguidor solar dispone de funciones de ajuste automático, entre las que se incluyen un modo de seguimiento del sol (&gt;50000 lux cada 30 minutos), modo de búsqueda del sol (&gt;30000 lux), modo suspensión automático (≤30000 lux) y apagado automático durante avisos de lluvia o tifones (tifón de nivel 6).<\/p>",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "video",
+            "mp4_video_url_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/cf196a10fc274f05a7ae52e12052ba78.mp4",
+            "mp4_video_url_m_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/cf196a10fc274f05a7ae52e12052ba78.mp4",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "dedb1532-40a4-40f7-a917-144be3fa69e2": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Con viento",
+            "title": "",
+            "subtitle": "<h2>La experiencia de usuario más sencilla<br\/><br\/><\/h2><h4>Sensores avanzados para detectar la luz solar y las condiciones climatológicas<\/h4>",
+            "content": "<p><br\/>Hemos desarrollado un nuevo sensor de lluvia y luz que puede capturar los cambios más sensibles en el entorno natural y las condiciones meteorológicas, lo que garantiza una producción de energía óptima y un uso seguro de los paneles solares.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>El seguidor solar se ajustará automáticamente a 10 grados cuando se enfrente a niveles de viento superiores a 6, lo que garantiza un uso seguro. Tiene una capacidad de resistencia al viento de hasta el nivel 8. En casos de vientos más fuertes, se recomienda retirar el seguidor solar de forma temporal y almacenarlo de un modo adecuado.<\/p><p><\/p><p>* Equipado con un sensor de lluvia y luz, este seguidor solar dispone de funciones de ajuste automático, entre las que se incluyen un modo de seguimiento del sol (&gt;50000 lux cada 30 minutos), modo de búsqueda del sol (&gt;30000 lux), modo suspensión automático (≤30000 lux) y apagado automático durante avisos de lluvia o tifones (tifón de nivel 6).<\/p>",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "video",
+            "mp4_video_url_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/3378075dff794c938f609866d2e78638.mp4",
+            "mp4_video_url_m_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/3378075dff794c938f609866d2e78638.mp4",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        }
+      },
+      "block_order": [
+        "99b22a59-d670-4d1c-8c54-b331425c7d7a",
+        "08bd4369-743e-49c8-9892-e882fb06f347",
+        "dedb1532-40a4-40f7-a917-144be3fa69e2"
+      ],
+      "settings": {
+        "section_id": ""
+      }
+    },
+    "77e26703-40a6-4d35-b76d-ce90bee6ccae": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "1398c571-99c8-418d-b4b1-bcbc4d912702": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/Axis-3-2.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/Axis-3-2.jpg",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "<h3>La mejor solución de ahorro de energía<br\/><br\/><\/h3><h4>Consigue seguir al sol con este artículo compatible con la mayoría de los paneles solares rígidos del mercado<\/h4><p><\/p><p>Con un marco expandible, el seguidor funciona a la perfección con la mayoría de los paneles solares rígidos del mercado, lo que garantiza una generación de energía de alta eficiencia. El seguidor es compatible con paneles solares rígidos que tengan un tamaño comprendido entre 1000 y 2500 mm de largo, 600 y 1200 mm de ancho, y 30 y 40 mm de alto. <\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "e83c8d63-3853-43af-9a57-4a95ec2b98b0": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/Axis-3-1.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/Axis-3-1.jpg",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "<h3>Eficiencia maximizada<br\/><br\/><\/h3><h4>Soluciones de energía dinámicas que proporcionan más posibilidades<\/h4><p><\/p><p><strong>Solución de energía en la red (seguidor solar + panel solar de 400W + inversor PowerStream) <\/strong>Cuando se combina con un inversor, se convierte en la solución de ahorro de energía conectada a la red más práctica para su hogar.<\/p><p><strong>Solución de energía sin conexión a la red (seguidor solar + panel solar de 100W + inversor PowerStream) <\/strong>Si se combina con una estación de energía portátil, dispondrás del equipo de generación de energía más potente y estable posible para vivir aventuras sin la necesidad de estar conectado a la red.<\/p>",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "301b67f8-e687-4414-8656-21c2df6cc9ea": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/ES-APP-Axis-4.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/ES-APP-Axis-4.jpg",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "<h3>Controles inteligentes<br\/><br\/><\/h3><h4>Fácil control a través de la aplicación o funcionamiento manual<\/h4><p><br\/>Se enciende automáticamente y funciona durante todo el día, y se apaga cuando se pone el sol o cuando no puede recibir la luz solar. Puedes monitorizar fácilmente el estado del funcionamiento del seguidor solar a través de App EcoFlow. En circunstancias específicas, puedes ajustar el ángulo del rastreador manualmente. Es altamente eficiente, inteligente y seguro de usar.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "7b683b7c-8539-402f-a61e-91cf6f8090d9": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/ES-IP68-Axis-5-PC.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/ES-IP68-Axis-5-M.jpg",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "<h3>Rendimiento y seguridad optimizados<br\/><br\/><\/h3><h4>Diseño seguro y resistente para garantizar un rendimiento duradero<br\/><br\/><\/h4><p>Nuestro seguidor está fabricado de acero altamente resistente con una impermeabilización excepcional, que garantiza una instalación exterior fiable y duradera en cualquier condición climática. Elegir el kit solar para balcones EcoFlow es una inversión a largo plazo en la independencia energética del hogar.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "9465803e-98b3-4ad8-815b-dd0626d0ea50": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "<p>* La caja de control no es resistente al agua ante lluvias fuertes.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "1398c571-99c8-418d-b4b1-bcbc4d912702",
+        "e83c8d63-3853-43af-9a57-4a95ec2b98b0",
+        "301b67f8-e687-4414-8656-21c2df6cc9ea",
+        "7b683b7c-8539-402f-a61e-91cf6f8090d9",
+        "9465803e-98b3-4ad8-815b-dd0626d0ea50"
+      ],
+      "settings": {
+      }
+    },
+    "a463c04b-62ca-4aa6-8a3d-82c1c94eadcd": {
+      "type": "pdp-slideshow",
+      "blocks": {
+        "73338ef4-53e9-4e77-811c-21e16c1f2885": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Paso 1",
+            "title": "",
+            "subtitle": "<h2>Sencillo de instalar por uno mismo<\/h2>",
+            "content": "",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>5 varillas de todos los lados combinadas en la forma de abrazadera que de muestra en la figura<\/p>",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "video",
+            "mp4_video_url_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/4d619627336c4928a375892120a501d0.mp4",
+            "mp4_video_url_m_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/4d619627336c4928a375892120a501d0.mp4",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "59d9bf76-ce90-4a0f-bbe9-d04544b4050d": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Paso 2",
+            "title": "",
+            "subtitle": "<h2><strong>Sencillo de instalar por uno mismo<\/strong><\/h2>",
+            "content": "",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>Instalar la caja de control y la caja del sensor y ajustar el ángulo<\/p>",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "video",
+            "mp4_video_url_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/cdada68829ad40f29ee912a65ae7996b.mp4",
+            "mp4_video_url_m_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/cdada68829ad40f29ee912a65ae7996b.mp4",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "bb0a73cf-d3e3-43e4-91a7-a442c46e5ae5": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Paso 3",
+            "title": "",
+            "subtitle": "<h2><strong>Sencillo de instalar por uno mismo<\/strong><\/h2>",
+            "content": "",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>Instalar el panel solar<\/p>",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "video",
+            "mp4_video_url_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/048b5c8dae644a30a4995a888dae9902.mp4",
+            "mp4_video_url_m_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/048b5c8dae644a30a4995a888dae9902.mp4",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "bfc34063-99af-40e2-8d41-dfeff14ded3d": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Paso 4",
+            "title": "",
+            "subtitle": "<h2><strong>Sencillo de instalar por uno mismo<\/strong><\/h2>",
+            "content": "",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>Instalar los enganches<\/p>",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "video",
+            "mp4_video_url_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e400930de3894f93a7874d63d2eabd58.mp4",
+            "mp4_video_url_m_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e400930de3894f93a7874d63d2eabd58.mp4",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "14751da4-2d7f-4fcd-b173-2d28aae0f1e5": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Paso 5",
+            "title": "",
+            "subtitle": "<h2><strong>Sencillo de instalar por uno mismo<\/strong><\/h2>",
+            "content": "",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>Instalar en la barandilla del balcón<\/p><p>*La barandilla del balcón debe ser de tipo enrejado con una anchura de &lt;80mm y una capacidad de carga de ≥50 kg.<\/p>",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "video",
+            "mp4_video_url_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/d27546d7f9cb4674a2610227a64518d6.mp4",
+            "mp4_video_url_m_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/d27546d7f9cb4674a2610227a64518d6.mp4",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        }
+      },
+      "block_order": [
+        "73338ef4-53e9-4e77-811c-21e16c1f2885",
+        "59d9bf76-ce90-4a0f-bbe9-d04544b4050d",
+        "bb0a73cf-d3e3-43e4-91a7-a442c46e5ae5",
+        "bfc34063-99af-40e2-8d41-dfeff14ded3d",
+        "14751da4-2d7f-4fcd-b173-2d28aae0f1e5"
+      ],
+      "settings": {
+        "section_id": ""
+      }
+    },
+    "b5e27793-ddbf-4a2b-97b6-a051ed6d0714": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--19068556018007__b5e27793-ddbf-4a2b-97b6-a051ed6d0714-1686833531bddde80e-0": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/single_axis_solar_tracker_9.webp",
+            "mobile_image": "shopify:\/\/shop_images\/single_axis_solar_tracker_9.webp",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Contenido de la caja",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--19068556018007__b5e27793-ddbf-4a2b-97b6-a051ed6d0714-1686833531bddde80e-0"
+      ],
+      "settings": {
+      }
+    },
+    "88e31da1-8fe6-4ee7-82e0-9793cc57aa85": {
+      "type": "pdp-specs",
+      "blocks": {
+        "e4d6d4b6-4c84-4d08-a25b-ed471b02b7b8": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso neto",
+            "content": "<p>11 kg (24 lb)<\/p>"
+          }
+        },
+        "33cd8e2e-7088-4075-b143-b78483f5c60b": {
+          "type": "contents",
+          "settings": {
+            "title": "Dimensión",
+            "content": "<p>1340 × 223 × 88 mm<\/p>"
+          }
+        },
+        "4cf4a980-d864-4fb7-b575-29483cb241d8": {
+          "type": "contents",
+          "settings": {
+            "title": "Resistencia al viento",
+            "content": "<p>NIVEL 6<\/p>"
+          }
+        },
+        "b8bd5c0d-f8b6-4c4f-897b-7abbcc414548": {
+          "type": "contents",
+          "settings": {
+            "title": "Ángulo ajustable",
+            "content": "<p>10°-85°<\/p>"
+          }
+        },
+        "7558d7f8-c5f7-4db8-97f7-62a1fc48e404": {
+          "type": "contents",
+          "settings": {
+            "title": "Grado de impermeabilidad",
+            "content": "<p>IP68<\/p>"
+          }
+        },
+        "09692ae7-7ddd-486a-a4f2-16a9be5693bf": {
+          "type": "contents",
+          "settings": {
+            "title": "Máx. panel solar soportado",
+            "content": "<p>25 kg,1000-2500 × 600-1200 × 30-40 mm <\/p>"
+          }
+        },
+        "ad04e706-6b28-44b1-bc25-1cf3e6b99352": {
+          "type": "contents",
+          "settings": {
+            "title": "Aplicación",
+            "content": "<p>iOS, Android<\/p>"
+          }
+        },
+        "73967c5e-8cfe-4889-9fae-4a70684f5981": {
+          "type": "contents",
+          "settings": {
+            "title": "Batería interna",
+            "content": "<p>NCM, 36Wh，500 ciclos al 80%+ de capacidad<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "e4d6d4b6-4c84-4d08-a25b-ed471b02b7b8",
+        "33cd8e2e-7088-4075-b143-b78483f5c60b",
+        "4cf4a980-d864-4fb7-b575-29483cb241d8",
+        "b8bd5c0d-f8b6-4c4f-897b-7abbcc414548",
+        "7558d7f8-c5f7-4db8-97f7-62a1fc48e404",
+        "09692ae7-7ddd-486a-a4f2-16a9be5693bf",
+        "ad04e706-6b28-44b1-bc25-1cf3e6b99352",
+        "73967c5e-8cfe-4889-9fae-4a70684f5981"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Especificaciones"
+      }
+    },
+    "1676887592a3dc4fd0": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_F447Py": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_F447Py"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    },
+    "aa9fa9f1-318f-46ac-a42b-20093aeb988b": {
+      "type": "pdp-image-with-text",
+      "blocks": {
+        "a5b310ca-5ec0-44b2-906e-0cdc102e10c1": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image_height": 310,
+            "mobile_image_height": 250,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "",
+            "subtext_bottom": "",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "a5b310ca-5ec0-44b2-906e-0cdc102e10c1"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_id": "",
+        "alignment": "center",
+        "layout": "stacked",
+        "stacked_row": "1",
+        "mobile_stacked_row": "1",
+        "slider_row": "1",
+        "mobile_slider_row": "1"
+      }
+    }
+  },
+  "order": [
+    "daf26638-f596-4384-b150-72d380a3268d",
+    "sticky-product-bar",
+    "main",
+    "product-recommendations",
+    "1b15ef12-7151-41be-b166-9dcc56820b5a",
+    "a6296812-3a63-4732-a327-259c99a92d95",
+    "bf07ad52-0f72-43c0-94ee-f75805bd7182",
+    "7f40b4cb-c2e1-4353-be14-e790eeb06711",
+    "17a473c8-21bd-45fe-a9a3-0d647b5df5b7",
+    "77e26703-40a6-4d35-b76d-ce90bee6ccae",
+    "a463c04b-62ca-4aa6-8a3d-82c1c94eadcd",
+    "b5e27793-ddbf-4a2b-97b6-a051ed6d0714",
+    "88e31da1-8fe6-4ee7-82e0-9793cc57aa85",
+    "1676887592a3dc4fd0",
+    "aa9fa9f1-318f-46ac-a42b-20093aeb988b"
+  ]
+}

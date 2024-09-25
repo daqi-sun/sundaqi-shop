@@ -1,0 +1,126 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "Product Intro",
+  "id": "product-intro",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "class": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "type": "checkbox",
+      "id": "atb_enable_checkbox",
+      "label": "Enable section",
+      "default": true,
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "blocks",
+      "label": "Block ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": "",
+      "repeatable": "section"
+    },
+    {
+      "id": "block_title",
+      "type": "text",
+      "label": "Heading",
+      "default": "Product Intro Copy",
+      "repeatable": "section",
+      "info": ""
+    },
+    {
+      "id": "block_description",
+      "type": "text",
+      "label": "Description",
+      "default": "Long lasting life span",
+      "repeatable": "section",
+      "info": ""
+    },
+    {
+      "id": "block_background_image",
+      "type": "image_picker",
+      "label": "Background image",
+      "repeatable": "section",
+      "info": ""
+    },
+    {
+      "id": "block_background_image_mobile",
+      "type": "image_picker",
+      "label": "Background Image Mobile",
+      "repeatable": "section",
+      "info": ""
+    }
+  ],
+  "warnings": [
+    "repeating image fields may not be properly handled"
+  ]
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_enable_checkbox' -%}
+{%- assign atb_enable_checkbox = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_title' -%}
+{%- assign block_title = val -%}
+{%- include 'atb-render' field:'block_description' -%}
+{%- assign block_description = val -%}
+{%- include 'atb-render' field:'block_background_image' -%}
+{%- assign block_background_image = val -%}
+{%- include 'atb-render' field:'block_background_image_mobile' -%}
+{%- assign block_background_image_mobile = val -%}
+{%- if atb_enable_checkbox == blank -%}
+{%- assign atb_enable_checkbox = false -%}
+{%- else -%}
+{%- assign atb_enable_checkbox = true -%}
+{%- endif -%}
+{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section ">
+{% if atb_enable_checkbox %}
+  <section class="product-intro" id="product-intro">
+    {% for block0 in blocks %}
+{%- assign my_image_key1 = block_background_image_mobile[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image1 = images[my_image_key1] -%}
+{%- assign my_image_key0 = block_background_image[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image0 = images[my_image_key0] -%}
+      <div class="white-bg my-md-5 py-md-3 my-4">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7 mx-auto">
+              <div class="intro-heading">
+                <h2>{{ block_title[forloop.index0]}}</h2>
+                <p class="my-3">{{ block_description[forloop.index0]}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="pdp-big-img mt-4">
+            <img class="lazyload desktop-image" data-src="{{ my_image0 | img_url: '1800x' }}">
+            <img class="lazyload mobile-image" data-src="{{ my_image1 | img_url: '1200x' }}">
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </section>
+{% endif %}
+
+
+<style>
+</style>
+
+<script type="application/javascript">
+</script>
+</section>

@@ -1,0 +1,109 @@
+{{ 'sp-v2.css' | asset_url | stylesheet_tag }}
+{{ 'jquery.min.js' | asset_url | script_tag }}
+
+<div class="sp-banner">
+  {% assign image = section.settings.mobileImage %}
+  {% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+  <div
+    class="custom-img__wrapper display--mobile"
+    style="padding-top: {{ pt }}%;"
+  >
+    <img
+      class="custom-img"
+      srcset="
+        {{ image | img_url: '500x' }} 500w,
+        {{ image | img_url: '600x' }} 600w,
+        {{ image | img_url: 'master' }} 700w,
+      "
+      alt="{{ image.alt }}"
+    >
+    <div class="sp-banner__image--overlay"></div>
+  </div>
+
+  {% assign image = section.settings.image %}
+  {% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+  <div
+    class="custom-img__wrapper display--desktop"
+    style="padding-top: {{ pt }}%;"
+  >
+    <img
+      class="custom-img"
+      srcset="
+        {{ image | img_url: '1000x' }} 1000w,
+        {{ image | img_url: '1200x' }} 1200w,
+        {{ image | img_url: '1400x' }} 1400w,
+        {{ image | img_url: 'master' }} 1600w,
+      "
+      alt="{{ image.alt }}"
+      loading="lazy"
+    >
+    <div class="sp-banner__image--overlay"></div>
+  </div>
+
+  <div class="sp-banner__content container--default" x-data="{ open: false }">
+    {% if section.settings.title != blank %}
+      <h1 class="sp-banner__content__h1 text--black">
+        {{ section.settings.title }}
+      </h1>
+    {% endif %}
+    {% if section.settings.subtitle != blank %}
+      <p class="sp-banner__content__p text--black">
+        {{ section.settings.subtitle -}}
+        <br class="display--mobile">
+        <svg
+          @click="open = !open"
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          :style="open ? 'transform: rotate(180deg);' : ''"
+        >
+          <circle cx="10" cy="10" r="10" transform="rotate(90 10 10)" fill="black"/>
+          <path d="M9.63235 13.75L16.25 8.96269L16.25 6.25L9.63235 11.0373L3.75 6.25L3.75 8.96269L9.63235 13.75Z" fill="white"/>
+        </svg>
+      </p>
+    {% endif %}
+    {% if section.settings.description != blank %}
+      <div class="sp-banner__content__description-wrapper" x-show="open">
+        <p class="sp-banner__content__description text--white">{{ section.settings.description }}</p>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "SP Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobileImage",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title",
+      "default": "Load Shedding Sale"
+    },
+    {
+      "type": "html",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Up to 30% OFF"
+    },
+    {
+      "type": "html",
+      "id": "description",
+      "label": "Description",
+      "default": "Up to 30% OFF"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,291 @@
+.video-section {
+    padding-top: 0;
+    padding-bottom: 54%;
+    height: 0;
+    background-color: #55140A;
+    background-image: url(https://cdn.shopify.com/s/files/1/0431/3789/2516/files/video-section-background.png?v=1669113246);
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+}
+
+.video-container {
+    max-width: 1080px;
+    width: 80%;
+    margin: auto;
+    top: 55%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+.embed-container .yt-iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+    display: block;
+}
+.embed-container iframe, .embed-container object, .embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.wish-steps-section {
+    padding-top: 0;
+    padding-bottom: 75%;
+    height: 0;
+    background-color: #55140A;
+    background-image: url(https://cdn.shopify.com/s/files/1/0431/3789/2516/files/wish-backgroud_e574a189-eead-4ec5-9a17-a10f7cdaf00b.png?v=1669212475);
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    margin-top: -1px;
+    margin-bottom: -1px;
+}
+
+.wish-steps-section .section-heading-wrapper {
+    margin-bottom: 154px;
+}
+
+.wish-steps-section .section-heading-wrapper .title-h3 {
+    margin-bottom: 26px;
+}
+
+.wish-steps-section .section-heading-wrapper p {
+    font-size: 21px;
+}
+
+.section-container {
+    max-width: 1450px;
+    margin: auto;
+}
+
+.wishlist-steps-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 95px;
+}
+
+.wishlist-steps-container .steps-container {
+    flex: 0 0 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.wishlist-steps-container .steps-container .wishlist-heading {
+    font-size: 105px!important;
+    line-height: .7;
+    color: #FFAE00!important;
+    height: 65px;
+    overflow: hidden;
+}
+
+.wishlist-steps-container .steps-container p {
+    font-size: 20px;
+    line-height: 1.3;
+    padding-top: 15px;
+}
+
+@media (max-width: 1560px) {
+    .wish-steps-section {
+        padding-bottom: 80%;
+    }
+}
+
+@media (max-width: 1470px) {
+    .wish-steps-section {
+        padding-bottom: 90%;
+    }
+    .section-container {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .video-section {
+        padding-bottom: 60%;
+    }
+}
+
+@media (max-width: 1280px) {
+    .wish-steps-section {
+        padding-bottom: 100%;
+    }
+    .wish-steps-section .section-heading-wrapper {
+        margin-bottom: 70px;
+    }
+}
+
+@media (max-width: 1150px) {
+    .wishlist-steps-container {
+        column-gap: 10px;
+        row-gap: 40px;
+        justify-content: left;
+    }
+    .wish-steps-section .section-heading-wrapper {
+        margin-bottom: 40px;
+    }
+    .wishlist-steps-container .steps-container {
+        flex: 0 0 32%
+    }
+}
+
+@media (max-width: 1023px) {
+    .wish-steps-section {
+        padding-bottom: 100%;
+    }
+}
+
+@media (max-width: 980px) {
+    .wish-steps-section {
+        padding-bottom: 120%;
+    }
+}
+
+@media (max-width: 890px) {
+    .wish-steps-section {
+        padding-bottom: 130%;
+    }
+}
+
+@media (max-width: 850px) {
+    .section-container {
+        padding-right: 17px;
+        padding-left: 17px;
+    }
+    .wish-steps-section {
+        padding-top: 0;
+        height: 0;
+        background-color: #551508;
+        background-image: url(https://cdn.shopify.com/s/files/1/0431/3789/2516/files/wish-background-mobile.png?v=1669219953);
+        background-position: center right;
+        background-size: cover;
+        position: relative;
+    }
+    .wishlist-steps-container {
+        column-gap: 0;
+        justify-content: flex-start;
+        row-gap: 24px;
+    }
+    .wishlist-steps-container .steps-container .wishlist-heading {
+        height: 30px;
+    }
+    .wishlist-steps-container .steps-container img {
+        height: 30px;
+    }
+    .wish-steps-section .section-heading-wrapper p {
+        font-size: 10px;
+    }
+    .wishlist-steps-container .steps-container {
+        flex: 0 0 50%
+    }
+    .wishlist-steps-container .steps-container p {
+        font-size: 12px;
+        padding-top: 6px;
+    }
+    .wishlist-steps-container .steps-container .wishlist-heading {
+        font-size: 44px!important;
+    }
+    .wish-steps-section .title-h3 {
+        font-size: 16px!important;
+    }
+    .wish-steps-section .title-h3:before,
+    .wish-steps-section .title-h3:after{
+        flex: 1 1 20%;
+    }
+}
+
+@media (max-width: 650px) {
+    .wish-steps-section {
+        padding-bottom: 120%;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .wishlist-steps-container .steps-container .wishlist-heading {
+        font-size: 26px!important;
+    }
+    .wishlist-steps-container .steps-container img {
+        height: 18px;
+    }
+    .wishlist-steps-container .steps-container p {
+        font-size: 11px!important;
+        letter-spacing: -1px;
+    }
+    .wishlist-steps-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .wishlist-steps-container .steps-container .wishlist-heading {
+        height: 18px;
+    }
+
+}
+
+@media (max-width: 560px) {
+    .wish-steps-section {
+        padding-bottom: 140%;
+    }
+}
+
+@media (max-width: 460px) {
+    .wish-steps-section {
+        padding-bottom: 160%;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .wish-steps-section .section-heading-wrapper {
+        padding-left: 26px;
+        padding-right: 26px;
+    }
+    .wishlist-steps-container {
+        justify-content: space-between;
+    }
+    .wishlist-steps-container .steps-container {
+        flex: 0 0 48%
+    }
+}
+
+@media (max-width: 390px) {
+    .wishlist-steps-container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .wish-steps-section {
+        padding-bottom: 200%;
+    }
+}
+
+
+@media (max-width: 370px) {
+    .wish-steps-section {
+        padding-bottom: 190%;
+    }
+    .wish-steps-section .section-heading-wrapper {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .wishlist-steps-container .steps-container p br {
+        display: none;
+    }
+}
+
+@media (max-width: 340px) {
+    .wish-steps-section {
+        padding-bottom: 200%;
+    }
+}

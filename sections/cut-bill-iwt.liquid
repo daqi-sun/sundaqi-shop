@@ -1,0 +1,67 @@
+{% liquid
+  assign top_title = 'cut-bill.iwt.top_title' | t
+  assign title = 'cut-bill.iwt.title' | t
+  assign text = 'cut-bill.iwt.text' | t
+  assign text1 = 'cut-bill.iwt.descriptions.text1' | t
+  assign text2 = 'cut-bill.iwt.descriptions.text2' | t
+  assign text3 = 'cut-bill.iwt.descriptions.text3' | t
+  assign text4 = 'cut-bill.iwt.descriptions.text4' | t
+  assign text5 = 'cut-bill.iwt.descriptions.text5' | t
+  assign product_info = 'cut-bill.iwt.product_info' | t
+  assign learn_more = 'cut-bill.buttons.learn_more' | t
+%}
+<div class="cut-bill-section-wrapper w-90 cut-bill-iwt">
+  <div class="iwt-title-with-divider">
+    <div class="iwt-title-with-divider__divider"></div>
+    <div>{{ top_title }}</div>
+    <div class="iwt-title-with-divider__divider"></div>
+  </div>
+
+  <h2>{{ title }}</h2>
+  <div class="iwt-text">{{ text }}</div>
+
+  <div class="iwt-desc">
+    <div>{{ text1 }}</div>
+    <div>{{ text2 }}</div>
+    <div>{{ text3 }}</div>
+    <div>{{ text4 }}</div>
+  </div>
+  <div class="iwt-text-5">{{ text5 }}</div>
+
+  <div class="iwt-img-wrapper">
+    {% assign image = section.settings.mobileImage %}
+    {% render 'th-image--mobile', image: image %}
+
+    {% assign image = section.settings.image %}
+    {% render 'th-image--desktop', image: image %}
+  </div>
+
+  <a class="cut-bill-btn mx-auto" href="{{ section.settings.url }}">
+    {{- learn_more -}}
+  </a>
+
+  <div class="iwt-product-info">{{ product_info }}</div>
+</div>
+
+{% schema %}
+{
+  "name": "Image with text 1",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobileImage",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "URL"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,237 @@
+{% liquid
+  assign sectionBoxId = 'imageLink_' | append: section.id
+  assign closeBtnId = 'imageLinkClose_' | append: section.id
+
+  assign _pc_image_width = section.settings.pc_image_width | default: '220px'
+  assign _pc_image_height = section.settings.pc_image_height | default: '220px'
+  assign _m_image_width = section.settings.m_image_width | default: '110px'
+  assign _m_image_height = section.settings._m_image_height | default: '110px'
+
+  #region include urls
+  # check if the current page is in the include_urls
+  assign page_url = request.path
+  assign include_urls = section.settings.include_urls | split: ','
+  assign is_include = false
+  for specific_url in include_urls
+    # specific_url eg. \/products/abc,
+    # page_url eg. /products/abc
+    # url eg. /products/abc
+    assign url = specific_url | strip | replace: '\/', '/' | replace: ',', ''
+    if url == page_url
+      assign is_include = true
+    endif
+  endfor
+  #endregion include urls
+%}
+
+{% if is_include %}
+
+  <style>
+    :root {
+      --image-link-box-width: {{ _pc_image_width }};
+      --image-link-box-height: {{ _pc_image_height }};
+      --image-link-box-width-mobile: {{ _m_image_width }};
+      --image-link-box-height-mobile: {{ _m_image_height }};
+    }
+    .image-link-box {
+      display: block;
+      width: var(--image-link-box-height);
+      height: var(--image-link-box-height);
+
+      position: fixed;
+      bottom: 70px;
+      left: 0;
+      /* 需要比Add To Card高 */
+      z-index: 1000;
+      transition: bottom 0.3s ease-in-out;
+    }
+
+    .image-link-box.has-add-to-cart {}
+  .image-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .image-link-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .img-pc {
+    display: block;
+  }
+  .img-mobile {
+    display: none;
+  }
+  .image-link-close {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(50%, 0);
+  }
+
+  @media screen and (max-width: 750px) {
+    :root {
+      --image-link-box-width: var(--image-link-box-width-mobile);
+      --image-link-box-height: var(--image-link-box-height-mobile);
+    }
+
+
+    .img-pc {
+      display: none;
+    }
+    .img-mobile {
+      display: block;
+    }
+  }
+  </style>
+
+  <div class="image-link-box" id="{{ sectionBoxId }}">
+    <a
+      class="image-link"
+      href="{{ section.settings.link }}"
+      {%- if section.settings.new_tab -%}
+      target="_blank"
+      {%- endif -%}>
+      <img
+        class="image-link-img img-pc"
+        src="{{ section.settings.pc_image | image_url }}"
+        alt=""
+        loading="lazy" width="{{ _pc_image_width }}" height="{{ _pc_image_height }}">
+      <img
+        class="image-link-img img-mobile"
+        src="{{ section.settings.m_image | image_url }}"
+        alt=""
+        loading="lazy" width="{{ _m_image_width }}" height="{{ _m_image_height }}"></a>
+    <div class="image-link-close" id="{{ closeBtnId }}">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 2.79999C14.5403 2.79999 16.8403 3.82987 18.5052 5.4948C20.1702 7.15973 21.2001 9.45972 21.2001 12C21.2001 14.5403 20.1702 16.8402 18.5052 18.5052C16.8403 20.1701 14.5403 21.2 12 21.2C9.45978 21.2 7.15979 20.1701 5.49486 18.5052C3.82993 16.8402 2.80005 14.5403 2.80005 12C2.80005 9.45972 3.82993 7.15973 5.49486 5.4948C7.15979 3.82987 9.45978 2.79999 12 2.79999Z"
+          stroke="#ACACAC"
+          stroke-width="1.6"></path>
+        <path
+          d="M8.5 8.5L15.5 15.5M15.5 8.5L8.5 15.5"
+          stroke="#ACACAC"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path>
+      </svg>
+    </div>
+  </div>
+
+  <script>
+        const box = document.querySelector("#{{ sectionBoxId }}")
+        const btn = document.querySelector("#{{ closeBtnId }}")
+        if (btn) {
+        btn.addEventListener("click", function (e) {
+          e.stopPropagation()
+          box.style.display = "none"
+        })
+        }
+    
+        function cleanAddToCart() {
+          box.style.bottom = ``
+          box.classList.remove('has-add-to-cart')
+        }
+        function updateHasAddToCard() {
+          if (window.innerWidth > 750) {
+            cleanAddToCart()
+            return
+          }
+          const addtoCatdBtn = document.querySelector('.enabled_mobile_sticky_btns')
+          if (!addtoCatdBtn) {
+            cleanAddToCart()
+            return
+          }
+          const popup = document.querySelector('.enabled_mobile_sticky_btns .product-form__controls-group--submit')
+          if (!popup) {
+            cleanAddToCart()
+            return 
+          }
+    
+          box.classList.add('has-add-to-cart')
+          const rect = popup.getBoundingClientRect() || {height: 200}
+          const bottom = rect.height + 10
+          box.style.bottom = `${bottom}px`
+        }
+    
+        let timer
+        function handle () {
+          updateHasAddToCard()
+        
+          if (timer) {
+            clearTimeout(timer)
+          }
+    
+          setTimeout(() => {
+            updateHasAddToCard()
+          }, 500)
+        }
+        document.addEventListener("resize", handle)
+        document.addEventListener("scroll", handle)
+        handle()
+  </script>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Image Link",
+    "settings": [
+
+      {
+        "type": "image_picker",
+        "id": "pc_image",
+        "label": "PC Image"
+      },
+      {
+        "type": "text",
+        "id": "pc_image_width",
+        "label": "PC Image Width"
+      },
+      {
+        "type": "text",
+        "id": "pc_image_height",
+        "label": "PC Image Height"
+      },
+      {
+        "type": "image_picker",
+        "id": "m_image",
+        "label": "Mobile Image"
+      },
+      {
+        "type": "text",
+        "id": "m_image_width",
+        "label": "Mobile Image Width"
+      },
+      {
+        "type": "text",
+        "id": "m_image_height",
+        "label": "Mobile Image Height"
+      },
+      {
+        "type": "text",
+        "id": "link",
+        "label": "Link"
+      },
+      {
+        "type": "checkbox",
+        "id": "new_tab",
+        "label": "Open in new tab",
+        "default": true
+      }, {
+        "type": "textarea",
+        "id": "include_urls",
+        "label": "Include Urls",
+        "info": "Show this banner on the following urls. Leave blank to show on all pages."
+      }
+    ]
+  }
+{% endschema %}

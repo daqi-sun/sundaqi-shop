@@ -1,0 +1,1442 @@
+
+/* Custom Styles */
+
+.custom {
+  width: 100%;
+  overflow: hidden;
+}
+
+.custom * {
+  outline: none;
+}
+
+.custom div {
+  line-height: 0;
+  border: none;
+}
+
+.custom h1,
+.custom h2,
+.custom h3,
+.custom h4,
+.custom p {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  color: #414141;
+}
+
+.custom a, .custom a:hover, .custom a:active, .custom a:visited, .custom a:link, .custom a:focus {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.custom .bg-light-grey {
+  background: #F6F6F6;
+}
+
+.custom .bg-dark-gray {
+  background: #E8E8E8;
+}
+
+.custom .bg-black {
+  background: #181818;
+}
+
+.custom img {
+  max-width: 100%;
+}
+
+.custom .overlay-img {
+  width: 100%;
+}
+
+.custom .pr {
+  position: relative;
+}
+
+.custom .pa {
+  position: absolute;
+}
+
+.custom .pa-cm {
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+}
+
+.custom .pa-c {
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.custom .pa-m {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.custom .fl {
+  float: left;
+}
+
+.custom .fr {
+  float: right;
+}
+
+.custom .tc {
+  text-align: center;
+}
+
+.custom .tl {
+  text-align: left;
+}
+
+.custom .tr {
+  text-align: right;
+}
+
+.custom .color-white {
+  color: #fff!important;
+}
+
+.custom .color-teal {
+  color: #0ECFE2;
+}
+
+.custom .a-button {
+  display: inline-block;
+  padding: 0 31px;
+  height: 50px;
+  line-height: 48px;
+  text-align: center;
+  font-size: 20px;
+  color: #FFFFFF;
+  cursor: pointer;
+  box-sizing: border-box;
+  background-color: #1D1D1D;
+  border-radius: 100px;
+}
+
+.custom .a-button:hover {
+  color: #FFFFFF !important;
+  background-color: #1D1D1D!important;
+}
+
+.custom .container {
+  width: 100%;
+  padding: 0;
+}
+
+.custom .pt100 {
+  padding-top: 100px;
+}
+
+.custom .pt60 {
+  padding-top: 60px;
+}
+
+.custom .mt100 {
+  margin-top: 100px;
+}
+
+.custom .pt150 {
+  padding-top: 150px;
+}
+
+.custom .mt150 {
+  margin-top: 150px;
+}
+
+.custom .img-visibility {
+  visibility: hidden;
+}
+
+.custom .custom_mobile_hidden {
+  display: block;
+}
+
+.custom .custom_mobile_show {
+  display: none;
+}
+
+.custom .title {
+  font-weight: 600 !important;
+}
+
+.custom .big-title {
+  font-size: 50px;
+  line-height: 1em;
+}
+
+.custom .title-h1 {
+  font-size: 50px;
+  line-height: 1em;
+}
+
+.custom .title-h2 {
+  font-size: 48px;
+  line-height: 1em;
+}
+
+.custom .title-h3 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.custom .des {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.custom .des-note {
+  display: block;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.custom .font14 {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.custom .font16 {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.custom .font18 {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.custom .font20 {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.custom .font24 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.custom .font30 {
+  font-size: 30px;
+  line-height: 40px;
+}
+
+.custom .font36 {
+  font-size: 36px;
+  line-height: 42px;
+}
+
+.custom .font60 {
+  font-size: 60px;
+  line-height: 1em;
+}
+
+.custom .text {
+  padding: 0 24px;
+}
+
+.custom .faq-table {
+  width: 100%;
+  line-height: 1.3em;
+}
+
+.custom .faq-table td {
+  padding: 8px 6px;
+}
+
+.custom .faq-table th {
+  padding: 8px 6px;
+  font-size: 18px;
+}
+
+@media (min-width: 799px) {
+  .custom .faq-table th {
+    font-size: 16px;
+  }
+}
+
+.custom .sidebar {
+  padding: 35px 30px 35px 18px;
+  background-color: #ffffff;
+  max-width: 320px;
+}
+
+.custom .sidebar .sidebar-wrap {
+  padding-right: 0;
+  border: none;
+}
+
+.custom .sidebar .sidebar-wrap .sidebar-block {
+  margin: 0;
+  border: none;
+}
+
+.custom .sidebar .sidebar-wrap .toggle {
+  padding-left: 10px;
+  border-bottom: solid 1px #bfbfbf;
+}
+
+.custom .sidebar .sidebar-wrap .toggle_list {
+  padding-left: 10px;
+}
+
+.custom .sidebar .sidebar-wrap .toggle_list li {
+  font-size: 16px;
+}
+
+.custom .sidebar .sidebar-wrap .toggle_list a.active {
+  padding-left: 0;
+  border: none;
+  color: #9cba1a;
+}
+
+@media (min-width: 799px) {
+  .custom .sidebar {
+    position: fixed;
+  }
+}
+
+.custom .page {
+  padding: 40px 40px 60px;
+  background-color: #f2f2f2;
+  margin-left: calc(25% + 20px);
+}
+
+.custom .page .title-h3 {
+  padding-bottom: 35px;
+}
+
+.custom .page p.font14 {
+  color: #717171;
+}
+
+.custom .page a {
+  color: #717171;
+}
+
+.custom .page a:hover {
+  color: #9cba1a;
+}
+
+.custom .page a.a-line {
+  font-weight: normal;
+  text-decoration: underline;
+}
+
+.custom .page .custom-content {
+  padding: 40px;
+  background: #fff;
+}
+
+.custom .page .section:first-child .font18 {
+  padding-top: 0;
+}
+
+.custom .page .section .font18 {
+  padding: 36px 0 24px;
+}
+
+.custom .page .section p.font14 {
+  padding-bottom: 24px;
+}
+
+.custom .page .section p.font14:last-child {
+  padding-bottom: 0;
+}
+
+.custom .page .section a {
+  font-weight: 600;
+}
+
+@media (max-width: 1199px) and (min-width: 799px) {
+  .custom .big-title {
+    font-size: 48px;
+  }
+  .custom .title-h1 {
+    font-size: 48px;
+  }
+  .custom .title-h2 {
+    font-size: 36px;
+  }
+  .custom .font60 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 798px) and (min-width: 768px) {
+  .custom .big-title {
+    font-size: 48px;
+  }
+  .custom .title-h1 {
+    font-size: 48px;
+  }
+  .custom .title-h2 {
+    font-size: 36px;
+  }
+  .custom .font60 {
+    font-size: 30px;
+  }
+  .custom .sidebar {
+    max-width: 100%;
+    margin-top: 60px;
+  }
+  .custom .page {
+    width: 100%;
+    margin-left: 0;
+    background: transparent;
+  }
+}
+
+@media (max-width: 767px) {
+  .custom .big-title {
+    font-size: 36px;
+  }
+  .custom .title-h1 {
+    font-size: 36px;
+  }
+  .custom .title-h2 {
+    font-size: 36px;
+  }
+  .custom .font60 {
+    font-size: 30px;
+  }
+  .custom .des-note {
+    font-size: 16px;
+    color: #414141;
+  }
+  .custom .des {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .custom .a-button {
+    display: inline-block;
+    padding: 0 30px;
+    height: 50px;
+    line-height: 44px;
+    text-align: center;
+    font-size: 20px;
+    color: #ffffff;
+    cursor: pointer;
+    border: 2px solid #1E1E20;
+    box-sizing: border-box;
+    background-color: #212121;
+  }
+  .custom .a-button:hover {
+    color: #fff !important;
+    background-color: #1E1E20!important;
+  }
+  .custom .custom_mobile_hidden {
+    display: none;
+  }
+  .custom .custom_mobile_show {
+    display: block;
+  }
+  .custom .sidebar {
+    max-width: 100%;
+    margin: 0;
+    position: relative;
+    bottom: 0;
+    display: block !important;
+    background: transparent;
+    opacity: 1 !important;
+  }
+  .custom .page {
+    width: 100%;
+    padding: 50px 20px;
+    margin-left: 0;
+  }
+  .custom .page .custom-content {
+    padding: 0;
+    background: transparent;
+  }
+}
+@media (max-width: 375px) {
+
+}
+
+/* End Custom Styles */
+
+html {
+  scroll-behavior: smooth;
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #000;
+}
+
+.icon-jiahao:before {
+  content: "\e616";
+}
+
+.icon-shangjiantou:before {
+  content: "\e60a";
+}
+
+.icon-xiajiantou:before {
+  content: "\e60c";
+}
+
+.icon-dayuhao:before {
+  content: "\e625";
+}
+
+.icon-jianhao:before {
+  content: "\e617";
+}
+.delta-portable-power-station .font-gotham, .delta-portable-power-station .des {
+  font-weight: 500;
+}
+.delta-portable-power-station .font-gotham-bold {
+  font-weight: 700;
+}
+
+.delta-portable-power-station {
+  width: 100%;
+}
+
+.delta-portable-power-station .banner {
+  width: 100%;
+  margin-bottom: -1px;
+}
+.delta-portable-power-station .banner .text {
+  width: 100%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 53%;
+}
+
+.delta-portable-power-station .banner .text .title-h1 {
+  color: #FFFFFF!important;
+  font-size: 80px;
+  line-height: 1.2;
+  margin-bottom: 48px;
+
+}
+.delta-portable-power-station .banner .text .title-h2 {
+  color: #B5B5BB!important;
+  font-size: 36px!important;
+  line-height: 47px;
+  margin-bottom: 24px;
+}
+.delta-portable-power-station .banner .text .banner-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: 7px;
+}
+.delta-portable-power-station .banner .text .banner-button p {
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.delta-portable-power-station .section-2 {
+  width: 100%;
+  padding: 100px;
+  background-color: #212121;
+}
+.delta-portable-power-station .section-2 .section-container {
+  max-width: 1600px;
+  width: 100%;
+  margin: auto;
+}
+
+.delta-portable-power-station .section-2 .section-container .flex-container {
+  display: flex;
+  column-gap: 120px;
+}
+
+.delta-portable-power-station .section-2 .section-container .flex-container .flex-item {
+  flex: 1 0 0;
+  padding: 0;
+}
+
+.delta-portable-power-station .section-2 .section-container .flex-container .flex-item .title-h2 {
+  font-size: 45px!important;
+  line-height: 1.3;
+  margin-bottom: 48px;
+}
+.delta-portable-power-station .section-2 .section-container .flex-container .flex-item .des {
+  font-size: 18px!important;
+  line-height: 1.3;
+  color: #A1A1A6;
+}
+.delta-portable-power-station .section-2 .des.title {
+  font-size: 36px;
+  color: #B5B5BB;
+  line-height: 47px;
+  margin-bottom: 48px;
+  letter-spacing: -1px;
+}
+.delta-portable-power-station .section-2 .des {
+  font-size: 45px;
+  color: #FFFFFF;
+  line-height: 58px;
+  letter-spacing: -1px;
+}
+
+.delta-portable-power-station .section-common {
+  width: 100%;
+}
+
+.delta-portable-power-station .section-3.section-common {
+  width: 100%;
+  background-color: #1d1d1d;
+  padding-left: 100px;
+  padding-right: 100px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+}
+
+.delta-portable-power-station .section-3 .product-swiper-container,
+.delta-portable-power-station .section-4 .product-swiper-container {
+  position: relative;
+}
+.delta-portable-power-station .section-3 .product-swiper-container .title-h6 {
+  font-size: 24px;
+  color: #212121!important;
+  margin-bottom: 16px;
+  margin-top: 16px;
+}
+.delta-portable-power-station .section-common .section-container {
+  max-width: 1586px;
+  margin: 0 auto;
+}
+.delta-portable-power-station .section-common .flex-container {
+  display: flex;
+  justify-content: center;
+}
+.delta-portable-power-station .section-common .section-product {
+  background-color: #f3f3f3;
+  border-radius: 32px;
+  padding: 24px 0 24px;
+  width: calc(33.33% - 24px);
+  margin-right: 24px;
+  margin-bottom: 28px;
+}
+.delta-portable-power-station .section-container .show-products .section-product .img-block {
+  min-height: 190px;
+  display: flex;
+  align-items: center;
+}
+.delta-portable-power-station .section-container .show-products .section-product .img-block img {
+  max-width: 230px;
+  margin: 0 auto;
+  align-items: center;
+}
+.delta-portable-power-station .section-3 .product-swiper-container .swiper-container,
+.delta-portable-power-station .section-4 .product-swiper-container .swiper-container {
+  position: unset!important;
+}
+.delta-portable-power-station .section-3 .swiper-button-prev,
+.delta-portable-power-station .section-4 .swiper-button-prev {
+  background-image: url("https://cdn.shopify.com/s/files/1/0625/0718/8450/files/slider-prev-1.png?v=1662443109") !important;
+  color: transparent;
+  background-repeat: no-repeat;
+  width: 48px!important;
+  height: 48px!important;
+  left: -72px;
+  transition: all 0.3s ease;
+}
+.delta-portable-power-station .section-3 .swiper-button-next,
+.delta-portable-power-station .section-4 .swiper-button-next {
+    background-image: url("https://cdn.shopify.com/s/files/1/0625/0718/8450/files/slider-next-1.png?v=1662443420") !important;
+    color: transparent;
+    background-repeat: no-repeat;
+    width: 48px!important;
+    height: 48px!important;
+    right: -72px;
+}
+.delta-portable-power-station .section-3 .swiper-button-prev.swiper-button-disabled,
+.delta-portable-power-station .section-4 .swiper-button-prev.swiper-button-disabled {
+    background-image: url("https://cdn.shopify.com/s/files/1/0625/0718/8450/files/slider-prev-disabled.png?v=1662443718") !important;
+}
+.delta-portable-power-station .section-3 .swiper-button-next.swiper-button-disabled,
+.delta-portable-power-station .section-4 .swiper-button-next.swiper-button-disabled {
+    background-image: url("https://cdn.shopify.com/s/files/1/0625/0718/8450/files/slider-next-disabled.png?v=1662444312") !important;
+}
+.delta-portable-power-station .section-3 .swiper-button-prev:hover,
+.delta-portable-power-station .section-4 .swiper-button-prev:hover {
+    background-image: url("https://cdn.shopify.com/s/files/1/0625/0718/8450/files/slider-prev-hover.png?v=1662444318")!important;
+    transition: all 0.3s ease;
+}
+.delta-portable-power-station .section-3 .swiper-button-next:hover,
+.delta-portable-power-station .section-4 .swiper-button-next:hover {
+    background-image: url("https://cdn.shopify.com/s/files/1/0625/0718/8450/files/slider-next-hover.png?v=1662444318")!important;
+    transition: all 0.3s ease;
+}
+.delta-portable-power-station .section-3 .product-swiper-container .swiper-container-horizontal>.swiper-pagination-bullets {
+  bottom: -60px;
+}
+.delta-portable-power-station .section-4 .product-swiper-container .product-dropdown-swiper.swiper-container-horizontal>.swiper-pagination-bullets {
+    bottom: -63px;
+}
+.delta-portable-power-station .section-3 .product-swiper-container .swiper-pagination-bullet,
+.delta-portable-power-station .section-4 .product-swiper-container .swiper-pagination-bullet {
+    background: #8e8e8e;
+}
+.delta-portable-power-station .section-3 .product-swiper-container .swiper-pagination-bullet-active,
+.delta-portable-power-station .section-4 .product-swiper-container .swiper-pagination-bullet-active {
+    background: #FFFFFF;
+}
+.delta-portable-power-station .section-common .product-serives {
+  width: 50%;
+  margin-left: -1px;
+}
+.delta-portable-power-station .section-common .product-serives .text {
+  bottom: 200px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 100%;
+}
+.delta-portable-power-station .section-common .product-serives .text .title-h3 {
+  font-size: 36px;
+  color: #1d1d1d!important;
+}
+.delta-portable-power-station .section-common .product-serives .text .a-button {
+  font-size: 24px;
+  padding: 0 40px;
+  line-height: 45px;
+  margin-top: 20px;
+  border: 2px #1d1d1d solid;
+  z-index: 5;
+}
+
+.delta-portable-power-station .section-show-product {
+  width: 100%;
+  background: #1D1D1D;
+  padding: 204px 100px 160px;
+  margin-bottom: -1px;
+}
+.delta-portable-power-station .product-parameters .title-h3 {
+  font-size: 36px;
+  line-height: 1.1em;
+  color: #fff!important;
+}
+.delta-portable-power-station .product-parameters .show-me-button {
+  border: 2px solid #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 28px;
+  font-size: 18px;
+  line-height: 1.3em;
+  font-weight: 600;
+  width: 180px;
+  height: 48px;
+  background: #1D1D1D;
+  margin-top: 40px;
+  color: #fff;
+}
+.delta-portable-power-station .product-parameters .show-me-button .iconfont {
+  font-size: 24px;
+  position: relative;
+  color: #fff;
+}
+.delta-portable-power-station .product-parameters .show-me {
+  margin: 113px auto 0;
+  display: none;
+}
+.delta-portable-power-station .product-parameters .show-me .flex-container {
+  display: flex;
+  justify-content: center;
+  max-width: 1460px;
+  margin: 0 auto;
+}
+.delta-portable-power-station .product-parameters .show-me .bg-light-grey {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.delta-portable-power-station .product-parameters .show-me .bg-dark-gray {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.delta-portable-power-station .product-parameters .show-me .product-parameter {
+  border-radius: 32px;
+  padding-top: 46px;
+  width: calc(33.33% - 24px);
+  margin-right: 24px;
+  margin-bottom: 28px;
+}
+.delta-portable-power-station .product-parameters .show-me .title-h6 {
+  font-size: 18px;
+  color: #6e6e73!important;
+  line-height: 1.2em;
+  margin-bottom: 16px;
+}
+.delta-portable-power-station .product-parameters .show-me p {
+  line-height: 1.5em;
+}
+.delta-portable-power-station .product-parameters .show-me .capacity {
+  font-size: 36px;
+  color: #1d1d1d;
+}
+.delta-portable-power-station .product-parameters .show-me .other-parameter {
+  font-size: 18px;
+}
+.delta-portable-power-station .product-parameters .show-me .parameter-spacing {
+  padding: 32px 0;
+}
+.delta-portable-power-station .product-parameters .show-me .divider {
+  position: relative;
+  padding: 20px 0;
+}
+.delta-portable-power-station .product-parameters .show-me .divider:after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  background: #707070;
+  content: "";
+  height: 2px;
+  width: 80%;
+  opacity: .5;
+}
+
+.delta-portable-power-station .section-5 {
+  width: 100%;
+  padding: 0 0 100px;
+  background-color: #1d1d1d;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.delta-portable-power-station .section-5 .section-content {
+  margin: 0 auto;
+}
+.delta-portable-power-station .section-5 .section-content .section-left {
+  width: 49%;
+  display: inline-block;
+}
+.delta-portable-power-station .section-5 .section-content .section-right {
+  width: 45%;
+  display: inline-block;
+}
+.delta-portable-power-station .section-5 .section-content .section-img {
+  width: 100%;
+}
+.delta-portable-power-station .section-5 .section-content .section-img img {
+  width: 100%;
+}
+.delta-portable-power-station .section-5 .section-content .title-h2 {
+  font-size: 45px!important;
+  color: #FFFFFF!important;
+  line-height: 58px;
+  margin-bottom: 32px;
+}
+.delta-portable-power-station .section-5 .section-content .text {
+  padding: 0;
+  margin: 100px 0 100px;
+}
+/* .delta-portable-power-station .section-5 .section-content .section-right .text {
+  padding-right: 20px;
+} */
+
+.delta-portable-power-station .section-5 .section-content .des {
+  font-size: 18px;
+  color: #B5B5BB;
+  line-height: 23px;
+  margin-bottom: 24px;
+}
+.delta-portable-power-station .section-5 .section-content .des .color-white {
+  color: #FFFFFF;
+}
+.delta-portable-power-station .section-5 .section-content .section-left .text {
+  float: right;
+}
+
+.delta-portable-power-station .section-5 .section-bottom .section-right .text {
+    margin: 0;
+    position: unset;
+}
+
+.delta-portable-power-station .section-6 {
+  width: 100%;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  padding-left: 100px;
+  padding-right: 100px;
+  background-color: #1d1d1d;
+}
+.delta-portable-power-station .section-6 .bsection-container {
+  max-width: 1616px;
+  margin: 0 auto;
+}
+.delta-portable-power-station .section-6 .faq-block {
+  max-width: 1730px;
+  margin: 0 auto;
+}
+.delta-portable-power-station .section-6 .faq-block .title-h2 {
+  font-size: 36px!important;
+  line-height: 1.1em;
+  color: #FFFFFF!important;
+}
+.delta-portable-power-station .section-6 .faq-block .show-me-button {
+  border: 2px solid #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 28px;
+  font-size: 25px;
+  line-height: 1.3em;
+  font-weight: 600;
+  width: 256px;
+  height: 55px;
+  background: #1d1d1d;
+  margin-top: 36px;
+  color: #FFFFFF;
+}
+.delta-portable-power-station .section-6 .faq-block .show-me-button .iconfont {
+  font-size: 24px;
+  color: #FFFFFF;
+}
+.delta-portable-power-station .section-6 .faq-block .show-me {
+  margin: 82px 0 0;
+  display: none;
+}
+.delta-portable-power-station .section-6 .faq-block .question {
+  border-top: 2px solid #FFFFFF;
+  padding: 64px 40px;
+  text-align: left;
+  display: block;
+}
+.delta-portable-power-station .section-6 .faq-block .last-question {
+  border-bottom: 2px solid #FFFFFF;
+}
+.delta-portable-power-station .section-6 .faq-block .question .title-h3 {
+  color: #FFFFFF!important;
+  font-size: 38px;
+  line-height: 1.3em;
+  cursor: pointer;
+}
+.delta-portable-power-station .section-6 .faq-block .question .title-h3 .iconfont {
+  font-size: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  color: #FFFFFF;
+}
+.delta-portable-power-station .section-6 .faq-block .question .des {
+  padding-top: 30px;
+  display: none;
+}
+.delta-portable-power-station .section-6 .faq-block .question .des a {
+  color: #C0C0C0;
+  /* text-decoration: underline; */
+}
+.delta-portable-power-station .section-6 .faq-block .question .des a:hover {
+  color: #0ecfe2;
+  text-decoration: underline!important;
+}
+.delta-portable-power-station .section-6 .faq-block .question p {
+  line-height: 1.2em;
+  font-size: 20px;
+  color: #FFFFFF;
+}
+.delta-portable-power-station .section-6 .question-container {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  align-items: baseline;
+  column-gap: 10px;
+}
+
+.delta-portable-power-station .section-6 .question-container .plus.active,
+.delta-portable-power-station .section-6 .question-container .minus.active {
+  display: inline;
+}
+.delta-portable-power-station .section-6 .question-container .plus,
+.delta-portable-power-station .section-6 .question-container .minus {
+  display: none;
+}
+.delta-portable-power-station .section-7 {
+  padding: 189px 0 236px;
+}
+.delta-portable-power-station .section-7 .title-h3 {
+  font-size: 64px!important;
+  line-height: 1.2em;
+  margin-bottom: 86px;
+  color: #1D1D1F!important;
+}
+.delta-portable-power-station .section-7 .media-container {
+  display: block;
+  max-width: 1309px;
+  margin: 0 auto;
+}
+
+@media(max-width: 1800px) {
+  .delta-portable-power-station .section-common .product-serives .text {
+    bottom: 180px;
+  }
+}
+
+@media (max-width: 1680px) {
+  .delta-portable-power-station .section-common .product-serives .text {
+    bottom: 160px;
+  }
+  .delta-portable-power-station .product-parameters .show-me .flex-container {
+    max-width: 1420px;
+  }
+  .delta-portable-power-station .section-6 .faq-block .question .title-h3 {
+    font-size: 34px;
+  }
+  .delta-portable-power-station .section-6 .faq-block .question {
+    padding: 54px 40px;
+  }
+}
+@media (max-width: 1560px) {
+  .delta-portable-power-station .section-common .product-serives .text {
+    bottom: 140px;
+  }
+  .delta-portable-power-station .section-5 .section-content.section-bottom {
+    position: relative;
+  }
+  .delta-portable-power-station .section-5 .section-content.section-bottom .section-img {
+    position: absolute;
+    height: 100%;
+    width: 48%;
+    top: 0;
+    left: 0;
+    z-index: 123123;
+    max-width: 48%;
+  }
+  .delta-portable-power-station .section-5 .section-content.section-bottom .section-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .delta-portable-power-station .section-6 .faq-block .question .title-h3 {
+    font-size: 32px;
+  }
+}
+@media (max-width: 1440px) {
+  .delta-portable-power-station .section-common .product-serives .text {
+    bottom: 120px;
+  }
+  .delta-portable-power-station .product-parameters .show-me .flex-container {
+    max-width: 1280px;
+  }
+  .delta-portable-power-station .section-5 .section-content {
+    max-width: 1259px;
+  }
+  .delta-portable-power-station .section-6 .faq-block .show-me {
+    margin: 72px 0 0;
+  }
+  .delta-portable-power-station .section-6 .faq-block .question .title-h3 {
+    font-size: 28px;
+  }
+  .delta-portable-power-station .section-6 .faq-block .question {
+    padding: 44px 40px;
+  }
+  .delta-portable-power-station .section-6 .faq-block .question p {
+    font-size: 18px;
+  }
+  .delta-portable-power-station .section-6 .faq-block .question .des {
+    padding-top: 20px;
+  }
+  .delta-portable-power-station .section-7 {
+    padding: 140px 0 190px;
+  }
+  .delta-portable-power-station .section-7 .media-container {
+    max-width: 1220px;
+  }
+  .delta-portable-power-station .section-7 .title-h3 {
+    font-size: 56px!important;
+    margin-bottom: 60px;
+  }
+}
+@media (max-width: 1300px) {
+  .delta-portable-power-station .banner .text .title-h1 {
+    font-size: 64px;
+  }
+  .delta-portable-power-station .section-2 .section-container .flex-container {
+    column-gap: 60px;
+  }
+  .delta-portable-power-station .section-common .product-serives .text .title-h3 {
+    font-size: 30px;
+  }
+  .delta-portable-power-station .section-common .product-serives .text {
+    bottom: 90px;
+  }
+  .delta-portable-power-station .product-parameters .show-me-button .iconfont {
+    font-size: 20px;
+  }
+  .delta-portable-power-station .section-show-product {
+    padding: 184px 100px 140px;
+  }
+  .delta-portable-power-station .product-parameters .show-me {
+    margin: 90px auto 0;
+  }
+  .delta-portable-power-station .product-parameters .show-me .flex-container {
+    max-width: 1080px;
+  }
+  .delta-portable-power-station .product-parameters .show-me .other-parameter {
+    font-size: 16px;
+  }
+  .delta-portable-power-station .product-parameters .show-me .divider {
+    padding: 15px 0;
+  }
+  .delta-portable-power-station .product-parameters .show-me .product-parameter {
+    border-radius: 24px;
+  }
+  .delta-portable-power-station .product-parameters .show-me .capacity {
+    font-size: 30px;
+  }
+  .delta-portable-power-station .product-parameters .show-me .title-h6 {
+    font-size: 16px;
+  }
+  .delta-portable-power-station .section-5 .section-content .text {
+    margin: 30px 0;
+  }
+  .delta-portable-power-station .section-6 .faq-block .show-me-button {
+    font-size: 20px;
+    width: 200px;
+    height: 50px;
+  }
+  .delta-portable-power-station .section-6 .faq-block .show-me-button .iconfont {
+    font-size: 20px;
+  }
+  .delta-portable-power-station .section-6 .faq-block .show-me-button {
+    margin-top: 25px;
+  }
+  .delta-portable-power-station .section-7 {
+    padding: 120px 0 170px;
+  }
+  .delta-portable-power-station .section-7 .title-h3 {
+    font-size: 48px!important;
+    margin-bottom: 50px;
+  }
+  .delta-portable-power-station .section-7 .media-container {
+    max-width: 1060px;
+  }
+}
+@media (max-width: 1250px) {
+  .delta-portable-power-station .section-6 {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .delta-portable-power-station .section-6 .faq-block .question {
+    padding: 40px 30px
+  }
+  .delta-portable-power-station .section-6 .faq-block .show-me {
+    margin: 62px 0 0;
+  }
+  .delta-portable-power-station .section-6 .faq-block .question .title-h3 {
+    font-size: 24px;
+  }
+}
+@media (max-width: 1100px) {
+  .delta-portable-power-station .section-2 {
+    padding: 100px 24px;
+  }
+  .delta-portable-power-station .section-2 .section-container .flex-container {
+    column-gap: 60px;
+  }
+  .delta-portable-power-station .section-common .product-serives .text .title-h3 {
+    font-size: 24px;
+  }
+  .delta-portable-power-station .section-common .product-serives .text .a-button {
+    margin-top: 10px;
+    font-size: 20px;
+    padding: 0 30px;
+    line-height: 38px;
+    height: 44px;
+    border-radius: 22px;
+  }
+  .delta-portable-power-station .section-common .product-serives .text {
+    bottom: 60px;
+  }
+  .delta-portable-power-station .section-show-product {
+    padding: 164px 100px 120px;
+  }
+  .delta-portable-power-station .product-parameters .show-me .flex-container {
+    max-width: 960px;
+  }
+  .delta-portable-power-station .section-5 {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 100px;
+  }
+  .delta-portable-power-station .section-5 .section-content {
+    max-width: 1037px;
+  }
+  .delta-portable-power-station .section-5 .section-content .title-h2 {
+    font-size: 36px!important;
+    line-height: 47px;
+  }
+  .delta-portable-power-station .section-5 .section-content .des {
+    font-size: 16px;
+    line-height: 21px;
+  }
+  .delta-portable-power-station .section-7 .title-h3 {
+    font-size: 44px!important;
+    margin-bottom: 40px;
+  }
+  .delta-portable-power-station .section-7 .media-container {
+    max-width: 920px;
+  }
+  .delta-portable-power-station .section-7 {
+    padding: 100px 0 140px;
+  }
+}
+@media (max-width: 1023px) {
+  .delta-portable-power-station .banner .text .title-h1 {
+    font-size: 44px;
+  }
+  .delta-portable-power-station .section-2 .section-container .flex-container .flex-item .title-h2 {
+    font-size: 28px!important;
+    margin-bottom: 24px;
+
+  }
+  .delta-portable-power-station .section-2 .section-container .flex-container .flex-item .des {
+    font-size: 16px!important;
+  }
+  .delta-portable-power-station .section-6 {
+    padding-top: 41px;
+    padding-bottom: 41px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .delta-portable-power-station .section-6 .faq-block .show-me {
+    margin: 52px 0 0;
+  }
+  .delta-portable-power-station .section-6 .faq-block .question .title-h3 {
+    font-size: 22px;
+  }
+  .delta-portable-power-station .section-6 .faq-block .question {
+    padding: 30px 20px;
+  }
+}
+@media (max-width: 980px) {
+  .delta-portable-power-station .section-2 .des.title {
+    font-size: 31px;
+    line-height: 42px;
+  }
+  .delta-portable-power-station .section-2 .des {
+    font-size: 40px;
+    line-height: 53px;
+  }
+  .delta-portable-power-station .section-common .product-serives .text .title-h3 {
+    font-size: 22px;
+  }
+  .delta-portable-power-station .section-common .product-serives .text {
+    bottom: 30px;
+  }
+  .delta-portable-power-station .product-parameters .show-me .flex-container {
+    max-width: 740px;
+  }
+  .delta-portable-power-station .product-parameters .show-me .title-h6 {
+    font-size: 14px;
+  }
+  .delta-portable-power-station .product-parameters .show-me .capacity {
+    font-size: 26px;
+  }
+  .delta-portable-power-station .product-parameters .show-me .other-parameter {
+    font-size: 14px;
+  }
+  .delta-portable-power-station .product-parameters .show-me .parameter-spacing {
+    padding: 15px 0;
+  }
+  .delta-portable-power-station .product-parameters .show-me .product-parameter {
+    padding-top: 30px;
+    border-radius: 20px;
+  }
+  .delta-portable-power-station .product-parameters .show-me {
+    margin: 70px auto 0;
+    padding-left: 76px;
+    padding-right: 76px;
+  }
+  .delta-portable-power-station .section-show-product {
+    padding: 144px 24px 100px;
+  }
+  .delta-portable-power-station .section-5 .section-content .text {
+    margin: 30px 0 60px;
+  }
+  .delta-portable-power-station .section-5 .section-content .section-right {
+    width: 48%;
+  }
+  .delta-portable-power-station .section-7 {
+    padding: 80px 0 120px;
+  }
+  .delta-portable-power-station .section-7 .title-h3 {
+    font-size: 40px!important;
+    margin-bottom: 30px;
+  }
+  .delta-portable-power-station .section-7 .media-container {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 767px) {
+  .delta-portable-power-station .section-common .flex-container, .delta-portable-power-station .product-parameters .show-me .flex-container {
+    flex-wrap: wrap;
+  }
+  .delta-portable-power-station .section-common .section-product, .delta-portable-power-station .product-parameters .show-me .product-parameter {
+    width: 100%;
+    margin-right: 0;
+  }
+  .delta-portable-power-station .banner .text .title-h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 32px;
+  }
+  .delta-portable-power-station .banner .text .banner-button {
+    justify-content: center;
+  }
+  .delta-portable-power-station .banner .text .title-h1 .small-title {
+    font-size: 28px;
+  }
+  .delta-portable-power-station .banner .text .title-h2 {
+    color: #A1A1A6!important;
+    font-size: 24px!important;
+    line-height: 31px;
+    margin-bottom: 8px;
+  }
+  .delta-portable-power-station .banner .text {
+    top: 18%;
+    left: 50%;
+  }
+  .delta-portable-power-station .section-2 {
+    padding: 48px 24px;
+  }
+  .delta-portable-power-station .section-2 .section-container .flex-container {
+    flex-wrap: wrap;
+  }
+  .delta-portable-power-station .section-2 .section-container .flex-container .flex-item {
+    flex: 1 0 100%;
+  }
+  .delta-portable-power-station .section-2 .section-container .flex-container .flex-item.text {
+    margin-top: 48px;
+  }
+  .delta-portable-power-station .section-2 .des.title {
+    font-size: 16px;
+    line-height: 21px;
+  }
+  .delta-portable-power-station .section-2 .des {
+    font-size: 24px;
+    line-height: 31px;
+  }
+  .delta-portable-power-station .section-3.section-common {
+    padding-left: 24px;
+    padding-right: 24px;
+    margin-top: -1px;
+    margin-bottom: -1px;
+  }
+  .delta-portable-power-station .section-3.section-common .products-container .swiper-container {
+    position: unset;
+  }
+  .delta-portable-power-station .section-3.section-common .products-container {
+    position: relative;
+  }
+  .delta-portable-power-station .section-3 .product-swiper-portable-power .title-h6 {
+    font-size: 24px;
+    color: #212121;
+  }
+  .delta-portable-power-station .section-3 .product-swiper-portable-power.swiper-container-horizontal>.swiper-pagination-bullets {
+    bottom: -60px;
+  }
+  .delta-portable-power-station .section-3 .product-swiper-portable-power .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: #FFFFFF!important;
+  }
+  .delta-portable-power-station .section-3 .product-swiper-portable-power .swiper-pagination-bullet {
+    background: #8e8e8e!important;
+  }
+  .delta-portable-power-station .product-parameters .show-me {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .delta-portable-power-station .section-4 .swiper-button-next,
+  .delta-portable-power-station .section-4 .swiper-button-prev {
+    display: none;
+  }
+  .delta-portable-power-station .section-4 .product-swiper-container .product-dropdown-swiper.swiper-container-horizontal>.swiper-pagination-bullets {
+    bottom: -41px;
+  }
+  .delta-portable-power-station .section-show-product {
+    padding: 103px 24px 87px;
+  }
+  .delta-portable-power-station .section-common .product-serives {
+    width: 100%;
+  }
+  .delta-portable-power-station .section-common .product-serives .text .title-h3 {
+    font-size: 18px;
+  }
+  .delta-portable-power-station .section-common .product-serives .text .a-button {
+    margin-top: 5px;
+    font-size: 16px;
+    padding: 0 28px;
+    line-height: 36px;
+    height: 40px;
+    border-radius: 20px;
+    color: #FFFFFF;
+    background-color: #1D1D1D;
+  }
+  .delta-portable-power-station .section-common .product-serives .text {
+    bottom: 20px;
+  }
+  .delta-portable-power-station .section-5 .section-content .text {
+    padding: 0 24px;
+    margin: 0 auto;
+  }
+  .delta-portable-power-station .section-5 .section-content .des {
+    font-size: 16px;
+    line-height: 21px;
+  }
+  .delta-portable-power-station .section-5 .section-content .title-h2 {
+    font-size: 28px!important;
+    margin-bottom: 24px;
+    line-height: 36px;
+  }
+  .delta-portable-power-station .section-5 .section-content .section-img {
+    padding-top: 24px;
+  }
+  .delta-portable-power-station .section-5 {
+    padding: 0;
+  }
+  .delta-portable-power-station .section-5 .other-mb-section {
+    margin-top: 48px;
+  }
+  .delta-portable-power-station .section-6 {
+    padding-top: 48px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .delta-portable-power-station .section-7 .media-container {
+    display: none;
+  }
+  .delta-portable-power-station .section-7 {
+    padding: 70px 0 60px;
+  }
+  .delta-portable-power-station .section-7 .title-h3 {
+    font-size: 28px!important;
+    margin-bottom: 20px;
+  }
+  .delta-portable-power-station .section-7 .mobile-media-container {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 365px) {
+  .delta-portable-power-station .banner .text {
+    top: 30%;
+  }
+}
+@media (max-width: 325px) {
+  .delta-portable-power-station .section-5 .section-content .title-h2 {
+    font-size: 24px!important;
+  }
+  .delta-portable-power-station .section-5 .section-content .text {
+    padding: 0 20px;
+    max-width: 100%;
+  }
+  .delta-portable-power-station .section-7 .mobile-media-container {
+    max-width: 95%;
+  }
+}

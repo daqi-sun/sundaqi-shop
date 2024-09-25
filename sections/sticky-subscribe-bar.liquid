@@ -1,0 +1,139 @@
+<div class="subscribe-bar-wrapper section-{{ section.id }}">
+    <div class="subscribe-bar-container">
+        <div class="subscribe-text">{{ section.settings.text }}</div>
+        <div class="subscribe-form">
+            <form
+                id="profileForm"
+                name="ProfileForm"
+                onsubmit="return false;"
+                action="https://media.ecoflow.com/u/register.php"
+                method="get"
+                class="emarsys__form"
+              >
+                <input type="hidden" name="CID" value="1046301189">
+                <input type="hidden" name="f" value="916">
+                <input type="hidden" name="p" value="2">
+                <input type="hidden" name="a" value="r">
+                <input type="hidden" name="SID" value="">
+                <input type="hidden" name="el" value="">
+                <input type="hidden" name="llid" value="">
+                <input type="hidden" name="counted" value="">
+                <input type="hidden" name="c" value="">
+                <input type="hidden" name="optin" value="y">
+                <input type="hidden" name="inp_4426" value="1">
+                <input type="hidden" name="inp_7596" value="2">
+                <div class="contact-form">
+                    <input
+                        type="email"
+                        name="inp_3"
+                        maxlength="255"
+                        value="{{ inp_3 }}"
+                        placeholder="{{ section.settings.email_placeholder }}"
+                        class="Form__Input"
+                        required
+                    >
+                    <div class="input-group__btn-wrapper klaviyo_form_actions">
+                        <button
+                            aria-label="Submit"
+                            tabindex="993"
+                            type="button"
+                            name="submit1"
+                            class="emarsys-form-btn"
+                        >
+                            {{ section.settings.btn_text | default: 'Subscribe' }}
+                        </button>
+                    </div>
+                </div>
+                <div id="successMessage" class="text--white" style="margin-top:4px;display:none;">{{ section.settings.success_text }}</div>
+                <div class="blank-email-error" style="display:none;">{{ section.settings.blank_error_text }}</div>
+                <div class="invalid-email-error" style="display:none;">{{ section.settings.invalid_error_text }}</div>
+              </form>
+              <div class="policy_text">{{ section.settings.policy_text }}</div>
+        </div>
+    </div>
+    <style>
+        .section-{{ section.id }}{ background-color: {{ section.settings.background_color }}; }
+        .section-{{ section.id }} .subscribe-text p,
+        .section-{{ section.id }} .policy_text p,
+        .section-{{ section.id }} #successMessage *{ color: {{ section.settings.text_color }}; }
+        .section-{{ section.id }} .emarsys-form-btn, .section-{{ section.id }} .sticky-subscribe-bar .emarsys-form-btn:hover{ background-color: {{ section.settings.btn_bg_color }}; color: {{ section.settings.btn_text_color }}; }
+    </style>
+</div>
+{% schema %}
+{
+  "name": "Subscribe bar",
+  "class": "sticky-subscribe-bar",
+  "settings": [
+    {
+        "type": "richtext",
+        "id": "text",
+        "label": "Subscription text"
+    },
+    {
+        "type": "text",
+        "id": "email_placeholder",
+        "label": "Email placholder text"
+    },
+    {
+        "type": "text",
+        "id": "btn_text",
+        "label": "Button text"
+    },
+    {
+        "type": "richtext",
+        "id": "policy_text",
+        "label": "Policy text"
+    },
+    {
+        "type": "textarea",
+        "id": "blank_error_text",
+        "label": "Error text if email is blank",
+        "default": "Email: missing data!",
+        "info": "As this text is showing in alert box, HTML tags are not supported."
+    },
+    {
+        "type": "textarea",
+        "id": "invalid_error_text",
+        "label": "Error text if email is invalid",
+        "default": "Email: invalid format!",
+        "info": "As this text is showing in alert box, HTML tags are not supported."
+    },
+    {
+        "type": "richtext",
+        "id": "success_text",
+        "label": "Success text",
+        "default": "<p>Success!</p>"
+    },
+    {
+        "type": "header",
+        "content": "Colors"
+    },
+    {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background color"
+    },
+    {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color"
+    },
+    {
+        "type": "color",
+        "id": "btn_bg_color",
+        "label": "Button background color"
+    },
+    {
+        "type": "color",
+        "id": "btn_text_color",
+        "label": "Button text color"
+    }
+  ],
+  "presets": [
+    {
+        "name": "Subscribe bar",
+        "category":"Custom Sections"
+    }
+  ]
+}
+{% endschema %}

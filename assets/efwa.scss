@@ -1,0 +1,1444 @@
+@import "functions";
+@import "variables";
+@import "mixins";
+@import "transitions";
+@import "grid";
+@import "flex";
+@import "background";
+@import "sizing";
+@import "modal";
+@import "nav";
+
+
+.atb-section{
+    padding-top: 50px;
+    .container, .page-width{ max-width: 1224px; }
+    .rich-text{ padding: 0; }
+
+    .index-section{ padding-top: 35px; padding-bottom: 35px; }
+
+    @media only screen and (min-width: 750px){
+        .index-section{ padding-top: 55px; padding-bottom: 55px; }
+    }
+
+    /*======= POWER KITS =======*/
+    body[data-product="power-kits-power-hub"] &,
+    body[data-product="ac-dc-smart-distribution-panel"] &{
+        .price__pricing-group {
+            display: none;
+        }
+    }
+    [data-page="power-kits-components"] &{
+        .m-0 { display: none; }
+    }
+
+    /*======= DUAL FUEL GENERATOR =======*/
+/* EFFICIENCY */
+.dg200-efficiency > div {
+    width: 50%;
+    display: inline-block;
+    font-size: 30px;
+  color: #44ba27;
+  font-weight: bold;
+  }
+
+  .dg200-efficiency small {
+    display: block;
+    font-size: 13px;
+  color: black;
+  }
+
+  @media (max-width: 768px) {
+  tr.mobile-image {
+    display: table-row !important;
+  }
+
+  section .efwa-container:not(:first-child) {
+    margin-top: 50px;
+  }
+
+  /* EFFICIENCY */
+  #shopify-section-xhbecigrje .efwa-column {
+    padding: 10px 0;
+  }
+
+  #shopify-section-xhbecigrje .efwa-row {
+    flex-direction: column;
+  }
+
+  #shopify-section-suqhvwtsyr .efwa-container:first-child tr:nth-child(2),
+  #shopify-section-suqhvwtsyr .efwa-container:first-child tr:nth-child(5) {
+    color: #7573ff;
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  #shopify-section-suqhvwtsyr .efwa-container:first-child tr:nth-child(3), #shopify-section-suqhvwtsyr .efwa-container:first-child tr:nth-child(6) {
+    font-size: 12px;
+    color: #a6a4a4;
+    text-align: right;
+  }
+
+  #shopify-section-suqhvwtsyr td {
+    white-space: nowrap;
+    padding: 10px 0;
+  }
+
+
+  #shopify-section-suqhvwtsyr .efwa-container:last-child td {
+    text-align: center;
+    width: 50%;
+  padding: 20px 5px;
+    font-size: 12px;
+  }
+
+  #shopify-section-usjvtqqrgr .efwa-container-column {
+    flex-direction: column-reverse;
+    display: flex;
+  }
+  #shopify-section-nzxkajoewz table tr,
+  #shopify-section-nkbwvdazqs  table tr,
+  #shopify-section-gmjgqcayfo table tr {
+  display: flex;
+  flex-direction: column;
+  }
+
+  #shopify-section-gmjgqcayfo table tr td {
+  width: 100% !important;
+  }
+
+  }
+
+  @media (min-width: 768px) {
+  section .efwa-container:not(:first-child) {
+    margin-top: 150px;
+  }
+
+  #shopify-section-icumizuoau table td {
+    width: 25%;
+  }
+
+  tr.desktop-image {
+    display: table-row !important;
+  }
+
+  /* Capacity */
+  #shopify-section-suqhvwtsyr .efwa-container:first-child tr:not(:last-child) td {
+    width: 16%;
+  }
+
+  #shopify-section-suqhvwtsyr .efwa-container:first-child strong {
+  font-size: 18px;
+  }
+
+  #shopify-section-suqhvwtsyr .efwa-container:first-child tr:nth-child(2) {
+    color: #7573ff;
+    font-weight: bold;
+    font-size: 25px;
+  }
+
+  #shopify-section-suqhvwtsyr .efwa-container:first-child tr:nth-child(3) {
+    font-size: 12px;
+    color: #a6a6a6;
+  }
+
+  #shopify-section-suqhvwtsyr .efwa-container:first-child tr:not(:first-child) {
+  text-align: center;
+  }
+
+  #shopify-section-suqhvwtsyr .efwa-container:first-child tr:nth-child(2) td {
+  padding: 20px 0 0 10px;
+  }
+
+  #shopify-section-suqhvwtsyr .efwa-container:first-child tr:nth-child(1) td:first-child,
+  #shopify-section-suqhvwtsyr .efwa-container:first-child tr:nth-child(2) td:nth-child(3),
+  #shopify-section-suqhvwtsyr .efwa-container:first-child tr:nth-child(3) td:nth-child(3) {
+    border-right: 1px solid #e8e8e8;
+  }
+
+  #shopify-section-suqhvwtsyr .efwa-container:first-child tr:nth-child(1) td:last-child,
+  #shopify-section-suqhvwtsyr .efwa-container:first-child tr:nth-child(2) td:nth-child(4),
+  #shopify-section-suqhvwtsyr .efwa-container:first-child tr:nth-child(3) td:nth-child(4) {
+    padding-left: 60px;
+  }
+
+  /* Efficiency */
+  #shopify-section-suqhvwtsyr .efwa-container:last-child td {
+    text-align: center;
+    width: 25%;
+  padding: 25px;
+    font-size: 14px;
+  }
+
+  #shopify-section-suqhvwtsyr .efwa-container:last-child tr:first-child td {
+  padding: 0;
+  }
+
+  #shopify-section-icumizuoau small {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Safety */
+
+  #shopify-section-nzxkajoewz  table {
+  margin: 0;
+  font-size: 12px;
+  color: #a6a6a6;
+  }
+
+  #shopify-section-nzxkajoewz  table strong {
+  color: #000;
+  font-size: 16px;
+  display: block;
+  margin: 5px 0 0 0;
+  }
+
+  #shopify-section-nzxkajoewz td {
+  vertical-align: top;
+    text-align: left;
+    background-color: #f7f7f7;
+    border: 20px solid white;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  #shopify-section-nzxkajoewz table:first-child td {
+  width: 33%;
+  }
+
+  #shopify-section-nzxkajoewz table:not(:first-child) td {
+  width: 50%;
+  }
+
+  #shopify-section-nzxkajoewz table:not(:first-child) {
+    max-width: 70%;
+    margin: auto;
+  }
+
+  /* Four ways */
+
+  }
+
+  /*======= RIVER 2 =======*/
+    body[data-product="river-2-pro-portable-power-station"] &,
+    body[data-product="river-2-pro-20w-portable-solar-panel"] &,
+    body[data-product="river-20-portable-power-station"] &,
+    body[data-product="river-2-1100w-portable-solar-panel"] &{
+        .add-to-cart, .shopify-payment-button, .rktheme-bundle-add-to-cart{
+            display: none !important;
+            visibility: hidden !important;
+            position: absolute;
+            top: -1000px;
+        }
+    }
+
+  .Globo-body-header p {
+      display: none;
+  }
+
+  .efwa-section h2:empty,
+  .efwa-section h3:empty,
+  .efwa-section p:empty {
+      display: none;
+  }
+
+  .efwa-page-80 {
+      width: 70%;
+      margin: auto;
+  }
+
+  section.efwa-section {
+      padding: 50px 20px;
+  }
+
+  .efwa-intro,
+  .efwa-intro-rich,
+  .efwa-video-intro {
+      text-align: center;
+      padding: 0;
+  }
+
+  .efwa-container-row {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .efwa-container-row:not(:first-child) {
+    margin-top: 60px;
+  }
+
+  .efwa-container-column {
+      display: flex;
+      flex-direction: row;
+  }
+
+  .efwa-row {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+  }
+
+  .efwa-column {
+      justify-content: center;
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 0 50px;
+  }
+
+  .efwa-row .efwa-column {
+      text-align: left;
+      padding: 0 20px 0 0px;
+  }
+
+  .efwa-column .efwa-description {
+      width: 100%;
+      margin: 0;
+  }
+
+  .efwa-title {
+      width: 100%;
+      font-size: 44px !important;
+      letter-spacing: 0px !important;
+      font-weight: bold;
+      margin-bottom: 20px;
+  }
+
+  .efwa-subtitle {
+      width: 100%;
+      color: #7573ff !important;
+      font-size: 30px;
+      margin-bottom: 10px;
+  }
+
+  .efwa-description {
+      width: 70%;
+      margin: 0 auto 30px auto !important;
+  }
+
+  .efwa-page-80 table td {
+      border: none;
+  }
+
+  .efwa-page-80 img,
+  .efwa-page-80 video {
+      width: 100%;
+      margin: auto;
+      border-radius: 10px;
+  }
+
+  @media (max-width: 768px) {
+
+      .efwa-page-80,
+      .efwa-description {
+          width: 100%;
+      }
+
+      .efwa-intro-lr .efwa-container-column,
+      .efwa-video-intro-lr .efwa-container-column,
+      .efwa-video-intro .efwa-row {
+          flex-direction: column;
+      }
+
+      .efwa-intro-rl .efwa-container-column {
+          flex-direction: column-reverse;
+      }
+
+      .efwa-column {
+          padding: 0;
+      }
+
+      .efwa-intro,
+      .efwa-intro-rich,
+      .efwa-video-intro {
+          text-align: left;
+      }
+
+      section.efwa-section {
+          padding: 20px;
+      }
+
+      .efwa-title {
+          font-size: 30px !important;
+      }
+
+      .efwa-subtitle {
+          font-size: 20px !important;
+      }
+
+      #shopify-section-gpbpaevkdf,
+      #shopify-section-kuibvupkwi {
+          text-align: center;
+      }
+
+      #shopify-section-lwcrwbtnvb {
+          padding: 0;
+      }
+
+      #shopify-section-lwcrwbtnvb .efwa-row:first-child {
+          padding: 20px 20px 0 20px;
+      }
+
+      #shopify-section-lwcrwbtnvb video {
+          border-radius: 0;
+      }
+  }
+
+  /*======= DELTA 2 =======*/
+  @media (max-width: 768px) {
+      .amazon-flag {
+          font-size: 12px;
+      }
+
+        body[data-product="delta-2-bundle"] &,
+        body[data-product="delta-2-extra-battery-bundle"] &,
+        body[data-product="delta-2-portable-power-station"] &{
+            .product-intro .video, .pdp-big-img{
+                margin: 10px !important;
+            }
+        }
+
+        body[data-product="delta-2-portable-power-station"] &{
+            .intro-heading:not(#shopify-section-hjujwtumpw .intro-heading):not(#what-in-the-box .intro-heading):not(#product-spec .intro-heading) {
+            text-align: left;
+            }
+        }
+
+      #shopify-section-tgcircqeew {
+          text-align: center;
+      }
+
+      #FeatureRowImageWrapper-tgcircqeew {
+          display: none;
+      }
+
+      #shopify-section-gdiabdfhhr iframe {
+          width: 90% !important;
+          height: 200px !important;
+      }
+  }
+
+
+  .discover-psp-button {
+      display: inline-block;
+      background-color: white;
+      color: black;
+      border: none;
+      margin: 20px auto;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 14px;
+      text-transform: uppercase;
+  }
+
+  #shopify-section-gdiabdfhhr iframe {
+      width: 1120px;
+      height: 630px;
+      max-width: 90%;
+      max-height: 630px;
+      background-image: url("https://cdn.shopify.com/s/files/1/0431/3789/2516/files/delta-2-banner.png");
+      background-size: contain;
+      background-color: black;
+  }
+
+  body[data-product="delta-2-bundle"] &,
+    body[data-product="delta-2-extra-battery-bundle"] &,
+    body[data-product="delta-2-portable-power-station"] &{
+    .rich-text table td{
+        border: none !important;
+    }
+    }
+
+    body[data-product="delta-2-bundle"] &,
+    body[data-product="delta-2-extra-battery-bundle"] &{
+        section.shopify-section .product-intro {
+        text-align: left;
+        }
+    }
+
+  #shopify-section-ptpvkechit .page-width {
+      min-height: 0;
+      padding: 0;
+  }
+
+  body[data-product="delta-2-bundle"] &,
+    body[data-product="delta-2-extra-battery-bundle"] &{
+        section.shopify-section .row:not(#product-spec .row)>div {
+        width: 100%;
+        margin: 0 !important;
+        max-width: none;
+        flex: 100%;
+        }
+    }
+
+    body[data-product="delta-2-bundle"] &,
+    body[data-product="delta-2-extra-battery-bundle"] &{
+        section.shopify-section h2:not(#product-spec h2){
+        font-size: 36px !important;
+        letter-spacing: -0.3px !important;
+        line-height: 44px !important;
+        margin-bottom: 15px !important;
+        font-weight: 700 !important;
+        margin-top: 12px !important;
+        }
+    }
+
+    body[data-product="delta-2-portable-power-station"] &{
+        section.shopify-section:not(#shopify-section-pivmjdlowq) h2:not(#product-spec h2) {
+        font-size: 36px !important;
+        letter-spacing: -0.3px !important;
+        line-height: 44px !important;
+        margin-bottom: 15px !important;
+        font-weight: 700 !important;
+        margin-top: 12px !important;
+        }
+    }
+
+  #what-in-the-box h2,
+  #product-spec .intro-heading h2 {
+      text-align: center;
+  }
+
+  body[data-product="delta-2-bundle"] &{
+    #shopify-section-iurqfgxjzn, #shopify-section-xrpimljaqg {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  body[data-product="delta-2-bundle"] &,
+    body[data-product="delta-2-extra-battery-bundle"] &{
+        section.shopify-section p {
+        color: #828486;
+        }
+    }
+
+    body[data-product="delta-2-bundle"] &,
+    body[data-product="delta-2-extra-battery-bundle"] &{
+        .intro-heading {
+        text-align: left;
+        }
+    }
+
+    body[data-product="delta-2-bundle"] &,
+    body[data-product="delta-2-extra-battery-bundle"] &{
+        .rich-text h2 {
+        text-align: left;
+        }
+    }
+
+    body[data-product="delta-2-portable-power-station"] &{
+        #shopify-section-hjujwtumpw, #shopify-section-pgsihxfoxj, #shopify-section-tuxxhgcaqd, #shopify-section-pivmjdlowq, #shopify-section-nexlzgulmf, #shopify-section-tgcircqeew, #shopify-section-bcwpjufvgy {
+        background-color: black;
+        margin: 0;
+        padding: 20px 0;
+        }
+    }
+
+    body[data-product="delta-2-portable-power-station"] &{
+        #shopify-section-hjujwtumpw, #shopify-section-pgsihxfoxj, #shopify-section-tuxxhgcaqd, #shopify-section-pivmjdlowq, #shopify-section-nexlzgulmf, #shopify-section-tgcircqeew, #shopify-section-bcwpjufvgy {
+            p, h2{
+                color: white !important;
+            }
+        }
+    }
+
+  #shopify-section-iwlyjgbsvn table tbody td {
+      width: 33.33%;
+      max-width: 33.33%;
+  }
+
+  #shopify-section-iwlyjgbsvn table td {
+      text-align: center;
+      border: none;
+  }
+
+  #shopify-section-iwlyjgbsvn table.desktop-image tbody tr:first-child td:first-child {
+      text-align: right;
+  }
+
+  #shopify-section-iwlyjgbsvn table.desktop-image tbody tr:first-child td:last-child {
+      text-align: left;
+  }
+
+  #shopify-section-iwlyjgbsvn table.desktop-image tr:last-child td:first-child {
+      text-align: right;
+  }
+
+  #shopify-section-iwlyjgbsvn table.desktop-image tr:last-child td:last-child {
+      text-align: left;
+  }
+
+  #shopify-section-iwlyjgbsvn table td span {
+      max-width: 300px;
+      display: inline-block;
+      margin: 0;
+      text-align: left;
+  }
+
+  #shopify-section-hjqwigodni .grid__item {
+      padding: 0 5px;
+  }
+
+  #shopify-section-pivmjdlowq .blue-link {
+      font-size: 30px;
+      font-weight: 700;
+  }
+
+  #shopify-section-pivmjdlowq h2 {
+      font-size: 16px !important;
+      line-height: 22px !important;
+      font-weight: 300 !important;
+  }
+
+  #shopify-section-pivmjdlowq h2 span {
+      color: #30fb50;
+  }
+
+  body[data-product="delta-2-portable-power-station"] section:not(:first-child) section>div {
+      margin: 0 !important;
+  }
+
+  body[data-product="delta-2-portable-power-station"] .pdp-intro-slider {
+      background-color: white;
+  }
+
+  #shopify-section-xfeutemqxv,
+  #shopify-section-iwlyjgbsvn,
+  #shopify-section-mtbefpuhhf,
+  #shopify-section-pjdlqfekun,
+  #shopify-section-vabcijngyz,
+  #shopify-section-xwsgxtjslr,
+  #shopify-section-hjqwigodni,
+  #shopify-section-gdiabdfhhr,
+  #shopify-section-emfjuaxlgh,
+  #shopify-section-mdtllysqpo,
+  #shopify-section-jdcxcxcwlg {
+      background-color: white !important;
+  }
+
+  /*======= THEME CORRECTIONS =======*/
+  .amazon-flag {
+      margin-bottom: 10px;
+      color: rgba(0, 0, 0, 0.6);
+      background-image: url('https://cdn.shopify.com/s/files/1/0431/3789/2516/files/flag.png');
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      display: block;
+      height: 80px;
+      width: 100%;
+      padding: 10px 70px 10px 20px;
+      line-height: 28px;
+  }
+
+  #what-in-the-box b:not(:first-child) {
+      margin-left: 10px;
+  }
+
+  .combo .pdp-detail-section .version-list li.active {
+      background-color: #0ecfe2 !important;
+      color: white;
+  }
+
+  .combo .product-price .saving-amount {
+      color: red !important;
+  }
+
+  .shopify-section .subheader {
+      background-color: #f3f3f7 !important;
+  }
+
+  .announcement-bar__message {
+      font-weight: normal !important;
+      font-size: inherit !important;
+  }
+
+  /*======= PRODUCT PREORDER =======*/
+  .Globo-form .Globo-form-subscribe .Globo-form-body .Globo-body-header h2 {
+      line-height: 25px !important;
+      font-size: 24px !important;
+  }
+
+  .Globo-body-content,
+  .Globo-content-form {
+      padding-top: 0 !important;
+  }
+
+  .Globo-body-header h2 {
+      padding: 0 10px;
+  }
+
+  .gPreorderHidden {
+      position: absolute;
+      left: -10000px;
+      visibility: hidden !important;
+  }
+
+  .gBackInStock-Label {
+      display: none !important;
+  }
+
+  .Globo-form-header,
+  .Globo-content-product {
+      display: none !important;
+  }
+
+  #Globo-Back-In-Stock {
+      box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  }
+
+  /*======= REVIEWS (GROWAVE) =======*/
+  .custom-review-count {
+      /*display: none !important;*/
+  }
+
+  .ssw-review-count {
+      padding: 0 10px;
+  }
+
+  /*=========================================Sitemap==============================================*/
+  .page-sitemap ul {
+      margin-left: 0;
+      padding-left: 10px;
+  }
+
+  .page-sitemap h2 {
+      margin-top: 20px !important;
+      color: #0ecfe2 !important;
+  }
+
+  .page-sitemap li {
+      line-height: 20px;
+      margin-bottom: 10px;
+      display: list-item;
+      list-style-type: circle;
+  }
+
+  .page-sitemap li a {
+      border: none !important;
+      font-size: 14px;
+  }
+
+  .page-sitemap li a:hover {
+      text-decoration: underline !important;
+  }
+
+  /*======= PRODUCT UPDATE =======*/
+  .shipping-time {
+      font-weight: bold;
+      color: #0ecfe2;
+  }
+
+  .shipping-time span {
+      display: none;
+  }
+
+  /*======= AMAZON BUTTON =======*/
+  .amazon-button {
+      display: none;
+      cursor: pointer;
+      background: url('https://cdn.shopify.com/s/files/1/0431/3789/2516/files/amazon-button.png');
+      background-position: center;
+      width: 100%;
+      height: 55px;
+      border-radius: 10px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-color: black;
+  }
+
+  /*======= POLICIES =======*/
+  .shopify-policy__container {
+      max-width: 1200px !important;
+      padding: 55px !important;
+  }
+
+  /*======= SECTIONS ANYWHERE =======*/
+  .product-intro img,
+  .feature-row img {
+      border-radius: 30px;
+  }
+
+  /*pdp starts*/
+.subheader {
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .eco-river {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .subheader .eco-river h3 {
+    font-size: 16px;
+    line-height: 24px;
+    color: #212121;
+  }
+  .subheader .eco-river ul li {
+    list-style: none;
+  }
+  .subheader .eco-river ul li a {
+    display: block;
+    padding: 10px;
+    margin: 10px;
+    color: #212121 !important;
+    text-decoration: none !important;
+  }
+  .subheader .eco-river ul li.active a,
+  .subheader .eco-river ul li a:hover {
+    color: #0ecfe2 !important;
+  }
+  .subheader .eco-river .blue-btn:hover {
+    color: #212121 !important;
+  }
+  /*
+  pdp-detail-section
+  */
+  .pdp-detail-section {
+    padding: 50px 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .pdp-detail-section .right-detail .low-price img {
+    position: relative;
+    top: -3px;
+    margin-left: 10px;
+  }
+  .pdp-detail-section .right-detail h2 {
+    font-size: 36px !important;
+    line-height: 43px;
+    color: #212121;
+  }
+  .blue-link {
+    color: #0ecfe2 !important;
+  }
+  .pdp-detail-section .pdp-link a {
+    font-size: 14px;
+  }
+  .pdp-detail-section .title-in {
+    font-size: 18px;
+  }
+  .pdp-detail-section .version-list {
+    padding: 0;
+  }
+  .pdp-detail-section .version-list li {
+    border: 1px solid #c4c4c4;
+    list-style: none;
+    font-size: 14px;
+    line-height: 17px;
+    color: #212121;
+    padding: 5px 24px;
+    margin-top: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    min-height: 70px;
+    justify-content: center;
+  }
+  .pdp-detail-section .version-list li.active,
+  .pdp-detail-section .version-list li:hover {
+    background: rgba(14, 207, 226, 0.02);
+    border: 1px solid #0ecfe2;
+  }
+  .pdp-detail-section .version-list li.disable {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  .pdp-detail-section .version-list li .red-text {
+    color: #ff2d46;
+    font-weight: 400;
+    font-size: 12px;
+  }
+  .light-weight {
+    font-weight: 400 !important;
+  }
+  .bundle-list li {
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: flex-start !important;
+    position: relative;
+    padding-right: 80px !important;
+  }
+  .bundle-list li .add-pdp,
+  .bundle-list li .remove-pdp {
+    position: absolute;
+    right: 20px;
+    top: 0;
+    bottom: 0;
+    height: 20px;
+    margin: auto;
+  }
+  .cart-popup__cta-link,
+  .pdp-detail-section .price-blk button {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 32px;
+    text-align: center;
+    color: #212121;
+    text-decoration: none;
+    border: 2px solid #0ecfe2;
+    align-items: center;
+    justify-content: center;
+    background: #0ecfe2;
+    margin-top: 15px;
+    border-radius: 0 !important;
+    text-transform: inherit;
+    letter-spacing: 0;
+  }
+  .pdp-detail-section .price-blk button.shopify-payment-button__button {
+    color: #212121;
+    border: 2px solid #212121;
+    background: transparent;
+  }
+  .pdp-detail-section .rate-number {
+    border: 1px solid #0ecfe2;
+    padding: 0 2px;
+    color: #0ecfe2;
+    font-size: 12px;
+    margin: 0 8px 4px 0 !important;
+  }
+  .pdp-detail-section .progress-list,
+  .pdp-detail-section .reviews {
+    font-size: 12px;
+    color: #212121;
+    margin-bottom: 3px !important;
+  }
+  .pdp-detail-section .progress-list {
+    max-width: 360px;
+  }
+  .pdp-detail-section .reviews-list li {
+    cursor: pointer;
+  }
+  .pdp-detail-section .progress-list .flex-sm-fill {
+    flex: 1;
+    margin: 0 8px;
+  }
+  .pdp-detail-section .progress-list .progress {
+    height: 4px;
+    background-color: #e0e0e0;
+  }
+  .pdp-detail-section .progress-list .progress .progress-bar {
+    background-color: #707070;
+  }
+  .product-actions {
+    color: #959393;
+    border-top: 1px solid #e0e0e0;
+    padding: 15px 0;
+    font-size: 12px;
+  }
+  /*
+  product-intro
+  */
+  .product-intro .video-rd {
+    position: relative;
+  }
+  .product-intro .video-rd .play {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .gray-bg {
+    background: #fafafb;
+  }
+  .intro-pdp-list {
+    padding: 70px 0;
+    text-align: center;
+  }
+  .intro-pdp-list .inner-intro img {
+    width: 72px;
+  }
+  .intro-heading {
+    text-align: center;
+  }
+  .intro-heading h2 {
+    font-size: 36px !important;
+    line-height: 44px !important;
+    color: #212121;
+    margin-bottom: 15px !important;
+    font-weight: 600;
+    margin-top: 12px;
+  }
+  del {
+    color: #c4c4c4;
+    font-weight: 400;
+  }
+
+  /*.intro-tabs*/
+
+.intro-pdp-tabs {
+    padding: 60px 0;
+  }
+  .intro-pdp-tabs .left-img {
+    height: 548px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 65px;
+    max-width: 548px;
+  }
+  .intro-pdp-tabs .left-img img {
+    min-width: 500px;
+  }
+  .intro-pdp-tabs .left-into h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 25px;
+  }
+  .intro-pdp-tabs .left-into p {
+    font-size: 14px;
+  }
+  .right-into-tabs .tabs-pdp-top li a {
+    font-size: 20px;
+    line-height: 29px;
+    color: #707070;
+    padding: 4px;
+    margin: 0 15px;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    display: inline-flex;
+    text-decoration: none !important;
+  }
+  .right-into-tabs .tabs-pdp-top li a.active {
+    border-color: #0ecfe2;
+    background-color: transparent;
+    color: #212121;
+  }
+  .right-into-tabs .tabs-pdp-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    margin-bottom: 24px !important;
+  }
+  .right-into-tabs .tabs-pdp-top li {
+    list-style: none;
+  }
+
+  .pdp-list-block .wrapper h3 {
+    font-size: 12px;
+    line-height: 18px;
+    padding: 15px;
+    margin: 0;
+  }
+
+  .pdp-list-block:hover {
+    background: #f5f5f5;
+    border: 1px solid #e0e0e0;
+  }
+
+  .back-bg {
+    background-color: #000;
+    padding: 60px 0;
+    overflow: hidden;
+  }
+  .pdp-center-slider .inner-content {
+    display: none;
+  }
+  .pdp-center-slider .owl-item.active.center .inner-content {
+    display: block;
+  }
+  .pdp-center-slider .inner-content p,
+  .back-bg h2 {
+    color: #fff !important;
+  }
+  .pdp-center-slider {
+    margin-top: 30px;
+  }
+  .pdp-center-slider .inner-content {
+    margin: 40px auto 0;
+    max-width: 650px;
+  }
+  .pdp-center-slider .owl-dots .owl-dot {
+    width: 80px;
+    background: rgba(255, 255, 255, 0.2) !important;
+    cursor: pointer;
+    height: 3px;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    outline: none !important;
+  }
+  .pdp-center-slider .owl-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: -35px;
+    left: 0;
+    right: 0;
+  }
+  .pdp-center-slider .owl-dots .owl-dot.active {
+    background: #0ecfe2 !important;
+  }
+  .pdp-center-slider .owl-nav button.owl-next,
+  .pdp-center-slider .owl-nav button.owl-prev {
+    position: absolute;
+    color: #fff;
+    height: 24px;
+    width: 24px;
+    top: 35%;
+    background: url("https://cdn.shopify.com/s/files/1/0558/9218/1165/files/Icon-Color.svg?v=1617886960") !important;
+    text-indent: -9999px;
+    background-position: center;
+    background-size: 100% 100% !important;
+    outline: none !important;
+    opacity: 0.5;
+  }
+  .pdp-center-slider .owl-nav button:hover {
+    opacity: 0.9;
+  }
+  .pdp-center-slider .owl-nav button.owl-prev {
+    left: 5%;
+  }
+  .pdp-center-slider .owl-nav button.owl-next {
+    right: 5%;
+    transform: rotate(180deg);
+  }
+  .bordertop {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 60px !important;
+  }
+  .compare-block {
+    margin-top: 30px;
+  }
+  .compare-block span.pdp-com-img {
+    background: #f5f5f5;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .compare-block .com-detail {
+    padding: 15px 0;
+  }
+  .compare-block .com-detail h2 {
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .dimen p strong {
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 6px;
+    display: block;
+  }
+  .dimen p {
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 0;
+  }
+  .dimen p:nth-child(even) {
+    margin-bottom: 40px;
+  }
+  .FAQ-accordion,
+  .FAQ-accordion .btn-link {
+    font-size: 18px !important;
+    color: #121212 !important;
+    text-decoration: none !important;
+  }
+  .FAQ-accordion .btn-link {
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    word-break: break-word;
+    white-space: normal;
+    background-color: transparent !important;
+    text-transform: inherit;
+  }
+  .FAQ-accordion .btn-link.collapsed span {
+    transform: rotate(180deg);
+  }
+  .card-faq {
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .card-faq:last-child {
+    border-bottom: 0;
+  }
+  .specs-section .specs-inner h2 {
+    font-weight: bold;
+    font-size: 18px !important;
+    line-height: 30px;
+    color: #212121 !important;
+  }
+  .specs-section .specs-inner {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 15px;
+  }
+  .last-two-border-zero .col-md-6:nth-last-child(2) .specs-inner,
+  .last-two-border-zero .col-md-6:last-child .specs-inner {
+    border-bottom: 0;
+  }
+  .detail-pdp-section {
+    padding: 40px 0;
+  }
+  .detail-pdp-section ol {
+    padding: 6px 15px;
+  }
+  .detail-pdp-section ol li {
+    list-style: decimal;
+  }
+  .detail-pdp-section p a,
+  .detail-pdp-section p,
+  .detail-pdp-section ol li {
+    font-size: 12px;
+    line-height: 18px;
+    color: #707070;
+    margin-bottom: 3px !important;
+  }
+  .product-form {
+    padding-top: 0 !important;
+  }
+  .product-tabs-container {
+    margin-left: -12px !important;
+    margin-right: -12px !important;
+  }
+  .product-tabs-container .col-4 {
+    padding: 12px !important;
+    display: flex;
+  }
+  .pdp-list-block {
+    flex: 1;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #fff;
+  }
+  .pdp-list-block .wrapper {
+    flex: 1 1 auto;
+  }
+  @media (max-width: 768px) {
+    .site-header {
+      padding: 0 !important;
+    }
+    .eco-banner img {
+      height: 500px;
+    }
+    .eco-river {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .eco-river h3 {
+      padding: 20px 0 !important;
+      flex: 1;
+      width: 100%;
+      position: relative;
+      padding-right: 25px !important;
+    }
+    .eco-river h3:after {
+      content: "";
+      background: url(https://cdn.shopify.com/s/files/1/0558/9218/1165/files/Vector.svg?v=1617631005)
+        no-repeat;
+      position: absolute;
+      height: 27px;
+      width: 27px;
+      right: 0;
+      background-position: center;
+    }
+    .eco-river ul {
+      width: 100%;
+      overflow-x: auto;
+      display: none !important;
+    }
+    .intro-pdp-list {
+      padding: 30px 0;
+    }
+
+    .product-intro .video,
+    .pdp-big-img {
+      margin: 0 -15px;
+    }
+    .intro-heading h2 {
+      font-size: 24px;
+      line-height: 33px;
+    }
+    .intro-pdp-tabs .left-img {
+      height: 300px;
+      margin: 0 -15px !important;
+    }
+    .product-tabs-container {
+      margin-left: -8px !important;
+      margin-right: -8px !important;
+    }
+    .product-tabs-container .col-4 {
+      padding: 8px !important;
+    }
+    .pdp-list-block .wrapper h3 {
+      font-size: 10px;
+      line-height: 13px;
+      left: 6px;
+      right: 6px;
+      top: 6px;
+    }
+    .right-into-tabs .tabs-pdp-top li a {
+      font-size: 16px;
+    }
+    .eco-river.open ul {
+      display: flex !important;
+      flex-direction: column;
+      text-align: left;
+      align-items: flex-start !important;
+      position: absolute;
+      background-color: #fff;
+      top: 60px;
+      left: 0;
+      right: 0;
+      padding: 0 0 20px 10px !important;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .eco-river.open ul li a {
+      margin: 0 !important;
+    }
+    .eco-river.open h3:after {
+      transform: rotate(180deg);
+    }
+  }
+  @media (max-width: 600px) {
+    .pdp-center-slider .inner-content {
+      margin: 10px !important;
+    }
+    .bordertop,
+    .back-bg,
+    .intro-pdp-tabs {
+      padding: 25px 0 !important;
+    }
+    .compare-block {
+      margin-top: 0;
+    }
+    .pdp-center-slider .owl-dots {
+      display: none;
+    }
+    .pdp-center-slider .owl-nav button {
+      top: 40% !important;
+    }
+    .pdp-center-slider .owl-nav button.owl-prev {
+      left: 5%;
+    }
+    .pdp-center-slider .owl-nav button.owl-next {
+      right: 5%;
+    }
+  }
+
+  /* /PDP-Modal/ */
+  .price__badge--sold-out {
+    display: none;
+  }
+  .pdp-modal {
+    font-size: 14px;
+  }
+  .pdp-modal .full-height {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+  .pdp-modal h5 {
+    font-size: 28px;
+    font-weight: 600;
+  }
+  .pdp-modal .close {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    z-index: 55;
+    outline: none !important;
+    cursor: pointer;
+  }
+  .pdp-modal.video-img-modal .modal-content {
+    background-color: transparent;
+    border: 0;
+  }
+  .pdp-modal.video-img-modal iframe {
+    width: 100%;
+    height: 500px !important;
+    border: 0;
+  }
+  .pdp-modal.video-img-modal .close {
+    position: absolute;
+    right: 60px !important;
+    top: 0px !important;
+    color: #fff;
+    opacity: 1 !important;
+  }
+  .pdp-modal.video-img-modal .close svg {
+    fill: currentColor;
+    width: 40px;
+    height: 40px;
+  }
+  @media (min-width: 992px) {
+    .video-img-modal .modal-lg {
+      max-width: 900px !important;
+    }
+  }
+  .mobile-image {
+    display: none!important;
+  }
+  @media (max-width: 600px) {
+    .pdp-modal.video-img-modal .close {
+      right: 5px !important;
+    }
+    .pdp-modal.video-img-modal .close svg {
+      fill: currentColor;
+      width: 30px;
+      height: 30px;
+    }
+    .mobile-image {
+      display: inline-block !important;
+    }
+    .desktop-image {
+      display: none !important;
+    }
+    .pdp-modal h5 {
+      font-size: 24px;
+    }
+    .pdp-modal .close {
+      right: 15px;
+      top: 15px;
+    }
+    .pdp-modal .full-height {
+      align-items: flex-end !important;
+    }
+    .pdp-modal .modal-dialog {
+      margin: 0;
+      border: 0 !important;
+    }
+    .pdp-modal .modal-content {
+      border: 0;
+      border-radius: 0 !important;
+    }
+    .play svg {
+      width: 40px;
+    }
+    .FAQ-accordion,
+    .FAQ-accordion .btn-link {
+      font-size: 16px !important;
+    }
+    .FAQ-accordion .card-body {
+      font-size: 14px !important;
+    }
+    .specs-section .col-10 {
+      flex: 0 0 100% !important;
+      max-width: 100% !important;
+    }
+    .specs-section .specs-inner {
+      border-bottom: 1px solid #e0e0e0 !important;
+      padding: 12px 0 !important;
+    }
+    .specs-section .col-md-6:last-child .specs-inner {
+      border-bottom: 0px !important;
+    }
+  }
+  /* /PDP-Modal/ */
+}

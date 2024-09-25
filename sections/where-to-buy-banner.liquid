@@ -1,0 +1,74 @@
+
+  {% if section.settings.image != blank %}
+    <section class="section-{{ section.id }}">
+        <div class="where-to-buy-banner" style="--image-height: {{section.settings.image_height}}px;--image-height-mobile: {{section.settings.image_height_mobile}}px;">
+            <img class="{% if section.settings.image_m != blank %}hideMobile{% endif %}" loading="lazy" srcset="{{ section.settings.image | img_url: 'small' | replace: '_small', '' }}" alt="{{ section.settings.text }}" />
+            {% if section.settings.image_m != blank %}
+                <img class="hideDesktop" loading="lazy" srcset="{{ section.settings.image_m | img_url: 'small' | replace: '_small', '' }}" alt="{{ section.settings.text }}" />
+            {% endif %}
+            <div class="where-to-buy-text-content">
+                {% if section.settings.title != blank %}
+                    <div class="title">{{ section.settings.title }}</div>
+                {% endif %}
+                {% if section.settings.content != blank %}
+                    <div class="small-content">{{ section.settings.content }}</div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+    <style>
+      .section-{{ section.id }} .title, .section-{{ section.id }} .small-content, .section-{{ section.id }} .small-content p{ color: {{section.settings.text_color}}; }
+    </style>
+{% endif %}
+  {% schema %}
+  {
+    "name": "Image banner",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_m",
+        "label": "Image(Mobile)"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading"
+      },
+      {
+        "type": "richtext",
+        "id": "content",
+        "label": "Content"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color"
+      },
+      {
+          "type": "range",
+          "label": "Image max height",
+          "id": "image_height",
+          "min": 200,
+          "max": 600,
+          "default": 540,
+          "step": 10,
+          "unit": "px"
+      },
+      {
+          "type": "range",
+          "label": "Image max height(Mobile)",
+          "id": "image_height_mobile",
+          "min": 100,
+          "max": 500,
+          "default": 400,
+          "step": 10,
+          "unit": "px"
+      }
+    ]
+  }
+  {% endschema %}

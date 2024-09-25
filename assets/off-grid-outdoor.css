@@ -1,0 +1,886 @@
+/*Global Page Style */
+
+html {
+  scroll-behavior: smooth;
+}
+
+.hb__text--heading {
+  font-size: 20px;
+}
+
+.hb__text--subheading {
+  font-size: 20px;
+}
+
+.hb__text--description {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .hb__text--heading {
+    font-size: 36px;
+  }
+  .hb__text--subheading {
+    font-size: 28px;
+  }
+  .hb__text--description {
+    font-size: 14px;
+  }
+}
+
+.hb__text--white {
+  color: #ffffff;
+}
+
+.hb__text--black {
+  color: #000000;
+}
+.hb__text--blue {
+  color: #2164ff;
+}
+
+.hb__text--left {
+  text-align: left;
+}
+
+.hb__text--center {
+  text-align: center;
+}
+
+.hb__text--capitalize {
+  text-transform: capitalize;
+}
+
+.hb__text--uppercase {
+  text-transform: uppercase;
+}
+
+.hb__relative {
+  position: relative;
+}
+
+.container--normal {
+  max-width: 1120px;
+  width: 100%;
+  margin: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@media (min-width: 768px) {
+  .container--normal {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+@media (min-width: 1261px) {
+  .container--normal {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.container--flex {
+  display: flex;
+}
+
+.background--white {
+  background: #ffffff;
+}
+
+.background--blue {
+  background: #2164ff;
+}
+
+.display--hidden {
+  opacity: 0;
+}
+
+.display--desktop {
+  display: none;
+}
+
+.hb__btn {
+  font-size: 17px;
+  line-height: 1.3;
+  width: fit-content;
+  padding: 12px 24px;
+  border-radius: 42px;
+}
+
+.hb__border-radius--8 {
+  border-radius: 8px;
+}
+
+@media (min-width: 1023px) {
+  .hb__btn {
+    padding: 16px 24px;
+  }
+}
+@media (min-width: 768px) {
+  .display--desktop {
+    display: block;
+  }
+
+  .display--mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .display--tablet {
+    display: none;
+  }
+}
+.custom-img__wrapper {
+  position: relative;
+}
+
+.custom-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+/*End Global Page Style */
+
+/* Start off-grid-outdoor-banner.liquid Style */
+
+.off-grid-outdoor-banner {
+  position: relative;
+}
+
+.off-grid-outdoor-banner__image--overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 100%);
+  z-index: 1;
+}
+
+.off-grid-outdoor-banner__content {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  text-align: center;
+  padding-top: 32px;
+}
+
+@media (min-width: 768px) {
+  .off-grid-outdoor-banner__image--overlay {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.6) 23.65%, rgba(255, 255, 255, 0) 50%);
+  }
+  .off-grid-outdoor-banner__content {
+    text-align: left;
+    padding: 0 60px;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (min-width: 1261px) {
+  .off-grid-outdoor-banner__content {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+.off-grid-outdoor-banner__content__h1 {
+  line-height: 1.2;
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+.off-grid-outdoor-banner__content__desc {
+  font-size: 18px;
+  line-height: 1;
+  margin-bottom: 34px;
+}
+
+@media (min-width: 1023px) {
+  .off-grid-outdoor-banner__content__h1 {
+    font-size: 46px;
+  }
+  .off-grid-outdoor-banner__content__desc {
+    font-size: 24px;
+  }
+}
+
+.off-grid-outdoor-banner__btn {
+  font-weight: 700;
+  text-transform: capitalize;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin: auto;
+}
+
+@media (min-width: 768px) {
+  .off-grid-outdoor-banner__btn {
+    margin: 0;
+  }
+}
+
+.off-grid-outdoor-banner--flex-style .off-grid-outdoor-banner-btn {
+  color: #000;
+}
+
+@media (min-width: 768px) {
+  .off-grid-outdoor-banner--flex-style .off-grid-outdoor-banner__content {
+    padding-top: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: left;
+    max-width: 760px;
+  }
+  .off-grid-outdoor-banner--flex-style .off-grid-outdoor-banner-btn {
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 1400px) {
+  .off-grid-outdoor-banner--flex-style .off-grid-outdoor-banner__content {
+    padding-left: 100px;
+  }
+}
+
+/* End off-grid-outdoor-banner.liquid Style */
+
+/* Start off-grid-outdoor-storage.liquid Style */
+
+.off-grid-outdoor-storage__section {
+  padding-top: 110px;
+  padding-bottom: 55px;
+}
+.off-grid-outdoor-storage__text-container {
+  max-width: 650px;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 48px;
+}
+.off-grid-outdoor-storage__heading {
+  margin-bottom: 24px;
+}
+.off-grid-outdoor-storage__flex-container {
+  gap: 15px;
+}
+
+@media (max-width: 1023px) {
+  .off-grid-outdoor-storage__section {
+    padding-top: 48px;
+    padding-bottom: 24px;
+  }
+  .off-grid-outdoor-storage__text-container {
+    margin-bottom: 24px;
+  }
+}
+/* End off-grid-outdoor-storage.liquid Style */
+
+/* Start off-grid-outdoor-transition.liquid Style */
+
+.off-grid-outdoor-transition__section {
+  padding-top: 55px;
+  padding-bottom: 55px;
+}
+
+.off-grid-outdoor-transition__text-container {
+  display: flex;
+  margin-bottom: 15px;
+  align-items: center;
+  gap: 15px;
+}
+
+.off-grid-outdoor-transition__image__container {
+  flex: 1 0 50%;
+}
+
+.off-grid-outdoor-transition__description {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.off-grid-outdoor-transition__flex-container {
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.off-grid-outdoor-transition__block {
+  border-radius: 8px;
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 32px;
+  padding-right: 32px;
+  padding-bottom: 32px;
+  padding-left: 32px;
+}
+
+.off-grid-outdoor-transition__block--short {
+  flex: 1 0 31.33%;
+}
+
+.off-grid-outdoor-transition__block--wide {
+  flex: 1 0 48%;
+}
+
+.off-grid-outdoor-transition__block img {
+  width: 48px;
+  height: 48px;
+}
+
+.off-grid-outdoor-transition__title {
+  font-size: 18px;
+  font-weight: 700;
+}
+@media (max-width: 1023px) {
+  .off-grid-outdoor-transition__section {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+  .off-grid-outdoor-transition__text-container {
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .off-grid-outdoor-transition__text-container {
+    flex-wrap: wrap;
+  }
+  .off-grid-outdoor-transition__image__container {
+    flex: 1 0 100%;
+  }
+  .off-grid-outdoor-transition__description {
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+  }
+  .off-grid-outdoor-transition__block {
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+  }
+  .off-grid-outdoor-transition__block--short,
+  .off-grid-outdoor-transition__block--wide {
+    flex: 1 0 100%;
+  }
+  .off-grid-outdoor-transition__block__image-wrapper {
+    flex: 0 0 48px;
+  }
+  .off-grid-outdoor-transition__title {
+    font-size: 14px;
+  }
+}
+
+/* End off-grid-outdoor-transition.liquid Style */
+
+/* Start off-grid-outdoor-offer.liquid Style */
+
+.off-grid-outdoor-offer__section {
+  padding-top: 55px;
+  padding-bottom: 55px;
+}
+
+.off-grid-outdoor-offer__text-container {
+  position: relative;
+}
+
+.off-grid-outdoor-offer__heading__container {
+  padding: 40px;
+  max-width: 650px;
+  width: 100%;
+  margin-top: -100px;
+  margin-right: auto;
+  margin-bottom: 48px;
+  margin-left: auto;
+  z-index: 3;
+  position: inherit;
+}
+
+.off-grid-outdoor-offer__heading {
+  margin-bottom: 16px;
+}
+
+.off-grid-outdoor-offer__flex-container {
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.off-grid-outdoor-offer__block-container {
+  display: flex;
+  gap: 56px;
+  border-radius: 8px;
+  align-items: center;
+  padding-top: 64px;
+  padding-right: 64px;
+  padding-bottom: 64px;
+  padding-left: 32px;
+}
+
+.off-grid-outdoor-offer__image__wrapper {
+  flex: 1 0 200px;
+}
+
+.off-grid-outdoor-offer__title {
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.off-grid-outdoor-offer__subtitle {
+  margin-bottom: 32px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.off-grid-outdoor-offer__description {
+  margin-bottom: 32px;
+}
+
+@media (max-width: 1023px) {
+  .off-grid-outdoor-offer__section {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+  .off-grid-outdoor-offer__block-container {
+    gap: 26px;
+  }
+}
+
+@media (max-width: 767px) {
+  .off-grid-outdoor-offer__heading__container {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    background: transparent;
+    padding: 0;
+  }
+  .off-grid-outdoor-offer__product__wrapper {
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    margin-left: -24px;
+    margin-right: -24px;
+  }
+  .off-grid-outdoor-offer__product__wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  .off-grid-outdoor-offer__flex-container {
+    flex-wrap: nowrap;
+    width: 700px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+  .off-grid-outdoor-offer__block-container {
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    flex-direction: column;
+    flex: 1 0 308px;
+    gap: 0;
+    align-items: flex-start;
+  }
+  .off-grid-outdoor-offer__image__wrapper {
+    margin-bottom: 24px;
+    flex: unset;
+  }
+  .off-grid-outdoor-offer__content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .off-grid-outdoor-offer__image {
+    width: 150px;
+  }
+  .off-grid-outdoor-offer__subtitle {
+    font-size: 13px;
+  }
+  .off-grid-outdoor-offer__content .btn--container {
+    margin-top: auto;
+  }
+}
+
+/* End off-grid-outdoor-offer.liquid Style */
+
+/* Start off-grid-outdoor-ecosystem.liquid Style */
+
+.off-grid-outdoor-ecosystem__section {
+  padding-top: 55px;
+  padding-bottom: 55px;
+  overflow: hidden;
+}
+
+.off-grid-outdoor-ecosystem__text-container {
+  position: relative;
+}
+
+.off-grid-outdoor-ecosystem__flex-container {
+  height: 100% !important;
+}
+
+.off-grid-outdoor-ecosystem__section .swiper-container {
+  overflow: visible;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.off-grid-outdoor-ecosystem__heading__container {
+  padding-top: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  max-width: 650px;
+  width: 100%;
+  margin-top: -100px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 98px;
+  z-index: 3;
+  position: inherit;
+}
+
+.off-grid-outdoor-ecosystem__heading {
+  margin-bottom: 16px;
+}
+
+.off-grid-outdoor-ecosystem__subheading {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.off-grid-outdoor-ecosystem__block-container {
+  border-radius: 8px;
+  padding-top: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  flex: 1 0 552.5px;
+  display: flex;
+  align-self: stretch;
+  flex-direction: column;
+}
+
+.off-grid-outdoor-ecosystem__block-container .btn--container {
+  margin-top: auto;
+  width: fit-content;
+}
+
+.off-grid-outdoor-ecosystem__image__wrapper {
+  margin-bottom: 24px;
+}
+
+.off-grid-outdoor-ecosystem__image {
+  width: 200px;
+}
+
+.off-grid-outdoor-ecosystem__title {
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.off-grid-outdoor-ecosystem__subtitle {
+  margin-bottom: 32px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.off-grid-outdoor-ecosystem__description {
+  margin-bottom: 32px !important;
+}
+
+.off-grid-outdoor-ecosystem__arrow__container .swiper-button-prev {
+  top: -40px;
+  right: 80px;
+  left: unset;
+}
+
+.off-grid-outdoor-ecosystem__arrow__container .swiper-button-next {
+  top: -40px;
+  right: 0;
+}
+
+.off-grid-outdoor-ecosystem__arrow__container .swiper-button-prev,
+.off-grid-outdoor-ecosystem__arrow__container .swiper-button-next {
+  width: auto;
+}
+
+.off-grid-outdoor-ecosystem__arrow__container .swiper-button-prev::after,
+.off-grid-outdoor-ecosystem__arrow__container .swiper-button-next::after {
+  content: "";
+  display: inline-block;
+  background-image: url("https://cdn.shopify.com/s/files/1/0651/6922/7998/files/arrow.svg?v=1681452973");
+  width: 48px;
+  height: 48px;
+}
+
+.off-grid-outdoor-ecosystem__arrow__container .swiper-button-prev.swiper-button-disabled::after,
+.off-grid-outdoor-ecosystem__arrow__container .swiper-button-next.swiper-button-disabled::after {
+  content: "";
+  display: inline-block;
+  background-image: url("https://cdn.shopify.com/s/files/1/0651/6922/7998/files/arrow-disabled.svg?v=1681452973");
+  width: 48px;
+  height: 48px;
+}
+
+.off-grid-outdoor-ecosystem__arrow__container .swiper-button-prev::after {
+  transform: rotate(180deg);
+}
+
+.off-grid-outdoor-ecosystem__arrow__container .swiper-button-prev.swiper-button-disabled::after {
+  transform: rotate(0deg);
+}
+
+.off-grid-outdoor-ecosystem__arrow__container .swiper-button-next.swiper-button-disabled::after {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 1023px) {
+  .off-grid-outdoor-ecosystem__section {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .off-grid-outdoor-ecosystem__heading__container {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    background: transparent;
+    padding: 0;
+  }
+  .off-grid-outdoor-ecosystem__subheading {
+    font-size: 14px;
+  }
+  .off-grid-outdoor-ecosystem__block-container {
+    flex: 1 0 308px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+  }
+  .off-grid-outdoor-ecosystem__subtitle {
+    font-size: 13px;
+  }
+
+  .off-grid-outdoor-ecosystem__arrow__container .swiper-button-prev {
+    top: 50%;
+    left: 10px;
+    right: unset;
+  }
+  .off-grid-outdoor-ecosystem__arrow__container .swiper-button-next {
+    top: 50%;
+    right: 10px;
+  }
+}
+
+/* End off-grid-outdoor-ecosystem.liquid Style */
+
+/* Start off-grid-outdoor-iwt.liquid Style */
+
+.off-grid-outdoor-iwt__section {
+  padding-top: 55px;
+  padding-bottom: 110px;
+}
+
+.off-grid-outdoor-iwt__wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 110px;
+}
+
+.off-grid-outdoor-iwt__container {
+  display: flex;
+  gap: 63px;
+  align-items: center;
+}
+
+.off-grid-outdoor-iwt__container.image--left {
+  flex-direction: row-reverse;
+}
+
+.off-grid-outdoor-iwt__text__container {
+  flex: 1 0 45%;
+}
+
+.off-grid-outdoor-iwt__title {
+  margin-bottom: 24px;
+}
+
+.off-grid-outdoor-iwt__image__container {
+  flex: 1 0 45%;
+}
+
+@media (max-width: 1023px) {
+  .off-grid-outdoor-iwt__section {
+    padding-top: 24px;
+    padding-bottom: 48px;
+  }
+  .off-grid-outdoor-iwt__container {
+    gap: 31px;
+  }
+}
+
+@media (max-width: 767px) {
+  .off-grid-outdoor-iwt__wrapper {
+    row-gap: 48px;
+  }
+  .off-grid-outdoor-iwt__container.image--right,
+  .off-grid-outdoor-iwt__container.image--left {
+    flex-direction: column-reverse;
+    gap: 24px;
+  }
+  .off-grid-outdoor-iwt__text__container {
+    flex: 1 0 100%;
+    margin-bottom: 0;
+    text-align: center;
+  }
+  .off-grid-outdoor-iwt__image__container {
+    flex: 1 0 100%;
+  }
+  .off-grid-outdoor-iwt__text__container p {
+    font-size: 13px;
+  }
+}
+/* End off-grid-outdoor-iwt.liquid Style */
+
+/* Start off-grid-outdoor-manual.liquid Style */
+
+.off-grid-outdoor-manual__section {
+  padding-top: 55px;
+  padding-bottom: 55px;
+}
+
+.off-grid-outdoor-manual__text-container {
+  max-width: 650px;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 48px;
+}
+
+.off-grid-outdoor-manual__heading {
+  margin-bottom: 24px;
+}
+
+.off-grid-outdoor-manual__flex-container {
+  gap: 15px;
+}
+
+.off-grid-outdoor-manual__block {
+  flex: 1 0 30%;
+}
+
+.off-grid-outdoor-manual__block__image-wrapper img {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.off-grid-outdoor-manual__content__container {
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 16px;
+  padding-left: 20px;
+  gap: 20px;
+}
+
+.off-grid-outdoor-manual__steps__heading {
+  font-size: 46px;
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+
+.off-grid-outdoor-manual__title {
+  font-size: 16px;
+}
+
+.off-grid-outdoor-manual__product__container {
+  margin-top: 48px;
+  gap: 47px;
+  align-items: center;
+}
+.off-grid-outdoor-manual__image__container,
+.off-grid-outdoor-manual__product__text__container {
+  flex: 1 0 45%;
+}
+
+@media (max-width: 1023px) {
+  .off-grid-outdoor-manual__section {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .off-grid-outdoor-manual__flex-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .off-grid-outdoor-manual__block {
+    flex: 0 0 48%;
+  }
+}
+
+@media (max-width: 767px) {
+  .off-grid-outdoor-manual__text-container {
+    margin-bottom: 24px;
+  }
+
+  .off-grid-outdoor-manual__flex__content__wrapper {
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    margin-left: -24px;
+    margin-right: -24px;
+  }
+  .off-grid-outdoor-manual__flex__content__wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  .off-grid-outdoor-manual__flex-container {
+    width: 960px;
+    flex-wrap: nowrap;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 24px;
+    padding-right: 24px;
+    justify-content: flex-start;
+  }
+  .off-grid-outdoor-manual__block {
+    flex: 1 0 30%;
+  }
+  .off-grid-outdoor-manual__content__container {
+    padding-top: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+    padding-left: 20px;
+  }
+  .off-grid-outdoor-manual__steps__heading {
+    font-size: 28px;
+  }
+  .off-grid-outdoor-manual__title {
+    font-size: 14px;
+  }
+  .off-grid-outdoor-manual__product__container {
+    margin-top: 60px;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .off-grid-outdoor-manual__image__container,
+  .off-grid-outdoor-manual__product__text__container {
+    flex: 1 0 100%;
+  }
+  .off-grid-outdoor-manual__product__description {
+    text-align: center;
+  }
+}
+/* End off-grid-outdoor-manual.liquid Style */

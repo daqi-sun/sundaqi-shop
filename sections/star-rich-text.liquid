@@ -1,0 +1,161 @@
+<section class="star-rich-text section-{{ section.id }}">
+    <div class="container">
+        <div class="star-rich-text-wrapper">
+            <div class="star-rich-text-content">
+                <div class="star-rich-text-content-1" style="--text-color: {{ section.settings.text_1_color }}; --font-size: {{ section.settings.text_1_font_size }}px; --font-size-m: {{ section.settings.text_1_font_size_m }}px;">
+                    {{ section.settings.text_1 }}
+                </div>
+                <div class="star-rich-text-content-2" style="--text-color: {{ section.settings.text_2_color }}; --font-size: {{ section.settings.text_2_font_size }}px; --font-size-m: {{ section.settings.text_2_font_size_m }}px;">
+                    {{ section.settings.text_2 }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .section-{{ section.id }}{
+            padding: {{ section.settings.section_top_space }}px 0 {{ section.settings.section_bottom_space }}px 0;
+        }
+        .section-{{ section.id }} .container{ max-width: {{ section.settings.text_content_width }}px; }
+        @media screen and (max-width: 749px){
+            .section-{{ section.id }}{
+                padding: {{ section.settings.section_top_space_m }}px 0 {{ section.settings.section_bottom_space_m }}px 0;
+            }
+        }
+    </style>
+</section>
+
+{% schema %}
+  {
+    "name": "Star rich text",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Section spacing"
+        },
+        {
+            "type": "range",
+            "id": "section_top_space",
+            "label": "Top space(Desktop)",
+            "min": 0,
+            "max": 150,
+            "step": 5,
+            "unit": "px",
+            "default": 120
+        },
+        {
+            "type": "range",
+            "id": "section_bottom_space",
+            "label": "Bottom space(Desktop)",
+            "min": 0,
+            "max": 150,
+            "step": 5,
+            "unit": "px",
+            "default": 40
+        },
+        {
+            "type": "range",
+            "id": "section_top_space_m",
+            "label": "Top space(Mobile)",
+            "min": 0,
+            "max": 80,
+            "step": 5,
+            "unit": "px",
+            "default": 40
+        },
+        {
+            "type": "range",
+            "id": "section_bottom_space_m",
+            "label": "Bottom space(Mobile)",
+            "min": 0,
+            "max": 80,
+            "step": 5,
+            "unit": "px",
+            "default": 40
+        },
+        {
+            "type": "range",
+            "id": "text_content_width",
+            "label": "Text content max width",
+            "min": 500,
+            "max": 1200,
+            "step": 10,
+            "unit": "px",
+            "default": 960
+        },
+        {
+            "type": "header",
+            "content": "Text content 1"
+        },
+        {
+            "type": "richtext",
+            "id": "text_1",
+            "label": "Text content"
+        },
+        {
+            "type": "color",
+            "id": "text_1_color",
+            "label": "Text content color"
+        },
+        {
+            "type": "range",
+            "id": "text_1_font_size",
+            "label": "Text content font size",
+            "min": 12,
+            "max": 50,
+            "step": 1,
+            "unit": "px",
+            "default": 16
+        },
+        {
+            "type": "range",
+            "id": "text_1_font_size_m",
+            "label": "Text content font size - Mobile",
+            "min": 10,
+            "max": 30,
+            "step": 1,
+            "unit": "px",
+            "default": 16
+        },
+        {
+            "type": "header",
+            "content": "Text content 2"
+        },
+        {
+            "type": "richtext",
+            "id": "text_2",
+            "label": "Text content"
+        },
+        {
+            "type": "color",
+            "id": "text_2_color",
+            "label": "Text content color"
+        },
+        {
+            "type": "range",
+            "id": "text_2_font_size",
+            "label": "Text content font size",
+            "min": 12,
+            "max": 50,
+            "step": 1,
+            "unit": "px",
+            "default": 16
+        },
+        {
+            "type": "range",
+            "id": "text_2_font_size_m",
+            "label": "Text content font size - Mobile",
+            "min": 10,
+            "max": 30,
+            "step": 1,
+            "unit": "px",
+            "default": 16
+        }
+    ],
+      "presets": [
+      {
+          "name": "Star rich text",
+          "category":"Custom Sections"
+      }
+      ]
+  }
+  {% endschema %}

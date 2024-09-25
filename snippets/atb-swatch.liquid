@@ -1,0 +1,293 @@
+{% assign file_extension = 'png' %}
+{% assign custom_color_swatches = settings.custom_color_swatches %}
+{%- assign small_description = product.metafields.custom.small_description -%}
+
+<style>
+.swatch-details-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.swatch-title {
+  font-weight: 600;
+}
+.swatch-shipping-message {
+  display: block;
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.36;
+  letter-spacing: normal;
+  color: #757575;
+}
+.swatch-details {
+  text-align: left;
+}
+.swatch-price {
+  text-align: right;
+  flex: 0 0 30%;
+}
+.swatch-price,
+.small-description {
+  font-size: 14px;
+  display: block;
+  text-transform: none;
+}
+.swatch-price .regular-price,
+.swatch-price .compare-price {
+  display: block;
+}
+.swatch-price .compare-price,
+.small-description {
+  color: #757575;
+  font-weight: 500;
+}
+@media screen and (max-width: 749px){
+  .swatch-title { font-weight: 700; }
+}
+</style>
+
+{% if swatch == blank %}
+<div class="swatch error">
+  <p>You must include the snippet swatch.liquid with the name of a product option.</p>
+  <p>Use: <code>{% raw %}{% render 'swatch' with 'name of your product option here' %}{% endraw %}</code></p>
+  <p>Example: <code>{% raw %}{% render 'swatch' with 'Color' %}{% endraw %}</code></p>
+</div>
+{% else %}
+
+{% assign found_option = false %}
+{% assign is_color = false %}
+{% assign option_index = 0 %}
+
+{% for option in product.options %}
+  {% if option == swatch %}
+    {% assign found_option = true %}
+    {% assign option_index = forloop.index0 %}
+    <style>
+      label[for="product-select-option-{{ option_index }}"] { display: none; }
+      #product-select-option-{{ option_index }} { display: none; }
+      #product-select-option-{{ option_index }} + .custom-style-select-box { display: none !important; }
+    </style>
+    <script>
+      window.addEventListener('load', function () {
+      {% if qvScope %}
+        document.querySelectorAll('#{{ qvScope }} .selector-wrapper)[{{ option_index }}].classList.add('hidden');
+      {% else %}
+        document.querySelectorAll('.selector-wrapper')[{{ option_index }}].classList.add('hidden');
+      {% endif %}
+      });
+    </script>
+    {% assign downcased_option = swatch | downcase %}
+    {% if downcased_option contains 'color' or downcased_option contains 'colour' %}
+      {% assign is_color = true %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% unless found_option %}
+<div class="swatch error">
+  <p>You included the snippet swatch.liquid with the name of a product option — <code>'{{ swatch }}'</code> — that does not belong to your product.</p>
+  <p>Use <code>{% raw %}{% render 'swatch' with 'name of your product option here' %}{% endraw %}</code></p>
+  <p>Example: <code>{% raw %}{% render 'swatch' with 'Color' %}{% endraw %}</code></p>
+  <p><strong>This is case-sensitive!</strong> Do not put in <code>'color'</code> if your product option name is <code>'Color'</code>.</p>
+</div>
+{% else %}
+<div class=" clearfix form_bg_row" >
+  {% assign swatchDowncase = swatch | downcase %}
+  <div class='swatch {% if swatchDowncase == 'model' or swatchDowncase == 'options' or swatchDowncase == 'option' %}swatch--model{% endif %}' data-option-index="{{ option_index }}">
+  {% assign swatchTitle = swatch %}
+
+  <div class="header">{{ swatchTitle }} </div>
+  {% assign values = '' %}
+
+    {%- assign current_variant = product.selected_or_first_available_variant -%}
+
+    {%- if product.metafields.custom.installation_text != blank %}
+      <div class="installation_text"><img src="{{ 'installation_msg.svg' | asset_url }}" />{{ product.metafields.custom.installation_text }}</div>
+    {%- endif -%}
+
+    <div class='swatch_elements_wrapper'>
+      {% for variant in product.variants %}
+
+      {% assign value = variant.options[option_index] %}
+      {% unless values contains value %}
+      {% assign values = values | join: ',' %}
+      {% assign values = values | append: ',' | append: value %}
+      {% assign values = values | split: ',' %}
+
+      {% assign selected_option = false %}
+      {% if current_variant.options contains value %}
+      {% assign selected_option = true %}
+      {% endif %}
+
+      <div  data-value="{{ value | escape }}" class="swatch-element {% if is_color %}color {% endif %} swatch_{{ value | handle }} {% if variant.available %}available{% else %}soldout{% endif %}">
+
+        <input {% if selected_option %}checked="checked"{% endif %} id="swatch-{{section_id}}-{{product.id}}-{{ option_index }}-{{ value | handle }}-{{variant.id}}" type="radio" name="option-{{ option_index }}" value="{{ value | escape }}" />
+        {% if is_color %}
+        <label for="{{section_id}}-{{product.id}}-{{ option_index }}-{{ value | handle }}-{{variant.id}}"
+               title="{{ value }}"
+               >
+                <span
+                  class="swatch-bg"
+                  style="
+                      {%- if use_variant_image_for_swatches -%}
+                      background-color: {{ value | downcase }};
+                      {% comment %} background-image: url({{ variant.featured_media  | img_url:"100x" }}) {% endcomment %}
+                      {%- else -%}
+                      {% render 'color_swatch_customization', default_value: value %}
+                      {%- endif -%}
+                      "
+                ></span>
+          <img class="crossed-out" src="{{ 'soldout.png' | asset_url }}"  alt="{{ 'products.product.sold_out' | t }}" />
+          {% comment %} <span class='swatch_check_icon'>{% include 'atb-icon'  with 'check' %}</span> {% endcomment  %}
+        </label>
+        <span class="color-swatch-title">{{ value }}</span>
+
+        {% else %}
+        <label for="swatch-{{section_id}}-{{product.id}}-{{ option_index }}-{{ value | handle }}-{{variant.id}}">
+          <div class="swatch-details-wrap">
+            <div class="swatch-details">
+              <span class="swatch-title">{{ value }}</span>
+              {% if variant.metafields.custom.shipping_message != blank %}
+                <span class="swatch-shipping-message">{{ variant.metafields.custom.shipping_message }}</span>
+              {% endif %}
+            </div>
+            {% if product.options.size == 1 %}
+            <div class="swatch-price">
+              <span class="regular-price">
+                {% if settings.currency_code_enable %}
+                  {{ variant.price | money_with_currency | replace:'.00','' }}
+                {% else %}
+                  {{ variant.price | money | replace:'.00','' }}
+                {% endif %}
+              </span>
+              {% if variant.compare_at_price > variant.price %}
+                <s class="compare-price">
+                  {% if settings.currency_code_enable_compare %}
+                    {{ variant.compare_at_price | money_with_currency | replace:'.00','' }}
+                  {% else %}
+                    {{ variant.compare_at_price | money | replace:'.00','' }}
+                  {% endif %}
+                </s>
+              {% endif %}
+            </div>
+            {% endif %}
+          </div>
+          <img class="crossed-out" src="{{ 'soldout.png' | asset_url }}" alt="{{ 'products.product.sold_out' | t }}" />
+        </label>
+        {% endif %}
+
+        {% comment %} {% if is_color %}
+        <div class="tooltip">{{ value }}</div>
+        {% endif %} {% endcomment %}
+      </div>
+      {% endunless %}
+      {% if variant.available %}
+      <script>
+        {% if qvScope %}
+        var qvScope = document.querySelector('#{{ qvScope }} .swatch[data-option-index="{{ option_index }}"] .swatch_{{ value | handle }}');
+                                                                     if(qvScope) {
+                                                                     qvScope.classList.remove('soldout');
+                                                                     qvScope.classList.add('available');
+                                                                     qvScope.querySelector('[type="radio"]').removeAttribute('disabled');
+                                                                     }
+
+                                                                     {% else %}
+
+                                                                     var swatch = document.querySelector('.swatch[data-option-index="{{ option_index }}"] .swatch_{{ value | handle }}');
+                                                                     if(swatch) {
+                                                                     swatch.classList.remove('soldout');
+                                                                     swatch.classList.add('available');
+                                                                     swatch.querySelector('[type="radio"]').removeAttribute('disabled');
+                                                                     }
+                                                                     {% endif %}
+      </script>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endunless %}
+
+{% endif %}
+
+
+{% if forloop.index == 1 %}
+<style>
+
+/*----------------
+Swatches
+-----------------*/
+
+.selector-wrapper,
+.product-variants {
+  display: none;
+}
+
+{% assign width = '30px' %}
+{% assign height = '30px' %}
+
+
+  /* Hide radio buttons.*/
+  .swatch input {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    padding: 0;
+    z-index: 5;
+    cursor: pointer;
+  }
+
+  .swatch label {
+  /* Rounded corners */
+  -webkit-border-radius:2px;
+  -moz-border-radius:2px;
+  border-radius:2px;
+  /* To give width and height */
+  float:left;
+  /* Color swatches contain no text so they need to have a width. */
+  min-width:{{ width }} !important;
+  height: auto !important;
+  /* No extra spacing between them */
+  margin:0;
+  /* The border when the button is not selected */
+  border:1px solid #c0c1c2;
+  /* Background color */
+  font-size:17px;
+  text-align:center;
+  line-height:20px;
+  white-space:normal;
+  cursor:pointer;
+  -moz-box-sizing:content-box;
+  -webkit-box-sizing:content-box;
+  box-sizing:content-box;
+  font-weight: 600;
+    }
+  .swatch-element label {
+    padding:19px 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 8px;
+    width: 100%;
+}
+.color.swatch-element label { padding:0; min-height: {{height}} !important;}
+
+  /* Image with the cross in it */
+.crossed-out { position:absolute; width:100%; height:100%; left:0; top:0; }
+.swatch .swatch-element .crossed-out { display:none; }
+.swatch .swatch-element.color.soldout .crossed-out { display:block; }
+.swatch .swatch-element.soldout label {
+  filter: alpha(opacity=60); /* internet explorer */
+  -khtml-opacity: 0.6;      /* khtml, old safari */
+  -moz-opacity: 0.6;       /* mozilla, netscape */
+  opacity: 0.6;           /* fx, safari, opera */
+}
+
+
+
+</style>
+{% endif %}

@@ -1,0 +1,97 @@
+{% if section.blocks.size > 0 %}
+    <div class="ecosystem-container">
+      <div class="home-ecosystem-bundles-alternate section-{{ section.id }}">
+        <div class="bundle-grid bundle-main-title">
+            {% if section.settings.heading != blank %}
+                <h2>{{ section.settings.heading | newline_to_br }}</h2>
+            {% endif %}
+        </div>
+
+        {% for block in section.blocks %}
+            <div class="bundle-grid">
+            <div class="bundle-content">
+                {% if block.settings.btn_url != blank %}
+                <a href="{{ block.settings.btn_url }}">
+                {% endif %}
+                    <div class="bundle-image">
+                        {% if block.settings.slide_image != blank %}
+                          <img loading="lazy"
+                            srcset="{%- if block.settings.slide_image.width >= 375 -%}{{ block.settings.slide_image | img_url: '375x' }} 375w,{%- endif -%}
+                            {%- if block.settings.slide_image.width >= 720 -%}{{ block.settings.slide_image | img_url: '720x' }} 750w,{%- endif -%}
+                            {%- if block.settings.slide_image.width >= 1066 -%}{{ block.settings.slide_image | img_url: '1066x' }} 1066w,{%- endif -%}
+                            {%- if block.settings.slide_image.width >= 1500 -%}{{ block.settings.slide_image | img_url: '1500x' }} 1500w,{%- endif -%}
+                            {%- if block.settings.slide_image.width >= 2000 -%}{{ block.settings.slide_image | img_url: '2000x' }} 2000w{%- endif -%}"
+                            src="{{ block.settings.slide_image | img_url: '535x' }}"
+                            sizes="auto"
+                            alt="{{ block.settings.slide_image.alt }}" />
+                        {% endif %}
+                    </div>
+                    {% if block.settings.bundle_heading != blank %}
+                        <div class="bundle-title">{{ block.settings.bundle_heading | newline_to_br }}</div>
+                    {% endif %}
+                    {% if block.settings.btn_text != blank %}
+                        <div class="bundle-btn">{{ block.settings.btn_text }}</div>
+                    {% endif %}
+                {% if block.settings.btn_url != blank %}
+                </a>
+                {% endif %}
+            </div>
+            </div>
+        {% endfor %}
+      </div>
+    </div>
+    <style>
+        .section-{{ section.id }} .bundle-content{ background-color: {{ section.settings.bg_color }}; color: {{ section.settings.text_color }}; }
+    </style>
+    {% endif %}
+
+    {% schema %}
+      {
+        "name": "Images Grid",
+        "settings": [
+          {
+            "id":"heading",
+            "type":"richtext",
+            "label":"Heading"
+          },
+          {
+            "id":"bg_color",
+            "type":"color",
+            "label":"Grid background color"
+          },
+          {
+            "id":"text_color",
+            "type":"color",
+            "label":"Text color"
+          }
+        ],
+        "blocks": [
+          {
+            "type": "block",
+            "name": "Block",
+            "settings": [
+              {
+                "type": "image_picker",
+                "id": "slide_image",
+                "label": "Image"
+              },
+              {
+                "type": "text",
+                "id": "bundle_heading",
+                "label": "Title"
+              },
+              {
+                "type": "text",
+                "id": "btn_text",
+                "label": "Link text"
+              },
+              {
+                "type": "url",
+                "id": "btn_url",
+                "label": "Link"
+              }
+            ]
+          }
+        ]
+      }
+    {% endschema %}

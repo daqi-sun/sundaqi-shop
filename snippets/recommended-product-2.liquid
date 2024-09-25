@@ -1,0 +1,328 @@
+<div class="star_product_block recommended_product">
+    <div class="star-product-info-wrapper">
+    {% assign star_product = block.settings.recommended_product_2 %}
+    {% assign current_variant = star_product.selected_or_first_available_variant %}
+    {% assign main_product_image = star_product.featured_image %}
+    {% assign main_product_title = star_product.title %}
+    {% assign custom_price = block.settings.recommended_product_2_custom_price %}
+    {% assign details_btn_text = block.settings.details_btn_text_2 %}
+    {% assign show_vat_label = block.settings.show_vat_label_2 %}
+    {% assign vat_label_text = block.settings.vat_label_text_2 %}
+    {% assign btn_text = block.settings.recommended_product_2_btn_text %}
+    {% assign text = block.settings.recommended_product_2_text %}
+    {% assign desc = block.settings.recommended_product_2_desc %}
+    {% if block.settings.show_manual_options_product_2 %}
+        {% if block.settings.option_1_text_product_2 != blank and block.settings.option_1_variant_id_2 != blank and block.settings.option_1_active_product_2 %}
+            {% assign variant_id = block.settings.option_1_variant_id_2 | times: 1 %}
+            {% assign non_member_variant_id = block.settings.option_1_non_member_variant_id_2 | times: 1 %}
+            {% assign main_product_title = block.settings.option_1_product_title_2 %}
+            {% assign main_product_image = block.settings.option_1_product_image_2 %}
+            {% assign star_product = block.settings.option_1_product_2 %}
+            {% assign custom_price = block.settings.option_1_custom_price_product_2 %}
+        {% endif %}
+
+        {% if block.settings.option_2_text_product_2 != blank and block.settings.option_2_variant_id_2 != blank and block.settings.option_2_active_product_2 %}
+            {% assign variant_id = block.settings.option_2_variant_id_2 | times: 1 %}
+            {% assign non_member_variant_id = block.settings.option_2_non_member_variant_id_2 | times: 1 %}
+            {% assign main_product_title = block.settings.option_2_product_title_2 %}
+            {% assign main_product_image = block.settings.option_2_product_image_2 %}
+            {% assign star_product = block.settings.option_2_product_2 %}
+            {% assign custom_price = block.settings.option_2_custom_price_product_2 %}
+        {% endif %}
+
+        {% for variant in star_product.variants %}
+            {% if variant.id == variant_id %}
+                {% assign current_variant = variant %}
+                {% if variant.metafields.custom.for_member_only == true %}
+                    {% assign member_only_variant = true %}
+                {% endif %}
+            {% endif %}
+            {% if variant.id == non_member_variant_id %}
+                {% assign non_member_variant = variant %}
+            {% endif %}
+        {% endfor %}
+
+        {% if current_variant.metafields.custom.for_member_only == false %}
+            {% if non_member_variant_id != '' %}
+                {% for variant in star_product.variants %}
+                    {% if variant.id == non_member_variant_id %}
+                        {% assign current_variant = variant %}
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                {% assign current_variant = star_product.variants[1] %}
+            {% endif %}
+        {% endif %}
+    {% endif %}
+    {% assign star_variant = current_variant %}
+
+    {% if section.settings.show_discount_badge and current_variant.compare_at_price > current_variant.price %}
+        {% assign price = current_variant.price %}
+        {% assign compare_price = current_variant.compare_at_price %}
+
+        {% assign discount_price = compare_price | minus: price %}
+        {% assign discount_percentage = price | times: 100 | divided_by: compare_price %}
+        {% assign discount_percentage = 100 | minus: discount_percentage | round %}
+        {% assign discount_dummy_price = discount_price | money_without_currency | replace: ',00', '' %}
+        {% assign dummy_price = 900 | money | replace: ',00', '' %}
+        {% if discount_dummy_price contains ',' %}
+            {% assign discount_dummy_price_str = discount_dummy_price | split: ',' %}
+            {% assign discount_dummy_price = discount_dummy_price | replace: discount_dummy_price_str[1], '' | replace: ',', '' %}
+        {% endif %}
+        {% assign discount_percentage = price | times: 100 | divided_by: compare_price %}
+        {% assign discount_percentage = 100 | minus: discount_percentage | round %}
+
+        {% if section.settings.discount_badge_type == 'absolute' or section.settings.discount_badge_type == 'percentage'%}
+        <div class="discount_tag_wrapper">
+            {% if discount_price > 0 %}
+                {% if section.settings.discount_badge_image != blank %}
+                    <img loading="lazy" {% if section.settings.discount_badge_image_m != blank %}class="hideMobile"{% endif %} srcset="{{ section.settings.discount_badge_image | img_url: 'small' | replace: '_small', '' }}" />
+                {% endif %}
+                {% if section.settings.discount_badge_image_m != blank %}
+                    <img loading="lazy" class="hideDesktop" srcset="{{ section.settings.discount_badge_image_m | img_url: 'small' | replace: '_small', '' }}" />
+                {% endif %}
+            {% endif %}
+            <div class="discount_tag_text {% if section.settings.discount_badge_image_m != blank %}discount_tag_text_mobile{% endif %}">
+                {% if section.settings.discount_badge_type == 'absolute' and discount_price > 0 %}
+                    {{ section.settings.discount_text | default: 'SAVE' }} <span>{{ dummy_price | replace: '9', discount_dummy_price }}</span>
+                {% elsif section.settings.discount_badge_type == 'percentage' and discount_price > 0 %}
+                    <span>{{ discount_percentage }}%</span> {{ section.settings.discount_text | default: 'OFF' }}
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+    {% endif %}
+
+    <h3 class="recommended-product-title title-for-mobile">{{ main_product_title }}</h3>
+    <div class="product-image">
+        {% if main_product_image != blank %}
+            <img class="star-product-image" loading="lazy" srcset="{{ main_product_image | image_url }}" />
+        {% elsif current_variant.featured_image != blank %}
+            <img class="star-product-image" loading="lazy" srcset="{{ current_variant.featured_image | image_url }}" />
+        {% endif %}
+    </div>
+    <div class="product-info">
+        <div class="title-desc-wrap">
+            <h3 class="recommended-product-title hide-for-mobile">{{ main_product_title }}</h3>
+            {% if desc != blank %}
+                <div class="product-desc">{{ desc }}</div>
+            {% endif %}
+        </div>
+        <div class="subtitle_price_row">
+            <div class="member-only-price-wrap" {% unless member_only_variant %}style="display: none;"{% endunless %}>
+                <div class="member-only-price">{{ current_variant.price | money }}</div>
+                <div class="member-tag">
+                    <span>{{ 'products.product.star_member_only' | t }}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="price_row price-wrapper" {% if member_only_variant %}style="display: none;"{% endif %}>
+            <div class="star_product_price product-price" data-price="{{ current_variant.price }}">{{ current_variant.price | money }}</div>
+            {% if show_vat_label %}
+                <div class="vat-label">{{ vat_label_text }}</div>
+            {% endif %}
+            <div class="star_product_compare_price product-compare-price" data-compare-price="{{ current_variant.compare_at_price }}">{% if current_variant.compare_at_price > current_variant.price %}{{ current_variant.compare_at_price | money }}{% endif %}</div>
+        </div>
+
+        <div class="subtitle_price_row_alter" {% unless member_only_variant and non_member_variant != '' %}style="display: none;"{% endunless %}>
+            <div class="non-member-price-wrap">
+                <div class="non-member-price"><span class="price_elem">{{ non_member_variant.price | money }}</span><span>{{ 'products.product.non_member_price' | t }}</span></div>
+                <div class="non-member-c-price" {% unless non_member_variant.compare_at_price > non_member_variant.price %}style="display:none;"{% endunless %}>{{ non_member_variant.compare_at_price | money }}</div>
+            </div>
+        </div>
+
+        <div class="custom_price" {% if custom_price == blank %}style="display: none;"{% endif %}>{{ custom_price }}</div>
+
+        <div class="product_option_wrapper">
+            {% if block.settings.show_manual_options_product_2 %}
+                {% if block.settings.option_title_product_2 != blank %}
+                    <div class="option_title">{{ block.settings.option_title_product_2 }}</div>
+                {% endif %}
+                <div class="product_options" style="--option-bg: {{ block.settings.active_option_bg_product_2 }};">
+                    {% if block.settings.option_1_text_product_2 != blank and block.settings.option_1_variant_id_2 != blank %}
+                        {% assign option_variant_id = block.settings.option_1_variant_id_2 | times: 1 %}
+                        {% assign option__1_non_member_variant_id = block.settings.option_1_non_member_variant_id_2 | times: 1 %}
+                        {% assign option_1_product = block.settings.option_1_product_2 %}
+                        {% assign non_member_variant = '' %}
+                        {% assign member_only_variant_option_1 = false %}
+                        {% assign non_member_showing = false %}
+                        {% for variant in option_1_product.variants %}
+                            {% if variant.id == option_variant_id %}
+                                {% assign option_variant = variant %}
+                                {% if variant.metafields.custom.for_member_only == true %}
+                                    {% assign member_only_variant_option_1 = true %}
+                                {% endif %}
+                            {% endif %}
+                            {% if variant.id == option__1_non_member_variant_id %}
+                                {% assign non_member_variant = variant %}
+                            {% endif %}
+                        {% endfor %}
+
+                        {% if option_variant.metafields.custom.for_member_only == false %}
+                            {% if option__1_non_member_variant_id != '' %}
+                                {% for variant in option_1_product.variants %}
+                                    {% if variant.id == option__1_non_member_variant_id %}
+                                        {% assign non_member_showing = true %}
+                                        {% assign option_variant = variant %}
+                                    {% endif %}
+                                {% endfor %}
+                            {% else %}
+                                {% assign option_variant = star_product.variants[1] %}
+                            {% endif %}
+                        {% endif %}
+                        {% assign option_discount_price = option_variant.compare_at_price | minus: option_variant.price %}
+                        {% assign option_discount_percentage = option_variant.price | times: 100 | divided_by: option_variant.compare_at_price %}
+                        {% assign option_discount_percentage = 100 | minus: option_discount_percentage | round %}
+                        {% if block.settings.option_1_active_product_2 %}
+                            {% assign star_variant = option_variant.id %}
+                        {% endif %}
+                        {% if block.settings.option_1_product_image_2 != blank %}
+                            {% assign variant_image = block.settings.option_1_product_image_2 %}
+                        {% else %}
+                            {% assign variant_image = option_variant.image | default: option_1_product.featured_image %}
+                        {% endif %}
+                        {% assign custom_price = block.settings.option_1_custom_price_product_2 %}
+                        <div class="product_option {% if block.settings.option_1_active_product_2 %}selected{% endif %}"
+                                data-product-title="{{ block.settings.option_1_product_title_2 | default: option_1_product.title }}"
+                                data-product-handle="{{ option_1_product.handle }}"
+                                data-variant-id="{{ option_variant.id }}" data-price="{{ option_variant.price | money }}" data-compare-price="{% if option_variant.compare_at_price > option_variant.price %}{{ option_variant.compare_at_price | money }}{% endif %}"
+                                data-non-member-variant-id="{{ option__1_non_member_variant_id }}"
+                                data-non-member-price="{{ non_member_variant.price | money }}"
+                                data-non-member-compare-price="{% if non_member_variant.compare_at_price > non_member_variant.price %}{{ non_member_variant.compare_at_price | money }}{% endif %}"
+                                data-member-only-variant="{{ member_only_variant_option_1 }}"
+                                data-non-member-showing="{{ non_member_showing }}"
+                                data-redirection-url=""
+                                data-amazon-url="{{option_variant.metafields.custom.amazon_button_link_star_template}}"
+                                data-variant-image="{{ variant_image | image_url }}" data-discounted="{% if option_discount_price > 0 %}yes{% else %}no{% endif %}" data-discount-price="{% if section.settings.discount_badge_type == 'absolute' and option_discount_price > 0 %}{{ option_discount_price | money | replace: ',00', '' }}{% elsif section.settings.discount_badge_type == 'percentage' and option_discount_price > 0 %}{{ option_discount_percentage }}%{% endif %}"
+                                data-custom-price="{{ custom_price }}">
+                                {{ block.settings.option_1_text_product_2 }}
+                                </div>
+                    {% endif %}
+                    {% if block.settings.option_2_text_product_2 != blank and block.settings.option_2_variant_id_2 != blank %}
+                        {% assign option_variant_id = block.settings.option_2_variant_id_2 | times: 1 %}
+                        {% assign option_2_non_member_variant_id = block.settings.option_2_non_member_variant_id_2 | times: 1 %}
+                        {% assign option_2_product = block.settings.option_2_product_2 %}
+                        {% assign non_member_variant = '' %}
+                        {% assign member_only_variant_option_2 = false %}
+                        {% assign non_member_showing = false %}
+                        {% for variant in option_2_product.variants %}
+                            {% if variant.id == option_variant_id %}
+                                {% assign option_variant = variant %}
+                                {% if variant.metafields.custom.for_member_only == true %}
+                                    {% assign member_only_variant_option_2 = true %}
+                                {% endif %}
+                            {% endif %}
+                            {% if variant.id == option_2_non_member_variant_id %}
+                                {% assign non_member_variant = variant %}
+                            {% endif %}
+                        {% endfor %}
+
+                        {% if option_variant.metafields.custom.for_member_only == false %}
+                            {% if option_2_non_member_variant_id != '' %}
+                                {% for variant in option_2_product.variants %}
+                                    {% if variant.id == option_2_non_member_variant_id %}
+                                        {% assign non_member_showing = true %}
+                                        {% assign option_variant = variant %}
+                                    {% endif %}
+                                {% endfor %}
+                            {% else %}
+                                {% assign option_variant = star_product.variants[1] %}
+                            {% endif %}
+                        {% endif %}
+                        {% assign option_discount_price = option_variant.compare_at_price | minus: option_variant.price %}
+                        {% assign option_discount_percentage = option_variant.price | times: 100 | divided_by: option_variant.compare_at_price %}
+                        {% assign option_discount_percentage = 100 | minus: option_discount_percentage | round %}
+                        {% if block.settings.option_2_active_product_2 %}
+                            {% assign star_variant = option_variant.id %}
+                        {% endif %}
+                        {% if block.settings.option_2_product_image_2 != blank %}
+                            {% assign variant_image = block.settings.option_2_product_image_2 %}
+                        {% else %}
+                            {% assign variant_image = option_variant.image | default: option_2_product.featured_image %}
+                        {% endif %}
+                        {% assign custom_price = block.settings.option_2_custom_price_product_2 %}
+                        <div class="product_option {% if block.settings.option_2_active_product_2 %}selected{% endif %}"
+                            data-product-title="{{ block.settings.option_2_product_title_2 | default: option_2_product.title }}"
+                            data-product-handle="{{ option_2_product.handle }}"
+                            data-variant-id="{{ option_variant.id }}" data-price="{{ option_variant.price | money }}" data-compare-price="{% if option_variant.compare_at_price > option_variant.price %}{{ option_variant.compare_at_price | money }}{% endif %}"
+                            data-non-member-variant-id="{{ option_2_non_member_variant_id }}"
+                            data-non-member-price="{{ non_member_variant.price | money }}"
+                            data-non-member-compare-price="{% if non_member_variant.compare_at_price > non_member_variant.price %}{{ non_member_variant.compare_at_price | money }}{% endif %}"
+                            data-member-only-variant="{{ member_only_variant_option_2 }}"
+                            data-non-member-showing="{{ non_member_showing }}"
+                            data-redirection-url=""
+                            data-amazon-url="{{option_variant.metafields.custom.amazon_button_link_star_template}}"
+                            data-variant-image="{{ variant_image | image_url }}" data-discounted="{% if option_discount_price > 0 %}yes{% else %}no{% endif %}" data-discount-price="{% if section.settings.discount_badge_type == 'absolute' and option_discount_price > 0 %}{{ option_discount_price | money | replace: ',00', '' }}{% elsif section.settings.discount_badge_type == 'percentage' and option_discount_price > 0 %}{{ option_discount_percentage }}%{% endif %}"
+                            data-custom-price="{{ custom_price }}">
+                                {{ block.settings.option_2_text_product_2 }}
+                                </div>
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="star_product_btn_qty_wrap">
+            <div class="qty-wrapper">
+                <div class="qty-minus">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <mask id="mask0_25_4987" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-1" y="-1" width="22" height="22">
+                        <path d="M20 0H0V20H20V0Z" fill="white" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </mask>
+                        <g mask="url(#mask0_25_4987)">
+                        <path d="M16.6667 10H3.33337" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                    </svg>
+                </div>
+                <input type="number" min="1" value="1" class="qty-value" />
+                <div class="qty-plus">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <mask id="mask0_25_4986" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-1" y="-1" width="22" height="22">
+                        <path d="M20 0H0V20H20V0Z" fill="white" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </mask>
+                        <g mask="url(#mask0_25_4986)">
+                        <path d="M10 3.33325V16.6666" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                        <mask id="mask1_25_4986" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-1" y="-1" width="22" height="22">
+                        <path d="M20 0H0V20H20V0Z" fill="white" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </mask>
+                        <g mask="url(#mask1_25_4986)">
+                        <path d="M16.6667 10H3.33337" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+            <div class="add-to-cart">
+                {% assign show_atc_buttons = true %}
+                {% if member_only_variant %}
+                    {% unless customer %}
+                        {% assign show_atc_buttons = false %}
+                    {% endunless %}
+                {% endif %}
+
+                {% if show_atc_buttons %}
+                <button class="atc_btn add-to-cart-btn" type="button" data-variant-id="{{ star_variant.id }}">
+                    <span data-add-to-cart-text class="add-to-cart-text">{% if btn_text != blank %}{{ btn_text }}{% else %}Add to cart{% endif %}</span>
+                    <span class="hide" data-loader>
+                    <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-spinner" viewBox="0 0 20 20"><path d="M7.229 1.173a9.25 9.25 0 1 0 11.655 11.412 1.25 1.25 0 1 0-2.4-.698 6.75 6.75 0 1 1-8.506-8.329 1.25 1.25 0 1 0-.75-2.385z" fill="#919EAB"></path></svg>
+                    </span>
+                    <span class="hide" data-added>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M24 0H0V24H24V0Z" fill="white" fill-opacity="0.01"></path>
+                        <path d="M21.5 5.5L8.4375 18.5L2.5 12.5909" stroke="#212121" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </span>
+                </button>
+                <div data-error-message></div>
+                {% else %}
+                    <a href="https://account.ecoflow.com/login?return_to=https://{{ request.host }}{{ request.path }}" class="atc_btn">{{ 'products.product.login' | t }}</a>
+                {% endif %}
+            </div>
+        </div>
+        {% if text != blank %}
+            <div class="suggestion-text">{{text}}</div>
+        {% endif %}
+        <div class="view-details-btn" data-handle="{{star_product.handle}}">{{ details_btn_text | default: 'View Details' }}</div>
+    </div>
+    </div>
+</div>

@@ -1,0 +1,333 @@
+<style>
+  .pp-blog__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .pp-blog__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+
+<div
+  class="pp-blog__section pp-blog__section-{{ section.id }}"
+  data-id="_{{ section.settings.id | downcase | remove: ' ' | replace: '&', '-' }}"
+>
+  <div class="container--default">
+    <div class="pp-blog__text-container">
+      {% if section.settings.title != blank %}
+        <h2 class="pp-blog__section-heading text--heading text--black">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+      {% if section.settings.subtitle != blank %}
+        <p class="pp-blog__section-description text--description text--gray">
+          {{ section.settings.subtitle }}
+        </p>
+      {% endif %}
+    </div>
+
+    <!-- Generate Tab Buttons -->
+    <div class="pp-blog__tab-buttons-container">
+      <div class="tab-buttons">
+        {% for block in section.blocks %}
+          {% if block.type == 'tab' %}
+            <button
+              class="tab-button {% if forloop.index == 1 %} active {% endif %}"
+              data-tab="{{ block.settings.tab_name }}"
+            >
+              {{ block.settings.tab_name }}
+            </button>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Generate Tab Content -->
+    {% for block in section.blocks %}
+      {% if block.type == 'tab' %}
+        <div
+          class="tab-content {% if forloop.index == 1 %} active {% endif %}"
+          data-tab="{{ block.settings.tab_name }}"
+        >
+          <div class="display--desktop" x-data="{ showItems: 6, viewMore: true }">
+            <div class="pp-blog__slider-container" x-ref="items">
+              {% for blogBlock in section.blocks %}
+                {% if blogBlock.type == 'blog' and blogBlock.settings.belongs_to_tab == block.settings.tab_name %}
+                  <!-- your existing blog content here -->
+                  <div
+                    class="pp-blog__slide-content"
+                    x-show="Array.from($el.parentElement.children).indexOf($el) < showItems"
+                  >
+                    <div class="pp-blog__image-wrapper">
+                      <a href="{{ blogBlock.settings.link }}">
+                        <img
+                          src="{{ blogBlock.settings.image | img_url: 'master' }}"
+                          alt="{{ blogBlock.settings.image.alt }}"
+                        >
+                      </a>
+                    </div>
+                    <div class="pp-blog__content-wrapper">
+                      <div class="pp-blog__title-wrapper">
+                        <h3 class="pp-blog__title text--black">{{ blogBlock.settings.title }}</h3>
+                      </div>
+                      <div class="pp-blog__link-wrapper">
+                        <a
+                          href="{{ blogBlock.settings.link }}"
+                          class="text--blue"
+                        >
+                          {{- blogBlock.settings.link_label -}}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+            <button
+              class="pp-blog__view-more-button text--blue"
+              x-show="$refs.items.children.length > 6"
+              @click="showItems = viewMore ? $refs.items.children.length : 6; viewMore = !viewMore"
+              x-text="viewMore ? '{{ section.settings.view_more_button_label }}' : '{{ section.settings.view_less_button_label }}'"
+            ></button>
+          </div>
+          <div class="display--mobile">
+            <div class="swiper pp-blog__slider-container custom-balcony-slider">
+              <div class="swiper-wrapper">
+                {% for blogBlock in section.blocks %}
+                  {% if blogBlock.type == 'blog' and blogBlock.settings.belongs_to_tab == block.settings.tab_name %}
+                    <!-- your existing blog content here -->
+                    <div class="pp-blog__slide-content swiper-slide">
+                      <div class="pp-blog__image-wrapper">
+                        <a href="{{ blogBlock.settings.link }}">
+                          <img
+                            src="{{ blogBlock.settings.image | img_url: 'master' }}"
+                            alt="{{ blogBlock.settings.image.alt }}"
+                          >
+                        </a>
+                      </div>
+                      <div class="pp-blog__content-wrapper">
+                        <div class="pp-blog__title-wrapper">
+                          <h3 class="pp-blog__title text--black">{{ blogBlock.settings.title }}</h3>
+                        </div>
+                        <div class="pp-blog__link-wrapper">
+                          <a
+                            href="{{ blogBlock.settings.link }}"
+                            class="text--blue"
+                          >
+                            {{- blogBlock.settings.link_label -}}
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    function initializeSwiper(container) {
+      let swiperContainer;
+
+      if (typeof container === 'string') {
+        swiperContainer = document.querySelector(container);
+      } else if (container instanceof HTMLElement) {
+        swiperContainer = container;
+      }
+
+      if (swiperContainer && swiperContainer.classList.contains('swiper-initialized')) {
+        const existingSwiper = swiperContainer.swiper;
+        existingSwiper.destroy();
+        swiperContainer.classList.remove('swiper-initialized');
+      }
+
+      const swiper = new Swiper(swiperContainer, {
+        freeMode: false,
+        spaceBetween: 15,
+        slidesPerView: 'auto',
+        pagination: {
+          el: '.swiper-pagination',
+        },
+        breakpoints: {
+          600: {
+            slidesPerView: 2.3,
+          },
+        },
+      });
+
+      swiperContainer.swiper = swiper;
+      swiperContainer.classList.add('swiper-initialized');
+    }
+
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    initializeSwiper('.swiper.pp-blog__slider-container');
+
+    tabButtons.forEach((button) => {
+      button.addEventListener('click', function () {
+        const tabName = this.getAttribute('data-tab');
+
+        tabContents.forEach((tab) => {
+          tab.classList.remove('active');
+        });
+
+        tabButtons.forEach((button) => {
+          button.classList.remove('active');
+        });
+
+        this.classList.add('active');
+
+        const tabToShow = document.querySelector(`.tab-content[data-tab="${tabName}"]`);
+        tabToShow.classList.add('active');
+
+        initializeSwiper(tabToShow.querySelector('.swiper.pp-blog__slider-container'));
+      });
+    });
+
+    window.addEventListener('resize', function () {
+      const activeTab = document.querySelector('.tab-content.active');
+      if (activeTab) {
+        initializeSwiper(activeTab.querySelector('.swiper.pp-blog__slider-container'));
+      }
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "PP Blog",
+  "settings": [
+    {
+      "type": "text",
+      "id": "id",
+      "label": "Section ID",
+      "default": "Blog"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Möchten Sie mehr erfahren?"
+    },
+    {
+      "type": "html",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Egal, ob Sie Ihre Abhängigkeit vom Stromnetz reduzieren oder Energie speichern möchten, mit der Schritt-für-Schritt-Anleitung wissen Sie in wenigen Schritten, wie EcoFlow Ihnen dabei helfen kann."
+    },
+
+    {
+      "type": "text",
+      "id": "view_more_button_label",
+      "label": "View More Label",
+      "default": "View More"
+    },
+    {
+      "type": "text",
+      "id": "view_less_button_label",
+      "label": "View Less Label",
+      "default": "View Less"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tab",
+      "name": "Tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_name",
+          "label": "Tab Name",
+          "default": "Category1"
+        }
+      ]
+    },
+    {
+      "type": "blog",
+      "name": "Blog",
+      "settings": [
+        {
+          "type": "text",
+          "id": "belongs_to_tab",
+          "label": "Belongs to Tab",
+          "default": "Category1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Blog Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Balkonkraftwerk maximale Leistung – bis wieviel Watt sind sie erlaubt?"
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "Link Label",
+          "default": "Mehr erfahren >"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link URL"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

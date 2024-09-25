@@ -1,0 +1,53 @@
+<div class="recommended_product">
+    {% if title_position == 'top' %}
+        <h3>{{ product.title }}</h3>
+    {% endif %}
+    {% if title_position == 'default' %}
+        <h3 class="title-for-mobile">{{ product.title }}</h3>
+    {% endif %}
+    <div class="product-image">
+        <img src="{{ product.featured_image.src | img_url: '300x' }}" />
+    </div>
+    <div class="product-info">
+        {% if title_position == 'default' %}<h3 class="hide-for-mobile">{{ product.title }}</h3>{% endif %}
+        <div class="price-wrapper">
+            <div class="product-price" data-price="{{ product.price }}">{{ product.price | money }}</div>
+            {% if product.compare_at_price > product.price %}
+                <div class="product-compare-price" data-compare-price="{{ product.compare_at_price }}">{{ product.compare_at_price | money }}</div>
+            {% endif %}
+        </div>
+        <div class="qty-wrapper">
+            <div class="qty-minus">
+                <svg width="10" height="1" viewBox="0 0 10 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line y1="0.5" x2="10" y2="0.5" stroke="#212121"/>
+                </svg>
+            </div>
+            <input type="number" min="1" value="1" class="qty-value" />
+            <div class="qty-plus">
+                <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line y1="5.5" x2="11" y2="5.5" stroke="#212121"/>
+                <line x1="5.5" y1="11" x2="5.5" y2="2.18557e-08" stroke="#212121"/>
+                </svg>
+            </div>
+        </div>
+        <div class="add-to-cart">
+            <button class="add-to-cart-btn" type="button" data-variant-id="{{ product.selected_or_first_available_variant.id }}">
+                <span data-add-to-cart-text class="add-to-cart-text">{% if btn_text != blank %}{{ btn_text }}{% else %}Add to cart{% endif %}</span>
+                <span class="hide" data-loader>
+                  <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-spinner" viewBox="0 0 20 20"><path d="M7.229 1.173a9.25 9.25 0 1 0 11.655 11.412 1.25 1.25 0 1 0-2.4-.698 6.75 6.75 0 1 1-8.506-8.329 1.25 1.25 0 1 0-.75-2.385z" fill="#919EAB"></path></svg>
+                </span>
+                <span class="hide" data-added>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M24 0H0V24H24V0Z" fill="white" fill-opacity="0.01"></path>
+                    <path d="M21.5 5.5L8.4375 18.5L2.5 12.5909" stroke="#212121" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </span>
+            </button>
+            <div data-error-message></div>
+        </div>
+        {% if text != blank %}
+            <div class="suggestion-text">{{text}}</div>
+        {% endif %}
+        <div class="view-details-btn" data-handle="{{product.handle}}">View Details</div>
+    </div>
+</div>

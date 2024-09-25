@@ -1,0 +1,691 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "daf26638-f596-4384-b150-72d380a3268d": {
+      "type": "product-atb-top",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "sticky-product-bar": {
+      "type": "sticky-product-bar",
+      "blocks": {
+        "588d25af-4d47-43ac-9697-b98aa2f65719": {
+          "type": "tab",
+          "disabled": true,
+          "settings": {
+            "tab_title": "Overview",
+            "tab_id": "product_information",
+            "section_class": ""
+          }
+        },
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02": {
+          "type": "tab",
+          "disabled": true,
+          "settings": {
+            "tab_title": "What's in the box",
+            "tab_id": "what_in_box",
+            "section_class": ""
+          }
+        },
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4": {
+          "type": "tab",
+          "disabled": true,
+          "settings": {
+            "tab_title": "FAQ",
+            "tab_id": "faq",
+            "section_class": ""
+          }
+        },
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38": {
+          "type": "tab",
+          "disabled": true,
+          "settings": {
+            "tab_title": "Reviews",
+            "tab_id": "section-reviews",
+            "section_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "588d25af-4d47-43ac-9697-b98aa2f65719",
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02",
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4",
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38"
+      ],
+      "settings": {
+        "enabled": true,
+        "enabled_tabs": false
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "11795adc-1afa-4833-a193-258f495901ef": {
+          "type": "sku_block",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e": {
+          "type": "product_title",
+          "settings": {
+          }
+        },
+        "judge_me_reviews_preview_badge_Ke6RtA": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "0471109f-c130-454e-a9ba-c56412cc11f3": {
+          "type": "product_vendor",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185": {
+          "type": "product_price",
+          "settings": {
+          }
+        },
+        "d25a0285-4fb4-422d-b95b-ab67446120ad": {
+          "type": "product_description",
+          "settings": {
+            "desc_display": "default"
+          }
+        },
+        "919f9cdd-6184-4311-b675-742931504318": {
+          "type": "coupon_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Component_2_1.png",
+            "discount_off_text": "{{ product.metafields.custom.discount_off_text.value }}",
+            "code": "{{ product.metafields.custom.discount_code.value }}",
+            "show_copy_code_btn": true
+          }
+        },
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879": {
+          "type": "product_options_block",
+          "settings": {
+            "show_product_swatches": true,
+            "use_variant_image_for_swatches": true,
+            "button_content": ""
+          }
+        },
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe": {
+          "type": "quantity_block",
+          "settings": {
+          }
+        },
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0": {
+          "type": "accessories_section",
+          "settings": {
+            "title": "También te puede interesar",
+            "metafield": "accessories"
+          }
+        },
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609": {
+          "type": "product_buttons",
+          "settings": {
+            "enable_payment_button": false,
+            "show_custom_icons": true,
+            "custom_payment_logo_1_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_08_7f374817-3a3e-42f2-95ce-077b67f293d2.svg?v=1672025209",
+            "custom_payment_logo_2_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_10_d8002835-e25f-4edb-9038-187f75f69a18.svg?v=1672025208",
+            "custom_payment_logo_3_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_02_a3ea7ab1-aa9a-4857-9ed6-01e62deccfce.svg?v=1672025208",
+            "custom_payment_logo_4_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_06_7c406d24-0983-49ff-ac8e-cf73032050d9.svg?v=1672025208",
+            "custom_payment_logo_5_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_07_be5959d4-9f22-4a31-8e40-285f8e3ac6e7.svg?v=1672025208",
+            "custom_payment_logo_6_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_01_96e6a30c-7908-4892-b6f1-75bce8657cd4.svg?v=1672025208",
+            "custom_payment_logo_7_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/apple_pay_icon_14953f11-2673-4162-8f1b-99c8a65b4610.png?v=1678448779",
+            "custom_payment_logo_8_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0649\/2533\/5793\/files\/googlepay_icon_6235bed6-fedf-42d2-8d0a-4854ccc3bdc2.png?v=1678450994",
+            "custom_payment_logo_9_svg": "",
+            "custom_payment_logo_10_svg": "",
+            "custom_payment_logo_11_svg": "",
+            "custom_payment_logo_12_svg": "",
+            "custom_payment_logo_13_svg": "",
+            "custom_payment_logo_14_svg": "",
+            "custom_payment_logo_15_svg": ""
+          }
+        },
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% if product.metafields.custom.trade_message != blank %}\n          <div class=\"trade-message\">♻️{{product.metafields.custom.trade_message}} <a href=\"\/pages\/trade-in\" target=\"_blank\">Learn more<\/a><\/div>\n{% endif %}"
+          }
+        }
+      },
+      "block_order": [
+        "11795adc-1afa-4833-a193-258f495901ef",
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e",
+        "judge_me_reviews_preview_badge_Ke6RtA",
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774",
+        "0471109f-c130-454e-a9ba-c56412cc11f3",
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185",
+        "d25a0285-4fb4-422d-b95b-ab67446120ad",
+        "919f9cdd-6184-4311-b675-742931504318",
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879",
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe",
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0",
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609",
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a"
+      ],
+      "settings": {
+        "section_id": "",
+        "show_breadcrumbs": true,
+        "show_pick_an_option": false,
+        "enable_linked_options": false,
+        "enabled_mobile_sticky_btns": true,
+        "media_size": "medium",
+        "enable_image_zoom": true,
+        "enable_video_looping": true,
+        "thumbnails_type": "grid",
+        "support_email": "",
+        "support_text": "",
+        "feature_1_show": false,
+        "feature_1_title": "Fast & Free Shipping",
+        "feature_1_content": "",
+        "feature_2_show": false,
+        "feature_2_title": "Warranty Protection",
+        "feature_2_content": "",
+        "feature_3_show": false,
+        "feature_3_title": "Secure Payments",
+        "feature_3_content": "",
+        "feature_4_show": false,
+        "feature_4_title": "Multi-channel Support",
+        "feature_4_content": ""
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "grid_mobile": "2",
+        "heading": "You may also like",
+        "show_vendor": false
+      }
+    },
+    "d8a51fec-16cf-4819-ac0a-1c5a5077987e": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 20,
+        "section_bottom_spacing": 20,
+        "section_top_spacing_mobile": 20,
+        "section_bottom_spacing_mobile": 20,
+        "alignment": "center",
+        "title": "",
+        "subtitle": "",
+        "content": "",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "bc7f5b0e-666f-4fc8-be0b-a23c2be32916": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--19086857175387__bc7f5b0e-666f-4fc8-be0b-a23c2be32916-168627976057ccb8bb-0": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "#fafafa",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/400W_1_icons.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/400W_1_icons_m.jpg",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "<p><strong>Convierta la luz solar en energía limpia y renovable utilizando paneles solares portátiles de 400 W, perfectos para camping, caravanas y uso doméstico.<\/strong><\/p>",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "b75e467f-2f20-4496-941a-ff0381febe5c": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/400W_1.png",
+            "mobile_image": "shopify:\/\/shop_images\/M_400W_1.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "<h2>Panel Solar Portátil de 400 W<\/h2><p>Nuestro panel solar portátil de 400W ofrece un alto rendimiento solar, un índice de eficiencia de conversión y un práctico diseño plegable para poder cogerlo y llevárselo en cualquier momento.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--19086857175387__bc7f5b0e-666f-4fc8-be0b-a23c2be32916-168627976057ccb8bb-0",
+        "b75e467f-2f20-4496-941a-ff0381febe5c"
+      ],
+      "settings": {
+      }
+    },
+    "3d95b6bc-745c-4c4a-9cb4-631f66b52d8c": {
+      "type": "pdp-image-with-text-horizontal-new",
+      "blocks": {
+        "215d6d92-d0a2-4d12-abaa-ed76d17471f1": {
+          "type": "image",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/400W_2.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/M_400W_2.jpg",
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "image_alignment": "right",
+            "title": "",
+            "subtitle": "<h4>Alto rendimiento y eficiencia solar<\/h4>",
+            "content": "<h2><strong>Carga más rápido, donde quiera que vayas.<\/strong><\/h2><p>Nuestro panel solar de 400W, con un diseño plegable único, combina una potente producción de energía con la portabilidad. Para lograr una mayor eficiencia de conversión solar del 23%, utilizamos células monocristalinas de múltiples barras, por lo que obtendrá aún más energía para recargar su estación de energía portátil.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "c6607865-e02f-4d7a-b5c0-ac8d24f916cc": {
+          "type": "image",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/400W_3.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/400W_3.jpg",
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "image_alignment": "left",
+            "title": "",
+            "subtitle": "<h4>Un soporte autoportante e integrado<\/h4>",
+            "content": "<h2>Optimiza tu energía.<\/h2><p>El panel solar EcoFlow de 400 W incluye una funda protectora que también sirve como soporte resistente. Basta con colocar el panel en cualquier lugar y ajustar cómodamente su ángulo para obtener la mayor cantidad de sol posible.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "215d6d92-d0a2-4d12-abaa-ed76d17471f1",
+        "c6607865-e02f-4d7a-b5c0-ac8d24f916cc"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "left",
+        "space_bw_blocks": 0
+      }
+    },
+    "e7635af4-f318-4d19-adfe-eddcba79b7f5": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--19086857175387__e7635af4-f318-4d19-adfe-eddcba79b7f5-168627976057ccb8bb-0": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/400W_4.png",
+            "mobile_image": "shopify:\/\/shop_images\/M_400W_4.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "<h2>Preparado para exteriores.<\/h2><p>Fabricado con materiales duraderos y flexibles, este panel solar portátil es perfecto para vivir y viajar sin conexión a la red. Su diseño de varias capas ofrece una gran resistencia a los impactos para resistir en los exteriores más exigentes, mientras que su peso ligero de 16 kg permite llevarlo sin esfuerzo hasta el lugar de acampada. La funda de transporte cuenta con una capa rígida incorporada que protege el panel para que no se doble cuando lo guardes o mientras lo transportas.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "cb5183c4-c63e-4319-ba56-255695ed80ff": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/400W_5.png",
+            "mobile_image": "shopify:\/\/shop_images\/M_400W_5.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "<h2>Fabricado para capear el temporal.<\/h2><p>Nuestro panel solar de 400 W puede seguir almacenando energía incluso durante un chaparrón. Con una película protectora de ETFE y un alto nivel de resistencia IP de 68, las celdas solares pueden soportar tanto entornos húmedos y mojados como secos y polvorientos.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "2b45c72e-8c6b-4904-b775-7edbd07ac2c9": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/400W_6.png",
+            "mobile_image": "shopify:\/\/shop_images\/M_400W_6.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "<h2>Lleva la energía solar a todas partes.<\/h2><p>El panel solar EcoFlow de 400 W es imprescindible en la autocaravana o en el lugar de acampada. Su diseño compacto ahorra un espacio valioso necesario para los demás artículos esenciales para tu viaje. Cuando estés listo para salir a vivir tu próxima aventura, solo tienes que plegar el panel para guardarlo en tu furgoneta o automóvil.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--19086857175387__e7635af4-f318-4d19-adfe-eddcba79b7f5-168627976057ccb8bb-0",
+        "cb5183c4-c63e-4319-ba56-255695ed80ff",
+        "2b45c72e-8c6b-4904-b775-7edbd07ac2c9"
+      ],
+      "settings": {
+      }
+    },
+    "bca1229f-438a-4782-9438-bf8bda63b0e2": {
+      "type": "pdp-whats-in-the-box",
+      "blocks": {
+        "template--20490444374359__38f9b846-322a-468d-8bfc-c2bf7457b9ed-image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PC_400W_01.png",
+            "cta_label": "Panel solar de 400 W",
+            "link": "",
+            "cta_width": 50,
+            "cta_image_width": "100%",
+            "custom_width": 300,
+            "custom_height": 365,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 225
+          }
+        },
+        "template--20490444374359__38f9b846-322a-468d-8bfc-c2bf7457b9ed-image-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PC_XT_60.png",
+            "cta_label": " Cable de carga solar a XT60",
+            "link": "",
+            "cta_width": 25,
+            "cta_image_width": "100%",
+            "custom_width": 265,
+            "custom_height": 100,
+            "custom_width_mobile": 135,
+            "custom_height_mobile": 160
+          }
+        },
+        "template--20490444374359__38f9b846-322a-468d-8bfc-c2bf7457b9ed-image-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PC_400W_bag.png",
+            "cta_label": "Funda protectora",
+            "link": "",
+            "cta_width": 25,
+            "cta_image_width": "100%",
+            "custom_width": 265,
+            "custom_height": 115,
+            "custom_width_mobile": 150,
+            "custom_height_mobile": 215
+          }
+        },
+        "template--20490444374359__38f9b846-322a-468d-8bfc-c2bf7457b9ed-image-4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PC_Snap_Hook_4.png",
+            "cta_label": "Mosquetones*4",
+            "link": "",
+            "cta_width": 25,
+            "cta_image_width": "100%",
+            "custom_width": 255,
+            "custom_height": 90,
+            "custom_width_mobile": 135,
+            "custom_height_mobile": 165
+          }
+        },
+        "template--20490444374359__38f9b846-322a-468d-8bfc-c2bf7457b9ed-image-5": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PC_User_manual_Warranty_card.png",
+            "cta_label": "Manual de Usuario y Tarjeta ",
+            "link": "",
+            "cta_width": 25,
+            "cta_image_width": "100%",
+            "custom_width": 285,
+            "custom_height": 100,
+            "custom_width_mobile": 160,
+            "custom_height_mobile": 190
+          }
+        }
+      },
+      "block_order": [
+        "template--20490444374359__38f9b846-322a-468d-8bfc-c2bf7457b9ed-image-1",
+        "template--20490444374359__38f9b846-322a-468d-8bfc-c2bf7457b9ed-image-2",
+        "template--20490444374359__38f9b846-322a-468d-8bfc-c2bf7457b9ed-image-3",
+        "template--20490444374359__38f9b846-322a-468d-8bfc-c2bf7457b9ed-image-4",
+        "template--20490444374359__38f9b846-322a-468d-8bfc-c2bf7457b9ed-image-5"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Contenido",
+        "bottom_content": "",
+        "cta_height": 400,
+        "cta_height_mobile": 255,
+        "cta_half_height_mobile": 200,
+        "gutter_width": 12
+      }
+    },
+    "92756880-1168-46ba-95c7-d5cb0b9a5679": {
+      "type": "faq-section-alternate",
+      "blocks": {
+        "2e5b5603-cf38-4656-b20c-435a2f379ba6": {
+          "type": "question",
+          "settings": {
+            "title": "¿Son eficaces los paneles solares portátiles?",
+            "answer": "Los paneles solares portátiles son una forma extremadamente eficaz, limpia y renovable de cargar un generador de energía portátil. Los paneles solares portátiles EcoFlow de 400 W tienen un vataje mayor que los paneles solares típicos y son más eficientes gracias a sus celdas monocristalinas. Encadene hasta tres paneles solares portátiles de 400 W y utilícelos con una central eléctrica portátil DELTA Pro para obtener una potencia de 1200 W. Además, los generadores de energía portátiles EcoFlow utilizan un algoritmo MPPT que garantiza un suministro de energía constante. A diferencia de los paneles solares estáticos, los paneles solares portátiles se mueven y ajustan fácilmente en función de dónde se encuentre el sol en el cielo."
+          }
+        },
+        "6a10f2b5-8682-41b4-8a94-3d95fdd67a1b": {
+          "type": "question",
+          "settings": {
+            "title": "¿Dónde se colocan los paneles solares portátiles?",
+            "answer": "Lo mejor es colocar los paneles solares portátiles en un ángulo de entre 30 y 45 grados, de cara a la dirección del sol. Los paneles solares portátiles EcoFlow tienen un soporte incorporado que puede ajustarse en función de la hora del día."
+          }
+        },
+        "da92e01e-5a7b-4446-a7fa-9e2ccea620bf": {
+          "type": "question",
+          "settings": {
+            "title": "¿Qué paneles solares son los mejores para acampar?",
+            "answer": "Los paneles solares que son portátiles, plegables y ligeros son los mejores para ir de camping.Combínalo con una estación de energía portátil para obtener energía inmediata, limpia, ecológica y renovable."
+          }
+        }
+      },
+      "block_order": [
+        "2e5b5603-cf38-4656-b20c-435a2f379ba6",
+        "6a10f2b5-8682-41b4-8a94-3d95fdd67a1b",
+        "da92e01e-5a7b-4446-a7fa-9e2ccea620bf"
+      ],
+      "settings": {
+        "title": "Preguntas frecuentes"
+      }
+    },
+    "1adeb1ce-0d84-4b2a-8c4e-11530c38704e": {
+      "type": "pdp-specs",
+      "blocks": {
+        "96c06b31-eda1-4903-bb43-4f077caa630d": {
+          "type": "contents",
+          "settings": {
+            "title": "Potencia nominal",
+            "content": "<p>400 W<\/p>"
+          }
+        },
+        "164ae904-ed35-4f04-bb56-59e5c98f5d93": {
+          "type": "contents",
+          "settings": {
+            "title": "Tipo de celda",
+            "content": "<p>Silicio monocristalino<\/p>"
+          }
+        },
+        "49030969-730a-40c6-a242-19a88c228dbd": {
+          "type": "contents",
+          "settings": {
+            "title": "Eficiencia",
+            "content": "<p>22.60%<\/p>"
+          }
+        },
+        "d41bb518-3e67-4858-aba2-e231a403a4b9": {
+          "type": "contents",
+          "settings": {
+            "title": "Dimensiones",
+            "content": "<p>105.8*236.5*2.5cm<\/p>"
+          }
+        },
+        "e6f9f81b-db30-414d-ad1e-0eaa53495bb6": {
+          "type": "contents",
+          "settings": {
+            "title": "Tensión de circuito abierto",
+            "content": "<p>48V (VMP: 41 V)<\/p>"
+          }
+        },
+        "2baac89b-2add-4a35-98c2-4800ab553f66": {
+          "type": "contents",
+          "settings": {
+            "title": "Corriente de cortocircuito",
+            "content": "<p>11A (IMP: 9,8 A)<\/p>"
+          }
+        },
+        "552cef54-ce99-42f6-b81f-2d884f5d6559": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso (panel solar)",
+            "content": "<p>Aprox. 16,0 kg<\/p>"
+          }
+        },
+        "47f24051-1956-4d09-914a-45617dd0b5b4": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso (con funda con función de soporte)",
+            "content": "<p>Aprox. 19 kg<\/p>"
+          }
+        },
+        "contents_REBzCH": {
+          "type": "contents",
+          "settings": {
+            "title": "Garantía",
+            "content": "<p>24 meses<br\/><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "96c06b31-eda1-4903-bb43-4f077caa630d",
+        "164ae904-ed35-4f04-bb56-59e5c98f5d93",
+        "49030969-730a-40c6-a242-19a88c228dbd",
+        "d41bb518-3e67-4858-aba2-e231a403a4b9",
+        "e6f9f81b-db30-414d-ad1e-0eaa53495bb6",
+        "2baac89b-2add-4a35-98c2-4800ab553f66",
+        "552cef54-ce99-42f6-b81f-2d884f5d6559",
+        "47f24051-1956-4d09-914a-45617dd0b5b4",
+        "contents_REBzCH"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Especificaciones"
+      }
+    },
+    "17141180300df19a43": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_MgRCFG": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_MgRCFG"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    }
+  },
+  "order": [
+    "daf26638-f596-4384-b150-72d380a3268d",
+    "sticky-product-bar",
+    "main",
+    "product-recommendations",
+    "d8a51fec-16cf-4819-ac0a-1c5a5077987e",
+    "bc7f5b0e-666f-4fc8-be0b-a23c2be32916",
+    "3d95b6bc-745c-4c4a-9cb4-631f66b52d8c",
+    "e7635af4-f318-4d19-adfe-eddcba79b7f5",
+    "bca1229f-438a-4782-9438-bf8bda63b0e2",
+    "92756880-1168-46ba-95c7-d5cb0b9a5679",
+    "1adeb1ce-0d84-4b2a-8c4e-11530c38704e",
+    "17141180300df19a43"
+  ]
+}

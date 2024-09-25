@@ -1,0 +1,85 @@
+{{ "xmas-banner.css" | asset_url | stylesheet_tag }}
+
+{% assign countdown = section.settings.countdown %}
+
+{% style %}
+
+.xmas--hero {
+    background-image: url({{ section.settings.image | img_url: 'master' }});
+}
+
+@media (max-width: 850px) {
+    .xmas--hero {
+        background-image: url({{ section.settings.mobile_image | img_url: 'master' }});
+    }
+}
+
+{% endstyle %}
+<div class="hero--section">
+    <div class="xmas--hero section-relative">
+        <div class="section-container-banner section-absolute-top">
+            <div class="hero--heading-wrapper text-left">
+                <h1 class="hero--heading title-h1 color-white gotham-medium text-left"><span class="banner-text gotham-book">{{ section.settings.title }}</span><br>{{ section.settings.sub_title }}</h1>
+            </div>
+            {% if section.settings.banner_image != blank %}
+                <div class="discount-section">
+                    <img src="{{ section.settings.banner_image | img_url: 'master' }}" alt="{{ section.settings.banner_image.alt }}">
+                </div>
+            {% endif %}
+            <div class="date-sale-section">
+                <h2 class="title-h2 color-white gotham-medium text-left">{{ section.settings.sale_title }}</h2>
+            </div>
+            <div class="countdown-section">
+
+                {% render 'xmas-countdown-timer', end_date: countdown %}
+            </div>
+        </div>
+    </div>
+</div>
+  {% schema %}
+  {
+    "name": "Xmas-Banner",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Desktop Banner"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobile_image",
+        "label": "Mobile Banner"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "EcoFlow Christmas Sale"
+      },
+      {
+        "type": "text",
+        "id": "sub_title",
+        "label": "Sub Title",
+        "default": "The Gift That Keeps On Giving"
+      },
+      {
+        "type": "image_picker",
+        "id": "banner_image",
+        "label": "Banner Sale"
+      },
+      {
+        "type": "text",
+        "id": "sale_title",
+        "label": "Sale Title",
+        "default": "Ends December 31st"
+      },
+      {
+        "type": "text",
+        "id": "countdown",
+        "label": "End Date Countdown",
+        "default": "Dec 31, 2022",
+        "info": "Input the date for ex: Dec 31, 2022 or you can set an specific date & time with time zone ex: Dec 31, 2022 10:00:00 GMT+0800"
+      }
+    ]
+  }
+  {% endschema %}

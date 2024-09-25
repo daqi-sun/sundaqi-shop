@@ -1,0 +1,193 @@
+<style>
+  .pp-video-tab__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .pp-video-tab__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+
+<div x-data="{ activeTab: 1 }" class="pp-video-tab__section pp-video-tab__section-{{ section.id }}">
+  <div class="container--default">
+    <div class="pp-video-tab__text-container">
+      {% if section.settings.title != blank %}
+        <h2 class="pp-video-tab__section-heading text--heading text-block">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+    </div>
+
+    <div class="pp-video-tab__content-container">
+      {% for block in section.blocks %}
+        <div
+          x-show="activeTab === {{ forloop.index }}"
+          class="pp-video-tab__container"
+        >
+          <div class="pp-video-tab__column-wrapper">
+            <div class="pp-video-tab__image-wrapper">
+              <img
+                class="pp-video-tab__thumbnail"
+                src="{{ block.settings.image | img_url: 'master' }}"
+                alt="{{ block.settings.image.alt }}"
+              >
+              <div class="pp-video-tab__iframe-wrapper hidden">
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 512 512"
+                  class="close-btn"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M256 48C140.559 48 48 140.559 48 256c0 115.436 92.559 208 208 208 115.435 0 208-92.564 208-208 0-115.441-92.564-208-208-208zm104.002 282.881l-29.12 29.117L256 285.117l-74.881 74.881-29.121-29.117L226.881 256l-74.883-74.881 29.121-29.116L256 226.881l74.881-74.878 29.12 29.116L285.119 256l74.883 74.881z"></path>
+                </svg>
+                <iframe
+                  class="pp-video-tab__iframe"
+                  id="pp-video-tab__{{ block.id }}"
+                  src="//www.youtube.com/embed/{{ block.settings.video_url.id }}?autoplay=0&showinfo=0&controls=1&rel=0&modestbranding=1&enablejsapi=1"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="pp-video-tab__tab-button-container">
+      {% for block in section.blocks %}
+        <button
+          x-on:click="activeTab = {{ forloop.index }}"
+          :class="{ 'active': activeTab === {{ forloop.index }} }"
+          class="pp-video-tab__tab-button {% if forloop.index == 1 %} active {% endif %}"
+        >
+          <li title="{{ block.settings.title }}">
+            <span>{{ block.settings.title }}</span>
+          </li>
+        </button>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const thumbnails = document.querySelectorAll('.pp-video-tab__thumbnail');
+
+    thumbnails.forEach(function (thumbnail) {
+      thumbnail.addEventListener('click', function (event) {
+        const iframeWrapper = thumbnail.parentElement.querySelector('.pp-video-tab__iframe-wrapper');
+
+        if (iframeWrapper) {
+          iframeWrapper.classList.remove('hidden');
+          void iframeWrapper.offsetWidth;
+        }
+      });
+    });
+
+    const closeButtons = document.querySelectorAll('.close-btn');
+
+    closeButtons.forEach(function (closeButton) {
+      closeButton.addEventListener('click', function (event) {
+        const iframeWrapper = closeButton.parentElement;
+        const iframe = iframeWrapper.querySelector('.pp-video-tab__iframe');
+
+        if (iframeWrapper) {
+          iframeWrapper.classList.add('hidden');
+          if (iframe) {
+            const src = iframe.src;
+            iframe.src = src;
+          }
+        }
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "PP Video Tab",
+  "max_blocks": 2,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Wählen Sie Ihre Lösung"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tab",
+      "name": "Tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Tab Title",
+          "default": "Balkonkraftwerk mit Speicher"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Thumbnail"
+        },
+        {
+          "type": "video_url",
+          "accept": ["youtube", "vimeo"],
+          "id": "video_url",
+          "label": "Video URL",
+          "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

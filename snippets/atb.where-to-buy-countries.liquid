@@ -1,0 +1,141 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "Countries",
+  "id": "where-to-buy-countries",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "class": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "label": "Country title",
+      "id": "atb_country_title",
+      "info": ""
+    },
+    {
+      "type": "range",
+      "label": "Blocks per page",
+      "id": "atb_blocks_per_page",
+      "min": 4,
+      "max": 7,
+      "step": 1,
+      "default": 7,
+      "info": ""
+    },
+    {
+      "type": "range",
+      "label": "Block Image height",
+      "id": "atb_image_height",
+      "min": 50,
+      "max": 100,
+      "default": 87,
+      "step": 1,
+      "unit": "px",
+      "info": ""
+    },
+    {
+      "type": "range",
+      "label": "Block Image height(Mobile)",
+      "id": "atb_image_height_mobile",
+      "min": 50,
+      "max": 100,
+      "default": 66,
+      "step": 1,
+      "unit": "px",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "blocks",
+      "label": "Block ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": "",
+      "repeatable": "Country-block"
+    },
+    {
+      "type": "image_picker",
+      "label": "Image",
+      "id": "block_image",
+      "repeatable": "Country-block",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "label": "Image url",
+      "id": "block_url",
+      "repeatable": "Country-block",
+      "info": ""
+    }
+  ],
+  "warnings": [
+    "repeating image fields may not be properly handled"
+  ]
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_country_title' -%}
+{%- assign atb_country_title = val -%}
+{%- include 'atb-render' field:'atb_blocks_per_page' -%}
+{%- assign atb_blocks_per_page = val -%}
+{%- include 'atb-render' field:'atb_image_height' -%}
+{%- assign atb_image_height = val -%}
+{%- include 'atb-render' field:'atb_image_height_mobile' -%}
+{%- assign atb_image_height_mobile = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_image' -%}
+{%- assign block_image = val -%}
+{%- include 'atb-render' field:'block_url' -%}
+{%- assign block_url = val -%}
+{%- assign atb_blocks_per_page = atb_blocks_per_page | plus: 0 -%}
+{%- assign atb_image_height = atb_image_height | plus: 0 -%}
+{%- assign atb_image_height_mobile = atb_image_height_mobile | plus: 0 -%}
+{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section ">
+
+{%- if blocks.size > 0 -%}
+    <div class="where-to-buy-container">
+        {%- if atb_country_title != blank -%}<div class="section-title"><span></span><div>{{ atb_country_title }}</div></div>{%- endif -%}
+        <div class="countries-blocks per-row-{{ atb_blocks_per_page }}" style="--image-height: {{atb_image_height}}px;--image-height-mobile: {{atb_image_height_mobile}}px;">
+            {%- for block0 in blocks -%}
+{%- assign my_image_key0 = block_image[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image0 = images[my_image_key0] -%}
+                <div class="country-block">
+                    {%- if block_url[forloop.index0] != blank -%}
+                        <a class="country-block-inner" target="_blank" href="{{ block_url[forloop.index0] }}">
+                    {%- else -%}
+                        <div class="country-block-inner">
+                    {%- endif -%}
+                    {%- if my_image0 != blank -%}
+                        <img srcset="{{ my_image0 | img_url: '1000x' }}" loading="lazy" />
+                    {%- endif -%}
+                    {%- if block_url[forloop.index0] != blank -%}</a>{%- else -%}</div>{%- endif -%}
+                </div>
+            {%- endfor -%}
+        </div>
+        {%- if blocks.size > 6 %}
+            <div class="show-more-btn">
+                <span>SHOW MORE</span>
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.5" y="0.5" width="21" height="21" rx="10.5" fill="white"/>
+                <path d="M5.75 11H16.25" stroke="#1D1D1D" stroke-width="3"/>
+                <path d="M11 5.75L11 16.25" stroke="#1D1D1D" stroke-width="3"/>
+                </svg>
+            </div>
+        {% endif %}
+    </div>
+{% endif %}
+</section>

@@ -1,0 +1,1609 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "daf26638-f596-4384-b150-72d380a3268d": {
+      "type": "product-atb-top",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "sticky-product-bar": {
+      "type": "sticky-product-bar",
+      "blocks": {
+        "588d25af-4d47-43ac-9697-b98aa2f65719": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Información general",
+            "tab_id": "product_information",
+            "section_class": ""
+          }
+        },
+        "tab_XdnN3k": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Especificaciones",
+            "tab_id": "space",
+            "section_class": ""
+          }
+        },
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "FAQ",
+            "tab_id": "faq",
+            "section_class": ""
+          }
+        },
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Compatibilidad",
+            "tab_id": "Compatibility",
+            "section_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "588d25af-4d47-43ac-9697-b98aa2f65719",
+        "tab_XdnN3k",
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4",
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38"
+      ],
+      "settings": {
+        "enabled": true,
+        "enabled_tabs": true
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "11795adc-1afa-4833-a193-258f495901ef": {
+          "type": "sku_block",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e": {
+          "type": "product_title",
+          "settings": {
+          }
+        },
+        "judge_me_reviews_preview_badge_eB3Gnj": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "0471109f-c130-454e-a9ba-c56412cc11f3": {
+          "type": "product_vendor",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185": {
+          "type": "product_price",
+          "settings": {
+          }
+        },
+        "d25a0285-4fb4-422d-b95b-ab67446120ad": {
+          "type": "product_description",
+          "settings": {
+            "desc_display": "default"
+          }
+        },
+        "79e1b437-5bbd-4b8a-ac55-27c2f795ee99": {
+          "type": "coupon_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Component_2_1.png",
+            "discount_off_text": "{{ product.metafields.custom.discount_off_text.value }}",
+            "code": "{{ product.metafields.custom.discount_code.value }}",
+            "show_copy_code_btn": true
+          }
+        },
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879": {
+          "type": "product_options_block",
+          "settings": {
+            "show_product_swatches": true,
+            "use_variant_image_for_swatches": true,
+            "button_content": ""
+          }
+        },
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe": {
+          "type": "quantity_block",
+          "settings": {
+          }
+        },
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0": {
+          "type": "accessories_section",
+          "settings": {
+            "title": "Puede que también necesites:",
+            "metafield": "accessories"
+          }
+        },
+        "9f863400-c572-447b-b273-93f1143583fa": {
+          "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/form-embed-block\/2632fe16-c075-4321-a88b-50b567f42507",
+          "disabled": true,
+          "settings": {
+            "formId": "UHSpKe"
+          }
+        },
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609": {
+          "type": "product_buttons",
+          "settings": {
+            "enable_payment_button": false,
+            "show_custom_icons": true,
+            "custom_payment_logo_1_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_08_7f374817-3a3e-42f2-95ce-077b67f293d2.svg?v=1672025209",
+            "custom_payment_logo_2_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_10_d8002835-e25f-4edb-9038-187f75f69a18.svg?v=1672025208",
+            "custom_payment_logo_3_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_02_a3ea7ab1-aa9a-4857-9ed6-01e62deccfce.svg?v=1672025208",
+            "custom_payment_logo_4_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_06_7c406d24-0983-49ff-ac8e-cf73032050d9.svg?v=1672025208",
+            "custom_payment_logo_5_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_07_be5959d4-9f22-4a31-8e40-285f8e3ac6e7.svg?v=1672025208",
+            "custom_payment_logo_6_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_04_7bff1113-0dc2-489f-8be8-d19dbe467a1a.svg?v=1672025208",
+            "custom_payment_logo_7_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_05_1c21f308-a0a3-4251-8641-87264da43d67.svg?v=1672025208",
+            "custom_payment_logo_8_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_01_96e6a30c-7908-4892-b6f1-75bce8657cd4.svg?v=1672025208",
+            "custom_payment_logo_9_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/sofort_icon_31ba2d5b-2c44-4960-8e80-645a7240c899.png?v=1679023017",
+            "custom_payment_logo_10_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/giropay_icon_c9d7e22e-cd7c-4bee-8de5-e50a4c6dc378.png?v=1679023017",
+            "custom_payment_logo_11_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/ideal_icon_8548c48a-3c4e-4052-95de-670062a453ce.png?v=1679023017",
+            "custom_payment_logo_12_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/multibanco_icon_e3f9b26f-234c-4a06-9e48-adfd188e7deb.png?v=1679023016",
+            "custom_payment_logo_13_svg": "",
+            "custom_payment_logo_14_svg": "",
+            "custom_payment_logo_15_svg": ""
+          }
+        },
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% if product.metafields.custom.trade_message != blank %}\n          <div class=\"trade-message\">♻️{{product.metafields.custom.trade_message}} <a href=\"\/pages\/trade-in\" target=\"_blank\">Learn more<\/a><\/div>\n{% endif %}"
+          }
+        }
+      },
+      "block_order": [
+        "11795adc-1afa-4833-a193-258f495901ef",
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e",
+        "judge_me_reviews_preview_badge_eB3Gnj",
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774",
+        "0471109f-c130-454e-a9ba-c56412cc11f3",
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185",
+        "d25a0285-4fb4-422d-b95b-ab67446120ad",
+        "79e1b437-5bbd-4b8a-ac55-27c2f795ee99",
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879",
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe",
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0",
+        "9f863400-c572-447b-b273-93f1143583fa",
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609",
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a"
+      ],
+      "settings": {
+        "section_id": "product_information",
+        "show_breadcrumbs": true,
+        "show_pick_an_option": false,
+        "enable_linked_options": false,
+        "enabled_mobile_sticky_btns": true,
+        "media_size": "medium",
+        "enable_image_zoom": true,
+        "enable_video_looping": true,
+        "thumbnails_type": "grid",
+        "support_email": "",
+        "support_text": "",
+        "feature_1_show": false,
+        "feature_1_title": "Fast & Free Shipping",
+        "feature_1_content": "",
+        "feature_2_show": false,
+        "feature_2_title": "Warranty Protection",
+        "feature_2_content": "",
+        "feature_3_show": false,
+        "feature_3_title": "Secure Payments",
+        "feature_3_content": "",
+        "feature_4_show": false,
+        "feature_4_title": "Multi-channel Support",
+        "feature_4_content": ""
+      }
+    },
+    "5d8ff2e1-b470-4293-bb66-a665b232bc6b": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "320fbd98-1bfa-4cb8-a6c5-f2b90dea2ce0": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "<p>Los términos “DELTA” y “RIVER”, que se mencionan en esta página, se refieren a productos fabricados exclusivamente por ECOFLOW INC.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "e9e69704-b9b1-4d60-b46a-190106ce7c6f": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/pc_ksp_es.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/m_ksp_es.jpg",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "320fbd98-1bfa-4cb8-a6c5-f2b90dea2ce0",
+        "e9e69704-b9b1-4d60-b46a-190106ce7c6f"
+      ],
+      "settings": {
+      }
+    },
+    "53b56ef3-353f-4a17-874a-1b976f57533d": {
+      "type": "pdp-slideshow",
+      "blocks": {
+        "eb106f4f-761a-48fd-97a5-4bbbda66e366": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "",
+            "title": "Conecta EcoFlow DELTA Pro 3 a tu hogar con el inversor PowerStream",
+            "subtitle": "",
+            "content": "<p>EcoFlow DELTA Pro 3, el inversor PowerStream y los paneles solares crean un sistema de batería solar doméstico que puede usarse conectado a la red eléctrica. Con las funciones Carga doble solar* y DualPower** líderes de la industria, el sistema puede lograr una verdadera independencia energética. <\/p><p>*Entrada solar simultánea desde el inversor PowerStream (entrada de 800 W) y EcoFlow DELTA Pro 3 (entrada de 2600 W)<br\/>**Alimenta tu hogar simultáneamente a través del inversor PowerStream (salida de 800 W) y EcoFlow DELTA Pro 3 (salida de 4000 W)<\/p>",
+            "content_alignment_m": "left",
+            "button_link": "https:\/\/www.ecoflow.com\/eu\/delta-pro-3-portable-power-station",
+            "button_text": "Más información sobre el sistema",
+            "bottom_content": "",
+            "bottom_content_alignment_m": "left",
+            "bottom_button_link": "",
+            "bottom_button_text": "",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/pc_powerstream_eu.jpg",
+            "mobile_image_1": "shopify:\/\/shop_images\/m_6_unique_methods_eu-1.jpg",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "image_2": "shopify:\/\/shop_images\/pc_Ensure_essential_appliances_keep_working_eu_9b8507ba-308c-453b-ab90-f07c039fe4d8.jpg",
+            "mobile_image_2": "shopify:\/\/shop_images\/20240821-112036.jpg",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        }
+      },
+      "block_order": [
+        "eb106f4f-761a-48fd-97a5-4bbbda66e366"
+      ],
+      "settings": {
+        "section_id": ""
+      }
+    },
+    "9755dabe-f9c8-4ad0-ab89-62efb21f28f9": {
+      "type": "pdp-slideshow",
+      "blocks": {
+        "a9dbc246-33d0-4407-8b04-9b894241d313": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Para uso doméstico",
+            "title": "Dispón de energía cuando la necesites",
+            "subtitle": "",
+            "content": "",
+            "content_alignment_m": "left",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "",
+            "bottom_content_alignment_m": "left",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/pc_For_Home_Use_eu.jpg",
+            "mobile_image_1": "shopify:\/\/shop_images\/m_For_Home_Use_eu.jpg",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "f372f39d-7df6-4d72-9a89-3a2eb433f689": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Para uso en caravanas",
+            "title": "Dispón de energía cuando la necesites",
+            "subtitle": "",
+            "content": "",
+            "content_alignment_m": "left",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "",
+            "bottom_content_alignment_m": "left",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/Frame_1000008477.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/m_For_RV_Use_eu.jpg",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "tab_dVcz9L": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Para uso sin conexión a red eléctrica",
+            "title": "Dispón de energía cuando la necesites",
+            "subtitle": "",
+            "content": "",
+            "content_alignment_m": "center",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "",
+            "bottom_content_alignment_m": "center",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/pc_For_Off-grid_Use_eu.jpg",
+            "mobile_image_1": "shopify:\/\/shop_images\/m_For_Off-grid_Use_eu.jpg",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "a598c7b1-7ea3-466e-a552-ff34f902d391": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Para proyectos de bricolaje",
+            "title": "Dispón de energía cuando la necesites",
+            "subtitle": "",
+            "content": "",
+            "content_alignment_m": "left",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "",
+            "bottom_content_alignment_m": "left",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/pc_For_On-site_DIY_Projects_eu.jpg",
+            "mobile_image_1": "shopify:\/\/shop_images\/m_For_On-site_DIY_Projects_eu.jpg",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "ccea95c1-85f2-447d-8e73-516c376642e7": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Para aventuras <br>al aire libre",
+            "title": "Dispón de energía cuando la necesites",
+            "subtitle": "",
+            "content": "",
+            "content_alignment_m": "left",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "",
+            "bottom_content_alignment_m": "left",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/pc_For_Outdoor_Adventures_eu.jpg",
+            "mobile_image_1": "shopify:\/\/shop_images\/m_For_Outdoor_Adventures_eu.jpg",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        }
+      },
+      "block_order": [
+        "a9dbc246-33d0-4407-8b04-9b894241d313",
+        "f372f39d-7df6-4d72-9a89-3a2eb433f689",
+        "tab_dVcz9L",
+        "a598c7b1-7ea3-466e-a552-ff34f902d391",
+        "ccea95c1-85f2-447d-8e73-516c376642e7"
+      ],
+      "settings": {
+        "section_id": ""
+      }
+    },
+    "pdp_slideshow_bFPeD7": {
+      "type": "pdp-slideshow",
+      "blocks": {
+        "tab_fCYigA": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Se asegura de que los electrodomésticos <br>esenciales funcionen en todo momento",
+            "title": "Mantén tu hogar en funcionamiento sin contratiempos",
+            "subtitle": "",
+            "content": "",
+            "content_alignment_m": "center",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>Una única fuente para alimentar casi todos tus electrodomésticos esenciales.  <\/p><p>Alimenta electrodomésticos que necesitan mucha energía, desde aires acondicionados centrales de 3 toneladas* hasta bombas de agua de 1 HP, con una sólida salida de 4000 W.  <\/p><p>Mantén en funcionamiento tu cocina y sistemas esenciales como puertas de garaje,  todo ello de forma simultánea y fiable a través de EcoFlow. <br\/><br\/>*Probado en condiciones controladas de laboratorio con motor de arranque gradual de CA central.<\/p>",
+            "bottom_content_alignment_m": "left",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/pc_Ensure_essential_appliances_keep_working_eu.jpg",
+            "mobile_image_1": "shopify:\/\/shop_images\/m_Ensure_essential_appliances_keep_working_eu.jpg",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "tab_jijfWf": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Sistema adaptable con capacidad de batería<br> ampliable hasta 12 kWh",
+            "title": "Mantén tu hogar en funcionamiento sin contratiempos",
+            "subtitle": "",
+            "content": "",
+            "content_alignment_m": "left",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>Alimenta fácilmente varios dispositivos al mismo tiempo. Haz una conexión en paralelo para ampliar la potencia hasta 12000 W y poder alimentar así electrodomésticos que necesitan mucha energía de manera simultánea. No es necesario desenchufar ni encender de manera permanente.<\/p>",
+            "bottom_content_alignment_m": "left",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/pc_Retrofittable_System_with_Expandable_Battery_Capacity_up_to_12kWh_eu.jpg",
+            "mobile_image_1": "shopify:\/\/shop_images\/m_Retrofittable_System_with_Expandable_Battery_Capacity_up_to_12kWh_eu.jpg",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "tab_zhPDVK": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Un SAI integral con<br> conmutación en 10 ms",
+            "title": "Mantén tu hogar en funcionamiento sin contratiempos",
+            "subtitle": "",
+            "content": "",
+            "content_alignment_m": "left",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p><strong>Protege tus datos. Garantiza conmutaciones rápidas en 10 ms, protegiendo tus sistemas NAS, servidores y dispositivos de entretenimiento contra interrupciones de energía y manteniendo tu tecnología segura y en funcionamiento permanente.<\/strong><\/p>",
+            "bottom_content_alignment_m": "left",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/pc_A_comprehensive_10_ms_UPS_eu.jpg",
+            "mobile_image_1": "shopify:\/\/shop_images\/m_A_comprehensive_10_ms_UPS_eu.jpg",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        }
+      },
+      "block_order": [
+        "tab_fCYigA",
+        "tab_jijfWf",
+        "tab_zhPDVK"
+      ],
+      "custom_css": [
+
+      ],
+      "settings": {
+        "section_id": ""
+      }
+    },
+    "d893f17d-7a00-4113-9531-f983c796d90b": {
+      "type": "pdp-video",
+      "custom_css": [
+        "h5 {font-size: 16px; color: #2673ff;}"
+      ],
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "",
+        "subtitle": "<h5>Silenciosa como un susurro<\/h5><h1><strong>Comodidad silenciosa para tu hogar y tus vecinos<\/strong><\/h1>",
+        "content": "<p>Gracias a su tecnología X-Quiet, es silenciosa, lo que garantiza un murmullo silencioso* y una noche de sueño tranquilo incluso si la dejas al lado de tu cama. Es tan silenciosa que apenas notarás que está ahí. <br\/>*Tan solo 30 dB<\/p>",
+        "content_alignment_m": "center",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/pc_Silent_as_a_Whisper_eu.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/m_Silent_as_a_Whisper_eu.jpg",
+        "video_type": "mp4",
+        "video_url": "",
+        "mp4_video_url": "",
+        "mp4_video_url_m": "",
+        "autoplay_video": false,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "371e1e05-60fa-44bf-a03a-bc06dac9078d": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "Carga rápido en cualquier lugar",
+        "subtitle": "",
+        "content": "<p>Presentamos la innovadora tecnología de carga rápida X-Stream de EcoFlow, que se ha convertido en un nuevo estándar en la industria. Carga del 0 hasta el 80 % en solo una hora. Disfruta de hasta 7000 W de carga súper rápida gracias a combinaciones de carga múltiple.<\/p>",
+        "content_alignment_m": "center",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/pc_Charge_Fast_Everywhere_eu.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/m_Charge_Fast_Everywhere_eu.jpg",
+        "video_type": "mp4",
+        "video_url": "",
+        "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/b82f6f6d72dd4b4d91d9c0fb2ff25aaf.mp4",
+        "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/a168c7ee8f184962aa5aa6f414cff3a9.mp4",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "6826bf9f-88e8-4de1-9bcb-88cb132fc0df": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "6 métodos únicos para satisfacer tus necesidades de carga en cualquier lugar y en cualquier momento",
+        "subtitle": "",
+        "content": "",
+        "content_alignment_m": "center",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/pc_6_unique_methods_es.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/m_6_unique_methods_es.jpg",
+        "video_type": "mp4",
+        "video_url": "",
+        "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/6108e13d2c3941fc970df1b3ac097438.mp4",
+        "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/37fb42695a424d9abbf73de5555ebf34.mp4",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "87b8b32d-496a-4917-993e-d054806c8a80": {
+      "type": "pdp-slideshow",
+      "blocks": {
+        "17f23f43-5f12-4b63-ae50-abc64abad26c": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Tecnología LFP de última generación",
+            "title": "Disfruta de la sensación de seguridad que te ofrece EcoFlow",
+            "subtitle": "<p><br\/><\/p>",
+            "content": "",
+            "content_alignment_m": "left",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>Fabricada con celdas LFP de grado automotriz, EcoFlow DELTA Pro 3 incluye el primer paquete de batería con clasificación IP65 de la industria, lo que garantiza resistencia contra impactos, agua, polvo y riesgos de incendio. Con 4000 ciclos al 80 %, ello equivale a energía diaria durante 11 años*.  Disfruta de un rendimiento fiable en cualquier condición climatológica y asegura tu tranquilidad en cualquier situación. <br\/>*Probada en condiciones controladas de laboratorio con carga y descarga a una velocidad de 0,5 C en condiciones de 25 °C<\/p>",
+            "bottom_content_alignment_m": "left",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/pc_State-of-the-art_LFP_Tech_eu.jpg",
+            "mobile_image_1": "shopify:\/\/shop_images\/m_State-of-the-art_LFP_Tech_eu.jpg",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": false,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "35732589-2d6a-4aba-8ed3-210284e00999": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "BMS provisto de la <br>innovadora tecnología X-Guard",
+            "title": "Explore the Secure Feeling EcoFlow Brings You",
+            "subtitle": "",
+            "content": "",
+            "content_alignment_m": "left",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>Confía en el sistema de gestión de batería dotado de la tecnología X-Guard para supervisar los 40 indicadores de seguridad de tu batería las 24 horas del día, los 7 días de la semana, con advertencias y protección activa las 24 horas del día. Gestiónalo todo a través de la aplicación para disfrutar de energía inteligente y segura.<\/p>",
+            "bottom_content_alignment_m": "left",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/pc_BMS_powered_by_ground-breaking_X-Guard_eu.jpg",
+            "mobile_image_1": "shopify:\/\/shop_images\/m_BMS_powered_by_ground-breaking_X-Guard_eu.jpg",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": false,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "7dee787a-9363-4a5c-9c9f-fd4b4800c0b5": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Revolucionando la construcción <br>de dispositivos duraderos",
+            "title": "Explore the Secure Feeling EcoFlow Brings You",
+            "subtitle": "",
+            "content": "",
+            "content_alignment_m": "left",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>Nuestra integración pionera de la tecnología «celda a chasis» (CTC) refuerza nuestro dispositivo EcoFlow DELTA Pro 3.  Este diseño, combinado con una carcasa ignífuga de grado 5VA con certificación UL, redefine los estándares de la industria en cuanto a resistencia y protección.<\/p>",
+            "bottom_content_alignment_m": "left",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/pc_Revolutionising_Durable_Construction_eu.jpg",
+            "mobile_image_1": "shopify:\/\/shop_images\/m_Revolutionising_Durable_Construction_eu.jpg",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": false,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "8366be76-cce4-4dd7-8e5b-23cff8ecd810": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "5 años de garantía,<br> cero preocupaciones",
+            "title": "Explore the Secure Feeling EcoFlow Brings You",
+            "subtitle": "",
+            "content": "",
+            "content_alignment_m": "left",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>Duraderos y con un excelente rendimiento, ofrecemos una garantía de 5 años, superando a los generadores de gas tradicionales y alineándonos con la élite en energía portátil. Disfruta de la asistencia optimizada de nuestro servicio de atención al cliente, que garantiza soluciones rápidas y unos tiempos de inactividad mínimos. Es nuestro compromiso con la calidad, redefinido.<\/p>",
+            "bottom_content_alignment_m": "left",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/pc_5_Years_Warranty_Zero_Worries_eu.jpg",
+            "mobile_image_1": "shopify:\/\/shop_images\/m_5_Years_Warranty_Zero_Worries_eu.jpg",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": false,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        }
+      },
+      "block_order": [
+        "17f23f43-5f12-4b63-ae50-abc64abad26c",
+        "35732589-2d6a-4aba-8ed3-210284e00999",
+        "7dee787a-9363-4a5c-9c9f-fd4b4800c0b5",
+        "8366be76-cce4-4dd7-8e5b-23cff8ecd810"
+      ],
+      "settings": {
+        "section_id": ""
+      }
+    },
+    "6c12d273-5cdf-4777-a0a1-ee3e2c8c69ee": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "Gestiona la energía sin esfuerzo desde la aplicación EcoFlow",
+        "subtitle": "",
+        "content": "",
+        "content_alignment_m": "center",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/pc_EcoFlow_App_es.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/m_EcoFlow_App_es.jpg",
+        "video_type": "mp4",
+        "video_url": "",
+        "mp4_video_url": "",
+        "mp4_video_url_m": "",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "82f7f3bf-a9d8-4236-9823-651a58407999": {
+      "type": "pdp-whats-in-the-box",
+      "blocks": {
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/sl_DP3.png",
+            "cta_label": "Estación de energía portátil EcoFlow DELTA Pro 3",
+            "link": "",
+            "cta_width": 30,
+            "cta_image_width": "100%",
+            "custom_width": 300,
+            "custom_height": 400,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 160
+          }
+        },
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/sl_dpu_accessories.png",
+            "cta_label": "Cable de carga de CA EcoFlow",
+            "link": "",
+            "cta_width": 45,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 170,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 110
+          }
+        },
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-5": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Grip_Protector.png",
+            "cta_label": "Protector de agarre",
+            "link": "",
+            "cta_width": 25,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 180,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 140
+          }
+        },
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Quick_Start_Guide.png",
+            "cta_label": "Guía de inicio rápido",
+            "link": "",
+            "cta_width": 23,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 170,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 140
+          }
+        },
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Safety_Guide.png",
+            "cta_label": "Guía de seguridad",
+            "link": "",
+            "cta_width": 23,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 180,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 140
+          }
+        },
+        "image_JAE6zY": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Warranty_Card.png",
+            "cta_label": "Tarjeta de garantía",
+            "link": "",
+            "cta_width": 24,
+            "cta_image_width": "100%",
+            "custom_width": 300,
+            "custom_height": 180,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 170
+          }
+        }
+      },
+      "block_order": [
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-0",
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-2",
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-5",
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-3",
+        "template--18569356837207__82f7f3bf-a9d8-4236-9823-651a58407999-16818926826cb059b3-4",
+        "image_JAE6zY"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "¿Contenido de la caja? - EcoFlow DELTA Pro 3",
+        "bottom_content": "",
+        "cta_height": 500,
+        "cta_height_mobile": 200,
+        "cta_half_height_mobile": 170,
+        "gutter_width": 8
+      }
+    },
+    "pdp_whats_in_the_box_y4fFyw": {
+      "type": "pdp-whats-in-the-box",
+      "blocks": {
+        "template--18569356837207__pdp_whats_in_the_box_y4fFyw-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/sl_DP3EB.png",
+            "cta_label": "Batería adicional inteligente EcoFlow DELTA Pro 3",
+            "link": "",
+            "cta_width": 40,
+            "cta_image_width": "100%",
+            "custom_width": 300,
+            "custom_height": 400,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 160
+          }
+        },
+        "template--18569356837207__pdp_whats_in_the_box_y4fFyw-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/20240827-161831.png",
+            "cta_label": "Cable de enlace plano de batería adicional EcoFlow (0,85 m)",
+            "link": "",
+            "cta_width": 30,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 170,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 100
+          }
+        },
+        "template--18569356837207__pdp_whats_in_the_box_y4fFyw-5": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Safety_Guide_621062a5-38d6-42ca-8c04-258751f6ec96.png",
+            "cta_label": "Guía de inicio rápido",
+            "link": "",
+            "cta_width": 30,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 180,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 130
+          }
+        },
+        "template--18569356837207__pdp_whats_in_the_box_y4fFyw-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Quick_Start_Guide_e9c9c050-cbea-44ab-ae25-64cf988987cc.png",
+            "cta_label": "Guía de seguridad",
+            "link": "",
+            "cta_width": 30,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 170,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 130
+          }
+        },
+        "template--18569356837207__pdp_whats_in_the_box_y4fFyw-4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Warranty_Card_0fabeec4-b834-42f4-85c5-23e522208eaf.png",
+            "cta_label": "Tarjeta de garantía",
+            "link": "",
+            "cta_width": 30,
+            "cta_image_width": "50%",
+            "custom_width": 300,
+            "custom_height": 180,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 130
+          }
+        }
+      },
+      "block_order": [
+        "template--18569356837207__pdp_whats_in_the_box_y4fFyw-0",
+        "template--18569356837207__pdp_whats_in_the_box_y4fFyw-2",
+        "template--18569356837207__pdp_whats_in_the_box_y4fFyw-5",
+        "template--18569356837207__pdp_whats_in_the_box_y4fFyw-3",
+        "template--18569356837207__pdp_whats_in_the_box_y4fFyw-4"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Contenido de la caja - Batería adicional inteligente EcoFlow DELTA Pro 3",
+        "bottom_content": "",
+        "cta_height": 500,
+        "cta_height_mobile": 200,
+        "cta_half_height_mobile": 170,
+        "gutter_width": 8
+      }
+    },
+    "445d25b8-a88b-4de2-811c-2cbe8505573e": {
+      "type": "pdp-specs",
+      "blocks": {
+        "47af9637-9c18-4189-ac35-f8a415f77098": {
+          "type": "contents",
+          "settings": {
+            "title": "Capacidad",
+            "content": "<p>4096 Wh<\/p>"
+          }
+        },
+        "f3a1ff22-e1c2-499a-8610-4bc6dbcdf47b": {
+          "type": "contents",
+          "settings": {
+            "title": "Salida de CA",
+            "content": "<p>7 salidas, 4000 W máx. (Pico de 8000 W)<\/p>"
+          }
+        },
+        "9735a98e-fa4d-4712-9472-44c8d2a204d5": {
+          "type": "contents",
+          "settings": {
+            "title": "Carga rápida USB-A",
+            "content": "<p>2 USB-A, 5 V 2,4 A 9 V 2 A 12 V 1,5 A 18 W máx.<\/p>"
+          }
+        },
+        "a6725352-6830-4493-aba9-a2094cf75982": {
+          "type": "contents",
+          "settings": {
+            "title": "Salida de CC 12 V",
+            "content": "<p>12,6 V \/ 30 A 378 W en total <br\/>1 DC5521, 5 A máx. <br\/>1 puerto Anderson, 30 A máx.<\/p>"
+          }
+        },
+        "03cae209-41ad-43b9-ac45-d01ab3422542": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada para carga solar",
+            "content": "<p>2600 W, 2 puertos: <br\/>HPV: 30-150 V \/ 15 A, 1600 W máx. <br\/>LPV: 11-60 V \/ 20 A, 1000 W máx.<\/p>"
+          }
+        },
+        "5e6f6e44-7544-4071-8a7e-25343ef62358": {
+          "type": "contents",
+          "settings": {
+            "title": "Química de la batería",
+            "content": "<p>LFP<\/p>"
+          }
+        },
+        "07c9b1a0-8f41-430f-a8b7-27b0d7cb41e9": {
+          "type": "contents",
+          "settings": {
+            "title": "Conexión",
+            "content": "<p>Wi-Fi 2,4 GHz\/Bluetooth\/CAN<\/p>"
+          }
+        },
+        "614680ef-24ec-4500-ab57-f0e4642ae896": {
+          "type": "contents",
+          "settings": {
+            "title": "Dimensiones",
+            "content": "<p>693×341×410 mm<\/p>"
+          }
+        },
+        "49c84d99-7423-4469-81f4-3fde371be7e4": {
+          "type": "contents",
+          "settings": {
+            "title": "4000W, 6000W (X-Boost)",
+            "content": "<p>Admite hasta dos baterías adicionales inteligentes DELTA Pro 3 \/ baterías adicionales inteligentes DELTA Pro<\/p>"
+          }
+        },
+        "b2e4d52a-2d0f-4095-bff6-6359bbaf8688": {
+          "type": "contents",
+          "settings": {
+            "title": "Potencia máxima de los dispositivos soportada por X-Boost",
+            "content": "<p>6000 W<\/p>"
+          }
+        },
+        "c2cef391-c4fe-4607-a2e2-4c1fb601e58f": {
+          "type": "contents",
+          "settings": {
+            "title": "Salida USB-C",
+            "content": "<p>2 USB-C, 5\/9\/12\/15\/20 V 5 A 100 W máx.<\/p>"
+          }
+        },
+        "007dec67-2841-4c16-b92b-449cb6c93308": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de carga de CA",
+            "content": "<p>200-240 V ~ 12,5 A, 50\/60 HZ 2900 W máx.<\/p>"
+          }
+        },
+        "72bcb0c3-9cc5-4252-a081-0bd13f013ef0": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de carga de vehículo",
+            "content": "<p>12 V 8 A máx.<br\/>48 V 20 A máx.<\/p>"
+          }
+        },
+        "60da6132-c27f-4fda-988e-32e461b798f9": {
+          "type": "contents",
+          "settings": {
+            "title": "Ciclo de vida",
+            "content": "<p>4000 cycles to 80% capacity<\/p>"
+          }
+        },
+        "8de015d7-0f4a-4f9a-94b7-3a20d169cd58": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso neto",
+            "content": "<p>51,5 kg (113,54 libras)<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "47af9637-9c18-4189-ac35-f8a415f77098",
+        "f3a1ff22-e1c2-499a-8610-4bc6dbcdf47b",
+        "9735a98e-fa4d-4712-9472-44c8d2a204d5",
+        "a6725352-6830-4493-aba9-a2094cf75982",
+        "03cae209-41ad-43b9-ac45-d01ab3422542",
+        "5e6f6e44-7544-4071-8a7e-25343ef62358",
+        "07c9b1a0-8f41-430f-a8b7-27b0d7cb41e9",
+        "614680ef-24ec-4500-ab57-f0e4642ae896",
+        "49c84d99-7423-4469-81f4-3fde371be7e4",
+        "b2e4d52a-2d0f-4095-bff6-6359bbaf8688",
+        "c2cef391-c4fe-4607-a2e2-4c1fb601e58f",
+        "007dec67-2841-4c16-b92b-449cb6c93308",
+        "72bcb0c3-9cc5-4252-a081-0bd13f013ef0",
+        "60da6132-c27f-4fda-988e-32e461b798f9",
+        "8de015d7-0f4a-4f9a-94b7-3a20d169cd58"
+      ],
+      "settings": {
+        "section_id": "space",
+        "title": "Especificaciones - EcoFlow DELTA Pro 3"
+      }
+    },
+    "pdp_specs_a8Bk4m": {
+      "type": "pdp-specs",
+      "blocks": {
+        "47af9637-9c18-4189-ac35-f8a415f77098": {
+          "type": "contents",
+          "settings": {
+            "title": "Capacidad",
+            "content": "<p> 4096 Wh<\/p>"
+          }
+        },
+        "f3a1ff22-e1c2-499a-8610-4bc6dbcdf47b": {
+          "type": "contents",
+          "settings": {
+            "title": "Puerto de salida",
+            "content": "<p> 40 V - 58,4 V = 100 A máx.<\/p>"
+          }
+        },
+        "9735a98e-fa4d-4712-9472-44c8d2a204d5": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso",
+            "content": "<p> 33 kg<\/p>"
+          }
+        },
+        "a6725352-6830-4493-aba9-a2094cf75982": {
+          "type": "contents",
+          "settings": {
+            "title": "Compatible con",
+            "content": "<p>EcoFlow DELTA Pro 3<\/p>"
+          }
+        },
+        "03cae209-41ad-43b9-ac45-d01ab3422542": {
+          "type": "contents",
+          "settings": {
+            "title": "Temperatura de descarga",
+            "content": "<p>-10°C ~ 45°C<\/p>"
+          }
+        },
+        "5e6f6e44-7544-4071-8a7e-25343ef62358": {
+          "type": "contents",
+          "settings": {
+            "title": "Temperatura de almacenamiento",
+            "content": "<p>-10°C ~ 45°C<\/p>"
+          }
+        },
+        "07c9b1a0-8f41-430f-a8b7-27b0d7cb41e9": {
+          "type": "contents",
+          "settings": {
+            "title": "Puerto de entrada",
+            "content": "<p>40 V - 58,4 V = 80 A máx.<\/p>"
+          }
+        },
+        "614680ef-24ec-4500-ab57-f0e4642ae896": {
+          "type": "contents",
+          "settings": {
+            "title": "Dimensiones",
+            "content": "<p>694 mm x 295 mm x 215 mm<\/p>"
+          }
+        },
+        "49c84d99-7423-4469-81f4-3fde371be7e4": {
+          "type": "contents",
+          "settings": {
+            "title": "Contenido de la caja",
+            "content": "<p>1. Batería adicional inteligente EcoFlow DELTA Pro 3 <br\/>2. Guía de inicio rápido <br\/>3. Guía de seguridad <br\/>4. Tarjeta de garantía <br\/>5. Cable de batería adicional EcoFlow<\/p>"
+          }
+        },
+        "b2e4d52a-2d0f-4095-bff6-6359bbaf8688": {
+          "type": "contents",
+          "settings": {
+            "title": "Pantalla",
+            "content": "<p>Matriz LED<\/p>"
+          }
+        },
+        "c2cef391-c4fe-4607-a2e2-4c1fb601e58f": {
+          "type": "contents",
+          "settings": {
+            "title": "Temperatura de carga",
+            "content": "<p>0°C ~ 45°C<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "47af9637-9c18-4189-ac35-f8a415f77098",
+        "f3a1ff22-e1c2-499a-8610-4bc6dbcdf47b",
+        "9735a98e-fa4d-4712-9472-44c8d2a204d5",
+        "a6725352-6830-4493-aba9-a2094cf75982",
+        "03cae209-41ad-43b9-ac45-d01ab3422542",
+        "5e6f6e44-7544-4071-8a7e-25343ef62358",
+        "07c9b1a0-8f41-430f-a8b7-27b0d7cb41e9",
+        "614680ef-24ec-4500-ab57-f0e4642ae896",
+        "49c84d99-7423-4469-81f4-3fde371be7e4",
+        "b2e4d52a-2d0f-4095-bff6-6359bbaf8688",
+        "c2cef391-c4fe-4607-a2e2-4c1fb601e58f"
+      ],
+      "settings": {
+        "section_id": "Especificaciones",
+        "title": "Especificaciones - Batería adicional inteligente EcoFlow DELTA Pro 3"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "grid_mobile": "2",
+        "heading": "You may also like",
+        "show_vendor": false
+      }
+    },
+    "index_accordion_7nHfNb": {
+      "type": "index-accordion",
+      "blocks": {
+        "block_7pjzmf": {
+          "type": "block",
+          "settings": {
+            "question": "¿Cuál es la entrada solar máxima que admite EcoFlow DELTA Pro 3?",
+            "answer": "<p>EcoFlow DELTA Pro 3 dispone de dos puertos de entrada FV, que son para el puerto FV de alta tensión y el puerto FV de baja tensión, respectivamente. <br\/>FV de alta tensión: 30-150 V, 15 A máx., 1600 W máx. FV de baja tensión: 11-60 V , 20 A máx., 1000 W máx.<\/p>"
+          }
+        },
+        "block_MkWa74": {
+          "type": "block",
+          "settings": {
+            "question": "¿Cómo se restablecen las conexiones Bluetooth y Wi-Fi en EcoFlow DELTA Pro 3?",
+            "answer": "<p>Cuando el dispositivo esté apagado, mantén presionado el botón de encendido durante más de 5 segundos. La pantalla LCD del dispositivo se iluminará y luego parpadeará una vez (debe parpadear una vez), lo que indica que la conexión Bluetooth se ha restablecido correctamente.<\/p>"
+          }
+        },
+        "block_Kc3PwW": {
+          "type": "block",
+          "settings": {
+            "question": "¿Se puede utilizar EcoFlow DELTA Pro 3 con un cargador de vehículo eléctrico?",
+            "answer": "<p>Sí, admite cargadores de vehículos eléctricos de nivel 1\/2. Deberás comprar un adaptador EcoFlow exclusivo, el adaptador EV X-Stream (DELTA Pro Ultra).  Normalmente, el puerto de carga de la red en el modelo para EE. UU. solo admite carga de CA de 120 V 2000 W (Nivel 1).  Sin embargo, al utilizar el puerto de ENTRADA\/SALIDA DE CA junto con el adaptador X-Stream de vehículo eléctrico (DELTA Pro Ultra), puedes conectar un cargador de vehículo eléctrico de 240 V, aumentando la velocidad de carga a 4000 W (Nivel 2).<\/p>"
+          }
+        },
+        "block_3hAYVe": {
+          "type": "block",
+          "settings": {
+            "question": "Si se conecta con paneles solares, ¿EcoFlow DELTA Pro 3 se encenderá automáticamente mientras esté apagado?",
+            "answer": "<p>Sí, pero existen requisitos específicos para las condiciones de iluminación.  <br\/>En lugares con poca iluminación, es posible que el dispositivo no se encienda.<\/p>"
+          }
+        },
+        "block_jLAL7f": {
+          "type": "block",
+          "settings": {
+            "question": "¿Qué productos EcoFlow son compatibles con EcoFlow DELTA Pro 3? (Otros productos EcoFlow)",
+            "answer": "<p>Cargador mediante alternador EcoFlow de 800 W Generador inteligente EcoFlow (doble combustible) Adaptador de EcoFlow DELTA Pro a generador inteligente Gestor de energía para el hogar EcoFlow PowerInsight <br\/>EcoFlow WAVE 2 Ten en cuenta que todos los dispositivos deben actualizarse a la última versión de firmware para garantizar la compatibilidad.<\/p>"
+          }
+        },
+        "block_YFixx9": {
+          "type": "block",
+          "settings": {
+            "question": "¿Qué productos EcoFlow son compatibles con EcoFlow DELTA Pro 3? (Serie EcoFlow DELTA Pro)",
+            "answer": "<p>Batería adicional inteligente EcoFlow DELTA Pro Control remoto EcoFlow DELTA Pro <br\/>Ten en cuenta que todos los dispositivos deben actualizarse a la última versión de firmware para garantizar la compatibilidad.<\/p>"
+          }
+        },
+        "block_8VFUn3": {
+          "type": "block",
+          "settings": {
+            "question": "¿Cuál es la vida útil (ciclos) de EcoFlow DELTA Pro 3?",
+            "answer": "<p>4000 ciclos. Después de 4000 ciclos a una velocidad de 0,5 C \/ 0,5 C a 25 °C, la batería mantiene más del 80 % de su estado de salud (SoH).<\/p>"
+          }
+        },
+        "block_DypmQF": {
+          "type": "block",
+          "settings": {
+            "question": "¿Cuál es el rango de temperatura operativa para EcoFlow DELTA Pro 3?",
+            "answer": "<p>Temperatura de funcionamiento óptima: 20 °C - 30 °C <br\/>Rango de temperatura de carga: 0 °C - 45 °C <br\/>Rango de temperatura de descarga: -10 °C - 45 °C Temperatura de almacenamiento de larga duración recomendada: 20 °C - 30 °C<\/p>"
+          }
+        },
+        "block_yqqWDP": {
+          "type": "block",
+          "settings": {
+            "question": "¿Cuál es el grado de protección frente al agua y el polvo de EcoFlow DELTA Pro 3? ¿Se puede utilizar el dispositivo en exteriores?",
+            "answer": "<p>Como componente principal del dispositivo, el nivel de seguridad y protección de la batería es crucial. <br\/> Para proteger mejor la unidad de la batería y reducir el riesgo de cortocircuitos e incendios causados por la entrada de agua, la unidad de la batería de EcoFlow DELTA Pro 3 está sellada. Ha alcanzado una clasificación IP65 de protección contra el agua y el polvo, lo que permite evitar de un modo eficaz la entrada de polvo y resistir las salpicaduras de agua. <br\/>Sin embargo, la unidad principal de EcoFlow DELTA Pro 3 no tiene una clasificación de resistencia al agua y al polvo (IP20).  <br\/>El dispositivo es adecuado para su uso en interiores bien ventilados o exteriores protegidos para evitar el impacto de la lluvia y el polvo.  Asegúrese de que el espacio situado alrededor del dispositivo esté seco y limpio durante la instalación y el uso para garantizar el funcionamiento normal y una larga duración del dispositivo.<\/p>"
+          }
+        },
+        "block_McHfRq": {
+          "type": "block",
+          "settings": {
+            "question": "¿EcoFlow DELTA Pro 3 dispone de protección GFCI?",
+            "answer": "<p>EcoFlow DELTA Pro 3 está equipado con un circuito de tierra de GFCI interno. Los usuarios pueden conectar un protector GFCI externo según cuáles sean sus necesidades.  Cuando se conecta un protector GFCI externo a EcoFlow DELTA Pro 3, el interruptor de apoyo de GFCI debe estar activado en la aplicación para que el protector GFCI externo funcione correctamente.<\/p>"
+          }
+        },
+        "block_K9x3Rz": {
+          "type": "block",
+          "settings": {
+            "question": "¿La batería adicional EcoFlow DELTA Pro 3 es compatible con EcoFlow DELTA Pro?",
+            "answer": "<p>No, no es compatible.<\/p>"
+          }
+        },
+        "block_cdCHrj": {
+          "type": "block",
+          "settings": {
+            "question": "¿La batería adicional inteligente EcoFlow DELTA Pro es compatible con EcoFlow DELTA Pro 3?",
+            "answer": "<p>Sí, es compatible. Ten en cuenta que todos los dispositivos deben actualizarse a la última versión de firmware para garantizar la compatibilidad.<\/p>"
+          }
+        },
+        "block_mdNctG": {
+          "type": "block",
+          "settings": {
+            "question": "Sí, es compatible. Ten en cuenta que todos los dispositivos deben actualizarse a la última versión de firmware para garantizar la compatibilidad.",
+            "answer": "<p>No, no es compatible.<\/p>"
+          }
+        },
+        "block_33MGcm": {
+          "type": "block",
+          "settings": {
+            "question": "¿Se pueden mezclar y enchufar la batería adicional inteligente EcoFlow DELTA Pro 3 y la batería adicional inteligente EcoFlow DELTA Pro en EcoFlow DELTA Pro 3?",
+            "answer": "<p>Sí, es compatible. Sin embargo, debido a las diferentes capacidades de la batería adicional para EcoFlow DELTA Pro y la batería adicional para EcoFlow DELTA Pro 3, el SOC no estará en equilibrio.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "block_7pjzmf",
+        "block_MkWa74",
+        "block_Kc3PwW",
+        "block_3hAYVe",
+        "block_jLAL7f",
+        "block_YFixx9",
+        "block_8VFUn3",
+        "block_DypmQF",
+        "block_yqqWDP",
+        "block_McHfRq",
+        "block_K9x3Rz",
+        "block_cdCHrj",
+        "block_mdNctG",
+        "block_33MGcm"
+      ],
+      "settings": {
+        "section_id": "faq",
+        "content_side": "left",
+        "title": "FAQ",
+        "subtitle": "",
+        "text_color": "#03060b",
+        "color_image_overlay": "",
+        "color_bgcolor": "",
+        "image_overlay_opacity": 70
+      }
+    },
+    "pdp_rich_text_mptJba": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "Compatibility",
+        "section_top_spacing": 20,
+        "section_bottom_spacing": 20,
+        "section_top_spacing_mobile": 20,
+        "section_bottom_spacing_mobile": 0,
+        "alignment": "center",
+        "title": "Compatibilidad de EcoFlow DELTA Pro 3*",
+        "subtitle": "<p>*Recuerda que EcoFlow DELTA Pro 3 no es compatible con EcoFlow DELTA Pro.<\/p>",
+        "content": "",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "image_ih7UwY": {
+      "type": "image",
+      "settings": {
+        "section_id": "",
+        "image": "shopify:\/\/shop_images\/pc__Compatibility_es.jpg",
+        "image_m": "shopify:\/\/shop_images\/m__Compatibility_es.jpg",
+        "custom_width_mobile": true,
+        "custom_width": 1200
+      }
+    },
+    "star_terms_conditions_twgncT": {
+      "type": "star_terms_conditions",
+      "settings": {
+        "section_background": "",
+        "section_id": "",
+        "show_mobile": true,
+        "section_top_space": 120,
+        "section_bottom_space": 40,
+        "section_top_space_m": 40,
+        "section_bottom_space_m": 40,
+        "tc_heading": "<p><strong>Sistema de batería solar para el hogar EcoFlow DELTA Pro 3 Términos y condiciones de la campaña de precalentamiento<\/strong><\/p>",
+        "heading_color": "#afafaf",
+        "tc": "<p>La campaña de precalentamiento del Sistema de batería solar para el hogar EcoFlow DELTA Pro 3 se llevará a cabo desde el 12 de agosto de 2024 a las 9 AM (CET) hasta el 6 de septiembre de 2024 a las 9 AM (CET). EcoFlow se reserva el derecho de acortar o ampliar el Periodo de la campaña a su exclusivo criterio sin previo aviso.<\/p><p><strong> Requisitos<\/strong><\/p><p>La campaña está disponible para todos los ciudadanos europeos mayores de 18 años a partir de las 9 AM (CET) del 12 de agosto de 2024.<\/p><p><strong> Detalles de la campaña<\/strong><\/p><p>1. Al proporcionar tu dirección de correo electrónico y confirmar tu suscripción, aceptas los Términos y condiciones de marketing por correo, incluyendo la suscripción a correos de marketing y la recepción de comunicaciones del equipo de EcoFlow. <\/p><p>2. Los primeros 200 pedidos de EcoFlow DELTA Pro 3 y sus paquetes realizados entre las 9 AM del 6 de septiembre y las 9 AM del 6 de octubre recibirán un seguidor solar de un solo eje EcoFlow gratis. Cada pedido está limitado a un <a href=\"https:\/\/es.ecoflow.com\/products\/single-axis-solar-tracker\" target=\"_blank\">seguidor solar de un solo eje EcoFlow<\/a>.<\/p><p> 3. Los primeros 200 pedidos mencionados anteriormente se contabilizan en los siguientes 5 sitios web oficiales de EcoFlow: <a href=\"http:\/\/eu.ecoflow.com\" target=\"_blank\">eu.ecoflow.com<\/a>, <a href=\"http:\/\/de.ecoflow.com\" target=\"_blank\">de.ecoflow.com<\/a>, <a href=\"http:\/\/fr.ecoflow.com\" target=\"_blank\">fr.ecoflow.com<\/a>, <a href=\"http:\/\/it.ecoflow.com\" target=\"_blank\">it.ecoflow.com<\/a> y <a href=\"http:\/\/es.ecoflow.com\" target=\"_blank\">es.ecoflow.com<\/a>. En total se repartirán 200 regalos entre los 5 sitios web. El inicio del recuento se basa en el anuncio en el sitio web de la hora de lanzamiento de EcoFlow DELTA Pro 3. Los pedidos que cumplan los requisitos se clasifican en orden cronológico de pago. <\/p><p>4. De estos primeros 200 pedidos de DELTA Pro 3 y su paquete mencionado anteriormente, si el comprador se ha suscrito a los correos electrónicos de marketing sobre EcoFlow DELTA Pro 3 en esta página de evento de precalentamiento <a href=\"https:\/\/es.ecoflow.com\/pages\/delta-pro-3-portable-power-station-preheat\" target=\"_blank\">https:\/\/es.ecoflow.com\/pages\/delta-pro-3-portable-power-station-preheat<\/a> desde las 9 AM del 12 de agosto hasta las 5:59 AM del 6 de septiembre, y sigue siendo suscriptor cuando se realiza el pedido, el comprador será elegible para los beneficios exclusivos para suscriptores: un Seguidor solar de un solo eje EcoFlow GRATIS y una garantía extendida de dos años para el EcoFlow DELTA Pro 3 adquirido. Cada dirección de correo electrónico cumple los requisitos para disfrutar de las ventajas de la garantía ampliada de dos años en un solo EcoFlow DELTA Pro 3 comprado. La dirección de correo electrónico utilizada por el comprador para realizar el pedido debe ser la misma que la dirección de correo electrónico utilizada para suscribirse a los correos electrónicos de marketing de EcoFlow DELTA Pro 3 durante el periodo de precalentamiento y debe permanecer suscrita en el momento del pago y dentro de las 24 horas posteriores al pago. Si el comprador cancela su suscripción en el momento del pago y dentro de las 24 horas posteriores al pago, no podrá recibir el correo electrónico de confirmación de las ventajas de la garantía ampliada. <\/p><p>5. Una vez que se hayan realizado 200 pedidos que cumplan los requisitos, la oferta especial para las primeras 200 compras finalizará automáticamente sin previo aviso en el sitio web. <\/p><p>6. Si el pedido cumple los requisitos para el seguidor solar de un solo eje EcoFlow, el regalo se agregará automáticamente al pedido dentro de las 24 horas posteriores al pago. El comprador puede consultar el correo electrónico de actualización del pedido 24 horas después de haber realizado el pago, o registrarse para una cuenta de EcoFlow y luego iniciar sesión en <a href=\"https:\/\/account.ecoflow.com\/login?return_to=es.ecoflow.com\/\" target=\"_blank\">https:\/\/account.ecoflow.com\/login?return_to=es.ecoflow.com\/<\/a> para confirmar que el regalo se ha agregado al pedido que cumpla los criterios. <\/p><p>7. Cada dirección de correo electrónico cumple los requisitos para disfrutar de las ventajas de la garantía ampliada de dos años en un solo EcoFlow DELTA Pro 3 comprado. Si el pedido cumple los requisitos para disfrutar de una garantía ampliada de 2 años en el EcoFlow DELTA Pro 3 comprado, el cliente recibirá un correo electrónico de confirmación dentro de las 24 horas posteriores a la realización del pedido, emitiendo el beneficio de la garantía ampliada de 2 años para un EcoFlow DELTA Pro 3 en el pedido. Si no se recibe este correo electrónico, revise la carpeta de correo no deseado. Si sigue sin haberlo recibido, contacte con nuestro equipo de atención al cliente a través de <a href=\"mailto:support.eu@ecoflow.com\" target=\"_blank\">support.eu@ecoflow.com<\/a> para verificar el cumplimiento de los requisitos del pedido y la emisión de la garantía ampliada. El comprador puede consultar el correo electrónico de actualización del pedido 24 horas después de haber realizado el pago, o registrarse para una cuenta de EcoFlow y luego iniciar sesión en <a href=\"https:\/\/account.ecoflow.com\/login?return_to=es.ecoflow.com\/\" target=\"_blank\">https:\/\/account.ecoflow.com\/login?return_to=es.ecoflow.com\/<\/a> para confirmar que la garantía ampliada de 2 años se ha agregado al pedido que cumpla los requisitos. La garantía ampliada de 2 años que se muestra en la página del pedido es un producto virtual que no se emitirá físicamente. Proteja su información de garantía, como el código de número de serie, el comprobante de compra (factura) y el correo electrónico de emisión de garantía ampliada para evitar la filtración de datos. EcoFlow no se responsabiliza de ninguna pérdida económica ocasionada por la filtración de información sobre la garantía causada por los clientes. <\/p><p>8. En caso de reembolso del pedido original, se deberá devolver el regalo (seguidor solar de un solo eje EcoFlow) y se invalidará la garantía extendida de dos años para EcoFlow DELTA Pro 3 (exclusiva para suscriptores durante la campaña de precalentamiento). No se proporcionará ningún aviso de invalidación por separado.<\/p><p><strong>Condiciones generales:<\/strong><\/p><p>1. Si tienes algún problema durante la promoción, contacta con <a href=\"mailto:support.eu@ecoflow.com\" target=\"_blank\">support.eu@ecoflow.com<\/a> para obtener ayuda.<\/p><p>2. En la medida en que lo permita la ley aplicable, podremos decidir modificar estas reglas o cancelar la promoción en cualquier momento. Si se comete algún fraude o abuso relacionado con la promoción, nos reservamos el derecho de excluir a cualquier cliente de la promoción.<\/p><p>3. Los participantes en la venta de rebajas aceptan los términos y condiciones establecidos en este documento y entienden que las decisiones de EcoFlow son definitivas y vinculantes. No se responderá correspondencia ni apelaciones. EcoFlow se reserva el derecho de hacer la interpretación final y definitiva de esta campaña.<\/p><p>4. Todos los pedidos deben cumplir el acuerdo de compra y la política de devoluciones de EcoFlow durante la promoción.<\/p><p>5. La promoción no se aplica a los pedidos de mayoristas o distribuidores.<\/p><p>6. Cualquier comportamiento no autorizado o fraudulento dará lugar a la descalificación de los participantes.<\/p><p>7. Los participantes deben cumplir con todas las leyes y regulaciones aplicables.<\/p><p>8. EcoFlow se reserva el derecho a interrumpir, cancelar o modificar la promoción en cualquier momento durante la misma. Cualquier cambio se anunciará en el sitio web oficial de EcoFlow.<\/p><p>9. Todos los premios de esta promoción están limitados en cantidad y están disponibles por orden de llegada. Cualquier asunto no cubierto en este documento será tratado de acuerdo con la interpretación final de EcoFlow.<\/p><p>10. EcoFlow no asumirá responsabilidad alguna por las participaciones fuera de plazo que puedan producirse por cualquier motivo, incluidos, entre otros, errores o fallos en la transmisión de la red o internet.<\/p><p>11. EcoFlow no será responsable de las pérdidas o daños directos o indirectos incurridos por cualquier parte, incluidos los participantes, que surjan de actos u omisiones en esta campaña, estén conectados con esta campaña o relacionados de cualquier forma con ella.<\/p><p>12. Los participantes aceptan eximir a EcoFlow de toda reclamación y responsabilidad, incluyendo el incumplimiento de contrato, agravio, negligencia o cualquier otra causa de demanda a tenor de la ley o la equidad que surja a raíz de, o que esté de alguna manera relacionada con esta campaña o a la inscripción del participante en la campaña.<\/p><p><\/p><p><\/p><p><\/p>",
+        "text_color": "#666666",
+        "highlight_color": "#000000",
+        "link_color": "#000000",
+        "text_alignment": "left",
+        "text_font_size": "medium",
+        "text_width": 1000,
+        "text_width_m": 800
+      }
+    },
+    "1676887592a3dc4fd0": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_a367dX": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_a367dX"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    }
+  },
+  "order": [
+    "daf26638-f596-4384-b150-72d380a3268d",
+    "sticky-product-bar",
+    "main",
+    "5d8ff2e1-b470-4293-bb66-a665b232bc6b",
+    "53b56ef3-353f-4a17-874a-1b976f57533d",
+    "9755dabe-f9c8-4ad0-ab89-62efb21f28f9",
+    "pdp_slideshow_bFPeD7",
+    "d893f17d-7a00-4113-9531-f983c796d90b",
+    "371e1e05-60fa-44bf-a03a-bc06dac9078d",
+    "6826bf9f-88e8-4de1-9bcb-88cb132fc0df",
+    "87b8b32d-496a-4917-993e-d054806c8a80",
+    "6c12d273-5cdf-4777-a0a1-ee3e2c8c69ee",
+    "82f7f3bf-a9d8-4236-9823-651a58407999",
+    "pdp_whats_in_the_box_y4fFyw",
+    "445d25b8-a88b-4de2-811c-2cbe8505573e",
+    "pdp_specs_a8Bk4m",
+    "product-recommendations",
+    "index_accordion_7nHfNb",
+    "pdp_rich_text_mptJba",
+    "image_ih7UwY",
+    "star_terms_conditions_twgncT",
+    "1676887592a3dc4fd0"
+  ]
+}

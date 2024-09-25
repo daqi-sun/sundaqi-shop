@@ -1,0 +1,112 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "Product Compare Modal",
+  "id": "pdp-compare-modal",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "class": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "id": "atb_heading",
+      "type": "text",
+      "label": "Heading",
+      "default": "Which model is right for you?",
+      "info": ""
+    },
+    {
+      "id": "atb_comparion_details",
+      "type": "wysiwyg",
+      "label": "Comparison Details",
+      "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "blocks",
+      "label": "Block ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": "",
+      "repeatable": "comparison"
+    },
+    {
+      "id": "block_background_image",
+      "type": "image_picker",
+      "label": "Background Image",
+      "repeatable": "comparison",
+      "info": ""
+    }
+  ],
+  "warnings": [
+    "repeating image fields may not be properly handled"
+  ]
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_heading' -%}
+{%- assign atb_heading = val -%}
+{%- include 'atb-render' field:'atb_comparion_details' -%}
+{%- assign atb_comparion_details = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_background_image' -%}
+{%- assign block_background_image = val -%}
+{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section ">
+<!-- Modal -->
+<div class="modal fade pdp-modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- <div class="modal fade show pdp-modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="padding-right: 16px; display: block;"> -->
+  <div class="full-height">
+    <div class="modal-dialog modal-lg w-100" role="document">
+      <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 0H0V24H24V0Z" fill="white" fill-opacity="0.01"/>
+            <path d="M4 4L20 20" stroke="#707070" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4 20L20 4" stroke="#707070" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="modal-body p-md-5 py-5">
+          <h5 class="modal-title text-center" id="exampleModalLabel">{{atb_heading}}</h5>
+          <div class="row">
+      		{% for block0 in blocks %}
+{%- assign my_image_key0 = block_background_image[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image0 = images[my_image_key0] -%}
+              <div class="col-md-6 col-6">
+                <span>
+                  <img class="lazyload" data-src="{{my_image0 | img_url: '1200x'}}">
+<!--                   <img class="lazyload mobile-image" data-src="{{block_background_image_mobile[forloop.index0] | img_url: '1000x'}}"> -->
+                </span>
+              </div>
+      		{% endfor %}      
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+				{{atb_comparion_details}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<style>
+</style>
+
+<script type="application/javascript">
+</script>
+</section>

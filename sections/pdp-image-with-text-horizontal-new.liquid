@@ -1,0 +1,204 @@
+{% if section.blocks.size > 0 %}
+    <section id="{{ section.id }}" class="pdp pdp-image-text-horizontal-alter">
+        <div class="pdp-image-text-container" id="{{ section.settings.section_id }}">
+            <div class="content-alignment-{{ section.settings.alignment }} blocks-wrapper" style="--gap: {{ section.settings.space_bw_blocks }}px;">
+                {% for block in section.blocks %}
+                    <div class="pdp-image-text-horizontal-block image-align-{{ block.settings.image_alignment }}">
+                        {% if block.settings.media_type == 'video' %}
+                            {% if block.settings.mp4_video_url != blank or block.settings.mp4_video_url_m != blank %}
+                                <div class="image-content">
+                                    <div class="video-parent {% if block.settings.mp4_video_url_m != blank %}hideMobile{% endif %} video-autoplay-{{block.settings.autoplay_video}}">
+                                        <video preload="auto" loop muted playsinline>
+                                            <source src="{{ block.settings.mp4_video_url }}#t=0.001" type="video/mp4">
+                                        </video>
+                                        {% if block.settings.autoplay_video == false %}
+                                        <div class="play-video">
+                                            {% render 'video-play-icon' %}
+                                            {% render 'video-pause-icon' %}
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                    {% if block.settings.mp4_video_url_m != blank %}
+                                        <div class="video-parent hideDesktop video-autoplay-{{block.settings.autoplay_video}}">
+                                            <video preload="auto" loop muted playsinline>
+                                                <source src="{{ block.settings.mp4_video_url_m }}#t=0.001" type="video/mp4">
+                                            </video>
+                                            {% if block.settings.autoplay_video == false %}
+                                                <div class="play-video">
+                                                    {% render 'video-play-icon' %}
+                                                    {% render 'video-pause-icon' %}
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                        {% else %}
+                            {% if block.settings.image != blank or block.settings.mobile_image != blank %}
+                                <div class="image-content">
+                                    <picture>
+                                        <source media="(min-width:750px)" srcset="{{ block.settings.image | image_url: width: 1000 }}">
+                                        {% if block.settings.mobile_image != blank %}
+                                            <source media="(max-width:749px)"  srcset="{{ block.settings.mobile_image | image_url: width: 749 }}">
+                                        {% else %}
+                                            <source media="(max-width:749px)"  srcset="{{ block.settings.image | image_url: width: 749 }}">
+                                        {% endif %}
+                                        <img src="{{ block.settings.image | image_url: width: 1000 }}" alt="{{ block.settings.image_alt }}" style="width: 100%;">
+                                    </picture>
+                                </div>
+                            {% endif %}
+                        {% endif %}
+                        <div class="text-content">
+                            {% if block.settings.title != blank %}
+                                <h1>{{ block.settings.title }}</h1>
+                            {% endif %}
+                            {% if block.settings.subtitle != blank %}
+                                <div class="subtitle">{{ block.settings.subtitle }}</div>
+                            {% endif %}
+                            {% if block.settings.content != blank %}
+                                <div class="content">{{ block.settings.content }}</div>
+                            {% endif %}
+                            {% if block.settings.button_link != blank and block.settings.button_text != blank %}
+                                <a href="{{ block.settings.button_link }}" class="pdp-button">{{ block.settings.button_text }}</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    {% schema %}
+    {
+        "name": "PDP Image/Text-Horizontal",
+        "presets": [
+            {
+                "name": "PDP Image/Text-Horizontal"
+            }
+        ],
+        "settings": [
+            {
+                "type": "text",
+                "id": "section_id",
+                "label": "Section ID"
+            },
+            {
+                "type": "select",
+                "id": "alignment",
+                "label": "Text alignment",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "Left"
+                    },
+                    {
+                        "value": "right",
+                        "label": "Right"
+                    },
+                    {
+                        "value": "center",
+                        "label": "Center"
+                    }
+                ],
+                "default": "center"
+            },
+            {
+                "type": "range",
+                "id": "space_bw_blocks",
+                "label": "Space between blocks",
+                "min": 0,
+                "max": 100,
+                "step": 5,
+                "default": 0,
+                "unit": "px"
+            }
+        ],
+        "blocks": [
+            {
+                "name": "Image/Video",
+                "type": "image",
+                "settings": [
+                    {
+                        "type": "radio",
+                        "id": "media_type",
+                        "label": "Media type",
+                        "options": [
+                            { "value": "image", "label": "Image" },
+                            { "value": "video", "label": "Video" }
+                        ]
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "Image"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "mobile_image",
+                        "label": "Mobile Image"
+                    },
+                    {
+                        "type": "text",
+                        "id": "mp4_video_url",
+                        "label": "Mp4 video URL"
+                    },
+                    {
+                        "type": "text",
+                        "id": "mp4_video_url_m",
+                        "label": "Mobile - Mp4 video URL"
+                    },
+                    {
+                        "type": "checkbox",
+                        "id": "autoplay_video",
+                        "label": "Autoplay MP4 video",
+                        "default": true
+                    },
+                    {
+                        "type": "select",
+                        "id": "image_alignment",
+                        "label": "Image/Video alignment",
+                        "options": [
+                            {
+                                "value": "left",
+                                "label": "Left"
+                            },
+                            {
+                                "value": "right",
+                                "label": "Right"
+                            }
+                        ],
+                        "default": "left"
+                    },
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Title"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "subtitle",
+                        "label": "Subtitle"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "content",
+                        "label": "Content"
+                    },
+                    {
+                        "type": "url",
+                        "id": "button_link",
+                        "label": "Button Link"
+                    },
+                    {
+                        "type": "text",
+                        "id": "button_text",
+                        "label": "Button Text",
+                        "default": "Learn More"
+                    }
+                ]
+            }
+        ]
+    }
+
+    {% endschema %}

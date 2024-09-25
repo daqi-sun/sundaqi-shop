@@ -1,0 +1,269 @@
+<style>
+  .sg-banner-slider__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .sg-banner-slider__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+<div
+  class="sg-banner-slider sg-banner-slider__section-{{ section.id }}"
+  id="_{{ section.settings.id | downcase | remove: ' ' | replace: '&', '-' }}"
+>
+  <div class="display--desktop">
+    <div class="sg-banner__container-slider">
+      <div class="swiper sg-icon__slider-container banner-slider">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            {% if block.type == 'banner_slider' %}
+              <div class="swiper-slide">
+                {% assign image = block.settings.mobileImage %}
+                {% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+                <div
+                  class="custom-img__wrapper display--mobile"
+                  style="padding-top: {{ pt }}%;"
+                >
+                  <img
+                    class="custom-img"
+                    srcset="
+                      {{ image | img_url: '500x' }} 500w,
+                      {{ image | img_url: '600x' }} 600w,
+                      {{ image | img_url: 'master' }} 700w,
+                    "
+                    alt="{{ image.alt }}"
+                  >
+                </div>
+
+                {% assign image = block.settings.image %}
+                {% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+                <div
+                  class="custom-img__wrapper display--desktop"
+                  style="padding-top: {{ pt }}%;"
+                >
+                  <img
+                    class="custom-img"
+                    srcset="
+                      {{ image | img_url: '1000x' }} 1000w,
+                      {{ image | img_url: '1200x' }} 1200w,
+                      {{ image | img_url: '1400x' }} 1400w,
+                      {{ image | img_url: 'master' }} 1600w,
+                    "
+                    alt="{{ image.alt }}"
+                    loading="lazy"
+                  >
+                </div>
+                <div class="sg-banner-slider__content__container container--default">
+                  <div class="sg-banner-slider__content">
+                    {% if block.settings.title != blank %}
+                      <h2 class="sg-banner-slider__title text--heading text--white">
+                        {{ block.settings.title }}
+                      </h2>
+                    {% endif %}
+                    {% if block.settings.subtitle != blank %}
+                      <h2 class="sg-banner-slider__subtitle text--subheading">
+                        {{ block.settings.subtitle }}
+                      </h2>
+                    {% endif %}
+                    {% if block.settings.description != blank %}
+                      <h2 class="sg-banner-slider__description text--description text--white">
+                        {{ block.settings.description }}
+                      </h2>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            {% else %}
+              <div class="sg-banner-slider__container swiper-slide">
+                <div class="container--default">
+                  <div class="sg-banner-slider__image-wrapper">
+                    <img
+                      src="{{ block.settings.image | img_url: 'master' }}"
+                      alt="{{ block.settings.image.alt }}"
+                    >
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="sg-banner-slider-swiper__navigation">
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="display--mobile">
+    {% for block in section.blocks %}
+      {% if block.type == 'banner_slider' %}
+        {% assign image = block.settings.mobileImage %}
+        {% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+        <div
+          class="custom-img__wrapper display--mobile"
+          style="padding-top: {{ pt }}%;"
+        >
+          <img
+            class="custom-img"
+            srcset="
+              {{ image | img_url: '500x' }} 500w,
+              {{ image | img_url: '600x' }} 600w,
+              {{ image | img_url: 'master' }} 700w,
+            "
+            alt="{{ image.alt }}"
+          >
+        </div>
+
+        {% assign image = block.settings.image %}
+        {% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+        <div
+          class="custom-img__wrapper display--desktop"
+          style="padding-top: {{ pt }}%;"
+        >
+          <img
+            class="custom-img"
+            srcset="
+              {{ image | img_url: '1000x' }} 1000w,
+              {{ image | img_url: '1200x' }} 1200w,
+              {{ image | img_url: '1400x' }} 1400w,
+              {{ image | img_url: 'master' }} 1600w,
+            "
+            alt="{{ image.alt }}"
+            loading="lazy"
+          >
+        </div>
+        <div class="sg-banner-slider__content__container container--default">
+          <div class="sg-banner-slider__content">
+            {% if block.settings.title != blank %}
+              <h2 class="sg-banner-slider__title text--heading text--white">
+                {{ block.settings.title }}
+              </h2>
+            {% endif %}
+            {% if block.settings.subtitle != blank %}
+              <h2 class="sg-banner-slider__subtitle text--subheading">
+                {{ block.settings.subtitle }}
+              </h2>
+            {% endif %}
+            {% if block.settings.description != blank %}
+              <h2 class="sg-banner-slider__description text--description text--white">
+                {{ block.settings.description }}
+              </h2>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    new Swiper('.banner-slider', {
+      slidesPerView: 1,
+      spaceBetween: 36,
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "SP Banner Slider",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "banner_slider",
+      "name": "Banner Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobileImage",
+          "label": "Mobile Image"
+        },
+        {
+          "type": "html",
+          "id": "title",
+          "label": "Title",
+          "default": "Load Shedding Sale"
+        },
+        {
+          "type": "html",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Up to 30% OFF"
+        },
+        {
+          "type": "html",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    },
+    {
+      "type": "table_slider",
+      "name": "Table Slider",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

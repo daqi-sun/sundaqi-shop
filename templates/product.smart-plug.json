@@ -1,0 +1,927 @@
+{
+  "sections": {
+    "daf26638-f596-4384-b150-72d380a3268d": {
+      "type": "product-atb-top",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "sticky-product-bar": {
+      "type": "sticky-product-bar",
+      "blocks": {
+        "588d25af-4d47-43ac-9697-b98aa2f65719": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Overview",
+            "tab_id": "product_information",
+            "section_class": ""
+          }
+        },
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "What's in the box",
+            "tab_id": "what_in_box",
+            "section_class": ""
+          }
+        },
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "FAQ",
+            "tab_id": "faq",
+            "section_class": ""
+          }
+        },
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Reviews",
+            "tab_id": "section-reviews",
+            "section_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "588d25af-4d47-43ac-9697-b98aa2f65719",
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02",
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4",
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38"
+      ],
+      "settings": {
+        "enabled": true,
+        "enabled_tabs": false
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "11795adc-1afa-4833-a193-258f495901ef": {
+          "type": "sku_block",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e": {
+          "type": "product_title",
+          "settings": {
+          }
+        },
+        "judge_me_reviews_preview_badge_zBGRqf": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "0471109f-c130-454e-a9ba-c56412cc11f3": {
+          "type": "product_vendor",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185": {
+          "type": "product_price",
+          "settings": {
+          }
+        },
+        "d25a0285-4fb4-422d-b95b-ab67446120ad": {
+          "type": "product_description",
+          "settings": {
+            "desc_display": "default"
+          }
+        },
+        "79e1b437-5bbd-4b8a-ac55-27c2f795ee99": {
+          "type": "coupon_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Component_2_1.png",
+            "discount_off_text": "{{ product.metafields.custom.discount_off_text.value }}",
+            "code": "{{ product.metafields.custom.discount_code.value }}",
+            "show_copy_code_btn": true
+          }
+        },
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879": {
+          "type": "product_options_block",
+          "settings": {
+            "show_product_swatches": true,
+            "use_variant_image_for_swatches": true,
+            "button_content": ""
+          }
+        },
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe": {
+          "type": "quantity_block",
+          "settings": {
+          }
+        },
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0": {
+          "type": "accessories_section",
+          "settings": {
+            "title": "You may also like",
+            "metafield": "accessories"
+          }
+        },
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609": {
+          "type": "product_buttons",
+          "settings": {
+            "enable_payment_button": false,
+            "show_custom_icons": true,
+            "custom_payment_logo_1_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_08_7f374817-3a3e-42f2-95ce-077b67f293d2.svg?v=1672025209",
+            "custom_payment_logo_2_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_10_d8002835-e25f-4edb-9038-187f75f69a18.svg?v=1672025208",
+            "custom_payment_logo_3_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_02_a3ea7ab1-aa9a-4857-9ed6-01e62deccfce.svg?v=1672025208",
+            "custom_payment_logo_4_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_06_7c406d24-0983-49ff-ac8e-cf73032050d9.svg?v=1672025208",
+            "custom_payment_logo_5_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_07_be5959d4-9f22-4a31-8e40-285f8e3ac6e7.svg?v=1672025208",
+            "custom_payment_logo_6_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_04_7bff1113-0dc2-489f-8be8-d19dbe467a1a.svg?v=1672025208",
+            "custom_payment_logo_7_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_05_1c21f308-a0a3-4251-8641-87264da43d67.svg?v=1672025208",
+            "custom_payment_logo_8_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_01_96e6a30c-7908-4892-b6f1-75bce8657cd4.svg?v=1672025208",
+            "custom_payment_logo_9_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/sofort_icon_31ba2d5b-2c44-4960-8e80-645a7240c899.png?v=1679023017",
+            "custom_payment_logo_10_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/giropay_icon_c9d7e22e-cd7c-4bee-8de5-e50a4c6dc378.png?v=1679023017",
+            "custom_payment_logo_11_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/ideal_icon_8548c48a-3c4e-4052-95de-670062a453ce.png?v=1679023017",
+            "custom_payment_logo_12_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/multibanco_icon_e3f9b26f-234c-4a06-9e48-adfd188e7deb.png?v=1679023016",
+            "custom_payment_logo_13_svg": "",
+            "custom_payment_logo_14_svg": "",
+            "custom_payment_logo_15_svg": ""
+          }
+        },
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% if product.metafields.custom.trade_message != blank %}\n          <div class=\"trade-message\">♻️{{product.metafields.custom.trade_message}} <a href=\"\/pages\/trade-in\" target=\"_blank\">Learn more<\/a><\/div>\n{% endif %}"
+          }
+        }
+      },
+      "block_order": [
+        "11795adc-1afa-4833-a193-258f495901ef",
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e",
+        "judge_me_reviews_preview_badge_zBGRqf",
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774",
+        "0471109f-c130-454e-a9ba-c56412cc11f3",
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185",
+        "d25a0285-4fb4-422d-b95b-ab67446120ad",
+        "79e1b437-5bbd-4b8a-ac55-27c2f795ee99",
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879",
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe",
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0",
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609",
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a"
+      ],
+      "settings": {
+        "section_id": "",
+        "show_breadcrumbs": true,
+        "show_pick_an_option": false,
+        "enable_linked_options": false,
+        "enabled_mobile_sticky_btns": true,
+        "media_size": "medium",
+        "enable_image_zoom": true,
+        "enable_video_looping": true,
+        "thumbnails_type": "grid",
+        "support_email": "",
+        "support_text": "",
+        "feature_1_show": false,
+        "feature_1_title": "Fast & Free Shipping",
+        "feature_1_content": "",
+        "feature_2_show": false,
+        "feature_2_title": "Warranty Protection",
+        "feature_2_content": "",
+        "feature_3_show": false,
+        "feature_3_title": "Secure Payments",
+        "feature_3_content": "",
+        "feature_4_show": false,
+        "feature_4_title": "Multi-channel Support",
+        "feature_4_content": ""
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "grid_mobile": "2",
+        "heading": "You may also like",
+        "show_vendor": false
+      }
+    },
+    "df8d05ea-b32a-4f9d-8d63-80b7f3e007e6": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--19005091250519__df8d05ea-b32a-4f9d-8d63-80b7f3e007e6-1684922582e6b0b130-0": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/smart_plug_pc_1.png",
+            "mobile_image": "shopify:\/\/shop_images\/smart_plug_mb_1.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "¿Por qué elegir EcoFlow Smart Plug?",
+            "title_color": "#232323",
+            "content": "<p>EcoFlow Smart Plug es un enchufe con conexión Wi-Fi que proporciona monitorización de la energía y control inteligente de aparatos. Como parte del Kit PowerStream, funciona junto con el microinversor y la aplicación EcoFlow para proporcionar estadísticas de consumo energético en tiempo real y distribución automática y optimizada de la electricidad.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "1076cbdc-ddda-4b3b-bcda-87091faaa41e": {
+          "type": "text_with_image",
+          "disabled": true,
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/smart_plug_pc_2.png",
+            "mobile_image": "shopify:\/\/shop_images\/smart_plug_mb_2.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Distribución automática y optimizada de la energía",
+            "title_color": "#232323",
+            "content": "<p>Los enchufes inteligentes controlan el consumo de energía de los electrodomésticos en tiempo real, y el inversor puede distribuir la cantidad de energía justa para cada aparato, y el excedente se almacena en la estación de alimentación portátil. Durante las horas pico, el sistema prioriza el uso doméstico. La mayor parte de la energía se almacena en las horas valle.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "142c9668-ea75-4723-9149-4311fcd8a24f": {
+          "type": "text_with_image",
+          "disabled": true,
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/smart_plug_pc_3.png",
+            "mobile_image": "shopify:\/\/shop_images\/smart_plug_mb_3.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Control remoto de los electrodomésticos.",
+            "title_color": "#232323",
+            "content": "<p>Apaga y enciende los dispositivos conectados tan solo haciendo clic en la aplicación desde cualquier lugar con conexión a Internet.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "b72961da-03f7-45a1-a0bd-752afd7cfb1b": {
+          "type": "text_with_image",
+          "disabled": true,
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/smart_plug_pc_4.png",
+            "mobile_image": "shopify:\/\/shop_images\/smart_plug_mb_4.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Seguimiento energético en tiempo real.",
+            "title_color": "#232323",
+            "content": "<p>Haz el seguimiento del consumo de energía en directo y a lo largo del tiempo de manera que puedas ver los informes completos en la aplicación EcoFlow y conocer cuáles son tus hábitos de consumo. Esto te proporciona una ventaja a la hora de mejorar tu ahorro energético y adoptar un estilo de vida neutro en cuando a emisiones de carbono. <\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "a2712162-bd57-40a0-aa3e-325e6d95497c": {
+          "type": "text_with_image",
+          "disabled": true,
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/smart_plug_pc_5.png",
+            "mobile_image": "shopify:\/\/shop_images\/smart_plug_mb_5.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Protocolo para dispositivos domésticos inteligentes Matter",
+            "title_color": "#232323",
+            "content": "<p>Se integran con Apple, Amazon, Google, Samsung y otros sistemas domésticos inteligentes compatibles con Matter. En otras palabras, puedes usar comandos de voz para controlar todos los dispositivos conectados. <\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "1ea9cf10-6e0c-4ea3-ad00-db5bfa8829d5": {
+          "type": "text_with_image",
+          "disabled": true,
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/smart_plug_pc_6.png",
+            "mobile_image": "shopify:\/\/shop_images\/smart_plug_mb_6.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Programas y temporizadores.",
+            "title_color": "#232323",
+            "content": "<p>Configura el horario de funcionamiento de tus electrodomésticos según tus hábitos. Incluso cuando Internet no funciona, tus horarios y temporizadores seguirán funcionando sin complicaciones. <\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "31e15b3d-c383-4682-86a3-b3eb2cf0f662": {
+          "type": "text_with_image",
+          "disabled": true,
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/smart_plug_pc_7.png",
+            "mobile_image": "shopify:\/\/shop_images\/smart_plug_mb_7.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Seguridad y larga duración garantizados.",
+            "title_color": "#232323",
+            "content": "<p>Fabricados con materiales PV ignífugos, estos enchufes están protegidos contra el riesgo de incendios. Además de eso, son sólidos y duraderos y ofrecen una excelente resistencia a la abrasión, las grasas, ácidos y álcalis. <\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "ea99389e-c678-41e5-8a02-3f5049ecaa27": {
+          "type": "text_with_image",
+          "disabled": true,
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/smart_plug_pc_8.png",
+            "mobile_image": "shopify:\/\/shop_images\/smart_plug_mb_8.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Más beneficios para ti",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "f30a6f2d-fcd0-4943-bf2a-1cd33db9b468": {
+          "type": "text_with_image",
+          "disabled": true,
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--19005091250519__df8d05ea-b32a-4f9d-8d63-80b7f3e007e6-1684922582e6b0b130-0",
+        "1076cbdc-ddda-4b3b-bcda-87091faaa41e",
+        "142c9668-ea75-4723-9149-4311fcd8a24f",
+        "b72961da-03f7-45a1-a0bd-752afd7cfb1b",
+        "a2712162-bd57-40a0-aa3e-325e6d95497c",
+        "1ea9cf10-6e0c-4ea3-ad00-db5bfa8829d5",
+        "31e15b3d-c383-4682-86a3-b3eb2cf0f662",
+        "ea99389e-c678-41e5-8a02-3f5049ecaa27",
+        "f30a6f2d-fcd0-4943-bf2a-1cd33db9b468"
+      ],
+      "settings": {
+      }
+    },
+    "cb0183dc-6c10-4983-94b6-ee1fd58808aa": {
+      "type": "pdp-slideshow",
+      "blocks": {
+        "ad22b96d-0a09-43b8-a3ba-6494ca75db6d": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "",
+            "title": "Distribución automática y optimizada de la energía",
+            "subtitle": "",
+            "content": "<p>Cuando  los enchufes inteligentes forman parte de tu kit solar para balcones,  monitorizan el uso de energía de los dispositivos y, por tanto, ayudan al  inversor a asignar automáticamente a los dispositivos conectados justo la  energía que necesitan. La energía sobrante se almacena en la batería. Por tanto, no se desperdicia energía. Cuando  los enchufes inteligentes están desconectados, el sistema suministra una  antidad establecida de energía a tus circuitos domésticos. La energía  sobrante se desperdicia cuando consumes menos de este suministro fijo.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "video",
+            "mp4_video_url_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/bb7d66e49174498c8faa8a51314e9804.mp4",
+            "mp4_video_url_m_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/a67824a9698d40dba9bb47460319d874.mp4",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        }
+      },
+      "block_order": [
+        "ad22b96d-0a09-43b8-a3ba-6494ca75db6d"
+      ],
+      "settings": {
+        "section_id": ""
+      }
+    },
+    "38466279-9431-4bff-8b9e-5ec88592de6d": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--20072608923995__38466279-9431-4bff-8b9e-5ec88592de6d-text_with_image-1": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/smart_plug_pc_3.png",
+            "mobile_image": "shopify:\/\/shop_images\/smart_plug_mb_3.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Control remoto de los electrodomésticos.",
+            "title_color": "#232323",
+            "content": "<p>Apaga y enciende los dispositivos conectados tan solo haciendo clic en la aplicación desde cualquier lugar con conexión a Internet.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "292006e5-1d4d-474d-b719-f22b55fbaa4d": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/smart_plug_pc_4.png",
+            "mobile_image": "shopify:\/\/shop_images\/smart_plug_mb_4.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Seguimiento energético en tiempo real.",
+            "title_color": "#232323",
+            "content": "<p>Haz el seguimiento del consumo de energía en directo y a lo largo del tiempo de manera que puedas ver los informes completos en la aplicación EcoFlow y conocer cuáles son tus hábitos de consumo. Esto te proporciona una ventaja a la hora de mejorar tu ahorro energético y adoptar un estilo de vida neutro en cuando a emisiones de carbono. <\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "91dbf097-418b-4e8d-b585-b4895de07243": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/smart_plug_pc_5.png",
+            "mobile_image": "shopify:\/\/shop_images\/smart_plug_mb_5.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Protocolo para dispositivos domésticos inteligentes Matter",
+            "title_color": "#232323",
+            "content": "<p>Se integran con Apple, Amazon, Google, Samsung y otros sistemas domésticos inteligentes compatibles con Matter. En otras palabras, puedes usar comandos de voz para controlar todos los dispositivos conectados. <\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "e1496c7a-ec15-4de1-9cee-46fe5183b17f": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/smart_plug_pc_6.png",
+            "mobile_image": "shopify:\/\/shop_images\/smart_plug_mb_6.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Programas y temporizadores.",
+            "title_color": "#232323",
+            "content": "<p>Configura el horario de funcionamiento de tus electrodomésticos según tus hábitos. Incluso cuando Internet no funciona, tus horarios y temporizadores seguirán funcionando sin complicaciones. <\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "6b975e78-6b4e-41ff-ad31-8ce94eaaf726": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/smart_plug_pc_7.png",
+            "mobile_image": "shopify:\/\/shop_images\/smart_plug_mb_7.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Seguridad y larga duración garantizados.",
+            "title_color": "#232323",
+            "content": "<p>Fabricados con materiales PV ignífugos, estos enchufes están protegidos contra el riesgo de incendios. Además de eso, son sólidos y duraderos y ofrecen una excelente resistencia a la abrasión, las grasas, ácidos y álcalis. <\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "54a823dc-9ab6-4ee7-80e7-44e9494d1960": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/smart_plug_pc_8.png",
+            "mobile_image": "shopify:\/\/shop_images\/smart_plug_mb_8.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Más beneficios para ti",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--20072608923995__38466279-9431-4bff-8b9e-5ec88592de6d-text_with_image-1",
+        "292006e5-1d4d-474d-b719-f22b55fbaa4d",
+        "91dbf097-418b-4e8d-b585-b4895de07243",
+        "e1496c7a-ec15-4de1-9cee-46fe5183b17f",
+        "6b975e78-6b4e-41ff-ad31-8ce94eaaf726",
+        "54a823dc-9ab6-4ee7-80e7-44e9494d1960"
+      ],
+      "settings": {
+      }
+    },
+    "b9faeabe-7ce7-444b-a5b5-edbd552618f9": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 20,
+        "section_bottom_spacing": 20,
+        "section_top_spacing_mobile": 20,
+        "section_bottom_spacing_mobile": 20,
+        "alignment": "center",
+        "title": "",
+        "subtitle": "<h2>Contenido de la caja<\/h2>",
+        "content": "",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "0be51028-c43f-40ea-a0fe-4ce220ddb951": {
+      "type": "pdp-image-with-text",
+      "blocks": {
+        "63da870a-593b-4c7a-958b-13d134a947b7": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/smart_plug_pc_9_1.png",
+            "mobile_image": "shopify:\/\/shop_images\/smart_plug_mb_9_1.png",
+            "image_height": 310,
+            "mobile_image_height": 250,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "<p>1 x Smart Plug<\/p>",
+            "subtext_bottom": "",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "c0884ae6-0455-4bee-9cce-c4bb5d502a4b": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/smart_plug_mb_9_2.png",
+            "image_height": 310,
+            "mobile_image_height": 250,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "<p>4 x Smart Plug<\/p>",
+            "subtext_bottom": "",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "63da870a-593b-4c7a-958b-13d134a947b7",
+        "c0884ae6-0455-4bee-9cce-c4bb5d502a4b"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "center",
+        "layout": "stacked",
+        "stacked_row": "2",
+        "mobile_stacked_row": "1",
+        "slider_row": "2",
+        "mobile_slider_row": "1"
+      }
+    },
+    "d0dcc489-5b64-4ba8-8099-4ddc2106f3af": {
+      "type": "pdp-specs",
+      "blocks": {
+        "daca02ce-2c9a-4acf-88d0-da6a988fa86d": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso",
+            "content": "<p>Aproximadamente 113 g<\/p>"
+          }
+        },
+        "b6457078-3b30-416a-894b-d21c5d49ba24": {
+          "type": "contents",
+          "settings": {
+            "title": "Dimensiones",
+            "content": "<p>53 × 53 × 79 mm<\/p>"
+          }
+        },
+        "4117ea6a-9056-43d4-bae6-42f7f544534a": {
+          "type": "contents",
+          "settings": {
+            "title": "Tensión",
+            "content": "<p>110-250V<\/p>"
+          }
+        },
+        "362eda9e-6a54-4736-8ead-77bc026ebd87": {
+          "type": "contents",
+          "settings": {
+            "title": "Corriente alterna",
+            "content": "<p>10A<\/p>"
+          }
+        },
+        "917bf0ff-dcb6-43ed-affa-eb6c3eaa584c": {
+          "type": "contents",
+          "settings": {
+            "title": "Frecuencia",
+            "content": "<p>50Hz<\/p>"
+          }
+        },
+        "0f463b0c-e011-4aca-b07d-66075f80755d": {
+          "type": "contents",
+          "settings": {
+            "title": "Temperatura de funcionamiento",
+            "content": "<p>-10°C - 40°C<\/p>"
+          }
+        },
+        "b4d8fb85-0b23-44d8-8656-684245a2a599": {
+          "type": "contents",
+          "settings": {
+            "title": "Wi-Fi (2.4G)",
+            "content": "<p>Rango de frecuencia：<br\/>20M: 2412 — 2472 MHz<br\/>40M: 2422 — 2462 MHz<br\/>Rango de frecuencia：<br\/>≤20 dBm<\/p>"
+          }
+        },
+        "49600f20-2acc-48c4-8c52-54708e5c1eee": {
+          "type": "contents",
+          "settings": {
+            "title": "Bluetooth®",
+            "content": "<p>Rango de frecuencia：<br\/>2402 — 2480 MH<br\/>Potencia de salida máxima：<br\/>≤20 dBm\"<\/p>"
+          }
+        },
+        "a3bd2744-d3dc-45fd-95be-5d05648db277": {
+          "type": "contents",
+          "disabled": true,
+          "settings": {
+            "title": "Overvoltage category",
+            "content": "<p>II<\/p>"
+          }
+        },
+        "a0067e06-f85a-4185-a508-0b11093c6e56": {
+          "type": "contents",
+          "disabled": true,
+          "settings": {
+            "title": "AC Input",
+            "content": "<p>100V-230V+-10% 50\/60 Hz<\/p>"
+          }
+        },
+        "2119b956-6e58-4cef-a4bb-7b465b20f46a": {
+          "type": "contents",
+          "disabled": true,
+          "settings": {
+            "title": "Minimal Display Power",
+            "content": "<p>1W<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "daca02ce-2c9a-4acf-88d0-da6a988fa86d",
+        "b6457078-3b30-416a-894b-d21c5d49ba24",
+        "4117ea6a-9056-43d4-bae6-42f7f544534a",
+        "362eda9e-6a54-4736-8ead-77bc026ebd87",
+        "917bf0ff-dcb6-43ed-affa-eb6c3eaa584c",
+        "0f463b0c-e011-4aca-b07d-66075f80755d",
+        "b4d8fb85-0b23-44d8-8656-684245a2a599",
+        "49600f20-2acc-48c4-8c52-54708e5c1eee",
+        "a3bd2744-d3dc-45fd-95be-5d05648db277",
+        "a0067e06-f85a-4185-a508-0b11093c6e56",
+        "2119b956-6e58-4cef-a4bb-7b465b20f46a"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Especificaciones"
+      }
+    },
+    "16851771988dbc4b81": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_htf8R3": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_htf8R3"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    }
+  },
+  "order": [
+    "daf26638-f596-4384-b150-72d380a3268d",
+    "sticky-product-bar",
+    "main",
+    "product-recommendations",
+    "df8d05ea-b32a-4f9d-8d63-80b7f3e007e6",
+    "cb0183dc-6c10-4983-94b6-ee1fd58808aa",
+    "38466279-9431-4bff-8b9e-5ec88592de6d",
+    "b9faeabe-7ce7-444b-a5b5-edbd552618f9",
+    "0be51028-c43f-40ea-a0fe-4ce220ddb951",
+    "d0dcc489-5b64-4ba8-8099-4ddc2106f3af",
+    "16851771988dbc4b81"
+  ]
+}

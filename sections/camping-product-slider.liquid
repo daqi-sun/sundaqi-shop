@@ -1,0 +1,134 @@
+<div class="camping-product-slider">
+    <div class="content--wrapper product-slider">
+      {% for block in section.blocks %}
+        <div class="product--block">
+          <a href="{{ block.settings.url }}">
+            <img
+              class="image-block"
+              srcset="{{ block.settings.image | img_url: 'master' }}"
+              alt="{{ block.settings.image.alt }}"
+              loading="lazy"
+            >
+            <h2>{{ block.settings.title }}</h2>
+          </a>
+          <a href="{{ block.settings.url }}">
+            <div class="shop--btn">
+              <span>{{ block.settings.buttonText }}</span>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <script>
+    $(window).on('load', function () {
+      function productMobileSlider($slidername, $dots, $arrows, $breakpoint) {
+        var slider = $($slidername);
+        var settings = {
+          mobileFirst: true,
+          dots: $dots,
+          arrows: $arrows,
+          responsive: [
+            {
+              breakpoint: $breakpoint,
+              settings: 'unslick',
+            },
+            {
+              breakpoint: 767,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+              },
+            },
+            {
+              breakpoint: 320,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+              },
+            },
+          ],
+        };
+
+        slider.slick(settings);
+
+        $(window).on('resize', function () {
+          if ($(window).width() > $breakpoint) {
+            return;
+          }
+          if (!slider.hasClass('slick-initialized')) {
+            return slider.slick(settings);
+          }
+        });
+      }
+
+      function contentMobileOnlySlider($slidername, $dots, $arrows, $breakpoint) {
+        var slider = $($slidername);
+        var settings = {
+          mobileFirst: true,
+          dots: $dots,
+          arrows: $arrows,
+          responsive: [
+            {
+              breakpoint: $breakpoint,
+              settings: 'unslick',
+            },
+          ],
+        };
+
+        slider.slick(settings);
+
+        $(window).on('resize', function () {
+          if ($(window).width() > $breakpoint) {
+            return;
+          }
+          if (!slider.hasClass('slick-initialized')) {
+            return slider.slick(settings);
+          }
+        });
+      }
+
+      contentMobileOnlySlider('.content-slider', true, false, 767);
+
+      productMobileSlider('.product-slider', true, false, 1022);
+    });
+  </script>
+
+  {% schema %}
+  {
+    "name": "Camping Product Slider",
+    "max_blocks": 3,
+    "settings": [],
+    "blocks": [
+      {
+        "type": "product",
+        "name": "Product",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Product Image"
+          },
+          {
+            "type": "html",
+            "id": "title",
+            "label": "Product Title",
+            "default": "Made for Camping"
+          },
+          {
+            "type": "text",
+            "id": "buttonText",
+            "label": "Button text",
+            "default": "Shop Now"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "URL"
+          }
+        ]
+      }
+    ]
+  }
+  {% endschema %}

@@ -1,0 +1,27 @@
+<div class="page-full-width">
+    <div class="page-full-width--wrapper">
+        {% if section.settings.enable_heading %}
+        <div class="section-header text-center">
+            <h1>{{ page.title }}</h1>
+        </div>
+        {% endif %}
+
+        <div class="rte">
+        {{ page.content }}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Page",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_heading",
+      "label": "Show page heading",
+      "default": false
+    }
+  ]
+}
+{% endschema %}

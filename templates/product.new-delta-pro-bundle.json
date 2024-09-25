@@ -1,0 +1,420 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "sticky-product-bar": {
+      "type": "sticky-product-bar",
+      "blocks": {
+        "588d25af-4d47-43ac-9697-b98aa2f65719": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "General",
+            "tab_id": "product_information",
+            "section_class": ""
+          }
+        },
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "FAQ",
+            "tab_id": "faq",
+            "section_class": ""
+          }
+        },
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Reseñas",
+            "tab_id": "",
+            "section_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "588d25af-4d47-43ac-9697-b98aa2f65719",
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4",
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38"
+      ],
+      "settings": {
+        "enabled": true,
+        "enabled_tabs": false
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "11795adc-1afa-4833-a193-258f495901ef": {
+          "type": "sku_block",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e": {
+          "type": "product_title",
+          "settings": {
+          }
+        },
+        "judge_me_reviews_preview_badge_gDdU6V": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "0471109f-c130-454e-a9ba-c56412cc11f3": {
+          "type": "product_vendor",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185": {
+          "type": "product_price",
+          "settings": {
+          }
+        },
+        "d25a0285-4fb4-422d-b95b-ab67446120ad": {
+          "type": "product_description",
+          "settings": {
+            "desc_display": "default"
+          }
+        },
+        "919f9cdd-6184-4311-b675-742931504318": {
+          "type": "coupon_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Component_2_1.png",
+            "discount_off_text": "{{ product.metafields.custom.discount_off_text.value }}",
+            "code": "{{ product.metafields.custom.discount_code.value }}",
+            "show_copy_code_btn": true
+          }
+        },
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879": {
+          "type": "product_options_block",
+          "settings": {
+            "show_product_swatches": true,
+            "use_variant_image_for_swatches": true,
+            "button_content": ""
+          }
+        },
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe": {
+          "type": "quantity_block",
+          "settings": {
+          }
+        },
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0": {
+          "type": "accessories_section",
+          "settings": {
+            "title": "Accessories",
+            "metafield": "accessories"
+          }
+        },
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609": {
+          "type": "product_buttons",
+          "settings": {
+            "enable_payment_button": false,
+            "show_custom_icons": true,
+            "custom_payment_logo_1_svg": "",
+            "custom_payment_logo_2_svg": "",
+            "custom_payment_logo_3_svg": "",
+            "custom_payment_logo_4_svg": "",
+            "custom_payment_logo_5_svg": "",
+            "custom_payment_logo_6_svg": "",
+            "custom_payment_logo_7_svg": "",
+            "custom_payment_logo_8_svg": "",
+            "custom_payment_logo_9_svg": "",
+            "custom_payment_logo_10_svg": "",
+            "custom_payment_logo_11_svg": "",
+            "custom_payment_logo_12_svg": "",
+            "custom_payment_logo_13_svg": "",
+            "custom_payment_logo_14_svg": "",
+            "custom_payment_logo_15_svg": ""
+          }
+        },
+        "a6857d85-dbb6-41d1-9501-c01cf5bbe11f": {
+          "type": "back_in_stock",
+          "disabled": true,
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "11795adc-1afa-4833-a193-258f495901ef",
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e",
+        "judge_me_reviews_preview_badge_gDdU6V",
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774",
+        "0471109f-c130-454e-a9ba-c56412cc11f3",
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185",
+        "d25a0285-4fb4-422d-b95b-ab67446120ad",
+        "919f9cdd-6184-4311-b675-742931504318",
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879",
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe",
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0",
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609",
+        "a6857d85-dbb6-41d1-9501-c01cf5bbe11f"
+      ],
+      "settings": {
+        "section_id": "",
+        "show_breadcrumbs": false,
+        "show_pick_an_option": false,
+        "enable_linked_options": false,
+        "enabled_mobile_sticky_btns": true,
+        "media_size": "medium",
+        "enable_image_zoom": true,
+        "enable_video_looping": true,
+        "thumbnails_type": "grid",
+        "support_email": "",
+        "support_text": "",
+        "feature_1_show": true,
+        "feature_1_title": "Envío rápido y gratis",
+        "feature_1_content": "",
+        "feature_2_show": true,
+        "feature_2_title": "Protección de garantía",
+        "feature_2_content": "",
+        "feature_3_show": true,
+        "feature_3_title": "Pago fiable",
+        "feature_3_content": "",
+        "feature_4_show": true,
+        "feature_4_title": "Asistencia multicanal",
+        "feature_4_content": ""
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "grid_mobile": "2",
+        "heading": "You may also like",
+        "show_vendor": false
+      }
+    },
+    "165728772697564e64": {
+      "type": "newsletter",
+      "disabled": true,
+      "settings": {
+        "section_bg_color": "",
+        "section_color": "",
+        "bg_image_opacity": 70,
+        "section_title": "Subscribe to our newsletter",
+        "subtitle": "",
+        "subheading": "<p>Promotions, new products and sales. Directly to your inbox.<\/p>",
+        "button_style": "primary",
+        "showFormLabels": true,
+        "removeBottomMargin": false
+      }
+    },
+    "705c586d-c6d2-4609-bba1-b868d0cbc03c": {
+      "type": "whats-in-the-box",
+      "disabled": true,
+      "settings": {
+        "section_id": "",
+        "title": "What's In The Box"
+      }
+    },
+    "a5e51d62-81ec-4825-916a-bee3996a091f": {
+      "type": "pdp-image-with-text-one-column",
+      "settings": {
+        "anchor_id": "product_information",
+        "alignment": "center",
+        "full_width": false,
+        "image": "shopify:\/\/shop_images\/RV_EV_Bundle-1.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/RV_EV_Bundle-1.jpg",
+        "show_actual_mobile_image_size": false,
+        "content_order": "3",
+        "image_alt": "",
+        "title": "Viaja sin límites.",
+        "content": "<p>Escapa de la red y disfruta de la naturaleza sin preocuparte de cuánta energía has consumido. Con la friolera de 3,6-7,2 kWh de potencia ampliable, experimente la máxima libertad de la vida fuera de la red mientras alimenta todo lo esencial de tu vehículo recreativo con una fuente de energía limpia y silenciosa. Además, utiliza DELTA Pro como cargador móvil para vehículos eléctricos cuando estés de viaje. DELTA Pro es la solución de energía portátil definitiva para viajes en autocaravana y aventuras al aire libre.<\/p>"
+      }
+    },
+    "55f4eca6-e309-4ce7-9e7f-42cba1187819": {
+      "type": "pdp-image-with-text-one-column",
+      "settings": {
+        "anchor_id": "",
+        "alignment": "center",
+        "full_width": false,
+        "image": "shopify:\/\/shop_images\/RV_EV_Bundle-2.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/RV_EV_Bundle-2.jpg",
+        "show_actual_mobile_image_size": false,
+        "content_order": "3",
+        "image_alt": "",
+        "title": "Disfruta de aventuras fuera de la red.",
+        "content": "<p> Un gran aventurero siempre en busca de nuevas emociones. Conecta DELTA Pro a una batería adicional para obtener una capacidad de 7,2 kWh, y podrás disponer de energía durante más de 2 días*. Puedes tener energía para que funcionen electrodomésticos que usas a diario como tu frigorífico, ordenador portátil, cafetera y hasta el aire acondicionado. Tendrás energía suficiente para disfrutar de todo lo que la naturaleza puede ofrecerte.  <\/p><p>*Suministro de energía para caravana \/ Clase B \/ autocaravana Clase C con un consumo diario de 4 kWh usando DELTA Pro + Batería adicional (7,2 kWh)<\/p>"
+      }
+    },
+    "d2d88fb0-80eb-41d3-96d9-a71dc7ae4c13": {
+      "type": "pdp-image-with-text",
+      "blocks": {
+        "74de8581-80d2-4dbe-a960-ad44f8e0cf75": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/RV_EV_Bundle-3.png",
+            "mobile_image": "shopify:\/\/shop_images\/RV_EV_Bundle-3.png",
+            "image_height": 310,
+            "mobile_image_height": 250,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "<p><strong>Kit para viajeros: 3,6 kWh <\/strong><\/p>",
+            "subtext_bottom": "<p>DELTA Pro + Adaptador de conexión a tierra <\/p><p>Starlink Wi-Fi (50 W): 72 horas<br\/>Frigorífico (20 W): 180 horas  <br\/>Luz (25 W): 144 horas  <br\/>Ordenador portátil (60 W) :3 horas  <br\/>Aire acondicionado (1200 W): 3 horas<\/p><p>*Los datos anteriores son solo de referencia. Los tiempos de funcionamiento reales dependen de las necesidades eléctricas de cada vehículo recreativo y pueden variar.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "55b686d1-34ed-45b9-b0e2-8ca3f5e19511": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/RV_EV_Bundle-4.png",
+            "mobile_image": "shopify:\/\/shop_images\/RV_EV_Bundle-4.png",
+            "image_height": 310,
+            "mobile_image_height": 250,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "<p><strong>Kit Overlander: 7,2 kWh<\/strong><\/p>",
+            "subtext_bottom": "<p>DELTA Pro + Batería adicional para DELTA Pro Extra + Adaptador de conexión a tierra <\/p><p>Starlink Wi-Fi (50 W): 144 horas <br\/>Frigorífico (100 W): 72 horas  <br\/>Luz (60 W): 288 horas  <br\/>Ordenador portátil (60 W) :120 horas <br\/>Cafetera (1000 W): 7,2 horas <br\/>Aire acondicionado (1200 W): 6 horas <\/p><p><strong>*Los datos anteriores son solo de referencia. Los tiempos de funcionamiento reales dependen de las necesidades eléctricas de cada vehículo recreativo y pueden variar.<\/strong><\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "74de8581-80d2-4dbe-a960-ad44f8e0cf75",
+        "55b686d1-34ed-45b9-b0e2-8ca3f5e19511"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "center",
+        "layout": "stacked",
+        "stacked_row": "2",
+        "mobile_stacked_row": "1",
+        "slider_row": "2",
+        "mobile_slider_row": "1"
+      }
+    },
+    "2fae91d4-98ac-47a7-ab6f-4ddd27cee300": {
+      "type": "pdp-image-with-text-one-column",
+      "settings": {
+        "anchor_id": "",
+        "alignment": "center",
+        "full_width": false,
+        "image": "shopify:\/\/shop_images\/RV_EV_Bundle-5.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/RV_EV_Bundle-5.jpg",
+        "show_actual_mobile_image_size": false,
+        "content_order": "3",
+        "image_alt": "",
+        "title": "Sin ruido, sin humos, sin mantenimiento",
+        "content": "<p> Despídete de los ruidos y del humo de los generadores de gas y disfruta de una energía silenciosa, ecológica y que no necesita mantenimiento en cualquier lugar al que te lleve tu autocaravana a vivir aventuras. Carga los dispositivos esenciales de tu autocaravana o enchúfala a una toma de corriente externa para suministrar alimentación directamente al sistema eléctrico de la autocaravana.<\/p>"
+      }
+    },
+    "45972288-e6a9-499e-a488-60ec9872378b": {
+      "type": "pdp-image-with-text-one-column",
+      "settings": {
+        "anchor_id": "",
+        "alignment": "center",
+        "full_width": false,
+        "image": "shopify:\/\/shop_images\/RV_EV_Bundle-6.png",
+        "mobile_image": "shopify:\/\/shop_images\/RV_EV_Bundle-6.png",
+        "show_actual_mobile_image_size": false,
+        "content_order": "3",
+        "image_alt": "",
+        "title": "Carga rápida en cualquier momento y lugar.",
+        "content": "<p>Tanto si estás en la carretera o de acampad,a como si te encuentras en el jardín de tu casa, nunca te quedarás sin electricidad. Puedes recargar usando la opción de multicarga en lo que se tarda en ver una película. Se carga por completo en solo 1,7 horas en una estación de carga para coches eléctricos (3400 W), 1,9 horas con carga CA doble + solar (3000 W), 2,7 horas desde una salida de CA (1800 W) y 3,5 horas usando carga solar (1600 W). <\/p>"
+      }
+    },
+    "a7456414-6d94-4c04-8ff5-a12ed9ce4b62": {
+      "type": "pdp-image-with-text-one-column",
+      "settings": {
+        "anchor_id": "",
+        "alignment": "center",
+        "full_width": false,
+        "image": "shopify:\/\/shop_images\/RV_EV_Bundle-7.png",
+        "mobile_image": "shopify:\/\/shop_images\/RV_EV_Bundle-7.png",
+        "show_actual_mobile_image_size": false,
+        "content_order": "3",
+        "image_alt": "",
+        "title": "Reduce la sensación de ansiedad cuando vas con un coche eléctrico.",
+        "content": "<p>¿Te has quedado sin batería en la carretera? Amplía la autonomía de tu coche eléctrico otros 22,5 Km* para que puedas llegar seguro a tu destino.  <\/p><p>*Kilómetros por kWh para un TESLA MODELO Y: 5,3-6,1 km\/kWh, DELTA Pro (3,6 kWh) puede ampliar el rango de un MODELO Y aproximadamente 22,01 kilómetros.<\/p>"
+      }
+    },
+    "b6365742-5226-4558-8601-d8bfc25e3b33": {
+      "type": "pdp-image-with-text-one-column",
+      "settings": {
+        "anchor_id": "",
+        "alignment": "center",
+        "full_width": false,
+        "image": "shopify:\/\/shop_images\/RV_EV_Bundle-8.png",
+        "mobile_image": "shopify:\/\/shop_images\/RV_EV_Bundle-8.png",
+        "show_actual_mobile_image_size": false,
+        "content_order": "3",
+        "image_alt": "",
+        "title": "Carga en estaciones para coches eléctricos de todo el mundo.",
+        "content": "<p>Por primera vez, ofrecemos una carga rápida de 1,7 horas en miles de estaciones de carga para coches eléctricos en todo el mundo. Este método de carga exclusivo te ofrece una carga rápida de hasta 3400 W sobre la marcha.<\/p>"
+      }
+    },
+    "97a7b56b-c40a-41c3-b668-146595efeb5b": {
+      "type": "pdp-video",
+      "disabled": true,
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "Mira lo que piensan los usuarios de EcoFlow",
+        "subtitle": "",
+        "content": "",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "image",
+        "video_type": "youtube",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "mp4_video_url": "",
+        "mp4_video_url_m": "",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "1714119522a05a02e8": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_w9ManR": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_w9ManR"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    }
+  },
+  "order": [
+    "sticky-product-bar",
+    "main",
+    "product-recommendations",
+    "165728772697564e64",
+    "705c586d-c6d2-4609-bba1-b868d0cbc03c",
+    "a5e51d62-81ec-4825-916a-bee3996a091f",
+    "55f4eca6-e309-4ce7-9e7f-42cba1187819",
+    "d2d88fb0-80eb-41d3-96d9-a71dc7ae4c13",
+    "2fae91d4-98ac-47a7-ab6f-4ddd27cee300",
+    "45972288-e6a9-499e-a488-60ec9872378b",
+    "a7456414-6d94-4c04-8ff5-a12ed9ce4b62",
+    "b6365742-5226-4558-8601-d8bfc25e3b33",
+    "97a7b56b-c40a-41c3-b668-146595efeb5b",
+    "1714119522a05a02e8"
+  ]
+}

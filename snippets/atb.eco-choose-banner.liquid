@@ -1,0 +1,94 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "Section name",
+  "id": "eco-choose-banner",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "class": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "id": "atb_background_image",
+      "type": "image_picker",
+      "label": "Background image",
+      "info": "1800x1000 recommended"
+    },
+    {
+      "id": "atb_title",
+      "type": "text",
+      "label": "Heading",
+      "default": "How to choose a power station",
+      "info": ""
+    },
+    {
+      "id": "atb_description",
+      "type": "text",
+      "label": "Subheading",
+      "default": "How to choose a power station",
+      "info": ""
+    },
+    {
+      "id": "atb_button_label",
+      "type": "text",
+      "label": "Button label",
+      "default": "Button",
+      "info": ""
+    },
+    {
+      "id": "atb_button_link",
+      "type": "text",
+      "label": "Button link",
+      "info": ""
+    }
+  ],
+  "warnings": []
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_background_image' -%}
+{%- assign atb_background_image = val -%}
+{%- include 'atb-render' field:'atb_title' -%}
+{%- assign atb_title = val -%}
+{%- include 'atb-render' field:'atb_description' -%}
+{%- assign atb_description = val -%}
+{%- include 'atb-render' field:'atb_button_label' -%}
+{%- assign atb_button_label = val -%}
+{%- include 'atb-render' field:'atb_button_link' -%}
+{%- assign atb_button_link = val -%}
+{%- assign atb_background_image_key = atb_background_image| split: '/files/' | last -%}{%- assign atb_background_image = images[atb_background_image_key] -%}{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section ">
+<section class="eco-choose-pdp">
+  <div class="eco-choose" style="background-image: url('{{ atb_background_image | img_url: '1800x'  }}')">
+    <div class="container">
+      <div class="inner-choose row">
+        <div class="col-lg-6 pr-lg-4">
+          <h2>{{ atb_title }}</h2>
+          <p>{{ atb_description }}</p>
+          {% if atb_button_label != blank %}
+          	<a href="{{atb_button_link}}" class="btn blue-btn btn-primary px-4">{{atb_button_label }}</a>	
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<style>
+</style>
+
+<script type="application/javascript">
+</script>
+</section>

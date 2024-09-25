@@ -1,0 +1,61 @@
+<div class="home-ecosystem-banner">
+    {% if section.settings.banner_image != blank %}
+      <img class="{% if section.settings.banner_image_mobile != blank %} desktop-image{% endif %}"
+           loading="lazy"
+           srcset="{%- if section.settings.banner_image.width >= 375 -%}{{ section.settings.banner_image | img_url: '375x' }} 375w,{%- endif -%}
+                   {%- if section.settings.banner_image.width >= 720 -%}{{ section.settings.banner_image | img_url: '720x' }} 750w,{%- endif -%}
+                   {%- if section.settings.banner_image.width >= 1066 -%}{{ section.settings.banner_image | img_url: '1066x' }} 1066w,{%- endif -%}
+                   {%- if section.settings.banner_image.width >= 1500 -%}{{ section.settings.banner_image | img_url: '1500x' }} 1500w,{%- endif -%}
+                   {%- if section.settings.banner_image.width >= 2000 -%}{{ section.settings.banner_image | img_url: '2000x' }} 2000w{%- endif -%}"
+                   src="{{ section.settings.banner_image | img_url: '535x' }}"
+                   sizes="auto"
+                   alt="{{ section.settings.banner_image.alt }}"
+           />
+      {% if section.settings.banner_image_mobile != blank %}
+        <img class="mobile-image" loading="lazy"
+            srcset="{%- if section.settings.banner_image_mobile.width >= 375 -%}{{ section.settings.banner_image_mobile | img_url: '375x' }} 375w,{%- endif -%}
+            {%- if section.settings.banner_image_mobile.width >= 720 -%}{{ section.settings.banner_image_mobile | img_url: '720x' }} 750w,{%- endif -%}
+            {%- if section.settings.banner_image_mobile.width >= 1066 -%}{{ section.settings.banner_image_mobile | img_url: '1066x' }} 1066w,{%- endif -%}
+            {%- if section.settings.banner_image_mobile.width >= 1500 -%}{{ section.settings.banner_image_mobile | img_url: '1500x' }} 1500w{%- endif -%}"
+            src="{{ section.settings.banner_image_mobile | img_url: '535x' }}"
+            sizes="auto"
+            alt="{{ section.settings.banner_image_mobile.alt }}" />
+      {% endif %}
+  {% endif %}
+    <div class="ecosystem-banner">
+        <div class="banner-inner">
+            <h2>{{ section.settings.heading | newline_to_br }}</h1>
+            <div class="banner-content"><div>{{ section.settings.description }}</div></div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Banner",
+    "settings": [
+      {
+        "id":"heading",
+        "type":"richtext",
+        "label":"Heading",
+        "default": "<p>Home ecosystem</p>"
+      },
+      {
+        "id":"description",
+        "type":"richtext",
+        "label":"Description",
+	    "default": "<p>EcoFlow was founded in 2017 by entrepreneurs who emerged from a leading drone developer where they had worked to perfect the drone battery to be lightweight, long-lasting and, most importantly, powerful.<p>"
+	  },
+      {
+        "id":"banner_image",
+        "type":"image_picker",
+        "label":"Image for PC"
+      },
+      {
+        "id":"banner_image_mobile",
+        "type":"image_picker",
+        "label":"Image for Mobile"
+      }
+	]
+  }
+{% endschema %}

@@ -1,0 +1,75 @@
+<div class="off-grid-outdoor-storage__section">
+  <div class="container--normal hb__text--center">
+    <div class="off-grid-outdoor-storage__text-container">
+      {% if section.settings.title != blank %}
+        <h2 class="off-grid-outdoor-storage__heading hb__text--heading hb__text--black">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+      {% if section.settings.subtitle != blank %}
+        <p class="off-grid-outdoor-storage__description hb__text--description hb__text--black">
+          {{ section.settings.subtitle }}
+        </p>
+      {% endif %}
+    </div>
+    <div class="off-grid-outdoor-storage__image__container">
+      <div class="off-grid-outdoor-storage__flex-container container--flex">
+        {% for block in section.blocks %}
+          <div class="off-grid-outdoor-storage__image__wrapper ">
+            <img
+              class="off-grid-outdoor-storage__image display--desktop"
+              loading="lazy"
+              src="{{ block.settings.image | img_url: 'master' }}"
+              alt="{{ block.settings.image.alt }}"
+            >
+            <img
+              class="off-grid-outdoor-storage__image display--mobile"
+              loading="lazy"
+              src="{{ block.settings.image_mobile | img_url: 'master' }}"
+              alt="{{ block.settings.image_mobile.alt }}"
+            >
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Outdoor Storage",
+  "max_blocks": 2,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Stromspeicher von EcoFlow – stets mit Energie versorgt "
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Hat Ihnen schon einmal jemand gesagt, dass sich Solaranlagen und Stromspeicher gar nicht lohnen würden und dabei zu viel Strom verschwendet werde? Bitte schenken Sie diesem Gerücht keinen Glauben! EcoFlow beweist Ihnen gerne das Gegenteil: Unsere Solar- und Batteriespeicher machen möglich, wovon wir vor einigen Jahren nur träumen konnten. Nachhaltiger, selbst erzeugter Strom kann in unseren Solaranlagen mit Speicher nicht nur effizient erzeugt werden – er wird auch so lange gespeichert, bis wir ihn in unseren Haushaltsgeräten benötigen."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Storage Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Section Image Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Section Image Mobile"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

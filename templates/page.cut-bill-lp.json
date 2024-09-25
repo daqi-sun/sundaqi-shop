@@ -1,0 +1,140 @@
+{
+    "sections": {
+      "banner": {
+        "type": "cut-bill-banner",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/1_220aee2d-c472-43d1-b024-b930df592589.png",
+          "mobileImage": "shopify:\/\/shop_images\/1320.png",
+          "title": "",
+          "subtitle": "",
+          "button_text": "Más Información",
+          "button_link": "#shopify-section-template--16654745764062__text"
+        }
+      },
+      "text": {
+        "type": "cut-bill-text",
+        "settings": {
+          "title": "",
+          "desc": ""
+        }
+      },
+      "iwt": {
+        "type": "cut-bill-iwt",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/PC.png",
+          "mobileImage": "shopify:\/\/shop_images\/MOB.png",
+          "url": "https:\/\/es.ecoflow.com\/products\/delta-110w-portable-solar-panel"
+        }
+      },
+      "iwt-2": {
+        "type": "cut-bill-iwt-2",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/Mask_Group_1310_066843e7-9c11-4640-af48-96a71205465a.png",
+          "mobileImage": "shopify:\/\/shop_images\/Mask_Group_1322_4cce99ac-c387-4c27-ba77-9cc699cac165.png"
+        }
+      },
+      "iwt-3": {
+        "type": "cut-bill-iwt-3",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/Mask_Group_108.png",
+          "mobileImage": "shopify:\/\/shop_images\/Mask_Group_1323.png"
+        }
+      },
+      "table": {
+        "type": "cut-bill-table",
+        "settings": {
+          "hideProductNameTag": false
+        }
+      },
+      "swiper": {
+        "type": "cut-bill-swiper",
+        "blocks": {
+          "67c4cd5f-6b63-4aa5-97b3-62fd6b34036e": {
+            "type": "product",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/delta-pro-400w.png",
+              "product_info": "EcoFlow DELTA Pro <br>\n+ <br>\nPanel Solar Portátil de 400W",
+              "url": "https:\/\/es.ecoflow.com\/products\/delta-pro-400w-portable-solar-panel"
+            }
+          },
+          "75fdd40e-c02b-4580-a88b-ecc6e44f59cb": {
+            "type": "product",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/ecoflow-delta-pro-220w-portable-solar-panel-2.png",
+              "product_info": "EcoFlow DELTA Pro <br>\n+ <br>\nPanel Solar Portátil de 220W",
+              "url": "https:\/\/es.ecoflow.com\/products\/delta-pro-220w-portable-solar-panel?variant=43823951511774"
+            }
+          },
+          "83d4845e-18d5-4343-89d7-2d41dcbe2dc8": {
+            "type": "product",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/delta-max-400w.png",
+              "product_info": "EcoFlow DELTA Max <br>\n+ <br>\nPanel Solar Portátil de 400W",
+              "url": "https:\/\/es.ecoflow.com\/products\/delta-max-400w-portable-solar-panel"
+            }
+          },
+          "3ea23b95-4038-4b66-a18b-efb8b11828be": {
+            "type": "product",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/2-2.png",
+              "product_info": "EcoFlow DELTA Max <br>\n+ <br>\nBatería adicional <br>\n+ <br>\nPanel Solar Rígido de 100W",
+              "url": "https:\/\/es.ecoflow.com\/products\/delta-max-portable-power-station-100w-rigid-solar-panel?variant=43550072996062"
+            }
+          },
+          "cfd28513-7b9e-4aa6-bcdf-fd68d57a7e76": {
+            "type": "product",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/delta-max-220w.png",
+              "product_info": "EcoFlow DELTA Max <br>\n+ <br>\nPanel Solar Portátil <br>\nBifacial de 220W",
+              "url": "https:\/\/es.ecoflow.com\/products\/delta-max-220w-portable-solar-panel"
+            }
+          },
+          "5070abae-dce2-42f9-a0a4-1b79f2ba1fd3": {
+            "type": "product",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/delta2-220w.png",
+              "product_info": "EcoFlow DELTA 2 <br>\n+ <br>\nPanel Solar de 220W",
+              "url": "https:\/\/es.ecoflow.com\/products\/delta-2-220w-portable-solar-panel"
+            }
+          }
+        },
+        "block_order": [
+          "67c4cd5f-6b63-4aa5-97b3-62fd6b34036e",
+          "75fdd40e-c02b-4580-a88b-ecc6e44f59cb",
+          "83d4845e-18d5-4343-89d7-2d41dcbe2dc8",
+          "3ea23b95-4038-4b66-a18b-efb8b11828be",
+          "cfd28513-7b9e-4aa6-bcdf-fd68d57a7e76",
+          "5070abae-dce2-42f9-a0a4-1b79f2ba1fd3"
+        ],
+        "settings": {
+        }
+      },
+      "end": {
+        "type": "cut-bill-end",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/1313.png",
+          "mobileImage": "shopify:\/\/shop_images\/1326.png",
+          "url": "https:\/\/www.ecoflow.com\/es\/smart-home-panel",
+          "url2": "https:\/\/es.ecoflow.com\/collections\/smart-home-panel-delta-pro",
+          "title": "Ecosistema en energía\n<br> de respaldo para el\n <br>hogar EcoFlow DELTA Pro"
+        }
+      },
+      "page-bottom-text": {
+        "type": "page-bottom-text",
+        "settings": {
+          
+        }
+      }
+    },
+    "order": [
+      "banner",
+      "text",
+      "iwt",
+      "iwt-2",
+      "iwt-3",
+      "table",
+      "swiper",
+      "end",
+      "page-bottom-text"
+    ]
+  }

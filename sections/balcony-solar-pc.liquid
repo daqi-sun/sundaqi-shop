@@ -1,0 +1,79 @@
+<div class="balcony-solar-pc__section">
+  <div class="container--normal">
+    <div class="balcony-solar-pc__text-container hb__text--center">
+      {% if section.settings.title != blank %}
+        <h2 class="balcony-solar-pc__heading hb__text--heading hb__text--black">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+    </div>
+    <div class="balcony-solar-pc__product__wrapper">
+      {% for block in section.blocks %}
+        {%- comment %}<locksmith:2747>{% endcomment -%}
+          {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+        {%- comment %}</locksmith:2747>{% endcomment -%}
+        <div class="balcony-solar-pc__block-container hb__relative">
+          <img
+            class="hb__border-radius--8"
+            src="{{ block.settings.image | img_url: 'master' }}"
+            alt="{{ block.settings.image.alt }}"
+          >
+          <div class="balcony-solar-pc__details hb__text--center">
+            <h3 class="balcony-solar-pc__title hb__text--white">
+              {{ block.settings.title }}
+            </h3>
+            <a class="btn--container" href="{{ block.settings.product_url }}" target="_blank">
+              <div class="balcony-solar-pc__btn hb__btn hb__text--white background--blue">
+                {{ section.settings.button_text }}
+              </div>
+            </a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Balcony Solar PC",
+  "settings": [
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title",
+      "default": "Vom Stromspeicher zum kompletten Solar-Ökosystem"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Jetzt kaufen"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Le panneau solaire EcoFlow rigide 400W"
+        },
+        {
+          "type": "url",
+          "id": "product_url",
+          "label": "Product Url"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,280 @@
+<style>
+  .sg-product-1__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .sg-product-1__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+
+<div
+  class="sg-product-1__section sg-product-1__section-{{ section.id }} background--white"
+  id="_{{ section.settings.id | downcase | remove: ' ' | replace: '&', '-' }}"
+>
+  <div class="container--default">
+    <div class="sg-product-1__container">
+      {% for block in section.blocks %}
+        {%- comment %}<locksmith:21b2>{% endcomment -%}
+          {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+        {%- comment %}</locksmith:21b2>{% endcomment -%}
+        <div
+          class="sg-product-1__item background--dark-white {% if block.settings.position == 'left' %} sg-product-1__item--left {% else %} sg-product-1__item--right {% endif %}"
+          id="_{{ block.settings.product_section_id | downcase | remove: ' ' | replace: '&', '-' }}"
+        >
+          <div class="sg-product-1__image-wrapper {% if block.settings.product_image_position == 'left' %} sg-product-1__image-wrapper--left {% else %} sg-product-1__image-wrapper--right {% endif %}">
+            <a href="{{ block.settings.url }}" target="_blank">
+              <img
+                class="display--desktop sg-product-1__image-desktop"
+                src="{{ block.settings.image | img_url: 'master' }}"
+                alt="{{ block.settings.image.alt }}"
+              >
+              <img
+                class="display--mobile"
+                src="{{ block.settings.image_mobile | img_url: 'master' }}"
+                alt="{{ block.settings.image_mobile.alt }}"
+              >
+              <img
+                class="sg-product-1__image display--desktop"
+                src="{{ block.settings.product_image_desktop | img_url: 'master' }}"
+                alt="{{ block.settings.product_image_desktop.alt }}"
+              >
+              <img
+                class="sg-product-1__image display--mobile"
+                src="{{ block.settings.product_image_mobile | img_url: 'master' }}"
+                alt="{{ block.settings.product_image_mobile.alt }}"
+              >
+            </a>
+          </div>
+          <div class="sg-product-1__item-description">
+            <div class="sg-product-1__title-wrapper">
+              <h3 class="sg-product-1__title text--black">{{ block.settings.title }}</h3>
+            </div>
+            <div class="sg-product-1__description-wrapper">
+              <p class="sg-product-1__description text--black">{{ block.settings.description }}</p>
+            </div>
+            <div class="sg-product-1__specification-container">
+              <div class="sg-product-1__specification-wrapper">
+                <div class="sg-product-1__icon-wrapper">
+                  <img
+                    class="sg-product-1__image"
+                    src="{{ block.settings.first_icon | img_url: 'master' }}"
+                    alt="{{ block.settings.first_icon.alt }}"
+                  >
+                </div>
+                <div class="sg-product-1__specification-description">
+                  <p class="sg-product-1__specification text--black">{{ block.settings.first_specification }}</p>
+                </div>
+              </div>
+              <div class="sg-product-1__specification-wrapper">
+                <div class="sg-product-1__icon-wrapper">
+                  <img
+                    class="sg-product-1__image"
+                    src="{{ block.settings.second_icon | img_url: 'master' }}"
+                    alt="{{ block.settings.second_icon.alt }}"
+                  >
+                </div>
+                <div class="sg-product-1__specification-description">
+                  <p class="sg-product-1__specification text--black">{{ block.settings.second_specification }}</p>
+                </div>
+              </div>
+              <div class="sg-product-1__specification-wrapper">
+                <div class="sg-product-1__icon-wrapper">
+                  <img
+                    class="sg-product-1__image"
+                    src="{{ block.settings.third_icon | img_url: 'master' }}"
+                    alt="{{ block.settings.third_icon.alt }}"
+                  >
+                </div>
+                <div class="sg-product-1__specification-description">
+                  <p class="sg-product-1__specification text--black">{{ block.settings.third_specification }}</p>
+                </div>
+              </div>
+            </div>
+            {% if block.settings.button_label %}
+              <div class="sg-product-1__button-wrapper">
+                <a href="{{ block.settings.url }}" target="_blank" class="button--container ">
+                  <span class="button text--white">{{ block.settings.button_label }}</span>
+                </a>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "SP Product 1",
+  "settings": [
+    {
+      "type": "text",
+      "id": "id",
+      "label": "Section ID",
+      "default": "Buyer’s Guides"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "text",
+          "id": "product_section_id",
+          "label": "Product Section ID"
+        },
+        {
+          "type": "select",
+          "id": "position",
+          "label": "Image Position",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Product Banner Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Product Banner Image Mobile"
+        },
+        {
+          "type": "select",
+          "id": "product_image_position",
+          "label": "Product Image Position (Mobile)",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_image_desktop",
+          "label": "Product Image Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_image_mobile",
+          "label": "Product Image Mobile"
+        },
+        {
+          "type": "html",
+          "id": "title",
+          "label": "Product Title"
+        },
+        {
+          "type": "html",
+          "id": "description",
+          "label": "Product Description"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button Label",
+          "default": "Shop Now"
+        },
+        {
+          "type": "image_picker",
+          "id": "first_icon",
+          "label": "First Icon"
+        },
+        {
+          "type": "html",
+          "id": "first_specification",
+          "label": "First Specification"
+        },
+        {
+          "type": "image_picker",
+          "id": "second_icon",
+          "label": "Second Icon"
+        },
+        {
+          "type": "html",
+          "id": "second_specification",
+          "label": "Second Specification"
+        },
+        {
+          "type": "image_picker",
+          "id": "third_icon",
+          "label": "Third Icon"
+        },
+        {
+          "type": "html",
+          "id": "third_specification",
+          "label": "Third Specification"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Button URL"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

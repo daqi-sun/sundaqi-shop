@@ -1,0 +1,257 @@
+{{ 'jquery.min.js' | asset_url | script_tag }}
+{{ 'slick.js' | asset_url | script_tag }}
+<section class="eco-banner eco-banner-1">
+    <!--   <div class="container-fluid">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+          {% for block in section.blocks %}
+            <li data-target="#carouselExampleIndicators" data-slide-to="{{forloop.index | minus: 1}}" class="{% if forloop.index == 1 %}active {% endif %}"></li>
+          {% endfor %}
+          </ol>
+          <div class="carousel-inner">
+            {% for block in section.blocks %}
+              <div class="carousel-item {% if forloop.index == 1 %}active {% endif %}">
+                <div class="inner-carl">
+                  <img class="d-block w-100 lazyload desktop-image" data-src="{{block.settings.background_image | img_url: '2400x'}}" src="" alt="First slide">
+                  <img class="d-block w-100 lazyload mobile-image" data-src="{{block.settings.background_image_mobile | img_url: '1800x'}}" src="" alt="First slide">
+                  <div class="carousel-caption">
+    {% if block.settings.title != blank %}
+                    <h5>{{ block.settings.title }}</h5>
+    {% endif %}
+                    <p style="color: {{ block.settings.color }}">{{ block.settings.text }}</p>
+                    <div>
+                      <a href="{{block.settings.button1_link}}" class="btn blue-btn btn-primary px-4 m-1" title="">{{block.settings.button1_label}}</a>
+                      <a href="{{block.settings.button2_link}}" class="btn blue-btn btn-primary px-4 m-1" title="">{{block.settings.button2_label}}</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+          {% if section.blocks.size > 1 %}
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <svg width="16" viewBox="0 0 24 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3334 41.1415L23.9697 37.4916L7.60609 21.0671L23.9697 4.64257L20.3334 0.992676L0.333363 21.0671L20.3334 41.1415Z" fill="black" fill-opacity="0.14"/>
+            </svg>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <svg width="16" viewBox="0 0 24 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M3.96968 41.1415L0.333313 37.4916L16.697 21.0671L0.333313 4.64257L3.96968 0.992676L23.9697 21.0671L3.96968 41.1415Z" fill="black" fill-opacity="0.14"/>
+            </svg>
+          </a>
+          {% endif %}
+        </div>
+      </div> -->
+      <div class="home-hero-slider">
+        {% for block in section.blocks %}
+          <div class="inner-carl">
+            {% if block.settings.image_link != blank %}
+              <a href="{{block.settings.image_link}}">
+            {% endif %}
+                  <img class="w-100 hideMobile" loading="lazy" srcset="{{block.settings.background_image | img_url: '2400x'}}" src="" alt="First slide">
+                  <img class="w-100 hideDesktop" loading="lazy" srcset="{{block.settings.background_image_mobile | img_url: '1800x'}}" src="" alt="First slide">
+            {% if block.settings.image_link != blank %}
+              </a>
+            {% endif %}
+              <div class="carousel-caption">
+                {% if block.settings.title != blank %}
+              <h5>{{ block.settings.title }}</h5>
+                {% endif %}
+              <p style="color: {{ block.settings.color }}">{{ block.settings.text }}</p>
+              <div>
+                {% if block.settings.button1_label != blank  %}
+                    <a href="{{block.settings.button1_link}}" class="btn blue-btn btn-primary px-4 m-1" title="">{{block.settings.button1_label}}</a>
+                {% endif %}
+                {% if block.settings.button2_label != blank  %}
+                    <a href="{{block.settings.button2_link}}" class="btn blue-btn btn-primary px-4 m-1" title="">{{block.settings.button2_label}}</a>
+                  {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <script>
+      $('.home-hero-slider').slick({
+        arrows: true,
+        dots: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        pauseOnHover: false,
+        autoplay: {{ section.settings.autoplay_setting }},
+        autoplaySpeed: {{ section.settings.autoplay_speed }},
+      });
+    </script>
+
+    {% schema %}
+      {
+        "name": "Banner Slideshow",
+        "settings": [
+          {
+            "type": "select",
+            "id": "autoplay_setting",
+            "label": "Autoplay Setting",
+            "options": [
+              {
+              "value": "true",
+              "label": "Enable"
+              },
+              {
+              "value": "false",
+              "label": "Disable"
+              }
+            ],
+            "default": "false"
+          },
+          {
+            "type": "select",
+            "id": "autoplay_speed",
+            "label": "Autoplay Speed",
+            "options": [
+              {
+              "value": "1000",
+              "label": "1 sec"
+              },
+              {
+              "value": "2000",
+              "label": "2 sec"
+              },
+              {
+              "value": "3000",
+              "label": "3 sec"
+              },
+              {
+              "value": "4000",
+              "label": "4 sec"
+              },
+              {
+              "value": "5000",
+              "label": "5 sec"
+              },
+              {
+              "value": "6000",
+              "label": "6 sec"
+              },
+              {
+              "value": "7000",
+              "label": "7 sec"
+              },
+              {
+              "value": "8000",
+              "label": "8 sec"
+              },
+              {
+              "value": "9000",
+              "label": "9 sec"
+              },
+              {
+              "value": "10000",
+              "label": "10 sec"
+              }
+            ],
+            "default": "4000",
+            "info": "Autoplay must be enabled to set autoplay speed"
+          }
+        ],
+        "blocks": [
+          {
+            "type": "slide",
+            "name": "Slide",
+            "settings": [
+              {
+                "id": "background_image",
+                "type": "image_picker",
+                "label": "Background image"
+              },
+              {
+                "id": "background_image_mobile",
+                "type": "image_picker",
+                "label": "Background image Mobile"
+              },
+              {
+                "id": "image_link",
+                "type": "url",
+                "label": "Image Link"
+              },
+              {
+                "id": "title",
+                "type": "text",
+                "label": "Heading",
+                "default": "Slideshow"
+              },
+              {
+                "id": "text",
+                "type": "text",
+                "label": "Subheading",
+                "default": "Introduce customers to your shop with lifestyle and product imagery"
+              },
+              {
+                "id": "color",
+                "type": "color",
+                "label": "Text color",
+                "default": "#FFFFFF"
+              },
+              {
+                "id": "text_alignment",
+                "type": "select",
+                "label": "Text alignment",
+                "options": [
+                  {
+                    "value": "left",
+                    "label": "Left"
+                  },
+                  {
+                    "value": "center",
+                    "label": "Center"
+                  },
+                  {
+                    "value": "right",
+                    "label": "Right"
+                  }
+                ],
+                "default": "center"
+              },
+              {
+                "type": "header",
+                "content": "Button"
+              },
+              {
+                "id": "button1_label",
+                "type": "text",
+                "label": "Button 1 label",
+                "default": "Button"
+              },
+              {
+                "id": "button1_link",
+                "type": "url",
+                "label": "Button 1 link"
+              },
+              {
+                "id": "button2_label",
+                "type": "text",
+                "label": "Button 2 label",
+                "default": "Button"
+              },
+              {
+                "id": "button2_link",
+                "type": "url",
+                "label": "Button 2 link"
+              }
+            ]
+          }
+        ],
+        "presets":[
+            {
+               "name":{
+                  "en":"Banner Slidehow"
+               },
+               "category":{
+                  "en":"Ecoflow"
+               }
+            }
+         ]
+      }
+    {% endschema %}
+
+

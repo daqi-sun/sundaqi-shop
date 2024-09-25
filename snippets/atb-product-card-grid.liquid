@@ -1,0 +1,32 @@
+{% comment %}
+    Renders a product card using "Grid" style
+    Accepts:
+    - max_height: {Number} Maximum height of the product's image (required)
+    - product: {Object} Product Liquid object (required)
+    - show_vendor: {Boolean} Show the product's vendor depending on the section setting (optional)
+
+    Usage:
+    {% include 'atb-product-card-grid' , max_height: max_height, product: product, show_vendor: atb_show_vendor  %}
+{% endcomment %}
+
+<div class="col-lg-3 p-2 col-md-6 col-6 my-2">
+  <a class="products-blk" href="{{ product.url }}">
+    <span>
+      {%- assign preview_image = product.featured_media.preview_image -%}
+      {%- assign hover_image = product.images[1] %}
+      {% unless hover_image %}
+      	{%- assign hover_image = product.featured_media.preview_image -%}
+      {% endunless %}
+      {% capture image_size %}{{ max_height }}x{{ max_height }}{% endcapture %}
+      <img class="main-img" src="{{ preview_image | img_url: image_size, scale: 2 }}" />
+      <img class="second-img" src="{{ hover_image | img_url: image_size, scale: 2 }}" />
+      {% if product.compare_at_price > product.price %}
+      	<div class="sale">Sale</div>
+      {% endif %}
+    </span>
+    <div class="details-products py-3">
+      <h3 class="mb-1">{{ product.title }}</h3>
+        {% include 'atb-product-price-listing' , product: product, show_vendor: show_vendor  %}
+    </div>
+  </a>
+</div>

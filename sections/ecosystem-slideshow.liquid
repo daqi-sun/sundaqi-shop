@@ -1,0 +1,100 @@
+{% if section.blocks.size > 0 %}
+    <div class="ecosystem-container">
+      <div class="home-ecosystem-slideshow">
+        <div class="slideshow-introduction">
+          {% if section.settings.heading != blank %}
+            <h2>{{ section.settings.heading }}</h2>
+          {% endif %}
+          {% if section.settings.description != blank %}
+            <div class="slideshow-desc">{{ section.settings.description }}</div>
+          {% endif %}
+        </div>
+        <div class="home-ecosystem-slideshow-inner">
+          {% for block in section.blocks %}
+              <div class="ecosystem-slide">
+                {% if block.settings.slide_description != blank %}
+                  <div class="slide-desc">{{ block.settings.slide_description }}</div>
+                {% endif %}
+                <div class="slide-images">
+                  {% if block.settings.slide_image != blank %}
+                    <img class="{% if block.settings.slide_image_mobile != blank %} desktop-image{% endif %}" src="{{block.settings.slide_image | img_url: '2000x'}}">
+                    {% if block.settings.slide_image_mobile != blank %}<img class="mobile-image" src="{{block.settings.slide_image_mobile | img_url: '1200x'}}">{% endif %}
+                  {% endif %}
+                </div>
+              </div>
+          {% endfor %}
+        </div>
+
+        <div class="home-ecosystem-slideshow-navigation">
+        {% for block in section.blocks %}
+          <div class="ecosystem-slide-nav {% if block.settings.active_slide %}slide-active{% endif %}">
+            <div class="bar"></div>
+            {% if block.settings.slide_heading != blank %}
+            <div class="nav-heading">{{ block.settings.slide_heading }}</div>
+            {% endif %}
+            {% if block.settings.slide_heading != blank %}
+            <div class="nav-subheading">{{ block.settings.slide_subheading }}</div>
+            {% endif %}
+          </div>
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+    {% schema %}
+      {
+        "name": "Slideshow",
+        "settings": [
+          {
+            "id":"heading",
+            "type":"text",
+            "label":"Heading",
+            "default": "Home ecosystem"
+          },
+          {
+            "id":"description",
+            "type":"richtext",
+            "label":"Description"
+          }
+          ],
+        "blocks": [
+          {
+            "type": "slide",
+            "name": "Slide",
+            "settings": [
+              {
+                "type": "checkbox",
+                "id": "active_slide",
+                "label": "Active slide?"
+              },
+              {
+                "type": "text",
+                "id": "slide_heading",
+                "label": "Heading"
+              },
+              {
+                "type": "text",
+                "id": "slide_subheading",
+                "label": "Sub Heading"
+              },
+              {
+                "type": "richtext",
+                "id": "slide_description",
+                "label": "Description"
+              },
+              {
+                "type": "image_picker",
+                "id": "slide_image",
+                "label": "Image for PC"
+              },
+              {
+                "type": "image_picker",
+                "id": "slide_image_mobile",
+                "label": "Image for Mobile"
+              }
+            ]
+          }
+        ]
+      }
+    {% endschema %}

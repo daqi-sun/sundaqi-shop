@@ -1,0 +1,436 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "PDP Image with Text [H]",
+  "id": "pdp-image-with-text-horizontal",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "class": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_section_id",
+      "label": "Section ID",
+      "info": ""
+    },
+    {
+      "type": "select",
+      "id": "atb_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ],
+      "default": "center",
+      "info": ""
+    },
+    {
+      "type": "select",
+      "id": "atb_position",
+      "label": "Text position",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center",
+      "info": ""
+    },
+    {
+      "type": "select",
+      "id": "atb_layout",
+      "label": "Mobile Layout",
+      "options": [
+        {
+          "label": "Stacked",
+          "value": "stacked"
+        },
+        {
+          "label": "Slider",
+          "value": "owl-carousel owl-theme"
+        }
+      ],
+      "default": "stacked",
+      "info": ""
+    },
+    {
+      "type": "select",
+      "id": "atb_stacked_row",
+      "label": "Desktop Stacked row per column",
+      "options": [
+        {
+          "label": "1",
+          "value": "1"
+        },
+        {
+          "label": "2",
+          "value": "2"
+        },
+        {
+          "label": "3",
+          "value": "3"
+        },
+        {
+          "label": "4",
+          "value": "4"
+        }
+      ],
+      "default": "2",
+      "info": "Enabled if Layout selected is Stacked"
+    },
+    {
+      "type": "select",
+      "id": "atb_mobile_stacked_row",
+      "label": "Mobile Stacked row per column",
+      "options": [
+        {
+          "label": "1",
+          "value": "1"
+        },
+        {
+          "label": "2",
+          "value": "2"
+        }
+      ],
+      "default": "1",
+      "info": "Enabled if Layout selected is Stacked"
+    },
+    {
+      "type": "select",
+      "id": "atb_slider_row",
+      "label": "Desktop slider row per column",
+      "options": [
+        {
+          "label": "1",
+          "value": "1"
+        },
+        {
+          "label": "2",
+          "value": "2"
+        },
+        {
+          "label": "3",
+          "value": "3"
+        },
+        {
+          "label": "4",
+          "value": "4"
+        }
+      ],
+      "default": "2",
+      "info": "Enabled if Layout selected is Slider"
+    },
+    {
+      "type": "select",
+      "id": "atb_mobile_slider_row",
+      "label": "Mobile slider row per column",
+      "options": [
+        {
+          "label": "1",
+          "value": "1"
+        },
+        {
+          "label": "2",
+          "value": "2"
+        },
+        {
+          "label": "3",
+          "value": "3"
+        },
+        {
+          "label": "4",
+          "value": "4"
+        }
+      ],
+      "default": "1",
+      "info": "Enabled if Layout selected is Slider"
+    },
+    {
+      "type": "text",
+      "id": "blocks",
+      "label": "Block ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": "",
+      "repeatable": "Image-Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "block_image",
+      "label": "Image",
+      "repeatable": "Image-Content",
+      "info": ""
+    },
+    {
+      "type": "image_picker",
+      "id": "block_mobile_image",
+      "label": "Mobile Image",
+      "repeatable": "Image-Content",
+      "info": ""
+    },
+    {
+      "type": "image_picker",
+      "id": "block_icon_image",
+      "label": "Icon Image",
+      "repeatable": "Image-Content",
+      "info": ""
+    },
+    {
+      "type": "checkbox",
+      "id": "block_reverse_image_text_desktop",
+      "label": "Reverse Image and Text (Desktop)",
+      "default": false,
+      "repeatable": "Image-Content",
+      "info": ""
+    },
+    {
+      "type": "checkbox",
+      "id": "block_reverse_image_text_mobile",
+      "label": "Reverse Image and Text (Mobile)",
+      "default": false,
+      "repeatable": "Image-Content",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "block_image_alt",
+      "label": "Image Alt",
+      "repeatable": "Image-Content",
+      "info": ""
+    },
+    {
+      "type": "wysiwyg",
+      "id": "block_sub_heading",
+      "label": "Sub Heading",
+      "repeatable": "Image-Content",
+      "info": ""
+    },
+    {
+      "type": "wysiwyg",
+      "id": "block_heading",
+      "label": "Heading",
+      "repeatable": "Image-Content",
+      "info": ""
+    },
+    {
+      "type": "wysiwyg",
+      "id": "block_content",
+      "label": "Content",
+      "repeatable": "Image-Content",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "block_button_link",
+      "label": "Button Link",
+      "repeatable": "Image-Content",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "block_button_text",
+      "label": "Button Text",
+      "default": "Learn More",
+      "repeatable": "Image-Content",
+      "info": ""
+    }
+  ],
+  "warnings": [
+    "repeating checkbox fields may not be properly handled",
+    "repeating image fields may not be properly handled"
+  ]
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_section_id' -%}
+{%- assign atb_section_id = val -%}
+{%- include 'atb-render' field:'atb_alignment' -%}
+{%- assign atb_alignment = val -%}
+{%- include 'atb-render' field:'atb_position' -%}
+{%- assign atb_position = val -%}
+{%- include 'atb-render' field:'atb_layout' -%}
+{%- assign atb_layout = val -%}
+{%- include 'atb-render' field:'atb_stacked_row' -%}
+{%- assign atb_stacked_row = val -%}
+{%- include 'atb-render' field:'atb_mobile_stacked_row' -%}
+{%- assign atb_mobile_stacked_row = val -%}
+{%- include 'atb-render' field:'atb_slider_row' -%}
+{%- assign atb_slider_row = val -%}
+{%- include 'atb-render' field:'atb_mobile_slider_row' -%}
+{%- assign atb_mobile_slider_row = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_image' -%}
+{%- assign block_image = val -%}
+{%- include 'atb-render' field:'block_mobile_image' -%}
+{%- assign block_mobile_image = val -%}
+{%- include 'atb-render' field:'block_icon_image' -%}
+{%- assign block_icon_image = val -%}
+{%- include 'atb-render' field:'block_reverse_image_text_desktop' -%}
+{%- assign block_reverse_image_text_desktop = val -%}
+{%- include 'atb-render' field:'block_reverse_image_text_mobile' -%}
+{%- assign block_reverse_image_text_mobile = val -%}
+{%- include 'atb-render' field:'block_image_alt' -%}
+{%- assign block_image_alt = val -%}
+{%- include 'atb-render' field:'block_sub_heading' -%}
+{%- assign block_sub_heading = val -%}
+{%- include 'atb-render' field:'block_heading' -%}
+{%- assign block_heading = val -%}
+{%- include 'atb-render' field:'block_content' -%}
+{%- assign block_content = val -%}
+{%- include 'atb-render' field:'block_button_link' -%}
+{%- assign block_button_link = val -%}
+{%- include 'atb-render' field:'block_button_text' -%}
+{%- assign block_button_text = val -%}
+{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section ">
+<section id="{{ section_id }}" class="pdp pdp-image-text-horizontal">
+    <div class="pdp-image-text-horizontal__container {% if atb_layout == "owl-carousel owl-theme" %}pr-0{% endif%}" id="{{ atb_section_id }}">
+        
+            {% for block0 in blocks %}
+{%- if block_reverse_image_text_mobile[forloop.index0] == blank -%}
+{%- assign my_checkbox1 = false -%}
+{%- else -%}
+{%- assign my_checkbox1 = true -%}
+{%- endif -%}
+{%- if block_reverse_image_text_desktop[forloop.index0] == blank -%}
+{%- assign my_checkbox0 = false -%}
+{%- else -%}
+{%- assign my_checkbox0 = true -%}
+{%- endif -%}
+{%- assign my_image_key2 = block_icon_image[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image2 = images[my_image_key2] -%}
+{%- assign my_image_key1 = block_mobile_image[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image1 = images[my_image_key1] -%}
+{%- assign my_image_key0 = block_image[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image0 = images[my_image_key0] -%}
+                <div class="stacked content-alignment-{{ atb_alignment }} content-position-{{ atb_position }} {% if atb_layout == "owl-carousel owl-theme" %}d-sm-none{% endif %}">
+                    <div class="stack-content stack-content-{{ atb_stacked_row }} mobile-stack-content-{{ atb_mobile_stacked_row }} {% if my_checkbox0 %} pdp-image-text-horizontal__stack_content--reverse-desktop {% endif %} {% if my_checkbox1 %} pdp-image-text-horizontal__stack_content--reverse-mobile {% endif %}">
+                        {% if my_image0 != blank or my_image1 != blank %}
+                            <picture>
+                                <source media="(min-width:750px)" srcset="{{ my_image0 | image_url: width: 1000 }}">
+                                <source media="(max-width:749px)"  srcset="{{ my_image1 | image_url: width: 749 }}">
+                                <img src="{{ my_image0 | image_url: width: 1000 }}" alt="{{ block_image_alt[forloop.index0] }}" style="width: 100%;">
+                            </picture>
+                        {% endif %}
+                    </div>
+
+                    <div class="stack-content stack-content-{{ atb_stacked_row }} mobile-stack-content-{{ atb_mobile_stacked_row }}">
+                        <div class="text-content">
+                            {% if my_image2 != blank %}
+                                <img src="{{ my_image2 | image_url: width: 300 }}" class="pdp-image-text-horizontal__icon" alt="{{ block_icon_image_alt[forloop.index0] }}">
+                            {% endif %}
+                            {% if block_sub_heading[forloop.index0] != blank %}
+                                {{ block_sub_heading[forloop.index0] }}
+                            {% endif %}
+                            {% if block_heading[forloop.index0] != blank %}
+                                {{ block_heading[forloop.index0] }}
+                            {% endif %}
+                            {% if block_content[forloop.index0] != blank %}
+                                {{ block_content[forloop.index0] }}
+                            {% endif %}
+
+                            {% if block_button_link[forloop.index0] != blank and block_button_text[forloop.index0] != blank %}
+                                <a href="{{ block_button_link[forloop.index0] }}" class="pdp-button">{{ block_button_text[forloop.index0] }}</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+        {% if atb_layout == "owl-carousel owl-theme" %}
+            <div class="owl-carousel owl-theme content-alignment-{{ atb_alignment }} content-position-{{ atb_position }}">
+                {% for block0 in blocks %}
+{%- if block_reverse_image_text_mobile[forloop.index0] == blank -%}
+{%- assign my_checkbox1 = false -%}
+{%- else -%}
+{%- assign my_checkbox1 = true -%}
+{%- endif -%}
+{%- if block_reverse_image_text_desktop[forloop.index0] == blank -%}
+{%- assign my_checkbox0 = false -%}
+{%- else -%}
+{%- assign my_checkbox0 = true -%}
+{%- endif -%}
+{%- assign my_image_key2 = block_icon_image[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image2 = images[my_image_key2] -%}
+{%- assign my_image_key1 = block_mobile_image[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image1 = images[my_image_key1] -%}
+{%- assign my_image_key0 = block_image[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image0 = images[my_image_key0] -%}
+                    <div class="stack-content item">
+                        {% if my_image0 != blank or my_image1 != blank %}
+                            <picture>
+                                <source media="(min-width:750px)" srcset="{{ my_image0 | image_url: width: 1000 }}">
+                                <source media="(max-width:749px)"  srcset="{{ my_image1 | image_url: width: 749 }}">
+                                <img src="{{ my_image0 | image_url: width: 1000 }}" alt="{{ block_image_alt[forloop.index0] }}" style="width: 100%;">
+                            </picture>
+                        {% endif %}
+                        <div class="text-content">
+                            {% if my_image2 != blank %}
+                                <img src="{{ my_image2 | image_url: width: 300 }}" alt="{{ block_icon_image_alt[forloop.index0] }}">
+                            {% endif %}
+                            {% if block_sub_heading[forloop.index0] != blank %}
+                                {{ block_sub_heading[forloop.index0] }}
+                            {% endif %}
+                            {% if block_heading[forloop.index0] != blank %}
+                                {{ block_heading[forloop.index0] }}
+                            {% endif %}
+                        </div>
+                        {% if block_button_link[forloop.index0] != blank and block_button_text[forloop.index0] != blank %}
+                            <a href="{{ block_button_link[forloop.index0] }}" class="pdp-button">{{ block_button_text[forloop.index0] }}</a>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</section>
+<script>
+    let owl = $("#{{ section_id }} .owl-carousel");
+    if(owl) {
+        let owlCarousel = owl.owlCarousel({
+            margin:12,
+            dots:true,
+            stagePadding: 39,
+            responsive:{
+                0:{
+                    items:{{ atb_mobile_slider_row }}
+                },
+                749:{
+                    items: {{ atb_slider_row }}
+                }
+            }
+        })
+    }
+</script>
+</section>

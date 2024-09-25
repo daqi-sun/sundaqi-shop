@@ -1,0 +1,223 @@
+<div class="star-page-title-section star_countdown_section section-{{ section.id }}" id="{{ section.settings.section_id }}" style="background-color: {{ section.settings.section_background }};">
+  <div class="star-page-container">
+          {% if section.settings.title != blank %}
+            <div class="star-page-title-wrapper">
+              <div class="title icon--before">
+                {% if section.settings.icon != blank %}
+                  <img loading="lazy" class="hideMobile" srcset="{{ section.settings.icon | img_url: 'small' | replace: '_small', '' }}" />
+                {% endif %}
+                {% if section.settings.icon_mobile != blank %}
+                  <img loading="lazy" class="hideDesktop" srcset="{{ section.settings.icon_mobile | img_url: 'small' | replace: '_small', '' }}" />
+                {% endif %}
+                <span>{{ section.settings.title }}</span>
+              </div>
+            </div>
+          {% endif %}
+          <div class="countdown_wrapper custom_countdown" data-countdown-end-date="{{ section.settings.countdown_end_date }}">
+              {% if section.settings.ends_in_text != blank %}<div class="ends_in">{{ section.settings.ends_in_text }}</div>{% endif %}
+              <div class="star_countdown">
+                <div class="days">
+                  <div><span class="block days_num"></span><span class="block_text" data-other="{{ 'general.countdown.days' | t }}" data-one="{{ 'general.countdown.day' | t }}">{{ 'general.countdown.days' | t }}</span></div>
+                  <span class="dots">:</span>
+                </div>
+                <div class="hours">
+                    <div><span class="block hours_num"></span><span class="block_text" data-other="{{ 'general.countdown.hours' | t }}" data-one="{{ 'general.countdown.hour' | t }}">{{ 'general.countdown.hours' | t }}</span></div>
+                    <span class="dots">:</span>
+                </div>
+                <div class="mins">
+                    <div><span class="block mins_num"></span><span class="block_text" data-other="{{ 'general.countdown.minutes' | t }}" data-one="{{ 'general.countdown.minute' | t }}">{{ 'general.countdown.minutes' | t }}</span></div>
+                    <span class="dots">:</span>
+                </div>
+                <div class="sec">
+                    <div><span class="block sec_num"></span><span class="block_text" data-other="{{ 'general.countdown.seconds' | t }}" data-one="{{ 'general.countdown.second' | t }}">{{ 'general.countdown.seconds' | t }}</span></div>
+                </div>
+              </div>
+          </div>
+          {% if section.settings.subtitle_1 != blank or section.settings.subtitle_2 != blank %}
+            <div class="star-page-title-wrapper">
+              <div class="title subtitle icon--before">
+                {% if section.settings.subtitle_icon != blank %}
+                  <img loading="lazy" srcset="{{ section.settings.subtitle_icon | img_url: 'small' | replace: '_small', '' }}" />
+                {% endif %}
+                <span class="strong">{{ section.settings.subtitle_1 }}</span>
+                <span class="text-2">{{ section.settings.subtitle_2 }}</span>
+              </div>
+            </div>
+          {% endif %}
+  </div>
+</div>
+
+<style>
+  .section-{{ section.id }}{
+      padding: {{ section.settings.section_top_space }}px 0 {{ section.settings.section_bottom_space }}px 0;
+  }
+  .section-{{ section.id }} .title{ color: {{ section.settings.title_color }}; }
+  .section-{{ section.id }} .subtitle{ color: {{ section.settings.subtitle_color }}; }
+  .section-{{ section.id }} .ends_in{ color: {{ section.settings.text_color }}; }
+  .section-{{ section.id }} .block{ background: {{ section.settings.countdown_background }}; color: {{ section.settings.countdown_text_color }}; }
+  .section-{{ section.id }} .star_countdown .dots{ color: {{ section.settings.countdown_colon_color }}; }
+  .section-{{ section.id }} .star_countdown .block_text{ color: {{ section.settings.countdown_indication_color }}; }
+
+  @media screen and (max-width: 749px){
+      .section-{{ section.id }}{
+          padding: {{ section.settings.section_top_space_m }}px 0 {{ section.settings.section_bottom_space_m }}px 0;
+      }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Star_countdown",
+  "settings": [
+    {
+      "type":"color",
+      "id":"section_background",
+      "label":"Section background color"
+    },
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID"
+    },
+    {
+      "type": "header",
+      "content": "Section spacing"
+    },
+    {
+      "type": "range",
+      "id": "section_top_space",
+      "label": "Top space(Desktop)",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "section_bottom_space",
+      "label": "Bottom space(Desktop)",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "section_top_space_m",
+      "label": "Top space(Mobile)",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "section_bottom_space_m",
+      "label": "Bottom space(Mobile)",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Icon(Desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_mobile",
+      "label": "Icon(Mobile)"
+    },
+    {
+      "type": "header",
+      "content": "Countdown"
+    },
+    {
+      "type": "text",
+      "id": "ends_in_text",
+      "label": "Ends in text"
+    },
+    {
+      "type": "text",
+      "id": "countdown_end_date",
+      "label": "Countdown End date",
+      "info": "Add timezone too to make it work correctly. Format is `day date month year time timezone`",
+      "default": "Tue 21 Feb 2023 23:00:00 GMT+8"
+    },
+    {
+      "type": "header",
+      "content": "Subtitle"
+    },
+    {
+      "type": "image_picker",
+      "id": "subtitle_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "subtitle_1",
+      "label": "Text 1"
+    },
+    {
+      "type": "text",
+      "id": "subtitle_2",
+      "label": "Text 2"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title text color"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle text color"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Ends in text color"
+    },
+    {
+      "type": "color_background",
+      "id": "countdown_background",
+      "label": "Countdown block background"
+    },
+    {
+      "type": "color",
+      "id": "countdown_text_color",
+      "label": "Countdown block text color"
+    },
+    {
+      "type": "color",
+      "id": "countdown_colon_color",
+      "label": "Countdown block colon color"
+    },
+    {
+      "type": "color",
+      "id": "countdown_indication_color",
+      "label": "Countdown block indication color"
+    }
+  ],
+  "presets": [
+        {
+            "name": "Star_countdown",
+            "category":"Custom Sections"
+        }
+  ]
+}
+{% endschema %}

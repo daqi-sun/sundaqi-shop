@@ -1,0 +1,422 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "t:sections.shop-the-look.name",
+  "class": "index-section",
+  "id": "shop-the-look",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "type": "image_picker",
+      "id": "atb_image",
+      "label": "t:sections.shop-the-look.settings.image.label",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_title",
+      "label": "t:sections.shop-the-look.settings.title.label",
+      "default": "Heading",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_subtitle",
+      "label": "t:sections.shop-the-look.settings.subtitle.label",
+      "default": "Subtitle",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_button_title",
+      "label": "t:sections.shop-the-look.settings.button_title.label",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_button_url",
+      "label": "t:sections.shop-the-look.settings.button_url.label",
+      "info": ""
+    },
+    {
+      "type": "select",
+      "id": "atb_button_style",
+      "label": "t:sections.shop-the-look.settings.button_style.label",
+      "default": "primary",
+      "options": [
+        {
+          "label": "t:sections.shop-the-look.settings.button_style.options__1.label",
+          "value": "primary"
+        },
+        {
+          "label": "t:sections.shop-the-look.settings.button_style.options__2.label",
+          "value": "secondary"
+        },
+        {
+          "label": "t:sections.shop-the-look.settings.button_style.options__3.label",
+          "value": "white"
+        },
+        {
+          "label": "t:sections.shop-the-look.settings.button_style.options__4.label",
+          "value": "transparent_primary"
+        },
+        {
+          "label": "t:sections.shop-the-look.settings.button_style.options__5.label",
+          "value": "transparent_secondary"
+        }
+      ],
+      "info": ""
+    },
+    {
+      "type": "wysiwyg",
+      "id": "atb_content",
+      "label": "t:sections.shop-the-look.settings.content.label",
+      "default": "<p>Content text</p>",
+      "info": ""
+    },
+    {
+      "type": "color",
+      "id": "atb_text_color",
+      "label": "t:sections.shop-the-look.settings.text_color.label",
+      "default": "#fff",
+      "info": ""
+    },
+    {
+      "type": "select",
+      "id": "atb_content_side",
+      "label": "t:sections.shop-the-look.settings.content_side.label",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.shop-the-look.settings.content_side.options__1.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.shop-the-look.settings.content_side.options__2.label"
+        }
+      ],
+      "default": "left",
+      "info": ""
+    },
+    {
+      "type": "color",
+      "id": "atb_color_image_overlay",
+      "label": "t:sections.shop-the-look.settings.color_image_overlay.label",
+      "info": ""
+    },
+    {
+      "type": "range",
+      "id": "atb_image_overlay_opacity",
+      "label": "t:sections.shop-the-look.settings.image_overlay_opacity.label",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "t:sections.shop-the-look.settings.image_overlay_opacity.unit",
+      "default": 70,
+      "info": ""
+    },
+    {
+      "type": "checkbox",
+      "id": "atb_show_vendor",
+      "label": "t:sections.shop-the-look.settings.show_vendor.label",
+      "default": true,
+      "info": ""
+    },
+    {
+      "type": "select",
+      "id": "atb_hotspot_size",
+      "label": "t:sections.shop-the-look.settings.hotspot_size.label",
+      "default": "medium",
+      "options": [
+        {
+          "label": "t:sections.shop-the-look.settings.hotspot_size.options__1.label",
+          "value": "small"
+        },
+        {
+          "label": "t:sections.shop-the-look.settings.hotspot_size.options__2.label",
+          "value": "medium"
+        },
+        {
+          "label": "t:sections.shop-the-look.settings.hotspot_size.options__3.label",
+          "value": "large"
+        }
+      ],
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "blocks",
+      "label": "Block ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": "",
+      "repeatable": "t:sections.shop-the-look.blocks.name.label"
+    },
+    {
+      "type": "product",
+      "id": "block_product",
+      "label": "t:sections.shop-the-look.blocks.settings.product.label",
+      "repeatable": "t:sections.shop-the-look.blocks.name.label",
+      "info": ""
+    },
+    {
+      "type": "range",
+      "id": "block_product_horizontal_position",
+      "label": "t:sections.shop-the-look.blocks.settings.product_horizontal_position.label",
+      "min": 5,
+      "max": 95,
+      "step": 1,
+      "unit": "%",
+      "default": 15,
+      "repeatable": "t:sections.shop-the-look.blocks.name.label",
+      "info": ""
+    },
+    {
+      "type": "range",
+      "id": "block_product_vertical_position",
+      "label": "t:sections.shop-the-look.blocks.settings.product_vertical_position.label",
+      "min": 5,
+      "max": 95,
+      "step": 1,
+      "unit": "%",
+      "default": 15,
+      "repeatable": "t:sections.shop-the-look.blocks.name.label",
+      "info": ""
+    }
+  ],
+  "warnings": [
+    "repeating range fields may not be properly handled"
+  ]
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_image' -%}
+{%- assign atb_image = val -%}
+{%- include 'atb-render' field:'atb_title' -%}
+{%- assign atb_title = val -%}
+{%- include 'atb-render' field:'atb_subtitle' -%}
+{%- assign atb_subtitle = val -%}
+{%- include 'atb-render' field:'atb_button_title' -%}
+{%- assign atb_button_title = val -%}
+{%- include 'atb-render' field:'atb_button_url' -%}
+{%- assign atb_button_url = val -%}
+{%- include 'atb-render' field:'atb_button_style' -%}
+{%- assign atb_button_style = val -%}
+{%- include 'atb-render' field:'atb_content' -%}
+{%- assign atb_content = val -%}
+{%- include 'atb-render' field:'atb_text_color' -%}
+{%- assign atb_text_color = val -%}
+{%- include 'atb-render' field:'atb_content_side' -%}
+{%- assign atb_content_side = val -%}
+{%- include 'atb-render' field:'atb_color_image_overlay' -%}
+{%- assign atb_color_image_overlay = val -%}
+{%- include 'atb-render' field:'atb_image_overlay_opacity' -%}
+{%- assign atb_image_overlay_opacity = val -%}
+{%- include 'atb-render' field:'atb_show_vendor' -%}
+{%- assign atb_show_vendor = val -%}
+{%- include 'atb-render' field:'atb_hotspot_size' -%}
+{%- assign atb_hotspot_size = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_product' -%}
+{%- assign block_product = val -%}
+{%- include 'atb-render' field:'block_product_horizontal_position' -%}
+{%- assign block_product_horizontal_position = val -%}
+{%- include 'atb-render' field:'block_product_vertical_position' -%}
+{%- assign block_product_vertical_position = val -%}
+{%- if atb_show_vendor == blank -%}
+{%- assign atb_show_vendor = false -%}
+{%- else -%}
+{%- assign atb_show_vendor = true -%}
+{%- endif -%}
+{%- assign atb_image_overlay_opacity = atb_image_overlay_opacity | plus: 0 -%}
+{%- assign atb_image_key = atb_image| split: '/files/' | last -%}{%- assign atb_image = images[atb_image_key] -%}{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section index-section">
+{% assign image = atb_image %}
+{% assign content_side = atb_content_side %}
+
+
+  {%- capture flickity_options -%}
+{
+  "prevNextButtons": false,
+  "wrapAround": false,
+  "dragThreshold": 15,
+ "cellAlign": "left",
+  "wrapAround": true,
+  "pauseAutoPlayOnHover": true,
+  "autoPlay": false,
+  "pageDots": true
+}
+{%- endcapture -%}
+
+
+
+<section id="section-{{ section_id }}" data-section-id="{{ section_id }}" data-section-type="shop-the-look" 
+         class='shop-the-look-section content_side_{{content_side}} fade-in-animation'  >
+
+
+  {% capture section_content%} 
+    {% if atb_title != blank or  atb_subtitle != blank %}
+    <header class="section-header homepage_subtitle_style_{{settings.homepage_subtitle_color}}">
+      {% if atb_subtitle != blank  %}
+     <span class='h5'>{{ atb_subtitle  }}</span>
+      {% endif %}
+      {% if atb_title != blank  %}
+      <h2>{{ atb_title }}</h2>
+      {% endif %}
+    
+    </header>
+    {% endif %}
+     {% if atb_content != blank  %}
+      <div class='content'>{{ atb_content }}</div>
+      {% endif %}
+    {% if atb_button_title != blank  %}
+    <a href='{{atb_button_url}}' class="content-btn btn btn--{{atb_button_style }}" >
+      <span>{{  atb_button_title }}</span>
+      {% include 'atb-icon'  with 'tail-right'  %}
+    </a>
+    {% endif %}
+  {% endcapture %}
+
+
+  <div class='section_image_block'>
+        {% if image != blank %}
+          <img 
+               class="section_image_block__image"
+               srcset="{%- if image.width >= 375 -%}{{ image | img_url: '375x' }} 375w,{%- endif -%}
+                       {%- if image.width >= 720 -%}{{ image | img_url: '720x' }} 750w,{%- endif -%}
+                       {%- if image.width >= 1066 -%}{{ image | img_url: '1066x' }} 1066w,{%- endif -%}
+                       {%- if image.width >= 1500 -%}{{ image | img_url: '1500x' }} 1500w,{%- endif -%}
+                       {%- if image.width >= 1780 -%}{{ image | img_url: '1780x' }} 1780w,{%- endif -%}
+                       {%- if image.width >= 2000 -%}{{ image | img_url: '2000x' }} 2000w,{%- endif -%}
+                       {%- if image.width >= 2800 -%}{{ image | img_url: '2800x' }} 2800w{%- endif -%}"
+               src="{{ image | img_url: '750x' }}"
+               sizes="100vw"
+               loading="lazy"
+               width="{{ image.width }}"
+               height="{{ image.height }}"
+               alt="{{image.alt | default: atb_title }}">
+        {% else %}
+          <div class='section_image_block__image'>
+            {% capture current %}{% cycle 1, 2 %}{% endcapture %}
+            {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        {% endif %}
+    
+      {% if blocks.size > 0 %}
+  
+    <div class='shop-the-look_overlay hotspot_size__{{atb_hotspot_size}}' >
+      {% for block0 in blocks %}
+{%- assign my_range1 = block_product_vertical_position[forloop.index0] | plus: 0 -%}
+{%- assign my_range0 = block_product_horizontal_position[forloop.index0] | plus: 0 -%}
+      {%- assign product = all_products[block_product[forloop.index0]] -%}
+
+      {%- if product == empty -%}
+      {%- continue -%}
+      {%- endif -%}
+
+      {%- assign product_horizontal_position = my_range0 -%}
+      {%- assign product_vertical_position = my_range1 -%}
+
+      <span class="shop_the_look_dot" 
+            data-index="{{forloop.index0}}"
+            data-block-id="shop_the_look_product_{{ blocks[forloop.index0] }}" 
+            style="left: {{ product_horizontal_position }}%; top: {{ product_vertical_position }}%">
+      	{% render 'icon-saletag' %}
+      </span>
+
+      {% endfor %}
+    </div>
+  {% endif %}
+    
+  
+
+    
+  </div>
+
+
+  <div class='section_block_content'>
+
+    <div class='section_content__wrapper text-left {%  if blocks.size == 0 %} empty_section_content__wrapper {%  endif %} '>
+      <div class='static_block'>
+        {{section_content}}
+      </div>     
+    </div>
+    <div class='section_content_overlay '>  </div>    
+    
+    {% if blocks.size > 0 %}
+
+    <div class='shop_the_look_product_carousel {% if settings.align_height %} use_align_height {% else %} use_image_height {% endif %}' data-flickity_options='{{flickity_options}}'>
+    {%- assign max_height = 345 -%}
+    {% for block0 in blocks %}
+{%- assign my_range1 = block_product_vertical_position[forloop.index0] | plus: 0 -%}
+{%- assign my_range0 = block_product_horizontal_position[forloop.index0] | plus: 0 -%}
+    {%- assign product = all_products[block_product[forloop.index0]] -%}
+
+    {%- if product == empty -%}
+    {%- continue -%}
+    {%- endif -%}
+
+    <div class='shop_the_look_product'
+         id='shop_the_look_product_{{ blocks[forloop.index0] }}'
+         >
+      {% include 'atb-product-card-item' , list: false, max_height: max_height, product: product, show_vendor: atb_show_vendor, products_per_row: 3  %}
+    </div>
+    {% endfor %}
+    </div>
+    {% endif %}
+    
+  </div>
+
+    {% assign color_image_overlay = atb_color_image_overlay %}
+  
+  {% if color_image_overlay == 'rgba(0,0,0,0)' or color_image_overlay == blank %}
+  {% assign color_image_overlay = settings.color_button %}
+  {% endif %}
+  
+  
+  <style>
+
+    #section-{{ section_id }}  .content,
+    #section-{{ section_id }}  .section-header h2 {
+      color: {{ atb_text_color }};
+    }
+
+    {% if settings.homepage_subtitle_color == 'match_header' %}
+    #section-{{ section_id }}  .section-header .h5 {
+      color: {{ atb_text_color }};
+    }
+    #section-{{ section_id }}  .section-header .h5:before {
+      background: {{ atb_text_color }};
+    }
+    {% endif %}
+
+   
+    #section-{{ section_id }} .section_content_overlay {
+      opacity: {{ atb_image_overlay_opacity }}% ;
+      background-color: {{ color_image_overlay }};
+    }
+    
+  
+  </style>
+
+
+ 
+  
+ 
+</section>
+
+
+</section>

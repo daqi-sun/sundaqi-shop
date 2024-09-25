@@ -1,0 +1,346 @@
+<div
+  x-data="
+    {
+      activeIndex: 0,
+      updateActiveIndex(index) {
+        this.activeIndex = index;
+
+        if(window.innerWidth > 768) return
+
+        // Scroll and move the active tab indicator to middle
+        const navWrapper = document.getElementById('disaster-tabs-nav');
+        const navItems = navWrapper.querySelectorAll('.disaster-tabs-nav__item');
+        const activeNavItem = navItems[index];
+
+        // 30 is padding left, 110 is offset to middle
+        navWrapper.scrollLeft += (activeNavItem.getBoundingClientRect().x + 30 - 110)
+      }
+    }
+  "
+  class="disaster-tabs"
+>
+  <h2 class="disaster-blue-heading">{{ section.settings.title }}</h2>
+
+  <div class="disaster-tabs-nav-wrapper">
+    <div class="disaster-tabs-nav" id="disaster-tabs-nav">
+      {% for block in section.blocks %}
+        <div
+          class="disaster-tabs-nav__item"
+          :class="{ 'disaster-tabs-nav__item--active': activeIndex === {{ forloop.index0 }} }"
+          @click="updateActiveIndex({{ forloop.index0 }})"
+        >
+          {{- block.settings.title -}}
+          <div
+            class="disaster-tabs-nab-indecator__item desktop-only"
+            :class="{ 'disaster-tabs-nab-indecator__item--active': activeIndex === {{ forloop.index0 }} }"
+            @click="updateActiveIndex({{ forloop.index0 }})"
+          ></div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="disaster-tabs-nab-indecator">
+    {% for block in section.blocks %}
+      <div
+        class="disaster-tabs-nab-indecator__item"
+        :class="{ 'disaster-tabs-nab-indecator__item--active': activeIndex === {{ forloop.index0 }} }"
+        @click="updateActiveIndex({{ forloop.index0 }})"
+      ></div>
+    {% endfor %}
+  </div>
+
+  <div class="disaster-tabs-grid">
+    {% for block in section.blocks %}
+      <div
+        class="disaster-tabs-content"
+        x-show="activeIndex === {{ forloop.index0 }}"
+      >
+        <div class="dtc-image-wrapper ">
+          <div class="mobile-only">
+            <img
+              class="disaster-tabs-content-image"
+              src="{{ block.settings.image_mobile | img_url: '800x' }}"
+              data-master-image="{{ block.settings.image_mobile | img_url: 'master' }}"
+              alt="{{ block.settings.image_mobile.alt }}"
+              loading="lazy"
+              draggable="false"
+            >
+          </div>
+          <div class="desktop-only">
+            <img
+              class="disaster-tabs-content-image"
+              src="{{ block.settings.image | img_url: '1200x' }}"
+              data-master-image="{{ block.settings.image | img_url: 'master' }}"
+              alt="{{ block.settings.image.alt }}"
+              loading="lazy"
+              draggable="false"
+            >
+          </div>
+
+          <div class="disaster-tabs-gray-text mobile-only">
+            {{ block.settings.graytext }}
+          </div>
+        </div>
+
+        <div class="dtc-text-content">
+          <div
+            class="desktop-only"
+            style="margin-top: 90px; font-weight: 600; font-size: 20px;"
+          >
+            {{ block.settings.richtext_desktop }}
+          </div>
+          <div style="margin-top: 30px;">
+            {{ block.settings.richtext }}
+          </div>
+          <a
+            href="{{ block.settings.url }}"
+            class="disaster-cta disaster-cta--big-on-desktop"
+          >
+            {{ section.settings.btn_text }}
+          </a>
+          <img
+            class="disaster-tabs-content__gif"
+            src="{{ block.settings.gif | img_url: 'master' }}"
+            alt="{{ block.settings.gif.alt }}"
+            loading="lazy"
+          >
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="disaster-tabs-gray-text desktop-only">
+    {% for block in section.blocks %}
+      <div x-show="activeIndex === {{ forloop.index0 }}">
+        {{ block.settings.graytext }}
+      </div>
+    {% endfor %}
+  </div>
+
+  <a
+    class="disaster-cta disaster-cta--mobile-only"
+    x-data="
+      {
+        links: [
+          {% for block in section.blocks %}
+            '{{ block.settings.url }}',
+          {% endfor %}
+        ]
+      }
+    "
+    :href="links[activeIndex]"
+  >
+    {{- section.settings.btn_text -}}
+  </a>
+
+  <!-- Full screen image -->
+  <div
+    class="disaster-tabs-full-screen-image"
+    id="disaster-tabs-full-screen-image"
+  >
+    <img alt="full screen image">
+    <button type="button" class="pswp__button pswp__button--close">
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g fill="none" fill-rule="evenodd">
+            <circle fill="currentColor" cx="10" cy="10" r="10"></circle>
+            <path d="M14.438 14.438a2.194 2.194 0 0 1-.498.387c-.16.086-.33.039-.51-.141L10 11.253l-3.443 3.443c-.172.172-.338.215-.497.129a2.194 2.194 0 0 1-.498-.387 2.194 2.194 0 0 1-.387-.498c-.086-.16-.043-.325.13-.497L8.746 10l-3.43-3.43c-.18-.18-.228-.35-.142-.51.086-.16.215-.326.387-.498.172-.172.338-.3.498-.387.16-.086.33-.039.51.141L10 8.747l3.43-3.43c.173-.173.34-.218.504-.136.164.082.332.21.504.381.172.172.299.34.38.504.083.164.038.331-.134.503L11.253 10l3.43 3.43c.18.18.228.35.142.51-.086.16-.215.326-.387.498z" fill="#FFF"></path>
+        </g>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const ele = document.getElementById('disaster-tabs-full-screen-image');
+    const activeClassName = 'disaster-tabs-full-screen-image--active';
+    let show = false;
+
+    let pos = { top: 0, left: 0, x: 0, y: 0 };
+    let zoom = false;
+    let mouseMoved = false;
+    let mouseDown = false;
+    let firstClick = true;
+
+    let mouseCanDown = false;
+    let mouseCanMove = false;
+    let mouseCanUp = false;
+
+    const mouseDownHandler = (e) => {
+      if (!mouseCanDown) return;
+      pos = {
+        // The current scroll
+        left: ele.scrollLeft,
+        top: ele.scrollTop,
+        // Get the current mouse position
+        x: e.clientX,
+        y: e.clientY,
+      };
+
+      mouseMoved = false;
+      mouseDown = true;
+
+      mouseCanMove = true;
+      mouseCanUp = true;
+
+      ele.style.cursor = 'grabbing';
+      ele.style.userSelect = 'none';
+    };
+    const mouseMoveHandler = (e) => {
+      if (!mouseDown && !mouseCanMove) return;
+
+      // How far the mouse has been moved
+      const dx = e.clientX - pos.x;
+      const dy = e.clientY - pos.y;
+      // Ignore if the mouse is outside the image
+      if (
+        e.clientX < ele.offsetLeft ||
+        e.clientX > ele.offsetLeft + ele.offsetWidth
+      ) {
+        return;
+      }
+      // Scroll the element
+      ele.scrollTop = pos.top - dy;
+      ele.scrollLeft = pos.left - dx;
+
+      mouseMoved = true;
+    };
+    const mouseUpHandler = () => {
+      if (!mouseCanUp) return;
+
+      mouseDown = false;
+      ele.style.cursor = 'grab';
+
+      // Zoom out:
+      if (!mouseMoved && !firstClick) {
+        exitZoom();
+      }
+      firstClick = false;
+      mouseCanUp = false;
+      mouseCanMove = false;
+    };
+
+    const enterZoom = () => {
+      if (zoom) return;
+      ele.classList.add(activeClassName);
+      setTimeout(() => {
+        zoom = true;
+        mouseCanDown = true;
+      }, 300);
+    };
+    const exitZoom = () => {
+      ele.classList.remove(activeClassName);
+      setTimeout(() => {
+        zoom = false;
+        mouseCanDown = false;
+      }, 300);
+    };
+    document.querySelectorAll('.dtc-image-wrapper').forEach((wrapper) => {
+      wrapper.addEventListener('click', () => {
+        // show full screen image
+        if (!show) {
+          document.getElementById(
+            'disaster-tabs-full-screen-image'
+          ).style.display = 'flex';
+          const masterImage = wrapper.querySelector('img').dataset.masterImage;
+          document
+            .getElementById('disaster-tabs-full-screen-image')
+            .querySelector('img').src = masterImage;
+
+          show = true;
+        }
+      });
+    });
+
+    ele.addEventListener('click', enterZoom);
+    ele.addEventListener('mousedown', mouseDownHandler);
+    ele.addEventListener('mousemove', mouseMoveHandler);
+    ele.addEventListener('mouseup', mouseUpHandler);
+
+    // FIXME: can not open after closing it
+    document
+      .getElementById('disaster-tabs-full-screen-image')
+      .querySelector('.pswp__button--close')
+      .addEventListener('click', () => {
+        document.getElementById(
+          'disaster-tabs-full-screen-image'
+        ).style.display = 'none';
+
+        show = false;
+      });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Tabs",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "What Are The Causes Of Power Outages?"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button text",
+      "default": "Learn more"
+    }
+  ],
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "html",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "richtext_desktop",
+          "label": "Richtext desktop only"
+        },
+        {
+          "type": "richtext",
+          "id": "richtext",
+          "label": "Richtext"
+        },
+        {
+          "type": "text",
+          "id": "url",
+          "label": "Learn more URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "gif",
+          "label": "Gif"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image Mobile"
+        },
+        {
+          "type": "richtext",
+          "id": "graytext",
+          "label": "Graytext"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

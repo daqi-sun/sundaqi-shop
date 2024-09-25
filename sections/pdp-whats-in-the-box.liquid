@@ -1,0 +1,304 @@
+
+{% assign section_id = section.settings.section_id | default: section.id %}
+
+<section id="{{ section_id }}" class="pdp pdp-what-in-box" data-section-id="{{ section_id }}" data-section-type="mosaic">
+  <div class='pdp-what-in-box-container'>
+  {% if section.settings.title != blank %}
+    <header class="alignment--center">
+       <h2>{{ section.settings.title }}</h2>
+    </header>
+  {% endif %}
+
+   <div class='mosaic_section_wrapper'>
+
+    {% assign column_gap = section.settings.gutter_width | divided_by: 2.0 %}
+    {% for block in section.blocks %}
+        {% assign image = block.settings.image  %}
+        {% assign mobile_image = block.settings.mobile_image  %}
+        {% assign title = block.settings.cta_label %}
+    <div class='mosaic_block mosaic_block--{{block.id}} {% if block.settings.cta_image_width == '50%' %}mobile-half-block{% else %}mobile-full-block{% endif %}'
+         data-image-width="{{image.width}}"
+         data-image-height='{{ image.height }}'
+         data-image-url='{{image | img_url:"2000x"}}'
+         style="--column-gap: {{ section.settings.gutter_width | divided_by: 2 }}px;
+                --column-width: {% if block.settings.cta_width != 100 %}calc({{ block.settings.cta_width }}% - {{ section.settings.gutter_width | divided_by: 2.0 }}px){% else %}{{block.settings.cta_width}}%;{% endif %}">
+       <div class='mosaic_block_inner'>
+         {% if link != blank %}
+         <a href='{{link}}'>
+         {% endif %}
+
+         <style>
+         .mosaic_section_wrapper .mosaic_block--{{block.id}} img.mosaic_image{
+            width: {{block.settings.custom_width}}px;
+            height:{{block.settings.custom_height}}px;
+            min-height:{{block.settings.custom_height}}px;
+         }
+         @media screen and (max-width: 749px){
+            .mosaic_section_wrapper .mosaic_block--{{block.id}} img.mosaic_image{
+               width: {{block.settings.custom_width_mobile}}px;
+               height:{{block.settings.custom_height_mobile}}px;
+               min-height:unset;
+            }
+            .mosaic_section_wrapper .mosaic_block--{{block.id}}{
+               width: calc({{block.settings.cta_image_width}} - {{section.settings.gutter_width}}px);
+            }
+         }
+         </style>
+
+            {% if title != blank %}
+            <div class='mosaic_block-caption'>
+             <h3>{{ title }}</h3>
+            </div>
+            {% endif %}
+            {% if image != blank %}
+            <img
+                  class="mosaic_image {% if mobile_image != blank %}hideMobile{% endif %}"
+                  srcset="{%- if image.width >= 375 -%}{{ image | img_url: '375x' }} 375w,{%- endif -%}
+                     {%- if image.width >= 720 -%}{{ image | img_url: '720x' }} 750w,{%- endif -%}
+                     {%- if image.width >= 1066 -%}{{ image | img_url: '1066x' }} 1066w,{%- endif -%}
+                     {%- if image.width >= 1500 -%}{{ image | img_url: '1500x' }} 1500w,{%- endif -%}
+                     {%- if image.width >= 1780 -%}{{ image | img_url: '1780x' }} 1780w,{%- endif -%}
+                     {%- if image.width >= 2000 -%}{{ image | img_url: '2000x' }} 2000w,{%- endif -%}
+                     {%- if image.width >= 2800 -%}{{ image | img_url: '2800x' }} 2800w{%- endif -%}"
+                  src="{{ image | img_url: '535x' }}"
+                  sizes="auto"
+                  loading="lazy"
+                  width="{{ image.width }}"
+                  height="{{ image.height }}"
+                  alt="{{image.alt | default: title }}">
+            {% else %}
+               {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+            {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg mosaic_image' }}
+
+            {% endif %}
+
+            {% if mobile_image != blank %}
+               <img
+                  class="mosaic_image hideDesktop"
+                  srcset="{{ mobile_image | img_url: 'small' | replace: '_small', '' }}"
+                  sizes="auto"
+                  loading="lazy"
+                  width="{{ mobile_image.width }}"
+                  height="{{ mobile_image.height }}"
+                  alt="{{mobile_image.alt | default: title }}">
+            {% endif %}
+
+      {% if link != blank %}
+      </a>
+      {% endif %}
+     </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div style="clear:both;"></div>
+  {% if section.settings.bottom_content != blank %}
+   <div class="pdp-box-line alignment--center"><div class="content">{{ section.settings.bottom_content }}</div></div>
+  {% endif %}
+  </div>
+
+
+  <style>
+     #{{ section_id }} .mosaic_section_wrapper .mosaic_block:after {
+       background: {{ section.settings.overlay_color }};
+       opacity: {{ section.settings.overlay_opacity | divided_by: 100 }};
+     }
+     #{{ section_id }} .mosaic_section_wrapper {
+       grid-column-gap: {{ section.settings.gutter_width }}px;
+       grid-row-gap: {{ section.settings.gutter_width }}px;
+       margin-left: -{{ section.settings.gutter_width | divided_by: 2 }}px;
+       margin-right: -{{ section.settings.gutter_width | divided_by: 2 }}px;
+    }
+    #{{ section_id }} .mosaic_section_wrapper .mosaic_block{
+        height: {{section.settings.cta_height | divided_by: 2.0 | minus: column_gap }}px;
+    }
+    #{{ section_id }} .mosaic_section_wrapper .mosaic_block:first-child {
+        height: {{section.settings.cta_height}}px;
+    }
+
+    @media screen and (max-width: 749px){
+        #{{ section_id }} .mosaic_section_wrapper .mosaic_block.mobile-full-block {
+            height: {{section.settings.cta_height_mobile}}px;
+        }
+        #{{ section_id }} .mosaic_section_wrapper .mosaic_block.mobile-half-block {
+            height: {{section.settings.cta_half_height_mobile}}px;
+        }
+    }
+  </style>
+
+</section>
+
+{% schema %}
+{
+   "name":"PDP What's in the box",
+   "settings":[
+      {
+         "type":"text",
+         "id":"section_id",
+         "label":"Section id"
+      },
+      {
+         "type":"text",
+         "id":"title",
+         "label":"Title",
+         "default":"Gallery"
+      },
+      {
+         "type":"richtext",
+         "id":"bottom_content",
+         "label":"Bottom line"
+      },
+      {
+        "type":      "range",
+        "id":        "cta_height",
+        "min":        200,
+        "max":        500,
+        "step":       5,
+        "label":      "First Column height",
+        "default":    465
+      },
+      {
+        "type":      "range",
+        "id":        "cta_height_mobile",
+        "min":        200,
+        "max":        500,
+        "step":       5,
+        "label":      "Full width columns height(Mobile)",
+        "default":    245
+      },
+      {
+        "type":      "range",
+        "id":        "cta_half_height_mobile",
+        "min":        100,
+        "max":        300,
+        "step":       5,
+        "label":      "Half width columns height(Mobile)",
+        "default":    200
+      },
+      {
+         "type": "range",
+         "id": "gutter_width",
+         "label":"Space between images",
+         "default":12,
+         "min": 0,
+         "max": 20,
+         "step": 2,
+         "unit": "px"
+      }
+   ],
+   "blocks":[
+      {
+         "type":"image",
+         "name":"t:sections.pdp_mosaic.blocks.image.name",
+         "settings":[
+            {
+               "type":"image_picker",
+               "id":"image",
+               "label":"t:sections.pdp_mosaic.blocks.image.settings.image.label"
+            },
+            {
+               "type":"text",
+               "id":"cta_label",
+               "label":"Title",
+               "default": "Title"
+            },
+            {
+                "type":"url",
+                "id":"link",
+                "label":"Link"
+            },
+            {
+                "type":      "range",
+                "id":        "cta_width",
+                "min":        10,
+                "max":        100,
+                "step":       1,
+                "label":      "Column width",
+                "default":    100
+            },
+            {
+                "type":"select",
+                "id":"cta_image_width",
+                "label":"Column width(Mobile)",
+                "default":"100%",
+                "options":[
+                   {
+                      "label":"Half",
+                      "value":"50%"
+                   },
+                   {
+                      "label":"Full",
+                      "value":"100%"
+                    }
+                ]
+            },
+            {
+                "type":      "range",
+                "id":        "custom_width",
+                "min":        100,
+                "max":        300,
+                "step":       5,
+                "label":      "Custom image width(Desktop)",
+                "default":    300,
+                "unit": "px"
+            },
+            {
+                "type":      "range",
+                "id":        "custom_height",
+                "min":        50,
+                "max":        500,
+                "step":       5,
+                "label":      "Custom image height(Desktop)",
+                "default":    300,
+                "unit": "px"
+            },
+            {
+                "type":      "range",
+                "id":        "custom_width_mobile",
+                "min":        100,
+                "max":        300,
+                "step":       5,
+                "label":      "Custom image width(Mobile)",
+                "default":    300,
+                "unit": "px"
+            },
+            {
+                "type":      "range",
+                "id":        "custom_height_mobile",
+                "min":        50,
+                "max":        300,
+                "step":       5,
+                "label":      "Custom image height(Mobile)",
+                "default":    200,
+                "unit": "px"
+            }
+         ]
+      }
+   ],
+   "presets":[
+      {
+         "name":"PDP What's in the box",
+         "category":"Custom Sections",
+         "blocks":[
+            {
+               "type":"image"
+            },
+            {
+               "type":"image"
+            },
+            {
+               "type":"image"
+            },
+            {
+               "type":"image"
+            },
+            {
+               "type":"image"
+            },
+            {
+               "type":"image"
+            }
+         ]
+      }
+   ]
+}
+{% endschema %}

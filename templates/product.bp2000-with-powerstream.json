@@ -1,0 +1,1287 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "daf26638-f596-4384-b150-72d380a3268d": {
+      "type": "product-atb-top",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "sticky-product-bar": {
+      "type": "sticky-product-bar",
+      "blocks": {
+        "588d25af-4d47-43ac-9697-b98aa2f65719": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Overview",
+            "tab_id": "product_information",
+            "section_class": ""
+          }
+        },
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "What's in the box",
+            "tab_id": "what_in_box",
+            "section_class": ""
+          }
+        },
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "FAQ",
+            "tab_id": "faq",
+            "section_class": ""
+          }
+        },
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Reviews",
+            "tab_id": "section-reviews",
+            "section_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "588d25af-4d47-43ac-9697-b98aa2f65719",
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02",
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4",
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38"
+      ],
+      "settings": {
+        "enabled": true,
+        "enabled_tabs": false
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "11795adc-1afa-4833-a193-258f495901ef": {
+          "type": "sku_block",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e": {
+          "type": "product_title",
+          "settings": {
+          }
+        },
+        "judge_me_reviews_preview_badge_B4bPfn": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "0471109f-c130-454e-a9ba-c56412cc11f3": {
+          "type": "product_vendor",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185": {
+          "type": "product_price",
+          "settings": {
+          }
+        },
+        "d25a0285-4fb4-422d-b95b-ab67446120ad": {
+          "type": "product_description",
+          "settings": {
+            "desc_display": "default"
+          }
+        },
+        "79e1b437-5bbd-4b8a-ac55-27c2f795ee99": {
+          "type": "coupon_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Component_2_1.png",
+            "discount_off_text": "{{ product.metafields.custom.discount_off_text.value }}",
+            "code": "{{ product.metafields.custom.discount_code.value }}",
+            "show_copy_code_btn": true
+          }
+        },
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879": {
+          "type": "product_options_block",
+          "settings": {
+            "show_product_swatches": true,
+            "use_variant_image_for_swatches": true,
+            "button_content": ""
+          }
+        },
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe": {
+          "type": "quantity_block",
+          "settings": {
+          }
+        },
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0": {
+          "type": "accessories_section",
+          "settings": {
+            "title": "You may also like",
+            "metafield": "accessories"
+          }
+        },
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609": {
+          "type": "product_buttons",
+          "settings": {
+            "enable_payment_button": false,
+            "show_custom_icons": true,
+            "custom_payment_logo_1_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_08_7f374817-3a3e-42f2-95ce-077b67f293d2.svg?v=1672025209",
+            "custom_payment_logo_2_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_10_d8002835-e25f-4edb-9038-187f75f69a18.svg?v=1672025208",
+            "custom_payment_logo_3_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_02_a3ea7ab1-aa9a-4857-9ed6-01e62deccfce.svg?v=1672025208",
+            "custom_payment_logo_4_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_06_7c406d24-0983-49ff-ac8e-cf73032050d9.svg?v=1672025208",
+            "custom_payment_logo_5_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_07_be5959d4-9f22-4a31-8e40-285f8e3ac6e7.svg?v=1672025208",
+            "custom_payment_logo_6_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_04_7bff1113-0dc2-489f-8be8-d19dbe467a1a.svg?v=1672025208",
+            "custom_payment_logo_7_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_05_1c21f308-a0a3-4251-8641-87264da43d67.svg?v=1672025208",
+            "custom_payment_logo_8_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_01_96e6a30c-7908-4892-b6f1-75bce8657cd4.svg?v=1672025208",
+            "custom_payment_logo_9_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/sofort_icon_31ba2d5b-2c44-4960-8e80-645a7240c899.png?v=1679023017",
+            "custom_payment_logo_10_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/giropay_icon_c9d7e22e-cd7c-4bee-8de5-e50a4c6dc378.png?v=1679023017",
+            "custom_payment_logo_11_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/ideal_icon_8548c48a-3c4e-4052-95de-670062a453ce.png?v=1679023017",
+            "custom_payment_logo_12_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/multibanco_icon_e3f9b26f-234c-4a06-9e48-adfd188e7deb.png?v=1679023016",
+            "custom_payment_logo_13_svg": "",
+            "custom_payment_logo_14_svg": "",
+            "custom_payment_logo_15_svg": ""
+          }
+        },
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% if product.metafields.custom.trade_message != blank %}\n          <div class=\"trade-message\">♻️{{product.metafields.custom.trade_message}} <a href=\"\/pages\/trade-in\" target=\"_blank\">Learn more<\/a><\/div>\n{% endif %}"
+          }
+        }
+      },
+      "block_order": [
+        "11795adc-1afa-4833-a193-258f495901ef",
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e",
+        "judge_me_reviews_preview_badge_B4bPfn",
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774",
+        "0471109f-c130-454e-a9ba-c56412cc11f3",
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185",
+        "d25a0285-4fb4-422d-b95b-ab67446120ad",
+        "79e1b437-5bbd-4b8a-ac55-27c2f795ee99",
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879",
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe",
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0",
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609",
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a"
+      ],
+      "settings": {
+        "section_id": "",
+        "show_breadcrumbs": true,
+        "show_pick_an_option": false,
+        "enable_linked_options": false,
+        "enabled_mobile_sticky_btns": true,
+        "media_size": "medium",
+        "enable_image_zoom": true,
+        "enable_video_looping": true,
+        "thumbnails_type": "grid",
+        "support_email": "",
+        "support_text": "",
+        "feature_1_show": false,
+        "feature_1_title": "Fast & Free Shipping",
+        "feature_1_content": "",
+        "feature_2_show": false,
+        "feature_2_title": "Warranty Protection",
+        "feature_2_content": "",
+        "feature_3_show": false,
+        "feature_3_title": "Secure Payments",
+        "feature_3_content": "",
+        "feature_4_show": false,
+        "feature_4_title": "Multi-channel Support",
+        "feature_4_content": ""
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "grid_mobile": "2",
+        "heading": "You may also like",
+        "show_vendor": false
+      }
+    },
+    "df8d05ea-b32a-4f9d-8d63-80b7f3e007e6": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--19005091250519__df8d05ea-b32a-4f9d-8d63-80b7f3e007e6-1684922582e6b0b130-0": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 70,
+            "section_top_padding_m": 10,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/img_v3_02c8_e30adeef-206a-4d18-b04a-16e32fe2e67g.png",
+            "mobile_image": "shopify:\/\/shop_images\/ES_M_3dd3010e-86b2-4544-aa4f-99e396554f48.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "text_with_image_cdy4Wi": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/Frame_161269440.png",
+            "mobile_image": "shopify:\/\/shop_images\/Frame_161269616.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--19005091250519__df8d05ea-b32a-4f9d-8d63-80b7f3e007e6-1684922582e6b0b130-0",
+        "text_with_image_cdy4Wi"
+      ],
+      "settings": {
+      }
+    },
+    "17f68fc5-208f-49b6-b903-2154375c3b47": {
+      "type": "pdp-slideshow",
+      "blocks": {
+        "313509c6-ead4-4225-ad37-8aaa8c66dc3e": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "",
+            "title": "",
+            "subtitle": "<h2>Ahorra más<\/h2>",
+            "content": "<p>Captura y almacena energía solar de forma eficiente con un 0 % de desperdicio de energía, ahorrando hasta 3,5 veces más energía en comparación con los sistemas sin almacenamiento.*<\/p>",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>*La cifra de 3,5 veces se obtiene con base a la cantidad máxima de electricidad proporcionada por el kit solar para balcones PowerStream de 1039 kWh en comparación con la que proporciona un kit solar doméstico sin baterías de 292 kWh.<\/p>",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/pc_f6299602-b514-448c-8d16-b3699d67f6cb.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/mb.png",
+            "mp4_video_url_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/c86a8d8936024ea8908ff5cb59a1e90e.mp4",
+            "mp4_video_url_m_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/2867199aeb914dd1a456df8121d923ac.mp4",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "fe29390b-f7cd-43a6-91c0-b3f65eb33683": {
+          "type": "tab",
+          "disabled": true,
+          "settings": {
+            "tab_title": "Reserven für Ihr Zuhause bei Stromausfällen",
+            "title": "",
+            "subtitle": "<h2>EcoFlow PowerStream Balkonkraftwerk<\/h2>",
+            "content": "<h3>Das erste Balkonkraftwerk mit tragbaren Power Station<\/h3>",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>Bei einem Stromausfall können Sie sich darauf verlassen, dass nicht nur Ihre wichtigsten Geräte, sondern auch energieintensive Geräte wie Waschmaschinen funktionieren.<\/p>",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "video",
+            "mp4_video_url_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/43b6a94e3a904b3c8833aa00082522c5.mp4",
+            "mp4_video_url_m_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/b15a100975134527ad28c386f2c8592b.mp4",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        }
+      },
+      "block_order": [
+        "313509c6-ead4-4225-ad37-8aaa8c66dc3e",
+        "fe29390b-f7cd-43a6-91c0-b3f65eb33683"
+      ],
+      "settings": {
+        "section_id": ""
+      }
+    },
+    "386e3233-d650-4c63-a3f4-bf92fb82aa98": {
+      "type": "pdp-slideshow",
+      "blocks": {
+        "021f7bb2-19fe-4b18-8e66-d1c2caa8f646": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "",
+            "title": "",
+            "subtitle": "<h2>Energía para la noche<\/h2>",
+            "content": "<p>Captúrala, almacénala y utilízala en cualquier momento con la estación de energía portátil EcoFlow Cuando se acerca la noche, confía en tu estación de energía portátil para satisfacer tus demandas de electricidad máxima, reduciendo la dependencia de la red eléctrica y asegurando un ahorro continuo.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/pc_da6b38aa-af76-4da6-99c6-8b707a7fdfe7.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/mb_4aaf46a8-ed8c-4e8c-80a7-4766924e9855.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        }
+      },
+      "block_order": [
+        "021f7bb2-19fe-4b18-8e66-d1c2caa8f646"
+      ],
+      "settings": {
+        "section_id": ""
+      }
+    },
+    "065630ed-190e-49c2-9dcb-7174959abada": {
+      "type": "pdp-slideshow",
+      "blocks": {
+        "e72557b1-96c8-4d57-aa64-e0b0d8c5fb49": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "",
+            "title": "",
+            "subtitle": "<h2>Energía inteligente, ahorro inteligente<\/h2>",
+            "content": "<p>Sistema de energía doméstica inteligente con enchufes inteligentes y la aplicación EcoFlow<\/p>",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/pc_d94477b3-f45a-43f2-aa88-2b39165415f1.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/mb_8cb669f5-e53c-4b47-9d99-1e7ad13b86d9.png",
+            "mp4_video_url_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/73c3757435a44173bb44d8a7c0908c18.mp4",
+            "mp4_video_url_m_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/73c3757435a44173bb44d8a7c0908c18.mp4",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        }
+      },
+      "block_order": [
+        "e72557b1-96c8-4d57-aa64-e0b0d8c5fb49"
+      ],
+      "settings": {
+        "section_id": ""
+      }
+    },
+    "pdp_slideshow_TAAF4q": {
+      "type": "pdp-slideshow",
+      "blocks": {
+        "tab_pM8Nby": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Monitorización en tiempo real",
+            "title": "",
+            "subtitle": "",
+            "content": "",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>Realiza un seguimiento de la energía solar capturada y del ahorro a la vez que obtienes información sobre el uso de la energía en el hogar.<\/p>",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/tab2-pc.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/tab2-mb.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "tab_KCj4pb": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Control remoto de electrodomésticos",
+            "title": "",
+            "subtitle": "",
+            "content": "",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>Enciende y apaga los electrodomésticos a distancia y programa tareas desde cualquier ubicación mediante la app.<\/p>",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/tab1-pc.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/tab1-mb.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "tab_yk7LA6": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Distribución automática de la energía",
+            "title": "",
+            "subtitle": "",
+            "content": "",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>Supervisa el consumo de energía de los electrodomésticos en tiempo real para distribuir la energía sobrante de forma eficiente. Durante las horas pico, prioriza el uso doméstico. La mayor parte de la energía se almacena en las horas de menor actividad.<\/p>",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/tab3-pc.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/tab3-mb.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        },
+        "tab_hWiVGf": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Uso personalizable de la energía",
+            "title": "",
+            "subtitle": "",
+            "content": "",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "<p>Maximiza tu energía solar configurando tus prioridades de energía mediante la app. Elige priorizar el suministro de energía a tu hogar, o priorizar el almacenamiento y la carga de la estación de energía.<\/p>",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/tab4-pc.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/tab4-mb.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        }
+      },
+      "block_order": [
+        "tab_pM8Nby",
+        "tab_KCj4pb",
+        "tab_yk7LA6",
+        "tab_hWiVGf"
+      ],
+      "settings": {
+        "section_id": ""
+      }
+    },
+    "pdp_slideshow_U7JiUG": {
+      "type": "pdp-slideshow",
+      "blocks": {
+        "tab_dkJbhp": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "",
+            "title": "",
+            "subtitle": "<h2><strong>Duradera y resistente al agua<\/strong><\/h2>",
+            "content": "<p>Su robusta batería de 2 kWh \/ 5 kWh dispone de una superficie duradera en metal y una clasificación IP54 para protegerla contra salpicaduras de agua y suciedad. Ideal para balcones o jardines, proporciona un resultado excelente y duradero.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/DE_PC.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/DE_M.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        }
+      },
+      "block_order": [
+        "tab_dkJbhp"
+      ],
+      "settings": {
+        "section_id": ""
+      }
+    },
+    "pdp_slideshow_R4XfkU": {
+      "type": "pdp-slideshow",
+      "blocks": {
+        "tab_nhGzQk": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "",
+            "title": "",
+            "subtitle": "<h2><strong>Funcionamiento perfecto incluso a -20 ℃<\/strong><\/h2>",
+            "content": "<p>Funciona sin problemas incluso a -20 °C, esta batería de 2 kWh resistente al agua ofrece una calefacción automática incorporada para aprovechar eficazmente la energía solar. Asegura una carga consistente en condiciones heladas y mantiene su funcionamiento tras calentar la parte interior de la batería por encima de 0°C.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/Frame_128720226.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/Frame_128720240_0275bf5b-d21d-4dd9-b6e9-c9ae517ab8a9.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        }
+      },
+      "block_order": [
+        "tab_nhGzQk"
+      ],
+      "settings": {
+        "section_id": ""
+      }
+    },
+    "9a05b92d-be18-4c46-adcc-6f6b814d73e7": {
+      "type": "pdp-image-with-text-horizontal-new",
+      "blocks": {
+        "a20e5137-82a6-49f2-a7a6-a6a3b103c155": {
+          "type": "image",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/LFP-pc.png",
+            "mobile_image": "shopify:\/\/shop_images\/LFP-mb.png",
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "image_alignment": "left",
+            "title": "",
+            "subtitle": "<h2><strong>Batería LFP de 10 años que dura 6 veces más<\/strong><\/h2>",
+            "content": "<p>Aprovecha las ventajas de una batería LFP con una vida útil de 10 años que dura 6 veces más. Con 10 años de uso diario hasta alcanzar el 80 % de su capacidad original, y gracias a su química LFP, proporciona 3000 ciclos de energía.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "image_brjYAG": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "media_type": "image",
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "image_alignment": "right",
+            "title": "",
+            "subtitle": "<h2>Leise Kraft<\/h2>",
+            "content": "<p>Genießen Sie eine ruhige Atmosphäre mit leiser Energie, die Batterie arbeitet mit einem extrem niedrigen Geräuschpegel von 0 dB. Genießen Sie die Ruhe, denn unser Produkt arbeitet reibungslos und ohne störende Geräusche.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "a20e5137-82a6-49f2-a7a6-a6a3b103c155",
+        "image_brjYAG"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "left"
+      }
+    },
+    "pdp_image_with_text_horizontal_new_rVFjdG": {
+      "type": "pdp-image-with-text-horizontal-new",
+      "blocks": {
+        "image_XPYanV": {
+          "type": "image",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/mb_f06658c8-1aa1-49cd-acf0-24db690c0214.png",
+            "mobile_image": "shopify:\/\/shop_images\/mb_f06658c8-1aa1-49cd-acf0-24db690c0214.png",
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "image_alignment": "right",
+            "title": "",
+            "subtitle": "<p><strong>Energía silenciosa<\/strong><\/p>",
+            "content": "<p>Envuélvete en una atmósfera tranquila con nuestra experiencia de energía silenciosa, que cuenta con un nivel de ruido ultra bajo de 0 dB. Disfruta de la tranquilidad mientras nuestro producto funciona sin problemas y sin ningún ruido que moleste.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "image_XPYanV"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "left"
+      }
+    },
+    "pdp_image_with_text_horizontal_Dpe6Gy": {
+      "type": "pdp-image-with-text-horizontal",
+      "blocks": {
+        "image_content_qteHm4": {
+          "type": "image_content",
+          "settings": {
+            "reverse_image_text_desktop": false,
+            "reverse_image_text_mobile": false,
+            "image_alt": "",
+            "sub_heading": "<h2><strong>LFP-Batterie, die 6× länger hält.<\/strong><\/h2>",
+            "heading": "",
+            "content": "<p>Profitieren Sie von einer 10-jährigen Lebensdauer der LFP-Batterie, einer 6-fachen Nutzungsdauer Dank der LFP-Batteriechemie, die 3 000 Ladezyklen ermöglicht, erreicht die Batterie nach 10 Jahren täglichen Gebrauchs noch 80 % ihrer ursprünglichen Kapazität.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "image_content_x4Yryi": {
+          "type": "image_content",
+          "settings": {
+            "reverse_image_text_desktop": true,
+            "reverse_image_text_mobile": false,
+            "image_alt": "",
+            "sub_heading": "<h2><strong>Leise Kraft<\/strong><\/h2>",
+            "heading": "",
+            "content": "<p>Genießen Sie eine ruhige Atmosphäre mit leiser Energie, die Batterie arbeitet mit einem extrem niedrigen Geräuschpegel von 0 dB. Genießen Sie die Ruhe, denn unser Produkt arbeitet reibungslos und ohne störende Geräusche.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "image_content_qteHm4",
+        "image_content_x4Yryi"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_id": "",
+        "alignment": "left",
+        "position": "center",
+        "layout": "stacked",
+        "stacked_row": "2",
+        "mobile_stacked_row": "1",
+        "slider_row": "2",
+        "mobile_slider_row": "2"
+      }
+    },
+    "pdp_specs_Q46Upd": {
+      "type": "pdp-specs",
+      "blocks": {
+        "contents_pmErVi": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso neto (kg)",
+            "content": "<p>Ca. 37.7 Ibs(17.1 kg)<\/p>"
+          }
+        },
+        "contents_zTDiF6": {
+          "type": "contents",
+          "settings": {
+            "title": "Dimensiones",
+            "content": "<p>13.7 x 7.8 x 11.2 in<br\/>348 x 198 x 285 mm<\/p>"
+          }
+        },
+        "contents_jAGHLF": {
+          "type": "contents",
+          "settings": {
+            "title": "Capacidad",
+            "content": "<p>2048 Wh(40Ah)<\/p>"
+          }
+        },
+        "contents_cFWFTU": {
+          "type": "contents",
+          "settings": {
+            "title": "Tensión nominal",
+            "content": "<p>51.2V<\/p>"
+          }
+        },
+        "contents_MMGqGn": {
+          "type": "contents",
+          "settings": {
+            "title": "Química de la batería",
+            "content": "<p>LiFePO4<\/p>"
+          }
+        },
+        "contents_RJWGD9": {
+          "type": "contents",
+          "settings": {
+            "title": "Ciclos de vida útil",
+            "content": "<p>3000 ciclos a &gt;80 % de capacidad<\/p>"
+          }
+        },
+        "contents_UqQ8ai": {
+          "type": "contents",
+          "settings": {
+            "title": "Clasificación IP",
+            "content": "<p>IP54<\/p>"
+          }
+        },
+        "contents_iNeHAb": {
+          "type": "contents",
+          "settings": {
+            "title": "Garantía",
+            "content": "<p>10 años de garantía<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "contents_pmErVi",
+        "contents_zTDiF6",
+        "contents_jAGHLF",
+        "contents_cFWFTU",
+        "contents_MMGqGn",
+        "contents_RJWGD9",
+        "contents_UqQ8ai",
+        "contents_iNeHAb"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Especificaciones"
+      }
+    },
+    "pdp_specs_yURef4": {
+      "type": "pdp-specs",
+      "blocks": {
+        "contents_3KYHwy": {
+          "type": "contents",
+          "settings": {
+            "title": "Kapazität",
+            "content": "<p>2048Wh<\/p>"
+          }
+        },
+        "contents_MTxfQe": {
+          "type": "contents",
+          "settings": {
+            "title": "Eingangsport",
+            "content": "<p>51,2 V, max. 2000 W<\/p>"
+          }
+        },
+        "contents_a4jCEH": {
+          "type": "contents",
+          "settings": {
+            "title": "Ausgangsport",
+            "content": "<p>51,2 V, max. 3200 W<\/p>"
+          }
+        },
+        "contents_MBEwTd": {
+          "type": "contents",
+          "settings": {
+            "title": "Akku",
+            "content": "<p>LFP-Akkuchemie, nach 3000 Ladezyklen noch mehr als 80 % Kapazität<\/p>"
+          }
+        },
+        "contents_cdwBbK": {
+          "type": "contents",
+          "settings": {
+            "title": "Abmessung",
+            "content": "<p>464 × 235 × 283 mm (18 × 9 × 11 Zoll)<\/p>"
+          }
+        },
+        "contents_gbDfPj": {
+          "type": "contents",
+          "settings": {
+            "title": "Gewicht",
+            "content": "<p>19 kg (42 Pfund)<\/p>"
+          }
+        },
+        "contents_9nr9mP": {
+          "type": "contents",
+          "settings": {
+            "title": "Lieferumfang",
+            "content": "<p>Zusatzakkukabel Benutzerhandbuch GarantiekarteIntelligenter Zusatzakku für EcoFlow DELTA 2 Max<\/p>"
+          }
+        },
+        "contents_ixgCPM": {
+          "type": "contents",
+          "settings": {
+            "title": "Kompatibel mit",
+            "content": "<p><a href=\"https:\/\/de.ecoflow.com\/products\/delta-2-portable-power-station\" title=\"EcoFlow DELTA 2\">DELTA 2<\/a>\/<a href=\"https:\/\/de.ecoflow.com\/products\/delta-max-portable-power-station?variant=42386682511607\" title=\"DELTA Max 2000\">DELTA Max 2000<\/a>\/<a href=\"https:\/\/de.ecoflow.com\/products\/delta-2-max-portable-power-station\" title=\"EcoFlow DELTA 2 Max | Notstromaggregat | Tragbare Powerstation\">DELTA 2 Max<\/a><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "contents_3KYHwy",
+        "contents_MTxfQe",
+        "contents_a4jCEH",
+        "contents_MBEwTd",
+        "contents_cdwBbK",
+        "contents_gbDfPj",
+        "contents_9nr9mP",
+        "contents_ixgCPM"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_id": "",
+        "title": "Spezifikationen von DELTA 2 Max Zusatzbatterie"
+      }
+    },
+    "pdp_compare_table_tzYt86": {
+      "type": "pdp-compare-table",
+      "blocks": {
+        "block_7tVLtm": {
+          "type": "block",
+          "settings": {
+            "feature_title": "PowerStream",
+            "feature_title_link": "",
+            "feature_value_1": "x 1",
+            "merge_feature_value_2": false,
+            "merge_feature_value_2_m": false,
+            "feature_value_2": "x 1",
+            "merge_feature_value_3": false,
+            "merge_feature_value_3_m": false,
+            "feature_value_3": "x 1",
+            "merge_feature_value_4": false,
+            "merge_feature_value_4_m": false,
+            "feature_value_4": "",
+            "merge_feature_value_5": false,
+            "merge_feature_value_5_m": false,
+            "feature_value_5": "",
+            "merge_feature_value_6": false,
+            "merge_feature_value_6_m": false,
+            "feature_value_6": ""
+          }
+        },
+        "block_h7NTGk": {
+          "type": "block",
+          "settings": {
+            "feature_title": "Wasserdichte Batterie (2 kWh)",
+            "feature_title_link": "",
+            "feature_value_1": "x1",
+            "merge_feature_value_2": false,
+            "merge_feature_value_2_m": false,
+            "feature_value_2": "x1",
+            "merge_feature_value_3": false,
+            "merge_feature_value_3_m": false,
+            "feature_value_3": "x1",
+            "merge_feature_value_4": false,
+            "merge_feature_value_4_m": false,
+            "feature_value_4": "",
+            "merge_feature_value_5": false,
+            "merge_feature_value_5_m": false,
+            "feature_value_5": "",
+            "merge_feature_value_6": false,
+            "merge_feature_value_6_m": false,
+            "feature_value_6": ""
+          }
+        },
+        "block_8EbwR6": {
+          "type": "block",
+          "settings": {
+            "feature_title": "400 W Starres Solarpanel",
+            "feature_title_link": "",
+            "feature_value_1": "-",
+            "merge_feature_value_2": false,
+            "merge_feature_value_2_m": false,
+            "feature_value_2": "x2",
+            "merge_feature_value_3": false,
+            "merge_feature_value_3_m": false,
+            "feature_value_3": "-",
+            "merge_feature_value_4": false,
+            "merge_feature_value_4_m": false,
+            "feature_value_4": "",
+            "merge_feature_value_5": false,
+            "merge_feature_value_5_m": false,
+            "feature_value_5": "",
+            "merge_feature_value_6": false,
+            "merge_feature_value_6_m": false,
+            "feature_value_6": ""
+          }
+        },
+        "block_JBXnLz": {
+          "type": "block",
+          "settings": {
+            "feature_title": "400 W Tragbares Solarpanel",
+            "feature_title_link": "",
+            "feature_value_1": "-",
+            "merge_feature_value_2": false,
+            "merge_feature_value_2_m": false,
+            "feature_value_2": "-",
+            "merge_feature_value_3": false,
+            "merge_feature_value_3_m": false,
+            "feature_value_3": "x2",
+            "merge_feature_value_4": false,
+            "merge_feature_value_4_m": false,
+            "feature_value_4": "",
+            "merge_feature_value_5": false,
+            "merge_feature_value_5_m": false,
+            "feature_value_5": "",
+            "merge_feature_value_6": false,
+            "merge_feature_value_6_m": false,
+            "feature_value_6": ""
+          }
+        },
+        "block_zXtftB": {
+          "type": "block",
+          "settings": {
+            "feature_title": "Batteriekabel",
+            "feature_title_link": "",
+            "feature_value_1": "BKW-DELTA Pro Kabel x1",
+            "merge_feature_value_2": true,
+            "merge_feature_value_2_m": true,
+            "feature_value_2": "BKW-DELTA Pro Kabel x1",
+            "merge_feature_value_3": true,
+            "merge_feature_value_3_m": true,
+            "feature_value_3": "BKW-DELTA Pro Kabel x1",
+            "merge_feature_value_4": false,
+            "merge_feature_value_4_m": false,
+            "feature_value_4": "",
+            "merge_feature_value_5": false,
+            "merge_feature_value_5_m": false,
+            "feature_value_5": "",
+            "merge_feature_value_6": false,
+            "merge_feature_value_6_m": false,
+            "feature_value_6": ""
+          }
+        },
+        "block_caU6Gr": {
+          "type": "block",
+          "settings": {
+            "feature_title": "1,5m BKW Solar Kabel",
+            "feature_title_link": "",
+            "feature_value_1": "x1",
+            "merge_feature_value_2": false,
+            "merge_feature_value_2_m": false,
+            "feature_value_2": "x1",
+            "merge_feature_value_3": false,
+            "merge_feature_value_3_m": false,
+            "feature_value_3": "x1",
+            "merge_feature_value_4": false,
+            "merge_feature_value_4_m": false,
+            "feature_value_4": "",
+            "merge_feature_value_5": false,
+            "merge_feature_value_5_m": false,
+            "feature_value_5": "",
+            "merge_feature_value_6": false,
+            "merge_feature_value_6_m": false,
+            "feature_value_6": ""
+          }
+        },
+        "block_HJgeVh": {
+          "type": "block",
+          "settings": {
+            "feature_title": "Solarmodul-Montagefüßex 4",
+            "feature_title_link": "",
+            "feature_value_1": "-",
+            "merge_feature_value_2": false,
+            "merge_feature_value_2_m": false,
+            "feature_value_2": "x4",
+            "merge_feature_value_3": false,
+            "merge_feature_value_3_m": false,
+            "feature_value_3": "-",
+            "merge_feature_value_4": false,
+            "merge_feature_value_4_m": false,
+            "feature_value_4": "",
+            "merge_feature_value_5": false,
+            "merge_feature_value_5_m": false,
+            "feature_value_5": "",
+            "merge_feature_value_6": false,
+            "merge_feature_value_6_m": false,
+            "feature_value_6": ""
+          }
+        },
+        "block_47Kikg": {
+          "type": "block",
+          "settings": {
+            "feature_title": "Benutzerhandbuch",
+            "feature_title_link": "",
+            "feature_value_1": "x2",
+            "merge_feature_value_2": false,
+            "merge_feature_value_2_m": false,
+            "feature_value_2": "x2",
+            "merge_feature_value_3": false,
+            "merge_feature_value_3_m": false,
+            "feature_value_3": "x2",
+            "merge_feature_value_4": false,
+            "merge_feature_value_4_m": false,
+            "feature_value_4": "",
+            "merge_feature_value_5": false,
+            "merge_feature_value_5_m": false,
+            "feature_value_5": "",
+            "merge_feature_value_6": false,
+            "merge_feature_value_6_m": false,
+            "feature_value_6": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_7tVLtm",
+        "block_h7NTGk",
+        "block_8EbwR6",
+        "block_JBXnLz",
+        "block_zXtftB",
+        "block_caU6Gr",
+        "block_HJgeVh",
+        "block_47Kikg"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_id": "pdp-compare-table",
+        "is_popup": true,
+        "title": "Wasserdichte Batterie Bundles",
+        "table_first_column_color": "rgba(0,0,0,0)",
+        "table_cell_color": "#eae9e9",
+        "fill_first_row": false,
+        "product_1_show": true,
+        "product_1": "",
+        "product_title_1": "PowerStream mit wasserdichter Batterie (2 kWh)",
+        "product_subtitle_1": "",
+        "product_btn_1": "",
+        "product_url_1": "",
+        "product_2_show": true,
+        "product_2": "",
+        "product_title_2": "400 W Starres Solarpanel mit wasserdichter Batterie (2 kWh) Bundle",
+        "product_subtitle_2": "",
+        "product_btn_2": "",
+        "product_url_2": "",
+        "product_3_show": true,
+        "product_3": "",
+        "product_title_3": "400 W Tragbares Solarpanel mit wasserdichter Batterie (2 kWh) Bundle",
+        "product_subtitle_3": "",
+        "product_btn_3": "",
+        "product_url_3": "",
+        "product_4_show": false,
+        "product_4": "",
+        "product_title_4": "",
+        "product_subtitle_4": "",
+        "product_btn_4": "",
+        "product_url_4": "",
+        "product_5_show": false,
+        "product_5": "",
+        "product_title_5": "",
+        "product_subtitle_5": "",
+        "product_btn_5": "",
+        "product_url_5": "",
+        "product_6_show": false,
+        "product_6": "",
+        "product_title_6": "",
+        "product_subtitle_6": "",
+        "product_btn_6": "",
+        "product_url_6": ""
+      }
+    },
+    "1714120114c03c052f": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_c8XjaN": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_c8XjaN"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    }
+  },
+  "order": [
+    "daf26638-f596-4384-b150-72d380a3268d",
+    "sticky-product-bar",
+    "main",
+    "product-recommendations",
+    "df8d05ea-b32a-4f9d-8d63-80b7f3e007e6",
+    "17f68fc5-208f-49b6-b903-2154375c3b47",
+    "386e3233-d650-4c63-a3f4-bf92fb82aa98",
+    "065630ed-190e-49c2-9dcb-7174959abada",
+    "pdp_slideshow_TAAF4q",
+    "pdp_slideshow_U7JiUG",
+    "pdp_slideshow_R4XfkU",
+    "9a05b92d-be18-4c46-adcc-6f6b814d73e7",
+    "pdp_image_with_text_horizontal_new_rVFjdG",
+    "pdp_image_with_text_horizontal_Dpe6Gy",
+    "pdp_specs_Q46Upd",
+    "pdp_specs_yURef4",
+    "pdp_compare_table_tzYt86",
+    "1714120114c03c052f"
+  ]
+}

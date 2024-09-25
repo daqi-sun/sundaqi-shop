@@ -1,0 +1,179 @@
+{% comment %} Promotion Message Criteria {% endcomment %}
+{%- liquid
+    assign userStatus = false
+    if customer
+    assign userStatus = true
+    endif
+    assign currency_symbol = cart.currency.symbol
+    assign promotion_message_enable = settings.enable_promotion_message
+    assign promotion_enable_tier1 = settings.promotion_enable_tier1
+    assign promotion_pricefrom_tier1 = settings.promotion_pricefrom_tier1 | append: '00' | default: 0 | plus: 0
+    assign promotion_priceto_tier1 = settings.promotion_priceto_tier1 | append: '00' | default: 0 | plus: 0
+    assign promotion_tier1 = settings.promotion_tier1
+    assign promotion_msg_not_log_in_tier1 = settings.promotion_msg_not_log_in_tier1
+    assign promotion_enable_tier2 = settings.promotion_enable_tier2
+    assign promotion_pricefrom_tier2 = settings.promotion_pricefrom_tier2 | append: '00' | default: 0 | plus: 0
+    assign promotion_priceto_tier2 = settings.promotion_priceto_tier2 | append: '00' | default: 0 | plus: 0
+    assign promotion_tier2 = settings.promotion_tier2
+    assign promotion_msg_not_log_in_tier2 = settings.promotion_msg_not_log_in_tier2
+    assign promotion_enable_tier3 = settings.promotion_enable_tier3
+    assign promotion_pricefrom_tier3 = settings.promotion_pricefrom_tier3 | append: '00' | default: 0 | plus: 0
+    assign promotion_priceto_tier3 = settings.promotion_priceto_tier3 | append: '00' | default: 0 | plus: 0
+    assign promotion_tier3 = settings.promotion_tier3
+    assign promotion_msg_not_log_in_tier3 = settings.promotion_msg_not_log_in_tier3
+    assign promotion_enable_tier4 = settings.promotion_enable_tier4
+    assign promotion_pricefrom_tier4 = settings.promotion_pricefrom_tier4 | append: '00' | default: 0 | plus: 0
+    assign promotion_priceto_tier4 = settings.promotion_priceto_tier4 | append: '00' | default: 0 | plus: 0
+    assign promotion_tier4 = settings.promotion_tier4
+    assign promotion_msg_not_log_in_tier4 = settings.promotion_msg_not_log_in_tier4
+    assign promotion_enable_tier5 = settings.promotion_enable_tier5
+    assign promotion_pricefrom_tier5 = settings.promotion_pricefrom_tier5 | append: '00' | default: 0 | plus: 0
+    assign promotion_priceto_tier5 = settings.promotion_priceto_tier5 | append: '00' | default: 0 | plus: 0
+    assign promotion_tier5 = settings.promotion_tier5
+    assign promotion_msg_not_log_in_tier5 = settings.promotion_msg_not_log_in_tier5
+    assign cart_total_price = 0
+    for item in cart.items
+        if item.variant.metafields.custom.applicable_for_promotion == true
+            assign cart_total_price = cart_total_price | plus: item.original_price | times: item.quantity
+        endif
+    endfor
+
+    assign promotion_message = ''
+    assign toggle_pm = 'hide'
+    if promotion_enable_tier1 and cart_total_price >= promotion_pricefrom_tier1
+        if promotion_priceto_tier1 == 0
+            if cart_total_price >= promotion_pricefrom_tier1
+                assign toggle_pm = 'show'
+                assign amount = promotion_pricefrom_tier1 | minus: cart_total_price | replace: '.' , '' | money_with_currency | replace: ',00', '' | replace: ' ', ''
+                if userStatus == false
+                    assign promotion_message = promotion_msg_not_log_in_tier1
+                else
+                    assign promotion_message = promotion_tier1 | replace: '[amount]' , amount
+                endif
+            endif
+        else
+            assign toggle_pm = 'show'
+            assign amount = promotion_priceto_tier1 | minus: cart_total_price | replace: '.' , '' | money_with_currency | replace: ',00', '' | replace: ' ', ''
+            if userStatus == false
+                assign promotion_message = promotion_msg_not_log_in_tier1
+            else
+                assign promotion_message = promotion_tier1 | replace: '[amount]' , amount
+            endif
+        endif
+    endif
+    if promotion_enable_tier2 and cart_total_price >= promotion_pricefrom_tier2
+        if promotion_priceto_tier2 == 0
+            if cart_total_price >= promotion_pricefrom_tier2
+                assign toggle_pm = 'show'
+                assign amount = promotion_pricefrom_tier2 | minus: cart_total_price | replace: '.' , '' | money_with_currency | replace: ',00', '' | replace: ' ', ''
+                if userStatus == false
+                    assign promotion_message = promotion_msg_not_log_in_tier2
+                else
+                    assign promotion_message = promotion_tier2 | replace: '[amount]' , amount
+                endif
+            endif
+        else
+            assign toggle_pm = 'show'
+            assign amount = promotion_priceto_tier2 | minus: cart_total_price | replace: '.' , '' | money_with_currency | replace: ',00', '' | replace: ' ', ''
+            if userStatus == false
+                assign promotion_message = promotion_msg_not_log_in_tier2
+            else
+                assign promotion_message = promotion_tier2 | replace: '[amount]' , amount
+            endif
+        endif
+    endif
+    if promotion_enable_tier3 and cart_total_price >= promotion_pricefrom_tier3
+        if promotion_priceto_tier3 == 0
+            if cart_total_price >= promotion_pricefrom_tier3
+                assign toggle_pm = 'show'
+                assign amount = promotion_pricefrom_tier3 | minus: cart_total_price | replace: '.' , '' | money_with_currency | replace: ',00', '' | replace: ' ', ''
+                if userStatus == false
+                    assign promotion_message = promotion_msg_not_log_in_tier3
+                else
+                    assign promotion_message = promotion_tier3 | replace: '[amount]' , amount
+                endif
+            endif
+        else
+            assign toggle_pm = 'show'
+            assign amount = promotion_priceto_tier3 | minus: cart_total_price | replace: '.' , '' | money_with_currency | replace: ',00', '' | replace: ' ', ''
+            if userStatus == false
+                assign promotion_message = promotion_msg_not_log_in_tier3
+            else
+                assign promotion_message = promotion_tier3 | replace: '[amount]' , amount
+            endif
+        endif
+    endif
+    if promotion_enable_tier4 and cart_total_price >= promotion_pricefrom_tier4
+        if promotion_priceto_tier4 == 0
+            if cart_total_price >= promotion_pricefrom_tier4
+                assign toggle_pm = 'show'
+                assign amount = promotion_pricefrom_tier4 | minus: cart_total_price | replace: '.' , '' | money_with_currency | replace: ',00', '' | replace: ' ', ''
+                if userStatus == false
+                    assign promotion_message = promotion_msg_not_log_in_tier4
+                else
+                    assign promotion_message = promotion_tier4 | replace: '[amount]' , amount
+                endif
+            endif
+        else
+            assign toggle_pm = 'show'
+            assign amount = promotion_priceto_tier4 | minus: cart_total_price | replace: '.' , '' | money_with_currency | replace: ',00', '' | replace: ' ', ''
+            if userStatus == false
+                assign promotion_message = promotion_msg_not_log_in_tier4
+            else
+                assign promotion_message = promotion_tier4 | replace: '[amount]' , amount
+            endif
+        endif
+    endif
+    if promotion_enable_tier5 and cart_total_price >= promotion_pricefrom_tier5
+        if promotion_priceto_tier5 == 0
+            if cart_total_price >= promotion_pricefrom_tier5
+                assign toggle_pm = 'show'
+                assign amount = promotion_pricefrom_tier5 | minus: cart_total_price | replace: '.' , '' | money_with_currency | replace: ',00', '' | replace: ' ', ''
+                if userStatus == false
+                    assign promotion_message = promotion_msg_not_log_in_tier5
+                else
+                    assign promotion_message = promotion_tier5 | replace: '[amount]' , amount
+                endif
+            endif
+        else
+            assign toggle_pm = 'show'
+            assign amount = promotion_priceto_tier5 | minus: cart_total_price | replace: '.' , '' | money_with_currency | replace: ',00', '' | replace: ' ', ''
+            if userStatus == false
+                assign promotion_message = promotion_msg_not_log_in_tier5
+            else
+                assign promotion_message = promotion_tier5 | replace: '[amount]' , amount
+            endif
+        endif
+    endif
+  -%}
+
+
+  <div class="promotion-message-wrapper promotion-message--cart alter {{ toggle_pm }}">
+    {% if customer %}
+        <div class="flexbox">
+            <div class="iconBox">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_8_7938)">
+                <path d="M27.6818 17.9999C27.6818 15.8338 29.4439 14.08 31.6143 14.08V6.18286H4.38525V14.0827C4.40358 14.0827 4.42453 14.08 4.44285 14.08C6.61594 14.08 8.37536 15.8364 8.37536 17.9999C8.37536 20.1634 6.61333 21.9198 4.44285 21.9198C4.42453 21.9198 4.40358 21.9172 4.38525 21.9172V29.817H31.6143V21.9198C29.4413 21.9198 27.6818 20.1634 27.6818 17.9999Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M13.5081 17C14.8932 17 16.0161 15.8807 16.0161 14.5C16.0161 13.1193 14.8932 12 13.5081 12C12.1229 12 11 13.1193 11 14.5C11 15.8807 12.1229 17 13.5081 17Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M22.1155 24.0552C23.5006 24.0552 24.6235 22.9359 24.6235 21.5552C24.6235 20.1745 23.5006 19.0552 22.1155 19.0552C20.7303 19.0552 19.6074 20.1745 19.6074 21.5552C19.6074 22.9359 20.7303 24.0552 22.1155 24.0552Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M22.0799 12.5732L13 23.3621" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_8_7938">
+                <rect width="28.8" height="25.2" fill="white" transform="translate(3.6001 5.3999)"/>
+                </clipPath>
+                </defs>
+                </svg>
+            </div>
+            <div class="message">{{ promotion_message }}</div>
+        </div>
+    {% else %}
+        <div class="flexbox">
+            <div class="message">{{ promotion_message }}</div>
+            <div class="btnBox"><a class="btn" href="https://account.ecoflow.com/login?return_to={{ request.host }}{{ request.path }}">{{ settings.login_btn_text }}</a></div>
+        </div>
+    {% endif %}
+  </div>
+
+

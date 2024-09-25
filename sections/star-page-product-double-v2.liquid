@@ -1,0 +1,1061 @@
+{% if section.blocks.size > 0 %}
+    <div class="star-page-product-double-v2-section section-{{ section.id }}" id="{{ section.settings.section_id }}" style="background-color: {{ section.settings.section_background }};">
+        <div class="star-products-container star-page-container {% if section.settings.slider_mobile %}slider-in-mobile{% endif %}" data-flickity-config='{
+            "prevNextButtons": false,
+            "wrapAround": false,
+            "dragThreshold": 15,
+            "cellAlign": "left",
+            "pauseAutoPlayOnHover": true,
+            "autoPlay": false,
+            "pageDots": true,
+            "adaptiveHeight": false,
+            "contain": true,
+            "freeScroll": true,
+            "watchCSS": true
+          }'>
+          {% assign currency_symbol = cart.currency.symbol %}
+        {%- comment %}<locksmith:4be7>{% endcomment -%}
+          {%- assign locksmith_3d0f_forloop__size = 0 %}{% for block in section.blocks %}{% capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == 'true' %}{% assign locksmith_3d0f_forloop__size = locksmith_3d0f_forloop__size | plus: 1 %}{% endif %}{% endfor %}{% assign locksmith_3d0f_forloop__index = nil -%}
+        {%- comment %}</locksmith:4be7>{% endcomment -%}
+        {% for block in section.blocks %}
+            {%- comment %}<locksmith:248d>{% endcomment -%}
+              {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% if locksmith_3d0f_forloop__index == nil %}{% assign locksmith_3d0f_forloop__index = 1 %}{% assign locksmith_3d0f_forloop__index0 = 0 %}{% else %}{% assign locksmith_3d0f_forloop__index = locksmith_3d0f_forloop__index | plus: 1 %}{% assign locksmith_3d0f_forloop__index0 = locksmith_3d0f_forloop__index0 | plus: 1 %}{% endif %}{% if locksmith_3d0f_forloop__index == 1 %}{% assign locksmith_3d0f_forloop__first = true %}{% else %}{% assign locksmith_3d0f_forloop__first = false %}{% endif %}{% if locksmith_3d0f_forloop__index == locksmith_3d0f_forloop__size %}{% assign locksmith_3d0f_forloop__last = true %}{% else %}{% assign locksmith_3d0f_forloop__last = false %}{% endif %}{% assign locksmith_3d0f_forloop__rindex = locksmith_3d0f_forloop__size | minus: locksmith_3d0f_forloop__index | minus: 1 %}{% assign locksmith_3d0f_forloop__rindex0 = locksmith_3d0f_forloop__size | minus: locksmith_3d0f_forloop__index0 | minus: 1 %}{% else %}{% continue %}{% endif -%}
+            {%- comment %}</locksmith:248d>{% endcomment -%}
+            {% assign star_product = block.settings.product %}
+            {% assign non_member_variant = '' %}
+            {% assign non_member_variant_id = block.settings.non_member_variant_id | times: 1 %}
+            {% assign member_only_variant = false %}
+            {% assign star_gift_product = block.settings.gift_product %}
+            {% if block.settings.product_variant_id == blank %}
+                {% assign variant_id = star_product.variants.first.id %}
+            {% else %}
+                {% assign variant_id = block.settings.product_variant_id | times: 1 %}
+            {% endif %}
+            {% for variant in star_product.variants %}
+                {% if variant.id == variant_id %}
+                    {% assign current_variant = variant %}
+                    {% assign variant_index = forloop.index %}
+                    {% if variant.metafields.custom.for_member_only == true %}
+                        {% assign member_only_variant = true %}
+                    {% endif %}
+                {% endif %}
+                {% if variant.id == non_member_variant_id %}
+                    {% assign non_member_variant = variant %}
+                {% endif %}
+            {% endfor %}
+
+            {% if current_variant.metafields.custom.for_member_only == false %}
+                {% if non_member_variant_id != '' %}
+                    {% for variant in star_product.variants %}
+                        {% if variant.id == non_member_variant_id %}
+                            {% assign current_variant = variant %}
+                        {% endif %}
+                    {% endfor %}
+                {% else %}
+                    {% assign current_variant = star_product.variants[1] %}
+                {% endif %}
+            {% endif %}
+            {% capture image_html %}
+                <div class="star-product-image-wrapper {% if block.settings.show_hover_image %}hover-image-enable{% endif %}">
+                    {% if block.settings.product != blank %}
+                        <a {% if section.settings.image_linked %}href="{{ current_variant.url }}"{% endif %}>
+                            {% if block.settings.product_image != blank %}
+                                <img class="star-image star-product-image" loading="lazy" srcset="{{ block.settings.product_image | img_url: 'small' | replace: '_small', '' }}">
+                            {% else %}
+                                <img class="star-image star-product-image" loading="lazy" srcset="{{ current_variant.image | default: star_product.featured_image | img_url: 'small' | replace: '_small', '' }}">
+                            {% endif %}
+
+                            {% if block.settings.show_hover_image %}
+                                {% if block.settings.hover_product_image != blank %}
+                                    <img class="star-image star-product-hover-image" loading="lazy" srcset="{{ block.settings.hover_product_image | img_url: 'small' | replace: '_small', '' }}">
+                                {% else %}
+                                    <img class="star-image star-product-hover-image" loading="lazy" srcset="{{ current_variant.image | default: star_product.featured_image | img_url: 'small' | replace: '_small', '' }}">
+                                {% endif %}
+                            {% endif %}
+
+                            {% if section.settings.show_discount_tag %}
+                                {% if block.settings.discount_text == '' %}
+                                    {% assign price = 0 %}
+                                    {% assign compare_price = 0 %}
+                                    {% if block.settings.price == '' %}
+                                        {% assign price = current_variant.price | replace: currency_symbol, '' | replace: ',', '' %}
+                                    {% else %}
+                                        {% assign price = block.settings.price | replace: currency_symbol, '' | times: 100 %}
+                                    {% endif %}
+
+                                    {% assign compare_price = current_variant.compare_at_price | replace: currency_symbol, '' | replace: ',', '' %}
+
+                                    {% assign discount_price = compare_price | minus: price %}
+                                    {% assign discount_percentage = price | times: 100 | divided_by: compare_price %}
+                                    {% assign discount_percentage = 100 | minus: discount_percentage | round %}
+                                {% endif %}
+
+                                {% if section.settings.discount_badge_type == 'absolute' or section.settings.discount_badge_type == 'percentage'%}
+                                    <div class="discount_tag_wrapper">
+                                        {% if discount_price > 0 or block.settings.discount_text != '' %}{% if section.settings.discount_badge_image != blank %}<img loading="lazy" srcset="{{ section.settings.discount_badge_image | img_url: 'small' | replace: '_small', '' }}" />{% endif %}{% endif %}
+                                        <div class="discount_tag_text">
+                                            {% if block.settings.discount_text == '' %}
+                                                {% if section.settings.discount_badge_type == 'absolute' and discount_price > 0 %}
+                                                    {{ section.settings.discount_text | default: 'SAVE' }}<span>{{ discount_price | money_without_trailing_zeros }}</span>
+                                                {% elsif section.settings.discount_badge_type == 'percentage' and discount_price > 0 %}
+                                                    <span>{{ discount_percentage }}%</span>{{ section.settings.discount_text | default: 'OFF' }}
+                                                {% endif %}
+                                            {% else %}
+                                                {{ block.settings.discount_text }}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                        </a>
+                    {% else %}
+                        <a>{{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}</a>
+                    {% endif %}
+
+                    {% if block.settings.gift_product != blank %}
+                        <div class="gift_product_wrapper">
+                            <div class="gift_product_image" style="--image-width: {{ block.settings.gift_image_width }}px; --mobile-image-width: {{ block.settings.gift_image_width_m }}px;">
+                                {% if block.settings.gift_image != blank %}
+                                    <img loading="lazy" srcset="{{ block.settings.gift_image | img_url: 'small' | replace: '_small', '' }}">
+                                {% else %}
+                                    <img loading="lazy" srcset="{{ star_gift_product.featured_image | img_url: 'small' | replace: '_small', '' }}">
+                                {% endif %}
+                            </div>
+                            <div class="gift_product_info">
+                                <div class="gift_product_texts">
+                                    {% if block.settings.gift_title != blank %}
+                                        <div class="gift_product_title">{{ block.settings.gift_title }}</div>
+                                    {% else %}
+                                        <div class="gift_product_title">{{ star_gift_product.title }}</div>
+                                    {% endif %}
+                                    {% if block.settings.gift_subtitle != blank %}
+                                        <div class="gift_product_subtitle">{{ block.settings.gift_subtitle }}</div>
+                                    {% endif %}
+                                </div>
+                                <div class="gift_product_prices">
+                                  <div class="free_text">{{ block.settings.free_text }}</div>
+                                    {% if block.settings.gift_price != blank %}
+                                        <div class="gift_product_price">{{ block.settings.gift_price }}</div>
+                                    {% else %}
+                                        <div class="gift_product_price">{{ star_gift_product.price | money }}</div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endcapture %}
+
+            <div class="star_product_block block-{{ block.id }} discount_tag_{{ block.settings.tag_alignment }} image_align_{{ block.settings.image_alignment }} {% if block.settings.block_visibility == 'pc_only' %}hideMobile{% elsif block.settings.block_visibility == 'mobile_only' %}hideDesktop{% endif %}">
+                {% if block.settings.image_alignment == 'left' %}
+                    {{ image_html }}
+                {% endif %}
+
+                <div class="star-product-info-wrapper text-align-{{ section.settings.text_alignment }} mobile-text-align-{{ section.settings.text_alignment_m }}">
+                    <div class="label_star_ranking">
+                        {% if block.settings.tag_1 != blank or block.settings.tag_2 != blank %}
+                            <div class="product_labels">
+                                {% if block.settings.tag_1 != blank %}
+                                    <span class="product_label_1">{{ block.settings.tag_1 }}</span>
+                                {% endif %}
+                                {% if block.settings.tag_2 != blank %}
+                                    <span class="product_label_2">{{ block.settings.tag_2 }}</span>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+
+                        {% if section.settings.show_star_ranking %}
+                            <div class="star_ranking">
+                                <div data-bv-show="rating_summary" data-bv-product-id="{{ star_product.id }}"></div>
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="star_product_title">
+                        {% if section.settings.title_linked %}<a href="{{ current_variant.url }}">{% endif %}
+                        {% if block.settings.title != blank %}
+                            {{ block.settings.title }}
+                        {% else %}
+                            <p>{{ star_product.title }}</p>
+                        {%  endif%}
+                        {% if section.settings.title_linked %}</a>{% endif %}
+                    </div>
+
+                    {% if block.settings.description != blank %}
+                        <div class="star_product_desc">{{ block.settings.description }}</div>
+                    {% endif %}
+
+                    <div class="subtitle_price_row">
+                        <div class="subtitle_price_column">
+                            {% if block.settings.subtitle != blank %}
+                                <div class="star_product_subtitle">{{ block.settings.subtitle }}</div>
+                            {% endif %}
+
+                            {% if member_only_variant %}
+                                <div class="member-only-price-wrap">
+                                    <div class="member-only-price">
+                                        {% if current_variant.price > 999900 %}
+                                            {{ current_variant.price | money | replace: ',00', '' | replace: '.', ' ' }}
+                                        {% else %}
+                                            {{ current_variant.price | money | replace: ',00', '' | replace: '.', '' }}
+                                        {% endif %}
+                                    </div>
+                                    <div class="member-tag">
+                                        <span>{{ 'products.product.star_member_only' | t }}</span>
+                                    </div>
+                                </div>
+                            {% else %}
+                                <div class="price_row">
+                                    {% if block.settings.price != blank %}
+                                        {% assign dummy_price = 900 | money | replace: '.00', '' %}
+                                        <div class="star_product_price">{{ block.settings.price }}</div>
+                                    {% else %}
+                                        <div class="star_product_price">
+                                            {% if current_variant.price > 999900 %}
+                                                {{ current_variant.price | money | replace: ',00', '' | replace: '.', ' ' }}
+                                            {% else %}
+                                                {{ current_variant.price | money | replace: ',00', '' | replace: '.', '' }}
+                                            {% endif %}
+                                        </div>
+                                    {% endif %}
+
+                                    {% if block.settings.compare_price != blank %}
+                                        <div class="star_product_compare_price">{{ block.settings.compare_price }}</div>
+                                    {% elsif current_variant.compare_at_price > current_variant.price %}
+                                        <div class="star_product_compare_price">
+                                            {% if current_variant.compare_at_price > 999900 %}
+                                                {{ current_variant.compare_at_price | money | replace: ',00', '' | replace: '.', ' ' }}
+                                            {% else %}
+                                                {{ current_variant.compare_at_price | money | replace: ',00', '' | replace: '.', '' }}
+                                            {% endif %}
+                                        </div>
+                                    {% endif %}
+
+                                    {% if section.settings.show_discount_tag %}
+                                        {% if discount_price > 0 and section.settings.discount_badge_type == 'save' %}
+                                            <div class="star_product_save_amount">
+                                                {% if block.settings.discount_text == '' %}
+                                                    -{{ discount_price | money_without_trailing_zeros }}
+                                                {% else %}
+                                                    {{ block.settings.discount_text }}
+                                                {% endif %}
+                                            </div>
+                                        {% endif %}
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        {% if block.settings.show_timer_tag %}
+                            <div class="star_timer_tag">
+                                <svg width="85" height="72" viewBox="0 0 85 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.5275 4.83733C13.8613 5.01584 13.466 5.70061 13.6445 6.36681L14.5064 9.58351C14.6849 10.2497 15.3697 10.6451 16.0359 10.4666L18.2466 9.87418L18.9 12.3126C14.8657 13.9893 11.3435 16.4689 8.47316 19.5092L4.85878 17.1376C3.51328 16.2547 1.70682 16.6297 0.823937 17.9752C-0.058941 19.3207 0.316091 21.1272 1.6616 22.0101L4.88394 24.1245C0.46739 31.0835 -1.13363 39.7987 1.16777 48.3876C5.5309 64.671 22.2682 74.3343 38.5517 69.9712C45.719 68.0507 51.607 63.7297 55.5771 58.1074C56.1177 57.3418 55.9354 56.2829 55.1698 55.7423C54.4042 55.2017 53.3453 55.3841 52.8047 56.1497C49.2752 61.148 44.0463 64.9852 37.6732 66.6929C23.2004 70.5709 8.32407 61.982 4.44608 47.5092C0.568089 33.0363 9.15693 18.16 23.6298 14.282C33.8076 11.5549 44.1878 14.9919 50.8023 22.3131C51.4306 23.0086 52.5037 23.063 53.1992 22.4347C53.8946 21.8064 53.949 20.7333 53.3207 20.0379C47.2039 13.2676 38.2157 9.44499 28.8418 10.0113L28.0978 7.23457L30.31 6.64182C30.9762 6.46331 31.3715 5.77854 31.193 5.11234L30.3311 1.89564C30.1526 1.22943 29.4678 0.834081 28.8016 1.01259L14.5275 4.83733ZM19.3421 50.1506L20.232 53.4718L34.4177 49.6708L33.4523 46.0681L25.2114 48.2762L28.6736 43.095C29.292 42.1751 29.8037 41.3643 30.2089 40.6624C30.6117 39.9511 30.8658 39.2294 30.9712 38.4973C31.0742 37.7557 30.9912 36.883 30.7222 35.8792C30.3577 34.5188 29.7369 33.403 28.86 32.5319C27.983 31.6607 26.9424 31.0798 25.7383 30.789C24.541 30.4864 23.2809 30.5123 21.9581 30.8668C20.5132 31.2539 19.3208 31.87 18.3808 32.7152C17.4408 33.5604 16.8017 34.5713 16.4633 35.7479C16.125 36.9246 16.1419 38.2072 16.5139 39.5957L20.4544 38.5399C20.2848 37.982 20.2719 37.4274 20.4158 36.876C20.5572 36.3152 20.8328 35.824 21.2427 35.4025C21.6595 34.969 22.1916 34.6656 22.839 34.4921C23.4582 34.3262 24.0354 34.3223 24.5705 34.4806C25.1031 34.6295 25.5615 34.914 25.9455 35.334C26.327 35.7446 26.6008 36.2595 26.7667 36.8787C26.8823 37.3103 26.8754 37.8099 26.7459 38.3775C26.6165 38.9452 26.3082 39.5959 25.821 40.3298L19.3421 50.1506ZM44.6415 43.5828L45.4862 46.7351L49.3704 45.6944L48.5257 42.542L50.3271 42.0593L49.3693 38.4848L47.5679 38.9674L46.2104 33.9011L42.3262 34.9419L43.6837 40.0082L39.2648 41.1922L42.0264 25.942L37.6356 27.1185L34.874 42.3688L35.8318 45.9433L44.6415 43.5828ZM63.3551 36.7822L64.6463 41.6012L67.2543 40.9024L65.72 35.1763C65.6744 35.0062 65.5892 34.7387 65.4644 34.3738C65.3396 34.0089 65.1575 33.6188 64.918 33.2036C64.6767 32.7821 64.3587 32.4015 63.9638 32.0617C63.5752 31.7202 63.0927 31.4815 62.5162 31.3457C61.9396 31.2099 61.2514 31.2491 60.4513 31.4635C59.4497 31.7319 58.6764 32.172 58.1315 32.7839C57.8792 33.0696 57.6709 33.3754 57.5064 33.7013L56.3137 29.2503L54.027 29.8631L57.6729 43.4697L60.2809 42.7709L58.8934 37.5928L58.892 37.5874C58.7225 36.9536 58.6556 36.4266 58.6911 36.0064C58.733 35.5833 58.8381 35.2446 59.0062 34.9902C59.1727 34.7296 59.3726 34.5308 59.606 34.394C59.8395 34.2572 60.0664 34.1593 60.2869 34.1002C60.8349 33.9533 61.2899 33.9631 61.6518 34.1294C62.02 34.2941 62.3192 34.5414 62.5494 34.8713C62.7796 35.2012 62.9562 35.5455 63.0793 35.9041C63.2007 36.2564 63.2926 36.5491 63.3551 36.7822ZM66.9717 30.0404L69.7062 40.2454L72.2952 39.5517L70.8976 34.3358C70.793 33.9452 70.7528 33.5813 70.7772 33.2439C70.7999 32.9002 70.8848 32.5872 71.0319 32.3047C71.1774 32.0159 71.3827 31.7617 71.6479 31.5421C71.9115 31.3162 72.2257 31.1409 72.5906 31.0161C72.9601 30.8833 73.2984 30.823 73.6055 30.8353L72.9624 28.4352C72.6437 28.4801 72.3333 28.5565 72.0314 28.6644C71.7278 28.766 71.4429 28.8998 71.1768 29.0656C70.9089 29.2251 70.6724 29.4134 70.4673 29.6304C70.1966 29.9055 69.9899 30.2174 69.8471 30.5663C69.7795 30.7314 69.7236 30.901 69.6795 31.075L69.2395 29.4328L66.9717 30.0404ZM77.8375 37.4387C78.7865 37.8056 79.9035 37.8169 81.1886 37.4725C82.5241 37.1147 83.4896 36.5353 84.0852 35.7343C84.6808 34.9333 84.8384 34.0099 84.5583 32.9642C84.4165 32.4351 84.1887 32.0134 83.8749 31.6991C83.5595 31.3785 83.1301 31.1493 82.5867 31.0113C82.048 30.8653 81.3642 30.7953 80.5354 30.8014C79.6876 30.8125 79.0516 30.8074 78.6273 30.786C78.2093 30.763 77.9212 30.7085 77.7632 30.6226C77.6114 30.535 77.5119 30.403 77.4646 30.2266C77.3853 29.9305 77.4663 29.6658 77.7076 29.4323C77.9551 29.1972 78.3194 29.0321 78.8003 28.937C79.2954 28.8448 79.7143 28.871 80.0568 29.0155C80.3994 29.16 80.6434 29.4154 80.7887 29.7815L83.289 28.6052C83.0354 28.0115 82.6557 27.5393 82.1499 27.1887C81.6504 26.8365 81.0591 26.6202 80.3759 26.5399C79.6927 26.4597 78.9511 26.5267 78.1511 26.7411C77.3259 26.9622 76.6432 27.2869 76.1031 27.7152C75.5675 28.1355 75.1978 28.6329 74.9939 29.2075C74.7883 29.7757 74.7733 30.3873 74.9488 31.0425C75.0889 31.5653 75.319 31.983 75.6391 32.2956C75.9575 32.6019 76.4009 32.8207 76.9695 32.9519C77.538 33.0831 78.2667 33.1444 79.1556 33.1358C79.945 33.1336 80.5289 33.1459 80.9075 33.1728C81.2923 33.1979 81.552 33.26 81.6865 33.359C81.8194 33.4517 81.9128 33.5988 81.9669 33.8004C82.0529 34.1217 81.9945 34.4074 81.7914 34.6576C81.5867 34.9015 81.2513 35.0859 80.7851 35.2108C80.2182 35.3627 79.7126 35.353 79.2684 35.1817C78.8304 35.0088 78.4938 34.6973 78.2584 34.2472L75.7379 35.3479C76.1932 36.3669 76.8931 37.0639 77.8375 37.4387ZM25.9453 17.2921C25.7668 16.6259 25.082 16.2306 24.4158 16.4091C23.7496 16.5876 23.3542 17.2724 23.5327 17.9386L24.4045 21.1922C24.7971 21.061 25.1961 20.9409 25.6013 20.8323C26.0063 20.7238 26.4117 20.6284 26.8171 20.5457L25.9453 17.2921ZM39.8996 22.2684C40.6454 22.6401 41.3679 23.0572 42.0627 23.5172L43.747 20.5998C44.0918 20.0025 43.8872 19.2388 43.2899 18.8939C42.6926 18.5491 41.9288 18.7537 41.584 19.351L39.8996 22.2684ZM37.3021 59.6763C36.9097 59.8074 36.5108 59.9274 36.1059 60.0359C35.7007 60.1445 35.2951 60.24 34.8895 60.3227L35.7611 63.5755C35.9396 64.2417 36.6244 64.6371 37.2906 64.4586C37.9568 64.2801 38.3522 63.5953 38.1736 62.9291L37.3021 59.6763ZM21.8076 58.5999C21.0619 58.2282 20.3394 57.8111 19.6446 57.3511L17.9605 60.268C17.6157 60.8653 17.8203 61.6291 18.4176 61.9739C19.0149 62.3188 19.7787 62.1141 20.1236 61.5168L21.8076 58.5999ZM11.6113 46.8823C11.4803 46.49 11.3603 46.0913 11.2518 45.6864C11.1432 45.2811 11.0477 44.8754 10.965 44.4698L7.71066 45.3417C7.04446 45.5203 6.64911 46.205 6.82762 46.8712C7.00612 47.5374 7.6909 47.9328 8.3571 47.7543L11.6113 46.8823ZM12.6879 31.3878C13.0596 30.6421 13.4768 29.9196 13.9368 29.2248L11.0197 27.5407C10.4224 27.1958 9.65865 27.4005 9.3138 27.9978C8.96895 28.5951 9.1736 29.3589 9.7709 29.7037L12.6879 31.3878Z" fill="url(#paint0_linear_6_7310)"/>
+                                    <defs>
+                                    <linearGradient id="paint0_linear_6_7310" x1="-3.54197" y1="100.86" x2="45.2054" y2="215.565" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="currentColor"/>
+                                    <stop offset="1" stop-color="currentColor" stop-opacity="0.45"/>
+                                    </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    {% if member_only_variant and non_member_variant != '' %}
+                        <div class="subtitle_price_row_alter">
+                            <div class="non-member-price-wrap">
+                                <div class="non-member-price">
+                                    {% if non_member_variant.price > 999900 %}
+                                        {{ non_member_variant.price | money | replace: ',00', '' | replace: '.', ' ' }}
+                                    {% else %}
+                                        {{ non_member_variant.price | money | replace: ',00', '' | replace: '.', '' }}
+                                    {% endif %}
+                                    <span>{{ 'products.product.non_member_price' | t }}</span>
+                                </div>
+                                {% if non_member_variant.compare_at_price > non_member_variant.price %}
+                                    <div class="non-member-c-price">
+                                        {% if non_member_variant.compare_at_price > 999900 %}
+                                            {{ non_member_variant.compare_at_price | money | replace: ',00', '' | replace: '.', ' ' }}
+                                        {% else %}
+                                            {{ non_member_variant.compare_at_price | money | replace: ',00', '' | replace: '.', '' }}
+                                        {% endif %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    {% if section.settings.show_klarna_msg and block.settings.product != blank %}
+                        <div class="affirm_message klarna_message">
+                            <klarna-placement
+                                data-key="credit-promotion-badge"
+                                data-locale="es-ES"
+                                data-purchase-amount="{{ current_variant.price }}"
+                            ></klarna-placement>
+                        </div>
+                    {% endif %}
+
+                    <div class="star_product_buttons" style="--section-button-width: {{ section.settings.buttons_width }}px; --section-button-width-mobile: {{ section.settings.buttons_width_mobile }}px;">
+                        {% assign star_variant = star_product.selected_or_first_available_variant.id %}
+                        {% assign show_atc_buttons = true %}
+                        {% if block.settings.product_variant_id != blank %}
+                            {% assign star_variant = block.settings.product_variant_id %}
+                        {% endif %}
+
+                        {% assign button_counter = 1 %}
+                        {% assign atc_button_shown = false %}
+                        {% assign checkout_button_shown = false %}
+
+                        {% if member_only_variant %}
+                            {% unless customer %}
+                                {% assign show_atc_buttons = false %}
+                            {% endunless %}
+                        {% endif %}
+
+                            {% if show_atc_buttons %}
+                                {% if block.settings.atc_btn_text != blank and button_counter < 3 %}
+                                    <a href="" data-variant-id="{{ star_variant }}" class="atcButton button_{{button_counter}} star_btn atc_btn">{{ block.settings.atc_btn_text }}</a>
+                                    {% assign button_counter = button_counter | plus: 1 %}
+                                    {% assign atc_button_shown = true %}
+                                {% endif %}
+
+                                {% if block.settings.checkout_btn_text != blank and button_counter < 3 %}
+                                    {% assign button_text = block.settings.checkout_btn_text %}
+                                    {% if block.settings.has_atc_icon %}<div class="checkout_atc_btn star_btn star_btn_with_icon">{% endif %}
+                                    <a href="" data-variant-id="{{ star_variant }}" class="checkoutButton button_{{button_counter}} {% if block.settings.has_atc_icon %}checkout_link{% else %}star_btn checkout_btn{% endif %}">{% if block.settings.has_atc_icon %}<span>{% endif %}{{ button_text }}{% if block.settings.has_atc_icon %}</span>{% endif %}</a>
+                                    {% if block.settings.has_atc_icon %}
+                                        <a href="" class="atcButton atc_link" data-variant-id="{{ star_variant }}">
+                                            <span class="btn_icon">
+                                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.1665 20C16.1665 21.3807 17.2858 22.5 18.6665 22.5C20.0472 22.5 21.1664 21.3807 21.1664 20C21.1664 18.6193 20.0472 17.5 18.6665 17.5C17.2858 17.5 16.1665 18.6193 16.1665 20ZM19.7056 20.017C19.7056 20.5692 19.2579 21.017 18.7057 21.017C18.1534 21.017 17.7057 20.5692 17.7057 20.017C17.7057 19.4647 18.1534 19.017 18.7057 19.017C19.2579 19.017 19.7056 19.4647 19.7056 20.017Z" fill="currentColor"/>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.1665 20C6.1665 21.3807 7.28578 22.5 8.66647 22.5C10.0472 22.5 11.1664 21.3807 11.1664 20C11.1664 18.6193 10.0472 17.5 8.66647 17.5C7.28578 17.5 6.1665 18.6193 6.1665 20ZM9.70565 20.017C9.70565 20.5692 9.25794 21.017 8.70566 21.017C8.15339 21.017 7.70568 20.5692 7.70568 20.017C7.70568 19.4647 8.15339 19.017 8.70566 19.017C9.25794 19.017 9.70565 19.4647 9.70565 20.017Z" fill="currentColor"/>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M21.1664 6.66667H7.44731L7.18443 4.67432C7.02155 3.432 5.96318 2.5019 4.70956 2.5H2.83332C2.37309 2.5 2 2.8731 2 3.33333C2 3.79357 2.37309 4.16667 2.83332 4.16667H4.70829C5.12491 4.1673 5.4777 4.47733 5.53202 4.89167L6.79876 14.4923C6.96283 15.7441 8.0355 16.6774 9.29863 16.6666L18.0998 16.6667C19.2946 16.6897 20.3479 15.8418 20.5838 14.654L21.9835 7.66362C22.0868 7.1479 21.6923 6.66667 21.1664 6.66667ZM8.45117 14.275L7.66721 8.33333H20.1497L18.9493 14.328C18.8704 14.7252 18.5193 15.0079 18.1157 15.0002L9.29156 15C8.86345 15.0036 8.5059 14.6925 8.45117 14.275Z" fill="currentColor"/>
+                                                    <path d="M14.5 9.5C14.5 9.22386 14.2761 9 14 9C13.7239 9 13.5 9.22386 13.5 9.5V11H12C11.7239 11 11.5 11.2239 11.5 11.5C11.5 11.7761 11.7239 12 12 12H13.5V13.5C13.5 13.7761 13.7239 14 14 14C14.2761 14 14.5 13.7761 14.5 13.5V12H16C16.2761 12 16.5 11.7761 16.5 11.5C16.5 11.2239 16.2761 11 16 11H14.5V9.5Z" fill="currentColor" stroke="currentColor" stroke-width="0.3"/>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    {% endif %}
+                                    {% assign button_counter = button_counter | plus: 1 %}
+                                    {% assign checkout_button_shown = true %}
+                                {% endif %}
+                            {% else %}
+                                <a href="https://account.ecoflow.com/login?return_to=https://{{ request.host }}{{ request.path }}" class="star_btn button_{{button_counter}}">{{ 'products.product.login' | t }}</a>
+                                {% assign button_counter = button_counter | plus: 1 %}
+                            {% endif %}
+
+                            {% if block.settings.btn_text != blank and button_counter < 3 %}
+                                {% assign button_text = block.settings.btn_text %}
+                                {% assign button_url = block.settings.redirect_link | default: star_product.url %}
+                                <a href="{{ button_url }}" class="star_btn button_{{button_counter}} normal_btn">{{ button_text }}</a>
+                                {% assign button_counter = button_counter | plus: 1 %}
+                            {% endif %}
+
+                            {% if block.settings.show_amazon_btn and button_counter < 3 %}
+                                {% assign button_url = block.settings.amazon_link %}
+                                {% if button_url != blank %}
+                                <a href="{{ button_url }}" class="star_btn button_{{button_counter}} amazon_btn">
+                                    <span>{% render 'amazon_btn' %}</span>
+                                </a>
+                                {% assign button_counter = button_counter | plus: 1 %}
+                                {% endif %}
+                            {% endif%}
+
+                            {% if show_atc_buttons %}
+                                {% if section.settings.atc_btn_text != blank and button_counter < 3 and atc_button_shown == false %}
+                                    <a href="" data-variant-id="{{ star_variant }}" class="atcButton button_{{button_counter}} star_btn atc_btn">{{ section.settings.atc_btn_text }}</a>
+                                    {% assign button_counter = button_counter | plus: 1 %}
+                                {% endif %}
+
+                                {% if section.settings.checkout_btn_text != blank and button_counter < 3 and checkout_button_shown == false %}
+                                    {% assign button_text = section.settings.checkout_btn_text %}
+                                    {% if section.settings.has_atc_icon %}<div class="checkout_atc_btn star_btn star_btn_with_icon">{% endif %}
+                                    <a href="" data-variant-id="{{ star_variant }}" class="checkoutButton button_{{button_counter}} {% if section.settings.has_atc_icon %}checkout_link{% else %}star_btn checkout_btn{% endif %}">{% if section.settings.has_atc_icon %}<span>{% endif %}{{ button_text }}{% if section.settings.has_atc_icon %}</span>{% endif %}</a>
+                                    {% if section.settings.has_atc_icon %}
+                                        <a href="" class="atcButton atc_link" data-variant-id="{{ star_variant }}">
+                                            <span class="btn_icon">
+                                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.1665 20C16.1665 21.3807 17.2858 22.5 18.6665 22.5C20.0472 22.5 21.1664 21.3807 21.1664 20C21.1664 18.6193 20.0472 17.5 18.6665 17.5C17.2858 17.5 16.1665 18.6193 16.1665 20ZM19.7056 20.017C19.7056 20.5692 19.2579 21.017 18.7057 21.017C18.1534 21.017 17.7057 20.5692 17.7057 20.017C17.7057 19.4647 18.1534 19.017 18.7057 19.017C19.2579 19.017 19.7056 19.4647 19.7056 20.017Z" fill="currentColor"/>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.1665 20C6.1665 21.3807 7.28578 22.5 8.66647 22.5C10.0472 22.5 11.1664 21.3807 11.1664 20C11.1664 18.6193 10.0472 17.5 8.66647 17.5C7.28578 17.5 6.1665 18.6193 6.1665 20ZM9.70565 20.017C9.70565 20.5692 9.25794 21.017 8.70566 21.017C8.15339 21.017 7.70568 20.5692 7.70568 20.017C7.70568 19.4647 8.15339 19.017 8.70566 19.017C9.25794 19.017 9.70565 19.4647 9.70565 20.017Z" fill="currentColor"/>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M21.1664 6.66667H7.44731L7.18443 4.67432C7.02155 3.432 5.96318 2.5019 4.70956 2.5H2.83332C2.37309 2.5 2 2.8731 2 3.33333C2 3.79357 2.37309 4.16667 2.83332 4.16667H4.70829C5.12491 4.1673 5.4777 4.47733 5.53202 4.89167L6.79876 14.4923C6.96283 15.7441 8.0355 16.6774 9.29863 16.6666L18.0998 16.6667C19.2946 16.6897 20.3479 15.8418 20.5838 14.654L21.9835 7.66362C22.0868 7.1479 21.6923 6.66667 21.1664 6.66667ZM8.45117 14.275L7.66721 8.33333H20.1497L18.9493 14.328C18.8704 14.7252 18.5193 15.0079 18.1157 15.0002L9.29156 15C8.86345 15.0036 8.5059 14.6925 8.45117 14.275Z" fill="currentColor"/>
+                                                    <path d="M14.5 9.5C14.5 9.22386 14.2761 9 14 9C13.7239 9 13.5 9.22386 13.5 9.5V11H12C11.7239 11 11.5 11.2239 11.5 11.5C11.5 11.7761 11.7239 12 12 12H13.5V13.5C13.5 13.7761 13.7239 14 14 14C14.2761 14 14.5 13.7761 14.5 13.5V12H16C16.2761 12 16.5 11.7761 16.5 11.5C16.5 11.2239 16.2761 11 16 11H14.5V9.5Z" fill="currentColor" stroke="currentColor" stroke-width="0.3"/>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    {% endif %}
+                                    {% assign button_counter = button_counter | plus: 1 %}
+                                    {% assign checkout_button_shown = true %}
+                                {% endif %}
+                            {% endif %}
+
+                            {% if section.settings.btn_text != blank and button_counter < 3 %}
+                                {% assign button_text = section.settings.btn_text %}
+                                {% assign button_url = block.settings.redirect_link | default: star_product.url %}
+                                <a href="{{ button_url }}" class="star_btn button_{{button_counter}} normal_btn">{{ button_text }}</a>
+                                {% assign button_counter = button_counter | plus: 1 %}
+                                {% assign second_button_shown = true %}
+                            {% endif %}
+
+                            {% if section.settings.show_amazon_btn and button_counter < 3 %}
+                                {% assign button_url = block.settings.amazon_link %}
+                                {% if button_url != blank %}
+                                <a href="{{ button_url }}" class="star_btn button_{{button_counter}} amazon_btn">
+                                    <span>{% render 'amazon_btn' %}</span>
+                                </a>
+                                {% assign second_button_shown = true %}
+                                {% assign button_counter = button_counter | plus: 1 %}
+                                {% endif %}
+                            {% endif%}
+                    </div>
+                </div>
+
+                {% if block.settings.image_alignment == 'right' %}
+                    {{ image_html }}
+                {% endif %}
+
+                <style>
+                    .block-{{ block.id }}{ background: {{ section.settings.info_background }}; }
+                    .block-{{ block.id }} span.product_label_1{ color: {{ block.settings.tag_1_color }}; }
+                    .block-{{ block.id }} span.product_label_2{ color: {{ block.settings.tag_2_color }}; }
+                    .block-{{ block.id }} .star_product_title p{ color: {{ block.settings.title_color }}; }
+                    .block-{{ block.id }} .star_product_desc p{ color: {{ block.settings.description_color }}; }
+                    .block-{{ block.id }} .star_product_subtitle p{ color: {{ block.settings.subtitle_color }}; }
+                    .block-{{ block.id }} .star_product_price{ color: {{ block.settings.price_color }}; }
+                    .block-{{ block.id }} .star_product_compare_price{ color: {{ block.settings.compare_price_color }}; }
+                    .block-{{ block.id }} .star_timer_tag{ color: {{ block.settings.timer_tag_color }}; }
+                    .block-{{ block.id }} klarna-placement *::part(osm-message), .block-{{ block.id }} klarna-placement *::part(osm-cta){ color: {{ section.settings.klarna_msg_color }}; }
+                    .block-{{ block.id }} .discount_tag_wrapper .discount_tag_text, .block-{{ block.id }} .discount_tag_wrapper .discount_tag_text span{ color: {{ section.settings.discount_color }}; }
+
+                    .block-{{ block.id }} .button_1{
+                        {% if section.settings.btn_text_color != blank %}color: {{ section.settings.btn_text_color }};{% endif %}
+                        {% if section.settings.btn_bg_color != blank %}background-color: {{ section.settings.btn_bg_color }};{% endif %}
+                        {% if section.settings.btn_border_color != blank %}border: 1px solid {{ section.settings.btn_border_color }};{% endif %}
+                    }
+                    .block-{{ block.id }} .button_1:hover{
+                        {% if section.settings.btn_text_color_hover != blank %}color: {{ section.settings.btn_text_color_hover }};{% endif %}
+                        {% if section.settings.btn_bg_color_hover != blank %}background-color: {{ section.settings.btn_bg_color_hover }};{% endif %}
+                        {% if section.settings.btn_border_color_hover != blank %}border: 1px solid {{ section.settings.btn_border_color_hover }};{% endif %}
+                        {% if section.settings.btn_bg_hover_opacity > 0 %}
+                        opacity: {{ section.settings.btn_bg_hover_opacity | divided_by: 100.0 }};
+                        {% endif %}
+                    }
+
+                    .block-{{ block.id }} .button_2{
+                        {% if section.settings.btn_2_text_color != blank %}color: {{ section.settings.btn_2_text_color }};{% endif %}
+                        {% if section.settings.btn_2_bg_color != blank %}background-color: {{ section.settings.btn_2_bg_color }};{% endif %}
+                        {% if section.settings.btn_2_border_color != blank %}border: 1px solid {{ section.settings.btn_2_border_color }};{% endif %}
+                    }
+                    .block-{{ block.id }} .button_2:hover{
+                        {% if section.settings.btn_2_text_color_hover != blank %}color: {{ section.settings.btn_2_text_color_hover }};{% endif %}
+                        {% if section.settings.btn_2_bg_color_hover != blank %}background-color: {{ section.settings.btn_2_bg_color_hover }};{% endif %}
+                        {% if section.settings.btn_2_border_color_hover != blank %}border: 1px solid {{ section.settings.btn_2_border_color_hover }};{% endif %}
+                        {% if section.settings.btn_bg_hover_opacity > 0 %}
+                            opacity: {{ section.settings.btn_bg_hover_opacity | divided_by: 100.0 }};
+                        {% endif %}
+                    }
+
+                    .block-{{ block.id }} .checkout_atc_btn .atc_link{
+                        {% if section.settings.checkout_atc_icon_bg_color != blank %}background-color: {{ section.settings.checkout_atc_icon_bg_color }};{% endif %}
+                    }
+                    .block-{{ block.id }} .checkout_atc_btn .button_1 + .atc_link{
+                        {% if section.settings.btn_text_color != blank %}color: {{ section.settings.btn_text_color }};{% endif %}
+                        {% if section.settings.btn_border_color != blank %}border: 1px solid {{ section.settings.btn_border_color }};{% endif %}
+                    }
+                    .block-{{ block.id }} .checkout_atc_btn .button_2 + .atc_link{
+                        {% if section.settings.btn_2_text_color != blank %}
+                            color: {{ section.settings.btn_2_text_color }};
+                        {% endif %}
+                        {% if section.settings.btn_2_border_color != blank %}
+                            border: 1px solid {{ section.settings.btn_2_border_color }};
+                        {% endif %}
+                    }
+                    .block-{{ block.id }} .checkout_atc_btn .atc_link:hover{
+                        {% if section.settings.checkout_atc_icon_bg_color_hover != blank %}
+                            background-color: {{ section.settings.checkout_atc_icon_bg_color_hover }};
+                        {% endif %}
+                        {% if section.settings.checkout_atc_icon_bg_hover_opacity > 0 %}
+                            opacity: {{ section.settings.checkout_atc_icon_bg_hover_opacity | divided_by: 100.0 }};
+                        {% endif %}
+                    }
+                    .block-{{ block.id }} .checkout_atc_btn .button_1 + .atc_link:hover{
+                        {% if section.settings.btn_text_color_hover != blank %}color: {{ section.settings.btn_text_color_hover }};{% endif %}
+                        {% if section.settings.btn_border_color_hover != blank %}border: 1px solid {{ section.settings.btn_border_color_hover }};{% endif %}
+                    }
+                    .block-{{ block.id }} .checkout_atc_btn .button_2 + .atc_link:hover{
+                        {% if section.settings.btn_2_text_color_hover != blank %}
+                            color: {{ section.settings.btn_2_text_color_hover }};
+                        {% endif %}
+                        {% if section.settings.btn_2_border_color_hover != blank %}
+                            border: 1px solid {{ section.settings.btn_2_border_color_hover }};
+                        {% endif %}
+                    }
+
+                    @media screen and (max-width: 749px){
+                        .block-{{ block.id }}{ background: unset; }
+                        .block-{{ block.id }} .star-product-info-wrapper, .block-{{ block.id }} .star-product-image-wrapper img.star-image{ background: {{ section.settings.info_background }}; }
+                    }
+                </style>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+{% endif %}
+{% schema %}
+{
+    "name": "Star_product_double_v2",
+    "settings": [
+      {
+        "type":"color",
+        "id":"section_background",
+        "label":"Section background color"
+      },
+      {
+        "type":"color_background",
+        "id":"info_background",
+        "label":"Product card Background color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "text",
+        "id": "section_id",
+        "label": "Section ID"
+      },
+      {
+        "type": "checkbox",
+        "id": "slider_mobile",
+        "label": "Use Slider on Mobile"
+      },
+      {
+        "type": "checkbox",
+        "id": "image_linked",
+        "label": "Is Image linked to PDP?"
+      },
+      {
+        "type": "checkbox",
+        "id": "title_linked",
+        "label": "Is Title linked to PDP?"
+      },
+      {
+        "id":"text_alignment",
+        "type":"select",
+        "label":"Text alignment(Desktop)",
+        "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" }
+        ]
+      },
+      {
+        "id":"text_alignment_m",
+        "type":"select",
+        "label":"Text alignment(Mobile)",
+        "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" }
+        ]
+      },
+      {
+          "type": "checkbox",
+          "id": "show_star_ranking",
+          "label": "Show Star ranking"
+      },
+      {
+        "type": "header",
+        "content": "Klarna message info"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_klarna_msg",
+        "label": "Show Klarna message",
+        "default": true
+    },
+    {
+        "type": "color",
+        "id": "klarna_msg_color",
+        "label": "Klarna message text color"
+    },
+      {
+        "type": "header",
+        "content": "Discount badge"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_discount_tag",
+        "label": "Show Discount Badge"
+      },
+      {
+        "type": "image_picker",
+        "id": "discount_badge_image",
+        "label": "Badge background image"
+      },
+      {
+        "type": "color",
+        "id": "discount_color",
+        "label": "Discount tag text color"
+      },
+      {
+        "id":"discount_badge_type",
+        "type":"select",
+        "label":"Discount badge type",
+        "options": [
+            { "value": "absolute", "label": "Absolute" },
+            { "value": "percentage", "label": "Percentage" },
+            { "value": "save", "label": "Save amount" }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "discount_text",
+        "label": "Discount text"
+      },
+      {
+        "type": "header",
+        "content": "Buttons"
+      },
+      {
+        "type": "text",
+        "id": "atc_btn_text",
+        "label": "Add to cart button text"
+      },
+      {
+        "type": "text",
+        "id": "checkout_btn_text",
+        "label": "Checkout button text"
+      },
+      {
+        "type": "text",
+        "id": "btn_text",
+        "label": "Button text"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_amazon_btn",
+        "label": "Show Amazon button"
+      },
+      {
+        "type": "range",
+        "id": "buttons_width",
+        "label": "Buttons width(Desktop)",
+        "min": 150,
+        "max": 300,
+        "step": 2,
+        "unit": "px",
+        "default": 180
+      },
+      {
+        "type": "range",
+        "id": "buttons_width_mobile",
+        "label": "Buttons width(Mobile)",
+        "min": 100,
+        "max": 300,
+        "step": 2,
+        "unit": "px",
+        "default": 180
+      },
+      {
+        "type": "header",
+        "content": "Button 1 style"
+      },
+      {
+        "type": "color",
+        "id": "btn_bg_color",
+        "label": "Background color"
+      },
+      {
+        "type": "color",
+        "id": "btn_text_color",
+        "label": "Text color"
+      },
+      {
+        "type": "color",
+        "id": "btn_border_color",
+        "label": "Border color"
+      },
+      {
+        "type": "color",
+        "id": "btn_bg_color_hover",
+        "label": "Background color(Hover)"
+      },
+      {
+        "type": "range",
+        "id": "btn_bg_hover_opacity",
+        "label": "Background color opacity(Hover)",
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "unit": "%",
+        "default": 20
+      },
+      {
+        "type": "color",
+        "id": "btn_text_color_hover",
+        "label": "Text color(Hover)"
+      },
+      {
+        "type": "checkbox",
+        "id": "has_atc_icon",
+        "label": "Has ATC icon or not?"
+      },
+      {
+        "type": "color",
+        "id": "checkout_atc_icon_bg_color",
+        "label": "ATC icon Background color"
+      },
+      {
+        "type": "color",
+        "id": "checkout_atc_icon_bg_color_hover",
+        "label": "ATC icon Background color(Hover)"
+      },
+      {
+        "type": "range",
+        "id": "checkout_atc_icon_bg_hover_opacity",
+        "label": "ATC icon Background color opacity(Hover)",
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "unit": "%",
+        "default": 20
+      },
+      {
+        "type": "header",
+        "content": "Button 2 style"
+      },
+      {
+        "type": "color",
+        "id": "btn_2_bg_color",
+        "label": "Background color"
+      },
+      {
+        "type": "color",
+        "id": "btn_2_text_color",
+        "label": "Text color"
+      },
+      {
+        "type": "color",
+        "id": "btn_2_border_color",
+        "label": "Border color"
+      },
+      {
+        "type": "color",
+        "id": "btn_2_bg_color_hover",
+        "label": "Background color(Hover)"
+      },
+      {
+        "type": "range",
+        "id": "btn_2_bg_hover_opacity",
+        "label": "Background color opacity(Hover)",
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "unit": "%",
+        "default": 20
+      },
+      {
+        "type": "color",
+        "id": "btn_2_text_color_hover",
+        "label": "Text color(Hover)"
+      },
+      {
+        "type": "color",
+        "id": "btn_2_border_color_hover",
+        "label": "Border color(Hover)"
+      }
+    ],
+    "blocks": [
+        {
+            "type": "product",
+            "name": "Product",
+            "settings": [
+                {
+                    "id":"block_visibility",
+                    "type":"select",
+                    "label":"Product visibility",
+                    "default": "pc_mobile",
+                    "options": [
+                        { "value": "pc_only", "label": "PC only" },
+                        { "value": "mobile_only", "label": "Mobile only" },
+                        { "value": "pc_mobile", "label": "Both view" }
+                    ]
+                },
+                {
+                    "id":"product",
+                    "type":"product",
+                    "label":"Choose product"
+                },
+                {
+                    "type": "text",
+                    "id": "product_variant_id",
+                    "label": "Variant ID"
+                },
+                {
+                    "type": "text",
+                    "id": "non_member_variant_id",
+                    "label": "Non-member variant ID"
+                },
+                {
+                    "type": "header",
+                    "content": "Product image"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "product_image",
+                    "label": "Image"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "show_hover_image",
+                    "label": "Show hover image?"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "hover_product_image",
+                    "label": "Hover Image",
+                    "info": "If empty, will use the first product image"
+                },
+                {
+                    "id": "image_alignment",
+                    "type": "select",
+                    "label": "Image alignment",
+                    "options": [
+                        { "value": "left", "label": "Left" },
+                        { "value": "right", "label": "Right" }
+                    ]
+                },
+                {
+                    "type": "header",
+                    "content": "Discount tag"
+                },
+                {
+                    "id": "discount_text",
+                    "type": "text",
+                    "label": "Discount tag text",
+                    "info": "Highlight the discount price by wrapping it in `span` html tag."
+                },
+                {
+                    "id": "tag_alignment",
+                    "type": "select",
+                    "label": "Discount tag position",
+                    "options": [
+                        { "value": "left", "label": "Left" },
+                        { "value": "right", "label": "Right" }
+                    ]
+                },
+                {
+                    "type": "header",
+                    "content": "Product Information"
+                },
+                {
+                    "type": "header",
+                    "content": "Labels"
+                },
+                {
+                    "type": "text",
+                    "id": "tag_1",
+                    "label": "Label 1 text"
+                },
+                {
+                    "type": "color",
+                    "id": "tag_1_color",
+                    "label": "Label 1 color"
+                },
+                {
+                    "type": "text",
+                    "id": "tag_2",
+                    "label": "Label 2 text"
+                },
+                {
+                    "type": "color",
+                    "id": "tag_2_color",
+                    "label": "Label 2 color"
+                },
+                {
+                    "type": "header",
+                    "content": "Title"
+                },
+                {
+                    "type": "richtext",
+                    "id": "title",
+                    "label": "Text"
+                },
+                {
+                    "type": "url",
+                    "id": "title_url",
+                    "label": "Text URL"
+                },
+                {
+                    "type": "color",
+                    "id": "title_color",
+                    "label": "Text color"
+                },
+                {
+                    "type": "header",
+                    "content": "Description"
+                },
+                {
+                    "type": "richtext",
+                    "id": "description",
+                    "label": "Text"
+                },
+                {
+                    "type": "color",
+                    "id": "description_color",
+                    "label": "Text color"
+                },
+                {
+                    "type": "header",
+                    "content": "Subtitle"
+                },
+                {
+                    "type": "richtext",
+                    "id": "subtitle",
+                    "label": "Text"
+                },
+                {
+                    "type": "color",
+                    "id": "subtitle_color",
+                    "label": "Text color"
+                },
+                {
+                    "type": "header",
+                    "content": "Price"
+                },
+                {
+                    "type": "text",
+                    "id": "price",
+                    "label": "Text"
+                },
+                {
+                    "type": "color",
+                    "id": "price_color",
+                    "label": "Text color"
+                },
+                {
+                    "type": "header",
+                    "content": "Compare price"
+                },
+                {
+                    "type": "text",
+                    "id": "compare_price",
+                    "label": "Text"
+                },
+                {
+                    "type": "color",
+                    "id": "compare_price_color",
+                    "label": "Text color",
+                    "default": "#666666"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "show_timer_tag",
+                    "label": "Show 24-hr timer tag"
+                },
+                {
+                    "type": "color",
+                    "id": "timer_tag_color",
+                    "label": "Timer tag color"
+                },
+                {
+                    "type": "header",
+                    "content": "Buttons"
+                },
+                {
+                    "type": "text",
+                    "id": "atc_btn_text",
+                    "label": "Add to cart button text"
+                },
+                {
+                    "type": "text",
+                    "id": "checkout_btn_text",
+                    "label": "Checkout button text"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "has_atc_icon",
+                    "label": "Has ATC icon?"
+                },
+                {
+                    "type": "text",
+                    "id": "btn_text",
+                    "label": "Button text"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "show_amazon_btn",
+                    "label": "Show Amazon button"
+                },
+                {
+                    "type": "url",
+                    "id": "redirect_link",
+                    "label": "Redirect URL"
+                },
+                {
+                    "type": "url",
+                    "id": "amazon_link",
+                    "label": "Amazon URL"
+                },
+                {
+                    "type": "header",
+                    "content": "Free gift feature"
+                },
+                {
+                    "type": "product",
+                    "id": "gift_product",
+                    "label": "Gift product"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "gift_image",
+                    "label": "Product image"
+                },
+                {
+                    "type": "range",
+                    "id": "gift_image_width",
+                    "label": "Image width(Desktop)",
+                    "min": 40,
+                    "max": 150,
+                    "step": 2,
+                    "unit": "px",
+                    "default": 80
+                },
+                {
+                    "type": "range",
+                    "id": "gift_image_width_m",
+                    "label": "Image width(Mobile)",
+                    "min": 30,
+                    "max": 100,
+                    "step": 2,
+                    "unit": "px",
+                    "default": 80
+                },
+                {
+                    "type": "text",
+                    "id": "gift_title",
+                    "label": "Gift product title"
+                },
+                {
+                    "type": "text",
+                    "id": "gift_subtitle",
+                    "label": "Gift product subtitle"
+                },
+                {
+                    "type": "text",
+                    "id": "gift_price",
+                    "label": "Gift product price"
+                },
+                {
+                  "type": "text",
+                  "id": "free_text",
+                  "label": "Gift Free text",
+                  "default": "Free"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Star_product_double_v2",
+            "category":"Custom Sections"
+        }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,283 @@
+{%- liquid
+  assign section_id = section.settings.section_id
+  assign title = section.settings.title
+  assign subtitle = section.settings.subtitle
+  assign disclaimer_text = section.settings.disclaimer_text
+  assign button_label = section.settings.button_label
+  assign button_style = section.settings.button_style
+  assign bg_image = section.settings.bg_image
+  assign bg_image_mobile = section.settings.bg_image_mobile
+  assign ovelay_image = section.settings.ovelay_image
+  assign ovelay_image_mobile = section.settings.ovelay_image_mobile
+-%}
+
+<style>
+.claw-my-offer__container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.claw-my-offer__overlay-image,
+.claw-my-offer__bg-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.claw-my-offer__overlay-image img,
+.claw-my-offer__bg-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.claw-my-offer__overlay-image img {
+  width: 86%;
+  position: absolute;
+  top: 21px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.claw-my-offer__bg-image { z-index: 1; }
+.claw-my-offer__overlay-image { z-index: 2; }
+.claw-my-offer__content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 34px 15px 40px;
+}
+.claw-my-offer__title {
+  font-family: "Helvetica Neue ForEco";
+  margin-bottom: 12px;
+  font-size: 40px;
+  line-height: 46.16px;
+  font-weight: 700;
+}
+.claw-my-offer__subtitle {
+  font-family: "Helvetica Neue ForEco";
+  margin-bottom: 40px;
+  font-size: 24px;
+  line-height: 27.7px;
+  font-weight: 500;
+}
+.claw-my-offer__btn {
+  font-family: "Helvetica Neue ForEco";
+  margin-bottom: 40px;
+  font-size: 14px;
+  line-height: 16.8px;
+  color: #fff;
+  border: none;
+  background-color: #000;
+  height: 47px;
+  border-radius: 27px;
+  display: flex-inline;
+  justify-content: center;
+  align-items: center;
+  min-width: 165px;
+  padding: 10px;
+  font-weight: 500;
+}
+.claw-my-offer__disclaimer_text {
+  font-family: "Helvetica Neue ForEco";
+  color: #707070;
+  font-size: 12px;
+  line-height: 14.4px;
+  font-weight: 400;
+}
+.claw-my-offer__disclaimer_text a {
+  color: #000;
+  text-decoration: underline;
+  font-weight: 400;
+}
+.claw-my-offer--mobile { display: none; }
+.claw-my-offer--desktop { display: block; }
+
+@media (max-width: 749px) {
+  .claw-my-offer--mobile { display: block; }
+  .claw-my-offer--desktop { display: none; }
+  .claw-my-offer__overlay-image img {
+    width: 100%;
+    position: absolute;
+    top: 24px;
+  }
+  .claw-my-offer__title {
+    font-size: 24px;
+    line-height: 27.7px;
+  }
+  .claw-my-offer__subtitle {
+    font-size: 16px;
+    line-height: 22.4px;
+  }
+  .claw-my-offer__btn {
+    font-size: 14px;
+    line-height: 16.8px;
+  }
+  .claw-my-offer__content {
+    min-height: 401px;
+  }
+}
+</style>
+
+<section id="{{ section_id }}" class="claw-my-offer fade-in-animation">
+  <div class="star-page-container">
+    <div class="claw-my-offer__container">
+
+      <div class="claw-my-offer__content">
+
+        {%- if title != blank or subtitle != blank -%}
+        <div class="claw-my-offer__heading">
+          {%- if title  != blank-%}
+          <h2 class="claw-my-offer__title">{{ title }}</h2>
+          {%- endif -%}
+          {%- if subtitle  != blank-%}
+          <div class="claw-my-offer__subtitle">{{ subtitle }}</div>
+          {%- endif -%}
+        </div>
+        {%- endif -%}
+
+        {%- if button_label != blank -%}
+        <button type="button" class="claw-my-offer__btn claw-link-start-interaction {{ button_style }}">{{ button_label }}</button>
+        {%- endif -%}
+
+        {%- if disclaimer_text != blank -%}
+        <div class="claw-my-offer__disclaimer_text">{{ disclaimer_text }}</div>
+        {%- endif -%}
+
+      </div>
+
+      <div class="claw-my-offer__bg-image">
+        <img
+          class="claw-my-offer__bg-image-desktop claw-my-offer--desktop"
+          src="{{ bg_image | image_url: width: bg_image.width, height: bg_image.height }}"
+          width="{{ bg_image.width }}"
+          height="{{ bg_image.height }}">
+        <img
+          class="claw-my-offer__bg-image-mobile claw-my-offer--mobile"
+          src="{{ bg_image_mobile | image_url: width: bg_image_mobile.width, height: bg_image_mobile.height }}"
+          width="{{ bg_image_mobile.width }}"
+          height="{{ bg_image_mobile.height }}">
+      </div>
+
+      <div class="claw-my-offer__overlay-image">
+        <img
+          class="claw-my-offer__overlay-image-desktop claw-my-offer--desktop"
+          src="{{ ovelay_image | image_url: width: ovelay_image.width, height: ovelay_image.height }}"
+          width="{{ ovelay_image.width }}"
+          height="{{ ovelay_image.height }}">
+        <img
+          class="claw-my-offer__overlay-image-mobile claw-my-offer--mobile"
+          src="{{ ovelay_image_mobile | image_url: width: ovelay_image_mobile.width, height: ovelay_image_mobile.height }}"
+          width="{{ ovelay_image_mobile.width }}"
+          height="{{ ovelay_image_mobile.height }}">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Claw My Offer",
+  "class": "claw-my-offer-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID"
+    },
+    {
+      "type": "header",
+      "content": "Background images"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "t:sections.rich-text.settings.bg_image.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image_mobile",
+      "label": "t:sections.rich-text.settings.bg_image_mobile.label"
+    },
+    {
+      "type": "header",
+      "content": "Overlay images (Optional)",
+      "info": "These images will be displayed on top of the background images. Recommended to use PNG images with transparent background."
+    },
+    {
+      "type": "image_picker",
+      "id": "ovelay_image",
+      "label": "t:sections.rich-text.settings.bg_image.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "ovelay_image_mobile",
+      "label": "t:sections.rich-text.settings.bg_image_mobile.label"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:sections.rich-text.settings.section_title.label",
+      "info": "Line breaks (add <br>). E.g. Line 1<br>Line 2"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "info": "Line breaks (add <br>). E.g. Line 1<br>Line 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "remove_section_title_br_mobile",
+      "label": "Remove heading <br> on mobile",
+      "default": false,
+      "info": "This will remove the line breaks from the heading on mobile devices."
+    },
+    {
+      "type": "richtext",
+      "id": "disclaimer_text",
+      "label": "Disclaimer text"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Claw My Offer"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button decorate",
+      "options": [
+        {
+          "value": "",
+          "label": "Normal"
+        },
+        {
+          "value": "claw-animation-shake",
+          "label": "Shake"
+        },
+        {
+          "value": "claw-animation-confetti",
+          "label": "Shoot confetti"
+        }
+      ],
+      "default": "claw-animation-confetti",
+      "info": "Decorate the link when clicked."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Claw My Offer"
+    }
+  ]
+}
+{% endschema %}

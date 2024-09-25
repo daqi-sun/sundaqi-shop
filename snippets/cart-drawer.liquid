@@ -1,0 +1,301 @@
+{% assign cart_icon_style = settings.header_cart_icon_style %}
+{% assign cart_related_collection_handle = settings.cart_related_collection_handle %}
+
+{% assign always_show_cart_related_collection = settings.always_show_cart_related_collection %}
+
+{% assign cart_total_price = 0 %}
+{%- for line_item in cart.items -%}
+  {% if line_item.variant.metafields.custom.applicable_for_promotion == true %}
+    {%- assign cart_total_price = cart_total_price | plus: line_item.original_price | times: line_item.quantity -%}
+  {% endif %}
+{%- endfor -%}
+{%- capture section_settings -%}
+{
+"type": {{ settings.cart_type | json }},
+"itemCount": {{ cart.item_count }},
+"totalPrice": {{ cart.total_price }},
+"originalTotalPrice": {{ cart_total_price }},
+"drawer": true,
+"hasShippingEstimator": false
+}
+{%- endcapture -%}
+
+<div id="sidebar-cart" class="Drawer Cart-Drawer" data-section-type="cart-template" data-section-settings='{{ section_settings }}' data-enabled-ecocredit-msg="{{ settings.enable_ecocredits_max_redemption_message }}" aria-modal="true" role="dialog" tabindex="-1">
+  <div class="Drawer__Header cart-drawer-container">
+    <h3 class="Drawer__Title hideMobile">{{ 'cart.general.title' | t }}</h3>
+    <h3 class="Drawer__Title hideDesktop">{{ 'cart.general.mobile_title' | t }}</h3>
+
+    <button class="Drawer__Close" data-action="close-drawer" data-drawer-id="sidebar-cart" aria-label="{{ 'sections.header.close_cart' | t }}">
+      <svg class="hideMobile" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" fill-rule="evenodd">
+            <circle fill="currentColor" cx="10" cy="10" r="10"/>
+            <path d="M14.438 14.438a2.194 2.194 0 0 1-.498.387c-.16.086-.33.039-.51-.141L10 11.253l-3.443 3.443c-.172.172-.338.215-.497.129a2.194 2.194 0 0 1-.498-.387 2.194 2.194 0 0 1-.387-.498c-.086-.16-.043-.325.13-.497L8.746 10l-3.43-3.43c-.18-.18-.228-.35-.142-.51.086-.16.215-.326.387-.498.172-.172.338-.3.498-.387.16-.086.33-.039.51.141L10 8.747l3.43-3.43c.173-.173.34-.218.504-.136.164.082.332.21.504.381.172.172.299.34.38.504.083.164.038.331-.134.503L11.253 10l3.43 3.43c.18.18.228.35.142.51-.086.16-.215.326-.387.498z" fill="#FFF"/>
+        </g>
+      </svg>
+
+      <svg class="hideDesktop" width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+        <path d="M29.601 15.46 23.061 22l6.54 6.54-1.06 1.061L22 23.061l-6.54 6.54-1.061-1.06L20.939 22l-6.54-6.54 1.06-1.061L22 20.939l6.54-6.54 1.061 1.06z" fill="#03060B" fill-rule="evenodd"/>
+      </svg>
+    </button>
+  </div>
+{% comment %}Added/Modified by Limoni Apps on 17/08/22 to support Discount Ninja{% endcomment %}
+
+  <form class="Cart Drawer__Content limoniapps-discountninja-drawercart-root" action="{{ routes.cart_url }}" method="POST" novalidate>
+    <div class="Drawer__Main" data-scrollable>
+      {%- if settings.cart_show_free_shipping_threshold -%}
+      {%- if cart.items.size > 0 %}
+      {%- assign threshold_in_cents = settings.cart_free_shipping_threshold | times: 100 -%}
+      <div class="Cart__ShippingNotice cart-drawer-container">
+        <div class="Drawer__Container">
+
+          {%- if cart.total_price >= threshold_in_cents -%}
+          <p style="color: {{ settings.free_shipping_reached_color }}">{{- 'cart.general.free_shipping' | t -}}</p>
+          {%- else -%}
+          {%- capture remaining_amount -%}<span>
+          {% if settings.currency_code_enable %}
+          {{ cart.total_price | minus: threshold_in_cents | abs | money_with_currency }}
+          {% else %}
+          {{ cart.total_price | minus: threshold_in_cents | abs | money }}
+          {% endif %}
+          </span>{%- endcapture -%}
+          <p style="color: {{ settings.free_shipping_not_reached_color }}">{{- 'cart.general.free_shipping_remaining_html' | t: remaining_amount: remaining_amount -}}</p>
+          {%- endif -%}
+
+        </div>
+      </div>
+
+
+      {% endif %}
+      {%- endif -%}
+
+      {%- if cart.item_count == 0 -%}
+
+
+      <div class="Cart__Empty {% if settings.empty_cart_featured_collection_1 != blank %} with_empty_cart_buttons {% endif %}">
+        <span>{%- render 'icon', icon: cart_icon_style -%}</span>
+        <p>{{ 'cart.general.empty' | t }}</p>
+      </div>
+
+      <div class='empty_cart_buttons cart-drawer-container'>
+        {% if settings.empty_cart_featured_collection_1 != blank %}
+
+        {% for i in (1..3) %}
+        {% capture empty_cart_featured_collection_handle %}empty_cart_featured_collection_{{i}}{% endcapture %}
+        {% assign empty_cart_featured_collection_settings = settings[empty_cart_featured_collection_handle] %}
+
+        {% if empty_cart_featured_collection_settings != blank %}
+        {% assign empty_cart_featured_collection = collections[empty_cart_featured_collection_settings] %}
+
+        <a class='empty_cart_featured_collection btn btn--transparent_secondary' href="{{ empty_cart_featured_collection.url }}">
+          <span>{{ empty_cart_featured_collection.title }}</span>
+        </a>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+
+        <button type="button" class="btn btn--primary keep_shopping__btn" data-action="close-drawer" data-drawer-id="sidebar-cart" aria-label="{{ 'sections.header.close_cart' | t }}">
+          <span>{{ 'cart.general.continue_shopping' | t }}</span>
+        </button>
+
+      </div>
+
+      {%- else -%}
+      <div id="CartPopupItemContainer" class="Drawer__Container">
+        <div class="promotion-message-wrapper promotion-message--drawer hide alter" data-promotion-message-container>
+          <div data-promotion-message-alter></div>
+        </div>
+
+        <input type="hidden" name="attributes[collection_mobile_items_per_row]" value="">
+        <input type="hidden" name="attributes[collection_desktop_items_per_row]" value="">
+
+        {% render 'cart-items' %}
+        {% if settings.upsell_accessories_feature == "true" %}
+          {% comment %}
+            Show button if upsell accessories discount feature enabled
+            Click button to open discount modal
+            openUpsellAccessoriesModal function in theme.js
+          {% endcomment %}
+          <button type="button" class="cart-upsell-accessories-button" onclick="openUpsellAccessoriesModal()">
+            {{ settings.cart_drawer_button_text }}
+          </button>
+        {% endif %}
+      </div>
+      {%- endif -%}
+
+    </div>
+
+
+    <div class="Drawer__Footer" data-drawer-animated-bottom>
+
+      {% if cart_related_collection_handle != blank %}
+      {% if always_show_cart_related_collection %}
+      {% render 'card-related-products', cart:cart, cart_related_collection_handle: cart_related_collection_handle %}
+      {% else %}
+      {% if cart.item_count == 0 %}
+      {% render 'card-related-products', cart:cart, cart_related_collection_handle: cart_related_collection_handle %}
+      {% endif %}
+      {% endif %}
+      {% endif %}
+
+      {%- unless cart.item_count == 0 -%}
+      <div class='cart-drawer-container'>
+
+        {% comment %} Promotion Message Criteria {% endcomment %}
+        <div class="promotion-message-wrapper promotion-message--drawer hide" data-promotion-message-container>
+          <img src="{{ 'icon-gift.png' | asset_url }}" /> <div data-promotion-message></div>
+        </div>
+
+        {%- assign cartDiscounts = 'template ' | split: ' ' -%}
+        {%- if cart.cart_level_discount_applications.size > 0 -%}
+        {%- assign cartDiscounts = cart.cart_level_discount_applications -%}
+        {%- endif -%}
+        <div{% if cart.cart_level_discount_applications.size == 0 %} class="hide"{% endif %} data-cart-discount-wrapper>
+          <div class="order-discount-card-wrapper" data-cart-discount>
+            {%- for discount_application in cartDiscounts -%}
+            <span class="order-discount order-discount--title order-discount--cart">
+              {% render 'icon-saletag' %}<span class="visually-hidden">{{ 'customer.order.discount' | t }}:</span><span data-cart-discount-title>{{- discount_application.title -}}</span>
+            </span>
+            <span class="order-discount order-discount--cart order-discount--cart-total">
+
+              {% if settings.currency_code_enable %}
+              -<span data-cart-discount-amount>{{ discount_application.total_allocated_amount | money_with_currency | replace: ',00', '' }}</span>
+              {% else %}
+              -<span data-cart-discount-amount>{{ discount_application.total_allocated_amount | money | replace: ',00', '' }}</span>
+              {% endif %}
+
+            </span>
+            {%- endfor -%}
+          </div>
+        </div>
+
+        {%- assign total_discount = 0 -%}
+        {%- assign total_compare_price = 0 -%}
+        {%- for line_item in cart.items -%}
+          {%- if line_item.variant.compare_at_price > line_item.variant.price -%}
+            {%- assign total_compare_price = line_item.variant.compare_at_price | times: line_item.quantity | plus: total_compare_price -%}
+            {%- assign line_item_discount = line_item.variant.compare_at_price | minus: line_item.variant.price | times: line_item.quantity -%}
+            {%- assign total_discount = total_discount | plus: line_item_discount -%}
+          {%- else -%}
+            {%- assign total_compare_price = line_item.variant.price | times: line_item.quantity | plus: total_compare_price -%}
+          {%- endif -%}
+        {%- endfor -%}
+
+        <!-- calculate script discount  -->
+        {%- assign script_discount = 0 -%}
+        {%- for discount in cart.discount_applications -%}
+          {%- if discount.type == 'script' -%}
+            {%- assign script_discount = discount.total_allocated_amount -%}
+            {%- assign total_discount = total_discount | plus: script_discount -%}
+          {%- endif -%}
+        {%- endfor -%}
+        {% comment %}Added/Modified by Limoni Apps on 17/08/22 to support Discount Ninja{% endcomment %}
+
+        <div class="cart-subtotal-row limoniapps-discountninja-cart-subtotal">
+          <div class="cart-subtotal-alter h6">
+            <span class="cart-subtotal__title">{{ 'cart.general.total' | t }}</span>
+            <div class="limoniapps-discountninja-cart-subtotal-price">
+              <span class="cart-subtotal__price" data-cart-subtotal>
+                {% if settings.currency_code_enable %}
+                  {% if cart.total_price > 999900 %}
+                    {{ cart.total_price | money_with_currency | replace: ',00', '' | replace: '.', ' ' }}
+                  {% else %}
+                    {{ cart.total_price | money_with_currency | replace: ',00', '' | replace: '.', '' }}
+                  {% endif %}
+                {% else %}
+                  {% if cart.total_price > 999900 %}
+                    {{ cart.total_price | money | replace: ',00', '' | replace: '.', ' ' }}
+                  {% else %}
+                    {{ cart.total_price | money | replace: ',00', '' | replace: '.', '' }}
+                  {% endif %}
+                {% endif %}
+              </span>
+              {% if total_compare_price > cart.total_price and script_discount == 0 %}
+                <span class="cart-subtotal__compare_price" data-cart-subtotal-compare>
+                  {% if settings.currency_code_enable %}
+                    {% if total_compare_price > 999900 %}
+                      {{ total_compare_price | money_with_currency | replace: ',00', '' | replace: '.', ' ' }}
+                    {% else %}
+                      {{ total_compare_price | money_with_currency | replace: ',00', '' | replace: '.', '' }}
+                    {% endif %}
+                  {% else %}
+                    {% if total_compare_price > 999900 %}
+                      {{ total_compare_price | money | replace: ',00', '' | replace: '.', ' ' }}
+                    {% else %}
+                      {{ total_compare_price | money | replace: ',00', '' | replace: '.', '' }}
+                    {% endif %}
+                  {% endif %}
+                </span>
+              {% endif %}
+
+              {%- if total_discount > 0 -%}
+                <div class="line-items-discount">
+                  {% if total_discount > 999900 %}
+                    -{{ total_discount | money | replace: ',00', '' | replace: '.', ' ' }}
+                  {% else %}
+                    -{{ total_discount | money | replace: ',00', '' | replace: '.', '' }}
+                  {% endif %}
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+        <klarna-placement
+          style="display: block;"
+          data-key="credit-promotion-badge"
+          data-locale="es-ES"
+          data-preloaded="true"
+          data-purchase-amount="{{ cart.total_price }}"
+        ></klarna-placement>
+<div class="limoniapps-discountninja-cart-promotionsummary"></div>
+        <div class="affirm-as-low-as affirm-message-item" data-page_type="cart" data-amount="{{ cart.total_price }}"></div>
+
+        {%- if settings.cart_notes_enable -%}
+          <div class='cart__block'>
+            <div class='cart_block__title h6'>
+              <span>{{ 'cart.general.note' | t }}</span>
+            </div>
+            <div class='cart_block__content'>
+              <textarea name="note" id="DrawerCartSpecialInstructions" class="cart-note__input" data-cart-notes placeholder='{{ "cart.general.note_placeholder" | t }}'>{{ cart.note }}</textarea>
+            </div>
+          </div>
+        {%- endif -%}
+        <div class="limoniapps-discountninja-cartdiscountfield-placeholder"></div>
+
+        <div class="cart__buttons-wrapper">
+          <button type="submit" name="checkout" class="cart-popup__cta-link btn btn--secondary-accent Cart__Checkout">
+            <span>{{- 'cart.general.checkout' | t -}}</span>
+          </button>
+        </div>
+        {% if settings.enable_ecocredits_max_redemption_message %}
+          <div class="cart-drawer-ecocredits-msg__container" style="display: none">
+            <div class="cart-drawer-ecocredits-msg__wrapper">
+              <img src="{{ 'ecocredit-msg-gray.svg' | asset_url }}" alt="" class="cart-drawer-ecocredits-msg__logo">
+              <p class="cart-drawer-ecocredits-msg__text">
+                Hasta <strong class="cart-drawer-ecocredits-msg__points"></strong> en deducciones en efectivo.
+              </p>
+              {% assign redeem_rules = settings.redeem_rules | strip %}
+              {% if redeem_rules != '' %}
+                <div class="tooltips">
+                  <img src="{{ 'icon-info.svg' | asset_url }}" alt="redeem rules" class="tooltips-handle cart-drawer-ecocredits-info__logo">
+                  <div class="tooltips-content">
+                    {{ redeem_rules }}
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+
+        {% if settings.cart_drawer_policy != blank %}
+          <div class="cart__drawer-policy">
+            {{ settings.cart_drawer_policy }}
+          </div>
+        {% endif %}
+
+      </div>
+      {%- endunless -%}
+
+    </div>
+
+  </form>
+</div>

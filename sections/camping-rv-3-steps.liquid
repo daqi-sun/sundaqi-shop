@@ -1,0 +1,70 @@
+<div class="camping-rv-steps__section">
+  <div class="container--normal ">
+    <div class="swiper-container camping-rv-steps__steps__wrapper">
+      <div class="swiper-wrapper camping-rv-steps__flex-container">
+        {% for block in section.blocks %}
+          <div class="swiper-slide camping-rv-steps__block-container background--white hb__border-radius--8">
+            <div class="camping-rv-steps__image__wrapper ">
+              <img
+                class="camping-rv-steps__image"
+                loading="lazy"
+                src="{{ block.settings.image | img_url: 'master' }}"
+                alt="{{ block.settings.image.alt }}"
+              >
+            </div>
+            <div class="camping-rv-steps__content">
+              <h3 class="camping-rv-steps__steps hb__text--blue">
+                {{ block.settings.steps }}
+              </h3>
+              <p class="camping-rv-steps__title hb__text--black">{{ block.settings.title }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 'auto',
+      freeMode: true,
+      autoHeight: true,
+      grabCursor: true,
+      spaceBetween: 15,
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Camping RV Steps",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "steps",
+      "name": "steps",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "steps Image"
+        },
+        {
+          "type": "text",
+          "id": "steps",
+          "label": "Step No.",
+          "default": "01"
+        },
+        {
+          "type": "html",
+          "id": "title",
+          "label": "Title",
+          "default": "Déployez facilement vos panneaux solaires prêts-à-l’emploi"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

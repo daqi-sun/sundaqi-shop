@@ -1,0 +1,71 @@
+{% if section.settings.show_bar_desktop or section.settings.show_bar_mobile %}
+    <div class="header-container user_popup_bar_wrap">
+      <div class="user_popup_bar {% unless section.settings.show_bar_desktop %}hideDesktop{% endunless %} {% unless section.settings.show_bar_mobile %}hideMobile{% endunless %}">
+        <div class="user-popup-inner">
+          <div class="user-popup-content">
+              {% if section.settings.title != blank %}
+                  <div class="title">{{ section.settings.title }}</div>
+              {% endif %}
+              {% if section.settings.description != blank %}
+                  <div class="user-popup-desc">{{ section.settings.description }}</div>
+              {% endif %}
+              {% if section.settings.content != blank %}
+                  <div class="user-popup-content">{{ section.settings.content }}</div>
+              {% endif %}
+          </div>
+          {% if section.settings.btn_text != blank %}
+            <a class="btn user-popup-btn" href="{{ section.settings.btn_url }}">{{ section.settings.btn_text }}</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "User Content Bar",
+    "settings": [
+        {
+            "type": "checkbox",
+            "id": "show_bar_desktop",
+            "label": "Show content bar in desktop"
+          },
+          {
+            "type": "checkbox",
+            "id": "show_bar_mobile",
+            "label": "Show content bar in mobile"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "textarea",
+            "id": "description",
+            "label": "Description"
+          },
+          {
+            "type": "text",
+            "id": "btn_text",
+            "label": "Button text"
+          },
+          {
+            "type": "url",
+            "id": "btn_url",
+            "label": "Button link"
+          },
+          {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content"
+          }
+    ],
+    "presets": [
+      {
+        "name": "User Content Bar",
+        "category": "Custom Sections"
+      }
+    ]
+  }
+  {% endschema %}

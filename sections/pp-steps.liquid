@@ -1,0 +1,155 @@
+<style>
+  .pp-steps__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .pp-steps__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+
+<div class="pp-steps__section pp-steps__section-{{ section.id }}">
+  <div class="container--default">
+    <div class="pp-steps__text-container">
+      {% if section.settings.title != blank %}
+        <h2 class="pp-steps__section-heading text--heading text--black">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+      {% if section.settings.subtitle != blank %}
+        <p class="pp-steps__section-description text--description text--gray">
+          {{ section.settings.subtitle }}
+        </p>
+      {% endif %}
+    </div>
+    <div class="pp-steps__container">
+      {% for block in section.blocks %}
+        <div class="pp-steps__column-wrapper">
+          <div class="pp-steps__image-wrapper">
+            <img
+              src="{{ block.settings.image | img_url: 'master' }}"
+              alt="{{ block.settings.image.alt }}"
+            >
+            {% if forloop.index == 1 %}
+              <div class="pp-steps__arrow-top-wrapper display--desktop">
+                {% render 'broken-arrow-top' %}
+              </div>
+            {% endif %}
+            {% if forloop.index == 2 %}
+              <div class="pp-steps__arrow-bottom-wrapper display--desktop">
+                {% render 'broken-arrow-bottom' %}
+              </div>
+            {% endif %}
+          </div>
+          <div class="pp-steps__title-wrapper">
+            {% if block.settings.subtitle != blank %}
+              <p class="pp-steps__subtitle text--light-black">{{ block.settings.subtitle }}</p>
+            {% endif %}
+            <h3 class="pp-steps__title text--black">{{ block.settings.title }}</h3>
+          </div>
+          <div class="pp-steps__subtitle-wrapper">
+            {% if block.settings.description != blank %}
+              <p class="pp-steps__description text--gray">{{ block.settings.description }}</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "PP steps",
+  "max_blocks": 3,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "So funktioniert's"
+    },
+    {
+      "type": "html",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "In dem EcoFlow PowerStream Balkon-Solarsystem sind die Module nur eine von mehreren Komponenten. Der Mikro-Wechselrichter übernimmt die wichtige Aufgabe, Sonnenenergie in sicheren, nutzbaren Strom umzuwandeln. Allerdings entsteht bei diesem Prozess immer eine gewisse Menge Blindstrom – Strom, den man zwar erzeugt, aber nicht nutzen können. Wenn Sie sich für den EcoFlow PowerStream entscheiden, erhalten Sie branchenführende Effizienz und erstklassige Qualität. Der PowerStream ist so konzipiert, dass er einfach zu installieren ist. Nutzer können das gesamte System selbst installieren, da der Mikro-Wechselrichter, das Balkonkraftwerk, Smarte Steckdosen und Solarmodule als Plug-and-Play Variante vorhanden sind. Mit seinem kompakten Design kann der PowerStream problemlos an verschiedenen Orten montiert werden, darunter an Hausbalkonen, Hausgärten und Hausterrassen. "
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "steps",
+      "name": "Steps",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Jeden Sonnenstrahl nutzen und speichern."
+        },
+        {
+          "type": "html",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "1"
+        },
+        {
+          "type": "html",
+          "id": "description",
+          "label": "Description",
+          "default": "Nutzen Sie die Kraft der Sonne mit unserem Plug-and-Play Solarsystem für Balkone, Terrassen oder Gärten. Wandeln Sie die Energie der Sonne in nutzbaren Strom um und genießen Sie nachhaltigen Strom, wo immer Sie ihn benötigen."
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,392 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "t:sections.index-countdown-timer.name",
+  "class": "index-section bg_image_with_custom_content",
+  "id": "index-countdown-timer",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "atb_overlay_behaviour",
+      "label": "t:sections.index-countdown-timer.settings.overlay_behaviour.label",
+      "default": "split",
+      "options": [
+        {
+          "label": "t:sections.index-countdown-timer.settings.overlay_behaviour.options__1.label",
+          "value": "split"
+        },
+        {
+          "label": "t:sections.index-countdown-timer.settings.overlay_behaviour.options__2.label",
+          "value": "full"
+        }
+      ],
+      "info": ""
+    },
+    {
+      "type": "select",
+      "id": "atb_content_side",
+      "label": "t:sections.index-countdown-timer.settings.content_side.label",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.index-countdown-timer.settings.content_side.options__1.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.index-countdown-timer.settings.content_side.options__2.label"
+        }
+      ],
+      "default": "left",
+      "info": ""
+    },
+    {
+      "type": "image_picker",
+      "id": "atb_image",
+      "label": "t:sections.index-countdown-timer.settings.image.label",
+      "info": ""
+    },
+    {
+      "type": "image_picker",
+      "id": "atb_mobile_image",
+      "label": "t:sections.index-countdown-timer.settings.mobile_image.label",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_title",
+      "label": "t:sections.index-countdown-timer.settings.title.label",
+      "default": "Heading",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_subtitle",
+      "label": "t:sections.index-countdown-timer.settings.subtitle.label",
+      "default": "Subtitle",
+      "info": ""
+    },
+    {
+      "type": "wysiwyg",
+      "id": "atb_content",
+      "label": "t:sections.index-countdown-timer.settings.content.label",
+      "default": "<p>Content text</p>",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_timer_date",
+      "label": "t:sections.index-countdown-timer.settings.timer_date.label",
+      "info": "t:sections.index-countdown-timer.settings.timer_date.info"
+    },
+    {
+      "type": "select",
+      "id": "atb_timer_behaviour",
+      "label": "t:sections.index-countdown-timer.settings.timer_behaviour.label",
+      "default": "use_current_day",
+      "options": [
+        {
+          "label": "t:sections.index-countdown-timer.settings.timer_behaviour.options__1.label",
+          "value": "use_current_day"
+        },
+        {
+          "label": "t:sections.index-countdown-timer.settings.timer_behaviour.options__2.label",
+          "value": "show_zeros"
+        },
+        {
+          "label": "t:sections.index-countdown-timer.settings.timer_behaviour.options__3.label",
+          "value": "hide"
+        }
+      ],
+      "info": ""
+    },
+    {
+      "type": "select",
+      "id": "atb_button_style",
+      "label": "t:sections.index-countdown-timer.settings.button_style.label",
+      "default": "primary",
+      "options": [
+        {
+          "label": "t:sections.index-countdown-timer.settings.button_style.options__1.label",
+          "value": "primary"
+        },
+        {
+          "label": "t:sections.index-countdown-timer.settings.button_style.options__2.label",
+          "value": "secondary"
+        },
+        {
+          "label": "t:sections.index-countdown-timer.settings.button_style.options__3.label",
+          "value": "white"
+        },
+        {
+          "label": "t:sections.index-countdown-timer.settings.button_style.options__4.label",
+          "value": "transparent_primary"
+        },
+        {
+          "label": "t:sections.index-countdown-timer.settings.button_style.options__5.label",
+          "value": "transparent_secondary"
+        }
+      ],
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_button_text",
+      "label": "t:sections.index-countdown-timer.settings.button_text.label",
+      "default": "Button",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_button_url",
+      "label": "t:sections.index-countdown-timer.settings.button_url.label",
+      "info": ""
+    },
+    {
+      "type": "color",
+      "id": "atb_text_color",
+      "label": "t:sections.index-countdown-timer.settings.text_color.label",
+      "default": "#000",
+      "info": ""
+    },
+    {
+      "type": "color",
+      "id": "atb_countdown_color",
+      "label": "t:sections.index-countdown-timer.settings.countdown_color.label",
+      "default": "#000",
+      "info": ""
+    },
+    {
+      "type": "color",
+      "id": "atb_color_image_overlay",
+      "label": "t:sections.index-countdown-timer.settings.color_image_overlay.label",
+      "info": ""
+    },
+    {
+      "type": "range",
+      "id": "atb_image_overlay_opacity",
+      "label": "t:sections.index-countdown-timer.settings.image_overlay_opacity.label",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "t:sections.index-countdown-timer.settings.image_overlay_opacity.unit",
+      "default": 70,
+      "info": ""
+    }
+  ],
+  "warnings": []
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_overlay_behaviour' -%}
+{%- assign atb_overlay_behaviour = val -%}
+{%- include 'atb-render' field:'atb_content_side' -%}
+{%- assign atb_content_side = val -%}
+{%- include 'atb-render' field:'atb_image' -%}
+{%- assign atb_image = val -%}
+{%- include 'atb-render' field:'atb_mobile_image' -%}
+{%- assign atb_mobile_image = val -%}
+{%- include 'atb-render' field:'atb_title' -%}
+{%- assign atb_title = val -%}
+{%- include 'atb-render' field:'atb_subtitle' -%}
+{%- assign atb_subtitle = val -%}
+{%- include 'atb-render' field:'atb_content' -%}
+{%- assign atb_content = val -%}
+{%- include 'atb-render' field:'atb_timer_date' -%}
+{%- assign atb_timer_date = val -%}
+{%- include 'atb-render' field:'atb_timer_behaviour' -%}
+{%- assign atb_timer_behaviour = val -%}
+{%- include 'atb-render' field:'atb_button_style' -%}
+{%- assign atb_button_style = val -%}
+{%- include 'atb-render' field:'atb_button_text' -%}
+{%- assign atb_button_text = val -%}
+{%- include 'atb-render' field:'atb_button_url' -%}
+{%- assign atb_button_url = val -%}
+{%- include 'atb-render' field:'atb_text_color' -%}
+{%- assign atb_text_color = val -%}
+{%- include 'atb-render' field:'atb_countdown_color' -%}
+{%- assign atb_countdown_color = val -%}
+{%- include 'atb-render' field:'atb_color_image_overlay' -%}
+{%- assign atb_color_image_overlay = val -%}
+{%- include 'atb-render' field:'atb_image_overlay_opacity' -%}
+{%- assign atb_image_overlay_opacity = val -%}
+{%- assign atb_image_overlay_opacity = atb_image_overlay_opacity | plus: 0 -%}
+{%- assign atb_image_key = atb_image| split: '/files/' | last -%}{%- assign atb_image = images[atb_image_key] -%}{%- assign atb_mobile_image_key = atb_mobile_image| split: '/files/' | last -%}{%- assign atb_mobile_image = images[atb_mobile_image_key] -%}{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section index-section bg_image_with_custom_content">
+{% assign timer_behaviour = atb_timer_behaviour %}
+{% assign overlay_behaviour = atb_overlay_behaviour %}
+
+
+<section id="section-{{ section_id }}" data-section-id="{{ section_id }}" data-section-type="index-countdown-timer" class='fade-in-animation overlay_behaviour_{{overlay_behaviour}}'>
+
+  {% assign image = atb_image %}
+  {% assign mobile_image = atb_mobile_image %}
+    {% assign content_side = atb_content_side %}
+  
+
+  <div class='section_bg'>
+ {% if image != blank %}  
+        <img 
+             class="section_bg_image {% if mobile_image != blank %} small--hide {% endif %}"
+             srcset="{%- if image.width >= 375 -%}{{ image | img_url: '375x' }} 375w,{%- endif -%}
+                {%- if image.width >= 720 -%}{{ image | img_url: '720x' }} 750w,{%- endif -%}
+                {%- if image.width >= 1066 -%}{{ image | img_url: '1066x' }} 1066w,{%- endif -%}
+             	{%- if image.width >= 1500 -%}{{ image | img_url: '1500x' }} 1500w,{%- endif -%}
+                {%- if image.width >= 1780 -%}{{ image | img_url: '1780x' }} 1780w,{%- endif -%}
+                {%- if image.width >= 2000 -%}{{ image | img_url: '2000x' }} 2000w,{%- endif -%}
+                {%- if image.width >= 2800 -%}{{ image | img_url: '2800x' }} 2800w{%- endif -%}"
+             src="{{ image | img_url: '750x' }}"
+             sizes="100vw"
+             loading="lazy"
+             width="{{ image.width }}"
+        	 height="{{ image.height }}"
+             alt="{{image.alt | default:  atb_title }}">
+      
+      {% if mobile_image != blank %}
+        <img 
+             class="section_bg_image mobile_image medium-up--hide"
+             srcset="{%- if mobile_image.width >= 375 -%}{{ mobile_image | img_url: '375x' }} 375w,{%- endif -%}
+                {%- if mobile_image.width >= 720 -%}{{ mobile_image | img_url: '720x' }} 750w,{%- endif -%}
+                {%- if mobile_image.width >= 1066 -%}{{ mobile_image | img_url: '1066x' }} 1066w,{%- endif -%}
+             	{%- if mobile_image.width >= 1500 -%}{{ mobile_image | img_url: '1500x' }} 1500w{%- endif -%}"
+             src="{{ mobile_image | img_url: '535x' }}"
+             sizes="100vw"
+             loading="lazy"
+             width="{{ mobile_image.width }}"
+        	 height="{{ mobile_image.height }}"
+             alt="{{mobile_image.alt | default:  atb_title }}">
+      {% endif %}
+           
+    
+    
+   {% else %}
+    <div class='section_bg_image'>
+      {% capture current %}{% cycle 1, 2 %}{% endcapture %}
+      {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+    </div>
+    
+  {% endif %}
+  </div>
+
+    <div class='section_content'>
+    <div class="{% if overlay_behaviour == 'full' %} page-width {% else %}page-width-small {% endif %} content_side_{{content_side}}">
+      <div class='section_content__wrapper'>
+        <div class='section_main_content text-left '>
+          {% if atb_title != blank or  atb_subtitle != blank %}
+          <header class="section-header homepage_subtitle_style_{{settings.homepage_subtitle_color}}">
+            {% if atb_subtitle != blank  %}
+            <span class='h5'>{{ atb_subtitle  }}</span>
+            {% endif %}
+            {% if atb_title != blank  %}
+            <h2>{{ atb_title }}</h2>
+            {% endif %}
+
+            {% if atb_content != blank  %}
+            <div class='content'>{{ atb_content }}</div>
+            {% endif %}
+          </header>
+          {% endif %}
+          
+          <div class='countdown_timer' 
+               data-timer_behaviour="{{timer_behaviour}}"
+               data-time="{% if atb_timer_date != blank %}{{ atb_timer_date }}{% else %}0{% endif %}"> 
+            <div class="timer-time timer-days">
+              <span class="timer-value"></span>
+              <span class="timer-label h5">Days</span>
+            </div>
+            <span class="time-divider">:</span>
+            <div class="timer-time timer-hours">
+              <span class="timer-value"></span>
+              <span class="timer-label h5">Hours</span>
+            </div>
+            <span class=" time-divider">:</span>
+            <div class="timer-time timer-minutes">
+              <span class="timer-value"></span>
+              <span class="timer-label h5">Mins</span>
+            </div>
+            <span class="time-divider">:</span>
+            <div class="timer-time timer-seconds">
+              <span class="timer-value"></span>
+              <span class="timer-label h5">Secs</span>
+            </div>
+
+          </div>
+         
+          {% if atb_button_text != blank %}
+          <a class='btn countdown_timer_btn btn--{{atb_button_style }}' id='button-{{section_id}}' href='{{atb_button_url}}'> 
+            <span>{{ atb_button_text }}</span>
+              {% include 'atb-icon'  with 'tail-right'  %}
+          </a>
+          {% endif %}
+
+
+
+        </div>
+      
+      </div>      
+    </div>
+  </div>
+
+  <style>
+    #section-{{ section_id }} {
+      color: {{ atb_text_color }};
+    }
+   #section-{{ section_id }}  .content * {
+     color: {{ atb_text_color }};
+   }
+       {% if settings.homepage_subtitle_color == 'match_header' %}
+      #section-{{ section_id }}  .section-header .h5 {
+      color: {{ atb_text_color }};
+    }
+    #section-{{ section_id }}  .section-header .h5:before {
+      background: {{ atb_text_color }};
+    }
+    {% endif %}
+    
+    #section-{{ section_id }}  .timer-value {
+      color: {{ atb_countdown_color }};
+    }
+  </style>
+  
+  <div class='section_overlay content_side_{{content_side}}'></div>
+  <div class='section_overlay_border_top content_side_{{content_side}}'></div>
+  <div class='section_overlay_border_bottom content_side_{{content_side}}'></div>
+  
+  
+  {% assign color_image_overlay = atb_color_image_overlay %}
+
+  {% if color_image_overlay == 'rgba(0,0,0,0)' or color_image_overlay == blank %}
+  {% assign color_image_overlay = settings.color_button %}
+  {% endif %}
+  
+  <style>
+    
+    #section-{{ section_id }}.overlay_behaviour_full .section_content .section_main_content:after,
+    #section-{{ section_id }} .section_overlay {
+      opacity: {{ atb_image_overlay_opacity }}% ;
+      background-color: {{ color_image_overlay }};
+    }
+  </style>
+  {% if overlay_behaviour == 'full' %}
+  <script>
+    document.querySelector('#shopify-section-{{section_id}}').classList.add('full_overlay');
+  </script>
+  {% endif %}
+</section>
+
+
+
+</section>

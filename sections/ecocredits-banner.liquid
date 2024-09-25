@@ -1,0 +1,96 @@
+{{ 'ecocredits.css' | asset_url | stylesheet_tag }}
+
+<div class="ecocredits-banner background--black">
+  {% assign image = section.settings.mobileImage %}
+  {% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+  <div
+    class="custom-img__wrapper display--mobile"
+    style="padding-top: {{ pt }}%;"
+  >
+    <img
+      class="custom-img background--black"
+      srcset="
+        {{ image | img_url: '500x' }} 500w,
+        {{ image | img_url: '600x' }} 600w,
+        {{ image | img_url: 'master' }} 700w,
+      "
+      alt="{{ image.alt }}"
+    >
+  </div>
+
+  {% assign image = section.settings.image %}
+  {% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+  <div
+    class="custom-img__wrapper display--desktop"
+    style="padding-top: {{ pt }}%;"
+  >
+    <img
+      class="custom-img background--black"
+      srcset="
+        {{ image | img_url: '1000x' }} 1000w,
+        {{ image | img_url: '1200x' }} 1200w,
+        {{ image | img_url: '1400x' }} 1400w,
+        {{ image | img_url: 'master' }} 1600w,
+      "
+      alt="{{ image.alt }}"
+      loading="lazy"
+    >
+  </div>
+
+  <div class="ecocredits-banner__content">
+    {% if section.settings.title != blank %}
+      <h1 class="ecocredits-banner__content__h1 ec__text--white">
+        {{ section.settings.title }}
+      </h1>
+    {% endif %}
+    {% if section.settings.subtitle != blank %}
+      <p class="ecocredits-banner__content__desc ec__text--white">
+        {{ section.settings.subtitle }}
+      </p>
+    {% endif %}
+    {% if section.settings.description != blank %}
+      <div class="display--mobile">
+        <svg xmlns="http://www.w3.org/2000/svg" width="81" height="1" viewBox="0 0 81 1">
+          <rect id="矩形" width="81" height="1" fill="#d8d8d8"/>
+        </svg>
+        <p class="ec__text--white">{{ section.settings.description }}</p>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Ecocredits Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobileImage",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title",
+      "default": "EcoCredits Day Sale is Now On!·"
+    },
+    {
+      "type": "html",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Earn double EcoCredits for every €1 you spend."
+    },
+    {
+      "type": "html",
+      "id": "description",
+      "label": "Description Mobile",
+      "default": "Ends 10 April."
+    }
+  ]
+}
+{% endschema %}

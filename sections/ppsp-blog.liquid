@@ -1,0 +1,205 @@
+<style>
+  .ppsp-blog__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .ppsp-blog__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+
+<div
+  class="ppsp-blog__section ppsp-blog__section-{{ section.id }} background--white"
+  data-id="_{{ section.settings.id | downcase | remove: ' ' | replace: '&', '-' }}"
+>
+  <div class="container--short">
+    <div class="ppsp-blog__text-container">
+      {% if section.settings.title != blank %}
+        <h2 class="ppsp-blog__heading text--heading text--black">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+      {% if section.settings.subtitle != blank %}
+        <p class="ppsp-blog__description text--gray">
+          {{ section.settings.subtitle }}
+        </p>
+      {% endif %}
+    </div>
+
+    <div class="ppsp-blog__block-container ppsp-blog__block-container--swiper">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="ppsp-blog__block-wrapper background--dark-white swiper-slide">
+            <div class="ppsp-blog__image-wrapper">
+              <a href="{{ block.settings.url }}" target="_blank">
+                <img
+                  class="ppsp-blog__image"
+                  src="{{ block.settings.image | img_url: 'master' }}"
+                  alt="{{ block.settings.image.alt }}"
+                >
+              </a>
+            </div>
+            <div class="ppsp-blog__block-content-wrapper">
+              <div class="ppsp-blog__title-wrapper">
+                <div class="ppsp-blog__title text--black">
+                  {{ block.settings.title }}
+                </div>
+              </div>
+              <div class="ppsp-blog__url-wrapper">
+                <div class="ppsp-blog__url">
+                  <a href="{{ block.settings.url }}" target="_blank" class="text--blue">Más Información ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-scrollbar"></div>
+      <div class="display--desktop">
+        <div class="ppsp-blog-swiper__navigation">
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    function initializeSwiper() {
+      var swiperContainer = document.querySelector('.ppsp-blog__block-container--swiper');
+      var blockWrapperCount = document.querySelectorAll('.ppsp-blog__block-wrapper').length;
+
+      if (swiperContainer.classList.contains('swiper-initialized')) {
+        var existingSwiper = swiperContainer.swiper;
+        if (existingSwiper) {
+          existingSwiper.destroy();
+        }
+        swiperContainer.classList.remove('swiper-initialized');
+      }
+
+      if (blockWrapperCount > 4 || window.innerWidth < 1241) {
+        var swiper = new Swiper(swiperContainer, {
+          freeMode: true,
+          spaceBetween: 15,
+          slidesPerView: 'auto',
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          scrollbar: {
+            el: '.swiper-scrollbar',
+            draggable: true,
+            dragSize: 33,
+          },
+          breakpoints: {
+            768: {
+              spaceBetween: 23.5,
+            },
+          },
+        });
+
+        swiperContainer.swiper = swiper;
+        swiperContainer.classList.add('swiper-initialized');
+      }
+    }
+
+    initializeSwiper();
+
+    window.addEventListener('resize', function () {
+      initializeSwiper();
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "PPSP Blog",
+  "settings": [
+    {
+      "type": "text",
+      "id": "id",
+      "label": "Section ID",
+      "default": "FAQ"
+    },
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "html",
+      "id": "subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "blog",
+      "name": "Blog",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Blog Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Blog Title"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Blog URL"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

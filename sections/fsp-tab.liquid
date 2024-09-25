@@ -1,0 +1,168 @@
+<style>
+  .fsp-tab__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .fsp-tab__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+
+<div x-data="{ activeTab: 1 }" class="fsp-tab__section fsp-tab__section-{{ section.id }}">
+  <div class="container--default">
+    <div class="fsp-tab__text-container">
+      {% if section.settings.title != blank %}
+        <h2 class="fsp-tab__section-heading text--heading text--white">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+      {% if section.settings.subtitle != blank %}
+        <p class="fsp-tab__section-description text--description text--gray">
+          {{ section.settings.subtitle }}
+        </p>
+      {% endif %}
+    </div>
+
+    <div class="fsp-tab__content-container">
+      {% for block in section.blocks %}
+        <div
+          x-show="activeTab === {{ forloop.index }}"
+          class="fsp-tab__container"
+        >
+          <div class="fsp-tab__image-wrapper">
+            <img
+              class="display--desktop"
+              src="{{ block.settings.image | img_url: 'master' }}"
+              alt="{{ block.settings.image.alt }}"
+            >
+            <img
+              class="display--mobile"
+              src="{{ block.settings.image_mobile | img_url: 'master' }}"
+              alt="{{ block.settings.image_mobile.alt }}"
+            >
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="fsp-tab__tab-button-container">
+      {% for block in section.blocks %}
+        <button
+          x-on:click="activeTab = {{ forloop.index }}"
+          :class="{ 'active': activeTab === {{ forloop.index }} }"
+          class="fsp-tab__tab-button {% if forloop.index == 1 %} active {% endif %}"
+        >
+          <li title="{{ block.settings.title }}">
+            <span>{{ block.settings.title }}</span>
+          </li>
+        </button>
+      {% endfor %}
+    </div>
+    <div class="fsp-tab__description-container">
+      {% for block in section.blocks %}
+        <div
+          x-show="activeTab === {{ forloop.index }}"
+          class="fsp-tab__description-container"
+        >
+          <div class="fsp-tab__description-wrapper">
+            <p class="fsp-tab__description text--white text--center">{{ block.settings.description }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "FSP Tab",
+  "max_blocks": 2,
+  "settings": [
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title",
+      "default": "Flexible vs. Traditional Solar Panels"
+    },
+    {
+      "type": "html",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Flexible solar panels and traditional solar panels both convert sunlight into electricity, but they're different in a few key ways. "
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tab",
+      "name": "Tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Tab Title",
+          "default": "Flexible solar panels"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image Mobile"
+        },
+        {
+          "type": "html",
+          "id": "description",
+          "label": "Description",
+          "default": "Traditional solar panels, on the other hand, are rigid and sturdier and tend to be more efficient. They're made of thick, crystalline silicon cells that can capture more sunlight and convert it into electricity. Since they're more robust and substantial, they're best for mounting on flat, sturdy surfaces like roofs. At EcoFlow, we have a variety of flexible and rigid solar panels to suit your project."
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

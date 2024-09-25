@@ -1,0 +1,97 @@
+
+{%- if section.blocks.size > 0 -%}
+    <div class="where-to-buy-container">
+        {%- if section.settings.country_title != blank -%}<div class="section-title"><span></span><div>{{ section.settings.country_title }}</div></div>{%- endif -%}
+        <div class="countries-blocks per-row-{{ section.settings.blocks_per_page }}" style="--image-height: {{section.settings.image_height}}px;--image-height-mobile: {{section.settings.image_height_mobile}}px;">
+            {%- for block in section.blocks -%}
+                <div class="country-block">
+                    {%- if block.settings.url != blank -%}
+                        <a class="country-block-inner" target="_blank" href="{{ block.settings.url }}">
+                    {%- else -%}
+                        <div class="country-block-inner">
+                    {%- endif -%}
+                    {%- if block.settings.image != blank -%}
+                        <img srcset="{{ block.settings.image | img_url: '1000x' }}" loading="lazy" />
+                    {%- endif -%}
+                    {%- if block.settings.url != blank -%}</a>{%- else -%}</div>{%- endif -%}
+                </div>
+            {%- endfor -%}
+        </div>
+        {%- if section.blocks.size > 6 %}
+            <div class="show-more-btn">
+                <span>SHOW MORE</span>
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.5" y="0.5" width="21" height="21" rx="10.5" fill="white"/>
+                <path d="M5.75 11H16.25" stroke="#1D1D1D" stroke-width="3"/>
+                <path d="M11 5.75L11 16.25" stroke="#1D1D1D" stroke-width="3"/>
+                </svg>
+            </div>
+        {% endif %}
+    </div>
+{% endif %}
+{% schema %}
+  {
+    "name": "Countries",
+    "settings": [
+        {
+            "type": "text",
+            "label": "Country title",
+            "id": "country_title"
+        },
+        {
+            "type": "range",
+            "label": "Blocks per page",
+            "id": "blocks_per_page",
+            "min": 4,
+            "max": 7,
+            "step": 1,
+            "default": 7
+        },
+        {
+            "type": "range",
+            "label": "Block Image height",
+            "id": "image_height",
+            "min": 50,
+            "max": 100,
+            "default": 87,
+            "step": 1,
+            "unit": "px"
+        },
+        {
+            "type": "range",
+            "label": "Block Image height(Mobile)",
+            "id": "image_height_mobile",
+            "min": 50,
+            "max": 100,
+            "default": 66,
+            "step": 1,
+            "unit": "px"
+        }
+
+    ],
+    "blocks": [
+        {
+            "type": "country-block",
+            "name": "Country-block",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "label": "Image",
+                    "id": "image"
+                },
+                {
+                    "type": "url",
+                    "label": "Image url",
+                    "id": "url"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Where to buy - countries",
+            "category": "Custom"
+        }
+    ]
+  }
+{% endschema %}

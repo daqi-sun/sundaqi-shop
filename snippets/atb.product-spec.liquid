@@ -1,0 +1,116 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "Product Spec",
+  "id": "product-spec",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "class": "efwa-product-spec",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "type": "checkbox",
+      "id": "atb_enable_checkbox",
+      "label": "Enable section",
+      "default": true,
+      "info": ""
+    },
+    {
+      "id": "atb_title",
+      "type": "text",
+      "label": "Heading",
+      "default": "Tamaño de pantalla",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "blocks",
+      "label": "Block ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": "",
+      "repeatable": "spec"
+    },
+    {
+      "id": "block_spec_name",
+      "type": "text",
+      "label": "Spec Name",
+      "default": "Tamaño de pantalla",
+      "repeatable": "spec",
+      "info": ""
+    },
+    {
+      "id": "block_spec_detail",
+      "type": "wysiwyg",
+      "label": "Spec Details",
+      "default": "Lorem ipsum dolor sit amet, consectetur",
+      "repeatable": "spec",
+      "info": ""
+    }
+  ],
+  "warnings": []
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_enable_checkbox' -%}
+{%- assign atb_enable_checkbox = val -%}
+{%- include 'atb-render' field:'atb_title' -%}
+{%- assign atb_title = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_spec_name' -%}
+{%- assign block_spec_name = val -%}
+{%- include 'atb-render' field:'block_spec_detail' -%}
+{%- assign block_spec_detail = val -%}
+{%- if atb_enable_checkbox == blank -%}
+{%- assign atb_enable_checkbox = false -%}
+{%- else -%}
+{%- assign atb_enable_checkbox = true -%}
+{%- endif -%}
+{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section ">
+{% if atb_enable_checkbox %}
+  <section class="product-intro" id="product-spec">
+    <div class="white-bg my-md-5 py-md-3 my-4 bordertop specs-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7 mx-auto">
+            <div class="intro-heading">
+              <h2>{{atb_title}}</h2>
+            </div>
+          </div>
+          <div class="col-10 mx-auto">
+            <div class="row last-two-border-zero">
+            {% for block0 in blocks %}
+              <div class="col-md-6 px-md-5">
+                <div class="specs-inner">
+                  <h2 class="m-0">{{block_spec_name[forloop.index0]}}</h2>
+                  <p class="m-0">{{block_spec_detail[forloop.index0]}} </p>
+                </div>
+              </div>
+             {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+
+<style>
+</style>
+
+<script type="application/javascript">
+</script>
+</section>

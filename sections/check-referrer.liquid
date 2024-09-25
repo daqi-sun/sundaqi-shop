@@ -1,0 +1,279 @@
+{% if section.settings.enable and section.blocks.size > 0 %}
+  <script type="text/javascript">
+    let URLArray = [];
+    let paramArray = [];
+    let window_location = window.location.href;
+    let validURL = true;
+    let validParamURLStr = '';
+    let redirect_link = '/';
+
+    function checkReferrer(URLString, check_referrer, referrer_condition, referrer_url){
+      if(check_referrer){
+        if(referrer_condition == 'is_not_blank'){
+          if(document.referrer != '') URLString = URLString + ' true';
+          else URLString = URLString + ' false';
+        }
+        else if(referrer_condition == 'match'){
+          if(document.referrer == referrer_url) URLString = URLString + ' true';
+          else URLString = URLString + ' false';
+        }
+        else if(referrer_condition == 'contains'){
+          if(document.referrer.indexOf(referrer_url) > -1) URLString = URLString + ' true';
+          else URLString = URLString + ' false';
+        }
+        else{
+          URLString = URLString + ' false';
+        }
+      }
+
+      return URLString;
+    }
+
+    function checkUserStatus(logged_in, redirect_to_login_page, URLString, tag_condition, products_tag, return_link){
+      if(logged_in){
+        {% if customer %}
+          URLString = URLString + ' true';
+          products_tag = products_tag.split(',');
+
+          var all_tags_matched = '';
+          var product_tags_str = '';
+          {%- for order in customer.orders -%}
+              {%- for line_item in order.line_items -%}
+                  var line_item_product_tags = '{{ line_item.product.tags | join: ',' }}';
+                  product_tags_str = product_tags_str + ',' + line_item_product_tags;
+              {%- endfor -%}
+          {%- endfor -%}
+
+          for(var i=0; i<products_tag.length; i++){
+              var tag = products_tag[i];
+              if(product_tags_str.indexOf(tag) > -1){
+                  all_tags_matched = all_tags_matched + ' true';
+              }
+              else{
+                  all_tags_matched = all_tags_matched + ' false';
+              }
+          }
+
+          if(tag_condition == 'any'){
+              if(all_tags_matched.indexOf('true') > -1) URLString = URLString + ' true';
+              else URLString = URLString + ' false';
+          }
+          else{
+              if(all_tags_matched.indexOf('false') > -1) URLString = URLString + ' false';
+              else URLString = URLString + ' true';
+          }
+
+
+        {%- else -%}
+          URLString = URLString + ' false';
+          if(redirect_to_login_page) redirect_link = "https://account.ecoflow.com/login?return_to=" + return_link;
+        {%- endif -%}
+      }
+
+      return URLString;
+    }
+
+    {% for block in section.blocks %}
+      {%- comment %}<locksmith:7655>{% endcomment -%}
+        {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+      {%- comment %}</locksmith:7655>{% endcomment -%}
+      {% if block.type == 'url' %}
+        var URLString = '';
+        if(window_location == '{{ block.settings.url }}'){
+          URLString = 'true';
+          var check_referrer = {{ block.settings.check_referrer }};
+          var referrer_condition = '{{ block.settings.referrer }}';
+          var referrer_url = '{{ block.settings.referrer_url }}';
+          URLString = checkReferrer(URLString, check_referrer, referrer_condition, referrer_url)
+
+          var logged_in = {{ block.settings.use_logged_in }};
+          var redirect_to_login_page = {{ block.settings.redirect_to_login_page }};
+          var tag_condition = '{{ block.settings.tag_condition }}';
+          var products_tag = "{{ block.settings.products_tag }}";
+          var return_link = '{{ block.settings.url }}';
+          URLString = checkUserStatus(logged_in, redirect_to_login_page, URLString, tag_condition, products_tag, return_link);
+        }
+        else{ URLString = 'false'; }
+
+        if (URLString.indexOf('false') > -1) validParamURLStr = validParamURLStr + ' false';
+        else validParamURLStr = validParamURLStr + ' true';
+      {% endif %}
+      {% if block.type == 'parameter' %}
+        var URLString = '';
+        var referrer_condition = '{{ block.settings.referrer }}';
+        var referrer_url = '{{ block.settings.referrer_url }}';
+        var param_1 = '{{ block.settings.param_1 }}';
+        var param_2 = '{{ block.settings.param_2 }}';
+        var param_3 = '{{ block.settings.param_3 }}';
+
+        if(window_location.indexOf(param_1) > 0 && window_location.indexOf(param_2) > 0 && window_location.indexOf(param_3) > 0){
+          URLString = 'true';
+          var check_referrer = {{ block.settings.check_referrer }};
+          URLString = checkReferrer(URLString, check_referrer, referrer_condition, referrer_url);
+
+          var logged_in = {{ block.settings.use_logged_in }};
+          var redirect_to_login_page = {{ block.settings.redirect_to_login_page }};
+          var tag_condition = '{{ block.settings.tag_condition }}';
+          var products_tag = "{{ block.settings.products_tag }}";
+          var return_link = "https://{{ request.host }}{{ request.path }}%3F" + param_1 + "%26" + param_2 + "%26" + param_3;
+          URLString = checkUserStatus(logged_in, redirect_to_login_page, URLString, tag_condition, products_tag, return_link);
+        }
+        else{ URLString = 'false'; }
+
+        if (URLString.indexOf('false') > -1) validParamURLStr = validParamURLStr + ' false';
+        else validParamURLStr = validParamURLStr + ' true';
+      {% endif %}
+    {% endfor %}
+
+    if(validParamURLStr.indexOf('true') > -1) validURL = true;
+    else validURL = false;
+
+    if(Shopify.designMode) validURL = true;
+
+    //console.log(validURL);
+
+    if(!validURL) window.location.replace(redirect_link);
+  </script>
+{% endif %}
+{% schema %}
+{
+"name": "URL checkup",
+"settings": [
+{
+  "id":"enable",
+  "type":"checkbox",
+  "label":"Enable URL checking?"
+}
+],
+"blocks": [
+{
+  "type": "url",
+  "name": "URL",
+  "settings": [
+    {
+      "id": "url",
+      "type": "text",
+      "label": "URL"
+    },
+    {
+      "id": "check_referrer",
+      "type": "checkbox",
+      "label": "Check document referrer"
+    },
+    {
+      "id": "referrer",
+      "type": "select",
+      "label": "Document referrer",
+      "options": [
+        { "value": "is_not_blank", "label": "Is not empty" },
+        { "value": "match", "label": "Match with URL" },
+        { "value": "contains", "label": "Contains URL" }
+      ]
+    },
+    {
+      "id": "referrer_url",
+      "type": "text",
+      "label": "Referrer URL"
+    },
+    {
+      "id": "use_logged_in",
+      "type": "checkbox",
+      "label": "For logged in users only?"
+    },
+    {
+      "id": "redirect_to_login_page",
+      "type": "checkbox",
+      "label": "Redirect to Login page if not logged in?",
+      "default": true
+    },
+    {
+      "id": "tag_condition",
+      "type": "select",
+      "label": "Tag condition criteria",
+      "options": [
+        { "value": "all", "label": "All tags" },
+        { "value": "any", "label": "Any tags" }
+      ]
+    },
+    {
+      "id": "products_tag",
+      "type": "textarea",
+      "label": "List of tags for products separated by comma"
+    }
+  ]
+},
+{
+  "type": "parameter",
+  "name": "Parameters",
+  "settings": [
+    {
+      "id": "param_1",
+      "type": "text",
+      "label": "Parameter 1"
+    },
+    {
+      "id": "param_2",
+      "type": "text",
+      "label": "Parameter 2"
+    },
+    {
+      "id": "param_3",
+      "type": "text",
+      "label": "Parameter 3"
+    },
+    {
+      "id": "check_referrer",
+      "type": "checkbox",
+      "label": "Check document referrer"
+    },
+    {
+      "id": "referrer",
+      "type": "select",
+      "label": "Document referrer",
+      "options": [
+        { "value": "is_not_blank", "label": "Is not empty" },
+        { "value": "match", "label": "Match with URL" },
+        { "value": "contains", "label": "Contains URL" }
+      ]
+    },
+    {
+      "id": "referrer_url",
+      "type": "text",
+      "label": "Referrer URL"
+    },
+    {
+      "id": "use_logged_in",
+      "type": "checkbox",
+      "label": "For logged in users only?"
+    },
+    {
+      "id": "redirect_to_login_page",
+      "type": "checkbox",
+      "label": "Redirect to Login page if not logged in?",
+      "default": true
+    },
+    {
+      "id": "tag_condition",
+      "type": "select",
+      "label": "Tag condition criteria",
+      "options": [
+        { "value": "all", "label": "All tags" },
+        { "value": "any", "label": "Any tags" }
+      ]
+    },
+    {
+      "id": "products_tag",
+      "type": "textarea",
+      "label": "List of tags for products separated by comma"
+    }
+  ]
+}
+],
+"presets": [
+  {
+      "name": "URL checkup",
+      "category":"Custom Sections"
+  }
+]
+}
+{% endschema %}

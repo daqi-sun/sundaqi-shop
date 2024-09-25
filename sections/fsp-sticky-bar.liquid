@@ -1,0 +1,128 @@
+<style>
+  .fsp-sticky__section-{{ section.id }} {
+
+    background: {{ section.settings.background_color }};
+  }
+</style>
+<div class="display--desktop">
+  <div class="sticky-placeholder"></div>
+  <div class="fsp-sticky__section fsp-sticky__section-{{ section.id }}">
+    <div class="fsp-sticky__wrapper container--wide">
+      <ul class="fsp-sticky__block-container">
+        {% for block in section.blocks %}
+          <a
+            class="fsp-sticky__block {% if forloop.index == 1 %} active {% endif %}"
+            href="#_{{ block.settings.title | downcase | remove: ' ' | replace: '&', '-' }}"
+          >
+            <li
+              title="{{ block.settings.title }}"
+            >
+              <span>{{ block.settings.title }}</span>
+            </li>
+          </a>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  const targetSection = document.querySelector('.fsp-sticky__section');
+  let targetSectionPosition;
+  let placeholder = document.querySelector('.sticky-placeholder');
+  const anchors = document.querySelectorAll('.fsp-sticky__block-container a');
+
+  anchors.forEach((anchor) => {
+    anchor.addEventListener('click', function (event) {
+      event.preventDefault();
+      anchors.forEach((a) => {
+        a.classList.remove('active');
+      });
+      this.classList.add('active');
+      const targetId = this.getAttribute('href');
+      document.querySelector(targetId).scrollIntoView({
+        behavior: 'smooth',
+      });
+    });
+  });
+
+  function updateStickySection() {
+    targetSectionPosition = placeholder.getBoundingClientRect().top + window.pageYOffset;
+    handleScroll();
+  }
+
+  function handleScroll() {
+    const scrollPosition = window.pageYOffset;
+    const totalHeight = targetSectionPosition;
+    if (scrollPosition > totalHeight) {
+      placeholder.style.height = `${targetSection.offsetHeight}px`;
+      targetSection.classList.add('sticky');
+    } else {
+      placeholder.style.height = '0';
+      targetSection.classList.remove('sticky');
+    }
+  }
+
+  function handleIntersection(entries) {
+    entries.forEach((entry) => {
+      const targetId = entry.target.getAttribute('id');
+      const correspondingAnchor = document.querySelector(`.fsp-sticky__block-container a[href="#${targetId}"]`);
+      if (correspondingAnchor) {
+        if (entry.isIntersecting) {
+          correspondingAnchor.classList.add('active');
+        } else {
+          correspondingAnchor.classList.remove('active');
+        }
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(handleIntersection, { threshold: 0.3 });
+  const sections = document.querySelectorAll('.section');
+  sections.forEach((section) => {
+    observer.observe(section);
+  });
+
+  window.addEventListener('resize', updateStickySection);
+  window.addEventListener('scroll', handleScroll);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    placeholder = document.querySelector('.sticky-placeholder');
+    updateStickySection();
+    anchors.forEach((anchor) => {
+      const targetId = anchor.getAttribute('href');
+      const section = document.querySelector(targetId);
+      if (section) {
+        observer.observe(section);
+      }
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "FSP Sticky",
+  "class": "fsp-sticky-section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "sticky",
+      "name": "Sticky Bar",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Tab Title",
+          "default": "DELTA Series"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

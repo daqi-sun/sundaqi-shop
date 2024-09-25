@@ -1,0 +1,101 @@
+<div class="ecocredits-earn__section background--black" id="_{{- section.settings.nav_1 | downcase | remove: ' ' -}}">
+  <div class="ecocredits-earn__container container--normal">
+    <div class="ecocredits-earn__wrapper">
+      {% if section.settings.title != blank %}
+        <h2 class="ecocredits-earn__title ec__text--white">{{ section.settings.title }}</h2>
+      {% endif %}
+
+      <div class="ecocredits-earn__steps__container">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'steps_wide' %}
+              <div class="ecocredits-earn__steps--wide">
+                {% if block.settings.image != blank %}
+                  <div class="ecocredits-earn__image__container">
+                    <img
+                      src="{{ block.settings.image | img_url: 'master' }}"
+                      alt="{{ block.settings.image.alt }}"
+                    >
+                  </div>
+                {% endif %}
+                {% if block.settings.title != blank %}
+                  <h3 class="ec__text--white">{{ block.settings.title }}</h3>
+                {% endif %}
+              </div>
+
+            {% else %}
+              <div class="ecocredits-earn__steps--short">
+                {% if block.settings.image != blank %}
+                  <div class="ecocredits-earn__image__container">
+                    <img
+                      src="{{ block.settings.image | img_url: 'master' }}"
+                      alt="{{ block.settings.image.alt }}"
+                    >
+                  </div>
+                {% endif %}
+                {% if block.settings.title != blank %}
+                  <h3 class="ec__text--white">{{ block.settings.title }}</h3>
+                {% endif %}
+              </div>
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Ecocredits Earn",
+  "settings": [
+    {
+      "type": "text",
+      "id": "nav_1",
+      "label": "Section ID Should be the same on the navigation on RAL section",
+      "default": "How to earn"
+    },
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Section Title",
+      "default": "How to earn even more EcoCredits?"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "steps_short",
+      "name": "Steps Short",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Register a purchased product to earn 2x EcoCredits from 2023.3.27 8AM (UTC)"
+        }
+      ]
+    },
+    {
+      "type": "steps_wide",
+      "name": "Steps Wide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Register a purchased product to earn 2x EcoCredits from 2023.3.27 8AM (UTC)"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,273 @@
+.star-email-subscription__container {
+    width: 100%;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: 400px;
+}
+
+.star-email-subscription__wrapper,
+.star-email-subscription__wrapper--success {
+    margin: 0;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 95px 72px;
+}
+
+.star-email-subscription__wrapper {
+    padding: 95px 72px;
+}
+
+.star-email-subscription__wrapper--success {
+    padding: 78.5px 72px;
+}
+
+.star-email-subscription__text-wrapper {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.star-email-subscription__form-title {
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Helvetica Neue ForEco';
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28.8px;
+    margin-bottom: 12px;
+}
+
+.star-email-subscription__form-description {
+    color: #ffffff;
+    font-family: 'Helvetica Neue ForEco';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.8px;
+}
+
+.star-email-subscription__form {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    max-width: 456px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.star-email-subscription__input-field {
+    border-radius: 4px 0px 0px 4px;
+    border: 1px solid;
+    padding: 14px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    outline: none;
+    flex: 1;
+}
+
+.star-email-subscription__input-field:focus {
+    outline: none;
+}
+
+.star-email-subscription__input-field::placeholder {
+    color: #AFAFAF;
+}
+
+.star-email-subscription__input-button {
+    border-radius: 0px 4px 4px 0px;
+    padding: 0px 45px;
+    text-align: center;
+    font-family: 'Manrope';
+    font-size: 14px;
+    font-weight: 700;
+    outline: none;
+    border: none;
+    white-space: nowrap;
+}
+
+.star-email-subscription__input-button:disabled {
+    background-color: #c4c4c4 !important;
+}
+
+.star-email-subscription__error {
+    color: #ff1f33;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.57;
+    margin-bottom: 20px;
+    display: none;
+}
+
+.star-email-subscription__disclaimer-wrapper {
+    width: 100%;
+    display: grid;
+    place-content: center;
+}
+
+.star-email-subscription__disclaimer {
+    display: block;
+    position: relative;
+    padding-left: 24px;
+    cursor: pointer;
+    user-select: none;
+    width: fit-content;
+}
+
+.star-email-subscription__disclaimer p {
+    margin: 0;
+    color: #ffffff;
+    font-family: 'Manrope';
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.star-email-subscription__disclaimer p>a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Hide the default checkbox */
+.star-email-subscription__disclaimer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.star-email-subscription__disclaimer .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: #fff;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    /* This is the border color */
+}
+
+/* When the checkbox is checked, add a black background */
+.star-email-subscription__disclaimer input:checked~.checkmark {
+    background-color: #03060B;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.star-email-subscription__disclaimer .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.star-email-subscription__disclaimer input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.star-email-subscription__disclaimer .checkmark:after {
+    left: 5.1px;
+    top: 2.3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.star-email-subscription__success-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 20px;
+}
+
+.star-email-subscription__success-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.star-email-subscription__success-button-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.star-email-subscription__success-button {
+    background-color: transparent;
+    border-radius: 4px;
+    border: 1px solid #ffffff;
+    padding: 14px 57.5px;
+    color: #ffffff;
+    font-family: 'Manrope';
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.star-email-subscription__successful-link,
+.star-email-subscription__successful-link:hover {
+    color: #ffffff;
+    font-family: 'Manrope';
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration-line: underline;
+}
+
+@media (max-width: 1024px) {
+    .star-email-subscription__container {
+        align-items: flex-end;
+        justify-content: center;
+        min-height: initial;
+    }
+
+    .star-email-subscription__wrapper {
+        width: 100%;
+        padding: calc(100% / 2.33) 24px 24px 24px;
+    }
+
+    .star-email-subscription__wrapper--success {
+        width: 100%;
+        padding: 38px 24px 57px 24px;
+    }
+
+    .star-email-subscription__title {
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 12px;
+    }
+
+    .star-email-subscription__form {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .star-email-subscription__input-field {
+        border-radius: 4px;
+        width: 100%;
+    }
+
+    .star-email-subscription__input-button {
+        border-radius: 4px;
+        padding-top: 13px;
+        padding-bottom: 13px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 749px) {
+    .star-email-subscription__success-button-link {
+        width: 100%;
+    }
+
+    .star-email-subscription__success-button {
+        padding: 14px 20px;
+        width: 100%;
+    }
+}

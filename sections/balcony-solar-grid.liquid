@@ -1,0 +1,274 @@
+<style>
+  {% for block in section.blocks %}
+      .balcony-solar-grid__item--{{ forloop.index }} .balcony-solar-grid__item__title {
+          color: {{ block.settings.title_color }};
+      }
+  {% endfor %}
+</style>
+
+<div class="balcony-solar-grid__section">
+  <div class="container--normal">
+    <div class="balcony-solar-grid__text-container hb__text--center">
+      {% if section.settings.title != blank %}
+        <h2 class="balcony-solar-grid__heading hb__text--heading hb__text--black">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+      {% if section.settings.subtitle != blank %}
+        <p class="balcony-solar-grid__description hb__text--description hb__text--black">
+          {{ section.settings.subtitle }}
+        </p>
+      {% endif %}
+    </div>
+    <div class="display--desktop">
+      <div class="balcony-solar-grid__container">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'grid' %}
+              <div class="balcony-solar-grid__item balcony-solar-grid__item--{{ forloop.index }} balcony-solar-grid__item--default hb__relative">
+                <img
+                  class="hb__border-radius--8"
+                  src="{{ block.settings.image | img_url: 'master' }}"
+                  alt="{{ block.settings.image.alt }}"
+                >
+                <div
+                  class="balcony-solar-grid__image--overlay {% if block.settings.background_color == 'black' %} balcony-solar-grid__image--black {% elsif block.settings.background_color == 'white' %} balcony-solar-grid__image--white {% endif %}"
+                ></div>
+                <p class="balcony-solar-grid__item__title balcony-solar-grid__item__title--default hb__text--left">
+                  {{ block.settings.title }}
+                </p>
+              </div>
+            {% when 'grid_tall' %}
+              <div class="balcony-solar-grid__item balcony-solar-grid__item--{{ forloop.index }} balcony-solar-grid__item--tall hb__relative">
+                <img
+                  class="hb__border-radius--8"
+                  src="{{ block.settings.image | img_url: 'master' }}"
+                  alt="{{ block.settings.image.alt }}"
+                >
+                <div
+                  class="balcony-solar-grid__image--overlay {% if block.settings.background_color == 'black' %} balcony-solar-grid__image--black {% elsif block.settings.background_color == 'white' %} balcony-solar-grid__image--white {% endif %}"
+                ></div>
+                <p class="balcony-solar-grid__item__title balcony-solar-grid__item__title--tall hb__text--left">
+                  {{ block.settings.title }}
+                </p>
+              </div>
+            {% when 'grid_wide' %}
+              <div class="balcony-solar-grid__item balcony-solar-grid__item--{{ forloop.index }} balcony-solar-grid__item--wide hb__relative">
+                <img
+                  class="hb__border-radius--8"
+                  src="{{ block.settings.image | img_url: 'master' }}"
+                  alt="{{ block.settings.image.alt }}"
+                >
+                <div
+                  class="balcony-solar-grid__image--overlay {% if block.settings.background_color == 'black' %} balcony-solar-grid__image--black {% elsif block.settings.background_color == 'white' %} balcony-solar-grid__image--white {% endif %}"
+                ></div>
+                <p class="balcony-solar-grid__item__title balcony-solar-grid__item__title--wide hb__text--left">
+                  {{ block.settings.title }}
+                </p>
+              </div>
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="display--mobile">
+      <div class="swiper-container-mobile balcony-solar-grid__wrapper">
+        <div class="swiper-wrapper balcony-solar-grid__slider__container">
+          {% for block in section.blocks %}
+            <div class="swiper-slide balcony-solar-grid__item balcony-solar-grid__item--{{ forloop.index }} balcony-solar-grid__item--default hb__relative">
+              <img
+                class="hb__border-radius--8"
+                src="{{ block.settings.image_mobile | img_url: 'master' }}"
+                alt="{{ block.settings.image_mobile.alt }}"
+              >
+              <div
+                class="balcony-solar-grid__image--overlay {% if block.settings.background_color == 'black' %} balcony-solar-grid__image--black {% elsif block.settings.background_color == 'white' %} balcony-solar-grid__image--white {% endif %}"
+              ></div>
+              <p class="balcony-solar-grid__item__title balcony-solar-grid__item__title--default hb__text--left">
+                {{ block.settings.title }}
+              </p>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var swiper = new Swiper('.swiper-container-mobile', {
+      slidesPerView: 'auto',
+      freeMode: true,
+      autoHeight: true,
+      grabCursor: true,
+      spaceBetween: 15,
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Balcony Solar Grid",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Stromspeicher von EcoFlow – stets mit Energie versorgt "
+    },
+    {
+      "type": "html",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Hat Ihnen schon einmal jemand gesagt, dass sich Solaranlagen und Stromspeicher gar nicht lohnen würden und dabei zu viel Strom verschwendet werde? Bitte schenken Sie diesem Gerücht keinen Glauben! EcoFlow beweist Ihnen gerne das Gegenteil: Unsere Solar- und Batteriespeicher machen möglich, wovon wir vor einigen Jahren nur träumen konnten. Nachhaltiger, selbst erzeugter Strom kann in unseren Solaranlagen mit Speicher nicht nur effizient erzeugt werden – er wird auch so lange gespeichert, bis wir ihn in unseren Haushaltsgeräten benötigen."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "grid",
+      "name": "Grid",
+      "settings": [
+        {
+          "type": "color",
+          "id": "title_color",
+          "label": "Title Color",
+          "default": "#212121"
+        },
+        {
+          "type": "select",
+          "id": "background_color",
+          "label": "Background Overlay Color",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "black",
+              "label": "Black"
+            },
+            {
+              "value": "white",
+              "label": "White"
+            }
+          ],
+          "default": "none"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Section Image Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Section Image Mobile"
+        },
+        {
+          "type": "html",
+          "id": "title",
+          "label": "Section Title",
+          "default": "Leise, sicher und emissionsfrei – Solaranlagen mit Stromspeicher für Ihr Zuhause"
+        }
+      ]
+    },
+    {
+      "type": "grid_tall",
+      "name": "Grid Tall",
+      "settings": [
+        {
+          "type": "color",
+          "id": "title_color",
+          "label": "Title Color",
+          "default": "#212121"
+        },
+        {
+          "type": "select",
+          "id": "background_color",
+          "label": "Background Overlay Color",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "black",
+              "label": "Black"
+            },
+            {
+              "value": "white",
+              "label": "White"
+            }
+          ],
+          "default": "none"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Section Image Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Section Image Mobile"
+        },
+        {
+          "type": "html",
+          "id": "title",
+          "label": "Section Title",
+          "default": "Leise, sicher und emissionsfrei – Solaranlagen mit Stromspeicher für Ihr Zuhause"
+        }
+      ]
+    },
+    {
+      "type": "grid_wide",
+      "name": "Grid Wide",
+      "settings": [
+        {
+          "type": "color",
+          "id": "title_color",
+          "label": "Title Color",
+          "default": "#212121"
+        },
+        {
+          "type": "select",
+          "id": "background_color",
+          "label": "Background Overlay Color",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "black",
+              "label": "Black"
+            },
+            {
+              "value": "white",
+              "label": "White"
+            }
+          ],
+          "default": "none"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Section Image Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Section Image Mobile"
+        },
+        {
+          "type": "html",
+          "id": "title",
+          "label": "Section Title",
+          "default": "Leise, sicher und emissionsfrei – Solaranlagen mit Stromspeicher für Ihr Zuhause"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

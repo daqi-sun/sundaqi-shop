@@ -1,0 +1,112 @@
+{{ 'off-grid.css' | asset_url | stylesheet_tag }}
+
+<div class="off-grid-banner {% if section.settings.flexStyle %} off-grid-banner--flex-style {% endif %}">
+  {% assign image = section.settings.mobileImage %}
+  {% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+  <div
+    class="custom-img-wrapper mobile-only"
+    style="padding-top: {{ pt }}%;"
+  >
+    <img
+      class="custom-img"
+      loading="lazy"
+      srcset="
+        {{ image | img_url: '500x' }} 500w,
+        {{ image | img_url: '600x' }} 600w,
+        {{ image | img_url: 'master' }} 700w,
+      "
+      alt="{{ image.alt }}"
+    >
+  </div>
+
+  {% assign image = section.settings.image %}
+  {% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+  <div
+    class="custom-img-wrapper desktop-only"
+    style="padding-top: {{ pt }}%;"
+  >
+    <img
+      class="custom-img"
+      srcset="
+        {{ image | img_url: '1000x' }} 1000w,
+        {{ image | img_url: '1200x' }} 1200w,
+        {{ image | img_url: '1400x' }} 1400w,
+        {{ image | img_url: 'master' }} 1600w,
+      "
+      alt="{{ image.alt }}"
+      loading="lazy"
+    >
+  </div>
+
+  <div class="off-grid-banner__content">
+    {% if section.settings.title != blank %}
+      <h1>
+        {{ section.settings.title }}
+      </h1>
+    {% endif %}
+    {% if section.settings.p != blank %}
+      <p>
+        {{ section.settings.p }}
+      </p>
+    {% endif %}
+    {% if section.settings.buttonText != blank %}
+      <a id="btn-scroll-section" class="btn--container" href="#">
+        <div class="off-grid-banner-btn">
+          {{ section.settings.buttonText }}
+          <svg xmlns="http://www.w3.org/2000/svg" width="13.617" height="8.309" viewBox="0 0 13.617 8.309">
+            <path id="Path_58" data-name="Path 58" d="M893.323-227.95l4.687,4.687,4.687-4.687" transform="translate(-891.202 230.071)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+          </svg>
+        </div>
+      </a>
+    {% endif %}
+  </div>
+</div>
+
+<script>
+  var btnLink = document.querySelector('#btn-scroll-section');
+
+  btnLink.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    var currentSection = this.closest('.shopify-section');
+    var nextSection = currentSection.nextElementSibling;
+    if (nextSection) {
+      var nextSectionTop = nextSection.offsetTop;
+
+      window.scroll({
+        top: nextSectionTop,
+        behavior: 'smooth',
+      });
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Off Grid Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobileImage",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title",
+      "default": "off-grid Solar Panels"
+    },
+    {
+      "type": "text",
+      "id": "buttonText",
+      "label": "Button text",
+      "default": "Keep Reading"
+    }
+  ]
+}
+{% endschema %}

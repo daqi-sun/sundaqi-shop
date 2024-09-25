@@ -1,0 +1,195 @@
+{%- if section.settings.enabled -%}
+  {%- assign current_variant = product.selected_or_first_available_variant -%}
+  {% for variant in product.variants %}
+    {% if variant == current_variant and variant.metafields.custom.for_member_only == false %}
+      {% assign variant_index = forloop.index %}
+      {%- assign current_variant = product.variants[variant_index] -%}
+    {% endif %}
+  {% endfor %}
+  {% assign button_text = product.metafields.custom.button_text %}
+  {% assign button_url = product.metafields.custom.button_url %}
+  {% assign button_2_text = product.metafields.custom.external_button_2_text %}
+  {% assign button_2_url = product.metafields.custom.external_button_2_url %}
+
+  {% if button_text != blank and button_url != blank %}
+    {% assign external_button = true %}
+  {% endif %}
+
+  {% if button_2_text != blank and button_2_url != blank %}
+    {% assign external_button = true %}
+  {% endif %}
+      <div class="product-info-sticky-wrapper hideMobile">
+        <div class="page-width-small">
+          <div class="sticky-product-info-bar">
+            <div class="product-name">{{ product.title }}</div>
+            <div class="sticky-price-wrapper">
+              {% if product.metafields.custom.show_price != false %}
+                <div class="product-price limoniapps-discountninja-productprice">
+                  {% if settings.currency_code_enable %}
+                    {% if current_variant.price > 999900 %}
+                      {{ current_variant.price | money_with_currency | replace: ',00', '' | replace: '.', ' ' }}
+                    {% else %}
+                      {{ current_variant.price | money_with_currency | replace: ',00', '' | replace: '.', '' }}
+                    {% endif %}
+                  {% else %}
+                    {% if current_variant.price > 999900 %}
+                      {{ current_variant.price | money | replace: ',00', '' | replace: '.', ' ' }}
+                    {% else %}
+                      {{ current_variant.price | money | replace: ',00', '' | replace: '.', '' }}
+                    {% endif %}
+                  {% endif %}
+                </div>
+              {% endif %}
+              <div class="shop-now-btn">
+                {% assign show_atc_for_variant = true %}
+                  {% if current_variant.metafields.custom.for_member_only == true %}
+                    {% if customer %}
+                      {% assign show_atc_for_variant = true %}
+                    {% else %}
+                      {% assign show_atc_for_variant = false %}
+                    {% endif %}
+                  {% endif %}
+                {% if product.metafields.custom.show_atc_button == false %}
+                {% else %}
+                <button class="btn sticky-shop-now-btn {% unless current_variant.available %}disabled{% endunless %}{% unless show_atc_for_variant %}hide{% endunless %} " {% unless current_variant.available %}disabled="disabled"{% endunless %} data-add-to-cart>
+                  <span data-sticky-add-to-cart-text>
+                  {% unless current_variant.available %}
+                    {{ 'products.product.sold_out' | t }}
+                  {% else %}
+                    {{ 'products.product.add_to_cart' | t }}
+                  {% endunless %}
+                  </span>
+                  <span class="hide" data-sticky-loader>
+                    {% include 'icon-spinner' %}
+                  </span>
+                  </button>
+                  {% unless customer %}
+                    <a href="https://account.ecoflow.com/login?return_to=https://{{ request.host }}{{ request.path }}?variant={{ current_variant.id }}" {% if show_atc_for_variant %}style="display: none;"{% endif %} class="btn member_only_login_btn">{{ 'products.product.login' | t }}</a>
+                  {% endunless %}
+                {% endif %}
+                {% if button_text != blank and button_url != blank %}
+                  <a href="{{ button_url }}" target="_blank" class="btn {% if settings.show_external_btn_1_blue %}blue-external-btn{% endif %}">{{ button_text }}</a>
+                {% endif %}
+                {% if button_2_text != blank and button_2_url != blank %}
+                  <a href="{{ button_2_url }}" target="_blank" class="btn {% if settings.show_external_btn_2_blue %}blue-external-btn{% endif %}">{{ button_2_text }}</a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {%- if section.settings.enabled_tabs and section.blocks.size > 0 -%}
+      <div class="sticky-tabs-wrapper">
+        <div class="page-width-small">
+          <div class="sticky-tabs-inner">
+              {%- for block in section.blocks -%}
+                {% if block.settings.section_class != blank %}
+                <a href="#" data-section-class="{{ block.settings.section_class }}">{{ block.settings.tab_title }}</a>
+                {% else %}
+                <a href="#{{ block.settings.tab_id }}">{{ block.settings.tab_title }}</a>
+                {% endif %}
+              {%- endfor -%}
+          </div>
+        </div>
+      </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          // Get all the <a> tags with data-section-class attribute on the page
+          const links = document.querySelectorAll('a[data-section-class]');
+
+          // If there are any links with the data-section-class attribute present
+          if (links.length) {
+            // Loop through each <a> tag
+            for (let i = 0; i < links.length; i++) {
+              // Get the value of the data-section-class attribute
+              const sectionClass = links[i].getAttribute('data-section-class');
+
+              // Get the id of the section with the class name of the data-section-class attribute
+              const section = document.querySelector(`.${sectionClass}`);
+
+              if (section) {
+                const sectionId = section.getAttribute('id');
+
+                // Change the href attribute to the value of the data-section-class attribute
+                links[i].setAttribute('href', `#${sectionId}`);
+              }
+            }
+          }
+        });
+      </script>
+      {%- endif -%}
+  {%- endif -%}
+
+  <script>
+    (function() {
+      let productStickyBar = document.querySelector('.product-sticky-bar')
+      if(productStickyBar) {
+        function checkAddToCartButton() {
+          let atcButton = document.querySelector('[data-add-to-cart]')
+            scrolled = window.pageYOffset,
+            atcButtonOffsetTop = productStickyBar.offsetTop + 100
+          if (scrolled > atcButtonOffsetTop) productStickyBar.classList.add('active')
+          else productStickyBar.classList.remove('active')
+        }
+        window.addEventListener('scroll', checkAddToCartButton)
+      }
+    })()
+  </script>
+
+  {% schema %}
+  {
+    "name": "Sticky bar",
+    "class": "product-sticky-bar",
+    "settings": [
+      {
+          "type":"checkbox",
+      "id":"enabled",
+      "label":"Enabled sticky bar",
+      "default": true
+      },
+      {
+          "type":"checkbox",
+      "id":"enabled_tabs",
+      "label":"Enabled anchor tabs",
+      "default": true
+      }
+    ],
+    "blocks": [
+      {
+        "type":"tab",
+        "name":"Anchor tab",
+        "settings": [
+          {
+            "type":"text",
+            "id":"tab_title",
+            "label": "Tab title"
+          },
+          {
+            "type":"text",
+            "id":"tab_id",
+            "label": "Section id"
+          },
+          {
+            "type": "header",
+            "content": "Class selector",
+            "info": "Use this when it is a dynamic section. You can find the unique class selector of that section with the dynamic ID."
+          },
+          {
+            "type":"text",
+            "id":"section_class",
+            "label": "Section class",
+            "info": "Note: when this has value, the Section id above will be ignored."
+          },
+          {
+            "type": "paragraph",
+            "content": "Example: <section id=\"template--15149783941193__f5e8ee6e-5b49-40e3-8e72-7e4236f2065f\" class=\"pdp pdp-specs\">"
+          },
+          {
+            "type": "paragraph",
+            "content": "On example above the unique class we can use is pdp-specs class name, then it will automatically grab the dynamic ID and create the anchor link."
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

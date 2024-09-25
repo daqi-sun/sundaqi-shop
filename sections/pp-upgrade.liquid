@@ -1,0 +1,113 @@
+<style>
+  .pp-upgrade__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .pp-upgrade__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+
+<div class="pp-upgrade__section pp-upgrade__section-{{ section.id }}">
+  <div class="pp-upgrade__wrapper background--dark-white">
+    <div class="pp-upgrade__content-container">
+      <div class="pp-upgrade__text-container">
+        {% if section.settings.title != blank %}
+          <h2 class="pp-upgrade__section-heading text--heading text--black">
+            {{ section.settings.title }}
+          </h2>
+        {% endif %}
+        {% if section.settings.subtitle != blank %}
+          <p class="pp-upgrade__section-description text--description text--gray">
+            {{ section.settings.subtitle }}
+          </p>
+        {% endif %}
+      </div>
+      <div class="pp-upgrade__image-wrapper">
+        <img
+          src="{{ section.settings.image | img_url: 'master' }}"
+          alt="{{ section.settings.image.alt }}"
+        >
+      </div>
+      <div class="pp-upgrade__bottom-container">
+        <p class="pp-upgrade__section-description text--description text--gray">
+          {{ section.settings.bottom_description }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "PP Upgrade",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": " Was macht das EcoFlow-Balkonkraftwerk mit 600 und 800 W Wechselrichtern so besonders?"
+    },
+    {
+      "type": "html",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Die Vorteile unseres Balkonkraftwerks und unseres PowerStream Balkon-Solarsystem werden am deutlichsten, wenn wir es mit den bisher am Markt verfügbaren Lösungen vergleichen. Das Balkonkraftwerk mit Netzanschluss speist den erzeugten Solarstrom in das öffentliche Stromnetz ein. Sie haben jedoch keine Speichermöglichkeit und funktionieren daher nicht als Notstromaggregat. Es gibt auch Solarbatterien für unterwegs oder zu Hause. Die mobilen Lösungen können wir während des Betriebs nicht aufladen. Heimlösungen müssen in der Regel von einem Fachmann installiert werden."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image Desktop"
+    },
+
+    {
+      "type": "html",
+      "id": "bottom_description",
+      "label": "Bottom Description"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ]
+}
+{% endschema %}

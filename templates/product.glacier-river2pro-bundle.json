@@ -1,0 +1,740 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "sticky-product-bar": {
+      "type": "sticky-product-bar",
+      "blocks": {
+        "588d25af-4d47-43ac-9697-b98aa2f65719": {
+          "type": "tab",
+          "disabled": true,
+          "settings": {
+            "tab_title": "Overview",
+            "tab_id": "product_information",
+            "section_class": ""
+          }
+        },
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4": {
+          "type": "tab",
+          "disabled": true,
+          "settings": {
+            "tab_title": "FAQ",
+            "tab_id": "faq",
+            "section_class": ""
+          }
+        },
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38": {
+          "type": "tab",
+          "disabled": true,
+          "settings": {
+            "tab_title": "Reviews",
+            "tab_id": "section-reviews",
+            "section_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "588d25af-4d47-43ac-9697-b98aa2f65719",
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4",
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38"
+      ],
+      "settings": {
+        "enabled": true,
+        "enabled_tabs": true
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "11795adc-1afa-4833-a193-258f495901ef": {
+          "type": "sku_block",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e": {
+          "type": "product_title",
+          "settings": {
+          }
+        },
+        "judge_me_reviews_preview_badge_BXBUnP": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "0471109f-c130-454e-a9ba-c56412cc11f3": {
+          "type": "product_vendor",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185": {
+          "type": "product_price",
+          "settings": {
+          }
+        },
+        "d25a0285-4fb4-422d-b95b-ab67446120ad": {
+          "type": "product_description",
+          "settings": {
+            "desc_display": "default"
+          }
+        },
+        "919f9cdd-6184-4311-b675-742931504318": {
+          "type": "coupon_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Component_2_1.png",
+            "discount_off_text": "{{ product.metafields.custom.discount_off_text.value }}",
+            "code": "{{ product.metafields.custom.discount_code.value }}",
+            "show_copy_code_btn": true
+          }
+        },
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879": {
+          "type": "product_options_block",
+          "settings": {
+            "show_product_swatches": true,
+            "use_variant_image_for_swatches": true,
+            "button_content": ""
+          }
+        },
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe": {
+          "type": "quantity_block",
+          "settings": {
+          }
+        },
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0": {
+          "type": "accessories_section",
+          "settings": {
+            "title": "Accessories",
+            "metafield": "accessories"
+          }
+        },
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609": {
+          "type": "product_buttons",
+          "settings": {
+            "enable_payment_button": false,
+            "show_custom_icons": true,
+            "custom_payment_logo_1_svg": "",
+            "custom_payment_logo_2_svg": "",
+            "custom_payment_logo_3_svg": "",
+            "custom_payment_logo_4_svg": "",
+            "custom_payment_logo_5_svg": "",
+            "custom_payment_logo_6_svg": "",
+            "custom_payment_logo_7_svg": "",
+            "custom_payment_logo_8_svg": "",
+            "custom_payment_logo_9_svg": "",
+            "custom_payment_logo_10_svg": "",
+            "custom_payment_logo_11_svg": "",
+            "custom_payment_logo_12_svg": "",
+            "custom_payment_logo_13_svg": "",
+            "custom_payment_logo_14_svg": "",
+            "custom_payment_logo_15_svg": ""
+          }
+        },
+        "a6857d85-dbb6-41d1-9501-c01cf5bbe11f": {
+          "type": "back_in_stock",
+          "disabled": true,
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "11795adc-1afa-4833-a193-258f495901ef",
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e",
+        "judge_me_reviews_preview_badge_BXBUnP",
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774",
+        "0471109f-c130-454e-a9ba-c56412cc11f3",
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185",
+        "d25a0285-4fb4-422d-b95b-ab67446120ad",
+        "919f9cdd-6184-4311-b675-742931504318",
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879",
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe",
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0",
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609",
+        "a6857d85-dbb6-41d1-9501-c01cf5bbe11f"
+      ],
+      "settings": {
+        "section_id": "",
+        "show_breadcrumbs": false,
+        "show_pick_an_option": false,
+        "enable_linked_options": false,
+        "enabled_mobile_sticky_btns": true,
+        "media_size": "medium",
+        "enable_image_zoom": true,
+        "enable_video_looping": true,
+        "thumbnails_type": "grid",
+        "support_email": "",
+        "support_text": "",
+        "feature_1_show": true,
+        "feature_1_title": "Fast & Free Shipping",
+        "feature_1_content": "",
+        "feature_2_show": true,
+        "feature_2_title": "Warranty Protection",
+        "feature_2_content": "",
+        "feature_3_show": true,
+        "feature_3_title": "Secure Payments",
+        "feature_3_content": "",
+        "feature_4_show": true,
+        "feature_4_title": "Multi-channel Support",
+        "feature_4_content": ""
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "grid_mobile": "2",
+        "heading": "You may also like",
+        "show_vendor": false
+      }
+    },
+    "3457daa7-eb8c-4f1a-9b77-6d6dff3ed929": {
+      "type": "pdp-rich-text",
+      "custom_css": [
+
+      ],
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 10,
+        "section_bottom_spacing": 20,
+        "section_top_spacing_mobile": 5,
+        "section_bottom_spacing_mobile": 5,
+        "alignment": "center",
+        "title": "",
+        "subtitle": "<h3>¡Un tiempo de ejecución asombroso de 98 horas en modo Eco con EcoFlow RIVER 2 Pro y la batería Plug-in conectada a GLACIER! ¡Comida fresca y refrescos fríos al alcance durante más de 4 días! Ya sea que esté en un SUV, camioneta, RV o tienda de campaña, ¡nunca tendrá hambre!<\/h3>",
+        "content": "",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "b73840d9-8058-4ea2-949d-6ba695b4b492": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "La primera máquina de hielo integrada del sector.",
+        "subtitle": "<p><strong>Compresor de 120 W<\/strong><\/p>",
+        "content": "<p><strong>Equipada con un potente compresor de 120 W, te proporcionará 18 cubitos de hielo en 12 minutos.[1] Acompaña todas las aventuras de tu viaje con refrescos fríos.<\/strong><br\/><br\/>* El resultado de la prueba se obtuvo con la nevera vacía, la temperatura ajustada a 4 °C y una temperatura ambiente de 25 °C.<\/p>",
+        "button_link": "",
+        "button_text": "",
+        "media_type": "video",
+        "video_type": "mp4",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/3b04fb35048c4b2e91c1ef6cee00a3ef.mp4",
+        "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/d460fe78722548a9a2364f8198aa64bd.mp4",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "918c4837-422c-4db7-b4a2-d03323a455c4": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "Lo mejor de una nevera-congelador.",
+        "subtitle": "<p><strong>Bizona, doble control.<\/strong><\/p>",
+        "content": "<p><strong>Equipada con un divisor extraíble que la separa en dos zonas y un control de temperatura independiente, ambas secciones pueden refrigerar y congelar desde 50 °F (10 °C) hasta -13 °F (-25 °C). Carne, queso o refrescos... independientemente de lo que quieras almacenar, se adapta a tus necesidades.<\/strong><\/p>",
+        "button_link": "",
+        "button_text": "",
+        "media_type": "video",
+        "video_type": "mp4",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/ce6acda98f7b4cac824ed764b2b8a0e9.mp4",
+        "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e289d6d0d79d4cb686240cbde7e6d66b.mp4",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": ""
+      }
+    },
+    "d66c4a37-0ab5-4ca7-8a90-beb9a2c843c0": {
+      "type": "pdp-image-with-text-horizontal-new",
+      "blocks": {
+        "58498170-1581-4316-9cac-d5a30c53f234": {
+          "type": "image",
+          "settings": {
+            "media_type": "video",
+            "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/1bdec4349bfa4916a1d28e338634e0c4.mp4",
+            "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/1bdec4349bfa4916a1d28e338634e0c4.mp4",
+            "autoplay_video": true,
+            "image_alignment": "left",
+            "title": "La refrigeración más rápida del sector.",
+            "subtitle": "",
+            "content": "<p><strong>La nevera GLACIER enfría a la velocidad óptima cuando está vacía, de 30 °C a 0 °C en unos 15 minutos.<\/strong><\/p>",
+            "button_link": "",
+            "button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "58498170-1581-4316-9cac-d5a30c53f234"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "left",
+        "space_bw_blocks": 0
+      }
+    },
+    "2d1c3e92-ab4a-4494-b8e2-9e52e18f445f": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "Refrigeración hasta 40 horas sin cables.",
+        "subtitle": "<p><strong>Batería enchufable de 298 Wh<\/strong><\/p>",
+        "content": "<p><strong>Diseñada para proporcionar una portabilidad absoluta, la nevera GLACIER puede obtener alimentación mediante una batería enchufable[2], por lo que no se verá limitada por la longitud de los cables.Con una batería de gran capacidad de 298 Wh, podrás disfrutar de hasta 40 horas[3] de fácil acceso a comidas congeladas, fruta fresca y bebidas heladas.<\/strong><\/p><p>* La batería enchufable se vende por separado.<br\/>* El resultado de la prueba se obtuvo con la nevera vacía, la temperatura ajustada a 4 °C y una temperatura ambiente de 25 °C.<\/p>",
+        "button_link": "",
+        "button_text": "",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/GLACIER-07-battery.png",
+        "mobile_image": "shopify:\/\/shop_images\/M-GLACIER-07-battery.png",
+        "video_type": "mp4",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "mp4_video_url": "",
+        "mp4_video_url_m": "",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": ""
+      }
+    },
+    "eea0c4c6-456d-48ec-838c-1bf5ab991d93": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "Carga tu portátil y mucho más sobre la marcha.",
+        "subtitle": "<p><strong>USB-C de 100 W máx.<\/strong><\/p>",
+        "content": "<p><strong>Con un puerto de carga USB-C de 100 W como máximo, incluso puede cargar tus teléfonos y portátiles para que nunca pierdas el contacto con tus seres queridos.<\/strong><\/p>",
+        "button_link": "",
+        "button_text": "",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/GLACIER-08.png",
+        "mobile_image": "shopify:\/\/shop_images\/M-GLACIER-08.png",
+        "video_type": "mp4",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "mp4_video_url": "",
+        "mp4_video_url_m": "",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": ""
+      }
+    },
+    "0519c2a0-eae1-45c9-bc16-0bef504bbbfc": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "La carga más rápida hasta la fecha.",
+        "subtitle": "<p><strong>Carga 0-100% en 70 min<\/strong><\/p>",
+        "content": "<p><strong>RIVER 2 Pro supera el estándar del sector en cuanto a velocidad de carga, alcanzando la carga completa en solo 70 minutos. Es decir, 5 veces más rápido que otras estaciones de energía portátiles del mercado y un 27 % más rápido que las generaciones anteriores. Carga completamente la RIVER 2 Pro mientras haces las maletas, para estar siempre preparado para viajes de última hora.<\/strong><\/p>",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "video",
+        "video_type": "mp4",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/12339fc3c5ff4f4da34626266ff976bc.mp4",
+        "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/12339fc3c5ff4f4da34626266ff976bc.mp4",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "8cf68180-f853-48df-9072-ad2229ec50b9": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "Segura, hasta 10 años de uso.",
+        "subtitle": "<p><strong>Química de batería LiFePO4<\/strong><\/p>",
+        "content": "<p><strong>Con la química de batería LFP de larga duración mejorada en su núcleo, podrás cargar y agotar la batería de la SerieRIVER 2 más de 3000 veces. Esto se traduce en prácticamente 10 años de uso diario1 6 veces más que la media del sector.<\/strong><\/p><p>Con las celdas LFP, la Serie RIVER 2 Serie es segura, duradera y altamente eficiente, incluso a altas temperaturas.<\/p>",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/R2P-3000years.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/M-R2P-3000years.jpg",
+        "video_type": "mp4",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "mp4_video_url": "",
+        "mp4_video_url_m": "",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "a29f2b7e-c87d-41e5-a337-8d856a6eaa04": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "Tamaño reducido. Gran potencia.",
+        "subtitle": "<p><strong>Hasta 1600 W con X-Boost<\/strong><\/p>",
+        "content": "<p><strong>RIVER 2 Pro tiene una salida de CA de hasta 800 W. ¿Necesitas alimentar un secador de pelo, un microondas o un hervidor eléctrico? Consigue hasta 1600 W con el modo X-Boost para utilizar hasta el 80 % de tus electrodomésticos de alta potencia.<\/strong><\/p>",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "video",
+        "video_type": "mp4",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/dea5976d191c41a5b1c7d7ff36f020ba.mp4",
+        "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/dea5976d191c41a5b1c7d7ff36f020ba.mp4",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "55da6e01-7b13-4fa6-b985-de573b746941": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "Carga dondequiera.",
+        "subtitle": "<p>Toma el control con solar<\/p>",
+        "content": "<p><strong>El generador solar RIVER 2 Pro produce hasta 1,8 kWh al día, suficiente energía para alimentar sin problemas los electrodomésticos esenciales durante casi medio día. ¿Cortes de electricidad repentinos? Siempre estarás preparado.El uso del generador solar RIVER 2 Pro a diario reduce tus emisiones anuales de carbono en unos 284 kg. ¡El equivalente a plantar 16 árboles en un año!*<\/strong><\/p><p>*Basado en la emisión de carbono promedio de 0,736 kg\/kWh y una duración promedio de la luz solar de 6 horas\/día.<\/p>",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/R2P-solar_charge.png",
+        "mobile_image": "shopify:\/\/shop_images\/M-R2P-solar_charge.png",
+        "video_type": "mp4",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "mp4_video_url": "",
+        "mp4_video_url_m": "",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "c2d6654e-c56d-4556-8857-709667908743": {
+      "type": "pdp-specs",
+      "blocks": {
+        "3d0793c4-e505-4afc-8f59-75b81df8f0f7": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de CA",
+            "content": "<p>100-240 V, 50\/60 Hz, 180 W<\/p>"
+          }
+        },
+        "afbf26f2-d811-42b6-8440-3a4487013c3f": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de carga mediante energía solar",
+            "content": "<p>240 W (11-60 V, 13 A MÁX.)<\/p>"
+          }
+        },
+        "26e9c21f-90cc-4504-8415-ec2795cc27bc": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de carga de coche",
+            "content": "<p>192 W (12\/24 V, 8 A MÁX.)<\/p>"
+          }
+        },
+        "19377af7-ebea-42a5-914c-c1cd31d8e1ea": {
+          "type": "contents",
+          "settings": {
+            "title": "Potencia del paquete de baterías",
+            "content": "<p>100 W (USB-C)<\/p>"
+          }
+        },
+        "aedd994c-83a4-47e7-912a-11067e096dff": {
+          "type": "contents",
+          "settings": {
+            "title": "Volumen operativo",
+            "content": "<p>Una zona: 38 L; Bizona: 36 L<\/p>"
+          }
+        },
+        "c4d514e9-ce85-4c2a-a69d-d7dfb16f8748": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso neto",
+            "content": "<p>23 kg<\/p>"
+          }
+        },
+        "5f01ec48-a8d1-460c-a07d-25a94267d72b": {
+          "type": "contents",
+          "settings": {
+            "title": "Dimensiones (ruedas y asas no incluidas)",
+            "content": "<p>776 × 385 × 445 mm<\/p>"
+          }
+        },
+        "5f045bc3-9da0-4d86-8ab5-30fb8e04eeb7": {
+          "type": "contents",
+          "settings": {
+            "title": "Clasificación IP",
+            "content": "<p>IPX4<\/p>"
+          }
+        },
+        "64342ee8-f241-4e1a-8040-34dd58c44397": {
+          "type": "contents",
+          "settings": {
+            "title": "Rango de temperatura de refrigeración",
+            "content": "<p> -25 °C a 10 °C (temperatura ambiente a 25° C)<\/p>"
+          }
+        },
+        "e0937ac1-8655-47d4-82bf-23a020f978b9": {
+          "type": "contents",
+          "settings": {
+            "title": "Nivel acústico (funcionamiento estable)",
+            "content": "<p>máquina de hielo: &lt;52 dB; Refrigeración: &lt;42 dB<\/p>"
+          }
+        },
+        "0aa80949-6b6e-4f32-a5cb-2239661815dc": {
+          "type": "contents",
+          "settings": {
+            "title": "Cantidad\/Tipo de refrigeración",
+            "content": "<p>R600a, 32 g<\/p>"
+          }
+        },
+        "207982f8-8e57-4233-9f7f-911398045779": {
+          "type": "contents",
+          "settings": {
+            "title": "Modo de congelación rápida (30℃ a 0℃)",
+            "content": "<p>15 minutos<\/p>"
+          }
+        },
+        "897a9de1-c607-48c9-9b34-a927aa168459": {
+          "type": "contents",
+          "settings": {
+            "title": "Potencia nominal de refrigeración",
+            "content": "<p>120 W<\/p>"
+          }
+        },
+        "9c9a2c5e-0c17-47e7-90ae-244309ef2e26": {
+          "type": "contents",
+          "settings": {
+            "title": "Bluetooth",
+            "content": "<p>√<\/p>"
+          }
+        },
+        "29870530-ec9f-4290-853a-0f44c74f270e": {
+          "type": "contents",
+          "settings": {
+            "title": "Wi-Fi",
+            "content": "<p>este producto solamente es compatible con las redes Wi-Fi de 2,4G<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "3d0793c4-e505-4afc-8f59-75b81df8f0f7",
+        "afbf26f2-d811-42b6-8440-3a4487013c3f",
+        "26e9c21f-90cc-4504-8415-ec2795cc27bc",
+        "19377af7-ebea-42a5-914c-c1cd31d8e1ea",
+        "aedd994c-83a4-47e7-912a-11067e096dff",
+        "c4d514e9-ce85-4c2a-a69d-d7dfb16f8748",
+        "5f01ec48-a8d1-460c-a07d-25a94267d72b",
+        "5f045bc3-9da0-4d86-8ab5-30fb8e04eeb7",
+        "64342ee8-f241-4e1a-8040-34dd58c44397",
+        "e0937ac1-8655-47d4-82bf-23a020f978b9",
+        "0aa80949-6b6e-4f32-a5cb-2239661815dc",
+        "207982f8-8e57-4233-9f7f-911398045779",
+        "897a9de1-c607-48c9-9b34-a927aa168459",
+        "9c9a2c5e-0c17-47e7-90ae-244309ef2e26",
+        "29870530-ec9f-4290-853a-0f44c74f270e"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Especificaciones de GLACIER"
+      }
+    },
+    "7e6cc59f-5e96-4d89-aa41-887919b74054": {
+      "type": "pdp-specs",
+      "blocks": {
+        "b2eef36c-f30f-4e1e-927d-c98d835bad17": {
+          "type": "contents",
+          "settings": {
+            "title": "Capacidad",
+            "content": "<p>768Wh<\/p>"
+          }
+        },
+        "3481793e-c2e3-4eb3-9f91-19d011899a86": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso neto",
+            "content": "<p>Aproximadamente 7,8kg<\/p>"
+          }
+        },
+        "dbe3a06c-ebcf-4c69-9e8a-3d8456ef8476": {
+          "type": "contents",
+          "settings": {
+            "title": "Dimensiones",
+            "content": "<p>270 × 260 x 226 mm<\/p>"
+          }
+        },
+        "7ae0bb8a-ea1c-43e5-b41d-487250cef6c6": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de CA",
+            "content": "<p>220-240V~ 50Hz\/60Hz, 870W Máx.<\/p>"
+          }
+        },
+        "99172e1b-0e9e-45c7-a093-fbf68f88b141": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada Solar",
+            "content": "<p>11-50V 13A, 220W Máx.<\/p>"
+          }
+        },
+        "5cc0af3f-4bcf-41d0-86af-f7416c18ad8e": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada\/Salida USB-C",
+            "content": "<p>5\/9\/12\/15\/20V 5A, 100W Máx<\/p>"
+          }
+        },
+        "f3f9e14b-9c83-4282-9481-19037631aeee": {
+          "type": "contents",
+          "settings": {
+            "title": "Salida de CC",
+            "content": "<p>12.6V, 10A\/3A\/3A, 126W Máx.<\/p>"
+          }
+        },
+        "14ccf8ef-ec40-4072-9f22-4372faefc269": {
+          "type": "contents",
+          "settings": {
+            "title": "Salida USB-A",
+            "content": "<p>5V, 2.4A, 12W Máx<\/p>"
+          }
+        },
+        "59af2b5f-2399-447c-b240-68434c84402e": {
+          "type": "contents",
+          "settings": {
+            "title": "Salida de CA",
+            "content": "<p>Onda sinusoidal pura, 800 W total (máximo 1600 W), 230 V ~ 50\/60 Hz<\/p>"
+          }
+        },
+        "444f181d-2a69-4d3d-b2ee-1e3a833f401c": {
+          "type": "contents",
+          "settings": {
+            "title": "Ciclos de vida útil",
+            "content": "<p>3000 ciclos a más del 80 % de la capacidad<\/p>"
+          }
+        },
+        "e79061f5-5be0-47a0-af27-f3adf99e6157": {
+          "type": "contents",
+          "settings": {
+            "title": "Temperatura de carga",
+            "content": "<p>Entre 0 °C y 45 °C<\/p>"
+          }
+        },
+        "8e371af7-ae1c-4d72-8fbc-5759d7c547b2": {
+          "type": "contents",
+          "settings": {
+            "title": "Temperatura de almacenamiento",
+            "content": "<p>Entre -10°C y 45°C (lo mejor es entre 20°C y 30°C)<\/p>"
+          }
+        },
+        "403dc634-c24a-4766-90e6-f54c3f035c8f": {
+          "type": "contents",
+          "settings": {
+            "title": "Salida DC5521",
+            "content": "<p>12.6V, 3A, 36W Máx<\/p>"
+          }
+        },
+        "3f99e86b-1ab9-4b41-a418-f901274ad9e5": {
+          "type": "contents",
+          "settings": {
+            "title": "Química de las celdas",
+            "content": "<p>LFP<\/p>"
+          }
+        },
+        "1d132d29-d7ad-42d3-be5f-3fd14150d90b": {
+          "type": "contents",
+          "settings": {
+            "title": "Temperatura de descarga",
+            "content": "<p>Entre -10°C y 45°C<\/p>"
+          }
+        },
+        "d40a08e3-c01f-4530-a054-3e8b5df4cc9c": {
+          "type": "contents",
+          "settings": {
+            "title": "Temperatura de funcionamiento óptima",
+            "content": "<p>Entre 20 °C y 30 °C<\/p>"
+          }
+        },
+        "ecfe403d-bfcf-4d8c-ac19-cc5bb61ce940": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada del Coche",
+            "content": "<p>12V\/24V, 8A, 100W Máx<\/p>"
+          }
+        },
+        "45443e14-41e1-4835-ae58-736a4372e999": {
+          "type": "contents",
+          "settings": {
+            "title": "Control mediante aplicación",
+            "content": "<p>Wi-Fi, Bluetooth<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "b2eef36c-f30f-4e1e-927d-c98d835bad17",
+        "3481793e-c2e3-4eb3-9f91-19d011899a86",
+        "dbe3a06c-ebcf-4c69-9e8a-3d8456ef8476",
+        "7ae0bb8a-ea1c-43e5-b41d-487250cef6c6",
+        "99172e1b-0e9e-45c7-a093-fbf68f88b141",
+        "5cc0af3f-4bcf-41d0-86af-f7416c18ad8e",
+        "f3f9e14b-9c83-4282-9481-19037631aeee",
+        "14ccf8ef-ec40-4072-9f22-4372faefc269",
+        "59af2b5f-2399-447c-b240-68434c84402e",
+        "444f181d-2a69-4d3d-b2ee-1e3a833f401c",
+        "e79061f5-5be0-47a0-af27-f3adf99e6157",
+        "8e371af7-ae1c-4d72-8fbc-5759d7c547b2",
+        "403dc634-c24a-4766-90e6-f54c3f035c8f",
+        "3f99e86b-1ab9-4b41-a418-f901274ad9e5",
+        "1d132d29-d7ad-42d3-be5f-3fd14150d90b",
+        "d40a08e3-c01f-4530-a054-3e8b5df4cc9c",
+        "ecfe403d-bfcf-4d8c-ac19-cc5bb61ce940",
+        "45443e14-41e1-4835-ae58-736a4372e999"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Especificaciones de RIVER 2 Pro"
+      }
+    },
+    "171412019828249f00": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_HrjFqp": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_HrjFqp"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    }
+  },
+  "order": [
+    "sticky-product-bar",
+    "main",
+    "product-recommendations",
+    "3457daa7-eb8c-4f1a-9b77-6d6dff3ed929",
+    "b73840d9-8058-4ea2-949d-6ba695b4b492",
+    "918c4837-422c-4db7-b4a2-d03323a455c4",
+    "d66c4a37-0ab5-4ca7-8a90-beb9a2c843c0",
+    "2d1c3e92-ab4a-4494-b8e2-9e52e18f445f",
+    "eea0c4c6-456d-48ec-838c-1bf5ab991d93",
+    "0519c2a0-eae1-45c9-bc16-0bef504bbbfc",
+    "8cf68180-f853-48df-9072-ad2229ec50b9",
+    "a29f2b7e-c87d-41e5-a337-8d856a6eaa04",
+    "55da6e01-7b13-4fa6-b985-de573b746941",
+    "c2d6654e-c56d-4556-8857-709667908743",
+    "7e6cc59f-5e96-4d89-aa41-887919b74054",
+    "171412019828249f00"
+  ]
+}

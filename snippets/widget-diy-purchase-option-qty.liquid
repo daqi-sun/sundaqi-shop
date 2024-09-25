@@ -1,0 +1,46 @@
+{% liquid
+  assign default_quantity = default_quantity | times: 1 | default: 0
+  assign minimum_quantity = minimum_quantity | times: 1 | default: 0
+  assign watt = watt | times: 1
+  if default_quantity > 0
+    assign wattValue = watt | times: default_quantity
+  else
+    assign wattValue = watt
+  endif
+%}
+
+<div class="qty product-page-qty diy-purchase__option__qty {% if watt > 0 %}diy-purchase__option__qty--with-watt{% endif %}">
+  <a href='javascript:void(0);' class="minus_btn qty_btn disabled">
+    <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" fill-rule="evenodd">
+        <path d="M0 0h40v40H0z"/>
+        <rect fill="currentColor" x="12" y="19.125" width="15.758" height="1.751" rx=".875"/>
+      </g>
+    </svg>
+  </a>
+  <input
+    type="text"
+    name="quantity"
+    value="{{ default_quantity }}"
+    min="{{ minimum_quantity }}"
+    data-default-quantity="{{ default_quantity }}"
+    pattern="[0-9]*"
+    class="product-form__input product-form__input--quantity"
+    {% if watt %}data-watt="{{ watt }}"{% endif %}
+    data-quantity-input
+  >
+  <a href='javascript:void(0);' class="plus_btn qty_btn">
+    <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" fill-rule="evenodd">
+        <path d="M0 0h40v40H0z"/>
+        <rect fill="#03060B" x="12" y="19.125" width="15.758" height="1.751" rx=".875"/>
+        <path d="M19.003 27.003V12.997a.875.875 0 0 1 1.751 0v14.006a.875.875 0 0 1-1.75 0z" fill="#03060B"/>
+      </g>
+    </svg>
+  </a>
+  {% if watt > 0 %}
+  <div class="diy-purchase__option-watt-value">
+    Total: <span class="diy-purchase__watt-value">{{ wattValue }}</span>W
+  </div>
+  {% endif %}
+</div>

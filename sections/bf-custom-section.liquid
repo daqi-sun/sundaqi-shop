@@ -1,0 +1,382 @@
+<div class="bf-custom-section section-{{section.id}}">
+    <div class="star-page-container">
+        {% if section.settings.title != blank %}
+            <div class="{% if section.settings.title_m != blank %}hideMobile{% endif %}">
+                <div class="title">
+                    {{ section.settings.title }}
+                </div>
+            </div>
+        {% endif %}
+        {% if section.settings.title_m != blank %}
+            <div class="hideDesktop">
+                <div class="title">
+                    {{ section.settings.title_m }}
+                </div>
+            </div>
+        {% endif %}
+
+        <div class="custom-section-inner">
+            <div class="bf-row row-1">
+                <div class="parent-column column-1">
+                    <span>Nov</span>
+                    <span>8-14</span>
+                </div>
+                <div class="parent-column column-2">
+                    <div class="column"><span>15</span></div>
+                    <div class="column"><span>20</span></div>
+                    <div class="column"><span>21</span></div>
+                    <div class="column"><span>22</span></div>
+                    <div class="column"><span>23</span></div>
+                    <div class="column highlight-column"><span>24</span><span class="hideMobile">{{ section.settings.black_friday }}</span></div>
+                    <div class="column"><span>25</span></div>
+                    <div class="column"><span>26</span></div>
+                    <div class="column highlight-column"><span>27</span><span class="hideMobile">{{ section.settings.cyber_monday }}</span></div>
+                    <div class="column highlight-column highlight-number-none"><span>28</span><span class="hideMobile">{{ section.settings.cet }}</span></div>
+                </div>
+            </div>
+            <div class="bf-row row-2">
+                <div class="parent-column column-1">
+                    <div class="column-inner">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="47" height="49" viewBox="0 0 47 49" fill="none">
+                            <path d="M10.2824 16.5474L32.3126 7.3418L35.8376 16.5474M17.3304 25.1855H22.6199M17.3304 30.7085H29.6699M5.87512 16.5474H41.1251V22.0704C38.4824 22.0704 35.8376 23.9107 35.8376 27.1322C35.8376 30.3538 38.4824 33.1163 41.1251 33.1163V38.6392H5.87512V33.1163C8.51988 33.1163 11.1626 31.276 11.1626 27.5933C11.1626 23.9107 8.51786 22.0704 5.87512 22.0704V16.5474Z" stroke="#040D1C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <div class="hideMobile">{{ section.settings.column_text }}</div>
+                        <div class="hideDesktop">{{ section.settings.column_text_m }}</div>
+                    </div>
+                </div>
+                <div class="parent-column column-2">
+                    {% if section.settings.popup_line_1 != blank %}
+                    <div class="yellow-bar yellow-bar-1 active" target="criteria-popup">
+                        <div class="bf-popup-trigger">{{ section.settings.popup_line_1 }}</div>
+                        {% if section.settings.popup_content_1 != blank %}
+                        <div class="bf-popup-content criteria-popup">
+                            <div class="bf-popup-close">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40" fill="none">
+                                    <path d="M20.0734 36.173C29.312 36.173 36.8013 28.8115 36.8013 19.7305C36.8013 10.6496 29.312 3.28809 20.0734 3.28809C10.8349 3.28809 3.34555 10.6496 3.34555 19.7305C3.34555 28.8115 10.8349 36.173 20.0734 36.173Z" fill="black" fill-opacity="0.4"/>
+                                    <path d="M25.0918 14.7979L15.0551 24.6633" stroke="white" stroke-width="1.11111" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.0551 14.7979L25.0918 24.6633" stroke="white" stroke-width="1.11111" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            {{ section.settings.popup_content_1 }}
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                    {% if section.settings.popup_line_2 != blank %}
+                    <div class="yellow-bar yellow-bar-2 active" target="ecocredit-popup">
+                        <div class="bf-popup-trigger">{{ section.settings.popup_line_2 }}</div>
+                        {% if section.settings.popup_content_2 != blank %}
+                        <div class="bf-popup-content ecocredit-popup">
+                            <div class="bf-popup-close">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40" fill="none">
+                                    <path d="M20.0734 36.173C29.312 36.173 36.8013 28.8115 36.8013 19.7305C36.8013 10.6496 29.312 3.28809 20.0734 3.28809C10.8349 3.28809 3.34555 10.6496 3.34555 19.7305C3.34555 28.8115 10.8349 36.173 20.0734 36.173Z" fill="black" fill-opacity="0.4"/>
+                                    <path d="M25.0918 14.7979L15.0551 24.6633" stroke="white" stroke-width="1.11111" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.0551 14.7979L25.0918 24.6633" stroke="white" stroke-width="1.11111" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            {{ section.settings.popup_content_2 }}
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                    {% if section.settings.popup_line_5 != blank %}
+                        <div class="yellow-bar yellow-bar-3 active" target="flash-sale-popup">
+                            <div class="bf-popup-trigger">{{ section.settings.popup_line_5 }}</div>
+                            {% if section.settings.popup_content_5 != blank %}
+                            <div class="bf-popup-content flash-sale-popup">
+                                <div class="bf-popup-close">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40" fill="none">
+                                        <path d="M20.0734 36.173C29.312 36.173 36.8013 28.8115 36.8013 19.7305C36.8013 10.6496 29.312 3.28809 20.0734 3.28809C10.8349 3.28809 3.34555 10.6496 3.34555 19.7305C3.34555 28.8115 10.8349 36.173 20.0734 36.173Z" fill="black" fill-opacity="0.4"/>
+                                        <path d="M25.0918 14.7979L15.0551 24.6633" stroke="white" stroke-width="1.11111" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M15.0551 14.7979L25.0918 24.6633" stroke="white" stroke-width="1.11111" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                {{ section.settings.popup_content_5 }}
+                            </div>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                    <div class="column">&nbsp;</div>
+                    <div class="column">&nbsp;</div>
+                    <div class="column">&nbsp;</div>
+                    <div class="column">&nbsp;</div>
+                    <div class="column">&nbsp;</div>
+                    <div class="column highlight-column">
+                        <div class="yellow-bar active" target="b1g1-popup">
+                        {% if section.settings.popup_line_6 != blank %}
+                            <div class="bf-popup-trigger">{{ section.settings.popup_line_6 }}</div>
+                            {% if section.settings.popup_content_6 != blank %}
+                            <div class="bf-popup-content b1g1-popup">
+                                <div class="bf-popup-close">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40" fill="none">
+                                        <path d="M20.0734 36.173C29.312 36.173 36.8013 28.8115 36.8013 19.7305C36.8013 10.6496 29.312 3.28809 20.0734 3.28809C10.8349 3.28809 3.34555 10.6496 3.34555 19.7305C3.34555 28.8115 10.8349 36.173 20.0734 36.173Z" fill="black" fill-opacity="0.4"/>
+                                        <path d="M25.0918 14.7979L15.0551 24.6633" stroke="white" stroke-width="1.11111" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M15.0551 14.7979L25.0918 24.6633" stroke="white" stroke-width="1.11111" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                {{ section.settings.popup_content_6 }}
+                            </div>
+                            {% endif %}
+                        {% endif %}
+                        {% if section.settings.popup_line_7 != blank %}
+                            {% if section.settings.popup_content_7 != blank %}
+                                <div class="bf-popup-content b1g1-2-popup">
+                                    <div class="bf-popup-close">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40" fill="none">
+                                            <path d="M20.0734 36.173C29.312 36.173 36.8013 28.8115 36.8013 19.7305C36.8013 10.6496 29.312 3.28809 20.0734 3.28809C10.8349 3.28809 3.34555 10.6496 3.34555 19.7305C3.34555 28.8115 10.8349 36.173 20.0734 36.173Z" fill="black" fill-opacity="0.4"/>
+                                            <path d="M25.0918 14.7979L15.0551 24.6633" stroke="white" stroke-width="1.11111" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M15.0551 14.7979L25.0918 24.6633" stroke="white" stroke-width="1.11111" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    {{ section.settings.popup_content_7 }}
+                                </div>
+                            {% endif %}
+                        {% endif %}
+                        </div>
+
+                        <div class="yellow-bar top active" target="cashback-popup">
+                        {% if section.settings.popup_line_3 != blank %}
+                                <div class="bf-popup-trigger">{{ section.settings.popup_line_3 }}</div>
+                                {% if section.settings.popup_content_3 != blank %}
+                                <div class="bf-popup-content cashback-popup">
+                                    <div class="bf-popup-close">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40" fill="none">
+                                            <path d="M20.0734 36.173C29.312 36.173 36.8013 28.8115 36.8013 19.7305C36.8013 10.6496 29.312 3.28809 20.0734 3.28809C10.8349 3.28809 3.34555 10.6496 3.34555 19.7305C3.34555 28.8115 10.8349 36.173 20.0734 36.173Z" fill="black" fill-opacity="0.4"/>
+                                            <path d="M25.0918 14.7979L15.0551 24.6633" stroke="white" stroke-width="1.11111" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M15.0551 14.7979L25.0918 24.6633" stroke="white" stroke-width="1.11111" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    {{ section.settings.popup_content_3 }}
+                                </div>
+                                {% endif %}
+                        {% endif %}
+                        {% if section.settings.popup_line_4 != blank %}
+                            {% if section.settings.popup_content_4 != blank %}
+                                <div class="bf-popup-content cashback-2-popup">
+                                    <div class="bf-popup-close">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40" fill="none">
+                                            <path d="M20.0734 36.173C29.312 36.173 36.8013 28.8115 36.8013 19.7305C36.8013 10.6496 29.312 3.28809 20.0734 3.28809C10.8349 3.28809 3.34555 10.6496 3.34555 19.7305C3.34555 28.8115 10.8349 36.173 20.0734 36.173Z" fill="black" fill-opacity="0.4"/>
+                                            <path d="M25.0918 14.7979L15.0551 24.6633" stroke="white" stroke-width="1.11111" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M15.0551 14.7979L25.0918 24.6633" stroke="white" stroke-width="1.11111" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    {{ section.settings.popup_content_4 }}
+                                </div>
+                            {% endif %}
+                        {% endif %}
+                        </div>
+                    </div>
+                    <div class="column">&nbsp;</div>
+                    <div class="column">&nbsp;</div>
+                    <div class="column highlight-column">
+                        {% if section.settings.popup_line_4 != blank %}
+                        <div class="yellow-bar top active" target="cashback-2-popup" style="z-index:1;">
+                            <div class="bf-popup-trigger">{{ section.settings.popup_line_4 }}</div>
+                        </div>
+                        {% endif %}
+                        {% if section.settings.popup_line_7 != blank %}
+                            <div class="yellow-bar active" target="b1g1-2-popup" style="z-index:1;">
+                                <div class="bf-popup-trigger">{{ section.settings.popup_line_7 }}</div>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="column">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .section-{{section.id}} .image-wrapper{ width: {{section.settings.image_max_width}}px; max-width: 100%; margin: 0 auto; }
+        .section-{{ section.id }}{
+            padding: {{ section.settings.section_top_space }}px 0 {{ section.settings.section_bottom_space }}px 0;
+        }
+        @media screen and (max-width: 749px){
+            .section-{{ section.id }}{
+                padding: {{ section.settings.section_top_space_m }}px 0 {{ section.settings.section_bottom_space_m }}px 0;
+            }
+        }
+    </style>
+    <script>
+        if(document.querySelectorAll('.yellow-bar').length > 0){
+            document.querySelectorAll('.yellow-bar').forEach(function(elem){
+                elem.querySelector('.bf-popup-trigger').onclick = function(){
+                    var targetClass = elem.getAttribute('target');
+                    if(document.querySelector('.bf-popup-content.active')) document.querySelector('.bf-popup-content.active').classList.remove('active');
+                    document.querySelector('.'+targetClass).classList.add('active');
+                }
+            });
+            document.querySelectorAll('.bf-popup-close').forEach(function(elem){
+                elem.onclick = function(){
+                    elem.closest('.bf-popup-content').classList.remove('active');
+                }
+            });
+        }
+    </script>
+</div>
+
+{% schema %}
+{
+    "name": "Custom section",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Section spacing"
+          },
+          {
+            "type": "range",
+            "id": "section_top_space",
+            "label": "Top space(Desktop)",
+            "min": 0,
+            "max": 150,
+            "step": 5,
+            "unit": "px",
+            "default": 120
+          },
+          {
+            "type": "range",
+            "id": "section_bottom_space",
+            "label": "Bottom space(Desktop)",
+            "min": 0,
+            "max": 150,
+            "step": 5,
+            "unit": "px",
+            "default": 40
+          },
+          {
+            "type": "range",
+            "id": "section_top_space_m",
+            "label": "Top space(Mobile)",
+            "min": 0,
+            "max": 80,
+            "step": 5,
+            "unit": "px",
+            "default": 40
+          },
+          {
+            "type": "range",
+            "id": "section_bottom_space_m",
+            "label": "Bottom space(Mobile)",
+            "min": 0,
+            "max": 80,
+            "step": 5,
+            "unit": "px",
+            "default": 40
+          },
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "Title(Desktop)"
+          },
+          {
+            "type": "textarea",
+            "id": "title_m",
+            "label": "Title(Mobile)"
+          },
+          {
+            "type": "textarea",
+            "id": "black_friday",
+            "label": "Black friday text"
+          },
+          {
+            "type": "textarea",
+            "id": "cyber_monday",
+            "label": "Cyber monday text"
+          },
+          {
+            "type": "textarea",
+            "id": "cet",
+            "label": "CET"
+          },
+          {
+            "type": "textarea",
+            "id": "column_text",
+            "label": "Column text(Desktop)"
+          },
+          {
+            "type": "textarea",
+            "id": "column_text_m",
+            "label": "Column text(Mobile)"
+          },
+          {
+            "type": "header",
+            "content": "Popups"
+          },
+          {
+            "type": "textarea",
+            "id": "popup_line_1",
+            "label": "Popup line 1"
+          },
+          {
+            "type": "textarea",
+            "id": "popup_content_1",
+            "label": "Popup content 1"
+          },
+          {
+            "type": "textarea",
+            "id": "popup_line_2",
+            "label": "Popup line 2"
+          },
+          {
+            "type": "textarea",
+            "id": "popup_content_2",
+            "label": "Popup content 2"
+          },
+          {
+            "type": "textarea",
+            "id": "popup_line_5",
+            "label": "Popup line 3"
+          },
+          {
+            "type": "textarea",
+            "id": "popup_content_5",
+            "label": "Popup content 3"
+          },
+          {
+            "type": "textarea",
+            "id": "popup_line_3",
+            "label": "Popup line 4"
+          },
+          {
+            "type": "textarea",
+            "id": "popup_content_3",
+            "label": "Popup content 4"
+          },
+          {
+            "type": "textarea",
+            "id": "popup_line_4",
+            "label": "Popup line 5"
+          },
+          {
+            "type": "textarea",
+            "id": "popup_content_4",
+            "label": "Popup content 5"
+          },
+          {
+            "type": "textarea",
+            "id": "popup_line_6",
+            "label": "Popup line 6"
+          },
+          {
+            "type": "textarea",
+            "id": "popup_content_6",
+            "label": "Popup content 6"
+          },
+          {
+            "type": "textarea",
+            "id": "popup_line_7",
+            "label": "Popup line 7"
+          },
+          {
+            "type": "textarea",
+            "id": "popup_content_7",
+            "label": "Popup content 7"
+          }
+    ],
+    "presets": [
+        {
+            "name": "Black friday - Custom section",
+            "category": "Custom Sections"
+        }
+    ]
+}
+{% endschema %}

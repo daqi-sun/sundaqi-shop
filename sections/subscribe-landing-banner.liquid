@@ -1,0 +1,53 @@
+<div class="subscribe-he">
+  <img class="subscribe-img_pc" src="{{ section.settings.subscribe_img | image_url }}" alt="subscribe" width="100%" height="100%">
+  <img class="subscribe-img_ph" src="{{ section.settings.subscribe_imgph | image_url }}" alt="subscribe" width="100%" height="100%">
+</div>
+
+<style>
+  .subscribe-img_ph {
+    display: none;
+  }
+  .subscribe-he {
+    width: 100%;
+    height: auto;
+  }
+  .subscribe-img_pc {
+    width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 749px) {
+    .subscribe-img_pc {
+      display: none;
+    }
+    .subscribe-img_ph {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Subscribe Landing Banner",
+  "settings": [
+  {
+      "type": "image_picker",
+      "id": "subscribe_img",
+      "label": "图片 PC"
+    },
+    {
+      "type": "image_picker",
+      "id": "subscribe_imgph",
+      "label": "图片 Mobile"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Subscription Landing Banner",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

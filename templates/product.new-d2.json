@@ -1,0 +1,1097 @@
+{
+  "sections": {
+    "daf26638-f596-4384-b150-72d380a3268d": {
+      "type": "product-atb-top",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "sticky-product-bar": {
+      "type": "sticky-product-bar",
+      "blocks": {
+        "588d25af-4d47-43ac-9697-b98aa2f65719": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Overview",
+            "tab_id": "product_information",
+            "section_class": ""
+          }
+        },
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "What's in the box",
+            "tab_id": "what_in_box",
+            "section_class": ""
+          }
+        },
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "FAQ",
+            "tab_id": "faq",
+            "section_class": ""
+          }
+        },
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Reviews",
+            "tab_id": "section-reviews",
+            "section_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "588d25af-4d47-43ac-9697-b98aa2f65719",
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02",
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4",
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38"
+      ],
+      "settings": {
+        "enabled": true,
+        "enabled_tabs": false
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "11795adc-1afa-4833-a193-258f495901ef": {
+          "type": "sku_block",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e": {
+          "type": "product_title",
+          "settings": {
+          }
+        },
+        "judge_me_reviews_preview_badge_99nhjE": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "0471109f-c130-454e-a9ba-c56412cc11f3": {
+          "type": "product_vendor",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185": {
+          "type": "product_price",
+          "settings": {
+          }
+        },
+        "d25a0285-4fb4-422d-b95b-ab67446120ad": {
+          "type": "product_description",
+          "settings": {
+            "desc_display": "default"
+          }
+        },
+        "bfd98f87-7785-4469-bd4a-4acdeef8a413": {
+          "type": "collapsible_tab_text",
+          "disabled": true,
+          "settings": {
+            "heading": "💡 Lieferverzug: die Lieferung wird ca. 4-7 Tage verspätet zugestellt.",
+            "content": "<p>Beachten Sie bitte: wir haben Feiertage vom 7 April bis 10 April, Ihre Bestellung wird in der kommenden Woche bearbeitet und die Lieferung wird ca. 4-7 Tage verspätet zugestellt. <\/p>"
+          }
+        },
+        "54b8bc8e-c601-43ae-af35-fb9d54e0158c": {
+          "type": "coupon_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Component_2_1.png",
+            "discount_off_text": "{{ product.metafields.custom.discount_off_text.value }}",
+            "code": "{{ product.metafields.custom.discount_code.value }}",
+            "show_copy_code_btn": true
+          }
+        },
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% if product.metafields.custom.trade_message != blank %}\n          <div class=\"trade-message\">🔥 {{product.metafields.custom.trade_message}} <a href=\"\/pages\/upgrade-program\" target=\"_blank\">Los geht's!<\/a><\/div>\n{% endif %}"
+          }
+        },
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879": {
+          "type": "product_options_block",
+          "settings": {
+            "show_product_swatches": true,
+            "use_variant_image_for_swatches": true,
+            "button_content": ""
+          }
+        },
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe": {
+          "type": "quantity_block",
+          "settings": {
+          }
+        },
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0": {
+          "type": "accessories_section",
+          "settings": {
+            "title": "You may also like",
+            "metafield": "accessories"
+          }
+        },
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609": {
+          "type": "product_buttons",
+          "settings": {
+            "enable_payment_button": false,
+            "show_custom_icons": true,
+            "custom_payment_logo_1_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_08_7f374817-3a3e-42f2-95ce-077b67f293d2.svg?v=1672025209",
+            "custom_payment_logo_2_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_10_d8002835-e25f-4edb-9038-187f75f69a18.svg?v=1672025208",
+            "custom_payment_logo_3_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_02_a3ea7ab1-aa9a-4857-9ed6-01e62deccfce.svg?v=1672025208",
+            "custom_payment_logo_4_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_06_7c406d24-0983-49ff-ac8e-cf73032050d9.svg?v=1672025208",
+            "custom_payment_logo_5_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_07_be5959d4-9f22-4a31-8e40-285f8e3ac6e7.svg?v=1672025208",
+            "custom_payment_logo_6_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_01_96e6a30c-7908-4892-b6f1-75bce8657cd4.svg?v=1672025208",
+            "custom_payment_logo_7_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/apple_pay_icon_14953f11-2673-4162-8f1b-99c8a65b4610.png?v=1678448779",
+            "custom_payment_logo_8_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0649\/2533\/5793\/files\/googlepay_icon_6235bed6-fedf-42d2-8d0a-4854ccc3bdc2.png?v=1678450994",
+            "custom_payment_logo_9_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/sofort_icon_31ba2d5b-2c44-4960-8e80-645a7240c899.png?v=1679023017",
+            "custom_payment_logo_10_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/giropay_icon_c9d7e22e-cd7c-4bee-8de5-e50a4c6dc378.png?v=1679023017",
+            "custom_payment_logo_11_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/ideal_icon_8548c48a-3c4e-4052-95de-670062a453ce.png?v=1679023017",
+            "custom_payment_logo_12_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/multibanco_icon_e3f9b26f-234c-4a06-9e48-adfd188e7deb.png?v=1679023016",
+            "custom_payment_logo_13_svg": "",
+            "custom_payment_logo_14_svg": "",
+            "custom_payment_logo_15_svg": ""
+          }
+        }
+      },
+      "block_order": [
+        "11795adc-1afa-4833-a193-258f495901ef",
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e",
+        "judge_me_reviews_preview_badge_99nhjE",
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774",
+        "0471109f-c130-454e-a9ba-c56412cc11f3",
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185",
+        "d25a0285-4fb4-422d-b95b-ab67446120ad",
+        "bfd98f87-7785-4469-bd4a-4acdeef8a413",
+        "54b8bc8e-c601-43ae-af35-fb9d54e0158c",
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a",
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879",
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe",
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0",
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609"
+      ],
+      "settings": {
+        "section_id": "",
+        "show_breadcrumbs": true,
+        "show_pick_an_option": false,
+        "enable_linked_options": false,
+        "enabled_mobile_sticky_btns": true,
+        "media_size": "medium",
+        "enable_image_zoom": true,
+        "enable_video_looping": true,
+        "thumbnails_type": "grid",
+        "support_email": "",
+        "support_text": "",
+        "feature_1_show": false,
+        "feature_1_title": "Fast & Free Shipping",
+        "feature_1_content": "",
+        "feature_2_show": false,
+        "feature_2_title": "Warranty Protection",
+        "feature_2_content": "",
+        "feature_3_show": false,
+        "feature_3_title": "Secure Payments",
+        "feature_3_content": "",
+        "feature_4_show": false,
+        "feature_4_title": "Multi-channel Support",
+        "feature_4_content": ""
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "grid_mobile": "2",
+        "heading": "You may also like",
+        "show_vendor": false
+      }
+    },
+    "pdp_rich_text_iAGypC": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 0,
+        "section_bottom_spacing": 50,
+        "section_top_spacing_mobile": 0,
+        "section_bottom_spacing_mobile": 30,
+        "alignment": "center",
+        "title": "",
+        "subtitle": "",
+        "content": "<p>Los términos “DELTA” y “RIVER”, que se mencionan en esta página, se refieren a productos fabricados exclusivamente por ECOFLOW INC.<\/p>",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "885d5f04-d1f1-4c61-bca5-17d58f4fbfd9": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "",
+        "subtitle": "",
+        "content": "",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "video",
+        "video_type": "youtube",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_YQbsiPE8to&feature=youtu.be",
+        "mp4_video_url": "",
+        "mp4_video_url_m": "",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "9191452c-b722-4cb2-a714-a7672a27addb": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--19119502655823__9191452c-b722-4cb2-a714-a7672a27addb-1686897178f9c9a9e3-0": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/delta-2-grid.png",
+            "mobile_image": "shopify:\/\/shop_images\/delta-2-grid-mobile.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "<p>EcoFlow DELTA 2 es imprescindible en cualquier hogar que dé prioridad a la seguridad energética y a la comodidad. Asegúrate de estar preparado con la estación de energía hecha para casi cualquier situación en la que tu familia pueda encontrarse. Está ecológico para siempre.<\/p>",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "ec4e8ec9-c4fc-4785-b091-5f61f39ffeb7": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/delta-2-expand-capacity.png",
+            "mobile_image": "shopify:\/\/shop_images\/delta-2-expand-capacity-mobile.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "<h2>Multiplica por tres. Amplía la capacidad.<\/h2>",
+            "content_color": "#757575",
+            "notification_message": "<p>Con una capacidad de <strong>1 kWh <\/strong>para empezar, tendrás energía suficiente para lo esencial durante horas. ¿Necesitas más? Añade la batería adicional DELTA 2 para llegar a los <strong>2048 Wh <\/strong>o la batería adicional DELTA Max para llegar a los <strong>3040 Wh<\/strong>. Ideal como energía auxiliar para el hogar o aparatos de uso diario.<\/p>",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "768fd051-7d66-4c96-ac00-5bed8611f669": {
+          "type": "text_with_image",
+          "disabled": true,
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Kompatibel mit dem EcoFlow PowerStream Balkonkraftwerk",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "https:\/\/de.ecoflow.com\/pages\/powerstream",
+            "button_text": "Weitere Informationen zur Lösung",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "dcda53f2-3b43-435a-8b92-c0aee5e5f8e6": {
+          "type": "text_with_image",
+          "disabled": true,
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/PC-_10-PowerStream.png",
+            "mobile_image": "shopify:\/\/shop_images\/M-_10-PowerStream.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Kompatibel mit dem EcoFlow PowerStream Balkonkraftwerk",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "<p>Sie können Ihre DELTA 2 mit minimalem Kostenaufwand in ein Balkonkraftwerk verwandeln. Mit dem netzgekoppelten Wechselrichter und dem PowerStream Mikro-Wechselrichter können Sie Ihr DELTA 2 in wenigen Minuten an eine AC-Wandsteckdose anschließen, um eine netzgekoppelte Verbindung für die Stromversorgung Ihres gesamten Hauses herzustellen. Funktioniert mit einem Solar-Eingang von bis zu 800 W, vermeidet Energieverschwendung und senkt die Stromrechnungen.<\/p>",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "https:\/\/de.ecoflow.com\/pages\/powerstream",
+            "button_text": "Weitere Informationen zur Lösung",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--19119502655823__9191452c-b722-4cb2-a714-a7672a27addb-1686897178f9c9a9e3-0",
+        "ec4e8ec9-c4fc-4785-b091-5f61f39ffeb7",
+        "768fd051-7d66-4c96-ac00-5bed8611f669",
+        "dcda53f2-3b43-435a-8b92-c0aee5e5f8e6"
+      ],
+      "settings": {
+      }
+    },
+    "02a0dc94-0c1f-4941-8b20-7b28e4b899ca": {
+      "type": "pdp-slideshow",
+      "blocks": {
+        "f1e9ecd3-043d-4f11-ac91-8c9fa4b57c91": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "",
+            "title": "Trabaja sincronizado con el Kit solar para balcones EcoFlow PowerStream",
+            "subtitle": "",
+            "content": "<p>Transforma tu estación de energía en una solución de energía solar <strong>conectada a la red<\/strong> que combine paneles solares, una estación de energía y un inversor. Suministra electricidad a tu hogar y ahorra en las facturas eléctricas tanto de día como de noche.<\/p>",
+            "button_link": "https:\/\/es.ecoflow.com\/pages\/powerstream",
+            "button_text": "Más información",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/pc_b0d81685-dc92-48bb-bf19-33d7c3baf849.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/m_70f19496-547b-4cb2-acb6-f70f8080019d.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        }
+      },
+      "block_order": [
+        "f1e9ecd3-043d-4f11-ac91-8c9fa4b57c91"
+      ],
+      "settings": {
+        "section_id": ""
+      }
+    },
+    "537918fb-2b2a-4d08-8796-b390b1e03998": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--19119502655823__537918fb-2b2a-4d08-8796-b390b1e03998-1686909958f7702b0c-0": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "#000000",
+            "section_top_padding": 35,
+            "section_top_padding_m": 35,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/PC_ES_825f5b6b-63fe-4f11-a920-23e7456bbe0f.png",
+            "mobile_image": "shopify:\/\/shop_images\/M_ES_50982f79-5412-4d6b-9347-b969a9a563d2.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Energía para casi todo.",
+            "title_color": "#ffffff",
+            "content": "",
+            "content_color": "#ffffff",
+            "notification_message": "<p>La salida de CA de 1800 W permite alimentar más del 90 % de los aparatos de tu hogar. Es decir, el microondas, la nevera o incluso la cafetera estarán respaldados en caso de apagón. O bien, prueba a conectar hasta 13 dispositivos a la vez cuando te reúnas con la familia alrededor de la mesa. A diferencia de otras marcas, DELTA 2 puede evitar la sobrecarga de dispositivos de hasta 2400 W gracias a la tecnología X-Boost.<\/p>",
+            "message_color": "#ffffff",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "c757b243-e1a0-4d31-bb25-435f3630ca7a": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "#000000",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/delta-2-power-anything.png",
+            "mobile_image": "shopify:\/\/shop_images\/delta-2-power-anything-mobile.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "d624a938-2e07-483c-b3d2-06142c65bf49": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "#000000",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/delta-2-fastest-charging.png",
+            "mobile_image": "shopify:\/\/shop_images\/delta-2-fastest-charging-mobile.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "d34d0731-9618-4158-9241-146a7cf41db0": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "#000000",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/delta-2-go-green.png",
+            "mobile_image": "shopify:\/\/shop_images\/delta-2-go-green-mobile.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Puedes ser ecológico sin sacrificar la velocidad.",
+            "title_color": "#ffffff",
+            "content": "",
+            "content_color": "#ffffff",
+            "notification_message": "<p>Se puede combinar con paneles solares y cargar en tan solo 3-6 horas con 1 panel solar portátil 400 W o 2 paneles de 220 W. Con su algoritmo inteligente de seguimiento del punto de máxima potencia (MPPT), DELTA 2 puede detectar de forma activa la tensión y la corriente en tiempo real para alcanzar el punto de máxima potencia con una eficiencia superior al 98 %. Esto significa una carga más eficiente que otras marcas.<\/p><p>Elige entre varios paneles solares para conseguir la velocidad que necesitas (110 W, 160 W, 220 W, 400 W). Con eso, tendrás acceso a energía libre dondequiera.<\/p>",
+            "message_color": "#ffffff",
+            "notification_message_font_size": "heading-6",
+            "button_link": "https:\/\/es.ecoflow.com\/collections\/delta-2-solar-generators",
+            "button_text": "DESCUBRA LOS GENERADORES SOLARES DELTA 2",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "fab4e390-e668-46ca-9e88-b3417fc62574": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "#000000",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/delta-2-last-longer.png",
+            "mobile_image": "shopify:\/\/shop_images\/delta-2-last-longer-mobile.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Con un diseño durar 6 años más.",
+            "title_color": "#ffffff",
+            "content": "",
+            "content_color": "#ffffff",
+            "notification_message": "<p>Por fin... una tecnología hecha para durar. Obtiene 10 años de uso diario hasta alcanzar el 80% de su capacidad original. Esto se debe a la química de la batería LiFePO4, que ofrece más de 3.000 ciclos de carga y descarga completos y 6 veces más tiempo que la media del sector.<\/p>",
+            "message_color": "#ffffff",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "312a8a23-15df-4b1f-8a85-693bead514da": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "#000000",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/delta-2-safety-first.png",
+            "mobile_image": "shopify:\/\/shop_images\/delta-2-chip-mobile.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "La seguridad es lo más importante.",
+            "title_color": "#ffffff",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "<p>El sistema de gestión de la batería integrado de DELTA 2 regula parámetros fundamentales para garantizar su seguridad y resistencia a lo largo del tiempo.<\/p>",
+            "message_color": "#ffffff",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--19119502655823__537918fb-2b2a-4d08-8796-b390b1e03998-1686909958f7702b0c-0",
+        "c757b243-e1a0-4d31-bb25-435f3630ca7a",
+        "d624a938-2e07-483c-b3d2-06142c65bf49",
+        "d34d0731-9618-4158-9241-146a7cf41db0",
+        "fab4e390-e668-46ca-9e88-b3417fc62574",
+        "312a8a23-15df-4b1f-8a85-693bead514da"
+      ],
+      "settings": {
+      }
+    },
+    "44c68e8a-bbdf-4494-9e52-15eb4a61b275": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "Preparado para emergencias.",
+        "subtitle": "",
+        "content": "<p>Se puede utilizar como EPS (fuente de alimentación de emergencia) para cambiar automáticamente a la alimentación de la batería cuando se produzca un apagón. Ideal para mantener tus aparatos esenciales en funcionamiento durante apagones.<\/p>",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "video",
+        "video_type": "mp4",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/91639d9c40044007a8eb5ae3d6ebb802.mp4",
+        "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/91639d9c40044007a8eb5ae3d6ebb802.mp4",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "bdae185b-adb2-4a38-b92a-4eab546b01be": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--19119502655823__bdae185b-adb2-4a38-b92a-4eab546b01be-1686909958f7702b0c-0": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/DELTA2-control-monitor.png",
+            "mobile_image": "shopify:\/\/shop_images\/DELTA2-control-monitor-mobile.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Control desde cualquier lugar.",
+            "title_color": "#232323",
+            "content": "<p>Utiliza la aplicación EcoFlow para controlar tu DELTA 2 desde cualquier lugar mediante Wi-Fi. Conéctate por Bluetooth cuando no tengas conexión a la red. En ambos casos puedes comprobar los datos de carga, personalizar la configuración y ajustar la velocidad de carga con facilidad.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "https:\/\/www.ecoflow.com\/de\/app",
+            "button_text": "Más información",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--19119502655823__bdae185b-adb2-4a38-b92a-4eab546b01be-1686909958f7702b0c-0"
+      ],
+      "settings": {
+      }
+    },
+    "79531cdb-60e9-4879-ae32-f55966b146dc": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 20,
+        "section_bottom_spacing": 20,
+        "section_top_spacing_mobile": 20,
+        "section_bottom_spacing_mobile": 20,
+        "alignment": "center",
+        "title": "Parte de un ecosistema en constante crecimiento.",
+        "subtitle": "",
+        "content": "<p>DELTA 2 es solo el principio. Se puede conectar a una amplia variedad de productos EcoFlow, como paneles solares portátiles, baterías adicionales y mucho más. Todo ello para ofrecer una solución de energía integral para tu familia.<\/p>",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "f72e6d13-d856-4e4d-b857-ff238cf1fc8e": {
+      "type": "pdp-image-with-text",
+      "blocks": {
+        "8d284cda-3b2b-4b34-913a-1f13664e3f07": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/DELTA2-slide1.png",
+            "image_height": 310,
+            "mobile_image_height": 250,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "",
+            "subtext_bottom": "",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "3bda2309-c498-4ec5-bf1e-95420f240292": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/DELTA2-slide2.png",
+            "image_height": 310,
+            "mobile_image_height": 250,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "",
+            "subtext_bottom": "",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "6b6d0a1d-57fe-4f27-923a-2eb239260f07": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/DELTA2-slide3.png",
+            "image_height": 310,
+            "mobile_image_height": 250,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "",
+            "subtext_bottom": "",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "8d284cda-3b2b-4b34-913a-1f13664e3f07",
+        "3bda2309-c498-4ec5-bf1e-95420f240292",
+        "6b6d0a1d-57fe-4f27-923a-2eb239260f07"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "center",
+        "layout": "owl-carousel owl-theme",
+        "stacked_row": "3",
+        "mobile_stacked_row": "1",
+        "slider_row": "2",
+        "mobile_slider_row": "1"
+      }
+    },
+    "938b94cc-1c26-4865-8ab1-ce48a774b7e4": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--19119502655823__938b94cc-1c26-4865-8ab1-ce48a774b7e4-168691307157944032-0": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/delta-2-portable-light.png",
+            "mobile_image": "shopify:\/\/shop_images\/delta-2-portable-light-mobile.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "27842cdb-ff86-4342-9774-599473f070b9": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/delta-2-5-years.png",
+            "mobile_image": "shopify:\/\/shop_images\/delta-2-5-years-mobile.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "b71e01bf-17d1-4295-8eb6-729fb7e28740": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/delta-2-outdoor-protection.png",
+            "mobile_image": "shopify:\/\/shop_images\/delta-2-outdoor-protection-mobile.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "b1ca417d-2a4e-48fb-add6-b8e7676c5330": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/DELTA2-Box-2.png",
+            "mobile_image": "shopify:\/\/shop_images\/DELTA2-Box-2.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Contenido de la caja",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "<p>1. DELTA 2 2. Cable de carga de CA 3.Cable de carga para coche 4.Cable de DC5521 a DC5525 5.Manual de usuario 6.Guía de inicio rápido de la aplicación 7. Warranty card<\/p><p>*El cable de carga solar a XT60 solo se incluye con la compra de paneles solares portátiles EcoFlow.<\/p>",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--19119502655823__938b94cc-1c26-4865-8ab1-ce48a774b7e4-168691307157944032-0",
+        "27842cdb-ff86-4342-9774-599473f070b9",
+        "b71e01bf-17d1-4295-8eb6-729fb7e28740",
+        "b1ca417d-2a4e-48fb-add6-b8e7676c5330"
+      ],
+      "settings": {
+      }
+    },
+    "2c254f22-2fa3-4e0d-8463-978aeab58752": {
+      "type": "pdp-specs",
+      "blocks": {
+        "819be72d-d08b-421c-b631-3d2f51d10849": {
+          "type": "contents",
+          "settings": {
+            "title": "Capacidad",
+            "content": "<p>1024 Wh<\/p>"
+          }
+        },
+        "66c8d24e-5daa-4d5f-9024-ed95c40059b1": {
+          "type": "contents",
+          "settings": {
+            "title": "Batería adicional",
+            "content": "<p>Admite una batería adicional DELTA 2 o una batería adicional DELTA Max<\/p>"
+          }
+        },
+        "c62852e7-8802-4bd0-baee-a6ca1600d230": {
+          "type": "contents",
+          "settings": {
+            "title": "Salida de CA",
+            "content": "<p>4 salidas, 1800 W en total (pico: 2700 W)<\/p>"
+          }
+        },
+        "e7772cdd-7e4c-4761-8097-4c2a74dccb5e": {
+          "type": "contents",
+          "settings": {
+            "title": "Potencia máxima de los dispositivos compatibles con X-Boost",
+            "content": "<p>2400W<\/p>"
+          }
+        },
+        "f810c176-454a-4dbf-9673-a6c0c2288c02": {
+          "type": "contents",
+          "settings": {
+            "title": "Salida USB-A",
+            "content": "<p>2 puertos, 5 V, 2,4 A, 12 W máx.<\/p>"
+          }
+        },
+        "b601258a-a7e9-4e9f-92a4-132f9739af85": {
+          "type": "contents",
+          "settings": {
+            "title": "Carga rápida USB-A",
+            "content": "<p>2 puertos, 5 V, 2,4 A\/9 V, 2 A\/12 V, 1,5 A, 18 W máx.<\/p>"
+          }
+        },
+        "8d0809b4-8686-4409-9571-987adfcbc500": {
+          "type": "contents",
+          "settings": {
+            "title": "Salida USB-C",
+            "content": "<p>2 puertos, 5\/9\/12\/15\/20 V, 5 A, 100 W máx.<\/p>"
+          }
+        },
+        "8dabf28b-d374-46bb-ae9b-0901e3a07db1": {
+          "type": "contents",
+          "settings": {
+            "title": "Salida de alimentación para coche",
+            "content": "<p>1 puerto, 12,6 V, 10 A, 126 W máx.<\/p>"
+          }
+        },
+        "11bb0f6d-a951-4943-be37-288f816692ad": {
+          "type": "contents",
+          "settings": {
+            "title": "Salida DC5521",
+            "content": "<p>2 puertos, 12,6V, 3A, 38W máx.<\/p>"
+          }
+        },
+        "eb171d4f-b56e-4d64-983f-626edb19f9ac": {
+          "type": "contents",
+          "settings": {
+            "title": "Carga de CA",
+            "content": "<p>1200W<\/p>"
+          }
+        },
+        "3706a4b1-e3e4-46c0-8d1b-bcbbd700afdb": {
+          "type": "contents",
+          "settings": {
+            "title": "Carga mediante energía solar",
+            "content": "<p>11-60 V, 15 A, 500 W máx.<\/p>"
+          }
+        },
+        "2dfb7491-54e0-4f4d-b849-595851f1edfe": {
+          "type": "contents",
+          "settings": {
+            "title": "Carga en vehículo",
+            "content": "<p>Admite batería de 12 V\/24 V, 8 A<\/p>"
+          }
+        },
+        "5aa46c5d-5788-4d17-9329-759dc838d282": {
+          "type": "contents",
+          "settings": {
+            "title": "Carga de CC",
+            "content": "<p>1100W<\/p>"
+          }
+        },
+        "dccadcf6-d924-4519-9725-578d16e2594b": {
+          "type": "contents",
+          "settings": {
+            "title": "Química de la batería",
+            "content": "<p>LFP (batería LiFePO4)<\/p>"
+          }
+        },
+        "0e18ab5e-c697-4798-bf7b-d2a25eac2df2": {
+          "type": "contents",
+          "settings": {
+            "title": "Ciclos de vida útil",
+            "content": "<p>3000 ciclos a más del 80 % de la capacidad<\/p>"
+          }
+        },
+        "2b2e9a64-3ccd-4797-89df-bc7874cdec12": {
+          "type": "contents",
+          "settings": {
+            "title": "Conectividad",
+            "content": "<p>Wi-Fi & Bluetooth<\/p>"
+          }
+        },
+        "08596886-bbfe-4ea6-8b1c-04c66d4731bb": {
+          "type": "contents",
+          "settings": {
+            "title": "Dimensiones",
+            "content": "<p>15,7 x 8,3 x 11 pulg.\/400 x 211 x 281 mm<\/p>"
+          }
+        },
+        "a71a9698-c5f1-4a1c-bd72-753c1f78f12f": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso neto",
+            "content": "<p>27 lbs \/ 12 kg<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "819be72d-d08b-421c-b631-3d2f51d10849",
+        "66c8d24e-5daa-4d5f-9024-ed95c40059b1",
+        "c62852e7-8802-4bd0-baee-a6ca1600d230",
+        "e7772cdd-7e4c-4761-8097-4c2a74dccb5e",
+        "f810c176-454a-4dbf-9673-a6c0c2288c02",
+        "b601258a-a7e9-4e9f-92a4-132f9739af85",
+        "8d0809b4-8686-4409-9571-987adfcbc500",
+        "8dabf28b-d374-46bb-ae9b-0901e3a07db1",
+        "11bb0f6d-a951-4943-be37-288f816692ad",
+        "eb171d4f-b56e-4d64-983f-626edb19f9ac",
+        "3706a4b1-e3e4-46c0-8d1b-bcbbd700afdb",
+        "2dfb7491-54e0-4f4d-b849-595851f1edfe",
+        "5aa46c5d-5788-4d17-9329-759dc838d282",
+        "dccadcf6-d924-4519-9725-578d16e2594b",
+        "0e18ab5e-c697-4798-bf7b-d2a25eac2df2",
+        "2b2e9a64-3ccd-4797-89df-bc7874cdec12",
+        "08596886-bbfe-4ea6-8b1c-04c66d4731bb",
+        "a71a9698-c5f1-4a1c-bd72-753c1f78f12f"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Especificaciones"
+      }
+    },
+    "d7bda39a-7de9-4e81-9e73-f26dd4260a2a": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 20,
+        "section_bottom_spacing": 20,
+        "section_top_spacing_mobile": 20,
+        "section_bottom_spacing_mobile": 20,
+        "alignment": "left",
+        "title": "",
+        "subtitle": "",
+        "content": "<h6>* Source:<\/h6><h6>Amazon.de\/fr\/uk Bestseller in der Kategorie Outdoor-Generatoren vom 16-19. September 2022<\/h6><h6>Bestseller in der Kategorie Garten auf Amazon.de vom 16. September 2022<\/h6>",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "1677853362288a00c5": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_MppJD9": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_MppJD9"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    }
+  },
+  "order": [
+    "daf26638-f596-4384-b150-72d380a3268d",
+    "sticky-product-bar",
+    "main",
+    "product-recommendations",
+    "pdp_rich_text_iAGypC",
+    "885d5f04-d1f1-4c61-bca5-17d58f4fbfd9",
+    "9191452c-b722-4cb2-a714-a7672a27addb",
+    "02a0dc94-0c1f-4941-8b20-7b28e4b899ca",
+    "537918fb-2b2a-4d08-8796-b390b1e03998",
+    "44c68e8a-bbdf-4494-9e52-15eb4a61b275",
+    "bdae185b-adb2-4a38-b92a-4eab546b01be",
+    "79531cdb-60e9-4879-ae32-f55966b146dc",
+    "f72e6d13-d856-4e4d-b857-ff238cf1fc8e",
+    "938b94cc-1c26-4865-8ab1-ce48a774b7e4",
+    "2c254f22-2fa3-4e0d-8463-978aeab58752",
+    "d7bda39a-7de9-4e81-9e73-f26dd4260a2a",
+    "1677853362288a00c5"
+  ]
+}

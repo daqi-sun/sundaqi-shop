@@ -1,0 +1,195 @@
+{% if section.blocks.size > 0 %}
+    <div class="star-page-tab-wrapper tax-exemption-subcategories section-{{ section.id }}"
+         style="--text-color: {{ section.settings.tab_color }};
+                --text-active-color: {{ section.settings.tab_active_color | default: section.settings.tab_color  }};
+                --text-active-undeline-color: {{ section.settings.tab_undeline_color | default: section.settings.tab_color  }};
+                --text-font-size: {{ section.settings.tab_font_size }}px;
+                --mobiel-text-font-size: {{ section.settings.tab_font_size_m }}px;
+                --section-background-color: {{ section.settings.gradient_color }};"
+        >
+        <div class="star-page-container">
+            <div class="sticky-row initial">
+                {% for block in section.blocks %}
+                    <div class="star_tab">
+                        <a class="no-border" href="#{{ block.settings.tab_id }}" data-first-section="#{{ block.settings.tab_id }}" data-last-section="{% if block.settings.tab_id_1 != blank %}#{{ block.settings.tab_id_1 }}{% endif %}">
+                            {% if block.settings.image != blank %}
+                                <div><img srcset="{{ block.settings.image | img_url: 'master' }}" loading="lazy" /></div>
+                            {% endif %}
+                            {{ block.settings.title }}
+                        </a></div>
+                {% endfor %}
+            </div>
+        </div>
+        <style>
+            .section-{{ section.id }}{
+                padding: {{ section.settings.section_top_space }}px 0 {{ section.settings.section_bottom_space }}px 0;
+            }
+            .tax-exemption-subcategories.section-{{ section.id }}.is-sticky.fixed{
+                background: {{ section.settings.gradient_color }};
+                padding: 0 !important;
+            }
+
+            @media screen and (max-width: 749px){
+                .section-{{ section.id }}{
+                    padding: {{ section.settings.section_top_space_m }}px 0 {{ section.settings.section_bottom_space_m }}px 0;
+                }
+            }
+        </style>
+    </div>
+    <div class="star-page-tab-wrapper tax-exemption-subcategories section-{{ section.id }} {% if section.settings.sticky_section %}is-sticky{% endif %}"
+        style="--text-color: {{ section.settings.tab_color }};
+               --text-active-color: {{ section.settings.tab_active_color | default: section.settings.tab_color  }};
+               --text-active-undeline-color: {{ section.settings.tab_undeline_color | default: section.settings.tab_color  }};
+               --text-font-size: {{ section.settings.tab_font_size }}px;
+               --mobiel-text-font-size: {{ section.settings.tab_font_size_m }}px;
+               --section-background-color: {{ section.settings.gradient_color }};"
+       >
+       <div class="star-page-container">
+           <div class="sticky-row initial">
+               {% for block in section.blocks %}
+                   <div class="star_tab">
+                       <a href="#{{ block.settings.tab_id }}" data-first-section="#{{ block.settings.tab_id }}" data-last-section="{% if block.settings.tab_id_1 != blank %}#{{ block.settings.tab_id_1 }}{% endif %}">
+                           {{ block.settings.title }}
+                       </a></div>
+               {% endfor %}
+           </div>
+       </div>
+    </div>
+{% endif %}
+
+{% schema %}
+    {
+    "name": "Zero tax - Subcategories",
+    "class": "zero-tax-subcategories",
+    "max_blocks": 10,
+    "settings": [
+        {
+            "type": "checkbox",
+            "id": "sticky_section",
+            "label": "Sticky section"
+        },
+        {
+            "type": "header",
+            "content": "Section background"
+        },
+        {
+            "id":"gradient_color",
+            "type":"color_background",
+            "label":"Gradient color"
+        },
+        {
+          "type": "color",
+          "id": "tab_color",
+          "label": "Text color"
+        },
+        {
+          "type": "color",
+          "id": "tab_active_color",
+          "label": "Tab active color"
+        },
+        {
+          "type": "color",
+          "id": "tab_undeline_color",
+          "label": "Tab active underline color"
+        },
+        {
+          "type": "range",
+          "id": "tab_font_size",
+          "label": "Font size(Desktop)",
+          "min": 10,
+          "max": 30,
+          "step": 1,
+          "unit": "px",
+          "default": 24
+        },
+        {
+          "type": "range",
+          "id": "tab_font_size_m",
+          "label": "Font size(Mobile)",
+          "min": 10,
+          "max": 30,
+          "step": 1,
+          "unit": "px",
+          "default": 24
+        },
+        {
+          "type": "header",
+          "content": "Section spacing"
+        },
+        {
+          "type": "range",
+          "id": "section_top_space",
+          "label": "Top space(Desktop)",
+          "min": 0,
+          "max": 150,
+          "step": 5,
+          "unit": "px",
+          "default": 120
+        },
+        {
+          "type": "range",
+          "id": "section_bottom_space",
+          "label": "Bottom space(Desktop)",
+          "min": 0,
+          "max": 150,
+          "step": 5,
+          "unit": "px",
+          "default": 40
+        },
+        {
+          "type": "range",
+          "id": "section_top_space_m",
+          "label": "Top space(Mobile)",
+          "min": 0,
+          "max": 80,
+          "step": 5,
+          "unit": "px",
+          "default": 40
+        },
+        {
+          "type": "range",
+          "id": "section_bottom_space_m",
+          "label": "Bottom space(Mobile)",
+          "min": 0,
+          "max": 80,
+          "step": 5,
+          "unit": "px",
+          "default": 40
+        }
+    ],
+    "blocks": [
+        {
+            "type": "tab",
+            "name": "Tab",
+            "settings": [
+                {
+                    "id":"image",
+                    "type":"image_picker",
+                    "label":"Image"
+                },
+                {
+                    "id":"title",
+                    "type":"text",
+                    "label":"Title"
+                },
+                {
+                    "id":"tab_id",
+                    "type":"text",
+                    "label":"ID of linked section"
+                },
+                {
+                    "id":"tab_id_1",
+                    "type":"text",
+                    "label":"ID of last linked section"
+                }
+            ]
+        }
+    ],
+	"presets": [
+        {
+            "name": "Zero tax - Subcategories",
+            "category":"Custom Sections"
+        }
+	]
+    }
+{% endschema %}

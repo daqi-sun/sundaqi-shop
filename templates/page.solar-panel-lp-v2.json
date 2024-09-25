@@ -1,0 +1,523 @@
+{
+  "sections": {
+    "banner": {
+      "type": "sp-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Frame_13_0d302205-2907-48d6-b4f3-813e606bfc44.png",
+        "mobileImage": "shopify:\/\/shop_images\/Frame_13_3.png",
+        "title": "Paneles solares",
+        "subtitle": "Los paneles solares aprovechan la energía del sol para generar electricidad. Pueden reducir enormemente tu huella de carbono, proporcionar energía de respaldo fiable y ahorrar dinero cada día en tus facturas de la luz. Los paneles solares están disponibles en varios tamaños y tipos para adaptarse a distintas necesidades de energía, desde 60 W hasta 400 W, en opciones portátiles, rígidas y flexibles.",
+        "description": "La gama de paneles solares de EcoFlow cubre todas tus necesidades, tanto si buscas energía solar portátil como si prefieres una instalación más permanente. Todos los paneles solares de EcoFlow están fabricados con células solares monocristalinas altamente eficientes y diseñados para facilitar su instalación y uso. Simplemente conéctalo a tu estación de energía portátil, a tus Power Kits o sistemas fotovoltaicos de terceros y almacena la electricidad para tu hogar o para cuando estés fuera."
+      }
+    },
+    "sp-button": {
+      "type": "sp-button",
+      "blocks": {
+        "38c12126-9711-496f-ac53-66fa762b2328": {
+          "type": "button",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/portable-solar-panel.png",
+            "title": "Paneles solares portátiles",
+            "url": "https:\/\/es.ecoflow.com\/collections\/portable-solar-panels"
+          }
+        },
+        "a7004ae1-8b9b-4bfe-864e-e1194f67ae5b": {
+          "type": "button",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/mountable-solar-panels.png",
+            "title": "Paneles solares montables",
+            "url": "https:\/\/es.ecoflow.com\/collections\/mountable-solar-panels"
+          }
+        }
+      },
+      "block_order": [
+        "38c12126-9711-496f-ac53-66fa762b2328",
+        "a7004ae1-8b9b-4bfe-864e-e1194f67ae5b"
+      ],
+      "settings": {
+      }
+    },
+    "sp-steps": {
+      "type": "sp-steps",
+      "blocks": {
+        "90221613-6145-40aa-b634-2c5a5c212a2b": {
+          "type": "steps",
+          "settings": {
+            "title": "Los paneles solares convierten la luz solar en CC\n (corriente continua)."
+          }
+        },
+        "621089f2-b0da-441e-85ab-83281e1cf47b": {
+          "type": "steps",
+          "settings": {
+            "title": "Un inversor convierte CC en CA (corriente alterna) para que pueda usarse para hacer funcionar electrodomésticos."
+          }
+        },
+        "6ac80b95-d5c5-424c-842c-368125dc2563": {
+          "type": "steps",
+          "settings": {
+            "title": "La energía se envía a tu hogar."
+          }
+        },
+        "dac5a5a9-8886-416f-b48f-6bda4ecc6e97": {
+          "type": "steps",
+          "settings": {
+            "title": "La electricidad sobrante va a la red eléctrica o se almacena en baterías para poder usarse en otro momento."
+          }
+        }
+      },
+      "block_order": [
+        "90221613-6145-40aa-b634-2c5a5c212a2b",
+        "621089f2-b0da-441e-85ab-83281e1cf47b",
+        "6ac80b95-d5c5-424c-842c-368125dc2563",
+        "dac5a5a9-8886-416f-b48f-6bda4ecc6e97"
+      ],
+      "settings": {
+        "title": "¿Cómo funcionan los paneles solares?",
+        "image": "shopify:\/\/shop_images\/steps-banner.png",
+        "image_mobile": "shopify:\/\/shop_images\/steps-banner-mobile.png",
+        "padding_top_desktop": 144,
+        "padding_top_mobile": 156,
+        "padding_bottom_desktop": 126,
+        "padding_bottom_mobile": 90
+      }
+    },
+    "sp-banner-2": {
+      "type": "sp-banner-2",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Mask_group_6945992f-4c19-44cf-a091-3833232a7dfd.png",
+        "mobileImage": "shopify:\/\/shop_images\/Group_161268955_2.png",
+        "black_font_mobile": false,
+        "title": "Paneles solares portátiles",
+        "subtitle": "Los paneles solares portátiles de EcoFlow son increíblemente versátiles, compactos y ligeros, lo que los hace ideales para casi cualquier situación, incluso para actividades sin acceso a la red. Despliega e instala los paneles solares con el soporte incorporado en segundos. Carga rápidamente tu estación de energía portátil en tus acampadas o en casa para prepararte para un apagón.",
+        "button_label": "Más información",
+        "url": "https:\/\/es.ecoflow.com\/pages\/portable-solar-panels",
+        "padding_top_desktop": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_desktop": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "sp-product-3": {
+      "type": "sp-product-3",
+      "blocks": {
+        "b43606d7-fcdf-49d7-9b32-67515fffee9a": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/160psp_1.png",
+            "title": "Panel solar de 160 W",
+            "rated_power": "160 W (+\/-5 W)",
+            "cell_type": "silicio monocristalino",
+            "efficiency": "22 %",
+            "weight": "5,6 kg (12,3 lb)",
+            "dimensions": "159 x 68,6 x 2,5 cm (desplegado) \/ 42.9 x 68,6 x 2,5 cm (plegado)",
+            "open_circuit_voltage": "21,4 V (Vmp 18,2 V)",
+            "short_circuit_current": "9,6 A (Imp 8,8 A)",
+            "warranty": "24 meses",
+            "button_label": "Comprar ahora",
+            "url": "https:\/\/es.ecoflow.com\/products\/160w-portable-solar-panel?variant=31913800630345"
+          }
+        },
+        "ae03b7e3-6f44-4f93-9262-3c62577f375d": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/220psp_1.png",
+            "title": "Panel solar portátil bifacial de 220 W",
+            "rated_power": "220 W (+\/-5 W) en lado delantero \/ 155 W en lado trasero",
+            "cell_type": "Tipo de célula: silicio monocristalino",
+            "efficiency": "22-23 % (≥22,8 %)",
+            "weight": "aprox. 5,6 kg (12,3 lb)",
+            "dimensions": "183,4 × 82 × 2,49 cm  (desplegado) \/ 82 × 50 × 3,3 cm  (plegado)",
+            "open_circuit_voltage": "21,8 V (Vmp 18,4 V)",
+            "short_circuit_current": "13 A (Imp 12,0 A) en lado delantero \/ 8,8 A (Imp 8,4 A) en lado trasero",
+            "warranty": "24 meses",
+            "button_label": "Comprar ahora",
+            "url": "https:\/\/es.ecoflow.com\/products\/220w-bifacial-portable-solar-panel?variant=39704995889225"
+          }
+        },
+        "e22fb0db-4f88-4fad-8ce9-2334a3568d32": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/400psp_1.png",
+            "title": "Panel solar portátil de 400 W",
+            "rated_power": "400 W (+\/-10 W)",
+            "cell_type": "silicio monocristalino",
+            "efficiency": "22~23 % (≥22,6 %)",
+            "weight": "aprox. 5,6 kg (12,3 lb)",
+            "dimensions": "236,5 x 105,9 x 2,5 cm (desplegado) \/ 62 x 105,9 x 2,5 cm (plegado)",
+            "open_circuit_voltage": "48 V (Vmp 41 V)",
+            "short_circuit_current": "48 V (Vmp 41 V)",
+            "warranty": "11 A (Imp 9,8 A)",
+            "button_label": "Comprar ahora",
+            "url": "https:\/\/es.ecoflow.com\/products\/400w-portable-solar-panel?variant=39998021697609"
+          }
+        }
+      },
+      "block_order": [
+        "b43606d7-fcdf-49d7-9b32-67515fffee9a",
+        "ae03b7e3-6f44-4f93-9262-3c62577f375d",
+        "e22fb0db-4f88-4fad-8ce9-2334a3568d32"
+      ],
+      "settings": {
+        "padding_top_desktop": 60,
+        "padding_top_mobile": 100,
+        "padding_bottom_desktop": 116,
+        "padding_bottom_mobile": 100
+      }
+    },
+    "sp-banner-3": {
+      "type": "sp-banner-3",
+      "settings": {
+        "id": "",
+        "image": "shopify:\/\/shop_images\/Mask_group_1_d4318d29-47e2-4a00-bcea-45095805eee2.png",
+        "mobileImage": "shopify:\/\/shop_images\/Mask_group_2_9c91a9b0-41fe-47bf-9cdd-43088f6ebda7.png",
+        "title": "Paneles solares rígidos",
+        "subtitle": "Ideales para su montaje permanente en los techos de autocaravanas y construcciones no conectadas a la red, y, con nuestro panel rígido de 400 W alto, incluso en hogares. Fabricados con células monocristalinas, marcos de aluminio anodizado, vidrio templado protector y una clasificación de impermeabilidad de IP68, los paneles solares rígidos pueden durar años.",
+        "button_label": "Más información",
+        "url": "https:\/\/es.ecoflow.com\/pages\/rigid-solar-panels",
+        "padding_top_desktop": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_desktop": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "sp-product-1": {
+      "type": "sp-product-1",
+      "blocks": {
+        "7daf40d3-9d3e-4bb0-a5b9-c829f84cff3b": {
+          "type": "product",
+          "settings": {
+            "position": "left",
+            "image": "shopify:\/\/shop_images\/Mask_group_4_a3986d7b-a54a-4c7a-8ade-8a24fd1c7cc7.png",
+            "image_mobile": "shopify:\/\/shop_images\/Mask_group_3_ddccdd73-2156-4618-b9b9-db56e8b753d3.png",
+            "product_image": "shopify:\/\/shop_images\/100yingban_1.png",
+            "title": "Panel solar rígido de 100 W",
+            "rated_power": "100 W (+\/-5 W)",
+            "cell_type": "silicio monocristalino",
+            "efficiency": "23 %",
+            "weight": "aprox. 6,2 kg (13,7 lb)",
+            "dimensions": "98 x 58,7 x 3 cm",
+            "open_circuit_voltage": "20,3 V",
+            "short_circuit_current": "6,3 A",
+            "warranty": "5 años",
+            "button_label": "Comprar ahora",
+            "url": "https:\/\/es.ecoflow.com\/products\/100w-rigid-solar-panel?variant=40133459640393"
+          }
+        },
+        "ce627233-a05f-4532-b23c-777462e57606": {
+          "type": "product",
+          "settings": {
+            "position": "right",
+            "image": "shopify:\/\/shop_images\/Mask_group_8_fda9aea1-4e8d-4f8d-b751-c9bb615eb85a.png",
+            "image_mobile": "shopify:\/\/shop_images\/Mask_group_7_cfda224f-2ca5-4d0d-bb88-abb6e279f938.png",
+            "product_image": "shopify:\/\/shop_images\/400yingban_1.png",
+            "title": "Panel solar rígido de 400 W",
+            "rated_power": "400 W",
+            "cell_type": "silicio monocristalino",
+            "efficiency": "23 %",
+            "weight": "aprox. 21,8 kg (48,1 lb)",
+            "dimensions": "172,2 x 113,3 x 3,5 cm",
+            "open_circuit_voltage": "37,10 V",
+            "short_circuit_current": "13,79 A",
+            "warranty": "10 años",
+            "button_label": "Comprar ahora",
+            "url": "https:\/\/es.ecoflow.com\/collections\/mountable-solar-panels\/products\/400w-rigid-solar-panel?variant=40250363478089"
+          }
+        }
+      },
+      "block_order": [
+        "7daf40d3-9d3e-4bb0-a5b9-c829f84cff3b",
+        "ce627233-a05f-4532-b23c-777462e57606"
+      ],
+      "settings": {
+        "padding_top_desktop": 100,
+        "padding_top_mobile": 60,
+        "padding_bottom_desktop": 100,
+        "padding_bottom_mobile": 60
+      }
+    },
+    "sp-banner-4": {
+      "type": "sp-banner-2",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Mask_group_5_cd6a2a03-8950-4e7f-96be-6048b15f0d1c.png",
+        "mobileImage": "shopify:\/\/shop_images\/Mask_group_6_1147e640-d9e1-4430-9fc2-f64780b80762.png",
+        "black_font_mobile": true,
+        "title": "Paneles solares flexibles",
+        "subtitle": "Estos paneles solares son ligeros y se pueden instalar en cualquier superficie, incluidos techos de tela como carpas o toldos. Su diseño flexible se adapta a techos curvos y se puede fijar sin problemas a autocaravanas y barcos. Nuestros paneles solares flexibles son extremadamente fáciles de montar y se pueden cambiar de lugar en cualquier momento, ya que no tienen un marco voluminoso ni ojales pretaladrados alrededor del perímetro.",
+        "button_label": "Más información",
+        "url": "https:\/\/es.ecoflow.com\/pages\/flexible-solar-panels",
+        "padding_top_desktop": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_desktop": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "sp-product-2": {
+      "type": "sp-product-1",
+      "blocks": {
+        "13f50162-b728-4139-b2bb-34a37cce95f7": {
+          "type": "product",
+          "settings": {
+            "position": "left",
+            "image": "shopify:\/\/shop_images\/Mask_group_9_ae85e980-84a5-407e-96bf-ac1d61fecd76.png",
+            "image_mobile": "shopify:\/\/shop_images\/Mask_group_10_7b80d198-59b2-4a0f-a838-f385b2ac56fb.png",
+            "product_image": "shopify:\/\/shop_images\/100ruanban_1.png",
+            "title": "Panel solar flexible de 100 W",
+            "rated_power": "100 W (+\/-5 W)",
+            "cell_type": "silicio monocristalino",
+            "efficiency": "23 %",
+            "weight": "aprox. 2,3 kg (5,1 lb)",
+            "dimensions": "105,4 x 61,2 x 2,5 cm",
+            "open_circuit_voltage": "20,3 V",
+            "short_circuit_current": "6,3 A",
+            "warranty": "36 meses",
+            "button_label": "Comprar ahora",
+            "url": "https:\/\/es.ecoflow.com\/products\/100w-flexible-solar-panel?variant=40133447974985"
+          }
+        }
+      },
+      "block_order": [
+        "13f50162-b728-4139-b2bb-34a37cce95f7"
+      ],
+      "settings": {
+        "padding_top_desktop": 100,
+        "padding_top_mobile": 60,
+        "padding_bottom_desktop": 100,
+        "padding_bottom_mobile": 100
+      }
+    },
+    "sp-feature": {
+      "type": "sp-features",
+      "blocks": {
+        "c519c14a-6d42-4947-945b-b1f25036d96f": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_161268927.png",
+            "image_mobile": "shopify:\/\/shop_images\/Group_161268953.png",
+            "title": "Amplia variedad de tipos y potencias",
+            "description": "EcoFlow ofrece una gama excepcional de tipos de paneles solares, desde paneles solares portátiles y plegables con soportes incorporados hasta paneles solares flexibles, ligeros y fáciles de instalar, y paneles solares rígidos y robustos. Además, con potencias de 60 a 400 W, cubrimos todas tus necesidades de energía. Conéctalos en paralelo y en serie para aprovechar al máximo tus paneles."
+          }
+        },
+        "cc111806-f6b0-46a9-923c-895e6464c6b8": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Mask_group_11_03850979-c8f0-42c5-9251-f3c9b1b1d851.png",
+            "image_mobile": "shopify:\/\/shop_images\/Mask_group_13_8454f12b-7332-499e-a0de-7fbb701ce060.png",
+            "title": "Altamente eficientes",
+            "description": "Todos los paneles solares EcoFlow están fabricados a partir de células solares monocristalinas extremadamente eficientes, que proporcionan altas tasas de conversión eficiente de entre el 22 y el 23,4 %, por lo que se obtiene más electricidad que con otros tipos de células."
+          }
+        },
+        "b7a2c566-19c1-4189-aedb-659b5ea925ed": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Mask_group_12_66fcb7d1-57d9-4efd-9ddc-39e46e6e2314.png",
+            "image_mobile": "shopify:\/\/shop_images\/Mask_group_14_fdf3b406-5cec-4de9-aba4-36b7c3be9830.png",
+            "title": "Plug-and-Play",
+            "description": "Fabricados con un conector universal, toda la gama de paneles solares EcoFlow es plug-and-play. Gracias a que no tiene una configuración complicada, se pueden conectar fácilmente a un generador solar o un inversor y comenzar a capturar energía de inmediato."
+          }
+        }
+      },
+      "block_order": [
+        "c519c14a-6d42-4947-945b-b1f25036d96f",
+        "cc111806-f6b0-46a9-923c-895e6464c6b8",
+        "b7a2c566-19c1-4189-aedb-659b5ea925ed"
+      ],
+      "settings": {
+        "title": "¿Cuáles son las razones para elegir paneles solares EcoFlow?",
+        "padding_top_desktop": 150,
+        "padding_top_mobile": 50,
+        "padding_bottom_desktop": 116,
+        "padding_bottom_mobile": 62
+      }
+    },
+    "sp-banner-5": {
+      "type": "sp-banner-4",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Group_161268900.png",
+        "mobileImage": "shopify:\/\/shop_images\/Group_161268954.png",
+        "title": "Encuentra el panel solar adecuado para ti",
+        "subtitle": "Compara nuestra gama de paneles solares para encontrar el panel solar que mejor se adapte a tus necesidades. Revisa la potencia, las dimensiones, la eficiencia de conversión y mucho más.",
+        "button_label": "Más información",
+        "url": "https:\/\/www.ecoflow.com\/es\/compare\/solar?id=1468461916013576194&productCatagoryId=1468461916013576194",
+        "padding_top_desktop": 118,
+        "padding_top_mobile": 62,
+        "padding_bottom_desktop": 120,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "sp-icons": {
+      "type": "sp-icons",
+      "blocks": {
+        "f67cf60e-36ff-4d8a-b55c-52bac12acd51": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Energy_Bills_icon_09370e4d-abe9-464c-9b28-7d450859c900.png",
+            "title": "Compensación del gasto en las facturas de la luz",
+            "description": "Almacena energía solar limpia durante el día y úsala después para alimentar tus electrodomésticos durante las horas pico, lo que reducirá tu dependencia de la red eléctrica y evitará facturas de la luz altas."
+          }
+        },
+        "97ee88a1-5536-49a8-a2e5-759dea809d9d": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Charge_icon_22725b6d-8006-45f4-9541-eda12fb80ce3.png",
+            "title": "Carga durante un apagón",
+            "description": "Cuando un apagón dura varios días, mantén tu generador cargado fácilmente aprovechando las horas del día."
+          }
+        },
+        "0e0254f8-4a76-4514-b064-6828f3261063": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Carbon_Footprint_icon_f055bfe0-8669-45ac-8136-a8779c415aaf.png",
+            "title": "Reduce tu huella de carbono",
+            "description": "El uso de energía renovable, como la solar, para alimentar tu hogar, vehículo o acampada puede reducir significativamente la cantidad de combustibles fósiles que utilizas, lo que a su vez reduce tu huella de carbono."
+          }
+        },
+        "d224481d-9e98-435a-b530-a65468ac1d8d": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Batteries_icon_24899fd7-d42b-490c-aed3-00da38232b1a.png",
+            "title": "Recarga baterías en cualquier lugar",
+            "description": "Da igual si estás en casa, en tu autocaravana o en la playa, aprovecha el sol para recargar tu batería solar."
+          }
+        }
+      },
+      "block_order": [
+        "f67cf60e-36ff-4d8a-b55c-52bac12acd51",
+        "97ee88a1-5536-49a8-a2e5-759dea809d9d",
+        "0e0254f8-4a76-4514-b064-6828f3261063",
+        "d224481d-9e98-435a-b530-a65468ac1d8d"
+      ],
+      "settings": {
+        "title": "Ventajas de los paneles solares",
+        "padding_top_desktop": 120,
+        "padding_top_mobile": 40,
+        "padding_bottom_desktop": 126,
+        "padding_bottom_mobile": 50
+      }
+    },
+    "sp-blog": {
+      "type": "sp-blog",
+      "blocks": {
+        "a1746e72-4cbf-4e7f-b9ec-bbc50f5807e1": {
+          "type": "blog",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image8.jpg",
+            "title": "Se Pueden Colocar Placas Solares en la Terraza de un Piso",
+            "link_label": "Leer ahora >",
+            "link": "https:\/\/blog.ecoflow.com\/es\/se-pueden-colocar-placas-solares-en-la-terraza-de-un-piso\/"
+          }
+        },
+        "blog_JEd4dC": {
+          "type": "blog",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image3.jpg",
+            "title": "Kit Placas Solares Para Casa de Campo",
+            "link_label": "Leer ahora >",
+            "link": "https:\/\/blog.ecoflow.com\/es\/kit-placas-solares-para-casa-de-campo\/"
+          }
+        },
+        "blog_hRxeRd": {
+          "type": "blog",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image2-3.jpg",
+            "title": "Subvencion Placas Solares 2024",
+            "link_label": "Leer ahora >",
+            "link": "https:\/\/blog.ecoflow.com\/es\/subvencion-placas-solares-2024\/"
+          }
+        },
+        "blog_MyyaNW": {
+          "type": "blog",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image3-5.png",
+            "title": "Deduccion Irpf Placas Solares 2024",
+            "link_label": "Leer ahora >",
+            "link": "https:\/\/blog.ecoflow.com\/es\/deduccion-irpf-placas-solares-2024\/"
+          }
+        }
+      },
+      "block_order": [
+        "a1746e72-4cbf-4e7f-b9ec-bbc50f5807e1",
+        "blog_JEd4dC",
+        "blog_hRxeRd",
+        "blog_MyyaNW"
+      ],
+      "settings": {
+        "title": "Leer más sobre los paneles solares",
+        "padding_top_desktop": 120,
+        "padding_top_mobile": 50,
+        "padding_bottom_desktop": 122,
+        "padding_bottom_mobile": 36
+      }
+    },
+    "sp-faq": {
+      "type": "sp-faq",
+      "blocks": {
+        "2a476293-dfba-4c24-ba07-9f1ae4211579": {
+          "type": "question",
+          "settings": {
+            "title": "¿Qué hace un panel solar?",
+            "answer": "<p>Un panel solar convierte la luz solar en electricidad. Está formado por células que tienen una propiedad especial llamada efecto fotovoltaico. Cuando la luz del sol incide sobre estas células, crea una corriente eléctrica al energizar los electrones del material. El flujo de los electrones energizados genera electricidad de corriente continua (CC). Se conectan varias células solares entre sí para formar un panel solar y se conectan varios paneles entre sí para crear un conjunto de paneles. Posteriormente, la electricidad CC se convierte en corriente alterna (CA) mediante un inversor, lo que la hace compatible con el sistema eléctrico de un edificio. La electricidad generada se puede utilizar para alimentar aparatos y dispositivos, almacenarse en baterías o devolverse a la red.<\/p>"
+          }
+        },
+        "b1503b78-ec1f-4e10-b89b-17a8b0b6416e": {
+          "type": "question",
+          "settings": {
+            "title": "¿Cuántos paneles solares se necesitan para suministrar la energía eléctrica de una casa?",
+            "answer": "<p>La cantidad de paneles solares necesarios para alimentar una casa depende de varios factores, incluido el consumo de energía de la casa, la disponibilidad de luz solar en la ubicación, la eficiencia de los paneles solares y el nivel deseado de independencia energética. Aquí tienes una guía general que te ayudará a hacer un cálculo estimado:<\/p><ol><li> Calcula tu consumo de energía: determina el uso mensual o anual medio de energía de tu hogar en kilovatios-hora (kWh).<br\/> <\/li><li>Evalúa la luz solar: piensa en la cantidad de luz solar que recibe tu ubicación diariamente y durante todo el año. Las áreas con más luz solar necesitarán menos paneles solares.<br\/><\/li><li>Determina la capacidad de los paneles solares: la capacidad nominal de los paneles solares suele medirse en vatios (W) o kilovatios (kW). Para calcular la cantidad de paneles solares que necesitas, es necesario conocer la capacidad de cada panel. Por ejemplo, si tuvieras paneles de 100 W, 1 kW equivaldría a diez paneles.<\/li><li>Ten en cuenta la eficiencia y las pérdidas: los paneles solares tienen un índice de eficiencia que indica el porcentaje de luz solar que pueden convertir en electricidad. Ten en cuenta esta eficiencia al calcular la cantidad de paneles que necesitas.<\/li><li>Calcula el número de paneles: divide tu consumo de energía por la producción de energía diaria media de un panel solar. Este cálculo te dará una estimación del número de paneles que necesitas.<\/li><\/ol>"
+          }
+        },
+        "ae0aff0d-94ef-4518-a0ae-e4109ec187a3": {
+          "type": "question",
+          "settings": {
+            "title": "¿Merecen la pena los paneles solares?",
+            "answer": "<p> Los paneles solares pueden ser una inversión que vale la pena para muchos propietarios. Estos son algunos factores que han de tenerse en cuenta al evaluar el valor de los paneles solares:<br\/> <\/p><ol><li>Ahorro de costes: los paneles solares pueden reducir significativamente o incluso eliminar tus facturas mensuales de electricidad.<br\/><\/li><li>Retorno de la inversión (ROI): el retorno de la inversión puede variar según factores como los costes de instalación, el ahorro de energía y los incentivos.<\/li><li>Aumento del valor de la propiedad: los paneles solares pueden aumentar el valor de tu propiedad.<\/li><li>Beneficios medioambientales: si instalas paneles solares, puedes reducir tu huella de carbono y contribuir a un futuro más sostenible.<\/li><li>Incentivos y beneficios fiscales: dependiendo de donde vivas, es posible que tengas distintos incentivos económicos destinados a apoyar la instalación de paneles solares.<\/li><\/ol>"
+          }
+        },
+        "66a89b6f-900f-4487-b20e-2bd314701561": {
+          "type": "question",
+          "settings": {
+            "title": "¿Qué panel solar es mejor?",
+            "answer": "<p>El «mejor» panel solar depende de varios factores, incluidas tus necesidades específicas, el presupuesto, la ubicación y tus preferencias. Estos son algunos factores clave que hay que tener en cuenta al evaluar los paneles solares:<\/p><ol><li> Eficiencia: los paneles de mayor eficiencia pueden generar más electricidad en la misma cantidad de espacio.<\/li><li>Calidad y fiabilidad: elige paneles solares de fabricantes acreditados conocidos por producir productos fiables y duraderos.<\/li><li>Garantía: busca garantías ampliadas que cubran el producto y su funcionamiento.<\/li><li>Coste: ten en cuenta tu presupuesto y la rentabilidad de los paneles solares.<\/li><li>Reseñas y reputación: busca opiniones y comentarios de los clientes para obtener información sobre su rendimiento, fiabilidad y satisfacción del cliente.<\/li><\/ol>"
+          }
+        },
+        "d285ebda-fd9a-4879-9789-f2f6b0f8e078": {
+          "type": "question",
+          "settings": {
+            "title": "¿Puede una casa funcionar únicamente con energía solar?",
+            "answer": "<p>Sí, una casa puede funcionar exclusivamente con energía solar. Una casa puede generar suficiente energía para satisfacer sus necesidades energéticas a partir de paneles solares. Para ello, es necesario instalar un sistema de energía solar acorde, diseñado de un modo adecuado. Normalmente, esto implica instalar paneles solares en el techo o en una área abierta con buena exposición a la luz solar.<br\/> <br\/> Para lograr una casa autosostenible con energía solar, un sistema de energía solar suele incluir varios componentes:<\/p><ol><li>Paneles solares<\/li><li>Inversor<\/li><li>Almacenamiento de batería<\/li><li>Medición neta (conexión a la red)<br\/> <\/li><\/ol><p>Es importante tener en cuenta que la viabilidad de hacer funcionar una casa únicamente con energía solar depende de factores como el tamaño del sistema fotovoltaico, el consumo de energía, la luz solar disponible y las regulaciones locales. Además, las medidas de eficiencia energética, como el uso de electrodomésticos de bajo consumo y la optimización del uso de la energía, pueden ayudar a maximizar la eficiencia de una casa que funciona con energía solar.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "2a476293-dfba-4c24-ba07-9f1ae4211579",
+        "b1503b78-ec1f-4e10-b89b-17a8b0b6416e",
+        "ae0aff0d-94ef-4518-a0ae-e4109ec187a3",
+        "66a89b6f-900f-4487-b20e-2bd314701561",
+        "d285ebda-fd9a-4879-9789-f2f6b0f8e078"
+      ],
+      "settings": {
+        "id": "FAQ",
+        "title": "Respondamos a tus preguntas",
+        "padding_top_desktop": 122,
+        "padding_top_mobile": 36,
+        "padding_bottom_desktop": 200,
+        "padding_bottom_mobile": 168
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "sp-button",
+    "sp-steps",
+    "sp-banner-2",
+    "sp-product-3",
+    "sp-banner-3",
+    "sp-product-1",
+    "sp-banner-4",
+    "sp-product-2",
+    "sp-feature",
+    "sp-banner-5",
+    "sp-icons",
+    "sp-blog",
+    "sp-faq"
+  ]
+}

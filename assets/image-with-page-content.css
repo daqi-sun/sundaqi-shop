@@ -1,0 +1,85 @@
+.image-with-page-content-wrapper {
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% - 48px);
+  margin-bottom: 110px;
+  margin-top: 0px;
+  display: flex;
+  align-items: center;
+}
+.image-with-page-content-wrapper>div {
+  width: calc(50% - 7.5px);
+  position: relative;
+}
+.image-with-page-content-wrapper>div:last-child {
+  margin-left: 15px;
+}
+.image-with-page-content-wrapper .image-wrapper img {
+  width: 100%;
+  border-radius: 8px;
+}
+.image-with-page-content-wrapper .page-content-wrapper {
+  padding: 48px;
+}
+.image-with-page-content-wrapper .page-content-wrapper p {
+  margin-bottom: 0;
+}
+.image-with-page-content-wrapper .image-content {
+  position: absolute;
+  padding: 32px;
+  width: 100%;
+  top: 0;
+}
+.image-with-page-content-wrapper .image-content p {
+  margin-bottom: 8px;
+  font-size: 18px;
+  color: #fff;
+  line-height: 21.6px;
+}
+.referral-page main .page-content-wrapper .title {
+  letter-spacing: unset;
+}
+.image-with-page-content-wrapper .image-content h2 {
+  margin-bottom: 0px;
+  font-size: 46px;
+  color: #fff;
+  line-height: 55.2px;
+}
+.image-with-page-content-wrapper .conjured_flexbox.top_banner .conjured_content {
+  padding-top: 24px;
+}
+@media screen and (max-width: 989px) {
+  .image-with-page-content-wrapper {
+    margin-top: 0px;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 60px;
+  }
+  .image-with-page-content-wrapper>div {
+    width: 100%;
+  }
+  .image-with-page-content-wrapper .image-wrapper img {
+    border-radius: 0px;
+  }
+  .image-with-page-content-wrapper .image-content {
+    padding: 32px 24px;
+    text-align: center;
+  }
+  .image-with-page-content-wrapper .image-content p {
+    font-size: 14px;
+    line-height: 16.8px;
+  }
+  .image-with-page-content-wrapper .image-content h2 {
+    font-size: 28px;
+    line-height: 33.6px;
+  }
+  .image-with-page-content-wrapper .page-content-wrapper {
+    padding: 60px 24px;
+    text-align: center;
+    padding-bottom: 0;
+  }
+  .image-with-page-content-wrapper>div:last-child {
+    margin-left: 0px;
+  }
+}

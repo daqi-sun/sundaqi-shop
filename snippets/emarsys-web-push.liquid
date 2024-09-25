@@ -1,0 +1,421 @@
+{% comment %}
+  Renders emarsys web push function and pop up
+  Usage:
+  {% render 'emarsys-web-push' %}
+{% endcomment %}
+<style>
+  #emarsys-popup {
+    position: fixed;
+    bottom: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 32px);
+    max-width: 340px;
+    background-color: #fff;
+    padding: 20px 24px;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    z-index: 9999999999;
+    display: none;
+  }
+  .emarsys-popup-icon{ display: none; }
+  .emarsys-popup-icon svg{ width: 32px; height: 32px; margin-bottom: 8px; }
+  .emarsys-popup-text h3{ font-size: 14px; margin-bottom: 8px; color: #03060B; }
+  .emarsys-popup-text div{ font-size: 13px; color: #757575; line-height: 1.375; margin-bottom: 16px; }
+  .emarsys-popup-buttons{ display: flex; column-gap: 16px; justify-content: space-between; }
+  .emarsys-popup-buttons button{ width: calc(50% - 8px); padding: 7px 10px; background: transparent; border-radius: 33px; font-weight: 600; font-size: 13px; line-height: 1.36; border: 1px solid; }
+  .emarsys-popup-buttons button#emarsys-popup-btn-later{ border: 1px solid #ccc; color: #757575; }
+  .emarsys-popup-buttons button#emarsys-popup-btn-subscribe{ background: #2673FF; color: #fff; }
+  #onetrust-banner-sdk.otFlat{ z-index: 999999999 !important; }
+  #emarsys-popup.ios-device{ display: none !important; }
+  @media screen and (min-width: 750px){
+    #emarsys-popup.ios-device{ display: block; }
+    #emarsys-popup {
+      top: 50px;
+      bottom: unset;
+      right: 20px;
+      left: unset;
+      transform: unset;
+      max-width: 300px;
+      padding: 28px 24px;
+    }
+    .emarsys-popup-info{
+      display: flex;
+    }
+    .emarsys-popup-icon svg{ width: 40px; height: 40px; }
+    .emarsys-popup-icon{ margin-right: 16px; display: block; }
+    .emarsys-popup-text div{ font-size: 14px; margin-bottom: 30px; }
+    .emarsys-popup-buttons{ text-align: right; display: block; }
+    .emarsys-popup-buttons button{ width: 100px; margin-left: 16px; }
+  }
+</style>
+
+<div id="emarsys-popup" class="emarsys-popup-wrap">
+  <div class="emarsys-popup-inner">
+    <div class="emarsys-popup-info">
+      <div class="emarsys-popup-icon">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="20" fill="#F5F5F5"/>
+          <path d="M13.7 26V17.1765C13.7 13.7653 16.5206 11 20 11C23.4794 11 26.3 13.7653 26.3 17.1765V26M11 26H29H11Z" fill="#757575"/>
+          <path d="M20 31C21.6568 31 23 29.8807 23 28.5V28H17V28.5C17 29.8807 18.3432 31 20 31Z" fill="#757575"/>
+          <path d="M20 9C18.8954 9 18 10.1193 18 11.5V12H22V11.5C22 10.1193 21.1046 9 20 9Z" fill="#757575"/>
+          <path d="M12 26H28" stroke="#757575" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="emarsys-popup-text">
+        <h3>{{ 'emarsys.popup.heading' | t }}</h3>
+        <div>{{ 'emarsys.popup.message' | t }}</div>
+      </div>
+    </div>
+    <div class="emarsys-popup-buttons">
+      <button id="emarsys-popup-btn-later" onclick="closePopup()">{{ 'emarsys.popup.button_decline_label' | t }}</button>
+      <button id="emarsys-popup-btn-subscribe" onclick="generalSubscribe()">{{ 'emarsys.popup.button_accept_label' | t }}</button>
+    </div>
+  </div>
+</div>
+
+<script>window.Inscoder=window.Inscoder||{},window.Inscoder.browserName=function(e){switch(!0){case-1<e.indexOf("edge"):case-1<e.indexOf("edg/"):return"edge";case-1<e.indexOf("opr")&&!!window.opr:return"opera";case-1<e.indexOf("chrome")&&!!window.chrome:return"chrome";case-1<e.indexOf("trident"):return"ie";case-1<e.indexOf("firefox"):return"firefox";case-1<e.indexOf("safari"):return"safari";default:return"other"}}(window.navigator.userAgent.toLowerCase()),window.Inscoder.isSafari=function(){return"safari"===window.Inscoder.browserName},window.Inscoder.isChrome=function(){return"chrome"===window.Inscoder.browserName},window.Inscoder.isFirefox=function(){return"firefox"===window.Inscoder.browserName},window.Inscoder.isEdge=function(){return"edge"===window.Inscoder.browserName},window.Inscoder.isOpera=function(){return"opera"===window.Inscoder.browserName},window.Inscoder.isIE=function(){return"ie"===window.Inscoder.browserName},window.Inscoder.deviceType=function(){if(navigator.platform==='iPad' || navigator.platform==='iPhone' || navigator.platform==='iPod'){ return "iOS"; }else{ return "noniOS"; }}</script>
+
+<script type="text/javascript" src="https://assets.emarsys.net/web-emarsys-sdk/4.5.0/web-emarsys-sdk.js" async></script>
+<script type="text/javascript">
+  const WebEmarsysSettings = {
+    "us.ecoflow.com": {
+        "applicationCode": "EMS37-95AFA",
+        "safariWebsitePushID": "web.ecoflow.shopifyus",
+        "defaultNotificationTitle": "EcoFlow-US",
+        "defaultNotificationIcon": "https://cdn.shopify.com/s/files/1/1996/9707/files/ecoflow_logo.png?v=1686111563",
+        "applicationServerPublicKey": "BLbq8GPuptYASbAo2MAWSwIkjQgcJdf4dw552r95VoJM3Ei4h7Z8tjF6DPyZqklxflgfyUaDhSbo0e_ENCJ_D5k",
+        "popupSuppressDays": 30,
+        "customerFieldID": 4272,
+        "showTimingDelay": 1,
+        "showAfterDays": 3
+    },
+    "jp.ecoflow.com": {
+        "applicationCode": "EMS4F-4C2D0",
+        "safariWebsitePushID": "web.ecoflow.shopifyjp",
+        "defaultNotificationTitle": "EcoFlow-JP",
+        "defaultNotificationIcon": "https://cdn.shopify.com/s/files/1/0412/3459/6001/files/ecoflow_logo.png?v=1686113160",
+        "applicationServerPublicKey": "BFncXeuQx_nnugMGlqp0Ww01kUbmdIDuK2P83s4qReGZhH9vLOlXTNEsQ-GIjTCOpldJNLz8L2jNhYvggfzdiWI",
+        "popupSuppressDays": 30,
+        "customerFieldID": 4326,
+        "showTimingDelay": 1,
+        "showAfterDays": 3
+    },
+    "ca.ecoflow.com": {
+        "applicationCode": "EMSC2-5D5AB",
+        "safariWebsitePushID": "web.ecoflow.shopifyca",
+        "defaultNotificationTitle": "EcoFlow-CA",
+        "defaultNotificationIcon": "https://cdn.shopify.com/s/files/1/0438/0901/3914/files/ecoflow_logo.png?v=1686651710",
+        "applicationServerPublicKey": "BOFsSMx2tcggsaRYFirTy-mGYSGuLgrjdssgXkJYTgdfPAh2fV-FtFormGDNz91NpIr-LYzF7nCN3e-u9zf3Zus",
+        "popupSuppressDays": 30,
+        "customerFieldID": 4272
+    },
+    "eu.ecoflow.com": {
+        "applicationCode": "EMS43-F453A",
+        "safariWebsitePushID": "web.ecoflow.shopifyeu",
+        "defaultNotificationTitle": "EcoFlow-EU",
+        "defaultNotificationIcon": "https://cdn.shopify.com/s/files/1/0431/3789/2516/files/ecoflow_logo_ec319c11-7c2b-4a59-ad16-30c4b1b99743.png?v=1686651787",
+        "applicationServerPublicKey": "BJnOOIfOAvFE8DAvNl1jjL8zKE2FURYviKRyCB13SMUkiAJ9WzPLevqGgxUD4uPPm2fdCBhkRAxb6euT5YYx7zA",
+        "popupSuppressDays": 30,
+        "customerFieldID": 4299,
+        "showTimingDelay": 1,
+        "showAfterDays": 3
+    },
+    "uk.ecoflow.com": {
+        "applicationCode": "EMSA1-0D8D7",
+        "safariWebsitePushID": "web.ecoflow.shopifyuk",
+        "defaultNotificationTitle": "EcoFlow-UK",
+        "defaultNotificationIcon": "https://cdn.shopify.com/s/files/1/0592/6004/3456/files/ecoflow_logo.png?v=1686651847",
+        "applicationServerPublicKey": "BDR_X64G6LnrRuB9S5lAH4mxdDgj10JyplBGZZO7TapysEtbfITFYvROEg-lFr_YJ22VHoVCnIZxlV8cr4mr154",
+        "popupSuppressDays": 30,
+        "customerFieldID": 4299,
+        "showTimingDelay": 1,
+        "showAfterDays": 3
+    },
+    "de.ecoflow.com": {
+        "applicationCode": "EMSDE-4AC20",
+        "safariWebsitePushID": "web.ecoflow.shopifyde",
+        "defaultNotificationTitle": "EcoFlow-DE",
+        "defaultNotificationIcon": "https://cdn.shopify.com/s/files/1/0622/6758/8855/files/ecoflow_logo.png?v=1686652033",
+        "applicationServerPublicKey": "BFmQZdVNOXhIKBRB_Gyif_RJFfiT1YM96-xoutRK6rxvdv8b3t7JlxPHx-qPw0inM3EE4uTVk-mF3ZyT9phoImA",
+        "popupSuppressDays": 30,
+        "customerFieldID": 4299,
+        "showTimingDelay": 1,
+        "showAfterDays": 3
+    },
+    "fr.ecoflow.com": {
+        "applicationCode": "EMS24-6CB63",
+        "safariWebsitePushID": "web.ecoflow.shopifyfr",
+        "defaultNotificationTitle": "EcoFlow-FR",
+        "defaultNotificationIcon": "https://cdn.shopify.com/s/files/1/0625/0718/8450/files/ecoflow_logo.png?v=1686651928",
+        "applicationServerPublicKey": "BIuginXl35pP5J7yPxjkyVjVWzSNcW-ZmpQBkvWBKhhnaQY_fRLorxAOe8sgQ_-jfKidPxMhbGPbRUd0jKI0AjM",
+        "popupSuppressDays": 30,
+        "customerFieldID": 4299,
+        "showTimingDelay": 1,
+        "showAfterDays": 3
+    },
+    "es.ecoflow.com": {
+        "applicationCode": "EMSEA-6874A",
+        "safariWebsitePushID": "web.ecoflow.shopifyes",
+        "defaultNotificationTitle": "EcoFlow-ES",
+        "defaultNotificationIcon": "https://cdn.shopify.com/s/files/1/0651/6922/7998/files/ecoflow_logo.png?v=1686651980",
+        "applicationServerPublicKey": "BEnYvaTPeOaWvpAEb_ObxEZXmcVaLb1qFWiBcd24NV_uaA09GRiI2QLW_JvenWc5-d8vdq795QNOOy219M3YGsY",
+        "popupSuppressDays": 30,
+        "customerFieldID": 4299,
+        "showTimingDelay": 1,
+        "showAfterDays": 3
+    },
+    "kr.ecoflow.com": {
+        "applicationCode": "EMS04-F3BA8",
+        "safariWebsitePushID": "web.ecoflow.shopifykr",
+        "defaultNotificationTitle": "EcoFlow-KR",
+        "defaultNotificationIcon": "https://cdn.shopify.com/s/files/1/0611/8024/8233/files/ecoflow_logo.png?v=1686652071",
+        "applicationServerPublicKey": "BFuZtZ_UTKFgcyzyyjtAt21e-xPY2ABLJx1-9IvxJjmD1phdM2AQH2NC4RcWBAAXT1ZXDMqnMbLkzLa75mbdFyw",
+        "popupSuppressDays": 30,
+        "customerFieldID": 4326,
+        "showTimingDelay": 1,
+        "showAfterDays": 3
+    },
+    "au.ecoflow.com": {
+        "applicationCode": "EMSA7-B101D",
+        "safariWebsitePushID": "web.ecoflow.shopifyau",
+        "defaultNotificationTitle": "EcoFlow-AU",
+        "defaultNotificationIcon": "https://cdn.shopify.com/s/files/1/0576/3668/3974/files/ecoflow_logo_3232bc35-4f5a-48a8-92b0-b62e49169c1f.png?v=1686651604",
+        "applicationServerPublicKey": "BHG4U1voy4GiJsu1hvJXfjnPVbWfYMmAXL2Az1mPUY0gFckjVY8RyQlle2WNY3ypIpLZlGam2zOiKoMbON2fKtY",
+        "popupSuppressDays": 30,
+        "customerFieldID": 4353,
+        "showTimingDelay": 1,
+        "showAfterDays": 3
+    },
+    "za.ecoflow.com": {
+        "applicationCode": "EMS2A-92378",
+        "safariWebsitePushID": "web.ecoflow.shopifyza",
+        "defaultNotificationTitle": "EcoFlow-ZA",
+        "defaultNotificationIcon": "https://cdn.shopify.com/s/files/1/0620/7881/2369/files/ecoflow_logo.png?v=1686652115",
+        "applicationServerPublicKey": "BDczl_WehqvWrzVyJ2FpavVGukROfk9FltH9bF6Gv3aqWjvGRechi4lHKBa43N89mb69W7lJbYD0MrmOJHqgqYE",
+        "popupSuppressDays": 30,
+        "customerFieldID": 4353,
+        "showTimingDelay": 1,
+        "showAfterDays": 3
+    }
+    // Add more entries as needed
+  };
+  const setting = WebEmarsysSettings['{{ shop.domain }}'];
+  console.log(setting);
+  var WebEmarsysSdk = WebEmarsysSdk || []
+    WebEmarsysSdk.push(['init', {
+      applicationCode: setting.applicationCode, // your Domain code obtained above
+      safariWebsitePushID: setting.safariWebsitePushID,
+      defaultNotificationTitle: setting.defaultNotificationTitle, // default title for notifications
+      defaultNotificationIcon: setting.defaultNotificationIcon, // default icon for notifications
+      autoSubscribe: false, // If true, prompts a user to subscribe for pushes upon SDK initialization which is not recommended
+      enableLogging: true,
+      serviceWorker: {
+        url: `apps/ems/web-emarsys-sdk/4.5.0/service-worker.js`,
+    	applicationServerPublicKey: setting.applicationServerPublicKey
+      }
+    }])
+</script>
+<script>
+
+  // For firefox
+  var permissionGrantedFirefox = false;
+  var permissionGrantedOthers = false;
+
+  const websiteStr = 'es';
+  //function - subscribe() - to trigger premission popup by browser and sync browser token to Emarsys - [all pages]
+  function generalSubscribe() {
+    if(!localStorage.getItem('emarsysSubscribe')){
+        console.log('generalSubscribe')
+        WebEmarsysSdk.push(function(res) {
+            WebEmarsysSdk.push(['onSubscribe', function (res) {
+				WebEmarsysSdk.customEvent('webpushsubscribe', { type: 'new', website: websiteStr}).then((success) => {
+					console.log('Emarsys Web Push Subscription (New):', success)
+				}).catch(err => {
+					console.error('Emarsys Web Push Subscription (New):', err)
+				});
+			}]);
+
+            WebEmarsysSdk.subscribe();
+            localStorage.setItem('emarsysSubscribe','subscribe');
+        })
+    }
+    document.getElementById("emarsys-popup").style.display = "none"
+  }
+
+  //get the shopify customer id
+  var customerId = null;
+  {% if customer %}
+    customerId = {{ customer.id }};
+  {% endif %}
+
+  //login() - map existing contact to this browser - [all pages]
+  //suggest to run once only
+  if (customerId) { // for user in login status
+    if(!localStorage.getItem('emarsysLogin')) {
+      WebEmarsysSdk.push(function(res) {
+        WebEmarsysSdk.isSubscribed().then(function (res) {
+          const contactInfo = {
+            fieldId: Number(setting.customerFieldID),
+            fieldValue: customerId
+          };
+          loginResult = WebEmarsysSdk.login(contactInfo).then(function (res) {
+            console.log("Login Result: " + res);
+            localStorage.setItem('emarsysLogin', 'login');
+          })
+        }).catch(function (err) {
+          console.error('Is subscribed error', err)
+        })
+      });
+    }
+  }else{
+    //for visitor (anonymous)
+    if(localStorage.getItem('emarsysLogin')) {
+      WebEmarsysSdk.push(function(res) {
+        WebEmarsysSdk.isSubscribed().then(function (res) {
+          logoutResult = WebEmarsysSdk.logout().then(function(res) {
+            console.log("Logout Result: " + res);
+            localStorage.removeItem('emarsysLogin');
+          })
+        }).catch(function (err) {
+          console.error('Is subscribed error', err);
+        })
+      })
+    }
+  }
+
+  //Determin wheter to trigger the pop up
+  if (window.Inscoder.isSafari() || window.Inscoder.isFirefox() || window.Inscoder.isEdge()) {
+    console.log("Safari or Firefox")
+    if (window.Inscoder.isSafari()) {
+      //For Safari
+      if (!localStorage.getItem("emarsysSubscribe")) {
+        showHTMLPopup()
+      }
+    } else {
+      //For Firefox and Edge
+      WebEmarsysSdk.push(["onReady", function (res) {
+        console.log('EVENT: onReady - Firefox or Edge');
+        WebEmarsysSdk.push(["onPermissionGranted", function (res) {
+          console.log("EVENT: onPermissionGranted - Firefox or Edge")
+          //参考现有的代码，如果已经授权，不需要再显示HTML弹窗，Emarsys可以同步token
+          permissionGrantedFirefox = true
+          if (!localStorage.getItem("emarsysSubscribe")) {
+            WebEmarsysSdk.push(['onSubscribe', function (res) {
+				WebEmarsysSdk.customEvent('webpushsubscribe', { type: 'migration', website: websiteStr}).then((success) => {
+				  console.log('Emarsys Web Push Subscription (Migration) - Firefox or Edge:', success)
+				}).catch(err => {
+					console.error('Emarsys Web Push Subscription (Migration) - Firefox or Edge:', err)
+				});
+			}]);
+
+            WebEmarsysSdk.subscribe()
+            localStorage.setItem("emarsysSubscribe", "subscribe")
+          }
+          },
+        ])
+        WebEmarsysSdk.push(["onPermissionDenied", function (res) {
+          console.log("EVENT: onPermissionDenied - Firefox or Edge")
+          //检查是否曾经拒绝，如果是的话，也不需要显示HTML弹窗
+          permissionGrantedFirefox = true
+          }
+        ])
+        setTimeout(funcHTMLPopup, 3000) //大约等待3秒
+        },
+      ])
+    }
+  } else {
+    //For other browsers, trigger the subscribe function
+    //generalSubscribe();
+
+      WebEmarsysSdk.push(["onReady", function (res) {
+        console.log('EVENT: onReady - Other browsers');
+        WebEmarsysSdk.push(["onPermissionGranted", function (res) {
+          console.log("EVENT: onPermissionGranted - Other browsers")
+          //参考现有的代码，如果已经授权，不需要再显示浏览器授权弹窗，Emarsys可以同步token
+          permissionGrantedOthers = true
+          if (!localStorage.getItem("emarsysSubscribe")) {
+            WebEmarsysSdk.push(['onSubscribe', function (res) {
+				WebEmarsysSdk.customEvent('webpushsubscribe', { type: 'migration', website: websiteStr}).then((success) => {
+				  console.log('Emarsys Web Push Subscription (Migration) - Other browsers:', success)
+				}).catch(err => {
+					console.error('Emarsys Web Push Subscription (Migration) - Other browsers:', err)
+				});
+			}]);
+
+            WebEmarsysSdk.subscribe()
+            localStorage.setItem("emarsysSubscribe", "subscribe")
+          }
+          },
+        ])
+        WebEmarsysSdk.push(["onPermissionDenied", function (res) {
+          console.log("EVENT: onPermissionDenied - Other browsers")
+          //检查是否曾经拒绝，如果是的话，也不需要显示浏览器授权弹窗
+          permissionGrantedOthers = true
+          }
+        ])
+        setTimeout(funcGeneralSubscribe, 3000) //大约等待3秒
+        },
+      ])
+  }
+
+
+  function funcGeneralSubscribe() {
+    console.log("funcGeneralSubscribe")
+    if (!permissionGrantedOthers) {
+      //检查如果其他浏览器并未授权或者拒绝的话，就执行显示浏览器授权弹窗的逻辑
+      generalSubscribe();
+    }
+  }
+
+  function funcHTMLPopup() {
+    console.log("funcHTMLPopup")
+    if (!permissionGrantedFirefox) {
+      //检查如果firefox并未授权或者拒绝的话，就执行显示HTML弹窗的逻辑
+      showHTMLPopup()
+    }
+  }
+  function showHTMLPopup() {
+    console.log("showHTMLPopup");
+    if(window.Inscoder.deviceType() == 'iOS' && window.innerWidth < 750) document.getElementById("emarsys-popup").classList.add('ios-device');
+    //get the item emarsysSubscribeSuppress from emarsysSubscribeSuppress
+    const noOfDaysBefore = calculateDaysFromToday(localStorage.getItem("emarsysSubscribeDeclineDate"));
+    const noOfDaysPopupShown = calculateDaysFromToday(localStorage.getItem("emarsysPopupShown"));
+    console.log("noOfDaysBefore: " + noOfDaysBefore)
+    if (noOfDaysBefore > setting.popupSuppressDays) {
+      if(noOfDaysPopupShown > setting.showAfterDays) {
+        //if the number of day is greater than 30, show the HTML popup
+        setTimeout(function(){
+          document.getElementById("emarsys-popup").style.display = "block";
+          localStorage.setItem('emarsysPopupShown', new Date().toISOString());
+          if(window.innerWidth < 750){
+            document.querySelector('body').classList.add('show_overlay');
+            document.addEventListener('click', function(e){
+              var el = e.target;
+              if(!el.classList.contains('emarsys-popup-wrap') && !el.closest('#emarsys-popup')) {
+                closePopup();
+              }
+            });
+          }
+        }, 60000);
+      }
+    }
+  }
+  //function - closePopup() - to close the HTML popup and set the decline date to localStroage
+  function closePopup() {
+    document.getElementById("emarsys-popup").style.display = "none";
+    if(document.querySelector('body').classList.contains('show_overlay')) document.querySelector('body').classList.remove('show_overlay');
+    localStorage.setItem("emarsysSubscribeDeclineDate", new Date().toISOString())
+  }
+  //calculate the number of days from today
+  function calculateDaysFromToday(fromDate) {
+    if (fromDate) {
+      const storedDate = new Date();
+      const timeDifference = Date.now() - new Date(fromDate);
+      return Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    } else {
+      //set a large number if the date is null
+      return 99999;
+    }
+  }
+</script>

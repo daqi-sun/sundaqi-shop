@@ -1,0 +1,140 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "Product Applications",
+  "id": "eco-pdp-application",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "class": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "id": "atb_main_heading",
+      "type": "text",
+      "label": "Main Heading",
+      "default": "Product Applications",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "blocks",
+      "label": "Block ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": "",
+      "repeatable": "application"
+    },
+    {
+      "id": "block_background_image",
+      "type": "image_picker",
+      "label": "Background Image",
+      "repeatable": "application",
+      "info": ""
+    },
+    {
+      "id": "block_background_image_mobile",
+      "type": "image_picker",
+      "label": "Background Image Mobile",
+      "repeatable": "application",
+      "info": ""
+    },
+    {
+      "id": "block_title",
+      "type": "text",
+      "label": "Heading",
+      "default": "Home Backup",
+      "repeatable": "application",
+      "info": ""
+    },
+    {
+      "id": "block_description",
+      "type": "text",
+      "label": "Subheading",
+      "default": "represents the new standard",
+      "repeatable": "application",
+      "info": ""
+    },
+    {
+      "id": "block_link_label",
+      "type": "text",
+      "label": "Link label",
+      "default": "learn more",
+      "repeatable": "application",
+      "info": ""
+    },
+    {
+      "id": "block_button_link",
+      "type": "text",
+      "label": "Link Url",
+      "repeatable": "application",
+      "info": ""
+    }
+  ],
+  "warnings": [
+    "repeating image fields may not be properly handled"
+  ]
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_main_heading' -%}
+{%- assign atb_main_heading = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_background_image' -%}
+{%- assign block_background_image = val -%}
+{%- include 'atb-render' field:'block_background_image_mobile' -%}
+{%- assign block_background_image_mobile = val -%}
+{%- include 'atb-render' field:'block_title' -%}
+{%- assign block_title = val -%}
+{%- include 'atb-render' field:'block_description' -%}
+{%- assign block_description = val -%}
+{%- include 'atb-render' field:'block_link_label' -%}
+{%- assign block_link_label = val -%}
+{%- include 'atb-render' field:'block_button_link' -%}
+{%- assign block_button_link = val -%}
+{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section ">
+<section class="eco-choose-pdp pdp-application">
+  <div class="container">
+    <div class="row my-5 pt-md-4">
+      <div class="col-md-12">
+        <h2 class="text-center mb-4">{{atb_main_heading}}</h2>
+      </div>
+      {% for block0 in blocks %}
+{%- assign my_image_key1 = block_background_image_mobile[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image1 = images[my_image_key1] -%}
+{%- assign my_image_key0 = block_background_image[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image0 = images[my_image_key0] -%}
+        <div class="col-md-4 p-md-1 my-2">
+          <div class="text-center choose-block">
+            <img data-src="{{my_image0 | img_url: '1200x'}}" class="lazyload desktop-image" style="object-position: 76%;">
+            <img data-src="{{my_image1 | img_url: '800x'}}" class="lazyload mobile-image" style="object-position: 76%;">
+            <div class="inner">
+              <h3>{{block_title[forloop.index0]}}</h3>
+              <p class="mb-2">{{block_description[forloop.index0]}}</p>
+              <p><a href="{{block_button_link[forloop.index0]}}" class="learnmore-link">{{block_link_label[forloop.index0]}}</a></p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+<style>
+</style>
+
+<script type="application/javascript">
+</script>
+</section>

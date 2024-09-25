@@ -1,0 +1,362 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "image_overlay_color": "#000000",
+        "image_overlay_opacity": 40,
+        "show_breadcrumbs": false,
+        "show_page_content": true
+      }
+    },
+    "6a932a86-7215-44a0-97dd-38e587715531": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 20,
+        "section_bottom_spacing": 40,
+        "section_top_spacing_mobile": 20,
+        "section_bottom_spacing_mobile": 0,
+        "alignment": "center",
+        "title": "Política de pagos",
+        "subtitle": "",
+        "content": "",
+        "button_link": "",
+        "button_text": ""
+      }
+    },
+    "0668c708-b2a1-4b39-8ad7-4d10dec5d61d": {
+      "type": "pdp-tab-anchor",
+      "blocks": {
+        "e3753945-8e23-4f5b-931d-1cbed6a601f9": {
+          "type": "anchor",
+          "settings": {
+            "pdp_tab_anchor_text": "PayPal",
+            "pdp_tab_anchor_text_id": "paypal"
+          }
+        },
+        "ff777328-83ab-495d-99c0-aac266d835a9": {
+          "type": "anchor",
+          "settings": {
+            "pdp_tab_anchor_text": "Credit\/Debit Card",
+            "pdp_tab_anchor_text_id": "credit_card"
+          }
+        },
+        "a5fcd948-889c-4cbb-816e-cb3e2562954b": {
+          "type": "anchor",
+          "settings": {
+            "pdp_tab_anchor_text": "Klarna",
+            "pdp_tab_anchor_text_id": "klarna"
+          }
+        },
+        "68c6d341-437e-499a-ae60-0c47dde9622e": {
+          "type": "anchor",
+          "settings": {
+            "pdp_tab_anchor_text": "Local Payment Methods",
+            "pdp_tab_anchor_text_id": "Local_Payment"
+          }
+        },
+        "51cfbe9f-c4af-4182-83e1-57653e0ebeca": {
+          "type": "anchor",
+          "settings": {
+            "pdp_tab_anchor_text": "Discount Codes",
+            "pdp_tab_anchor_text_id": "discount_code"
+          }
+        }
+      },
+      "block_order": [
+        "e3753945-8e23-4f5b-931d-1cbed6a601f9",
+        "ff777328-83ab-495d-99c0-aac266d835a9",
+        "a5fcd948-889c-4cbb-816e-cb3e2562954b",
+        "68c6d341-437e-499a-ae60-0c47dde9622e",
+        "51cfbe9f-c4af-4182-83e1-57653e0ebeca"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "section.pdp.pdp-tab-anchor {padding-bottom: 0px;}"
+      ],
+      "settings": {
+        "full_width": true,
+        "head_background_color": "#222222",
+        "head_text_color": "#ffffff",
+        "active_head_text_color": "#222222",
+        "active_head_background_color": "#ffffff"
+      }
+    },
+    "2f38302d-6c39-4a93-bc2c-564a81a0112f": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 3,
+        "section_bottom_spacing": 30,
+        "section_top_spacing_mobile": 6,
+        "section_bottom_spacing_mobile": 0,
+        "alignment": "left",
+        "title": "",
+        "subtitle": "<h3>Actualmente, <a href=\"http:\/\/es.ecoflow.com\" target=\"_blank\" title=\"http:\/\/es.ecoflow.com\">es.ecoflow.com<\/a> admite varios métodos de pago: <\/h3>",
+        "content": "",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "862f565b-5b8f-4946-beed-0098d7f59e01": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/FR_IT_ES_1920web_1.png",
+        "image_m": "shopify:\/\/shop_images\/FR_IT_ES_375_1.png",
+        "title": "",
+        "content": "",
+        "text_color": "",
+        "btn_text": "",
+        "btn_url": "",
+        "btn_color": "",
+        "bg_color": "",
+        "image_height": 540,
+        "image_height_mobile": 400
+      }
+    },
+    "31edb977-379d-4953-9cd1-f5b6c8dde292": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 10,
+        "section_bottom_spacing": 10,
+        "section_top_spacing_mobile": 20,
+        "section_bottom_spacing_mobile": 20,
+        "alignment": "center",
+        "title": "",
+        "subtitle": "",
+        "content": "",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "ac3fcb43-ec4f-4839-b3d3-d475d3e84d92": {
+      "type": "pdp-image-with-text-horizontal",
+      "blocks": {
+        "7c8c7ba5-4fa1-4652-84c1-c88e4f067148": {
+          "type": "image_content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/paypal_1.png",
+            "reverse_image_text_desktop": false,
+            "reverse_image_text_mobile": true,
+            "image_alt": "",
+            "sub_heading": "",
+            "heading": "<h3>1. PayPal<\/h3>",
+            "content": "<p>Cuando realices un pedido con Paypal, se te redirigirá a la página de pago de PayPal. Confirma tu pago iniciando sesión con tu nombre de usuario y contraseña de PayPal.<\/p><p>Puedes realizar el pago sin una cuenta de PayPal. Para ello, haz clic en «Pagar con una tarjeta» y se te redirigirá a una página segura donde podrás indicar la información de tu tarjeta de crédito o completar el pago de forma segura a través de PayPal.<\/p><p><em>* Los clientes pagan todos los gastos de PayPal y las comisiones por transacción. Estas comisiones no se devuelven en caso de devolución.<\/em><\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "7c8c7ba5-4fa1-4652-84c1-c88e4f067148"
+      ],
+      "custom_css": [
+        "section.pdp.pdp-image-text-horizontal {padding-bottom: 30px;}"
+      ],
+      "settings": {
+        "section_id": "paypal",
+        "alignment": "left",
+        "position": "center",
+        "layout": "stacked",
+        "stacked_row": "2",
+        "mobile_stacked_row": "1",
+        "slider_row": "2",
+        "mobile_slider_row": "1"
+      }
+    },
+    "ad25e5ea-dfa2-41a8-a592-f1a044ac7d8a": {
+      "type": "pdp-image-with-text-horizontal",
+      "blocks": {
+        "a54dcde5-0d49-4350-b30d-873c1dbe5fd3": {
+          "type": "image_content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/credit_card.png",
+            "reverse_image_text_desktop": true,
+            "reverse_image_text_mobile": true,
+            "image_alt": "",
+            "sub_heading": "",
+            "heading": "<h3><strong>2. Tarjeta de crédito\/débito<\/strong><\/h3>",
+            "content": "<p>Aceptamos las siguientes tarjetas de crédito\/débito como formas de pago:<\/p><p>- Visa<br\/>- MasterCard<br\/>- Maestro<br\/>- American Express<br\/>- Apple Pay<br\/>- Google Pay<\/p><p><em>* Los clientes pagan todos los gastos bancarios y las comisiones por transacción. Estas comisiones no se devuelven en caso de devolución.<\/em><\/p><p>Paso 1. En la página de pago, selecciona «Tarjeta de crédito» como método de pago.<\/p><p>Paso 2. Ingresa la información de la tarjeta y haz clic en «Pagar ahora» para continuar. <\/p><p>Paso 3. Una vez finalizado el pago, se te dirigirá a la página de confirmación de pedido, donde podrás revisar la información de tu pedido.<\/p><p><em>* Recuerda que EcoFlow no recopila tu número de tarjeta de crédito\/débito ni información personal cuando realizas un pago. Si tienes preguntas sobre tus transacciones en nuestro sitio, consulta al banco emisor de tu tarjeta para obtener información.<\/em><\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "a54dcde5-0d49-4350-b30d-873c1dbe5fd3"
+      ],
+      "custom_css": [
+        "section.pdp.pdp-image-text-horizontal {padding-bottom: 30px;}"
+      ],
+      "settings": {
+        "section_id": "credit_card",
+        "alignment": "left",
+        "position": "center",
+        "layout": "stacked",
+        "stacked_row": "2",
+        "mobile_stacked_row": "1",
+        "slider_row": "2",
+        "mobile_slider_row": "1"
+      }
+    },
+    "d57585d8-007d-4f0a-a266-7720b7b625b9": {
+      "type": "pdp-image-with-text-horizontal",
+      "blocks": {
+        "f55a7abe-e2c9-4988-a8d6-01cf11ac3481": {
+          "type": "image_content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/klarna.png",
+            "reverse_image_text_desktop": false,
+            "reverse_image_text_mobile": true,
+            "image_alt": "",
+            "sub_heading": "",
+            "heading": "<h3><strong>3. Klarna<\/strong><\/h3>",
+            "content": "<p>Paso 1: Añade tus artículos al carrito e indica la dirección de envío.<\/p><p>Paso 2: Selecciona Klarna al finalizar la compra.<\/p><p>Paso 3: Elige la opción que se ajuste a tu presupuesto.<\/p><p>Klarna ofrece varias opciones de pago, según cuál sea tu país y el importe de la transacción. Estas son las opciones ofrecidas:<\/p><p><\/p><ul><li><strong>Pagar ahora: <\/strong>Paga tu compra al instante mediante domiciliación bancaria, tarjeta de crédito o transferencia bancaria.<\/li><li><strong>Paga en 30 días: <\/strong>Haz tu compra hoy para que puedas probar tu artículo antes de comprar. Paga solo por lo que conserves. Paga hasta 30 días después sin intereses y sin cargos si pagas a tiempo.<\/li><li><strong>Paga en 3: <\/strong>El pago de tus cuotas de «Paga en 3» se cargará automáticamente a la tarjeta de débito o crédito que indicaste al realizar el pago. El primer pago se realiza cuando se confirma el pedido. La segunda y tercera cuota se cobran 30 y 60 días después de la primera cuota, respectivamente. Siempre puedes revisar tu calendario de pagos en la app de Klarna.<\/li><\/ul>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "f55a7abe-e2c9-4988-a8d6-01cf11ac3481"
+      ],
+      "custom_css": [
+        "section.pdp.pdp-image-text-horizontal {padding-bottom: 30px;}"
+      ],
+      "settings": {
+        "section_id": "klarna",
+        "alignment": "left",
+        "position": "center",
+        "layout": "stacked",
+        "stacked_row": "2",
+        "mobile_stacked_row": "1",
+        "slider_row": "2",
+        "mobile_slider_row": "1"
+      }
+    },
+    "c96d10f5-03b7-4ad3-a724-320e8d0bd526": {
+      "type": "pdp-image-with-text-horizontal",
+      "blocks": {
+        "fe4d41b3-ad06-436c-96d4-b099acba19ab": {
+          "type": "image_content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/local_payment.png",
+            "reverse_image_text_desktop": true,
+            "reverse_image_text_mobile": true,
+            "image_alt": "",
+            "sub_heading": "",
+            "heading": "<h3><strong>4. Métodos de pago locales<\/strong><\/h3>",
+            "content": "<p>Aceptamos el siguiente método de pago alternativo: <\/p><p>- Trustly<\/p><p>Paso 1. Selecciona el método de pago local que deseas utilizar y haz clic en «Pagar ahora» para continuar.<\/p><p>Paso 2. Luego se te dirigirá a la página de pago de PingPong. Rellena la información de tu tarjeta y finaliza el pago.<\/p><p>Paso 3. Una vez finalizado el pago, se te dirigirá a la página de agradecimiento, donde podrás comprobar la información de tu pedido.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "fe4d41b3-ad06-436c-96d4-b099acba19ab"
+      ],
+      "custom_css": [
+        "section.pdp.pdp-image-text-horizontal {padding-bottom: 30px;}"
+      ],
+      "settings": {
+        "section_id": "Local_Payment",
+        "alignment": "left",
+        "position": "center",
+        "layout": "stacked",
+        "stacked_row": "2",
+        "mobile_stacked_row": "1",
+        "slider_row": "2",
+        "mobile_slider_row": "1"
+      }
+    },
+    "f0e63184-83c9-4b3b-9be8-10d2c3acc664": {
+      "type": "pdp-image-with-text-horizontal",
+      "blocks": {
+        "07f28b19-2620-4da2-a5ad-53c0a7b754ac": {
+          "type": "image_content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/discount_code.png",
+            "reverse_image_text_desktop": false,
+            "reverse_image_text_mobile": true,
+            "image_alt": "",
+            "sub_heading": "",
+            "heading": "<h3>«Códigos de descuento» y «Tarjetas regalo»<\/h3>",
+            "content": "<p><\/p><p>Puedes aplicar un código de descuento y una tarjeta regalo a tu pedido en el momento de realizar el pago de tu compra. Una vez que hayas ingresado tu código de cupón o tarjeta regalo, haz clic en «Aplicar» y el descuento ajustará automáticamente el total de tu pedido. No olvides que si no haces clic en «Aplicar» antes de continuar con el pago, el total de tu pedido no reflejará el descuento del cupón ni de la tarjeta regalo.<\/p><p>NOTAS:<\/p><p>- Asegúrate de ingresar el código de descuento o el código de la tarjeta regalo exactamente como lo recibiste, sin espacios delante, en medio o detrás. Para evitar errores, te recomendamos copiar\/pegar el código promocional que recibiste.<\/p><p>- Los códigos de descuento no se pueden combinar. Solamente puedes utilizar un código por pedido.<\/p><p>- Los códigos promocionales están sujetos a los términos de la oferta. Por ejemplo, restricciones que afectan a plazos o el producto. Consulta los términos de la oferta cuando recibas tu código promocional.<\/p>",
+            "button_link": "",
+            "button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "07f28b19-2620-4da2-a5ad-53c0a7b754ac"
+      ],
+      "custom_css": [
+        "section.pdp.pdp-image-text-horizontal {padding-bottom: 20px;}"
+      ],
+      "settings": {
+        "section_id": "discount_code",
+        "alignment": "left",
+        "position": "center",
+        "layout": "stacked",
+        "stacked_row": "2",
+        "mobile_stacked_row": "1",
+        "slider_row": "2",
+        "mobile_slider_row": "1"
+      }
+    },
+    "eee7ed86-6008-4892-93ce-7d9a6764cb87": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "e6e5d7b9-9fc7-475b-a300-56a3e691e7e1": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "rgba(0,0,0,0)",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#222222",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "https:\/\/es.ecoflow.com\/collections\/promotional-items",
+            "button_text": "¡Ahora comienza a comprar y disfruta de tu compra!",
+            "button_link_2": "",
+            "button_text_2": "",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "e6e5d7b9-9fc7-475b-a300-56a3e691e7e1"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "6a932a86-7215-44a0-97dd-38e587715531",
+    "0668c708-b2a1-4b39-8ad7-4d10dec5d61d",
+    "2f38302d-6c39-4a93-bc2c-564a81a0112f",
+    "862f565b-5b8f-4946-beed-0098d7f59e01",
+    "31edb977-379d-4953-9cd1-f5b6c8dde292",
+    "ac3fcb43-ec4f-4839-b3d3-d475d3e84d92",
+    "ad25e5ea-dfa2-41a8-a592-f1a044ac7d8a",
+    "d57585d8-007d-4f0a-a266-7720b7b625b9",
+    "c96d10f5-03b7-4ad3-a724-320e8d0bd526",
+    "f0e63184-83c9-4b3b-9be8-10d2c3acc664",
+    "eee7ed86-6008-4892-93ce-7d9a6764cb87"
+  ]
+}

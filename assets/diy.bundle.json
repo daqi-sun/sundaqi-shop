@@ -1,0 +1,123 @@
+{
+  "option_blocks": [
+    {
+      "title": "Elija su solución",
+      "subtitle": "",
+      "footer": "",
+      "is_mandatory": true,
+      "information": {
+        "option_type": "nil",
+        "title": "",
+        "text": "",
+        "image_url": ""
+      },
+      "options": [
+        {
+          "option_type": "bundle",
+          "option_size": "full",
+          "title": "",
+          "footer": "",
+          "variant_id": "",
+          "is_ihave": false,
+          "is_viewmore": false,
+          "option_notification_msg": "",
+          "badge": "",
+          "initial_quantity": 0,
+          "min_quantity": 0,
+          "max_quantity": 10,
+          "enable_watt": false,
+          "watt_value": 100,
+          "bundle_title": "Kit de almacenamiento de 2 kWh",
+          "bundle": [
+            {
+              "title": "Microinversor PowerStream 800 W",
+              "variant_id": "https://admin.shopify.com/store/ecoflow-es/products/8444009251163/variants/48491822547291"
+            },
+            {
+              "title": "Estación de Energía Portátil DELTA 2 Max (2kWh) con Cable",
+              "variant_id": "https://admin.shopify.com/store/ecoflow-es/products/8439217586523/variants/46769173889371"
+            }
+          ],
+          "slider_images": [
+            "https://cdn.shopify.com/s/files/1/0651/6922/7998/files/bl_ps_D2M_8de82fae-a73d-4af1-ac60-dce693babf00.png?v=1713940260",
+            "https://cdn.shopify.com/s/files/1/0651/6922/7998/files/2kWh_Storage_Kit-balcony-pc_b0b1b7e3-f1a2-40a0-ac71-ea2616ffffb4.png?v=1721270625",
+            "https://cdn.shopify.com/s/files/1/0651/6922/7998/files/2kWh_Storage_Kit-garden-pc_96143b40-5422-4fa7-bb9b-fdbb2f1731e7.png?v=1721270625",
+            "https://cdn.shopify.com/s/files/1/0651/6922/7998/files/2kWh_Storage_Kit-terrace-pc_5d15fe0e-7d1e-406f-9e1a-6bdafbf7bf5a.png?v=1721270627"
+          ],
+          "accessories_title": "",
+          "accessories": []
+        },
+        {
+          "option_type": "bundle with accessory",
+          "option_size": "full",
+          "title": "",
+          "footer": "",
+          "variant_id": "",
+          "is_ihave": false,
+          "is_viewmore": false,
+          "option_notification_msg": "* Actualizable a 800 W sin costo adicional.",
+          "badge": "",
+          "initial_quantity": 0,
+          "min_quantity": 0,
+          "max_quantity": 10,
+          "enable_watt": false,
+          "watt_value": 100,
+          "bundle_title": "Kit sin almacenamiento",
+          "bundle": [
+            {
+              "title": "Microinversor PowerStream 800 W",
+              "variant_id": "https://admin.shopify.com/store/ecoflow-es/products/8444009251163/variants/48491822547291"
+            },
+            {
+              "title": "Panel Solar Rígido de 400 W x2 ",
+              "variant_id": "https://admin.shopify.com/store/ecoflow-es/products/8439217783131/variants/46769174184283"
+            }
+          ],
+          "slider_images": [
+            "https://es.ecoflow.com/cdn/shop/files/no_storage_kit.png?v=1694090593",
+            "https://es.ecoflow.com/cdn/shop/files/no_storage_kit_what_s_in_the_box_es.png?v=1694090591",
+            "https://es.ecoflow.com/cdn/shop/files/No_Storage_Kit-pc.png?v=1690342703"
+          ],
+          "accessories_title": "Elija su cable de batería",
+          "accessories": [
+            {
+              "option_type": "single - accessories",
+              "title": "para RIVER, DELTA mini y DELTA 1300 0.5 m",
+              "variant_id": "https://admin.shopify.com/store/ecoflow-es/products/8439217095003/variants/46769173332315",
+              "text": "",
+              "image_url": ""
+            },
+            {
+              "option_type": "single - accessories",
+              "title": "para DELTA 2, DELTA 2 Max, DELTA Max y DELTA Max EB 0.4 m",
+              "variant_id": "https://admin.shopify.com/store/ecoflow-es/products/8439217095003/variants/46769173299547",
+              "text": "",
+              "image_url": ""
+            },
+            {
+              "option_type": "single - accessories",
+              "title": "para DELTA 2, DELTA 2 Max, DELTA Max y DELTA Max EB 1 m",
+              "variant_id": "https://admin.shopify.com/store/ecoflow-es/products/8439217095003/variants/47708526739803",
+              "text": "",
+              "image_url": ""
+            },
+            {
+              "option_type": "single - accessories",
+              "title": "para DELTA Pro y DELTA Pro EB 0.5 m",
+              "variant_id": "https://admin.shopify.com/store/ecoflow-es/products/8439217095003/variants/46769173365083",
+              "text": "",
+              "image_url": ""
+            },
+            {
+              "option_type": "no thanks - accessories",
+              "title": "No, gracias.",
+              "variant_id": "",
+              "text": "",
+              "image_url": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

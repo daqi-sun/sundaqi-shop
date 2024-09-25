@@ -1,0 +1,205 @@
+<style>
+  .sg-scenario__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .sg-scenario__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+
+<div
+  class="sg-scenario__section sg-scenario__section-{{ section.id }}"
+  data-id="_{{ section.settings.id | downcase | remove: ' ' | replace: '&', '-' }}"
+>
+  <div class="container--default">
+    <div class="sg-scenario__scenario-container">
+      {% if section.settings.title != blank %}
+        <h2 class="sg-scenario__heading text--heading">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+      {% if section.settings.description != blank %}
+        <p class="sg-scenario__description text--description text--gray">
+          {{ section.settings.description }}
+        </p>
+      {% endif %}
+    </div>
+    {% comment %}
+      <div class="sg-scenario-scroll__wrapper">
+        <div class="sg-scenario__container">
+          {% for block in section.blocks %}
+            <div class="sg-scenario__item">
+              <div class="sg-scenario__image-wrapper relative">
+                <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.image.alt }}">
+
+                {% if block.settings.button_label %}
+                  <div class="sg-scenario__button-wrapper">
+                    <a
+                      href="#_{{ block.settings.id | downcase | remove: ' ' | replace: '&', '-' }}"
+                      class="sg-scenario__link"
+                    >
+                      <span class="button text--white">{{ block.settings.button_label }}</span>
+                    </a>
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endcomment %}
+
+    <div class="sg-scenario__container-slider">
+      <div class="swiper sg-scenario__slider-container sg-scenario-slider">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            <div class="sg-scenario__slide-content swiper-slide">
+              <div class="sg-scenario__image-wrapper">
+                <img
+                  src="{{ block.settings.image | img_url: 'master' }}"
+                  alt="{{ block.settings.image.alt }}"
+                >
+                {% if block.settings.button_label %}
+                  <div class="sg-scenario__button-wrapper">
+                    <a
+                      href="#_{{ block.settings.id | downcase | remove: ' ' | replace: '&', '-' }}"
+                      class="sg-scenario__link"
+                    >
+                      <span class="button text--white">{{ block.settings.button_label }}</span>
+                    </a>
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="display--mobile">
+          <div class="sg-scenario-swiper__navigation">
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    new Swiper('.sg-scenario-slider', {
+      slidesPerView: 1.1,
+      spaceBetween: 20,
+      loop: false,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        600: {
+          slidesPerView: 2,
+          spaceBetween: 24,
+        },
+        1261: {
+          slidesPerView: 3,
+          spaceBetween: 24,
+          allowTouchMove: false,
+        },
+      },
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "SG Scenario",
+  "settings": [
+    {
+      "type": "text",
+      "id": "id",
+      "label": "Section ID",
+      "default": "Buyer’s Guides"
+    },
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title",
+      "default": "Discover the Right Solar Panel for You"
+    },
+    {
+      "type": "html",
+      "id": "description",
+      "label": "Description",
+      "default": "Discover the Right Solar Panel for You"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "scenario",
+      "name": "Scenario",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Scenario Image"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button Label",
+          "default": "Shop Now"
+        },
+        {
+          "type": "text",
+          "id": "id",
+          "label": "Product ID Redirection"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

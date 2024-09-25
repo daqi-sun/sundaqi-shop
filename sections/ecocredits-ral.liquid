@@ -1,0 +1,369 @@
+<div class="ecocredits-ral__section background--black" id="_{{- section.settings.nav_1 | downcase | remove: ' ' -}}">
+  <div class="ecocredits-nav__container background--black">
+    <ul class="ecocredits-nav__flex-nav-container container--short">
+      {% if section.settings.nav_1 != blank %}
+        <a
+          class="ec__text--dark-gray"
+          href="#_{{- section.settings.nav_1 | downcase | remove: ' ' -}}"
+          onclick="scrollToSection('#_{{- section.settings.nav_1 | downcase | remove: ' ' -}}', this, event)"
+        >
+          <li class="ec__nav__li ec__text--dark-gray active">
+            {{- section.settings.nav_1 -}}
+          </li>
+        </a>
+      {% endif %}
+      {% if section.settings.nav_2 != blank %}
+        <a
+          class="ec__text--dark-gray"
+          href="#_{{- section.settings.nav_2 | downcase | remove: ' ' -}}"
+          onclick="scrollToSection('#_{{- section.settings.nav_2 | downcase | remove: ' ' -}}', this, event)"
+        >
+          <li class="ec__nav__li ec__text--dark-gray">
+            {{- section.settings.nav_2 -}}
+          </li>
+        </a>
+      {% endif %}
+      {% if section.settings.nav_3 != blank %}
+        <a
+          class="ec__text--dark-gray"
+          href="#_{{- section.settings.nav_3 | downcase | remove: ' ' -}}"
+          onclick="scrollToSection('#_{{- section.settings.nav_3 | downcase | remove: ' ' -}}', this, event)"
+        >
+          <li class="ec__nav__li ec__text--dark-gray">
+            {{- section.settings.nav_3 -}}
+          </li>
+        </a>
+      {% endif %}
+      {% if section.settings.nav_4 != blank %}
+        <a
+          class="ec__text--dark-gray"
+          href="#_{{- section.settings.nav_4 | downcase | remove: ' ' -}}"
+          onclick="scrollToSection('#_{{- section.settings.nav_4 | downcase | remove: ' ' -}}', this, event)"
+        >
+          <li class="ec__nav__li ec__text--dark-gray">
+            {{- section.settings.nav_4 -}}
+          </li>
+        </a>
+      {% endif %}
+    </ul>
+  </div>
+  <div class="ecocredits-ral__container container--normal">
+    {% if section.settings.title != blank %}
+      <div class="ecocredits-ral__heading__wrapper container--short ec__relative">
+        <h2 class="ecocredits-ral__section-heading ec__text--heading ec__text--white ec__text--center">
+          {{ section.settings.title }}
+        </h2>
+        {% if section.settings.popup != blank %}
+          <div class="ecocredits-ral__popup__container">
+            <button
+              type="button"
+              data-toggle="popover"
+              class="ecocredits-ral__popup__icon"
+              data-content="{{ section.settings.popup }}"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+                <g id="Group_10" data-name="Group 10" transform="translate(-1370 -1059)">
+                    <path id="icon-问号" d="M4.394,25.606A15,15,0,1,1,25.606,4.394,15,15,0,1,1,4.394,25.606ZM2,15A13,13,0,1,0,15,2,13.015,13.015,0,0,0,2,15Zm14.3,9.363H13.95V21.625H16.3v2.737h0Zm0-4.9H13.937a11.287,11.287,0,0,1,.119-1.705,4.522,4.522,0,0,1,.518-1.494,3.925,3.925,0,0,1,.863-1.144,12.846,12.846,0,0,1,1.075-.856,7.98,7.98,0,0,0,1.138-1.013,2.961,2.961,0,0,0,.662-1.131,4.421,4.421,0,0,0,.163-1.207,3.7,3.7,0,0,0-.131-1.019,1.908,1.908,0,0,0-.431-.781,2.313,2.313,0,0,0-1.119-.775A4.6,4.6,0,0,0,15.4,8.125a4.412,4.412,0,0,0-1.294.187A2.411,2.411,0,0,0,13.1,8.9a2.171,2.171,0,0,0-.587.881,3.276,3.276,0,0,0-.188,1.119H10a6.027,6.027,0,0,1,.518-2.068A4.376,4.376,0,0,1,11.75,7.213a4.782,4.782,0,0,1,1.688-.919A6.473,6.473,0,0,1,15.35,6a7.52,7.52,0,0,1,2.419.388,4.241,4.241,0,0,1,1.906,1.287,4.157,4.157,0,0,1,.875,1.463,5.27,5.27,0,0,1,.288,1.738,4.929,4.929,0,0,1-.444,2.075A6.266,6.266,0,0,1,19.2,14.688a7.29,7.29,0,0,1-.894.824c-.319.248-.625.5-.913.751a3.1,3.1,0,0,0-.681.824,2.8,2.8,0,0,0-.368,1.082c-.029.324-.044.759-.044,1.292h0Z" transform="translate(1370 1059)" fill="#fff"/>
+                    </g>
+              </svg>
+            </button>
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+    {% if section.settings.btn_text != blank %}
+      <a class="ecocredits-ral__button--link" href="{{ section.settings.btn_link }}">
+        <div class="ecocredits-ral__button__container">
+          <span
+            class="ec__text--white"
+          >
+            {{- section.settings.btn_text -}}
+          </span>
+        </div>
+      </a>
+    {% endif %}
+  </div>
+
+  <div class="ecocredits-ral__product__container container--normal">
+    {% for block in section.blocks %}
+      {%- comment %}<locksmith:9faf>{% endcomment -%}
+        {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+      {%- comment %}</locksmith:9faf>{% endcomment -%}
+      {% liquid
+        if block.settings.product != blank
+          assign product = block.settings.product
+        endif
+
+        assign productUrl = product.url
+        assign current_variant = product.first_available_variant
+        assign variantID = block.settings.variantID | plus: 0
+        assign price = current_variant.price | money_without_trailing_zeros
+        assign compareAtPrice = current_variant.compare_at_price | money_without_trailing_zeros
+        if variant.compare_at_price != blank
+          assign priceDiff = variant.compare_at_price | minus: variant.price
+        endif
+
+        if variantID != blank
+          for variant in product.variants
+            if variantID == variant.id
+              assign current_variant = variant
+              assign price = variant.price | money_without_trailing_zeros
+              assign compareAtPrice = variant.compare_at_price | money_without_trailing_zeros
+              if variant.compare_at_price != blank
+                assign priceDiff = variant.compare_at_price | minus: variant.price
+              endif
+            endif
+          endfor
+        endif
+      %}
+      <div class="ecocredits-ral__product__block background--light-black">
+        <div class="ecocredits-ral__product__image">
+          <img src="{{ product.featured_image | img_url: 'master' }}" alt="">
+        </div>
+        <div class="ecocredits-ral__product__details">
+            <h3 class="ecocredits-ral__heading ec__text--white">{{ product.title | remove: 'EcoFlow' }}</h3>
+          {% if block.settings.specification != blank %}
+            <p class="ecocredits-ral__specification ec__text--white">{{ block.settings.specification }}</p>
+          {% endif %}
+          <div class="ecocredits-ral__product--height display--mobile"></div>
+          <div class="ecocredits-ral__product--value">
+            <p class="ecocredits-ral__price__wrapper ec__text--white">
+              <span class="ecocredits-ral__price--discounted">
+                {{ price }}
+              </span>
+              {% if price != compareAtPrice %}
+                <span class="ecocredits-ral__price ec__text--dark-gray">{{ compareAtPrice }}</span>
+              {% endif %}
+            </p>
+            <div class="ecocredits-ral__product__button-wrapper">
+              <button
+                class="ecocredits__btn ecocredits__btn--atc background--white ec__text--white"
+                type="button"
+                onclick="addToCart('{{ current_variant.id }}')"
+              >
+                <span class="ecocredits-btn__text">{{ block.settings.btn_text }}</span>
+                <span class="loader hide" data-loader="">
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    role="presentation"
+                    class="icon icon-spinner"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M7.229 1.173a9.25 9.25 0 1 0 11.655 11.412 1.25 1.25 0 1 0-2.4-.698 6.75 6.75 0 1 1-8.506-8.329 1.25 1.25 0 1 0-.75-2.385z" fill="#919EAB"></path>
+                  </svg>
+                </span>
+              </button>
+              <a class="ecocredits__btn ecocredits__btn--lm ec__text--white" target="_blank" href="{{ productUrl }}">
+                {{- block.settings.btn_label_text -}}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  {% if section.settings.btn_text_clp != blank %}
+    <div class="ecocredits-link__clp">
+      <a class="ec__text--dark-gray" target="_blank" href="{{ section.settings.btn_link_clp }}">
+        {{- section.settings.btn_text_clp -}}
+      </a>
+    </div>
+  {% endif %}
+</div>
+
+<script>
+  $(document).ready(function () {
+    $('[data-toggle="popover"]').popover({
+      placement: 'top',
+      trigger: 'hover',
+      html: true,
+    });
+
+    var navContainer = $('.ecocredits-nav__container');
+    var navPlaceholder = $('<div>').addClass('ecocredits-nav__placeholder');
+
+    $(window).bind('scroll', function () {
+      var bannerHeight = $('.ecocredits-banner').outerHeight();
+      var headerHeight = $('#shopify-section-header').outerHeight();
+      var topBarHeight = $('.top-bar-shift').outerHeight();
+      var announcementBarHeight = $('#shopify-section-announcement-bar').outerHeight();
+      var scrollTop = $(window).scrollTop();
+      var navHeight = bannerHeight + headerHeight + topBarHeight + announcementBarHeight;
+
+      if (scrollTop > navHeight) {
+        navContainer.addClass('fixed');
+        if (!navContainer.next().hasClass('ecocredits-nav__placeholder')) {
+          navContainer.after(navPlaceholder);
+          navPlaceholder.height(navContainer.outerHeight());
+        }
+      } else {
+        navContainer.removeClass('fixed');
+        navContainer.next('.ecocredits-nav__placeholder').remove();
+      }
+    });
+  });
+
+  function addToCart(variantID) {
+    const textElement = event.target.closest('.ecocredits__btn--atc').querySelector('.ecocredits-btn__text');
+    const loaderElement = event.target.closest('.ecocredits__btn--atc').querySelector('[data-loader]');
+    textElement.classList.add('hide');
+    loaderElement.classList.remove('hide');
+
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        items: [
+          {
+            id: variantID,
+            quantity: 1,
+          },
+        ],
+      }),
+    })
+      .then(() => {
+        window.location.href = '/checkout';
+      })
+      .catch((error) => {
+        console.error('Error adding to cart:', error);
+      })
+      .finally(() => {
+        textElement.classList.remove('hide');
+        loaderElement.classList.add('hide');
+      });
+  }
+
+  function scrollToSection(sectionId, menuItem, event) {
+    event.preventDefault();
+    var section = document.querySelector(sectionId);
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function addActiveClass() {
+    const lis = document.querySelectorAll('.ecocredits-nav__flex-nav-container li');
+
+    lis.forEach((li) => {
+      li.addEventListener('click', function () {
+        lis.forEach((li) => {
+          li.classList.remove('active');
+        });
+
+        this.classList.add('active');
+      });
+    });
+  }
+
+  addActiveClass();
+</script>
+
+{% schema %}
+{
+  "name": "Ecocredits RAL",
+  "settings": [
+    {
+      "type": "text",
+      "id": "nav_1",
+      "label": "1st Navigation",
+      "default": "2X EcoCredits"
+    },
+    {
+      "type": "text",
+      "id": "nav_2",
+      "label": "2nd Navigation",
+      "default": "What is the EcoCredits Programme"
+    },
+    {
+      "type": "text",
+      "id": "nav_3",
+      "label": "3rd Navigation",
+      "default": " How to earn"
+    },
+    {
+      "type": "text",
+      "id": "nav_4",
+      "label": "4th Navigation",
+      "default": "How to use"
+    },
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title",
+      "default": "Register and login to earn double EcoCredits and redeem a free gift."
+    },
+    {
+      "type": "html",
+      "id": "popup",
+      "label": "Popup Content",
+      "default": "1. This campaign is open to all registered EcoFlow ID website users (www.ecoflow.com/eu) who are citizens of Europe and aged 18 years old or above as of 20/3/2023 12AM. 2. All users need to be logged in (register & log in), and shop at the EU store from 27/3/2023 8AM to 10/4/2023 8AM to get double EcoCredits. 3. Earn double EcoCredits for every €1 you spend. 4. Ecocredits will be issued to the personal account after the purchased products are shipped. 5. The free gift needs to be  6. EcoFlow reserves the right to modify and/or cancel the terms and conditions herein at any time at its sole discretion. 7. This campaign and the terms and conditions herein shall be governed by the laws of the country."
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button Text",
+      "default": "Register"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Register Button Link"
+    },
+    {
+      "type": "text",
+      "id": "btn_text_clp",
+      "label": "Button Text CLP",
+      "default": "Shop the entire sale >>"
+    },
+    {
+      "type": "url",
+      "id": "btn_link_clp",
+      "label": "CLP Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "products",
+      "name": "Products",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "variantID",
+          "label": "Variant ID",
+          "info": "For Specific Variant Add to Cart"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "160W Portable Solar Panel"
+        },
+        {
+          "type": "text",
+          "id": "specification",
+          "label": "Product Specification",
+          "default": "3600Wh | 2800W"
+        },
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": "ATC Button Text",
+          "default": "shop now"
+        },
+        {
+          "type": "text",
+          "id": "btn_label_text",
+          "label": "Product Link Button Text",
+          "default": "learn more"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

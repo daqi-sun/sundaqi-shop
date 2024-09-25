@@ -1,0 +1,1455 @@
+{% comment %}
+  This section is for the email and sms subscription popup
+  It will show a floating logo on the bottom left corner of the page
+  When user click on the logo, it will show a popup for user to subscribe
+  After user subscribed, it will show a thank you page
+{% endcomment %}
+
+{% comment %}
+  Email Subscription Popup Logic:
+  - If customer is logged in and subscribed, do not show popup automatically
+    Otherwise, show popup after X seconds when user visit the page (controlled by theme setting)
+  - If customer has closed the popup, do not show popup again after X days (controlled by theme setting)
+  - Popup will not show on the pages that are excluded (controlled by theme setting)
+  - For email subscription api call, if customer is tagged as member, show member thank you section
+    Otherwise, show non-member thank you section
+  - When user is logged in, API will be called to get user's subscription information
+    if user is already subscribed for email or sms, corresponding section will be hidden automatically
+{% endcomment %}
+
+{{ 'email-subscription-popup.css' | asset_url | stylesheet_tag }}
+{% comment %}
+  Check the current page should be excluded or not
+  - popup_exclude_urls exclude the popup by page url
+  - popup_exclude_pages exclude the popup by page handle
+{% endcomment %}
+{% liquid
+  # region popup_exclude_urls
+  assign pageUrl = request.path
+  assign popup_exclude_urls = section.settings.popup_exclude_urls | split: ','
+  assign is_excluded_url = false
+  for specific_url in popup_exclude_urls
+    assign url = specific_url | strip | replace: '\/', '/' | replace: ',', ''
+    if url == pageUrl
+      assign is_excluded_url = true
+    endif
+  endfor
+  # endregion popup_exclude_urls
+
+  assign autoIncludedPageUrl = request.path
+  assign popup_auto_show_include_pages = section.settings.popup_auto_show_include_pages | split: ','
+  assign is_included_popup_auto_show_url = false
+  for specific_url in popup_auto_show_include_pages
+    assign url = specific_url | strip | replace: '\/', '/' | replace: ',', ''
+    if url == autoIncludedPageUrl
+      assign is_included_popup_auto_show_url = true
+    endif
+  endfor
+%}
+
+{% if section.settings.show and is_excluded_url == false %}
+  <div
+    class="email-subscription-popup__section"
+    x-data="emailSubscriptionPopup"
+    x-show="showTriggerLogo"
+    x-cloak
+    id="email-subscription-popup"
+    data-popup-delay-seconds="{{ section.settings.popup_delay_seconds }}"
+    data-popup-delay-days="{{ section.settings.popup_delay_days }}"
+    data-popup-exclude-pages="{{ section.settings.popup_exclude_pages }}"
+    {% if is_included_popup_auto_show_url %}
+      data-auto-show-popup="{{ section.settings.auto_show_popup }}"
+    {% endif %}
+    data-enable-sms="{{ section.settings.enable_sms_section }}"
+    data-enable-registration="{{ section.settings.enable_member_registration }}"
+    data-popup-subscribed="{{ customer.accepts_marketing }}"
+    data-customer-tags="{{ customer.tags }}"
+    {% if customer.email != blank %}
+      data-customer-email="{{ customer.email }}"
+    {% endif %}
+  >
+    {% comment %} Floating Trigger Popup Image Button Start {% endcomment %}
+    <a class="email-subscription-popup__section-trigger">
+      <div class="email-subscription-popup__trigger-inner">
+        <div
+          class="email-subscription-popup__trigger-image-wrapper"
+          @click="() => togglePopup()"
+        >
+          <img
+            srcset="{{ section.settings.icon | image_url: width: 600 }}"
+            class="hideMobile"
+            loading="lazy"
+            alt="Trigger Email Subscription Popup Image"
+            style="width: {{ section.settings.popup_size }}px;}}"
+          >
+          <img
+            srcset="{{ section.settings.mobile_icon | image_url: width: 600 }}"
+            class="hideDesktop"
+            loading="lazy"
+            alt="Trigger Email Subscription Popup Image"
+            style="width: {{ section.settings.popup_size_m }}px;}}"
+          >
+        </div>
+        <div class="email-subscription-popup__trigger-close" @click="() => toggleTriggerLogo()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2.79999C14.5403 2.79999 16.8403 3.82987 18.5052 5.4948C20.1702 7.15973 21.2001 9.45972 21.2001 12C21.2001 14.5403 20.1702 16.8402 18.5052 18.5052C16.8403 20.1701 14.5403 21.2 12 21.2C9.45978 21.2 7.15979 20.1701 5.49486 18.5052C3.82993 16.8402 2.80005 14.5403 2.80005 12C2.80005 9.45972 3.82993 7.15973 5.49486 5.4948C7.15979 3.82987 9.45978 2.79999 12 2.79999Z" stroke="#ACACAC" stroke-width="1.6"></path>
+            <path d="M8.5 8.5L15.5 15.5M15.5 8.5L8.5 15.5" stroke="#ACACAC" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+      </div>
+    </a>
+    {% comment %} Floating Trigger Popup Image Button End {% endcomment %}
+
+    {% comment %} Popup Start {% endcomment %}
+    <div class="email-subscription-popup__wrapper" x-show="showPopup">
+      <div class="email-subscription-popup__wrapper-inner">
+        {% comment %} Popup Body Start {% endcomment %}
+        <div
+          :class="
+            {
+              'email-subscription-popup__body': true,
+              'email-subscription-popup__body--subscrption': showStep === 'subscription',
+              'email-subscription-popup__body--sms': showStep === 'sms',
+              'email-subscription-popup__body--thankyou': showStep === 'thank-you',
+              'email-subscription-popup__body--thankyou-member': showStep === 'thank-you-member',
+              'email-subscription-popup__body--thankyou-sms': showStep === 'thank-you-sms'
+            }
+          "
+        >
+          <div class="email-subscription-popup__body-inner">
+            <button
+              @click="() => togglePopup()"
+              class="email-subscription-popup__body-close-button"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g opacity="0.4">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2.8C14.5403 2.8 16.8402 3.82989 18.5052 5.49482C20.1701 7.15975 21.2 9.45973 21.2 12C21.2 14.5403 20.1701 16.8403 18.5052 18.5052C16.8402 20.1701 14.5403 21.2 12 21.2C9.45972 21.2 7.15973 20.1701 5.4948 18.5052C3.82987 16.8403 2.79999 14.5403 2.79999 12C2.79999 9.45973 3.82987 7.15975 5.4948 5.49482C7.15973 3.82989 9.45972 2.8 12 2.8Z" stroke="black" stroke-width="1.6"/>
+                <path d="M8.49998 8.5L15.5 15.5M15.5 8.5L8.49998 15.5" stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+              </svg>
+            </button>
+
+            {% comment %} Subscription UI Start {% endcomment %}
+            <div class="email-subscription-popup__subscription" x-show="showStep === 'subscription'">
+              <div class="email-subscription-popup__title-wrapper">
+                <h3 class="email-subscription-popup__title--subscription">
+                  {{ section.settings.subscription_title }}
+                </h3>
+                <p class="email-subscription-popup__desc--subscription">
+                  {{ section.settings.subscription_description }}
+                </p>
+              </div>
+
+              <div class="email-subscription-popup__input-wrapper">
+                <input
+                  type="email"
+                  class="email-subscription-popup__input"
+                  placeholder="{{ section.settings.subscription_input_placeholder }}"
+                  name="contact[email]"
+                  x-model="email"
+                >
+                <button
+                  type="button"
+                  class="email-subscription-popup__button--subscription"
+                  @click="() => submitEmailForm()"
+                  :disabled="loading"
+                  x-text="loading ? 'Loading...' : '{{ section.settings.subscription_btn_text | replace: "'", "\\'" }}'"
+                ></button>
+              </div>
+
+              <div class="email-subscription-popup__disclaimer-wrapper">
+                <label
+                  class="email-subscription-popup__disclaimer email-subscription-popup__disclaimer--email"
+                  for="contact_disclaimer"
+                >
+                  {{ section.settings.subscription_disclaimer_text }}
+                  <input
+                    type="checkbox"
+                    class="email-subscription-popup__disclaimer-checkbox"
+                    name="disclaimer"
+                    id="contact_disclaimer"
+                    x-model="disclaimerChecked"
+                  >
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+
+              <p class="email-subscription-popup__error-message" x-text="errMsg"></p>
+            </div>
+            {% comment %} Subscription UI End {% endcomment %}
+
+            {% comment %} SMS UI Start {% endcomment %}
+            <div class="email-subscription-popup__sms" x-show="showStep === 'sms'">
+              <div class="email-subscription-popup__title-wrapper--sms">
+                <p class="email-subscription-popup__desc--sms">
+                  {{ section.settings.sms_description }}
+                  <span class="email-subscription-popup__sms-coupon">{{ section.settings.sms_coupon_code }}</span>
+                </p>
+                <h3 class="email-subscription-popup__title--sms">
+                  {{- section.settings.sms_title -}}
+                </h3>
+              </div>
+
+              <div class="email-subscription-popup__input-wrapper--sms">
+                <div class="email-subscription-popup__dropdown-wrapper">
+                  <select class="email-subscription-popup__dropdown-hidden" x-model="phoneCode">
+                    <template x-for="(phoneCode, index) in phoneCodeList" :key="index">
+                      <option x-text="phoneCode" :value="phoneCode"></option>
+                    </template>
+                  </select>
+                  <div class="email-subscription-popup__dropdown-visible">
+                    <p class="email-subscription-popup__phone-code" x-text="phoneCode"></p>
+                    <div class="email-subscription-popup__dropdown-arrow">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="6" height="4" viewBox="0 0 6 4" fill="none">
+                        <path d="M5.01223 0.317285C5.12401 0.205503 5.25874 0.149612 5.41644 0.149612C5.57413 0.149612 5.70887 0.205503 5.82065 0.317285C5.93642 0.429067 5.99431 0.562806 5.99431 0.718501C5.99431 0.874197 5.93642 1.00794 5.82065 1.11972L3.58102 3.34737C3.53312 3.40326 3.47323 3.44218 3.40137 3.46414C3.32951 3.4861 3.25366 3.49508 3.17382 3.49109C3.09397 3.48709 3.01513 3.47013 2.93728 3.44019C2.85943 3.41024 2.79256 3.36733 2.73667 3.31144L0.532975 1.11972C0.417201 1.00794 0.359314 0.874197 0.359314 0.718501C0.359314 0.562806 0.417201 0.429067 0.532975 0.317285C0.588866 0.261394 0.651743 0.219476 0.721606 0.191531C0.79147 0.163585 0.86333 0.149612 0.937185 0.149612C1.01104 0.149612 1.0839 0.163585 1.15576 0.191531C1.22762 0.219476 1.29149 0.261394 1.34738 0.317285L3.17981 2.12575L5.01223 0.317285Z" fill="{{ section.settings.sms_phone_list_dropdown_text_color }}"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <input
+                  type="tel"
+                  x-model="phoneNumber"
+                  :value="phoneNumber"
+                  class="email-subscription-popup__input--sms"
+                  placeholder="{{ section.settings.sms_input_placeholder }}"
+                >
+
+                <button
+                  type="button"
+                  class="email-subscription-popup__button--sms"
+                  :disabled="loading"
+                  x-text="loading ? 'Loading...' : '{{ section.settings.sms_button_text }}'"
+                  @click="() => submitSmsForm()"
+                ></button>
+              </div>
+
+              <div class="email-subscription-popup__disclaimer-wrapper">
+                <label
+                  class="email-subscription-popup__disclaimer email-subscription-popup__disclaimer--sms"
+                  for="sms_disclaimer"
+                  x-data="{ withViewMore: true }"
+                >
+                  <div x-show="withViewMore" x-cloak>
+                    {{ section.settings.sms_disclaimer_collapse }}
+                    <span
+                      class="email-subscription-popup__disclaimer--view-more"
+                      @click="
+                        withViewMore = false;
+                        document.querySelector('.email-subscription-popup__body--sms').classList.replace('email-subscription-popup__body--sms', 'email-subscription-popup__body--sms-expand')
+                      "
+                      >view more...</span
+                    >
+                  </div>
+                  <div x-show="withViewMore === false" x-cloak>{{ section.settings.sms_disclaimer }}</div>
+
+                  <input
+                    type="checkbox"
+                    class="email-subscription-popup__disclaimer-checkbox email-subscription-popup__disclaimer-checkbox--sms"
+                    name="disclaimer"
+                    id="sms_disclaimer"
+                    x-model="smsDisclaimerChecked"
+                  >
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <p class="email-subscription-popup__error-message" x-text="errMsg"></p>
+            </div>
+            {% comment %} SMS UI End {% endcomment %}
+
+            {% comment %} Thank you UI Start {% endcomment %}
+            <div class="email-subscription-popup__thankyou" x-show="showStep === 'thank-you'">
+              <div class="email-subscription-popup__title-wrapper--thankyou">
+                <h3 class="email-subscription-popup__title--thankyou">
+                  {{ section.settings.thank_you_title }}
+                </h3>
+                <p class="email-subscription-popup__desc--thankyou">
+                  {{ section.settings.thank_you_description }}
+                  <span class="email-subscription-popup__thankyou-coupon">
+                    {{- section.settings.thank_you_coupon_code -}}
+                  </span>
+                </p>
+              </div>
+
+              <div class="email-subscription-popup__thankyou-box">
+                <h4 class="email-subscription-popup__thankyou-box-intro">
+                  {{ section.settings.thank_you_intro_text }}
+                </h4>
+                <a href="{{ section.settings.thank_you_button_link }}">
+                  <button type="button" class="email-subscription-popup__thankyou-box-button">
+                    {{ section.settings.thank_you_button_text }}
+                  </button>
+                </a>
+              </div>
+
+              <div class="email-subscription-popup__disclaimer--thankyou">
+                {{- section.settings.thank_you_disclaimer -}}
+              </div>
+            </div>
+            {% comment %} Thank you UI End {% endcomment %}
+
+            {% comment %} Member Thank you UI Start {% endcomment %}
+            <div class="email-subscription-popup__thankyou-member" x-show="showStep === 'thank-you-member'">
+              <div class="email-subscription-popup__title-wrapper--thankyou-member">
+                <h3 class="email-subscription-popup__title--thankyou-member">
+                  {{ section.settings.thank_you_member_title }}
+                </h3>
+                <div class="email-subscription-popup__desc--thankyou-member">
+                  {{ section.settings.thank_you_member_description }}
+                  <span class="email-subscription-popup__thankyou-member-coupon">
+                    {{- section.settings.thank_you_member_coupon_code -}}
+                  </span>
+                </div>
+              </div>
+            </div>
+            {% comment %} Member Thank you UI End {% endcomment %}
+
+            {% comment %} SMS Thank you UI Start {% endcomment %}
+            <div class="email-subscription-popup__thankyou-sms" x-show="showStep === 'thank-you-sms'">
+              <div class="email-subscription-popup__title-wrapper--thankyou-sms">
+                <h3 class="email-subscription-popup__title--thankyou-sms">
+                  {{ section.settings.thank_you_sms_title }}
+                </h3>
+                <div class="email-subscription-popup__desc--thankyou-sms">
+                  {{ section.settings.thank_you_sms_description }}
+                  <span class="email-subscription-popup__thankyou-sms-coupon">
+                    {{- section.settings.thank_you_sms_coupon_code -}}
+                  </span>
+                </div>
+              </div>
+            </div>
+            {% comment %} SMS Thank you UI End {% endcomment %}
+          </div>
+        </div>
+        {% comment %} Popup Body End {% endcomment %}
+      </div>
+    </div>
+    {% comment %} Popup End {% endcomment %}
+  </div>
+
+  <style>
+    .email-subscription-popup__body--subscrption {
+      background-image: url({{ section.settings.subscription_bg_image | image_url: width: 1200 }});
+      background-size: cover;
+      background-position: bottom center;
+      background-repeat: no-repeat;
+      background-color: {{ section.settings.subscription_bg_color }};
+    }
+
+    .email-subscription-popup__title--subscription
+    {
+      color: {{ section.settings.email_text_color }};
+    }
+
+    .email-subscription-popup__desc--subscription {
+      color: {{ section.settings.subscription_description_color }};
+
+    }
+
+    .email-subscription-popup__disclaimer p,
+    .email-subscription-popup__disclaimer span,
+    .email-subscription-popup__disclaimer p>a {
+      color: {{ section.settings.subscription_disclaimer_text_checkmark_color }};
+    }
+
+    .email-subscription-popup__disclaimer .checkmark,
+    .email-subscription-popup__disclaimer .checkmark:after {
+      border-color: {{ section.settings.subscription_disclaimer_text_checkmark_color }};
+    }
+
+    .email-subscription-popup__input {
+      border: 1px solid {{ section.settings.subscription_input_border_color }};
+    }
+
+    .email-subscription-popup__input:focus {
+      border: 1px solid {{ section.settings.subscription_input_border_color }};
+      outline: none;
+    }
+
+    .email-subscription-popup__button--subscription {
+      border: 1px solid {{ section.settings.subscription_btn_bg_color }};
+      background-color: {{ section.settings.subscription_btn_bg_color }};
+      color: {{ section.settings.subscription_btn_text_color }};
+    }
+
+    .email-subscription-popup__body--sms {
+      background-image: url({{ section.settings.sms_bg_image | image_url: width: 1200 }});
+      background-size: cover;
+      background-position: bottom center;
+      background-repeat: no-repeat;
+      background-color: {{ section.settings.sms_bg_color }};
+    }
+
+    .email-subscription-popup__body--sms-expand {
+      background-image: url({{ section.settings.sms_bg_image_expand | image_url: width: 1200 }});
+      background-size: cover;
+      background-position: bottom center;
+      background-repeat: no-repeat;
+      background-color: {{ section.settings.sms_bg_color }};
+    }
+
+    .email-subscription-popup__title--sms,
+    .email-subscription-popup__desc--sms
+    {
+      color: {{ section.settings.sms_text_color }};
+    }
+
+    .email-subscription-popup__disclaimer--sms p,
+    .email-subscription-popup__disclaimer--sms p>a,
+    .email-subscription-popup__disclaimer--sms span
+    {
+      color: {{ section.settings.sms_disclaimer_text_checkmark_color }};
+    }
+
+    .email-subscription-popup__disclaimer--sms .checkmark,
+    .email-subscription-popup__disclaimer--sms .checkmark:after {
+      border-color: {{ section.settings.sms_disclaimer_text_checkmark_color }};
+    }
+
+    .email-subscription-popup__sms-coupon {
+      color: {{ section.settings.sms_coupon_color }};
+    }
+
+    .email-subscription-popup__dropdown-visible {
+      background-color: {{ section.settings.sms_phone_list_dropdown_bg_color }};
+    }
+
+    .email-subscription-popup__phone-code {
+      color: {{ section.settings.sms_phone_list_dropdown_text_color }};
+    }
+
+    .email-subscription-popup__input--sms {
+      border-top: 1px solid {{ section.settings.sms_input_border_color }};
+      border-bottom: 1px solid {{ section.settings.sms_input_border_color }};
+    }
+
+    .email-subscription-popup__input--sms:focus {
+      border-top: 1px solid {{ section.settings.sms_input_border_color }};
+      border-bottom: 1px solid {{ section.settings.sms_input_border_color }};
+    }
+
+    .email-subscription-popup__button--sms {
+      background: {{ section.settings.sms_button_bg_color }};
+      color: {{ section.settings.sms_button_text_color }};
+    }
+
+    .email-subscription-popup__body--thankyou {
+      background-image: url({{ section.settings.thank_you_bg_image | image_url: width: 1200 }});
+      background-size: cover;
+      background-position: bottom center;
+      background-repeat: no-repeat;
+      background-color: {{ section.settings.thank_you_bg_color }};
+    }
+
+    .email-subscription-popup__title--thankyou,
+    .email-subscription-popup__desc--thankyou
+    {
+      color: {{ section.settings.thank_you_text_color }};
+    }
+
+    .email-subscription-popup__disclaimer--thankyou>p {
+      color: {{ section.settings.thank_you_disclaimer_text_color }};
+    }
+
+    .email-subscription-popup__thankyou-coupon {
+      color: {{ section.settings.thank_you_coupon_color }};
+    }
+
+    .email-subscription-popup__thankyou-box {
+      background: {{ section.settings.thank_you_box_bg_color }};
+    }
+
+    .email-subscription-popup__thankyou-box-intro {
+      color: {{ section.settings.thank_you_intro_text_color }};
+    }
+
+    .email-subscription-popup__thankyou-box-button {
+      background-color: {{ section.settings.thank_you_button_bg_color }};
+      color: {{ section.settings.thank_you_button_text_color }};
+    }
+
+    .email-subscription-popup__body--thankyou-member {
+      background-image: url({{ section.settings.thank_you_member_bg_image | image_url: width: 1200 }});
+      background-size: cover;
+      background-position: bottom center;
+      background-repeat: no-repeat;
+      background-color: {{ section.settings.thank_you_member_bg_color }};
+    }
+
+    .email-subscription-popup__title--thankyou-member,
+    .email-subscription-popup__desc--thankyou-member p {
+      color: {{ section.settings.thank_you_member_text_color }};
+    }
+
+    .email-subscription-popup__thankyou-member-coupon {
+      color: {{ section.settings.thank_you_member_coupon_color }};
+    }
+
+    .email-subscription-popup__body--thankyou-sms {
+      background-image: url({{ section.settings.thank_you_sms_bg_image | image_url: width: 1200 }});
+      background-size: cover;
+      background-position: bottom center;
+      background-repeat: no-repeat;
+      background-color: {{ section.settings.sms_thank_you_bg_color }};
+    }
+
+    .email-subscription-popup__title--thankyou-sms,
+    .email-subscription-popup__desc--thankyou-sms p {
+      color: {{ section.settings.thank_you_sms_text_color }};
+    }
+
+    .email-subscription-popup__thankyou-sms-coupon {
+      color: {{ section.settings.thank_you_sms_coupon_color }};
+    }
+    @media screen and (max-width: 749px) {
+      .email-subscription-popup__body--subscrption {
+        background-image: url({{ section.settings.subscription_bg_image_mobile | image_url: width: 300 }});
+        background-size: cover;
+      }
+
+      .email-subscription-popup__body--sms {
+        background-image: url({{ section.settings.sms_bg_image_mobile | image_url: width: 300 }});
+        background-size: cover;
+      }
+
+      .email-subscription-popup__body--sms-expand {
+        background-image: url({{ section.settings.sms_bg_image_mobile_expand | image_url: width: 300 }});
+        background-size: cover;
+        background-position: bottom center;
+        background-repeat: no-repeat;
+      }
+
+      .email-subscription-popup__body--thankyou {
+        background-image: url({{ section.settings.thank_you_image_mobile | image_url: width: 300 }});
+      }
+
+      .email-subscription-popup__body--thankyou-member {
+        background-image: url({{ section.settings.thank_you_member_bg_image_mobile | image_url: width: 300 }});
+        background-size: cover;
+      }
+
+      .email-subscription-popup__body--thankyou-sms {
+        background-image: url({{ section.settings.thank_you_sms_bg_image_mobile | image_url: width: 300 }});
+        background-size: cover;
+      }
+    }
+  </style>
+
+  <script>
+    // email subscription popup section settings will pass to below js file
+    var emailSubscriptionPopupSettingJsons = {{ section.settings | json }};
+  </script>
+  <script src="{{ 'subscription-form-common.js' | asset_url }}"></script>
+  <script src="{{ 'email-subscription-popup-alpine.js' | asset_url }}"></script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Email Subscription Popup",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Floating Logo Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show",
+      "label": "Show?"
+    },
+    {
+      "type": "number",
+      "id": "popup_size",
+      "label": "icon size(PC)",
+      "default": 179
+    },
+    {
+      "type": "number",
+      "id": "popup_size_m",
+      "label": "icon size(Mobile)",
+      "default": 90
+    },
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "PC Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_icon",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "header",
+      "content": "General Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "auto_show_popup",
+      "label": "Show popup automatically?",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sms_section",
+      "label": "Enable SMS section?",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_member_registration",
+      "label": "Enable member registration?",
+      "default": true
+    },
+    {
+      "type": "number",
+      "id": "popup_delay_seconds",
+      "label": "Show popup after how many seconds",
+      "info": "Show popup after X seconds when user visit the page. Please enter a number."
+    },
+    {
+      "type": "number",
+      "id": "popup_delay_days",
+      "label": "Popup will not show again after how many days",
+      "info": "Popup will not show again after X days when user close the popup. Please enter a number."
+    },
+    {
+      "type": "textarea",
+      "id": "popup_auto_show_include_pages",
+      "label": "Auto Show Popup Include Urls",
+      "info": "Please enter the page urls that you want to allow show the popup automatically and separate them by comma. \ne.g.  /pages/0-vat-products, /products/powerstream-microinverter, /products/balkonkraftwerk-600w-800w-fur-garten"
+    },
+    {
+      "type": "textarea",
+      "id": "popup_exclude_urls",
+      "label": "Exclude Urls",
+      "info": "Please enter the page Url that you want to exclude the popup and separate them by comma. \ne.g. \n/pages/0-vat-products,\n/products/powerstream-microinverter,\n/products/balkonkraftwerk-600w-800w-fur-garten"
+    },
+    {
+      "type": "header",
+      "content": "Email Subscription API Settings",
+      "info": "Global Headers can be changed in the global theme settings - Email Subscription API Settings section"
+    },
+    {
+      "type": "text",
+      "id": "contact_list_id",
+      "label": "Contact List ID"
+    },
+    {
+      "type": "text",
+      "id": "single_1_id",
+      "label": "Single 1 ID"
+    },
+    {
+      "type": "text",
+      "id": "single_1_value",
+      "label": "Single 1 Value",
+      "info": "Please enter a single number for the value. e.g. 1 or 2 or 3"
+    },
+    {
+      "type": "radio",
+      "id": "single_1_overwrite",
+      "label": "Single 1 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "single_2_id",
+      "label": "Single 2 ID"
+    },
+    {
+      "type": "text",
+      "id": "single_2_value",
+      "label": "Single 2 Value",
+      "info": "Please enter a single number for the value. e.g. 1 or 2 or 3"
+    },
+    {
+      "type": "radio",
+      "id": "single_2_overwrite",
+      "label": "Single 2 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "single_3_id",
+      "label": "Single 3 ID"
+    },
+    {
+      "type": "text",
+      "id": "single_3_value",
+      "label": "Single 3 Value",
+      "info": "Please enter a single number for the value. e.g. 1 or 2 or 3"
+    },
+    {
+      "type": "radio",
+      "id": "single_3_overwrite",
+      "label": "Single 3 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "single_4_id",
+      "label": "Single 4 ID"
+    },
+    {
+      "type": "text",
+      "id": "single_4_value",
+      "label": "Single 4 Value",
+      "info": "Please enter a single number for the value. e.g. 1 or 2 or 3"
+    },
+    {
+      "type": "radio",
+      "id": "single_4_overwrite",
+      "label": "Single 4 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "subscription_text_1_id",
+      "label": "Text 1 ID"
+    },
+    {
+      "type": "text",
+      "id": "subscription_text_1_value",
+      "label": "Text 1 Value"
+    },
+    {
+      "type": "radio",
+      "id": "subscription_text_1_overwrite",
+      "label": "Text 1 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "subscription_text_2_id",
+      "label": "Text 2 ID"
+    },
+    {
+      "type": "text",
+      "id": "subscription_text_2_value",
+      "label": "Text 2 Value"
+    },
+    {
+      "type": "radio",
+      "id": "subscription_text_2_overwrite",
+      "label": "Text 2 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "multiple_1_id",
+      "label": "Multiple 1 ID"
+    },
+    {
+      "type": "text",
+      "id": "multiple_1_value",
+      "label": "Multiple 1 Value",
+      "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+    },
+    {
+      "type": "radio",
+      "id": "multiple_1_overwrite",
+      "label": "Multiple 1 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "multiple_2_id",
+      "label": "Multiple 2 ID"
+    },
+    {
+      "type": "text",
+      "id": "multiple_2_value",
+      "label": "Multiple 2 Value",
+      "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+    },
+    {
+      "type": "radio",
+      "id": "multiple_2_overwrite",
+      "label": "Multiple 2 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "multiple_3_id",
+      "label": "Multiple 3 ID"
+    },
+    {
+      "type": "text",
+      "id": "multiple_3_value",
+      "label": "Multiple 3 Value",
+      "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+    },
+    {
+      "type": "radio",
+      "id": "multiple_3_overwrite",
+      "label": "Multiple 3 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "multiple_4_id",
+      "label": "Multiple 4 ID"
+    },
+    {
+      "type": "text",
+      "id": "multiple_4_value",
+      "label": "Multiple 4 Value",
+      "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+    },
+    {
+      "type": "radio",
+      "id": "multiple_4_overwrite",
+      "label": "Multiple 4 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "multiple_5_id",
+      "label": "Multiple 5 ID"
+    },
+    {
+      "type": "text",
+      "id": "multiple_5_value",
+      "label": "Multiple 5 Value",
+      "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+    },
+    {
+      "type": "radio",
+      "id": "multiple_5_overwrite",
+      "label": "Multiple 5 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "header",
+      "content": "SMS API Settings"
+    },
+    {
+      "type": "text",
+      "id": "contact_list_id_sms",
+      "label": "SMS Contact List ID"
+    },
+    {
+      "type": "text",
+      "id": "s_id_sms",
+      "label": "SMS Single ID"
+    },
+    {
+      "type": "text",
+      "id": "s_value_sms",
+      "label": "SMS Single Value",
+      "info": "Please enter a single number for the value. e.g. 1 or 2 or 3"
+    },
+    {
+      "type": "radio",
+      "id": "s_overwrite_sms",
+      "label": "SMS Single Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "t_id_sms",
+      "label": "SMS Text ID"
+    },
+    {
+      "type": "text",
+      "id": "t_value_sms",
+      "label": "SMS Text Value",
+      "info": "Please enter a single number for the value. e.g. 1 or 2 or 3"
+    },
+    {
+      "type": "radio",
+      "id": "t_overwrite_sms",
+      "label": "SMS Text Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "m_id_sms",
+      "label": "SMS Multiple ID"
+    },
+    {
+      "type": "text",
+      "id": "m_value_sms",
+      "label": "SMS Multiple Value",
+      "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+    },
+    {
+      "type": "radio",
+      "id": "m_overwrite_sms",
+      "label": "SMS Multiple Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "m_2_id_sms",
+      "label": "SMS Multiple 2 ID"
+    },
+    {
+      "type": "text",
+      "id": "m_2_value_sms",
+      "label": "SMS Multiple 2 Value",
+      "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+    },
+    {
+      "type": "radio",
+      "id": "m_2_overwrite_sms",
+      "label": "SMS Multiple 2 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "header",
+      "content": "Subscription Section UI Settings"
+    },
+    {
+      "type": "color",
+      "id": "subscription_bg_color",
+      "label": "Subscription Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "image_picker",
+      "id": "subscription_bg_image",
+      "label": "Subscription Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "subscription_bg_image_mobile",
+      "label": "Subscription Background Image Mobile"
+    },
+    {
+      "type": "color",
+      "id": "email_text_color",
+      "label": "Subscription Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "id": "subscription_title",
+      "label": "Subscription Title",
+      "default": "Unlock your R500 Discount"
+    },
+    {
+      "type": "color",
+      "id": "subscription_description_color",
+      "label": "Subscription Description Color",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "id": "subscription_description",
+      "label": "Subscription Description",
+      "default": "Subscribe to our emails and unlock a delightful surprise!"
+    },
+    {
+      "type": "text",
+      "id": "subscription_input_placeholder",
+      "label": "Subscription Input Placeholder",
+      "default": "Email"
+    },
+    {
+      "type": "color",
+      "id": "subscription_input_border_color",
+      "label": "Subscription Input Border Color",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "id": "subscription_btn_text",
+      "label": "Subscription Button Text",
+      "default": "Subscribe"
+    },
+    {
+      "type": "color",
+      "id": "subscription_btn_bg_color",
+      "label": "Subscription Button Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "subscription_btn_text_color",
+      "label": "Subscription Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "richtext",
+      "id": "subscription_disclaimer_text",
+      "label": "Subscription Disclaimer Text",
+      "default": "<p>I agree to EcoFlow's Privacy Policy and Terms of Service.</p>"
+    },
+    {
+      "type": "color",
+      "id": "subscription_disclaimer_text_checkmark_color",
+      "label": "Subscription Disclaimer Text and Checkmark Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "SMS Section UI Settings"
+    },
+    {
+      "type": "color",
+      "id": "sms_bg_color",
+      "label": "SMS Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "image_picker",
+      "id": "sms_bg_image",
+      "label": "SMS Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "sms_bg_image_mobile",
+      "label": "SMS Background Image Mobile"
+    },
+    {
+      "type": "image_picker",
+      "id": "sms_bg_image_expand",
+      "label": "SMS Disclaimer Expanded Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "sms_bg_image_mobile_expand",
+      "label": "SMS Disclaimer Expanded Background Image Mobile"
+    },
+    {
+      "type": "color",
+      "id": "sms_text_color",
+      "label": "SMS Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "textarea",
+      "id": "sms_title",
+      "label": "SMS Title",
+      "default": "Unlock your R500 Discount"
+    },
+    {
+      "type": "text",
+      "id": "sms_description",
+      "label": "SMS Description"
+    },
+    {
+      "type": "text",
+      "id": "sms_coupon_code",
+      "label": "SMS Coupon Code"
+    },
+    {
+      "type": "color",
+      "id": "sms_coupon_color",
+      "label": "SMS Coupon Code Color",
+      "default": "#3F68E0"
+    },
+    {
+      "type": "color",
+      "id": "sms_phone_list_dropdown_bg_color",
+      "label": "SMS Phone List Dropdown Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "sms_phone_list_dropdown_text_color",
+      "label": "SMS Phone List Dropdown Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "sms_input_placeholder",
+      "label": "SMS Input Placeholder",
+      "default": "Phone Number"
+    },
+    {
+      "type": "color",
+      "id": "sms_input_border_color",
+      "label": "SMS Input Border Color",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "id": "sms_button_text",
+      "label": "SMS Button Text",
+      "default": "Subscribe"
+    },
+    {
+      "type": "color",
+      "id": "sms_button_text_color",
+      "label": "SMS Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "sms_button_bg_color",
+      "label": "SMS Button Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "richtext",
+      "id": "sms_disclaimer_collapse",
+      "label": "SMS Disclaimer in Short",
+      "default": "<p>* EcoCredits can be redeemed for discounts and gifts</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "sms_disclaimer",
+      "label": "SMS Disclaimer in Full",
+      "default": "<p>* EcoCredits can be redeemed for discounts and gifts</p>"
+    },
+    {
+      "type": "color",
+      "id": "sms_disclaimer_text_checkmark_color",
+      "label": "SMS Disclaimer Text and Checkmark Color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Thank You Section UI Settings",
+      "info": "This section is for the non-member thank you page with button"
+    },
+    {
+      "type": "color",
+      "id": "thank_you_bg_color",
+      "label": "Thank You Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "image_picker",
+      "id": "thank_you_bg_image",
+      "label": "Thank you Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "thank_you_image_mobile",
+      "label": "Thank you Background Image Mobile"
+    },
+    {
+      "type": "color",
+      "id": "thank_you_text_color",
+      "label": "Thank you Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "id": "thank_you_title",
+      "label": "Thank you Title",
+      "default": "Thank You For Subscribing!"
+    },
+    {
+      "type": "text",
+      "id": "thank_you_description",
+      "label": "Thank you Description"
+    },
+    {
+      "type": "text",
+      "id": "thank_you_coupon_code",
+      "label": "Thank You Coupon Code"
+    },
+    {
+      "type": "color",
+      "id": "thank_you_coupon_color",
+      "label": "Thank You Coupon Code Color",
+      "default": "#3F68E0"
+    },
+    {
+      "type": "color_background",
+      "id": "thank_you_box_bg_color",
+      "label": "Thank you Box Background Color",
+      "default": "#3F68E0"
+    },
+    {
+      "type": "text",
+      "id": "thank_you_intro_text",
+      "label": "Thank you Intro Text",
+      "default": "Join us to receive an additional 500 EcoCredits for free."
+    },
+    {
+      "type": "color",
+      "id": "thank_you_intro_text_color",
+      "label": "Thank you Intro Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "id": "thank_you_button_text",
+      "label": "Thank you Button Text",
+      "default": "Create an EcoFlow Account"
+    },
+    {
+      "type": "color",
+      "id": "thank_you_button_text_color",
+      "label": "Thank you Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "thank_you_button_bg_color",
+      "label": "Thank you Button Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "url",
+      "id": "thank_you_button_link",
+      "label": "Thank you Button Link"
+    },
+    {
+      "type": "richtext",
+      "id": "thank_you_disclaimer",
+      "label": "Thank you Disclaimer",
+      "default": "<p>* EcoCredits can be redeemed for discounts and gifts</p>"
+    },
+    {
+      "type": "color",
+      "id": "thank_you_disclaimer_text_color",
+      "label": "Thank you Disclaimer Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Member Thank You Section UI Settings",
+      "info": "This section will appear after EDM subscription for those who have already become a member."
+    },
+    {
+      "type": "color",
+      "id": "thank_you_member_bg_color",
+      "label": "Member Thank You Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "image_picker",
+      "id": "thank_you_member_bg_image",
+      "label": "Member Thank you Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "thank_you_member_bg_image_mobile",
+      "label": "Member Thank you Background Image Mobile"
+    },
+    {
+      "type": "color",
+      "id": "thank_you_member_text_color",
+      "label": "Member Thank you Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "id": "thank_you_member_title",
+      "label": "Member Thank you Title",
+      "default": "Thank You For Subscribing!"
+    },
+    {
+      "type": "richtext",
+      "id": "thank_you_member_description",
+      "label": "Member Thank you Description"
+    },
+    {
+      "type": "text",
+      "id": "thank_you_member_coupon_code",
+      "label": "Thank You Member Coupon Code"
+    },
+    {
+      "type": "color",
+      "id": "thank_you_member_coupon_color",
+      "label": "Thank You Member Coupon Code Color",
+      "default": "#3F68E0"
+    },
+    {
+      "type": "header",
+      "content": "SMS Thank You Section UI Settings",
+      "info": "This section is for the sms thank you page without button"
+    },
+    {
+      "type": "color",
+      "id": "sms_thank_you_bg_color",
+      "label": "SMS Thank You Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "image_picker",
+      "id": "thank_you_sms_bg_image",
+      "label": "SMS Thank you Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "thank_you_sms_bg_image_mobile",
+      "label": "SMS Thank you Background Image Mobile"
+    },
+    {
+      "type": "color",
+      "id": "thank_you_sms_text_color",
+      "label": "SMS Thank you Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "id": "thank_you_sms_title",
+      "label": "SMS Thank you Title",
+      "default": "Thank You For Subscribing!"
+    },
+    {
+      "type": "richtext",
+      "id": "thank_you_sms_description",
+      "label": "SMS Thank you Description"
+    },
+    {
+      "type": "text",
+      "id": "thank_you_sms_coupon_code",
+      "label": "Thank You SMS Coupon Code"
+    },
+    {
+      "type": "color",
+      "id": "thank_you_sms_coupon_color",
+      "label": "Thank You SMS Coupon Code Color",
+      "default": "#3F68E0"
+    }
+  ]
+}
+{% endschema %}

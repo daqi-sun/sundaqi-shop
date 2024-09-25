@@ -1,0 +1,496 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "Sound System",
+  "id": "speaker",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "class": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "id": "atb_main_heading",
+      "type": "text",
+      "label": "Main Heading",
+      "default": "Major Sound",
+      "info": ""
+    },
+    {
+      "id": "atb_description",
+      "type": "text",
+      "label": "Description",
+      "default": "This purposefully designed speaker creates rich, nuanced sound that defies its size.",
+      "info": ""
+    },
+    {
+      "id": "atb_main_image",
+      "type": "image_picker",
+      "label": "Main Image",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "blocks",
+      "label": "Block ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": "",
+      "repeatable": "slide"
+    },
+    {
+      "id": "block_slide_image",
+      "type": "image_picker",
+      "label": "Slide Image",
+      "repeatable": "slide",
+      "info": ""
+    },
+    {
+      "id": "block_slide_heading",
+      "type": "text",
+      "label": "Slide Heading",
+      "default": "Deep bass with range you can feel",
+      "repeatable": "slide",
+      "info": ""
+    },
+    {
+      "id": "block_slide_description",
+      "type": "text",
+      "label": "Description",
+      "default": "The Apple-designed high-excursion woofer is positioned at the top of the speaker facing upward, creating a wide range of deep bass that surpasses any traditional speaker. A six-microphone array, along with an internal bass-EQ microphone, analyzes and compensates for the effect of the room on the bass response, providing rich, consistent sound. And a powerful motor drives the diaphragm a remarkable 20 mm, so the bass shines through even when the volume is low.",
+      "repeatable": "slide",
+      "info": ""
+    }
+  ],
+  "warnings": [
+    "repeating image fields may not be properly handled"
+  ]
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_main_heading' -%}
+{%- assign atb_main_heading = val -%}
+{%- include 'atb-render' field:'atb_description' -%}
+{%- assign atb_description = val -%}
+{%- include 'atb-render' field:'atb_main_image' -%}
+{%- assign atb_main_image = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_slide_image' -%}
+{%- assign block_slide_image = val -%}
+{%- include 'atb-render' field:'block_slide_heading' -%}
+{%- assign block_slide_heading = val -%}
+{%- include 'atb-render' field:'block_slide_description' -%}
+{%- assign block_slide_description = val -%}
+{%- assign atb_main_image_key = atb_main_image| split: '/files/' | last -%}{%- assign atb_main_image = images[atb_main_image_key] -%}{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section ">
+<div id="ac-ln-sticky-placeholder" class="css-sticky ac-ln-sticking"></div>
+<nav id="ac-localnav" class="js no-touch css-sticky ac-ln-sticking" lang="en-US" dir="ltr" data-sticky="" data-analytics-region="local nav locked" role="navigation" aria-label="Local">
+</nav>
+<main>
+  <section class="section section-design" data-analytics-section-engagement="name:design" data-component-list="ProgressiveImage StickySpeaker">
+    <div class="section-content">
+      <div class="section-heading transition-complete" data-component-list="CopyEngagement CopyParallax" style="transform: translate3d(0px, -15px, 0px);">
+        <h2 class="typography-headline-super transition-1 large-10 large-centered small-12">{{atb_main_heading}}</h2>
+        <p class="typography-intro-elevated transition-2 large-8 large-centered medium-10 small-12">{{atb_description}}</p>
+      </div>
+    </div>
+    <div class="sticky-wrapper">
+      <div class="speaker-components-wrapper full-feature" style="top: 100px; transform: translate3d(0px, -126.959px, 0px);">
+        <figure class="homepod-speaker-side" style="opacity: 0.001;"></figure>
+<!--         <figure class="homepod-speaker-guts" style="background-image: url({{atb_main_image | img_url: '1800x'}})"></figure> -->
+        {% for block0 in blocks %}
+{%- assign my_image_key0 = block_slide_image[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image0 = images[my_image_key0] -%}
+        	<figure class="speaker-component homepod-speaker-component-{{forloop.index}}" style="opacity: 0.999;background-image: url({{my_image0 | img_url: '1800x'}})"></figure>
+		{% endfor %}
+        <!--         <figure class="speaker-component homepod-speaker-component-2" style="opacity: 0.999;"></figure>
+        <figure class="speaker-component homepod-speaker-component-3" style="opacity: 0.001;"></figure>
+        <figure class="speaker-component homepod-speaker-component-4" style="opacity: 0.001;"></figure>
+        <figure class="speaker-component homepod-speaker-component-5" style="opacity: 0.001;"></figure> -->
+      </div>
+      <div class="card-wrapper">
+        {% for block0 in blocks %}
+{%- assign my_image_key0 = block_slide_image[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image0 = images[my_image_key0] -%}
+          <figure class="fallback speaker-component homepod-speaker-component-{{forloop.index}}"></figure>
+          <div class="design-card" data-fade-offset="							-0.15">
+            <h3 class="typography-callout">{{block_slide_heading[forloop.index0]}}</h3>
+            <p>{{block_slide_description[forloop.index0]}}</p>
+          </div>
+        {% endfor %}
+<!--         <figure class="fallback speaker-component homepod-speaker-component-2"></figure>
+        <div class="design-card" data-fade-offset="							0">
+          <h3 class="typography-callout">Far and away <br>an incredible listener.</h3>
+          <p>Six microphones positioned around HomePod allow it to pick up all the sound in a room. When you say “Hey Siri,” advanced signal processing, together with echo and noise cancellation, allows HomePod to hear you without the need to raise your voice — even if you’re across the room with loud music playing. After HomePod recognizes the words “Hey Siri,” what you say is encrypted and sent anonymously to Apple servers without being tied to your Apple&nbsp;ID.</p>
+        </div>
+        <figure class="fallback speaker-component homepod-speaker-component-3"></figure>
+        <div class="design-card" data-fade-offset="							0.2">
+          <h3 class="typography-callout">High-fidelity audio <br>that’s all around you.</h3>
+          <p>A custom-designed array of seven beamforming tweeters, each with its own amplifier, creates tremendous directional control. Placed around the base and using a folded-horn design, they send the flow of music toward the center and then out the bottom in a 360-degree pattern, resulting in an all-encompassing sense of space. This virtually eliminates early table reflections and allows for consistent high-definition sound.</p>
+        </div>
+        <figure class="fallback speaker-component homepod-speaker-component-4"></figure>
+        <div class="design-card" data-fade-offset="							0">
+          <figure class="image-icon-a8"></figure>
+          <h3 class="typography-callout">The biggest brain <br>ever in&nbsp;a&nbsp;speaker.</h3>
+          <p>An Apple-designed A8 chip orchestrates all the remarkable audio innovations inside HomePod. Like advanced signal processing so Siri can hear you over the music. Real-time studio-level processing that maximizes the bass while minimizing distortion. Buffering that’s even faster than real time. And upmixing of both direct and ambient audio. You get amazing sound, every single time.</p>
+        </div>
+        <figure class="fallback speaker-component homepod-speaker-component-5"></figure>
+        <div class="design-card" data-fade-offset="							0">
+          <h3 class="typography-callout">Designed to be <br>seen and heard.</h3>
+          <p>HomePod is wrapped in a seamless mesh fabric designed for aesthetics and acoustic performance. Available in white and space gray, it’s gorgeous from every angle — yet virtually transparent to the sound waves passing&nbsp;through&nbsp;it.</p>
+        </div> -->
+      </div>
+    </div>
+  </section>
+  <section class="section section-room" data-analytics-section-engagement="name:room" data-component-list="ProgressiveImage" style="margin-top: -441px;">
+
+  </section>
+  <!--/main-->
+
+</main>
+
+
+
+<style>
+.page-overview .section-design .homepod-speaker-component-1 {
+	width: 654px;
+	height: 825px;
+	background-size: 654px 825px;
+	background-repeat: no-repeat;
+/* 	background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/guts_1__ddez8kzp4omu_large.jpg") */
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min-resolution: 1.5dppx),
+(-webkit-min-device-pixel-ratio: 1.5),
+(min-resolution: 144dpi) {
+	.page-overview .section-design .homepod-speaker-component-1 {
+/* 		background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/guts_1__ddez8kzp4omu_large_2x.jpg") */
+	}
+}
+
+@media only screen and (max-width: 1068px) {
+	.page-overview .section-design .homepod-speaker-component-1 {
+		width: 462px;
+		height: 583px;
+		background-size: 462px 583px;
+		background-repeat: no-repeat;
+/* 		background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/guts_1__ddez8kzp4omu_medium.jpg") */
+	}
+}
+
+@media only screen and (max-width: 1068px) and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (max-width: 1068px) and (min-resolution: 1.5dppx),
+only screen and (max-width: 1068px) and (min-resolution: 144dpi) {
+	.page-overview .section-design .homepod-speaker-component-1 {
+/* 		background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/guts_1__ddez8kzp4omu_medium_2x.jpg") */
+	}
+}
+
+@media only screen and (max-width: 735px) {
+	.page-overview .section-design .homepod-speaker-component-1 {
+		width: 288px;
+		height: 363px;
+		background-size: 288px 363px;
+		background-repeat: no-repeat;
+/* 		background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/guts_1__ddez8kzp4omu_small.jpg") */
+	}
+}
+
+@media only screen and (max-width: 735px) and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (max-width: 735px) and (min-resolution: 1.5dppx),
+only screen and (max-width: 735px) and (min-resolution: 144dpi) {
+	.page-overview .section-design .homepod-speaker-component-1 {
+/* 		background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/guts_1__ddez8kzp4omu_small_2x.jpg") */
+	}
+}
+
+.page-overview .section-design .homepod-speaker-component-2 {
+	width: 654px;
+	height: 825px;
+	background-size: 654px 825px;
+	background-repeat: no-repeat;
+/* 	background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/guts_2__cnol9djca7bm_large.jpg") */
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min-resolution: 1.5dppx),
+(-webkit-min-device-pixel-ratio: 1.5),
+(min-resolution: 144dpi) {
+	.page-overview .section-design .homepod-speaker-component-2 {
+/* 		background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/guts_2__cnol9djca7bm_large_2x.jpg") */
+	}
+}
+
+@media only screen and (max-width: 1068px) {
+	.page-overview .section-design .homepod-speaker-component-2 {
+		width: 462px;
+		height: 583px;
+		background-size: 462px 583px;
+		background-repeat: no-repeat;
+/* 		background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/guts_2__cnol9djca7bm_medium.jpg") */
+	}
+}
+
+@media only screen and (max-width: 1068px) and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (max-width: 1068px) and (min-resolution: 1.5dppx),
+only screen and (max-width: 1068px) and (min-resolution: 144dpi) {
+	.page-overview .section-design .homepod-speaker-component-2 {
+/* 		background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/guts_2__cnol9djca7bm_medium_2x.jpg") */
+	}
+}
+
+@media only screen and (max-width: 735px) {
+	.page-overview .section-design .homepod-speaker-component-2 {
+		width: 288px;
+		height: 363px;
+		background-size: 288px 363px;
+		background-repeat: no-repeat;
+/* 		background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/guts_2__cnol9djca7bm_small.jpg") */
+	}
+}
+
+@media only screen and (max-width: 735px) and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (max-width: 735px) and (min-resolution: 1.5dppx),
+only screen and (max-width: 735px) and (min-resolution: 144dpi) {
+	.page-overview .section-design .homepod-speaker-component-2 {
+/* 		background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/guts_2__cnol9djca7bm_small_2x.jpg") */
+	}
+}
+
+.page-overview .section-design .homepod-speaker-component-3 {
+	width: 654px;
+	height: 825px;
+	background-size: 654px 825px;
+	background-repeat: no-repeat;
+/* 	background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/guts_3__k9w71kkilbuy_large.jpg") */
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min-resolution: 1.5dppx),
+(-webkit-min-device-pixel-ratio: 1.5),
+(min-resolution: 144dpi) {
+	.page-overview .section-design .homepod-speaker-component-3 {
+/* 		background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/guts_3__k9w71kkilbuy_large_2x.jpg") */
+	}
+}
+
+@media only screen and (max-width: 1068px) {
+	.page-overview .section-design .homepod-speaker-component-3 {
+		width: 462px;
+		height: 583px;
+		background-size: 462px 583px;
+		background-repeat: no-repeat;
+/* 		background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/guts_3__k9w71kkilbuy_medium.jpg") */
+	}
+}
+
+@media only screen and (max-width: 1068px) and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (max-width: 1068px) and (min-resolution: 1.5dppx),
+only screen and (max-width: 1068px) and (min-resolution: 144dpi) {
+	.page-overview .section-design .homepod-speaker-component-3 {
+/* 		background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/guts_3__k9w71kkilbuy_medium_2x.jpg") */
+	}
+}
+
+@media only screen and (max-width: 735px) {
+	.page-overview .section-design .homepod-speaker-component-3 {
+		width: 288px;
+		height: 363px;
+		background-size: 288px 363px;
+		background-repeat: no-repeat;
+/* 		background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/guts_3__k9w71kkilbuy_small.jpg") */
+	}
+}
+
+@media only screen and (max-width: 735px) and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (max-width: 735px) and (min-resolution: 1.5dppx),
+only screen and (max-width: 735px) and (min-resolution: 144dpi) {
+	.page-overview .section-design .homepod-speaker-component-3 {
+/* 		background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/guts_3__k9w71kkilbuy_small_2x.jpg") */
+	}
+}
+
+.page-overview .section-design .homepod-speaker-component-4 {
+	width: 654px;
+	height: 825px;
+	background-size: 654px 825px;
+	background-repeat: no-repeat;
+/* 	background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/guts_4__dfs8aga4geoi_large.jpg") */
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min-resolution: 1.5dppx),
+(-webkit-min-device-pixel-ratio: 1.5),
+(min-resolution: 144dpi) {
+	.page-overview .section-design .homepod-speaker-component-4 {
+/* 		background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/guts_4__dfs8aga4geoi_large_2x.jpg") */
+	}
+}
+
+@media only screen and (max-width: 1068px) {
+	.page-overview .section-design .homepod-speaker-component-4 {
+		width: 462px;
+		height: 583px;
+		background-size: 462px 583px;
+		background-repeat: no-repeat;
+/* 		background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/guts_4__dfs8aga4geoi_medium.jpg") */
+	}
+}
+
+@media only screen and (max-width: 1068px) and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (max-width: 1068px) and (min-resolution: 1.5dppx),
+only screen and (max-width: 1068px) and (min-resolution: 144dpi) {
+	.page-overview .section-design .homepod-speaker-component-4 {
+/* 		background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/guts_4__dfs8aga4geoi_medium_2x.jpg") */
+	}
+}
+
+@media only screen and (max-width: 735px) {
+	.page-overview .section-design .homepod-speaker-component-4 {
+		width: 288px;
+		height: 363px;
+		background-size: 288px 363px;
+		background-repeat: no-repeat;
+/* 		background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/guts_4__dfs8aga4geoi_small.jpg") */
+	}
+}
+
+@media only screen and (max-width: 735px) and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (max-width: 735px) and (min-resolution: 1.5dppx),
+only screen and (max-width: 735px) and (min-resolution: 144dpi) {
+	.page-overview .section-design .homepod-speaker-component-4 {
+/* 		background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/guts_4__dfs8aga4geoi_small_2x.jpg") */
+	}
+}
+
+.page-overview .section-design .homepod-speaker-guts {
+	width: 654px;
+	height: 825px;
+	background-size: 654px 825px;
+	background-repeat: no-repeat;
+/* 	background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/guts_4__dfs8aga4geoi_large.jpg") */
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min-resolution: 1.5dppx),
+(-webkit-min-device-pixel-ratio: 1.5),
+(min-resolution: 144dpi) {
+	.page-overview .section-design .homepod-speaker-guts {
+/* 		background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/guts_4__dfs8aga4geoi_large_2x.jpg") */
+	}
+}
+
+@media only screen and (max-width: 1068px) {
+	.page-overview .section-design .homepod-speaker-guts {
+		width: 462px;
+		height: 583px;
+		background-size: 462px 583px;
+		background-repeat: no-repeat;
+/* 		background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/guts_4__dfs8aga4geoi_medium.jpg") */
+	}
+}
+
+@media only screen and (max-width: 1068px) and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (max-width: 1068px) and (min-resolution: 1.5dppx),
+only screen and (max-width: 1068px) and (min-resolution: 144dpi) {
+	.page-overview .section-design .homepod-speaker-guts {
+/* 		background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/guts_4__dfs8aga4geoi_medium_2x.jpg") */
+	}
+}
+
+@media only screen and (max-width: 735px) {
+	.page-overview .section-design .homepod-speaker-guts {
+		width: 288px;
+		height: 363px;
+		background-size: 288px 363px;
+		background-repeat: no-repeat;
+/* 		background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/guts_4__dfs8aga4geoi_small.jpg") */
+	}
+}
+
+@media only screen and (max-width: 735px) and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (max-width: 735px) and (min-resolution: 1.5dppx),
+only screen and (max-width: 735px) and (min-resolution: 144dpi) {
+	.page-overview .section-design .homepod-speaker-guts {
+/* 		background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/guts_4__dfs8aga4geoi_small_2x.jpg") */
+	}
+}
+
+.page-overview .section-design .homepod-speaker-component-5,
+.page-overview .section-design .homepod-speaker-side {
+	width: 654px;
+	height: 825px;
+	background-size: 654px 825px;
+	background-repeat: no-repeat;
+/* 	background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/homepod_side__brlxkl4gtrf6_large.jpg") */
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min-resolution: 1.5dppx),
+(-webkit-min-device-pixel-ratio: 1.5),
+(min-resolution: 144dpi) {
+	.page-overview .section-design .homepod-speaker-component-5,
+	.page-overview .section-design .homepod-speaker-side {
+/* 		background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/homepod_side__brlxkl4gtrf6_large_2x.jpg") */
+	}
+}
+
+@media only screen and (max-width: 1068px) {
+	.page-overview .section-design .homepod-speaker-component-5,
+	.page-overview .section-design .homepod-speaker-side {
+		width: 462px;
+		height: 583px;
+		background-size: 462px 583px;
+		background-repeat: no-repeat;
+/* 		background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/homepod_side__brlxkl4gtrf6_medium.jpg") */
+	}
+}
+
+@media only screen and (max-width: 1068px) and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (max-width: 1068px) and (min-resolution: 1.5dppx),
+only screen and (max-width: 1068px) and (min-resolution: 144dpi) {
+	.page-overview .section-design .homepod-speaker-component-5,
+	.page-overview .section-design .homepod-speaker-side {
+/* 		background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/homepod_side__brlxkl4gtrf6_medium_2x.jpg") */
+	}
+}
+
+@media only screen and (max-width: 735px) {
+	.page-overview .section-design .homepod-speaker-component-5,
+	.page-overview .section-design .homepod-speaker-side {
+		width: 288px;
+		height: 363px;
+		background-size: 288px 363px;
+		background-repeat: no-repeat;
+/* 		background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/homepod_side__brlxkl4gtrf6_small.jpg") */
+	}
+}
+
+@media only screen and (max-width: 735px) and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (max-width: 735px) and (min-resolution: 1.5dppx),
+only screen and (max-width: 735px) and (min-resolution: 144dpi) {
+	.page-overview .section-design .homepod-speaker-component-5,
+	.page-overview .section-design .homepod-speaker-side {
+/* 		background-image: url("https://www.apple.com/v/homepod-2018/a/images/overview/homepod_side__brlxkl4gtrf6_small_2x.jpg") */
+	}
+}
+
+	
+
+</style>
+<script type="application/javascript">
+</script>
+<link rel="stylesheet" href="{{ 'speaker-sticky.css' | asset_url }}" type="text/css" media="print" onload="this.media='all';onLoadStylesheet()">
+<script src="{{ 'ac-films.built.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'main.built.js' | asset_url }}" defer="defer"></script></section>

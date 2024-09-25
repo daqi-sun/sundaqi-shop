@@ -1,0 +1,47 @@
+<style>
+  .balcony-solar-divider__section--{{ section.id }} {
+  background: {{ section.settings.divider_color }};
+  height: {{ section.settings.height_desktop }}px;
+  }
+  @media (max-width: 1023px) {
+      .balcony-solar-divider__section--{{ section.id }} {
+          height: {{ section.settings.height_mobile }}px;
+          }
+  }
+</style>
+
+<div class="balcony-solar-divider__section balcony-solar-divider__section--{{ section.id }}"></div>
+
+{% schema %}
+{
+  "name": "Camping RV Div",
+  "settings": [
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Divider Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "height_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Height Desktop",
+      "default": 55
+    },
+    {
+      "type": "range",
+      "id": "height_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Height Mobile",
+      "default": 55
+    }
+  ]
+}
+{% endschema %}

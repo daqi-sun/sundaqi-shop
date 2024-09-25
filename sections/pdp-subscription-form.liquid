@@ -1,0 +1,681 @@
+{{ 'pdp-subscription-form.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="pdp pdp-rich-text"
+  x-data="{ checked: false, contact_email: '', isSuccess: false }"
+  x-init='
+    if (window.location.href.includes("form_type=customer") || window.location.href.includes("customer_posted=true#contact_form")) {
+      isSuccess = true;
+    } else {
+      isSuccess = false;
+    }
+  '
+>
+  <div class="pdp-container">
+    {% form 'customer' %}
+      <input id="pdp-subscription-submit-hidden" type="submit" style="display: none">
+
+      <div
+        class="pdp-subscription-form__container"
+        :class="isSuccess ? 'pdp-subscription-form__background--success' : 'pdp-subscription-form__background'"
+      >
+        {% comment %} Successfully Submit Form UI {% endcomment %}
+        <div class="pdp-subscription-form__wrapper" x-show="isSuccess">
+          <div class="pdp-subscription-form__icon-wrapper">
+            <img
+              class="pdp-subscription-form__icon"
+              src="{{ section.settings.successful_icon | image_url: width: 64 }}"
+              loading="eager"
+              alt="PDP Subscription Form Icon"
+            >
+          </div>
+
+          <div class="pdp-subscription-form__text-wrapper">
+            <h2
+              class="pdp-subscription-form__title"
+              style="color: {{ section.settings.successful_form_title_color }}"
+            >
+              {{ section.settings.successful_form_title }}
+            </h2>
+            <p
+              class="pdp-subscription-form__description"
+              style="color: {{ section.settings.successful_form_description_color }}"
+            >
+              {{ section.settings.successful_form_description }}
+            </p>
+          </div>
+
+          <div class="pdp-subscription-form__success-button-wrapper">
+            <a
+              href="{{ section.settings.successful_button_link }}"
+              class="pdp-subscription-form__success-button-link"
+            >
+              <button
+                type="button"
+                class="pdp-subscription-form__success-button"
+                style="
+                  color: {{ section.settings.successful_button_text_color }};
+                  background-color: {{ section.settings.successful_button_background_color }};
+                  border-color: {{ section.settings.successful_button_border_color }};
+                "
+              >
+                {{ section.settings.successful_button_text }}
+              </button>
+            </a>
+          </div>
+
+          <a
+            href="{{ section.settings.successful_link }}"
+            class="pdp-subscription-form__successful-link"
+            style="color: {{ section.settings.successful_link_text_color }}"
+          >
+            {{ section.settings.successful_link_text }}
+          </a>
+        </div>
+
+        {% comment %} Normal Form UI {% endcomment %}
+        <div class="pdp-subscription-form__wrapper" x-show="!isSuccess">
+          <div class="pdp-subscription-form__icon-wrapper">
+            <img
+              class="pdp-subscription-form__icon"
+              src="{{ section.settings.normal_icon | image_url: width: 64 }}"
+              loading="eager"
+              alt="PDP Subscription Form Icon"
+            >
+          </div>
+
+          <div class="pdp-subscription-form__text-wrapper">
+            <h2 class="pdp-subscription-form__title" style="color: {{ section.settings.form_title_color }}">
+              {{ section.settings.form_title }}
+            </h2>
+            <p
+              class="pdp-subscription-form__description"
+              style="color: {{ section.settings.form_description_color }}"
+            >
+              {{ section.settings.form_description }}
+            </p>
+          </div>
+
+          <div class="pdp-subscription-form">
+            <input
+              type="text"
+              class="pdp-subscription-form__input-field"
+              name="contact[email]"
+              id="contact_email"
+              placeholder="{{ section.settings.input_placeholder }}"
+              value="{{ form.email }}"
+              x-model="contact_email"
+            >
+            <button
+              type="button"
+              id="pdp-subscription-submit-button"
+              class="pdp-subscription-form__input-button"
+              style="
+                color: {{ section.settings.form_button_text_color }};
+                background-color: {{ section.settings.form_button_background_color }};
+              "
+              :disabled="!checked || contact_email === ''"
+            >
+              {{ section.settings.form_button_text }}
+            </button>
+          </div>
+
+          <span id="pdp-subscription-error" class="pdp-subscription-form__error">
+            Oops... Something went wrong, please refresh and try again.
+          </span>
+
+          <div class="pdp-subscription-form__disclaimer-wrapper">
+            <label class="pdp-subscription-form__disclaimer" for="contact_disclaimer">
+              {{ section.settings.disclaimer_text }}
+              <input
+                type="checkbox"
+                class="pdp-subscription-form__disclaimer-checkbox"
+                name="disclaimer"
+                id="contact_disclaimer"
+                x-model="checked"
+              >
+              <span class="checkmark"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+    {% endform %}
+  </div>
+</section>
+
+<style>
+  .pdp-subscription-form__background {
+    background: url('{{ section.settings.background_image | image_url: width: 1200 }}') no-repeat;
+    background-size: cover;
+    background-color: {{ section.settings.background_color }};
+  }
+
+  .pdp-subscription-form__background--success {
+    background: url('{{ section.settings.success_background_image | image_url: width: 1200 }}') no-repeat center;
+    background-size: cover;
+    background-color: {{ section.settings.background_color }};
+  }
+
+  .pdp-subscription-form__disclaimer p {
+    color: {{ section.settings.disclaimer_text_color }};
+  }
+
+  .pdp-subscription-form__disclaimer p>a {
+    color: {{ section.settings.disclaimer_link_color }};
+  }
+
+  @media (max-width: 749px) {
+      .pdp-subscription-form__background {
+        background: url('{{ section.settings.background_image_mobile | image_url: width: 750 }}') no-repeat top;
+        background-size: 100%;
+        background-color: {{ section.settings.background_color }};
+      }
+
+      .pdp-subscription-form__background--success {
+        background: url('{{ section.settings.success_background_image_mobile | image_url: width: 750 }}') no-repeat top;
+        background-size: 100%;
+        background-color: {{ section.settings.background_color }};
+      }
+  }
+</style>
+
+<script>
+  // pdp section settings will pass to below js file
+  var pdpSettingJsons = {{ section.settings | json }};
+</script>
+<script src="{{ 'subscription-form-common.js' |  asset_url }}"></script>
+<script src="{{ 'pdp-subscription-form.js' |  asset_url }}"></script>
+
+{% schema %}
+{
+  "name": "PDP Email Subscription",
+  "settings": [
+    {
+      "type": "header",
+      "content": "PDP Subscription Form API Settings",
+      "info": "Global Headers can be changed in the global theme settings - PDP Email Subscription API Settings section"
+    },
+    {
+      "type": "text",
+      "id": "contact_list_id",
+      "label": "Contact List ID"
+    },
+    {
+      "type": "text",
+      "id": "single_1_id",
+      "label": "Single 1 ID"
+    },
+    {
+      "type": "text",
+      "id": "single_1_value",
+      "label": "Single 1 Value",
+      "info": "Please enter a single number for the value. e.g. 1 or 2 or 3"
+    },
+    {
+      "type": "radio",
+      "id": "single_1_overwrite",
+      "label": "Single 1 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "single_2_id",
+      "label": "Single 2 ID"
+    },
+    {
+      "type": "text",
+      "id": "single_2_value",
+      "label": "Single 2 Value",
+      "info": "Please enter a single number for the value. e.g. 1 or 2 or 3"
+    },
+    {
+      "type": "radio",
+      "id": "single_2_overwrite",
+      "label": "Single 2 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "single_3_id",
+      "label": "Single 3 ID"
+    },
+    {
+      "type": "text",
+      "id": "single_3_value",
+      "label": "Single 3 Value",
+      "info": "Please enter a single number for the value. e.g. 1 or 2 or 3"
+    },
+    {
+      "type": "radio",
+      "id": "single_3_overwrite",
+      "label": "Single 3 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "single_4_id",
+      "label": "Single 4 ID"
+    },
+    {
+      "type": "text",
+      "id": "single_4_value",
+      "label": "Single 4 Value",
+      "info": "Please enter a single number for the value. e.g. 1 or 2 or 3"
+    },
+    {
+      "type": "radio",
+      "id": "single_4_overwrite",
+      "label": "Single 4 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "subscription_text_1_id",
+      "label": "Text 1 ID"
+    },
+    {
+      "type": "text",
+      "id": "subscription_text_1_value",
+      "label": "Text 1 Value"
+    },
+    {
+      "type": "radio",
+      "id": "subscription_text_1_overwrite",
+      "label": "Text 1 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "subscription_text_2_id",
+      "label": "Text 2 ID"
+    },
+    {
+      "type": "text",
+      "id": "subscription_text_2_value",
+      "label": "Text 2 Value"
+    },
+    {
+      "type": "radio",
+      "id": "subscription_text_2_overwrite",
+      "label": "Text 2 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "multiple_1_id",
+      "label": "Multiple 1 ID"
+    },
+    {
+      "type": "text",
+      "id": "multiple_1_value",
+      "label": "Multiple 1 Value",
+      "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+    },
+    {
+      "type": "radio",
+      "id": "multiple_1_overwrite",
+      "label": "Multiple 1 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "multiple_2_id",
+      "label": "Multiple 2 ID"
+    },
+    {
+      "type": "text",
+      "id": "multiple_2_value",
+      "label": "Multiple 2 Value",
+      "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+    },
+    {
+      "type": "radio",
+      "id": "multiple_2_overwrite",
+      "label": "Multiple 2 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "multiple_3_id",
+      "label": "Multiple 3 ID"
+    },
+    {
+      "type": "text",
+      "id": "multiple_3_value",
+      "label": "Multiple 3 Value",
+      "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+    },
+    {
+      "type": "radio",
+      "id": "multiple_3_overwrite",
+      "label": "Multiple 3 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "multiple_4_id",
+      "label": "Multiple 4 ID"
+    },
+    {
+      "type": "text",
+      "id": "multiple_4_value",
+      "label": "Multiple 4 Value",
+      "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+    },
+    {
+      "type": "radio",
+      "id": "multiple_4_overwrite",
+      "label": "Multiple 4 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "text",
+      "id": "multiple_5_id",
+      "label": "Multiple 5 ID"
+    },
+    {
+      "type": "text",
+      "id": "multiple_5_value",
+      "label": "Multiple 5 Value",
+      "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+    },
+    {
+      "type": "radio",
+      "id": "multiple_5_overwrite",
+      "label": "Multiple 5 Overwrite",
+      "options": [
+        {
+          "value": "true",
+          "label": "true"
+        },
+        {
+          "value": "false",
+          "label": "false"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "header",
+      "content": "PDP Subscription Form UI Settings"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#F4F4F4"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image_mobile",
+      "label": "Background Image Mobile"
+    },
+    {
+      "type": "image_picker",
+      "id": "normal_icon",
+      "label": "Normal Subscription Icon"
+    },
+    {
+      "type": "text",
+      "id": "form_title",
+      "label": "Form Title",
+      "default": "Subscribe To Unlock Surprise"
+    },
+    {
+      "type": "color",
+      "id": "form_title_color",
+      "label": "Form Title Color",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "id": "form_description",
+      "label": "Form Description",
+      "default": "You'll also get product news, special offers, tips on portable power and much more."
+    },
+    {
+      "type": "color",
+      "id": "form_description_color",
+      "label": "Form Description Color",
+      "default": "#707070"
+    },
+    {
+      "type": "text",
+      "id": "input_placeholder",
+      "label": "Email Placeholder",
+      "default": "Enter your email"
+    },
+    {
+      "type": "text",
+      "id": "form_button_text",
+      "label": "Button Text",
+      "default": "Subscribe"
+    },
+    {
+      "type": "color",
+      "id": "form_button_text_color",
+      "label": "Button Text Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "form_button_background_color",
+      "label": "Button Background Color",
+      "default": "#03060B"
+    },
+    {
+      "type": "richtext",
+      "id": "disclaimer_text",
+      "label": "Disclaimer Text",
+      "default": "<p>I agree to EcoFlow's Terms of Use and Privacy Policy.</p>"
+    },
+    {
+      "type": "color",
+      "id": "disclaimer_text_color",
+      "label": "Disclaimer Text Color",
+      "default": "#707070"
+    },
+    {
+      "type": "color",
+      "id": "disclaimer_link_color",
+      "label": "Disclaimer Link Color",
+      "default": "#000000"
+    },
+    {
+      "type": "image_picker",
+      "id": "success_background_image",
+      "label": "Success Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "success_background_image_mobile",
+      "label": "Success Background Image Mobile"
+    },
+    {
+      "type": "image_picker",
+      "id": "successful_icon",
+      "label": "Successful Subscription Icon"
+    },
+    {
+      "type": "text",
+      "id": "successful_form_title",
+      "label": "Successful Form Title",
+      "default": "Thank you for subscribing!"
+    },
+    {
+      "type": "color",
+      "id": "successful_form_title_color",
+      "label": "Successful Form Title Color",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "id": "successful_form_description",
+      "label": "Successful Form Description",
+      "default": "Join us to get an extra free 500 EcoCredits"
+    },
+    {
+      "type": "color",
+      "id": "successful_form_description_color",
+      "label": "Successful Form Description Color",
+      "default": "#707070"
+    },
+    {
+      "type": "text",
+      "id": "successful_button_text",
+      "label": "Successful Button Text",
+      "default": "Create EcoFlow Account"
+    },
+    {
+      "type": "color",
+      "id": "successful_button_text_color",
+      "label": "Successful Button Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "successful_button_background_color",
+      "label": "Successful Button Background Color",
+      "default": "transparent"
+    },
+    {
+      "type": "color",
+      "id": "successful_button_border_color",
+      "label": "Successful Button Border Color",
+      "default": "#03060B"
+    },
+    {
+      "type": "url",
+      "id": "successful_button_link",
+      "label": "Successful Button Link"
+    },
+    {
+      "type": "url",
+      "id": "successful_link",
+      "label": "Successful Link"
+    },
+    {
+      "type": "text",
+      "id": "successful_link_text",
+      "label": "Successful Link Text",
+      "default": "Discover EcoCredit Program"
+    },
+    {
+      "type": "color",
+      "id": "successful_link_text_color",
+      "label": "Successful Link Text Color",
+      "default": "#707070"
+    }
+  ],
+  "presets": [
+    {
+      "name": "PDP Email Subscription"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,66 @@
+<div class="off-grid-ss-section">
+  <div class="off-grid-ss-container">
+    <div class="off-grid-ss-text-container">
+      {% if section.settings.title != blank %}
+        <h2>{{ section.settings.title }}</h2>
+      {% endif %}
+      {% if section.settings.textarea != blank %}
+        <p>
+          {{ section.settings.textarea }}
+        </p>
+      {% endif %}
+    </div>
+    <div class="off-grid-ss-details-container">
+      {% for block in section.blocks %}
+        <div class="off-grid-ss-flex-item">
+          {% if block.settings.img != blank %}
+            <img loading="lazy" src="{{ block.settings.img | img_url: 'master' }}" alt="{{ block.settings.img.alt }}">
+          {% endif %}
+          {% if block.settings.title != blank %}
+            <p>{{ block.settings.title }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Off Grid SS",
+  "max_blocks": 3,
+  "settings": [
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title",
+      "default": "What is off grid solar system?"
+    },
+    {
+      "type": "textarea",
+      "id": "textarea",
+      "label": "Details",
+      "default": "An off-grid solar system relies on energy from the sun to run homes, off-grid builds, or even recreational vehicles. Unlike grid-tied solar systems, batteries store any solar energy collected from panels in order to run some of, or your entire home. Off-grid solar system setups give you the freedom to live comfortably, and the option to run almost any appliance, rain or shine, morning or night."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "details",
+      "name": "Details",
+      "settings": [
+        {
+          "type": "html",
+          "id": "title",
+          "label": "Title",
+          "default": "Lower Carbon Emissions"
+        },
+        {
+          "type": "image_picker",
+          "id": "img",
+          "label": "Icons"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

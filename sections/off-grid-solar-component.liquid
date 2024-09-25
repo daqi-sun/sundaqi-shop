@@ -1,0 +1,348 @@
+<div class="off-grid-sc-section">
+  <div class="off-grid-sc-content--container">
+    {% if section.settings.title != blank %}
+      <h2>{{ section.settings.title }}</h2>
+    {% endif %}
+    {% if section.settings.textarea != blank %}
+      <p>
+        {{ section.settings.textarea }}
+      </p>
+    {% endif %}
+  </div>
+</div>
+<div class="desktop-only">
+  <div class="off-grid-sc-component-menu">
+    <div class="off-grid-sc-menu--container ">
+      <ul class="off-grid-sc-menu">
+        {% for block in section.blocks %}
+          {% if block.settings.title != blank %}
+            <li
+              class="
+                ogsc-menu-item {% if forloop.first %}
+                  active
+                {% endif %}
+              "
+              data-target="#{{- block.settings.title | strip | downcase | replace: " ", "" -}}"
+              style="order: {{ block.settings.tab_order }};"
+            >
+              {{ block.settings.title }}
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="off-grid-sc-component-section">
+  <div class="off-grid-sc-component--container">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'full_width_content' %}
+          <div
+            id="{{- block.settings.title | strip | downcase | replace: " ", "" -}}"
+            class="off-grid-sc-component-full-width"
+          >
+            <div class="off-grid-sc-component-full-width-content">
+              <div class="ogsc-content--wrapper">
+                {% if block.settings.title != blank %}
+                  <h3>{{ block.settings.title }}</h3>
+                {% endif %}
+                {% if block.settings.textarea %}
+                  <p>
+                    {{ block.settings.textarea }}
+                  </p>
+                {% endif %}
+              </div>
+              <div class="ogsc-button--wrapper">
+                {% if block.settings.btn_text_1 != blank %}
+                  <a href="{{ block.settings.btn_url_1 }}">
+                    <div class="btn--wrapper">{{ block.settings.btn_text_1 }}</div>
+                  </a>
+                {% endif %}
+                {% if block.settings.btn_text_2 != blank %}
+                  <a href="{{ block.settings.btn_url_2 }}">
+                    <div class="btn--wrapper">{{ block.settings.btn_text_2 }}</div>
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+            {% if block.settings.img != blank %}
+              <div class="desktop-only">
+                <img
+                  loading="lazy"
+                  src="{{ block.settings.img | img_url: 'master' }}"
+                  alt="{{ block.settings.img.alt }}"
+                >
+              </div>
+            {% endif %}
+            {% if block.settings.img_mobile != blank %}
+              <div class="mobile-only">
+                <img
+                  loading="lazy"
+                  src="{{ block.settings.img_mobile | img_url: 'master' }}"
+                  alt="{{ block.settings.img_mobile.alt }}"
+                >
+              </div>
+            {% endif %}
+          </div>
+        {% when 'half_width_content' %}
+          <div
+            id="{{- block.settings.title | strip | downcase | replace: " ", "" -}}"
+            class="off-grid-sc-component-half-width"
+          >
+            <div class="ogsc-content--wrapper">
+              {% if block.settings.title != blank %}
+                <h3>{{ block.settings.title }}</h3>
+              {% endif %}
+              {% if block.settings.textarea %}
+                <p>
+                  {{ block.settings.textarea }}
+                </p>
+              {% endif %}
+            </div>
+            <div class="ogsc-button--wrapper">
+              {% if block.settings.btn_text_1 != blank %}
+                <a href="{{ block.settings.btn_url_1 }}">
+                  <div class="btn--wrapper">{{ block.settings.btn_text_1 }}</div>
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        {% when 'full_width_content_2' %}
+          <div
+            id="{{- block.settings.title | strip | downcase | replace: " ", "" -}}"
+            class="off-grid-sc-component-full-width-2"
+          >
+            {% if block.settings.img != blank %}
+              <div class="desktop-only">
+                <img
+                  loading="lazy"
+                  src="{{ block.settings.img | img_url: 'master' }}"
+                  alt="{{ block.settings.img.alt }}"
+                >
+              </div>
+            {% endif %}
+            {% if block.settings.img_mobile != blank %}
+              <div class="mobile-only">
+                <img
+                  loading="lazy"
+                  src="{{ block.settings.img_mobile | img_url: 'master' }}"
+                  alt="{{ block.settings.img_mobile.alt }}"
+                >
+              </div>
+            {% endif %}
+            <div class="off-grid-sc-component-full-width-content">
+              <div class="ogsc-content--wrapper">
+                {% if block.settings.title != blank %}
+                  <h3>{{ block.settings.title }}</h3>
+                {% endif %}
+                {% if block.settings.textarea %}
+                  <p>
+                    {{ block.settings.textarea }}
+                  </p>
+                {% endif %}
+              </div>
+              <div class="ogsc-button--wrapper">
+                {% if block.settings.btn_text_1 != blank %}
+                  <a href="{{ block.settings.btn_url_1 }}">
+                    <div class="btn--wrapper">{{ block.settings.btn_text_1 }}</div>
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+      {% endcase %}
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+  window.addEventListener('scroll', function () {
+    var scrollPos = window.scrollY;
+    var menu = document.querySelector('.off-grid-sc-component-menu');
+    var section = document.querySelector('.off-grid-sc-component-section');
+    var sectionPos = section.offsetTop;
+    var sectionBottomPos = sectionPos + section.offsetHeight;
+    var placeholder = document.createElement('div');
+    placeholder.id = 'ogsc-section-menu';
+    placeholder.style.height = menu.offsetHeight + 'px';
+
+    if (scrollPos >= sectionPos && scrollPos < sectionBottomPos && !menu.classList.contains('fixed')) {
+      menu.parentNode.insertBefore(placeholder, menu);
+      menu.classList.add('fixed');
+    } else if (scrollPos < sectionPos && menu.classList.contains('fixed')) {
+      document.getElementById('ogsc-section-menu').remove();
+      menu.classList.remove('fixed');
+    } else if (scrollPos > sectionBottomPos && menu.classList.contains('fixed')) {
+      document.getElementById('ogsc-section-menu').remove();
+      menu.classList.remove('fixed');
+    }
+  });
+
+  const menuItems = document.querySelectorAll('.ogsc-menu-item');
+
+  menuItems.forEach((menuItem) => {
+    menuItem.addEventListener('click', (event) => {
+      event.preventDefault();
+      const targetId = menuItem.dataset.target;
+      const targetElement = document.querySelector(targetId);
+      const elementTop = targetElement.offsetTop;
+      menuItems.forEach((item) => item.classList.remove('active'));
+      menuItem.classList.add('active');
+      window.scrollTo({ top: elementTop, behavior: 'smooth' });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Off Grid Solar Component",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title",
+      "default": "What is off grid solar system?"
+    },
+    {
+      "type": "textarea",
+      "id": "textarea",
+      "label": "Details",
+      "default": "An off-grid solar system relies on energy from the sun to run homes, off-grid builds, or even recreational vehicles. Unlike grid-tied solar systems, batteries store any solar energy collected from panels in order to run some of, or your entire home. Off-grid solar system setups give you the freedom to live comfortably, and the option to run almost any appliance, rain or shine, morning or night."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "full_width_content",
+      "name": "Full Width Content",
+      "settings": [
+        {
+          "type": "number",
+          "id": "tab_order",
+          "label": "Tab order",
+          "info": "this will overwrite the tab order of the menu"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "image_picker",
+          "id": "img",
+          "label": "Desktop Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "img_mobile",
+          "label": "Mobile Image"
+        },
+        {
+          "type": "textarea",
+          "id": "textarea",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "btn_text_1",
+          "label": "1st Button Text",
+          "default": "Learn More"
+        },
+        {
+          "type": "url",
+          "id": "btn_url_1",
+          "label": "1st Button Link"
+        },
+        {
+          "type": "text",
+          "id": "btn_text_2",
+          "label": "2nd Button Text",
+          "default": "Learn More"
+        },
+        {
+          "type": "url",
+          "id": "btn_url_2",
+          "label": "2nd Button Link"
+        }
+      ]
+    },
+    {
+      "type": "half_width_content",
+      "name": "Half Width Content",
+      "settings": [
+        {
+          "type": "number",
+          "id": "tab_order",
+          "label": "Tab order",
+          "info": "this will overwrite the tab order of the menu"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "textarea",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "btn_text_1",
+          "label": "1st Button Text",
+          "default": "Learn More"
+        },
+        {
+          "type": "url",
+          "id": "btn_url_1",
+          "label": "1st Button Link"
+        }
+      ]
+    },
+    {
+      "type": "full_width_content_2",
+      "name": "Full Width Content 2",
+      "settings": [
+        {
+          "type": "number",
+          "id": "tab_order",
+          "label": "Tab order",
+          "info": "this will overwrite the tab order of the menu"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "image_picker",
+          "id": "img",
+          "label": "Desktop Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "img_mobile",
+          "label": "Mobile Image"
+        },
+        {
+          "type": "textarea",
+          "id": "textarea",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "btn_text_1",
+          "label": "1st Button Text",
+          "default": "Learn More"
+        },
+        {
+          "type": "url",
+          "id": "btn_url_1",
+          "label": "1st Button Link"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

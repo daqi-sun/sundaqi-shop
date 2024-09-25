@@ -1,0 +1,110 @@
+<div class="camping-rv-iwt__section">
+  <div class="camping-rv-iwt__wrapper container--normal">
+    {% for block in section.blocks %}
+      <div
+        class="
+            camping-rv-iwt__container
+          {% if block.settings.image_position == 'right' %}
+            image--right
+            {% else %}
+            image--left
+          {% endif %}
+        "
+      >
+        <div class="camping-rv-iwt__text__container">
+          {% if block.settings.title != blank %}
+            <h2 class="camping-rv-iwt__title hb__text--black {% if block.settings.heading_size == 'heading' %} hb__text--heading {% else %} hb__text--subheading {% endif %}">
+              {{ block.settings.title }}
+            </h2>
+          {% endif %}
+          {% if block.settings.subtitle != blank %}
+            <span class="hb__text--description">{{ block.settings.subtitle }}</span>
+          {% endif %}
+        </div>
+        <div class="camping-rv-iwt__image__container">
+          {% if block.settings.image != blank %}
+            <img
+              class="display--desktop"
+              src="{{ block.settings.image | img_url: 'master' }}"
+              alt="{{ block.settings.image.alt }}"
+            >
+            <img
+              class="display--mobile"
+              src="{{ block.settings.image_mobile | img_url: 'master' }}"
+              alt="{{ block.settings.image_mobile.alt }}"
+            >
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Backup Power IWT",
+  "blocks": [
+    {
+      "type": "iwt",
+      "name": "Image with Text",
+      "settings": [
+        {
+          "type": "select",
+          "id": "image_position",
+          "label": "Set Section Image Position",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "right",
+          "info": "Set Section Image Position"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "label": "Set Section Image Position",
+          "options": [
+            {
+              "value": "heading",
+              "label": "Heading"
+            },
+            {
+              "value": "subheading",
+              "label": "Subheading"
+            }
+          ],
+          "default": "heading",
+          "info": "Set Section Heading Size"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Section Image Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Section Image Mobile"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Section Title",
+          "default": "Leise, sicher und emissionsfrei – Solaranlagen mit Stromspeicher für Ihr Zuhause"
+        },
+        {
+          "type": "richtext",
+          "id": "subtitle",
+          "label": "Subtitle"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

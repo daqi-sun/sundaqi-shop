@@ -1,0 +1,4168 @@
+{%- comment -%}
+This file has been modified by the Yoast SEO for Shopify app.
+You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+<style>
+  {% if section.settings.logo != blank %}
+  @media screen and (min-width:750px) {
+    .logo_element {
+      min-width: {{ section.settings.logo_max_width | escape }}px;
+    }
+  }
+  {% endif %}
+
+    #AccessibleNav .menu_block-image_heading h3,
+  #AccessibleNav .mega-menu__image-text,
+  #AccessibleNav .mega-menu__image-heading,
+  #AccessibleNav .mega-menu__title,
+  #AccessibleNav  .link {
+    text-transform: {{  section.settings.main_linklist_style }} ;
+  }
+
+</style>
+
+
+{%- assign navigation_menu_handle = section.settings.main_linklist | default: 'main-menu' -%}
+{%- assign navigation_menu = linklists[navigation_menu_handle] -%}
+
+
+{% capture categories_linklist %}
+  {% if section.settings.categories_linklist != blank %}
+  <div class='categories_menu  emphasize_link'>
+
+    {%- assign categories_linklist_handle = section.settings.categories_linklist  -%}
+    {%- assign categories_menu = linklists[categories_linklist_handle] -%}
+
+
+    <ul class="nav-bar__linklist list--unstyled" data-type="menu">
+      <li class="nav-bar__item  item-has-mega-menu">
+        <a href="javascript:void(0)" class="nav-bar__link link categories_main_link  btn btn--primary" data-type="menuitem" aria-expanded="false" aria-haspopup="true">
+          <span> {{ categories_menu.title }}</span>
+          {%- render 'icon', icon: 'hamburger-mobile' -%}
+        </a>
+
+
+
+        {%- capture index -%}categories-menu{%- endcapture -%}
+        {%- render 'categories-menu', menu: categories_menu, index: index -%}
+      </li>
+    </ul>
+</div>
+  {% endif %}
+{% endcapture %}
+
+
+{% assign enable_overlap_header = section.settings.enable_overlap_header %}
+{% assign header_fallback_image = section.settings.header_fallback_image %}
+{% assign enable_header_fallback_image = section.settings.enable_header_fallback_image %}
+
+{% assign email_text = section.settings.email_text %}
+{% assign phone_number = section.settings.phone_number %}
+{% assign information_1 = section.settings.information_1 %}
+{% assign information_1_link = section.settings.information_1_link %}
+{% assign information_2 = section.settings.information_2 %}
+{% assign information_2_link = section.settings.information_2_link %}
+{% assign currency_selector = section.settings.show_currency_selector %}
+{% assign country_selector = section.settings.show_country_selector %}
+{% assign locale_selector = section.settings.show_locale_selector %}
+{% assign top_navigation_linklist = section.settings.top_navigation_linklist %}
+{% assign show_search_filter = section.settings.show_search_filter %}
+{%- assign show_selectors = false -%}
+{%- if currency_selector or locale_selector or country_selector -%}
+{%- assign show_selectors = true -%}
+{%- endif -%}
+{% assign alternate_logo = section.settings.alternate_logo %}
+{% assign search_popular_searches = section.settings.search_popular_searches %}
+{% assign search_popular_products = section.settings.search_popular_products %}
+
+{% assign cart_icon_style = settings.header_cart_icon_style %}
+{% assign show_cart_subtotal = settings.show_header_cart_subtotal %}
+{% assign enable_live_search = section.settings.enable_live_search %}
+
+
+{% capture header_cart_icon %}
+<div class='header_cart_info  {% if show_cart_subtotal %}btn btn--primary show_cart_subtotal{% endif %}' id="HeaderCart" data-cart-count-bubble>
+  {% if show_cart_subtotal %}
+  <span class='cart_total_info'>
+    <span class='cart_total_label'> {{ 'sections.header.total' | t }}</span>
+    <span class='cart_total_price h6'>
+      {% if settings.currency_code_enable %}
+      {{ cart.total_price | money_with_currency }}
+      {% else %}
+      {{ cart.total_price | money }}
+      {% endif %}
+    </span>
+  </span>
+  {% endif %}
+
+  <a href='{{ routes.cart_url }}' class='cart_icon {% if show_cart_subtotal %}btn btn--primary{% endif %}' >
+    {%- render 'icon', icon: cart_icon_style -%}
+    <span class='header_cart_count {% if cart.item_count == 0 %}hide{% endif %}' data-cart-count>{{ cart.item_count }}</span>
+  </a>
+</div>
+{% endcapture %}
+
+{% capture logo_element %}
+
+<div class="logo_element">
+
+  {% if request.page_type == 'index' %}
+  <h1 class="h4 site-header__logo">
+    {% else %}
+    <div class="h4 site-header__logo">
+      {% endif %}
+      {% if section.settings.logo != blank or  alternate_logo != blank %}
+      {%- assign img_url = section.settings.logo | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+      <a href="{{ routes.root_url }}" class="site-header__logo-image{% if section.settings.align_logo == 'center' %} site-header__logo-image--centered{% endif %}">
+
+
+        {% capture logo_alt %}{{ section.settings.logo.alt | default: shop.name }}{% endcapture %}
+        <img class="js main_logo {% if section.settings.mobile_logo != blank %}hideLaptop{% endif %}"
+             src="{{ section.settings.logo | img_url: '300x300' }}"
+             srcset="{{ section.settings.logo | img_url: '300x300' }} 1x, {{ section.settings.logo | img_url: '300x300', scale: 2 }} 2x"
+             loading="lazy"
+             width="{{section.settings.logo.width}}"
+             height="{{section.settings.logo.height}}"
+             alt="{{ logo_alt | escape }}"
+             style="max-width: {{ section.settings.logo_max_width }}px">
+        <noscript>
+          {% capture image_size %}{{ section.settings.logo_max_width | escape }}x{% endcapture %}
+          <img src="{{ section.settings.logo | img_url: image_size }}"
+               srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
+               loading="lazy"
+               width="{{section.settings.logo.width}}"
+               height="{{section.settings.logo.height}}"
+               alt="{{ section.settings.logo.alt | default: shop.name }}"
+               style="max-width: {{ section.settings.logo_max_width }}px;">
+        </noscript>
+
+        {% if alternate_logo != blank and enable_overlap_header %}
+        {% capture alternate_logo_alt %}{{ alternate_logo.alt | default: shop.name }}{% endcapture %}
+        <img class="js  hide alternate_logo"
+             src="{{ alternate_logo | img_url: '300x300' }}"
+             srcset="{{ alternate_logo | img_url: '300x300' }} 1x, {{ alternate_logo | img_url: '300x300', scale: 2 }} 2x"
+             loading="lazy"
+             width="{{alternate_logo.width}}"
+             height="{{alternate_logo.height}}"
+             alt="{{ alternate_logo_alt | escape }}"
+             style="max-width: {{ section.settings.logo_max_width }}px">
+        {% endif %}
+
+        {% if section.settings.mobile_logo != blank %}
+          <img class="js main_logo hideDesktop showLaptop"
+            src="{{ section.settings.mobile_logo | img_url: '300x300' }}"
+            srcset="{{ section.settings.mobile_logo | img_url: '300x300' }} 1x, {{ section.settings.mobile_logo | img_url: '300x300', scale: 2 }} 2x"
+            loading="lazy"
+            width="{{section.settings.mobile_logo.width}}"
+            height="{{section.settings.mobile_logo.height}}"
+            alt="{{ section.settings.mobile_logo.alt | escape }}"
+            style="max-width: {{ section.settings.logo_max_width }}px">
+        {% endif %}
+
+      </a>
+      {% else %}
+      <a class="site-header__logo-link" href="{{ routes.root_url }}">{{ shop.name }}</a>
+      {% endif %}
+      {% if request.page_type == 'index' %}
+      </h1>
+    {% else %}
+    </div>
+  {% endif %}
+</div>
+
+{% endcapture %}
+
+{% capture top_navitagion_links %}
+{% if top_navigation_linklist != blank %}
+          {% assign top_navigation_menu = linklists[top_navigation_linklist].links %}
+          {% if top_navigation_menu.size > 0 %}
+          <ul class='top_navigation_menu'>
+            {% for link in top_navigation_menu %}
+            {%- comment %}<locksmith:849d>{% endcomment -%}
+              {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+            {%- comment %}</locksmith:849d>{% endcomment -%}
+            <li><a href='{{link.url}}'>{{link.title}}</a></li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        {% else %}
+        {% if email_text != blank or phone_number != blank or information_1 != blank or information_2 != blank %}
+        <ul class='top_navigation_links left_column'>
+          {% if email_text != blank %}
+          <li class='email_text'><a href='mailto:{{email_text | downcase | strip }}'>{{email_text}}</a></li>
+          {% endif %}
+          {% if phone_number != blank %}
+          <li class='phone_number'><a href='tel: {{phone_number | downcase | replace:"-",""  | replace:" ","" |  strip }}'>{{phone_number}}</a></li>
+          {% endif %}
+          {% if information_1 != blank %}
+            <li class='information'>
+              <a {% if information_1_link != blank %}href="{{information_1_link}}"{% endif %}>{{information_1}}</a>
+            </li>
+          {% endif %}
+          {% if information_2 != blank %}
+            <li class='information'><a {% if information_2_link != blank %}href="{{information_2_link}}"{% endif %}>{{information_2}}</a></li>
+          {% endif %}
+        </ul>
+        {% endif %}
+        {% endif %}
+{% endcapture %}
+
+{% capture customer_account %}
+<div class='customer_nav_menu__wrapper'>
+  <div class="site-nav--has-dropdown"
+    x-data="{
+             open: {% if template contains 'index' %}{% if section.settings.show_initially_after == 0 %}true{% else %}false{% endif %}{% else %}false{% endif %},
+             closed: false,
+             closePopup(){
+               this.open = false;
+               const d = new Date();
+               d.setTime(d.getTime() + (1*24*60*60*1000));
+               let expires = 'expires='+ d.toUTCString();
+               document.cookie = 'UserPopupClose=1;' + expires + ';path=/';
+               this.closed = true;
+             },
+             init(){
+               let name = 'UserPopupClose=';
+               let decodedCookie = decodeURIComponent(document.cookie);
+               let ca = decodedCookie.split(';');
+               for(let i = 0; i <ca.length; i++) {
+                 let c = ca[i];
+                 while (c.charAt(0) == ' ') {
+                   c = c.substring(1);
+                 }
+                 if (c.indexOf(name) == 0) {
+                   let cookieValue = c.substring(name.length, c.length);
+                   if(cookieValue == 1) this.closed = true;
+                   else this.closed = false;
+                 }
+               }
+             }
+           }"
+    {% if template contains 'index' %}
+    {% if section.settings.show_initially_after != 0 %}x-effect="setTimeout(() => open = true, {{ section.settings.show_initially_after | times: 1000 }})"{% endif %}
+    x-effect="setTimeout(() => open = false, {{ section.settings.close_after | times: 1000 }})"
+    {% endif %}
+    @mouseout="open = false" @mouseover="open = true">
+    <a href="{% if customer %}/account{% else %}https://account.ecoflow.com/login?return_to={{ request.host }}{{ request.path }}{% endif %}" class="site-nav__link site-nav__link--main customer_nav_button site-nav__link--button {% if section.settings.show_mobile %}hideMobile{% endif %}" type="button" aria-expanded="false" aria-controls="">
+      {% render 'icon-login' %}
+    </a>
+    {% if section.settings.show_mobile %}
+      <a href="{% if customer %}/account{% else %}{% endif %}" class="site-nav__link site-nav__link--main customer_nav_button site-nav__link--button hideDesktop" type="button" @click.prevent="open = !open" aria-expanded="false" aria-controls="">
+        {% render 'icon-login' %}
+      </a>
+    {% endif %}
+    {% unless customer %}
+        <div class="user-popup-wrap {% unless section.settings.show_desktop %}hide-in-Desktop{% endunless %} {% unless  section.settings.show_mobile %}hide-in-Mobile{% endunless %}" x-show="open && !closed" style="display: none;">
+          <div class="user-popup-inner">
+            <div class="user-popup-close" @click="closePopup()">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 5L5 15" stroke="#949494" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5 5L15 15" stroke="#949494" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="user-popup-content">
+                {% if section.settings.title != blank %}
+                    <div class="title">{{ section.settings.title }}</div>
+                {% endif %}
+                {% if section.settings.description != blank %}
+                    <div class="user-popup-desc">{{ section.settings.description }}</div>
+                {% endif %}
+                {% if section.settings.btn_text != blank %}
+                    <a class="btn user-popup-btn" href="{{ section.settings.btn_url }}">{{ section.settings.btn_text }}</a>
+                {% endif %}
+                {% if section.settings.content != blank %}
+                    <div class="user-popup-content">{{ section.settings.content }}</div>
+                {% endif %}
+            </div>
+          </div>
+        </div>
+    {% endunless %}
+    {% comment %}<div class="small_dropdown site-nav__dropdown site-nav__dropdown--centered critical-hidden customer_nav_dropdown" id="Customer_nav_dropdown">
+      <ul>
+        {% if customer %}
+        <li><a href='{{ routes.account_url }}'>{{ 'customer.account.my_orders' | t }}</a></li>
+        <li><a href='{{ routes.account_url }}/addresses'>{{ 'customer.account.address_book' | t }}</a></li>
+        <li><a href='{{ routes.account_url }}'>{{ 'customer.account.settings' | t }}</a></li>
+        <li><a href='{{ routes.account_logout_url  }}'>{{ 'customer.account.logout' | t }}</a></li>
+        {% else %}
+        <li><a href='{{ routes.account_login_url }}'>{{ 'customer.account.login' | t }}</a></li>
+        <li><a href='{{ routes.account_register_url  }}'>{{ 'customer.account.create_account' | t }}</a></li>
+        {% endif %}
+      </ul>
+    </div>{% endcomment %}
+  </div>
+</div>
+{% endcapture %}
+
+{% capture search_bar %}
+
+ <div class="search-bar__interior {%  unless show_search_filter %} without_search_filter {%  endunless %}">
+
+            <button type="button"
+                    class="header-search-button"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <circle cx="11" cy="11" r="6" stroke="black" stroke-width="1.6"/>
+                      <path d="M19.3841 20.5154C19.6965 20.8279 20.203 20.8279 20.5154 20.5154C20.8279 20.203 20.8279 19.6965 20.5154 19.3841L19.3841 20.5154ZM14.4343 15.5657L19.3841 20.5154L20.5154 19.3841L15.5657 14.4343L14.4343 15.5657Z" fill="black"/>
+                    </svg>
+              <span class="icon__fallback-text">{{ 'general.search.submit' | t }}</span>
+            </button>
+
+            <div class="search-form__container" data-search-form-container>
+
+              {% if show_search_filter != blank %}
+              {% assign search_categories_menu = linklists[search_categories_linklist] %}
+              <div class='search_categories_menu  site-nav--has-dropdown site-nav--has-centered-dropdown' data-has-dropdowns >
+
+                <button class="site-nav__link site-nav__link--main search_categories_button  site-nav__link--button btn btn--primary" type="button" aria-expanded="false" aria-controls="Search_categories_menu__dropdown">
+                  <span class="search_categories_button__label">{{ 'sections.header.all_categories' | t }}</span>
+                  {% include 'icon-chevron-down' %}
+                </button>
+
+                <div class="small_dropdown site-nav__dropdown site-nav__dropdown--centered search_categories_dropdown critical-hidden" id="Search_categories_menu__dropdown">
+                  <ul id='search-product-type' data-search-type="*">
+                    <li><a data-value='{{ 'sections.header.all_categories' | t }}' href="javascript:void(0)">{{ 'sections.header.all_categories' | t }}</a></li>
+                    {%- for product_type in shop.types -%}
+                    {%- if product_type != blank -%}
+                    <li><a data-value='{{  product_type }}' href="javascript:void(0)">{{ product_type | escape}}</a></li>
+                    {%- endif -%}
+                    {%- endfor -%}
+                  </ul>
+                </div>
+              </div>
+              {% endif %}
+              <form class="search-form search-bar__form" action="{{ routes.search_url }}" method="get" role="search">
+                <div class="search-form__input-wrapper">
+                  <button class="search-button__submit search-form__submit" type="submit">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="11" cy="11" r="6" stroke="#707070" stroke-width="1.6"/>
+                      <path d="M19.3841 20.5154C19.6965 20.8279 20.203 20.8279 20.5154 20.5154C20.8279 20.203 20.8279 19.6965 20.5154 19.3841L19.3841 20.5154ZM14.4343 15.5657L19.3841 20.5154L20.5154 19.3841L15.5657 14.4343L14.4343 15.5657Z" fill="#707070"/>
+                    </svg>
+                    <span class="icon__fallback-text">{{ 'general.search.submit' | t }}</span>
+                  </button>
+                  <label for="predictive-search-drawer-input" class="visually-hidden"></label>
+                  <input
+                         type="text"
+                         name="q"
+                         id="predictive-search-drawer-input"
+                         data-predictive-search-drawer-input
+                         placeholder="{{ 'general.search.placeholder' | t }}"
+                         aria-label="{{ 'general.search.placeholder' | t }}"
+                          autocomplete="off"
+                         autocorrect="off"
+                         class="search-form__input search-bar__input"
+                         />
+                  <input type="hidden" name="options[prefix]" value="last" aria-hidden="true" />
+                  <button class="search-close">
+                    <div class="hideMobile">
+                      <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.57178 5L19.5718 18M19.5718 5L6.57178 18" stroke="#707070" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                    <div class="hideDesktop">
+                      <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M29.601 15.46 23.061 22l6.54 6.54-1.06 1.061L22 23.061l-6.54 6.54-1.061-1.06L20.939 22l-6.54-6.54 1.06-1.061L22 20.939l6.54-6.54 1.061 1.06z" fill="#03060B" fill-rule="evenodd"/>
+                      </svg>
+                    </div>
+
+                  </button>
+                  <div class="predictive-search-wrapper predictive-search-wrapper--drawer">
+
+                    <div class="predictive-search">
+                      {% if search_popular_searches != blank %}
+                       {% assign search_popular_menu = linklists[search_popular_searches].links %}
+                      {% if search_popular_menu.size > 0 %}
+                      <div class='search_popular_searches_menu'>
+
+                        <div class="predictive-search-title">
+                          <h3  class="predictive-search-title__content">{{ 'general.search.search_title' | t }}</h3>
+                        </div>
+                        <div class='search_popular_menu'>
+                          {% for  link in search_popular_menu %}
+                          {%- comment %}<locksmith:dc41>{% endcomment -%}
+                            {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                          {%- comment %}</locksmith:dc41>{% endcomment -%}
+                          <a href='{{ link.url }}'> {{ link.title }} </a>
+                          {% endfor %}
+                        </div>
+                      </div>
+                      {% endif %}
+                      {% endif %}
+
+
+                      <div class="search-bar__results" aria-hidden="true">
+
+
+                        <div class="search-bar__results-inner">
+
+                        </div>
+                      </div>
+
+
+                      {% if search_popular_products != blank %}
+                      {% assign search_popular_product_collection = collections[search_popular_products] %}
+                      {% if search_popular_product_collection.products.size > 0 %}
+                      <div class='search_popular_products'>
+                        <div class="predictive-search-title">
+                          <h3  class="predictive-search-title__content">{{ 'general.search.products' | t }}</h3>
+                        </div>
+                        <ul id="predictive-search-results" class="predictive-search__list" role="listbox" aria-labelledby="predictive-search">
+
+                          {% for product in search_popular_product_collection.products limit: 3 %}
+
+{%- comment %}<locksmith:c9cc>{% endcomment -%}
+  {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: search_popular_product_collection, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+{%- comment %}</locksmith:c9cc>{% endcomment -%}
+
+{% comment %}Added/Modified by Limoni Apps on 17/08/22 to support Discount Ninja{% endcomment %}
+
+                          <li
+data-limoniapps-discountninja-product-handle="{{ product.handle }}"
+data-limoniapps-discountninja-product-collections="{{ product.collections | map: 'handle' | join: ',' | default: '[[--NONE--]]' }}"
+data-limoniapps-discountninja-product-collectionids="{{ product.collections | map: 'id' | join: ',' | default: '[[--NONE--]]' }}"
+data-limoniapps-discountninja-product-available="{{ product.available}}"
+data-limoniapps-discountninja-product-price="{{ product.first_available_variant.price | default: product.price }}"
+data-limoniapps-discountninja-product-compareatprice="{{ product.first_available_variant.compare_at_price | default: product.first_available_variant.price | default: product.compare_at_price | default: product.price }}"
+data-limoniapps-discountninja-product-pricevaries="{{ product.price_varies}}"
+data-limoniapps-discountninja-product-pricemin="{{ product.price_min}}"
+data-limoniapps-discountninja-product-tags="{{ product.tags | join: ',' | escape | default: '[[--NONE--]]' }}"
+class="predictive-search-item">
+                            <a class="predictive-search-item__link"
+                               href="{{ product.url }}"
+                               >
+                              <div class="predictive-search__column predictive-search__column--image">
+                                {% assign default_product_alt = product.alt | split: "#" | first %}
+                                <img class="predictive-search-item__image"
+                                     src="{{ product.featured_media | img_url:'300x' }}"
+                                     srcset="{{ product.featured_media | img_url: '300x' }} 1x, {{ product.featured_media | img_url: '300x', scale: 2 }} 2x"
+                                     loading="lazy"
+                                     width="{{product.featured_media.width}}"
+                                     height="{{product.featured_media.height}}"
+                                     alt="{{ product.featured_media.alt | default: default_product_alt }}">
+                              </div>
+                              <div class="predictive-search__column predictive-search__column--content predictive-search__column--center">
+                                <span class="predictive-search-item__title">
+                                  <span class="predictive-search-item__title-text">{{ product.title }}</span>
+                                </span>
+                                {% if product.metafields.custom.show_price != false %}
+                                  <span class="predictive-search-item__price limoniapps-discountninja-productprice">
+                                    {% unless product.price_max == 0 and settings.custom_price0_text != blank %}
+
+                                    {% if settings.currency_code_enable %}
+                                    {{ product.price | money_with_currency }}
+                                    {% else %}
+                                    {{ product.price | money }}
+                                    {% endif %}
+                                    {% else %}
+                                    {{settings.custom_price0_text }}
+                                    {% endunless %}
+                                  </span>
+                                {% endif %}
+                              </div>
+                            </a>
+                          </li>
+                          {% endfor %}
+                        </ul>
+                      </div>
+                      {% endif %}
+                      {% endif %}
+
+
+                  </div>
+                </div>
+
+
+                </div>
+              </form>
+
+
+            </div>
+          </div>
+
+{% endcapture %}
+
+<div data-section-id="{{ section.id }}" data-section-type="header-section" data-header-section >
+  <header class="site-header logo--{{ section.settings.align_logo }} {% if section.settings.categories_linklist  != blank  %} enable_emphasize_category_menu {% endif %}"
+          role="banner"
+          data-enable_overlap_header="{{enable_overlap_header}}"
+          data-enable_live_search='{{enable_live_search}}'>
+
+
+
+  {% if section.settings.align_logo != 'left' %}<div class="header_top_temp_element">{% endif %}
+    <div class="{% if section.settings.align_logo == 'left' %} header_top__row {% else %} header_top {% if section.settings.show_top_line_separator %} show_top_line_separator {% endif %} {% endif %}">
+      <div class="header-container grid grid--no-gutters">
+      {% if section.settings.align_logo == 'left' and top_navitagion_links != blank %}
+      <div class='header_top_navigation_wrapper header_top {% if section.settings.show_top_line_separator %} show_top_line_separator {% endif %} '>
+        {{top_navitagion_links}}
+        <ul class='top_navigation_links right_column'>
+
+          {% if shop.customer_accounts_enabled %}
+          <li>
+
+            <div class='customer_nav_menu__wrapper'>
+              <div class="site-nav--has-dropdown  site-nav--has-centered-dropdown customer_nav_dropdown__wrapper" data-has-dropdowns>
+                <button class="site-nav__link site-nav__link--main customer_nav_button site-nav__link--button" type="button" aria-expanded="false" aria-controls="Customer_nav_dropdown">
+
+                  {% if customer %}
+                  {% include 'icon-login' %}<span class="site-nav__label">{{ 'layout.customer.welcome' | t }} {{ customer.name }}</span>{% include 'icon-chevron-down' %}
+                  {% else %}
+                  {% include 'icon-login' %}
+                  <span>{{ 'layout.customer.log_in' | t }}</span>
+                  {% endif %}
+                </button>
+                <div class="small_dropdown site-nav__dropdown site-nav__dropdown--centered critical-hidden customer_nav_dropdown" id="Customer_nav_dropdown">
+                  <ul>
+                    {% if customer %}
+                    <li><a href='{{ routes.account_url }}'>{{ 'customer.account.my_orders' | t }}</a></li>
+                    <li><a href='{{ routes.account_url }}/addresses'>{{ 'customer.account.address_book' | t }}</a></li>
+                    <li><a href='{{ routes.account_url }}'>{{ 'customer.account.settings' | t }}</a></li>
+                    <li><a href='{{ routes.account_logout_url  }}'>{{ 'customer.account.logout' | t }}</a></li>
+                    {% else %}
+                    <li><a href='{{ routes.account_login_url }}'>{{ 'customer.account.login' | t }}</a></li>
+                    <li><a href='{{ routes.account_register_url  }}'>{{ 'customer.account.create_account' | t }}</a></li>
+                    {% endif %}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </li>
+          {% endif %}
+
+          {%- if show_selectors -%}
+          <li>
+
+            {%- form 'localization', id: 'header_top__localization', class: 'selectors-form localization', data-disclosure-form: '' -%}
+
+           {%- if currency_selector and localization.available_countries.size > 1 -%}
+            <div class="selectors-form__item">
+
+
+              <div class="disclosure" data-disclosure-currency>
+                <button type="button" class="disclosure__toggle" aria-expanded="false" aria-controls="header--currency-list" aria-describedby="currency-heading" data-disclosure-toggle>
+                  <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <g fill="none" fill-rule="evenodd">
+                        <path d="M0 0h24v24H0z"/>
+                        <g transform="translate(4 4)" stroke="#222" stroke-width="1.067">
+                            <circle cx="8" cy="8" r="7.467"/>
+                            <path d="M.593 8.943c4.938 2.134 9.93 2.134 14.979 0M.593 7.343c4.938-2.133 9.93-2.133 14.979 0"/>
+                            <path d="M7.282.654c-2.133 4.938-2.133 9.931 0 14.979M8.882.654c2.134 4.938 2.134 9.931 0 14.979"/>
+                        </g>
+                    </g>
+                  </svg>
+                  {{ localization.country.name }} ({{ localization.country.currency.iso_code }} {{ localization.country.currency.symbol }})
+                </button>
+                <ul id="header--currency-list" class="disclosure-list" data-disclosure-list>
+                  {% for country in localization.available_countries %}
+                  <li class="disclosure-list__item {% if country.iso_code == localization.country.iso_code %} disclosure-list__item--current{% endif %}">
+                    <a class="disclosure-list__option" href="#" {% if country.iso_code == localization.country.iso_code %}aria-current="true"{% endif %} data-value="{{ country.iso_code }}" data-disclosure-option>
+                       {{ country.name }} ({{ country.currency.iso_code }} {{ country.currency.symbol }})
+                    </a>
+                  </li>
+                  {%- endfor -%}
+                </ul>
+                <input type="hidden" name="country_code"  value="{{  localization.country.iso_code  }}" data-disclosure-input/>
+              </div>
+            </div>
+            {%- endif -%}
+
+           {%- if locale_selector and localization.available_languages.size  > 1 -%}
+            <div class="selectors-form__item">
+
+
+              <div class="disclosure" data-disclosure-locale>
+                <button type="button" class="disclosure__toggle" aria-expanded="false" aria-controls="header-lang-list" aria-describedby="lang-heading" data-disclosure-toggle>
+                  {{ localization.language.endonym_name }}
+                </button>
+                <ul id="header-lang-list" class="disclosure-list" data-disclosure-list>
+                  {%- for language in localization.available_languages -%}
+                  <li class="disclosure-list__item {% if language.iso_code == localization.language.iso_code %}disclosure-list__item--current{% endif %}">
+                    <a class="disclosure-list__option" href="#" lang="{{ language.iso_code }}" {% if language.iso_code == localization.language.iso_code %}aria-current="true"{% endif %} data-value="{{ language.iso_code }}" data-disclosure-option>
+                      {{ language.endonym_name }}
+                    </a>
+                  </li>
+                  {%- endfor -%}
+                </ul>
+                <input type="hidden" name="locale_code"  value="{{ localization.language.iso_code }}" data-disclosure-input/>
+              </div>
+            </div>
+            {%- endif -%}
+
+
+            {%- endform -%}
+
+            {%- if country_selector -%}
+              <button type="button" class="disclosure__toggle" data-country-toggle>
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <g fill="none" fill-rule="evenodd">
+                      <path d="M0 0h24v24H0z"/>
+                      <g transform="translate(4 4)" stroke="#222" stroke-width="1.067">
+                          <circle cx="8" cy="8" r="7.467"/>
+                          <path d="M.593 8.943c4.938 2.134 9.93 2.134 14.979 0M.593 7.343c4.938-2.133 9.93-2.133 14.979 0"/>
+                          <path d="M7.282.654c-2.133 4.938-2.133 9.931 0 14.979M8.882.654c2.134 4.938 2.134 9.931 0 14.979"/>
+                      </g>
+                  </g>
+                </svg>
+                {{ section.settings.country_selector_title }}
+              </button>
+            {%- endif -%}
+          </li>
+          {%- endif -%}
+
+        </ul>
+
+      </div>
+      {% endif %}
+
+      <div class='{% if section.settings.align_logo == 'left' %} header_top__wrapper {% else %} grid__item   {% if section.settings.align_logo == 'center' %} medium-up--two-fifths {% else %}  medium-up--one-half tablet--two-thirds {% endif %} {% endif %}'>
+
+
+        {% if section.settings.align_logo == 'left' %}
+        <div class='medium-up--one-fifth grid__item logo_element-wrapper'>
+          {{logo_element}}
+
+          <style>
+            .site-header .header_top__wrapper .logo_element-wrapper {
+              max-width: {{ section.settings.logo_max_width }}px;
+              width:100%;
+            }
+            @media screen and (min-width:750px) {
+            .site-header .header_top__wrapper .logo_element-wrapper {
+                min-width: {{ section.settings.logo_max_width }}px;
+              }
+            }
+          </style>
+        </div>
+        <div class='grid__item site-header__icons{% if shop.customer_accounts_enabled %} site-header__icons--plus{% endif %}'>
+          <div class="site-header__icons-wrapper">
+            {{ search_bar }}
+            {{ header_cart_icon }}
+            {% unless navigation_menu_handle == blank %}
+            <button type="button" class="btn--link site-header__icon site-header__menu js-mobile-nav-toggle mobile-nav--open" aria-controls="MobileNav"  aria-expanded="false" aria-label="{{ 'layout.navigation.menu' | t }}">
+              <span></span><span></span><span></span>
+              <svg width="24" height="24" viewBox="0 0 24 24" class="icon icon-hamburger" xmlns="http://www.w3.org/2000/svg">
+                <g fill="#03060B" fill-rule="evenodd">
+                    <rect x="7" y="5" width="14" height="2" rx=".75"/>
+                    <path d="M7.75 11h12.5a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75H7.75a.75.75 0 0 1-.75-.75v-.5a.75.75 0 0 1 .75-.75zM7.75 17h12.5a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75H7.75a.75.75 0 0 1-.75-.75v-.5a.75.75 0 0 1 .75-.75z"/>
+                </g>
+              </svg>
+              {% include 'icon-close' %}
+            </button>
+            {% endunless %}
+          </div>
+        </div>
+        {% endif %}
+
+
+
+
+        {% unless  section.settings.align_logo == 'left'  %}
+        <div class='header_top_left_side'>
+          {{top_navitagion_links}}
+        </div>
+        {% endunless %}
+
+      </div>
+
+      {% if section.settings.align_logo == 'center' %}
+      <div class='medium-up--one-fifth grid__item'>
+        {{logo_element}}
+      </div>
+      {% endif %}
+
+      {% if section.settings.align_logo != 'left' %}
+      <div class='grid__item {% if section.settings.align_logo == 'center' %} medium-up--two-fifths {% else %}  medium-up--one-half tablet--one-third {% endif %} '>
+        <ul class='top_navigation_links right_column'>
+
+          {%- if show_selectors -%}
+          <li>
+
+            {%- form 'localization', id: 'header_top__localization', class: 'selectors-form localization', data-disclosure-form: '' -%}
+
+            {%- if currency_selector and localization.available_countries.size > 1 -%}
+            <div class="selectors-form__item">
+
+
+              <div class="disclosure" data-disclosure-currency>
+                <button type="button" class="disclosure__toggle" aria-expanded="false" aria-controls="header--currency-list" aria-describedby="currency-heading" data-disclosure-toggle>
+                  <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <g fill="none" fill-rule="evenodd">
+                        <path d="M0 0h24v24H0z"/>
+                        <g transform="translate(4 4)" stroke="#222" stroke-width="1.067">
+                            <circle cx="8" cy="8" r="7.467"/>
+                            <path d="M.593 8.943c4.938 2.134 9.93 2.134 14.979 0M.593 7.343c4.938-2.133 9.93-2.133 14.979 0"/>
+                            <path d="M7.282.654c-2.133 4.938-2.133 9.931 0 14.979M8.882.654c2.134 4.938 2.134 9.931 0 14.979"/>
+                        </g>
+                    </g>
+                  </svg>
+                  {{ localization.country.name }} ({{ localization.country.currency.iso_code }} {{ localization.country.currency.symbol }})
+                </button>
+                <ul id="header--currency-list" class="disclosure-list" data-disclosure-list>
+                  {% for country in localization.available_countries %}
+                  <li class="disclosure-list__item {% if country.iso_code == localization.country.iso_code %} disclosure-list__item--current{% endif %}">
+                    <a class="disclosure-list__option" href="#" {% if country.iso_code == localization.country.iso_code %} aria-current="true"{% endif %}
+                       data-value="{{ country.iso_code }}" data-disclosure-option>
+                      {{ country.name }} ({{ country.currency.iso_code }} {{ country.currency.symbol }})
+                    </a>
+                  </li>
+                  {%- endfor -%}
+                </ul>
+                <input type="hidden" name="country_code"  value="{{ localization.country.iso_code  }}" data-disclosure-input/>
+              </div>
+            </div>
+            {%- endif -%}
+
+            {%- if locale_selector and localization.available_languages.size  > 1 -%}
+            <div class="selectors-form__item">
+
+
+              <div class="disclosure" data-disclosure-locale>
+                {{ localization.language.endonym_name }}
+                </button>
+                <ul id="header-lang-list" class="disclosure-list" data-disclosure-list>
+                  {%- for language in localization.available_languages -%}
+                  <li class="disclosure-list__item {% if language.iso_code == localization.language.iso_code %}disclosure-list__item--current{% endif %}">
+                    <a class="disclosure-list__option" href="#" lang="{{ language.iso_code }}" {% if language.iso_code == localization.language.iso_code %}aria-current="true"{% endif %} data-value="{{ language.iso_code }}" data-disclosure-option>
+                      {{ language.endonym_name }}
+                    </a>
+                  </li>
+                  {%- endfor -%}
+                </ul>
+                <input type="hidden" name="locale_code"  value="{{ localization.language.iso_code }}" data-disclosure-input/>
+              </div>
+            </div>
+            {%- endif -%}
+
+
+            {%- endform -%}
+
+            {%- if country_selector -%}
+              <button type="button" class="disclosure__toggle" data-country-toggle>
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <g fill="none" fill-rule="evenodd">
+                      <path d="M0 0h24v24H0z"/>
+                      <g transform="translate(4 4)" stroke="#222" stroke-width="1.067">
+                          <circle cx="8" cy="8" r="7.467"/>
+                          <path d="M.593 8.943c4.938 2.134 9.93 2.134 14.979 0M.593 7.343c4.938-2.133 9.93-2.133 14.979 0"/>
+                          <path d="M7.282.654c-2.133 4.938-2.133 9.931 0 14.979M8.882.654c2.134 4.938 2.134 9.931 0 14.979"/>
+                      </g>
+                  </g>
+                </svg>
+                {{ section.settings.country_selector_title }}
+              </button>
+            {%- endif -%}
+          </li>
+          {%- endif -%}
+
+        </ul>
+      </div>
+      {% endif %}
+      </div>
+    </div>
+  {% if section.settings.align_logo != 'left' %}</div>{% endif %}
+
+    {% assign hide_site_header__mobile_nav = false %}
+    {% if email_text != blank or phone_number != blank or top_navigation_linklist != blank  %}
+	 {% assign hide_site_header__mobile_nav = true %}
+    {% endif %}
+
+    <div class="{% if hide_site_header__mobile_nav %} hide_site_header__mobile_nav {% endif %} site-header__mobile-nav  {% if section.settings.align_logo == 'center' and section.settings.categories_linklist == blank %} without_categories_linklist  {% endif %}">
+      <div class="header-container grid grid--no-gutters">
+
+      {% if  section.settings.align_logo  != 'left' %}
+     <div class='medium-up--two-twelfths grid__item small--one-half {% if section.settings.align_logo == 'inline' %} logo_element-wrapper {% else %} mobile-logo-element-wrapper {% endif %}' >
+        {{ logo_element }}
+      </div>
+      {% endif %}
+
+
+
+      {% if section.settings.align_logo == 'inline' %}
+        <div class="menu-icon-wrapper">
+      {% endif %}
+      <nav class="grid__item {% if section.settings.align_logo != 'inline' %}{% if section.settings.align_logo == 'left' and top_navitagion_links != blank  %}  {% else %}  medium-up--four-sixths  {% endif %}{% endif %}" id="AccessibleNav" role="navigation">
+
+
+        <div class='navigation_wrapper'>
+
+          {% if  section.settings.align_logo == 'center' and categories_linklist != blank %}
+          {{  categories_linklist }}
+          {% endif %}
+
+
+
+          {% if section.settings.align_logo == 'center' %}
+          {% elsif section.settings.align_logo == 'left' %}
+          {{  categories_linklist }}
+          {% endif %}
+
+
+          <ul class="nav-bar__linklist list--unstyled main_nav-bar_linklist" data-type="menu">
+            {%- comment %}<locksmith:1f30>{% endcomment -%}
+              {%- assign locksmith_e6a0_forloop__size = 0 %}{%- for link in navigation_menu.links -%}{% capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: navigation_menu, variable: 'transparent' %}{% endcapture %}{% if var == 'true' %}{% assign locksmith_e6a0_forloop__size = locksmith_e6a0_forloop__size | plus: 1 %}{% endif %}{% endfor %}{% assign locksmith_e6a0_forloop__index = nil -%}
+            {%- comment %}</locksmith:1f30>{% endcomment -%}
+            {%- for link in navigation_menu.links -%}
+
+              {%- comment %}<locksmith:6f17>{% endcomment -%}
+                {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: navigation_menu, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% if locksmith_e6a0_forloop__index == nil %}{% assign locksmith_e6a0_forloop__index = 1 %}{% assign locksmith_e6a0_forloop__index0 = 0 %}{% else %}{% assign locksmith_e6a0_forloop__index = locksmith_e6a0_forloop__index | plus: 1 %}{% assign locksmith_e6a0_forloop__index0 = locksmith_e6a0_forloop__index0 | plus: 1 %}{% endif %}{% if locksmith_e6a0_forloop__index == 1 %}{% assign locksmith_e6a0_forloop__first = true %}{% else %}{% assign locksmith_e6a0_forloop__first = false %}{% endif %}{% if locksmith_e6a0_forloop__index == locksmith_e6a0_forloop__size %}{% assign locksmith_e6a0_forloop__last = true %}{% else %}{% assign locksmith_e6a0_forloop__last = false %}{% endif %}{% assign locksmith_e6a0_forloop__rindex = locksmith_e6a0_forloop__size | minus: locksmith_e6a0_forloop__index | minus: 1 %}{% assign locksmith_e6a0_forloop__rindex0 = locksmith_e6a0_forloop__size | minus: locksmith_e6a0_forloop__index0 | minus: 1 %}{% else %}{% continue %}{% endif -%}
+              {%- comment %}</locksmith:6f17>{% endcomment -%}
+
+              {%- assign is_mega_menu = false -%}
+            {%- assign custom_label = '' -%}
+            {%- assign downcase_title = link.title | downcase | strip -%}
+
+            {% for block in section.blocks %}
+              {% if block.type == 'mega_menu_image_links' or block.type == 'mega_menu_product_cards' or block.type == 'custom_mega_menu_alter' %}
+                {%- assign mega_menu_setting_downcase = block.settings.menu_item | downcase | strip -%}
+                {%- if mega_menu_setting_downcase == downcase_title -%}
+                  {%- assign is_mega_menu = true -%}
+                  {%- if block.settings.menu_item_label != blank -%}
+                    {%- assign custom_label = block.settings.menu_item_label -%}
+                    {%- assign custom_label_bg = block.settings.menu_item_label_bg -%}
+                  {%- endif -%}
+                  {%- break -%}
+                {%- endif -%}
+              {% endif %}
+            {% endfor %}
+
+            <!-- {{ is_mega_menu }}-->
+            <li class="nav-bar__item {% if is_mega_menu or link.links.size > 0%} item-has-mega-menu mega_menu_main_parent {% endif %}">
+            {% if is_mega_menu or link.links.size > 0 %}
+              <a {% unless is_mega_menu %}href="{{ link.url }}"{% endunless %} data-text="{{ link.title }}" class="nav-bar__link link {% if link.active %}link-active{% endif %}" data-type="menuitem" aria-expanded="false" aria-haspopup="true">
+                <span>{{- link.title -}}</span>
+                {%- if link.links.size > 0 or is_mega_menu -%}<svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon" width="13" height="14" viewBox="0 0 13 14" fill="none">
+                  <path d="M11 5.16667L6.66667 9.5L2.33333 5.16667" stroke="black" stroke-width="1.1375" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>{%- endif -%}
+                {% if custom_label != '' %}
+                  <div class="menu_item_custom_label" style="--background-color:{{custom_label_bg}};">{{ custom_label }}</div>
+                {% endif %}
+              </a>
+              {%- capture index -%}desktop-menu-0-{{ locksmith_e6a0_forloop__index }}{%- endcapture -%}
+              {%- render 'desktop-menu', menu: link, index: index, blocks: section.blocks -%}
+            {%- elsif link.links.size == 0 -%}
+              <a href="{{ link.url }}" data-text="{{ link.title }}" class="nav-bar__link link {% if link.active %}link-active{% endif %}" data-type="menuitem">
+                <span>{{- link.title -}}</span>
+              </a>
+
+            {%- endif -%}
+            </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+
+
+      </nav>
+
+      <div class="grid__item {% if section.settings.align_logo != 'inline' %}{% if section.settings.align_logo == 'left' and top_navitagion_links != blank %} hide {% else %} medium-up--two-sixths {% endif %}{% endif %} small--two-fifths text-right site-header__icons{% if shop.customer_accounts_enabled %} site-header__icons--plus{% endif %}">
+
+        {% if section.settings.align_logo == 'inline' %}
+        <div class='small--hide'>
+          {{  categories_linklist }}
+        </div>
+        {% endif %}
+
+        <div class="site-header__icons-wrapper">
+
+          {% if  section.settings.align_logo  == 'left' %}
+            {% if email_text == blank and phone_number == blank and top_navigation_linklist == blank  %}
+              {% if shop.customer_accounts_enabled or show_selectors %}
+          <div class='header_top {% if section.settings.show_top_line_separator %} show_top_line_separator {% endif %}'>
+              <ul class='top_navigation_links right_column'>
+
+                {% if shop.customer_accounts_enabled %}
+                <li>
+
+
+
+                </li>
+                {% endif %}
+
+                {%- if show_selectors -%}
+                <li>
+
+                  {%- form 'localization', id: 'header_top__localization', class: 'selectors-form localization', data-disclosure-form: '' -%}
+
+                          {%- if currency_selector and localization.available_countries.size > 1 -%}
+                  <div class="selectors-form__item">
+
+
+                    <div class="disclosure" data-disclosure-currency>
+                      <button type="button" class="disclosure__toggle" aria-expanded="false" aria-controls="header--currency-list" aria-describedby="currency-heading" data-disclosure-toggle>
+                        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <g fill="none" fill-rule="evenodd">
+                              <path d="M0 0h24v24H0z"/>
+                              <g transform="translate(4 4)" stroke="#222" stroke-width="1.067">
+                                  <circle cx="8" cy="8" r="7.467"/>
+                                  <path d="M.593 8.943c4.938 2.134 9.93 2.134 14.979 0M.593 7.343c4.938-2.133 9.93-2.133 14.979 0"/>
+                                  <path d="M7.282.654c-2.133 4.938-2.133 9.931 0 14.979M8.882.654c2.134 4.938 2.134 9.931 0 14.979"/>
+                              </g>
+                          </g>
+                        </svg>
+                        {{ localization.country.name }} ({{ localization.country.currency.iso_code }} {{ localization.country.currency.symbol }})
+                      </button>
+                      <ul id="header--currency-list" class="disclosure-list" data-disclosure-list>
+                        {% for country in localization.available_countries %}
+                        <li class="disclosure-list__item {% if country.iso_code == localization.country.iso_code %}disclosure-list__item--current{% endif %}">
+                          <a class="disclosure-list__option" href="#" {% if country.iso_code == localization.country.iso_code %} aria-current="true"{% endif %}
+                             data-value="{{  country.iso_code }}" data-disclosure-option>
+                             {{ country.name }} ({{ country.currency.iso_code }} {{ country.currency.symbol }})
+                          </a>
+                        </li>
+                        {%- endfor -%}
+                      </ul>
+                      <input type="hidden" name="country_code"  value="{{ localization.country.iso_code }}" data-disclosure-input/>
+                    </div>
+                  </div>
+                  {%- endif -%}
+
+                 {%- if locale_selector and localization.available_languages.size  > 1 -%}
+            <div class="selectors-form__item">
+
+
+              <div class="disclosure" data-disclosure-locale>
+                <button type="button" class="disclosure__toggle" aria-expanded="false" aria-controls="header-lang-list" aria-describedby="lang-heading" data-disclosure-toggle>
+                  {{ localization.language.endonym_name }}
+                </button>
+                <ul id="header-lang-list" class="disclosure-list" data-disclosure-list>
+                  {%- for language in localization.available_languages -%}
+                  <li class="disclosure-list__item {% if language.iso_code == localization.language.iso_code %}disclosure-list__item--current{% endif %}">
+                    <a class="disclosure-list__option" href="#" lang="{{ language.iso_code }}" {% if language.iso_code == localization.language.iso_code %}aria-current="true"{% endif %} data-value="{{ language.iso_code }}" data-disclosure-option>
+                      {{ language.endonym_name }}
+                    </a>
+                  </li>
+                  {%- endfor -%}
+                </ul>
+                <input type="hidden" name="locale_code"  value="{{ localization.language.iso_code }}" data-disclosure-input/>
+              </div>
+            </div>
+                  {%- endif -%}
+
+
+                  {%- endform -%}
+
+                  {%- if country_selector -%}
+                    <button type="button" class="disclosure__toggle" aria-expanded="false" data-country-toggle>
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="none" fill-rule="evenodd">
+                            <path d="M0 0h24v24H0z"/>
+                            <g transform="translate(4 4)" stroke="#222" stroke-width="1.067">
+                                <circle cx="8" cy="8" r="7.467"/>
+                                <path d="M.593 8.943c4.938 2.134 9.93 2.134 14.979 0M.593 7.343c4.938-2.133 9.93-2.133 14.979 0"/>
+                                <path d="M7.282.654c-2.133 4.938-2.133 9.931 0 14.979M8.882.654c2.134 4.938 2.134 9.931 0 14.979"/>
+                            </g>
+                        </g>
+                      </svg>
+                      {{ section.settings.country_selector_title }}
+                    </button>
+                  {%- endif -%}
+                </li>
+                {%- endif -%}
+
+              </ul>
+          </div>
+              {% endif %}
+            {% endif %}
+
+          {% else %}
+          <!-- 跳转积分商城 -->
+          <script>
+            var ecoLang = "es";
+            var integral_url = "https://www.ecoflow.com/" + ecoLang + "/ecocredits";
+            // 修改token：token前缀约定：us-token jp-token ca-token eu-token au-token uk-token
+            var cookie_name = ecoLang + "-token";
+            function to_integral() {
+              window.open(integral_url);
+              windlow.event.returnValue = false;
+            }
+
+            function delCookie() {
+              var exp = new Date();
+              exp.setTime(exp.getTime() - 1);
+              var del_token = cookie_name + "=123456;expires=" + exp.toGMTString() + ";domain=.ecoflow.com;";
+              document.cookie = del_token;
+            }
+          </script>
+          {% if customer %}
+          <a class="site-header__gift_icon" href="#" onclick="to_integral()">
+            <svg width="24" height="24" style="display: block;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19.6446 13.5985C19.8634 12.85 19.9806 12.0592 19.9806 11.2415C19.9806 6.54207 16.1099 2.73242 11.3352 2.73242C6.56058 2.73242 2.68994 6.54207 2.68994 11.2415C2.68994 15.941 6.56058 19.7506 11.3352 19.7506C12.2655 19.7506 13.1614 19.606 14.0011 19.3384" stroke="#010101" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M21.0005 16.5C21.0005 17.0523 19.8812 17.5 18.5005 17.5C17.1198 17.5 16.0005 17.0523 16.0005 16.5C16.0005 15.9477 17.1198 15.5 18.5005 15.5C19.8812 15.5 21.0005 15.9477 21.0005 16.5Z" fill="#010101"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M20.6656 17.5C20.2332 17.7987 19.4255 17.9997 18.5005 17.9997C17.5754 17.9997 16.7677 17.7987 16.3354 17.5C16.1224 17.6472 16.0005 17.818 16.0005 18.0003C16.0005 18.5526 17.1198 19.0003 18.5005 19.0003C19.8812 19.0003 21.0005 18.5526 21.0005 18.0003C21.0005 17.818 20.8786 17.6472 20.6656 17.5Z" fill="#010101"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M20.6656 19C20.2332 19.2987 19.4255 19.4997 18.5005 19.4997C17.5754 19.4997 16.7677 19.2987 16.3354 19C16.1224 19.1472 16.0005 19.318 16.0005 19.5003C16.0005 20.0526 17.1198 20.5003 18.5005 20.5003C19.8812 20.5003 21.0005 20.0526 21.0005 19.5003C21.0005 19.318 20.8786 19.1472 20.6656 19Z" fill="#010101"/>
+              <path d="M7.34473 9.74414H10.8569M7.34473 13.7222H10.8569M12.4779 9.74414H15.99M7.34473 11.7869H10.8569M12.4779 13.8605V12.0571C12.4779 11.9079 12.5988 11.7869 12.748 11.7869H15.99" stroke="#010101" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+          </a>
+          {% else %}
+          <script>delCookie()</script>
+          {% endif %}
+          <!-- 跳转积分商城 end -->
+          {{ search_bar }}
+          {{ customer_account }}
+          {{ header_cart_icon }}
+
+          {% endif %}
+
+          <div class='navigation-toggle-btn'>
+            {% unless navigation_menu_handle == blank %}
+              <button type="button" class="btn--link site-header__icon site-header__menu js-mobile-nav-toggle mobile-nav--open" aria-controls="MobileNav"  aria-expanded="false" aria-label="{{ 'layout.navigation.menu' | t }}">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon--full-color icon-hamburger" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 6H19M5 12H19M5 18H19" stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon--full-color icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M6 5L19 18M19 5L6 18" stroke="#010101" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            {% endunless %}
+          </div>
+
+        </div>
+
+      </div>
+      {% if section.settings.align_logo == 'inline' %}</div>{% endif %}
+    </div>
+    </div>
+
+    <nav class="mobile-nav-wrapper critical-hidden" role="navigation">
+      <ul id="MobileNav" class="mobile-nav">
+
+        {%- assign categories_linklist_handle = section.settings.categories_linklist  -%}
+        {% if categories_linklist_handle != blank %}
+        {%- assign categories_menu = linklists[categories_linklist_handle] -%}
+
+
+        <li class="mobile-nav__item">
+
+              {% capture child_list_handle %}categories_link_title-1{% endcapture %}
+              <button type="button" class="btn--link js-toggle-submenu mobile-nav__link mobile-nav__link--active"
+                      data-target="{{ child_list_handle }}"
+                      data-level="1"
+                      aria-expanded="false">
+                <span class="mobile-nav__label">{{ 'sections.header.categories_link_title'| t }}</span>
+                <div class="mobile-nav__icon">
+                 {%- render 'icon', icon: 'chevron-right' -%}
+                </div>
+              </button>
+              <ul class="mobile-nav__dropdown_level_1 mobile-nav__dropdown" data-parent="{{ child_list_handle }}" data-level="2">
+                <li class="visually-hidden" tabindex="-1" data-menu-title="2">
+                 {{ 'sections.header.categories_link_title'| t }} {{ 'layout.navigation.menu' | t -}}
+                </li>
+                <li class="mobile-nav__item ">
+                  <div class="mobile-nav__table">
+                    <div class="mobile-nav__table-cell mobile-nav__return">
+                      <button class="btn--link js-toggle-submenu mobile-nav__return-btn" type="button" aria-expanded="true" aria-label="{{ 'sections.header.categories_link_title'| t }}">
+                        {% include 'icon-chevron-left' %}
+                         <span class="mobile-nav__label">{{ 'sections.header.categories_link_title'| t }}</span>
+                      </button>
+                    </div>
+
+                  </div>
+                </li>
+
+                {%- comment %}<locksmith:4445>{% endcomment -%}
+                  {%- assign locksmith_d9c9_forloop__size = 0 %}{% for link in categories_menu.links %}{% capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: categories_menu, variable: 'transparent' %}{% endcapture %}{% if var == 'true' %}{% assign locksmith_d9c9_forloop__size = locksmith_d9c9_forloop__size | plus: 1 %}{% endif %}{% endfor %}{% assign locksmith_d9c9_forloop__index = nil -%}
+                {%- comment %}</locksmith:4445>{% endcomment -%}
+                {% for link in categories_menu.links %}
+                {%- comment %}<locksmith:3fc1>{% endcomment -%}
+                  {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: categories_menu, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% if locksmith_d9c9_forloop__index == nil %}{% assign locksmith_d9c9_forloop__index = 1 %}{% assign locksmith_d9c9_forloop__index0 = 0 %}{% else %}{% assign locksmith_d9c9_forloop__index = locksmith_d9c9_forloop__index | plus: 1 %}{% assign locksmith_d9c9_forloop__index0 = locksmith_d9c9_forloop__index0 | plus: 1 %}{% endif %}{% if locksmith_d9c9_forloop__index == 1 %}{% assign locksmith_d9c9_forloop__first = true %}{% else %}{% assign locksmith_d9c9_forloop__first = false %}{% endif %}{% if locksmith_d9c9_forloop__index == locksmith_d9c9_forloop__size %}{% assign locksmith_d9c9_forloop__last = true %}{% else %}{% assign locksmith_d9c9_forloop__last = false %}{% endif %}{% assign locksmith_d9c9_forloop__rindex = locksmith_d9c9_forloop__size | minus: locksmith_d9c9_forloop__index | minus: 1 %}{% assign locksmith_d9c9_forloop__rindex0 = locksmith_d9c9_forloop__size | minus: locksmith_d9c9_forloop__index0 | minus: 1 %}{% else %}{% continue %}{% endif -%}
+                {%- comment %}</locksmith:3fc1>{% endcomment -%}
+                {%- assign outerLoopIndex = locksmith_d9c9_forloop__index | plus: 1 -%}
+
+                  <li class="mobile-nav__item">
+                    {% if link.links != blank %}
+                      {% capture grandchild_list_handle %}{{ link.handle }}-{{ outerLoopIndex }}-{{ locksmith_d9c9_forloop__index }}{% endcapture %}
+                      <button type="button" class="btn--link js-toggle-submenu mobile-nav__link mobile-nav__sublist-link" data-target="{{ grandchild_list_handle }}" aria-expanded="false">
+                        <span class="mobile-nav__label">{{ link.title | escape }}</span>
+                        <div class="mobile-nav__icon">
+                          {%- render 'icon', icon: 'chevron-right' -%}
+                        </div>
+                      </button>
+                      <ul class="mobile-nav__dropdown" data-parent="{{ grandchild_list_handle }}" data-level="3">
+                        <li class="visually-hidden" tabindex="-1" data-menu-title="3">
+                          {{- link.title }} {{ 'layout.navigation.menu' | t -}}
+                        </li>
+                        <li class="mobile-nav__item ">
+                          <div class="mobile-nav__table">
+                            <div class="mobile-nav__table-cell mobile-nav__return">
+                              <button type="button" class="btn--link js-toggle-submenu mobile-nav__return-btn" data-target="{{ child_list_handle }}" aria-expanded="true" aria-label="{{ link.title }}">
+                                {% include 'icon-chevron-left' %}
+                                <span>{{ link.title | escape }}</span>
+                              </button>
+                            </div>
+
+                          </div>
+                        </li>
+                        {%- comment %}<locksmith:04fd>{% endcomment -%}
+                          {%- assign locksmith_df94_forloop__size = 0 %}{% for childlink in link.links %}{% capture var %}{% render 'locksmith-variables', scope: 'subject', subject: childlink, subject_parent: link, variable: 'transparent' %}{% endcapture %}{% if var == 'true' %}{% assign locksmith_df94_forloop__size = locksmith_df94_forloop__size | plus: 1 %}{% endif %}{% endfor %}{% assign locksmith_df94_forloop__index = nil -%}
+                        {%- comment %}</locksmith:04fd>{% endcomment -%}
+                        {% for childlink in link.links %}
+                          {%- comment %}<locksmith:291f>{% endcomment -%}
+                            {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: childlink, subject_parent: link, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% if locksmith_df94_forloop__index == nil %}{% assign locksmith_df94_forloop__index = 1 %}{% assign locksmith_df94_forloop__index0 = 0 %}{% else %}{% assign locksmith_df94_forloop__index = locksmith_df94_forloop__index | plus: 1 %}{% assign locksmith_df94_forloop__index0 = locksmith_df94_forloop__index0 | plus: 1 %}{% endif %}{% if locksmith_df94_forloop__index == 1 %}{% assign locksmith_df94_forloop__first = true %}{% else %}{% assign locksmith_df94_forloop__first = false %}{% endif %}{% if locksmith_df94_forloop__index == locksmith_df94_forloop__size %}{% assign locksmith_df94_forloop__last = true %}{% else %}{% assign locksmith_df94_forloop__last = false %}{% endif %}{% assign locksmith_df94_forloop__rindex = locksmith_df94_forloop__size | minus: locksmith_df94_forloop__index | minus: 1 %}{% assign locksmith_df94_forloop__rindex0 = locksmith_df94_forloop__size | minus: locksmith_df94_forloop__index0 | minus: 1 %}{% else %}{% continue %}{% endif -%}
+                          {%- comment %}</locksmith:291f>{% endcomment -%}
+                          <li class="mobile-nav__item">
+
+
+                            {% if childlink.links != blank %}
+                            {% capture grandgrandchild_list_handle %}{{ childlink.handle }}-{{ outerLoopIndex }}-{{ locksmith_df94_forloop__index }}{% endcapture %}
+                            <button type="button" class="btn--link js-toggle-submenu mobile-nav__link mobile-nav__sublist-link" data-target="{{ grandgrandchild_list_handle }}" aria-expanded="false">
+                              <span class="mobile-nav__label">{{ childlink.title | escape }}</span>
+                              <div class="mobile-nav__icon">
+                               {%- render 'icon', icon: 'chevron-right' -%}
+                              </div>
+                            </button>
+                            <ul class="mobile-nav__dropdown" data-parent="{{ grandgrandchild_list_handle }}" data-level="4">
+                              <li class="visually-hidden" tabindex="-1" data-menu-title="4">
+                                {{- childlink.title }} {{ 'layout.navigation.menu' | t -}}
+                              </li>
+                              <li class="mobile-nav__item ">
+                                <div class="mobile-nav__table">
+                                  <div class="mobile-nav__table-cell mobile-nav__return">
+                                    <button type="button" class="btn--link js-toggle-submenu mobile-nav__return-btn" data-target="{{ grandchild_list_handle }}" aria-expanded="true" aria-label="{{ childlink.title }}">
+                                      {% include 'icon-chevron-left' %}
+                                      <span>{{ childlink.title | escape }}</span>
+                                    </button>
+                                  </div>
+
+                                </div>
+                              </li>
+                              {% for grandchildlink in childlink.links %}
+                              {%- comment %}<locksmith:a7fd>{% endcomment -%}
+                                {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: grandchildlink, subject_parent: childlink, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                              {%- comment %}</locksmith:a7fd>{% endcomment -%}
+                              <li class="mobile-nav__item">
+                                <a href="{{ grandchildlink.url }}"
+                                   class="mobile-nav__sublist-link"
+                                   {% if grandchildlink.current %} aria-current="page"{% endif %}
+                                   >
+                                  <span class="mobile-nav__label">{{ grandchildlink.title | escape }}</span>
+                                </a>
+                              </li>
+                              {% endfor %}
+                            </ul>
+                            {% else %}
+                            <a href="{{ childlink.url }}"
+                               class="mobile-nav__sublist-link"
+                               {% if childlink.current %} aria-current="page"{% endif %}
+                               >
+                              <span class="mobile-nav__label">{{ childlink.title | escape }}</span>
+                            </a>
+                            {% endif %}
+
+
+
+
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    {% else %}
+                      <a href="{{ link.url }}"
+                        class="mobile-nav__sublist-link"
+                        {% if link.current %} aria-current="page"{% endif %}
+                      >
+                        <span class="mobile-nav__label">{{ link.title | escape }}</span>
+                      </a>
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+          </li>
+
+
+        {% endif %}
+
+
+
+
+        {% assign open_element_found = false %}
+        {%- comment %}<locksmith:550c>{% endcomment -%}
+          {%- assign locksmith_6c25_forloop__size = 0 %}{% for link in linklists[navigation_menu_handle].links %}{% capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: linklists[navigation_menu_handle], variable: 'transparent' %}{% endcapture %}{% if var == 'true' %}{% assign locksmith_6c25_forloop__size = locksmith_6c25_forloop__size | plus: 1 %}{% endif %}{% endfor %}{% assign locksmith_6c25_forloop__index = nil -%}
+        {%- comment %}</locksmith:550c>{% endcomment -%}
+        {% for link in linklists[navigation_menu_handle].links %}
+          {%- comment %}<locksmith:31ff>{% endcomment -%}
+            {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: linklists[navigation_menu_handle], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% if locksmith_6c25_forloop__index == nil %}{% assign locksmith_6c25_forloop__index = 1 %}{% assign locksmith_6c25_forloop__index0 = 0 %}{% else %}{% assign locksmith_6c25_forloop__index = locksmith_6c25_forloop__index | plus: 1 %}{% assign locksmith_6c25_forloop__index0 = locksmith_6c25_forloop__index0 | plus: 1 %}{% endif %}{% if locksmith_6c25_forloop__index == 1 %}{% assign locksmith_6c25_forloop__first = true %}{% else %}{% assign locksmith_6c25_forloop__first = false %}{% endif %}{% if locksmith_6c25_forloop__index == locksmith_6c25_forloop__size %}{% assign locksmith_6c25_forloop__last = true %}{% else %}{% assign locksmith_6c25_forloop__last = false %}{% endif %}{% assign locksmith_6c25_forloop__rindex = locksmith_6c25_forloop__size | minus: locksmith_6c25_forloop__index | minus: 1 %}{% assign locksmith_6c25_forloop__rindex0 = locksmith_6c25_forloop__size | minus: locksmith_6c25_forloop__index0 | minus: 1 %}{% else %}{% continue %}{% endif -%}
+          {%- comment %}</locksmith:31ff>{% endcomment -%}
+          {%- assign outerLoopIndex = locksmith_6c25_forloop__index -%}
+
+          {%- assign is_mega_menu = false -%}
+          {%- assign downcase_title = link.title | downcase | strip -%}
+
+          {% include 'mobile-mega-menu' with link: link, outerLoopIndex: outerLoopIndex, index: locksmith_6c25_forloop__index, blocks: section.blocks %}
+        {% endfor %}
+      </ul>
+      <div class='mobile-nav-footer'>
+
+        {% if information_1 != blank %}
+          <div class='mobile-nav-footer-block mobile-nav__link'>
+            <a href="{{information_1_link}}">
+              <span class="mobile-nav__label">{{information_1}}</span>
+            </a>
+          </div>
+        {% endif %}
+
+        {%- if show_selectors -%}
+
+        {%- if currency_selector   -%}
+        <div class='mobile-nav-footer-block'>
+           {%- form 'localization', id: 'mobile_nav_currency__localization',  class: 'selectors-form localization', data-disclosure-form: '' -%}
+          {% if localization.available_countries.size > 1 %}
+          <div class="selectors-form__item">
+
+
+            <div class="disclosure" data-disclosure-currency>
+              <button type="button" class="disclosure__toggle" aria-expanded="false" aria-controls="mobile-header--currency-list"
+                      aria-describedby="currency-heading" data-disclosure-toggle>
+                <span class="mobile-nav__label">
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <g fill="none" fill-rule="evenodd">
+                      <path d="M0 0h24v24H0z"/>
+                      <g transform="translate(4 4)" stroke="#666" stroke-width="1.067">
+                          <circle cx="8" cy="8" r="7.467"/>
+                          <path d="M.593 8.943c4.938 2.134 9.93 2.134 14.979 0M.593 7.343c4.938-2.133 9.93-2.133 14.979 0"/>
+                          <path d="M7.282.654c-2.133 4.938-2.133 9.931 0 14.979M8.882.654c2.134 4.938 2.134 9.931 0 14.979"/>
+                      </g>
+                  </g>
+                </svg>
+                {{ localization.country.name }} ({{ localization.language.endonym_name }} / {{ localization.country.currency.symbol }} {{ localization.country.currency.iso_code }})
+                </span>
+              </button>
+              <ul id="mobile-header--currency-list" class="disclosure-list" data-disclosure-list>
+                <li class="return_to_currency mobile-nav__link" data-disclosure-close>
+                  <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                    <g fill="none" fill-rule="evenodd">
+                        <path d="M0 0h18v18H0z"/>
+                        <path d="m10.485 8.775-3.54 3.572a.654.654 0 0 0-.195.478c0 .188.065.347.195.478s.288.197.474.197a.642.642 0 0 0 .474-.197l4.04-4.078c.298-.3.289-.61-.027-.928l-4.013-4.05a.642.642 0 0 0-.474-.197.642.642 0 0 0-.474.197.654.654 0 0 0-.195.478c0 .188.065.347.195.478l3.54 3.572z" fill="currentColor"/>
+                    </g>
+                  </svg>
+                  {{ localization.country.name }} ({{ localization.language.endonym_name }} / {{ localization.country.currency.symbol }} {{ localization.country.currency.iso_code }})
+                </li>
+               {% for country in localization.available_countries %}
+                <li class="disclosure-list__item mobile-nav__link {% if country.iso_code == localization.country.iso_code %}disclosure-list__item--current{% endif %}">
+                  <a class="disclosure-list__option" href="#" {% if country.iso_code == localization.country.iso_code %}aria-current="true"{% endif %}
+                     data-value="{{ country.iso_code }}" data-disclosure-option>
+                     {{ country.name }} ({{ country.currency.symbol }} {{ country.currency.iso_code }})
+                  </a>
+                </li>
+                {%- endfor -%}
+              </ul>
+              <input type="hidden" name="country_code"  value="{{localization.country.iso_code  }}" data-disclosure-input/>
+            </div>
+          </div>
+          {% endif %}
+          {%- endform -%}
+        </div>
+        {%- endif -%}
+
+        {%- if locale_selector and localization.available_languages.size  > 1 -%}
+        <div class='mobile-nav-footer-block'>
+           {%- form 'localization', id: 'mobile_nav_language__localization', class: 'selectors-form localization', data-disclosure-form: '' -%}
+            <div class="selectors-form__item">
+
+
+              <div class="disclosure" data-disclosure-locale>
+                <button type="button" class="disclosure__toggle" aria-expanded="false" aria-controls="header-lang-list" aria-describedby="lang-heading" data-disclosure-toggle>
+                  {{ localization.language.endonym_name }}
+                </button>
+                <ul id="header-lang-list" class="disclosure-list" data-disclosure-list>
+                  {%- for language in localization.available_languages -%}
+                  <li class="disclosure-list__item {% if language.iso_code == localization.language.iso_code %}disclosure-list__item--current{% endif %}">
+                    <a class="disclosure-list__option" href="#" lang="{{ language.iso_code }}" {% if language.iso_code == localization.language.iso_code %}aria-current="true"{% endif %} data-value="{{ language.iso_code }}" data-disclosure-option>
+                      {{ language.endonym_name }}
+                    </a>
+                  </li>
+                  {%- endfor -%}
+                </ul>
+                <input type="hidden" name="locale_code"  value="{{ localization.language.iso_code }}" data-disclosure-input/>
+              </div>
+            </div>
+          {%- endform -%}
+        </div>
+        {%- endif -%}
+
+        {%- if country_selector -%}
+        <div class='mobile-nav-footer-block'>
+          {%- form 'localization', id: 'mobile_nav_language__localization', class: 'selectors-form localization'-%}
+            <div class="selectors-form__item">
+              <div class="disclosure">
+                <button type="button" class="disclosure__toggle" aria-expanded="false" data-country-toggle>
+                  <span class="mobile-nav__label">
+                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <g fill="none" fill-rule="evenodd">
+                          <path d="M0 0h24v24H0z"/>
+                          <g transform="translate(4 4)" stroke="#666" stroke-width="1.067">
+                              <circle cx="8" cy="8" r="7.467"/>
+                              <path d="M.593 8.943c4.938 2.134 9.93 2.134 14.979 0M.593 7.343c4.938-2.133 9.93-2.133 14.979 0"/>
+                              <path d="M7.282.654c-2.133 4.938-2.133 9.931 0 14.979M8.882.654c2.134 4.938 2.134 9.931 0 14.979"/>
+                          </g>
+                      </g>
+                    </svg>
+                  {{ section.settings.country_selector_title }}
+                  </span>
+                </button>
+              </div>
+            </div>
+          {%- endform -%}
+        </div>
+        {%- endif -%}
+
+        {%- endif -%}
+
+        {% if email_text != blank %}
+        <div class='mobile-nav-footer-block'>
+          <div class='email_text'>
+            <a href='mailto:{{email_text | downcase | strip }}'>{{email_text}}</a>
+          </div>
+        </div>
+        {% endif %}
+
+         {% if phone_number != blank %}
+         <div class='mobile-nav-footer-block'>
+          <div class='phone_number'><a href='tel: {{phone_number | downcase | replace:"-",""  | replace:" ","" |  strip }}'>{{phone_number}}</a></div>
+        </div>
+          {% endif %}
+
+        {% if top_navigation_linklist != blank %}
+        {% assign top_navigation_menu = linklists[top_navigation_linklist].links %}
+        {% if top_navigation_menu.size > 0 %}
+        <ul class='bottom_navigation_menu'>
+          {% for link in top_navigation_menu %}
+          {%- comment %}<locksmith:6620>{% endcomment -%}
+            {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+          {%- comment %}</locksmith:6620>{% endcomment -%}
+          <li class='mobile-nav-footer-block'><a href='{{link.url}}'>{{link.title}}</a></li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        {% endif %}
+
+
+
+      </div>
+    </nav>
+  </header>
+
+  {% if header_fallback_image != blank and enable_overlap_header and enable_header_fallback_image and template.name == 'product'  %}<div class="header__overlay"></div>{% endif %}
+</div>
+
+{% if header_fallback_image != blank and enable_overlap_header and enable_header_fallback_image and template.name == 'product' %}
+<style>
+  #shopify-section-header.showAlternateHeader .header__overlay {
+    background-image: url({{ header_fallback_image | img_url :'master' }});
+    background-position:center center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    opacity: {{ section.settings.header_fallback_image_opacity }}%;
+  }
+</style>
+{% endif %}
+
+<style>
+  .header_cart_info.show_cart_subtotal .cart_icon,
+  .header_cart_info .header_cart_count {
+    background: #fa4500;
+      color: var(--color-btn-primary-text);
+  }
+</style>
+{%- comment -%}Yoast SEO schema control block: start.{%- endcomment -%}
+{%- assign yoast_seo_settings = shop.metafields.yoast_seo.settings.value | default: shop.metafields.yoast_seo.settings -%}
+{%- if disabled_by_yoast_seo or yoast_seo_settings.schema.useTheme.schema or yoast_seo_settings.schema.useTheme.organization -%}
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": {{ shop.name | json }},
+  {% if section.settings.logo %}
+    {% assign image_size = section.settings.logo.width | append:'x' %}
+    "logo": {{ section.settings.logo | img_url: image_size | prepend: "https:" | json }},
+  {% endif %}
+  "sameAs": [
+    {{ settings.social_twitter_link | json }},
+    {{ settings.social_facebook_link | json }},
+    {{ settings.social_pinterest_link | json }},
+    {{ settings.social_instagram_link | json }},
+    {{ settings.social_tumblr_link | json }},
+    {{ settings.social_snapchat_link | json }},
+    {{ settings.social_youtube_link | json }},
+    {{ settings.social_vimeo_link | json }}
+  ],
+  "url": {{ shop.url | append: page.url | json }}
+}
+{%- comment -%}Yoast SEO schema control block: end.{%- endcomment -%}
+</script>
+{%- endif -%}
+
+{% if request.page_type == 'index' %}
+  {% assign potential_action_target = shop.url | append: routes.search_url | append: "?q={search_term_string}" %}
+  {%- comment -%}Yoast SEO schema control block: start.{%- endcomment -%}
+{%- assign yoast_seo_settings = shop.metafields.yoast_seo.settings.value | default: shop.metafields.yoast_seo.settings -%}
+{%- if disabled_by_yoast_seo or yoast_seo_settings.schema.useTheme.schema or yoast_seo_settings.schema.useTheme.website -%}
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": {{ shop.name | json }},
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {{ potential_action_target | json }},
+        "query-input": "required name=search_term_string"
+      },
+      "url": {{ shop.url | append: page.url | json }}
+    }
+  {%- comment -%}Yoast SEO schema control block: end.{%- endcomment -%}
+</script>
+{%- endif -%}
+{% endif %}
+
+<script>
+{% if section.settings.enable_overlap_header %}
+  document.documentElement.style.setProperty('--sticky-header-height', document.getElementById('shopify-section-{{ section.id }}').clientHeight + 'px');
+{% else %}
+document.documentElement.style.setProperty('--sticky-header-height', '0');
+{% endif %}
+  document.documentElement.style.setProperty('--header-height', document.getElementById('shopify-section-{{ section.id }}').clientHeight + 'px');
+	window.addEventListener('resize', function () {
+	document.documentElement.style.setProperty('--header-height', document.getElementById('shopify-section-{{ section.id }}').clientHeight + 'px');
+	});
+
+</script>
+
+{%- if country_selector -%}
+  <div class="country-selector-popup-wrapper"></div>
+{%- endif -%}
+
+
+{% schema %}
+{
+  "name": "t:sections.header.name",
+  "settings": [
+
+      {
+        "type":"select",
+        "id":"align_logo",
+       	"label": "t:sections.header.settings.align_logo.label",
+        "default":"left",
+        "options":[
+            {
+              "value": "inline",
+              "label": "t:sections.header.settings.align_logo.options__1.label"
+            },
+ 			{
+          "value": "left",
+          "label": "t:sections.header.settings.align_logo.options__2.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.header.settings.align_logo.options__3.label"
+		}
+        ]
+      },
+	{
+	"type":"checkbox",
+	"id":"enable_overlap_header",
+	"label": "t:sections.header.settings.enable_overlap_header.label",
+	"info": "t:sections.header.settings.enable_overlap_header.info"
+
+	},
+
+  {
+      "type": "image_picker",
+      "id": "header_fallback_image",
+      "label": "t:sections.header.settings.header_fallback_image.label",
+	  "info": "t:sections.header.settings.header_fallback_image.info"
+    },
+{
+        "type": "range",
+        "id": "header_fallback_image_opacity",
+       "label": "t:sections.header.settings.header_fallback_image_opacity.label",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+       "unit": "t:sections.header.settings.header_fallback_image_opacity.unit",
+        "default": 40
+      },
+	{
+	"type":"checkbox",
+	"id":"enable_header_fallback_image",
+	"label": "t:sections.header.settings.enable_header_fallback_image.label"
+
+	},
+{
+	"type":"checkbox",
+	"id":"show_top_line_separator",
+	"label": "t:sections.header.settings.show_top_line_separator.label",
+	"info": "t:sections.header.settings.show_top_line_separator.info"
+	},
+
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "t:sections.header.settings.logo.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_logo",
+      "label": "Logo(Mobile)"
+    },
+      {
+      "type": "image_picker",
+      "id": "alternate_logo",
+      "label": "t:sections.header.settings.alternate_logo.label",
+	  "info": "t:sections.header.settings.alternate_logo.info"
+      },
+    {
+      "type": "range",
+      "id": "logo_max_width",
+      "label": "t:sections.header.settings.logo_max_width.label",
+      "min": 50,
+      "max": 250,
+      "step": 5,
+      "unit": "t:sections.header.settings.logo_max_width.unit",
+      "default": 100
+    },
+    {
+      "type": "link_list",
+      "id": "main_linklist",
+      "label": "t:sections.header.settings.main_linklist.label",
+      "default": "main-menu"
+    },
+      {
+        "type":"select",
+        "id":"main_linklist_style",
+       	"label": "t:sections.header.settings.main_linklist_style.label",
+        "default":"none",
+        "options":[
+            {
+              "value": "uppercase",
+              "label": "t:sections.header.settings.main_linklist_style.options__1.label"
+            },
+ 			{
+          "value": "none",
+          "label": "t:sections.header.settings.main_linklist_style.options__2.label"
+        },
+        {
+          "value": "lowercase",
+          "label": "t:sections.header.settings.main_linklist_style.options__3.label"
+		}
+        ]
+      },
+
+	{
+		"type":"text",
+		"id":"email_text",
+		"label":"t:sections.header.settings.email_text.label"
+	},
+	{
+		"type":"text",
+		"id":"phone_number",
+		"label":"t:sections.header.settings.phone_number.label"
+	},
+  {
+		"type":"text",
+		"id":"information_1",
+		"label":"t:sections.header.settings.information_1.label"
+	},
+  {
+		"type":"url",
+		"id":"information_1_link",
+		"label":"t:sections.header.settings.information_1.link_label"
+	},
+  {
+		"type":"text",
+		"id":"information_2",
+		"label":"t:sections.header.settings.information_2.label"
+	},
+  {
+		"type":"url",
+		"id":"information_2_link",
+		"label":"t:sections.header.settings.information_2.link_label"
+	},
+  {
+        "type": "checkbox",
+        "id": "show_currency_selector",
+        "label": "t:sections.header.settings.show_currency_selector.label"
+  },
+  {
+        "type": "checkbox",
+        "id": "show_locale_selector",
+        "label": "t:sections.header.settings.show_locale_selector.label"
+  },
+  {
+    "type": "checkbox",
+    "id": "show_country_selector",
+    "label": "t:sections.header.settings.show_country_selector.label"
+  },
+  {
+    "type": "text",
+    "id": "country_selector_title",
+    "label": "t:sections.header.settings.country_selector.label"
+  },
+	{
+   "type": "link_list",
+      "id": "top_navigation_linklist",
+      "label": "t:sections.header.settings.top_navigation_linklist.label"
+   },
+	{
+   "type": "link_list",
+      "id": "categories_linklist",
+      "label": "t:sections.header.settings.categories_linklist.label"
+   },
+	{
+		"type":"header",
+		"content" :"t:sections.header.settings.header__1.content"
+	},
+	{
+   "type": "checkbox",
+      "id": "show_search_filter",
+      "label": "t:sections.header.settings.show_search_filter.label",
+	"default": true
+   },
+{
+   "type": "checkbox",
+      "id": "enable_live_search",
+      "label": "t:sections.header.settings.enable_live_search.label",
+	"default": true
+   },
+	{
+   "type": "link_list",
+      "id": "search_popular_searches",
+      "label": "t:sections.header.settings.search_popular_searches.label",
+	  "info": "t:sections.header.settings.search_popular_searches.info"
+   },
+	{
+   "type": "collection",
+      "id": "search_popular_products",
+      "label": "t:sections.header.settings.search_popular_products.label",
+	  "info": "t:sections.header.settings.search_popular_products.info"
+   },
+   {
+    "type": "header",
+    "content": "User icon pop up"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_desktop",
+      "label": "Show popup in desktop"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_mobile",
+      "label": "Show popup in mobile"
+    },
+    {
+      "type": "range",
+      "id": "show_initially_after",
+      "label": "Show popup initially",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "sec",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "close_after",
+      "label": "Close popup after",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "sec",
+      "default": 10
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "btn_url",
+      "label": "Button link"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "mega_menu_product_cards",
+      "name": "Mega menu - Product cards",
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_item",
+          "label": "Navigation item"
+        },
+        {
+          "type": "text",
+          "id": "view_all_btn_text",
+          "label": "View all button text"
+        },
+        {
+          "type": "text",
+          "id": "menu_item_label",
+          "label": "Navigation item label"
+        },
+        {
+          "type": "color",
+          "id": "menu_item_label_bg",
+          "label": "Navigation item label BG color"
+        },
+        {
+          "type": "range",
+          "id": "products_limit",
+          "label": "Products limit for first row",
+          "min": 2,
+          "max": 6,
+          "default": 6,
+          "step": 1
+        },
+        {
+          "type": "range",
+          "id": "products_limit_2",
+          "label": "Products limit for second row",
+          "min": 2,
+          "max": 6,
+          "default": 6,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "type": "mega_menu_image_links",
+      "name": "Mega menu - Images",
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_item",
+          "label": "Navigation item"
+        },
+        {
+          "type": "text",
+          "id": "menu_item_label",
+          "label": "Navigation item label"
+        },
+        {
+          "type": "color",
+          "id": "menu_item_label_bg",
+          "label": "Navigation item label BG color"
+        },
+        {
+          "type": "select",
+          "id": "images_level",
+          "label": "Image levels",
+          "options": [
+            { "label": "1", "value": "1" },
+            { "label": "2", "value": "2" }
+          ],
+          "default": "1"
+        },
+        {
+          "type": "header",
+          "content": "Blocks"
+        },
+        {
+          "type": "header",
+          "content": "#1"
+        },
+        {
+          "type": "text",
+          "id": "block_1_title",
+          "label": "Block 1 title"
+        },
+        {
+          "type": "header",
+          "content": "Image #1"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_1_image_1",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "block_1_image_1_content",
+          "label": "Image content"
+        },
+        {
+          "type": "url",
+          "id": "block_1_image_1_link",
+          "label": "Image link"
+        },
+        {
+          "type": "color",
+          "id": "block_1_image_1_color",
+          "label": "Text color"
+        },
+        {
+          "type": "header",
+          "content": "Image #2"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_1_image_2",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "block_1_image_2_content",
+          "label": "Image content"
+        },
+        {
+          "type": "url",
+          "id": "block_1_image_2_link",
+          "label": "Image link"
+        },
+        {
+          "type": "color",
+          "id": "block_1_image_2_color",
+          "label": "Text color"
+        },
+        {
+          "type": "header",
+          "content": "Image #3"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_1_image_3",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "block_1_image_3_content",
+          "label": "Image content"
+        },
+        {
+          "type": "url",
+          "id": "block_1_image_3_link",
+          "label": "Image link"
+        },
+        {
+          "type": "color",
+          "id": "block_1_image_3_color",
+          "label": "Text color"
+        },
+        {
+          "type": "header",
+          "content": "Image #4"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_1_image_4",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "block_1_image_4_content",
+          "label": "Image content"
+        },
+        {
+          "type": "url",
+          "id": "block_1_image_4_link",
+          "label": "Image link"
+        },
+        {
+          "type": "color",
+          "id": "block_1_image_4_color",
+          "label": "Text color"
+        },
+        {
+          "type": "header",
+          "content": "Image #5"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_1_image_5",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "block_1_image_5_content",
+          "label": "Image content"
+        },
+        {
+          "type": "url",
+          "id": "block_1_image_5_link",
+          "label": "Image link"
+        },
+        {
+          "type": "color",
+          "id": "block_1_image_5_color",
+          "label": "Text color"
+        },
+        {
+          "type": "header",
+          "content": "Image #6"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_1_image_6",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "block_1_image_6_content",
+          "label": "Image content"
+        },
+        {
+          "type": "url",
+          "id": "block_1_image_6_link",
+          "label": "Image link"
+        },
+        {
+          "type": "color",
+          "id": "block_1_image_6_color",
+          "label": "Text color"
+        },
+        {
+          "type": "header",
+          "content": "#2"
+        },
+        {
+          "type": "text",
+          "id": "block_2_title",
+          "label": "Block 2 title"
+        },
+        {
+          "type": "header",
+          "content": "Image #1"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_2_image_1",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "block_2_image_1_content",
+          "label": "Image content"
+        },
+        {
+          "type": "url",
+          "id": "block_2_image_1_link",
+          "label": "Image link"
+        },
+        {
+          "type": "color",
+          "id": "block_2_image_1_color",
+          "label": "Text color"
+        },
+        {
+          "type": "header",
+          "content": "Image #2"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_2_image_2",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "block_2_image_2_content",
+          "label": "Image content"
+        },
+        {
+          "type": "url",
+          "id": "block_2_image_2_link",
+          "label": "Image link"
+        },
+        {
+          "type": "color",
+          "id": "block_2_image_2_color",
+          "label": "Text color"
+        },
+        {
+          "type": "header",
+          "content": "Image #3"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_2_image_3",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "block_2_image_3_content",
+          "label": "Image content"
+        },
+        {
+          "type": "url",
+          "id": "block_2_image_3_link",
+          "label": "Image link"
+        },
+        {
+          "type": "color",
+          "id": "block_2_image_3_color",
+          "label": "Text color"
+        },
+        {
+          "type": "header",
+          "content": "Image #4"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_2_image_4",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "block_2_image_4_content",
+          "label": "Image content"
+        },
+        {
+          "type": "url",
+          "id": "block_2_image_4_link",
+          "label": "Image link"
+        },
+        {
+          "type": "color",
+          "id": "block_2_image_4_color",
+          "label": "Text color"
+        },
+        {
+          "type": "header",
+          "content": "Image #5"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_2_image_5",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "block_2_image_5_content",
+          "label": "Image content"
+        },
+        {
+          "type": "url",
+          "id": "block_2_image_5_link",
+          "label": "Image link"
+        },
+        {
+          "type": "color",
+          "id": "block_2_image_5_color",
+          "label": "Text color"
+        },
+        {
+          "type": "header",
+          "content": "Image #6"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_2_image_6",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "block_2_image_6_content",
+          "label": "Image content"
+        },
+        {
+          "type": "url",
+          "id": "block_2_image_6_link",
+          "label": "Image link"
+        },
+        {
+          "type": "color",
+          "id": "block_2_image_6_color",
+          "label": "Text color"
+        },
+        {
+          "type": "header",
+          "content": "#3"
+        },
+        {
+          "type": "text",
+          "id": "block_3_title",
+          "label": "Block 3 title"
+        },
+        {
+          "type": "header",
+          "content": "Image #1"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_3_image_1",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "block_3_image_1_content",
+          "label": "Image content"
+        },
+        {
+          "type": "url",
+          "id": "block_3_image_1_link",
+          "label": "Image link"
+        },
+        {
+          "type": "color",
+          "id": "block_3_image_1_color",
+          "label": "Text color"
+        },
+        {
+          "type": "header",
+          "content": "Image #2"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_3_image_2",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "block_3_image_2_content",
+          "label": "Image content"
+        },
+        {
+          "type": "url",
+          "id": "block_3_image_2_link",
+          "label": "Image link"
+        },
+        {
+          "type": "color",
+          "id": "block_3_image_2_color",
+          "label": "Text color"
+        },
+        {
+          "type": "header",
+          "content": "Image #3"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_3_image_3",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "block_3_image_3_content",
+          "label": "Image content"
+        },
+        {
+          "type": "url",
+          "id": "block_3_image_3_link",
+          "label": "Image link"
+        },
+        {
+          "type": "color",
+          "id": "block_3_image_3_color",
+          "label": "Text color"
+        },
+        {
+          "type": "header",
+          "content": "Image #4"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_3_image_4",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "block_3_image_4_content",
+          "label": "Image content"
+        },
+        {
+          "type": "url",
+          "id": "block_3_image_4_link",
+          "label": "Image link"
+        },
+        {
+          "type": "color",
+          "id": "block_3_image_4_color",
+          "label": "Text color"
+        },
+        {
+          "type": "header",
+          "content": "Image #5"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_3_image_5",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "block_3_image_5_content",
+          "label": "Image content"
+        },
+        {
+          "type": "url",
+          "id": "block_3_image_5_link",
+          "label": "Image link"
+        },
+        {
+          "type": "color",
+          "id": "block_3_image_5_color",
+          "label": "Text color"
+        },
+        {
+          "type": "header",
+          "content": "Image #6"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_3_image_6",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "block_3_image_6_content",
+          "label": "Image content"
+        },
+        {
+          "type": "url",
+          "id": "block_3_image_6_link",
+          "label": "Image link"
+        },
+        {
+          "type": "color",
+          "id": "block_3_image_6_color",
+          "label": "Text color"
+        },
+        {
+          "type": "header",
+          "content": "#4"
+        },
+        {
+          "type": "text",
+          "id": "block_4_title",
+          "label": "Block 4 title"
+        },
+        {
+          "type": "header",
+          "content": "Image #1"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_4_image_1",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "block_4_image_1_content",
+          "label": "Image content"
+        },
+        {
+          "type": "url",
+          "id": "block_4_image_1_link",
+          "label": "Image link"
+        },
+        {
+          "type": "color",
+          "id": "block_4_image_1_color",
+          "label": "Text color"
+        },
+        {
+          "type": "header",
+          "content": "Image #2"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_4_image_2",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "block_4_image_2_content",
+          "label": "Image content"
+        },
+        {
+          "type": "url",
+          "id": "block_4_image_2_link",
+          "label": "Image link"
+        },
+        {
+          "type": "color",
+          "id": "block_4_image_2_color",
+          "label": "Text color"
+        },
+        {
+          "type": "header",
+          "content": "Image #3"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_4_image_3",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "block_4_image_3_content",
+          "label": "Image content"
+        },
+        {
+          "type": "url",
+          "id": "block_4_image_3_link",
+          "label": "Image link"
+        },
+        {
+          "type": "color",
+          "id": "block_4_image_3_color",
+          "label": "Text color"
+        },
+        {
+          "type": "header",
+          "content": "Image #4"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_4_image_4",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "block_4_image_4_content",
+          "label": "Image content"
+        },
+        {
+          "type": "url",
+          "id": "block_4_image_4_link",
+          "label": "Image link"
+        },
+        {
+          "type": "color",
+          "id": "block_4_image_4_color",
+          "label": "Text color"
+        },
+        {
+          "type": "header",
+          "content": "Image #5"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_4_image_5",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "block_4_image_5_content",
+          "label": "Image content"
+        },
+        {
+          "type": "url",
+          "id": "block_4_image_5_link",
+          "label": "Image link"
+        },
+        {
+          "type": "color",
+          "id": "block_4_image_5_color",
+          "label": "Text color"
+        },
+        {
+          "type": "header",
+          "content": "Image #6"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_4_image_6",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "block_4_image_6_content",
+          "label": "Image content"
+        },
+        {
+          "type": "url",
+          "id": "block_4_image_6_link",
+          "label": "Image link"
+        },
+        {
+          "type": "color",
+          "id": "block_4_image_6_color",
+          "label": "Text color"
+        },
+        {
+          "type": "header",
+          "content": "#5"
+        },
+        {
+          "type": "text",
+          "id": "block_5_title",
+          "label": "Block 5 title"
+        },
+        {
+          "type": "header",
+          "content": "Image #1"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_5_image_1",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "block_5_image_1_content",
+          "label": "Image content"
+        },
+        {
+          "type": "url",
+          "id": "block_5_image_1_link",
+          "label": "Image link"
+        },
+        {
+          "type": "color",
+          "id": "block_5_image_1_color",
+          "label": "Text color"
+        },
+        {
+          "type": "header",
+          "content": "Image #2"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_5_image_2",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "block_5_image_2_content",
+          "label": "Image content"
+        },
+        {
+          "type": "url",
+          "id": "block_5_image_2_link",
+          "label": "Image link"
+        },
+        {
+          "type": "color",
+          "id": "block_5_image_2_color",
+          "label": "Text color"
+        },
+        {
+          "type": "header",
+          "content": "Image #3"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_5_image_3",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "block_5_image_3_content",
+          "label": "Image content"
+        },
+        {
+          "type": "url",
+          "id": "block_5_image_3_link",
+          "label": "Image link"
+        },
+        {
+          "type": "color",
+          "id": "block_5_image_3_color",
+          "label": "Text color"
+        },
+        {
+          "type": "header",
+          "content": "Image #4"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_5_image_4",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "block_5_image_4_content",
+          "label": "Image content"
+        },
+        {
+          "type": "url",
+          "id": "block_5_image_4_link",
+          "label": "Image link"
+        },
+        {
+          "type": "color",
+          "id": "block_5_image_4_color",
+          "label": "Text color"
+        },
+        {
+          "type": "header",
+          "content": "Image #5"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_5_image_5",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "block_5_image_5_content",
+          "label": "Image content"
+        },
+        {
+          "type": "url",
+          "id": "block_5_image_5_link",
+          "label": "Image link"
+        },
+        {
+          "type": "color",
+          "id": "block_5_image_5_color",
+          "label": "Text color"
+        },
+        {
+          "type": "header",
+          "content": "Image #6"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_5_image_6",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "block_5_image_6_content",
+          "label": "Image content"
+        },
+        {
+          "type": "url",
+          "id": "block_5_image_6_link",
+          "label": "Image link"
+        },
+        {
+          "type": "color",
+          "id": "block_5_image_6_color",
+          "label": "Text color"
+        }
+      ]
+    },
+    {
+      "type": "custom_mega_menu_alter",
+      "name": "Custom mega menu - Alter",
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_item",
+          "label": "Navigation item"
+        },
+        {
+          "type": "text",
+          "id": "menu_item_label",
+          "label": "Navigation item label"
+        },
+        {
+          "type": "color",
+          "id": "menu_item_label_bg",
+          "label": "Navigation item label BG color"
+        },
+        {
+          "type": "header",
+          "content": "Mega menu blocks"
+        },
+        {
+          "type": "header",
+          "content": "#1"
+        },
+        {
+          "type": "text",
+          "id": "block_1_title",
+          "label": "Block title"
+        },
+        {
+          "type": "select",
+          "id": "tab_1_block_1_text_align",
+          "label": "Text alignment",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" }
+          ],
+          "default": "center"
+        },
+        {
+          "type": "text",
+          "id": "tab_1_block_1_row_1_title",
+          "label": "First row title"
+        },
+        {
+          "type": "text",
+          "id": "tab_1_block_1_row_1_btn_title",
+          "label": "First row button title"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_1_row_1_btn_url",
+          "label": "First row button url"
+        },
+        {
+          "type": "select",
+          "id": "tab_1_block_1_row_1_products",
+          "label": "Menu items type",
+          "options": [
+            { "label": "Collection products", "value": "collection" },
+            { "label": "Manual items", "value": "manual" }
+          ]
+        },
+        {
+          "type": "collection",
+          "id": "tab_1_block_1_row_1_coll",
+          "label": "Collection"
+        },
+        {
+          "type": "range",
+          "id": "tab_1_block_1_row_1_product_limit",
+          "label": "Products limit",
+          "min": 2,
+          "max": 5,
+          "step": 1,
+          "default": 4
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_1_row_1_item_1",
+          "label": "Menu item #1 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_1_row_1_item_1_text",
+          "label": "Menu item #1 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_1_row_1_item_1_url",
+          "label": "Menu item #1 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_1_row_1_item_2",
+          "label": "Menu item #2 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_1_row_1_item_2_text",
+          "label": "Menu item #2 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_1_row_1_item_2_url",
+          "label": "Menu item #2 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_1_row_1_item_3",
+          "label": "Menu item #3 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_1_row_1_item_3_text",
+          "label": "Menu item #3 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_1_row_1_item_3_url",
+          "label": "Menu item #3 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_1_row_1_item_4",
+          "label": "Menu item #4 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_1_row_1_item_4_text",
+          "label": "Menu item #4 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_1_row_1_item_4_url",
+          "label": "Menu item #4 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_1_row_1_item_5",
+          "label": "Menu item #5 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_1_row_1_item_5_text",
+          "label": "Menu item #5 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_1_row_1_item_5_url",
+          "label": "Menu item #5 URL"
+        },
+        {
+          "type": "range",
+          "id": "tab_1_block_1_row_1_block_limit",
+          "label": "Blocks size",
+          "min": 2,
+          "max": 5,
+          "step": 1,
+          "default": 4
+        },
+        {
+          "type": "text",
+          "id": "tab_1_block_1_row_2_title",
+          "label": "Second row title"
+        },
+        {
+          "type": "text",
+          "id": "tab_1_block_1_row_2_btn_title",
+          "label": "Second row button title"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_1_row_2_btn_url",
+          "label": "Second row button url"
+        },
+        {
+          "type": "select",
+          "id": "tab_1_block_1_row_2_products",
+          "label": "Menu items type",
+          "options": [
+            { "label": "Collection products", "value": "collection" },
+            { "label": "Manual items", "value": "manual" }
+          ]
+        },
+        {
+          "type": "collection",
+          "id": "tab_1_block_1_row_2_coll",
+          "label": "Collection"
+        },
+        {
+          "type": "range",
+          "id": "tab_1_block_1_row_2_product_limit",
+          "label": "Products limit",
+          "min": 2,
+          "max": 5,
+          "step": 1,
+          "default": 4
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_1_row_2_item_1",
+          "label": "Menu item #1 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_1_row_2_item_1_text",
+          "label": "Menu item #1 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_1_row_2_item_1_url",
+          "label": "Menu item #1 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_1_row_2_item_2",
+          "label": "Menu item #2 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_1_row_2_item_2_text",
+          "label": "Menu item #2 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_1_row_2_item_2_url",
+          "label": "Menu item #2 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_1_row_2_item_3",
+          "label": "Menu item #3 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_1_row_2_item_3_text",
+          "label": "Menu item #3 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_1_row_2_item_3_url",
+          "label": "Menu item #3 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_1_row_2_item_4",
+          "label": "Menu item #4 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_1_row_2_item_4_text",
+          "label": "Menu item #4 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_1_row_2_item_4_url",
+          "label": "Menu item #4 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_1_row_2_item_5",
+          "label": "Menu item #5 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_1_row_2_item_5_text",
+          "label": "Menu item #5 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_1_row_2_item_5_url",
+          "label": "Menu item #5 URL"
+        },
+        {
+          "type": "range",
+          "id": "tab_1_block_1_row_2_block_limit",
+          "label": "Blocks size",
+          "min": 2,
+          "max": 5,
+          "step": 1,
+          "default": 4
+        },
+        {
+          "type": "header",
+          "content": "#2"
+        },
+        {
+          "type": "text",
+          "id": "block_2_title",
+          "label": "Block title"
+        },
+        {
+          "type": "select",
+          "id": "tab_1_block_2_text_align",
+          "label": "Text alignment",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" }
+          ],
+          "default": "center"
+        },
+        {
+          "type": "text",
+          "id": "tab_1_block_2_row_1_title",
+          "label": "First row title"
+        },
+        {
+          "type": "text",
+          "id": "tab_1_block_2_row_1_btn_title",
+          "label": "First row button title"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_2_row_1_btn_url",
+          "label": "First row button url"
+        },
+        {
+          "type": "select",
+          "id": "tab_1_block_2_row_1_products",
+          "label": "Menu items type",
+          "options": [
+            { "label": "Collection products", "value": "collection" },
+            { "label": "Manual items", "value": "manual" }
+          ]
+        },
+        {
+          "type": "collection",
+          "id": "tab_1_block_2_row_1_coll",
+          "label": "Collection"
+        },
+        {
+          "type": "range",
+          "id": "tab_1_block_2_row_1_product_limit",
+          "label": "Products limit",
+          "min": 2,
+          "max": 5,
+          "step": 1,
+          "default": 4
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_2_row_1_item_1",
+          "label": "Menu item #1 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_2_row_1_item_1_text",
+          "label": "Menu item #1 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_2_row_1_item_1_url",
+          "label": "Menu item #1 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_2_row_1_item_2",
+          "label": "Menu item #2 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_2_row_1_item_2_text",
+          "label": "Menu item #2 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_2_row_1_item_2_url",
+          "label": "Menu item #2 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_2_row_1_item_3",
+          "label": "Menu item #3 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_2_row_1_item_3_text",
+          "label": "Menu item #3 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_2_row_1_item_3_url",
+          "label": "Menu item #3 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_2_row_1_item_4",
+          "label": "Menu item #4 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_2_row_1_item_4_text",
+          "label": "Menu item #4 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_2_row_1_item_4_url",
+          "label": "Menu item #4 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_2_row_1_item_5",
+          "label": "Menu item #5 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_2_row_1_item_5_text",
+          "label": "Menu item #5 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_2_row_1_item_5_url",
+          "label": "Menu item #5 URL"
+        },
+        {
+          "type": "range",
+          "id": "tab_1_block_2_row_1_block_limit",
+          "label": "Blocks size",
+          "min": 2,
+          "max": 5,
+          "step": 1,
+          "default": 4
+        },
+        {
+          "type": "text",
+          "id": "tab_1_block_2_row_2_title",
+          "label": "Second row title"
+        },
+        {
+          "type": "text",
+          "id": "tab_1_block_2_row_2_btn_title",
+          "label": "Second row button title"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_2_row_2_btn_url",
+          "label": "Second row button url"
+        },
+        {
+          "type": "select",
+          "id": "tab_1_block_2_row_2_products",
+          "label": "Menu items type",
+          "options": [
+            { "label": "Collection products", "value": "collection" },
+            { "label": "Manual items", "value": "manual" }
+          ]
+        },
+        {
+          "type": "collection",
+          "id": "tab_1_block_2_row_2_coll",
+          "label": "Collection"
+        },
+        {
+          "type": "range",
+          "id": "tab_1_block_2_row_2_product_limit",
+          "label": "Products limit",
+          "min": 2,
+          "max": 5,
+          "step": 1,
+          "default": 4
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_2_row_2_item_1",
+          "label": "Menu item #1 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_2_row_2_item_1_text",
+          "label": "Menu item #1 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_2_row_2_item_1_url",
+          "label": "Menu item #1 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_2_row_2_item_2",
+          "label": "Menu item #2 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_2_row_2_item_2_text",
+          "label": "Menu item #2 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_2_row_2_item_2_url",
+          "label": "Menu item #2 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_2_row_2_item_3",
+          "label": "Menu item #3 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_2_row_2_item_3_text",
+          "label": "Menu item #3 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_2_row_2_item_3_url",
+          "label": "Menu item #3 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_2_row_2_item_4",
+          "label": "Menu item #4 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_2_row_2_item_4_text",
+          "label": "Menu item #4 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_2_row_2_item_4_url",
+          "label": "Menu item #4 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_2_row_2_item_5",
+          "label": "Menu item #5 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_2_row_2_item_5_text",
+          "label": "Menu item #5 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_2_row_2_item_5_url",
+          "label": "Menu item #5 URL"
+        },
+        {
+          "type": "range",
+          "id": "tab_1_block_2_row_2_block_limit",
+          "label": "Blocks size",
+          "min": 2,
+          "max": 5,
+          "step": 1,
+          "default": 4
+        },
+        {
+          "type": "header",
+          "content": "#3"
+        },
+        {
+          "type": "text",
+          "id": "block_3_title",
+          "label": "Block title"
+        },
+        {
+          "type": "select",
+          "id": "tab_1_block_3_text_align",
+          "label": "Text alignment",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" }
+          ],
+          "default": "center"
+        },
+        {
+          "type": "text",
+          "id": "tab_1_block_3_row_1_title",
+          "label": "First row title"
+        },
+        {
+          "type": "text",
+          "id": "tab_1_block_3_row_1_btn_title",
+          "label": "First row button title"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_3_row_1_btn_url",
+          "label": "First row button url"
+        },
+        {
+          "type": "select",
+          "id": "tab_1_block_3_row_1_products",
+          "label": "Menu items type",
+          "options": [
+            { "label": "Collection products", "value": "collection" },
+            { "label": "Manual items", "value": "manual" }
+          ]
+        },
+        {
+          "type": "collection",
+          "id": "tab_1_block_3_row_1_coll",
+          "label": "Collection"
+        },
+        {
+          "type": "range",
+          "id": "tab_1_block_3_row_1_product_limit",
+          "label": "Products limit",
+          "min": 2,
+          "max": 5,
+          "step": 1,
+          "default": 4
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_3_row_1_item_1",
+          "label": "Menu item #1 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_3_row_1_item_1_text",
+          "label": "Menu item #1 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_3_row_1_item_1_url",
+          "label": "Menu item #1 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_3_row_1_item_2",
+          "label": "Menu item #2 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_3_row_1_item_2_text",
+          "label": "Menu item #2 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_3_row_1_item_2_url",
+          "label": "Menu item #2 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_3_row_1_item_3",
+          "label": "Menu item #3 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_3_row_1_item_3_text",
+          "label": "Menu item #3 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_3_row_1_item_3_url",
+          "label": "Menu item #3 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_3_row_1_item_4",
+          "label": "Menu item #4 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_3_row_1_item_4_text",
+          "label": "Menu item #4 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_3_row_1_item_4_url",
+          "label": "Menu item #4 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_3_row_1_item_5",
+          "label": "Menu item #5 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_3_row_1_item_5_text",
+          "label": "Menu item #5 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_3_row_1_item_5_url",
+          "label": "Menu item #5 URL"
+        },
+        {
+          "type": "range",
+          "id": "tab_1_block_3_row_1_block_limit",
+          "label": "Blocks size",
+          "min": 2,
+          "max": 5,
+          "step": 1,
+          "default": 4
+        },
+        {
+          "type": "text",
+          "id": "tab_1_block_3_row_2_title",
+          "label": "Second row title"
+        },
+        {
+          "type": "text",
+          "id": "tab_1_block_3_row_2_btn_title",
+          "label": "Second row button title"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_3_row_2_btn_url",
+          "label": "Second row button url"
+        },
+        {
+          "type": "select",
+          "id": "tab_1_block_3_row_2_products",
+          "label": "Menu items type",
+          "options": [
+            { "label": "Collection products", "value": "collection" },
+            { "label": "Manual items", "value": "manual" }
+          ]
+        },
+        {
+          "type": "collection",
+          "id": "tab_1_block_3_row_2_coll",
+          "label": "Collection"
+        },
+        {
+          "type": "range",
+          "id": "tab_1_block_3_row_2_product_limit",
+          "label": "Products limit",
+          "min": 2,
+          "max": 5,
+          "step": 1,
+          "default": 4
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_3_row_2_item_1",
+          "label": "Menu item #1 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_3_row_2_item_1_text",
+          "label": "Menu item #1 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_3_row_2_item_1_url",
+          "label": "Menu item #1 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_3_row_2_item_2",
+          "label": "Menu item #2 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_3_row_2_item_2_text",
+          "label": "Menu item #2 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_3_row_2_item_2_url",
+          "label": "Menu item #2 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_3_row_2_item_3",
+          "label": "Menu item #3 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_3_row_2_item_3_text",
+          "label": "Menu item #3 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_3_row_2_item_3_url",
+          "label": "Menu item #3 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_3_row_2_item_4",
+          "label": "Menu item #4 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_3_row_2_item_4_text",
+          "label": "Menu item #4 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_3_row_2_item_4_url",
+          "label": "Menu item #4 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_3_row_2_item_5",
+          "label": "Menu item #5 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_3_row_2_item_5_text",
+          "label": "Menu item #5 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_3_row_2_item_5_url",
+          "label": "Menu item #5 URL"
+        },
+        {
+          "type": "range",
+          "id": "tab_1_block_3_row_2_block_limit",
+          "label": "Blocks size",
+          "min": 2,
+          "max": 5,
+          "step": 1,
+          "default": 4
+        },
+        {
+          "type": "header",
+          "content": "#4"
+        },
+        {
+          "type": "text",
+          "id": "block_4_title",
+          "label": "Block title"
+        },
+        {
+          "type": "select",
+          "id": "tab_1_block_4_text_align",
+          "label": "Text alignment",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" }
+          ],
+          "default": "center"
+        },
+        {
+          "type": "text",
+          "id": "tab_1_block_4_row_1_title",
+          "label": "First row title"
+        },
+        {
+          "type": "text",
+          "id": "tab_1_block_4_row_1_btn_title",
+          "label": "First row button title"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_4_row_1_btn_url",
+          "label": "First row button url"
+        },
+        {
+          "type": "select",
+          "id": "tab_1_block_4_row_1_products",
+          "label": "Menu items type",
+          "options": [
+            { "label": "Collection products", "value": "collection" },
+            { "label": "Manual items", "value": "manual" }
+          ]
+        },
+        {
+          "type": "collection",
+          "id": "tab_1_block_4_row_1_coll",
+          "label": "Collection"
+        },
+        {
+          "type": "range",
+          "id": "tab_1_block_4_row_1_product_limit",
+          "label": "Products limit",
+          "min": 2,
+          "max": 5,
+          "step": 1,
+          "default": 4
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_4_row_1_item_1",
+          "label": "Menu item #1 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_4_row_1_item_1_text",
+          "label": "Menu item #1 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_4_row_1_item_1_url",
+          "label": "Menu item #1 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_4_row_1_item_2",
+          "label": "Menu item #2 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_4_row_1_item_2_text",
+          "label": "Menu item #2 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_4_row_1_item_2_url",
+          "label": "Menu item #2 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_4_row_1_item_3",
+          "label": "Menu item #3 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_4_row_1_item_3_text",
+          "label": "Menu item #3 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_4_row_1_item_3_url",
+          "label": "Menu item #3 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_4_row_1_item_4",
+          "label": "Menu item #4 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_4_row_1_item_4_text",
+          "label": "Menu item #4 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_4_row_1_item_4_url",
+          "label": "Menu item #4 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_4_row_1_item_5",
+          "label": "Menu item #5 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_4_row_1_item_5_text",
+          "label": "Menu item #5 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_4_row_1_item_5_url",
+          "label": "Menu item #5 URL"
+        },
+        {
+          "type": "range",
+          "id": "tab_1_block_4_row_1_block_limit",
+          "label": "Blocks size",
+          "min": 2,
+          "max": 5,
+          "step": 1,
+          "default": 4
+        },
+        {
+          "type": "text",
+          "id": "tab_1_block_4_row_2_title",
+          "label": "Second row title"
+        },
+        {
+          "type": "text",
+          "id": "tab_1_block_4_row_2_btn_title",
+          "label": "Second row button title"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_4_row_2_btn_url",
+          "label": "Second row button url"
+        },
+        {
+          "type": "select",
+          "id": "tab_1_block_4_row_2_products",
+          "label": "Menu items type",
+          "options": [
+            { "label": "Collection products", "value": "collection" },
+            { "label": "Manual items", "value": "manual" }
+          ]
+        },
+        {
+          "type": "collection",
+          "id": "tab_1_block_4_row_2_coll",
+          "label": "Collection"
+        },
+        {
+          "type": "range",
+          "id": "tab_1_block_4_row_2_product_limit",
+          "label": "Products limit",
+          "min": 2,
+          "max": 5,
+          "step": 1,
+          "default": 4
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_4_row_2_item_1",
+          "label": "Menu item #1 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_4_row_2_item_1_text",
+          "label": "Menu item #1 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_4_row_2_item_1_url",
+          "label": "Menu item #1 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_4_row_2_item_2",
+          "label": "Menu item #2 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_4_row_2_item_2_text",
+          "label": "Menu item #2 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_4_row_2_item_2_url",
+          "label": "Menu item #2 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_4_row_2_item_3",
+          "label": "Menu item #3 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_4_row_2_item_3_text",
+          "label": "Menu item #3 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_4_row_2_item_3_url",
+          "label": "Menu item #3 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_4_row_2_item_4",
+          "label": "Menu item #4 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_4_row_2_item_4_text",
+          "label": "Menu item #4 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_4_row_2_item_4_url",
+          "label": "Menu item #4 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_4_row_2_item_5",
+          "label": "Menu item #5 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_4_row_2_item_5_text",
+          "label": "Menu item #5 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_4_row_2_item_5_url",
+          "label": "Menu item #5 URL"
+        },
+        {
+          "type": "range",
+          "id": "tab_1_block_4_row_2_block_limit",
+          "label": "Blocks size",
+          "min": 2,
+          "max": 5,
+          "step": 1,
+          "default": 4
+        },
+        {
+          "type": "header",
+          "content": "#5"
+        },
+        {
+          "type": "text",
+          "id": "block_5_title",
+          "label": "Block title"
+        },
+        {
+          "type": "select",
+          "id": "tab_1_block_5_text_align",
+          "label": "Text alignment",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" }
+          ],
+          "default": "center"
+        },
+        {
+          "type": "text",
+          "id": "tab_1_block_5_row_1_title",
+          "label": "First row title"
+        },
+        {
+          "type": "text",
+          "id": "tab_1_block_5_row_1_btn_title",
+          "label": "First row button title"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_5_row_1_btn_url",
+          "label": "First row button url"
+        },
+        {
+          "type": "select",
+          "id": "tab_1_block_5_row_1_products",
+          "label": "Menu items type",
+          "options": [
+            { "label": "Collection products", "value": "collection" },
+            { "label": "Manual items", "value": "manual" }
+          ]
+        },
+        {
+          "type": "collection",
+          "id": "tab_1_block_5_row_1_coll",
+          "label": "Collection"
+        },
+        {
+          "type": "range",
+          "id": "tab_1_block_5_row_1_product_limit",
+          "label": "Products limit",
+          "min": 2,
+          "max": 5,
+          "step": 1,
+          "default": 4
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_5_row_1_item_1",
+          "label": "Menu item #1 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_5_row_1_item_1_text",
+          "label": "Menu item #1 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_5_row_1_item_1_url",
+          "label": "Menu item #1 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_5_row_1_item_2",
+          "label": "Menu item #2 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_5_row_1_item_2_text",
+          "label": "Menu item #2 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_5_row_1_item_2_url",
+          "label": "Menu item #2 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_5_row_1_item_3",
+          "label": "Menu item #3 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_5_row_1_item_3_text",
+          "label": "Menu item #3 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_5_row_1_item_3_url",
+          "label": "Menu item #3 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_5_row_1_item_4",
+          "label": "Menu item #4 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_5_row_1_item_4_text",
+          "label": "Menu item #4 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_5_row_1_item_4_url",
+          "label": "Menu item #4 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_5_row_1_item_5",
+          "label": "Menu item #5 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_5_row_1_item_5_text",
+          "label": "Menu item #5 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_5_row_1_item_5_url",
+          "label": "Menu item #5 URL"
+        },
+        {
+          "type": "range",
+          "id": "tab_1_block_5_row_1_block_limit",
+          "label": "Blocks size",
+          "min": 2,
+          "max": 5,
+          "step": 1,
+          "default": 4
+        },
+        {
+          "type": "text",
+          "id": "tab_1_block_5_row_2_title",
+          "label": "Second row title"
+        },
+        {
+          "type": "text",
+          "id": "tab_1_block_5_row_2_btn_title",
+          "label": "Second row button title"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_5_row_2_btn_url",
+          "label": "Second row button url"
+        },
+        {
+          "type": "select",
+          "id": "tab_1_block_5_row_2_products",
+          "label": "Menu items type",
+          "options": [
+            { "label": "Collection products", "value": "collection" },
+            { "label": "Manual items", "value": "manual" }
+          ]
+        },
+        {
+          "type": "collection",
+          "id": "tab_1_block_5_row_2_coll",
+          "label": "Collection"
+        },
+        {
+          "type": "range",
+          "id": "tab_1_block_5_row_2_product_limit",
+          "label": "Products limit",
+          "min": 2,
+          "max": 5,
+          "step": 1,
+          "default": 4
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_5_row_2_item_1",
+          "label": "Menu item #1 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_5_row_2_item_1_text",
+          "label": "Menu item #1 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_5_row_2_item_1_url",
+          "label": "Menu item #1 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_5_row_2_item_2",
+          "label": "Menu item #2 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_5_row_2_item_2_text",
+          "label": "Menu item #2 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_5_row_2_item_2_url",
+          "label": "Menu item #2 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_5_row_2_item_3",
+          "label": "Menu item #3 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_5_row_2_item_3_text",
+          "label": "Menu item #3 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_5_row_2_item_3_url",
+          "label": "Menu item #3 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_5_row_2_item_4",
+          "label": "Menu item #4 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_5_row_2_item_4_text",
+          "label": "Menu item #4 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_5_row_2_item_4_url",
+          "label": "Menu item #4 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_5_row_2_item_5",
+          "label": "Menu item #5 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_5_row_2_item_5_text",
+          "label": "Menu item #5 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_5_row_2_item_5_url",
+          "label": "Menu item #5 URL"
+        },
+        {
+          "type": "range",
+          "id": "tab_1_block_5_row_2_block_limit",
+          "label": "Blocks size",
+          "min": 2,
+          "max": 5,
+          "step": 1,
+          "default": 4
+        }
+      ]
+    },
+    {
+      "type": "custom_mega_menu_child",
+      "name": "Custom mega menu - Child",
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_item",
+          "label": "Navigation item"
+        },
+        {
+          "type": "select",
+          "id": "tab_1_block_1_text_align",
+          "label": "Text alignment",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" }
+          ],
+          "default": "center"
+        },
+        {
+          "type": "text",
+          "id": "tab_1_block_1_row_1_title",
+          "label": "First row title"
+        },
+        {
+          "type": "text",
+          "id": "tab_1_block_1_row_1_btn_title",
+          "label": "First row button title"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_1_row_1_btn_url",
+          "label": "First row button url"
+        },
+        {
+          "type": "select",
+          "id": "tab_1_block_1_row_1_products",
+          "label": "Menu items type",
+          "options": [
+            { "label": "Collection products", "value": "collection" },
+            { "label": "Manual items", "value": "manual" }
+          ]
+        },
+        {
+          "type": "collection",
+          "id": "tab_1_block_1_row_1_coll",
+          "label": "Collection"
+        },
+        {
+          "type": "range",
+          "id": "tab_1_block_1_row_1_product_limit",
+          "label": "Products limit",
+          "min": 2,
+          "max": 5,
+          "step": 1,
+          "default": 4
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_1_row_1_item_1",
+          "label": "Menu item #1 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_1_row_1_item_1_text",
+          "label": "Menu item #1 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_1_row_1_item_1_url",
+          "label": "Menu item #1 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_1_row_1_item_2",
+          "label": "Menu item #2 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_1_row_1_item_2_text",
+          "label": "Menu item #2 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_1_row_1_item_2_url",
+          "label": "Menu item #2 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_1_row_1_item_3",
+          "label": "Menu item #3 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_1_row_1_item_3_text",
+          "label": "Menu item #3 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_1_row_1_item_3_url",
+          "label": "Menu item #3 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_1_row_1_item_4",
+          "label": "Menu item #4 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_1_row_1_item_4_text",
+          "label": "Menu item #4 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_1_row_1_item_4_url",
+          "label": "Menu item #4 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_1_row_1_item_5",
+          "label": "Menu item #5 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_1_row_1_item_5_text",
+          "label": "Menu item #5 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_1_row_1_item_5_url",
+          "label": "Menu item #5 URL"
+        },
+        {
+          "type": "range",
+          "id": "tab_1_block_1_row_1_block_limit",
+          "label": "Blocks size",
+          "min": 2,
+          "max": 5,
+          "step": 1,
+          "default": 4
+        },
+        {
+          "type": "text",
+          "id": "tab_1_block_1_row_2_title",
+          "label": "Second row title"
+        },
+        {
+          "type": "text",
+          "id": "tab_1_block_1_row_2_btn_title",
+          "label": "Second row button title"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_1_row_2_btn_url",
+          "label": "Second row button url"
+        },
+        {
+          "type": "select",
+          "id": "tab_1_block_1_row_2_products",
+          "label": "Menu items type",
+          "options": [
+            { "label": "Collection products", "value": "collection" },
+            { "label": "Manual items", "value": "manual" }
+          ]
+        },
+        {
+          "type": "collection",
+          "id": "tab_1_block_1_row_2_coll",
+          "label": "Collection"
+        },
+        {
+          "type": "range",
+          "id": "tab_1_block_1_row_2_product_limit",
+          "label": "Products limit",
+          "min": 2,
+          "max": 5,
+          "step": 1,
+          "default": 4
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_1_row_2_item_1",
+          "label": "Menu item #1 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_1_row_2_item_1_text",
+          "label": "Menu item #1 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_1_row_2_item_1_url",
+          "label": "Menu item #1 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_1_row_2_item_2",
+          "label": "Menu item #2 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_1_row_2_item_2_text",
+          "label": "Menu item #2 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_1_row_2_item_2_url",
+          "label": "Menu item #2 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_1_row_2_item_3",
+          "label": "Menu item #3 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_1_row_2_item_3_text",
+          "label": "Menu item #3 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_1_row_2_item_3_url",
+          "label": "Menu item #3 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_1_row_2_item_4",
+          "label": "Menu item #4 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_1_row_2_item_4_text",
+          "label": "Menu item #4 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_1_row_2_item_4_url",
+          "label": "Menu item #4 URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_1_block_1_row_2_item_5",
+          "label": "Menu item #5 image"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_1_block_1_row_2_item_5_text",
+          "label": "Menu item #5 text"
+        },
+        {
+          "type": "url",
+          "id": "tab_1_block_1_row_2_item_5_url",
+          "label": "Menu item #5 URL"
+        },
+        {
+          "type": "range",
+          "id": "tab_1_block_1_row_2_block_limit",
+          "label": "Blocks size",
+          "min": 2,
+          "max": 5,
+          "step": 1,
+          "default": 4
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<!-- Sales Script -->
+<!-- Start Tradedoubler Landing Page Tag Insert on all landing pages to handle first party cookie-->
+<script type="text/javascript">
+	(function(i, s, o, g, r, a, m) {
+	 i['TDConversionObject'] = r;
+	 i[r] = i[r] || function() {
+	 (i[r].q = i[r].q || []).push(arguments)
+	 }, i[r].l = 1 * new Date();
+	 a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+	 a.async = 1;
+	 a.src = g;
+	 m.parentNode.insertBefore(a, m)
+	 })(window, document, 'script', 'https://svht.tradedoubler.com/tr_sdk.js?org=2384587', 'tdconv');
+	tdconv('cookie-consent', [COOKIE_CONSENT]);
+
+</script>
+<script src="https://swrap.tradedoubler.com/wrap?id=[CONTAINER_TAG_ID]"></script>
+
+                                

@@ -1,0 +1,111 @@
+{% if section.settings.custom %}
+    <div class="camping-banner-with-text">
+      <div class="content--wrapper">
+        <div class="flex-item banner--wrapper">
+          <img
+            class="image-block desktop-only"
+            srcset="{{ section.settings.image | img_url: 'master' }}"
+            alt="{{ section.settings.image.alt }}"
+            loading="lazy"
+          >
+          <img
+            class="image-block mobile-only"
+            srcset="{{ section.settings.image_mobile | img_url: 'master' }}"
+            alt="{{ section.settings.image_mobile.alt }}"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="flex-item text-content--wrapper">
+          <div class="flex-item--inner title--wrapper desktop-only">
+            <h2>{{ section.settings.title }}</h2>
+          </div>
+          <div class="flex-item--inner subtitle-text--wrapper">
+            <div class="custom-title--wrapper mobile-only">
+              <h2>{{ section.settings.title }}</h2>
+            </div>
+            {% if section.settings.subtitle != blank %}
+              <h2 class="subtitle">{{ section.settings.subtitle }}</h2>
+            {% endif %}
+            {{ section.settings.p }}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <div class="camping-banner-with-text">
+      <div class="content--wrapper">
+        <div class="flex-item--inner title--wrapper mobile-only">
+          <h2>{{ section.settings.title }}</h2>
+        </div>
+        <div class="flex-item banner--wrapper">
+          <img
+            class="image-block desktop-only"
+            srcset="{{ section.settings.image | img_url: 'master' }}"
+            alt="{{ section.settings.image.alt }}"
+            loading="lazy"
+          >
+          <img
+            class="image-block mobile-only"
+            srcset="{{ section.settings.image_mobile | img_url: 'master' }}"
+            alt="{{ section.settings.image_mobile.alt }}"
+            loading="lazy"
+          >
+        </div>
+        <div class="flex-item text-content--wrapper">
+          <div class="flex-item--inner title--wrapper desktop-only">
+            <h2>{{ section.settings.title }}</h2>
+          </div>
+          <div class="flex-item--inner subtitle-text--wrapper">
+            {% if section.settings.subtitle != blank %}
+              <h2 class="subtitle">{{ section.settings.subtitle }}</h2>
+            {% endif %}
+            {{ section.settings.p }}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  {% schema %}
+  {
+    "name": "Camping BWT",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Image"
+      },
+      {
+        "type": "checkbox",
+        "id": "custom",
+        "label": "Custom Section",
+        "default": false,
+        "info": "Check if the section is custom"
+      },
+      {
+        "type": "html",
+        "id": "title",
+        "label": "Title",
+        "default": "The Best Power Station for Your Camping Trip: RIVER 2 Series"
+      },
+      {
+        "type": "html",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default": "RIVER 2 Series Portable Power Stations"
+      },
+      {
+        "type": "textarea",
+        "id": "p",
+        "label": "Paragraph",
+        "default": "<p>RIVER 2 series portable power stations are the next generation of compact recreational power solutions. With faster recharging, longer lifespan, higher battery, and output capacity, smaller build, and never-before-seen low prices, RIVER 2 portable power stations make having enough electricity when you’re camping convenient and affordable. Charge before you go with AC power and go from zero to 100% charge in under an hour — 5x faster than the industry standard! Recharge on the road with a car adapter, Type-C cable, or — best of all — portable solar panels. Why camp without electricity ever again?</p>"
+      }
+    ]
+  }
+  {% endschema %}

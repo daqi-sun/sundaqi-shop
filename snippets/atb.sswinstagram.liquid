@@ -1,0 +1,62 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "Shoppable Instagram",
+  "class": "ssw-instagram-section",
+  "id": "sswinstagram",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "atb_option_galleries_id",
+      "options": [
+        {
+          "value": "0",
+          "label": "No galleries"
+        }
+      ],
+      "label": "Choose gallery",
+      "info": ""
+    }
+  ],
+  "warnings": []
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_option_galleries_id' -%}
+{%- assign atb_option_galleries_id = val -%}
+{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section ssw-instagram-section">
+{% comment %}    
+/**************************************************
+* DO NOT MODIFY THIS FILE!!!                      *
+* IT WILL BE OVERWRITTEN BY UPDATES FROM GROWAVE! *
+**************************************************/
+{% endcomment %}    
+<div class="ssw-instagram-feed-wrap container page-width">
+    <div class="section clearfix">
+      <div class="sixteen columns">
+        <div class="clearfix placeholder-instagram">
+          <div class="ssw-html-widget ssw-instagram-widget" data-module="service"  data-name="instagramPhotos" {{atb_option_galleries_id}}>
+            <div class="ssw-page-loading">
+              <span class="ssw-spin ssw-loader"></span>
+            </div>
+          </div>    
+        </div>
+      </div>
+    </div>
+</div>
+</section>

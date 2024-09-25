@@ -1,0 +1,310 @@
+{{ 'xmas-best-choice.css' | asset_url | stylesheet_tag }}
+{{ 'jquery.min.js' | asset_url | script_tag }}
+
+<div class="best-choice-section">
+  <div class="section-container">
+    <div class="section-heading-wrapper" id="most-popular-products">
+      <h3 class="title-h3 color-white gotham-bold text-center">
+        {{ section.settings.heading }}
+      </h3>
+    </div>
+    <div class="product-section-container">
+      <div class="product-container with-variant delta-max-product">
+        {%- assign product = all_products['delta-max-220w-portable-solar-panel'] -%}
+        {%- assign current_variant = product.variants[4] -%}
+        {%- assign savePrice = current_variant.compare_at_price
+          | minus: current_variant.price
+          | money_without_currency
+          | replace: ',00', ''
+        -%}
+        {%- if current_variant.compare_at_price > current_variant.price -%}
+          <div class="save-container">
+            <img
+              class="discount-icon"
+              src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/discount-icon.png?v=1669190182"
+              alt=""
+            >
+            <p class="discount-price gotham-medium color-white">
+              <span class="minus-sign">-</span>{{ savePrice -}}
+              <span class="currency">€</span>
+            </p>
+          </div>
+        {%- endif -%}
+        <div class="product-info flex-container">
+          <div class="product-image--container section-relative text-center">
+            <a href="{{ shop.url }}{{ product.url }}" target="_blank">
+              <div class="product-name-image--wrapper">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/ecoflow-delta-max_ad3f5a5d-f4f2-4712-a65e-977906916a04.png?v=1669193345"
+                  alt=""
+                >
+              </div>
+              <div class="product-bundle--wrapper">
+                <p class="product-bundle gotham-medium">+ Panel Solar Bifacial de 220W</p>
+              </div>
+              <div class="product-image--wrapper">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0431/3789/2516/files/ecoflow-delta-max-220w.png?v=1669193385"
+                  alt=""
+                >
+              </div>
+            </a>
+          </div>
+          <div class="product-details--container with-variant flex-container flex-column flex-align-center flex-justify-center">
+            <div class="product-specs-container">
+              <p class="product-specs gotham-book text-center">
+                Con una capacidad ampliable de hasta 6 kWh, <br>
+                carga dual, paneles de alta eficiencia y <br>
+                capacidad de alimentar dispositivos de gran potencia,<br>
+                puedes estar siempre alimentado.
+              </p>
+            </div>
+            <div class="product-variant--wrapper">
+              <ul class="variant-list solar-generator">
+                {% comment %}
+                   {%- assign current_variant = product.selected_or_first_available_variant -%}
+                  <li class="gotham-medium variant-generator delta-1600 active">
+                    DELTA Max 1600
+                  </li>
+                {% endcomment %}
+                {%- assign current_variant = product.variants[4] -%}
+                <li class="gotham-medium variant-generator delta-2000 active">DELTA Max 2000</li>
+              </ul>
+              <p class="product-variant-title gotham-book text-center">Elige la cantidad de paneles solares</p>
+              {% comment %}
+                 <ul class="variant-list solar-panel" data-generator="1600">
+                  {%- assign current_variant = product.selected_or_first_available_variant -%}
+                  {%- assign savePrice = current_variant.compare_at_price | minus: current_variant.price | money_without_currency | replace: ',00', '' -%}
+                  <li class="gotham-medium variant custom-variant active" data-price="{{ current_variant.price | money_without_currency | replace: ',00','' }}€" data-discount="{{ current_variant.compare_at_price | money_without_currency | replace: ',00','' }}€" data-variant-id="{{ current_variant.id }}" data-shop-link="{{ shop.url }}{{ product.url }}?variant={{product.variants[0].id}}" data-price-save="{{ savePrice }}" onclick="updateVariant({{ product.variants[0].id }}, {{product.id}}, 0)">
+                    1
+                  </li>
+                  {%- assign current_variant = product.variants[1] -%}
+                  {%- assign savePrice = current_variant.compare_at_price | minus: current_variant.price | money_without_currency | replace: ',00', '' -%}
+                  <li class="gotham-medium variant custom-variant" data-price="{{ current_variant.price | money_without_currency | replace: ',00','' }}€" data-discount="{{ current_variant.compare_at_price | money_without_currency | replace: ',00','' }}€" data-variant-id="{{ current_variant.id }}" data-shop-link="{{ shop.url }}{{ product.url }}?variant={{product.variants[1].id}}" data-price-save="{{ savePrice }}" onclick="updateVariant({{ product.variants[1].id }}, {{product.id}}, 1)">
+                    2
+                  </li>
+                  {%- assign current_variant = product.variants[2] -%}
+                  {%- assign savePrice = current_variant.compare_at_price | minus: current_variant.price | money_without_currency | replace: ',00', '' -%}
+                  <li class="gotham-medium variant custom-variant" data-price="{{ current_variant.price | money_without_currency | replace: ',00','' }}€" data-discount="{{ current_variant.compare_at_price | money_without_currency | replace: ',00','' }}€" data-variant-id="{{ current_variant.id }}" data-shop-link="{{ shop.url }}{{ product.url }}?variant={{product.variants[2].id}}" data-price-save="{{ savePrice }}" onclick="updateVariant({{ product.variants[2].id }}, {{product.id}}, 2)">
+                    3
+                  </li>
+                  {%- assign current_variant = product.variants[3] -%}
+                  {%- assign savePrice = current_variant.compare_at_price | minus: current_variant.price | money_without_currency | replace: ',00', '' -%}
+                  <li class="gotham-medium variant custom-variant" data-price="{{ current_variant.price | money_without_currency | replace: ',00','' }}€" data-discount="{{ current_variant.compare_at_price | money_without_currency | replace: ',00','' }}€" data-variant-id="{{ current_variant.id }}" data-shop-link="{{ shop.url }}{{ product.url }}?variant={{product.variants[3].id}}" data-price-save="{{ savePrice }}" onclick="updateVariant({{ product.variants[3].id }}, {{product.id}}, 3)">
+                    4
+                  </li>
+                </ul>
+              {% endcomment %}
+              <ul class="variant-list solar-panel" data-generator="2000">
+                {%- assign current_variant = product.variants[4] -%}
+                {%- assign savePrice = current_variant.compare_at_price
+                  | minus: current_variant.price
+                  | money_without_currency
+                  | replace: ',00', ''
+                -%}
+                <li
+                  class="gotham-medium variant custom-variant active"
+                  data-price="{{ current_variant.price | money_without_currency | replace: ',00','' }}€"
+                  data-discount="{{ current_variant.compare_at_price | money_without_currency | replace: ',00','' }}€"
+                  data-variant-id="{{ current_variant.id }}"
+                  data-shop-link="{{ shop.url }}{{ product.url }}?variant={{product.variants[4].id}}"
+                  data-price-save="{{ savePrice }}"
+                  onclick="updateVariant({{ product.variants[4].id }}, {{product.id}}, 4)"
+                >
+                  1
+                </li>
+                {%- assign current_variant = product.variants[5] -%}
+                {%- assign savePrice = current_variant.compare_at_price
+                  | minus: current_variant.price
+                  | money_without_currency
+                  | replace: ',00', ''
+                -%}
+                <li
+                  class="gotham-medium variant custom-variant"
+                  data-price="{{ current_variant.price | money_without_currency | replace: ',00','' }}€"
+                  data-discount="{{ current_variant.compare_at_price | money_without_currency | replace: ',00','' }}€"
+                  data-variant-id="{{ current_variant.id }}"
+                  data-shop-link="{{ shop.url }}{{ product.url }}?variant={{product.variants[5].id}}"
+                  data-price-save="{{ savePrice }}"
+                  onclick="updateVariant({{ product.variants[5].id }}, {{product.id}}, 5)"
+                >
+                  2
+                </li>
+                {%- assign current_variant = product.variants[6] -%}
+                {%- assign savePrice = current_variant.compare_at_price
+                  | minus: current_variant.price
+                  | money_without_currency
+                  | replace: ',00', ''
+                -%}
+                <li
+                  class="gotham-medium variant custom-variant"
+                  data-price="{{ current_variant.price | money_without_currency | replace: ',00','' }}€"
+                  data-discount="{{ current_variant.compare_at_price | money_without_currency | replace: ',00','' }}€"
+                  data-variant-id="{{ current_variant.id }}"
+                  data-shop-link="{{ shop.url }}{{ product.url }}?variant={{product.variants[6].id}}"
+                  data-price-save="{{ savePrice }}"
+                  onclick="updateVariant({{ product.variants[6].id }}, {{product.id}}, 6)"
+                >
+                  3
+                </li>
+                {%- assign current_variant = product.variants[7] -%}
+                {%- assign savePrice = current_variant.compare_at_price
+                  | minus: current_variant.price
+                  | money_without_currency
+                  | replace: ',00', ''
+                -%}
+                <li
+                  class="gotham-medium variant custom-variant"
+                  data-price="{{ current_variant.price | money_without_currency | replace: ',00','' }}€"
+                  data-discount="{{ current_variant.compare_at_price | money_without_currency | replace: ',00','' }}€"
+                  data-variant-id="{{ current_variant.id }}"
+                  data-shop-link="{{ shop.url }}{{ product.url }}?variant={{product.variants[7].id}}"
+                  data-price-save="{{ savePrice }}"
+                  onclick="updateVariant({{ product.variants[7].id }}, {{product.id}}, 7)"
+                >
+                  4
+                </li>
+              </ul>
+            </div>
+            <div class="product-price--wrapper">
+              {%- assign current_variant = product.variants[4] -%}
+              <p class="product-discounted-price gotham-bold text-center">
+                {{ current_variant.price | money_without_currency | replace: ',00', '' -}}
+                <span>€ </span>
+                {%- if current_variant.compare_at_price > current_variant.price -%}
+                  <span class="product-price color-gray">
+                    {{- current_variant.compare_at_price | money_without_currency | replace: ',00', '' }}€</span
+                  >
+                {%- endif -%}
+              </p>
+            </div>
+            <div class="button--wrapper flex-container">
+              <a
+                class="product-btn product-shop-btn"
+                href="{{ shop.url }}{{ product.url }}?variant={{product.variants[4].id}}"
+                target="_blank"
+              >
+                <div class="shop-now-btn--wrapper">
+                  <span class="product-btn gotham-bold color-white">Comprar Ahora</span>
+                </div>
+              </a>
+              <!-- Swym Wishlist Plus EPI Button -->
+              <div class="wishlist-btn--wrapper wishlist-disabled">
+                <button
+                  id="custom-{{ product.variants[0].id }}"
+                  data-with-epi="true"
+                  class="is-active-variant-{{product.id}} swym-button swym-add-to-wishlist-view-product product_{{product.id}}"
+                  data-swaction="addToWishlist" disabled
+                  data-product-id="{{product.id | json}}"
+                  data-variant-id="{{product.variants[0].id}}"
+                  data-product-url="{{ shop.url }}{{ product.url }}"
+                >
+                  Añadir a la lista de deseos
+                </button>
+                {% for item in product.variants %}
+                  {% if forloop.index != 0 %}
+                    <button
+                      id="custom-{{item.id}}"
+                      data-with-epi="true"
+                      class="hidden swym-button swym-add-to-wishlist-view-product product_{{product.id}} "
+                      data-swaction="addToWishlist" disabled
+                      data-product-id="{{product.id | json}}"
+                      data-variant-id="{{item.id}}"
+                      data-product-url="{{ shop.url }}{{ product.url }}"
+                    >
+                      Añadir a la lista de deseos
+                    </button>
+                  {% endif %}
+                {% endfor %}
+              </div>
+              <!-- Swym Wishlist Plus EPI Button -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(function () {
+    $(document).on('click', '.variant', function () {
+      var productDiscount = $(this).attr('data-discount');
+      var productPrice = $(this).attr('data-price');
+      var productPriceSave = $(this).attr('data-price-save');
+      var productShopButton = $(this).attr('data-shop-link');
+      var productSavePrice = $(this).attr('data-shop-link');
+      var productAmazonButton = $(this).attr('data-amazon-link');
+      var html = productPrice + ' <span class="product-price color-gray">' + productDiscount + '</span>';
+      var savePrice = '<span class="minus-sign">-</span>' + productPriceSave + '<span class="currency">€</span>';
+      var index = $(this).index();
+
+      $(this).parents('.with-variant').find('.product-discounted-price').html(html);
+      $(this).parents('.with-variant').find('.product-shop-btn').attr('href', productShopButton);
+      $(this).parents('.with-variant').find('.product-amazon-btn').attr('href', productAmazonButton);
+      $(this).parents('.with-variant').find('.discount-price').html(savePrice);
+      $(this).parent().find('.variant').removeClass('active');
+      $(this).addClass('active');
+    });
+
+    var deltaPanelOne = $('[data-generator="1600"]');
+    var deltaPanelTwo = $('[data-generator="2000"]');
+    var deltaOne = $('.delta-1600');
+    var deltaTwo = $('.delta-2000');
+    let deltaOneDiscount;
+    let deltaOnePrice;
+    let deltaOneSavePrice;
+    let deltaTwoDiscount;
+    let deltaTwoPrice;
+    let deltaTwoSavePrice;
+    let activeWishProduct;
+
+    $(document).on('click', '.delta-1600', function () {
+      deltaOneDiscount = $(deltaPanelOne).find('.active').attr('data-discount');
+      deltaOnePrice = $(deltaPanelOne).find('.active').attr('data-price');
+      deltaOneSavePrice = $(deltaPanelOne).find('.active').attr('data-price-save');
+      activeWishProduct = $(deltaPanelOne).find('.active');
+      $(activeWishProduct).click();
+      var html = deltaOnePrice + ' <span class="product-price color-gray">' + deltaOneDiscount + '</span>';
+      var savePrice = '<span class="minus-sign">-</span>' + deltaOneSavePrice + '<span class="currency">€</span>';
+
+      $(this).parents('.with-variant').find('.product-discounted-price').html(html);
+      $(this).parents('.with-variant').find('.discount-price').html(savePrice);
+      $(deltaPanelTwo).addClass('hidden');
+      $(deltaPanelOne).removeClass('hidden');
+      $(deltaOne).addClass('active');
+      $(deltaTwo).removeClass('active');
+    });
+
+    $(document).on('click', '.delta-2000', function () {
+      deltaTwoDiscount = $(deltaPanelTwo).find('.active').attr('data-discount');
+      deltaTwoPrice = $(deltaPanelTwo).find('.active').attr('data-price');
+      deltaTwoSavePrice = $(deltaPanelTwo).find('.active').attr('data-price-save');
+      activeWishProduct = $(deltaPanelTwo).find('.active');
+      $(activeWishProduct).click();
+      var html = deltaTwoPrice + ' <span class="product-price color-gray">' + deltaTwoDiscount + '</span>';
+      var savePrice = '<span class="minus-sign">-</span>' + deltaTwoSavePrice + '<span class="currency">€</span>';
+
+      $(this).parents('.with-variant').find('.product-discounted-price').html(html);
+      $(this).parents('.with-variant').find('.discount-price').html(savePrice);
+      $(deltaPanelOne).addClass('hidden');
+      $(deltaPanelTwo).removeClass('hidden');
+      $(deltaTwo).addClass('active');
+      $(deltaOne).removeClass('active');
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Xmas Best Choice",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "X'MAS BEST CHOICE"
+    }
+  ]
+}
+{% endschema %}

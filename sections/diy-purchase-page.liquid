@@ -1,0 +1,4238 @@
+{{ 'diy-purchase.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  comment
+    Micro Inverter 1
+  endcomment
+  assign diy_mi_1_product_handle = section.settings.diy_mi_1_product_handle
+  assign diy_mi_1_product_1 = section.settings.diy_mi_1_product_handle
+  assign diy_mi_1_title = section.settings.diy_mi_1_title | default: diy_mi_1_product_1.title
+
+  assign diy_mi_1_product_1_id = diy_mi_1_product_1.id
+  assign diy_mi_1_product_1_variant_first_id = diy_mi_1_product_1.variants.first.id
+  assign diy_mi_1_product_1_price = diy_mi_1_product_1.price
+  assign diy_mi_1_no_vat_price = ''
+  assign diy_mi_1_product_1_compare_at_price = diy_mi_1_product_1.compare_at_price
+  assign diy_mi_1_no_vat_compare_at_price = ''
+
+  assign diy_mi_variant_id_1 = section.settings.diy_mi_variant_id_1 | default: diy_mi_1_product_1_variant_first_id | times: 1
+  assign diy_mi_variant_id_1_no_vat = section.settings.diy_mi_variant_id_1_no_vat
+  if diy_mi_variant_id_1_no_vat != blank
+    assign diy_mi_variant_id_1_no_vat = diy_mi_variant_id_1_no_vat | times: 1
+  else
+    assign diy_mi_variant_id_1_no_vat = ''
+  endif
+
+  if diy_mi_1_product_1.variants.size > 0
+    for variant in diy_mi_1_product_1.variants
+      if variant.id == diy_mi_variant_id_1
+        assign diy_mi_1_product_1_price = variant.price
+        assign diy_mi_1_product_1_compare_at_price = variant.compare_at_price
+      elsif variant.id == diy_mi_variant_id_1_no_vat
+        assign diy_mi_1_no_vat_price = variant.price
+        assign diy_mi_1_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    Micro Inverter 2
+  endcomment
+  assign diy_mi_2_product_handle = section.settings.diy_mi_2_product_handle
+  assign diy_mi_2_product_2 = section.settings.diy_mi_2_product_handle
+  assign diy_mi_2_title = section.settings.diy_mi_2_title | default: diy_mi_2_product_2.title
+
+  assign diy_mi_2_product_2_id = diy_mi_2_product_2.id
+  assign diy_mi_2_product_2_variant_first_id = diy_mi_2_product_2.variants.first.id
+  assign diy_mi_2_product_2_price = diy_mi_2_product_2.price
+  assign diy_mi_2_no_vat_price = ''
+  assign diy_mi_2_product_2_compare_at_price = diy_mi_2_product_2.compare_at_price
+  assign diy_mi_2_no_vat_compare_at_price = ''
+
+  assign diy_mi_variant_id_2 = section.settings.diy_mi_variant_id_2 | default: diy_mi_2_product_2_variant_first_id | times: 1
+  assign diy_mi_variant_id_2_no_vat = section.settings.diy_mi_variant_id_2_no_vat
+  if diy_mi_variant_id_2_no_vat != blank
+    assign diy_mi_variant_id_2_no_vat = diy_mi_variant_id_2_no_vat | times: 1
+  else
+    assign diy_mi_variant_id_2_no_vat = ''
+  endif
+
+  if diy_mi_2_product_2.variants.size > 0
+    for variant in diy_mi_2_product_2.variants
+      if variant.id == diy_mi_variant_id_2
+        assign diy_mi_2_product_2_price = variant.price
+        assign diy_mi_2_product_2_compare_at_price = variant.compare_at_price
+      elsif variant.id == diy_mi_variant_id_2_no_vat
+        assign diy_mi_2_no_vat_price = variant.price
+        assign diy_mi_2_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    Power Station 1
+  endcomment
+  assign diy_ps_1_product_handle = section.settings.diy_ps_1_product_handle
+  assign diy_ps_1_product_1 = section.settings.diy_ps_1_product_handle
+  assign diy_ps_1_title = section.settings.diy_ps_1_title | default: diy_ps_1_product_1.title
+
+  assign diy_ps_1_product_1_id = diy_ps_1_product_1.id
+  assign diy_ps_1_product_1_variant_first_id = diy_ps_1_product_1.variants.first.id
+  assign diy_ps_1_product_1_price = diy_ps_1_product_1.price
+  assign diy_ps_1_no_vat_price = ''
+  assign diy_ps_1_product_1_compare_at_price = diy_ps_1_product_1.compare_at_price
+  assign diy_ps_1_no_vat_compare_at_price = ''
+
+  assign diy_ps_variant_id_1 = section.settings.diy_ps_variant_id_1 | default: diy_ps_1_product_1_variant_first_id | times: 1
+  assign diy_ps_variant_id_1_no_vat = section.settings.diy_ps_variant_id_1_no_vat
+  if diy_ps_variant_id_1_no_vat != blank
+    assign diy_ps_variant_id_1_no_vat = diy_ps_variant_id_1_no_vat | times: 1
+  else
+    assign diy_ps_variant_id_1_no_vat = ''
+  endif
+
+  if diy_ps_1_product_1.variants.size > 0
+    for variant in diy_ps_1_product_1.variants
+      if variant.id == diy_ps_variant_id_1
+        assign diy_ps_1_product_1_price = variant.price
+        assign diy_ps_1_product_1_compare_at_price = variant.compare_at_price
+      elsif variant.id == diy_ps_variant_id_1_no_vat
+        assign diy_ps_1_no_vat_price = variant.price
+        assign diy_ps_1_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    Power Station 2
+  endcomment
+  assign diy_ps_2_product_handle = section.settings.diy_ps_2_product_handle
+  assign diy_ps_2_product_2 = section.settings.diy_ps_2_product_handle
+  assign diy_ps_2_title = section.settings.diy_ps_2_title | default: diy_ps_2_product_2.title
+
+  assign diy_ps_2_product_2_id = diy_ps_2_product_2.id
+  assign diy_ps_2_product_2_variant_first_id = diy_ps_2_product_2.variants.first.id
+  assign diy_ps_2_product_2_price = diy_ps_2_product_2.price
+  assign diy_ps_2_no_vat_price = ''
+  assign diy_ps_2_product_2_compare_at_price = diy_ps_2_product_2.compare_at_price
+  assign diy_ps_2_no_vat_compare_at_price = ''
+
+  assign diy_ps_variant_id_2 = section.settings.diy_ps_variant_id_2 | default: diy_ps_2_product_2_variant_first_id | times: 1
+  assign diy_ps_variant_id_2_no_vat = section.settings.diy_ps_variant_id_2_no_vat
+  if diy_ps_variant_id_2_no_vat != blank
+    assign diy_ps_variant_id_2_no_vat = diy_ps_variant_id_2_no_vat | times: 1
+  else
+    assign diy_ps_variant_id_2_no_vat = ''
+  endif
+
+  if diy_ps_2_product_2.variants.size > 0
+    for variant in diy_ps_2_product_2.variants
+      if variant.id == diy_ps_variant_id_2
+        assign diy_ps_2_product_2_price = variant.price
+        assign diy_ps_2_product_2_compare_at_price = variant.compare_at_price
+      elsif variant.id == diy_ps_variant_id_2_no_vat
+        assign diy_ps_2_no_vat_price = variant.price
+        assign diy_ps_2_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    Power Station 3
+  endcomment
+  assign diy_ps_3_product_handle = section.settings.diy_ps_3_product_handle
+  assign diy_ps_3_product_3 = section.settings.diy_ps_3_product_handle
+  assign diy_ps_3_title = section.settings.diy_ps_3_title | default: diy_ps_3_product_3.title
+
+  assign diy_ps_3_product_3_id = diy_ps_3_product_3.id
+  assign diy_ps_3_product_3_variant_first_id = diy_ps_3_product_3.variants.first.id
+  assign diy_ps_3_product_3_price = diy_ps_3_product_3.price
+  assign diy_ps_3_no_vat_price = ''
+  assign diy_ps_3_product_3_compare_at_price = diy_ps_3_product_3.compare_at_price
+  assign diy_ps_3_no_vat_compare_at_price = ''
+
+  assign diy_ps_variant_id_3 = section.settings.diy_ps_variant_id_3 | default: diy_ps_3_product_3_variant_first_id | times: 1
+  assign diy_ps_variant_id_3_no_vat = section.settings.diy_ps_variant_id_3_no_vat
+  if diy_ps_variant_id_3_no_vat != blank
+    assign diy_ps_variant_id_3_no_vat = diy_ps_variant_id_3_no_vat | times: 1
+  else
+    assign diy_ps_variant_id_3_no_vat = ''
+  endif
+
+  if diy_ps_3_product_3.variants.size > 0
+    for variant in diy_ps_3_product_3.variants
+      if variant.id == diy_ps_variant_id_3
+        assign diy_ps_3_product_3_price = variant.price
+        assign diy_ps_3_product_3_compare_at_price = variant.compare_at_price
+      elsif variant.id == diy_ps_variant_id_3_no_vat
+        assign diy_ps_3_no_vat_price = variant.price
+        assign diy_ps_3_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    Power Station 4
+  endcomment
+  assign diy_ps_4_product_handle = section.settings.diy_ps_4_product_handle
+  assign diy_ps_4_product_4 = section.settings.diy_ps_4_product_handle
+  assign diy_ps_4_title = section.settings.diy_ps_4_title | default: diy_ps_4_product_4.title
+
+  assign diy_ps_4_product_4_id = diy_ps_4_product_4.id
+  assign diy_ps_4_product_4_variant_first_id = diy_ps_4_product_4.variants.first.id
+  assign diy_ps_4_product_4_price = diy_ps_4_product_4.price
+  assign diy_ps_4_no_vat_price = ''
+  assign diy_ps_4_product_4_compare_at_price = diy_ps_4_product_4.compare_at_price
+  assign diy_ps_4_no_vat_compare_at_price = ''
+
+  assign diy_ps_variant_id_4 = section.settings.diy_ps_variant_id_4 | default: diy_ps_4_product_4_variant_first_id | times: 1
+  assign diy_ps_variant_id_4_no_vat = section.settings.diy_ps_variant_id_4_no_vat
+  if diy_ps_variant_id_4_no_vat != blank
+    assign diy_ps_variant_id_4_no_vat = diy_ps_variant_id_4_no_vat | times: 1
+  else
+    assign diy_ps_variant_id_4_no_vat = ''
+  endif
+
+  if diy_ps_4_product_4.variants.size > 0
+    for variant in diy_ps_4_product_4.variants
+      if variant.id == diy_ps_variant_id_4
+        assign diy_ps_4_product_4_price = variant.price
+        assign diy_ps_4_product_4_compare_at_price = variant.compare_at_price
+      elsif variant.id == diy_ps_variant_id_4_no_vat
+        assign diy_ps_4_no_vat_price = variant.price
+        assign diy_ps_4_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    Power Station 5
+  endcomment
+  assign diy_ps_5_product_handle = section.settings.diy_ps_5_product_handle
+  assign diy_ps_5_product_5 = section.settings.diy_ps_5_product_handle
+  assign diy_ps_5_title = section.settings.diy_ps_5_title | default: diy_ps_5_product_5.title
+
+  assign diy_ps_5_product_5_id = diy_ps_5_product_5.id
+  assign diy_ps_5_product_5_variant_first_id = diy_ps_5_product_5.variants.first.id
+  assign diy_ps_5_product_5_price = diy_ps_5_product_5.price
+  assign diy_ps_5_no_vat_price = ''
+  assign diy_ps_5_product_5_compare_at_price = diy_ps_5_product_5.compare_at_price
+  assign diy_ps_5_no_vat_compare_at_price = ''
+
+  assign diy_ps_variant_id_5 = section.settings.diy_ps_variant_id_5 | default: diy_ps_5_product_5_variant_first_id | times: 1
+  assign diy_ps_variant_id_5_no_vat = section.settings.diy_ps_variant_id_5_no_vat
+  if diy_ps_variant_id_5_no_vat != blank
+    assign diy_ps_variant_id_5_no_vat = diy_ps_variant_id_5_no_vat | times: 1
+  else
+    assign diy_ps_variant_id_5_no_vat = ''
+  endif
+
+  if diy_ps_5_product_5.variants.size > 0
+    for variant in diy_ps_5_product_5.variants
+      if variant.id == diy_ps_variant_id_5
+        assign diy_ps_5_product_5_price = variant.price
+        assign diy_ps_5_product_5_compare_at_price = variant.compare_at_price
+      elsif variant.id == diy_ps_variant_id_5_no_vat
+        assign diy_ps_5_no_vat_price = variant.price
+        assign diy_ps_5_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    Power Station 6
+  endcomment
+  assign diy_ps_6_product_handle = section.settings.diy_ps_6_product_handle
+  assign diy_ps_6_product_6 = section.settings.diy_ps_6_product_handle
+  assign diy_ps_6_title = section.settings.diy_ps_6_title | default: diy_ps_6_product_6.title
+
+  assign diy_ps_6_product_6_id = diy_ps_6_product_6.id
+  assign diy_ps_6_product_6_variant_first_id = diy_ps_6_product_6.variants.first.id
+  assign diy_ps_6_product_6_price = diy_ps_6_product_6.price
+  assign diy_ps_6_no_vat_price = ''
+  assign diy_ps_6_product_6_compare_at_price = diy_ps_6_product_6.compare_at_price
+  assign diy_ps_6_no_vat_compare_at_price = ''
+
+  assign diy_ps_variant_id_6 = section.settings.diy_ps_variant_id_6 | default: diy_ps_6_product_6_variant_first_id | times: 1
+  assign diy_ps_variant_id_6_no_vat = section.settings.diy_ps_variant_id_6_no_vat
+  if diy_ps_variant_id_6_no_vat != blank
+    assign diy_ps_variant_id_6_no_vat = diy_ps_variant_id_6_no_vat | times: 1
+  else
+    assign diy_ps_variant_id_6_no_vat = ''
+  endif
+
+  if diy_ps_6_product_6.variants.size > 0
+    for variant in diy_ps_6_product_6.variants
+      if variant.id == diy_ps_variant_id_6
+        assign diy_ps_6_product_6_price = variant.price
+        assign diy_ps_6_product_6_compare_at_price = variant.compare_at_price
+      elsif variant.id == diy_ps_variant_id_6_no_vat
+        assign diy_ps_6_no_vat_price = variant.price
+        assign diy_ps_6_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    Power Station 7
+  endcomment
+  assign diy_ps_7_product_handle = section.settings.diy_ps_7_product_handle
+  assign diy_ps_7_product_7 = section.settings.diy_ps_7_product_handle
+  assign diy_ps_7_title = section.settings.diy_ps_7_title | default: diy_ps_7_product_7.title
+
+  assign diy_ps_7_product_7_id = diy_ps_7_product_7.id
+  assign diy_ps_7_product_7_variant_first_id = diy_ps_7_product_7.variants.first.id
+  assign diy_ps_7_product_7_price = diy_ps_7_product_7.price
+  assign diy_ps_7_no_vat_price = ''
+  assign diy_ps_7_product_7_compare_at_price = diy_ps_7_product_7.compare_at_price
+  assign diy_ps_7_no_vat_compare_at_price = ''
+
+  assign diy_ps_variant_id_7 = section.settings.diy_ps_variant_id_7 | default: diy_ps_7_product_7_variant_first_id | times: 1
+  assign diy_ps_variant_id_7_no_vat = section.settings.diy_ps_variant_id_7_no_vat
+  if diy_ps_variant_id_7_no_vat != blank
+    assign diy_ps_variant_id_7_no_vat = diy_ps_variant_id_7_no_vat | times: 1
+  else
+    assign diy_ps_variant_id_7_no_vat = ''
+  endif
+
+  if diy_ps_7_product_7.variants.size > 0
+    for variant in diy_ps_7_product_7.variants
+      if variant.id == diy_ps_variant_id_7
+        assign diy_ps_7_product_7_price = variant.price
+        assign diy_ps_7_product_7_compare_at_price = variant.compare_at_price
+      elsif variant.id == diy_ps_variant_id_7_no_vat
+        assign diy_ps_7_no_vat_price = variant.price
+        assign diy_ps_7_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    Power Station 8
+  endcomment
+  assign diy_ps_8_product_handle = section.settings.diy_ps_8_product_handle
+  assign diy_ps_8_product_8 = section.settings.diy_ps_8_product_handle
+  assign diy_ps_8_title = section.settings.diy_ps_8_title | default: diy_ps_8_product_8.title
+
+  assign diy_ps_8_product_8_id = diy_ps_8_product_8.id
+  assign diy_ps_8_product_8_variant_first_id = diy_ps_8_product_8.variants.first.id
+  assign diy_ps_8_product_8_price = diy_ps_8_product_8.price
+  assign diy_ps_8_no_vat_price = ''
+  assign diy_ps_8_product_8_compare_at_price = diy_ps_8_product_8.compare_at_price
+  assign diy_ps_8_no_vat_compare_at_price = ''
+
+  assign diy_ps_variant_id_8 = section.settings.diy_ps_variant_id_8 | default: diy_ps_8_product_8_variant_first_id | times: 1
+  assign diy_ps_variant_id_8_no_vat = section.settings.diy_ps_variant_id_8_no_vat
+  if diy_ps_variant_id_8_no_vat != blank
+    assign diy_ps_variant_id_8_no_vat = diy_ps_variant_id_8_no_vat | times: 1
+  else
+    assign diy_ps_variant_id_8_no_vat = ''
+  endif
+
+  if diy_ps_8_product_8.variants.size > 0
+    for variant in diy_ps_8_product_8.variants
+      if variant.id == diy_ps_variant_id_8
+        assign diy_ps_8_product_8_price = variant.price
+        assign diy_ps_8_product_8_compare_at_price = variant.compare_at_price
+      elsif variant.id == diy_ps_variant_id_8_no_vat
+        assign diy_ps_8_no_vat_price = variant.price
+        assign diy_ps_8_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    Power Station 9
+  endcomment
+  assign diy_ps_9_product_handle = section.settings.diy_ps_9_product_handle
+  assign diy_ps_9_product_9 = section.settings.diy_ps_9_product_handle
+  assign diy_ps_9_title = section.settings.diy_ps_9_title | default: diy_ps_9_product_9.title
+
+  assign diy_ps_9_product_9_id = diy_ps_9_product_9.id
+  assign diy_ps_9_product_9_variant_first_id = diy_ps_9_product_9.variants.first.id
+  assign diy_ps_9_product_9_price = diy_ps_9_product_9.price
+  assign diy_ps_9_no_vat_price = ''
+  assign diy_ps_9_product_9_compare_at_price = diy_ps_9_product_9.compare_at_price
+  assign diy_ps_9_no_vat_compare_at_price = ''
+
+  assign diy_ps_variant_id_9 = section.settings.diy_ps_variant_id_9 | default: diy_ps_9_product_9_variant_first_id | times: 1
+  assign diy_ps_variant_id_9_no_vat = section.settings.diy_ps_variant_id_9_no_vat
+  if diy_ps_variant_id_9_no_vat != blank
+    assign diy_ps_variant_id_9_no_vat = diy_ps_variant_id_9_no_vat | times: 1
+  else
+    assign diy_ps_variant_id_9_no_vat = ''
+  endif
+
+  if diy_ps_9_product_9.variants.size > 0
+    for variant in diy_ps_9_product_9.variants
+      if variant.id == diy_ps_variant_id_9
+        assign diy_ps_9_product_9_price = variant.price
+        assign diy_ps_9_product_9_compare_at_price = variant.compare_at_price
+      elsif variant.id == diy_ps_variant_id_9_no_vat
+        assign diy_ps_9_no_vat_price = variant.price
+        assign diy_ps_9_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    Power Station 10
+  endcomment
+  assign diy_ps_10_product_handle = section.settings.diy_ps_10_product_handle
+  assign diy_ps_10_product_10 = section.settings.diy_ps_10_product_handle
+  assign diy_ps_10_title = section.settings.diy_ps_10_title | default: diy_ps_10_product_10.title
+
+  assign diy_ps_10_product_10_id = diy_ps_10_product_10.id
+  assign diy_ps_10_product_10_variant_first_id = diy_ps_10_product_10.variants.first.id
+  assign diy_ps_10_product_10_price = diy_ps_10_product_10.price
+  assign diy_ps_10_no_vat_price = ''
+  assign diy_ps_10_product_10_compare_at_price = diy_ps_10_product_10.compare_at_price
+  assign diy_ps_10_no_vat_compare_at_price = ''
+
+  assign diy_ps_variant_id_10 = section.settings.diy_ps_variant_id_10 | default: diy_ps_10_product_10_variant_first_id | times: 1
+  assign diy_ps_variant_id_10_no_vat = section.settings.diy_ps_variant_id_10_no_vat
+  if diy_ps_variant_id_10_no_vat != blank
+    assign diy_ps_variant_id_10_no_vat = diy_ps_variant_id_10_no_vat | times: 1
+  else
+    assign diy_ps_variant_id_10_no_vat = ''
+  endif
+
+  if diy_ps_10_product_10.variants.size > 0
+    for variant in diy_ps_10_product_10.variants
+      if variant.id == diy_ps_variant_id_10
+        assign diy_ps_10_product_10_price = variant.price
+        assign diy_ps_10_product_10_compare_at_price = variant.compare_at_price
+      elsif variant.id == diy_ps_variant_id_10_no_vat
+        assign diy_ps_10_no_vat_price = variant.price
+        assign diy_ps_10_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    Power Station 10a
+  endcomment
+  assign diy_ps_10a_product_handle = section.settings.diy_ps_10a_product_handle
+  assign diy_ps_10a_product_10a = section.settings.diy_ps_10a_product_handle
+  assign diy_ps_10a_title = section.settings.diy_ps_10a_title | default: diy_ps_10a_product_10a.title
+
+  assign diy_ps_10a_product_10a_id = diy_ps_10a_product_10a.id
+  assign diy_ps_10a_product_10a_variant_first_id = diy_ps_10a_product_10a.variants.first.id
+  assign diy_ps_10a_product_10a_price = diy_ps_10a_product_10a.price
+  assign diy_ps_10a_no_vat_price = ''
+  assign diy_ps_10a_product_10a_compare_at_price = diy_ps_10a_product_10a.compare_at_price
+  assign diy_ps_10a_no_vat_compare_at_price = ''
+
+  assign diy_ps_variant_id_10a = section.settings.diy_ps_variant_id_10a | default: diy_ps_10a_product_10a_variant_first_id | times: 1
+  assign diy_ps_variant_id_10a_no_vat = section.settings.diy_ps_variant_id_10a_no_vat
+  if diy_ps_variant_id_10a_no_vat != blank
+    assign diy_ps_variant_id_10a_no_vat = diy_ps_variant_id_10a_no_vat | times: 1
+  else
+    assign diy_ps_variant_id_10a_no_vat = ''
+  endif
+
+  if diy_ps_10a_product_10a.variants.size > 0
+    for variant in diy_ps_10a_product_10a.variants
+      if variant.id == diy_ps_variant_id_10a
+        assign diy_ps_10a_product_10a_price = variant.price
+        assign diy_ps_10a_product_10a_compare_at_price = variant.compare_at_price
+      elsif variant.id == diy_ps_variant_id_10a_no_vat
+        assign diy_ps_10a_no_vat_price = variant.price
+        assign diy_ps_10a_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    Power Station 11
+  endcomment
+  assign diy_ps_11_product_handle = section.settings.diy_ps_11_product_handle
+  assign diy_ps_11_product_11 = section.settings.diy_ps_11_product_handle
+  assign diy_ps_11_title = section.settings.diy_ps_11_title | default: diy_ps_11_product_11.title
+
+  assign diy_ps_11_product_11_id = diy_ps_11_product_11.id
+  assign diy_ps_11_product_11_variant_first_id = diy_ps_11_product_11.variants.first.id
+  assign diy_ps_11_product_11_price = diy_ps_11_product_11.price
+  assign diy_ps_11_no_vat_price = ''
+  assign diy_ps_11_product_11_compare_at_price = diy_ps_11_product_11.compare_at_price
+  assign diy_ps_11_no_vat_compare_at_price = ''
+
+  assign diy_ps_variant_id_11 = section.settings.diy_ps_variant_id_11 | default: diy_ps_11_product_11_variant_first_id | times: 1
+  assign diy_ps_variant_id_11_no_vat = section.settings.diy_ps_variant_id_11_no_vat
+  if diy_ps_variant_id_11_no_vat != blank
+    assign diy_ps_variant_id_11_no_vat = diy_ps_variant_id_11_no_vat | times: 1
+  else
+    assign diy_ps_variant_id_11_no_vat = ''
+  endif
+
+  if diy_ps_11_product_11.variants.size > 0
+    for variant in diy_ps_11_product_11.variants
+      if variant.id == diy_ps_variant_id_11
+        assign diy_ps_11_product_11_price = variant.price
+        assign diy_ps_11_product_11_compare_at_price = variant.compare_at_price
+      elsif variant.id == diy_ps_variant_id_11_no_vat
+        assign diy_ps_11_no_vat_price = variant.price
+        assign diy_ps_11_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    Power Station 12
+  endcomment
+  assign diy_ps_12_product_handle = section.settings.diy_ps_12_product_handle
+  assign diy_ps_12_product_12 = section.settings.diy_ps_12_product_handle
+  assign diy_ps_12_title = section.settings.diy_ps_12_title | default: diy_ps_12_product_12.title
+
+  assign diy_ps_12_product_12_id = diy_ps_12_product_12.id
+  assign diy_ps_12_product_12_variant_first_id = diy_ps_12_product_12.variants.first.id
+  assign diy_ps_12_product_12_price = diy_ps_12_product_12.price
+  assign diy_ps_12_no_vat_price = ''
+  assign diy_ps_12_product_12_compare_at_price = diy_ps_12_product_12.compare_at_price
+  assign diy_ps_12_no_vat_compare_at_price = ''
+
+  assign diy_ps_variant_id_12 = section.settings.diy_ps_variant_id_12 | default: diy_ps_12_product_12_variant_first_id | times: 1
+  assign diy_ps_variant_id_12_no_vat = section.settings.diy_ps_variant_id_12_no_vat
+  if diy_ps_variant_id_12_no_vat != blank
+    assign diy_ps_variant_id_12_no_vat = diy_ps_variant_id_12_no_vat | times: 1
+  else
+    assign diy_ps_variant_id_12_no_vat = ''
+  endif
+
+  if diy_ps_12_product_12.variants.size > 0
+    for variant in diy_ps_12_product_12.variants
+      if variant.id == diy_ps_variant_id_12
+        assign diy_ps_12_product_12_price = variant.price
+        assign diy_ps_12_product_12_compare_at_price = variant.compare_at_price
+      elsif variant.id == diy_ps_variant_id_12_no_vat
+        assign diy_ps_12_no_vat_price = variant.price
+        assign diy_ps_12_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    Power Station 13
+  endcomment
+  assign diy_ps_13_product_handle = section.settings.diy_ps_13_product_handle
+  assign diy_ps_13_product_13 = section.settings.diy_ps_13_product_handle
+  assign diy_ps_13_title = section.settings.diy_ps_13_title | default: diy_ps_13_product_13.title
+
+  assign diy_ps_13_product_13_id = diy_ps_13_product_13.id
+  assign diy_ps_13_product_13_variant_first_id = diy_ps_13_product_13.variants.first.id
+  assign diy_ps_13_product_13_price = diy_ps_13_product_13.price
+  assign diy_ps_13_no_vat_price = ''
+  assign diy_ps_13_product_13_compare_at_price = diy_ps_13_product_13.compare_at_price
+  assign diy_ps_13_no_vat_compare_at_price = ''
+
+  assign diy_ps_variant_id_13 = section.settings.diy_ps_variant_id_13 | default: diy_ps_13_product_13_variant_first_id | times: 1
+  assign diy_ps_variant_id_13_no_vat = section.settings.diy_ps_variant_id_13_no_vat
+  if diy_ps_variant_id_13_no_vat != blank
+    assign diy_ps_variant_id_13_no_vat = diy_ps_variant_id_13_no_vat | times: 1
+  else
+    assign diy_ps_variant_id_13_no_vat = ''
+  endif
+
+  if diy_ps_13_product_13.variants.size > 0
+    for variant in diy_ps_13_product_13.variants
+      if variant.id == diy_ps_variant_id_13
+        assign diy_ps_13_product_13_price = variant.price
+        assign diy_ps_13_product_13_compare_at_price = variant.compare_at_price
+      elsif variant.id == diy_ps_variant_id_13_no_vat
+        assign diy_ps_13_no_vat_price = variant.price
+        assign diy_ps_13_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    Power Station 14
+  endcomment
+  assign diy_ps_14_product_handle = section.settings.diy_ps_14_product_handle
+  assign diy_ps_14_product_14 = section.settings.diy_ps_14_product_handle
+  assign diy_ps_14_title = section.settings.diy_ps_14_title | default: diy_ps_14_product_14.title
+
+  assign diy_ps_14_product_14_id = diy_ps_14_product_14.id
+  assign diy_ps_14_product_14_variant_first_id = diy_ps_14_product_14.variants.first.id
+  assign diy_ps_14_product_14_price = diy_ps_14_product_14.price
+  assign diy_ps_14_no_vat_price = ''
+  assign diy_ps_14_product_14_compare_at_price = diy_ps_14_product_14.compare_at_price
+  assign diy_ps_14_no_vat_compare_at_price = ''
+
+  assign diy_ps_variant_id_14 = section.settings.diy_ps_variant_id_14 | default: diy_ps_14_product_14_variant_first_id | times: 1
+  assign diy_ps_variant_id_14_no_vat = section.settings.diy_ps_variant_id_14_no_vat
+  if diy_ps_variant_id_14_no_vat != blank
+    assign diy_ps_variant_id_14_no_vat = diy_ps_variant_id_14_no_vat | times: 1
+  else
+    assign diy_ps_variant_id_14_no_vat = ''
+  endif
+
+  if diy_ps_14_product_14.variants.size > 0
+    for variant in diy_ps_14_product_14.variants
+      if variant.id == diy_ps_variant_id_14
+        assign diy_ps_14_product_14_price = variant.price
+        assign diy_ps_14_product_14_compare_at_price = variant.compare_at_price
+      elsif variant.id == diy_ps_variant_id_14_no_vat
+        assign diy_ps_14_no_vat_price = variant.price
+        assign diy_ps_14_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    Solar Panel 1
+  endcomment
+  assign diy_solar_panel_1_product_handle = section.settings.diy_solar_panel_1_product_handle
+  assign diy_solar_panel_1_product_1 = section.settings.diy_solar_panel_1_product_handle
+  assign diy_solar_panel_1_title = section.settings.diy_solar_panel_1_title | default: diy_solar_panel_1_product_1.title
+
+  assign diy_solar_panel_1_product_1_id = diy_solar_panel_1_product_1.id
+  assign diy_solar_panel_1_product_1_variant_first_id = diy_solar_panel_1_product_1.variants.first.id
+  assign diy_solar_panel_1_product_1_price = diy_solar_panel_1_product_1.price
+  assign diy_solar_panel_1_no_vat_price = ''
+  assign diy_solar_panel_1_product_1_compare_at_price = diy_solar_panel_1_product_1.compare_at_price
+  assign diy_solar_panel_1_no_vat_compare_at_price = ''
+
+  assign diy_solar_panel_variant_id_1 = section.settings.diy_solar_panel_variant_id_1 | default: diy_solar_panel_1_product_1_variant_first_id | times: 1
+  assign diy_solar_panel_variant_id_1_no_vat = section.settings.diy_solar_panel_variant_id_1_no_vat
+  if diy_solar_panel_variant_id_1_no_vat != blank
+    assign diy_solar_panel_variant_id_1_no_vat = diy_solar_panel_variant_id_1_no_vat | times: 1
+  else
+    assign diy_solar_panel_variant_id_1_no_vat = ''
+  endif
+
+  if diy_solar_panel_1_product_1.variants.size > 0
+    for variant in diy_solar_panel_1_product_1.variants
+      if variant.id == diy_solar_panel_variant_id_1
+        assign diy_solar_panel_1_product_1_price = variant.price
+        assign diy_solar_panel_1_product_1_compare_at_price = variant.compare_at_price
+      elsif variant.id == diy_solar_panel_variant_id_1_no_vat
+        assign diy_solar_panel_1_no_vat_price = variant.price
+        assign diy_solar_panel_1_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    Solar Panel 2
+  endcomment
+  assign diy_solar_panel_2_watt = section.settings.diy_solar_panel_2_watt
+  assign diy_solar_panel_2_default_quantity = section.settings.diy_solar_panel_2_default_quantity
+  assign diy_solar_panel_2_minimum_quantity = section.settings.diy_solar_panel_2_minimum_quantity
+  assign diy_solar_panel_2_product_handle = section.settings.diy_solar_panel_2_product_handle
+  assign diy_solar_panel_2_product_2 = section.settings.diy_solar_panel_2_product_handle
+  assign diy_solar_panel_2_title = section.settings.diy_solar_panel_2_title | default: diy_solar_panel_2_product_2.title
+
+  assign diy_solar_panel_2_product_2_id = diy_solar_panel_2_product_2.id
+  assign diy_solar_panel_2_product_2_variant_first_id = diy_solar_panel_2_product_2.variants.first.id
+  assign diy_solar_panel_2_product_2_price = diy_solar_panel_2_product_2.price
+  assign diy_solar_panel_2_no_vat_price = ''
+  assign diy_solar_panel_2_product_2_compare_at_price = diy_solar_panel_2_product_2.compare_at_price
+  assign diy_solar_panel_2_no_vat_compare_at_price = ''
+
+  assign diy_solar_panel_variant_id_2 = section.settings.diy_solar_panel_variant_id_2 | default: diy_solar_panel_2_product_2_variant_first_id | times: 1
+  assign diy_solar_panel_variant_id_2_no_vat = section.settings.diy_solar_panel_variant_id_2_no_vat
+  if diy_solar_panel_variant_id_2_no_vat != blank
+    assign diy_solar_panel_variant_id_2_no_vat = diy_solar_panel_variant_id_2_no_vat | times: 1
+  else
+    assign diy_solar_panel_variant_id_2_no_vat = ''
+  endif
+
+  if diy_solar_panel_2_product_2.variants.size > 0
+    for variant in diy_solar_panel_2_product_2.variants
+      if variant.id == diy_solar_panel_variant_id_2
+        assign diy_solar_panel_2_product_2_price = variant.price
+        assign diy_solar_panel_2_product_2_compare_at_price = variant.compare_at_price
+      elsif variant.id == diy_solar_panel_variant_id_2_no_vat
+        assign diy_solar_panel_2_no_vat_price = variant.price
+        assign diy_solar_panel_2_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    Solar Panel 3
+  endcomment
+  assign diy_solar_panel_3_watt = section.settings.diy_solar_panel_3_watt
+  assign diy_solar_panel_3_default_quantity = section.settings.diy_solar_panel_3_default_quantity
+  assign diy_solar_panel_3_product_handle = section.settings.diy_solar_panel_3_product_handle
+  assign diy_solar_panel_3_product_3 = section.settings.diy_solar_panel_3_product_handle
+  assign diy_solar_panel_3_title = section.settings.diy_solar_panel_3_title | default: diy_solar_panel_3_product_3.title
+
+  assign diy_solar_panel_3_product_3_id = diy_solar_panel_3_product_3.id
+  assign diy_solar_panel_3_product_3_variant_first_id = diy_solar_panel_3_product_3.variants.first.id
+  assign diy_solar_panel_3_product_3_price = diy_solar_panel_3_product_3.price
+  assign diy_solar_panel_3_no_vat_price = ''
+  assign diy_solar_panel_3_product_3_compare_at_price = diy_solar_panel_3_product_3.compare_at_price
+  assign diy_solar_panel_3_no_vat_compare_at_price = ''
+
+  assign diy_solar_panel_variant_id_3 = section.settings.diy_solar_panel_variant_id_3 | default: diy_solar_panel_3_product_3_variant_first_id | times: 1
+  assign diy_solar_panel_variant_id_3_no_vat = section.settings.diy_solar_panel_variant_id_3_no_vat
+  if diy_solar_panel_variant_id_3_no_vat != blank
+    assign diy_solar_panel_variant_id_3_no_vat = diy_solar_panel_variant_id_3_no_vat | times: 1
+  else
+    assign diy_solar_panel_variant_id_3_no_vat = ''
+  endif
+
+  if diy_solar_panel_3_product_3.variants.size > 0
+    for variant in diy_solar_panel_3_product_3.variants
+      if variant.id == diy_solar_panel_variant_id_3
+        assign diy_solar_panel_3_product_3_price = variant.price
+        assign diy_solar_panel_3_product_3_compare_at_price = variant.compare_at_price
+      elsif variant.id == diy_solar_panel_variant_id_3_no_vat
+        assign diy_solar_panel_3_no_vat_price = variant.price
+        assign diy_solar_panel_3_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    Solar Panel - Bracket 1 (400W)
+  endcomment
+  assign diy_solar_panel_bracket_1_description = section.settings.diy_solar_panel_bracket_1_description
+  assign diy_solar_panel_bracket_1_image = section.settings.diy_solar_panel_bracket_1_image
+  assign diy_solar_panel_bracket_1_product_handle = section.settings.diy_solar_panel_bracket_1_product_handle
+  assign diy_solar_panel_bracket_1_product_1 = section.settings.diy_solar_panel_bracket_1_product_handle
+  assign diy_solar_panel_bracket_1_title = section.settings.diy_solar_panel_bracket_1_title | default: diy_solar_panel_bracket_1_product_1.title
+
+  assign diy_solar_panel_bracket_1_product_1_id = diy_solar_panel_bracket_1_product_1.id
+  assign diy_solar_panel_bracket_1_product_1_variant_first_id = diy_solar_panel_bracket_1_product_1.variants.first.id
+  assign diy_solar_panel_bracket_1_product_1_price = diy_solar_panel_bracket_1_product_1.price
+  assign diy_solar_panel_bracket_1_no_vat_price = ''
+  assign diy_solar_panel_bracket_1_product_1_compare_at_price = diy_solar_panel_bracket_1_product_1.compare_at_price
+  assign diy_solar_panel_bracket_1_no_vat_compare_at_price = ''
+
+  assign diy_solar_panel_bracket_variant_id_1 = section.settings.diy_solar_panel_bracket_variant_id_1 | default: diy_solar_panel_bracket_1_product_1_variant_first_id | times: 1
+  assign diy_solar_panel_bracket_variant_id_1_no_vat = section.settings.diy_solar_panel_bracket_variant_id_1_no_vat
+  if diy_solar_panel_bracket_variant_id_1_no_vat != blank
+    assign diy_solar_panel_bracket_variant_id_1_no_vat = diy_solar_panel_bracket_variant_id_1_no_vat | times: 1
+  else
+    assign diy_solar_panel_bracket_variant_id_1_no_vat = ''
+  endif
+
+  if diy_solar_panel_bracket_1_product_1.variants.size > 0
+    for variant in diy_solar_panel_bracket_1_product_1.variants
+      if variant.id == diy_solar_panel_bracket_variant_id_1
+        assign diy_solar_panel_bracket_1_product_1_price = variant.price
+        assign diy_solar_panel_bracket_1_product_1_compare_at_price = variant.compare_at_price
+      elsif variant.id == diy_solar_panel_bracket_variant_id_1_no_vat
+        assign diy_solar_panel_bracket_1_no_vat_price = variant.price
+        assign diy_solar_panel_bracket_1_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    Solar Panel - Bracket 2 (400W)
+  endcomment
+  assign diy_solar_panel_bracket_2_description = section.settings.diy_solar_panel_bracket_2_description
+  assign diy_solar_panel_bracket_2_image = section.settings.diy_solar_panel_bracket_2_image
+  assign diy_solar_panel_bracket_2_product_handle = section.settings.diy_solar_panel_bracket_2_product_handle
+  assign diy_solar_panel_bracket_2_product_2 = section.settings.diy_solar_panel_bracket_2_product_handle
+  assign diy_solar_panel_bracket_2_title = section.settings.diy_solar_panel_bracket_2_title | default: diy_solar_panel_bracket_2_product_2.title
+
+  assign diy_solar_panel_bracket_2_product_2_id = diy_solar_panel_bracket_2_product_2.id
+  assign diy_solar_panel_bracket_2_product_2_variant_first_id = diy_solar_panel_bracket_2_product_2.variants.first.id
+  assign diy_solar_panel_bracket_2_product_2_price = diy_solar_panel_bracket_2_product_2.price
+  assign diy_solar_panel_bracket_2_no_vat_price = ''
+  assign diy_solar_panel_bracket_2_product_2_compare_at_price = diy_solar_panel_bracket_2_product_2.compare_at_price
+  assign diy_solar_panel_bracket_2_no_vat_compare_at_price = ''
+
+  assign diy_solar_panel_bracket_variant_id_2 = section.settings.diy_solar_panel_bracket_variant_id_2 | default: diy_solar_panel_bracket_2_product_2_variant_first_id | times: 1
+  assign diy_solar_panel_bracket_variant_id_2_no_vat = section.settings.diy_solar_panel_bracket_variant_id_2_no_vat
+  if diy_solar_panel_bracket_variant_id_2_no_vat != blank
+    assign diy_solar_panel_bracket_variant_id_2_no_vat = diy_solar_panel_bracket_variant_id_2_no_vat | times: 1
+  else
+    assign diy_solar_panel_bracket_variant_id_2_no_vat = ''
+  endif
+
+  if diy_solar_panel_bracket_2_product_2.variants.size > 0
+    for variant in diy_solar_panel_bracket_2_product_2.variants
+      if variant.id == diy_solar_panel_bracket_variant_id_2
+        assign diy_solar_panel_bracket_2_product_2_price = variant.price
+        assign diy_solar_panel_bracket_2_product_2_compare_at_price = variant.compare_at_price
+      elsif variant.id == diy_solar_panel_bracket_variant_id_2_no_vat
+        assign diy_solar_panel_bracket_2_no_vat_price = variant.price
+        assign diy_solar_panel_bracket_2_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    Solar Panel - Bracket 3 (400W)
+  endcomment
+  assign diy_solar_panel_bracket_3_description = section.settings.diy_solar_panel_bracket_3_description
+  assign diy_solar_panel_bracket_3_image = section.settings.diy_solar_panel_bracket_3_image
+  assign diy_solar_panel_bracket_3_product_handle = section.settings.diy_solar_panel_bracket_3_product_handle
+  assign diy_solar_panel_bracket_3_product_3 = section.settings.diy_solar_panel_bracket_3_product_handle
+  assign diy_solar_panel_bracket_3_title = section.settings.diy_solar_panel_bracket_3_title | default: diy_solar_panel_bracket_3_product_3.title
+
+  assign diy_solar_panel_bracket_3_product_3_id = diy_solar_panel_bracket_3_product_3.id
+  assign diy_solar_panel_bracket_3_product_3_variant_first_id = diy_solar_panel_bracket_3_product_3.variants.first.id
+  assign diy_solar_panel_bracket_3_product_3_price = diy_solar_panel_bracket_3_product_3.price
+  assign diy_solar_panel_bracket_3_no_vat_price = ''
+  assign diy_solar_panel_bracket_3_product_3_compare_at_price = diy_solar_panel_bracket_3_product_3.compare_at_price
+  assign diy_solar_panel_bracket_3_no_vat_compare_at_price = ''
+
+  assign diy_solar_panel_bracket_variant_id_3 = section.settings.diy_solar_panel_bracket_variant_id_3 | default: diy_solar_panel_bracket_3_product_3_variant_first_id | times: 1
+  assign diy_solar_panel_bracket_variant_id_3_no_vat = section.settings.diy_solar_panel_bracket_variant_id_3_no_vat
+  if diy_solar_panel_bracket_variant_id_3_no_vat != blank
+    assign diy_solar_panel_bracket_variant_id_3_no_vat = diy_solar_panel_bracket_variant_id_3_no_vat | times: 1
+  else
+    assign diy_solar_panel_bracket_variant_id_3_no_vat = ''
+  endif
+
+  if diy_solar_panel_bracket_3_product_3.variants.size > 0
+    for variant in diy_solar_panel_bracket_3_product_3.variants
+      if variant.id == diy_solar_panel_bracket_variant_id_3
+        assign diy_solar_panel_bracket_3_product_3_price = variant.price
+        assign diy_solar_panel_bracket_3_product_3_compare_at_price = variant.compare_at_price
+      elsif variant.id == diy_solar_panel_bracket_variant_id_3_no_vat
+        assign diy_solar_panel_bracket_3_no_vat_price = variant.price
+        assign diy_solar_panel_bracket_3_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    Solar Panel - Bracket 1 (100W)
+  endcomment
+  assign diy_solar_panel_bracket_100w_1_description = section.settings.diy_solar_panel_bracket_100w_1_description
+  assign diy_solar_panel_bracket_100w_1_image = section.settings.diy_solar_panel_bracket_100w_1_image
+  assign diy_solar_panel_bracket_100w_1_product_handle = section.settings.diy_solar_panel_bracket_100w_1_product_handle
+  assign diy_solar_panel_bracket_100w_1_product_1 = section.settings.diy_solar_panel_bracket_100w_1_product_handle
+  assign diy_solar_panel_bracket_100w_1_title = section.settings.diy_solar_panel_bracket_100w_1_title | default: diy_solar_panel_bracket_100w_1_product_1.title
+
+  assign diy_solar_panel_bracket_100w_1_product_1_id = diy_solar_panel_bracket_100w_1_product_1.id
+  assign diy_solar_panel_bracket_100w_1_product_1_variant_first_id = diy_solar_panel_bracket_100w_1_product_1.variants.first.id
+  assign diy_solar_panel_bracket_100w_1_product_1_price = diy_solar_panel_bracket_100w_1_product_1.price
+  assign diy_solar_panel_bracket_100w_1_no_vat_price = ''
+  assign diy_solar_panel_bracket_100w_1_product_1_compare_at_price = diy_solar_panel_bracket_100w_1_product_1.compare_at_price
+  assign diy_solar_panel_bracket_100w_1_no_vat_compare_at_price = ''
+
+  assign diy_solar_panel_bracket_100w_variant_id_1 = section.settings.diy_solar_panel_bracket_100w_variant_id_1 | default: diy_solar_panel_bracket_100w_1_product_1_variant_first_id | times: 1
+  assign diy_solar_panel_bracket_100w_variant_id_1_no_vat = section.settings.diy_solar_panel_bracket_100w_variant_id_1_no_vat
+  if diy_solar_panel_bracket_100w_variant_id_1_no_vat != blank
+    assign diy_solar_panel_bracket_100w_variant_id_1_no_vat = diy_solar_panel_bracket_100w_variant_id_1_no_vat | times: 1
+  else
+    assign diy_solar_panel_bracket_100w_variant_id_1_no_vat = ''
+  endif
+
+  if diy_solar_panel_bracket_100w_1_product_1.variants.size > 0
+    for variant in diy_solar_panel_bracket_100w_1_product_1.variants
+      if variant.id == diy_solar_panel_bracket_100w_variant_id_1
+        assign diy_solar_panel_bracket_100w_1_product_1_price = variant.price
+        assign diy_solar_panel_bracket_100w_1_product_1_compare_at_price = variant.compare_at_price
+      elsif variant.id == diy_solar_panel_bracket_100w_variant_id_1_no_vat
+        assign diy_solar_panel_bracket_100w_1_no_vat_price = variant.price
+        assign diy_solar_panel_bracket_100w_1_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    Solar Panel - Bracket 2 (100W)
+  endcomment
+  assign diy_solar_panel_bracket_100w_2_description = section.settings.diy_solar_panel_bracket_100w_2_description
+  assign diy_solar_panel_bracket_100w_2_image = section.settings.diy_solar_panel_bracket_100w_2_image
+  assign diy_solar_panel_bracket_100w_2_product_handle = section.settings.diy_solar_panel_bracket_100w_2_product_handle
+  assign diy_solar_panel_bracket_100w_2_product_2 = section.settings.diy_solar_panel_bracket_100w_2_product_handle
+  assign diy_solar_panel_bracket_100w_2_title = section.settings.diy_solar_panel_bracket_100w_2_title | default: diy_solar_panel_bracket_100w_2_product_2.title
+
+  assign diy_solar_panel_bracket_100w_2_product_2_id = diy_solar_panel_bracket_100w_2_product_2.id
+  assign diy_solar_panel_bracket_100w_2_product_2_variant_first_id = diy_solar_panel_bracket_100w_2_product_2.variants.first.id
+  assign diy_solar_panel_bracket_100w_2_product_2_price = diy_solar_panel_bracket_100w_2_product_2.price
+  assign diy_solar_panel_bracket_100w_2_no_vat_price = ''
+  assign diy_solar_panel_bracket_100w_2_product_2_compare_at_price = diy_solar_panel_bracket_100w_2_product_2.compare_at_price
+  assign diy_solar_panel_bracket_100w_2_no_vat_compare_at_price = ''
+
+  assign diy_solar_panel_bracket_100w_variant_id_2 = section.settings.diy_solar_panel_bracket_100w_variant_id_2 | default: diy_solar_panel_bracket_100w_2_product_2_variant_first_id | times: 1
+  assign diy_solar_panel_bracket_100w_variant_id_2_no_vat = section.settings.diy_solar_panel_bracket_100w_variant_id_2_no_vat
+  if diy_solar_panel_bracket_100w_variant_id_2_no_vat != blank
+    assign diy_solar_panel_bracket_100w_variant_id_2_no_vat = diy_solar_panel_bracket_100w_variant_id_2_no_vat | times: 1
+  else
+    assign diy_solar_panel_bracket_100w_variant_id_2_no_vat = ''
+  endif
+
+  if diy_solar_panel_bracket_100w_2_product_2.variants.size > 0
+    for variant in diy_solar_panel_bracket_100w_2_product_2.variants
+      if variant.id == diy_solar_panel_bracket_100w_variant_id_2
+        assign diy_solar_panel_bracket_100w_2_product_2_price = variant.price
+        assign diy_solar_panel_bracket_100w_2_product_2_compare_at_price = variant.compare_at_price
+      elsif variant.id == diy_solar_panel_bracket_100w_variant_id_2_no_vat
+        assign diy_solar_panel_bracket_100w_2_no_vat_price = variant.price
+        assign diy_solar_panel_bracket_100w_2_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    Solar Panel - Bracket 3 (100W)
+  endcomment
+  assign diy_solar_panel_bracket_100w_3_description = section.settings.diy_solar_panel_bracket_100w_3_description
+  assign diy_solar_panel_bracket_100w_3_image = section.settings.diy_solar_panel_bracket_100w_3_image
+  assign diy_solar_panel_bracket_100w_3_product_handle = section.settings.diy_solar_panel_bracket_100w_3_product_handle
+  assign diy_solar_panel_bracket_100w_3_product_3 = section.settings.diy_solar_panel_bracket_100w_3_product_handle
+  assign diy_solar_panel_bracket_100w_3_title = section.settings.diy_solar_panel_bracket_100w_3_title | default: diy_solar_panel_bracket_100w_3_product_3.title
+
+  assign diy_solar_panel_bracket_100w_3_product_3_id = diy_solar_panel_bracket_100w_3_product_3.id
+  assign diy_solar_panel_bracket_100w_3_product_3_variant_first_id = diy_solar_panel_bracket_100w_3_product_3.variants.first.id
+  assign diy_solar_panel_bracket_100w_3_product_3_price = diy_solar_panel_bracket_100w_3_product_3.price
+  assign diy_solar_panel_bracket_100w_3_no_vat_price = ''
+  assign diy_solar_panel_bracket_100w_3_product_3_compare_at_price = diy_solar_panel_bracket_100w_3_product_3.compare_at_price
+  assign diy_solar_panel_bracket_100w_3_no_vat_compare_at_price = ''
+
+  assign diy_solar_panel_bracket_100w_variant_id_3 = section.settings.diy_solar_panel_bracket_100w_variant_id_3 | default: diy_solar_panel_bracket_100w_3_product_3_variant_first_id | times: 1
+  assign diy_solar_panel_bracket_100w_variant_id_3_no_vat = section.settings.diy_solar_panel_bracket_100w_variant_id_3_no_vat
+  if diy_solar_panel_bracket_100w_variant_id_3_no_vat != blank
+    assign diy_solar_panel_bracket_100w_variant_id_3_no_vat = diy_solar_panel_bracket_100w_variant_id_3_no_vat | times: 1
+  else
+    assign diy_solar_panel_bracket_100w_variant_id_3_no_vat = ''
+  endif
+
+  if diy_solar_panel_bracket_100w_3_product_3.variants.size > 0
+    for variant in diy_solar_panel_bracket_100w_3_product_3.variants
+      if variant.id == diy_solar_panel_bracket_100w_variant_id_3
+        assign diy_solar_panel_bracket_100w_3_product_3_price = variant.price
+        assign diy_solar_panel_bracket_100w_3_product_3_compare_at_price = variant.compare_at_price
+      elsif variant.id == diy_solar_panel_bracket_100w_variant_id_3_no_vat
+        assign diy_solar_panel_bracket_100w_3_no_vat_price = variant.price
+        assign diy_solar_panel_bracket_100w_3_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    Smart Plug
+  endcomment
+  assign diy_smart_plug_1_default_quantity = section.settings.diy_smart_plug_1_default_quantity
+  assign diy_smart_plug_1_product_handle = section.settings.diy_smart_plug_1_product_handle
+  assign diy_smart_plug_1_product_1 = section.settings.diy_smart_plug_1_product_handle
+  assign diy_smart_plug_1_title = section.settings.diy_smart_plug_1_title | default: diy_smart_plug_1_product_1.title
+
+  assign diy_smart_plug_1_product_1_id = diy_smart_plug_1_product_1.id
+  assign diy_smart_plug_1_product_1_variant_first_id = diy_smart_plug_1_product_1.variants.first.id
+  assign diy_smart_plug_1_product_1_price = diy_smart_plug_1_product_1.price
+  assign diy_smart_plug_1_no_vat_price = ''
+  assign diy_smart_plug_1_product_1_compare_at_price = diy_smart_plug_1_product_1.compare_at_price
+  assign diy_smart_plug_1no_vat_compare_at_price = ''
+
+  assign diy_smart_plug_variant_id_1 = section.settings.diy_smart_plug_variant_id_1 | default: diy_smart_plug_1_product_1_variant_first_id | times: 1
+  assign diy_smart_plug_variant_id_1_no_vat = section.settings.diy_smart_plug_variant_id_1_no_vat
+  if diy_smart_plug_variant_id_1_no_vat != blank
+    assign diy_smart_plug_variant_id_1_no_vat = diy_smart_plug_variant_id_1_no_vat | times: 1
+  else
+    assign diy_smart_plug_variant_id_1_no_vat = ''
+  endif
+
+  if diy_smart_plug_1_product_1.variants.size > 0
+    for variant in diy_smart_plug_1_product_1.variants
+      if variant.id == diy_smart_plug_variant_id_1
+        assign diy_smart_plug_1_product_1_price = variant.price
+        assign diy_smart_plug_1_product_1_compare_at_price = variant.compare_at_price
+      elsif variant.id == diy_smart_plug_variant_id_1_no_vat
+        assign diy_smart_plug_1_no_vat_price = variant.price
+        assign diy_smart_plug_1_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    Super Flat Cable
+  endcomment
+  assign diy_sfc_1_default_quantity = section.settings.diy_sfc_1_default_quantity
+  assign diy_sfc_1_product_handle = section.settings.diy_sfc_1_product_handle
+  assign diy_sfc_1_product_1 = section.settings.diy_sfc_1_product_handle
+  assign diy_sfc_1_title = section.settings.diy_sfc_1_title | default: diy_sfc_1_product_1.title
+
+  assign diy_sfc_1_product_1_id = diy_sfc_1_product_1.id
+  assign diy_sfc_1_product_1_variant_first_id = diy_sfc_1_product_1.variants.first.id
+  assign diy_sfc_1_product_1_price = diy_sfc_1_product_1.price
+  assign diy_sfc_1_no_vat_price = ''
+  assign diy_sfc_1_product_1_compare_at_price = diy_sfc_1_product_1.compare_at_price
+  assign diy_sfc_1_no_vat_compare_at_price = ''
+
+  assign diy_sfc_variant_id_1 = section.settings.diy_sfc_variant_id_1 | default: diy_sfc_1_product_1_variant_first_id | times: 1
+  assign diy_sfc_variant_id_1_no_vat = section.settings.diy_sfc_variant_id_1_no_vat
+  if diy_sfc_variant_id_1_no_vat != blank
+    assign diy_sfc_variant_id_1_no_vat = diy_sfc_variant_id_1_no_vat | times: 1
+  else
+    assign diy_sfc_variant_id_1_no_vat = ''
+  endif
+
+  if diy_sfc_1_product_1.variants.size > 0
+    for variant in diy_sfc_1_product_1.variants
+      if variant.id == diy_sfc_variant_id_1
+        assign diy_sfc_1_product_1_price = variant.price
+        assign diy_sfc_1_product_1_compare_at_price = variant.compare_at_price
+      elsif variant.id == diy_sfc_variant_id_1_no_vat
+        assign diy_sfc_1_no_vat_price = variant.price
+        assign diy_sfc_1_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    Start Recommended Kit
+  endcomment
+
+  comment
+    Micro Inverter 1
+  endcomment
+  assign bundle_mi_1_product_handle = section.settings.bundle_mi_1_product_handle
+  assign bundle_mi_1_product_1 = section.settings.bundle_mi_1_product_handle
+  assign bundle_mi_1_title = section.settings.bundle_mi_1_title | default: bundle_mi_1_product_1.title
+
+  assign bundle_mi_1_product_1_id = bundle_mi_1_product_1.id
+  assign bundle_mi_1_product_1_variant_first_id = bundle_mi_1_product_1.variants.first.id
+  assign bundle_mi_1_product_1_price = bundle_mi_1_product_1.price
+  assign bundle_mi_1_no_vat_price = ''
+  assign bundle_mi_1_product_1_compare_at_price = bundle_mi_1_product_1.compare_at_price
+  assign bundle_mi_1_no_vat_compare_at_price = ''
+
+  assign bundle_mi_variant_id_1 = section.settings.bundle_mi_variant_id_1 | default: bundle_mi_1_product_1_variant_first_id | times: 1
+  assign bundle_mi_variant_id_1_no_vat = section.settings.bundle_mi_variant_id_1_no_vat
+  if bundle_mi_variant_id_1_no_vat != blank
+    assign bundle_mi_variant_id_1_no_vat = bundle_mi_variant_id_1_no_vat | times: 1
+  else
+    assign bundle_mi_variant_id_1_no_vat = ''
+  endif
+
+  if bundle_mi_1_product_1.variants.size > 0
+    for variant in bundle_mi_1_product_1.variants
+      if variant.id == bundle_mi_variant_id_1
+        assign bundle_mi_1_product_1_price = variant.price
+        assign bundle_mi_1_product_1_compare_at_price = variant.compare_at_price
+      elsif variant.id == bundle_mi_variant_id_1_no_vat
+        assign bundle_mi_1_no_vat_price = variant.price
+        assign bundle_mi_1_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    Micro Inverter 2
+  endcomment
+  assign bundle_mi_2_product_handle = section.settings.bundle_mi_2_product_handle
+  assign bundle_mi_2_product_2 = section.settings.bundle_mi_2_product_handle
+  assign bundle_mi_2_title = section.settings.bundle_mi_2_title | default: bundle_mi_2_product_2.title
+
+  assign bundle_mi_2_product_2_id = bundle_mi_2_product_2.id
+  assign bundle_mi_2_product_2_variant_first_id = bundle_mi_2_product_2.variants.first.id
+  assign bundle_mi_2_product_2_price = bundle_mi_2_product_2.price
+  assign bundle_mi_2_no_vat_price = ''
+  assign bundle_mi_2_product_2_compare_at_price = bundle_mi_2_product_2.compare_at_price
+  assign bundle_mi_2_no_vat_compare_at_price = ''
+
+  assign bundle_mi_variant_id_2 = section.settings.bundle_mi_variant_id_2 | default: bundle_mi_2_product_2_variant_first_id | times: 1
+  assign bundle_mi_variant_id_2_no_vat = section.settings.bundle_mi_variant_id_2_no_vat
+  if bundle_mi_variant_id_2_no_vat != blank
+    assign bundle_mi_variant_id_2_no_vat = bundle_mi_variant_id_2_no_vat | times: 1
+  else
+    assign bundle_mi_variant_id_2_no_vat = ''
+  endif
+
+  if bundle_mi_2_product_2.variants.size > 0
+    for variant in bundle_mi_2_product_2.variants
+      if variant.id == bundle_mi_variant_id_2
+        assign bundle_mi_2_product_2_price = variant.price
+        assign bundle_mi_2_product_2_compare_at_price = variant.compare_at_price
+      elsif variant.id == bundle_mi_variant_id_2_no_vat
+        assign bundle_mi_2_no_vat_price = variant.price
+        assign bundle_mi_2_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    2kWh Storage Kit - 1
+  endcomment
+  assign bundle_2kWh_1_product_handle = section.settings.bundle_2kWh_1_product_handle
+  assign bundle_2kWh_1_product_1 = section.settings.bundle_2kWh_1_product_handle
+  assign bundle_2kWh_1_title = section.settings.bundle_2kWh_1_title | default: bundle_2kWh_1_product_1.title
+
+  assign bundle_2kWh_1_product_1_id = bundle_2kWh_1_product_1.id
+  assign bundle_2kWh_1_product_1_variant_first_id = bundle_2kWh_1_product_1.variants.first.id
+  assign bundle_2kWh_1_product_1_price = bundle_2kWh_1_product_1.price
+  assign bundle_2kWh_1_no_vat_price = ''
+  assign bundle_2kWh_1_product_1_compare_at_price = bundle_2kWh_1_product_1.compare_at_price
+  assign bundle_2kWh_1_no_vat_compare_at_price = ''
+
+  assign bundle_2kWh_variant_id_1 = section.settings.bundle_2kWh_variant_id_1 | default: bundle_2kWh_1_product_1_variant_first_id | times: 1
+  assign bundle_2kWh_variant_id_1_no_vat = section.settings.bundle_2kWh_variant_id_1_no_vat
+  if bundle_2kWh_variant_id_1_no_vat != blank
+    assign bundle_2kWh_variant_id_1_no_vat = bundle_2kWh_variant_id_1_no_vat | times: 1
+  else
+    assign bundle_2kWh_variant_id_1_no_vat = ''
+  endif
+
+  if bundle_2kWh_1_product_1.variants.size > 0
+    for variant in bundle_2kWh_1_product_1.variants
+      if variant.id == bundle_2kWh_variant_id_1
+        assign bundle_2kWh_1_product_1_price = variant.price
+        assign bundle_2kWh_1_product_1_compare_at_price = variant.compare_at_price
+      elsif variant.id == bundle_2kWh_variant_id_1_no_vat
+        assign bundle_2kWh_1_no_vat_price = variant.price
+        assign bundle_2kWh_1_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    2kWh Storage Kit - 2
+  endcomment
+  assign bundle_2kWh_2_product_handle = section.settings.bundle_2kWh_2_product_handle
+  assign bundle_2kWh_2_product_2 = section.settings.bundle_2kWh_2_product_handle
+  assign bundle_2kWh_2_title = section.settings.bundle_2kWh_2_title | default: bundle_2kWh_2_product_2.title
+
+  assign bundle_2kWh_2_product_2_id = bundle_2kWh_2_product_2.id
+  assign bundle_2kWh_2_product_2_variant_first_id = bundle_2kWh_2_product_2.variants.first.id
+  assign bundle_2kWh_2_product_2_price = bundle_2kWh_2_product_2.price
+  assign bundle_2kWh_2_no_vat_price = ''
+  assign bundle_2kWh_2_product_2_compare_at_price = bundle_2kWh_2_product_2.compare_at_price
+  assign bundle_2kWh_2_no_vat_compare_at_price = ''
+
+  assign bundle_2kWh_variant_id_2 = section.settings.bundle_2kWh_variant_id_2 | default: bundle_2kWh_2_product_2_variant_first_id | times: 1
+  assign bundle_2kWh_variant_id_2_no_vat = section.settings.bundle_2kWh_variant_id_2_no_vat
+  if bundle_2kWh_variant_id_2_no_vat != blank
+    assign bundle_2kWh_variant_id_2_no_vat = bundle_2kWh_variant_id_2_no_vat | times: 1
+  else
+    assign bundle_2kWh_variant_id_2_no_vat = ''
+  endif
+
+  if bundle_2kWh_2_product_2.variants.size > 0
+    for variant in bundle_2kWh_2_product_2.variants
+      if variant.id == bundle_2kWh_variant_id_2
+        assign bundle_2kWh_2_product_2_price = variant.price
+        assign bundle_2kWh_2_product_2_compare_at_price = variant.compare_at_price
+      elsif variant.id == bundle_2kWh_variant_id_2_no_vat
+        assign bundle_2kWh_2_no_vat_price = variant.price
+        assign bundle_2kWh_2_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    2kWh Storage Kit - 3
+  endcomment
+  assign bundle_2kWh_3_product_handle = section.settings.bundle_2kWh_3_product_handle
+  assign bundle_2kWh_3_product_3 = section.settings.bundle_2kWh_3_product_handle
+  assign bundle_2kWh_3_title = section.settings.bundle_2kWh_3_title | default: bundle_2kWh_3_product_3.title
+
+  assign bundle_2kWh_3_product_3_id = bundle_2kWh_3_product_3.id
+  assign bundle_2kWh_3_product_3_variant_first_id = bundle_2kWh_3_product_3.variants.first.id
+  assign bundle_2kWh_3_product_3_price = bundle_2kWh_3_product_3.price
+  assign bundle_2kWh_3_no_vat_price = ''
+  assign bundle_2kWh_3_product_3_compare_at_price = bundle_2kWh_3_product_3.compare_at_price
+  assign bundle_2kWh_3_no_vat_compare_at_price = ''
+
+  assign bundle_2kWh_variant_id_3 = section.settings.bundle_2kWh_variant_id_3 | default: bundle_2kWh_3_product_3_variant_first_id | times: 1
+  assign bundle_2kWh_variant_id_3_no_vat = section.settings.bundle_2kWh_variant_id_3_no_vat
+  if bundle_2kWh_variant_id_3_no_vat != blank
+    assign bundle_2kWh_variant_id_3_no_vat = bundle_2kWh_variant_id_3_no_vat | times: 1
+  else
+    assign bundle_2kWh_variant_id_3_no_vat = ''
+  endif
+
+  if bundle_2kWh_3_product_3.variants.size > 0
+    for variant in bundle_2kWh_3_product_3.variants
+      if variant.id == bundle_2kWh_variant_id_3
+        assign bundle_2kWh_3_product_3_price = variant.price
+        assign bundle_2kWh_3_product_3_compare_at_price = variant.compare_at_price
+      elsif variant.id == bundle_2kWh_variant_id_3_no_vat
+        assign bundle_2kWh_3_no_vat_price = variant.price
+        assign bundle_2kWh_3_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    2kWh Storage Kit - 4
+  endcomment
+  assign bundle_2kWh_4_product_handle = section.settings.bundle_2kWh_4_product_handle
+  assign bundle_2kWh_4_product_4 = section.settings.bundle_2kWh_4_product_handle
+  assign bundle_2kWh_4_title = section.settings.bundle_2kWh_4_title | default: bundle_2kWh_4_product_4.title
+
+  assign bundle_2kWh_4_product_4_id = bundle_2kWh_4_product_4.id
+  assign bundle_2kWh_4_product_4_variant_first_id = bundle_2kWh_4_product_4.variants.first.id
+  assign bundle_2kWh_4_product_4_price = bundle_2kWh_4_product_4.price
+  assign bundle_2kWh_4_no_vat_price = ''
+  assign bundle_2kWh_4_product_4_compare_at_price = bundle_2kWh_4_product_4.compare_at_price
+  assign bundle_2kWh_4_no_vat_compare_at_price = ''
+
+  assign bundle_2kWh_variant_id_4 = section.settings.bundle_2kWh_variant_id_4 | default: bundle_2kWh_4_product_4_variant_first_id | times: 1
+  assign bundle_2kWh_variant_id_4_no_vat = section.settings.bundle_2kWh_variant_id_4_no_vat
+  if bundle_2kWh_variant_id_4_no_vat != blank
+    assign bundle_2kWh_variant_id_4_no_vat = bundle_2kWh_variant_id_4_no_vat | times: 1
+  else
+    assign bundle_2kWh_variant_id_4_no_vat = ''
+  endif
+
+  if bundle_2kWh_4_product_4.variants.size > 0
+    for variant in bundle_2kWh_4_product_4.variants
+      if variant.id == bundle_2kWh_variant_id_4
+        assign bundle_2kWh_4_product_4_price = variant.price
+        assign bundle_2kWh_4_product_4_compare_at_price = variant.compare_at_price
+      elsif variant.id == bundle_2kWh_variant_id_4_no_vat
+        assign bundle_2kWh_4_no_vat_price = variant.price
+        assign bundle_2kWh_4_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    2kWh Storage Kit - 5
+  endcomment
+  assign bundle_2kWh_5_product_handle = section.settings.bundle_2kWh_5_product_handle
+  assign bundle_2kWh_5_product_5 = section.settings.bundle_2kWh_5_product_handle
+  assign bundle_2kWh_5_title = section.settings.bundle_2kWh_5_title | default: bundle_2kWh_5_product_5.title
+
+  assign bundle_2kWh_5_product_5_id = bundle_2kWh_5_product_5.id
+  assign bundle_2kWh_5_product_5_variant_first_id = bundle_2kWh_5_product_5.variants.first.id
+  assign bundle_2kWh_5_product_5_price = bundle_2kWh_5_product_5.price
+  assign bundle_2kWh_5_no_vat_price = ''
+  assign bundle_2kWh_5_product_5_compare_at_price = bundle_2kWh_5_product_5.compare_at_price
+  assign bundle_2kWh_5_no_vat_compare_at_price = ''
+
+  assign bundle_2kWh_variant_id_5 = section.settings.bundle_2kWh_variant_id_5 | default: bundle_2kWh_5_product_5_variant_first_id | times: 1
+  assign bundle_2kWh_variant_id_5_no_vat = section.settings.bundle_2kWh_variant_id_5_no_vat
+  if bundle_2kWh_variant_id_5_no_vat != blank
+    assign bundle_2kWh_variant_id_5_no_vat = bundle_2kWh_variant_id_5_no_vat | times: 1
+  else
+    assign bundle_2kWh_variant_id_5_no_vat = ''
+  endif
+
+  if bundle_2kWh_5_product_5.variants.size > 0
+    for variant in bundle_2kWh_5_product_5.variants
+      if variant.id == bundle_2kWh_variant_id_5
+        assign bundle_2kWh_5_product_5_price = variant.price
+        assign bundle_2kWh_5_product_5_compare_at_price = variant.compare_at_price
+      elsif variant.id == bundle_2kWh_variant_id_5_no_vat
+        assign bundle_2kWh_5_no_vat_price = variant.price
+        assign bundle_2kWh_5_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    1kWh Storage Kit - 1
+  endcomment
+  assign bundle_1kWh_1_product_handle = section.settings.bundle_1kWh_1_product_handle
+  assign bundle_1kWh_1_product_1 = section.settings.bundle_1kWh_1_product_handle
+  assign bundle_1kWh_1_title = section.settings.bundle_1kWh_1_title | default: bundle_1kWh_1_product_1.title
+
+  assign bundle_1kWh_1_product_1_id = bundle_1kWh_1_product_1.id
+  assign bundle_1kWh_1_product_1_variant_first_id = bundle_1kWh_1_product_1.variants.first.id
+  assign bundle_1kWh_1_product_1_price = bundle_1kWh_1_product_1.price
+  assign bundle_1kWh_1_no_vat_price = ''
+  assign bundle_1kWh_1_product_1_compare_at_price = bundle_1kWh_1_product_1.compare_at_price
+  assign bundle_1kWh_1_no_vat_compare_at_price = ''
+
+  assign bundle_1kWh_variant_id_1 = section.settings.bundle_1kWh_variant_id_1 | default: bundle_1kWh_1_product_1_variant_first_id | times: 1
+  assign bundle_1kWh_variant_id_1_no_vat = section.settings.bundle_1kWh_variant_id_1_no_vat
+  if bundle_1kWh_variant_id_1_no_vat != blank
+    assign bundle_1kWh_variant_id_1_no_vat = bundle_1kWh_variant_id_1_no_vat | times: 1
+  else
+    assign bundle_1kWh_variant_id_1_no_vat = ''
+  endif
+
+  if bundle_1kWh_1_product_1.variants.size > 0
+    for variant in bundle_1kWh_1_product_1.variants
+      if variant.id == bundle_1kWh_variant_id_1
+        assign bundle_1kWh_1_product_1_price = variant.price
+        assign bundle_1kWh_1_product_1_compare_at_price = variant.compare_at_price
+      elsif variant.id == bundle_1kWh_variant_id_1_no_vat
+        assign bundle_1kWh_1_no_vat_price = variant.price
+        assign bundle_1kWh_1_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    1kWh Storage Kit - 2
+  endcomment
+  assign bundle_1kWh_2_product_handle = section.settings.bundle_1kWh_2_product_handle
+  assign bundle_1kWh_2_product_2 = section.settings.bundle_1kWh_2_product_handle
+  assign bundle_1kWh_2_title = section.settings.bundle_1kWh_2_title | default: bundle_1kWh_2_product_2.title
+
+  assign bundle_1kWh_2_product_2_id = bundle_1kWh_2_product_2.id
+  assign bundle_1kWh_2_product_2_variant_first_id = bundle_1kWh_2_product_2.variants.first.id
+  assign bundle_1kWh_2_product_2_price = bundle_1kWh_2_product_2.price
+  assign bundle_1kWh_2_no_vat_price = ''
+  assign bundle_1kWh_2_product_2_compare_at_price = bundle_1kWh_2_product_2.compare_at_price
+  assign bundle_1kWh_2_no_vat_compare_at_price = ''
+
+  assign bundle_1kWh_variant_id_2 = section.settings.bundle_1kWh_variant_id_2 | default: bundle_1kWh_2_product_2_variant_first_id | times: 1
+  assign bundle_1kWh_variant_id_2_no_vat = section.settings.bundle_1kWh_variant_id_2_no_vat
+  if bundle_1kWh_variant_id_2_no_vat != blank
+    assign bundle_1kWh_variant_id_2_no_vat = bundle_1kWh_variant_id_2_no_vat | times: 1
+  else
+    assign bundle_1kWh_variant_id_2_no_vat = ''
+  endif
+
+  if bundle_1kWh_2_product_2.variants.size > 0
+    for variant in bundle_1kWh_2_product_2.variants
+      if variant.id == bundle_1kWh_variant_id_2
+        assign bundle_1kWh_2_product_2_price = variant.price
+        assign bundle_1kWh_2_product_2_compare_at_price = variant.compare_at_price
+      elsif variant.id == bundle_1kWh_variant_id_2_no_vat
+        assign bundle_1kWh_2_no_vat_price = variant.price
+        assign bundle_1kWh_2_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    1kWh Storage Kit - 3
+  endcomment
+  assign bundle_1kWh_3_product_handle = section.settings.bundle_1kWh_3_product_handle
+  assign bundle_1kWh_3_product_3 = section.settings.bundle_1kWh_3_product_handle
+  assign bundle_1kWh_3_title = section.settings.bundle_1kWh_3_title | default: bundle_1kWh_3_product_3.title
+
+  assign bundle_1kWh_3_product_3_id = bundle_1kWh_3_product_3.id
+  assign bundle_1kWh_3_product_3_variant_first_id = bundle_1kWh_3_product_3.variants.first.id
+  assign bundle_1kWh_3_product_3_price = bundle_1kWh_3_product_3.price
+  assign bundle_1kWh_3_no_vat_price = ''
+  assign bundle_1kWh_3_product_3_compare_at_price = bundle_1kWh_3_product_3.compare_at_price
+  assign bundle_1kWh_3_no_vat_compare_at_price = ''
+
+  assign bundle_1kWh_variant_id_3 = section.settings.bundle_1kWh_variant_id_3 | default: bundle_1kWh_3_product_3_variant_first_id | times: 1
+  assign bundle_1kWh_variant_id_3_no_vat = section.settings.bundle_1kWh_variant_id_3_no_vat
+  if bundle_1kWh_variant_id_3_no_vat != blank
+    assign bundle_1kWh_variant_id_3_no_vat = bundle_1kWh_variant_id_3_no_vat | times: 1
+  else
+    assign bundle_1kWh_variant_id_3_no_vat = ''
+  endif
+
+  if bundle_1kWh_3_product_3.variants.size > 0
+    for variant in bundle_1kWh_3_product_3.variants
+      if variant.id == bundle_1kWh_variant_id_3
+        assign bundle_1kWh_3_product_3_price = variant.price
+        assign bundle_1kWh_3_product_3_compare_at_price = variant.compare_at_price
+      elsif variant.id == bundle_1kWh_variant_id_3_no_vat
+        assign bundle_1kWh_3_no_vat_price = variant.price
+        assign bundle_1kWh_3_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    1kWh Storage Kit - 4
+  endcomment
+  assign bundle_1kWh_4_product_handle = section.settings.bundle_1kWh_4_product_handle
+  assign bundle_1kWh_4_product_4 = section.settings.bundle_1kWh_4_product_handle
+  assign bundle_1kWh_4_title = section.settings.bundle_1kWh_4_title | default: bundle_1kWh_4_product_4.title
+
+  assign bundle_1kWh_4_product_4_id = bundle_1kWh_4_product_4.id
+  assign bundle_1kWh_4_product_4_variant_first_id = bundle_1kWh_4_product_4.variants.first.id
+  assign bundle_1kWh_4_product_4_price = bundle_1kWh_4_product_4.price
+  assign bundle_1kWh_4_no_vat_price = ''
+  assign bundle_1kWh_4_product_4_compare_at_price = bundle_1kWh_4_product_4.compare_at_price
+  assign bundle_1kWh_4_no_vat_compare_at_price = ''
+
+  assign bundle_1kWh_variant_id_4 = section.settings.bundle_1kWh_variant_id_4 | default: bundle_1kWh_4_product_4_variant_first_id | times: 1
+  assign bundle_1kWh_variant_id_4_no_vat = section.settings.bundle_1kWh_variant_id_4_no_vat
+  if bundle_1kWh_variant_id_4_no_vat != blank
+    assign bundle_1kWh_variant_id_4_no_vat = bundle_1kWh_variant_id_4_no_vat | times: 1
+  else
+    assign bundle_1kWh_variant_id_4_no_vat = ''
+  endif
+
+  if bundle_1kWh_4_product_4.variants.size > 0
+    for variant in bundle_1kWh_4_product_4.variants
+      if variant.id == bundle_1kWh_variant_id_4
+        assign bundle_1kWh_4_product_4_price = variant.price
+        assign bundle_1kWh_4_product_4_compare_at_price = variant.compare_at_price
+      elsif variant.id == bundle_1kWh_variant_id_4_no_vat
+        assign bundle_1kWh_4_no_vat_price = variant.price
+        assign bundle_1kWh_4_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    1kWh Storage Kit - 5
+  endcomment
+  assign bundle_1kWh_5_product_handle = section.settings.bundle_1kWh_5_product_handle
+  assign bundle_1kWh_5_product_5 = section.settings.bundle_1kWh_5_product_handle
+  assign bundle_1kWh_5_title = section.settings.bundle_1kWh_5_title | default: bundle_1kWh_5_product_5.title
+
+  assign bundle_1kWh_5_product_5_id = bundle_1kWh_5_product_5.id
+  assign bundle_1kWh_5_product_5_variant_first_id = bundle_1kWh_5_product_5.variants.first.id
+  assign bundle_1kWh_5_product_5_price = bundle_1kWh_5_product_5.price
+  assign bundle_1kWh_5_no_vat_price = ''
+  assign bundle_1kWh_5_product_5_compare_at_price = bundle_1kWh_5_product_5.compare_at_price
+  assign bundle_1kWh_5_no_vat_compare_at_price = ''
+
+  assign bundle_1kWh_variant_id_5 = section.settings.bundle_1kWh_variant_id_5 | default: bundle_1kWh_5_product_5_variant_first_id | times: 1
+  assign bundle_1kWh_variant_id_5_no_vat = section.settings.bundle_1kWh_variant_id_5_no_vat
+  if bundle_1kWh_variant_id_5_no_vat != blank
+    assign bundle_1kWh_variant_id_5_no_vat = bundle_1kWh_variant_id_5_no_vat | times: 1
+  else
+    assign bundle_1kWh_variant_id_5_no_vat = ''
+  endif
+
+  if bundle_1kWh_5_product_5.variants.size > 0
+    for variant in bundle_1kWh_5_product_5.variants
+      if variant.id == bundle_1kWh_variant_id_5
+        assign bundle_1kWh_5_product_5_price = variant.price
+        assign bundle_1kWh_5_product_5_compare_at_price = variant.compare_at_price
+      elsif variant.id == bundle_1kWh_variant_id_5_no_vat
+        assign bundle_1kWh_5_no_vat_price = variant.price
+        assign bundle_1kWh_5_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    no_storage Storage Kit - 1
+  endcomment
+  assign bundle_no_storage_1_product_handle = section.settings.bundle_no_storage_1_product_handle
+  assign bundle_no_storage_1_product_1 = section.settings.bundle_no_storage_1_product_handle
+  assign bundle_no_storage_1_title = section.settings.bundle_no_storage_1_title | default: bundle_no_storage_1_product_1.title
+
+  assign bundle_no_storage_1_product_1_id = bundle_no_storage_1_product_1.id
+  assign bundle_no_storage_1_product_1_variant_first_id = bundle_no_storage_1_product_1.variants.first.id
+  assign bundle_no_storage_1_product_1_price = bundle_no_storage_1_product_1.price
+  assign bundle_no_storage_1_no_vat_price = ''
+  assign bundle_no_storage_1_product_1_compare_at_price = bundle_no_storage_1_product_1.compare_at_price
+  assign bundle_no_storage_1_no_vat_compare_at_price = ''
+
+  assign bundle_no_storage_variant_id_1 = section.settings.bundle_no_storage_variant_id_1 | default: bundle_no_storage_1_product_1_variant_first_id | times: 1
+  assign bundle_no_storage_variant_id_1_no_vat = section.settings.bundle_no_storage_variant_id_1_no_vat
+  if bundle_no_storage_variant_id_1_no_vat != blank
+    assign bundle_no_storage_variant_id_1_no_vat = bundle_no_storage_variant_id_1_no_vat | times: 1
+  else
+    assign bundle_no_storage_variant_id_1_no_vat = ''
+  endif
+
+  if bundle_no_storage_1_product_1.variants.size > 0
+    for variant in bundle_no_storage_1_product_1.variants
+      if variant.id == bundle_no_storage_variant_id_1
+        assign bundle_no_storage_1_product_1_price = variant.price
+        assign bundle_no_storage_1_product_1_compare_at_price = variant.compare_at_price
+      elsif variant.id == bundle_no_storage_variant_id_1_no_vat
+        assign bundle_no_storage_1_no_vat_price = variant.price
+        assign bundle_no_storage_1_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    no_storage Storage Kit - 2
+  endcomment
+  assign bundle_no_storage_2_product_handle = section.settings.bundle_no_storage_2_product_handle
+  assign bundle_no_storage_2_product_2 = section.settings.bundle_no_storage_2_product_handle
+  assign bundle_no_storage_2_title = section.settings.bundle_no_storage_2_title | default: bundle_no_storage_2_product_2.title
+
+  assign bundle_no_storage_2_product_2_id = bundle_no_storage_2_product_2.id
+  assign bundle_no_storage_2_product_2_variant_first_id = bundle_no_storage_2_product_2.variants.first.id
+  assign bundle_no_storage_2_product_2_price = bundle_no_storage_2_product_2.price
+  assign bundle_no_storage_2_no_vat_price = ''
+  assign bundle_no_storage_2_product_2_compare_at_price = bundle_no_storage_2_product_2.compare_at_price
+  assign bundle_no_storage_2_no_vat_compare_at_price = ''
+
+  assign bundle_no_storage_variant_id_2 = section.settings.bundle_no_storage_variant_id_2 | default: bundle_no_storage_2_product_2_variant_first_id | times: 1
+  assign bundle_no_storage_variant_id_2_no_vat = section.settings.bundle_no_storage_variant_id_2_no_vat
+  if bundle_no_storage_variant_id_2_no_vat != blank
+    assign bundle_no_storage_variant_id_2_no_vat = bundle_no_storage_variant_id_2_no_vat | times: 1
+  else
+    assign bundle_no_storage_variant_id_2_no_vat = ''
+  endif
+
+  if bundle_no_storage_2_product_2.variants.size > 0
+    for variant in bundle_no_storage_2_product_2.variants
+      if variant.id == bundle_no_storage_variant_id_2
+        assign bundle_no_storage_2_product_2_price = variant.price
+        assign bundle_no_storage_2_product_2_compare_at_price = variant.compare_at_price
+      elsif variant.id == bundle_no_storage_variant_id_2_no_vat
+        assign bundle_no_storage_2_no_vat_price = variant.price
+        assign bundle_no_storage_2_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    no_storage Storage Kit - 3
+  endcomment
+  assign bundle_no_storage_3_product_handle = section.settings.bundle_no_storage_3_product_handle
+  assign bundle_no_storage_3_product_3 = section.settings.bundle_no_storage_3_product_handle
+  assign bundle_no_storage_3_title = section.settings.bundle_no_storage_3_title | default: bundle_no_storage_3_product_3.title
+
+  assign bundle_no_storage_3_product_3_id = bundle_no_storage_3_product_3.id
+  assign bundle_no_storage_3_product_3_variant_first_id = bundle_no_storage_3_product_3.variants.first.id
+  assign bundle_no_storage_3_product_3_price = bundle_no_storage_3_product_3.price
+  assign bundle_no_storage_3_no_vat_price = ''
+  assign bundle_no_storage_3_product_3_compare_at_price = bundle_no_storage_3_product_3.compare_at_price
+  assign bundle_no_storage_3_no_vat_compare_at_price = ''
+
+  assign bundle_no_storage_variant_id_3 = section.settings.bundle_no_storage_variant_id_3 | default: bundle_no_storage_3_product_3_variant_first_id | times: 1
+  assign bundle_no_storage_variant_id_3_no_vat = section.settings.bundle_no_storage_variant_id_3_no_vat
+  if bundle_no_storage_variant_id_3_no_vat != blank
+    assign bundle_no_storage_variant_id_3_no_vat = bundle_no_storage_variant_id_3_no_vat | times: 1
+  else
+    assign bundle_no_storage_variant_id_3_no_vat = ''
+  endif
+
+  if bundle_no_storage_3_product_3.variants.size > 0
+    for variant in bundle_no_storage_3_product_3.variants
+      if variant.id == bundle_no_storage_variant_id_3
+        assign bundle_no_storage_3_product_3_price = variant.price
+        assign bundle_no_storage_3_product_3_compare_at_price = variant.compare_at_price
+      elsif variant.id == bundle_no_storage_variant_id_3_no_vat
+        assign bundle_no_storage_3_no_vat_price = variant.price
+        assign bundle_no_storage_3_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+
+  comment
+    no_storage Storage Kit - 4
+  endcomment
+  assign bundle_no_storage_4_product_handle = section.settings.bundle_no_storage_4_product_handle
+  assign bundle_no_storage_4_product_4 = section.settings.bundle_no_storage_4_product_handle
+  assign bundle_no_storage_4_title = section.settings.bundle_no_storage_4_title | default: bundle_no_storage_4_product_4.title
+
+  assign bundle_no_storage_4_product_4_id = bundle_no_storage_4_product_4.id
+  assign bundle_no_storage_4_product_4_variant_first_id = bundle_no_storage_4_product_4.variants.first.id
+  assign bundle_no_storage_4_product_4_price = bundle_no_storage_4_product_4.price
+  assign bundle_no_storage_4_no_vat_price = ''
+  assign bundle_no_storage_4_product_4_compare_at_price = bundle_no_storage_4_product_4.compare_at_price
+  assign bundle_no_storage_4_no_vat_compare_at_price = ''
+
+  assign bundle_no_storage_variant_id_4 = section.settings.bundle_no_storage_variant_id_4 | default: bundle_no_storage_4_product_4_variant_first_id | times: 1
+  assign bundle_no_storage_variant_id_4_no_vat = section.settings.bundle_no_storage_variant_id_4_no_vat
+  if bundle_no_storage_variant_id_4_no_vat != blank
+    assign bundle_no_storage_variant_id_4_no_vat = bundle_no_storage_variant_id_4_no_vat | times: 1
+  else
+    assign bundle_no_storage_variant_id_4_no_vat = ''
+  endif
+
+  if bundle_no_storage_4_product_4.variants.size > 0
+    for variant in bundle_no_storage_4_product_4.variants
+      if variant.id == bundle_no_storage_variant_id_4
+        assign bundle_no_storage_4_product_4_price = variant.price
+        assign bundle_no_storage_4_product_4_compare_at_price = variant.compare_at_price
+      elsif variant.id == bundle_no_storage_variant_id_4_no_vat
+        assign bundle_no_storage_4_no_vat_price = variant.price
+        assign bundle_no_storage_4_no_vat_compare_at_price = variant.compare_at_price
+      endif
+    endfor
+  endif
+%}
+
+<div class="page-width-small product-container diy-purchase--page">
+  <div class="grid">
+    <div class="grid__item product-single__media-group position--sticky-top--desktop">
+      <div class="diy-purchase__image-wrapper hide">
+        {% comment %}
+          Note: Do not re-arrange the image sequence below as it has purpose for z-indexing
+          data-category: used for image filtering
+          data-image: used for image filtering
+        {% endcomment %}
+        <img class="diy-purchase__image" loading="lazy" src="{{ 'diy-sq_background.png' | file_url }}">
+
+        <img class="diy-purchase__image" data-category="smart-plug" data-image="default" loading="lazy" src="{{ 'diy_sq_smart-plug-white.png' | file_url }}">
+        <img class="diy-purchase__image hide" data-category="smart-plug" data-image="smart-plug" loading="lazy" src="{{ 'diy_sq_smart-plug-normal.png' | file_url }}">
+
+        <img class="diy-purchase__image" data-category="solar-panel" data-image="default" loading="lazy" src="{{ 'diy_sq_solar-panel-transparent.png' | file_url }}">
+        <img class="diy-purchase__image hide" data-category="solar-panel" data-image="2X400W-rigid" loading="lazy" src="{{ 'diy_sq_2X400W-rigid.png' | file_url }}">
+        <img class="diy-purchase__image hide" data-category="solar-panel" data-image="2X100W-rigid" loading="lazy" src="{{ 'diy_sq_2X100W-rigid.png' | file_url }}">
+        <img class="diy-purchase__image hide" data-category="solar-panel" data-image="100W-flexible" loading="lazy" src="{{ 'diy_sq_100w-flexible.png' | file_url }}">
+
+        <img class="diy-purchase__image" data-category="microinverter" data-image="default" loading="lazy" src="{{ 'diy_sq_microinverter-and-two-wires.png' | file_url }}">
+        <img class="diy-purchase__image hide" data-category="microinverter" data-image="microinverter" loading="lazy" src="{{ 'diy_sq_microinverter-and-two-wires.png' | file_url }}">
+
+        <img class="diy-purchase__image" data-category="power-station" data-image="default" loading="lazy" src="{{ 'diy_sq_DELTA-2-with-cable-transparent.png' | file_url }}">
+        <img class="diy-purchase__image hide" data-category="power-station" data-image="power-station-battery-cable" loading="lazy" src="{{ 'diy_sq_DELTA-2-cable-only.png' | file_url }}">
+        <img class="diy-purchase__image hide" data-category="power-station" data-image="DELTA-2-1kWh" loading="lazy" src="{{ 'diy_sq_DELTA-2-with-cable.png' | file_url }}">
+        <img class="diy-purchase__image hide" data-category="power-station" data-image="DELTA-Max-2kWh" loading="lazy" src="{{ 'diy_sq_DELTA-Max-with-cable.png' | file_url }}">
+        <img class="diy-purchase__image hide" data-category="power-station" data-image="DELTA-Pro-3kWh" loading="lazy" src="{{ 'diy_sq_DELTA-Pro-with-cable-eu.png' | file_url }}">
+        <img class="diy-purchase__image hide" data-category="power-station" data-image="RIVER-2" loading="lazy" src="{{ 'diy_sq_RIVER-2-Pro-with-cable-eu.png' | file_url }}">
+
+        <img class="diy-purchase__image hide" data-category="power-station" data-image="RIVER-2-025kWh" loading="lazy" src="{{ 'diy_sq_RIVER-2.png' | file_url }}">
+        <img class="diy-purchase__image hide" data-category="power-station" data-image="RIVER-2-Max-05kWh" loading="lazy" src="{{ 'diy_sq_RIVER-2-Max.png' | file_url }}">
+        <img class="diy-purchase__image hide" data-category="power-station" data-image="DELTA-2-Extra-Battery-1kWH" loading="lazy" src="{{ 'diy_sq_DELTA-2-Extra-Battery.png' | file_url }}">
+        <img class="diy-purchase__image hide" data-category="power-station" data-image="DELTA-Max-Extra-Battery-2kWH" loading="lazy" src="{{ 'diy_sq_DELTA-Max-Extra-Battery.png' | file_url }}">
+        <img class="diy-purchase__image hide" data-category="power-station" data-image="DELTA-Pro-Extra-Battery-3kWH" loading="lazy" src="{{ 'diy_sq_DELTA-Pro-Extra-Battery.png' | file_url }}">
+
+        <img class="diy-purchase__image" data-image="omnibus" loading="lazy" src="{{ 'diy_sq_omnibus.png' | file_url }}">
+      </div>
+
+      {% for block in section.blocks %}
+        {% if block.type == 'slider-2kWh' %}
+          <div id="diy-purchase__slider-2kWh" class="diy-purchase__slider" {{ block.shopify_attributes }}>
+            {% if block.settings.image_1 != blank %}
+              <div class="diy-purchase__slider-item">
+                <img
+                  class="diy-purchase__slider-image"
+                  loading="lazy"
+                  src="{{ block.settings.image_1 | img_url: 'master' }}"
+                  alt="{{ block.settings.image_1.alt | escape }}"
+                >
+              </div>
+            {% endif %}
+            {% if block.settings.image_2 != blank %}
+              <div class="diy-purchase__slider-item">
+                <img
+                  class="diy-purchase__slider-image"
+                  loading="lazy"
+                  src="{{ block.settings.image_2 | img_url: 'master' }}"
+                  alt="{{ block.settings.image_2.alt | escape }}"
+                >
+              </div>
+            {% endif %}
+            {% if block.settings.image_3 != blank %}
+              <div class="diy-purchase__slider-item">
+                <img
+                  class="diy-purchase__slider-image"
+                  loading="lazy"
+                  src="{{ block.settings.image_3 | img_url: 'master' }}"
+                  alt="{{ block.settings.image_3.alt | escape }}"
+                >
+              </div>
+            {% endif %}
+            {% if block.settings.image_4 != blank %}
+              <div class="diy-purchase__slider-item">
+                <img
+                  class="diy-purchase__slider-image"
+                  loading="lazy"
+                  src="{{ block.settings.image_4 | img_url: 'master' }}"
+                  alt="{{ block.settings.image_4.alt | escape }}"
+                >
+              </div>
+            {% endif %}
+            {% if block.settings.image_5 != blank %}
+              <div class="diy-purchase__slider-item">
+                <img
+                  class="diy-purchase__slider-image"
+                  loading="lazy"
+                  src="{{ block.settings.image_5 | img_url: 'master' }}"
+                  alt="{{ block.settings.image_5.alt | escape }}"
+                >
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if block.type == 'slider-1kWh' %}
+          <div id="diy-purchase__slider-1kWh" class="diy-purchase__slider hide" {{ block.shopify_attributes }}>
+            {% if block.settings.image_1 != blank %}
+              <div class="diy-purchase__slider-item">
+                <img
+                  class="diy-purchase__slider-image"
+                  loading="lazy"
+                  src="{{ block.settings.image_1 | img_url: 'master' }}"
+                  alt="{{ block.settings.image_1.alt | escape }}"
+                >
+              </div>
+            {% endif %}
+            {% if block.settings.image_2 != blank %}
+              <div class="diy-purchase__slider-item">
+                <img
+                  class="diy-purchase__slider-image"
+                  loading="lazy"
+                  src="{{ block.settings.image_2 | img_url: 'master' }}"
+                  alt="{{ block.settings.image_2.alt | escape }}"
+                >
+              </div>
+            {% endif %}
+            {% if block.settings.image_3 != blank %}
+              <div class="diy-purchase__slider-item">
+                <img
+                  class="diy-purchase__slider-image"
+                  loading="lazy"
+                  src="{{ block.settings.image_3 | img_url: 'master' }}"
+                  alt="{{ block.settings.image_3.alt | escape }}"
+                >
+              </div>
+            {% endif %}
+            {% if block.settings.image_4 != blank %}
+              <div class="diy-purchase__slider-item">
+                <img
+                  class="diy-purchase__slider-image"
+                  loading="lazy"
+                  src="{{ block.settings.image_4 | img_url: 'master' }}"
+                  alt="{{ block.settings.image_4.alt | escape }}"
+                >
+              </div>
+            {% endif %}
+            {% if block.settings.image_5 != blank %}
+              <div class="diy-purchase__slider-item">
+                <img
+                  class="diy-purchase__slider-image"
+                  loading="lazy"
+                  src="{{ block.settings.image_5 | img_url: 'master' }}"
+                  alt="{{ block.settings.image_5.alt | escape }}"
+                >
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if block.type == 'slider-no-storage' %}
+          <div id="diy-purchase__slider-no-storage" class="diy-purchase__slider hide" {{ block.shopify_attributes }}>
+            {% if block.settings.image_1 != blank %}
+              <div class="diy-purchase__slider-item">
+                <img
+                  class="diy-purchase__slider-image"
+                  loading="lazy"
+                  src="{{ block.settings.image_1 | img_url: 'master' }}"
+                  alt="{{ block.settings.image_1.alt | escape }}"
+                >
+              </div>
+            {% endif %}
+            {% if block.settings.image_2 != blank %}
+              <div class="diy-purchase__slider-item">
+                <img
+                  class="diy-purchase__slider-image"
+                  loading="lazy"
+                  src="{{ block.settings.image_2 | img_url: 'master' }}"
+                  alt="{{ block.settings.image_2.alt | escape }}"
+                >
+              </div>
+            {% endif %}
+            {% if block.settings.image_3 != blank %}
+              <div class="diy-purchase__slider-item">
+                <img
+                  class="diy-purchase__slider-image"
+                  loading="lazy"
+                  src="{{ block.settings.image_3 | img_url: 'master' }}"
+                  alt="{{ block.settings.image_3.alt | escape }}"
+                >
+              </div>
+            {% endif %}
+            {% if block.settings.image_4 != blank %}
+              <div class="diy-purchase__slider-item">
+                <img
+                  class="diy-purchase__slider-image"
+                  loading="lazy"
+                  src="{{ block.settings.image_4 | img_url: 'master' }}"
+                  alt="{{ block.settings.image_4.alt | escape }}"
+                >
+              </div>
+            {% endif %}
+            {% if block.settings.image_5 != blank %}
+              <div class="diy-purchase__slider-item">
+                <img
+                  class="diy-purchase__slider-image"
+                  loading="lazy"
+                  src="{{ block.settings.image_5 | img_url: 'master' }}"
+                  alt="{{ block.settings.image_5.alt | escape }}"
+                >
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="grid__item product-single__description-group position--sticky-top">
+      <div class="product-single__meta">
+
+
+        <div class="hideMobile">
+          <div class="new-label"></div>
+        </div>
+
+        <h1 class="product-single__title">EcoFlow PowerStream</h1>
+
+        <div class="diy-purchase__tabs layout--rounded-box-gray">
+          <div class="diy-purchase__options diy-purchase__options--two-column">
+            <label class="diy-purchase__option">
+              <input type="radio" name="diy-purchase-option" data-form-id="feature-bundle" checked>
+              <span class="diy-purchase__option__radio-button">Recomendado</span>
+            </label>
+            <label class="diy-purchase__option">
+              <input type="radio" name="diy-purchase-option" data-form-id="diy">
+              <span class="diy-purchase__option__radio-button">Personalizado</span>
+            </label>
+          </div>
+        </div>
+
+        {% comment %} Hide only instead of comment-out: so that JS won't break {% endcomment %}
+        <label class="confirm-tax-exemption hide">
+          <div class="input-check-wrap">
+            <input type="checkbox" name="confirm-tax-exemption">
+            <span class="input-check-wrap__icon"></span>
+          </div>
+          I confirm that I am eligible for the German tax exemption
+          <div class="confirm-tax-exemption__error-msg hide">*Germany VAT exemption doesn not apply to 800W model.</div>
+        </label>
+
+        <div id="diy" class="diy-purchase__form">
+          <div class="diy-purchase__form-group" data-required>
+            <div class="diy-purchase__sub-header">
+              Microinversor
+              <div class="diy-purchase__price-wrapper">
+                <span class="diy-purchase__price"></span>
+              </div>
+            </div>
+            <div class="diy-purchase__options diy-purchase__options--two-column">
+              {% comment %}
+                <label class="diy-purchase__option">
+                  <input
+                    type="radio"
+                    name="micro-inverter"
+                    data-country="de"
+                    data-price="{{ diy_mi_1_product_1_price }}"
+                    data-price-no-vat="{{ diy_mi_1_no_vat_price }}"
+                    data-compare-at-price="{{ diy_mi_1_product_1_compare_at_price }}"
+                    data-compare-at-price-no-vat="{{ diy_mi_1_no_vat_compare_at_price }}"
+                    data-product-id="{{ diy_mi_1_product_1_id }}"
+                    data-variant-id="{{ diy_mi_variant_id_1 }}"
+                    data-variant-no-vat-id="{{ diy_mi_variant_id_1_no_vat }}"
+                    data-category="microinverter"
+                    data-image="microinverter">
+                  <span class="diy-purchase__option__radio-button justify--start">
+                    {{ diy_mi_1_title }}
+                  </span>
+                </label>
+              {% endcomment %}
+              <label class="diy-purchase__option diy-purchase__option-eu-micro-inverter">
+                <input
+                  type="radio"
+                  name="micro-inverter"
+                  data-country="eu"
+                  data-price="{{ diy_mi_2_product_2_price }}"
+                  data-price-no-vat="{{ diy_mi_2_no_vat_price }}"
+                  data-compare-at-price="{{ diy_mi_2_product_2_compare_at_price }}"
+                  data-compare-at-price-no-vat="{{ diy_mi_2_no_vat_compare_at_price }}"
+                  data-product-id="{{ diy_mi_2_product_2_id }}"
+                  data-variant-id="{{ diy_mi_variant_id_2 }}"
+                  data-variant-no-vat-id="{{ diy_mi_variant_id_2_no_vat }}"
+                  data-category="microinverter"
+                  data-image="microinverter"
+                >
+                <span class="diy-purchase__option__radio-button justify--start">
+                  {{ diy_mi_2_title }}
+                  {% comment %} <span class="diy-purchase__option__icon"><img src="{{ 'icon-flag-eu.png' | file_url }}" width="21" height="16" alt=""></span> {% endcomment %}
+                </span>
+              </label>
+            </div>
+            <div class="diy-purchase__info-text diy-purchase__info-text--below-input">
+              {{ section.settings.diy_mi_shipping_message }}
+            </div>
+          </div>
+
+          <div class="diy-purchase__form-group" data-required>
+            <div class="diy-purchase__sub-header">
+              <div class="diy-purchase__title">
+                Estaciones de Energía (con Cable)
+                <div class="diy-purchase__info-icon" data-info="En todas las estaciones de energía portátiles de la serie RIVER, DELTA mini y DELTA (1300), el puerto de carga del automóvil sirve para transmitir la salida al microinversor, mientras que el puerto de entrada solar es para la recarga solar.<br><br>Debido a la limitación del puerto de carga del automóvil y al hecho de que es el único puerto para la conexión con un microinversor, estas estaciones de energía portátiles mencionadas están sujetas a un límite de salida de 100W.">
+                  <img src="{{ 'icon-info.svg' | asset_url }}" width="19" height="18" loading="lazy">
+                </div>
+              </div>
+              <div class="diy-purchase__price-wrapper">
+                <span class="diy-purchase__price"></span>
+              </div>
+            </div>
+            <div class="diy-purchase__options diy-purchase__options--two-column">
+              <label class="diy-purchase__option">
+                <input
+                  type="radio"
+                  name="power-station"
+                  data-price="{{ diy_ps_1_product_1_price }}"
+                  data-price-no-vat="{{ diy_ps_1_no_vat_price }}"
+                  data-compare-at-price="{{ diy_ps_1_product_1_compare_at_price }}"
+                  data-compare-at-price-no-vat="{{ diy_ps_1_no_vat_compare_at_price }}"
+                  data-product-id="{{ diy_ps_1_product_1_id }}"
+                  data-variant-id="{{ diy_ps_variant_id_1 }}"
+                  data-variant-no-vat-id="{{ diy_ps_variant_id_1_no_vat }}"
+                  data-category="power-station"
+                  data-image="DELTA-Max-2kWh"
+                >
+                <span class="diy-purchase__option__radio-button justify-content--flex-start">{{ diy_ps_1_title }} <span class="diy-purchase__new">Nuevo</span></span>
+              </label>
+              <label class="diy-purchase__option">
+                <input
+                  type="radio"
+                  name="power-station"
+                  data-price="{{ diy_ps_2_product_2_price }}"
+                  data-price-no-vat="{{ diy_ps_2_no_vat_price }}"
+                  data-compare-at-price="{{ diy_ps_2_product_2_compare_at_price }}"
+                  data-compare-at-price-no-vat="{{ diy_ps_2_no_vat_compare_at_price }}"
+                  data-product-id="{{ diy_ps_2_product_2_id }}"
+                  data-variant-id="{{ diy_ps_variant_id_2 }}"
+                  data-variant-no-vat-id="{{ diy_ps_variant_id_2_no_vat }}"
+                  data-category="power-station"
+                  data-image="DELTA-2-1kWh"
+                >
+                <span class="diy-purchase__option__radio-button">{{ diy_ps_2_title }}</span>
+              </label>
+              <label class="diy-purchase__option">
+                <input
+                  type="radio"
+                  name="power-station"
+                  data-price="{{ diy_ps_3_product_3_price }}"
+                  data-price-no-vat="{{ diy_ps_3_no_vat_price }}"
+                  data-compare-at-price="{{ diy_ps_3_product_3_compare_at_price }}"
+                  data-compare-at-price-no-vat="{{ diy_ps_3_no_vat_compare_at_price }}"
+                  data-product-id="{{ diy_ps_3_product_3_id }}"
+                  data-variant-id="{{ diy_ps_variant_id_3 }}"
+                  data-variant-no-vat-id="{{ diy_ps_variant_id_3_no_vat }}"
+                  data-category="power-station"
+                  data-image="DELTA-Max-2kWh"
+                >
+                <span class="diy-purchase__option__radio-button">{{ diy_ps_3_title }}</span>
+              </label>
+              <label class="diy-purchase__option">
+                <input
+                  type="radio"
+                  name="power-station"
+                  data-price="{{ diy_ps_4_product_4_price }}"
+                  data-price-no-vat="{{ diy_ps_4_no_vat_price }}"
+                  data-compare-at-price="{{ diy_ps_4_product_4_compare_at_price }}"
+                  data-compare-at-price-no-vat="{{ diy_ps_4_no_vat_compare_at_price }}"
+                  data-product-id="{{ diy_ps_4_product_4_id }}"
+                  data-variant-id="{{ diy_ps_variant_id_4 }}"
+                  data-variant-no-vat-id="{{ diy_ps_variant_id_4_no_vat }}"
+                  data-category="power-station"
+                  data-image="DELTA-Max-2kWh"
+                >
+                <span class="diy-purchase__option__radio-button">{{ diy_ps_4_title }}</span>
+              </label>
+              <div class="diy-purchase__options diy-purchase__options--one-column">
+              <label class="diy-purchase__option" data-name="DELTA Pro (3,6kWh)">
+                <input
+                  type="radio"
+                  name="power-station"
+                  data-price="{{ diy_ps_5_product_5_price }}"
+                  data-price-no-vat="{{ diy_ps_5_no_vat_price }}"
+                  data-compare-at-price="{{ diy_ps_5_product_5_compare_at_price }}"
+                  data-compare-at-price-no-vat="{{ diy_ps_5_no_vat_compare_at_price }}"
+                  data-product-id="{{ diy_ps_5_product_5_id }}"
+                  data-variant-id="{{ diy_ps_variant_id_5 }}"
+                  data-variant-no-vat-id="{{ diy_ps_variant_id_5_no_vat }}"
+                  data-category="power-station"
+                  data-image="DELTA-Pro-3kWh">
+                <span class="diy-purchase__option__radio-button">{{ diy_ps_5_title }}</span>
+              </label>
+              </div>
+
+              {% comment %} View More Options {% endcomment %}
+              <div class="diy-purchase__options--more hide">
+                <div class="diy-purchase__options diy-purchase__options--one-column">
+                  <label class="diy-purchase__option">
+                    <input
+                      type="radio"
+                      name="power-station"
+                      data-price="{{ diy_ps_9_product_9_price }}"
+                      data-price-no-vat="{{ diy_ps_9_no_vat_price }}"
+                      data-compare-at-price="{{ diy_ps_9_product_9_compare_at_price }}"
+                      data-compare-at-price-no-vat="{{ diy_ps_9_no_vat_compare_at_price }}"
+                      data-product-id="{{ diy_ps_9_product_9_id }}"
+                      data-variant-id="{{ diy_ps_variant_id_9 }}"
+                      data-variant-no-vat-id="{{ diy_ps_variant_id_9_no_vat }}"
+                      data-category="power-station"
+                      data-image="DELTA-2-Extra-Battery-1kWH"
+                    >
+                    <span class="diy-purchase__option__radio-button">{{ diy_ps_9_title }}</span>
+                  </label>
+                  <label class="diy-purchase__option">
+                    <input
+                      type="radio"
+                      name="power-station"
+                      data-price="{{ diy_ps_10_product_10_price }}"
+                      data-price-no-vat="{{ diy_ps_10_no_vat_price }}"
+                      data-compare-at-price="{{ diy_ps_10_product_10_compare_at_price }}"
+                      data-compare-at-price-no-vat="{{ diy_ps_10_no_vat_compare_at_price }}"
+                      data-product-id="{{ diy_ps_10_product_10_id }}"
+                      data-variant-id="{{ diy_ps_variant_id_10 }}"
+                      data-variant-no-vat-id="{{ diy_ps_variant_id_10_no_vat }}"
+                      data-category="power-station"
+                      data-image="DELTA-Max-Extra-Battery-2kWH"
+                    >
+                    <span class="diy-purchase__option__radio-button">{{ diy_ps_10_title }}</span>
+                  </label>
+                  {% if diy_ps_10a_product_10a_id != blank %}
+                  <label class="diy-purchase__option">
+                    <input
+                      type="radio"
+                      name="power-station"
+                      data-price="{{ diy_ps_10a_product_10a_price }}"
+                      data-price-no-vat="{{ diy_ps_10a_no_vat_price }}"
+                      data-compare-at-price="{{ diy_ps_10a_product_10a_compare_at_price }}"
+                      data-compare-at-price-no-vat="{{ diy_ps_10a_no_vat_compare_at_price }}"
+                      data-product-id="{{ diy_ps_10a_product_10a_id }}"
+                      data-variant-id="{{ diy_ps_variant_id_10a }}"
+                      data-variant-no-vat-id="{{ diy_ps_variant_id_10a_no_vat }}"
+                      data-category="power-station"
+                      data-image="DELTA-Max-Extra-Battery-2kWH"
+                    >
+                    <span class="diy-purchase__option__radio-button">{{ diy_ps_10a_title }}</span>
+                  </label>
+                  {% endif %}
+                  <label class="diy-purchase__option">
+                    <input
+                      type="radio"
+                      name="power-station"
+                      data-price="{{ diy_ps_11_product_11_price }}"
+                      data-price-no-vat="{{ diy_ps_11_no_vat_price }}"
+                      data-compare-at-price="{{ diy_ps_11_product_11_compare_at_price }}"
+                      data-compare-at-price-no-vat="{{ diy_ps_11_no_vat_compare_at_price }}"
+                      data-product-id="{{ diy_ps_11_product_11_id }}"
+                      data-variant-id="{{ diy_ps_variant_id_11 }}"
+                      data-variant-no-vat-id="{{ diy_ps_variant_id_11_no_vat }}"
+                      data-category="power-station"
+                      data-image="DELTA-Pro-Extra-Battery-3kWH"
+                    >
+                    <span class="diy-purchase__option__radio-button">{{ diy_ps_11_title }}</span>
+                  </label>
+                  <label class="diy-purchase__option" data-name="RIVER 2 Pro (0,7kWh)">
+                    <input
+                      type="radio"
+                      name="power-station"
+                      data-price="{{ diy_ps_6_product_6_price }}"
+                      data-price-no-vat="{{ diy_ps_6_no_vat_price }}"
+                      data-compare-at-price="{{ diy_ps_6_product_6_compare_at_price }}"
+                      data-compare-at-price-no-vat="{{ diy_ps_6_no_vat_compare_at_price }}"
+                      data-product-id="{{ diy_ps_6_product_6_id }}"
+                      data-variant-id="{{ diy_ps_variant_id_6 }}"
+                      data-variant-no-vat-id="{{ diy_ps_variant_id_6_no_vat }}"
+                      data-category="power-station"
+                      data-image="RIVER-2">
+                    <span class="diy-purchase__option__radio-button">{{ diy_ps_6_title }}</span>
+                  </label>
+                  <label class="diy-purchase__option" data-name="RIVER 2 (0,25kWh)">
+                    <input
+                      type="radio"
+                      name="power-station"
+                      data-price="{{ diy_ps_7_product_7_price }}"
+                      data-price-no-vat="{{ diy_ps_7_no_vat_price }}"
+                      data-compare-at-price="{{ diy_ps_7_product_7_compare_at_price }}"
+                      data-compare-at-price-no-vat="{{ diy_ps_7_no_vat_compare_at_price }}"
+                      data-product-id="{{ diy_ps_7_product_7_id }}"
+                      data-variant-id="{{ diy_ps_variant_id_7 }}"
+                      data-variant-no-vat-id="{{ diy_ps_variant_id_7_no_vat }}"
+                      data-category="power-station"
+                      data-image="RIVER-2-025kWh">
+                  <span class="diy-purchase__option__radio-button">{{ diy_ps_7_title }}</span>
+                  </label>
+                  <label class="diy-purchase__option" data-name="RIVER 2 Max (0,5kWh)">
+                    <input
+                      type="radio"
+                      name="power-station"
+                      data-price="{{ diy_ps_8_product_8_price }}"
+                      data-price-no-vat="{{ diy_ps_8_no_vat_price }}"
+                      data-compare-at-price="{{ diy_ps_8_product_8_compare_at_price }}"
+                      data-compare-at-price-no-vat="{{ diy_ps_8_no_vat_compare_at_price }}"
+                      data-product-id="{{ diy_ps_8_product_8_id }}"
+                      data-variant-id="{{ diy_ps_variant_id_8 }}"
+                      data-variant-no-vat-id="{{ diy_ps_variant_id_8_no_vat }}"
+                      data-category="power-station"
+                      data-image="RIVER-2-Max-05kWh">
+                    <span class="diy-purchase__option__radio-button">{{ diy_ps_8_title }}</span>
+                  </label>
+                </div>
+              </div>
+
+              <label class="diy-purchase__option">
+                <input
+                  type="radio"
+                  name="power-station"
+                  data-no-thanks
+                  data-show-sub-options="battery-cable"
+                  data-category="power-station"
+                  data-image="default"
+                >
+                <span class="diy-purchase__option__radio-button">Lo tengo</span>
+              </label>
+              <a
+                href="#"
+                class="diy-purchase__option-btn-text"
+                data-view-text="Mostrar más >"
+                data-hide-text="Mostrar menos >"
+                data-view-more-button
+                >Mostrar más &gt;</a
+              >
+            </div>
+
+            {% comment %} Sub-Options {% endcomment %}
+            <div id="battery-cable" class="diy-purchase__form-group diy-purchase__form-group--sub-options hide">
+              <div class="diy-purchase__sub-header diy-purchase__sub-header--small">
+                Elija su cable de batería
+                <div class="diy-purchase__price-wrapper">
+                  <span class="diy-purchase__price"></span>
+                </div>
+              </div>
+              <div class="diy-purchase__options">
+                <label class="diy-purchase__option">
+                  <input
+                    type="radio"
+                    name="power-station-battery-cable"
+                    data-price="{{ diy_ps_12_product_12_price }}"
+                    data-price-no-vat="{{ diy_ps_12_no_vat_price }}"
+                    data-compare-at-price="{{ diy_ps_12_product_12_compare_at_price }}"
+                    data-compare-at-price-no-vat="{{ diy_ps_12_no_vat_compare_at_price }}"
+                    data-product-id="{{ diy_ps_12_product_12_id }}"
+                    data-variant-id="{{ diy_ps_variant_id_12 }}"
+                    data-variant-no-vat-id="{{ diy_ps_variant_id_12_no_vat }}"
+                    data-category="power-station"
+                    data-image="power-station-battery-cable"
+                  >
+                  <span class="diy-purchase__option__radio-button">{{ diy_ps_12_title }}</span>
+                </label>
+                <label class="diy-purchase__option">
+                  <input
+                    type="radio"
+                    name="power-station-battery-cable"
+                    data-price="{{ diy_ps_13_product_13_price }}"
+                    data-price-no-vat="{{ diy_ps_13_no_vat_price }}"
+                    data-compare-at-price="{{ diy_ps_13_product_13_compare_at_price }}"
+                    data-compare-at-price-no-vat="{{ diy_ps_13_no_vat_compare_at_price }}"
+                    data-product-id="{{ diy_ps_13_product_13_id }}"
+                    data-variant-id="{{ diy_ps_variant_id_13 }}"
+                    data-variant-no-vat-id="{{ diy_ps_variant_id_13_no_vat }}"
+                    data-category="power-station"
+                    data-image="power-station-battery-cable"
+                  >
+                  <span class="diy-purchase__option__radio-button">{{ diy_ps_13_title }}</span>
+                </label>
+                <label class="diy-purchase__option">
+                  <input
+                    type="radio"
+                    name="power-station-battery-cable"
+                    data-price="{{ diy_ps_14_product_14_price }}"
+                    data-price-no-vat="{{ diy_ps_14_no_vat_price }}"
+                    data-compare-at-price="{{ diy_ps_14_product_14_compare_at_price }}"
+                    data-compare-at-price-no-vat="{{ diy_ps_14_no_vat_compare_at_price }}"
+                    data-product-id="{{ diy_ps_14_product_14_id }}"
+                    data-variant-id="{{ diy_ps_variant_id_14 }}"
+                    data-variant-no-vat-id="{{ diy_ps_variant_id_14_no_vat }}"
+                    data-category="power-station"
+                    data-image="power-station-battery-cable"
+                  >
+                  <span class="diy-purchase__option__radio-button">{{ diy_ps_14_title }}</span>
+                </label>
+                <label class="diy-purchase__option">
+                  <input
+                    type="radio"
+                    name="power-station-battery-cable"
+                    data-no-thanks
+                    data-category="power-station"
+                    data-image="default"
+                  >
+                  <span class="diy-purchase__option__radio-button">No, gracias.</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="diy-purchase__info-text diy-purchase__info-text--below-input">
+              {{ section.settings.diy_ps_shipping_message }}
+            </div>
+          </div>
+          <div class="diy-purchase__form-group">
+            <div class="diy-purchase__sub-header">
+              Panel Solar
+              <div class="diy-purchase__price-wrapper">
+                <span class="diy-purchase__price"></span>
+              </div>
+            </div>
+            {% comment %} 400W Rigid (ACCORDION with accessories) {% endcomment %}
+            <div class="diy-purchase__accordion">
+              <div class="diy-purchase__accordion-item diy-purchase__accordion-item--wrapper-select">
+                <div class="diy-purchase__accordion-button diy-purchase__accordion-button--single-mode">
+                  {{ diy_solar_panel_1_title }}
+                </div>
+                <div class="diy-purchase__accordion-content">
+                  <div class="diy-purchase__options">
+                    <label class="diy-purchase__option diy-purchase__option--same-font-weight hide">
+                      <input
+                        type="radio"
+                        name="solar-panel"
+                        data-price="{{ diy_solar_panel_1_product_1_price }}"
+                        data-price-no-vat="{{ diy_solar_panel_1_no_vat_price }}"
+                        data-compare-at-price="{{ diy_solar_panel_1_product_1_compare_at_price }}"
+                        data-compare-at-price-no-vat="{{ diy_solar_panel_1_no_vat_compare_at_price }}"
+                        data-product-id="{{ diy_solar_panel_1_product_1_id }}"
+                        data-variant-id="{{ diy_solar_panel_variant_id_1 }}"
+                        data-variant-no-vat-id="{{ diy_solar_panel_variant_id_1_no_vat }}"
+                        data-category="solar-panel"
+                        data-image="2X400W-rigid"
+                      >
+                      <span class="diy-purchase__option__radio-button diy-purchase__option__radio-button--small-text">
+                        {{ diy_solar_panel_1_title }}
+                      </span>
+                    </label>
+                  </div>
+                  <div class="diy-purchase__form-group">
+                    <div class="diy-purchase__sub-header diy-purchase__sub-header--small">
+                      Elija su soporte
+                      <div class="diy-purchase__price-wrapper">
+                        <span class="diy-purchase__price"></span>
+                      </div>
+                    </div>
+                    <div class="diy-purchase__options">
+                      <label class="diy-purchase__option" data-toggle-select>
+                        <input
+                          type="radio"
+                          name="solar-panel-bracket"
+                          data-price="{{ diy_solar_panel_bracket_1_product_1_price }}"
+                          data-price-no-vat="{{ diy_solar_panel_bracket_1_no_vat_price }}"
+                          data-compare-at-price="{{ diy_solar_panel_bracket_1_product_1_compare_at_price }}"
+                          data-compare-at-price-no-vat="{{ diy_solar_panel_bracket_1_no_vat_compare_at_price }}"
+                          data-product-id="{{ diy_solar_panel_bracket_1_product_1_id }}"
+                          data-variant-id="{{ diy_solar_panel_bracket_variant_id_1 }}"
+                          data-variant-no-vat-id="{{ diy_solar_panel_bracket_variant_id_1_no_vat }}"
+                        >
+                        <span class="diy-purchase__option__radio-button align-items--start">
+                          <span class="radio-button__image">
+                            <img src="{{ diy_solar_panel_bracket_1_image | img_url: '116x' }}" width="116">
+                          </span>
+                          <span class="radio-button__details">
+                            {{ diy_solar_panel_bracket_1_title }}
+                            {{ diy_solar_panel_bracket_1_description }}
+                          </span>
+                        </span>
+                      </label>
+                      <label class="diy-purchase__option" data-toggle-select>
+                        <input
+                          type="radio"
+                          name="solar-panel-bracket"
+                          data-price="{{ diy_solar_panel_bracket_2_product_2_price }}"
+                          data-price-no-vat="{{ diy_solar_panel_bracket_2_no_vat_price }}"
+                          data-compare-at-price="{{ diy_solar_panel_bracket_2_product_2_compare_at_price }}"
+                          data-compare-at-price-no-vat="{{ diy_solar_panel_bracket_2_no_vat_compare_at_price }}"
+                          data-product-id="{{ diy_solar_panel_bracket_2_product_2_id }}"
+                          data-variant-id="{{ diy_solar_panel_bracket_variant_id_2 }}"
+                          data-variant-no-vat-id="{{ diy_solar_panel_bracket_variant_id_2_no_vat }}"
+                        >
+                        <span class="diy-purchase__option__radio-button align-items--start">
+                          <span class="radio-button__image">
+                            <img src="{{ diy_solar_panel_bracket_2_image | img_url: '116x' }}" width="116">
+                          </span>
+                          <span class="radio-button__details">
+                            {{ diy_solar_panel_bracket_2_title }}
+                            {{ diy_solar_panel_bracket_2_description }}
+                          </span>
+                        </span>
+                      </label>
+                      <label class="diy-purchase__option" data-toggle-select>
+                        <input
+                          type="radio"
+                          name="solar-panel-bracket"
+                          data-price="{{ diy_solar_panel_bracket_3_product_3_price }}"
+                          data-price-no-vat="{{ diy_solar_panel_bracket_3_no_vat_price }}"
+                          data-compare-at-price="{{ diy_solar_panel_bracket_3_product_3_compare_at_price }}"
+                          data-compare-at-price-no-vat="{{ diy_solar_panel_bracket_3_no_vat_compare_at_price }}"
+                          data-product-id="{{ diy_solar_panel_bracket_3_product_3_id }}"
+                          data-variant-id="{{ diy_solar_panel_bracket_variant_id_3 }}"
+                          data-variant-no-vat-id="{{ diy_solar_panel_bracket_variant_id_3_no_vat }}"
+                        >
+                        <span class="diy-purchase__option__radio-button align-items--start">
+                          <span class="radio-button__image">
+                            <img src="{{ diy_solar_panel_bracket_3_image | img_url: '116x' }}" width="116">
+                          </span>
+                          <span class="radio-button__details">
+                            {{ diy_solar_panel_bracket_3_title }}
+                            {{ diy_solar_panel_bracket_3_description }}
+                          </span>
+                        </span>
+                      </label>
+                      {% comment %} <label class="diy-purchase__option">
+                        <input
+                          type="radio"
+                          name="solar-panel-bracket"
+                          data-no-thanks
+                        >
+                        <span class="diy-purchase__option__radio-button">No, gracias.</span>
+                      </label> {% endcomment %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="diy-purchase__options">
+              {% comment %} 400W Rigid {% endcomment %}
+              {% comment %} <label class="diy-purchase__option">
+                <input
+                  type="radio"
+                  name="solar-panel"
+                  data-price="{{ diy_solar_panel_1_product_1_price }}"
+                  data-price-no-vat="{{ diy_solar_panel_1_no_vat_price }}"
+                  data-compare-at-price="{{ diy_solar_panel_1_product_1_compare_at_price }}"
+                  data-compare-at-price-no-vat="{{ diy_solar_panel_1_no_vat_compare_at_price }}"
+                  data-product-id="{{ diy_solar_panel_1_product_1_id }}"
+                  data-variant-id="{{ diy_solar_panel_variant_id_1 }}"
+                  data-variant-no-vat-id="{{ diy_solar_panel_variant_id_1_no_vat }}"
+                  data-category="solar-panel"
+                  data-image="2X400W-rigid"
+                >
+                <span class="diy-purchase__option__radio-button">
+                  {{ diy_solar_panel_1_title }}
+                </span>
+              </label> {% endcomment %}
+              <label class="diy-purchase__option">
+                <input
+                  data-quantity
+                  type="radio"
+                  name="solar-panel"
+                  data-price="{{ diy_solar_panel_2_product_2_price }}"
+                  data-price-no-vat="{{ diy_solar_panel_2_no_vat_price }}"
+                  data-compare-at-price="{{ diy_solar_panel_2_product_2_compare_at_price }}"
+                  data-compare-at-price-no-vat="{{ diy_solar_panel_2_no_vat_compare_at_price }}"
+                  data-product-id="{{ diy_solar_panel_2_product_2_id }}"
+                  data-variant-id="{{ diy_solar_panel_variant_id_2 }}"
+                  data-variant-no-vat-id="{{ diy_solar_panel_variant_id_2_no_vat }}"
+                  data-category="solar-panel"
+                  data-image="100W-flexible"
+                >
+                <div class="diy-purchase__option__radio-button">
+                  {% comment %} 100 Flexible (Strap) {% endcomment %}
+                  {{ diy_solar_panel_2_title }}
+                  {% render 'widget-diy-purchase-option-qty',
+                    watt: diy_solar_panel_2_watt,
+                    default_quantity: diy_solar_panel_2_default_quantity,
+                    minimum_quantity: diy_solar_panel_2_minimum_quantity
+                  %}
+                </div>
+              </label>
+            </div>
+
+            {% comment %} 100W Rigid (Hooks) *2 (QTY layout) {% endcomment %}
+            {% comment %}
+              <div class="diy-purchase__options">
+                <label class="diy-purchase__option">
+                  <input
+                    data-quantity
+                    type="radio"
+                    name="solar-panel"
+                    data-price="{{ diy_solar_panel_3_product_3_price }}"
+                    data-price-no-vat="{{ diy_solar_panel_3_no_vat_price }}"
+                    data-product-id="{{ diy_solar_panel_3_product_3_id }}"
+                    data-variant-id="{{ diy_solar_panel_variant_id_3 }}"
+                    data-variant-no-vat-id="{{ diy_solar_panel_variant_id_3_no_vat }}"
+                    data-category="solar-panel"
+                    data-image="100W-flexible">
+                  <div class="diy-purchase__option__radio-button">
+                    {{ diy_solar_panel_3_title }}
+                    {% render 'widget-diy-purchase-option-qty', watt: diy_solar_panel_3_watt, default_quantity: diy_solar_panel_3_default_quantity %}
+                  </div>
+                </label>
+              </div>
+            {% endcomment %}
+            {% comment %} 100W Rigid (Hooks) *2 (Accordion layout) {% endcomment %}
+            {% comment %}
+              <div class="diy-purchase__accordion">
+                <div class="diy-purchase__accordion-item diy-purchase__accordion-item--wrapper-select">
+                  <div class="diy-purchase__accordion-button diy-purchase__accordion-button--single-mode">
+                    100W Rigid (Hooks) *2
+                  </div>
+                  <div class="diy-purchase__accordion-content">
+                    <div class="diy-purchase__options">
+                      <label class="diy-purchase__option">
+                        <input
+                          data-quantity
+                          type="radio"
+                          name="solar-panel"
+                          data-price="{{ diy_solar_panel_3_product_3_price }}"
+                          data-price-no-vat="{{ diy_solar_panel_3_no_vat_price }}"
+                          data-product-id="{{ diy_solar_panel_3_product_3_id }}"
+                          data-variant-id="{{ diy_solar_panel_variant_id_3 }}"
+                          data-variant-no-vat-id="{{ diy_solar_panel_variant_id_3_no_vat }}"
+                          data-category="solar-panel"
+                          data-image="2X100W-rigid">
+                        <div class="diy-purchase__option__radio-button">
+                          <!-- 100W Rigid (Hooks) *2 -->
+                          <!--
+                            watt: 200
+                            default_quantity: 2
+                          -->
+                          {{ diy_solar_panel_3_title }}
+                          {% render 'widget-diy-purchase-option-qty', watt: diy_solar_panel_3_watt, default_quantity: diy_solar_panel_3_default_quantity %}
+                        </div>
+                      </label>
+                    </div>
+                    <div class="diy-purchase__form-group">
+                      <div class="diy-purchase__sub-header diy-purchase__sub-header--small">
+                        Choose your bracket x 2
+                        <div class="diy-purchase__price-wrapper">
+                          <span class="diy-purchase__price"></span>
+                        </div>
+                      </div>
+                      <div class="diy-purchase__options">
+                        <label class="diy-purchase__option">
+                          <input
+                            type="radio"
+                            name="solar-panel-bracket"
+                            data-price="{{ diy_solar_panel_bracket_100w_1_product_1_price }}"
+                            data-price-no-vat="{{ diy_solar_panel_bracket_100w_1_no_vat_price }}"
+                            data-product-id="{{ diy_solar_panel_bracket_100w_1_product_1_id }}"
+                            data-variant-id="{{ diy_solar_panel_bracket_100w_variant_id_1 }}"
+                            data-variant-no-vat-id="{{ diy_solar_panel_bracket_100w_variant_id_1_no_vat }}">
+                          <span class="diy-purchase__option__radio-button align-items--start">
+                            <span class="radio-button__image">
+                              <img src="{{ diy_solar_panel_bracket_100w_1_image | img_url: '116x' }}" width="116">
+                            </span>
+                            <span class="radio-button__details">
+                              {{ diy_solar_panel_bracket_100w_1_title }}
+                              {{ diy_solar_panel_bracket_100w_1_description }}
+                            </span>
+                            {% render 'widget-diy-purchase-option-qty', default_quantity: 2 %}
+                          </span>
+                        </label>
+                        <label class="diy-purchase__option">
+                          <input
+                            type="radio"
+                            name="solar-panel-bracket"
+                            data-price="{{ diy_solar_panel_bracket_100w_2_product_2_price }}"
+                            data-price-no-vat="{{ diy_solar_panel_bracket_100w_2_no_vat_price }}"
+                            data-product-id="{{ diy_solar_panel_bracket_100w_2_product_2_id }}"
+                            data-variant-id="{{ diy_solar_panel_bracket_100w_variant_id_2 }}"
+                            data-variant-no-vat-id="{{ diy_solar_panel_bracket_100w_variant_id_2_no_vat }}">
+                          <span class="diy-purchase__option__radio-button align-items--start">
+                            <span class="radio-button__image">
+                              <img src="{{ diy_solar_panel_bracket_100w_2_image | img_url: '116x' }}" width="116">
+                            </span>
+                            <span class="radio-button__details">
+                              {{ diy_solar_panel_bracket_100w_2_title }}
+                              {{ diy_solar_panel_bracket_100w_2_description }}
+                            </span>
+                            {% render 'widget-diy-purchase-option-qty', default_quantity: 2 %}
+                          </span>
+                        </label>
+                        <!-- <label class="diy-purchase__option">
+                          <input
+                            type="radio"
+                            name="solar-panel-bracket"
+                            data-price="{{ diy_solar_panel_bracket_100w_3_product_3_price }}"
+                            data-price-no-vat="{{ diy_solar_panel_bracket_100w_3_no_vat_price }}"
+                            data-product-id="{{ diy_solar_panel_bracket_100w_3_product_3_id }}"
+                            data-variant-id="{{ diy_solar_panel_bracket_100w_variant_id_3 }}"
+                            data-variant-no-vat-id="{{ diy_solar_panel_bracket_100w_variant_id_3_no_vat }}">
+                          <span class="diy-purchase__option__radio-button align-items--start">
+                            <span class="radio-button__image">
+                              <img src="{{ diy_solar_panel_bracket_100w_3_image | img_url: '116x' }}" width="116">
+                            </span>
+                            <span class="radio-button__details">
+                              {{ diy_solar_panel_bracket_100w_3_title }}
+                              {{ diy_solar_panel_bracket_100w_3_description }}
+                            </span>
+                            {% render 'widget-diy-purchase-option-qty', default_quantity: 2 %}
+                          </span>
+                        </label> -->
+                        <label class="diy-purchase__option">
+                          <input
+                            type="radio"
+                            name="solar-panel-bracket"
+                            data-no-thanks>
+                          <span class="diy-purchase__option__radio-button">No, thanks.</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endcomment %}
+            <div class="diy-purchase__options">
+              <label class="diy-purchase__option">
+                <input
+                  type="radio"
+                  2
+                  name="solar-panel"
+                  data-no-thanks
+                  data-category="solar-panel"
+                  data-image="default"
+                >
+                <span class="diy-purchase__option__radio-button">No, gracias.</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="diy-purchase__form-group">
+            <div class="diy-purchase__sub-header">
+              Smart Plug
+              <div class="diy-purchase__price-wrapper">
+                <span class="diy-purchase__price"></span>
+              </div>
+              <div class="diy-purchase__info-text">{{ section.settings.diy_smart_plug_shipping_message }}</div>
+            </div>
+            <div class="diy-purchase__options">
+              <label class="diy-purchase__option">
+                <input
+                  data-quantity
+                  type="radio"
+                  name="smart-plug"
+                  data-price="{{ diy_smart_plug_1_product_1_price }}"
+                  data-price-no-vat="{{ diy_smart_plug_1_no_vat_price }}"
+                  data-compare-at-price="{{ diy_smart_plug_1_product_1_compare_at_price }}"
+                  data-compare-at-price-no-vat="{{ diy_smart_plug_1_no_vat_compare_at_price }}"
+                  data-product-id="{{ diy_smart_plug_1_product_1_id }}"
+                  data-variant-id="{{ diy_smart_plug_variant_id_1 }}"
+                  data-variant-no-vat-id="{{ diy_smart_plug_variant_id_1_no_vat }}"
+                  data-category="smart-plug"
+                  data-image="smart-plug"
+                >
+                <div class="diy-purchase__option__radio-button">
+                  {% comment %} Quantity {% endcomment %}
+                  {{ diy_smart_plug_1_title }}
+                  {% render 'widget-diy-purchase-option-qty', default_quantity: diy_smart_plug_1_default_quantity %}
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div class="diy-purchase__form-group">
+            <div class="diy-purchase__sub-header">
+              Super Flat Cable
+              <div class="diy-purchase__price-wrapper">
+                <span class="diy-purchase__price"></span>
+              </div>
+              <div class="diy-purchase__info-text">{{ section.settings.diy_sfc_shipping_message }}</div>
+            </div>
+            <div class="diy-purchase__options">
+              <label class="diy-purchase__option">
+                <input
+                  data-quantity
+                  type="radio"
+                  name="super-flat-cable"
+                  data-price="{{ diy_sfc_1_product_1_price }}"
+                  data-price-no-vat="{{ diy_sfc_1_no_vat_price }}"
+                  data-compare-at-price="{{ diy_sfc_1_product_1_compare_at_price }}"
+                  data-compare-at-price-no-vat="{{ diy_sfc_1_no_vat_compare_at_price }}"
+                  data-product-id="{{ diy_sfc_1_product_1_id }}"
+                  data-variant-id="{{ diy_sfc_variant_id_1 }}"
+                  data-variant-no-vat-id="{{ diy_sfc_variant_id_1_no_vat }}"
+                >
+                <div class="diy-purchase__option__radio-button">
+                  {% comment %} Pair {% endcomment %}
+                  {{ diy_sfc_1_title }}
+                  {% render 'widget-diy-purchase-option-qty', default_quantity: diy_sfc_1_default_quantity %}
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <!-- /#diy -->
+
+        <div id="feature-bundle" class="diy-purchase__form diy-purchase__form--active">
+          {% comment %}
+            <div class="diy-purchase__form-group" data-required>
+              <div class="diy-purchase__sub-header">
+                Micro Inverter
+                <div class="diy-purchase__price-wrapper">
+                  <span class="diy-purchase__price"></span>
+                </div>
+              </div>
+              <div class="diy-purchase__options diy-purchase__options--two-column">
+                <label class="diy-purchase__option">
+                  <input
+                    type="radio"
+                    name="micro-inverter"
+                    data-country="de"
+                    data-price="{{ bundle_mi_1_product_1_price }}"
+                    data-price-no-vat="{{ bundle_mi_1_no_vat_price }}"
+                    data-compare-at-price="{{ bundle_mi_1_product_1_compare_at_price }}"
+                  data-compare-at-price-no-vat="{{ bundle_mi_1_no_vat_compare_at_price }}"
+                    data-product-id="{{ bundle_mi_1_product_1_id }}"
+                    data-variant-id="{{ bundle_mi_variant_id_1 }}"
+                    data-variant-no-vat-id="{{ bundle_mi_variant_id_1_no_vat }}"
+                    data-category="microinverter"
+                    data-image="microinverter">
+                  <span class="diy-purchase__option__radio-button justify--start">
+                    {{ bundle_mi_1_title }}
+                  </span>
+                </label>
+                <label class="diy-purchase__option diy-purchase__option-eu-micro-inverter">
+                  <input
+                    type="radio"
+                    name="micro-inverter"
+                    data-country="eu"
+                    data-price="{{ bundle_mi_2_product_2_price }}"
+                    data-price-no-vat="{{ bundle_mi_2_no_vat_price }}"
+                    data-compare-at-price="{{ bundle_mi_2_product_2_compare_at_price }}"
+                  data-compare-at-price-no-vat="{{ bundle_mi_2_no_vat_compare_at_price }}"
+                    data-product-id="{{ bundle_mi_2_product_2_id }}"
+                    data-variant-id="{{ bundle_mi_variant_id_2 }}"
+                    data-variant-no-vat-id="{{ bundle_mi_variant_id_2_no_vat }}"
+                    data-category="microinverter"
+                    data-image="microinverter">
+                  <span class="diy-purchase__option__radio-button justify--start">
+                    {{ bundle_mi_2_title }}
+                  </span>
+                </label>
+              </div>
+              <div class="diy-purchase__info-text diy-purchase__info-text--below-input">{{ section.settings.diy_mi_shipping_message }}</div>
+            </div>
+          {% endcomment %}
+
+          <div
+            class="diy-purchase__form-group diy-purchase__form-group--choose-your-solution diy-purchase__form-group--accordion"
+            data-required
+          >
+            <div class="diy-purchase__sub-header">
+              Elija su solución
+              <div class="diy-purchase__price-wrapper">
+                <span class="diy-purchase__price"></span>
+              </div>
+            </div>
+            <div class="diy-purchase__accordion">
+              <div class="diy-purchase__accordion-item diy-purchase__accordion-item--wrapper-select">
+                <div class="diy-purchase__accordion-button">Kit de almacenamiento de 2 kWh</div>
+                <div class="diy-purchase__accordion-content">
+                  <div class="diy-purchase__options diy-purchase__options--two-column">
+                    <label class="diy-purchase__option diy-purchase__option--same-font-weight">
+                      <input
+                        type="radio"
+                        name="advanced-kit"
+                        data-bundle
+                        data-product-id="{%- if bundle_2kWh_1_product_1_id != blank -%}{{ bundle_2kWh_1_product_1_id }}{%- endif -%}
+                        {%- if bundle_2kWh_2_product_2_id != blank -%},{{ bundle_2kWh_2_product_2_id }}{%- endif -%}
+                        {%- if bundle_2kWh_3_product_3_id != blank -%},{{ bundle_2kWh_3_product_3_id }}{%- endif -%}
+                        {%- if bundle_2kWh_4_product_4_id != blank -%},{{ bundle_2kWh_4_product_4_id }}{%- endif -%}
+                        {%- if bundle_2kWh_5_product_5_id != blank -%},{{ bundle_2kWh_5_product_5_id }}{%- endif -%}"
+                        data-price="{%- if bundle_2kWh_1_product_1_id != blank -%}{{ bundle_2kWh_1_product_1_price }}{%- endif -%}
+                        {%- if bundle_2kWh_2_product_2_id != blank -%},{{ bundle_2kWh_2_product_2_price }}{%- endif -%}
+                        {%- if bundle_2kWh_3_product_3_id != blank -%},{{ bundle_2kWh_3_product_3_price }}{%- endif -%}
+                        {%- if bundle_2kWh_4_product_4_id != blank -%},{{ bundle_2kWh_4_product_4_price }}{%- endif -%}
+                        {%- if bundle_2kWh_5_product_5_id != blank -%},{{ bundle_2kWh_5_product_5_price }}{%- endif -%}"
+                        data-price-no-vat="{%- if bundle_2kWh_1_product_1_id != blank -%}{{ bundle_2kWh_1_no_vat_price }}{%- endif -%}
+                        {%- if bundle_2kWh_2_product_2_id != blank -%},{{ bundle_2kWh_2_no_vat_price }}{%- endif -%}
+                        {%- if bundle_2kWh_3_product_3_id != blank -%},{{ bundle_2kWh_3_no_vat_price }}{%- endif -%}
+                        {%- if bundle_2kWh_4_product_4_id != blank -%},{{ bundle_2kWh_4_no_vat_price }}{%- endif -%}
+                        {%- if bundle_2kWh_5_product_5_id != blank -%},{{ bundle_2kWh_5_no_vat_price }}{%- endif -%}"
+                        data-compare-at-price="{%- if bundle_2kWh_1_product_1_id != blank -%}{{ bundle_2kWh_1_product_1_compare_at_price }}{%- endif -%}
+                        {%- if bundle_2kWh_2_product_2_id != blank -%},{{ bundle_2kWh_2_product_2_compare_at_price }}{%- endif -%}
+                        {%- if bundle_2kWh_3_product_3_id != blank -%},{{ bundle_2kWh_3_product_3_compare_at_price }}{%- endif -%}
+                        {%- if bundle_2kWh_4_product_4_id != blank -%},{{ bundle_2kWh_4_product_4_compare_at_price }}{%- endif -%}
+                        {%- if bundle_2kWh_5_product_5_id != blank -%},{{ bundle_2kWh_5_product_5_compare_at_price }}{%- endif -%}"
+                        data-compare-at-price-no-vat="{%- if bundle_2kWh_1_product_1_id != blank -%}{{ bundle_2kWh_1_no_vat_compare_at_price }}{%- endif -%}
+                        {%- if bundle_2kWh_2_product_2_id != blank -%},{{ bundle_2kWh_2_no_vat_compare_at_price }}{%- endif -%}
+                        {%- if bundle_2kWh_3_product_3_id != blank -%},{{ bundle_2kWh_3_no_vat_compare_at_price }}{%- endif -%}
+                        {%- if bundle_2kWh_4_product_4_id != blank -%},{{ bundle_2kWh_4_no_vat_compare_at_price }}{%- endif -%}
+                        {%- if bundle_2kWh_5_product_5_id != blank -%},{{ bundle_2kWh_5_no_vat_compare_at_price }}{%- endif -%}"
+                        data-variant-id="{%- if bundle_2kWh_1_product_1_id != blank -%}{{ bundle_2kWh_variant_id_1 }}{%- endif -%}
+                        {%- if bundle_2kWh_2_product_2_id != blank -%},{{ bundle_2kWh_variant_id_2 }}{%- endif -%}
+                        {%- if bundle_2kWh_3_product_3_id != blank -%},{{ bundle_2kWh_variant_id_3 }}{%- endif -%}
+                        {%- if bundle_2kWh_4_product_4_id != blank -%},{{ bundle_2kWh_variant_id_4 }}{%- endif -%}
+                        {%- if bundle_2kWh_5_product_5_id != blank -%},{{ bundle_2kWh_variant_id_5 }}{%- endif -%}"
+                        data-variant-no-vat-id="{%- if bundle_2kWh_1_product_1_id != blank -%}{{ bundle_2kWh_variant_id_1_no_vat }}{%- endif -%}
+                        {%- if bundle_2kWh_2_product_2_id != blank -%},{{ bundle_2kWh_variant_id_2_no_vat }}{%- endif -%}
+                        {%- if bundle_2kWh_3_product_3_id != blank -%},{{ bundle_2kWh_variant_id_3_no_vat }}{%- endif -%}
+                        {%- if bundle_2kWh_4_product_4_id != blank -%},{{ bundle_2kWh_variant_id_4_no_vat }}{%- endif -%}
+                        {%- if bundle_2kWh_5_product_5_id != blank -%},{{ bundle_2kWh_variant_id_5_no_vat }}{%- endif -%}"
+                        data-category="slider"
+                        data-image="diy-purchase__slider-2kWh"
+                      >
+                      <span class="diy-purchase__option__radio-button diy-purchase__option__radio-button--small-text diy-purchase__option__radio-button--details">
+                        {% if bundle_2kWh_1_product_1_id != blank %}{{ bundle_2kWh_1_title }}{% endif %}
+                        {% if bundle_2kWh_2_product_2_id != blank %}<br>{{ bundle_2kWh_2_title }}{% endif %}
+                        {% if bundle_2kWh_3_product_3_id != blank %}<br>{{ bundle_2kWh_3_title }}{% endif %}
+                        {% if bundle_2kWh_4_product_4_id != blank %}<br>{{ bundle_2kWh_4_title }}{% endif %}
+                        {% if bundle_2kWh_5_product_5_id != blank %}<br>{{ bundle_2kWh_5_title }}{% endif %}
+                      </span>
+                    </label>
+                  </div>
+                  {% comment %} <div class="diy-purchase__form-group">
+                    <div class="diy-purchase__sub-header diy-purchase__sub-header--small">
+                      Elija su soporte
+                      {% comment %} same with 400W Rigid {% endcomment %}
+                      <div class="diy-purchase__price-wrapper">
+                        <span class="diy-purchase__price"></span>
+                      </div>
+                    </div>
+                    <div class="diy-purchase__options">
+                      <label class="diy-purchase__option">
+                        <input
+                          type="radio"
+                          name="solar-panel-bracket"
+                          data-price="{{ diy_solar_panel_bracket_1_product_1_price }}"
+                          data-price-no-vat="{{ diy_solar_panel_bracket_1_no_vat_price }}"
+                          data-product-id="{{ diy_solar_panel_bracket_1_product_1_id }}"
+                          data-variant-id="{{ diy_solar_panel_bracket_variant_id_1 }}"
+                          data-variant-no-vat-id="{{ diy_solar_panel_bracket_variant_id_1_no_vat }}"
+                        >
+                        <span class="diy-purchase__option__radio-button align-items--start">
+                          <span class="radio-button__image">
+                            <img src="{{ diy_solar_panel_bracket_1_image | img_url: '116x' }}" width="116">
+                          </span>
+                          <span class="radio-button__details">
+                            {{ diy_solar_panel_bracket_1_title }}
+                            {{ diy_solar_panel_bracket_1_description }}
+                          </span>
+                        </span>
+                      </label>
+                      <label class="diy-purchase__option">
+                        <input
+                          type="radio"
+                          name="solar-panel-bracket"
+                          data-price="{{ diy_solar_panel_bracket_2_product_2_price }}"
+                          data-price-no-vat="{{ diy_solar_panel_bracket_2_no_vat_price }}"
+                          data-product-id="{{ diy_solar_panel_bracket_2_product_2_id }}"
+                          data-variant-id="{{ diy_solar_panel_bracket_variant_id_2 }}"
+                          data-variant-no-vat-id="{{ diy_solar_panel_bracket_variant_id_2_no_vat }}"
+                        >
+                        <span class="diy-purchase__option__radio-button align-items--start">
+                          <span class="radio-button__image">
+                            <img src="{{ diy_solar_panel_bracket_2_image | img_url: '116x' }}" width="116">
+                          </span>
+                          <span class="radio-button__details">
+                            {{ diy_solar_panel_bracket_2_title }}
+                            {{ diy_solar_panel_bracket_2_description }}
+                          </span>
+                        </span>
+                      </label>
+                      <label class="diy-purchase__option">
+                        <input
+                          type="radio"
+                          name="solar-panel-bracket"
+                          data-price="{{ diy_solar_panel_bracket_3_product_3_price }}"
+                          data-price-no-vat="{{ diy_solar_panel_bracket_3_no_vat_price }}"
+                          data-product-id="{{ diy_solar_panel_bracket_3_product_3_id }}"
+                          data-variant-id="{{ diy_solar_panel_bracket_variant_id_3 }}"
+                          data-variant-no-vat-id="{{ diy_solar_panel_bracket_variant_id_3_no_vat }}"
+                        >
+                        <span class="diy-purchase__option__radio-button align-items--start">
+                          <span class="radio-button__image">
+                            <img src="{{ diy_solar_panel_bracket_3_image | img_url: '116x' }}" width="116">
+                          </span>
+                          <span class="radio-button__details">
+                            {{ diy_solar_panel_bracket_3_title }}
+                            {{ diy_solar_panel_bracket_3_description }}
+                          </span>
+                        </span>
+                      </label>
+                      <label class="diy-purchase__option">
+                        <input
+                          type="radio"
+                          name="solar-panel-bracket"
+                          data-no-thanks
+                        >
+                        <span class="diy-purchase__option__radio-button">No, gracias.</span>
+                      </label>
+                    </div>
+                  </div> {% endcomment %}
+                </div>
+              </div>
+
+              <div class="diy-purchase__accordion-item diy-purchase__accordion-item--wrapper-select">
+                <div class="diy-purchase__accordion-button">Kit de almacenamiento de 1 kWh</div>
+                <div class="diy-purchase__accordion-content">
+                  <div class="diy-purchase__options">
+                    <label class="diy-purchase__option diy-purchase__option--same-font-weight">
+                      <input
+                        type="radio"
+                        name="starter-kit"
+                        data-bundle
+                        data-product-id="
+                        {%- if bundle_1kWh_1_product_1_id != blank -%}{{ bundle_1kWh_1_product_1_id }}{%- endif -%}
+                        {%- if bundle_1kWh_2_product_2_id != blank -%},{{ bundle_1kWh_2_product_2_id }}{%- endif -%}
+                        {%- if bundle_1kWh_3_product_3_id != blank -%},{{ bundle_1kWh_3_product_3_id }}{%- endif -%}
+                        {%- if bundle_1kWh_4_product_4_id != blank -%},{{ bundle_1kWh_4_product_4_id }}{%- endif -%}
+                        {%- if bundle_1kWh_5_product_5_id != blank -%},{{ bundle_1kWh_5_product_5_id }}{%- endif -%}"
+                        data-price="
+                        {%- if bundle_1kWh_1_product_1_id != blank -%}{{ bundle_1kWh_1_product_1_price }}{%- endif -%}
+                        {%- if bundle_1kWh_2_product_2_id != blank -%},{{ bundle_1kWh_2_product_2_price }}{%- endif -%}
+                        {%- if bundle_1kWh_3_product_3_id != blank -%},{{ bundle_1kWh_3_product_3_price }}{%- endif -%}
+                        {%- if bundle_1kWh_4_product_4_id != blank -%},{{ bundle_1kWh_4_product_4_price }}{%- endif -%}
+                        {%- if bundle_1kWh_5_product_5_id != blank -%},{{ bundle_1kWh_5_product_5_price }}{%- endif -%}"
+                        data-price-no-vat="
+                        {%- if bundle_1kWh_1_product_1_id != blank -%}{{ bundle_1kWh_1_no_vat_price }}{%- endif -%}
+                        {%- if bundle_1kWh_2_product_2_id != blank -%},{{ bundle_1kWh_2_no_vat_price }}{%- endif -%}
+                        {%- if bundle_1kWh_3_product_3_id != blank -%},{{ bundle_1kWh_3_no_vat_price }}{%- endif -%}
+                        {%- if bundle_1kWh_4_product_4_id != blank -%},{{ bundle_1kWh_4_no_vat_price }}{%- endif -%}
+                        {%- if bundle_1kWh_5_product_5_id != blank -%},{{ bundle_1kWh_5_no_vat_price }}{%- endif -%}"
+                        data-compare-at-price="{%- if bundle_1kWh_1_product_1_id != blank -%}{{ bundle_1kWh_1_product_1_compare_at_price }}{%- endif -%}
+                        {%- if bundle_1kWh_2_product_2_id != blank -%},{{ bundle_1kWh_2_product_2_compare_at_price }}{%- endif -%}
+                        {%- if bundle_1kWh_3_product_3_id != blank -%},{{ bundle_1kWh_3_product_3_compare_at_price }}{%- endif -%}
+                        {%- if bundle_1kWh_4_product_4_id != blank -%},{{ bundle_1kWh_4_product_4_compare_at_price }}{%- endif -%}
+                        {%- if bundle_1kWh_5_product_5_id != blank -%},{{ bundle_1kWh_5_product_5_compare_at_price }}{%- endif -%}"
+                        data-compare-at-price-no-vat="{%- if bundle_1kWh_1_product_1_id != blank -%}{{ bundle_1kWh_1_no_vat_compare_at_price }}{%- endif -%}
+                        {%- if bundle_1kWh_2_product_2_id != blank -%},{{ bundle_1kWh_2_no_vat_compare_at_price }}{%- endif -%}
+                        {%- if bundle_1kWh_3_product_3_id != blank -%},{{ bundle_1kWh_3_no_vat_compare_at_price }}{%- endif -%}
+                        {%- if bundle_1kWh_4_product_4_id != blank -%},{{ bundle_1kWh_4_no_vat_compare_at_price }}{%- endif -%}
+                        {%- if bundle_1kWh_5_product_5_id != blank -%},{{ bundle_1kWh_5_no_vat_compare_at_price }}{%- endif -%}"
+                        data-variant-id="
+                        {%- if bundle_1kWh_1_product_1_id != blank -%}{{ bundle_1kWh_variant_id_1 }}{%- endif -%}
+                        {%- if bundle_1kWh_2_product_2_id != blank -%},{{ bundle_1kWh_variant_id_2 }}{%- endif -%}
+                        {%- if bundle_1kWh_3_product_3_id != blank -%},{{ bundle_1kWh_variant_id_3 }}{%- endif -%}
+                        {%- if bundle_1kWh_4_product_4_id != blank -%},{{ bundle_1kWh_variant_id_4 }}{%- endif -%}
+                        {%- if bundle_1kWh_5_product_5_id != blank -%},{{ bundle_1kWh_variant_id_5 }}{%- endif -%}"
+                        data-variant-no-vat-id="
+                        {%- if bundle_1kWh_1_product_1_id != blank -%}{{ bundle_1kWh_variant_id_1_no_vat }}{%- endif -%}
+                        {%- if bundle_1kWh_2_product_2_id != blank -%},{{ bundle_1kWh_variant_id_2_no_vat }}{%- endif -%}
+                        {%- if bundle_1kWh_3_product_3_id != blank -%},{{ bundle_1kWh_variant_id_3_no_vat }}{%- endif -%}
+                        {%- if bundle_1kWh_4_product_4_id != blank -%},{{ bundle_1kWh_variant_id_4_no_vat }}{%- endif -%}
+                        {%- if bundle_1kWh_5_product_5_id != blank -%},{{ bundle_1kWh_variant_id_5_no_vat }}{%- endif -%}"
+                        data-category="slider"
+                        data-image="diy-purchase__slider-1kWh"
+                      >
+                      <span class="diy-purchase__option__radio-button diy-purchase__option__radio-button--small-text diy-purchase__option__radio-button--details">
+                        {% if bundle_1kWh_1_product_1_id != blank %}{{ bundle_1kWh_1_title }}{% endif %}
+                        {% if bundle_1kWh_2_product_2_id != blank %}<br>{{ bundle_1kWh_2_title }}{% endif %}
+                        {% if bundle_1kWh_3_product_3_id != blank %}<br>{{ bundle_1kWh_3_title }}{% endif %}
+                        {% if bundle_1kWh_4_product_4_id != blank %}<br>{{ bundle_1kWh_4_title }}{% endif %}
+                        {% if bundle_1kWh_5_product_5_id != blank %}<br>{{ bundle_1kWh_5_title }}{% endif %}
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="diy-purchase__accordion-item diy-purchase__accordion-item--wrapper-select">
+                <div class="diy-purchase__accordion-button">Kit sin almacenamiento</div>
+                <div class="diy-purchase__accordion-content">
+                  <div class="diy-purchase__options">
+                    <label class="diy-purchase__option diy-purchase__option--same-font-weight">
+                      <input
+                        type="radio"
+                        name="battery-ready"
+                        data-bundle
+                        data-product-id="
+                        {%- if bundle_no_storage_1_product_1_id != blank -%}{{ bundle_no_storage_1_product_1_id }}{%- endif -%}
+                        {%- if bundle_no_storage_2_product_2_id != blank -%},{{ bundle_no_storage_2_product_2_id }}{%- endif -%}
+                        {%- if bundle_no_storage_3_product_3_id != blank -%},{{ bundle_no_storage_3_product_3_id }}{%- endif -%}
+                        {%- if bundle_no_storage_4_product_4_id != blank -%},{{ bundle_no_storage_4_product_4_id }}{%- endif -%}"
+                        data-price="
+                        {%- if bundle_no_storage_1_product_1_id != blank -%}{{ bundle_no_storage_1_product_1_price }}{%- endif -%}
+                        {%- if bundle_no_storage_2_product_2_id != blank -%},{{ bundle_no_storage_2_product_2_price }}{%- endif -%}
+                        {%- if bundle_no_storage_3_product_3_id != blank -%},{{ bundle_no_storage_3_product_3_price }}{%- endif -%}
+                        {%- if bundle_no_storage_4_product_4_id != blank -%},{{ bundle_no_storage_4_product_4_price }}{%- endif -%}"
+                        data-price-no-vat="
+                        {%- if bundle_no_storage_1_product_1_id != blank -%}{{ bundle_no_storage_1_no_vat_price }}{%- endif -%}
+                        {%- if bundle_no_storage_2_product_2_id != blank -%},{{ bundle_no_storage_2_no_vat_price }}{%- endif -%}
+                        {%- if bundle_no_storage_3_product_3_id != blank -%},{{ bundle_no_storage_3_no_vat_price }}{%- endif -%}
+                        {%- if bundle_no_storage_4_product_4_id != blank -%},{{ bundle_no_storage_4_no_vat_price }}{%- endif -%}"
+                        data-compare-at-price="{%- if bundle_no_storage_1_product_1_id != blank -%}{{ bundle_no_storage_1_product_1_compare_at_price }}{%- endif -%}
+                        {%- if bundle_no_storage_2_product_2_id != blank -%},{{ bundle_no_storage_2_product_2_compare_at_price }}{%- endif -%}
+                        {%- if bundle_no_storage_3_product_3_id != blank -%},{{ bundle_no_storage_3_product_3_compare_at_price }}{%- endif -%}
+                        {%- if bundle_no_storage_4_product_4_id != blank -%},{{ bundle_no_storage_4_product_4_compare_at_price }}{%- endif -%}"
+                        data-compare-at-price-no-vat="{%- if bundle_no_storage_1_product_1_id != blank -%}{{ bundle_no_storage_1_no_vat_compare_at_price }}{%- endif -%}
+                        {%- if bundle_no_storage_2_product_2_id != blank -%},{{ bundle_no_storage_2_no_vat_compare_at_price }}{%- endif -%}
+                        {%- if bundle_no_storage_3_product_3_id != blank -%},{{ bundle_no_storage_3_no_vat_compare_at_price }}{%- endif -%}
+                        {%- if bundle_no_storage_4_product_4_id != blank -%},{{ bundle_no_storage_4_no_vat_compare_at_price }}{%- endif -%}"
+                        data-variant-id="
+                        {%- if bundle_no_storage_1_product_1_id != blank -%}{{ bundle_no_storage_variant_id_1 }}{%- endif -%}
+                        {%- if bundle_no_storage_2_product_2_id != blank -%},{{ bundle_no_storage_variant_id_2 }}{%- endif -%}
+                        {%- if bundle_no_storage_3_product_3_id != blank -%},{{ bundle_no_storage_variant_id_3 }}{%- endif -%}
+                        {%- if bundle_no_storage_4_product_4_id != blank -%},{{ bundle_no_storage_variant_id_4 }}{%- endif -%}"
+                        data-variant-no-vat-id="
+                        {%- if bundle_no_storage_1_product_1_id != blank -%}{{ bundle_no_storage_variant_id_1_no_vat }}{%- endif -%}
+                        {%- if bundle_no_storage_2_product_2_id != blank -%},{{ bundle_no_storage_variant_id_2_no_vat }}{%- endif -%}
+                        {%- if bundle_no_storage_3_product_3_id != blank -%},{{ bundle_no_storage_variant_id_3_no_vat }}{%- endif -%}
+                        {%- if bundle_no_storage_4_product_4_id != blank -%},{{ bundle_no_storage_variant_id_4_no_vat }}{%- endif -%}"
+                        data-category="slider"
+                        data-image="diy-purchase__slider-no-storage"
+                      >
+                      <span class="diy-purchase__option__radio-button diy-purchase__option__radio-button--small-text diy-purchase__option__radio-button--details">
+                        {% if bundle_no_storage_1_product_1_id != blank %}{{ bundle_no_storage_1_title }}{% endif %}
+                        {% if bundle_no_storage_2_product_2_id != blank %}<br>{{ bundle_no_storage_2_title }}{% endif %}
+                        {% if bundle_no_storage_3_product_3_id != blank %}<br>{{ bundle_no_storage_3_title }}{% endif %}
+                        {% if bundle_no_storage_4_product_4_id != blank %}<br>{{ bundle_no_storage_4_title }}{% endif %}
+                      </span>
+                    </label>
+                  </div>
+                  <div class="diy-purchase__form-group">
+                    <div class="diy-purchase__sub-header diy-purchase__sub-header--small">
+                      Elija su cable de batería
+                      <div class="diy-purchase__price-wrapper">
+                        <span class="diy-purchase__price"></span>
+                      </div>
+                      <div class="diy-purchase__info-text">{{ section.settings.diy_battery_cable_shipping_message }}</div>
+                    </div>
+                    <div class="diy-purchase__options">
+                      <label class="diy-purchase__option">
+                        <input
+                          type="radio"
+                          name="power-station-battery-cable"
+                          data-price="{{ diy_ps_12_product_12_price }}"
+                          data-price-no-vat="{{ diy_ps_12_no_vat_price }}"
+                          data-compare-at-price="{{ diy_ps_12_product_12_compare_at_price }}"
+                          data-compare-at-price-no-vat="{{ diy_ps_12_no_vat_compare_at_price }}"
+                          data-product-id="{{ diy_ps_12_product_12_id }}"
+                          data-variant-id="{{ diy_ps_variant_id_12 }}"
+                          data-variant-no-vat-id="{{ diy_ps_variant_id_12_no_vat }}"
+                          data-category="power-station"
+                          data-image="power-station-battery-cable"
+                        >
+                        <span class="diy-purchase__option__radio-button">{{ diy_ps_12_title }}</span>
+                      </label>
+                      <label class="diy-purchase__option">
+                        <input
+                          type="radio"
+                          name="power-station-battery-cable"
+                          data-price="{{ diy_ps_13_product_13_price }}"
+                          data-price-no-vat="{{ diy_ps_13_no_vat_price }}"
+                          data-compare-at-price="{{ diy_ps_13_product_13_compare_at_price }}"
+                          data-compare-at-price-no-vat="{{ diy_ps_13_no_vat_compare_at_price }}"
+                          data-product-id="{{ diy_ps_13_product_13_id }}"
+                          data-variant-id="{{ diy_ps_variant_id_13 }}"
+                          data-variant-no-vat-id="{{ diy_ps_variant_id_13_no_vat }}"
+                          data-category="power-station"
+                          data-image="power-station-battery-cable"
+                        >
+                        <span class="diy-purchase__option__radio-button">{{ diy_ps_13_title }}</span>
+                      </label>
+                      <label class="diy-purchase__option">
+                        <input
+                          type="radio"
+                          name="power-station-battery-cable"
+                          data-price="{{ diy_ps_14_product_14_price }}"
+                          data-price-no-vat="{{ diy_ps_14_no_vat_price }}"
+                          data-compare-at-price="{{ diy_ps_14_product_14_compare_at_price }}"
+                          data-compare-at-price-no-vat="{{ diy_ps_14_no_vat_compare_at_price }}"
+                          data-product-id="{{ diy_ps_14_product_14_id }}"
+                          data-variant-id="{{ diy_ps_variant_id_14 }}"
+                          data-variant-no-vat-id="{{ diy_ps_variant_id_14_no_vat }}"
+                          data-category="power-station"
+                          data-image="power-station-battery-cable"
+                        >
+                        <span class="diy-purchase__option__radio-button">{{ diy_ps_14_title }}</span>
+                      </label>
+                      <label class="diy-purchase__option">
+                        <input
+                          type="radio"
+                          name="power-station-battery-cable"
+                          data-no-thanks
+                          data-category="power-station"
+                          data-image="default"
+                        >
+                        <span class="diy-purchase__option__radio-button">No, gracias.</span>
+                      </label>
+                    </div>
+                    <div class="diy-purchase__info-text diy-purchase__info-text--below-input">{{ section.settings.diy_battery_cable_shipping_message }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /#feature-bundle -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="diy-footer position--sticky-bottom">
+  <div class="page-width-small product-container">
+    <div class="diy-footer__col-left">
+      <span class="product-single__title--footer">EcoFlow PowerStream</span>
+    </div>
+    <div class="diy-footer__col-right">
+      <div class="diy-footer__total-price-label">
+        <div class="diy-footer__total-price" data-total-price></div>
+        <div class="diy-footer__compare-price hide">
+          <div class="diy-footer__discounted-price" data-discounted-price></div>
+          <div class="diy-footer__compare-at-price" data-compare-at-price></div>
+        </div>
+      </div>
+      <div class="diy-footer__buttons">
+        <button class="btn btn--brand btn--diy-checkout" disabled data-checkout-button>
+          <span class="btn__text">Comprar Ahora</span>
+          <span class="hide" data-loader>
+            {% render 'icon-spinner' %}
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="{{ 'diy-purchase.js' | asset_url }}" async></script>
+
+{% schema %}
+{
+  "name": "DIY Purchase",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Customize Form"
+    },
+    {
+      "type": "paragraph",
+      "content": "IMPORTANT: add the Variant ID, but if it is only a single product add the Product ID"
+    },
+
+    {
+      "type": "header",
+      "content": "Micro Inverter"
+    },
+    {
+      "type": "text",
+      "id": "diy_mi_heading",
+      "label": "Heading",
+      "default": "Micro Inverter"
+    },
+    {
+      "type": "richtext",
+      "id": "diy_mi_shipping_message",
+      "label": "Shipping Message"
+    },
+    {
+      "type": "product",
+      "id": "diy_mi_1_product_handle",
+      "label": "Product 1"
+    },
+    {
+      "type": "text",
+      "id": "diy_mi_1_title",
+      "label": "Product 1 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "diy_mi_variant_id_1",
+      "label": "Product 1 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "diy_mi_variant_id_1_no_vat",
+      "label": "Product 1 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "product",
+      "id": "diy_mi_2_product_handle",
+      "label": "Product 2"
+    },
+    {
+      "type": "text",
+      "id": "diy_mi_2_title",
+      "label": "Product 2 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "diy_mi_variant_id_2",
+      "label": "Product 2 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "diy_mi_variant_id_2_no_vat",
+      "label": "Product 2 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "header",
+      "content": "Power Station"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_heading",
+      "label": "Heading",
+      "default": "Power Station"
+    },
+    {
+      "type": "richtext",
+      "id": "diy_ps_shipping_message",
+      "label": "Shipping Message"
+    },
+    {
+      "type": "product",
+      "id": "diy_ps_1_product_handle",
+      "label": "Product 1"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_1_title",
+      "label": "Product 1 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_variant_id_1",
+      "label": "Product 1 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_variant_id_1_no_vat",
+      "label": "Product 1 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "product",
+      "id": "diy_ps_2_product_handle",
+      "label": "Product 2"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_2_title",
+      "label": "Product 2 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_variant_id_2",
+      "label": "Product 2 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_variant_id_2_no_vat",
+      "label": "Product 2 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "product",
+      "id": "diy_ps_3_product_handle",
+      "label": "Product 3"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_3_title",
+      "label": "Product 3 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_variant_id_3",
+      "label": "Product 3 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_variant_id_3_no_vat",
+      "label": "Product 3 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "product",
+      "id": "diy_ps_4_product_handle",
+      "label": "Product 4"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_4_title",
+      "label": "Product 4 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_variant_id_4",
+      "label": "Product 4 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_variant_id_4_no_vat",
+      "label": "Product 4 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "product",
+      "id": "diy_ps_5_product_handle",
+      "label": "Product 5"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_5_title",
+      "label": "Product 5 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_variant_id_5",
+      "label": "Product 5 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_variant_id_5_no_vat",
+      "label": "Product 5 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "product",
+      "id": "diy_ps_6_product_handle",
+      "label": "Product 6"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_6_title",
+      "label": "Product 6 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_variant_id_6",
+      "label": "Product 6 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_variant_id_6_no_vat",
+      "label": "Product 6 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "header",
+      "content": "Power Station (View More)"
+    },
+
+    {
+      "type": "product",
+      "id": "diy_ps_7_product_handle",
+      "label": "Product 7"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_7_title",
+      "label": "Product 7 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_variant_id_7",
+      "label": "Product 7 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_variant_id_7_no_vat",
+      "label": "Product 7 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "product",
+      "id": "diy_ps_8_product_handle",
+      "label": "Product 8"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_8_title",
+      "label": "Product 8 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_variant_id_8",
+      "label": "Product 8 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_variant_id_8_no_vat",
+      "label": "Product 8 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "product",
+      "id": "diy_ps_9_product_handle",
+      "label": "Product 9"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_9_title",
+      "label": "Product 9 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_variant_id_9",
+      "label": "Product 9 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_variant_id_9_no_vat",
+      "label": "Product 9 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "product",
+      "id": "diy_ps_10_product_handle",
+      "label": "Product 10"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_10_title",
+      "label": "Product 10 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_variant_id_10",
+      "label": "Product 10 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_variant_id_10_no_vat",
+      "label": "Product 10 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "product",
+      "id": "diy_ps_10a_product_handle",
+      "label": "Product 10a",
+      "info": "DELTA 2 MAX Extra Battery (2kWh)"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_10a_title",
+      "label": "Product 10a Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_variant_id_10a",
+      "label": "Product 10a Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_variant_id_10a_no_vat",
+      "label": "Product 10a Variant ID (No VAT)"
+    },
+
+    {
+      "type": "product",
+      "id": "diy_ps_11_product_handle",
+      "label": "Product 11"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_11_title",
+      "label": "Product 11 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_variant_id_11",
+      "label": "Product 11 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_variant_id_11_no_vat",
+      "label": "Product 11 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "header",
+      "content": "Power Station (Battery Cable)"
+    },
+
+    {
+      "type": "richtext",
+      "id": "diy_battery_cable_shipping_message",
+      "label": "Shipping Message"
+    },
+    {
+      "type": "product",
+      "id": "diy_ps_12_product_handle",
+      "label": "Product 12"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_12_title",
+      "label": "Product 12 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_variant_id_12",
+      "label": "Product 12 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_variant_id_12_no_vat",
+      "label": "Product 12 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "product",
+      "id": "diy_ps_13_product_handle",
+      "label": "Product 13"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_13_title",
+      "label": "Product 13 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_variant_id_13",
+      "label": "Product 13 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_variant_id_13_no_vat",
+      "label": "Product 13 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "product",
+      "id": "diy_ps_14_product_handle",
+      "label": "Product 14"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_14_title",
+      "label": "Product 14 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_variant_id_14",
+      "label": "Product 14 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "diy_ps_variant_id_14_no_vat",
+      "label": "Product 14 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "header",
+      "content": "Solar Panel"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_heading",
+      "label": "Heading",
+      "default": "Solar Panel"
+    },
+    {
+      "type": "product",
+      "id": "diy_solar_panel_1_product_handle",
+      "label": "Product 1",
+      "info": "400W Rigid (Hooks) *2"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_1_title",
+      "label": "Product 1 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_variant_id_1",
+      "label": "Product 1 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_variant_id_1_no_vat",
+      "label": "Product 1 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "product",
+      "id": "diy_solar_panel_2_product_handle",
+      "label": "Product 2",
+      "info": "100W Flexible (Straps)"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_2_title",
+      "label": "Product 2 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_variant_id_2",
+      "label": "Product 2 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_variant_id_2_no_vat",
+      "label": "Product 2 Variant ID (No VAT)"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_2_watt",
+      "label": "Watt"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_2_default_quantity",
+      "label": "Default quantity",
+      "default": "0"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_2_minimum_quantity",
+      "label": "Minimum quantity",
+      "default": "1"
+    },
+
+    {
+      "type": "product",
+      "id": "diy_solar_panel_3_product_handle",
+      "label": "Product 3",
+      "info": "100W Flexible (Straps)"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_3_title",
+      "label": "Product 3 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_variant_id_3",
+      "label": "Product 3 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_variant_id_3_no_vat",
+      "label": "Product 3 Variant ID (No VAT)"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_3_watt",
+      "label": "Watt"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_3_default_quantity",
+      "label": "Default quantity",
+      "default": "0"
+    },
+
+    {
+      "type": "header",
+      "content": "Solar Panel - Brackets",
+      "info": "For 400W Rigid (Hooks) *2"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_bracket_heading",
+      "label": "Heading",
+      "default": "Solar Panel"
+    },
+
+    {
+      "type": "product",
+      "id": "diy_solar_panel_bracket_1_product_handle",
+      "label": "Product 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "diy_solar_panel_bracket_1_image",
+      "label": "Product 1 Image"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_bracket_1_title",
+      "label": "Product 1 Title ////////////////////"
+    },
+    {
+      "type": "richtext",
+      "id": "diy_solar_panel_bracket_1_description",
+      "label": "Product 1 Description"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_bracket_variant_id_1",
+      "label": "Product 1 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_bracket_variant_id_1_no_vat",
+      "label": "Product 1 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "product",
+      "id": "diy_solar_panel_bracket_2_product_handle",
+      "label": "Product 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "diy_solar_panel_bracket_2_image",
+      "label": "Product 2 Image"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_bracket_2_title",
+      "label": "Product 2 Title ////////////////////"
+    },
+    {
+      "type": "richtext",
+      "id": "diy_solar_panel_bracket_2_description",
+      "label": "Product 2 Description"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_bracket_variant_id_2",
+      "label": "Product 2 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_bracket_variant_id_2_no_vat",
+      "label": "Product 2 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "product",
+      "id": "diy_solar_panel_bracket_3_product_handle",
+      "label": "Product 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "diy_solar_panel_bracket_3_image",
+      "label": "Product 3 Image"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_bracket_3_title",
+      "label": "Product 3 Title ////////////////////"
+    },
+    {
+      "type": "richtext",
+      "id": "diy_solar_panel_bracket_3_description",
+      "label": "Product 3 Description"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_bracket_variant_id_3",
+      "label": "Product 3 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_bracket_variant_id_3_no_vat",
+      "label": "Product 3 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "header",
+      "content": "Solar Panel - Brackets",
+      "info": "For 100W Rigid (Hooks) *2"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_bracket_100w_heading",
+      "label": "Heading",
+      "default": "Solar Panel"
+    },
+
+    {
+      "type": "product",
+      "id": "diy_solar_panel_bracket_100w_1_product_handle",
+      "label": "Product 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "diy_solar_panel_bracket_100w_1_image",
+      "label": "Product 1 Image"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_bracket_100w_1_title",
+      "label": "Product 1 Title ////////////////////"
+    },
+    {
+      "type": "richtext",
+      "id": "diy_solar_panel_bracket_100w_1_description",
+      "label": "Product 1 Description"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_bracket_100w_variant_id_1",
+      "label": "Product 1 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_bracket_100w_variant_id_1_no_vat",
+      "label": "Product 1 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "product",
+      "id": "diy_solar_panel_bracket_100w_2_product_handle",
+      "label": "Product 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "diy_solar_panel_bracket_100w_2_image",
+      "label": "Product 2 Image"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_bracket_100w_2_title",
+      "label": "Product 2 Title ////////////////////"
+    },
+    {
+      "type": "richtext",
+      "id": "diy_solar_panel_bracket_100w_2_description",
+      "label": "Product 2 Description"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_bracket_100w_variant_id_2",
+      "label": "Product 2 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_bracket_100w_variant_id_2_no_vat",
+      "label": "Product 2 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "product",
+      "id": "diy_solar_panel_bracket_100w_3_product_handle",
+      "label": "Product 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "diy_solar_panel_bracket_100w_3_image",
+      "label": "Product 3 Image"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_bracket_100w_3_title",
+      "label": "Product 3 Title ////////////////////"
+    },
+    {
+      "type": "richtext",
+      "id": "diy_solar_panel_bracket_100w_3_description",
+      "label": "Product 3 Description"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_bracket_100w_variant_id_3",
+      "label": "Product 3 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "diy_solar_panel_bracket_100w_variant_id_3_no_vat",
+      "label": "Product 3 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "header",
+      "content": "Smart Plug"
+    },
+    {
+      "type": "text",
+      "id": "diy_smart_plug_heading",
+      "label": "Heading",
+      "default": "Smart Plug"
+    },
+    {
+      "type": "richtext",
+      "id": "diy_smart_plug_shipping_message",
+      "label": "Shipping Message"
+    },
+    {
+      "type": "product",
+      "id": "diy_smart_plug_1_product_handle",
+      "label": "Product 1"
+    },
+    {
+      "type": "text",
+      "id": "diy_smart_plug_1_title",
+      "label": "Product 1 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "diy_smart_plug_variant_id_1",
+      "label": "Product 1 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "diy_smart_plug_variant_id_1_no_vat",
+      "label": "Product 1 Variant ID (No VAT)"
+    },
+    {
+      "type": "text",
+      "id": "diy_smart_plug_1_watt",
+      "label": "Watt"
+    },
+    {
+      "type": "text",
+      "id": "diy_smart_plug_1_default_quantity",
+      "label": "Default quantity",
+      "default": "0"
+    },
+
+    {
+      "type": "header",
+      "content": "Super Flat Cable"
+    },
+    {
+      "type": "text",
+      "id": "diy_sfc_heading",
+      "label": "Heading",
+      "default": "Super Flat Cable"
+    },
+    {
+      "type": "richtext",
+      "id": "diy_sfc_shipping_message",
+      "label": "Shipping Message"
+    },
+    {
+      "type": "product",
+      "id": "diy_sfc_1_product_handle",
+      "label": "Product 1"
+    },
+    {
+      "type": "text",
+      "id": "diy_sfc_1_title",
+      "label": "Product 1 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "diy_sfc_variant_id_1",
+      "label": "Product 1 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "diy_sfc_variant_id_1_no_vat",
+      "label": "Product 1 Variant ID (No VAT)"
+    },
+    {
+      "type": "text",
+      "id": "diy_sfc_1_watt",
+      "label": "Watt"
+    },
+    {
+      "type": "text",
+      "id": "diy_sfc_1_default_quantity",
+      "label": "Default quantity",
+      "default": "0"
+    },
+
+    {
+      "type": "header",
+      "content": "Recommended Kit Form"
+    },
+    {
+      "type": "paragraph",
+      "content": "IMPORTANT: add the Variant ID, but if it is only a single product add the Product ID"
+    },
+
+    {
+      "type": "header",
+      "content": "Micro Inverter"
+    },
+    {
+      "type": "text",
+      "id": "bundle_mi_heading",
+      "label": "Heading",
+      "default": "Micro Inverter"
+    },
+    {
+      "type": "product",
+      "id": "bundle_mi_1_product_handle",
+      "label": "Product 1"
+    },
+    {
+      "type": "text",
+      "id": "bundle_mi_1_title",
+      "label": "Product 1 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "bundle_mi_variant_id_1",
+      "label": "Product 1 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "bundle_mi_variant_id_1_no_vat",
+      "label": "Product 1 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "product",
+      "id": "bundle_mi_2_product_handle",
+      "label": "Product 2"
+    },
+    {
+      "type": "text",
+      "id": "bundle_mi_2_title",
+      "label": "Product 2 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "bundle_mi_variant_id_2",
+      "label": "Product 2 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "bundle_mi_variant_id_2_no_vat",
+      "label": "Product 2 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "header",
+      "content": "2kWh Storage Kit (Bundle)"
+    },
+
+    {
+      "type": "product",
+      "id": "bundle_2kWh_1_product_handle",
+      "label": "Product 1"
+    },
+    {
+      "type": "text",
+      "id": "bundle_2kWh_1_title",
+      "label": "Product 1 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "bundle_2kWh_variant_id_1",
+      "label": "Product 1 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "bundle_2kWh_variant_id_1_no_vat",
+      "label": "Product 1 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "product",
+      "id": "bundle_2kWh_2_product_handle",
+      "label": "Product 2"
+    },
+    {
+      "type": "text",
+      "id": "bundle_2kWh_2_title",
+      "label": "Product 2 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "bundle_2kWh_variant_id_2",
+      "label": "Product 2 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "bundle_2kWh_variant_id_2_no_vat",
+      "label": "Product 2 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "product",
+      "id": "bundle_2kWh_3_product_handle",
+      "label": "Product 3"
+    },
+    {
+      "type": "text",
+      "id": "bundle_2kWh_3_title",
+      "label": "Product 3 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "bundle_2kWh_variant_id_3",
+      "label": "Product 3 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "bundle_2kWh_variant_id_3_no_vat",
+      "label": "Product 3 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "product",
+      "id": "bundle_2kWh_4_product_handle",
+      "label": "Product 4"
+    },
+    {
+      "type": "text",
+      "id": "bundle_2kWh_4_title",
+      "label": "Product 4 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "bundle_2kWh_variant_id_4",
+      "label": "Product 4 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "bundle_2kWh_variant_id_4_no_vat",
+      "label": "Product 4 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "product",
+      "id": "bundle_2kWh_5_product_handle",
+      "label": "Product 5"
+    },
+    {
+      "type": "text",
+      "id": "bundle_2kWh_5_title",
+      "label": "Product 5 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "bundle_2kWh_variant_id_5",
+      "label": "Product 5 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "bundle_2kWh_variant_id_5_no_vat",
+      "label": "Product 5 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "header",
+      "content": "1kWh Storage Kit (Bundle)"
+    },
+
+    {
+      "type": "product",
+      "id": "bundle_1kWh_1_product_handle",
+      "label": "Product 1"
+    },
+    {
+      "type": "text",
+      "id": "bundle_1kWh_1_title",
+      "label": "Product 1 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "bundle_1kWh_variant_id_1",
+      "label": "Product 1 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "bundle_1kWh_variant_id_1_no_vat",
+      "label": "Product 1 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "product",
+      "id": "bundle_1kWh_2_product_handle",
+      "label": "Product 2"
+    },
+    {
+      "type": "text",
+      "id": "bundle_1kWh_2_title",
+      "label": "Product 2 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "bundle_1kWh_variant_id_2",
+      "label": "Product 2 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "bundle_1kWh_variant_id_2_no_vat",
+      "label": "Product 2 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "product",
+      "id": "bundle_1kWh_3_product_handle",
+      "label": "Product 3"
+    },
+    {
+      "type": "text",
+      "id": "bundle_1kWh_3_title",
+      "label": "Product 3 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "bundle_1kWh_variant_id_3",
+      "label": "Product 3 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "bundle_1kWh_variant_id_3_no_vat",
+      "label": "Product 3 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "product",
+      "id": "bundle_1kWh_4_product_handle",
+      "label": "Product 4"
+    },
+    {
+      "type": "text",
+      "id": "bundle_1kWh_4_title",
+      "label": "Product 4 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "bundle_1kWh_variant_id_4",
+      "label": "Product 4 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "bundle_1kWh_variant_id_4_no_vat",
+      "label": "Product 4 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "product",
+      "id": "bundle_1kWh_5_product_handle",
+      "label": "Product 5"
+    },
+    {
+      "type": "text",
+      "id": "bundle_1kWh_5_title",
+      "label": "Product 5 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "bundle_1kWh_variant_id_5",
+      "label": "Product 5 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "bundle_1kWh_variant_id_5_no_vat",
+      "label": "Product 5 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "header",
+      "content": "No Storage Kit (Bundle)"
+    },
+
+    {
+      "type": "product",
+      "id": "bundle_no_storage_1_product_handle",
+      "label": "Product 1"
+    },
+    {
+      "type": "text",
+      "id": "bundle_no_storage_1_title",
+      "label": "Product 1 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "bundle_no_storage_variant_id_1",
+      "label": "Product 1 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "bundle_no_storage_variant_id_1_no_vat",
+      "label": "Product 1 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "product",
+      "id": "bundle_no_storage_2_product_handle",
+      "label": "Product 2"
+    },
+    {
+      "type": "text",
+      "id": "bundle_no_storage_2_title",
+      "label": "Product 2 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "bundle_no_storage_variant_id_2",
+      "label": "Product 2 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "bundle_no_storage_variant_id_2_no_vat",
+      "label": "Product 2 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "product",
+      "id": "bundle_no_storage_3_product_handle",
+      "label": "Product 3"
+    },
+    {
+      "type": "text",
+      "id": "bundle_no_storage_3_title",
+      "label": "Product 3 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "bundle_no_storage_variant_id_3",
+      "label": "Product 3 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "bundle_no_storage_variant_id_3_no_vat",
+      "label": "Product 3 Variant ID (No VAT)"
+    },
+
+    {
+      "type": "product",
+      "id": "bundle_no_storage_4_product_handle",
+      "label": "Product 4"
+    },
+    {
+      "type": "text",
+      "id": "bundle_no_storage_4_title",
+      "label": "Product 4 Title ////////////////////"
+    },
+    {
+      "type": "text",
+      "id": "bundle_no_storage_variant_id_4",
+      "label": "Product 4 Variant ID"
+    },
+    {
+      "type": "text",
+      "id": "bundle_no_storage_variant_id_4_no_vat",
+      "label": "Product 4 Variant ID (No VAT)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slider-2kWh",
+      "name": "Slider-2kWh",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Slider-2kWh"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "Image 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_4",
+          "label": "Image 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_5",
+          "label": "Image 5"
+        }
+      ]
+    },
+    {
+      "type": "slider-1kWh",
+      "name": "Slider-1kWh",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Slider-1kWh"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "Image 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_4",
+          "label": "Image 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_5",
+          "label": "Image 5"
+        }
+      ]
+    },
+    {
+      "type": "slider-no-storage",
+      "name": "Slider-no-storage",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Slider-no-storage"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "Image 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_4",
+          "label": "Image 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_5",
+          "label": "Image 5"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

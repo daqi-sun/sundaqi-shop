@@ -1,0 +1,150 @@
+<style>
+  .pp-iwt__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .pp-iwt__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+
+<div class="pp-iwt__section pp-iwt__section-{{ section.id }}">
+  <div class="pp-iwt__wrapper container--medium">
+    {% for block in section.blocks %}
+      <div
+        class="
+            pp-iwt__container
+          {% if block.settings.image_position == 'right' %}
+            image--right
+            {% else %}
+            image--left
+          {% endif %}
+        "
+      >
+        <div class="pp-iwt__text__container">
+          <div class="pp-iwt__text--wrapper">
+            {% if block.settings.title != blank %}
+              <h2 class="pp-iwt__title text--black text--heading">
+                {{ block.settings.title }}
+              </h2>
+            {% endif %}
+            {% if block.settings.subtitle != blank %}
+              <span class="text--description">{{ block.settings.subtitle }}</span>
+            {% endif %}
+          </div>
+        </div>
+        <div class="pp-iwt__image__container">
+          {% if block.settings.image != blank %}
+            <img
+              class="display--desktop"
+              src="{{ block.settings.image | img_url: 'master' }}"
+              alt="{{ block.settings.image.alt }}"
+            >
+            <img
+              class="display--mobile"
+              src="{{ block.settings.image_mobile | img_url: 'master' }}"
+              alt="{{ block.settings.image_mobile.alt }}"
+            >
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "PP IWT",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "iwt",
+      "name": "Image with Text",
+      "settings": [
+        {
+          "type": "select",
+          "id": "image_position",
+          "label": "Set Section Image Position",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "right"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Section Image Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Section Image Mobile"
+        },
+        {
+          "type": "html",
+          "id": "title",
+          "label": "Section Title",
+          "default": "Leise, sicher und emissionsfrei – Solaranlagen mit Stromspeicher für Ihr Zuhause"
+        },
+        {
+          "type": "richtext",
+          "id": "subtitle",
+          "label": "Subtitle"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

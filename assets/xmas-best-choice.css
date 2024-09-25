@@ -1,0 +1,380 @@
+.best-choice-section {
+    background: #541409;
+    padding-top: 192px;
+    padding-bottom: 58px;
+}
+
+.best-choice-section .section-heading-wrapper {
+    margin-bottom: 80px;
+}
+
+.product-section-container {
+    max-width: 1153px;
+    margin: auto;
+}
+
+.best-choice-section .product-container {
+    background: #ffffff;
+    border-radius: 25px;
+    padding-top: 90px;
+    padding-bottom: 50px;
+    margin-bottom: 95px;
+    padding-right: 40px;
+    padding-left: 40px;
+    position: relative;
+}
+
+.best-choice-section .product-container:last-child {
+    margin-bottom: 0;
+}
+
+.best-choice-section .product-container .save-container {
+    background: #A33B26;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-top: 20px;
+    padding-left: 19px;
+    padding-right: 19px;
+    padding-bottom: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+.best-choice-section .product-container .save-container .minus-sign {
+    font-size: 30px;
+    line-height: 1;
+}
+
+.best-choice-section .product-container .save-container .currency {
+    font-size: 25px;
+    line-height: 1;
+}
+
+.best-choice-section .product-container .discount-icon {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+}
+
+.best-choice-section .product-container .save-container .discount-price {
+    font-size: 35px;
+    line-height: 1;
+}
+
+.best-choice-section .product-container .product-info {
+    margin-bottom: 14px;
+    margin-right: 6%;
+}
+
+.best-choice-section .product-image--container {
+    flex: 45%;
+}
+.best-choice-section .product-details--container {
+    flex: 55%;
+}
+
+.best-choice-section .product-container .product-bundle--wrapper {
+    margin-top: 17.5px;
+    margin-bottom: 48px;
+}
+
+.best-choice-section .product-container .product-bundle--wrapper .product-bundle {
+    font-size: 20px;
+    line-height: 1;
+    color: #666666;
+}
+
+.best-choice-section .product-container .product-details--container .product-specs-container .product-specs {
+    font-size: 21px;
+    line-height: 1.2;
+}
+
+.best-choice-section .product-container .product-details--container .product-variant--wrapper {
+    margin-top: 38px;
+    margin-bottom: 46px;
+}
+
+.best-choice-section .product-container.delta-max-product .product-details--container .product-variant--wrapper {
+    margin-top: 24px;
+    margin-bottom: 30px;
+}
+
+
+.best-choice-section .product-variant--wrapper .product-variant-title {
+    font-size: 20px;
+    line-height: 1;
+    margin-bottom: 14px;
+    color: #666666;
+}
+
+.best-choice-section .product-variant--wrapper .variant-list {
+    display: flex;
+    justify-content: center;
+    column-gap: 36px;
+}
+
+.best-choice-section .product-variant--wrapper .variant-list.solar-panel.hidden {
+    display: none;
+}
+
+.best-choice-section .product-variant--wrapper .variant-list.solar-generator {
+    margin-bottom: 13px;
+}
+
+.best-choice-section .product-variant--wrapper .variant-list.solar-generator .variant-generator {
+    font-size: 20px;
+}
+
+.best-choice-section .product-variant--wrapper .variant-list .variant {
+    border: 1px solid #505050;
+    border-radius: 4px;
+    background: #ffffff;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-right: 20px;
+    padding-left: 20px;
+    color: #3A3C42;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.best-choice-section .product-variant--wrapper .variant-list .variant-generator {
+    border: 1px solid #505050;
+    border-radius: 4px;
+    background: #ffffff;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-right: 20px;
+    padding-left: 20px;
+    color: #3A3C42;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.best-choice-section .product-variant--wrapper .variant-list.solar-generator .variant-generator {
+    padding-right: 32px;
+    padding-left: 32px;
+}
+
+.best-choice-section .product-variant--wrapper .variant-list .variant-generator.active {
+    border: 1px solid #505050;
+    border-radius: 4px;
+    background: #505050;
+    color: #ffffff;
+}
+
+.best-choice-section .product-variant--wrapper .variant-list .variant.active {
+    border: 1px solid #505050;
+    border-radius: 4px;
+    background: #505050;
+    color: #ffffff;
+}
+
+.best-choice-section .product-container .product-details--container .product-price--wrapper .product-discounted-price {
+    font-size: 54px;
+    line-height: .8;
+    color: #1D1D1D;
+}
+
+.best-choice-section .product-container .product-details--container .product-price--wrapper .product-discounted-price .product-price {
+    font-size: 26px;
+    text-decoration: line-through;
+}
+
+.best-choice-section .product-container.delta-max-product .product-details--container .product-price--wrapper .product-discounted-price {
+    margin-bottom: 30px;
+}
+
+.best-choice-section .button--wrapper {
+    justify-content: flex-end;
+    column-gap: 20px;
+}
+
+.best-choice-section .button--wrapper .product-btn {
+    font-size: 20px;
+    color: #212121;
+    line-height: 48px;
+}
+
+.button--wrapper .shop-now-btn--wrapper,
+.button--wrapper .amazon-btn--wrapper {
+    background: #000000;
+    border-radius: 25px;
+    width: 218px;
+    height: 50px;
+    text-align: center;
+}
+
+.button--wrapper .wishlist-btn--wrapper{
+    background: #C0503B;
+    border-radius: 25px;
+    width: 218px;
+    height: 50px;
+    text-align: center;
+}
+
+.button--wrapper .wishlist-btn--wrapper .swym-button.swym-add-to-wishlist-view-product {
+    font-weight: 700;
+    max-width: 218px;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 48px;
+    text-transform: none;
+}
+
+.button--wrapper .wishlist-btn--wrapper .swym-button.swym-add-to-wishlist-view-product.swym-heart:after {
+    display: none;
+}
+
+
+.best-choice-section .button--wrapper .product-btn {
+    font-size: 20px;
+    color: #212121;
+    line-height: 48px;
+}
+
+@media (max-width: 1300px) {
+    .best-choice-section .product-container .product-info {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 1100px) {
+    .best-choice-section .product-container {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    .best-choice-section .product-container .product-details--container .product-specs-container .product-specs {
+        font-size: 16px;
+    }
+    .best-choice-section .product-variant--wrapper .variant-list {
+        column-gap: 10px;
+    }
+    .best-choice-section .product-variant--wrapper .variant-list.solar-generator .variant {
+        font-size: 16px;
+    }
+}
+
+@media(max-width: 1023px) {
+    .best-choice-section {
+        padding-top: 70px;
+    }
+}
+
+@media (max-width: 850px) {
+    .best-choice-section {
+        padding-top: 0;
+        padding-bottom: 27px;
+    }
+    .best-choice-section .section-heading-wrapper {
+        margin-bottom: 49px;
+    }
+    .best-choice-section .section-heading-wrapper .title-h3 {
+        font-size: 16px!important;
+    }
+    .best-choice-section .product-container {
+        margin-bottom: 66px;
+    }
+    .best-choice-section .product-container .product-info {
+        flex-wrap: wrap;
+        margin-bottom: 25px;
+    }
+    .best-choice-section .product-image--container {
+        flex: 0 0 100%;
+    }
+    .best-choice-section .product-details--container {
+        flex: 0 0 100%;
+    }
+    .best-choice-section .product-container .save-container {
+        right: 3%;
+    }
+    .best-choice-section .product-container .save-container .discount-price {
+        font-size: 17px;
+    }
+    .best-choice-section .product-container .save-container .minus-sign {
+        font-size: 17px;
+    }
+    .best-choice-section .product-container .save-container .currency {
+        font-size: 17px;
+    }
+    .best-choice-section .product-container .product-bundle--wrapper {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .best-choice-section .product-container .product-details--container .product-specs-container .product-specs {
+        font-size: 15px;
+    }
+    .best-choice-section .product-variant--wrapper .product-variant-title {
+        font-size: 15px;
+    }
+    .best-choice-section .product-container .product-details--container .product-variant--wrapper {
+        margin-top: 18px;
+        margin-bottom: 38px;
+    }
+    .best-choice-section .product-variant--wrapper .variant-list {
+        column-gap: 29px;
+    }
+    .best-choice-section .product-variant--wrapper .variant-list .variant {
+        font-size: 12px;
+    }
+    .best-choice-section .product-variant--wrapper .variant-list.solar-generator .variant {
+        font-size: 11px;
+        padding-right: 28px;
+        padding-left: 28px;
+    }
+    .best-choice-section .product-container .product-details--container .product-price--wrapper .product-discounted-price {
+        font-size: 40px;
+    }
+    .best-choice-section .button--wrapper {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 7px;
+    }
+    .button--wrapper .shop-now-btn--wrapper,
+    .button--wrapper .amazon-btn--wrapper,
+    .button--wrapper .wishlist-btn--wrapper {
+        width: 282px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 650px) {
+    .best-choice-section .product-variant--wrapper .variant-list {
+        column-gap: 15px;
+    }
+    .best-choice-section .product-variant--wrapper .variant-list.solar-generator .variant-generator {
+        font-size: 11px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .best-choice-section .product-container .product-bundle--wrapper .product-bundle {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 400px) {
+    .best-choice-section .product-container .product-details--container .product-specs-container .product-specs br {
+        display: none;
+    }
+}
+
+@media (max-width: 380px) {
+    .button--wrapper .shop-now-btn--wrapper,
+    .button--wrapper .amazon-btn--wrapper,
+    .button--wrapper .wishlist-btn--wrapper {
+        width: 218px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 350px) {
+    .best-choice-section .product-variant--wrapper .variant-list.solar-generator .variant-generator {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}

@@ -1,0 +1,588 @@
+{{ 'bf-take-guess-form.css' | asset_url | stylesheet_tag }}
+
+<div class="bf-take-guess-form__section" x-data="bfTakeGuess">
+  <div class="star-page-container">
+    {% comment %} Step 1 Form start here {% endcomment %}
+    <div class="bf-take-guess-form__form-container form-container--step-1" x-show="step === 1">
+      <div class="bf-take-guess-form__step-1-title-wrapper">
+        <div class="bf-take-guess-form__step-1-title-icon-wrapper display--desktop">
+          <img
+            src="{{ section.settings.step_1_title_icon |  image_url: width: 60 }}"
+            alt=""
+            class="bf-take-guess-form__step-1-title-icon"
+            loading="eager"
+          >
+        </div>
+        <h2
+          class="bf-take-guess-form__step-1-title"
+          style="color: {{ section.settings.step_1_title_color }};"
+        >
+          {{ section.settings.step_1_title }}
+        </h2>
+      </div>
+
+      <div class="bf-take-guess-form__step-1-content-wrapper">
+        <div class="bf-take-guess-form__step-1-description-wrapper">
+          <p
+            class="bf-take-guess-form__step-1-description"
+            style="color: {{ section.settings.step_1_description_color }};"
+          >
+            {{ section.settings.step_1_description }}
+          </p>
+          <div class="display--mobile bf-take-guess-form__step-1-tooltip-wrapper">
+            <span class="bf-take-guess-form__step-1-tooltip-icon">
+              <svg width="15" height="16" viewBox="0 0 15 16" fill="none">
+                <circle cx="7.5" cy="8.4834" r="7.15305" stroke="#FFC24D" stroke-width="0.69391"/>
+                <path d="M6.76124 5.32801H8.17759V7.03206L7.92337 9.83347H7.01546L6.76124 7.03206V5.32801ZM6.76124 10.4312H8.17759V11.6981H6.76124V10.4312Z" fill="#FFC24D"/>
+              </svg>
+            </span>
+            <div class="bf-take-guess-form__step-1-tooltip">
+              <p
+                class="bf-take-guess-form__step-1-tips"
+              >
+                {{ section.settings.step_1_tips }}
+              </p>
+            </div>
+          </div>
+          <p
+            class="bf-take-guess-form__step-1-tips display--desktop"
+            style="color: {{ section.settings.step_1_tips_color }}"
+          >
+            {{ section.settings.step_1_tips }}
+          </p>
+        </div>
+
+        <div class="bf-take-guess-form__step-1-input-section">
+          <div class="bf-take-guess-form__step-1-input-wrapper">
+            <input
+              type="text"
+              class="bf-take-guess-form__step-1-input"
+              placeholder="{{ section.settings.step_1_input_placeholder }}"
+              style="
+                color: {{ section.settings.step_1_input_color }};
+                background-color: {{ section.settings.step_1_input_background_color }};
+              "
+              x-model="email"
+            >
+            <button
+              class="bf-take-guess-form__step-1-input-button"
+              type="button"
+              :aria-disabled="!agreeToMarketing || email === ''"
+              style="
+                color: {{ section.settings.step_1_input_button_color }};
+                background-color: {{ section.settings.step_1_input_button_background_color }};
+              "
+              @click="submitStepOneEmail"
+            >
+              {{ section.settings.step_1_input_button_text }}
+            </button>
+          </div>
+
+          <p
+            class="bf-take-guess-form__step-1-error-message"
+            style="color: {{ section.settings.step_1_error_message_color }}"
+            x-text="stepOneErrMsg"
+            x-show="stepOneErrMsg !== ''"
+          ></p>
+
+          <div class="bf-take-guess-form__step-1-disclaimer-wrapper">
+            <label
+              class="bf-take-guess-form__step-1-disclaimer"
+              style="color: {{ section.settings.step_1_disclaimer_text_color }}"
+              for="bf_take_guess_disclaimer"
+            >
+              {{ section.settings.step_1_disclaimer_text }}
+              <input
+                type="checkbox"
+                checked
+                class="bf-take-guess-form__step-1-disclaimer-checkbox"
+                name="disclaimer"
+                id="bf_take_guess_disclaimer"
+                x-model="agreeToMarketing"
+              >
+              <span class="checkmark"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% comment %} Step 1 Form end here {% endcomment %}
+
+    {% comment %} Step 2 Form start here {% endcomment %}
+    <div class="bf-take-guess-form__form-container form-container--step-2" x-show="step === 2">
+      <div class="bf-take-guess-form__close-button-wrapper">
+        <button
+          type="button"
+          class="bf-take-guess-form__close-button"
+          @click="setStep(1)"
+        ></button>
+      </div>
+      <div class="bf-take-guess-form__step-2-content-container">
+        <h2
+          class="bf-take-guess-form__step-2-title"
+          style="color: {{ section.settings.step_2_title_color }}"
+        >
+          {{ section.settings.step_2_title }}
+        </h2>
+        <div class="bf-take-guess-form__step-2-answers-wrapper">
+          <template x-for="option in options">
+            <div class="bf-take-guess-form__step-2-answer">
+              <input
+                type="radio"
+                name=""
+                :id="'step-2-answer-' + option.value"
+                :value="option.value"
+                x-model="answer"
+                hidden
+              >
+              <label
+                class="bf-take-guess-form__step-2-answer-label"
+                :for="'step-2-answer-' + option.value"
+              >
+                <div
+                  :class="answer === option.value ? 'step-2-answer-checkmark active' : 'step-2-answer-checkmark'"
+                ></div>
+                <p class="step-2-answer-text" x-text="option.label"></p>
+              </label>
+            </div>
+          </template>
+          <div class="bf-take-guess-form__step-2-answer">
+            <button
+              type="button"
+              class="bf-take-guess-form__button"
+              style="
+                color: {{ section.settings.step_2_button_text_color }};
+                background-color: {{ section.settings.step_2_button_background_color }};
+              "
+              @click="submitResult"
+            >
+              <span x-text="loading ? 'Loading...' : '{{ section.settings.step_2_button_text }}'"> </span>
+            </button>
+          </div>
+        </div>
+
+        <p
+          class="bf-take-guess-form__step-2-error-message"
+          style="color: {{ section.settings.step_2_error_message_color }}"
+          x-text="stepTwoErrMsg"
+          x-show="stepTwoErrMsg !== ''"
+        ></p>
+      </div>
+    </div>
+    {% comment %} Step 2 Form end here {% endcomment %}
+
+    {% comment %} Step 3 Form start here {% endcomment %}
+    <div class="bf-take-guess-form__form-container form-container--step-3" x-show="step === 3">
+      <div class="bf-take-guess-form__step-3-content-container">
+        <div class="bf-take-guess-form__step-3-title-wrapper">
+          <h2
+            class="bf-take-guess-form__step-3-title"
+            style="color: {{ section.settings.step_3_title_color }}"
+          >
+            {{ section.settings.step_3_title }}
+          </h2>
+          <div class="bf-take-guess-form__step-3-description-wrapper">
+            <p
+              class="bf-take-guess-form__step-3-description"
+              style="color: {{ section.settings.step_3_description_color }}; position: relative"
+            >
+              {{ section.settings.step_3_description }}
+              <span class="bf-take-guess-form__step-3-tooltip-wrapper">
+                <span class="bf-take-guess-form__step-3-tooltip-icon">
+                  <svg style="vertical-align: text-top" width="15" height="16" viewBox="0 0 15 16" fill="none">
+                    <circle cx="7.5" cy="8.4834" r="7.15305" stroke="#000000" stroke-width="0.69391"/>
+                    <path d="M6.76124 5.32801H8.17759V7.03206L7.92337 9.83347H7.01546L6.76124 7.03206V5.32801ZM6.76124 10.4312H8.17759V11.6981H6.76124V10.4312Z" fill="#000000"/>
+                  </svg>
+                </span>
+                <div class="bf-take-guess-form__step-3-tooltip">
+                  <p class="bf-take-guess-form__step-3-tips">{{ section.settings.step_3_tips | strip }}</p>
+                </div>
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="bf-take-guess-form__step-3-input-wrapper"
+          style="background: {{ section.settings.step_3_input_background_color }}"
+        >
+          <input
+            type="text"
+            readonly="readonly"
+            class="bf-take-guess-form__step-3-input"
+            style="
+              color: {{ section.settings.step_3_input_color }};
+              background-color: {{ section.settings.step_3_input_background_color }};
+            "
+            value="{{ section.settings.coupon_code }}"
+          >
+          <button
+            class="bf-take-guess-form__step-3-input-button"
+            type="button"
+            style="
+              color: {{ section.settings.step_3_input_button_color }};
+              background-color: {{ section.settings.step_3_input_button_background_color }};
+            "
+            @click="copyCodeToClipboard"
+          >
+            {{ section.settings.step_3_input_button_text }}
+          </button>
+        </div>
+        <p
+          class="bf-take-guess-form__step-3-success-copied-message"
+          style="color: {{ section.settings.success_copy_message_color }}"
+          x-show="showSuccessCopyMessage"
+        >
+          {{ section.settings.success_copy_message }}
+        </p>
+        <p
+          class="bf-take-guess-form__step-3-disclaimer-text"
+          style="color: {{ section.settings.step_3_disclaimer_text_color }}"
+        >
+          {{ section.settings.step_3_disclaimer_text }}
+        </p>
+      </div>
+    </div>
+    {% comment %} Step 3 Form end here {% endcomment %}
+  </div>
+</div>
+
+<style>
+  .form-container--step-1 {
+      background: {{ section.settings.step_1_background_color }};
+      border-color: {{ section.settings.step_1_border_color }};
+  }
+
+  .form-container--step-2 {
+      background: url({{ section.settings.step_2_background_image | image_url: width: 1200 }}) no-repeat center;
+      background-size: cover;
+  }
+
+  .form-container--step-3 {
+      background: url({{ section.settings.step_3_background_image | image_url: width: 1200 }}) no-repeat center;
+      background-size: cover;
+  }
+
+  .bf-take-guess-form__step-1-tips {
+      color: {{ section.settings.step_1_tips_color }}
+  }
+
+  @media (max-width: 749px) {
+    .bf-take-guess-form__step-1-tips {
+        color: {{ section.settings.step_1_tips_color_mobile }}
+    }
+
+    .form-container--step-2 {
+      background: url({{ section.settings.step_2_background_image_mobile | image_url: width: 700 }}) no-repeat 20% 50%;
+      background-size: cover;
+    }
+
+    .form-container--step-3 {
+      background: url({{ section.settings.step_3_background_image_mobile | image_url: width: 700 }}) no-repeat 50% 79%;
+      background-size: cover;
+    }
+  }
+</style>
+
+<script>
+  // star email section settings will pass to below js file
+  var bfTakeGuessSettingJsons = {{ section.settings | json }};
+
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector(".bf-take-guess-form__step-3-tooltip-icon").addEventListener("mouseenter", function() {
+      document.querySelector('.bf-take-guess-form__step-3-tooltip').classList.add('hovered');
+    });
+
+    document.querySelector(".bf-take-guess-form__step-3-tooltip-icon").addEventListener("mouseleave", function() {
+      document.querySelector('.bf-take-guess-form__step-3-tooltip').classList.remove('hovered');
+    });
+  });
+</script>
+{{ 'subscription-form-common.js' | asset_url | script_tag }}
+<script src="{{ 'bf-take-guess-form-alpine.js' | asset_url }}"></script>
+
+{% schema %}
+{
+  "name": "Take a guess form",
+  "settings": [
+    {
+      "type": "header",
+      "content": "API Settings"
+    },
+    {
+      "type": "text",
+      "id": "contact_list_id",
+      "label": "Contact list ID"
+    },
+    {
+      "type": "header",
+      "content": "Step 1 Settings"
+    },
+    {
+      "type": "color",
+      "id": "step_1_background_color",
+      "label": "Step 1 background color",
+      "default": "#111F34"
+    },
+    {
+      "type": "color",
+      "id": "step_1_border_color",
+      "label": "Step 1 border color",
+      "default": "#8AE3FF"
+    },
+    {
+      "type": "text",
+      "id": "step_1_title",
+      "label": "Step 1 form title",
+      "default": "Take a Wild Guess"
+    },
+    {
+      "type": "color",
+      "id": "step_1_title_color",
+      "label": "Step 1 title color",
+      "default": "#FFC24D"
+    },
+    {
+      "type": "image_picker",
+      "id": "step_1_title_icon",
+      "label": "Step 1 title icon"
+    },
+    {
+      "type": "text",
+      "id": "step_1_description",
+      "label": "Step 1 description",
+      "default": "Guess our Best Seller for a chance to win a €50 gift card for Black Friday deals!"
+    },
+    {
+      "type": "color",
+      "id": "step_1_description_color",
+      "label": "Step 1 description color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "text",
+      "id": "step_1_tips",
+      "label": "Step 1 tips",
+      "default": "* Simply put down your guess and earn a €5 gift card. If you get it correctly, the €50 gift card will be sent to your email on November 14. Mark your calendar now!"
+    },
+    {
+      "type": "color",
+      "id": "step_1_tips_color",
+      "label": "Step 1 Tips color",
+      "default": "#A5ACBA"
+    },
+    {
+      "type": "color",
+      "id": "step_1_tips_color_mobile",
+      "label": "Step 1 Tips mobile color",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "id": "step_1_input_placeholder",
+      "label": "Step 1 input placeholder"
+    },
+    {
+      "type": "color",
+      "id": "step_1_input_color",
+      "label": "Step 1 input color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "step_1_input_background_color",
+      "label": "Step 1 input background color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "text",
+      "id": "step_1_input_button_text",
+      "label": "Step 1 input button text",
+      "default": "Join Now"
+    },
+    {
+      "type": "color",
+      "id": "step_1_input_button_color",
+      "label": "Step 1 input button color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "step_1_input_button_background_color",
+      "label": "Step 1 input button background color",
+      "default": "#FFC24D"
+    },
+    {
+      "type": "text",
+      "id": "step_1_disclaimer_text",
+      "label": "Step 1 Disclaimer text",
+      "default": "By signing up, you agree to receive marketing emails from EcoFlow."
+    },
+    {
+      "type": "color",
+      "id": "step_1_disclaimer_text_color",
+      "label": "Step 1 Disclaimer text color",
+      "default": "#A5ACBA"
+    },
+    {
+      "type": "color",
+      "id": "step_1_error_message_color",
+      "label": "Step 1 error message color",
+      "default": "#FF0000"
+    },
+    {
+      "type": "header",
+      "content": "Step 2 Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "step_2_background_image",
+      "label": "Step 2 background image"
+    },
+    {
+      "type": "image_picker",
+      "id": "step_2_background_image_mobile",
+      "label": "Step 2 mobile background image"
+    },
+    {
+      "type": "text",
+      "id": "step_2_title",
+      "label": "Step 2 form title",
+      "default": "Which portable power station is so far the best seller of 2023?"
+    },
+    {
+      "type": "text",
+      "id": "step_2_title_color",
+      "label": "Step 2 form title color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "text",
+      "id": "step_2_button_text",
+      "label": "Step 2 button text",
+      "default": "Take a Guess"
+    },
+    {
+      "type": "color",
+      "id": "step_2_button_text_color",
+      "label": "Step 2 button text color",
+      "default": "#040D1C"
+    },
+    {
+      "type": "color",
+      "id": "step_2_button_background_color",
+      "label": "Step 2 button background color",
+      "default": "#FFC24D"
+    },
+    {
+      "type": "color",
+      "id": "step_2_error_message_color",
+      "label": "Step 2 error message color",
+      "default": "#FF0000"
+    },
+    {
+      "type": "header",
+      "content": "Step 3 Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "step_3_background_image",
+      "label": "Step 3 background image"
+    },
+    {
+      "type": "image_picker",
+      "id": "step_3_background_image_mobile",
+      "label": "Step 3 mobile background image"
+    },
+    {
+      "type": "text",
+      "id": "step_3_title",
+      "label": "Step 3 form title",
+      "default": "Thank you for participating! You have earned a €5 gift card."
+    },
+    {
+      "type": "color",
+      "id": "step_3_title_color",
+      "label": "Step 3 form title color",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "id": "step_3_description",
+      "label": "Step 3 form description",
+      "default": "The winners will be announced on the page and via email on November 14. Stay tuned!"
+    },
+    {
+      "type": "color",
+      "id": "step_3_description_color",
+      "label": "Step 3 form description color",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "id": "coupon_code",
+      "label": "Coupon code"
+    },
+    {
+      "type": "color",
+      "id": "step_3_input_color",
+      "label": "Step 3 input color",
+      "default": "#9A9A9A"
+    },
+    {
+      "type": "color",
+      "id": "step_3_input_background_color",
+      "label": "Step 3 input background color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "text",
+      "id": "step_3_input_button_text",
+      "label": "Step 3 input button text",
+      "default": "COPY"
+    },
+    {
+      "type": "color",
+      "id": "step_3_input_button_color",
+      "label": "Step 3 input button color",
+      "default": "#9A9A9A"
+    },
+    {
+      "type": "color",
+      "id": "step_3_input_button_background_color",
+      "label": "Step 3 input button background color",
+      "default": "#FFC24D"
+    },
+    {
+      "type": "text",
+      "id": "success_copy_message",
+      "label": "Success copy message",
+      "default": "Copied to clipboard!"
+    },
+    {
+      "type": "color",
+      "id": "success_copy_message_color",
+      "label": "Success copy message color",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "id": "step_3_disclaimer_text",
+      "label": "Step 3 Disclaimer text",
+      "default": "*The gift card will also be sent to your email address."
+    },
+    {
+      "type": "color",
+      "id": "step_3_disclaimer_text_color",
+      "label": "Step 3 Disclaimer text color",
+      "default": "#808080"
+    },
+    {
+      "type": "textarea",
+      "id": "step_3_tips",
+      "label": "Step 3 tips",
+      "default": "* The gift card is valid November 28, 2023 and also be sent to your email address.\n\n* Each user can only participate once, and if multiple entries are made the last submission will prevail."
+    }
+  ]
+}
+{% endschema %}

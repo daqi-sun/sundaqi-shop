@@ -1,0 +1,65 @@
+<div class="balcony-solar-icon__section">
+  <div class="container--normal hb__text--center">
+    <div class="balcony-solar-icon__text-container">
+      {% if section.settings.title != blank %}
+        <h2 class="balcony-solar-icon__heading hb__text--heading hb__text--black">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+    </div>
+    <div class="balcony-solar-icon__image__container">
+      <div class="balcony-solar-icon__flex-container container--flex hb__text--left">
+        {% for block in section.blocks %}
+          <div class="balcony-solar-icon__block balcony-solar-icon__block--wide background--white">
+            {% if block.settings.image != blank %}
+              <div class="balcony-solar-icon__block__image-wrapper">
+                <img
+                  src="{{ block.settings.image | img_url: 'master' }}"
+                  alt="{{ block.settings.image.alt }}"
+                >
+              </div>
+            {% endif %}
+            {% if block.settings.title != blank %}
+              <p class="balcony-solar-icon__title hb__text--black">
+                {{ block.settings.title }}
+              </p>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Balcony Solar Icon",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Wir sind überzeugt davon, dass die Energiewende jeden betrifft! "
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block",
+      "name": "Icon",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Block Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Block Title",
+          "default": "Unabhängigkeit von Netzversorgern"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

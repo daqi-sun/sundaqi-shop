@@ -1,0 +1,532 @@
+<link href="{{ 'slick.css' | asset_url }}" rel="stylesheet" type="text/css">
+<script src="{{ 'jquery.min.js' | asset_url }}"  type="text/javascript"></script>
+<script src="{{ 'slick.js' | asset_url }}" type="text/javascript" defer></script>
+<script src="{{ 'giving-back-page.js' | asset_url }}" type="text/javascript" defer></script>
+<div class="product-recommendations-page-wrapper {{ section.settings.custom_class }} section-{{ section.id }}">
+    <div class="recommedation-container">
+        {% if section.settings.heading != blank %}
+            <h2>{{ section.settings.heading }}</h2>
+        {% endif %}
+        {% if section.settings.heading != blank %}
+            <div class="recommendation-desc">{{ section.settings.description }}</div>
+        {% endif %}
+
+        {% if section.blocks.size > 0 %}
+            <div class="recommendation-wrapper">
+                <div class="recommendation-row recommendation-row-1" data-station="delta-2-portable-power-station">
+                    <div class="recommendation-column left-column">
+                        <h3>{{ section.settings.title }}</h3>
+                        <select class="power-station-dropdown">
+                        {% for block in section.blocks %}
+                            <option value="{{ block.settings.power_station }}">{{ block.settings.power_station }}</option>
+                        {% endfor %}
+                        </select>
+                        {% for block in section.blocks %}
+                            {% if block.settings.power_station_image != blank %}
+                                <div class="power-station-image {% if forloop.first %}active{% endif %}" data-station="{{block.settings.power_station}}">
+                                    <img src="{{ block.settings.power_station_image | img_url: '400x' }}" alt="{{block.settings.power_station}}" />
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                        {% if section.settings.show_arrow %}
+                        <div class="bundle-sign hideMobile">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="94.707" height="66.843" viewBox="0 0 94.707 66.843">
+                                <defs>
+                                  <clipPath id="clip-path">
+                                    <path id="Path_35045" data-name="Path 35045" d="M69.194,0l-.442,10.309C37.126,9.287,11.077,24.853,0,66.847c9.814-25.7,38.845-38.567,67.858-35.717l-.516,10.564L94.707,22.441Z" transform="translate(0 -0.004)" fill="#c0503b"/>
+                                  </clipPath>
+                                </defs>
+                                <g id="Group_15397" data-name="Group 15397" transform="translate(0 -0.004)">
+                                  <g id="Group_15396" data-name="Group 15396" transform="translate(0 0.004)" clip-path="url(#clip-path)">
+                                    <path id="Path_35046" data-name="Path 35046" d="M0,0,109.425-2.525l-2.017,93.371L-2.017,93.371Z" transform="translate(-17.314 5.754) rotate(-17.062)" fill="#c0503b"/>
+                                  </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="bundle-sign hideDesktop">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="44.544" height="63.114" viewBox="0 0 44.544 63.114">
+                                <defs>
+                                    <clipPath id="clip-path-mob">
+                                    <path id="Path_35045" data-name="Path 35045" d="M46.111,0l-.295,6.87C24.741,6.19,7.382,16.564,0,44.548c6.54-17.127,25.887-25.7,45.221-23.8l-.344,7.04L63.114,14.956Z" transform="translate(0 -0.004)" fill="#c0503b"/>
+                                    </clipPath>
+                                </defs>
+                                <g id="Group_16363" data-name="Group 16363" transform="translate(44.548) rotate(90)">
+                                    <g id="Group_15396" data-name="Group 15396" transform="translate(0 0.004)" clip-path="url(#clip-path-mob)">
+                                    <path id="Path_35046" data-name="Path 35046" d="M1.344,1.683,74.266,0,72.922,62.223,0,63.906Z" transform="translate(-13.317 2.62) rotate(-17.062)" fill="#c0503b"/>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="recommendation-column">
+                        <div class="product-recommendation-wrapper {% if section.settings.slide_in_mobile %}slick-enabled{% endif %}">
+                            {% for block in section.blocks %}
+                                {% assign recommended_product_count = 0 %}
+                                {% if block.settings.recommended_product_1 != blank or block.settings.show_manual_options_product_1 %}
+                                    {% assign recommended_product_count = 1 %}
+                                {% endif %}
+
+                                {% if block.settings.recommended_product_2 != blank or block.settings.show_manual_options_product_2 %}
+                                    {% assign recommended_product_count = recommended_product_count | plus: 1 %}
+                                {% endif %}
+                                <div class="recommended_products count-{{recommended_product_count}} {% if forloop.first %}active{% endif %}" data-station="{{block.settings.power_station}}">
+                                    {% if block.settings.recommended_product_1 != blank or block.settings.show_manual_options_product_1 %}
+                                        {% assign product = all_products[block.settings.recommended_product_1] %}
+                                        {% render 'recommended-product-1' with block: block %}
+                                    {% endif %}
+
+                                    {% if block.settings.recommended_product_2 != blank or block.settings.show_manual_options_product_2 %}
+                                        {% assign product = all_products[block.settings.recommended_product_2] %}
+                                        {% render 'recommended-product-2' with block: block %}
+                                    {% endif %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        <div class="add_more_btn_wrap">
+            <button class="add_more_btn" style="--btn-bg: {{ section.settings.btn_bg }};">
+                <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 8H16" stroke="#fff" stroke-width="2"/>
+                <line x1="8" y1="16.5" x2="8" y2="0.5" stroke="#fff" stroke-width="2"/>
+                </svg>{{ section.settings.button_text }}
+            </button>
+        </div>
+    </div>
+    <style>
+        .section-{{ section.id }} .discount_tag_wrapper{ width: {{ section.settings.discount_badge_width_d }}px; }
+        @media screen and (max-width: 749px){
+            .section-{{ section.id }} .discount_tag_wrapper{ width: {{ section.settings.discount_badge_width_m }}px; }
+        }
+    </style>
+</div>
+{% schema %}
+  {
+    "name": "Product recommendations",
+    "class": "product-recommendations-ps-lp",
+    "max_blocks": 20,
+    "settings": [
+      {
+        "id":"custom_class",
+        "type":"text",
+        "label":"Custom Class"
+      },
+      {
+        "id":"heading",
+        "type":"textarea",
+        "label":"Heading"
+      },
+      {
+        "id":"description",
+        "type":"richtext",
+        "label":"Description"
+	  },
+      {
+        "id":"title",
+        "type":"text",
+        "label":"Choose your power station",
+        "default": "Choose Your Power Station"
+      },
+      {
+        "id":"button_text",
+        "type":"text",
+        "label":"Button text",
+        "default": "add another power station"
+      },
+      {
+        "id":"btn_bg",
+        "type":"color",
+        "label":"Button background color",
+        "default": "#C0503B"
+	  },
+      {
+        "id":"show_arrow",
+        "type":"checkbox",
+        "label":"Show Arrow?",
+        "default": true
+	  },
+      {
+        "id":"show_discount_badge",
+        "type":"checkbox",
+        "label":"Show Discount badge?",
+        "default": false
+	  },
+      {
+        "id":"slide_in_mobile",
+        "type":"checkbox",
+        "label":"Slider in mobile?",
+        "default": true
+	  },
+      {
+        "type": "image_picker",
+        "id": "discount_badge_image",
+        "label": "Badge background image"
+      },
+      {
+        "type": "range",
+        "id": "discount_badge_width_d",
+        "label": "Badge image width(Desktop)",
+        "min": 50,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "default": 80
+      },
+      {
+        "type": "image_picker",
+        "id": "discount_badge_image_m",
+        "label": "Badge background image(Mobile)"
+      },
+      {
+        "type": "range",
+        "id": "discount_badge_width_m",
+        "label": "Badge image width(Mobile)",
+        "min": 30,
+        "max": 80,
+        "step": 2,
+        "unit": "px",
+        "default": 50
+      },
+      {
+        "id":"discount_badge_type",
+        "type":"select",
+        "label":"Discount badge type",
+        "options": [
+            { "value": "absolute", "label": "Absolute" },
+            { "value": "percentage", "label": "Percentage" }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "discount_text",
+        "label": "Discount text"
+      },
+      {
+        "type":"paragraph",
+        "content":"Add one block for each power station to add recommended products."
+	  }
+	],
+    "blocks": [
+        {
+            "type": "recommendation",
+            "name": "Recommendation",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "power_station",
+                    "label": "Choose power station"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "power_station_image",
+                    "label": "Power station image"
+                },
+                {
+                    "type": "header",
+                    "content": "Recommendation #1"
+                },
+                {
+                    "type": "product",
+                    "id": "recommended_product_1",
+                    "label": "Recommended product 1"
+                },
+                {
+                    "type": "text",
+                    "id": "recommended_product_1_btn_text",
+                    "label": "Recommended product 1 button text",
+                    "default": "Add to cart"
+                },
+                {
+                    "type": "textarea",
+                    "id": "recommended_product_1_desc",
+                    "label": "Recommended product 1 desc"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "show_vat_label_1",
+                    "label": "Recommended product 1 Show VAT label"
+                },
+                {
+                    "type": "text",
+                    "id": "vat_label_text_1",
+                    "label": "Recommended product 1 VAT label"
+                },
+                {
+                    "type": "textarea",
+                    "id": "recommended_product_1_custom_price",
+                    "label": "Recommended product 1 custom price text",
+                    "info": "For compare price, wrap the price in `span` tag"
+                },
+                {
+                    "type": "text",
+                    "id": "recommended_product_1_text",
+                    "label": "Recommended product 1 text"
+                },
+                {
+                    "type": "text",
+                    "id": "details_btn_text_1",
+                    "label": "Details button text"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "show_manual_options_product_1",
+                    "label": "Show manual product options"
+                },
+                {
+                    "type": "text",
+                    "id": "option_title_product_1",
+                    "label": "Option title"
+                },
+                {
+                    "type": "header",
+                    "content": "Product Option 1"
+                },
+                {
+                    "id":"option_1_product_1",
+                    "type":"product",
+                    "label":"Choose product"
+                },
+                {
+                    "type": "text",
+                    "id": "option_1_text_product_1",
+                    "label": "Option 1 text"
+                },
+                {
+                    "type": "text",
+                    "id": "option_1_product_title_1",
+                    "label": "Option 1 product title"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "option_1_product_image_1",
+                    "label": "Option 1 product image"
+                },
+                {
+                    "type": "text",
+                    "id": "option_1_variant_id_1",
+                    "label": "Option 1 variant ID"
+                },
+                {
+                    "type": "text",
+                    "id": "option_1_non_member_variant_id_1",
+                    "label": "Option 1 Non-member variant ID"
+                },
+                {
+                    "type": "textarea",
+                    "id": "option_1_custom_price_product_1",
+                    "label": "Option 1 Custom price text"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "option_1_active_product_1",
+                    "label": "Active option?"
+                },
+                {
+                    "type": "header",
+                    "content": "Product Option 2"
+                },
+                {
+                    "id":"option_2_product_1",
+                    "type":"product",
+                    "label":"Choose product"
+                },
+                {
+                    "type": "text",
+                    "id": "option_2_text_product_1",
+                    "label": "Option 2 text"
+                },
+                {
+                    "type": "text",
+                    "id": "option_2_product_title_1",
+                    "label": "Option 2 product title"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "option_2_product_image_1",
+                    "label": "Option 2 product image"
+                },
+                {
+                    "type": "text",
+                    "id": "option_2_variant_id_1",
+                    "label": "Option 2 variant ID"
+                },
+                {
+                    "type": "text",
+                    "id": "option_2_non_member_variant_id_1",
+                    "label": "Option 2 Non-member variant ID"
+                },
+                {
+                    "type": "textarea",
+                    "id": "option_2_custom_price_product_1",
+                    "label": "Option 2 Custom price text"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "option_2_active_product_1",
+                    "label": "Active option?"
+                },
+                {
+                    "type": "color",
+                    "id": "active_option_bg_product_1",
+                    "label": "Active option color",
+                    "default": "#002055"
+                },
+                {
+                    "type": "header",
+                    "content": "Recommendation #2"
+                },
+                {
+                    "type": "product",
+                    "id": "recommended_product_2",
+                    "label": "Recommended product 2"
+                },
+                {
+                    "type": "textarea",
+                    "id": "recommended_product_2_desc",
+                    "label": "Recommended product 2 desc"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "show_vat_label_2",
+                    "label": "Recommended product 2 Show VAT label"
+                },
+                {
+                    "type": "text",
+                    "id": "vat_label_text_2",
+                    "label": "Recommended product 1 VAT label"
+                },
+                {
+                    "type": "text",
+                    "id": "recommended_product_2_btn_text",
+                    "label": "Recommended product 2 button text",
+                    "default": "Add to cart"
+                },
+                {
+                    "type": "textarea",
+                    "id": "recommended_product_2_custom_price",
+                    "label": "Recommended product 2 custom price text",
+                    "info": "For compare price, wrap the price in `span` tag"
+                },
+                {
+                    "type": "text",
+                    "id": "recommended_product_2_text",
+                    "label": "Recommended product 2 text"
+                },
+                {
+                    "type": "text",
+                    "id": "details_btn_text_2",
+                    "label": "Details button text"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "show_manual_options_product_2",
+                    "label": "Show manual product options"
+                },
+                {
+                    "type": "text",
+                    "id": "option_title_product_2",
+                    "label": "Option title"
+                },
+                {
+                    "type": "header",
+                    "content": "Product Option 1"
+                },
+                {
+                    "id":"option_1_product_2",
+                    "type":"product",
+                    "label":"Choose product"
+                },
+                {
+                    "type": "text",
+                    "id": "option_1_text_product_2",
+                    "label": "Option 1 text"
+                },
+                {
+                    "type": "text",
+                    "id": "option_1_product_title_2",
+                    "label": "Option 1 product title"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "option_1_product_image_2",
+                    "label": "Option 1 product image"
+                },
+                {
+                    "type": "text",
+                    "id": "option_1_variant_id_2",
+                    "label": "Option 1 variant ID"
+                },
+                {
+                    "type": "text",
+                    "id": "option_1_non_member_variant_id_2",
+                    "label": "Option 1 Non-member variant ID"
+                },
+                {
+                    "type": "textarea",
+                    "id": "option_1_custom_price_product_2",
+                    "label": "Option 1 Custom price text"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "option_1_active_product_2",
+                    "label": "Active option?"
+                },
+                {
+                    "type": "header",
+                    "content": "Product Option 2"
+                },
+                {
+                    "id":"option_2_product_2",
+                    "type":"product",
+                    "label":"Choose product"
+                },
+                {
+                    "type": "text",
+                    "id": "option_2_text_product_2",
+                    "label": "Option 2 text"
+                },
+                {
+                    "type": "text",
+                    "id": "option_2_product_title_2",
+                    "label": "Option 2 product title"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "option_2_product_image_2",
+                    "label": "Option 2 product image"
+                },
+                {
+                    "type": "text",
+                    "id": "option_2_variant_id_2",
+                    "label": "Option 2 variant ID"
+                },
+                {
+                    "type": "text",
+                    "id": "option_2_non_member_variant_id_2",
+                    "label": "Option 2 Non-member variant ID"
+                },
+                {
+                    "type": "textarea",
+                    "id": "option_2_custom_price_product_2",
+                    "label": "Option 2 Custom price text"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "option_2_active_product_2",
+                    "label": "Active option?"
+                },
+                {
+                    "type": "color",
+                    "id": "active_option_bg_product_2",
+                    "label": "Active option color",
+                    "default": "#002055"
+                }
+            ]
+        }
+    ]
+  }
+{% endschema %}

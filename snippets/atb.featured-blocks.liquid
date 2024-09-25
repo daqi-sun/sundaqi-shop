@@ -1,0 +1,260 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "t:sections.featured-blocks.name",
+  "class": "index-section",
+  "max_blocks": 4,
+  "id": "featured-blocks",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "atb_layout",
+      "label": "t:sections.featured-blocks.settings.layout.label",
+      "options": [
+        {
+          "value": "mosaic",
+          "label": "t:sections.featured-blocks.settings.layout.options__1.label"
+        },
+        {
+          "value": "grid",
+          "label": "t:sections.featured-blocks.settings.layout.options__2.label"
+        }
+      ],
+      "default": "grid",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_title",
+      "label": "t:sections.featured-blocks.settings.title.label",
+      "default": "Heading",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_subtitle",
+      "label": "t:sections.featured-blocks.settings.subtitle.label",
+      "default": "Subheading",
+      "info": ""
+    },
+    {
+      "type": "select",
+      "id": "atb_image_style",
+      "label": "t:sections.featured-blocks.settings.image_style.label",
+      "options": [
+        {
+          "value": "circle",
+          "label": "t:sections.featured-blocks.settings.image_style.options__1.label"
+        },
+        {
+          "value": "square",
+          "label": "t:sections.featured-blocks.settings.image_style.options__2.label"
+        },
+        {
+          "value": "background",
+          "label": "t:sections.featured-blocks.settings.image_style.options__3.label"
+        }
+      ],
+      "default": "circle",
+      "info": ""
+    },
+    {
+      "type": "checkbox",
+      "id": "atb_mobile_carousel",
+      "label": "t:sections.featured-blocks.settings.mobile_carousel.label",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "blocks",
+      "label": "Block ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": "",
+      "repeatable": "t:sections.featured-blocks.blocks.block.name"
+    },
+    {
+      "type": "text",
+      "id": "block_heading",
+      "label": "t:sections.featured-blocks.blocks.block.settings.heading.label",
+      "default": "Block title",
+      "repeatable": "t:sections.featured-blocks.blocks.block.name",
+      "info": ""
+    },
+    {
+      "type": "wysiwyg",
+      "id": "block_content",
+      "label": "t:sections.featured-blocks.blocks.block.settings.content.label",
+      "default": "<p>Default text</p>",
+      "repeatable": "t:sections.featured-blocks.blocks.block.name",
+      "info": ""
+    },
+    {
+      "type": "image_picker",
+      "id": "block_image",
+      "label": "t:sections.featured-blocks.blocks.block.settings.image.label",
+      "repeatable": "t:sections.featured-blocks.blocks.block.name",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "block_url",
+      "label": "t:sections.featured-blocks.blocks.block.settings.url.label",
+      "repeatable": "t:sections.featured-blocks.blocks.block.name",
+      "info": ""
+    }
+  ],
+  "warnings": [
+    "repeating image fields may not be properly handled"
+  ]
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_layout' -%}
+{%- assign atb_layout = val -%}
+{%- include 'atb-render' field:'atb_title' -%}
+{%- assign atb_title = val -%}
+{%- include 'atb-render' field:'atb_subtitle' -%}
+{%- assign atb_subtitle = val -%}
+{%- include 'atb-render' field:'atb_image_style' -%}
+{%- assign atb_image_style = val -%}
+{%- include 'atb-render' field:'atb_mobile_carousel' -%}
+{%- assign atb_mobile_carousel = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_heading' -%}
+{%- assign block_heading = val -%}
+{%- include 'atb-render' field:'block_content' -%}
+{%- assign block_content = val -%}
+{%- include 'atb-render' field:'block_image' -%}
+{%- assign block_image = val -%}
+{%- include 'atb-render' field:'block_url' -%}
+{%- assign block_url = val -%}
+{%- if atb_mobile_carousel == blank -%}
+{%- assign atb_mobile_carousel = false -%}
+{%- else -%}
+{%- assign atb_mobile_carousel = true -%}
+{%- endif -%}
+{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section index-section">
+{% assign layout = atb_layout %}
+{% assign IsMobile_carousel = atb_mobile_carousel %}
+{% assign blocks_size = blocks.size %}
+
+{% case blocks_size %}
+{% when 1 %}
+{% assign block_width = '' %}
+{% when 2 %}
+{% assign block_width = 'medium-up--one-half small--one-whole' %}
+{% when 3 %}
+{% assign block_width = 'medium-up--one-third small--one-whole' %}
+{% when 4 %}
+{% assign block_width = 'medium-up--one-quarter small--one-whole' %}
+{% endcase %}
+
+<section id="section-{{ section_id }}" data-section-id="{{ section_id }}" data-section-type="featured-blocks" class='fade-in-animation'>
+  <div class='page-width'>
+    
+     {% if atb_title != blank or  atb_subtitle != blank %}
+    <header class="section-header homepage_subtitle_style_{{settings.homepage_subtitle_color}} ">
+      {% if atb_subtitle != blank  %}
+     <span class='h5'>{{ atb_subtitle  }}</span>
+      {% endif %}
+      {% if atb_title != blank  %}
+      <h2>{{ atb_title }}</h2>
+      {% endif %}
+    </header>
+    {% endif %}
+    
+    
+    {% if blocks_size > 0 %}
+    <div class='zoom-fade-animation featured-blocks-wrapper {% if IsMobile_carousel %} mobile_carousel {% endif %}' >
+      {% for block0 in blocks %} 
+{%- assign my_image_key0 = block_image[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image0 = images[my_image_key0] -%}
+          <div class='zoom-fade-animation-element-wrapper {{block_width}} featured-block layout_{{layout}} image_style_{{atb_image_style}}' >
+			{% assign image = my_image0 %}
+            {% assign link = block_url[forloop.index0] %}
+            {% assign heading = block_heading[forloop.index0] %}
+            {% assign content = block_content[forloop.index0] %}
+            
+            
+            <div class='featured-block-wrapper'>
+            {% if link != blank %}
+            <a href='{{link}}' class='featured-block_link' aria-label="{{heading}}"></a>
+            {% endif %}
+              
+             
+
+              
+              <div  class='featured-block-image-container'  {% if image == blank %} data-image-loading-animation {% endif %}>     
+              
+                {% if image != blank %}
+
+                {% capture img_id %}Image-{{ image.id }}{% endcapture %}
+                {% capture img_wrapper_id %}ImageWrapper-{{ image.id }}{% endcapture %}
+
+                <img id="{{ img_id }}"  
+                     class="featured-block-image zoom-fade-animation-element"
+                     srcset="{%- if image.width >= 375 -%}{{ image | img_url: '375x' }} 375w,{%- endif -%}
+                             {%- if image.width >= 720 -%}{{ image | img_url: '720x' }} 750w,{%- endif -%}
+                             {%- if image.width >= 1066 -%}{{ image | img_url: '1066x' }} 1066w,{%- endif -%}
+                             {%- if image.width >= 1500 -%}{{ image | img_url: '1500x' }} 1500w,{%- endif -%}
+                             {%- if image.width >= 1780 and blocks_size < 4 -%}{{ image | img_url: '1780x' }} 1780w,{%- endif -%}
+                             {%- if image.width >= 2000 and blocks_size < 3 -%}{{ image | img_url: '2000x' }} 2000w,{%- endif -%}
+                             {%- if image.width >= 2800 and blocks_size < 2 -%}{{ image | img_url: '2800x' }} 2800w{%- endif -%}"
+                     src="{{ image | img_url: '535x' }}"
+                     sizes="(min-width: 750px) calc(100vw / {{ blocks_size }}), 100vw"
+                     loading="lazy"
+                     width="{{ image.width }}"
+                     height="{{ image.height }}"
+                     alt="{{image.alt | default: heading }}">
+                
+                 {% render 'load_spinner' %}
+                {% else %}
+  
+                {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+                {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg featured-block-image zoom-fade-animation-element' }}
+                
+                {% endif %}
+              </div>
+             
+              {% if heading != blank or content != blank %}
+              <div class='featured-block-content-wrapper'>
+                <div class='featured-block-content'>
+                  {% if heading != blank %}
+                  <span class='h4'>{{heading}}</span>
+                  {% endif %}
+                  {% if content != blank %}
+                  <div> {{content}} </div>
+                  {% endif %}
+                </div>
+              </div>
+              {% endif %}
+            </div>
+
+            
+          </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  
+  </div>
+</section>
+
+
+
+</section>

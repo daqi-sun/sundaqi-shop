@@ -1,0 +1,331 @@
+{% if section.settings.compare_btn_title != blank %}
+    <section class="corporate-section section-{{ section.id }}">
+        <div class="corporate-compare-btn">
+            <button class="btn corporate-btn">{{ section.settings.compare_btn_title }}</button>
+            <div class="corporate-compare-popup-content hide">
+                <button class="modal__close close-popup-modal"
+                    title="{{ 'general.accessibility.close_modal' | t | escape }}">
+
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L21 21" stroke="#757575"/>
+                    <path d="M21 1L1 21" stroke="#757575"/>
+                    </svg>
+
+                </button>
+
+                <div class="compare-modal__dialog">
+                    <div class="compare-popup-top-bar">
+                        <div class="compare-popup-title">{{ section.settings.compare_btn_title }}</div>
+
+                        <div class="compare-popup-buttons">
+                            {% assign first_image_found = false %}
+                            {% for block in section.blocks %}
+                                {% if block.settings.btn_title != blank %}
+                                    <button class="btn corporate-btn compare-popup-btn {% unless first_image_found %}active{% endunless %}" data-btn-index="{{ forloop.index }}">{{ block.settings.btn_title }}</button>
+                                    {% assign first_image_found = true %}
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+
+                    </div>
+                    <div class="compare-popup-table">
+                        {% assign first_image_found = false %}
+                        {% for block in section.blocks %}
+                            {% if block.settings.btn_title != blank %}
+                                <div class="compare-popup-table-inner {% unless first_image_found %}active{% endunless %}" data-table-index="{{ forloop.index }}"><table class="comparison_table">
+                                    {% assign first_image_found = true %}
+                                    <tr class="comparison_feature_row">
+                                        <td class="compare_column compare_feature_title"></td>
+                                        {% for i in (1..4) %}
+                                            {% capture product_image %}product_image_{{i}}{% endcapture %}
+                                            {% capture product_title %}product_title_{{i}}{% endcapture %}
+                                            {% capture product_subtitle %}product_subtitle_{{i}}{% endcapture %}
+                                            {% if block.settings[product_image] != blank %}
+                                            <td class="compare_column">
+                                                    <div class="compare_table_product_inner">
+                                                        <div class="compare_table_product_image">
+                                                            <img src="{{ block.settings[product_image] | img_url: 'small' | replace: '_small','' }}" alt="">
+                                                        </div>
+                                                        <div class="compare_table_product_content">
+                                                            <div class="compare_table_product_title">
+                                                                {% if block.settings[product_title] != blank %}
+                                                                    <h3>{{ block.settings[product_title] }}</h3>
+                                                                {% endif %}
+                                                                {% if block.settings[product_subtitle] != blank %}
+                                                                    <div class="compare_table_product_subtitle">{{ block.settings[product_subtitle] }}</div>
+                                                                {% endif %}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                            </td>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </tr>
+                                    {% if block.settings.second_row_content != blank %}
+                                        <tr>{{ block.settings.second_row_content }}</tr>
+                                    {% endif %}
+                                    {% if block.settings.third_row_content != blank %}
+                                        <tr>{{ block.settings.third_row_content }}</tr>
+                                    {% endif %}
+                                    {% if block.settings.fourth_row_content != blank %}
+                                        <tr>{{ block.settings.fourth_row_content }}</tr>
+                                    {% endif %}
+                                    {% if block.settings.fifth_row_content != blank %}
+                                        <tr>{{ block.settings.fifth_row_content }}</tr>
+                                    {% endif %}
+                                    {% if block.settings.sixth_row_content != blank %}
+                                        <tr>{{ block.settings.sixth_row_content }}</tr>
+                                    {% endif %}
+                                    {% if block.settings.seventh_row_content != blank %}
+                                        <tr>{{ block.settings.seventh_row_content }}</tr>
+                                    {% endif %}
+                                    {% if block.settings.row_8_content != blank %}
+                                        <tr>{{ block.settings.row_8_content }}</tr>
+                                    {% endif %}
+                                    {% if block.settings.row_9_content != blank %}
+                                        <tr>{{ block.settings.row_9_content }}</tr>
+                                    {% endif %}
+                                    {% if block.settings.row_10_content != blank %}
+                                        <tr>{{ block.settings.row_10_content }}</tr>
+                                    {% endif %}
+                                    {% if block.settings.row_11_content != blank %}
+                                        <tr>{{ block.settings.row_11_content }}</tr>
+                                    {% endif %}
+                                    {% if block.settings.row_12_content != blank %}
+                                        <tr>{{ block.settings.row_12_content }}</tr>
+                                    {% endif %}
+                                    {% if block.settings.row_13_content != blank %}
+                                        <tr>{{ block.settings.row_13_content }}</tr>
+                                    {% endif %}
+                                    {% if block.settings.row_14_content != blank %}
+                                        <tr>{{ block.settings.row_14_content }}</tr>
+                                    {% endif %}
+                                    {% if block.settings.row_15_content != blank %}
+                                        <tr>{{ block.settings.row_15_content }}</tr>
+                                    {% endif %}
+                                </table></div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>
+        .section-{{ section.id }}{
+            margin-top: {% if section.settings.add_top_negative_margin %}-{% endif %}{{ section.settings.top_margin }}px;
+        }
+        @media screen and (max-width: 749px){
+            .section-{{ section.id }}{
+                margin-top: {% if section.settings.add_top_negative_margin %}-{% endif %}{{ section.settings.top_margin_m }}px;
+            }
+        }
+    </style>
+{% endif %}
+{% schema %}
+  {
+    "name": "Compare popup",
+    "max_blocks": 2,
+    "settings": [
+      {
+        "type": "text",
+        "id": "compare_btn_title",
+        "label": "Button title"
+      },
+      {
+        "type": "checkbox",
+        "id": "add_top_negative_margin",
+        "label": "Enable top negative margin?"
+      },
+      {
+        "type": "range",
+        "id": "top_margin",
+        "label": "Top space(Desktop)",
+        "min": 0,
+        "max": 110,
+        "step": 5,
+        "default": 0,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "top_margin_m",
+        "label": "Top space(Mobile)",
+        "min": 0,
+        "max": 60,
+        "step": 5,
+        "default": 0,
+        "unit": "px"
+      }
+    ],
+    "blocks": [
+        {
+            "type": "button",
+            "name": "Button content",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "btn_title",
+                    "label": "Button title"
+                },
+                {
+                    "type": "header",
+                    "content": "Row 1 content"
+                },
+                {
+                    "type": "header",
+                    "content": "Product 1"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "product_image_1",
+                    "label": "Product image"
+                },
+                {
+                    "type": "text",
+                    "id": "product_title_1",
+                    "label": "Product title"
+                },
+                {
+                    "type": "text",
+                    "id": "product_subtitle_1",
+                    "label": "Product subtitle"
+                },
+                {
+                    "type": "header",
+                    "content": "Product 2"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "product_image_2",
+                    "label": "Product image"
+                },
+                {
+                    "type": "text",
+                    "id": "product_title_2",
+                    "label": "Product title"
+                },
+                {
+                    "type": "text",
+                    "id": "product_subtitle_2",
+                    "label": "Product subtitle"
+                },
+                {
+                    "type": "header",
+                    "content": "Product 3"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "product_image_3",
+                    "label": "Product image"
+                },
+                {
+                    "type": "text",
+                    "id": "product_title_3",
+                    "label": "Product title"
+                },
+                {
+                    "type": "text",
+                    "id": "product_subtitle_3",
+                    "label": "Product subtitle"
+                },
+                {
+                    "type": "header",
+                    "content": "Product 4"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "product_image_4",
+                    "label": "Product image"
+                },
+                {
+                    "type": "text",
+                    "id": "product_title_4",
+                    "label": "Product title"
+                },
+                {
+                    "type": "text",
+                    "id": "product_subtitle_4",
+                    "label": "Product subtitle"
+                },
+                {
+                    "type": "textarea",
+                    "label": "Row 2 content",
+                    "id": "second_row_content"
+                },
+                {
+                    "type": "textarea",
+                    "label": "Row 3 content",
+                    "id": "third_row_content"
+                },
+                {
+                    "type": "textarea",
+                    "label": "Row 4 content",
+                    "id": "fourth_row_content"
+                },
+                {
+                    "type": "textarea",
+                    "label": "Row 5 content",
+                    "id": "fifth_row_content"
+                },
+                {
+                    "type": "textarea",
+                    "label": "Row 6 content",
+                    "id": "sixth_row_content"
+                },
+                {
+                    "type": "textarea",
+                    "label": "Row 7 content",
+                    "id": "seventh_row_content"
+                },
+                {
+                    "type": "textarea",
+                    "label": "Row 8 content",
+                    "id": "row_8_content"
+                },
+                {
+                    "type": "textarea",
+                    "label": "Row 9 content",
+                    "id": "row_9_content"
+                },
+                {
+                    "type": "textarea",
+                    "label": "Row 10 content",
+                    "id": "row_10_content"
+                },
+                {
+                    "type": "textarea",
+                    "label": "Row 11 content",
+                    "id": "row_11_content"
+                },
+                {
+                    "type": "textarea",
+                    "label": "Row 12 content",
+                    "id": "row_12_content"
+                },
+                {
+                    "type": "textarea",
+                    "label": "Row 13 content",
+                    "id": "row_13_content"
+                },
+                {
+                    "type": "textarea",
+                    "label": "Row 14 content",
+                    "id": "row_14_content"
+                },
+                {
+                    "type": "textarea",
+                    "label": "Row 15 content",
+                    "id": "row_15_content"
+                }
+            ]
+        }
+    ],
+    "presets": [
+      {
+        "name": "Compare popup",
+        "category": "Custom Sections"
+      }
+    ]
+  }
+{% endschema %}

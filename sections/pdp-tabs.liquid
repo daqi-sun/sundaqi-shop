@@ -1,0 +1,808 @@
+{%-liquid
+    assign title_order = "order-1"
+    assign content_order = "order-2"
+    assign image_order = "order-3"
+
+    if section.settings.content_order == "1"
+        assign title_order = "order-1"
+        assign content_order = "order-3"
+        assign image_order = "order-2"
+    elsif section.settings.content_order == "2"
+        assign title_order = "order-2"
+        assign content_order = "order-3"
+        assign image_order = "order-1"
+    elsif section.settings.content_order == "3"
+        assign title_order = "order-1"
+        assign content_order = "order-2"
+        assign image_order = "order-3"
+    endif
+
+    assign tab_titles = ''
+    for block in section.blocks
+        assign assign tab_titles = tab_titles | append: "," | append: block.settings.tab_title
+    endfor
+
+    comment
+        Removes any duplicate items in an array.
+    endcomment
+    assign tab_titles = tab_titles | remove_first: ","
+    assign tab_titles = tab_titles | split: ","
+    assign tab_titles = tab_titles | uniq | join: ", "
+    assign tab_titles = tab_titles | split: ","
+%}
+
+{% style %}
+@media screen and (max-width:749px) {
+    {% for block in section.blocks %}
+        {% if block.settings.show_actual_mobile_image_size %}
+            .pdp-image-{{ block.id }} picture {
+                overflow-x: auto;
+                display: block;
+            }
+
+            .pdp-image-{{ block.id }} picture img {
+                width: auto !important;
+                max-width: inherit !important;
+            }
+        {% endif %}
+    {% endfor %}
+}
+{% endstyle %}
+
+<section id="{{ section.id }}" class="pdp pdp-tabs">
+    <div class="content-alignment-{{ section.settings.alignment }} pdp-tabs-container" id="{{ section.settings.section_id }}">
+        <div class="tab-title-container tab-title-container--layout-{{ section.settings.tab_title_layout }}">
+        {% for tab_title in tab_titles %}
+            <div class="tab-title {% if forloop.first %}active{% endif %}" data-href="tab_{{ forloop.index }}">
+                <a>{{ tab_title }}</a>
+            </div>
+        {% endfor %}
+        </div>
+        <div class="tab-content-container">
+        {% for my_tab_title in tab_titles %}
+            <div class="tab-content-wrap {% if forloop.first %}active{% endif %}" id="tab_{{ forloop.index }}">
+            {% for block in section.blocks %}
+                {% assign my_tab_title_compare = my_tab_title | downcase | escape | strip | handleize %}
+                {% assign tab_title = block.settings.tab_title | downcase | escape | strip | handleize %}
+
+                {% if my_tab_title_compare == tab_title %}
+
+                    {% if block.type == 'tabs' %}
+                    <div class="tab-content" data-block-type={{ block.type }}>
+                        {% if block.settings.title != blank %}
+                        <div class="{{ title_order }} pdp-title">
+                            <p>{{ block.settings.title }}</p>
+                        </div>
+                        {% endif %}
+                        {% if block.settings.content != blank or block.settings.notification_message != blank %}
+                        <div class="{{ content_order }} pdp-content">
+                            {{ block.settings.content }}
+                            {% if block.settings.notification_message != blank %}
+                                <div class="{{ block.settings.notification_message_font_size }}">
+                                {{ block.settings.notification_message }}
+                                </div>
+                            {% endif %}
+                        </div>
+                        {% endif %}
+                        {% if block.settings.image != blank or block.settings.mobile_image != blank %}
+                        <div class="{{ image_order }} pdp-image pdp-image-{{ block.id }}">
+                            {% capture image_content %}
+                                <picture class="draggable-image-container">
+                                    <source media="(min-width:750px)" srcset="{{ block.settings.image | image_url: width: 1000 }}">
+                                    <source media="(max-width:749px)"  srcset="{{ block.settings.mobile_image | image_url: width: 749 }}">
+                                    <img src="{{ block.settings.image | image_url: width: 1000 }}" alt="{{ block.settings.image_alt }}" style="width: 100%;">
+                                </picture>
+                            {% endcapture %}
+
+                            {% if block.settings.show_actual_mobile_image_size %}
+                                <scroll-draggable-image>
+                                    {{ image_content }}
+                                </scroll-draggable-image>
+                            {% else %}
+                                {{ image_content }}
+                            {% endif %}
+                        </div>
+                        {% endif %}
+                        {% if block.settings.button_link != blank and block.settings.button_text != blank or block.settings.button_link_2 != blank and block.settings.button_text_2 != blank or block.settings.button_link_3 != blank and block.settings.button_text_3 != blank %}
+                            <div class="pdp-button-div order-4">
+                                {% if block.settings.button_link != blank and block.settings.button_text != blank %}
+                                    <a href="{{ block.settings.button_link }}" class="pdp-button">{{ block.settings.button_text }}</a>
+                                {% endif %}
+
+                                {% if block.settings.button_link_2 != blank and block.settings.button_text_2 != blank %}
+                                    <a href="{{ block.settings.button_link_2 }}" class="pdp-button">{{ block.settings.button_text_2 }}</a>
+                                {% endif %}
+
+                                {% if block.settings.button_link_3 != blank and block.settings.button_text_3 != blank %}
+                                    <a href="{{ block.settings.button_link_3 }}" class="pdp-button">{{ block.settings.button_text_3 }}</a>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+
+                    {% if block.type == 'image_with_text' %}
+                    <div class="tab-content" data-block-type={{ block.type }}>
+                        {% if block.settings.title != blank %}
+                        <div class="{{ title_order }} pdp-title">
+                            <p>{{ block.settings.title }}</p>
+                        </div>
+                        {% endif %}
+                        {% if block.settings.content != blank or block.settings.notification_message != blank %}
+                        <div class="{{ content_order }} pdp-content">
+                            {{ block.settings.content }}
+                            {% if block.settings.notification_message != blank %}
+                                <div class="{{ block.settings.notification_message_font_size }}">
+                                {{ block.settings.notification_message }}
+                                </div>
+                            {% endif %}
+                        </div>
+                        {% endif %}
+                        <div class="{{ image_order }} pdp-image">
+
+                        {% render
+                            'pdp-image-text'
+
+                            index_number: forloop.index0,
+                            layout: block.settings.layout,
+                            alignment: block.settings.alignment,
+                            stacked_row: block.settings.stacked_row,
+                            mobile_stacked_row: block.settings.mobile_stacked_row,
+                            mobile_slider_row: block.settings.mobile_slider_row,
+                            slider_row: block.settings.slider_row,
+
+                            image_column_1: block.settings.image_column_1,
+                            mobile_image_column_1: block.settings.mobile_image_column_1,
+                            image_alt_column_1: block.settings.image_alt_column_1,
+                            subtext_top_column_1: block.settings.subtext_top_column_1,
+                            subtext_bottom_column_1: block.settings.subtext_bottom_column_1,
+                            button_link_column_1: block.settings.button_link_column_1,
+                            button_text_column_1: block.settings.button_text_column_1,
+
+                            image_column_2: block.settings.image_column_2,
+                            mobile_image_column_2: block.settings.mobile_image_column_2,
+                            image_alt_column_2: block.settings.image_alt_column_2,
+                            subtext_top_column_2: block.settings.subtext_top_column_2,
+                            subtext_bottom_column_2: block.settings.subtext_bottom_column_2,
+                            button_link_column_2: block.settings.button_link_column_2,
+                            button_text_column_2: block.settings.button_text_column_2,
+
+                            image_column_3: block.settings.image_column_3,
+                            mobile_image_column_3: block.settings.mobile_image_column_3,
+                            image_alt_column_3: block.settings.image_alt_column_3,
+                            subtext_top_column_3: block.settings.subtext_top_column_3,
+                            subtext_bottom_column_3: block.settings.subtext_bottom_column_3,
+                            button_link_column_3: block.settings.button_link_column_3,
+                            button_text_column_3: block.settings.button_text_column_3,
+
+                            image_column_4: block.settings.image_column_4,
+                            mobile_image_column_4: block.settings.mobile_image_column_4,
+                            image_alt_column_4: block.settings.image_alt_column_4,
+                            subtext_top_column_4: block.settings.subtext_top_column_4,
+                            subtext_bottom_column_4: block.settings.subtext_bottom_column_4,
+                            button_link_column_4: block.settings.button_link_column_4,
+                            button_text_column_4: block.settings.button_text_column_4
+                        %}
+                        </div>
+                    </div>
+                    {% endif %}
+
+                {% endif %}
+            {% endfor %}
+             </div>
+        {% endfor %}
+        </div>
+    </div>
+</section>
+<script>
+    document.querySelectorAll("#{{ section.id }} .tab-title").forEach(function(i,e) {
+        i.addEventListener("click", function() {
+            document.querySelectorAll("#{{ section.id }} .tab-title").forEach(function(i,e) {
+                i.classList.remove("active");
+            });
+            document.querySelectorAll("#{{ section.id }} .tab-content-wrap").forEach(function(i,e) {
+                i.classList.remove("active");
+            });
+            this.classList.add("active");
+            document.querySelector("#{{ section.id }} .tab-content-wrap[id='" + this.dataset.href + "']").classList.add("active");
+        });
+    });
+</script>
+
+{% schema %}
+{
+    "name": "PDP Tab Switch",
+    "settings": [
+        {
+            "type": "text",
+            "id": "section_id",
+            "label": "Section ID"
+        },
+        {
+            "type": "select",
+            "id": "tab_title_layout",
+            "label": "Tab Title Layout",
+            "options": [
+                {
+                    "value": "horizontal",
+                    "label": "Horizontal-Left"
+                },
+                {
+                    "value": "horizontal-center",
+                    "label": "Horizontal-Center"
+                },
+                {
+                    "value": "horizontal-right",
+                    "label": "Horizontal-Right"
+                },
+                {
+                    "value": "vertical-left",
+                    "label": "Vertical-Left"
+                },
+                {
+                    "value": "vertical-center",
+                    "label": "Vertical-Center"
+                },
+                {
+                    "value": "vertical-right",
+                    "label": "Vertical-Right"
+                }
+
+            ],
+            "default": "horizontal"
+        },
+        {
+            "type": "select",
+            "id": "alignment",
+            "label": "Text alignment",
+            "options": [
+                {
+                    "value": "left",
+                    "label": "Left"
+                },
+                {
+                    "value": "right",
+                    "label": "Right"
+                },
+                {
+                    "value": "center",
+                    "label": "Center"
+                }
+            ],
+            "default": "center"
+        },
+        {
+            "type": "checkbox",
+            "id": "full_width",
+            "label": "Full Width",
+            "default": false
+        },
+        {
+            "type": "select",
+            "id": "content_order",
+            "label": "Content Order",
+            "options": [
+                {
+                    "value": "1",
+                    "label": "Title, Image, Content"
+                },
+                {
+                    "value": "2",
+                    "label": "Image, Title, Content"
+                },
+                {
+                    "value": "3",
+                    "label": "Title, Content, Image"
+                }
+            ],
+            "default": "3"
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Tabs",
+            "type": "tabs",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "mobile_image",
+                    "label": "Mobile Image"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "show_actual_mobile_image_size",
+                    "label": "Show actual image size in mobile",
+                    "default": false
+                },
+                {
+                    "type": "text",
+                    "id": "image_alt",
+                    "label": "Image Alt"
+                },
+                {
+                    "type": "text",
+                    "id": "tab_title",
+                    "label": "Tab Header"
+                },
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Title Content Header"
+                },
+                {
+                    "type": "richtext",
+                    "id": "content",
+                    "label": "Tab Content"
+                },
+                {
+                    "type": "richtext",
+                    "id": "notification_message",
+                    "label": "Notification message"
+                },
+                {
+                    "type": "select",
+                    "id": "notification_message_font_size",
+                    "label": "Notification message: Font size",
+                    "options": [
+                        {
+                            "value": "heading-1",
+                            "label": "Heading 1"
+                        },
+                        {
+                            "value": "heading-2",
+                            "label": "Heading 2"
+                        },
+                        {
+                            "value": "heading-3",
+                            "label": "Heading 3"
+                        },
+                        {
+                            "value": "heading-4",
+                            "label": "Heading 4"
+                        },
+                        {
+                            "value": "heading-5",
+                            "label": "Heading 5"
+                        },
+                        {
+                            "value": "heading-6",
+                            "label": "Heading 6"
+                        },
+                        {
+                            "value": "body-1",
+                            "label": "Body 1"
+                        },
+                        {
+                            "value": "body-2",
+                            "label": "Body 2"
+                        },
+                        {
+                            "value": "body-3",
+                            "label": "Body 3"
+                        },
+                        {
+                            "value": "body-4",
+                            "label": "Body 4"
+                        }
+                    ],
+                    "default": "heading-6"
+                },
+                {
+                    "type": "url",
+                    "id": "button_link",
+                    "label": "Button Link"
+                },
+                {
+                    "type": "text",
+                    "id": "button_text",
+                    "label": "Button Text",
+                    "default": "Learn More"
+                },
+                {
+                    "type": "url",
+                    "id": "button_link_2",
+                    "label": "Button Link 2"
+                },
+                {
+                    "type": "text",
+                    "id": "button_text_2",
+                    "label": "Button Text 2",
+                    "default": "Learn More"
+                },
+                {
+                    "type": "url",
+                    "id": "button_link_3",
+                    "label": "Button Link 3"
+                },
+                {
+                    "type": "text",
+                    "id": "button_text_3",
+                    "label": "Button Text 3",
+                    "default": "Learn More"
+                }
+            ]
+        },
+        {
+            "name": "Image with Text",
+            "type": "image_with_text",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "Important Settings",
+                    "info": "Tab Header is use to combined content in one tab. That is all with the same Tab Header value."
+                },
+                {
+                    "type": "text",
+                    "id": "tab_title",
+                    "label": "Tab Header",
+                    "info": "Mandatory field. Please fill this field."
+                },
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Title Content Header"
+                },
+                {
+                    "type": "richtext",
+                    "id": "content",
+                    "label": "Tab Content"
+                },
+                {
+                    "type": "richtext",
+                    "id": "notification_message",
+                    "label": "Notification message"
+                },
+                {
+                    "type": "select",
+                    "id": "notification_message_font_size",
+                    "label": "Notification message: Font size",
+                    "options": [
+                        {
+                            "value": "heading-1",
+                            "label": "Heading 1"
+                        },
+                        {
+                            "value": "heading-2",
+                            "label": "Heading 2"
+                        },
+                        {
+                            "value": "heading-3",
+                            "label": "Heading 3"
+                        },
+                        {
+                            "value": "heading-4",
+                            "label": "Heading 4"
+                        },
+                        {
+                            "value": "heading-5",
+                            "label": "Heading 5"
+                        },
+                        {
+                            "value": "heading-6",
+                            "label": "Heading 6"
+                        },
+                        {
+                            "value": "body-1",
+                            "label": "Body 1"
+                        },
+                        {
+                            "value": "body-2",
+                            "label": "Body 2"
+                        },
+                        {
+                            "value": "body-3",
+                            "label": "Body 3"
+                        },
+                        {
+                            "value": "body-4",
+                            "label": "Body 4"
+                        }
+                    ],
+                    "default": "heading-6"
+                },
+                {
+                    "type": "header",
+                    "content": "Global Settings"
+                },
+                {
+                    "type": "select",
+                    "id": "alignment",
+                    "label": "Text alignment",
+                    "options": [
+                        {
+                            "value": "left",
+                            "label": "Left"
+                        },
+                        {
+                            "value": "right",
+                            "label": "Right"
+                        },
+                        {
+                            "value": "center",
+                            "label": "Center"
+                        }
+                    ],
+                    "default": "center"
+                },
+                {
+                    "type": "select",
+                    "id": "layout",
+                    "label": "Mobile Layout",
+                    "options": [
+                        {
+                            "label": "Stacked",
+                            "value": "stacked"
+                        },
+                        {
+                            "label": "Slider",
+                            "value": "owl-carousel owl-theme"
+                        }
+                    ],
+                    "default": "owl-carousel owl-theme"
+                },
+                {
+                    "type": "select",
+                    "id": "stacked_row",
+                    "label": "Desktop Stacked row per column",
+                    "options": [
+                        {
+                            "label": "1",
+                            "value": "1"
+                        },
+                        {
+                            "label": "2",
+                            "value": "2"
+                        },
+                        {
+                            "label": "3",
+                            "value": "3"
+                        },
+                        {
+                            "label": "4",
+                            "value": "4"
+                        }
+                    ],
+                    "default": "3"
+                },
+                {
+                    "type": "select",
+                    "id": "mobile_stacked_row",
+                    "label": "Mobile Stacked row per column",
+                    "options": [
+                        {
+                            "label": "1",
+                            "value": "1"
+                        },
+                        {
+                            "label": "2",
+                            "value": "2"
+                        }
+                    ],
+                    "default": "1",
+                    "info": "Enabled if Layout selected is Stacked"
+                },
+                {
+                    "type": "select",
+                    "id": "slider_row",
+                    "label": "Desktop slider row per column",
+                    "options": [
+                        {
+                            "label": "1",
+                            "value": "1"
+                        },
+                        {
+                            "label": "2",
+                            "value": "2"
+                        },
+                        {
+                            "label": "3",
+                            "value": "3"
+                        },
+                        {
+                            "label": "4",
+                            "value": "4"
+                        }
+                    ],
+                    "default": "2",
+                    "info": "Enabled if Layout selected is Slider"
+                },
+                {
+                    "type": "select",
+                    "id": "mobile_slider_row",
+                    "label": "Mobile slider row per column",
+                    "options": [
+                        {
+                            "label": "1",
+                            "value": "1"
+                        },
+                        {
+                            "label": "2",
+                            "value": "2"
+                        },
+                        {
+                            "label": "3",
+                            "value": "3"
+                        },
+                        {
+                            "label": "4",
+                            "value": "4"
+                        }
+                    ],
+                    "default": "1",
+                    "info": "Enabled if Layout selected is Slider"
+                },
+                {
+                    "type": "header",
+                    "content": "Column 1"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image_column_1",
+                    "label": "Image"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "mobile_image_column_1",
+                    "label": "Mobile Image"
+                },
+                {
+                    "type": "text",
+                    "id": "image_alt_column_1",
+                    "label": "Image Alt"
+                },
+                {
+                    "type": "richtext",
+                    "id": "subtext_top_column_1",
+                    "label": "Subtext Top"
+                },
+                {
+                    "type": "richtext",
+                    "id": "subtext_bottom_column_1",
+                    "label": "Subtext Bottom"
+                },
+                {
+                    "type": "url",
+                    "id": "button_link_column_1",
+                    "label": "Button Link"
+                },
+                {
+                    "type": "text",
+                    "id": "button_text_column_1",
+                    "label": "Button Text",
+                    "default": "Learn More"
+                },
+                {
+                    "type": "header",
+                    "content": "Column 2"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image_column_2",
+                    "label": "Image"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "mobile_image_column_2",
+                    "label": "Mobile Image"
+                },
+                {
+                    "type": "text",
+                    "id": "image_alt_column_2",
+                    "label": "Image Alt"
+                },
+                {
+                    "type": "richtext",
+                    "id": "subtext_top_column_2",
+                    "label": "Subtext Top"
+                },
+                {
+                    "type": "richtext",
+                    "id": "subtext_bottom_column_2",
+                    "label": "Subtext Bottom"
+                },
+                {
+                    "type": "url",
+                    "id": "button_link_column_2",
+                    "label": "Button Link"
+                },
+                {
+                    "type": "text",
+                    "id": "button_text_column_2",
+                    "label": "Button Text",
+                    "default": "Learn More"
+                },
+                {
+                    "type": "header",
+                    "content": "Column 3"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image_column_3",
+                    "label": "Image"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "mobile_image_column_3",
+                    "label": "Mobile Image"
+                },
+                {
+                    "type": "text",
+                    "id": "image_alt_column_3",
+                    "label": "Image Alt"
+                },
+                {
+                    "type": "richtext",
+                    "id": "subtext_top_column_3",
+                    "label": "Subtext Top"
+                },
+                {
+                    "type": "richtext",
+                    "id": "subtext_bottom_column_3",
+                    "label": "Subtext Bottom"
+                },
+                {
+                    "type": "url",
+                    "id": "button_link_column_3",
+                    "label": "Button Link"
+                },
+                {
+                    "type": "text",
+                    "id": "button_text_column_3",
+                    "label": "Button Text",
+                    "default": "Learn More"
+                },
+                {
+                    "type": "header",
+                    "content": "Column 4"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image_column_4",
+                    "label": "Image"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "mobile_image_column_4",
+                    "label": "Mobile Image"
+                },
+                {
+                    "type": "text",
+                    "id": "image_alt_column_4",
+                    "label": "Image Alt"
+                },
+                {
+                    "type": "richtext",
+                    "id": "subtext_top_column_4",
+                    "label": "Subtext Top"
+                },
+                {
+                    "type": "richtext",
+                    "id": "subtext_bottom_column_4",
+                    "label": "Subtext Bottom"
+                },
+                {
+                    "type": "url",
+                    "id": "button_link_column_4",
+                    "label": "Button Link"
+                },
+                {
+                    "type": "text",
+                    "id": "button_text_column_4",
+                    "label": "Button Text",
+                    "default": "Learn More"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "PDP Tab Switch"
+        }
+    ]
+}
+{% endschema %}

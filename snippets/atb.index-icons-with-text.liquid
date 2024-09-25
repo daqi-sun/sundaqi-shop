@@ -1,0 +1,198 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "t:sections.index-icons-with-text.name",
+  "class": "index-section",
+  "id": "index-icons-with-text",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_title",
+      "label": "t:sections.index-icons-with-text.settings.title.label",
+      "default": "Heading",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_subtitle",
+      "label": "t:sections.index-icons-with-text.settings.subtitle.label",
+      "default": "SubHeading",
+      "info": ""
+    },
+    {
+      "type": "color",
+      "id": "atb_icon_color",
+      "label": "t:sections.index-icons-with-text.settings.icon_color.label",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "blocks",
+      "label": "Block ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": "",
+      "repeatable": "t:sections.index-icons-with-text.blocks.block.name"
+    },
+    {
+      "type": "text",
+      "id": "block_custom_icon",
+      "label": "t:sections.index-icons-with-text.blocks.block.settings.custom_icon.label",
+      "info": "t:sections.index-icons-with-text.blocks.block.settings.custom_icon.info",
+      "default": "star",
+      "repeatable": "t:sections.index-icons-with-text.blocks.block.name"
+    },
+    {
+      "type": "image_picker",
+      "id": "block_image",
+      "label": "t:sections.index-icons-with-text.blocks.block.settings.image.label",
+      "repeatable": "t:sections.index-icons-with-text.blocks.block.name",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "block_title",
+      "label": "t:sections.index-icons-with-text.blocks.block.settings.title.label",
+      "default": "Title",
+      "repeatable": "t:sections.index-icons-with-text.blocks.block.name",
+      "info": ""
+    },
+    {
+      "type": "wysiwyg",
+      "id": "block_content",
+      "label": "t:sections.index-icons-with-text.blocks.block.settings.content.label",
+      "default": "<p>Content text</p>",
+      "repeatable": "t:sections.index-icons-with-text.blocks.block.name",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "block_link",
+      "label": "t:sections.index-icons-with-text.blocks.block.settings.link.label",
+      "repeatable": "t:sections.index-icons-with-text.blocks.block.name",
+      "info": ""
+    }
+  ],
+  "warnings": [
+    "repeating image fields may not be properly handled"
+  ]
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_title' -%}
+{%- assign atb_title = val -%}
+{%- include 'atb-render' field:'atb_subtitle' -%}
+{%- assign atb_subtitle = val -%}
+{%- include 'atb-render' field:'atb_icon_color' -%}
+{%- assign atb_icon_color = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_custom_icon' -%}
+{%- assign block_custom_icon = val -%}
+{%- include 'atb-render' field:'block_image' -%}
+{%- assign block_image = val -%}
+{%- include 'atb-render' field:'block_title' -%}
+{%- assign block_title = val -%}
+{%- include 'atb-render' field:'block_content' -%}
+{%- assign block_content = val -%}
+{%- include 'atb-render' field:'block_link' -%}
+{%- assign block_link = val -%}
+{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section index-section">
+<section id="section-{{ section_id }}" data-section-id="{{ section_id }}" data-section-type="index-icons-with-text">
+  <div class="page-width-small">
+    {% if atb_title != blank or atb_subtitle != blank %}
+    <header class="section-header text-center homepage_subtitle_style_{{settings.homepage_subtitle_color}}">
+      {% if atb_subtitle != blank %}
+     <span class='h5'>{{ atb_subtitle  }}</span>
+      {% endif %}
+
+      {% if atb_title != blank %}
+      <h2>{{ atb_title }}</h2>
+      {% endif %}
+    </header>
+    {% endif %}
+    
+    {% if blocks.size > 0 %}
+    <div class='zoom-fade-animation icon-with-text--blocks'>
+      {% for block0 in blocks %}
+{%- assign my_image_key0 = block_image[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image0 = images[my_image_key0] -%}
+        {% assign link = block_link[forloop.index0] %}      
+        <div class='icon-with-text--block zoom-fade-animation-element-wrapper'>
+          {% if link != blank %}
+        <a href='{{link}}' class='icon-with-text--block_link'>
+          {% endif %}
+          <div class='block_icon'>
+            
+            {% assign custom_image = my_image0 %}
+            
+            {% if custom_image != blank %}
+            
+            <img src='{{ custom_image | img_url:"200x"}}' 
+                 alt='{{ custom_image.alt | default:  block_title[forloop.index0] }}' 
+                 srcset="{{ custom_image | img_url: '200x' }} 1x, {{ custom_image | img_url: '200x', scale: 2 }} 2x"
+                 loading="lazy"
+                 width="{{ custom_image.width}}"
+                 class='zoom-fade-animation-element'
+                 height="{{ custom_image.height}}"/>
+            
+            {% else %}
+            <span class='zoom-fade-animation-element'>
+              <load-icon name="{{ block_custom_icon[forloop.index0] }}"></load-icon>
+            </span>
+            
+            {% comment %}
+            {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+            {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+            {% endcomment %}
+            {% endif %}
+
+          </div>
+          <div class='block_info'>
+            <span class='h4'>{{ block_title[forloop.index0]}}</span>
+            {% if block_content[forloop.index0] != blank %}
+            <div class='block_content'>
+              {{block_content[forloop.index0]}}
+            </div>
+            {% endif %}
+          </div>
+          {% if link != blank %}
+      	  </a>
+          {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+  
+  {% assign icon_color = atb_icon_color %}
+ {% if icon_color == 'rgba(0,0,0,0)' %}
+  {% assign icon_color = settings.color_button %}
+  {% endif %}
+  <style>
+    #section-{{section_id}} .block_icon svg {
+      color: {{ icon_color }};
+    }
+  </style>
+</section>
+
+  <script type="module" src="{{ 'dynamic-icon.js' | asset_url }}"></script>
+
+
+
+
+</section>

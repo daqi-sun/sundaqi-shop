@@ -1,0 +1,146 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "PDP Video",
+  "id": "pdp-video",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "class": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_section_id",
+      "label": "Section ID",
+      "info": ""
+    },
+    {
+      "type": "select",
+      "id": "atb_text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ],
+      "default": "center",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_title",
+      "label": "Section Heading",
+      "info": ""
+    },
+    {
+      "type": "wysiwyg",
+      "id": "atb_sub_heading",
+      "label": "Section Sub-heading",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_youtube_link",
+      "label": "Youtube Link",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_button_link",
+      "label": "Button Link",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_button_text",
+      "label": "Button Text",
+      "default": "Learn More",
+      "info": ""
+    }
+  ],
+  "warnings": []
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_section_id' -%}
+{%- assign atb_section_id = val -%}
+{%- include 'atb-render' field:'atb_text_alignment' -%}
+{%- assign atb_text_alignment = val -%}
+{%- include 'atb-render' field:'atb_title' -%}
+{%- assign atb_title = val -%}
+{%- include 'atb-render' field:'atb_sub_heading' -%}
+{%- assign atb_sub_heading = val -%}
+{%- include 'atb-render' field:'atb_youtube_link' -%}
+{%- assign atb_youtube_link = val -%}
+{%- include 'atb-render' field:'atb_button_link' -%}
+{%- assign atb_button_link = val -%}
+{%- include 'atb-render' field:'atb_button_text' -%}
+{%- assign atb_button_text = val -%}
+{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section ">
+{%- liquid
+    assign section_id = atb_section_id
+    assign title = atb_title
+    assign sub_heading = atb_sub_heading
+    assign youtube_link = atb_youtube_link
+    assign button_link = atb_button_link
+    assign button_text = atb_button_text
+-%}
+<section id="{{ section_id }}" class="pdp pdp-video">
+    <div class="pdp-video-container" id="{{ section_id }}">
+        <div class="pdp-section-header alignment--{{ atb_text_alignment }}">
+            {% if title != blank %}
+            <h2 class="pdp-section-header__heading">{{ title }}</h2>
+            {% endif %}
+            {% if sub_heading != blank %}
+            <span class="pdp-section-header__subheading">{{ sub_heading }}</span>
+            {% endif %}
+        </div>
+        <div class="video-container">
+            {% if youtube_link != blank %}
+            <iframe id="{{ section_id }}-iframe" frameborder="0" data-src="{{ youtube_link }}" src="" data-video-iframe></iframe>
+            {% endif %}
+            {% if button_link != blank and button_text != blank %}
+                <a href="{{ button_link }}" class="pdp-button">{{ button_text }}</a>
+            {% endif %}
+        </div>
+    </div>
+</section>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        let vidIframeElems = document.querySelectorAll("[data-video-iframe]");
+        console.log('vidIframeElems', vidIframeElems.length)
+        vidIframeElems.forEach(function(vidIframeElem) {
+            let vidIframeElemDataSrc = vidIframeElem.getAttribute("data-src");
+            if (vidIframeElemDataSrc) {
+                vidIframeElem.setAttribute("src", `https://www.youtube.com/embed/${getId(vidIframeElemDataSrc)}?modestbranding=1`);
+            }
+        });
+        function getId(url) {
+            let regex = /^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/)|(?:(?:watch)?\?v(?:i)?=|\&v(?:i)?=))([^#\&\?]+).*/;
+            return url.match(regex)[1];
+        }
+    });
+</script>
+
+</section>

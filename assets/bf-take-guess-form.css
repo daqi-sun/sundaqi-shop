@@ -1,0 +1,722 @@
+.display--desktop {
+    display: block;
+}
+
+.display--mobile {
+    display: none;
+}
+
+@media (max-width: 749px) {
+    .display--desktop {
+        display: none;
+    }
+
+    .display--mobile {
+        display: block;
+    }
+}
+
+/* Step 1 style start here */
+.bf-take-guess-form__section {
+    width: 100%;
+    overflow: hidden;
+    padding: 65px 0;
+}
+
+.bf-take-guess-form__form-container {
+    padding: 34px 42px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.form-container--step-1 {
+    border: 2px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.bf-take-guess-form__step-1-title-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 43px;
+    gap: 12px;
+}
+
+.bf-take-guess-form__step-1-title-icon-wrapper {
+    width: 60px;
+    height: 60px;
+}
+
+.bf-take-guess-form__step-1-title-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.bf-take-guess-form__step-1-title {
+    text-align: center;
+    font-family: 'Helvetica Neue ForEco';
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 30px;
+}
+
+.bf-take-guess-form__step-1-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+.bf-take-guess-form__step-1-description-wrapper {
+    flex: 1;
+    text-align: left;
+}
+
+.bf-take-guess-form__step-1-description {
+    font-family: 'Helvetica Neue ForEco';
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 27.45px;
+    margin-bottom: 5px;
+}
+
+.bf-take-guess-form__step-1-tips {
+    font-family: 'Helvetica Neue ForEco';
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+}
+
+.bf-take-guess-form__step-1-input-section {
+    flex: 1;
+}
+
+.bf-take-guess-form__step-1-input-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-bottom: 10px;
+}
+
+.bf-take-guess-form__step-1-input {
+    padding: 19px 16px;
+    border-radius: 6px 0 0 6px;
+    outline: none;
+    flex: 1;
+    font-size: 15px;
+    border: none;
+}
+
+.bf-take-guess-form__step-1-input-button {
+    padding: 14px 24px;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    font-family: 'Helvetica Neue ForEco';
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.bf-take-guess-form__step-1-input-button:focus {
+    outline: none;
+}
+
+.bf-take-guess-form__step-1-input-button[aria-disabled=true] {
+    background-color: #e1e1e1 !important;
+    color: #a9a9a9 !important;
+}
+
+.bf-take-guess-form__step-1-disclaimer {
+    display: block;
+    position: relative;
+    padding-left: 20px;
+    cursor: pointer;
+    user-select: none;
+    width: fit-content;
+    font-family: 'Helvetica Neue ForEco';
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+}
+
+/* Hide the default checkbox */
+.bf-take-guess-form__step-1-disclaimer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.bf-take-guess-form__step-1-disclaimer .checkmark {
+    position: absolute;
+    top: 1.5px;
+    left: 0;
+    height: 14px;
+    width: 14px;
+    background-color: transparent;
+    border: 1px solid #A5ACBA;
+    /* This is the border color */
+}
+
+/* When the checkbox is checked, add a black background */
+.bf-take-guess-form__step-1-disclaimer input:checked~.checkmark {
+    background-color: transparent;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.bf-take-guess-form__step-1-disclaimer .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.bf-take-guess-form__step-1-disclaimer input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.bf-take-guess-form__step-1-disclaimer .checkmark:after {
+    left: 4.1px;
+    top: 0.3px;
+    width: 4px;
+    height: 10px;
+    border: solid #A5ACBA;
+    border-width: 0 1px 1px 0;
+    transform: rotate(45deg);
+}
+
+.bf-take-guess-form__step-1-error-message {
+    font-family: 'Helvetica Neue ForEco';
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    margin-top: 8px;
+}
+
+@media (max-width: 749px) {
+    .bf-take-guess-form__section {
+        padding: 33px 0 0 0;
+        overflow: visible;
+    }
+
+    .bf-take-guess-form__form-container {
+        padding: 16px 12px 23px;
+    }
+
+    .bf-take-guess-form__step-1-title-wrapper {
+        margin-bottom: 1px;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .bf-take-guess-form__step-1-title {
+        text-align: left;
+        font-size: 18px;
+    }
+
+    .bf-take-guess-form__step-1-content-wrapper {
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 13px;
+    }
+
+    .bf-take-guess-form__step-1-description-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 4px;
+    }
+
+    .bf-take-guess-form__step-1-description {
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 16px;
+        margin-bottom: 0;
+    }
+
+    .bf-take-guess-form__step-1-tips {
+        font-size: 12px;
+    }
+
+    .bf-take-guess-form__step-1-tooltip-wrapper {
+        position: relative;
+    }
+
+    .bf-take-guess-form__step-1-tooltip-icon:hover+.bf-take-guess-form__step-1-tooltip {
+        opacity: 1;
+    }
+
+    .bf-take-guess-form__step-1-tooltip {
+        position: absolute;
+        top: 22px;
+        right: 0;
+        width: 280px;
+        padding: 8px 16px 10px;
+        background-color: rgba(211, 213, 216, 0.90);
+        border-radius: 3px;
+        z-index: 2;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .bf-take-guess-form__step-1-input-wrapper {
+        margin-bottom: 6px;
+        width: 100%;
+    }
+
+    .bf-take-guess-form__step-1-input-section {
+        width: 100%;
+    }
+
+    .bf-take-guess-form__step-1-input {
+        padding: 12px 16px;
+        font-size: 12px;
+    }
+
+    .bf-take-guess-form__step-1-input-button {
+        padding: 12px 20px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22px;
+    }
+
+    .bf-take-guess-form__step-1-disclaimer {
+        line-height: 16px;
+    }
+
+    .bf-take-guess-form__step-1-error-message {
+        font-size: 10px;
+        line-height: 12px;
+    }
+}
+
+/* Step 1 style end here */
+
+/* Step 2 style start here */
+.bf-take-guess-form__close-button-wrapper {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+.bf-take-guess-form__close-button {
+    width: 45px;
+    height: 45px;
+    border-radius: 9999px;
+    background-color: #ffffff66;
+    position: relative;
+    border: none;
+    outline: none;
+}
+
+.bf-take-guess-form__close-button:focus {
+    outline: none;
+}
+
+.bf-take-guess-form__close-button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background-color: white;
+    width: 19px;
+    height: 2px;
+}
+
+.bf-take-guess-form__close-button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    background-color: white;
+    width: 19px;
+    height: 2px;
+}
+
+.bf-take-guess-form__step-2-content-container {
+    width: 100%;
+    max-width: 655px;
+}
+
+.bf-take-guess-form__step-2-title {
+    font-family: 'Helvetica Neue ForEco';
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 35px;
+    margin-bottom: 17px;
+}
+
+.bf-take-guess-form__step-2-answers-wrapper {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 16px;
+}
+
+.bf-take-guess-form__step-2-answer:nth-of-type(1) {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.bf-take-guess-form__step-2-answer:nth-of-type(2) {
+    grid-row: 2;
+    grid-column: 1;
+}
+
+.bf-take-guess-form__step-2-answer:nth-of-type(3) {
+    grid-row: 3;
+    grid-column: 1;
+}
+
+.bf-take-guess-form__step-2-answer:nth-of-type(4) {
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.bf-take-guess-form__step-2-answer:nth-of-type(5) {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.bf-take-guess-form__step-2-answer:nth-of-type(6) {
+    grid-row: 3;
+    grid-column: 2;
+}
+
+.bf-take-guess-form__step-2-answer-label {
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 19px;
+}
+
+.step-2-answer-checkmark {
+    width: 24px;
+    height: 24px;
+    border-radius: 9999px;
+    border: 1px solid #FFC24D;
+    position: relative;
+}
+
+.step-2-answer-checkmark::before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 24%;
+    width: 1px;
+    background-color: #FFC24D;
+    content: "";
+    transform: translateX(8px) rotate(-34deg);
+    transform-origin: left bottom;
+}
+
+.step-2-answer-checkmark::after {
+    position: absolute;
+    left: -1px;
+    bottom: 5px;
+    height: 1px;
+    width: 55%;
+    background-color: #FFC24D;
+    content: "";
+    transform: translateX(10px) rotate(-52deg);
+    transform-origin: left bottom;
+}
+
+.step-2-answer-checkmark.active {
+    background-color: #FFC24D;
+}
+
+.step-2-answer-checkmark.active::before {
+    background-color: #0a0d16;
+}
+
+.step-2-answer-checkmark.active::after {
+    background-color: #0a0d16;
+}
+
+.step-2-answer-text {
+    color: #FFC24D;
+    font-family: 'Helvetica Neue ForEco';
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 35px;
+}
+
+.bf-take-guess-form__button {
+    font-family: 'Helvetica Neue ForEco';
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 30px;
+    padding: 8px 18px;
+    border: none;
+    outline: none;
+}
+
+.bf-take-guess-form__button:focus {
+    outline: none;
+}
+
+.bf-take-guess-form__step-2-error-message {
+    font-family: 'Helvetica Neue ForEco';
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    margin-top: 8px;
+}
+
+@media (max-width: 749px) {
+    .bf-take-guess-form__close-button {
+        width: 20px;
+        height: 20px;
+    }
+
+    .bf-take-guess-form__close-button::before {
+        width: 7px;
+    }
+
+    .bf-take-guess-form__close-button::after {
+        width: 7px;
+    }
+
+    .bf-take-guess-form__step-2-title {
+        font-size: 16px;
+        line-height: 18px;
+        margin-bottom: 8px;
+        padding-right: 20px;
+    }
+
+    .bf-take-guess-form__step-2-answers-wrapper {
+        width: 100%;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        grid-gap: 9px;
+    }
+
+    .bf-take-guess-form__step-2-answer:nth-of-type(n) {
+        grid-row: initial;
+        grid-column: initial;
+    }
+
+    .bf-take-guess-form__step-2-answer-label {
+        gap: 10px;
+    }
+
+    .step-2-answer-checkmark {
+        width: 16px;
+        height: 16px;
+        border-radius: 9999px;
+        border: 1px solid #FFC24D;
+        position: relative;
+    }
+
+    .step-2-answer-checkmark::before {
+        transform: translateX(5.5px) rotate(-34deg);
+    }
+
+    .step-2-answer-checkmark::after {
+        bottom: 3px;
+        transform: translateX(7.5px) rotate(-52deg);
+    }
+
+    .step-2-answer-text {
+        font-size: 12px;
+        line-height: 17px;
+    }
+
+    .bf-take-guess-form__button {
+        font-size: 8px;
+        padding: 5px 8px;
+    }
+
+    .bf-take-guess-form__step-2-error-message {
+        font-size: 10px;
+        line-height: 12px;
+    }
+}
+
+/* Step 2 style end here */
+
+/* Step 3 style start here */
+.bf-take-guess-form__step-3-content-container {
+    width: 100%;
+    max-width: 680px;
+}
+
+.bf-take-guess-form__step-3-title-wrapper {
+    margin-bottom: 12px;
+}
+
+.bf-take-guess-form__step-3-title {
+    font-family: 'Helvetica Neue ForEco';
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 32px;
+    margin-bottom: 4px;
+}
+
+.bf-take-guess-form__step-3-description-wrapper {
+    position: relative;
+}
+
+.bf-take-guess-form__step-3-description {
+    font-family: 'Helvetica Neue ForEco';
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 28px;
+    margin: 0;
+}
+
+.bf-take-guess-form__step-3-input-wrapper {
+    max-width: 520px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.bf-take-guess-form__step-3-input {
+    border: none;
+    outline: none;
+    border-radius: 10px 0 0 10px;
+    font-family: 'Helvetica Neue ForEco';
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 15.257px;
+    padding: 12px 24px;
+    flex: 1;
+}
+
+.bf-take-guess-form__step-3-input-button {
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-family: 'Helvetica Neue ForEco';
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 15.257px;
+    padding: 12px 40px;
+    cursor: pointer;
+}
+
+.bf-take-guess-form__step-3-input-button:focus {
+    outline: none;
+}
+
+.bf-take-guess-form__step-3-success-copied-message {
+    font-family: 'Helvetica Neue ForEco';
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    margin-bottom: 8px;
+}
+
+.bf-take-guess-form__step-3-disclaimer-text {
+    font-family: 'Helvetica Neue ForEco';
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.bf-take-guess-form__step-3-tooltip-wrapper {
+    position: relative;
+    margin-top: 4px;
+}
+
+.bf-take-guess-form__step-3-tooltip.hovered {
+    opacity: 1;
+}
+
+.bf-take-guess-form__step-3-tooltip {
+    position: absolute;
+    top: 27px;
+    right: 50px;
+    width: 280px;
+    padding: 8px 16px 10px;
+    background-color: rgba(211, 213, 216, 0.90);
+    border-radius: 3px;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.bf-take-guess-form__step-3-tips {
+    font-family: 'Helvetica Neue ForEco';
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+    white-space: pre-wrap;
+}
+
+@media (max-width: 749px) {
+    .bf-take-guess-form__step-3-title-wrapper {
+        margin-bottom: 18px;
+    }
+
+    .bf-take-guess-form__step-3-title {
+        font-size: 16px;
+        line-height: 16px;
+        margin-bottom: 6px;
+        padding-right: 20px;
+    }
+
+    .bf-take-guess-form__step-3-description {
+        font-size: 14px;
+        line-height: 15px;
+        max-width: 280px;
+    }
+
+    .bf-take-guess-form__step-3-input-wrapper {
+        max-width: 225px;
+        margin-bottom: 4px;
+    }
+
+    .bf-take-guess-form__step-3-input {
+        font-size: 12px;
+        line-height: 6px;
+        padding: 8px 16px;
+        width: 100%;
+    }
+
+    .bf-take-guess-form__step-3-input-button {
+        font-size: 12px;
+        line-height: 6px;
+        padding: 8px 24px;
+    }
+
+    .bf-take-guess-form__step-3-success-copied-message {
+        font-size: 10px;
+        line-height: 12px;
+    }
+
+    .bf-take-guess-form__step-3-disclaimer-text {
+        font-size: 10px;
+        line-height: 12px;
+        max-width: 225px;
+    }
+
+    .bf-take-guess-form__step-1-tips {
+        font-size: 12px;
+    }
+
+    .bf-take-guess-form__step-3-tooltip {
+        top: 40px;
+        left: 0;
+        right: initial;
+    }
+}
+
+/* Step 3 style end here */

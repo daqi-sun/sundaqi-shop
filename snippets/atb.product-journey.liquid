@@ -1,0 +1,138 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "Product Journey",
+  "id": "product-journey",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "class": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "type": "checkbox",
+      "id": "atb_enable_checkbox",
+      "label": "Enable section",
+      "default": true,
+      "info": ""
+    },
+    {
+      "id": "atb_title",
+      "type": "text",
+      "label": "Title",
+      "default": "About",
+      "info": ""
+    },
+    {
+      "id": "atb_description",
+      "type": "text",
+      "label": "description",
+      "default": "EcoFlow was founded in 2017 by entrepreneurs who emerged from a leading drone developer where they had worked to perfect the drone battery to be lightweight, long-lasting and, most importantly, powerful",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "blocks",
+      "label": "Block ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": "",
+      "repeatable": "tile"
+    },
+    {
+      "id": "block_background_image",
+      "type": "image_picker",
+      "label": "Background image",
+      "repeatable": "tile",
+      "info": ""
+    },
+    {
+      "id": "block_background_image_mobile",
+      "type": "image_picker",
+      "label": "Background image Mobile",
+      "repeatable": "tile",
+      "info": ""
+    },
+    {
+      "id": "block_title",
+      "type": "text",
+      "label": "Heading",
+      "default": "Long lasting life span",
+      "repeatable": "tile",
+      "info": ""
+    }
+  ],
+  "warnings": [
+    "repeating image fields may not be properly handled"
+  ]
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_enable_checkbox' -%}
+{%- assign atb_enable_checkbox = val -%}
+{%- include 'atb-render' field:'atb_title' -%}
+{%- assign atb_title = val -%}
+{%- include 'atb-render' field:'atb_description' -%}
+{%- assign atb_description = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_background_image' -%}
+{%- assign block_background_image = val -%}
+{%- include 'atb-render' field:'block_background_image_mobile' -%}
+{%- assign block_background_image_mobile = val -%}
+{%- include 'atb-render' field:'block_title' -%}
+{%- assign block_title = val -%}
+{%- if atb_enable_checkbox == blank -%}
+{%- assign atb_enable_checkbox = false -%}
+{%- else -%}
+{%- assign atb_enable_checkbox = true -%}
+{%- endif -%}
+{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section ">
+{% if atb_enable_checkbox %}
+  <section class="product-intro" id="product-journey">
+    <div class="gray-bg intro-pdp-list">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7 mx-auto">
+            <div class="intro-heading">
+              <h2>{{atb_title}}</h2>
+              <p class="my-3">{{atb_description}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          {% for block0 in blocks %}
+{%- assign my_image_key1 = block_background_image_mobile[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image1 = images[my_image_key1] -%}
+{%- assign my_image_key0 = block_background_image[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image0 = images[my_image_key0] -%}
+            <div class="col-md-3 col-6">
+              <div class="inner-intro mt-3">
+                <img class="lazyload desktop-image" data-src="{{ my_image0 | img_url }}">
+                <img class="lazyload mobile-image" data-src="{{ my_image1 | img_url }}">
+                <p class="my-3"><strong>{{ block_title[forloop.index0]}}</strong></p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+ 
+
+
+<style>
+</style>
+
+</section>

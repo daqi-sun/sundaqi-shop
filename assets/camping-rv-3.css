@@ -1,0 +1,874 @@
+/*Global Page Style */
+
+.shopify-section {
+  background: #f8f9fc;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.hb__text--heading {
+  font-size: 20px;
+}
+
+.hb__text--subheading {
+  font-size: 20px;
+}
+
+.hb__text--description {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+@media (min-width: 550px) {
+  .hb__text--heading {
+    font-size: 36px;
+  }
+  .hb__text--subheading {
+    font-size: 28px;
+  }
+  .hb__text--description {
+    font-size: 14px;
+  }
+}
+
+.hb__text--white {
+  color: #ffffff;
+}
+
+.hb__text--black {
+  color: #212121;
+}
+.hb__text--blue {
+  color: #2164ff;
+}
+
+.hb__text--left {
+  text-align: left;
+}
+
+.hb__text--center {
+  text-align: center;
+}
+
+.hb__text--capitalize {
+  text-transform: capitalize;
+}
+
+.hb__text--uppercase {
+  text-transform: uppercase;
+}
+
+.hb__relative {
+  position: relative;
+}
+
+.container--normal {
+  max-width: 1120px;
+  width: 100%;
+  margin: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@media (min-width: 768px) {
+  .container--normal {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+@media (min-width: 1261px) {
+  .container--normal {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.container--flex {
+  display: flex;
+}
+
+.background--white {
+  background: #ffffff;
+}
+
+.background--blue {
+  background: #2164ff;
+}
+
+.display--hidden {
+  opacity: 0;
+}
+
+.display--desktop {
+  display: none;
+}
+
+.hb__btn {
+  font-size: 17px;
+  line-height: 1.3;
+  width: fit-content;
+  padding: 12px 24px;
+  border-radius: 42px;
+  letter-spacing: 0.1em;
+}
+
+.hb__border-radius--8 {
+  border-radius: 8px;
+}
+
+@media (min-width: 1023px) {
+  .hb__btn {
+    padding: 16px 24px;
+  }
+}
+@media (min-width: 768px) {
+  .display--desktop {
+    display: block;
+  }
+
+  .display--mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .display--tablet {
+    display: none;
+  }
+}
+.custom-img__wrapper {
+  position: relative;
+}
+
+.custom-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+/*End Global Page Style */
+
+/* Start camping-rv-banner.liquid Style */
+
+.camping-rv-banner {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.camping-rv-banner__image--overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.6) 32.11%,
+    rgba(255, 255, 255, 0) 72.78%
+  );
+  z-index: 1;
+}
+
+.camping-rv-banner__content {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  text-align: center;
+  padding-top: 32px;
+}
+
+@media (min-width: 768px) {
+  .camping-rv-banner__image--overlay {
+    background: linear-gradient(
+      99.72deg,
+      rgba(255, 255, 255, 0.6) 27.16%,
+      rgba(255, 255, 255, 0) 60.09%
+    );
+  }
+  .camping-rv-banner__content {
+    text-align: left;
+    padding: 0 60px;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (min-width: 1261px) {
+  .camping-rv-banner__content {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+.camping-rv-banner__content__h1 {
+  line-height: 1.2;
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+.camping-rv-banner__content__desc {
+  font-size: 18px;
+  line-height: 1;
+  margin-bottom: 34px;
+}
+
+@media (min-width: 1023px) {
+  .camping-rv-banner {
+    margin-bottom: 55px;
+  }
+
+  .camping-rv-banner__content__h1 {
+    font-size: 46px;
+  }
+  .camping-rv-banner__content__desc {
+    font-size: 24px;
+  }
+}
+
+.camping-rv-banner__btn {
+  font-weight: 700;
+  text-transform: capitalize;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin: auto;
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  .camping-rv-banner__btn {
+    margin: 0;
+    font-size: 17px;
+  }
+}
+
+.camping-rv-banner--flex-style .camping-rv-banner-btn {
+  color: #000;
+}
+
+@media (min-width: 768px) {
+  .camping-rv-banner--flex-style .camping-rv-banner__content {
+    padding-top: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: left;
+    max-width: 760px;
+  }
+  .camping-rv-banner--flex-style .camping-rv-banner-btn {
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 1400px) {
+  .camping-rv-banner--flex-style .camping-rv-banner__content {
+    padding-left: 100px;
+  }
+}
+
+/* End camping-rv-banner.liquid Style */
+
+/* Start camping-rv-iwt.liquid Style */
+
+.camping-rv-iwt__section {
+  padding-top: 55px;
+  padding-bottom: 55px;
+}
+
+.camping-rv-iwt__wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 110px;
+}
+
+.camping-rv-iwt__container {
+  display: flex;
+  gap: 63px;
+  align-items: center;
+}
+
+.camping-rv-iwt__container.image--left {
+  flex-direction: row-reverse;
+}
+
+.camping-rv-iwt__text__container {
+  flex: 1 0 45%;
+}
+
+.camping-rv-iwt__text__container p {
+  color: #212121;
+}
+
+.camping-rv-iwt__title {
+  margin-bottom: 24px;
+}
+
+.camping-rv-iwt__image__container {
+  flex: 1 0 45%;
+}
+
+@media (max-width: 1023px) {
+  .camping-rv-iwt__section {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .camping-rv-iwt__container {
+    gap: 31px;
+  }
+}
+
+@media (max-width: 767px) {
+  .camping-rv-iwt__wrapper {
+    row-gap: 24px;
+  }
+  .camping-rv-iwt__container.image--right,
+  .camping-rv-iwt__container.image--left {
+    flex-direction: column-reverse;
+    gap: 48px;
+  }
+  .camping-rv-iwt__text__container {
+    flex: 1 0 100%;
+    margin-bottom: 0;
+    text-align: center;
+  }
+  .camping-rv-iwt__image__container {
+    flex: 1 0 100%;
+  }
+  .camping-rv-iwt__text__container p {
+    font-size: 13px;
+  }
+}
+/* End camping-rv-iwt.liquid Style */
+
+/* Start camping-rv-3-steps.liquid Style */
+
+.camping-rv-steps__section {
+  padding-top: 55px;
+  padding-bottom: 55px;
+  overflow: hidden;
+}
+
+.camping-rv-steps__flex-container {
+  height: 100% !important;
+}
+
+.camping-rv-steps__section .swiper-container {
+  overflow: visible;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.camping-rv-steps__heading {
+  margin-bottom: 16px;
+}
+
+.camping-rv-steps__block-container {
+  flex: 1 0 360px;
+  display: flex;
+  align-self: stretch;
+  flex-direction: column;
+}
+
+.camping-rv-steps__image {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.camping-rv-steps__content {
+  display: flex;
+  gap: 20px;
+  padding-top: 16px;
+  padding-right: 20px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+}
+
+.camping-rv-steps__steps {
+  margin-bottom: 0;
+  font-size: 46px;
+  line-height: 1.2;
+}
+
+.camping-rv-steps__title {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@media (max-width: 1023px) {
+  .camping-rv-steps__section {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .camping-rv-steps__block-container {
+    flex: 1 0 300px;
+  }
+  .camping-rv-steps__steps {
+    font-size: 28px;
+  }
+
+  .camping-rv-steps__title {
+    font-size: 14px;
+  }
+}
+
+/* End camping-rv-3-steps.liquid Style */
+
+/* Start camping-rv-3-bwp.liquid Style */
+
+.camping-rv-bwp__section {
+  padding-top: 55px;
+  padding-bottom: 55px;
+  overflow: hidden;
+}
+
+.camping-rv-bwp__image--overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+  z-index: 1;
+  border-radius: 8px;
+  opacity: 0.8;
+}
+
+.camping-rv-bwp__text-container {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.camping-rv-bwp__flex-container {
+  height: 100% !important;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.camping-rv-bwp__section .swiper-container {
+  overflow: visible;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.camping-rv-bwp__heading__container {
+  padding-top: 40px;
+  max-width: 800px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.camping-rv-bwp__heading {
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.camping-rv-bwp__subheading {
+  line-height: 1.5;
+}
+
+.camping-rv-bwp__block-container {
+  border-radius: 8px;
+  padding-top: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  flex: 0 0 49.3%;
+  display: flex;
+  align-self: stretch;
+  flex-direction: column;
+  height: auto;
+}
+
+.camping-rv-bwp__block-container .btn--container {
+  margin-top: auto;
+  width: fit-content;
+}
+
+.camping-rv-bwp__image__wrapper {
+  margin-bottom: 24px;
+}
+
+.camping-rv-bwp__image {
+  width: 200px;
+}
+
+.camping-rv-bwp__title {
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.camping-rv-bwp__subtitle {
+  margin-bottom: 32px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.camping-rv-bwp__description {
+  margin-bottom: 32px !important;
+}
+
+@media (max-width: 1260px) {
+  .camping-rv-bwp__flex-container {
+    justify-content: space-between;
+  }
+  .camping-rv-bwp__block-container {
+    flex: 0 0 48.8%;
+  }
+}
+
+@media (max-width: 1023px) {
+  .camping-rv-bwp__section {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .camping-rv-bwp__heading__container {
+    padding-top: 32px;
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .camping-rv-bwp__flex-container {
+    height: 100% !important;
+    gap: 0;
+    flex-wrap: nowrap;
+  }
+  .camping-rv-bwp__block-container {
+    flex: 1 0 308px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+  }
+  .camping-rv-bwp__text-container {
+    margin-bottom: 48px;
+  }
+  .camping-rv-bwp__block-container:last-child {
+    margin-right: 0 !important;
+  }
+  .camping-rv-bwp__image {
+    width: 150px;
+  }
+  .camping-rv-bwp__subtitle {
+    font-size: 13px;
+  }
+}
+
+/* End camping-rv-3-bwp.liquid Style */
+
+/* Start camping-rv-3-grid.liquid Style */
+
+.camping-rv-grid__section {
+  padding-top: 55px;
+  padding-bottom: 55px;
+  overflow: hidden;
+}
+
+.camping-rv-grid__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.camping-rv-grid__image--overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
+  z-index: 1;
+  border-radius: 8px;
+}
+
+.camping-rv-grid__text-container {
+  position: relative;
+}
+
+.camping-rv-grid__flex-container {
+  height: 100% !important;
+  gap: 15px;
+}
+
+.camping-rv-grid__section .swiper-container {
+  overflow: visible;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.camping-rv-grid__heading__container {
+  padding-top: 48px;
+  padding-right: 48px;
+  padding-left: 48px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.camping-rv-grid__heading {
+  margin-bottom: 0;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.camping-rv-grid__subheading {
+  line-height: 1.5;
+}
+
+.camping-rv-grid__block-item {
+  border-radius: 8px;
+  flex: 1 0 49%;
+}
+.camping-rv-grid__block-container {
+  border-radius: 8px;
+  padding-top: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  display: flex;
+  align-self: stretch;
+  flex-direction: column;
+  height: auto;
+}
+
+.camping-rv-grid__block-container .btn--container {
+  margin-top: auto;
+  width: fit-content;
+}
+
+.camping-rv-grid__image__wrapper {
+  margin-bottom: 24px;
+}
+
+.camping-rv-grid__image {
+  width: 200px;
+}
+
+.camping-rv-grid__title {
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.camping-rv-grid__subtitle {
+  margin-bottom: 32px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.camping-rv-grid__description {
+  margin-bottom: 32px !important;
+}
+
+@media (max-width: 1260px) {
+  .camping-rv-grid__text-container .custom-img__wrapper,
+  .camping-rv-grid__text-container .custom-img__wrapper .custom-img {
+    height: 100%;
+  }
+  .camping-rv-grid__text-container .custom-img__wrapper .custom-img {
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 1023px) {
+  .camping-rv-grid__section {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .camping-rv-grid__block-item {
+    flex: 1 0 48%;
+  }
+  .camping-rv-grid__heading__container {
+    padding-top: 32px;
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .camping-rv-grid__text-container {
+    margin-bottom: 48px;
+  }
+  .camping-rv-grid__heading {
+    text-align: center;
+  }
+  .camping-rv-grid__flex-container {
+    height: 100% !important;
+    gap: 0;
+  }
+  .camping-rv-grid__block-container {
+    flex: 1 0 308px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+  }
+  .camping-rv-grid__heading .camping-rv-grid__image {
+    width: 150px;
+  }
+  .camping-rv-grid__subtitle {
+    font-size: 13px;
+  }
+}
+
+/* End camping-rv-3-grid.liquid Style */
+
+/* Start camping-rv-3-bp.liquid Style */
+
+.camping-rv-bp__section {
+  padding-top: 55px;
+  padding-bottom: 55px;
+}
+.camping-rv-bp__text-container {
+  max-width: 650px;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 48px;
+}
+.camping-rv-bp__heading {
+  margin-bottom: 24px;
+}
+.camping-rv-bp__flex-container {
+  gap: 15px;
+}
+
+.camping-rv-bp__wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 110px;
+}
+
+.camping-rv-bp__container {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  background-color: #ffffff;
+  margin-top: 15px;
+}
+
+.camping-rv-bp__container.image--left {
+  flex-direction: row-reverse;
+}
+
+.camping-rv-bp__text__container {
+  flex: 1 0 45%;
+  padding-top: 32px;
+  padding-right: 32px;
+  padding-bottom: 32px;
+  padding-left: 32px;
+}
+
+.camping-rv-bp__text__container p {
+  color: #212121;
+}
+
+.camping-rv-bp__title {
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.camping-rv-bp__subtitle {
+  margin-bottom: 32px;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.camping-rv-bp__image__container {
+  flex: 1 0 45%;
+}
+
+.camping-rv-bp__text__container .btn--container {
+  margin-top: 20px;
+  display: block;
+  width: fit-content;
+}
+
+@media (max-width: 1023px) {
+  .camping-rv-bp__section {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .camping-rv-bp__text-container {
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .camping-rv-bp__section {
+    padding-bottom: 0px;
+  }
+  .camping-rv-bp__wrapper {
+    row-gap: 24px;
+  }
+  .camping-rv-bp__text-container {
+    margin-bottom: 48px;
+  }
+  .camping-rv-bp__text__container {
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+  }
+  .camping-rv-bp__title {
+    text-align: center;
+  }
+  .camping-rv-bp__text__container .btn--container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .camping-rv-bp__container {
+    margin-top: 48px;
+  }
+  .camping-rv-bp__container.image--right,
+  .camping-rv-bp__container.image--left {
+    flex-direction: column-reverse;
+    gap: 15px;
+  }
+  .camping-rv-bp__text__container {
+    flex: 1 0 100%;
+    margin-bottom: 0;
+    text-align: center;
+  }
+  .camping-rv-bp__image__container {
+    flex: 1 0 100%;
+  }
+  .camping-rv-bp__subtitle {
+    margin-bottom: 32px;
+  }
+  .camping-rv-bp__text__container p {
+    font-size: 13px;
+    text-align: center;
+  }
+}
+
+/* End camping-rv-3-bp.liquid Style */

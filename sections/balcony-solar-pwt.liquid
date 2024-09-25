@@ -1,0 +1,137 @@
+<div class="balcony-solar-pwt__section">
+  <div class="balcony-solar-pwt__wrapper container--normal">
+    {% for block in section.blocks %}
+      <div
+        class="
+            balcony-solar-pwt__container
+          {% if block.settings.image_position == 'right' %}
+            image--right
+            {% else %}
+            image--left
+          {% endif %}
+          hb__border-radius--8
+        "
+      >
+        <div class="balcony-solar-pwt__text__container">
+          {% if block.settings.title != blank %}
+            <h2 class="balcony-solar-pwt__title {% if block.settings.heading_size == 'heading' %} hb__text--heading {% else %} hb__text--subheading {% endif %}">
+              {{ block.settings.title }}
+            </h2>
+          {% endif %}
+          {% if block.settings.subtitle != blank %}
+            <span class="hb__text--description hb__text--black">{{ block.settings.subtitle }}</span>
+          {% endif %}
+          {% if block.settings.url != blank %}
+            <a
+              class="btn--container"
+              href="{{ block.settings.url }}"
+              target="_blank"
+            >
+              <div class="balcony-solar-bwp__btn hb__btn hb__text--white background--blue">
+                {{ section.settings.button_text }}
+              </div>
+            </a>
+          {% endif %}
+        </div>
+        <div class="balcony-solar-pwt__image__container">
+          {% if block.settings.image != blank %}
+            <a href="{{ block.settings.url }}" target="_blank">
+              <img
+                class="display--desktop"
+                src="{{ block.settings.image | img_url: 'master' }}"
+                alt="{{ block.settings.image.alt }}"
+            ></a>
+            <a href="{{ block.settings.url }}" target="_blank">
+              <img
+                class="display--mobile"
+                src="{{ block.settings.image_mobile | img_url: 'master' }}"
+                alt="{{ block.settings.image_mobile.alt }}"
+              >
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Balcony Solar PWT",
+  "settings": [
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "pwt",
+      "name": "Product with Text",
+      "settings": [
+        {
+          "type": "select",
+          "id": "image_position",
+          "label": "Set Section Image Position",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "right",
+          "info": "Set Section Image Position"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "label": "Set Section Image Position",
+          "options": [
+            {
+              "value": "heading",
+              "label": "Heading"
+            },
+            {
+              "value": "subheading",
+              "label": "Subheading"
+            }
+          ],
+          "default": "heading",
+          "info": "Set Section Heading Size"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Section Image Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Section Image Mobile"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Section Title",
+          "default": "Leise, sicher und emissionsfrei – Solaranlagen mit Stromspeicher für Ihr Zuhause"
+        },
+        {
+          "type": "richtext",
+          "id": "subtitle",
+          "label": "Subtitle"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Button Link"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

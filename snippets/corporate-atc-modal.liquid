@@ -1,0 +1,19 @@
+<div class="modal" id="corporate-atc-modal">
+    <div class="modal__dialog modal__dialog--stretch" role="dialog">
+        <button class="modal__close close-corporate-modal"
+                title="{{ 'general.accessibility.close_modal' | t | escape }}">
+
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L21 21" stroke="#757575"/>
+                <path d="M21 1L1 21" stroke="#757575"/>
+                </svg>
+
+        </button>
+
+        <div class="modal__loader">
+        {%- render 'icon', icon: 'search-loader' -%}
+        </div>
+
+        <div class="modal__inner"></div>
+    </div>
+</div>

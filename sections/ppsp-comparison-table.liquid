@@ -1,0 +1,773 @@
+<style>
+  .ppsp-comparison-table__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .ppsp-comparison-table__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+
+<div
+  class="ppsp-comparison-table__section ppsp-comparison-table__section-{{ section.id }}"
+  data-id="_{{ section.settings.id | downcase | remove: ' ' | replace: '&', '-' }}"
+>
+  <div class="container--default">
+    <div class="ppsp-comparison-table__content-container">
+      <div class="ppsp-comparison-table__text-container">
+        {% if section.settings.title != blank %}
+          <h2 class="ppsp-comparison-table__section-heading text--heading text--black">
+            {{ section.settings.title }}
+          </h2>
+        {% endif %}
+        {% if section.settings.subtitle != blank %}
+          <p class="ppsp-comparison-table__section-description text--description text--gray">
+            {{ section.settings.subtitle }}
+          </p>
+        {% endif %}
+        {% if section.settings.description != blank %}
+          <p class="ppsp-comparison-table__section-description text--description text--gray">
+            {{ section.settings.description }}
+          </p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <feature-chart
+    class="ppsp-comparison-table__wrapper "
+    x-data="
+      {
+          scrollPosition: 0
+      }
+    "
+    x-init="
+      $refs.content.addEventListener('scroll', function() {
+          const maxScroll = $refs.content.scrollWidth - $refs.content.clientWidth;
+          const scrollbarWidth = $refs.scrollbar.clientWidth;
+          const dragWidth = $refs.drag.clientWidth;
+          const maxDragPosition = scrollbarWidth - dragWidth;
+          scrollPosition = ($refs.content.scrollLeft / maxScroll) * maxDragPosition;
+      });
+    "
+  >
+    <div class="ppsp-comparison-table__container background--white scroll-area" x-ref="content">
+      {% for block in section.blocks %}
+        {%- comment %}<locksmith:79bf>{% endcomment -%}
+          {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+        {%- comment %}</locksmith:79bf>{% endcomment -%}
+        {% case block.type %}
+          {% when 'table_head' %}
+            <div class="ppsp-comparison-table__table-row {% if section.settings.table_column == 'four' %} ppsp-comparison-table__table-row--4 {% else %} ppsp-comparison-table__table-row--5 {% endif %} ppsp-comparison-table__table-row--product">
+              {% comment %} First Product Column {% endcomment %}
+              {% liquid
+                assign product = block.settings.first_product
+                if block.settings.first_column_image != blank
+                  assign product_image = block.settings.first_column_image
+                else
+                  assign product_image = product.featured_image
+                endif
+                if block.settings.product_url != blank
+                  assign product_url = block.settings.product_link
+                else
+                  assign product_url = product.url
+                endif
+                assign current_variant = product.first_available_variant
+              %}
+              {% if product != blank %}
+                <div class="ppsp-comparison-table__column-heading text--black">
+                  <div class="ppsp-comparison-table__image-wrapper">
+                    <a href="{{ product_url }}" target="_blank">
+                      <img
+                        src="{{ product_image | img_url: 'master' }}"
+                        alt="{{ product_image.alt }}"
+                      >
+                    </a>
+                  </div>
+                  <div class="ppsp-comparison-table__title-wrapper">
+                    <h4 class="ppsp-comparison-table__column__title">{{ block.settings.first_column_title }}</h4>
+                  </div>
+                  <div class="ppsp-comparison-table__column_specification-container">
+                    <p class="ppsp-comparison-table__column__specification">
+                      {{ block.settings.first_column_specification }}
+                    </p>
+                  </div>
+                  <div class="button--wrapper ppsp-button--container">
+                    <button
+                      class="button--container btn--checkout"
+                      data-variant-id="{{ current_variant.id }}"
+                    >
+                      <span class="button text--white background--black">Comprar Ahora</span>
+                      <span class="loader hide button" data-loader="">
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          role="presentation"
+                          class="icon icon-spinner"
+                          viewBox="0 0 20 20"
+                        >
+                          <path d="M7.229 1.173a9.25 9.25 0 1 0 11.655 11.412 1.25 1.25 0 1 0-2.4-.698 6.75 6.75 0 1 1-8.506-8.329 1.25 1.25 0 1 0-.75-2.385z" fill="#919EAB"></path>
+                        </svg>
+                      </span>
+                    </button>
+
+                    <a
+                      href="{{ product_url }}"
+                      target="_blank"
+                      class="button--container"
+                    >
+                      <span class="ppsp-comparison-table__product-link  text--blue text--center">Más Información ></span>
+                    </a>
+                  </div>
+                </div>
+              {% endif %}
+
+              {% comment %} Second Product Column {% endcomment %}
+              {% liquid
+                assign product = block.settings.second_product
+                if block.settings.second_column_image != blank
+                  assign product_image = block.settings.second_column_image
+                else
+                  assign product_image = product.featured_image
+                endif
+                if block.settings.product_url != blank
+                  assign product_url = block.settings.product_link
+                else
+                  assign product_url = product.url
+                endif
+                assign current_variant = product.first_available_variant
+              %}
+              {% if product != blank %}
+                <div class="ppsp-comparison-table__column-heading text--black">
+                  <div class="ppsp-comparison-table__image-wrapper">
+                    <a href="{{ product_url }}" target="_blank">
+                      <img
+                        src="{{ product_image | img_url: 'master' }}"
+                        alt="{{ product_image.alt }}"
+                      >
+                    </a>
+                  </div>
+                  <div class="ppsp-comparison-table__title-wrapper">
+                    <h4 class="ppsp-comparison-table__column__title">{{ block.settings.second_column_title }}</h4>
+                  </div>
+                  <div class="ppsp-comparison-table__column_specification-container">
+                    <p class="ppsp-comparison-table__column__specification">
+                      {{ block.settings.second_column_specification }}
+                    </p>
+                  </div>
+                  <div class="button--wrapper ppsp-button--container">
+                    <button
+                      class="button--container btn--checkout"
+                      data-variant-id="{{ current_variant.id }}"
+                    >
+                      <span class="button text--white background--black">Comprar Ahora</span>
+                      <span class="loader hide button" data-loader="">
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          role="presentation"
+                          class="icon icon-spinner"
+                          viewBox="0 0 20 20"
+                        >
+                          <path d="M7.229 1.173a9.25 9.25 0 1 0 11.655 11.412 1.25 1.25 0 1 0-2.4-.698 6.75 6.75 0 1 1-8.506-8.329 1.25 1.25 0 1 0-.75-2.385z" fill="#919EAB"></path>
+                        </svg>
+                      </span>
+                    </button>
+
+                    <a
+                      href="{{ product_url }}"
+                      target="_blank"
+                      class="button--container"
+                    >
+                      <span class="ppsp-comparison-table__product-link  text--blue text--center">Más Información ></span>
+                    </a>
+                  </div>
+                </div>
+              {% endif %}
+
+              {% comment %} Third Product Column {% endcomment %}
+              {% liquid
+                assign product = block.settings.third_product
+                if block.settings.third_column_image != blank
+                  assign product_image = block.settings.third_column_image
+                else
+                  assign product_image = product.featured_image
+                endif
+                if block.settings.product_url != blank
+                  assign product_url = block.settings.product_link
+                else
+                  assign product_url = product.url
+                endif
+                assign current_variant = product.first_available_variant
+              %}
+              {% if product != blank %}
+                <div class="ppsp-comparison-table__column-heading text--black">
+                  <div class="ppsp-comparison-table__image-wrapper">
+                    <a href="{{ product_url }}" target="_blank">
+                      <img
+                        src="{{ product_image | img_url: 'master' }}"
+                        alt="{{ product_image.alt }}"
+                      >
+                    </a>
+                  </div>
+                  <div class="ppsp-comparison-table__title-wrapper">
+                    <h4 class="ppsp-comparison-table__column__title">{{ block.settings.third_column_title }}</h4>
+                  </div>
+                  <div class="ppsp-comparison-table__column_specification-container">
+                    <p class="ppsp-comparison-table__column__specification">
+                      {{ block.settings.third_column_specification }}
+                    </p>
+                  </div>
+                  <div class="button--wrapper ppsp-button--container">
+                    <button
+                      class="button--container btn--checkout"
+                      data-variant-id="{{ current_variant.id }}"
+                    >
+                      <span class="button text--white background--black">Comprar Ahora</span>
+                      <span class="loader hide button" data-loader="">
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          role="presentation"
+                          class="icon icon-spinner"
+                          viewBox="0 0 20 20"
+                        >
+                          <path d="M7.229 1.173a9.25 9.25 0 1 0 11.655 11.412 1.25 1.25 0 1 0-2.4-.698 6.75 6.75 0 1 1-8.506-8.329 1.25 1.25 0 1 0-.75-2.385z" fill="#919EAB"></path>
+                        </svg>
+                      </span>
+                    </button>
+
+                    <a
+                      href="{{ product_url }}"
+                      target="_blank"
+                      class="button--container"
+                    >
+                      <span class="ppsp-comparison-table__product-link  text--blue text--center">Más Información ></span>
+                    </a>
+                  </div>
+                </div>
+              {% endif %}
+
+              {% comment %} Fourth Product Column {% endcomment %}
+              {% liquid
+                assign product = block.settings.fourth_product
+                if block.settings.fourth_column_image != blank
+                  assign product_image = block.settings.fourth_column_image
+                else
+                  assign product_image = product.featured_image
+                endif
+                if block.settings.product_url != blank
+                  assign product_url = block.settings.product_link
+                else
+                  assign product_url = product.url
+                endif
+                assign current_variant = product.first_available_variant
+              %}
+              {% if product != blank %}
+                <div class="ppsp-comparison-table__column-heading text--black">
+                  <div class="ppsp-comparison-table__image-wrapper">
+                    <a href="{{ product_url }}" target="_blank">
+                      <img
+                        src="{{ product_image | img_url: 'master' }}"
+                        alt="{{ product_image.alt }}"
+                      >
+                    </a>
+                  </div>
+                  <div class="ppsp-comparison-table__title-wrapper">
+                    <h4 class="ppsp-comparison-table__column__title">{{ block.settings.fourth_column_title }}</h4>
+                  </div>
+                  <div class="ppsp-comparison-table__column_specification-container">
+                    <p class="ppsp-comparison-table__column__specification">
+                      {{ block.settings.fourth_column_specification }}
+                    </p>
+                  </div>
+                  <div class="button--wrapper ppsp-button--container">
+                    <button
+                      class="button--container btn--checkout"
+                      data-variant-id="{{ current_variant.id }}"
+                    >
+                      <span class="button text--white background--black">Comprar Ahora</span>
+                      <span class="loader hide button" data-loader="">
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          role="presentation"
+                          class="icon icon-spinner"
+                          viewBox="0 0 20 20"
+                        >
+                          <path d="M7.229 1.173a9.25 9.25 0 1 0 11.655 11.412 1.25 1.25 0 1 0-2.4-.698 6.75 6.75 0 1 1-8.506-8.329 1.25 1.25 0 1 0-.75-2.385z" fill="#919EAB"></path>
+                        </svg>
+                      </span>
+                    </button>
+
+                    <a
+                      href="{{ product_url }}"
+                      target="_blank"
+                      class="button--container"
+                    >
+                      <span class="ppsp-comparison-table__product-link  text--blue text--center">Más Información ></span>
+                    </a>
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+          {% when 'table_details' %}
+            <div class="ppsp-comparison-table__table-row {% if section.settings.table_column == 'four' %} ppsp-comparison-table__table-row--4 {% else %} ppsp-comparison-table__table-row--5 {% endif %}">
+              <div class="ppsp-comparison-table__row__heading  ppsp-comparison-table__title text--gray">
+                {{ block.settings.row_title }}
+              </div>
+              <div class="ppsp-comparison-table__row__value">
+                {% if block.settings.first_column_image_1 != blank %}
+                  <div class="ppsp-comparison-table__row__image--wrapper">
+                    <img
+                      src="{{ block.settings.first_column_image_1 | img_url: 'master' }}"
+                      alt="{{ block.settings.first_column_image_1.alt }}"
+                    >
+                    {% if block.settings.first_column_image_2 != blank %}
+                      <p>or</p>
+                      <img
+                        src="{{ block.settings.first_column_image_2 | img_url: 'master' }}"
+                        alt="{{ block.settings.first_column_image_2.alt }}"
+                      >
+                    {% endif %}
+                  </div>
+                {% endif %}
+                {{ block.settings.first_column_data }}
+              </div>
+              <div class="ppsp-comparison-table__row__value">
+                {% if block.settings.second_column_image_1 != blank %}
+                  <div class="ppsp-comparison-table__row__image--wrapper">
+                    <img
+                      src="{{ block.settings.second_column_image_1 | img_url: 'master' }}"
+                      alt="{{ block.settings.second_column_image_1.alt }}"
+                    >
+                    {% if block.settings.second_column_image_2 != blank %}
+                      <p>or</p>
+                      <img
+                        src="{{ block.settings.second_column_image_2 | img_url: 'master' }}"
+                        alt="{{ block.settings.second_column_image_2.alt }}"
+                      >
+                    {% endif %}
+                  </div>
+                {% endif %}
+                {{ block.settings.second_column_data }}
+              </div>
+              <div class="ppsp-comparison-table__row__value">
+                {% if block.settings.third_column_image_1 != blank %}
+                  <div class="ppsp-comparison-table__row__image--wrapper">
+                    <img
+                      src="{{ block.settings.third_column_image_1 | img_url: 'master' }}"
+                      alt="{{ block.settings.third_column_image_1.alt }}"
+                    >
+                    {% if block.settings.third_column_image_2 != blank %}
+                      <p>or</p>
+                      <img
+                        src="{{ block.settings.third_column_image_2 | img_url: 'master' }}"
+                        alt="{{ block.settings.third_column_image_2.alt }}"
+                      >
+                    {% endif %}
+                  </div>
+                {% endif %}
+                {{ block.settings.third_column_data }}
+              </div>
+              {% if section.settings.table_column == 'five' %}
+                <div class="ppsp-comparison-table__row__value">
+                  {% if block.settings.fourth_column_image_1 != blank %}
+                    <div class="ppsp-comparison-table__row__image--wrapper">
+                      <img
+                        src="{{ block.settings.fourth_column_image_1 | img_url: 'master' }}"
+                        alt="{{ block.settings.fourth_column_image_1.alt }}"
+                      >
+                      {% if block.settings.fourth_column_image_2 != blank %}
+                        <p>or</p>
+                        <img
+                          src="{{ block.settings.fourth_column_image_2 | img_url: 'master' }}"
+                          alt="{{ block.settings.fourth_column_image_2.alt }}"
+                        >
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                  {{ block.settings.fourth_column_data }}
+                </div>
+              {% endif %}
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+    {% if section.settings.table_column == 'five' %}
+      <div class="ppsp-comparison-table__swiper-scrollbar" x-ref="scrollbar">
+        <div
+          class="ppsp-comparison-table__swiper-scrollbar-drag"
+          x-ref="drag"
+          :style="'left: ' + scrollPosition + 'px'"
+        ></div>
+      </div>
+    {% endif %}
+  </feature-chart>
+</div>
+
+<script>
+  function addProduct(elem, type) {
+    document.querySelectorAll(elem).forEach(function (elem) {
+      elem.onclick = function (e) {
+        e.preventDefault();
+
+        // Get the button and loader elements
+        var buttonElement = this.querySelector('.button');
+        var loaderElement = this.querySelector('.loader');
+
+        // Hide the button and show the loader
+        buttonElement.style.display = 'none';
+        loaderElement.classList.remove('hide');
+
+        let formData = {
+          items: [
+            {
+              id: elem.getAttribute('data-variant-id'),
+              quantity: 1,
+            },
+          ],
+        };
+        fetch('/cart/add.js', {
+          method: 'POST',
+          credentials: 'same-origin',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        })
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (json) {
+            if (type == 'checkout') {
+              window.location.href = '/checkout';
+            } else {
+              theme.Cart.prototype._onProductAdded();
+            }
+          })
+          .finally(() => {
+            // Show the button and hide the loader
+            buttonElement.style.display = 'block';
+            loaderElement.classList.add('hide');
+          });
+      };
+    });
+  }
+
+  if (document.querySelectorAll('.btn--atc').length > 0) {
+    addProduct('.btn--atc', '');
+  }
+
+  if (document.querySelectorAll('.btn--checkout').length > 0) {
+    addProduct('.btn--checkout', 'checkout');
+  }
+</script>
+{% schema %}
+{
+  "name": "PPSP Comparison Table",
+  "settings": [
+    {
+      "type": "text",
+      "id": "id",
+      "label": "Section ID",
+      "default": "Buyer’s Guides"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Wählen Sie Ihre Lösung"
+    },
+    {
+      "type": "html",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Der Power Stream-Mikrowechselrichter ist mit allen tragbaren EcoFlow-Powerstations kompatibel. Mit Batteriekapazitäten von 1kWh bis 3,6kWh können Sie die optimale Option für Ihr Zuhause wählen. Darüber hinaus bieten wir eine Vielzahl von Solarmodulen an, um die Installationsanforderungen von Wohnungen und Häusern in verschiedenen Szenarien zu erfüllen."
+    },
+    {
+      "type": "html",
+      "id": "description",
+      "label": "Description",
+      "default": "Hier finden Sie eine Referenztabelle, die Ihnen bei der Auswahl der richtigen Lösung hilft:"
+    },
+    {
+      "type": "select",
+      "id": "table_column",
+      "label": "Table Column",
+      "options": [
+        {
+          "value": "four",
+          "label": "4"
+        },
+        {
+          "value": "five",
+          "label": "5"
+        }
+      ],
+      "default": "four",
+      "info": "Setting the columns to 4 will hide the 4th Column in the Table Details block and the 4th Product Column in the Table Head block"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "table_details",
+      "name": "Table Details",
+      "settings": [
+        {
+          "type": "html",
+          "id": "row_title",
+          "label": "Row Title",
+          "default": "Notstromversorgung"
+        },
+        {
+          "type": "header",
+          "content": "1st Column"
+        },
+        {
+          "type": "image_picker",
+          "id": "first_column_image_1",
+          "label": "1st Column Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "first_column_image_2",
+          "label": "1st Column Image 2"
+        },
+        {
+          "type": "richtext",
+          "id": "first_column_data",
+          "label": "1st Column Data"
+        },
+        {
+          "type": "header",
+          "content": "2nd Column"
+        },
+        {
+          "type": "image_picker",
+          "id": "second_column_image_1",
+          "label": "2nd Column Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "second_column_image_2",
+          "label": "2nd Column Image 2"
+        },
+        {
+          "type": "richtext",
+          "id": "second_column_data",
+          "label": "2nd Column Data"
+        },
+        {
+          "type": "header",
+          "content": "3rd Column"
+        },
+        {
+          "type": "image_picker",
+          "id": "third_column_image_1",
+          "label": "3rd Column Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "third_column_image_2",
+          "label": "3rd Column Image 2"
+        },
+        {
+          "type": "richtext",
+          "id": "third_column_data",
+          "label": "3rd Column Data"
+        },
+        {
+          "type": "header",
+          "content": "4th Column"
+        },
+        {
+          "type": "image_picker",
+          "id": "fourth_column_image_1",
+          "label": "4th Column Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "fourth_column_image_2",
+          "label": "4th Column Image 2"
+        },
+        {
+          "type": "richtext",
+          "id": "fourth_column_data",
+          "label": "4th Column Data"
+        }
+      ]
+    },
+    {
+      "type": "table_head",
+      "name": "Table Head",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "1st Column Heading"
+        },
+        {
+          "type": "product",
+          "id": "first_product",
+          "label": "1st Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "first_column_image",
+          "label": "1st Column Image"
+        },
+        {
+          "type": "html",
+          "id": "first_column_title",
+          "label": "1st Column Title",
+          "default": "2 kWh Speicherkeit"
+        },
+        {
+          "type": "html",
+          "id": "first_column_specification",
+          "label": "1st Column Specification"
+        },
+        {
+          "type": "url",
+          "id": "first_column_url",
+          "label": "1st Column URL"
+        },
+        {
+          "type": "header",
+          "content": "2nd Column Heading"
+        },
+        {
+          "type": "product",
+          "id": "second_product",
+          "label": "2nd Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "second_column_image",
+          "label": "2nd Column Image"
+        },
+        {
+          "type": "html",
+          "id": "second_column_title",
+          "label": "2nd Column Title",
+          "default": "2 kWh Speicherkeit"
+        },
+        {
+          "type": "html",
+          "id": "second_column_specification",
+          "label": "2nd Column Specification"
+        },
+        {
+          "type": "url",
+          "id": "second_column_url",
+          "label": "2nd Column URL"
+        },
+        {
+          "type": "header",
+          "content": "3rd Column Heading"
+        },
+        {
+          "type": "product",
+          "id": "third_product",
+          "label": "3rd Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "third_column_image",
+          "label": "3rd Column Image"
+        },
+        {
+          "type": "html",
+          "id": "third_column_title",
+          "label": "3rd Column Title",
+          "default": "2 kWh Speicherkeit"
+        },
+        {
+          "type": "html",
+          "id": "third_column_specification",
+          "label": "3rd Column Specification"
+        },
+        {
+          "type": "url",
+          "id": "third_column_url",
+          "label": "3rd Column URL"
+        },
+        {
+          "type": "header",
+          "content": "4th Column Heading"
+        },
+        {
+          "type": "product",
+          "id": "fourth_product",
+          "label": "4th Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "fourth_column_image",
+          "label": "4th Column Image"
+        },
+        {
+          "type": "html",
+          "id": "fourth_column_title",
+          "label": "4th Column Title",
+          "default": "2 kWh Speicherkeit"
+        },
+        {
+          "type": "html",
+          "id": "fourth_column_specification",
+          "label": "4th Column Specification"
+        },
+        {
+          "type": "url",
+          "id": "fourth_column_url",
+          "label": "4th Column URL"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

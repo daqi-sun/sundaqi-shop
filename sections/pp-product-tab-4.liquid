@@ -1,0 +1,607 @@
+<style>
+  .pp-product-tab-4__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .pp-product-tab-4__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+
+<div
+  class="pp-product-tab-4__section pp-product-tab-4__section-{{ section.id }} background--dark-white"
+>
+  <div class="container--default">
+    <div class="pp-product-tab-4__text-container">
+      {% if section.settings.title != blank %}
+        <h2 class="pp-product-tab-4__section-heading text--heading text--black">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+      {% if section.settings.subtitle != blank %}
+        <p class="pp-product-tab-4__section-description text--description text--gray">
+          {{ section.settings.subtitle }}
+        </p>
+      {% endif %}
+    </div>
+    <div class="display--mobile">
+      <div class="pp-product-tab-4__tab-button-container">
+        {% for block in section.blocks %}
+          <button
+            class="pp-product-tab-4__tab-button text--black mobile-button {% if forloop.index == 1 %} active {% endif %}"
+            data-tab="{{ forloop.index }}"
+          >
+            <li class="text--black" title="{{ block.settings.title }}">
+              <span>{{ block.settings.title }}</span>
+            </li>
+          </button>
+        {% endfor %}
+      </div>
+    </div>
+    {%- comment %}<locksmith:fe5e>{% endcomment -%}
+      {%- assign locksmith_7e7f_forloop__size = 0 %}{% for block in section.blocks %}{% capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == 'true' %}{% assign locksmith_7e7f_forloop__size = locksmith_7e7f_forloop__size | plus: 1 %}{% endif %}{% endfor %}{% assign locksmith_7e7f_forloop__index = nil -%}
+    {%- comment %}</locksmith:fe5e>{% endcomment -%}
+    {% for block in section.blocks %}
+      {%- comment %}<locksmith:0994>{% endcomment -%}
+        {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% if locksmith_7e7f_forloop__index == nil %}{% assign locksmith_7e7f_forloop__index = 1 %}{% assign locksmith_7e7f_forloop__index0 = 0 %}{% else %}{% assign locksmith_7e7f_forloop__index = locksmith_7e7f_forloop__index | plus: 1 %}{% assign locksmith_7e7f_forloop__index0 = locksmith_7e7f_forloop__index0 | plus: 1 %}{% endif %}{% if locksmith_7e7f_forloop__index == 1 %}{% assign locksmith_7e7f_forloop__first = true %}{% else %}{% assign locksmith_7e7f_forloop__first = false %}{% endif %}{% if locksmith_7e7f_forloop__index == locksmith_7e7f_forloop__size %}{% assign locksmith_7e7f_forloop__last = true %}{% else %}{% assign locksmith_7e7f_forloop__last = false %}{% endif %}{% assign locksmith_7e7f_forloop__rindex = locksmith_7e7f_forloop__size | minus: locksmith_7e7f_forloop__index | minus: 1 %}{% assign locksmith_7e7f_forloop__rindex0 = locksmith_7e7f_forloop__size | minus: locksmith_7e7f_forloop__index0 | minus: 1 %}{% else %}{% continue %}{% endif -%}
+      {%- comment %}</locksmith:0994>{% endcomment -%}
+      <div
+        class="pp-product-tab-4__content-container swiper-container pp-product-tab-4__slider-container-{{ locksmith_7e7f_forloop__index }}"
+        style="{% if locksmith_7e7f_forloop__index == 2 %} display: none; {% endif %}"
+        data-tab="{{ locksmith_7e7f_forloop__index }}"
+      >
+        <div
+          class="pp-product-tab-4__container swiper-wrapper"
+        >
+          {% if block.settings.product_title_1 != blank %}
+            {% comment %} PRODUCT 1 {% endcomment %}
+            <div class="pp-product-tab-4__column-wrapper background--white swiper-slide">
+              <div class="pp-product-tab-4__image-wrapper">
+                <a href="{{ block.settings.product_url_1 }}" target="_blank">
+                  <img
+                    src="{{ block.settings.image_1 | img_url: 'master' }}"
+                    alt="{{ block.settings.image_1.alt }}"
+                  >
+                </a>
+              </div>
+              <div class="pp-product-tab-4__tag-wrapper">
+                {% if block.settings.first_product_tag != blank %}
+                  <span class="pp-product-tab-4__tag text--red">
+                    {{ block.settings.first_product_tag }}
+                  </span>
+                {% else %}
+                  <span class="pp-product-tab-4__tag text--red" style="opacity: 0;"> Placeholder </span>
+                {% endif %}
+              </div>
+              <div class="pp-product-tab-4__title-wrapper">
+                <h3 class="pp-product-tab-4__title text--black">
+                  {{ block.settings.product_title_1 }}
+                </h3>
+              </div>
+              <div class="pp-product-tab-4__specification-wrapper">
+                <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2 2H2.5V1.5V1C2.5 0.723858 2.72386 0.5 3 0.5H5C5.27614 0.5 5.5 0.723858 5.5 1V1.5V2H6H7C7.27614 2 7.5 2.22386 7.5 2.5V11.5C7.5 11.7761 7.27614 12 7 12H1C0.723858 12 0.5 11.7761 0.5 11.5V2.5C0.5 2.22386 0.723857 2 1 2H2Z" stroke="black"/>
+                  <path d="M1.5 5C2.08771 4.41229 2.99998 4.29999 3.71268 4.72761L4.07324 4.94395C4.66146 5.29688 5.37454 5.37515 6.02531 5.15823L6.5 5V11H1.5V5Z" fill="black"/>
+                </svg>
+                <p class="pp-product-tab-4__specification">{{ block.settings.first_product_specification_1 }}</p>
+              </div>
+              <div class="pp-product-tab-4__specification-wrapper">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0.5" y="0.5" width="9" height="9" rx="0.5" stroke="black"/>
+                  <rect x="3" y="3" width="1" height="2" rx="0.5" fill="black"/>
+                  <rect x="4.5" y="5.5" width="1" height="2" rx="0.5" fill="black"/>
+                  <rect x="6" y="3" width="1" height="2" rx="0.5" fill="black"/>
+                </svg>
+
+                <p class="pp-product-tab-4__specification">{{ block.settings.first_product_specification_2 }}</p>
+              </div>
+              <div class="pp-product-tab-4__specification-wrapper">
+                <svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 2.5H12.5C12.7761 2.5 13 2.72386 13 3V9.5C13 9.77614 12.7761 10 12.5 10H1.5C1.22386 10 1 9.77614 1 9.5V3C1 2.72386 1.22386 2.5 1.5 2.5H7M7 2.5L5.5 1M7 2.5L5.5 4M3 6.5H6M8 6.5H9.5M11 6.5H9.5M9.5 6.5V5V8" stroke="black"/>
+                </svg>
+
+                <p class="pp-product-tab-4__specification">{{ block.settings.first_product_specification_3 }}</p>
+              </div>
+            </div>
+          {% endif %}
+
+          {% if block.settings.product_title_2 != blank %}
+            {% comment %} PRODUCT 2 {% endcomment %}
+            <div class="pp-product-tab-4__column-wrapper background--white swiper-slide">
+              <div class="pp-product-tab-4__image-wrapper">
+                <a href="{{ block.settings.product_url_2 }}" target="_blank">
+                  <img
+                    src="{{ block.settings.image_2 | img_url: 'master' }}"
+                    alt="{{ block.settings.image_2.alt }}"
+                  >
+                </a>
+              </div>
+              <div class="pp-product-tab-4__tag-wrapper">
+                {% if block.settings.second_product_tag != blank %}
+                  <span class="pp-product-tab-4__tag text--red">
+                    {{ block.settings.second_product_tag }}
+                  </span>
+                {% else %}
+                  <span class="pp-product-tab-4__tag text--red" style="opacity: 0;"> Placeholder </span>
+                {% endif %}
+              </div>
+              <div class="pp-product-tab-4__title-wrapper">
+                <h3 class="pp-product-tab-4__title text--black">
+                  {{ block.settings.product_title_2 }}
+                </h3>
+              </div>
+              <div class="pp-product-tab-4__specification-wrapper">
+                <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2 2H2.5V1.5V1C2.5 0.723858 2.72386 0.5 3 0.5H5C5.27614 0.5 5.5 0.723858 5.5 1V1.5V2H6H7C7.27614 2 7.5 2.22386 7.5 2.5V11.5C7.5 11.7761 7.27614 12 7 12H1C0.723858 12 0.5 11.7761 0.5 11.5V2.5C0.5 2.22386 0.723857 2 1 2H2Z" stroke="black"/>
+                  <path d="M1.5 5C2.08771 4.41229 2.99998 4.29999 3.71268 4.72761L4.07324 4.94395C4.66146 5.29688 5.37454 5.37515 6.02531 5.15823L6.5 5V11H1.5V5Z" fill="black"/>
+                </svg>
+                <p class="pp-product-tab-4__specification">{{ block.settings.second_product_specification_1 }}</p>
+              </div>
+              <div class="pp-product-tab-4__specification-wrapper">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0.5" y="0.5" width="9" height="9" rx="0.5" stroke="black"/>
+                  <rect x="3" y="3" width="1" height="2" rx="0.5" fill="black"/>
+                  <rect x="4.5" y="5.5" width="1" height="2" rx="0.5" fill="black"/>
+                  <rect x="6" y="3" width="1" height="2" rx="0.5" fill="black"/>
+                </svg>
+
+                <p class="pp-product-tab-4__specification">{{ block.settings.second_product_specification_2 }}</p>
+              </div>
+              <div class="pp-product-tab-4__specification-wrapper">
+                <svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 2.5H12.5C12.7761 2.5 13 2.72386 13 3V9.5C13 9.77614 12.7761 10 12.5 10H1.5C1.22386 10 1 9.77614 1 9.5V3C1 2.72386 1.22386 2.5 1.5 2.5H7M7 2.5L5.5 1M7 2.5L5.5 4M3 6.5H6M8 6.5H9.5M11 6.5H9.5M9.5 6.5V5V8" stroke="black"/>
+                </svg>
+
+                <p class="pp-product-tab-4__specification">{{ block.settings.second_product_specification_3 }}</p>
+              </div>
+            </div>
+          {% endif %}
+
+          {% if block.settings.product_title_3 != blank %}
+            {% comment %} PRODUCT 3 {% endcomment %}
+            <div class="pp-product-tab-4__column-wrapper background--white swiper-slide">
+              <div class="pp-product-tab-4__image-wrapper">
+                <a href="{{ block.settings.product_url_3 }}" target="_blank">
+                  <img
+                    src="{{ block.settings.image_3 | img_url: 'master' }}"
+                    alt="{{ block.settings.image_3.alt }}"
+                  >
+                </a>
+              </div>
+              <div class="pp-product-tab-4__tag-wrapper">
+                {% if block.settings.third_product_tag != blank %}
+                  <span class="pp-product-tab-4__tag text--red">
+                    {{ block.settings.third_product_tag }}
+                  </span>
+                {% else %}
+                  <span class="pp-product-tab-4__tag text--red" style="opacity: 0;"> Placeholder </span>
+                {% endif %}
+              </div>
+              <div class="pp-product-tab-4__title-wrapper">
+                <h3 class="pp-product-tab-4__title text--black">
+                  {{ block.settings.product_title_3 }}
+                </h3>
+              </div>
+              <div class="pp-product-tab-4__specification-wrapper">
+                <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2 2H2.5V1.5V1C2.5 0.723858 2.72386 0.5 3 0.5H5C5.27614 0.5 5.5 0.723858 5.5 1V1.5V2H6H7C7.27614 2 7.5 2.22386 7.5 2.5V11.5C7.5 11.7761 7.27614 12 7 12H1C0.723858 12 0.5 11.7761 0.5 11.5V2.5C0.5 2.22386 0.723857 2 1 2H2Z" stroke="black"/>
+                  <path d="M1.5 5C2.08771 4.41229 2.99998 4.29999 3.71268 4.72761L4.07324 4.94395C4.66146 5.29688 5.37454 5.37515 6.02531 5.15823L6.5 5V11H1.5V5Z" fill="black"/>
+                </svg>
+                <p class="pp-product-tab-4__specification">{{ block.settings.third_product_specification_1 }}</p>
+              </div>
+              <div class="pp-product-tab-4__specification-wrapper">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0.5" y="0.5" width="9" height="9" rx="0.5" stroke="black"/>
+                  <rect x="3" y="3" width="1" height="2" rx="0.5" fill="black"/>
+                  <rect x="4.5" y="5.5" width="1" height="2" rx="0.5" fill="black"/>
+                  <rect x="6" y="3" width="1" height="2" rx="0.5" fill="black"/>
+                </svg>
+
+                <p class="pp-product-tab-4__specification">{{ block.settings.third_product_specification_2 }}</p>
+              </div>
+              <div class="pp-product-tab-4__specification-wrapper">
+                <svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 2.5H12.5C12.7761 2.5 13 2.72386 13 3V9.5C13 9.77614 12.7761 10 12.5 10H1.5C1.22386 10 1 9.77614 1 9.5V3C1 2.72386 1.22386 2.5 1.5 2.5H7M7 2.5L5.5 1M7 2.5L5.5 4M3 6.5H6M8 6.5H9.5M11 6.5H9.5M9.5 6.5V5V8" stroke="black"/>
+                </svg>
+
+                <p class="pp-product-tab-4__specification">{{ block.settings.third_product_specification_3 }}</p>
+              </div>
+            </div>
+          {% endif %}
+
+          {% if block.settings.product_title_4 != blank %}
+            {% comment %} PRODUCT 4 {% endcomment %}
+            <div class="pp-product-tab-4__column-wrapper background--white swiper-slide">
+              <div class="pp-product-tab-4__image-wrapper">
+                <a href="{{ block.settings.product_url_4 }}" target="_blank">
+                  <img
+                    src="{{ block.settings.image_4 | img_url: 'master' }}"
+                    alt="{{ block.settings.image_4.alt }}"
+                  >
+                </a>
+              </div>
+              <div class="pp-product-tab-4__tag-wrapper">
+                {% if block.settings.fourth_product_tag != blank %}
+                  <span class="pp-product-tab-4__tag text--red">
+                    {{ block.settings.fourth_product_tag }}
+                  </span>
+                {% else %}
+                  <span class="pp-product-tab-4__tag text--red" style="opacity: 0;"> Placeholder </span>
+                {% endif %}
+              </div>
+              <div class="pp-product-tab-4__title-wrapper">
+                <h3 class="pp-product-tab-4__title text--black">
+                  {{ block.settings.product_title_4 }}
+                </h3>
+              </div>
+              <div class="pp-product-tab-4__specification-wrapper">
+                <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2 2H2.5V1.5V1C2.5 0.723858 2.72386 0.5 3 0.5H5C5.27614 0.5 5.5 0.723858 5.5 1V1.5V2H6H7C7.27614 2 7.5 2.22386 7.5 2.5V11.5C7.5 11.7761 7.27614 12 7 12H1C0.723858 12 0.5 11.7761 0.5 11.5V2.5C0.5 2.22386 0.723857 2 1 2H2Z" stroke="black"/>
+                  <path d="M1.5 5C2.08771 4.41229 2.99998 4.29999 3.71268 4.72761L4.07324 4.94395C4.66146 5.29688 5.37454 5.37515 6.02531 5.15823L6.5 5V11H1.5V5Z" fill="black"/>
+                </svg>
+                <p class="pp-product-tab-4__specification">{{ block.settings.fourth_product_specification_1 }}</p>
+              </div>
+              <div class="pp-product-tab-4__specification-wrapper">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0.5" y="0.5" width="9" height="9" rx="0.5" stroke="black"/>
+                  <rect x="3" y="3" width="1" height="2" rx="0.5" fill="black"/>
+                  <rect x="4.5" y="5.5" width="1" height="2" rx="0.5" fill="black"/>
+                  <rect x="6" y="3" width="1" height="2" rx="0.5" fill="black"/>
+                </svg>
+
+                <p class="pp-product-tab-4__specification">{{ block.settings.fourth_product_specification_2 }}</p>
+              </div>
+              <div class="pp-product-tab-4__specification-wrapper">
+                <svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 2.5H12.5C12.7761 2.5 13 2.72386 13 3V9.5C13 9.77614 12.7761 10 12.5 10H1.5C1.22386 10 1 9.77614 1 9.5V3C1 2.72386 1.22386 2.5 1.5 2.5H7M7 2.5L5.5 1M7 2.5L5.5 4M3 6.5H6M8 6.5H9.5M11 6.5H9.5M9.5 6.5V5V8" stroke="black"/>
+                </svg>
+
+                <p class="pp-product-tab-4__specification">{{ block.settings.fourth_product_specification_3 }}</p>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+        <div class="swiper-scrollbar"></div>
+      </div>
+    {% endfor %}
+
+    <div class="display--desktop">
+      <div class="pp-product-tab-4__tab-button-container">
+        {% for block in section.blocks %}
+          <button
+            class="pp-product-tab-4__tab-button text--black desktop-button {% if forloop.index == 1 %} active {% endif %}"
+            data-tab="{{ forloop.index }}"
+          >
+            <li class="text--black" title="{{ block.settings.title }}">
+              <span>{{ block.settings.title }}</span>
+            </li>
+          </button>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(function () {
+    function initializeSwiper(index) {
+      var swiperContainer = $('.pp-product-tab-4__slider-container-' + index);
+
+      if (swiperContainer.hasClass('swiper-initialized')) {
+        var existingSwiper = swiperContainer.data('swiper');
+        existingSwiper.destroy();
+        swiperContainer.removeClass('swiper-initialized');
+      }
+
+      if ($(window).width() <= 1260) {
+        var swiper = new Swiper(swiperContainer[0], {
+          freeMode: false,
+          spaceBetween: 12,
+          slidesPerView: 'auto',
+          scrollbar: {
+            el: '.swiper-scrollbar',
+            draggable: true,
+            dragSize: 23,
+          },
+        });
+
+        swiperContainer.data('swiper', swiper);
+        swiperContainer.addClass('swiper-initialized');
+      }
+    }
+
+    initializeSwiper(1);
+
+    // Event handler for desktop tab button click
+    $('.desktop-button').on('click', function () {
+      $('.desktop-button').removeClass('active');
+      $(this).addClass('active');
+
+      var index = $(this).index() + 1;
+
+      $('.pp-product-tab-4__content-container').hide();
+      $('.pp-product-tab-4__slider-container-' + index).show();
+
+      initializeSwiper(index);
+    });
+
+    // Event handler for mobile tab button click
+    $('.mobile-button').on('click', function () {
+      $('.mobile-button').removeClass('active');
+      $(this).addClass('active');
+
+      var index = $(this).index() + 1;
+
+      $('.pp-product-tab-4__content-container').hide();
+      $('.pp-product-tab-4__slider-container-' + index).show();
+
+      initializeSwiper(index);
+    });
+
+    $(window).on('resize', function () {
+      var index = $('.pp-product-tab-4__tab-button.active').index() + 1;
+      initializeSwiper(index);
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "PP Product Tab 4",
+  "max_blocks": 2,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Wählen Sie Ihre Lösung"
+    },
+    {
+      "type": "html",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "* Bei allen tragbaren RIVER-Serien, DELTA mini und DELTA (1300) Powerstationen dient der Auto-Ladeanschluss zur Stromausgabe an den Mikrowechselrichter, während der Solar-Eingangsanschluss zur Solarenergieaufladung dient.Der Auto-Ladeanschluss ist der einzige Weg, wie diese tragbaren Stromstationen mit dem Mikrowechselrichter verbunden werden können. Aufgrund der Begrenzung des Auto-Ladeanschlusses unterliegen diese Stromstationen einer Ausgangsbeschränkung von 100 W."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Jetzt kaufen"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tab",
+      "name": "Tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Tab Title",
+          "default": "Balkonkraftwerk mit Speicher"
+        },
+        {
+          "type": "header",
+          "content": "First Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "First Product Image"
+        },
+        {
+          "type": "text",
+          "id": "first_product_tag",
+          "label": "First Product Tag",
+          "default": "New"
+        },
+        {
+          "type": "text",
+          "id": "product_title_1",
+          "label": "First Product Title",
+          "default": "Erweiterungskit"
+        },
+        {
+          "type": "text",
+          "id": "first_product_specification_1",
+          "label": "First Product Specification 1",
+          "default": "2048Wh"
+        },
+        {
+          "type": "text",
+          "id": "first_product_specification_2",
+          "label": "First Product Specification 2",
+          "default": "2400W(Überspannung 4800W)"
+        },
+        {
+          "type": "text",
+          "id": "first_product_specification_3",
+          "label": "First Product Specification 3",
+          "default": "3.000 Zyklen bis zu 80+ % Kapazität"
+        },
+        {
+          "type": "url",
+          "id": "product_url_1",
+          "label": "First Product URL"
+        },
+        {
+          "type": "header",
+          "content": "Second Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Second Product Image"
+        },
+        {
+          "type": "text",
+          "id": "second_product_tag",
+          "label": "Second Product Tag",
+          "default": "New"
+        },
+        {
+          "type": "text",
+          "id": "product_title_2",
+          "label": "Second Product Title",
+          "default": "Erweiterungskit"
+        },
+        {
+          "type": "text",
+          "id": "second_product_specification_1",
+          "label": "Second Product Specification 1",
+          "default": "2048Wh"
+        },
+        {
+          "type": "text",
+          "id": "second_product_specification_2",
+          "label": "Second Product Specification 2",
+          "default": "2400W(Überspannung 4800W)"
+        },
+        {
+          "type": "text",
+          "id": "second_product_specification_3",
+          "label": "Second Product Specification 3",
+          "default": "3.000 Zyklen bis zu 80+ % Kapazität"
+        },
+        {
+          "type": "url",
+          "id": "product_url_2",
+          "label": "Second Product URL"
+        },
+        {
+          "type": "header",
+          "content": "Third Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "Third Product Image"
+        },
+        {
+          "type": "text",
+          "id": "third_product_tag",
+          "label": "Third Product Tag",
+          "default": "New"
+        },
+        {
+          "type": "text",
+          "id": "product_title_3",
+          "label": "Third Product Title",
+          "default": "Erweiterungskit"
+        },
+        {
+          "type": "text",
+          "id": "third_product_specification_1",
+          "label": "Third Product Specification 1",
+          "default": "2048Wh"
+        },
+        {
+          "type": "text",
+          "id": "third_product_specification_2",
+          "label": "Third Product Specification 2",
+          "default": "2400W(Überspannung 4800W)"
+        },
+        {
+          "type": "text",
+          "id": "third_product_specification_3",
+          "label": "Third Product Specification 3",
+          "default": "3.000 Zyklen bis zu 80+ % Kapazität"
+        },
+        {
+          "type": "url",
+          "id": "product_url_3",
+          "label": "Third Product URL"
+        },
+        {
+          "type": "header",
+          "content": "Fourth Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_4",
+          "label": "Fourth Product Image"
+        },
+        {
+          "type": "text",
+          "id": "fourth_product_tag",
+          "label": "Fourth Product Tag",
+          "default": "New"
+        },
+        {
+          "type": "text",
+          "id": "product_title_4",
+          "label": "Fourth Product Title",
+          "default": "Erweiterungskit"
+        },
+        {
+          "type": "text",
+          "id": "fourth_product_specification_1",
+          "label": "Fourth Product Specification 1",
+          "default": "2048Wh"
+        },
+        {
+          "type": "text",
+          "id": "fourth_product_specification_2",
+          "label": "Fourth Product Specification 2",
+          "default": "2400W(Überspannung 4800W)"
+        },
+        {
+          "type": "text",
+          "id": "fourth_product_specification_3",
+          "label": "Fourth Product Specification 3",
+          "default": "3.000 Zyklen bis zu 80+ % Kapazität"
+        },
+        {
+          "type": "url",
+          "id": "product_url_4",
+          "label": "Fourth Product URL"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

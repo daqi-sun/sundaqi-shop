@@ -1,0 +1,67 @@
+<div class="relative">
+  {% render 'ht-responsive-image', image: section.settings.image, image_mobile: section.settings.image_mobile %}
+  <div class="disaster-banner-content">
+    {% if section.settings.title != blank %}
+      <h1>{{ section.settings.title }}</h1>
+    {% endif %}
+    {% if section.settings.subtitle != blank %}
+      <h2>{{ section.settings.subtitle }}</h2>
+    {% endif %}
+    {% if section.settings.richtext != blank %}
+      <div>{{ section.settings.richtext }}</div>
+    {% endif %}
+    {% if section.settings.btn_text != blank %}
+      <a class="banner-get-now--btn" href="{{ section.settings.btn_link }}">
+        <div class="banner-btn--wrapper">
+          {{ section.settings.btn_text }}
+        </div>
+      </a>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Disaster Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image mobile"
+    },
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title",
+      "default": "Prepare Your Home For Winter Power Outages."
+    },
+    {
+      "type": "html",
+      "id": "subtitle",
+      "label": "Sub-Title",
+      "default": "Prepare Your Home For Winter Power Outages."
+    },
+    {
+      "type": "richtext",
+      "id": "richtext",
+      "label": "Richtext"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button Text",
+      "default": "Get It Now"
+    },
+    {
+      "type": "text",
+      "id": "btn_link",
+      "label": "Button Link"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,545 @@
+<style>
+  .pp-product-tab-2__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .pp-product-tab-2__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+
+<div class="pp-product-tab-2__section pp-product-tab-2__section-{{ section.id }}">
+  <div class="container--default">
+    <div class="pp-product-tab-2__text-container">
+      {% if section.settings.title != blank %}
+        <h2 class="pp-product-tab-2__section-heading text--heading text--black">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+    </div>
+
+    <div class="display--desktop">
+      <div class="pp-product-tab-2__tab-button-container">
+        {% for block in section.blocks %}
+          <button
+            class="pp-product-tab-2__tab-button text--black {% if forloop.index == 1 %} active {% endif %}"
+          >
+            <li class="text--black" title="{{ block.settings.title }}">
+              <span>{{ block.settings.title }}</span>
+            </li>
+          </button>
+        {% endfor %}
+      </div>
+    </div>
+
+    {%- comment %}<locksmith:ccbc>{% endcomment -%}
+      {%- assign locksmith_90c5_forloop__size = 0 %}{% for block in section.blocks %}{% capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == 'true' %}{% assign locksmith_90c5_forloop__size = locksmith_90c5_forloop__size | plus: 1 %}{% endif %}{% endfor %}{% assign locksmith_90c5_forloop__index = nil -%}
+    {%- comment %}</locksmith:ccbc>{% endcomment -%}
+    {% for block in section.blocks %}
+      {%- comment %}<locksmith:14af>{% endcomment -%}
+        {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% if locksmith_90c5_forloop__index == nil %}{% assign locksmith_90c5_forloop__index = 1 %}{% assign locksmith_90c5_forloop__index0 = 0 %}{% else %}{% assign locksmith_90c5_forloop__index = locksmith_90c5_forloop__index | plus: 1 %}{% assign locksmith_90c5_forloop__index0 = locksmith_90c5_forloop__index0 | plus: 1 %}{% endif %}{% if locksmith_90c5_forloop__index == 1 %}{% assign locksmith_90c5_forloop__first = true %}{% else %}{% assign locksmith_90c5_forloop__first = false %}{% endif %}{% if locksmith_90c5_forloop__index == locksmith_90c5_forloop__size %}{% assign locksmith_90c5_forloop__last = true %}{% else %}{% assign locksmith_90c5_forloop__last = false %}{% endif %}{% assign locksmith_90c5_forloop__rindex = locksmith_90c5_forloop__size | minus: locksmith_90c5_forloop__index | minus: 1 %}{% assign locksmith_90c5_forloop__rindex0 = locksmith_90c5_forloop__size | minus: locksmith_90c5_forloop__index0 | minus: 1 %}{% else %}{% continue %}{% endif -%}
+      {%- comment %}</locksmith:14af>{% endcomment -%}
+      <div
+        class="pp-product-tab-2__content-container swiper-container pp-product-tab-2__slider-container-{{ locksmith_90c5_forloop__index }}"
+        style="{% if locksmith_90c5_forloop__index == 2 %} display: none; {% endif %}"
+        data-tab="{{ locksmith_90c5_forloop__index }}"
+      >
+        <div
+          class="pp-product-tab-2__container swiper-wrapper"
+        >
+          {% if block.settings.product_title_1 != blank %}
+            {% comment %} 1st Product {% endcomment %}
+            <div class="pp-product-tab-2__column-wrapper background--white swiper-slide">
+              <div class="pp-product-tab-2__title-wrapper">
+                <p class="pp-product-tab-2__vat text--red">{{ block.settings.vat_1 }}</p>
+                <h3 class="pp-product-tab-2__title {% if block.settings.specification_1 == blank %} title--only {% endif %} text--black">
+                  {{ block.settings.product_title_1 }}
+                </h3>
+                {% if block.settings.specification_1 != blank %}
+                  <p class="pp-product-tab-2__specification text--black">{{ block.settings.specification_1 }}</p>
+                {% endif %}
+              </div>
+              <div class="pp-product-tab-2__description-wrapper">
+                {{ block.settings.description_1 }}
+              </div>
+              <div class="pp-product-tab-2__image-wrapper">
+                <a href="{{ block.settings.product_url_1 }}" target="_blank">
+                  <img
+                    src="{{ block.settings.image_1 | img_url: 'master' }}"
+                    alt="{{ block.settings.image_1.alt }}"
+                  >
+                </a>
+              </div>
+              <div class="pp-product-tab-2__details-container">
+                <div class="pp-product-tab-2__price-wrapper">
+                  <p class="pp-product-tab-2__price text--black">{{ block.settings.product_price_1 }}€</p>
+                  {% if block.settings.product_compare_price_1 != empty %}
+                    <p class="pp-product-tab-2__compare-price text--light-gray">
+                      {{ block.settings.product_compare_price_1 }}€
+                    </p>
+                  {% else %}
+                    <p class="pp-product-tab-2__compare-price text--light-gray" style="opacity: 0;">
+                      {{ block.settings.product_compare_price_1 }}€
+                    </p>
+                  {% endif %}
+                </div>
+                <div class="pp-product-tab-2__button-wrapper">
+                  <a href="{{ block.settings.product_url_1 }}" target="_blank" class="button--container ">
+                    <span class="button text--white background--dark-blue">{{ section.settings.button_label }}</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+          {% if block.settings.product_title_2 != blank %}
+            {% comment %} 2nd Product {% endcomment %}
+            <div class="pp-product-tab-2__column-wrapper background--white swiper-slide">
+              <div class="pp-product-tab-2__title-wrapper">
+                <p class="pp-product-tab-2__vat text--red">{{ block.settings.vat_2 }}</p>
+                <h3 class="pp-product-tab-2__title {% if block.settings.specification_2 == blank %} title--only {% endif %} text--black">
+                  {{ block.settings.product_title_2 }}
+                </h3>
+                {% if block.settings.specification_2 != blank %}
+                  <p class="pp-product-tab-2__specification text--black">{{ block.settings.specification_2 }}</p>
+                {% endif %}
+              </div>
+              <div class="pp-product-tab-2__description-wrapper">
+                {{ block.settings.description_2 }}
+              </div>
+              <div class="pp-product-tab-2__image-wrapper">
+                <a href="{{ block.settings.product_url_2 }}" target="_blank">
+                  <img
+                    src="{{ block.settings.image_2 | img_url: 'master' }}"
+                    alt="{{ block.settings.image_2.alt }}"
+                  >
+                </a>
+              </div>
+              <div class="pp-product-tab-2__details-container">
+                <div class="pp-product-tab-2__price-wrapper">
+                  <p class="pp-product-tab-2__price text--black">{{ block.settings.product_price_2 }}€</p>
+                  {% if block.settings.product_compare_price_2 != empty %}
+                    <p class="pp-product-tab-2__compare-price text--light-gray">
+                      {{ block.settings.product_compare_price_2 }}€
+                    </p>
+                  {% else %}
+                    <p class="pp-product-tab-2__compare-price text--light-gray" style="opacity: 0;">
+                      {{ block.settings.product_compare_price_2 }}€
+                    </p>
+                  {% endif %}
+                </div>
+                <div class="pp-product-tab-2__button-wrapper">
+                  <a href="{{ block.settings.product_url_2 }}" target="_blank" class="button--container ">
+                    <span class="button text--white background--dark-blue">{{ section.settings.button_label }}</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+          {% if block.settings.product_title_3 != blank %}
+            {% comment %} 3rd Product {% endcomment %}
+            <div class="pp-product-tab-2__column-wrapper background--white swiper-slide">
+              <div class="pp-product-tab-2__title-wrapper">
+                {% if block.settings.vat_3 != blank %}
+                  <p class="pp-product-tab-2__vat text--red">{{ block.settings.vat_3 }}</p>
+                {% endif %}
+                <h3 class="pp-product-tab-2__title {% if block.settings.specification_3 == blank %} title--only {% endif %} text--black">
+                  {{ block.settings.product_title_3 }}
+                </h3>
+                {% if block.settings.specification_3 != blank %}
+                  <p class="pp-product-tab-2__specification text--black">{{ block.settings.specification_3 }}</p>
+                {% endif %}
+              </div>
+              <div class="pp-product-tab-2__description-wrapper">
+                {{ block.settings.description_3 }}
+              </div>
+              <div class="pp-product-tab-2__image-wrapper">
+                <a href="{{ block.settings.product_url_3 }}" target="_blank">
+                  <img
+                    src="{{ block.settings.image_3 | img_url: 'master' }}"
+                    alt="{{ block.settings.image_3.alt }}"
+                  >
+                </a>
+              </div>
+              <div class="pp-product-tab-2__details-container">
+                <div class="pp-product-tab-2__price-wrapper">
+                  <p class="pp-product-tab-2__price text--black">{{ block.settings.product_price_3 }}€</p>
+                  {% if block.settings.product_compare_price_3 != empty %}
+                    <p class="pp-product-tab-2__compare-price text--light-gray">
+                      {{ block.settings.product_compare_price_3 }}€
+                    </p>
+                  {% else %}
+                    <p class="pp-product-tab-2__compare-price text--light-gray" style="opacity: 0;">
+                      {{ block.settings.product_compare_price_3 }}€
+                    </p>
+                  {% endif %}
+                </div>
+                <div class="pp-product-tab-2__button-wrapper">
+                  <a href="{{ block.settings.product_url_3 }}" target="_blank" class="button--container ">
+                    <span class="button text--white background--dark-blue">{{ section.settings.button_label }}</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+
+          {% if block.settings.card_title != blank %}
+            {% comment %} Card Item {% endcomment %}
+            <div class="pp-product-tab-2__column-wrapper pp-product-card-tab-2__column-wrapper background--white swiper-slide">
+              <div class="pp-product-tab-2__title-wrapper">
+                <h3 class="pp-product-tab-2__title text--black">
+                  {{ block.settings.card_title }}
+                </h3>
+              </div>
+              <div class="pp-product-tab-2__details-container">
+                <div class="pp-product-tab-2__button-wrapper">
+                  <a href="{{ block.settings.card_url }}" target="_blank" class="button--container ">
+                    <span class="button text--white background--dark-blue">{{ section.settings.button_label }}</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+        <div class="swiper-scrollbar"></div>
+        <div class="display--desktop">
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    {% endfor %}
+
+    <div class="display--mobile">
+      <div class="pp-product-tab-2__tab-button-container">
+        {% for block in section.blocks %}
+          <button
+            class="pp-product-tab-2__tab-button text--black {% if forloop.index == 1 %} active {% endif %}"
+          >
+            <li class="text--black" title="{{ block.settings.title }}">
+              <span>{{ block.settings.title }}</span>
+            </li>
+          </button>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(function () {
+    function initializeSwiper(index) {
+      var swiperContainer = $('.pp-product-tab-2__slider-container-' + index);
+      var blockWrapperCount = $('.pp-product-tab-2__column-wrapper').length;
+      if (swiperContainer.hasClass('swiper-initialized')) {
+        var existingSwiper = swiperContainer.data('swiper');
+        existingSwiper.destroy();
+        swiperContainer.removeClass('swiper-initialized');
+      }
+
+      if (blockWrapperCount >= 4 || $(window).width() < 1241) {
+        var numberOfSlides = swiperContainer.find('.swiper-slide').length;
+        var swiper = new Swiper(swiperContainer[0], {
+          freeMode: false,
+          spaceBetween: 16,
+          slidesPerView: 'auto',
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          scrollbar: {
+            el: '.swiper-scrollbar',
+            draggable: true,
+            dragSize: 40,
+          },
+          breakpoints: {
+            768: {
+              spaceBetween: 40,
+            },
+          },
+        });
+        var container = $('.pp-product-tab-2__container');
+        if (numberOfSlides <= 3) {
+          container.addClass('centered-slides');
+        } else {
+          container.removeClass('centered-slides');
+        }
+
+        swiperContainer.data('swiper', swiper);
+        swiperContainer.addClass('swiper-initialized');
+      }
+    }
+
+    initializeSwiper(1);
+
+    // Event handler for desktop tab button click
+    $('.display--desktop .pp-product-tab-2__tab-button').on('click', function () {
+      $('.display--desktop .pp-product-tab-2__tab-button').removeClass('active');
+      $(this).addClass('active');
+
+      var index = $(this).index() + 1;
+
+      $('.pp-product-tab-2__content-container').hide();
+      $('.pp-product-tab-2__slider-container-' + index).show();
+
+      initializeSwiper(index);
+    });
+
+    // Event handler for mobile tab button click
+    $('.display--mobile .pp-product-tab-2__tab-button').on('click', function () {
+      $('.display--mobile .pp-product-tab-2__tab-button').removeClass('active');
+      $(this).addClass('active');
+
+      var index = $(this).index() + 1;
+
+      $('.pp-product-tab-4__content-container').hide();
+      $('.pp-product-tab-4__slider-container-' + index).show();
+
+      initializeSwiper(index);
+    });
+
+    $(window).on('resize', function () {
+      var index = $('.pp-product-tab-2__tab-button.active').index() + 1;
+      initializeSwiper(index);
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "PP Product Tab 2",
+  "max_blocks": 2,
+  "settings": [
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title",
+      "default": "Wählen Sie Ihre Lösung"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Jetzt kaufen"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tab",
+      "name": "Tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Tab Title",
+          "default": "Balkonkraftwerk mit Speicher"
+        },
+        {
+          "type": "header",
+          "content": "First Product"
+        },
+        {
+          "type": "text",
+          "id": "vat_1",
+          "label": "First Vat",
+          "default": "0%"
+        },
+        {
+          "type": "html",
+          "id": "product_title_1",
+          "label": "First Product Title",
+          "default": "Erweiterungskit"
+        },
+        {
+          "type": "html",
+          "id": "specification_1",
+          "label": "First Product Specification",
+          "default": "2-kWh-Speicher Kit"
+        },
+        {
+          "type": "richtext",
+          "id": "description_1",
+          "label": "First Product Description"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "First Product Image"
+        },
+        {
+          "type": "text",
+          "id": "product_price_1",
+          "label": "First Product Price",
+          "default": "2,202.52"
+        },
+        {
+          "type": "text",
+          "id": "product_compare_price_1",
+          "label": "First Product Compare Price",
+          "default": "3,538.00"
+        },
+        {
+          "type": "url",
+          "id": "product_url_1",
+          "label": "First Product URL"
+        },
+        {
+          "type": "header",
+          "content": "Second Product"
+        },
+        {
+          "type": "text",
+          "id": "vat_2",
+          "label": "Second Vat",
+          "default": "0%"
+        },
+        {
+          "type": "html",
+          "id": "product_title_2",
+          "label": "Second Product Title",
+          "default": "Erweiterungskit"
+        },
+        {
+          "type": "html",
+          "id": "specification_2",
+          "label": "Second Product Specification",
+          "default": "2-kWh-Speicher Kit"
+        },
+        {
+          "type": "richtext",
+          "id": "description_2",
+          "label": "Second Product Description"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Second Product Image"
+        },
+        {
+          "type": "text",
+          "id": "product_price_2",
+          "label": "Second Product Price",
+          "default": "2,202.52"
+        },
+        {
+          "type": "text",
+          "id": "product_compare_price_2",
+          "label": "Second Product Compare Price",
+          "default": "3,538.00"
+        },
+        {
+          "type": "url",
+          "id": "product_url_2",
+          "label": "Second Product URL"
+        },
+        {
+          "type": "header",
+          "content": "Third Product"
+        },
+        {
+          "type": "text",
+          "id": "vat_3",
+          "label": "Third Vat",
+          "default": "0%"
+        },
+        {
+          "type": "html",
+          "id": "product_title_3",
+          "label": "Third Product Title",
+          "default": "Erweiterungskit"
+        },
+        {
+          "type": "html",
+          "id": "specification_3",
+          "label": "Third Product Specification",
+          "default": "2-kWh-Speicher Kit"
+        },
+        {
+          "type": "richtext",
+          "id": "description_3",
+          "label": "Third Product Description"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "Third Product Image"
+        },
+        {
+          "type": "text",
+          "id": "product_price_3",
+          "label": "Third Product Price",
+          "default": "2,202.52"
+        },
+        {
+          "type": "text",
+          "id": "product_compare_price_3",
+          "label": "Third Product Compare Price",
+          "default": "3,538.00"
+        },
+        {
+          "type": "url",
+          "id": "product_url_3",
+          "label": "Third Product URL"
+        },
+        {
+          "type": "header",
+          "content": "Last Product"
+        },
+        {
+          "type": "html",
+          "id": "card_title",
+          "label": "Card Title",
+          "default": "Individuell für Ihr Zuhause"
+        },
+        {
+          "type": "url",
+          "id": "card_url",
+          "label": "Card URL"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

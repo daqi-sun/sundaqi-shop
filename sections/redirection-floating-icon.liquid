@@ -1,0 +1,145 @@
+{{ 'redirection-floating-icon.css' | asset_url | stylesheet_tag }}
+
+{% comment %} Check the current page should be excluded or not {% endcomment %}
+
+{% liquid
+  if section.settings.popup_setting == 'exclude'
+    assign pageUrl = request.path
+    assign popup_exclude_urls = section.settings.popup_exclude_urls | split: ','
+    assign is_excluded_url = false
+    for specific_url in popup_exclude_urls
+      assign url = specific_url | strip | replace: '\/', '/' | replace: ',', ''
+      if url == pageUrl
+        assign is_excluded_url = true
+      endif
+    endfor
+
+  else
+    assign pageUrl = request.path
+    assign popup_include_urls = section.settings.popup_include_urls | split: ','
+    assign is_included_url = false
+    for specific_url in popup_include_urls
+      assign url = specific_url | strip | replace: '\/', '/' | replace: ',', ''
+      if url == pageUrl
+        assign is_included_url = true
+      endif
+    endfor
+  endif
+%}
+
+{% capture floating_logo %}
+  <div
+    class="redirection-floating-icon__section"
+    x-data="{ showIcon: true }"
+    x-show="showIcon"
+    x-cloak
+  >
+    <div class="redirection-floating-icon__trigger-inner">
+      <a class="redirection-floating-icon__section-trigger" href="{{ section.settings.redirect_url }}">
+        <div class="redirection-floating-icon__trigger-image-wrapper">
+          <img
+            srcset="{{ section.settings.icon | image_url: width: section.settings.popup_size }}"
+            class="hideMobile"
+            loading="lazy"
+            alt="Trigger Email Subscription Popup Image"
+            style="width: {{ section.settings.popup_size }}px;}}"
+          >
+          <img
+            srcset="{{ section.settings.mobile_icon | image_url: width: section.settings.popup_size_m }}"
+            class="hideDesktop"
+            loading="lazy"
+            alt="Trigger Email Subscription Popup Image"
+            style="width: {{ section.settings.popup_size_m }}px;}}"
+          >
+        </div>
+      </a>
+      <div class="redirection-floating-icon__trigger-close" @click.stop="showIcon = false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2.79999C14.5403 2.79999 16.8403 3.82987 18.5052 5.4948C20.1702 7.15973 21.2001 9.45972 21.2001 12C21.2001 14.5403 20.1702 16.8402 18.5052 18.5052C16.8403 20.1701 14.5403 21.2 12 21.2C9.45978 21.2 7.15979 20.1701 5.49486 18.5052C3.82993 16.8402 2.80005 14.5403 2.80005 12C2.80005 9.45972 3.82993 7.15973 5.49486 5.4948C7.15979 3.82987 9.45978 2.79999 12 2.79999Z" stroke="#ACACAC" stroke-width="1.6"></path>
+          <path d="M8.5 8.5L15.5 15.5M15.5 8.5L8.5 15.5" stroke="#ACACAC" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+  {% endcapture %}
+{% if section.settings.popup_setting == 'exclude' %}
+  {% if section.settings.show and is_excluded_url == false %}
+    {{ floating_logo }}
+  {% endif %}
+{% else %}
+  {% if section.settings.show and is_included_url == true %}
+    {{ floating_logo }}
+  {% endif %}
+{% endif %}
+
+{% schema %}
+{
+  "name": "Redirection floating icon",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Floating Logo Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show",
+      "label": "Show?"
+    },
+    {
+      "type": "number",
+      "id": "popup_size",
+      "label": "icon size(PC)",
+      "default": 179
+    },
+    {
+      "type": "number",
+      "id": "popup_size_m",
+      "label": "icon size(Mobile)",
+      "default": 90
+    },
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "PC Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_icon",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "url",
+      "id": "redirect_url",
+      "label": "Redirect URL"
+    },
+    {
+      "type": "select",
+      "id": "popup_setting",
+      "label": "Popup Setting",
+      "options": [
+        {
+          "value": "include",
+          "label": "Include URLs"
+        },
+        {
+          "value": "exclude",
+          "label": "Exclude URLs"
+        }
+      ],
+      "default": "include"
+    },
+    {
+      "type": "textarea",
+      "id": "popup_include_urls",
+      "label": "Include Urls",
+      "info": "Please enter the page Url that you want to include the popup and separate them by comma. \ne.g. \n/pages/0-vat-products,\n/products/powerstream-microinverter,\n/products/balkonkraftwerk-600w-800w-fur-garten"
+    },
+    {
+      "type": "textarea",
+      "id": "popup_exclude_urls",
+      "label": "Exclude Urls",
+      "info": "Please enter the page Url that you want to exclude the popup and separate them by comma. \ne.g. \n/pages/0-vat-products,\n/products/powerstream-microinverter,\n/products/balkonkraftwerk-600w-800w-fur-garten"
+    }
+  ]
+}
+{% endschema %}

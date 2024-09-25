@@ -1,0 +1,138 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "Submenu",
+  "id": "submenu",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "class": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "type": "checkbox",
+      "id": "atb_hide_in_mobile",
+      "label": "Hide in Mobile",
+      "info": ""
+    },
+    {
+      "type": "checkbox",
+      "id": "atb_hide_in_laptop",
+      "label": "Hide in Small screens",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "blocks",
+      "label": "Block ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": "",
+      "repeatable": "Block"
+    },
+    {
+      "type": "text",
+      "id": "block_heading",
+      "label": "Heading",
+      "default": "Heading",
+      "repeatable": "Block",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "block_block_link",
+      "label": "Link",
+      "repeatable": "Block",
+      "info": ""
+    },
+    {
+      "type": "image_picker",
+      "id": "block_image",
+      "label": "Image",
+      "repeatable": "Block",
+      "info": ""
+    },
+    {
+      "type": "range",
+      "id": "block_image_height",
+      "label": "Image height",
+      "min": 20,
+      "max": 52,
+      "step": 1,
+      "unit": "px",
+      "default": 52,
+      "repeatable": "Block",
+      "info": ""
+    }
+  ],
+  "warnings": [
+    "repeating range fields may not be properly handled",
+    "repeating image fields may not be properly handled"
+  ]
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_hide_in_mobile' -%}
+{%- assign atb_hide_in_mobile = val -%}
+{%- include 'atb-render' field:'atb_hide_in_laptop' -%}
+{%- assign atb_hide_in_laptop = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_heading' -%}
+{%- assign block_heading = val -%}
+{%- include 'atb-render' field:'block_block_link' -%}
+{%- assign block_block_link = val -%}
+{%- include 'atb-render' field:'block_image' -%}
+{%- assign block_image = val -%}
+{%- include 'atb-render' field:'block_image_height' -%}
+{%- assign block_image_height = val -%}
+{%- if atb_hide_in_mobile == blank -%}
+{%- assign atb_hide_in_mobile = false -%}
+{%- else -%}
+{%- assign atb_hide_in_mobile = true -%}
+{%- endif -%}
+{%- if atb_hide_in_laptop == blank -%}
+{%- assign atb_hide_in_laptop = false -%}
+{%- else -%}
+{%- assign atb_hide_in_laptop = true -%}
+{%- endif -%}
+{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section ">
+{%- if blocks.size > 0 -%}
+    <section class="submenu-wrapper {% if atb_hide_in_mobile %}hideLaptop{% endif %}">
+        <div class="submenu-wrapper-inner">
+            {%- for block0 in blocks -%}
+{%- assign my_range0 = block_image_height[forloop.index0] | plus: 0 -%}
+{%- assign my_image_key0 = block_image[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image0 = images[my_image_key0] -%}
+                <div class="submenu-block">
+                    {%- if block_block_link[forloop.index0] != blank -%}
+                        <a href="{{ block_block_link[forloop.index0] }}">
+                    {%- endif -%}
+                        {%- if my_image0 != blank -%}
+                            <div class="submenu-block-image">
+                                <img src="{{ my_image0 | img_url: '200x' }}" style="max-height: {{ my_range0 }}px;" />
+                            </div>
+                        {%- endif -%}
+                        {%- if block_heading[forloop.index0] != blank -%}
+                            <h3>{{ block_heading[forloop.index0] }}</h3>
+                        {%- endif -%}
+                    {%- if block_block_link[forloop.index0] != blank -%}
+                        </a>
+                    {%- endif -%}
+                </div>
+            {%- endfor -%}
+        </div>
+    </section>
+{%- endif -%}
+
+</section>

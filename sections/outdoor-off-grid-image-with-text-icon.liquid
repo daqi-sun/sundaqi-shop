@@ -1,0 +1,75 @@
+<div class="outdoor-grid-section">
+  <div class="outdoor-off-grid__img-with-text-icon-wrapper">
+    <div
+      class="outdoor-off-grid__img-with-text-icon">
+      <div class="outdoor-off-grid__img-content">
+        <img src="{{ section.settings.image_content | img_url: '550x' }}" alt="">
+      </div>
+      <div class="outdoor-off-grid__text-content">
+        <div class="outdoor-off-grid__text-content-heading">
+          <span>{{ section.settings.text_content_heading }}</span>
+        </div>
+        <div class="outdoor-off-grid__text-content-subheading">
+          <span>{{ section.settings.text_content_subheading }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="outdoor-off-grid__icon-wrapper">
+      <div class="outdoor-off-grid__icon-blocks">
+        {% for block in section.blocks %}
+          <div class="outdoor-off-grid__icon-items">
+            <div class="outdoor-off-grid__icon">
+              <img src="{{ block.settings.icon | img_url: '550x' }}" alt="">
+            </div>
+            <div class="outdoor-off-grid__icon-text">
+              <span>{{ block.settings.icon_text }}</span>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Image with Text and Icon",
+    "settings": [
+      {
+        "type": "text",
+        "id": "text_content_heading",
+        "label": "Text Content Heading"
+      }, {
+        "type": "text",
+        "id": "text_content_subheading",
+        "label": "Text Content Subheading"
+      }, {
+        "type": "image_picker",
+        "id": "image_content",
+        "label": "Image Content"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "icons",
+        "name": "Icons",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon"
+          }, {
+            "type": "text",
+            "id": "icon_text",
+            "label": "Icon text"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image with Text Icon"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,471 @@
+{%- comment -%}
+This file has been modified by the Yoast SEO for Shopify app.
+You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+<!DOCTYPE html>
+<html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
+  <head>
+    <!-- default google consent mode -->
+    <script>
+      (function () {
+        // Define dataLayer and the gtag function.
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        // Default ad_storage to 'denied'.
+        gtag('consent', 'default', {
+          ad_storage: 'denied',
+          analytics_storage: 'denied',
+          ad_personalization: 'denied',
+          ad_user_data: 'denied',
+        });
+      })();
+    </script>
+    
+    <!-- OneTrust Cookies Consent Notice start for es.ecoflow.com -->
+    <script type="text/javascript" src="https://cdn-apac.onetrust.com/consent/7f8e7d3f-89ef-4127-a959-4ae1d5601b30/OtAutoBlock.js" ></script>
+    <script src="https://cdn-apac.onetrust.com/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="7f8e7d3f-89ef-4127-a959-4ae1d5601b30" ></script>
+    <script type="text/javascript">
+    function OptanonWrapper() { }
+    </script>
+    <!-- OneTrust Cookies Consent Notice end for es.ecoflow.com -->
+    <script>(function () { function asyncLoad() { var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'https://s3.eu-west-1.amazonaws.com/production-klarna-il-shopify-osm/06813f2bbb40bf097c85cc33982be5da59692f3f/ecoflow-es.myshopify.com-1679990667844.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x); }; if (window.attachEvent) { window.attachEvent('onload', asyncLoad); } else { window.addEventListener('load', asyncLoad, false); } })(); </script>
+
+    <script
+      id="script_tag_id"
+      data-last-check-status-key="_prevCheckIsOk"
+      data-last-check-timestamp-key="_prevCheckTimestamp"
+      data-refresh-interval-ms="120000"
+      data-script-src="https://d2fj3s7h83rb61.cloudfront.net/U7SD5gGFTR/bin"
+      data-app-info="1-1--1.7.0"
+      data-app-platform="1"
+      data-app-type="1"
+      data-app-version="1.7.0">
+      (function () {
+          var currentScript = document.currentScript;
+          var currentScriptDataset = currentScript.dataset;
+          var lastCheckStatusKey = currentScriptDataset.lastCheckStatusKey;
+          var lastCheckTimestampKey = currentScriptDataset.lastCheckTimestampKey;
+          var refreshIntervalMs = parseInt(currentScriptDataset.refreshIntervalMs, 10);
+          var scriptSrc = currentScriptDataset.scriptSrc;
+
+          if (lastCheckStatusKey && lastCheckTimestampKey && refreshIntervalMs && scriptSrc && !isNaN(refreshIntervalMs)) {
+              if (localStorage.getItem(lastCheckStatusKey) === null) {
+                  localStorage.setItem(lastCheckStatusKey, String(false));
+              }
+
+              if (localStorage.getItem(lastCheckTimestampKey) === null){
+                  localStorage.setItem(lastCheckTimestampKey, String(0));
+              }
+
+              var locationHref = document.location.href;
+              var now = Date.now();
+              var lastCheckStatus = String(localStorage.getItem(lastCheckStatusKey)).toLowerCase() === 'true';
+              var lastCheckTimestamp = parseInt(localStorage.getItem(lastCheckTimestampKey), 10);
+
+              if (!isNaN(lastCheckTimestamp)) {
+                  var needRefreshByInterval = now - lastCheckTimestamp > refreshIntervalMs;
+
+                  if (needRefreshByInterval || lastCheckStatus) {
+                      var LOAD = 'load';
+                      var ERROR = 'error';
+                      var script = document.createElement('script');
+
+                      function scriptEventHandler(evt) {
+                          var target = evt.target;
+                          var evtType = evt.type;
+
+                          var currentCheckStatus = false;
+                          var currentCheckTimestamp = Date.now();
+
+                          if (evtType === LOAD) {
+                              currentCheckStatus = true;
+                          }
+
+                          localStorage.setItem(lastCheckStatusKey, String(currentCheckStatus));
+                          localStorage.setItem(lastCheckTimestampKey, String(currentCheckTimestamp));
+
+                          target.removeEventListener(LOAD, scriptEventHandler);
+                          target.removeEventListener(ERROR, scriptEventHandler);
+                      }
+
+                      if (!locationHref.match(/(\/checkouts\/|\/thank_you)/gi)) {
+                          script.defer = true;
+                      }
+
+                      script.addEventListener(LOAD, scriptEventHandler);
+                      script.addEventListener(ERROR, scriptEventHandler);
+
+                      script.src = scriptSrc;
+
+                      document.head.insertBefore(script, currentScript);
+                  }
+              }
+          } else {
+              console.error('wrapper is not right configured');
+          }
+      })();
+    </script>
+
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-174671673-6', 'auto');
+      ga(function(tracker) {
+          var clientId = String(tracker.get("clientId"));
+        ga("set", {
+            "anonymizeIp": true,
+            "dimension1": {{ customer.id | json }},
+          "dimension2": clientId,
+          "dimension3": {{ customer.id | json }} ? "Loggedin" : "Guest"
+        });
+      });
+    </script>
+    <!-- End Google Analytics -->
+    <!-- GTM dataLayer Init -->
+    <script type="text/javascript">
+      dataLayer = [{
+        shopify_id: {{ customer.id | json }},
+        user_type: {{ customer.id | json }} ? "Loggedin" : "Guest"
+      }]
+    </script>
+    <!-- End GTM dataLayer Init -->
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NRWKJ9R');</script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+    <meta name="referrer" content="origin">
+
+    <script src="{{ 'jquery.min.js' | asset_url }}"></script>
+    {%- comment -%}Auto-disabled. Yoast plugin is taking care of SEO output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<title>{{ page_title }}</title>
+{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
+{%- endif -%}
+
+    {{ content_for_header }}
+
+    {{ checkout_stylesheets }}
+    {{ checkout_scripts }}
+
+    {{ 'checkout.css' | asset_url | stylesheet_tag }}
+
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NRWKJ9R"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    {{ skip_to_content_link }}
+
+    <header class="banner" data-header role="banner">
+      <div class="wrap">
+        {{ content_for_logo }}
+      </div>
+    </header>
+
+    {{ order_summary_toggle }}
+    <div class="content" data-content>
+      <div class="wrap">
+        <div class="main">
+          <header class="main__header" role="banner">
+            {{ content_for_logo }}
+            {{ breadcrumb }}
+
+            {% if settings.show_notification_box %}
+              <div class="notification_box">
+                <div class="notification_icon">
+                  <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.99997 17.64C9.31494 17.6328 9.6172 17.5144 9.85327 17.3057C10.0894 17.0971 10.244 16.8117 10.29 16.5H7.65997C7.70721 16.8202 7.86913 17.1123 8.11562 17.322C8.36211 17.5317 8.67639 17.6447 8.99997 17.64Z" fill="#212121"/>
+                    <path d="M16.255 14.415C15.7729 13.9852 15.3507 13.4925 15 12.95C14.6171 12.2013 14.3876 11.3837 14.325 10.545V8.07504C14.323 7.77502 14.2962 7.47567 14.245 7.18004C13.8515 7.10137 13.4733 6.95954 13.125 6.76004C13.2578 7.18747 13.3252 7.63248 13.325 8.08004V10.55C13.3863 11.5731 13.6677 12.5708 14.15 13.475C14.4952 14.022 14.9048 14.5256 15.37 14.975H2.56502C3.03023 14.5256 3.43982 14.022 3.78502 13.475C4.26733 12.5708 4.54874 11.5731 4.61002 10.55V8.07504C4.60739 7.49639 4.71893 6.92289 4.93825 6.3874C5.15756 5.85191 5.48035 5.36494 5.88813 4.95437C6.29591 4.54381 6.78067 4.21771 7.31466 3.99475C7.84864 3.77179 8.42136 3.65635 9.00002 3.65504C9.84691 3.65572 10.6748 3.90617 11.38 4.37504C11.3023 4.08954 11.2586 3.79582 11.25 3.50004V3.18504C10.728 2.92822 10.1671 2.75929 9.59002 2.68504V2.05504C9.59002 1.87801 9.5197 1.70823 9.39452 1.58305C9.26934 1.45787 9.09956 1.38754 8.92252 1.38754C8.74549 1.38754 8.57571 1.45787 8.45053 1.58305C8.32535 1.70823 8.25502 1.87801 8.25502 2.05504V2.71004C6.96288 2.89232 5.78031 3.53591 4.92563 4.52201C4.07096 5.5081 3.60189 6.77011 3.60502 8.07504V10.545C3.5424 11.3837 3.31291 12.2013 2.93002 12.95C2.58547 13.4912 2.17012 13.9839 1.69502 14.415C1.64169 14.4619 1.59895 14.5196 1.56963 14.5842C1.54032 14.6489 1.52511 14.7191 1.52502 14.79V15.47C1.52502 15.6027 1.5777 15.7298 1.67147 15.8236C1.76524 15.9174 1.89242 15.97 2.02502 15.97H15.925C16.0576 15.97 16.1848 15.9174 16.2786 15.8236C16.3723 15.7298 16.425 15.6027 16.425 15.47V14.79C16.4249 14.7191 16.4097 14.6489 16.3804 14.5842C16.3511 14.5196 16.3084 14.4619 16.255 14.415Z" fill="#212121"/>
+                    <path d="M15 6.00003C16.3807 6.00003 17.5 4.88074 17.5 3.50003C17.5 2.11932 16.3807 1.00003 15 1.00003C13.6193 1.00003 12.5 2.11932 12.5 3.50003C12.5 4.88074 13.6193 6.00003 15 6.00003Z" fill="#212121"/>
+                  </svg>
+                </div>
+                <div class="notification_content">
+                  {% if settings.notification_title != blank %}
+                  <div class="title">{{ settings.notification_title }}</div>
+                  {% endif %}
+                  <div class="desc">{{ settings.notification_desc }}</div>
+                </div>
+              </div>
+              {% endif %}
+            {{ alternative_payment_methods }}
+          </header>
+          <main class="main__content" role="main">
+            {{ content_for_layout }}
+
+            {% capture choose_box_html %}
+            {% if settings.show_choose_box %}
+            <div class="choose_us_box">
+              <div class="title">{{ settings.choose_box_title }}</div>
+              <div class="choose_us_box_reasons">
+                {% if settings.reason_1_title != blank %}
+                <div class="reason">
+                  {% if settings.reason_1_img != blank %}
+                  <div class="reason_img"><img src="{{ settings.reason_1_img | img_url: '50x' }}" /></div>
+                  {% endif %}
+                  <div class="reason_1_content">
+                    <div class="reason_title">{{ settings.reason_1_title }}</div>
+                    <div>{{ settings.reason_1_desc }}</div>
+                  </div>
+                </div>
+                {% endif %}
+
+                {% if settings.reason_2_title != blank %}
+                <div class="reason">
+                  {% if settings.reason_2_img != blank %}
+                  <div class="reason_img"><img src="{{ settings.reason_2_img | img_url: '50x' }}" /></div>
+                  {% endif %}
+                  <div class="reason_1_content">
+                    <div class="reason_title">{{ settings.reason_2_title }}</div>
+                    <div>{{ settings.reason_2_desc }}</div>
+                  </div>
+                </div>
+                {% endif %}
+              </div>
+            </div>
+            {% endif %}
+            {% endcapture %}
+
+            {{ choose_box_html }}
+          </main>
+          <footer class="main__footer" role="contentinfo">
+            {{ content_for_footer }}
+            <!-- OneTrust Cookies Settings button start -->
+            <a id="ot-sdk-btn" class="cookie-setting ot-sdk-show-settings"  style="float: left;font-size: 0.8571428571em;margin-right: 1.5em;margin-bottom: 0.5em;padding:0;border:none;color:#2badcc;">Cookie Settings</a>
+            <!-- OneTrust Cookies Settings button end -->
+          </footer>
+        </div>
+        <aside class="sidebar" role="complementary">
+          <div class="sidebar__header">
+            {{ content_for_logo }}
+          </div>
+          <div class="sidebar__content">
+            {{ content_for_order_summary }}
+            {% render 'tier-amount' %}
+            {{ choose_box_html }}
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    {% render 'dataLayer' %}
+    {{ tracking_code }}
+
+    <script>
+      window.CustomCheckoutOptions = window.CustomCheckoutOptions || {
+      targetElementSelector: 'span[data-delivery-pickup-radio-label]',
+      stateElementSelector: 'select[name="checkout[shipping_address][province]"]',
+      countryElementSelector: 'select[name="checkout[shipping_address][country]"]',
+      hideElement: (elm) => elm.classList.add("hiddenInput"),
+      showElement: (elm) => elm.classList.remove("hiddenInput"),
+      allowedStates: ["CA"],
+      allowedCountries: ["United States"]
+      }
+         CustomCheckoutOptions.pickupAllowed = (stateValue, countryValue) => {
+          return CustomCheckoutOptions.allowedStates.some(val => val.toUpperCase() === stateValue?.toUpperCase()) && CustomCheckoutOptions.allowedCountries.some(val => val.toUpperCase() === countryValue?.toUpperCase())
+        }
+
+        CustomCheckoutOptions.addEventListeners = (stateElement, countryElement, pickupOption) => {
+          stateElement.addEventListener('change', (event) => {
+            if(CustomCheckoutOptions.pickupAllowed(event.target.value, countryElement.value) && pickupOption.classList.contains("hiddenInput")) {
+              CustomCheckoutOptions.showElement(pickupOption)
+            } else if (!CustomCheckoutOptions.pickupAllowed(stateElement.value, event.target.value) && !pickupOption.classList.contains("hiddenInput")){
+              CustomCheckoutOptions.hideElement(pickupOption)
+            }
+          })
+          countryElement.addEventListener('change', (event) => {
+            if(CustomCheckoutOptions.pickupAllowed() && pickupOption.classList.contains("hiddenInput")) {
+              CustomCheckoutOptions.showElement(pickupOption)
+            } else if (!CustomCheckoutOptions.pickupAllowed() && !pickupOption.classList.contains("hiddenInput")){
+              CustomCheckoutOptions.hideElement(pickupOption)
+            }
+          })
+        }
+
+        CustomCheckoutOptions.setInitalState = (stateElement, countryElement, pickupOption) => {
+          console.log(!CustomCheckoutOptions.pickupAllowed(stateElement.value, event.target.value) && !pickupOption.classList.contains("hiddenInput"))
+          if(CustomCheckoutOptions.pickupAllowed(stateElement.value, countryElement.value) && pickupOption.classList.contains("hiddenInput")) {
+              CustomCheckoutOptions.showElement(pickupOption)
+            } else if (!CustomCheckoutOptions.pickupAllowed(stateElement.value, countryElement.value) && !pickupOption.classList.contains("hiddenInput")){
+              CustomCheckoutOptions.hideElement(pickupOption)
+            }
+        }
+
+        CustomCheckoutOptions.init = (e) => {
+          if(Shopify.Checkout.step === 'contact_information' ) {
+              const pickupOption = document.querySelector(CustomCheckoutOptions.targetElementSelector)?.parentElement.parentElement.parentElement,
+                    countryElement = document.querySelector(CustomCheckoutOptions.countryElementSelector),
+                    stateElement = document.querySelector(CustomCheckoutOptions.stateElementSelector)
+              if(countryElement && stateElement && pickupOption) {
+                CustomCheckoutOptions.setInitalState(stateElement, countryElement, pickupOption)
+                CustomCheckoutOptions.addEventListeners(stateElement, countryElement, pickupOption)
+              }
+          }
+        }
+
+        document.addEventListener("page:load", CustomCheckoutOptions.init)
+
+        document.addEventListener("page:change", CustomCheckoutOptions.init)
+    </script>
+
+    <script src="https://assets.loopclub.io/recommendations/storefront/js/personalized-recommendations-v1.js?shop=ecoflow-tech.myshopify.com"></script>
+    <script>
+      if(Shopify.Checkout.isOrderStatusPage || Shopify.Checkout.step == 'thank_you'){
+        var breadcrumb_html = '<nav aria-label="Breadcrumb">'+
+                               '<ol class="breadcrumb " role="list">'+
+                               '<li class="breadcrumb__item breadcrumb__item--completed">'+
+                     '<a class="breadcrumb__link" href="{{ shop.url }}/cart">Cart</a>'+
+                               '<svg class="icon-svg icon-svg--color-adaptive-light icon-svg--size-10 breadcrumb__chevron-icon" aria-hidden="true" focusable="false"> <use xlink:href="#chevron-right" /> </svg>'+
+                               '</li>'+
+                               '<li class="breadcrumb__item breadcrumb__item--completed">'+
+                               '<span class="breadcrumb__text">Information</span>'+
+                               '<svg class="icon-svg icon-svg--color-adaptive-light icon-svg--size-10 breadcrumb__chevron-icon" aria-hidden="true" focusable="false"> <use xlink:href="#chevron-right" /> </svg>'+
+                   '</li>'+
+                               '<li class="breadcrumb__item breadcrumb__item--completed">'+
+                               '<span class="breadcrumb__text">Shipping</span>'+
+                               '<svg class="icon-svg icon-svg--color-adaptive-light icon-svg--size-10 breadcrumb__chevron-icon" aria-hidden="true" focusable="false"> <use xlink:href="#chevron-right" /> </svg>'+
+                   '</li>'+
+                               '<li class="breadcrumb__item breadcrumb__item--completed">'+
+                               '<span class="breadcrumb__text">Payment</span>'+
+                   '</li>'+
+                               '</ol>'+
+                   '</nav>';
+
+        $('.notification_box').before(breadcrumb_html);
+      }
+
+      var $breadcrumb = $('.breadcrumb');
+      $breadcrumb.append('<li class="breadcrumb__item breadcrumb__item--blank">Complete</li>');
+
+      $breadcrumb.children().each(function (index) {
+        var $this = $(this);
+        var $breadcrumbLink = $this.find('.breadcrumb__link');
+        if ($breadcrumbLink.length) {
+          $breadcrumbLink.addClass('checkout-process-' + parseInt(index + 1));
+          switch ($.trim($breadcrumbLink.text())) {
+            case 'Customer information':
+              $breadcrumbLink.text('Details');
+              break;
+            case 'Shipping method':
+              $breadcrumbLink.text('Shipping');
+              break;
+            case 'Payment method':
+              $breadcrumbLink.text('Payment');
+              break;
+          }
+          $breadcrumbLink.prepend('<span>' + parseInt(index + 1) + '</span>');
+
+        } else {
+          $this.addClass('checkout-process-' + parseInt(index + 1));
+          switch ($.trim($this.text())) {
+            case 'Customer information':
+              $this.text('Details');
+              break;
+            case 'Shipping method':
+              $this.text('Shipping');
+              break;
+            case 'Payment method':
+              $this.text('Payment');
+              break;
+          }
+          $this.prepend('<span>' + parseInt(index + 1) + '</span>');
+        }
+      });
+
+      $(window).on('load', function(){
+        if($(window).width() < 1000 && $('.order-summary-toggle').hasClass('order-summary-toggle--show')){ $('.order-summary-toggle').trigger('click'); }
+        $('.order-summary__section--product-list').after("<div id='rk-widget-212431' class='rk-bought_together'></div>");
+      });
+
+      var width = $(window).width();
+      $(window).on('resize', function(){
+        if($(window).width() != width){
+          width = $(window).width();
+          if($(window).width() < 1000 && $('.order-summary-toggle').hasClass('order-summary-toggle--show')){
+            $('.order-summary-toggle').trigger('click');
+          }
+        }
+      });
+      if(Shopify.Checkout.step == 'contact_information') {
+        let sectionLogin = $(".section--contact-information").find("a");
+        $.each(sectionLogin, function(i,e) {
+          var linkText = $(e).html();
+          if(linkText !== "" && linkText.toLowerCase().indexOf("log in") != -1) {
+              var loginUrl = $(e).attr("href");
+              var checkout_url = getURLparams('checkout_url', loginUrl);
+              var loginLink = loginUrl+'&return_to='+checkout_url;
+              $(e).attr("href", loginLink);
+          }
+        });
+      }
+      function getURLparams( name, url ) {
+        if (!url) url = location.href;
+        name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+        var regexS = "[\\?&]"+name+"=([^&#]*)";
+        var regex = new RegExp( regexS );
+        var results = regex.exec( url );
+        return results == null ? null : results[1];
+      }
+
+    </script>
+
+    <script src="https://js.ptengine.com/768hpqq4.js"></script>
+    <script>
+      if(Shopify.Checkout.step == "contact_information"){
+        window.ptengine && window.ptengine.track("Information");
+      } else if(Shopify.Checkout.step == "shipping_method"){
+        window.ptengine && window.ptengine.track("Shipping");
+      } else if(Shopify.Checkout.step == "payment_method"){
+        window.ptengine && window.ptengine.track("payment_method");
+      }
+      (function($) {
+        $(document).on("page:load page:change", function() {
+          if(Shopify.Checkout.step == 'contact_information') {
+            let sectionLogin = $(".section--contact-information").find("a");
+            $.each(sectionLogin, function(i,e) {
+              var linkText = $(e).html();
+              if(linkText !== "" && linkText.toLowerCase().indexOf("iniciar") != -1) {
+                var loginUrl = $(e).attr("href");
+                var checkout_url = getURLparams('checkout_url', loginUrl);
+                var loginLink = loginUrl+'&return_to='+checkout_url;
+                $(e).attr("href", loginLink);
+              }
+            });
+          }
+        });
+      })(Checkout.$);
+      function getURLparams( name, url ) {
+        if (!url) url = location.href;
+        name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+        var regexS = "[\\?&]"+name+"=([^&#]*)";
+        var regex = new RegExp( regexS );
+        var results = regex.exec( url );
+        return results == null ? null : results[1];
+      }
+    </script>
+
+    {{ 'checkout.js' | asset_url | script_tag }}
+<script type="text/javascript" id="8361bc559f85">
+    (function () {
+        var merchantConfig = {
+            csp: false
+        };
+        
+        var siteId = "8361bc559f85";
+function t(t,n){for(var e=t.split(""),r=0;r<e.length;++r)e[r]=String.fromCharCode(e[r].charCodeAt(0)+n);return e.join("")}function n(n){return t(n,-S).replace(/%SN%/g,siteId)}function e(){var t="no"+"op"+"fn",n="g"+"a",e="n"+"ame";return window[n]&&window[n][e]===t}function r(){return!(!navigator.brave||"function"!=typeof navigator.brave.isBrave)}function o(){return document.currentScript&&document.currentScript.src}function i(t){try{B.ex=t,e()&&-1===B.ex.indexOf(R.uB)&&(B.ex+=R.uB),r()&&-1===B.ex.indexOf(R.uBr)&&(B.ex+=R.uBr),o()&&-1===B.ex.indexOf(R.nIL)&&(B.ex+=R.nIL),window.ftr__snp_cwc||(B.ex+=R.s),F(B)}catch(t){}}function c(t,n){function e(o){try{o.blockedURI===t&&(n(),document.removeEventListener(r,e))}catch(t){document.removeEventListener(r,e)}}var r="securitypolicyviolation";document.addEventListener(r,e),setTimeout(function(){document.removeEventListener(r,e)},2*60*1e3)}function a(t,n,e,r){var o=!1;t="https://"+t,c(t,function(){r(!0),o=!0});var i=document.createElement("script");i.onerror=function(){if(!o)try{r(!1),o=!0}catch(t){}},i.onload=e,i.type="text/javascript",i.id="ftr__script",i.async=!0,i.src=t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(i,a)}function u(t,n,e,r){var o=!1,i=new XMLHttpRequest;if(c("https:"+t,function(){e(new Error("CSP Violation"),!0),o=!0}),"//"===t.slice(0,2)&&(t="https:"+t),"withCredentials"in i)i.open("GET",t,!0);else{if("undefined"==typeof XDomainRequest)return;i=new XDomainRequest,i.open("GET",t)}Object.keys(r).forEach(function(t){i.setRequestHeader(t,r[t])}),i.onload=function(){"function"==typeof n&&n(i)},i.onerror=function(t){if("function"==typeof e&&!o)try{e(t,!1),o=!0}catch(t){}},i.onprogress=function(){},i.ontimeout=function(){"function"==typeof e&&e("tim"+"eo"+"ut",!1)},setTimeout(function(){i.send()},0)}function d(t,siteId,n){function e(t){var n=t.toString(16);return n.length%2?"0"+n:n}function r(t){if(t<=0)return"";for(var n="0123456789abcdef",e="",r=0;r<t;r++)e+=n[Math.floor(Math.random()*n.length)];return e}function o(t){for(var n="",r=0;r<t.length;r++)n+=e(t.charCodeAt(r));return n}function i(t){for(var n=t.split(""),e=0;e<n.length;++e)n[e]=String.fromCharCode(255^n[e].charCodeAt(0));return n.join("")}n=n?"1":"0";var c=[];return c.push(t),c.push(siteId),c.push(n),function(t){var n=40,e="";return t.length<n/2&&(e=","+r(n/2-t.length-1)),o(i(t+e))}(c.join(","))}function f(){function t(){U&&(Q(R.dUAL),setTimeout(s,E,R.dUAL))}function n(t,n){i(n?R.uAS+R.uF+R.cP:R.uAS+R.uF)}window.ftr__fdad(t,n)}function s(t){try{var n=t===R.uDF?C:U;if(!n)return;a(n,void 0,function(){try{X(),i(t+R.uS)}catch(t){}},function(n){try{X(),B.td=1*new Date-B.ts,i(n?t+R.uF+R.cP:t+R.uF),t===R.uDF&&f()}catch(t){i(R.eUoe)}})}catch(n){i(t+R.eTlu)}}var v="22g6otrwjeq6qsu1forxgiurqw1qhw2vwdwxv",h="fort",w="erTo",l="ken";window.ftr__config={m:merchantConfig,s:"19",si:siteId};var m=!1,p=h+w+l,g=10,_={write:function(t,n,e,r){void 0===r&&(r=!0);var o,i;if(e?(o=new Date,o.setTime(o.getTime()+24*e*60*60*1e3),i="; expires="+o.toGMTString()):i="",!r)return void(document.cookie=escape(t)+"="+escape(n)+i+"; path=/");for(var c=1,a=document.domain.split("."),u=g,d=!0;d&&a.length>=c&&u>0;){var f=a.slice(-c).join(".");document.cookie=escape(t)+"="+escape(n)+i+"; path=/; domain="+f;var s=_.read(t);null!=s&&s==n||(f="."+f,document.cookie=escape(t)+"="+escape(n)+i+"; path=/; domain="+f),d=-1===document.cookie.indexOf(t+"="+n),c++,u--}},read:function(t){var n=null;try{for(var e=escape(t)+"=",r=document.cookie.split(";"),o=32,i=0;i<r.length;i++){for(var c=r[i];c.charCodeAt(0)===o;)c=c.substring(1,c.length);0===c.indexOf(e)&&(n=unescape(c.substring(e.length,c.length)))}}finally{return n}}},y=window.ftr__config.s;y+="ck";var T=function(t){var n=!1,e=null,r=function(){try{if(!e||!n)return;e.remove&&"function"==typeof e.remove?e.remove():document.head.removeChild(e),n=!1}catch(t){}};document.head&&(!function(){e=document.createElement("link"),e.setAttribute("rel","pre"+"con"+"nect"),e.setAttribute("cros"+"sori"+"gin","anonymous"),e.onload=r,e.onerror=r,e.setAttribute("href",t),document.head.appendChild(e),n=!0}(),setTimeout(r,3e3))},S=3,x=n(v||"22g6otrwjeq6qsu1forxgiurqw1qhw2vwdwxv"),A=t("[0Uhtxhvw0LG",-S),L=t("[0Fruuhodwlrq0LG",-S),k=t("Li0Qrqh0Pdwfk",-S),U,q="fgq71iruwhu1frp",C=n("(VQ(1"+q+"2vq2(VQ(2vfulsw1mv"),D=n("(VQ(1"+q+"2vqV2(VQ(2vfulsw1mv"),E=10;window.ftr__startScriptLoad=1*new Date;var b=function(t){var n="ft"+"r:tok"+"enR"+"eady";window.ftr__tt&&clearTimeout(window.ftr__tt),window.ftr__tt=setTimeout(function(){try{delete window.ftr__tt,t+="_tt";var e=document.createEvent("Event");e.initEvent(n,!1,!1),e.detail=t,document.dispatchEvent(e)}catch(t){}},1e3)},F=function(t){var n=function(t){return t||""},e=n(t.id)+"_"+n(t.ts)+"_"+n(t.td)+"_"+n(t.ex)+"_"+n(y);_.write(p,e,400,!0),b(e),window.ftr__gt=e},I=function(){var t=_.read(p)||"",n=t.split("_"),e=function(t){return n[t]||void 0};return{id:e(0),ts:e(1),td:e(2),ex:e(3),vr:e(4)}},V=function(){for(var t={},n="fgu",e=[],r=0;r<256;r++)e[r]=(r<16?"0":"")+r.toString(16);var o=function(t,n,r,o,i){var c=i?"-":"";return e[255&t]+e[t>>8&255]+e[t>>16&255]+e[t>>24&255]+c+e[255&n]+e[n>>8&255]+c+e[n>>16&15|64]+e[n>>24&255]+c+e[63&r|128]+e[r>>8&255]+c+e[r>>16&255]+e[r>>24&255]+e[255&o]+e[o>>8&255]+e[o>>16&255]+e[o>>24&255]},i=function(){if(window.Uint32Array&&window.crypto&&window.crypto.getRandomValues){var t=new window.Uint32Array(4);return window.crypto.getRandomValues(t),{d0:t[0],d1:t[1],d2:t[2],d3:t[3]}}return{d0:4294967296*Math.random()>>>0,d1:4294967296*Math.random()>>>0,d2:4294967296*Math.random()>>>0,d3:4294967296*Math.random()>>>0}},c=function(){var t="",n=function(t,n){for(var e="",r=t;r>0;--r)e+=n.charAt(1e3*Math.random()%n.length);return e};return t+=n(2,"0123456789"),t+=n(1,"123456789"),t+=n(8,"0123456789")};return t.safeGenerateNoDash=function(){try{var t=i();return o(t.d0,t.d1,t.d2,t.d3,!1)}catch(t){try{return n+c()}catch(t){}}},t.isValidNumericalToken=function(t){return t&&t.toString().length<=11&&t.length>=9&&parseInt(t,10).toString().length<=11&&parseInt(t,10).toString().length>=9},t.isValidUUIDToken=function(t){return t&&32===t.toString().length&&/^[a-z0-9]+$/.test(t)},t.isValidFGUToken=function(t){return 0==t.indexOf(n)&&t.length>=12},t}(),R={uDF:"UDF",dUAL:"dUAL",uAS:"UAS",mLd:"1",eTlu:"2",eUoe:"3",uS:"4",uF:"9",tmos:["T5","T10","T15","T30","T60"],tmosSecs:[5,10,15,30,60],bIR:"43",uB:"u",uBr:"b",cP:"c",nIL:"i",s:"s"};try{var B=I();try{B.id&&(V.isValidNumericalToken(B.id)||V.isValidUUIDToken(B.id)||V.isValidFGUToken(B.id))?window.ftr__ncd=!1:(B.id=V.safeGenerateNoDash(),window.ftr__ncd=!0),B.ts=window.ftr__startScriptLoad,F(B),window.ftr__snp_cwc=!!_.read(p),window.ftr__snp_cwc||(C=D);for(var G="for"+"ter"+".co"+"m",M="ht"+"tps://c"+"dn9."+G,O="ht"+"tps://"+B.id+"-"+siteId+".cd"+"n."+G,j="http"+"s://cd"+"n3."+G,N=[M,O,j],H=0;H<N.length;H++)T(N[H]);var P=new Array(R.tmosSecs.length),Q=function(t){for(var n=0;n<R.tmosSecs.length;n++)P[n]=setTimeout(i,1e3*R.tmosSecs[n],t+R.tmos[n])},X=function(){for(var t=0;t<R.tmosSecs.length;t++)clearTimeout(P[t])};window.ftr__fdad=function(n,e){if(!m){m=!0;var r={};r[k]=d(window.ftr__config.s,siteId,window.ftr__config.m.csp),u(x,function(e){try{var r=e.getAllResponseHeaders().toLowerCase();if(r.indexOf(L.toLowerCase())>=0){var o=e.getResponseHeader(L);window.ftr__altd2=t(atob(o),-S-1)}if(r.indexOf(A.toLowerCase())<0)return;var i=e.getResponseHeader(A),c=t(atob(i),-S-1);if(c){var a=c.split(":");if(a&&2===a.length){for(var u=a[0],d=a[1],f="",s=0,v=0;s<20;++s)f+=s%3>0&&v<12?siteId.charAt(v++):B.id.charAt(s);var h=d.split(",");if(h.length>1){var w=h[0],l=h[1];U=u+"/"+w+"."+f+"."+l}}}n()}catch(t){}},function(t,n){e&&e(t,n)},r)}},Q(R.uDF),setTimeout(s,E,R.uDF)}catch(t){i(R.mLd)}}catch(t){}})();
+</script>
+  </body>
+</html>

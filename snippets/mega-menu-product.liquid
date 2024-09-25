@@ -1,0 +1,48 @@
+<div class="swiper-slide custom_menu_product">
+    {% assign product_url = custom_product.metafields.custom.mega_menu_link | default: custom_product.url %}
+    <a href="{{ product_url }}">
+    <div class="image">
+        <img src="{{ custom_product.featured_image | img_url: 'small' }}" loading="lazy"
+             srcset="{%- if custom_product.featured_image.width >= 375 -%}{{ custom_product.featured_image | img_url: '375x' }} 375w,{%- endif -%}
+             {%- if custom_product.featured_image.width >= 720 -%}{{ custom_product.featured_image | img_url: '720x' }} 750w,{%- endif -%}
+             {%- if custom_product.featured_image.width >= 1066 -%}{{ custom_product.featured_image | img_url: '1066x' }} 1066w,{%- endif -%}
+             {%- if custom_product.featured_image.width >= 1500 -%}{{ custom_product.featured_image | img_url: '1500x' }} 1500w{%- endif -%}"
+        />
+    </div>
+    <div class="product_content">
+        {% assign mega_menu_max_savings = 0 %}
+        {% for variant in custom_product.variants %}
+          {% if variant.metafields.custom.for_member_only != false %}
+            {% assign savings = variant.compare_at_price | minus: variant.price %}
+            {% if savings > mega_menu_max_savings %}
+              {% assign mega_menu_max_savings = savings %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+        {% if mega_menu_max_savings != 0 %}
+          <div class="discount-label">
+                {% if custom_product.variants.size <= 1 %}
+              {% assign variant = custom_product.variants.first %}
+              {% if variant.compare_at_price > variant.price %}
+                Ahorrar {{ variant.compare_at_price | minus: variant.price | money_without_currency | replace: ',00', '' }} €
+              {% endif %}
+            {% else %}
+            Hasta -{{ mega_menu_max_savings | money_without_currency | replace: ',00', '' }} €
+            {% endif %}
+          </div>
+        {% else %}
+        {%- render 'product-custom-labels', product: custom_product, block: 'mega-menu' -%}
+        {% endif %}
+        {% if custom_product.metafields.custom.mega_menu_title != blank %}
+            <div class="title {% if custom_product.metafields.custom.small_description == blank %}add-bottom-space{% endif %}">
+                {{ custom_product.metafields.custom.mega_menu_title }}
+            </div>
+        {% endif %}
+        {% if custom_product.metafields.custom.small_description != blank %}
+            <div class="small-desc">
+                {{ custom_product.metafields.custom.small_description }}
+            </div>
+        {% endif %}
+    </div>
+    </a>
+</div>

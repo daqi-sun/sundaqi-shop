@@ -1,0 +1,58 @@
+{% liquid
+  assign title = 'cut-bill.end.title' | t
+  assign desc = 'cut-bill.end.description' | t
+  assign learn_more = 'cut-bill.buttons.learn_more' | t
+  assign atc = 'cut-bill.buttons.atc' | t
+%}
+<div class="cut-bill-section-wrapper w-90 cut-bill-end">
+  <h2>{{ title }}</h2>
+  <div class="cbe-img relative">
+    {% assign image = section.settings.mobileImage %}
+    {% render 'th-image--mobile', image: image %}
+
+    {% assign image = section.settings.image %}
+    {% render 'th-image--desktop', image: image %}
+    <h3 class="cbe-img__title">{{ section.settings.title }}</h3>
+  </div>
+  <div class="cut-bill-desc">{{ desc }}</div>
+  <div class="cbe-btn-wrapper mx-auto">
+    <a class="cut-bill-btn " href="{{ section.settings.url }}">
+      {{- learn_more -}}
+    </a>
+    <a class="cut-bill-btn " href="{{ section.settings.url2 }}">{{ atc }}</a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "END",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobileImage",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "Learn more url"
+    },
+    {
+      "type": "url",
+      "id": "url2",
+      "label": "ATC url"
+    },
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Image title",
+      "default": "DELTA Pro<br/> Home Backup <br/>Ecosystem"
+    }
+  ]
+}
+{% endschema %}

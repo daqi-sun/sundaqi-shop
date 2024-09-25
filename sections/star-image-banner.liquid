@@ -1,0 +1,76 @@
+<div class="father-day-image-banner section-{{section.id}}" id="{{ section.settings.section_id }}">
+    <div class="container">
+        {% if section.settings.section_title != blank %}
+            <div class="title">{{ section.settings.section_title }}</div>
+        {% endif %}
+
+        <div class="image-wrapper">
+        {% if section.settings.section_image != blank %}
+            <div class="image {% if section.settings.section_image_m != blank %}hideMobile{% endif %}">
+              {% if section.settings.image_url != blank %}<a href="{{ section.settings.image_url }}">{% endif %}
+                    <img src="{{ section.settings.section_image | img_url: 'master' }}" alt="{{ section.settings.section_title | escape }}">
+              {% if section.settings.image_url != blank %}</a>{% endif %}
+            </div>
+        {% endif %}
+
+        {% if section.settings.section_image_m != blank %}
+            <div class="image-m hideDesktop">
+              {% if section.settings.image_url != blank %}<a href="{{ section.settings.image_url }}">{% endif %}
+                    <img src="{{ section.settings.section_image_m | img_url: '990x' }}" alt="{{ section.settings.section_title | escape }}">
+              {% if section.settings.image_url != blank %}</a>{% endif %}
+            </div>
+        {% endif %}
+        </div>
+    </div>
+    <style>
+        .section-{{section.id}} .image-wrapper{ width: {{section.settings.image_max_width}}px; max-width: 100%; margin: 0 auto; }
+    </style>
+</div>
+{% schema %}
+{
+    "name": "Star-image-banner",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_id",
+        "label": "Section ID"
+      },
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section title"
+      },
+      {
+        "type": "image_picker",
+        "id": "section_image",
+        "label": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "section_image_m",
+        "label": "Image(Mobile)"
+      },
+      {
+        "type": "url",
+        "id": "image_url",
+        "label": "Image URL"
+      },
+      {
+        "type": "range",
+        "id": "image_max_width",
+        "label": "Image maximum width",
+        "min": 500,
+        "max": 1200,
+        "step": 10,
+        "unit": "px",
+        "default": 990
+      }
+    ],
+    "presets": [
+        {
+            "name": "Star-image-banner",
+            "category": "Custom Sections"
+        }
+    ]
+}
+{% endschema %}

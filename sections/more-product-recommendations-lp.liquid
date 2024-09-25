@@ -1,0 +1,89 @@
+<div class="product-recommendations-page-wrapper">
+    <div class="more-accessories recommedation-container">
+        {% if section.settings.heading != blank %}
+            <h2>{{ section.settings.heading }}</h2>
+        {% endif %}
+        {% if section.settings.heading != blank %}
+            <div class="recommendation-desc">{{ section.settings.description }}</div>
+        {% endif %}
+
+        {% if section.blocks.size > 0 %}
+            <div class="accessories-wrapper">
+                <div class="recommendation-row">
+                    {% for block in section.blocks %}
+                        {%- comment %}<locksmith:d8b8>{% endcomment -%}
+                          {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                        {%- comment %}</locksmith:d8b8>{% endcomment -%}
+                        {% if block.settings.product != blank %}
+                            {% assign accessory = all_products[block.settings.product] %}
+                            <div class="recommendation-column accessory-outer">
+                                {% render 'recommended-product' with product: accessory, btn_text: block.settings.recommended_product_btn_text, text: block.settings.recommended_product_text, title_position: 'top' %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+        {%- if section.blocks.size > 6 %}
+            <div class="show-more-btn">
+                <span>View More  >></span>
+            </div>
+        {% endif %}
+
+        {% if section.settings.btn_text != blank %}
+            <div class="recommedation_btn"><a href="{{ section.settings.btn_link }}">{{ section.settings.btn_text }}</a></div>
+        {% endif %}
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Product Accessories",
+    "settings": [
+      {
+        "id":"heading",
+        "type":"text",
+        "label":"Heading"
+      },
+      {
+        "id":"description",
+        "type":"richtext",
+        "label":"Description"
+	  },
+      {
+        "type": "text",
+        "id": "btn_text",
+        "label": "Button text"
+      },
+      {
+        "type": "url",
+        "id": "btn_link",
+        "label": "Button link"
+      }
+	],
+    "blocks": [
+        {
+            "type": "accessory",
+            "name": "Accessory",
+            "settings": [
+                {
+                    "type": "product",
+                    "id": "product",
+                    "label": "Product"
+                },
+                {
+                    "type": "text",
+                    "id": "recommended_product_btn_text",
+                    "label": "Button text",
+                    "default": "Add to cart"
+                },
+                {
+                    "type": "text",
+                    "id": "recommended_product_text",
+                    "label": "Text"
+                }
+            ]
+        }
+    ]
+  }
+{% endschema %}

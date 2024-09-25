@@ -1,0 +1,127 @@
+{
+  "wrapper": "div.referral-page",
+  "sections": {
+    "3456010e-98dd-48f5-9c91-4b76d24fe1ef": {
+      "type": "image-banner",
+      "custom_css": [
+        ".image-banner-text-content {width: calc(100% - 36px); margin: 0 auto; max-width: 1096px; text-align: center;}"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/new-referral-page-banner-1.webp",
+        "image_m": "shopify:\/\/shop_images\/new-referral-page-banner-2.webp",
+        "title": "Ilumina su día, Aumenta tus recompensas",
+        "content": "<p>Tus amigos ahorran un 3% o un 10 % especial en DELTA Pro y DELTA Max; Recibes 15 € por cada recomendación.<\/p>",
+        "text_color": "#ffffff",
+        "btn_text": "Unirse ahora",
+        "btn_url": "#image-with-page-content",
+        "btn_color": "#ffffff",
+        "bg_color": "#234feb",
+        "image_height": 780,
+        "image_height_mobile": 500
+      }
+    },
+    "547a4bf3-82df-462e-b8d3-d88cc71b80c6": {
+      "type": "image-with-page-content",
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "page_content_title": "15 € para ti, 3 % de descuento para tus amigos",
+        "page_content_subtitle": "¡Regala a tus colegas un 3 % de descuento en su primera compra y tú obtendrás una tarjeta regalo de 15 € cuando tus amigos realicen una compra! Y eso no es todo: las recompensas son acumulables, por lo que si 10 amigos hacen un pedido con nosotros, puedes obtener hasta 150 € de descuento en un pedido que hagas en EcoFlow."
+      }
+    },
+    "e6f812d5-f6eb-4b48-8844-67dae6b4ffdd": {
+      "type": "feature-row",
+      "custom_css": [
+        ".feature-row > .feature-row {max-width: 1440px; width: calc(100% - 38px); padding: 0; margin: 0 auto; border-radius: 10px; align-items: unset;}",
+        ".feature-row__image-wrapper,.feature-row__image-wrapper .feature-row__image {height: 100%;}",
+        ".feature-row__image-wrapper {border-radius: 0;}",
+        "a.btn {border-radius: 10px; justify-content: center; background: #234feb; font-size: 24px; width: 100%;}",
+        ".feature-row__image-wrapper > div {padding-top: 68.7% !important;}",
+        "a.btn.btn--primary > svg {display: none;}"
+      ],
+      "settings": {
+        "section_width": "page-width",
+        "image": "shopify:\/\/shop_images\/Mask_group.webp",
+        "layout": "left",
+        "title": "10% de descuento en DELTA Pro y DELTA Max",
+        "text": "<p>Introduce tu email para empezar a compartir! Tus amigos ahorran un 10 % especial en DELTA Pro y DELTA Max; tu obtienes 15 € por cada referido.<\/p>",
+        "button_style": "primary",
+        "button_label": "Unirse ahora",
+        "button_link": "https:\/\/es.ecoflow.com\/pages\/refer-a-friend-delta-series"
+      }
+    },
+    "76fee62e-3a7b-40f4-b066-ad5102164ad0": {
+      "type": "referral-process",
+      "blocks": {
+        "fdaa8d98-377b-4178-af5e-ae3583a65ba3": {
+          "type": "process",
+          "settings": {
+            "icon": "<svg width=\"48\" height=\"48\" viewbox=\"0 0 48 48\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<path d=\"M13.8742 19.4385L8.77817 24.5346C4.48241 28.8303 4.48241 35.7952 8.77817 40.0909V40.0909C13.0739 44.3867 20.0388 44.3867 24.3345 40.0909L29.4306 34.9949\" stroke=\"#212121\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<path d=\"M19.2386 14.0742L24.3346 8.97813C28.6304 4.68236 35.5952 4.68236 39.891 8.97813V8.97813C44.1867 13.2739 44.1867 20.2387 39.891 24.5345L34.7949 29.6305\" stroke=\"#212121\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<path d=\"M18.6777 30.1914L30.6985 18.1706\" stroke=\"#2164FF\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<\/svg>",
+            "title": "Regístrate y comparte",
+            "content": "Introduce tu email, obtén un enlace de recomendación y compártelo con tu amigo."
+          }
+        },
+        "0d1fb705-94fd-4998-bc19-d50ed8eea398": {
+          "type": "process",
+          "settings": {
+            "icon": "<svg width=\"49\" height=\"48\" viewbox=\"0 0 49 48\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<path d=\"M44.3335 12.3394C44.335 13.0137 44.2017 13.6816 43.9411 14.3045C43.6806 14.9273 43.2981 15.4928 42.8158 15.9682L34.8432 23.9887C34.7767 24.0556 34.6975 24.1087 34.6101 24.145C34.5228 24.1813 34.429 24.2 34.3343 24.2C34.2396 24.2 34.1458 24.1813 34.0585 24.145C33.9711 24.1087 33.8919 24.0556 33.8254 23.9887L25.8528 15.9682C24.8809 15.0058 24.3343 13.7 24.3335 12.3381C24.3327 10.9762 24.8776 9.66977 25.8484 8.70618C26.8192 7.74259 28.1363 7.20078 29.5101 7.19995C30.8839 7.19912 32.2017 7.73934 33.1737 8.70175L34.3343 9.77712L35.503 8.69821C36.2283 7.98271 37.1512 7.49629 38.1552 7.30036C39.1591 7.10443 40.1992 7.20777 41.1439 7.59734C42.0887 7.98691 42.8959 8.64524 43.4636 9.48922C44.0312 10.3332 44.3339 11.325 44.3335 12.3394Z\" fill=\"#2164FF\"><\/path>\n<path d=\"M4.3335 21.2V19.7C3.50507 19.7 2.8335 20.3715 2.8335 21.2H4.3335ZM33.2426 31.6545C33.2426 32.4829 33.9142 33.1545 34.7426 33.1545C35.571 33.1545 36.2426 32.4829 36.2426 31.6545H33.2426ZM4.3335 40.109H2.8335C2.8335 40.9375 3.50507 41.609 4.3335 41.609V40.109ZM10.2829 40.109V41.609C11.1113 41.609 11.7829 40.9375 11.7829 40.109H10.2829ZM4.3335 22.7H13.8498V19.7H4.3335V22.7ZM20.6295 23.9236L30.4091 27.5728L31.4579 24.7621L21.6783 21.1129L20.6295 23.9236ZM2.8335 21.2V40.109H5.8335V21.2H2.8335ZM4.3335 41.609H10.2829V38.609H4.3335V41.609ZM11.7829 40.109V22.3616H8.7829V40.109H11.7829ZM30.4091 27.5728C32.1129 28.2086 33.2426 29.8359 33.2426 31.6545H36.2426C36.2426 28.5836 34.335 25.8357 31.4579 24.7621L30.4091 27.5728ZM13.8498 22.7C16.1646 22.7 18.4607 23.1144 20.6295 23.9236L21.6783 21.1129C19.174 20.1785 16.5227 19.7 13.8498 19.7V22.7Z\" fill=\"black\"><\/path>\n<path d=\"M21.6531 30.2293C20.866 29.971 20.0185 30.3998 19.7603 31.187C19.5021 31.9741 19.9309 32.8216 20.718 33.0798L21.6531 30.2293ZM32.1138 43.3034L31.6891 41.8648L32.1138 43.3034ZM26.0777 43.1853L25.597 44.6062L26.0777 43.1853ZM44.0654 39.7749L43.6407 38.3363L44.0654 39.7749ZM20.718 33.0798L22.6884 33.7262L23.6235 30.8756L21.6531 30.2293L20.718 33.0798ZM30.325 34.9467H43.1508V31.9467H30.325V34.9467ZM43.6407 38.3363L31.6891 41.8648L32.5385 44.742L44.4901 41.2135L43.6407 38.3363ZM26.5584 41.7644L10.1325 36.2077L9.17118 39.0495L25.597 44.6062L26.5584 41.7644ZM31.6891 41.8648C30.0094 42.3607 28.2175 42.3257 26.5584 41.7644L25.597 44.6062C27.8416 45.3656 30.266 45.413 32.5385 44.742L31.6891 41.8648ZM44.7895 36.1219C45.1046 37.0523 44.5828 38.0581 43.6407 38.3363L44.4901 41.2135C47.0659 40.453 48.4925 37.7031 47.6309 35.1594L44.7895 36.1219ZM43.1508 34.9467C43.8924 34.9467 44.5516 35.4194 44.7895 36.1219L47.6309 35.1594C46.9804 33.239 45.1784 31.9467 43.1508 31.9467V34.9467ZM22.6884 33.7262C25.1533 34.5348 27.7309 34.9467 30.325 34.9467V31.9467C28.0486 31.9467 25.7866 31.5852 23.6235 30.8756L22.6884 33.7262Z\" fill=\"black\"><\/path>\n<\/svg>",
+            "title": "3% de descuento para tus amigos",
+            "content": "Tus amigos obtendrán un 3% de descuento si introducen tu email a través de tu enlace."
+          }
+        },
+        "abd88a86-3fc5-44b0-a51b-583f0cef6aa3": {
+          "type": "process",
+          "settings": {
+            "icon": "<svg width=\"49\" height=\"48\" viewbox=\"0 0 49 48\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<path d=\"M24.6665 44.2V12.2\" stroke=\"#2164FF\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<path d=\"M41.6665 24.2H7.6665V38.7C7.6665 40.2382 8.26353 41.7135 9.32623 42.8012C10.3889 43.8889 11.8303 44.5 13.3332 44.5H35.9998C37.5027 44.5 38.9441 43.8889 40.0068 42.8012C41.0695 41.7135 41.6665 40.2382 41.6665 38.7V24.2Z\" stroke=\"#212121\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<path d=\"M16.3001 15.2C14.122 12.6904 14.122 8.06961 16.3001 5.56002C18.4781 3.05042 24.6665 3.95336 24.6665 8.77333M24.6665 15.2V8.77333M24.6665 8.77333C24.6665 3.95336 30.8549 3.05042 33.033 5.56002C35.211 8.06961 35.211 12.6904 33.033 15.2\" stroke=\"#2164FF\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<rect x=\"5.6665\" y=\"15.2\" width=\"38\" height=\"9\" rx=\"2\" stroke=\"#212121\" stroke-width=\"3\" stroke-linejoin=\"round\"><\/rect>\n<\/svg>",
+            "title": "15 € de recompensa para ti",
+            "content": "Obtendrás una tarjeta regalo de 15 € cada vez que tus amigos compren."
+          }
+        }
+      },
+      "block_order": [
+        "fdaa8d98-377b-4178-af5e-ae3583a65ba3",
+        "0d1fb705-94fd-4998-bc19-d50ed8eea398",
+        "abd88a86-3fc5-44b0-a51b-583f0cef6aa3"
+      ],
+      "settings": {
+        "title": "Cómo funciona"
+      }
+    },
+    "fdd52950-1cca-4dc8-a93f-49cf89ef4bf8": {
+      "type": "tabs-and-details",
+      "blocks": {
+        "047983a8-8f8b-4895-9800-36f88f35310f": {
+          "type": "tab",
+          "settings": {
+            "title": "Persona que hace la recomendación",
+            "content": "<p> 1. La persona que haya hecho la recomendación recibirá una tarjeta regalo de 15 € en un correo electrónico en un plazo de 10 días después de que su amigo haya completado un pedido de manera exitosa usando el código. <\/p><p>2. La tarjeta regalo tiene una validez de 365 días. <\/p><p>3. Las tarjetas regalo son acumulables, pero no se pueden canjear por dinero en efectivo.  <\/p><p>4. Puedes recomendar a una misma persona solamente una vez. Si se recomienda a la persona varias veces, el descuento lo obtendrá únicamente la primera persona que hizo la recomendación.<\/p><p><strong><br\/><\/strong>La interpretación final es únicamente competencia de EcoFlow: <\/p><p>Cualquier abuso del programa de recomendación, según lo determinado por Ecoflow, puede resultar en la rescisión de los códigos de descuento del usuario y de la persona recomendada, así como la incapacidad de ambas partes para participar en esta o futuras promociones. Los descuentos por recomendación no pueden aplicarse a compras anteriores y no son canjeables por dinero en efectivo. Este programa de recomendación está sujeto a modificaciones o a la finalización en cualquier momento sin previo aviso a nuestra entera discreción.<\/p>"
+          }
+        },
+        "1562c543-9c46-4a0f-a5c6-51c2f5d98efa": {
+          "type": "tab",
+          "settings": {
+            "title": "Solicitar cupón",
+            "content": "<p> 1. El descuento para el amigo (equivalente a un 3 % en todos los productos) vence en 30 días, por lo que ese amigo debe hacer un pedido durante ese periodo para que la persona que lo haya recomendado obtenga la tarjeta regalo de 15 €. 2. Se puede aplicar solo un código de descuento en cada pedido. Un código de descuento solo se puede utilizar una vez por persona.3. Solo se puede utilizar una dirección de email por participante. Si se utiliza más de una dirección de email para la misma persona, solo se contará una recomendación.4. Los códigos promocionales solo se pueden usar en el sitio web regional donde el remitente se registró inicialmente. Por ejemplo, unirse al programa de recomendación en el sitio <a href=\"http:\/\/es.ecoflow.com\" target=\"_blank\">es.ecoflow.com<\/a> significa que los cupones solo se pueden usar en <a href=\"http:\/\/es.ecoflow.com\" target=\"_blank\">es.ecoflow.com<\/a>.<br\/><br\/>La interpretación final es únicamente competencia de EcoFlow: <\/p><p>Cualquier abuso del programa de recomendación, según lo determinado por Ecoflow, puede resultar en la rescisión de los códigos de descuento del usuario y de la persona recomendada, así como la incapacidad de ambas partes para participar en esta o futuras promociones. Los descuentos por recomendación no pueden aplicarse a compras anteriores y no son canjeables por dinero en efectivo. Este programa de recomendación está sujeto a modificaciones o a la finalización en cualquier momento sin previo aviso a nuestra entera discreción.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "047983a8-8f8b-4895-9800-36f88f35310f",
+        "1562c543-9c46-4a0f-a5c6-51c2f5d98efa"
+      ],
+      "custom_css": [
+
+      ],
+      "settings": {
+        "title": "Términos & Condiciones"
+      }
+    }
+  },
+  "order": [
+    "3456010e-98dd-48f5-9c91-4b76d24fe1ef",
+    "547a4bf3-82df-462e-b8d3-d88cc71b80c6",
+    "e6f812d5-f6eb-4b48-8844-67dae6b4ffdd",
+    "76fee62e-3a7b-40f4-b066-ad5102164ad0",
+    "fdd52950-1cca-4dc8-a93f-49cf89ef4bf8"
+  ]
+}

@@ -1,0 +1,20 @@
+{% if image != blank %}
+  {% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+  <div
+    class="custom-img-wrapper mobile-only"
+    style="padding-top: {{ pt }}%;"
+  >
+    <img
+      class="custom-img"
+      src="{{ image | img_url: '500x' }}"
+      srcset="
+        {{ image | img_url: '400x' }} 400w,
+        {{ image | img_url: '500x' }} 500w,
+        {{ image | img_url: '600x' }} 600w,
+        {{ image | img_url: 'master' }} 700w
+      "
+      alt="{{ image.alt }}"
+      loading="lazy"
+    >
+  </div>
+{% endif %}

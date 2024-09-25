@@ -1,0 +1,656 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "sticky-product-bar": {
+      "type": "sticky-product-bar",
+      "blocks": {
+        "588d25af-4d47-43ac-9697-b98aa2f65719": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Overview",
+            "tab_id": "product_information",
+            "section_class": ""
+          }
+        },
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "FAQ",
+            "tab_id": "faq",
+            "section_class": ""
+          }
+        },
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Reviews",
+            "tab_id": "section-reviews",
+            "section_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "588d25af-4d47-43ac-9697-b98aa2f65719",
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4",
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38"
+      ],
+      "settings": {
+        "enabled": true,
+        "enabled_tabs": true
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "11795adc-1afa-4833-a193-258f495901ef": {
+          "type": "sku_block",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e": {
+          "type": "product_title",
+          "settings": {
+          }
+        },
+        "judge_me_reviews_preview_badge_XXfzCi": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "0471109f-c130-454e-a9ba-c56412cc11f3": {
+          "type": "product_vendor",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185": {
+          "type": "product_price",
+          "settings": {
+          }
+        },
+        "d25a0285-4fb4-422d-b95b-ab67446120ad": {
+          "type": "product_description",
+          "settings": {
+            "desc_display": "default"
+          }
+        },
+        "919f9cdd-6184-4311-b675-742931504318": {
+          "type": "coupon_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Component_2_1.png",
+            "discount_off_text": "{{ product.metafields.custom.discount_off_text.value }}",
+            "code": "{{ product.metafields.custom.discount_code.value }}",
+            "show_copy_code_btn": true
+          }
+        },
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879": {
+          "type": "product_options_block",
+          "settings": {
+            "show_product_swatches": true,
+            "use_variant_image_for_swatches": true,
+            "button_content": ""
+          }
+        },
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe": {
+          "type": "quantity_block",
+          "settings": {
+          }
+        },
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0": {
+          "type": "accessories_section",
+          "settings": {
+            "title": "Accessories",
+            "metafield": "accessories"
+          }
+        },
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609": {
+          "type": "product_buttons",
+          "settings": {
+            "enable_payment_button": false,
+            "show_custom_icons": true,
+            "custom_payment_logo_1_svg": "",
+            "custom_payment_logo_2_svg": "",
+            "custom_payment_logo_3_svg": "",
+            "custom_payment_logo_4_svg": "",
+            "custom_payment_logo_5_svg": "",
+            "custom_payment_logo_6_svg": "",
+            "custom_payment_logo_7_svg": "",
+            "custom_payment_logo_8_svg": "",
+            "custom_payment_logo_9_svg": "",
+            "custom_payment_logo_10_svg": "",
+            "custom_payment_logo_11_svg": "",
+            "custom_payment_logo_12_svg": "",
+            "custom_payment_logo_13_svg": "",
+            "custom_payment_logo_14_svg": "",
+            "custom_payment_logo_15_svg": ""
+          }
+        },
+        "a6857d85-dbb6-41d1-9501-c01cf5bbe11f": {
+          "type": "back_in_stock",
+          "disabled": true,
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "11795adc-1afa-4833-a193-258f495901ef",
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e",
+        "judge_me_reviews_preview_badge_XXfzCi",
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774",
+        "0471109f-c130-454e-a9ba-c56412cc11f3",
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185",
+        "d25a0285-4fb4-422d-b95b-ab67446120ad",
+        "919f9cdd-6184-4311-b675-742931504318",
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879",
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe",
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0",
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609",
+        "a6857d85-dbb6-41d1-9501-c01cf5bbe11f"
+      ],
+      "settings": {
+        "section_id": "",
+        "show_breadcrumbs": false,
+        "show_pick_an_option": false,
+        "enable_linked_options": false,
+        "enabled_mobile_sticky_btns": true,
+        "media_size": "medium",
+        "enable_image_zoom": true,
+        "enable_video_looping": true,
+        "thumbnails_type": "grid",
+        "support_email": "",
+        "support_text": "",
+        "feature_1_show": true,
+        "feature_1_title": "Fast & Free Shipping",
+        "feature_1_content": "",
+        "feature_2_show": true,
+        "feature_2_title": "Warranty Protection",
+        "feature_2_content": "",
+        "feature_3_show": true,
+        "feature_3_title": "Secure Payments",
+        "feature_3_content": "",
+        "feature_4_show": true,
+        "feature_4_title": "Multi-channel Support",
+        "feature_4_content": ""
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "grid_mobile": "2",
+        "heading": "You may also like",
+        "show_vendor": false
+      }
+    },
+    "3457daa7-eb8c-4f1a-9b77-6d6dff3ed929": {
+      "type": "pdp-rich-text",
+      "custom_css": [
+
+      ],
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 5,
+        "section_bottom_spacing": 20,
+        "section_top_spacing_mobile": 5,
+        "section_bottom_spacing_mobile": 15,
+        "alignment": "center",
+        "title": "",
+        "subtitle": "<p>Manténgase fresco este verano mientras acampa, pesca o disfruta del aire libre con nuestro bundle WAVE 2 y GLACIER.<\/p>",
+        "content": "",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "7a8b3de3-94c6-499d-82c2-f005be9f3f9f": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "El primer aparato de aire acondicionado portátil e inalámbrico del mundo con calefactor.",
+        "subtitle": "<p>La refrigeración y la calefacción más rápidas: <\/p>",
+        "content": "<p><strong>El compresor personalizado de EcoFlow permite al Wave 2 proporcionar un rendimiento de refrigeración de 5100 BTU y un rendimiento de calefacción de 6100 BTU. ¡Prepárate para disfrutar de la máxima comodidad con el Wave 2!<\/strong><\/p><p>5 minutos de refrigeración de 35 °C a 20 °C (-10 °C) <br\/>5 minutos de calefacción de 20 °C a 30 °C(+10 °C) <br\/>El estándar de referencia en refrigeración: un 120 % más potente que la media del sector <\/p><p>* Baja la temperatura 10 °C desde una temperatura de 30 °C en un espacio de 10 m³ en 5 minutos con un rendimiento de refrigeración de 5100 BTU, y aumenta la temperatura de 10°C desde una temperatura de 20 °C en un espacio de 10 m³ en 5 minutos con un rendimiento de calefacción de 6100 BTU en condiciones de funcionamiento óptimas. <\/p>",
+        "button_link": "",
+        "button_text": "",
+        "media_type": "video",
+        "video_type": "mp4",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/f481bb406be84657ae874efbe404e6ed.mp4",
+        "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/f481bb406be84657ae874efbe404e6ed.mp4",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "78d4f57f-9130-4908-b471-f26e36b206f9": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "3",
+        "text_alignment": "center",
+        "title": "¡Sin instalación!",
+        "subtitle": "<p><strong>Cabe en cualquier lugar<\/strong><\/p>",
+        "content": "<p><strong>El aire acondicionado perfecto para cualquier espacio compacto. Es extremadamente fácil de usar, no requiere instalación ni drenaje*. Hay adaptadores para conductos de aire que se adaptan a cualquier espacio. Disfruta de la comodidad de la refrigeración y la calefacción sin complicaciones.<\/strong><\/p><p>* No se necesita drenaje en el modo de refrigeración cuando la humedad es inferior al 70 %, pero sigue siendo necesario en el modo de calefacción.<\/p>",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "video",
+        "video_type": "mp4",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/25377f61e0e94734b7e6b22c62c724e9.mp4",
+        "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/b4805f6b62754937bdd738e28c9b1927.mp4",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "688dfdf7-0bcc-4b10-b0a5-417c938095ec": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "4",
+        "text_alignment": "center",
+        "title": "Descansos largos y tranquilos",
+        "subtitle": "",
+        "content": "<p><strong>Con el algoritmo de software avanzado de EcoFlow, el Wave 2 ofrece varios modos y control mediante la aplicación. El sistema funciona de forma silenciosa (44 dB) en el modo noche y hasta 8 horas en el modo Eco. Disfruta de una comodidad duradera en tu tienda de campaña, caravana o casa gracias a su diseño potente y portátil.<\/strong><\/p>",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "video",
+        "video_type": "mp4",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/b805a8ff532b4a429792938b87558b45.mp4",
+        "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/0a5b30ab833c4d16a8502e14fe2b5369.mp4",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "b73840d9-8058-4ea2-949d-6ba695b4b492": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "5",
+        "text_alignment": "center",
+        "title": "La primera máquina de hielo integrada del sector.",
+        "subtitle": "<p><strong>Compresor de 120 W<\/strong><\/p>",
+        "content": "<p><strong>Equipada con un potente compresor de 120 W, te proporcionará 18 cubitos de hielo en 12 minutos.[1] Acompaña todas las aventuras de tu viaje con refrescos fríos.<\/strong><br\/><br\/>* El resultado de la prueba se obtuvo con la nevera vacía, la temperatura ajustada a 4 °C y una temperatura ambiente de 25 °C.<\/p>",
+        "button_link": "",
+        "button_text": "",
+        "media_type": "video",
+        "video_type": "mp4",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/3b04fb35048c4b2e91c1ef6cee00a3ef.mp4",
+        "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/d460fe78722548a9a2364f8198aa64bd.mp4",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "851dcc2a-8cd8-4430-93be-9fdfb94f8be5": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "Lo mejor de una nevera-congelador.",
+        "subtitle": "<p><strong>Bizona, doble control.<\/strong><\/p>",
+        "content": "<p><strong>Equipada con un divisor extraíble que la separa en dos zonas y un control de temperatura independiente, ambas secciones pueden refrigerar y congelar desde 10 °C hasta -25 °C. Carne, queso o refrescos... independientemente de lo que quieras almacenar, se adapta a tus necesidades.<\/strong><\/p>",
+        "button_link": "",
+        "button_text": "",
+        "media_type": "video",
+        "video_type": "mp4",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/ce6acda98f7b4cac824ed764b2b8a0e9.mp4",
+        "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e289d6d0d79d4cb686240cbde7e6d66b.mp4",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": ""
+      }
+    },
+    "dc1023a1-3bf2-47d0-9385-1fc6b513ad34": {
+      "type": "pdp-image-with-text-horizontal-new",
+      "blocks": {
+        "527e3f2e-7782-4067-87de-4156b74d536d": {
+          "type": "image",
+          "settings": {
+            "media_type": "video",
+            "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/1bdec4349bfa4916a1d28e338634e0c4.mp4",
+            "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/1bdec4349bfa4916a1d28e338634e0c4.mp4",
+            "autoplay_video": true,
+            "image_alignment": "left",
+            "title": "La refrigeración más rápida del sector.",
+            "subtitle": "",
+            "content": "<p><strong>La nevera GLACIER enfría a la velocidad óptima cuando está vacía, de 86 °F (30 °C) a 32 °F (0 °C) en unos 15 minutos.<\/strong><\/p>",
+            "button_link": "",
+            "button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "527e3f2e-7782-4067-87de-4156b74d536d"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "left",
+        "space_bw_blocks": 0
+      }
+    },
+    "1604408c-2b1e-453a-804d-89608b83ed8c": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "Refrigeración hasta 40 horas sin cables.",
+        "subtitle": "<p><strong>Batería enchufable de 298 Wh<\/strong><\/p>",
+        "content": "<p><strong>Diseñada para proporcionar una portabilidad absoluta, la nevera GLACIER puede obtener alimentación mediante una batería enchufable[2], por lo que no se verá limitada por la longitud de los cables.Con una batería de gran capacidad de 298 Wh, podrás disfrutar de hasta 40 horas[3] de fácil acceso a comidas congeladas, fruta fresca y bebidas heladas.<\/strong><\/p><p>* La batería enchufable se vende por separado.* El resultado de la prueba se obtuvo con la nevera vacía, la temperatura ajustada a 4 °C y una temperatura ambiente de 25 °C.<\/p>",
+        "button_link": "",
+        "button_text": "",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/GLACIER-07-battery.png",
+        "mobile_image": "shopify:\/\/shop_images\/M-GLACIER-07-battery.png",
+        "video_type": "mp4",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "mp4_video_url": "",
+        "mp4_video_url_m": "",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": ""
+      }
+    },
+    "d7bf3bdd-f023-48ca-8675-d1338469780a": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "Carga tu portátil y mucho más sobre la marcha.",
+        "subtitle": "<p><strong>USB-C de 100 W máx.<\/strong><\/p>",
+        "content": "<p><strong>Con un puerto de carga USB-C de 100 W como máximo, incluso puede cargar tus teléfonos y portátiles para que nunca pierdas el contacto con tus seres queridos.<\/strong><\/p>",
+        "button_link": "",
+        "button_text": "",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/GLACIER-08.png",
+        "mobile_image": "shopify:\/\/shop_images\/M-GLACIER-08.png",
+        "video_type": "mp4",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "mp4_video_url": "",
+        "mp4_video_url_m": "",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": ""
+      }
+    },
+    "c2d6654e-c56d-4556-8857-709667908743": {
+      "type": "pdp-specs",
+      "blocks": {
+        "19377af7-ebea-42a5-914c-c1cd31d8e1ea": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de CA",
+            "content": "<p>100\/240V, 50\/60Hz, 820W Máx<\/p>"
+          }
+        },
+        "53f8a597-765f-4d15-a280-a9b0f0dad9f4": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de carga mediante energía solar",
+            "content": "<p>11-60V, 3A, 400W Máx<\/p>"
+          }
+        },
+        "26e9c21f-90cc-4504-8415-ec2795cc27bc": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de carga del coche",
+            "content": "<p>12\/24V, 192W, 8A Máx<\/p>"
+          }
+        },
+        "c4d514e9-ce85-4c2a-a69d-d7dfb16f8748": {
+          "type": "contents",
+          "settings": {
+            "title": "Potencia de batería adicional",
+            "content": "<p>700W Máx<\/p>"
+          }
+        },
+        "3d0793c4-e505-4afc-8f59-75b81df8f0f7": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso neto",
+            "content": "<p>14.5 kg aproximadamente<\/p>"
+          }
+        },
+        "afbf26f2-d811-42b6-8440-3a4487013c3f": {
+          "type": "contents",
+          "settings": {
+            "title": "Dimensiones",
+            "content": "<p>518 x 297 x 336 mm<\/p>"
+          }
+        },
+        "29870530-ec9f-4290-853a-0f44c74f270e": {
+          "type": "contents",
+          "settings": {
+            "title": "Wi-Fi",
+            "content": "<p>este producto solamente es compatible con las redes Wi-Fi de 2,4G<\/p>"
+          }
+        },
+        "aedd994c-83a4-47e7-912a-11067e096dff": {
+          "type": "contents",
+          "settings": {
+            "title": "Nivel acústico",
+            "content": "<p>44-56dB<\/p>"
+          }
+        },
+        "c5106eb7-de70-4dfd-999a-ee2d1185006d": {
+          "type": "contents",
+          "settings": {
+            "title": "Refrigerante \/ Cantidad",
+            "content": "<p>R290\/130g<\/p>"
+          }
+        },
+        "4d85f45f-b926-451a-a19c-7384d4d1aa5b": {
+          "type": "contents",
+          "settings": {
+            "title": "Función sin drenaje",
+            "content": "<p>compatible (en estado de refrigeración)<\/p>"
+          }
+        },
+        "bd67aec2-a658-47bb-9a5c-b57e4fc2d1fc": {
+          "type": "contents",
+          "settings": {
+            "title": "Área de refrigeración",
+            "content": "<p>≤ 10 ㎡ \/ 107.6 pies²<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "19377af7-ebea-42a5-914c-c1cd31d8e1ea",
+        "53f8a597-765f-4d15-a280-a9b0f0dad9f4",
+        "26e9c21f-90cc-4504-8415-ec2795cc27bc",
+        "c4d514e9-ce85-4c2a-a69d-d7dfb16f8748",
+        "3d0793c4-e505-4afc-8f59-75b81df8f0f7",
+        "afbf26f2-d811-42b6-8440-3a4487013c3f",
+        "29870530-ec9f-4290-853a-0f44c74f270e",
+        "aedd994c-83a4-47e7-912a-11067e096dff",
+        "c5106eb7-de70-4dfd-999a-ee2d1185006d",
+        "4d85f45f-b926-451a-a19c-7384d4d1aa5b",
+        "bd67aec2-a658-47bb-9a5c-b57e4fc2d1fc"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Especificaciones de WAVE 2"
+      }
+    },
+    "745f2c4c-7481-4586-be2d-5798d9c550cb": {
+      "type": "pdp-specs",
+      "blocks": {
+        "a50dda2f-4bcd-427c-98c5-ab0569323f60": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de CA",
+            "content": "<p>100-240 V, 50\/60 Hz, 180 W<\/p>"
+          }
+        },
+        "afbf26f2-d811-42b6-8440-3a4487013c3f": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de carga mediante energía solar",
+            "content": "<p>240 W (11-60 V, 13 A MÁX.)<\/p>"
+          }
+        },
+        "26e9c21f-90cc-4504-8415-ec2795cc27bc": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de carga de coche",
+            "content": "<p>192 W (12\/24 V, 8 A MÁX.)<\/p>"
+          }
+        },
+        "19377af7-ebea-42a5-914c-c1cd31d8e1ea": {
+          "type": "contents",
+          "settings": {
+            "title": "Potencia del paquete de baterías",
+            "content": "<p>100 W (USB-C)<\/p>"
+          }
+        },
+        "aedd994c-83a4-47e7-912a-11067e096dff": {
+          "type": "contents",
+          "settings": {
+            "title": "Volumen operativo",
+            "content": "<p>Una zona: 38 L; Bizona: 36 L<\/p>"
+          }
+        },
+        "c4d514e9-ce85-4c2a-a69d-d7dfb16f8748": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso neto",
+            "content": "<p>23 kg<\/p>"
+          }
+        },
+        "5f01ec48-a8d1-460c-a07d-25a94267d72b": {
+          "type": "contents",
+          "settings": {
+            "title": "Dimensiones (ruedas y asas no incluidas)",
+            "content": "<p>776 × 385 × 445 mm<\/p>"
+          }
+        },
+        "5f045bc3-9da0-4d86-8ab5-30fb8e04eeb7": {
+          "type": "contents",
+          "settings": {
+            "title": "Clasificación IP",
+            "content": "<p>IPX4<\/p>"
+          }
+        },
+        "64342ee8-f241-4e1a-8040-34dd58c44397": {
+          "type": "contents",
+          "settings": {
+            "title": "Rango de temperatura de refrigeración",
+            "content": "<p> -25 °C a 10 °C (temperatura ambiente a 25° C)<\/p>"
+          }
+        },
+        "e0937ac1-8655-47d4-82bf-23a020f978b9": {
+          "type": "contents",
+          "settings": {
+            "title": "Nivel acústico (funcionamiento estable)",
+            "content": "<p>máquina de hielo: &lt;52 dB; Refrigeración: &lt;42 dB<\/p>"
+          }
+        },
+        "0aa80949-6b6e-4f32-a5cb-2239661815dc": {
+          "type": "contents",
+          "settings": {
+            "title": "Cantidad\/Tipo de refrigeración",
+            "content": "<p>R600a, 32 g<\/p>"
+          }
+        },
+        "207982f8-8e57-4233-9f7f-911398045779": {
+          "type": "contents",
+          "settings": {
+            "title": "Modo de congelación rápida (30℃ a 0℃):",
+            "content": "<p>15 minutos<\/p>"
+          }
+        },
+        "897a9de1-c607-48c9-9b34-a927aa168459": {
+          "type": "contents",
+          "settings": {
+            "title": "Potencia nominal de refrigeración",
+            "content": "<p>120 W<\/p>"
+          }
+        },
+        "9c9a2c5e-0c17-47e7-90ae-244309ef2e26": {
+          "type": "contents",
+          "settings": {
+            "title": "Bluetooth",
+            "content": "<p>√<\/p>"
+          }
+        },
+        "29870530-ec9f-4290-853a-0f44c74f270e": {
+          "type": "contents",
+          "settings": {
+            "title": "Wi-Fi",
+            "content": "<p>este producto solamente es compatible con las redes Wi-Fi de 2,4G<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "a50dda2f-4bcd-427c-98c5-ab0569323f60",
+        "afbf26f2-d811-42b6-8440-3a4487013c3f",
+        "26e9c21f-90cc-4504-8415-ec2795cc27bc",
+        "19377af7-ebea-42a5-914c-c1cd31d8e1ea",
+        "aedd994c-83a4-47e7-912a-11067e096dff",
+        "c4d514e9-ce85-4c2a-a69d-d7dfb16f8748",
+        "5f01ec48-a8d1-460c-a07d-25a94267d72b",
+        "5f045bc3-9da0-4d86-8ab5-30fb8e04eeb7",
+        "64342ee8-f241-4e1a-8040-34dd58c44397",
+        "e0937ac1-8655-47d4-82bf-23a020f978b9",
+        "0aa80949-6b6e-4f32-a5cb-2239661815dc",
+        "207982f8-8e57-4233-9f7f-911398045779",
+        "897a9de1-c607-48c9-9b34-a927aa168459",
+        "9c9a2c5e-0c17-47e7-90ae-244309ef2e26",
+        "29870530-ec9f-4290-853a-0f44c74f270e"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Especificaciones de GLACIER"
+      }
+    },
+    "17141203206887388f": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_DDPBGQ": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_DDPBGQ"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    }
+  },
+  "order": [
+    "sticky-product-bar",
+    "main",
+    "product-recommendations",
+    "3457daa7-eb8c-4f1a-9b77-6d6dff3ed929",
+    "7a8b3de3-94c6-499d-82c2-f005be9f3f9f",
+    "78d4f57f-9130-4908-b471-f26e36b206f9",
+    "688dfdf7-0bcc-4b10-b0a5-417c938095ec",
+    "b73840d9-8058-4ea2-949d-6ba695b4b492",
+    "851dcc2a-8cd8-4430-93be-9fdfb94f8be5",
+    "dc1023a1-3bf2-47d0-9385-1fc6b513ad34",
+    "1604408c-2b1e-453a-804d-89608b83ed8c",
+    "d7bf3bdd-f023-48ca-8675-d1338469780a",
+    "c2d6654e-c56d-4556-8857-709667908743",
+    "745f2c4c-7481-4586-be2d-5798d9c550cb",
+    "17141203206887388f"
+  ]
+}

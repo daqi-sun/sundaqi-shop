@@ -1,0 +1,100 @@
+{
+  "sections": {
+    "main": {
+      "type": "accessories-collection-template",
+      "settings": {
+        "default_view_layout": "grid",
+        "image": "{{ collection.metafields.custom.banner_image.value }}",
+        "image_m": "{{ collection.metafields.custom.mobile_banner_image.value }}",
+        "collection_image_mode": "banner",
+        "show_search_bar": true,
+        "search_bar_title": "Encuentra los accesorios que buscas.",
+        "product_type_search_menu": "product-type-search-menu",
+        "show_breadcrumbs": false,
+        "image_overlay_color": "#ffffff",
+        "image_overlay_opacity": 0,
+        "grid": 3,
+        "grid_mobile": "2",
+        "rows": 50,
+        "image_position": "top",
+        "show_collection_description": "top",
+        "show_last_image_on_hover": true,
+        "show_vendor": false,
+        "pagination_mode": "scroll"
+      }
+    },
+    "5eb3dcce-065e-4d1b-a91f-e37b7754358d": {
+      "type": "quotes",
+      "blocks": {
+        "template--14886228033609__5eb3dcce-065e-4d1b-a91f-e37b7754358d-1665162978f5d885f6-0": {
+          "type": "quote",
+          "settings": {
+            "title": "Fast & Free Shipping",
+            "mobile_title": "",
+            "quote": "<p>All orders are processed within 3-5 business days.<\/p>",
+            "author": "",
+            "image_format": "image",
+            "svg_image": ""
+          }
+        },
+        "template--14886228033609__5eb3dcce-065e-4d1b-a91f-e37b7754358d-1665162978f5d885f6-1": {
+          "type": "quote",
+          "settings": {
+            "title": "Warranty Protection",
+            "mobile_title": "",
+            "quote": "<p>All products are covered by a warranty service.<\/p>",
+            "author": "",
+            "image_format": "image",
+            "svg_image": ""
+          }
+        },
+        "template--14886228033609__5eb3dcce-065e-4d1b-a91f-e37b7754358d-1665162978f5d885f6-2": {
+          "type": "quote",
+          "settings": {
+            "title": "Secure Payments",
+            "mobile_title": "",
+            "quote": "<p>Pay by debit or credit card, PayPal, or other secure payment platform.<\/p>",
+            "author": "",
+            "image_format": "image",
+            "svg_image": ""
+          }
+        },
+        "template--14886228033609__5eb3dcce-065e-4d1b-a91f-e37b7754358d-1665162978f5d885f6-3": {
+          "type": "quote",
+          "settings": {
+            "title": "Multi-channel Support",
+            "mobile_title": "Multiple Scenarios",
+            "quote": "<p>Contact us via email, phone or online customer service.<\/p>",
+            "author": "",
+            "image_format": "image",
+            "svg_image": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--14886228033609__5eb3dcce-065e-4d1b-a91f-e37b7754358d-1665162978f5d885f6-0",
+        "template--14886228033609__5eb3dcce-065e-4d1b-a91f-e37b7754358d-1665162978f5d885f6-1",
+        "template--14886228033609__5eb3dcce-065e-4d1b-a91f-e37b7754358d-1665162978f5d885f6-2",
+        "template--14886228033609__5eb3dcce-065e-4d1b-a91f-e37b7754358d-1665162978f5d885f6-3"
+      ],
+      "settings": {
+        "full_width": false,
+        "image_style": "right",
+        "heading_style": "left",
+        "title": "Why. buy from the Ecoflow Store?",
+        "subtitle": "",
+        "bg_color": "#ffffff",
+        "title_color": "#03060b",
+        "enable_carousel": false,
+        "show_dots": false,
+        "show_arrows": false,
+        "enable_autoplay": false,
+        "cycle_speed": 5
+      }
+    }
+  },
+  "order": [
+    "main",
+    "5eb3dcce-065e-4d1b-a91f-e37b7754358d"
+  ]
+}

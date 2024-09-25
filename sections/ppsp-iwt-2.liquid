@@ -1,0 +1,130 @@
+<style>
+  .ppsp-iwt-2__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .ppsp-iwt-2__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+
+<div
+  class="ppsp-iwt-2__section ppsp-iwt-2__section-{{ section.id }}"
+  data-id="_{{ section.settings.id | downcase | remove: ' ' | replace: '&', '-' }}"
+>
+  <div class="container--default">
+    <div class="ppsp-iwt-2__content-container">
+      <div class="ppsp-iwt-2__text-container">
+        {% if section.settings.title != blank %}
+          <h2 class="ppsp-iwt-2__heading text--heading text--black">
+            {{ section.settings.title }}
+          </h2>
+        {% endif %}
+        {% if section.settings.subtitle != blank %}
+          <p class="ppsp-iwt-2__description text--description text--gray">
+            {{ section.settings.subtitle }}
+          </p>
+        {% endif %}
+      </div>
+      <div class="ppsp-iwt-2__container">
+        <div class="ppsp-iwt-2__image-wrapper">
+          <img
+            class="display--desktop"
+            src="{{ section.settings.image | img_url: 'master' }}"
+            alt="{{ section.settings.image.alt }}"
+          >
+          <img
+            class="display--mobile"
+            src="{{ section.settings.image_mobile | img_url: 'master' }}"
+            alt="{{ section.settings.image_mobile.alt }}"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "PPSP IWT 2",
+  "settings": [
+    {
+      "type": "text",
+      "id": "id",
+      "label": "Section ID",
+      "default": "Buyer’s Guides"
+    },
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title",
+      "default": "Was ist das EcoFlow Balkonkraftwerk?"
+    },
+    {
+      "type": "html",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Das EcoFlow Balkonkraftwerk ist eine innovative Kombination aus Wechselrichter, Solarpanel und einer Powerstation. Den Mikro-Wechselrichter für Ihr Balkonkraftwerk mit 600 oder 800 Watt können Sie direkt an Ihre Solarpanels anschließen. Anschließend verbinden Sie ihn mit einer Wandsteckdose – und damit dem öffentlichen Stromnetz – oder mit einer Powerstation. Tagsüber können Sie nun gleichzeitig Solarstrom und Netzstrom nutzen oder Ihre Powerstation aufladen, um auch nachts und unterwegs Solarstrom zur Verfügung zu haben."
+    },
+
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image Mobile"
+    },
+    {
+      "type": "header",
+      "content": "Section Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ]
+}
+{% endschema %}

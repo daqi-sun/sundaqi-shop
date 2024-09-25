@@ -1,0 +1,638 @@
+<section class="spring-sale-flash-section dp3-flash-section section-{{ section.id }}" id="{{ section.settings.section_id }}" style="background: {{ section.settings.section_bg }};">
+    <div class="star-page-container">
+      {% if section.settings.title != blank %}
+        <div class="star-page-title-wrapper">
+          <div class="title">
+            {% if section.settings.icon != blank %}
+              <img
+                class="star-page-icon"
+                src="{{ section.settings.icon | image_url: width: 200 }}"
+                loading="eager"
+                alt="PDP Subscription Form Icon"
+              >
+            {% endif %}
+            <div>
+              {{ section.settings.title }}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      <div class="dp3-flash-section-wrapper">
+      <div
+        class="flash-sale-wrapper"
+        x-data="springSaleFlash"
+      >
+        <div
+          class="pdp-subscription-form__container"
+        >
+          {% comment %} Successfully Submit Form UI {% endcomment %}
+          <div
+            class="pdp-subscription-form__wrapper pdp-subscription-form__success_wrapper"
+            style="display: none"
+            x-show="isSuccess"
+          >
+            <div class="subscription-title-wrapper">
+              <div class="pdp-subscription-form__icon-wrapper">
+                <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0.25" y="0.25" width="38.5" height="38.5" rx="19.25" fill="#30BF00"/>
+                  <path d="M27.7501 14L16.2263 25.5238L10.3329 19.8929" stroke="white" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h2
+                class="pdp-subscription-form__title"
+              >
+                {{ section.settings.successful_form_title }}
+              </h2>
+            </div>
+            <div class="pdp-subscription-form__description">
+              {{ section.settings.successful_form_description }}
+            </div>
+          </div>
+
+          {% comment %} Normal Form UI {% endcomment %}
+          <div class="pdp-subscription-form__wrapper" x-show="!isSuccess">
+            <div class="subscription-form-desc">{{ section.settings.form_desc }}</div>
+            <div class="subscription-form">
+              <div class="form-fields">
+                <input
+                  type="text"
+                  class="pdp-subscription-form__input-field"
+                  name="contact[email]"
+                  id="contact_email"
+                  placeholder="{{ section.settings.input_placeholder }}"
+                  :value="email"
+                  x-model="email"
+                >
+                <button
+                  type="button"
+                  id="pdp-subscription-submit-button"
+                  class="pdp-subscription-form__input-button"
+                  x-on:click="postEcoflowSubscribeApiAndSubmitForm();"
+                >
+                  {{ section.settings.submit_btn_text }}
+                </button>
+              </div>
+              <div class="form-messages" x-text="errMsg" style="color: red;"></div>
+              {% if section.settings.privacy_text != blank %}
+                <label
+                  class="subscription-privacy-text"
+                  for="spring-sale-disclaimer"
+                >
+                  {{ section.settings.privacy_text }}
+                  <input
+                    type="checkbox"
+                    class="subscription-privacy-checkbox"
+                    checked
+                    name="disclaimer"
+                    id="spring-sale-disclaimer"
+                    x-model="agreeToMarketing"
+                  >
+                  <span class="checkmark">
+                    <svg width="7" height="5" viewBox="0 0 7 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M2.0286 3.6358L0.605551 2.19791L0 2.81415L2.0286 4.87854L6.2069 0.626507L5.60135 0L2.0286 3.6358Z" fill="#03060B"/>
+                    </svg>
+                  </span>
+                </label>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% if section.settings.round_text != blank or section.settings.round_date != blank %}
+        <div class="round-section-header">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.6647 2.94391C14.9179 1.19703 12.5047 0.116455 9.83936 0.116455C7.17406 0.116455 4.76086 1.19703 3.01398 2.94391C1.2671 4.69079 0.186523 7.10399 0.186523 9.76929C0.186523 12.4346 1.2671 14.8478 3.01398 16.5947C4.76086 18.3415 7.17406 19.4221 9.83936 19.4221C12.5047 19.4221 14.9179 18.3415 16.6647 16.5947C18.4116 14.8478 19.4922 12.4346 19.4922 9.76929C19.4922 7.10399 18.4116 4.69079 16.6647 2.94391ZM10.6522 4.68887C10.6522 4.23994 10.2883 3.876 9.83933 3.876C9.39039 3.876 9.02646 4.23994 9.02646 4.68887V10.7854C9.02646 11.0671 9.17233 11.3288 9.41198 11.4769C9.65163 11.625 9.95088 11.6384 10.2029 11.5125L14.2672 9.48028C14.6687 9.27951 14.8315 8.79124 14.6307 8.3897C14.43 7.98816 13.9417 7.8254 13.5402 8.02617L10.6522 9.47015V4.68887Z" fill="#FFD400"/>
+          </svg>
+          <span class="round_number">{{ section.settings.round_text }}</span>
+          <span class="round_date">{{ section.settings.round_date }}</span>
+        </div>
+      {% endif %}
+
+      {% if section.blocks.size > 0 %}
+        <div class="dp3-flash-sale-blocks-wrap">
+        {% if section.settings.blocks_title != blank %}
+            <div class="block-title">{{ section.settings.blocks_title }}</div>
+        {% endif %}
+        <div class="spring-round-section-blocks spring-round-section-blocks--{{ section.id }}">
+          {% for block in section.blocks %}
+            {%- comment %}<locksmith:e76f>{% endcomment -%}
+              {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+            {%- comment %}</locksmith:e76f>{% endcomment -%}
+            <div class="spring-round-section-block">
+              <div class="spring-round-section-block-inner">
+                <div class="spring-round-section-block-image">
+                  <img
+                    srcset="{% if block.settings.image != blank %}{{ block.settings.image | image_url: width: 400 }}{% endif %}"
+                    loading="lazy"
+                    alt="{{ block.settings.title }}"
+                  >
+                </div>
+                <div class="spring-round-section-block-content">
+                  {% if block.settings.badge_text != blank %}
+                    <div class=badge>{{ block.settings.badge_text }}</div>
+                  {% endif %}
+                  {% if block.settings.title != blank %}
+                    <h2>{{ block.settings.title }}</h2>
+                  {% endif %}
+                  {% if block.settings.content != blank %}
+                    <div class="content">{{ block.settings.content }}</div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        </div>
+      {% endif %}
+    </div>
+    </div>
+    <style>
+        .section-{{ section.id }}{
+            padding: {{ section.settings.section_top_space }}px 0 {{ section.settings.section_bottom_space }}px 0;
+        }
+        @media screen and (max-width: 749px){
+            .section-{{ section.id }}{
+                padding: {{ section.settings.section_top_space_m }}px 0 {{ section.settings.section_bottom_space_m }}px 0;
+            }
+        }
+    </style>
+  </section>
+
+  <script>
+    // pdp section settings will pass to below js file
+    var springSaleSettingJsons = {{ section.settings | json }};
+  </script>
+  {{ 'subscription-form-common.js' | asset_url | script_tag }}
+  <script src="{{ 'spring-sale-flash-sale-alpine.js' |  asset_url }}"></script>
+
+  {% schema %}
+  {
+    "name": "Flash sale section",
+    "class": "spring-round-section spring-flash-section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_id",
+        "label": "Section ID"
+      },
+      {
+        "type": "color_background",
+        "id": "section_bg",
+        "label": "Section background"
+      },
+      {
+        "type": "header",
+        "content": "Section spacing"
+    },
+    {
+        "type": "range",
+        "id": "section_top_space",
+        "label": "Top space(Desktop)",
+        "min": 0,
+        "max": 150,
+        "step": 5,
+        "unit": "px",
+        "default": 120
+    },
+    {
+        "type": "range",
+        "id": "section_bottom_space",
+        "label": "Bottom space(Desktop)",
+        "min": 0,
+        "max": 150,
+        "step": 5,
+        "unit": "px",
+        "default": 40
+    },
+    {
+        "type": "range",
+        "id": "section_top_space_m",
+        "label": "Top space(Mobile)",
+        "min": 0,
+        "max": 80,
+        "step": 5,
+        "unit": "px",
+        "default": 40
+    },
+    {
+        "type": "range",
+        "id": "section_bottom_space_m",
+        "label": "Bottom space(Mobile)",
+        "min": 0,
+        "max": 80,
+        "step": 5,
+        "unit": "px",
+        "default": 40
+    },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "image_picker",
+        "id": "icon",
+        "label": "Icon"
+      },
+      {
+        "type": "text",
+        "id": "round_text",
+        "label": "Round text"
+      },
+      {
+        "type": "text",
+        "id": "round_date",
+        "label": "Round Dates"
+      },
+      {
+        "type": "text",
+        "id": "round_autoplay_mobile",
+        "label": "Round Autoplay Slider",
+        "info": "Enable autoplay (in milliseconds e.g. 1500 is 1.5sec). If no value is set, the slider will not autoplay."
+      },
+      {
+        "type": "header",
+        "content": "Email Subscription API Settings",
+        "info": "Global Headers can be changed in the global theme settings - Email Subscription API Settings section"
+      },
+      {
+        "type": "richtext",
+        "id": "form_desc",
+        "label": "Form content"
+      },
+      {
+        "type": "text",
+        "id": "input_placeholder",
+        "label": "Email placeholder"
+      },
+      {
+        "type": "text",
+        "id": "submit_btn_text",
+        "label": "Submit button text"
+      },
+      {
+        "type": "richtext",
+        "id": "privacy_text",
+        "label": "Privacy text"
+      },
+      {
+        "type": "text",
+        "id": "contact_list_id",
+        "label": "Contact List ID"
+      },
+      {
+        "type": "text",
+        "id": "single_1_id",
+        "label": "Single 1 ID"
+      },
+      {
+        "type": "text",
+        "id": "single_1_value",
+        "label": "Single 1 Value",
+        "info": "Please enter a single number for the value. e.g. 1 or 2 or 3"
+      },
+      {
+        "type": "radio",
+        "id": "single_1_overwrite",
+        "label": "Single 1 Overwrite",
+        "options": [
+          {
+            "value": "true",
+            "label": "true"
+          },
+          {
+            "value": "false",
+            "label": "false"
+          }
+        ],
+        "default": "false"
+      },
+      {
+        "type": "text",
+        "id": "single_2_id",
+        "label": "Single 2 ID"
+      },
+      {
+        "type": "text",
+        "id": "single_2_value",
+        "label": "Single 2 Value",
+        "info": "Please enter a single number for the value. e.g. 1 or 2 or 3"
+      },
+      {
+        "type": "radio",
+        "id": "single_2_overwrite",
+        "label": "Single 2 Overwrite",
+        "options": [
+          {
+            "value": "true",
+            "label": "true"
+          },
+          {
+            "value": "false",
+            "label": "false"
+          }
+        ],
+        "default": "false"
+      },
+      {
+        "type": "text",
+        "id": "single_3_id",
+        "label": "Single 3 ID"
+      },
+      {
+        "type": "text",
+        "id": "single_3_value",
+        "label": "Single 3 Value",
+        "info": "Please enter a single number for the value. e.g. 1 or 2 or 3"
+      },
+      {
+        "type": "radio",
+        "id": "single_3_overwrite",
+        "label": "Single 3 Overwrite",
+        "options": [
+          {
+            "value": "true",
+            "label": "true"
+          },
+          {
+            "value": "false",
+            "label": "false"
+          }
+        ],
+        "default": "false"
+      },
+      {
+        "type": "text",
+        "id": "single_4_id",
+        "label": "Single 4 ID"
+      },
+      {
+        "type": "text",
+        "id": "single_4_value",
+        "label": "Single 4 Value",
+        "info": "Please enter a single number for the value. e.g. 1 or 2 or 3"
+      },
+      {
+        "type": "radio",
+        "id": "single_4_overwrite",
+        "label": "Single 4 Overwrite",
+        "options": [
+          {
+            "value": "true",
+            "label": "true"
+          },
+          {
+            "value": "false",
+            "label": "false"
+          }
+        ],
+        "default": "false"
+      },
+      {
+        "type": "text",
+        "id": "subscription_text_1_id",
+        "label": "Text 1 ID"
+      },
+      {
+        "type": "text",
+        "id": "subscription_text_1_value",
+        "label": "Text 1 Value"
+      },
+      {
+        "type": "radio",
+        "id": "subscription_text_1_overwrite",
+        "label": "Text 1 Overwrite",
+        "options": [
+          {
+            "value": "true",
+            "label": "true"
+          },
+          {
+            "value": "false",
+            "label": "false"
+          }
+        ],
+        "default": "false"
+      },
+      {
+        "type": "text",
+        "id": "subscription_text_2_id",
+        "label": "Text 2 ID"
+      },
+      {
+        "type": "text",
+        "id": "subscription_text_2_value",
+        "label": "Text 2 Value"
+      },
+      {
+        "type": "radio",
+        "id": "subscription_text_2_overwrite",
+        "label": "Text 2 Overwrite",
+        "options": [
+          {
+            "value": "true",
+            "label": "true"
+          },
+          {
+            "value": "false",
+            "label": "false"
+          }
+        ],
+        "default": "false"
+      },
+      {
+        "type": "text",
+        "id": "multiple_1_id",
+        "label": "Multiple 1 ID"
+      },
+      {
+        "type": "text",
+        "id": "multiple_1_value",
+        "label": "Multiple 1 Value",
+        "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+      },
+      {
+        "type": "radio",
+        "id": "multiple_1_overwrite",
+        "label": "Multiple 1 Overwrite",
+        "options": [
+          {
+            "value": "true",
+            "label": "true"
+          },
+          {
+            "value": "false",
+            "label": "false"
+          }
+        ],
+        "default": "false"
+      },
+      {
+        "type": "text",
+        "id": "multiple_2_id",
+        "label": "Multiple 2 ID"
+      },
+      {
+        "type": "text",
+        "id": "multiple_2_value",
+        "label": "Multiple 2 Value",
+        "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+      },
+      {
+        "type": "radio",
+        "id": "multiple_2_overwrite",
+        "label": "Multiple 2 Overwrite",
+        "options": [
+          {
+            "value": "true",
+            "label": "true"
+          },
+          {
+            "value": "false",
+            "label": "false"
+          }
+        ],
+        "default": "false"
+      },
+      {
+        "type": "text",
+        "id": "multiple_3_id",
+        "label": "Multiple 3 ID"
+      },
+      {
+        "type": "text",
+        "id": "multiple_3_value",
+        "label": "Multiple 3 Value",
+        "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+      },
+      {
+        "type": "radio",
+        "id": "multiple_3_overwrite",
+        "label": "Multiple 3 Overwrite",
+        "options": [
+          {
+            "value": "true",
+            "label": "true"
+          },
+          {
+            "value": "false",
+            "label": "false"
+          }
+        ],
+        "default": "false"
+      },
+      {
+        "type": "text",
+        "id": "multiple_4_id",
+        "label": "Multiple 4 ID"
+      },
+      {
+        "type": "text",
+        "id": "multiple_4_value",
+        "label": "Multiple 4 Value",
+        "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+      },
+      {
+        "type": "radio",
+        "id": "multiple_4_overwrite",
+        "label": "Multiple 4 Overwrite",
+        "options": [
+          {
+            "value": "true",
+            "label": "true"
+          },
+          {
+            "value": "false",
+            "label": "false"
+          }
+        ],
+        "default": "false"
+      },
+      {
+        "type": "text",
+        "id": "multiple_5_id",
+        "label": "Multiple 5 ID"
+      },
+      {
+        "type": "text",
+        "id": "multiple_5_value",
+        "label": "Multiple 5 Value",
+        "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+      },
+      {
+        "type": "radio",
+        "id": "multiple_5_overwrite",
+        "label": "Multiple 5 Overwrite",
+        "options": [
+          {
+            "value": "true",
+            "label": "true"
+          },
+          {
+            "value": "false",
+            "label": "false"
+          }
+        ],
+        "default": "false"
+      },
+      {
+        "type": "image_picker",
+        "id": "successful_icon",
+        "label": "Successful Subscription Icon"
+      },
+      {
+        "type": "text",
+        "id": "successful_form_title",
+        "label": "Successful Form Title",
+        "default": "Thank you for subscribing!"
+      },
+      {
+        "type": "text",
+        "id": "successful_form_description",
+        "label": "Successful Form Description",
+        "default": "Join us to get an extra free 500 EcoCredits"
+      },
+      {
+        "type": "textarea",
+        "id": "blocks_title",
+        "label": "Blocks title"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "block",
+        "name": "Block",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "badge_text",
+            "label": "Badge text"
+          },
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "textarea",
+            "id": "content",
+            "label": "Content"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "DP3 - Flash sale section",
+        "category": "Custom Sections"
+      }
+    ]
+  }
+  {% endschema %}

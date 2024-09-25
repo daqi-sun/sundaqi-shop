@@ -1,0 +1,119 @@
+<div class="product-info-sticky-wrapper">
+  <div class="page-width-small product-container">
+    <div class="diy-footer__col-left">
+      <span class="product-single__title--footer" x-text="diyPageTitle"></span>
+    </div>
+    <div class="diy-footer__col-right">
+      {% comment %} Price VAT {% endcomment %}
+      <div class="diy-footer__total-price-label" x-show="totalPrice > 0">
+        <div class="diy-footer__total-price" data-total-price data-cy="total-price" x-show="totalPrice > 0" x-text="priceFormat(totalPrice)"></div>
+        <div class="diy-footer__compare-price" :class="{ 'hide': totalCompareAtPrice == '' || Number(totalCompareAtPrice) <= Number(totalPrice) }">
+          <div class="diy-footer__discounted-price" data-cy="discounted-price" data-discounted-price x-show="totalDiscountedPrice > 0" x-text="'-' + priceFormat(totalDiscountedPrice)"></div>
+          <div class="diy-footer__compare-at-price" data-cy="compare-at-price" data-compare-at-price x-show="totalCompareAtPrice > 0" x-text="priceFormat(totalCompareAtPrice)"></div>
+        </div>
+      </div>
+      {% comment %} Price NO VAT {% endcomment %}
+      <div class="diy-footer__total-price-label" x-show="totalPriceNoVat > 0">
+        <div class="diy-footer__total-price" data-total-price data-cy="total-price" x-show="totalPriceNoVat > 0" x-text="priceFormat(totalPriceNoVat)"></div>
+        <div class="diy-footer__compare-price" :class="{ 'hide': totalCompareAtPrice == '' || Number(totalCompareAtPrice) <= Number(totalPriceNoVat) }">
+          <div class="diy-footer__discounted-price" data-cy="discounted-price" data-discounted-price x-show="totalDiscountedPriceNoVat > 0" x-text="'-' + priceFormat(totalDiscountedPriceNoVat)"></div>
+          <div class="diy-footer__compare-at-price" data-cy="compare-at-price" data-compare-at-price x-show="totalCompareAtPriceNoVat > 0" x-text="priceFormat(totalCompareAtPriceNoVat)"></div>
+        </div>
+      </div>
+      <div class="diy-footer__buttons">
+        <button
+          class="btn btn--brand btn--diy-checkout"
+          :disabled="!isMandatoryOptionChecked"
+          data-checkout-button
+          @click="addToCart"
+        >
+          <span class="btn__text">Comprar Ahora</span>
+          <span class="hide" data-loader>
+            {% render 'icon-spinner' %}
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sticky-tabs-wrapper">
+  <div class="page-width-small">
+    <div class="sticky-tabs-inner">
+      {%- for block in section.blocks -%}
+        {% if block.settings.section_class != blank %}
+          <a href="#" data-section-class="{{ block.settings.section_class }}">{{ block.settings.tab_title }}</a>
+        {% else %}
+          <a href="#{{ block.settings.tab_id }}">{{ block.settings.tab_title }}</a>
+        {% endif %}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+
+// Get all the <a> tags with data-section-class attribute on the page
+    const links = document.querySelectorAll('a[data-section-class]');
+
+// If there are any links with the data-section-class attribute present
+    if (links.length) { // Loop through each <a> tag
+      for (let i = 0; i < links.length; i++) { // Get the value of the data-section-class attribute
+        const sectionClass = links[i].getAttribute('data-section-class');
+
+// Get the id of the section with the class name of the data-section-class attribute
+        const section = document.querySelector(`.${sectionClass}`);
+
+        if (section) {
+          const sectionId = section.getAttribute('id');
+
+// Change the href attribute to the value of the data-section-class attribute
+          links[i].setAttribute('href', `#${sectionId}`);
+        }
+      }
+    }
+  });
+</script>
+
+
+{% schema %}
+  {
+    "name": "DIY Sticky bar",
+    "class": "product-sticky-bar diy-purchase__sticky-bar",
+    "blocks": [
+      {
+        "type": "tab",
+        "name": "Anchor tab",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "tab_title",
+            "label": "Tab title"
+          },
+          {
+            "type": "text",
+            "id": "tab_id",
+            "label": "Section id"
+          },
+          {
+            "type": "header",
+            "content": "Class selector",
+            "info": "Use this when it is a dynamic section. You can find the unique class selector of that section with the dynamic ID."
+          },
+          {
+            "type": "text",
+            "id": "section_class",
+            "label": "Section class",
+            "info": "Note: when this has value, the Section id above will be ignored."
+          }, {
+            "type": "paragraph",
+            "content": "Example: <section id=\"template--15149783941193__f5e8ee6e-5b49-40e3-8e72-7e4236f2065f\" class=\"pdp pdp-specs\">"
+          }, {
+            "type": "paragraph",
+            "content": "On example above the unique class we can use is pdp-specs class name, then it will automatically grab the dynamic ID and create the anchor link."
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

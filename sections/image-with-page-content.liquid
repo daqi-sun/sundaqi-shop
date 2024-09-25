@@ -1,0 +1,80 @@
+{{ 'image-with-page-content.css' | asset_url | stylesheet_tag }}
+<div class="image-with-page-content-wrapper" id="image-with-page-content">
+  {% if section.settings.image %}
+    <div class="image-wrapper">
+      <picture>
+        <source media="(max-width: 989px)" srcset="{{ section.settings.image_mobile | image_url }}">
+        <img src="{{ section.settings.image | image_url }}" alt="{{ section.settings.image.alt }}">
+      </picture>
+      <div class="image-content">
+        <p class="image-subtitle">{{ section.settings.subtitle }}</p>
+        <h2 class="image-title">{{ section.settings.title }}</h2>
+      </div>
+    </div>
+  {% endif %}
+  <div class="page-content-wrapper">
+    <div class="text-content">
+      <h3 class="title">{{ section.settings.page_content_title }}</h3>
+      <p class="subtitle">
+        {{ section.settings.page_content_subtitle }}
+      </p>
+    </div>
+    <div class="page-content">
+      {{ page.content }}
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Image with page content",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Text over image"
+      }, 
+      {
+        "id": "title",
+        "type": "text",
+        "label": "Title"
+      }, 
+      {
+        "id": "subtitle",
+        "type": "text",
+        "label": "Subtitle"
+      },
+      {
+        "type": "header",
+        "content": "Image"
+      }, 
+      {
+        "id": "image",
+        "type": "image_picker",
+        "label": "Desktop"
+      }, 
+      {
+        "id": "image_mobile",
+        "type": "image_picker",
+        "label": "Mobile"
+      },
+      {
+        "type": "header",
+        "content": "Page content"
+      },
+      {
+        "id": "page_content_title",
+        "type": "text",
+        "label": "Title"
+      }, 
+      {
+        "id": "page_content_subtitle",
+        "type": "textarea",
+        "label": "Subtitle"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image with page content"
+      }
+    ]
+  }
+{% endschema %}

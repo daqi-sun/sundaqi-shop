@@ -1,0 +1,1061 @@
+<main>
+    <!-- start -->
+    <div class="container text-center" id="start">
+      <div>
+        <h1 class="m-0 pt-6 title">{{ 'help_me_choose.start_page.heading' | t }}</h1>
+        <p class="pt-2">{{ 'help_me_choose.start_page.description' | t }}</p>
+      </div>
+      <div class="pt-5 pb-6">
+        <button type="button" id="choose-button" class="btn btn-primary btn-lg text-dark border-0 py-2 px-5 start-button"
+          style="background-color: rgba(14, 207, 226, 1); border-radius: 0px;">{{ 'help_me_choose.start_page.button_html'
+          | t }}</button>
+      </div>
+      <picture>
+        <!--[if IE]>
+        <video style="display: none;&gt;"></video>
+        <![endif]-->
+        <source media="(max-width: 768px)" sizes="(max-width: 768px) 100vw, 576px"
+          data-srcset="{{ 'mb_start.jpeg' | asset_img_url: 'master' }} "
+          srcset="{{ 'mb_start.jpeg' | asset_img_url: 'master' }} ">
+        <img class="lazyload bg-black object-fit-cover pb-7" src="{{ 'pc_start.jpeg' | asset_img_url: 'master' }}">
+        <!--[if IE]><![endif]-->
+        </source>
+      </picture>
+    </div>
+
+    <!-- Q1 -->
+    <div class="container text-center" id="question1" style="display: none;">
+      <div>
+        {% assign number = 1 %}
+        <p class="text-muted pt-6 pb-2 m-0">{{ 'help_me_choose.question.question_X_of_4' | t: number: number }}</p>
+        <h2 class="title-h2 title pb-5 m-0">{{ 'help_me_choose.q1.question' | t }}</h2>
+      </div>
+      <div class="row pr-md-3 justify-content-center">
+        <div class="col-md-3 col-12 pb-3 px-0">
+          <div class="form-check h-100 px-sm">
+            <div class="h-100">
+              <input style="opacity: 0;" class="card-check-input form-check-input" type="radio" name="questionAnswer1"
+                id="questionOne-answerOne">
+              <label class="form-check-label card-check-label h-100 define-border border" for="questionOne-answerOne">
+                <div class=" row p-2 mx-0 w-100" style="cursor: pointer;">
+                  <img class="card-img-top px-0 col-4 col-md-12 h-100"
+                    src="{{ 'q1_1_home.jpeg' | asset_img_url: 'master' }}" alt="Card image cap">
+                  <div class="card-body card-text-alignment p-2 col-md-12 col-8 pl-3 textarea h-100">
+                    <h5 class="card-title subtitle">{{ 'help_me_choose.q1.a1' | t }}</h5>
+                    <p class="content p-0">{{ 'help_me_choose.q1.a1_description' | t }}</p>
+                  </div>
+                  <img src="{{ 'pc_tick.png' | asset_img_url: 'master' }}" alt="tick" class="tick_ p-0">
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-12 pb-3 px-0">
+          <div class="form-check h-100 px-sm">
+            <div class="h-100">
+              <input style="opacity: 0;" class="card-check-input form-check-input" type="radio" name="questionAnswer1"
+                id="questionOne-answerTwo">
+              <label class="form-check-label card-check-label h-100 define-border border" for="questionOne-answerTwo">
+                <div class=" p-2 row mx-0 w-100" style="cursor: pointer;">
+                  <img class="card-img-top col-md-12 col-4 px-0 h-100"
+                    src="{{ 'q1_2_work.jpeg' | asset_img_url: 'master' }}" alt="Card image cap">
+                  <div class="card-body card-text-alignment p-2 col-md-12 col-8 pl-3 textarea h-100">
+                    <h5 class="card-title subtitle">{{ 'help_me_choose.q1.a2' | t }}</h5>
+                    <p class="content p-0">{{ 'help_me_choose.q1.a2_description' | t }}</p>
+                  </div>
+                  <img src="{{ 'pc_tick.png' | asset_img_url: 'master' }}" alt="tick" class="tick_ p-0">
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-12 pb-md-3 px-0">
+          <div class="form-check h-100 px-sm">
+            <div class="h-100">
+              <input style="opacity: 0;" class="card-check-input form-check-input" type="radio" name="questionAnswer1"
+                id="questionOne-answerThree">
+              <label class="form-check-label card-check-label h-100 define-border border" for="questionOne-answerThree">
+                <div class="p-2 row mx-0 w-100" style="cursor: pointer;">
+                  <img class="card-img-top col-md-12 col-4 px-0 h-100"
+                    src="{{ 'q1_3_outdoors.jpeg' | asset_img_url: 'master' }}" alt="Card image cap">
+                  <div class="card-body card-text-alignment p-2 col-md-12 col-8 pl-3 textarea h-100">
+                    <h5 class="card-title subtitle">{{ 'help_me_choose.q1.a3' | t }}</h5>
+                    <p class="content p-0">{{ 'help_me_choose.q1.a3_description' | t }}</p>
+                  </div>
+                  <img src="{{ 'pc_tick.png' | asset_img_url: 'master' }}" alt="tick" class="tick_ p-0">
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row py-5 justify-content-center">
+        <div class="col-md-9">
+          <div class="text-right">
+            <button type="button" id="next1" class="next-btn btn btn-primary border-0 text-dark start-button px-5 py-2"
+              style="background-color: rgba(14, 207, 226, 1);border-radius: 0px;" disabled="disabled">{{'help_me_choose.next.next' | t }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="container text-center" id="question2" style="display: none;">
+      <div>
+        {% assign number = 2 %}
+        <p class="text-muted pt-6 pb-2 m-0">{{ 'help_me_choose.question.question_X_of_4' | t: number: number }}</p>
+        <h2 class="title-h2 pb-2 title m-0">{{ 'help_me_choose.q2.question' | t }}</h2>
+        <p class="pb-8 mb-0">{{'help_me_choose.question_type.multiple_choice' | t }}</p>
+        <div class="row pb-0 pr-md-3">
+          <div class="col-md-3 col-12 pb-3 px-0">
+            <div class="form-check px-sm">
+              <input style="opacity: 0;" class="card-check-input form-check-input" type="checkbox"
+                id="questionTwo-answerOne">
+              <label class="form-check-label card-check-label" for="questionTwo-answerOne">
+                <div class=" card row p-2 mx-0 w-100" style="cursor: pointer;">
+                  <img class="card-img-top col-md-12 col-4 px-0 w-100 h-100"
+                    src="{{ 'q2_1_lights.jpeg' | asset_img_url: 'master' }}" alt="Card image cap">
+                  <div class="card-body card-text-alignment p-md-2 col-md-12 col-8 pl-md-3 textarea d-md-block d-none">
+                    <h6 class="card-title card-text-alignment subtitle subtitle-padding mb-0 h-100">{{
+                      'help_me_choose.q2.a1' | t }}</h6>
+                  </div>
+                  <div class="align--center col-8 d-flex d-md-none text-left" style="padding: 0px 0px 0px 40px;">
+                    <h6 class="m-0 mb_title">{{'help_me_choose.q2.a1' | t }}</h6>
+                  </div>
+                  <img src="{{ 'pc_tick.png' | asset_img_url: 'master' }}" alt="tick" class="tick p-0">
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3 col-12 pb-3 px-0">
+            <div class="form-check px-sm">
+              <input style="opacity: 0;" class="card-check-input form-check-input" type="checkbox"
+                id="questionTwo-answerTwo">
+              <label class="form-check-label card-check-label" for="questionTwo-answerTwo">
+                <div class=" card row p-2 mx-0 w-100" style="cursor: pointer;">
+                  <img class="card-img-top col-md-12 col-4  px-0 h-100 w-100"
+                    src="{{ 'q2_2consumer.jpeg' | asset_img_url: 'master' }}" alt="Card image cap">
+                  <div class="card-body card-text-alignment p-md-2 col-md-12 col-8 pl-md-3 textarea d-md-block d-none">
+                    <h6 class="card-title card-text-alignment subtitle subtitle-padding mb-0 h-100">{{
+                      'help_me_choose.q2.a2' | t }}</h6>
+                  </div>
+                  <div class="align--center col-8 d-flex d-md-none text-left" style="padding: 0px 0px 0px 40px;">
+                    <h6 class="m-0 mb_title">{{'help_me_choose.q2.a2' | t }}</h6>
+                  </div>
+                  <img src="{{ 'pc_tick.png' | asset_img_url: 'master' }}" alt="tick" class="tick p-0">
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3 col-12 pb-3 px-0">
+            <div class="form-check px-sm">
+              <input style="opacity: 0;" class="card-check-input form-check-input" type="checkbox"
+                id="questionTwo-answerThree">
+              <label class="form-check-label card-check-label" for="questionTwo-answerThree">
+                <div class=" card row p-2 mx-0 w-100" style="cursor:pointer;">
+                  <img class="card-img-top col-md-12 col-4  px-0 h-100 w-100"
+                    src="{{ 'q2_3_television.jpeg' | asset_img_url: 'master' }}" alt="Card image cap">
+                  <div class="card-body card-text-alignment p-md-2 col-md-12 col-8 pl-md-3 textarea d-md-block d-none">
+                    <h6 class="card-title card-text-alignment subtitle subtitle-padding mb-0 h-100">{{
+                      'help_me_choose.q2.a3' | t }}</h6>
+                  </div>
+                  <div class="align--center col-8 d-flex d-md-none text-left" style="padding: 0px 0px 0px 40px;">
+                    <h6 class="m-0 mb_title">{{'help_me_choose.q2.a3' | t }}</h6>
+                  </div>
+                  <img src="{{ 'pc_tick.png' | asset_img_url: 'master' }}" alt="tick" class="tick p-0">
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3 col-12 pb-3 px-0">
+            <div class="form-check px-sm">
+              <input style="opacity: 0;" class="card-check-input form-check-input" type="checkbox"
+                id="questionTwo-answerFour">
+              <label class="form-check-label card-check-label" for="questionTwo-answerFour">
+                <div class=" card row p-2 mx-0 w-100" style="cursor: pointer;">
+                  <img class="card-img-top col-md-12 col-4  px-0 w-100 h-100"
+                    src="{{ 'q2_4_refrigerator.jpeg' | asset_img_url: 'master' }}" alt="Card image cap">
+                  <div class="card-body card-text-alignment p-md-2 col-md-12 col-8 pl-md-3 textarea d-md-block d-none">
+                    <h6 class="card-title card-text-alignment subtitle subtitle-padding mb-0 h-100">{{
+                      'help_me_choose.q2.a4' | t }}</h6>
+                  </div>
+                  <div class="align--center col-8 d-flex d-md-none text-left" style="padding: 0px 0px 0px 40px;">
+                    <h6 class="m-0 mb_title">{{'help_me_choose.q2.a4' | t }}</h6>
+                  </div>
+                  <img src="{{ 'pc_tick.png' | asset_img_url: 'master' }}" alt="tick" class="tick p-0">
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row pb-0 pr-md-3">
+          <div class="col-md-3 col-12 pb-3 px-0">
+            <div class="form-check px-sm">
+              <input style="opacity: 0;" class="card-check-input form-check-input" type="checkbox"
+                id="questionTwo-answerFive">
+              <label class="form-check-label card-check-label" for="questionTwo-answerFive">
+                <div class=" card row p-2 mx-0 w-100" style="cursor:pointer;">
+                  <img class="card-img-top col-md-12 col-4  px-0 h-100 w-100"
+                    src="{{ 'q2_5_hair.jpeg' | asset_img_url: 'master' }}" alt="Card image cap">
+                  <div class="card-body card-text-alignment p-md-2 col-md-12 col-8 pl-md-3 textarea d-md-block d-none">
+                    <h6 class="card-title card-text-alignment subtitle subtitle-padding mb-0 h-100">{{
+                      'help_me_choose.q2.a5' | t }}</h6>
+                  </div>
+                  <div class="align--center col-8 d-flex d-md-none text-left" style="padding: 0px 0px 0px 40px;">
+                    <h6 class="mb_title m-0">{{'help_me_choose.q2.a5' | t }}</h6>
+                  </div>
+                  <img src="{{ 'pc_tick.png' | asset_img_url: 'master' }}" alt="tick" class="tick p-0">
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3 col-12 pb-3 px-0">
+            <div class="form-check px-sm">
+              <input style="opacity: 0;" class="card-check-input form-check-input" type="checkbox"
+                id="questionTwo-answerSix">
+              <label class="form-check-label card-check-label" for="questionTwo-answerSix">
+                <div class=" card row p-2 mx-0 w-100" style="cursor:pointer;">
+                  <img class="card-img-top col-md-12 col-4  px-0 h-100 w-100"
+                    src="{{ 'q2_6_dishwasher.jpeg' | asset_img_url: 'master' }}" alt="Card image cap">
+                  <div class="card-body card-text-alignment p-md-2 col-md-12 col-8 pl-md-3 textarea d-md-block d-none">
+                    <h6 class="card-title card-text-alignment subtitle subtitle-padding mb-0 h-100">{{
+                      'help_me_choose.q2.a6' | t }}</h6>
+                  </div>
+                  <div class="align--center col-8 d-flex d-md-none text-left" style="padding: 0px 0px 0px 40px;">
+                    <h6 class="mb_title m-0">{{'help_me_choose.q2.a6' | t }}</h6>
+                  </div>
+                  <img src="{{ 'pc_tick.png' | asset_img_url: 'master' }}" alt="tick" class="tick p-0">
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3 col-12 pb-3 px-0">
+            <div class="form-check px-sm">
+              <input style="opacity: 0;" class="card-check-input form-check-input" type="checkbox"
+                id="questionTwo-answerSeven">
+              <label class="form-check-label card-check-label" for="questionTwo-answerSeven">
+                <div class=" card row p-2 mx-0 w=100" style="cursor:pointer;">
+                  <img class="card-img-top col-md-12 col-4  px-0 h-100 w-100"
+                    src="{{ 'q2_7_microwave.jpeg' | asset_img_url: 'master' }}" alt="Card image cap">
+                  <div class="card-body card-text-alignment p-md-2 col-md-12 col-8 pl-md-3 textarea d-md-block d-none">
+                    <h6 class="card-title card-text-alignment subtitle subtitle-padding mb-0 h-100">{{
+                      'help_me_choose.q2.a7' | t }}</h6>
+                  </div>
+                  <div class="align--center col-8 d-flex d-md-none text-left" style="padding: 0px 0px 0px 40px;">
+                    <h6 class="mb_title m-0">{{'help_me_choose.q2.a7' | t }}</h6>
+                  </div>
+                  <img src="{{ 'pc_tick.png' | asset_img_url: 'master' }}" alt="tick" class="tick p-0">
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3 col-12 px-0">
+            <div class="form-check px-sm">
+              <input style="opacity: 0;" class="card-check-input form-check-input" type="checkbox"
+                id="questionTwo-answerEight">
+              <label class="form-check-label card-check-label" for="questionTwo-answerEight">
+                <div class=" card row p-2 mx-0 w-100" style="cursor: pointer;">
+                  <img class="card-img-top col-md-12 col-4  px-0 w-100 h-100"
+                    src="{{ 'q2_8_space.jpeg' | asset_img_url: 'master' }}" alt="Card image cap">
+                  <div class="card-body card-text-alignment p-md-2 col-md-12 col-8 pl-md-3 textarea d-md-block d-none">
+                    <h6 class="card-title card-text-alignment subtitle subtitle-padding mb-0 h-100">{{
+                      'help_me_choose.q2.a8' | t }}</h6>
+                  </div>
+                  <div class="align--center col-8 d-flex d-md-none text-left" style="padding: 0px 0px 0px 40px;">
+                    <h6 class="mb_title m-0">{{'help_me_choose.q2.a8' | t }}</h6>
+                  </div>
+                  <img src="{{ 'pc_tick.png' | asset_img_url: 'master' }}" alt="tick" class="tick p-0">
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row pb-0 pr-md-3">
+          <div class="col-md-3 col-12 px-0">
+            <div class="form-check pt-md-0 pt-3 px-sm">
+              <input style="opacity: 0;" class="card-check-input form-check-input" type="checkbox"
+                id="questionTwo-answerNine">
+              <label class="form-check-label card-check-label" for="questionTwo-answerNine">
+                <div class=" card row p-2 mx-0 w-100" style="cursor: pointer;">
+                  <img class="card-img-top col-md-12 col-4  px-0 h-100 w-100"
+                    src="{{ 'q2_9_air.jpeg' | asset_img_url: 'master' }}" alt="Card image cap">
+                  <div class="card-body card-text-alignment p-md-2 col-md-12 col-8 pl-md-3 textarea d-md-block d-none">
+                    <h6 class="card-title card-text-alignment subtitle subtitle-padding mb-0 h-100">{{
+                      'help_me_choose.q2.a9' | t }}</h6>
+                  </div>
+                  <div class="align--center col-8 d-flex d-md-none text-left" style="padding: 0px 0px 0px 40px;">
+                    <h6 class="mb_title m-0">{{'help_me_choose.q2.a9' | t }}</h6>
+                  </div>
+                  <img src="{{ 'pc_tick.png' | asset_img_url: 'master' }}" alt="tick" class="tick p-0">
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3 col-12">
+          </div>
+          <div class="col-md-3 col-12">
+          </div>
+          <div class="col-md-3 col-12">
+          </div>
+        </div>
+
+        <div class="row py-5">
+          <div class="col-6 text-left back">
+            <svg class="align--center" fill="none" height="12px" viewBox="0 0 6 9" width="6px"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="m4.5 7.5-3-3 3-3" stroke="#212121" stroke-linecap="square" stroke-width="1.5" />
+            </svg>
+            <button id="back2" class="p-0 pt-2 btn-link border-0"
+              style="cursor: pointer;text-decoration:none;color: black;outline: none;">{{'help_me_choose.back.back' | t }}</button>
+          </div>
+          <div class="col-6 text-right">
+            <button type="button" id="next2" class="next-btn btn btn-primary border-0 text-dark px-5 py-2 start-button"
+              style="background-color: rgba(14, 207, 226, 1);border-radius: 0px;" disabled="disabled">{{'help_me_choose.next.next' | t }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="container text-center" id="question3" style="display: none;">
+      <div>
+        {% assign number = 2 %}
+        <p class="text-muted pt-6 pb-2 m-0">{{ 'help_me_choose.question.question_X_of_4' | t: number: number }}</p>
+        <h2 class="title-h2 pb-2 title m-0">{{ 'help_me_choose.q3.question' | t }}</h2>
+        <p class="pb-8 mb-0">{{'help_me_choose.question_type.multiple_choice' | t }}</p>
+        <div class="row pr-md-3">
+          <div class="col-md-3 col-12 pb-3 px-0">
+            <div class="form-check px-sm">
+              <input style="opacity: 0;" class="card-check-input form-check-input" type="checkbox"
+                id="questionThree-answerOne">
+              <label class="form-check-label card-check-label" for="questionThree-answerOne">
+                <div class=" card row p-2 mx-0 w-100">
+                  <img class="card-img-top col-md-12 col-4  px-0 h-100 w-100"
+                    src="{{ 'q2_1_lights.jpeg' | asset_img_url: 'master' }}" alt="Card image cap">
+                  <div class="card-body card-text-alignment p-md-2 col-md-12 col-8 pl-md-3 textarea d-md-block d-none">
+                    <h6 class="card-title card-text-alignment subtitle subtitle-padding mb-0 h-100">{{
+                      'help_me_choose.q3.a1' | t }}</h6>
+                  </div>
+                  <div class="align--center col-8 d-flex d-md-none text-left" style="padding: 0px 0px 0px 40px;">
+                    <h6 class="m-0 mb_title">{{'help_me_choose.q3.a1' | t }}</h6>
+                  </div>
+                  <img src="{{ 'pc_tick.png' | asset_img_url: 'master' }}" alt="tick" class="tick p-0">
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3 col-12 pb-3 px-0">
+            <div class="form-check px-sm">
+              <input style="opacity: 0;" class="card-check-input form-check-input" type="checkbox"
+                id="questionThree-answerTwo">
+              <label class="form-check-label card-check-label" for="questionThree-answerTwo">
+                <div class=" card row p-2 mx-0 w-100">
+                  <img class="card-img-top col-md-12 col-4  px-0 h-100 w-100"
+                    src="{{ 'q3_2_drill.jpeg' | asset_img_url: 'master' }}" alt="Card image cap">
+                  <div class="card-body card-text-alignment p-md-2 col-md-12 col-8 pl-md-3 textarea d-md-block d-none">
+                    <h6 class="card-title card-text-alignment subtitle subtitle-padding mb-0 h-100">{{
+                      'help_me_choose.q3.a2' | t }}</h6>
+                  </div>
+                  <div class="align--center col-8 d-flex d-md-none text-left" style="padding: 0px 0px 0px 40px;">
+                    <h6 class="mb_title m-0">{{'help_me_choose.q3.a2' | t }}</h6>
+                  </div>
+                  <img src="{{ 'pc_tick.png' | asset_img_url: 'master' }}" alt="tick" class="tick p-0">
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3 col-12 pb-3 px-0">
+            <div class="form-check px-sm">
+              <input style="opacity: 0;" class="card-check-input form-check-input" type="checkbox"
+                id="questionThree-answerThree">
+              <label class="form-check-label card-check-label" for="questionThree-answerThree">
+                <div class=" card row p-2 mx-0 w-100">
+                  <img class="card-img-top col-md-12 col-4  px-0 w-100 h-100"
+                    src="{{ 'q3_3_circular.jpeg' | asset_img_url: 'master' }}" alt="Card image cap">
+                  <div class="card-body card-text-alignment p-md-2 col-md-12 col-8 pl-md-3 textarea d-md-block d-none">
+                    <h6 class="card-title card-text-alignment subtitle subtitle-padding mb-0 h-100">{{
+                      'help_me_choose.q3.a3' | t }}</h6>
+                  </div>
+                  <div class="align--center col-8 d-flex d-md-none text-left" style="padding: 0px 0px 0px 40px;">
+                    <h6 class="m-0 mb_title">{{'help_me_choose.q3.a3' | t }}</h6>
+                  </div>
+                  <img src="{{ 'pc_tick.png' | asset_img_url: 'master' }}" alt="tick" class="tick p-0">
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3 col-12 px-0">
+            <div class="form-check px-sm">
+              <input style="opacity: 0;" class="card-check-input form-check-input" type="checkbox"
+                id="questionThree-answerFour">
+              <label class="form-check-label card-check-label" for="questionThree-answerFour">
+                <div class=" card row p-2 mx-0 w-100">
+                  <img class="card-img-top col-md-12 col-4  px-0 w-100 h-100"
+                    src="{{ 'q3_4_band.jpeg' | asset_img_url: 'master' }}" alt="Card image cap">
+                  <div class="card-body card-text-alignment p-md-2 col-md-12 col-8 pl-md-3 textarea d-md-block d-none">
+                    <h6 class="card-title card-text-alignment subtitle subtitle-padding mb-0 h-100">{{
+                      'help_me_choose.q3.a4' | t }}</h6>
+                  </div>
+                  <div class="align--center col-8 d-flex d-md-none text-left" style="padding: 0px 0px 0px 40px;">
+                    <h6 class="m-0 mb_title">{{'help_me_choose.q3.a4' | t }}</h6>
+                  </div>
+                  <img src="{{ 'pc_tick.png' | asset_img_url: 'master' }}" alt="tick" class="tick p-0">
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="row py-5">
+          <div class="col-6 text-left back">
+            <svg class="align--center" fill="none" height="12px" viewBox="0 0 6 9" width="6px"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="m4.5 7.5-3-3 3-3" stroke="#212121" stroke-linecap="square" stroke-width="1.5" />
+            </svg>
+            <button id="back3" class="p-0 pt-2 btn-link border-0"
+              style="cursor: pointer;text-decoration:none;color: black;outline: none;">{{'help_me_choose.back.back' | t }}</button>
+          </div>
+          <div class="col-6 text-right">
+            <button type="button" id="next3" class="next-btn btn btn-primary border-0 text-dark start-button px-5 py-2"
+              style="background-color: rgba(14, 207, 226, 1);border-radius: 0px;" disabled="disabled">{{'help_me_choose.next.next' | t }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="container text-center" id="question4" style="display: none;">
+      <div>
+        {% assign number = 2 %}
+        <p class="text-muted pt-6 pb-2 m-0">{{ 'help_me_choose.question.question_X_of_4' | t: number: number }}</p>
+        <h2 class="title-h2 pb-2 title m-0">{{ 'help_me_choose.q4.question' | t }}</h2>
+        <p class="pb-8 mb-0">{{'help_me_choose.question_type.multiple_choice' | t }}</p>
+        <div class="row pr-md-3">
+          <div class="col-md-3 col-12 pb-3 px-0">
+            <div class="form-check px-sm">
+              <input style="opacity: 0;" class="card-check-input form-check-input" type="checkbox"
+                id="questionFour-answerOne">
+              <label class="form-check-label card-check-label" for="questionFour-answerOne">
+                <div class=" card row p-2 mx-0 w-100">
+                  <img class="card-img-top col-md-12 col-4  px-0 h-100 w-100"
+                    src="{{ 'q2_1_lights.jpeg' | asset_img_url: 'master' }}" alt="Card image cap">
+                  <div class="card-body card-text-alignment p-md-2 col-md-12 col-8 pl-md-3 textarea d-md-block d-none">
+                    <h6 class="card-title card-text-alignment subtitle subtitle-padding mb-0 h-100">{{
+                      'help_me_choose.q4.a1' | t }}</h6>
+                  </div>
+                  <div class="align--center col-8 d-flex d-md-none text-left" style="padding: 0px 0px 0px 40px;">
+                    <h6 class="m-0 mb_title">{{'help_me_choose.q4.a1' | t }}</h6>
+                  </div>
+                  <img src="{{ 'pc_tick.png' | asset_img_url: 'master' }}" alt="tick" class="tick p-0">
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3 col-12 pb-3 px-0">
+            <div class="form-check px-sm">
+              <input style="opacity: 0;" class="card-check-input form-check-input" type="checkbox"
+                id="questionFour-answerTwo">
+              <label class="form-check-label card-check-label" for="questionFour-answerTwo">
+                <div class=" card row p-2 mx-0 w-100">
+                  <img class="card-img-top col-md-12 col-4  px-0 h-100 w-100"
+                    src="{{ 'q2_2consumer.jpeg' | asset_img_url: 'master' }}" alt="Card image cap">
+                  <div class="card-body card-text-alignment p-md-2 col-md-12 col-8 pl-md-3 textarea d-md-block d-none">
+                    <h6 class="card-title card-text-alignment subtitle subtitle-padding mb-0 h-100">{{
+                      'help_me_choose.q4.a2' | t }}</h6>
+                  </div>
+                  <div class="align--center col-8 d-flex d-md-none text-left" style="padding: 0px 0px 0px 40px;">
+                    <h6 class="m-0 mb_title">{{'help_me_choose.q4.a2' | t }}</h6>
+                  </div>
+                  <img src="{{ 'pc_tick.png' | asset_img_url: 'master' }}" alt="tick" class="tick p-0">
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3 col-12 pb-3 px-0">
+            <div class="form-check px-sm">
+              <input style="opacity: 0;" class="card-check-input form-check-input" type="checkbox"
+                id="questionFour-answerThree">
+              <label class="form-check-label card-check-label" for="questionFour-answerThree">
+                <div class=" card row p-2 mx-0 w-100">
+                  <img class="card-img-top col-md-12 col-4  px-0 h-100 w-100"
+                    src="{{ 'q4_3_mini.jpeg' | asset_img_url: 'master' }}" alt="Card image cap">
+                  <div class="card-body card-text-alignment p-md-2 col-md-12 col-8 pl-md-3 textarea d-md-block d-none">
+                    <h6 class="card-title card-text-alignment subtitle subtitle-padding mb-0 h-100">{{
+                      'help_me_choose.q4.a3' | t }}</h6>
+                  </div>
+                  <div class="align--center col-8 d-flex d-md-none text-left" style="padding: 0px 0px 0px 40px;">
+                    <h6 class="m-0 mb_title">{{'help_me_choose.q4.a3' | t }}</h6>
+                  </div>
+                  <img src="{{ 'pc_tick.png' | asset_img_url: 'master' }}" alt="tick" class="tick p-0">
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3 col-12 px-0">
+            <div class="form-check px-sm">
+              <input style="opacity: 0;" class="card-check-input form-check-input" type="checkbox"
+                id="questionFour-answerFour">
+              <label class="form-check-label card-check-label" for="questionFour-answerFour">
+                <div class=" card row p-2 mx-0 w-100">
+                  <img class="card-img-top col-md-12 col-4  px-0 h-100 w-100"
+                    src="{{ 'q2_5_hair.jpeg' | asset_img_url: 'master' }}" alt="Card image cap">
+                  <div class="card-body card-text-alignment p-md-2 col-md-12 col-8 pl-md-3 textarea d-md-block d-none">
+                    <h6 class="card-title card-text-alignment subtitle subtitle-padding mb-0 h-100">{{
+                      'help_me_choose.q4.a4' | t }}</h6>
+                  </div>
+                  <div class="align--center col-8 d-flex d-md-none text-left" style="padding: 0px 0px 0px 40px;">
+                    <h6 class="m-0 mb_title">{{'help_me_choose.q4.a4' | t }}</h6>
+                  </div>
+                  <img src="{{ 'pc_tick.png' | asset_img_url: 'master' }}" alt="tick" class="tick p-0">
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="row py-5">
+          <div class="col-6 text-left back">
+            <svg class="align--center" fill="none" height="12px" viewBox="0 0 6 9" width="6px"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="m4.5 7.5-3-3 3-3" stroke="#212121" stroke-linecap="square" stroke-width="1.5" />
+            </svg>
+            <button id="back4" class="p-0 pt-2 btn-link border-0"
+              style="cursor: pointer;text-decoration:none;color: black;outline: none;">{{'help_me_choose.back.back' | t }}</button>
+          </div>
+          <div class="col-6 text-right">
+            <button type="button" id="next4" class="next-btn btn btn-primary border-0 text-dark start-button px-5 py-2"
+              style="background-color: rgba(14, 207, 226, 1);border-radius: 0px;" disabled="disabled">{{'help_me_choose.next.next' | t }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="container text-center" id="question5" style="display: none;">
+      <div>
+        {% assign number = 3 %}
+        <p class="text-muted pt-6 pb-2 m-0">{{ 'help_me_choose.question.question_X_of_4' | t: number: number }}</p>
+        <h2 class="title-h2 pb-8 title m-0">{{ 'help_me_choose.q5.question' | t }}</h2>
+        <div class="row pb-0 pr-md-3">
+          <div class="col-md-3 col-12 pb-3 px-0">
+            <div class="form-check h-100 px-sm">
+              <div class="h-100">
+                <input style="opacity: 0;" class="card-check-input form-check-input" type="radio" name="questionAnswer2"
+                  id="questionFive-answerOne">
+                <label class="form-check-label card-check-label h-100 define-border border" for="questionFive-answerOne">
+                  <div class="row p-2 mx-0 w-100">
+                    <img class="card-img-top col-md-12 col-4 px-0 h-100"
+                      src="{{ 'q5_1_few.jpeg' | asset_img_url: 'master' }}" alt="Card image cap">
+                    <div class="card-body p-2 col-md-12 col-8 textarea card-text-alignment pl-3 h-100">
+                      <h6 class="card-title subtitle">{{ 'help_me_choose.q5.a1' | t }}</h6>
+                      <p class="content p-0">{{ 'help_me_choose.q5.a1_description' | t }}</p>
+                    </div>
+                    <img src="{{ 'pc_tick.png' | asset_img_url: 'master' }}" alt="tick" class="tick_ p-0">
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-12 pb-3 px-0">
+            <div class="form-check h-100 px-sm">
+              <div class="h-100">
+                <input style="opacity: 0;" class="card-check-input form-check-input" type="radio" name="questionAnswer2"
+                  id="questionFive-answerTwo">
+                <label class="form-check-label card-check-label h-100 define-border border" for="questionFive-answerTwo">
+                  <div class="row p-2 mx-0 w-100">
+                    <img class="card-img-top col-md-12 col-4 px-0 h-100"
+                      src="{{ 'q5_2_half.jpeg' | asset_img_url: 'master' }}" alt="Card image cap">
+                    <div class="card-body p-2 col-md-12 col-8 textarea card-text-alignment pl-3 h-100">
+                      <h6 class="card-title subtitle">{{'help_me_choose.q5.a2' | t }}</h6>
+                      <p class="content p-0">{{ 'help_me_choose.q5.a2_description' | t }}</p>
+                    </div>
+                    <img src="{{ 'pc_tick.png' | asset_img_url: 'master' }}" alt="tick" class="tick_ p-0">
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-12 pb-3 px-0">
+            <div class="form-check h-100 px-sm">
+              <div class="h-100">
+                <input style="opacity: 0;" class="card-check-input form-check-input" type="radio" name="questionAnswer2"
+                  id="questionFive-answerThree">
+                <label class="form-check-label card-check-label h-100 define-border border" for="questionFive-answerThree">
+                  <div class=" row p-2 mx-0 w-100">
+                    <img class="card-img-top col-md-12 col-4 px-0 h-100"
+                      src="{{ 'q5_3_one.jpeg' | asset_img_url: 'master' }}" alt="Card image cap">
+                    <div class="card-body p-2 col-md-12 col-8 textarea card-text-alignment pl-3 h-100">
+                      <h6 class="card-title subtitle">{{ 'help_me_choose.q5.a3' | t }}</h6>
+                      <p class="content p-0">{{ 'help_me_choose.q5.a3_description' | t }}</p>
+                    </div>
+                    <img src="{{ 'pc_tick.png' | asset_img_url: 'master' }}" alt="tick" class="tick_ p-0">
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-12 pb-md-3 px-0">
+            <div class="form-check h-100 px-sm">
+              <div class="h-100">
+                <input style="opacity: 0;" class="card-check-input form-check-input" type="radio" name="questionAnswer2"
+                  id="questionFive-answerFour">
+                <label class="form-check-label card-check-label h-100 define-border border" for="questionFive-answerFour">
+                  <div class=" row p-2 mx-0 w-100">
+                    <img class="card-img-top col-md-12 col-4 px-0 h-100"
+                      src="{{ 'q5_4_more.jpeg' | asset_img_url: 'master' }}" alt="Card image cap">
+                    <div class="card-body p-2 col-md-12 col-8 textarea card-text-alignment pl-3 h-100">
+                      <h6 class="card-title subtitle">{{'help_me_choose.q5.a4' | t }}</h6>
+                      <p class="content p-0">{{ 'help_me_choose.q5.a4_description' | t }}</p>
+                    </div>
+                    <img src="{{ 'pc_tick.png' | asset_img_url: 'master' }}" alt="tick" class="tick_ p-0">
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row py-5">
+          <div class="col-6 text-left back">
+            <svg class="align--center" fill="none" height="12px" viewBox="0 0 6 9" width="6px"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="m4.5 7.5-3-3 3-3" stroke="#212121" stroke-linecap="square" stroke-width="1.5" />
+            </svg>
+            <button id="back5" class="p-0 pt-2 btn-link border-0"
+              style="cursor: pointer;text-decoration:none;color: black;outline: none;">{{'help_me_choose.back.back' | t }}</button>
+          </div>
+          <div class="col-6 text-right">
+            <button type="button" id="next5" class="next-btn btn btn-primary border-0 text-dark start-button px-5 py-2"
+              style="background-color: rgba(14, 207, 226, 1);border-radius: 0px;" disabled="disabled">{{'help_me_choose.next.next' | t }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="container text-center" id="question6" style="display: none;">
+      <div>
+        {% assign number = 4 %}
+        <p class="text-muted pt-6 pb-2 m-0">{{ 'help_me_choose.question.question_X_of_4' | t: number: number }}</p>
+        <h2 class="title-h2 pb-2 title m-0">{{ 'help_me_choose.q6.question' | t }}</h2>
+        <p class="pb-8 mb-0">{{'help_me_choose.question_type.multiple_choice' | t }}</p>
+        <div class="row pr-md-3">
+          <div class="col-md-3 col-12 pb-3 px-0">
+            <div class="form-check h-100 px-sm">
+              <div class="h-100">
+                <input style="opacity: 0;" class="card-check-input form-check-input" type="checkbox"
+                  id="questionSix-answerOne">
+                <label class="form-check-label card-check-label h-100 define-border border" for="questionSix-answerOne">
+                  <div class=" row p-2 mx-0 w-100">
+                    <img class="card-img-top col-md-12 col-4 px-0 h-100"
+                      src="{{ 'q6_1_portability.jpeg' | asset_img_url: 'master' }}" alt="Card image cap">
+                    <div class="card-body p-2 col-md-12 col-8 textarea card-text-alignment pl-3 h-100">
+                      <h6 class="card-title subtitle">{{ 'help_me_choose.q6.a1' | t }}</h6>
+                      <p class="content p-0">{{ 'help_me_choose.q6.a1_description' | t }}</p>
+                    </div>
+                    <img src="{{ 'pc_tick.png' | asset_img_url: 'master' }}" alt="tick" class="tick_ p-0">
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-12 pb-3 px-0">
+            <div class="form-check h-100 px-sm">
+              <div class="h-100">
+                <input style="opacity: 0;" class="card-check-input form-check-input" type="checkbox"
+                  id="questionSix-answerTwo">
+                <label class="form-check-label card-check-label h-100 define-border border" for="questionSix-answerTwo">
+                  <div class=" row p-2 mx-0 w-100">
+                    <img class="card-img-top col-md-12 col-4 px-0 h-100"
+                      src="{{ 'q6_2_runtime.jpeg' | asset_img_url: 'master' }}" alt="Card image cap">
+                    <div class="card-body p-2 col-md-12 col-8 textarea card-text-alignment pl-3 h-100">
+                      <h6 class="card-title subtitle">{{ 'help_me_choose.q6.a2' | t }}</h6>
+                      <p class="content p-0">{{ 'help_me_choose.q6.a2_description' | t }}</p>
+                    </div>
+                    <img src="{{ 'pc_tick.png' | asset_img_url: 'master' }}" alt="tick" class="tick_ p-0">
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-12 pb-3 px-0">
+            <div class="form-check h-100 px-sm">
+              <div class="h-100">
+                <input style="opacity: 0;" class="card-check-input form-check-input" type="checkbox"
+                  id="questionSix-answerThree">
+                <label class="form-check-label card-check-label h-100 define-border border" for="questionSix-answerThree">
+                  <div class=" row p-2 mx-0 w-100">
+                    <img class="card-img-top col-md-12 col-4 px-0 h-100"
+                      src="{{ 'q6_3_power.jpeg' | asset_img_url: 'master' }}" alt="Card image cap">
+                    <div class="card-body p-2 col-md-12 col-8 textarea card-text-alignment pl-3 h-100">
+                      <h6 class="card-title subtitle">{{ 'help_me_choose.q6.a3' | t }}</h6>
+                      <p class="content p-0">{{ 'help_me_choose.q6.a3_description' | t }}</p>
+                    </div>
+                    <img src="{{ 'pc_tick.png' | asset_img_url: 'master' }}" alt="tick" class="tick_ p-0">
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-12 px-0 pb-md-3">
+            <div class="form-check h-100 px-sm">
+              <div class="h-100">
+                <input style="opacity: 0;" class="card-check-input form-check-input" type="checkbox"
+                  id="questionSix-answerFour">
+                <label class="form-check-label card-check-label h-100 define-border border" for="questionSix-answerFour">
+                  <div class=" row p-2 mx-0 w-100">
+                    <img class="card-img-top col-md-12 col-4 px-0 h-100"
+                      src="{{ 'q6_4_battery.jpeg' | asset_img_url: 'master' }}" alt="Card image cap">
+                    <div class="card-body p-2 col-md-12 col-8 textarea card-text-alignment pl-3 h-100">
+                      <h6 class="card-title subtitle">{{ 'help_me_choose.q6.a4' | t }}</h6>
+                      <p class="content p-0">{{ 'help_me_choose.q6.a4_description' | t }}</p>
+                    </div>
+                    <img src="{{ 'pc_tick.png' | asset_img_url: 'master' }}" alt="tick" class="tick_ p-0">
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row py-5">
+          <div class="col-6 text-left back">
+            <svg class="align--center" fill="none" height="12px" viewBox="0 0 6 9" width="6px"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="m4.5 7.5-3-3 3-3" stroke="#212121" stroke-linecap="square" stroke-width="1.5" />
+            </svg>
+            <button id="back6" class="p-0 pt-2 btn-link border-0"
+              style="cursor: pointer;text-decoration:none;color: black;outline: none;">{{'help_me_choose.back.back' | t }}</button>
+          </div>
+          <div class="col-6 text-right">
+            <button type="button" id="next6" class="next-btn btn btn-primary border-0 text-dark start-button px-5 py-2"
+              style="background-color: rgba(14, 207, 226, 1);border-radius: 0px;" disabled="disabled">{{'help_me_choose.next.next' | t }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- end -->
+    <div class="container" id="end" style="display: none;">
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <h2 class="title-h2 text-center title pt-6">{{ 'help_me_choose.results_page.heading' | t }}</h2>
+          {% for block in section.blocks %}
+          {% assign best_pro = all_products[block.settings.best_pro] %}
+          {% assign alt_1_pro = all_products[block.settings.alt_1_pro] %}
+          {% assign alt_2_pro = all_products[block.settings.alt_2_pro] %}
+          <div class="as-results d-none" data-result="{{block.settings.result}}">
+            <ul class="row nav px-3" id="myTab" role="tablist">
+              {% if block.settings.best_pro != blank %}
+              <li class="col nav-item text-center p-0 m-0">
+                <a class="border-bottom nav-link active" style="border: 0px;color: black;padding-bottom: 2px;" id="Top match-tab" data-toggle="tab"
+                  href="#Top-match-{{ block.id }}" role="tab" aria-controls="Top match" aria-selected="true">{{
+                  'help_me_choose.results_page.tab_best' | t }}</a>
+              </li>
+              {% endif %}
+              {% if block.settings.alt_1_pro != blank %}
+              <li class="col nav-item text-center p-0 m-0">
+                <a class="border-bottom nav-link" style="border: 0px;color: black;padding-bottom: 2px;" id="Alt #1-tab" data-toggle="tab"
+                  href="#Alt-1-{{ block.id }}" role="tab" aria-controls="Alt #1" aria-selected="false">{{
+                  'help_me_choose.results_page.tab_alt_1' | t }}</a>
+              </li>
+              {% endif %}
+              {% if block.settings.alt_2_pro != blank %}
+              <li class="col nav-item text-center p-0 m-0">
+                <a class="border-bottom nav-link" style="border: 0px;color: black;padding-bottom: 2px;" id="Alt #2-tab" data-toggle="tab"
+                  href="#Alt-2-{{ block.id }}" role="tab" aria-controls="Alt #2" aria-selected="false">{{
+                  'help_me_choose.results_page.tab_alt_2' | t }}</a>
+              </li>
+              {% endif %}
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              {% if block.settings.best_pro != blank %}
+              <div class="tab-pane fade show active" id="Top-match-{{ block.id }}" role="tabpanel"
+                aria-labelledby="Top match-tab">
+                <div class="text-center">
+                  <picture>
+                    <!--[if IE]>
+                  <video style="display: none;&gt;"></video>
+                  <![endif]-->
+                    <source media="(max-width: 768px)" sizes="(max-width: 768px) 100vw, 576px" class="text-center"
+                      data-srcset="{{best_pro.featured_image | img_url: 'master'}}"
+                      srcset="{{best_pro.featured_image | img_url: 'master'}}">
+                    <img class="lazyload bg-black object-fit-cover pt-5 pb-5 text-center w-100" style="max-width: 500px;"
+                      src="{{best_pro.featured_image | img_url: 'master'}}">
+                    <!--[if IE]><![endif]-->
+                    </source>
+                  </picture>
+                </div>
+                <div class="container text-left">
+                  <div class="row pdbottom">
+                    <div class="col-md-5 col-12 pl-0 spacing"
+                      style=" @media screen and (min-width:768px){padding-right:112px;}">
+                      <h2 class="pb-3 m-0 h2" id="resultName">{{best_pro.title}}</h2>
+                      <div style="padding-bottom: 32px;" class="m-0">{{block.settings.best_pro_desc}}</div>
+                      <!-- <p id="h3" class="pb-3 m-0 nodisplay">{{best_pro.price}}</p> -->
+                      {% include 'help-product-price', product: best_pro, is_pc: true %}
+                      <a href="{{best_pro.url}}" target="_blank"
+                        class="btn btn-primary border-0 text-dark px-md-5 nodisplay d-md-table start-button"
+                        style="background-color: rgba(14, 207, 226, 1);border-radius: 0px;padding: 12px 48px;line-height: 24px;">{{
+                        'help_me_choose.results_page.learn_more' | t }}</a>
+                      <div class="nodisplay">
+                        <button id="start-over" style="padding-top: 40px;background-color: transparent!important;"
+                          class="btn-link border-0 nodisplay btn start-over-css pl-md-0 back"
+                          style="cursor: pointer;color: black;text-decoration: none;"> <svg class="align--center"
+                            fill="none" height="12px" viewBox="0 0 6 9" width="6px" xmlns="http://www.w3.org/2000/svg">
+                            <path d="m4.5 7.5-3-3 3-3" stroke="#212121" stroke-linecap="square" stroke-width="1.5" />
+                          </svg>{{'help_me_choose.results_page.start_over' | t }}</button>
+                      </div>
+                    </div>
+                    <div class="col-md-7 col-12 px-0">
+                      <div class="row m-0 strong">
+                        {{block.settings.best_pro_text}}
+                      </div>
+                      <div class="row display">
+                        <button id="start-over" style="padding:32px 0px 32px 15px"
+                          class="text-left btn-link border-0 display btn start-over-css"
+                          style="cursor: pointer;text-decoration:none;color: black;"> <svg class="align--center"
+                            fill="none" height="12px" viewBox="0 0 6 9" width="6px" xmlns="http://www.w3.org/2000/svg">
+                            <path d="m4.5 7.5-3-3 3-3" stroke="#212121" stroke-linecap="square" stroke-width="1.5" />
+                          </svg>{{'help_me_choose.results_page.start_over' | t }}</button>
+                      </div>
+                      <div class="fixed">
+                        <div class="border-top row display" style="padding:15px 15px; background-color:#FFFFFF;">
+                          <div class="col-5 pl-0" style="font-weight: 700;">
+                            <!-- <p style="font-size: 20px;font-weight: bold;">{{best_pro.price}}<s style="font-size:14px;"
+                              class="text-muted">{{best_pro.price}}</s></p> -->
+                            {% include 'help-product-price', product: best_pro %}
+                          </div>
+                          <div class="col-6 px-0 m-0 align--center text-right">
+                            <a href="{{best_pro.url}}" target="_blank"
+                              class="btn btn-primary border-0 text-dark px-4 px-md-5 py-md-2 display d-inline start-button p-2"
+                              style="background-color: rgba(14, 207, 226, 1);border-radius: 0px;">{{
+                              'help_me_choose.results_page.learn_more' | t }}</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+
+              {% if block.settings.alt_1_pro != blank %}
+              <div class="tab-pane fade" id="Alt-1-{{ block.id }}" role="tabpanel" aria-labelledby="Alt #1-tab">
+                <div class="text-center">
+                  <picture>
+                    <!--[if IE]>
+                  <video style="display: none;&gt;"></video>
+                  <![endif]-->
+                    <source media="(max-width: 768px)" sizes="(max-width: 768px) 100vw, 576px" class="text-center"
+                      data-srcset="{{alt_1_pro.featured_image | img_url: 'master'}}"
+                      srcset="{{alt_1_pro.featured_image | img_url: 'master'}}">
+                    <img class="lazyload bg-black object-fit-cover pt-5 pb-5 text-center w-100" style="max-width: 500px;"
+                      src="{{alt_1_pro.featured_image | img_url: 'master'}}">
+                    <!--[if IE]><![endif]-->
+                    </source>
+                  </picture>
+                </div>
+                <div class="container text-left">
+                  <div class="row pdbottom">
+                    <div class="col-md-5 col-12 pl-0 spacing"
+                      style=" @media screen and (min-width:768px){padding-right:112px;}">
+                      <h2 class="pb-3 m-0 h2">{{alt_1_pro.title}}</h2>
+                      <div style="padding-bottom: 32px;" class="m-0">{{block.settings.alt_1_pro_desc}}</div>
+                      <!-- <p id="h3" class="pb-3 m-0 nodisplay">{{alt_1_pro.price}}</p> -->
+                      {% include 'help-product-price', product: alt_1_pro, is_pc: true %}
+                      <a href="{{alt_1_pro.url}}" target="_blank"
+                        class="btn btn-primary border-0 text-dark px-md-5 nodisplay d-md-table start-button"
+                        style="background-color: rgba(14, 207, 226, 1);border-radius: 0px;padding: 12px 48px;line-height: 24px;">{{
+                        'help_me_choose.results_page.learn_more' | t }}</a>
+                      <div class="nodisplay">
+                        <button id="start-over" style="padding-top: 40px;background-color: transparent!important;"
+                          class="btn-link border-0 nodisplay btn start-over-css pl-md-0 back"
+                          style="cursor: pointer;text-decoration:none;color: black;"> <svg class="align--center"
+                            fill="none" height="12px" viewBox="0 0 6 9" width="6px" xmlns="http://www.w3.org/2000/svg">
+                            <path d="m4.5 7.5-3-3 3-3" stroke="#212121" stroke-linecap="square" stroke-width="1.5" />
+                          </svg>{{'help_me_choose.results_page.start_over'
+                          | t }}</button>
+                      </div>
+                    </div>
+                    <div class="col-md-7 col-12 px-0">
+                      <div class="row m-0 strong">
+                        {{block.settings.alt_1_pro_text}}
+                      </div>
+                      <div class="row display">
+                        <button id="start-over" style="padding:32px 0px 32px 15px"
+                          class="text-left btn-link border-0 display btn start-over-css back"
+                          style="cursor: pointer;text-decoration:none;color: black;"> <svg class="align--center"
+                            fill="none" height="12px" viewBox="0 0 6 9" width="6px" xmlns="http://www.w3.org/2000/svg">
+                            <path d="m4.5 7.5-3-3 3-3" stroke="#212121" stroke-linecap="square" stroke-width="1.5" />
+                          </svg>{{'help_me_choose.results_page.start_over' | t }}</button>
+                      </div>
+                      <div class="fixed">
+                        <div class="border-top row display" style="padding:15px 15px; background-color:#FFFFFF;">
+                          <div class="col-5 pl-0" style="font-weight: 700;">
+                            <!-- <p style="font-size: 20px;font-weight: bold;">{{alt_1_pro.price}}<s style="font-size:14px;"
+                              class="text-muted">{{alt_1_pro.price}}</s></p> -->
+                            {% include 'help-product-price', product: alt_1_pro %}
+                          </div>
+                          <div class="col-6 px-0 m-0 align--center text-right">
+                            <a href="{{alt_1_pro.url}}" target="_blank"
+                              class="btn btn-primary border-0 text-dark px-4 px-md-5 py-md-2 display d-inline start-button p-2"
+                              style="background-color: rgba(14, 207, 226, 1);border-radius: 0px;">{{
+                              'help_me_choose.results_page.learn_more' | t }}</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+
+              {% if block.settings.alt_2_pro != blank %}
+              <div class="tab-pane fade" id="Alt-2-{{ block.id }}" role="tabpanel" aria-labelledby="Alt #2-tab">
+                <div class="text-center">
+                  <picture>
+                    <!--[if IE]>
+                  <video style="display: none;&gt;"></video>
+                  <![endif]-->
+                    <source media="(max-width: 768px)" sizes="(max-width: 768px) 100vw, 576px" class="text-center"
+                      data-srcset="{{alt_2_pro.featured_image | img_url: 'master'}}"
+                      srcset="{{alt_2_pro.featured_image | img_url: 'master'}}">
+                    <img class="lazyload bg-black object-fit-cover pt-5 pb-5 text-center w-100" style="max-width: 500px;"
+                      src="{{alt_2_pro.featured_image | img_url: 'master'}}">
+                    <!--[if IE]><![endif]-->
+                    </source>
+                  </picture>
+                </div>
+                <div class="container text-left">
+                  <div class="row pdbottom">
+                    <div class="col-md-5 col-12 pl-0 spacing"
+                      style="@media screen and (min-width:768px){padding-right:112px;}">
+                      <h2 class="pb-3 m-0 h2">{{alt_2_pro.title}}</h2>
+                      <div style="padding-bottom: 32px;" class="m-0">{{block.settings.alt_2_pro_desc}}</div>
+                      <!-- <p id="h3" class="pb-3 m-0 nodisplay">{{alt_2_pro.price}}</p> -->
+                      {% include 'help-product-price', product: alt_2_pro, is_pc: true %}
+                      <a href="{{alt_2_pro.url}}" target="_blank"
+                        class="btn btn-primary border-0 text-dark px-md-5 nodisplay d-md-table start-button"
+                        style="background-color: rgba(14, 207, 226, 1);border-radius: 0px;padding: 12px 48px;line-height: 24px;">{{
+                        'help_me_choose.results_page.learn_more' | t }}</a>
+                      <div class="nodisplay">
+                        <button id="start-over" style="padding-top: 40px;background-color: transparent!important;"
+                          class="btn-link border-0 nodisplay btn start-over-css pl-md-0 back"
+                          style="cursor: pointer;text-decoration:none;color: black;"> <svg class="align--center"
+                            fill="none" height="12px" viewBox="0 0 6 9" width="6px" xmlns="http://www.w3.org/2000/svg">
+                            <path d="m4.5 7.5-3-3 3-3" stroke="#212121" stroke-linecap="square" stroke-width="1.5" />
+                          </svg>{{'help_me_choose.results_page.start_over'
+                          | t }}</button>
+                      </div>
+                    </div>
+                    <div class="col-md-7 col-12 px-0">
+                      <div class="row m-0 strong">
+                        {{block.settings.alt_2_pro_text}}
+                      </div>
+                      <div class="row display">
+                        <button id="start-over" style="padding:32px 0px 32px 15px"
+                          class="text-left btn-link border-0 display btn start-over-css back"
+                          style="cursor: pointer;text-decoration:none;color: black;"> <svg class="align--center"
+                            fill="none" height="12px" viewBox="0 0 6 9" width="6px" xmlns="http://www.w3.org/2000/svg">
+                            <path d="m4.5 7.5-3-3 3-3" stroke="#212121" stroke-linecap="square" stroke-width="1.5" />
+                          </svg>{{'help_me_choose.results_page.start_over' | t }}</button>
+                      </div>
+                      <div class="fixed">
+                        <div class="border-top row display" style="padding:15px 15px; background-color:#FFFFFF;">
+                          <div class="col-5 pl-0" style="font-weight: 700;">
+                            {% include 'help-product-price', product: alt_2_pro %}
+                          </div>
+                          <div class="col-6 px-0 align--center text-right">
+                            <a href="{{alt_2_pro.url}}" target="_blank"
+                              class="btn btn-primary border-0 text-dark px-4 px-md-5 py-md-2 display d-inline start-button p-2"
+                              style="background-color: rgba(14, 207, 226, 1);border-radius: 0px;">{{
+                              'help_me_choose.results_page.learn_more' | t }}</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </main>
+
+  {% schema %}
+  {
+  "name": "Content",
+  "tag": "section",
+  "blocks": [
+  {
+  "name": "Result",
+  "type": "result",
+  "settings": [
+  {
+  "type": "text",
+  "id": "result",
+  "label": "Results"
+  },
+  {
+  "type": "product",
+  "id": "best_pro",
+  "label": "Best Prodcut"
+  },
+  {
+  "type": "richtext",
+  "id": "best_pro_desc",
+  "label": "Best Prodcut Description"
+  },
+  {
+  "type": "richtext",
+  "id": "best_pro_text",
+  "label": "Best Prodcut Text"
+  },
+  {
+  "type": "product",
+  "id": "alt_1_pro",
+  "label": "Alt_1 Prodcut"
+  },
+  {
+  "type": "richtext",
+  "id": "alt_1_pro_desc",
+  "label": "Alt_1 Prodcut Description"
+  },
+  {
+  "type": "richtext",
+  "id": "alt_1_pro_text",
+  "label": "Alt_1 Prodcut Text"
+  },
+  {
+  "type": "product",
+  "id": "alt_2_pro",
+  "label": "Alt_2 Prodcut"
+  },
+  {
+  "type": "richtext",
+  "id": "alt_2_pro_desc",
+  "label": "Alt_2 Prodcut Description"
+  },
+  {
+  "type": "richtext",
+  "id": "alt_2_pro_text",
+  "label": "Alt_2 Prodcut Text"
+  }
+  ]
+  }
+  ]
+  }
+  {% endschema %}
+
+
+

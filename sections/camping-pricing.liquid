@@ -1,0 +1,83 @@
+{% if section.settings.title != blank %}
+    <div id="camping" class="camping-pricing">
+      <div class="content--wrapper">
+        <div class="text-container">
+          <h2>{{ section.settings.title }}</h2>
+          <p>{{ section.settings.p }}</p>
+          <a href="{{ section.settings.url }}">
+            <div class="btn--wrapper">
+              <span>{{ section.settings.buttonText }}</span>
+            </div>
+          </a>
+        </div>
+        <div class="image--container">
+          {% for block in section.blocks %}
+            <div class="image--wrapper">
+              <img
+                class="image-block desktop-only"
+                srcset="{{ block.settings.image | img_url: 'master' }}"
+                alt="{{ block.settings.image.alt }}"
+                loading="lazy"
+              >
+              <img
+                class="image-block mobile-only"
+                srcset="{{ block.settings.image_mobile | img_url: 'master' }}"
+                alt="{{ block.settings.image_mobile.alt }}"
+                loading="lazy"
+              >
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  {% schema %}
+  {
+    "name": "Camping Pricing",
+    "max_blocks": 3,
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Made for Camping"
+      },
+      {
+        "type": "textarea",
+        "id": "p",
+        "label": "Paragraph",
+        "default": "No matter how you like to camp, an EcoFlow portable power station or solar generator is right for you. Whether you’re backpacking off the beaten path, boondocking, camping without a hookup, or full-on glamping, EcoFlow has a portable power station to meet your recreational off-grid electricity needs. Never go camping without energy independence again."
+      },
+      {
+        "type": "text",
+        "id": "buttonText",
+        "label": "Button text",
+        "default": "View Pricing"
+      },
+      {
+        "type": "url",
+        "id": "url",
+        "label": "URL"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_mobile",
+            "label": "Image Mobile"
+          }
+        ]
+      }
+    ]
+  }
+  {% endschema %}

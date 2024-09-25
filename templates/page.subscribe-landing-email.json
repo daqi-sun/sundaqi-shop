@@ -1,0 +1,65 @@
+{
+  "sections": {
+    "banner": {
+      "type": "subscribe-landing-banner",
+      "settings": {
+        "subscribe_img": "shopify:\/\/shop_images\/20240226-172953.jpg",
+        "subscribe_imgph": "shopify:\/\/shop_images\/20240226-173026.jpg"
+      }
+    },
+    "subscribe-landing": {
+      "type": "subscribe-landing-email",
+      "settings": {
+        "contact_list_id": "1473782362",
+        "single_1_id": "",
+        "single_1_value": "",
+        "single_1_overwrite": "false",
+        "single_2_id": "",
+        "single_2_value": "",
+        "single_2_overwrite": "false",
+        "single_3_id": "",
+        "single_3_value": "",
+        "single_3_overwrite": "false",
+        "single_4_id": "",
+        "single_4_value": "",
+        "single_4_overwrite": "false",
+        "subscription_text_1_id": "",
+        "subscription_text_1_value": "",
+        "subscription_text_1_overwrite": "false",
+        "subscription_text_2_id": "",
+        "subscription_text_2_value": "",
+        "subscription_text_2_overwrite": "false",
+        "multiple_1_id": "",
+        "multiple_1_value": "",
+        "multiple_1_overwrite": "false",
+        "multiple_2_id": "",
+        "multiple_2_value": "",
+        "multiple_2_overwrite": "false",
+        "multiple_3_id": "",
+        "multiple_3_value": "",
+        "multiple_3_overwrite": "false",
+        "multiple_4_id": "",
+        "multiple_4_value": "",
+        "multiple_4_overwrite": "false",
+        "multiple_5_id": "",
+        "multiple_5_value": "",
+        "multiple_5_overwrite": "false",
+        "subscribe_title": "¡Mantente al día! Regístrate para recibir mensajes de texto de EcoFlow.",
+        "subscribe_subtitle": "¡Sé de los primeros en recibir ofertas exclusivas, eventos y mucho más!",
+        "email_title": "Iniciar sesión",
+        "email_placeholder": "Dirección de correo",
+        "email_consent": "Aceptas recibir boletines y correos electrónicos de marketing de EcoFlow. Cancela la suscripción en cualquier momento haciendo clic en el enlace «Cancelar suscripción» de la parte inferior del boletín.",
+        "email_opt_in": false,
+        "submit_btn_text": "Registrarse ahora",
+        "hint_email_empty": "Introduce tu dirección de correo.",
+        "hint_email_valid": "Introduce una dirección de correo válida (Ejemplo: name@domain.com).",
+        "hint_email_opt_in": "Marca las casillas del acuerdo para continuar.",
+        "subcribe_success_text": "¡Gracias por registrarte para recibir nuestros mensajes de texto!"
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "subscribe-landing"
+  ]
+}

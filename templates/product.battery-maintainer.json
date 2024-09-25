@@ -1,0 +1,937 @@
+{
+  "sections": {
+    "daf26638-f596-4384-b150-72d380a3268d": {
+      "type": "product-atb-top",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "sticky-product-bar": {
+      "type": "sticky-product-bar",
+      "blocks": {
+        "588d25af-4d47-43ac-9697-b98aa2f65719": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Overview",
+            "tab_id": "product_information",
+            "section_class": ""
+          }
+        },
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "What's in the box",
+            "tab_id": "what_in_box",
+            "section_class": ""
+          }
+        },
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "FAQ",
+            "tab_id": "faq",
+            "section_class": ""
+          }
+        },
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Reviews",
+            "tab_id": "section-reviews",
+            "section_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "588d25af-4d47-43ac-9697-b98aa2f65719",
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02",
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4",
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38"
+      ],
+      "settings": {
+        "enabled": true,
+        "enabled_tabs": false
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "11795adc-1afa-4833-a193-258f495901ef": {
+          "type": "sku_block",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e": {
+          "type": "product_title",
+          "settings": {
+          }
+        },
+        "judge_me_reviews_preview_badge_7x4Gyf": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "0471109f-c130-454e-a9ba-c56412cc11f3": {
+          "type": "product_vendor",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185": {
+          "type": "product_price",
+          "settings": {
+          }
+        },
+        "d25a0285-4fb4-422d-b95b-ab67446120ad": {
+          "type": "product_description",
+          "settings": {
+            "desc_display": "default"
+          }
+        },
+        "79e1b437-5bbd-4b8a-ac55-27c2f795ee99": {
+          "type": "coupon_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Component_2_1.png",
+            "discount_off_text": "{{ product.metafields.custom.discount_off_text.value }}",
+            "code": "{{ product.metafields.custom.discount_code.value }}",
+            "show_copy_code_btn": true
+          }
+        },
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879": {
+          "type": "product_options_block",
+          "settings": {
+            "show_product_swatches": true,
+            "use_variant_image_for_swatches": true,
+            "button_content": ""
+          }
+        },
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe": {
+          "type": "quantity_block",
+          "settings": {
+          }
+        },
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0": {
+          "type": "accessories_section",
+          "settings": {
+            "title": "You may also like",
+            "metafield": "accessories"
+          }
+        },
+        "a96faac7-b2a0-4157-9b80-c757c18c6a89": {
+          "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/form-embed-block\/2632fe16-c075-4321-a88b-50b567f42507",
+          "disabled": true,
+          "settings": {
+            "formId": "UHSpKe"
+          }
+        },
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609": {
+          "type": "product_buttons",
+          "settings": {
+            "enable_payment_button": false,
+            "show_custom_icons": true,
+            "custom_payment_logo_1_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_08_7f374817-3a3e-42f2-95ce-077b67f293d2.svg?v=1672025209",
+            "custom_payment_logo_2_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_10_d8002835-e25f-4edb-9038-187f75f69a18.svg?v=1672025208",
+            "custom_payment_logo_3_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_02_a3ea7ab1-aa9a-4857-9ed6-01e62deccfce.svg?v=1672025208",
+            "custom_payment_logo_4_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_06_7c406d24-0983-49ff-ac8e-cf73032050d9.svg?v=1672025208",
+            "custom_payment_logo_5_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_07_be5959d4-9f22-4a31-8e40-285f8e3ac6e7.svg?v=1672025208",
+            "custom_payment_logo_6_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_04_7bff1113-0dc2-489f-8be8-d19dbe467a1a.svg?v=1672025208",
+            "custom_payment_logo_7_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_05_1c21f308-a0a3-4251-8641-87264da43d67.svg?v=1672025208",
+            "custom_payment_logo_8_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_01_96e6a30c-7908-4892-b6f1-75bce8657cd4.svg?v=1672025208",
+            "custom_payment_logo_9_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/sofort_icon_31ba2d5b-2c44-4960-8e80-645a7240c899.png?v=1679023017",
+            "custom_payment_logo_10_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/giropay_icon_c9d7e22e-cd7c-4bee-8de5-e50a4c6dc378.png?v=1679023017",
+            "custom_payment_logo_11_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/ideal_icon_8548c48a-3c4e-4052-95de-670062a453ce.png?v=1679023017",
+            "custom_payment_logo_12_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/multibanco_icon_e3f9b26f-234c-4a06-9e48-adfd188e7deb.png?v=1679023016",
+            "custom_payment_logo_13_svg": "",
+            "custom_payment_logo_14_svg": "",
+            "custom_payment_logo_15_svg": ""
+          }
+        },
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% if product.metafields.custom.trade_message != blank %}\n          <div class=\"trade-message\">♻️{{product.metafields.custom.trade_message}} <a href=\"\/pages\/trade-in\" target=\"_blank\">Learn more<\/a><\/div>\n{% endif %}"
+          }
+        }
+      },
+      "block_order": [
+        "11795adc-1afa-4833-a193-258f495901ef",
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e",
+        "judge_me_reviews_preview_badge_7x4Gyf",
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774",
+        "0471109f-c130-454e-a9ba-c56412cc11f3",
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185",
+        "d25a0285-4fb4-422d-b95b-ab67446120ad",
+        "79e1b437-5bbd-4b8a-ac55-27c2f795ee99",
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879",
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe",
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0",
+        "a96faac7-b2a0-4157-9b80-c757c18c6a89",
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609",
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a"
+      ],
+      "settings": {
+        "section_id": "",
+        "show_breadcrumbs": true,
+        "show_pick_an_option": false,
+        "enable_linked_options": false,
+        "enabled_mobile_sticky_btns": true,
+        "media_size": "medium",
+        "enable_image_zoom": true,
+        "enable_video_looping": true,
+        "thumbnails_type": "grid",
+        "support_email": "",
+        "support_text": "",
+        "feature_1_show": false,
+        "feature_1_title": "Fast & Free Shipping",
+        "feature_1_content": "",
+        "feature_2_show": false,
+        "feature_2_title": "Warranty Protection",
+        "feature_2_content": "",
+        "feature_3_show": false,
+        "feature_3_title": "Secure Payments",
+        "feature_3_content": "",
+        "feature_4_show": false,
+        "feature_4_title": "Multi-channel Support",
+        "feature_4_content": ""
+      }
+    },
+    "ae8f43db-0c7f-46fc-80da-3bab0bcd78b3": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--19684935467351__ae8f43db-0c7f-46fc-80da-3bab0bcd78b3-text_with_image-1": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 40,
+            "section_top_padding_m": 20,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/1_pc_hd_new.png",
+            "mobile_image": "shopify:\/\/shop_images\/1_m_hd.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Cargador y mantenedor de batería de vehículo de 12\/24 V tipo todo en uno",
+            "title_color": "#232323",
+            "content": "<p>Combínalo con las series RIVER o DELTA para encender la batería de tu vehículo. También puedes utilizar el cargador de batería automático inteligente para el mantenimiento diario de la batería. De este modo, con la ayuda de nuestra tecnología de carga segura y optimizada para su batería podrás alargar su vida útil. Es adecuado para la mayoría de automóviles, pick-ups, SUV y motocicletas con un modo de conmutación de 12\/24 V, lo que garantiza cobertura tanto en invierno como en verano.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "f7ab6ac9-6fa6-436b-8a1e-d6af1a2c7417": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Protege y alimenta la batería de tu vehículo diariamente y en emergencias",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--19684935467351__ae8f43db-0c7f-46fc-80da-3bab0bcd78b3-text_with_image-1",
+        "f7ab6ac9-6fa6-436b-8a1e-d6af1a2c7417"
+      ],
+      "settings": {
+      }
+    },
+    "48ca26bc-8400-40ac-bbb2-fca1ced2f33e": {
+      "type": "pdp-image-with-text-horizontal-new",
+      "blocks": {
+        "37cd9b29-1602-434b-bf7a-5f161e3fa729": {
+          "type": "image",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/5_ce00af5c-f6bd-4351-9cee-d045ca3e76de.png",
+            "mobile_image": "shopify:\/\/shop_images\/5_84d556aa-23ec-4b41-a797-48c16dd6b24d.png",
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "image_alignment": "left",
+            "title": "",
+            "subtitle": "<p><strong>Energía de emergencia para una batería agotada.<\/strong><\/p>",
+            "content": "<p>El cargador de batería automático inteligente EcoFlow es un accesorio esencial para cualquier viaje. Perfecto si viajas por carreteras apartadas para cargar la batería de tu vehículo o incluso la de tu compañero de viaje.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "a67c1fb5-6ca2-411f-ab2e-c1f5acc18569": {
+          "type": "image",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/4_b7f61a26-ff0c-470e-9be0-72ffdd7ab6fc.png",
+            "mobile_image": "shopify:\/\/shop_images\/4_b0198924-96f3-4993-8435-69a64eed5c53.png",
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "image_alignment": "right",
+            "title": "",
+            "subtitle": "<p><strong>Enciende tu motor incluso con el frío invernal.<\/strong><\/p>",
+            "content": "<p>El frío puede agotar tu batería más rápido de lo normal, dificultando el arranque del motor. El cargador de batería automático inteligente EcoFlow garantiza siempre un encendido sin contratiempos.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "f4775b86-09e0-4b51-9f5f-843c1d2abc28": {
+          "type": "image",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/6_pc_hd.png",
+            "mobile_image": "shopify:\/\/shop_images\/6_m_hd.png",
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "image_alignment": "left",
+            "title": "",
+            "subtitle": "<p><strong>Mantenimiento de la batería<\/strong><\/p>",
+            "content": "<p>Las baterías se agotan rápidamente en vehículos viejos y que se usan poco, causando daños y molestias. Carga tu batería cada 2-3 meses para ampliar su duración.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "37cd9b29-1602-434b-bf7a-5f161e3fa729",
+        "a67c1fb5-6ca2-411f-ab2e-c1f5acc18569",
+        "f4775b86-09e0-4b51-9f5f-843c1d2abc28"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "center"
+      }
+    },
+    "pdp_text_with_image_hnKFPN": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "text_with_image_DGJjxM": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/ES_1af66fe2-f76a-43c8-86ed-bd64759c54d3.png",
+            "mobile_image": "shopify:\/\/shop_images\/ES_7469603f-f25d-47d5-b3dc-ee0dec6c0217.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Solución de energía de carga doble para tus viajes",
+            "title_color": "#232323",
+            "content": "<p> Llévate el cargador de batería automático inteligente EcoFlow con tus estaciones de energía portátil serie RIVER o DELTA para tener energía en cualquier viaje. Recarga la batería de tu vehículo cuando esté baja o carga RIVER o DELTA con la toma de 12 V de tu vehículo para acceder a varias tomas como puertos de CA, USB-C, USB-A y DC5521.* Añade paneles solares para obtener energía solar ilimitada y no tendrás que preocuparte de los apagones mientras viajas.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "<p> <br\/>*EcoFlow RIVER 2 no incluye puertos de salida DC5521.<\/p>",
+            "message_color": "#a9a9a9",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "text_with_image_ihKqt4": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/2_pc_hd_new.png",
+            "mobile_image": "shopify:\/\/shop_images\/2_m_hd.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Carga tu batería sin causar daños",
+            "title_color": "#232323",
+            "content": "<p>El uso de dispositivos de alta corriente, como arrancadores de emergencia, durante subidas de tensión puede dañar la batería de tu vehículo. El cargador de batería automático inteligente EcoFlow, con su tecnología de carga de reparación por pulsos en cinco etapas, garantiza una carga y un encendido seguros de la batería. Ten a mano un cargador de batería automático inteligente EcoFlow para emergencias y mantenimiento rutinario.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "text_with_image_BrX4Tk": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/3_pc_hd.png",
+            "mobile_image": "shopify:\/\/shop_images\/3_m_hd.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "<p>*Evita cargar baterías no recargables o ya dañadas.<br\/>*No arranques el vehículo durante el proceso de recarga de la batería.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "text_with_image_DGJjxM",
+        "text_with_image_ihKqt4",
+        "text_with_image_BrX4Tk"
+      ],
+      "settings": {
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "grid_mobile": "2",
+        "heading": "You may also like",
+        "show_vendor": false
+      }
+    },
+    "c86126de-2d1f-4172-b65c-2954a80d8b19": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--19684935467351__c86126de-2d1f-4172-b65c-2954a80d8b19-text_with_image-1": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/7_pc_hd.png",
+            "mobile_image": "shopify:\/\/shop_images\/7_m_hd.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Carga sencilla mediante el control automático inteligente",
+            "title_color": "#232323",
+            "content": "<p>Benefíciate de nuestro avanzado sistema que ajusta intuitivamente la corriente y la tensión, garantizando así la carga segura y sin riesgo de sobrecarga para tu batería.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "12bf456d-5f82-46a7-93c7-f9c61a76da79": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/8_pc_hd.png",
+            "mobile_image": "shopify:\/\/shop_images\/8_m_hd.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Diseño que permite cambiar entre 12 y 24 V",
+            "title_color": "#232323",
+            "content": "<p>Cambia sin esfuerzo entre 12 V y 24 V para adaptarte a diferentes modelos de vehículos. Perfectamente ubicado debajo del cabezal del cargador, este botón evita la conmutación accidental durante el uso.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "b52b1b2c-b272-446e-b68e-a45d35a65ca6": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "<p>*La carga dura aproximadamente 20 minutos en vehículos de 12 V y unos 40 minutos en vehículos de 24 V.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "44ba3119-2021-4f41-aad8-4efa7db23f02": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/11_pc_hd.png",
+            "mobile_image": "shopify:\/\/shop_images\/11_m_hd.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Protección de polaridad con indicador de advertencia",
+            "title_color": "#232323",
+            "content": "<p>Una función de seguridad detendrá la carga si los clips de la batería se conectan al revés. Se iluminará una luz roja de advertencia para confirmar que la batería sigue protegida.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "5dcf5d7b-2df2-4243-b8ef-59f853309a5c": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/9_pc_hd.png",
+            "mobile_image": "shopify:\/\/shop_images\/9_m_hd.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Información clara sobre la batería con indicadores inteligentes",
+            "title_color": "#232323",
+            "content": "<p>Obtén una vista completa del estado de la carga de la batería de tu vehículo con las luces indicadoras intuitivas del cargador de batería automático inteligente EcoFlow.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "f8d45e4e-9cbb-4ccc-b30f-82443754be09": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "<p>*Si se produce alguna alerta, desenchufa el cargador de inmediato.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "36d1a2eb-42ce-453b-8a8c-508123902157": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/10_pc_hd.png",
+            "mobile_image": "shopify:\/\/shop_images\/10_m_hd.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "ae94f61d-abb3-4c35-b90e-7dbd699a2248": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/12pc_eu.png",
+            "mobile_image": "shopify:\/\/shop_images\/12_m_eu.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Compacto y fácil de usar",
+            "title_color": "#232323",
+            "content": "<p>Diseñado para caber en la palma de tu mano, este dispositivo pesa menos que una manzana y ocupa un espacio mínimo. Es una experiencia plug-and-play perfecta, lo que le convierte en el compañero ideal para las estaciones de energía portátil de EcoFlow, incluidas las series RIVER y DELTA.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "5619af47-d08a-480a-b521-dbea706e190c": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "<p>*Sólo compatible con estaciones de energía portátiles EcoFlow.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "a30c5e35-326e-4ee2-9460-be6def4d5446": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/13_pc_hd.png",
+            "mobile_image": "shopify:\/\/shop_images\/13_m_hd.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Detalles del producto",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--19684935467351__c86126de-2d1f-4172-b65c-2954a80d8b19-text_with_image-1",
+        "12bf456d-5f82-46a7-93c7-f9c61a76da79",
+        "b52b1b2c-b272-446e-b68e-a45d35a65ca6",
+        "44ba3119-2021-4f41-aad8-4efa7db23f02",
+        "5dcf5d7b-2df2-4243-b8ef-59f853309a5c",
+        "f8d45e4e-9cbb-4ccc-b30f-82443754be09",
+        "36d1a2eb-42ce-453b-8a8c-508123902157",
+        "ae94f61d-abb3-4c35-b90e-7dbd699a2248",
+        "5619af47-d08a-480a-b521-dbea706e190c",
+        "a30c5e35-326e-4ee2-9460-be6def4d5446"
+      ],
+      "settings": {
+      }
+    },
+    "686ae4b9-4dbf-4a3f-b87d-f091733d2816": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 20,
+        "section_bottom_spacing": 20,
+        "section_top_spacing_mobile": 20,
+        "section_bottom_spacing_mobile": 20,
+        "alignment": "center",
+        "title": "Contenido de la caja",
+        "subtitle": "",
+        "content": "",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "c52bc9f0-a02a-4384-b81d-36997694a78d": {
+      "type": "pdp-image-with-text",
+      "blocks": {
+        "64ae7593-fbdd-4826-aaf0-88254025fa47": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/14.png",
+            "mobile_image": "shopify:\/\/shop_images\/14_M.png",
+            "image_height": 310,
+            "mobile_image_height": 250,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "<p>1 cargador de batería automático inteligente EcoFlow<\/p>",
+            "subtext_bottom": "",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "8445d370-3eb9-473a-8461-85801a96c564": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/15_4eb57a8d-929a-48ab-af30-dd330ed012b8.png",
+            "mobile_image": "shopify:\/\/shop_images\/15_M.png",
+            "image_height": 310,
+            "mobile_image_height": 250,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "<p>1 cable de clips para conectar XT60 a la batería<\/p>",
+            "subtext_bottom": "",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "64ae7593-fbdd-4826-aaf0-88254025fa47",
+        "8445d370-3eb9-473a-8461-85801a96c564"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "center",
+        "layout": "stacked",
+        "stacked_row": "2",
+        "mobile_stacked_row": "1",
+        "slider_row": "2",
+        "mobile_slider_row": "1"
+      }
+    },
+    "d5994ce4-adc1-462c-844b-f2209837afe7": {
+      "type": "pdp-specs",
+      "blocks": {
+        "f3ba8d5d-d345-4b8d-adc3-55020c46a85a": {
+          "type": "contents",
+          "settings": {
+            "title": "Nombre del producto",
+            "content": "<p>Cargador de batería automático inteligente EcoFlow<\/p>"
+          }
+        },
+        "9a6ca87c-a42c-46b6-9a0b-ad0acb01359b": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de 12 V",
+            "content": "<p>11-15V -- 7.25V<\/p>"
+          }
+        },
+        "80d98493-276a-4a1c-9130-8293bb380502": {
+          "type": "contents",
+          "settings": {
+            "title": "Salida XT60",
+            "content": "<p>14,2 V == 6,2 A o 28,2 V == 3,2 A<\/p>"
+          }
+        },
+        "adeb8242-06ae-43f5-a69e-6434e43b49fd": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso",
+            "content": "<p>103 g<\/p>"
+          }
+        },
+        "9d10d297-b00a-4000-9ff5-c62853898ae4": {
+          "type": "contents",
+          "settings": {
+            "title": "Dimensiones",
+            "content": "<p>128 × 72 × 26 mm<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "f3ba8d5d-d345-4b8d-adc3-55020c46a85a",
+        "9a6ca87c-a42c-46b6-9a0b-ad0acb01359b",
+        "80d98493-276a-4a1c-9130-8293bb380502",
+        "adeb8242-06ae-43f5-a69e-6434e43b49fd",
+        "9d10d297-b00a-4000-9ff5-c62853898ae4"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Especificaciones"
+      }
+    },
+    "4367d3fe-4d7f-4b24-951d-ed9259f733e9": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--19684935467351__4367d3fe-4d7f-4b24-951d-ed9259f733e9-text_with_image-1": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "<p>1. Evita las chispas cerca de la batería mientras se carga y asegúrate de que haya un buen flujo de aire en la zona.<br\/>2. Si la tensión de la batería del automóvil baja demasiado, la función de seguridad del cargador podría activarse y provocar que no funcione del modo esperado. Si ocurre esto, ponte en contacto con el servicio de asistencia de emergencia para obtener ayuda.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--19684935467351__4367d3fe-4d7f-4b24-951d-ed9259f733e9-text_with_image-1"
+      ],
+      "settings": {
+      }
+    },
+    "1676887592a3dc4fd0": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_M4WC7a": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_M4WC7a"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    }
+  },
+  "order": [
+    "daf26638-f596-4384-b150-72d380a3268d",
+    "sticky-product-bar",
+    "main",
+    "ae8f43db-0c7f-46fc-80da-3bab0bcd78b3",
+    "48ca26bc-8400-40ac-bbb2-fca1ced2f33e",
+    "pdp_text_with_image_hnKFPN",
+    "product-recommendations",
+    "c86126de-2d1f-4172-b65c-2954a80d8b19",
+    "686ae4b9-4dbf-4a3f-b87d-f091733d2816",
+    "c52bc9f0-a02a-4384-b81d-36997694a78d",
+    "d5994ce4-adc1-462c-844b-f2209837afe7",
+    "4367d3fe-4d7f-4b24-951d-ed9259f733e9",
+    "1676887592a3dc4fd0"
+  ]
+}

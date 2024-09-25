@@ -1,0 +1,305 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "t:sections.index-accordion.name",
+  "class": "index-section bg_image_with_custom_content bg_image_with_custom_content--index-accordion",
+  "id": "index-accordion",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_section_id",
+      "label": "Section id",
+      "info": ""
+    },
+    {
+      "type": "image_picker",
+      "id": "atb_image",
+      "label": "t:sections.index-accordion.settings.image.label",
+      "info": ""
+    },
+    {
+      "type": "image_picker",
+      "id": "atb_mobile_image",
+      "label": "t:sections.index-accordion.settings.mobile_image.label",
+      "info": ""
+    },
+    {
+      "type": "select",
+      "id": "atb_content_side",
+      "label": "t:sections.index-accordion.settings.content_side.label",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.index-accordion.settings.content_side.options__1.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.index-accordion.settings.content_side.options__2.label"
+        },
+        {
+          "value": "full_width",
+          "label": "t:sections.index-accordion.settings.content_side.options__3.label"
+        }
+      ],
+      "default": "left",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_title",
+      "label": "t:sections.index-accordion.settings.title.label",
+      "default": "Heading",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_subtitle",
+      "label": "t:sections.index-accordion.settings.subtitle.label",
+      "default": "Subtitle",
+      "info": ""
+    },
+    {
+      "type": "color",
+      "id": "atb_text_color",
+      "label": "t:sections.index-accordion.settings.text_color.label",
+      "default": "#03060b",
+      "info": ""
+    },
+    {
+      "type": "color",
+      "id": "atb_color_image_overlay",
+      "label": "t:sections.index-accordion.settings.color_image_overlay.label",
+      "info": ""
+    },
+    {
+      "type": "color",
+      "id": "atb_color_bgcolor",
+      "label": "Background color",
+      "info": "This will be displayed when there's no background image."
+    },
+    {
+      "type": "range",
+      "id": "atb_image_overlay_opacity",
+      "label": "t:sections.index-accordion.settings.image_overlay_opacity.label",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "t:sections.index-accordion.settings.image_overlay_opacity.unit",
+      "default": 70,
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "blocks",
+      "label": "Block ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": "",
+      "repeatable": "t:sections.index-accordion.blocks.block.name"
+    },
+    {
+      "type": "text",
+      "id": "block_question",
+      "label": "t:sections.index-accordion.blocks.block.settings.question.label",
+      "default": "Question title",
+      "repeatable": "t:sections.index-accordion.blocks.block.name",
+      "info": ""
+    },
+    {
+      "type": "wysiwyg",
+      "id": "block_answer",
+      "label": "t:sections.index-accordion.blocks.block.settings.answer.label",
+      "default": "<p>Answer text</p>",
+      "repeatable": "t:sections.index-accordion.blocks.block.name",
+      "info": ""
+    }
+  ],
+  "warnings": []
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_section_id' -%}
+{%- assign atb_section_id = val -%}
+{%- include 'atb-render' field:'atb_image' -%}
+{%- assign atb_image = val -%}
+{%- include 'atb-render' field:'atb_mobile_image' -%}
+{%- assign atb_mobile_image = val -%}
+{%- include 'atb-render' field:'atb_content_side' -%}
+{%- assign atb_content_side = val -%}
+{%- include 'atb-render' field:'atb_title' -%}
+{%- assign atb_title = val -%}
+{%- include 'atb-render' field:'atb_subtitle' -%}
+{%- assign atb_subtitle = val -%}
+{%- include 'atb-render' field:'atb_text_color' -%}
+{%- assign atb_text_color = val -%}
+{%- include 'atb-render' field:'atb_color_image_overlay' -%}
+{%- assign atb_color_image_overlay = val -%}
+{%- include 'atb-render' field:'atb_color_bgcolor' -%}
+{%- assign atb_color_bgcolor = val -%}
+{%- include 'atb-render' field:'atb_image_overlay_opacity' -%}
+{%- assign atb_image_overlay_opacity = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_question' -%}
+{%- assign block_question = val -%}
+{%- include 'atb-render' field:'block_answer' -%}
+{%- assign block_answer = val -%}
+{%- assign atb_image_overlay_opacity = atb_image_overlay_opacity | plus: 0 -%}
+{%- assign atb_image_key = atb_image| split: '/files/' | last -%}{%- assign atb_image = images[atb_image_key] -%}{%- assign atb_mobile_image_key = atb_mobile_image| split: '/files/' | last -%}{%- assign atb_mobile_image = images[atb_mobile_image_key] -%}{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section index-section bg_image_with_custom_content bg_image_with_custom_content--index-accordion">
+{% assign section_id = atb_section_id | default: section_id %}
+<section id="section-{{ section_id }}" class="fade-in-animation {% if template contains 'product' %}product-section{% endif %}" data-section-id="{{ section_id }}" data-section-type="index-accordion" data-alfie>
+
+  {% assign image = atb_image %}
+  {% assign mobile_image = atb_mobile_image %}
+  {% assign content_side = atb_content_side %}
+
+  {% capture section_content%}
+    {% if atb_title != blank or  atb_subtitle != blank %}
+    <header class="section-header section-title homepage_subtitle_style_{{settings.homepage_subtitle_color}}">
+      {% if atb_title != blank  %}
+      <h2>{{ atb_title }}</h2>
+      {% endif %}
+      {% if atb_subtitle != blank  %}
+      <span class='section-header--subtitle'>{{ atb_subtitle  }}</span>
+      {% endif %}
+    </header>
+    {% endif %}
+
+    {% if blocks.size > 0 %}
+    <div class='homepage_accordion' id='homepage_accordion-{{ section_id }}'>
+      {% for block0 in blocks %}
+      <div class='homepage_accordion__block'>
+        <a href="javascript:void(0)" class='h4 question' data-id="{{blocks[forloop.index0]}}">
+        <span>{{ block_question[forloop.index0] }}</span>
+        {% render 'icon' with "chevron-right" %}
+        {% render 'icon' with "chevron-down" %}
+        </a>
+        <div class='answer'>
+          <div class='answer_content'>
+            {{ block_answer[forloop.index0]}}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+     {% if blocks.size == 0 %}
+    <div class="placeholder-noblocks">
+      {{ 'homepage.onboarding.no_content' | t }}
+    </div>
+  {% endif %}
+
+  {% endcapture %}
+
+
+
+
+
+  <div class='section_bg {% if content_side == 'full_width' %} full_height {% endif %}'>
+ {% if image != blank %}
+        <img
+             class="section_bg_image {% if mobile_image != blank %} small--hide {% endif %}"
+             srcset="{%- if image.width >= 375 -%}{{ image | img_url: '375x' }} 375w,{%- endif -%}
+                {%- if image.width >= 720 -%}{{ image | img_url: '720x' }} 750w,{%- endif -%}
+                {%- if image.width >= 1066 -%}{{ image | img_url: '1066x' }} 1066w,{%- endif -%}
+             	{%- if image.width >= 1500 -%}{{ image | img_url: '1500x' }} 1500w,{%- endif -%}
+                {%- if image.width >= 1780 -%}{{ image | img_url: '1780x' }} 1780w,{%- endif -%}
+                {%- if image.width >= 2000 -%}{{ image | img_url: '2000x' }} 2000w,{%- endif -%}
+                {%- if image.width >= 2800 -%}{{ image | img_url: '2800x' }} 2800w{%- endif -%}"
+             src="{{ image | img_url: '750x' }}"
+             sizes="100vw"
+             loading="lazy"
+             width="{{ image.width }}"
+        	 height="{{ image.height }}"
+             alt="{{image.alt | default:  atb_title }}">
+
+      {% if mobile_image != blank %}
+        <img
+             class="section_bg_image mobile_image medium-up--hide"
+             srcset="{%- if mobile_image.width >= 375 -%}{{ mobile_image | img_url: '375x' }} 375w,{%- endif -%}
+                {%- if mobile_image.width >= 720 -%}{{ mobile_image | img_url: '720x' }} 750w,{%- endif -%}
+                {%- if mobile_image.width >= 1066 -%}{{ mobile_image | img_url: '1066x' }} 1066w,{%- endif -%}
+             	{%- if mobile_image.width >= 1500 -%}{{ mobile_image | img_url: '1500x' }} 1500w{%- endif -%}"
+             src="{{ mobile_image | img_url: '535x' }}"
+             sizes="100vw"
+             loading="lazy"
+             width="{{ mobile_image.width }}"
+        	 height="{{ mobile_image.height }}"
+             alt="{{mobile_image.alt | default:  atb_title}}">
+      {% endif %}
+
+
+     {% else %}
+    <div class='section_bg_image' style="background-color: {{ atb_color_bgcolor }}">
+      {% comment %} {% capture current %}{% cycle 1, 2 %}{% endcapture %}
+      {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }} {% endcomment %}
+    </div>
+    {% endif %}
+
+  </div>
+  <div class='section_content'>
+    <div class="{% if content_side == 'full_width' %} page-width-small  {% else %} page-width-small content_side_{{content_side}} {% endif %}">
+      <div class='text-left'>
+        <div class='{% unless content_side == 'full_width' %}section_main_content{% else %}page-width-xsmall{% endunless%}'>
+          {{section_content}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <style>
+    #section-{{ section_id }} *:not(.h5) {
+      color: {{ atb_text_color }};
+    }
+       {% if settings.homepage_subtitle_color == 'match_header' %}
+    #section-{{ section_id }}  .section-header .h5 {
+      color: {{ atb_text_color }};
+    }
+     #section-{{ section_id }}  .section-header .h5:before {
+      background: {{ atb_text_color }};
+    }
+    {% endif %}
+
+  </style>
+
+  {% unless content_side == 'full_width' %}
+  <div class='section_overlay content_side_{{content_side}}'></div>
+  <div class='section_overlay_border_top content_side_{{content_side}}'></div>
+  <div class='section_overlay_border_bottom content_side_{{content_side}}'></div>
+  {% else %}
+  <div class='section_overlay full_width '></div>
+  {% endunless %}
+
+
+  {% assign color_image_overlay = atb_color_image_overlay %}
+
+   {% if color_image_overlay == 'rgba(0,0,0,0)' or color_image_overlay == blank %}
+  {% assign color_image_overlay = settings.color_button %}
+  {% endif %}
+
+  <style>
+    #section-{{ section_id }} .section_overlay {
+      opacity: {{ atb_image_overlay_opacity }}% ;
+      background-color: {{ color_image_overlay }};
+    }
+  </style>
+</section>
+
+
+</section>

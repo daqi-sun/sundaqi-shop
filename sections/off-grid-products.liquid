@@ -1,0 +1,102 @@
+<div class="off-grid-products-section">
+  <div class="off-grid-products-container">
+    <div class="off-grid-products-text-container">
+      {% if section.settings.title != blank %}
+        <h2>{{ section.settings.title }}</h2>
+      {% endif %}
+      {% if section.settings.textarea != blank %}
+        <p>
+          {{ section.settings.textarea }}
+        </p>
+      {% endif %}
+      <div class="ogsc-button--wrapper">
+        {% if section.settings.btn_text_1 != blank %}
+          <a href="{{ section.settings.btn_url_1 }}">
+            <div class="btn--wrapper">{{ section.settings.btn_text_1 }}</div>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+    <div class="off-grid-products-details-container product-slide-init">
+      {% for block in section.blocks %}
+        <div class="off-grid-products-flex-item">
+          {% if block.settings.title != blank %}
+            <h3>{{ block.settings.title }}</h3>
+          {% endif %}
+          {% if block.settings.img != blank %}
+            <img loading="lazy" src="{{ block.settings.img | img_url: 'master' }}" alt="{{ block.settings.img.alt }}">
+          {% endif %}
+          <div class="ogsc-button--wrapper">
+            {% if block.settings.btn_text_1 != blank %}
+              <a href="{{ block.settings.btn_url_1 }}">
+                <div class="btn--wrapper">{{ block.settings.btn_text_1 }}</div>
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Off Grid Products",
+  "max_blocks": 3,
+  "settings": [
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title",
+      "default": "What is off grid solar system?"
+    },
+    {
+      "type": "textarea",
+      "id": "textarea",
+      "label": "Details",
+      "default": "An off-grid solar system relies on energy from the sun to run homes, off-grid builds, or even recreational vehicles. Unlike grid-tied solar systems, batteries store any solar energy collected from panels in order to run some of, or your entire home. Off-grid solar system setups give you the freedom to live comfortably, and the option to run almost any appliance, rain or shine, morning or night."
+    },
+    {
+      "type": "text",
+      "id": "btn_text_1",
+      "label": "1st Button Text",
+      "default": "Learn More"
+    },
+    {
+      "type": "url",
+      "id": "btn_url_1",
+      "label": "1st Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Product",
+      "name": "Details",
+      "settings": [
+        {
+          "type": "html",
+          "id": "title",
+          "label": "Title",
+          "default": "Lower Carbon Emissions"
+        },
+        {
+          "type": "image_picker",
+          "id": "img",
+          "label": "Icons"
+        },
+        {
+          "type": "text",
+          "id": "btn_text_1",
+          "label": "1st Button Text",
+          "default": "Learn More"
+        },
+        {
+          "type": "url",
+          "id": "btn_url_1",
+          "label": "1st Button Link"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

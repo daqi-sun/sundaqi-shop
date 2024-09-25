@@ -1,0 +1,635 @@
+<div
+  class="diy-purchase__form-group diy-purchase__form-group--price-below-heading"
+  :data-required="optionBlock.is_mandatory"
+  :data-selector="'option-block-'+convertToSlug(optionBlock.title)"
+>
+  <div class="diy-purchase__sub-header">
+    <div class="diy-purchase__title">
+      <div x-text="optionBlock.title"></div>
+      <div
+        x-show="optionBlock.information.option_type != 'nil'"
+        class="diy-purchase__info-icon"
+        :class="{'diy-purchase__info-icon--image-with-text': optionBlock.information.option_type === 'image-with-text'}"
+        :data-type="optionBlock.information.option_type"
+        :data-title="optionBlock.information.title"
+        :data-info="optionBlock.information.text"
+        :data-image="optionBlock.information.image_url"
+      >
+        <img src="{{ 'icon-info.svg' | asset_url }}" width="19" height="18" loading="lazy">
+      </div>
+    </div>
+    <div class="diy-purchase__price-wrapper">
+      {% comment %} Price {% endcomment %}
+      <div class="diy-purchase__price" x-show="optionBlock.selectedOptionPrice > 0">
+        <span x-text="priceFormat(optionBlock.selectedOptionPrice)"></span>
+        <span
+          class="diy-purchase__price-no-vat"
+          :class="{'hide': optionBlock.selectedOptionCompareAtPrice === '' || Number(optionBlock.selectedOptionPrice) === Number(optionBlock.selectedOptionCompareAtPrice)}"
+        >
+          <s x-show="optionBlock.selectedOptionCompareAtPrice > 0" x-text="priceFormat(optionBlock.selectedOptionCompareAtPrice)"></s>
+        </span>
+      </div>
+    </div>
+    <div class="diy-purchase__info-text" x-text="optionBlock.subtitle"></div>
+  </div>
+
+  <div class="diy-purchase__options" x-data="{ openMore: false, openHave: false }">
+    <template x-for="(option, optionIndex) in optionBlock.options" :key="optionIndex">
+      <div
+        class="diy-purchase__label-wrap"
+        :class="{'diy-purchase__label-wrap--two-column': option.option_size === 'half', 'diy-purchase__label-wrap--one-column': option.option_size === 'full'}"
+        x-show="option.is_ihave ? openHave : option.is_viewmore ? openMore : true"
+      >
+
+        {% comment %} Template: Single {% endcomment %}
+        <template x-if="option.option_type === 'single' && !option.is_ihave && !option.is_viewmore">
+          <div class="diy-purchase__option-wrapper">
+            <label class="diy-purchase__option" :data-option="optionIndex">
+              <input
+                type="radio"
+                :name="convertToSlug(optionBlock.title)"
+                :value="option.option_type"
+                :data-category="option.option_type"
+                :data-cy="generateDataCyAttributeName(optionBlock.title, option.title)"
+                :checked="option.isSelected"
+                @change="
+                  updatePrice(option, optionBlock);
+                  openHave = false;
+                "
+                @click="
+                  if(option.isSelected) {
+                    removeSelectedOption(optionBlock, option);
+                    if (option.customize_image_url && option.customize_image_url !== '') {
+                      customizeImages = replaceCustomizeImageWithPlaceholderImage(optionBlock.title);
+                    }
+                  }
+                  optionBlock.options.forEach((option) => { option.isAccordionOpen = false });
+
+                  optionBlock.options.forEach((opt) => {
+                    opt.isAccordionOpen = false
+                    if (opt !== option) {
+                      opt.isSelected = false
+                      removeSelectedOption(optionBlock, opt)
+                    }
+                  });
+
+                  if (!option.isSelected && option.customize_image_url && option.customize_image_url !== '') {
+                    customizeImages = getCustomizeImages(optionBlock.title, option.customize_image_url);
+                  }
+
+                  option.isSelected = !option.isSelected;
+                "
+              >
+              <span class="diy-purchase__option__radio-button justify--start">
+                <span x-text="option.title"></span>
+                <span class="diy-purchase__new" x-show="option.badge != ''" x-text="option.badge"></span>
+              </span>
+            </label>
+            <template x-if="option.option_notification_msg != ''">
+              <span
+                class="diy-purchase__option-info-message diy-purchase__error-message--style"
+                :class="{'hide': !option.isSelected }"
+                x-text="option.option_notification_msg"
+              ></span>
+            </template>
+          </div>
+        </template>
+
+        {% comment %} Template: Single - is_viewmore {% endcomment %}
+        <template x-if="option.option_type === 'single' && !option.is_ihave && option.is_viewmore">
+          <div class="diy-purchase__option-wrapper">
+            <label class="diy-purchase__option" :data-option="optionIndex">
+              <input
+                type="radio"
+                :name="convertToSlug(optionBlock.title)"
+                :value="option.option_type"
+                :data-category="option.option_type"
+                :data-cy="generateDataCyAttributeName(optionBlock.title, option.title)"
+                :checked="option.isSelected"
+                @change="
+                  updatePrice(option, optionBlock);
+                  openHave = false;
+                "
+                @click="
+                  if(option.isSelected) {
+                    removeSelectedOption(optionBlock, option);
+                    if (option.customize_image_url && option.customize_image_url !== '') {
+                      customizeImages = replaceCustomizeImageWithPlaceholderImage(optionBlock.title);
+                    }
+                  }
+                  optionBlock.options.forEach((option) => { option.isAccordionOpen = false });
+
+                  optionBlock.options.forEach((opt) => {
+                    opt.isAccordionOpen = false
+                    if (opt !== option) {
+                      opt.isSelected = false
+                      removeSelectedOption(optionBlock, opt)
+                    }
+                  });
+
+                  if (!option.isSelected && option.customize_image_url && option.customize_image_url !== '') {
+                    customizeImages = getCustomizeImages(optionBlock.title, option.customize_image_url);
+                  }
+
+                  option.isSelected = !option.isSelected;
+                "
+              >
+              <span class="diy-purchase__option__radio-button justify--start" x-text="option.title"></span>
+            </label>
+            <template x-if="option.option_notification_msg != ''">
+              <span
+                class="diy-purchase__option-info-message diy-purchase__error-message--style"
+                :class="{'hide': !option.isSelected }"
+                x-text="option.option_notification_msg"
+              ></span>
+            </template>
+          </div>
+        </template>
+
+        {% comment %} Template: No Thanks {% endcomment %}
+        <template x-if="option.option_type === 'no thanks'">
+          <label class="diy-purchase__option" :data-option="optionIndex">
+            <input
+              type="radio"
+              :name="option.is_ihave ? convertToSlug(optionBlock.title + '-is_ihave') : convertToSlug(optionBlock.title)"
+              :value="option.option_type"
+              :data-category="option.option_type"
+              :data-cy="generateDataCyAttributeName(optionBlock.title, option.title)"
+              @change="
+                if(!option.is_ihave) {
+                  openHave = !openHave
+                  {% comment %} removeSelectedOption(optionBlock) {% endcomment %}
+                  optionBlock.options.forEach((opt) => {
+                    if (opt !== option) {
+                      opt.isAccordionOpen = false
+                      opt.isSelected = false
+                      removeSelectedOption(optionBlock, opt)
+                    }
+                  });
+                  // make sure all is_ihave is unchecked
+                  const isIhaveOptions = document.querySelectorAll('[name=' + convertToSlug(optionBlock.title + '-is_ihave') + ']');
+                  if(isIhaveOptions) isIhaveOptions.forEach((isIhaveOption) => isIhaveOption.checked = false)
+                } else {
+                  optionBlock.options.forEach((opt) => {
+                    if (opt !== option) {
+                      opt.isAccordionOpen = false
+                      opt.isSelected = false
+                      removeSelectedOption(optionBlock, opt)
+                    }
+                  });
+                }
+                hideOptionBlocksErrorMessage(optionBlock.title)
+                getAllMandatoryOptionBlocks(optionBlock, option)
+                checkIsMandatory()
+              "
+              @click="
+                if (option.customize_image_url && option.customize_image_url !== '') {
+                  customizeImages = getCustomizeImages(optionBlock.title, option.customize_image_url);
+                }
+              "
+            >
+            <span class="diy-purchase__option__radio-button justify--start" x-text="option.title"></span>
+          </label>
+        </template>
+
+        {% comment %} Template: View More {% endcomment %}
+        <template x-if="option.option_type === 'view more'">
+          <a
+            href="#"
+            class="diy-purchase__option-btn-text"
+            data-view-text="Mehr anzeigen >"
+            data-hide-text="Weniger anzeigen >"
+            data-view-more-button
+            x-text="
+              openMore
+              ? option.title.split(',')[1] ? option.title.split(',')[1].trim() + ' >' : option.title.split(',')[0].trim() + ' >'
+              : option.title.split(',')[0].trim() + ' >'
+            "
+            @click.prevent="openMore = !openMore"
+            ></a
+          >
+        </template>
+
+        {% comment %} Template: Sub Title {% endcomment %}
+        <template x-if="option.option_type === 'sub title'">
+          <div class="diy-purchase__sub-header diy-purchase__sub-header--small diy-purchase__sub-header--no-margin" x-text="option.title">
+          </div>
+        </template>
+
+        {% comment %} Template: Single - is_ihave {% endcomment %}
+        <template x-if="option.option_type === 'single' && option.is_ihave && !option.is_viewmore">
+          <div class="diy-purchase__option-wrapper">
+            <label class="diy-purchase__option" :data-option="optionIndex">
+              <input
+                type="radio"
+                :name="convertToSlug(optionBlock.title + '-is_ihave')"
+                :value="option.option_type"
+                :data-category="option.option_type"
+                :data-cy="generateDataCyAttributeName(optionBlock.title, option.title)"
+                :checked="option.isSelected"
+                @change="updatePrice(option, optionBlock)"
+                {% comment %} check if this option isCheck {% endcomment %}
+
+                @click="
+                  if(option.isSelected) {
+                    removeSelectedOption(optionBlock, option);
+                    if (option.customize_image_url && option.customize_image_url !== '') {
+                      customizeImages = replaceCustomizeImageWithPlaceholderImage(optionBlock.title);
+                    }
+                  }
+                  optionBlock.options.forEach((option) => { option.isAccordionOpen = false });
+
+                  optionBlock.options.forEach((opt) => {
+                    opt.isAccordionOpen = false
+                    if (opt !== option) {
+                      opt.isSelected = false
+                      if (opt.is_ihave) {
+                        removeSelectedOption(optionBlock, opt)
+                      }
+                    }
+                  });
+
+                  if (!option.isSelected && option.customize_image_url && option.customize_image_url !== '') {
+                    customizeImages = getCustomizeImages(optionBlock.title, option.customize_image_url);
+                  }
+
+                  option.isSelected = !option.isSelected;
+                "
+              >
+              <span class="diy-purchase__option__radio-button justify--start" x-text="option.title"></span>
+            </label>
+            <template x-if="option.option_notification_msg != ''">
+              <span
+                class="diy-purchase__option-info-message diy-purchase__error-message--style"
+                :class="{'hide': !option.isSelected }"
+                x-text="option.option_notification_msg"
+              ></span>
+            </template>
+          </div>
+        </template>
+
+        {% comment %} Template: Single with Quantity Selector {% endcomment %}
+        <template x-if="option.option_type === 'single with quantity selector'">
+          <div class="diy-purchase__option-wrapper">
+            <label class="diy-purchase__option" x-data="{ quantity: option.initial_quantity }" x-init="quantity = option.initial_quantity">
+              <input
+                data-quantity
+                type="radio"
+                :name="convertToSlug(optionBlock.title)"
+                :data-category="option.option_type"
+                :data-cy="generateDataCyAttributeName(optionBlock.title, option.title)"
+                @change="updatePrice(option, optionBlock, quantity)"
+                :checked="quantity > 0 && option.isSelected"
+                @click="
+                  if(option.isSelected) {
+                    removeSelectedOption(optionBlock, option);
+                    if (option.customize_image_url && option.customize_image_url !== '') {
+                      customizeImages = replaceCustomizeImageWithPlaceholderImage(optionBlock.title);
+                    }
+                  }
+
+                  optionBlock.options.forEach((opt) => {
+                    opt.isAccordionOpen = false
+                    if (opt !== option) {
+                      opt.isSelected = false
+                      removeSelectedOption(optionBlock, opt)
+                    }
+                  });
+
+                  optionBlock.options.forEach((option) => { option.isAccordionOpen = false })
+                  if (quantity === 0) quantity = option.initial_quantity < 1 ? 1 : option.initial_quantity;
+
+                  if (!option.isSelected && option.customize_image_url && option.customize_image_url !== '') {
+                    customizeImages = getCustomizeImages(optionBlock.title, option.customize_image_url);
+                  }
+
+                  option.isSelected = !option.isSelected;
+                "
+              >
+              <div class="diy-purchase__option__radio-button">
+                <span x-text="option.title"></span>
+                <div class="qty product-page-qty diy-purchase__option__qty" :class="{'diy-purchase__option__qty--with-watt': option.enable_watt && option.watt_value > 0}">
+                  <a
+                  href="#"
+                  @click.prevent="
+                    quantity = quantity >= 1 ? quantity - 1 : 0;
+
+                    if (quantity === 0) {
+                      if (option.customize_image_url && option.customize_image_url !== '') {
+                        customizeImages = replaceCustomizeImageWithPlaceholderImage(optionBlock.title);
+                      }
+                      removeSelectedOption(optionBlock, option);
+                    }
+
+                    updatePrice(option, optionBlock, quantity)
+                  "
+                  class="minus_btn qty_btn"
+                  :class="{'disabled': quantity < 1}">
+                    <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                      <g fill="none" fill-rule="evenodd">
+                        <path d="M0 0h40v40H0z"/>
+                        <rect fill="currentColor" x="12" y="19.125" width="15.758" height="1.751" rx=".875"/>
+                      </g>
+                    </svg>
+                  </a>
+                  <input
+                    type="text"
+                    name="quantity"
+                    x-model.number="quantity"
+                    :value="option.isSelected ? quantity : option.initial_quantity"
+                    :min="option.min_quantity"
+                    :max="option.max_quantity"
+                    :data-default-quantity="option.initial_quantity"
+                    pattern="[0-9]*"
+                    class="product-form__input product-form__input--quantity"
+                    :data-watt="option.watt_value"
+                    data-quantity-input
+                    disabled
+                  >
+                  <a
+                  href="#"
+                  @click.prevent="
+                    quantity = quantity + 1
+                    if (quantity > 0) customizeImages = getCustomizeImages(optionBlock.title, option.customize_image_url);
+                    updatePrice(option, optionBlock, quantity)
+                  "
+                  class="plus_btn qty_btn">
+                    <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                      <g fill="none" fill-rule="evenodd">
+                        <path d="M0 0h40v40H0z"/>
+                        <rect fill="#03060B" x="12" y="19.125" width="15.758" height="1.751" rx=".875"/>
+                        <path d="M19.003 27.003V12.997a.875.875 0 0 1 1.751 0v14.006a.875.875 0 0 1-1.75 0z" fill="#03060B"/>
+                      </g>
+                    </svg>
+                  </a>
+                  <div class="diy-purchase__option-watt-value" x-show="option.enable_watt && option.watt_value > 0">
+                    Total: <span class="diy-purchase__watt-value" x-text="quantity > 0 ? option.watt_value * quantity : option.watt_value"></span>W
+                  </div>
+                </div>
+              </div>
+            </label>
+            <template x-if="option.option_notification_msg != ''">
+              <span
+                class="diy-purchase__option-info-message diy-purchase__error-message--style"
+                :class="{'hide': !option.isSelected }"
+                x-text="option.option_notification_msg"
+              ></span>
+            </template>
+          </div>
+        </template>
+
+        {% comment %} Template: Bundle {% endcomment %}
+        <template x-if="option.option_type === 'bundle'">
+          <div class="diy-purchase__accordion">
+            <div
+              class="diy-purchase__accordion-item diy-purchase__accordion-item--wrapper-select"
+              :class="{ 'diy-purchase__accordion-item--active': option.isAccordionOpen }"
+            >
+              <div
+                class="diy-purchase__accordion-button diy-purchase__accordion-button--single-mode"
+                x-text="option.bundle_title"
+                :data-cy="generateDataCyAttributeName(optionBlock.title, option.bundle_title, true)"
+                @click="
+                  option.isAccordionOpen = !option.isAccordionOpen;
+
+                  optionBlock.options.forEach((opt) => {
+                    if (opt !== option) {
+                      opt.isAccordionOpen = false;
+                      removeSelectedOption(optionBlock, opt);
+                    }
+                  });
+
+                  if(option.isAccordionOpen) {
+                    optionBlock.options.forEach((opt) => {
+                      if (opt !== option) {
+                        opt.isAccordionOpen = false;
+                        opt.isSliderRendered = false;
+                        removeSelectedOption(optionBlock, opt);
+                      }
+                    });
+
+                    updatePrice(option, optionBlock);
+                    scrollIntoView($el.parentNode)
+                    if (option.customize_image_url && option.customize_image_url !== '') {
+                      customizeImages = getCustomizeImages(optionBlock.title, option.customize_image_url);
+                    }
+                  }
+
+                  if(!option.isAccordionOpen) removeSelectedOption(optionBlock, option)
+
+                  if (!option.isSliderRendered && option.slider_images && option.slider_images.length > 0) {
+                    sliderImages = option.slider_images;
+                    changeSliderImages(option.slider_images);
+                    option.isSliderRendered = true;
+                  }
+
+                  if (!option.isAccordionOpen && option.customize_image_url && option.customize_image_url !== '') {
+                    customizeImages = replaceCustomizeImageWithPlaceholderImage(optionBlock.title);
+                  }
+
+                  if(selectedTab === 'bundle') scrollToTop()
+                "
+              >
+              </div>
+              <div class="diy-purchase__accordion-content">
+                <div class="diy-purchase__options">
+                  <label class="diy-purchase__option diy-purchase__option--same-font-weight diy-purchase__label-wrap--one-column">
+                    <input
+                      type="radio"
+                      :name="convertToSlug(optionBlock.title)"
+                      :checked="option.isAccordionOpen"
+                    >
+                    <span class="diy-purchase__option__radio-button diy-purchase__option__radio-button--small-text diy-purchase__option__radio-button--details">
+                      <template x-for="(bundle, bundleIndex) in option.bundle" :key="bundleIndex">
+                          <span x-text="bundle.title"></span>
+                      </template>
+                    </span>
+                  </label>
+                </div>
+
+                <template x-if="option.footer">
+                <div class="diy-purchase__info-text diy-purchase__info-text--below-input" x-if="option.footer" x-html="option.footer"></div>
+                </template>
+
+              </div>
+            </div>
+          </div>
+        </template>
+
+        {% comment %} Template: Bundle with Accessories {% endcomment %}
+        <template x-if="option.option_type === 'bundle with accessory'">
+          <div class="diy-purchase__accordion">
+            <div
+              class="diy-purchase__accordion-item diy-purchase__accordion-item--wrapper-select"
+              :class="{ 'diy-purchase__accordion-item--active': option.isAccordionOpen }"
+            >
+              <div
+                class="diy-purchase__accordion-button diy-purchase__accordion-button--single-mode"
+                x-text="option.bundle_title"
+                :data-cy="generateDataCyAttributeName(optionBlock.title, option.bundle_title)"
+                @click="
+                  option.isAccordionOpen = !option.isAccordionOpen;
+
+                  optionBlock.options.forEach((opt) => {
+                    if (opt !== option) {
+                      opt.isAccordionOpen = false;
+                      removeSelectedOption(optionBlock, opt);
+                    }
+                  });
+
+                  if(option.isAccordionOpen) {
+                    updatePrice(option, optionBlock);
+                    scrollIntoView($el.parentNode)
+                    if (option.customize_image_url && option.customize_image_url !== '') {
+                      customizeImages = getCustomizeImages(optionBlock.title, option.customize_image_url);
+                    }
+                  }
+
+                  if(!option.isAccordionOpen) {
+                    removeSelectedOption(optionBlock, option)
+                    option.accessories.forEach((opt) => opt.isSelected = false);
+                  }
+
+                  if (option.slider_images && option.slider_images.length > 0) {
+                    sliderImages = option.slider_images;
+                    changeSliderImages(option.slider_images);
+                  }
+
+                  if (!option.isAccordionOpen && option.customize_image_url && option.customize_image_url !== '') {
+                    customizeImages = replaceCustomizeImageWithPlaceholderImage(optionBlock.title);
+                  }
+
+                  if(selectedTab === 'bundle') scrollToTop()
+                "
+              >
+              </div>
+              <div class="diy-purchase__accordion-content">
+                <div class="diy-purchase__options">
+                  <label class="diy-purchase__option diy-purchase__option--same-font-weight diy-purchase__label-wrap--one-column">
+                    <input
+                      type="radio"
+                      :name="convertToSlug(optionBlock.title)"
+                      :checked="option.isAccordionOpen"
+                    >
+                    <span class="diy-purchase__option__radio-button diy-purchase__option__radio-button--small-text diy-purchase__option__radio-button--details">
+                      <template x-for="(bundle, bundleIndex) in option.bundle" :key="bundleIndex">
+                        <span x-text="bundle.title"></span>
+                      </template>
+                    </span>
+                  </label>
+                </div>
+                <div class="diy-purchase__form-group diy-purchase__form-group--price-below-heading">
+                  <div class="diy-purchase__sub-header diy-purchase__sub-header--small">
+                    <span x-text="option.accessories_title"></span>
+                    <div class="diy-purchase__price-wrapper">
+                      {% comment %} Prrice {% endcomment %}
+                      <div class="diy-purchase__price" x-show="optionBlock.accesoriesSelectedOptionPrice > 0">
+                        <span x-text="priceFormat(optionBlock.accesoriesSelectedOptionPrice)"></span>
+                        <span
+                          class="diy-purchase__price-no-vat"
+                          :class="{'hide': optionBlock.accesoriesSelectedOptionCompareAtPrice === '' || optionBlock.accesoriesSelectedOptionPrice === optionBlock.accesoriesSelectedOptionCompareAtPrice}"
+                        >
+                          <s x-show="optionBlock.accesoriesSelectedOptionCompareAtPrice > 0" x-text="priceFormat(optionBlock.accesoriesSelectedOptionCompareAtPrice)"></s>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="diy-purchase__options">
+                    <template x-for="(accessories, accessoriesIndex) in option.accessories" :key="accessoriesIndex">
+                      <div class="diy-purchase__accessories-wrap diy-purchase__label-wrap--one-column">
+
+                        {% comment %} Template: Single {% endcomment %}
+                        <template x-if="accessories.option_type === 'single - accessories'">
+                          <label class="diy-purchase__option">
+                            <input
+                              type="radio"
+                              :name="'accessories-' + convertToSlug(optionBlock.title)"
+                              :value="accessories.option_type"
+                              :data-cy="generateDataCyAttributeName(optionBlock.title, accessories.title)"
+                              @change="updatePrice(accessories, optionBlock)"
+                              :checked="accessories.isSelected"
+                              @click="
+                                if(accessories.isSelected) removeSelectedOption(optionBlock, accessories);
+
+                                accessories.isSelected = !accessories.isSelected;
+                                option.accessories.forEach((opt) => {
+                                  if (opt !== accessories) opt.isSelected = false
+                                  removeSelectedOption(optionBlock, opt)
+                                });
+                              "
+                            >
+                            <span class="diy-purchase__option__radio-button" x-text="accessories.title"></span>
+                          </label>
+                        </template>
+
+                        {% comment %} Template: Single with Image and Text {% endcomment %}
+                        <template x-if="accessories.option_type === 'single with image and text - accessories'">
+                          <label class="diy-purchase__option" data-toggle-select>
+                            <input
+                              type="radio"
+                              :name="'accessories-' + convertToSlug(optionBlock.title)"
+                              :value="accessories.option_type"
+                              :data-cy="generateDataCyAttributeName(optionBlock.title, accessories.title)"
+                              @change="updatePrice(accessories, optionBlock)"
+                              :checked="accessories.isSelected"
+                              @click="
+                                if(accessories.isSelected) removeSelectedOption(optionBlock, accessories);
+
+                                accessories.isSelected = !accessories.isSelected;
+                                option.accessories.forEach((opt) => {
+                                  if (opt !== accessories) opt.isSelected = false
+                                  removeSelectedOption(optionBlock, opt)
+                                });
+                              "
+                            >
+                            <span class="diy-purchase__option__radio-button align-items--start">
+                              <span class="radio-button__image">
+                                <img :src="accessories.image_url" width="116">
+                              </span>
+                              <span class="radio-button__details">
+                                <span x-text="accessories.title"></span>
+                                <span x-html="accessories.text"></span>
+                              </span>
+                            </span>
+                          </label>
+                        </template>
+
+                        {% comment %} Template: No Thanks - accessories {% endcomment %}
+                        <template x-if="accessories.option_type === 'no thanks - accessories'">
+                          <label class="diy-purchase__option" :data-option="optionIndex">
+                            <input
+                              type="radio"
+                              :name="'accessories-' + convertToSlug(optionBlock.title)"
+                              :value="option.option_type"
+                              :data-category="option.option_type"
+                              @change="
+                                option.accessories.forEach((opt) => {
+                                  if (opt !== option) removeSelectedOption(optionBlock, opt)
+                                });
+                              "
+                            >
+                            <span class="diy-purchase__option__radio-button" x-text="accessories.title"></span>
+                          </label>
+                        </template>
+                      </div>
+                    </template>
+                  </div>
+
+                  <template x-if="option.footer">
+                  <div class="diy-purchase__info-text diy-purchase__info-text--below-input" x-html="option.footer"></div>
+                  </template>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </template>
+
+      </div>
+    </template>
+  </div>
+  <template x-if="optionBlock.footer">
+  <div class="diy-purchase__info-text diy-purchase__info-text--below-input" x-html="optionBlock.footer"></div>
+  </template>
+  <div class="diy-purchase__error-message hide">* Por favor, seleccione su modelo.</div>
+</div>

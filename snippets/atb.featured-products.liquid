@@ -1,0 +1,534 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "t:sections.featured-products.name",
+  "class": "index-section section_with_bg",
+  "max_blocks": 3,
+  "id": "featured-products",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_title",
+      "label": "t:sections.featured-products.settings.title.label",
+      "default": "Heading",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_subtitle",
+      "label": "t:sections.featured-products.settings.subtitle.label",
+      "default": "Subheading",
+      "info": ""
+    },
+    {
+      "type": "select",
+      "id": "atb_navigation_style",
+      "label": "t:sections.featured-products.settings.navigation_style.label",
+      "options": [
+        {
+          "value": "normal",
+          "label": "t:sections.featured-products.settings.navigation_style.options__1.label"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.featured-products.settings.navigation_style.options__2.label"
+        }
+      ],
+      "default": "normal",
+      "info": ""
+    },
+    {
+      "type": "checkbox",
+      "id": "atb_show_vendor",
+      "label": "t:sections.featured-products.settings.show_vendor.label",
+      "default": false,
+      "info": ""
+    },
+    {
+      "type": "checkbox",
+      "id": "atb_show_add_to_cart",
+      "label": "Show ATC button",
+      "default": false,
+      "info": ""
+    },
+    {
+      "type": "range",
+      "id": "atb_grid",
+      "label": "t:sections.featured-products.settings.grid.label",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "default": 4,
+      "info": ""
+    },
+    {
+      "type": "select",
+      "id": "atb_grid_mobile",
+      "label": "t:sections.featured-products.settings.grid_mobile.label",
+      "options": [
+        {
+          "value": "1",
+          "label": "t:sections.featured-products.settings.grid_mobile.options__1.label"
+        },
+        {
+          "value": "2",
+          "label": "t:sections.featured-products.settings.grid_mobile.options__2.label"
+        }
+      ],
+      "default": "1",
+      "info": ""
+    },
+    {
+      "type": "header",
+      "content": "t:sections.featured-products.settings.carousel_options_header.label",
+      "info": ""
+    },
+    {
+      "type": "checkbox",
+      "id": "atb_enable_carousel",
+      "label": "t:sections.featured-products.settings.enable_carousel.label",
+      "default": true,
+      "info": ""
+    },
+    {
+      "type": "checkbox",
+      "id": "atb_show_dots",
+      "label": "t:sections.featured-products.settings.show_dots.label",
+      "default": true,
+      "info": ""
+    },
+    {
+      "type": "checkbox",
+      "id": "atb_show_arrows",
+      "label": "t:sections.featured-products.settings.show_arrows.label",
+      "default": true,
+      "info": ""
+    },
+    {
+      "type": "checkbox",
+      "id": "atb_enable_autoplay",
+      "label": "t:sections.featured-products.settings.enable_autoplay.label",
+      "default": false,
+      "info": ""
+    },
+    {
+      "type": "range",
+      "id": "atb_cycle_speed",
+      "min": 1,
+      "max": 8,
+      "step": 1,
+      "unit": "t:sections.featured-products.settings.cycle_speed.unit",
+      "label": "t:sections.featured-products.settings.cycle_speed.label",
+      "default": 5,
+      "info": ""
+    },
+    {
+      "type": "select",
+      "id": "atb_image_position",
+      "label": "t:sections.featured-products.settings.image_position.label",
+      "options": [
+        {
+          "value": "top",
+          "label": "t:sections.featured-products.settings.image_position.options__1.label"
+        },
+        {
+          "value": "bottom",
+          "label": "t:sections.featured-products.settings.image_position.options__2.label"
+        }
+      ],
+      "default": "bottom",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "blocks",
+      "label": "Block ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": "",
+      "repeatable": "t:sections.featured-products.blocks.collection.name"
+    },
+    {
+      "type": "text",
+      "id": "block_heading",
+      "label": "t:sections.featured-products.blocks.collection.settings.heading.label",
+      "repeatable": "t:sections.featured-products.blocks.collection.name",
+      "info": ""
+    },
+    {
+      "type": "collection",
+      "id": "block_collection_handle",
+      "label": "t:sections.featured-products.blocks.collection.settings.collection_handle.label",
+      "repeatable": "t:sections.featured-products.blocks.collection.name",
+      "info": ""
+    },
+    {
+      "type": "range",
+      "id": "block_max_products_count",
+      "label": "t:sections.featured-products.blocks.collection.settings.max_products_count.label",
+      "min": 2,
+      "max": 40,
+      "step": 1,
+      "default": 10,
+      "repeatable": "t:sections.featured-products.blocks.collection.name",
+      "info": ""
+    }
+  ],
+  "warnings": [
+    "repeating range fields may not be properly handled"
+  ]
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_title' -%}
+{%- assign atb_title = val -%}
+{%- include 'atb-render' field:'atb_subtitle' -%}
+{%- assign atb_subtitle = val -%}
+{%- include 'atb-render' field:'atb_navigation_style' -%}
+{%- assign atb_navigation_style = val -%}
+{%- include 'atb-render' field:'atb_show_vendor' -%}
+{%- assign atb_show_vendor = val -%}
+{%- include 'atb-render' field:'atb_show_add_to_cart' -%}
+{%- assign atb_show_add_to_cart = val -%}
+{%- include 'atb-render' field:'atb_grid' -%}
+{%- assign atb_grid = val -%}
+{%- include 'atb-render' field:'atb_grid_mobile' -%}
+{%- assign atb_grid_mobile = val -%}
+{%- include 'atb-render' field:'atb_enable_carousel' -%}
+{%- assign atb_enable_carousel = val -%}
+{%- include 'atb-render' field:'atb_show_dots' -%}
+{%- assign atb_show_dots = val -%}
+{%- include 'atb-render' field:'atb_show_arrows' -%}
+{%- assign atb_show_arrows = val -%}
+{%- include 'atb-render' field:'atb_enable_autoplay' -%}
+{%- assign atb_enable_autoplay = val -%}
+{%- include 'atb-render' field:'atb_cycle_speed' -%}
+{%- assign atb_cycle_speed = val -%}
+{%- include 'atb-render' field:'atb_image_position' -%}
+{%- assign atb_image_position = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_heading' -%}
+{%- assign block_heading = val -%}
+{%- include 'atb-render' field:'block_collection_handle' -%}
+{%- assign block_collection_handle = val -%}
+{%- include 'atb-render' field:'block_max_products_count' -%}
+{%- assign block_max_products_count = val -%}
+{%- if atb_show_vendor == blank -%}
+{%- assign atb_show_vendor = false -%}
+{%- else -%}
+{%- assign atb_show_vendor = true -%}
+{%- endif -%}
+{%- if atb_show_add_to_cart == blank -%}
+{%- assign atb_show_add_to_cart = false -%}
+{%- else -%}
+{%- assign atb_show_add_to_cart = true -%}
+{%- endif -%}
+{%- if atb_enable_carousel == blank -%}
+{%- assign atb_enable_carousel = false -%}
+{%- else -%}
+{%- assign atb_enable_carousel = true -%}
+{%- endif -%}
+{%- if atb_show_dots == blank -%}
+{%- assign atb_show_dots = false -%}
+{%- else -%}
+{%- assign atb_show_dots = true -%}
+{%- endif -%}
+{%- if atb_show_arrows == blank -%}
+{%- assign atb_show_arrows = false -%}
+{%- else -%}
+{%- assign atb_show_arrows = true -%}
+{%- endif -%}
+{%- if atb_enable_autoplay == blank -%}
+{%- assign atb_enable_autoplay = false -%}
+{%- else -%}
+{%- assign atb_enable_autoplay = true -%}
+{%- endif -%}
+{%- assign atb_grid = atb_grid | plus: 0 -%}
+{%- assign atb_cycle_speed = atb_cycle_speed | plus: 0 -%}
+{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section index-section section_with_bg">
+{% assign navigation_style  = atb_navigation_style %}
+{% assign enable_carousel = atb_enable_carousel %}
+{% assign products_per_row = atb_grid %}
+{% assign products_per_row_mobile = atb_grid_mobile | times: 1 %}
+
+{% assign show_vendor = atb_show_vendor %}
+
+{% assign image = atb_image %}
+{% assign mobile_image = atb_mobile_image %}
+{% assign image_position = atb_image_position %}
+
+{%- capture flickity_options -%}
+{
+  "prevNextButtons": true,
+  "wrapAround": false,
+  "dragThreshold": 15,
+	"cellAlign": "left",
+  "pauseAutoPlayOnHover": true,
+  "autoPlay": {% if atb_enable_autoplay %}{{ atb_cycle_speed | times: 1000 }}{% else %}false{% endif %},
+  "pageDots": {% if atb_show_dots %}true{% else %}false{% endif %},
+	"adaptiveHeight": false,
+  "contain": true,
+  "freeScroll": true
+}
+{%- endcapture -%}
+
+
+  {% case products_per_row %}
+    {% when 2 %}
+      {%- assign max_height = 530 -%}
+      {%- assign grid_item_width = 'medium-up--one-half' -%}
+    {% when 3 %}
+      {%- assign max_height = 368 -%}
+      {%- assign grid_item_width = ' medium-up--one-third' -%}
+    {% when 4 %}
+      {%- assign max_height = 250 -%}
+      {%- assign grid_item_width = ' medium-up--one-quarter' -%}
+    {% when 5 %}
+      {%- assign max_height = 195 -%}
+      {%- assign grid_item_width = ' medium-up--one-fifth' -%}
+  {% endcase %}
+
+{% assign grid_item_mobile_width = '' %}
+{% if enable_carousel == false %}
+{% assign grid_item_mobile_width = 'small--one-whole' %}
+{% if products_per_row_mobile  == 2 %}
+{% assign grid_item_mobile_width = 'small--one-half' %}
+{% endif %}
+{% endif %}
+
+<section id="section-{{ section_id }}" data-section-id="{{ section_id }}" data-section-type="featured-products"  {% if image != blank %} class="fade-in-animation" {% endif %}>
+
+  {%- if blocks.size > 0 -%}
+  <div class='index-tabs-collections-wrapper section_main_content {% if products_per_row_mobile == 2 and enable_carousel == false %} half_row_mobile {% endif %}'>
+    <div class="page-width-small homepage_subtitle_style_{{settings.homepage_subtitle_color}}" >
+      {% if atb_subtitle != blank  %}
+      <span class='h5'>{{ atb_subtitle  }}</span>
+      {% endif %}
+
+      {% if atb_title != blank %}
+      <h2>{{ atb_title | escape }}</h2>
+    {% endif %}
+
+
+      <div class='index-tabs_nav__wrapper navigation_style_{{navigation_style}} {% if blocks.size == 1 and section.blocks[0].settings.heading == blank  %} single_collection_wrapper {% endif %}'>
+        <div class='index-tabs_nav {% if blocks.size == 1 %} single_collection {% endif %}'>
+          {% for block0 in blocks %}
+{%- assign my_range0 = block_max_products_count[forloop.index0] | plus: 0 -%}
+           {% if  block_heading[forloop.index0] != blank %}
+         <a href="javascript:void(0)" class='index-tabs_nav--item {% if forloop.first %} active {% endif %}' data-index="{{forloop.index0}}" data-href='tab_{{block_heading[forloop.index0] | handle }}_{{blocks[forloop.index0]}}' aria-label="{{block_heading[forloop.index0]}}">
+            {% if navigation_style == 'large' %}
+
+            {% if atb_title != blank %}
+             <h3>{{ block_heading[forloop.index0] }}</h3>
+            {% else %}
+            <h2>{{ block_heading[forloop.index0] }}</h2>
+            {% endif %}
+
+            {% else %}
+            <h3>{{ block_heading[forloop.index0] }}</h3>
+            {% endif %}
+          </a>
+          {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+
+    </div>
+    <div class='section-tabs-content  {% if settings.align_height %} use_align_height {% else %} use_image_height {% endif %}  {% unless enable_carousel %} page-width {% endunless %}'>
+      {% for block0 in blocks %}
+{%- assign my_range0 = block_max_products_count[forloop.index0] | plus: 0 -%}
+
+      {% assign collection = collections[block_collection_handle[forloop.index0]] %}
+      {% assign product_limit = my_range0 %}
+
+
+      <div class='index-tabs-content_block {% if forloop.first %} active  {% endif %}' id='tab_{{block_heading[forloop.index0] | handle  }}_{{blocks[forloop.index0]}}'>
+        {% if enable_carousel %}
+        <div class='index-tabs-content_block__slider slides_{{collection.products.size}}' data-flickity-config=''>
+          <div class="scroller-content">
+            <div class="scroller-platter" data-flickity-config='{{ flickity_options }}'>
+              {% for product in collection.products limit:product_limit %}
+                {%- comment %}<locksmith:4da2>{% endcomment -%}
+                  {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: collection, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                {%- comment %}</locksmith:4da2>{% endcomment -%}
+                {% include 'atb-product-card-item' , list: false, max_height: max_height, product: product, show_vendor: show_vendor, show_alternate_image: true  %}
+              {% else %}
+
+                {% for i in (1..product_limit) %}
+
+                <div class="zoom-fade-animation-element-wrapper grid__item  product-item-block   view-mode-grid {{ grid_item_width }} {{ grid_item_mobile_width}} " >
+                  <div class="product-card product-card-grid-wrapper grid-view-item ">
+
+
+
+
+                    <div class="product-card__image-with-placeholder-wrapper" data-image-loading-animation>
+                      <a class="grid-view-item__link-image product-card__link-image" href="#" aria-label="{{ 'homepage.onboarding.product_title' | t }}">
+                        <div  class="grid-view-item__image-wrapper product-card__image-wrapper">
+                        {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+                      {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg zoom-fade-animation-element' }}
+                        </div>
+                      </a>
+                    </div>
+
+
+                    <a class="grid-view-item__link-title product-card__link-title" href="#" aria-label="{{ 'homepage.onboarding.product_title' | t }}">
+                      <span class="h4 grid-view-item__title product-card__title" >
+                      {{ 'homepage.onboarding.product_title' | t }}
+                      </span>
+                    </a>
+
+                    <div class='product-item__price_and_reviews_row'>
+                      {% include 'atb-product-price'   %}
+                    </div>
+
+                  </div>
+                  <div class="product-card product-card--list-wrapper list-view-item">
+                    <div class='product-card--list'>
+
+                      <div class='product-list--media'>
+
+
+
+
+                        <div class="product-card__image-with-placeholder-wrapper" data-image-loading-animation>
+                          <a class="list-view-item__link-image product-card__link-image" href="#" aria-label="{{ 'homepage.onboarding.product_title' | t }}">
+                            <div  class="list-view-item__image-wrapper product-card__image-wrapper">
+                              {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+                              {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg zoom-fade-animation-element' }}
+                            </div>
+                          </a>
+                        </div>
+
+                      </div>
+                      <div class='product-list--info'>
+
+                        <a class="list-view-item__link-title product-card__link-title" href="#" aria-label="{{ 'homepage.onboarding.product_title' | t }}">
+                          <span class="h4 list-view-item__title product-card__title"> {{ 'homepage.onboarding.product_title' | t }}</span>
+                        </a>
+                        <div class='product-item__price_and_reviews_row'>
+                      {% include 'atb-product-price'   %}
+                        </div>
+
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {% endfor %}
+
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        {% else %}
+        <div class="zoom-fade-animation grid grid--uniform grid--view-items">
+          {% for product in collection.products limit: product_limit %}
+            {%- comment %}<locksmith:57d1>{% endcomment -%}
+              {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: collection, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+            {%- comment %}</locksmith:57d1>{% endcomment -%}
+            {% include 'atb-product-card-item' , list: false, max_height: max_height, product: product, show_vendor: show_vendor, show_add_to_cart: atb_show_add_to_cart, image_position: image_position, show_alternate_image: true  %}
+          {% else %}
+
+          {% for i in (1..product_limit) %}
+          <div class="zoom-fade-animation-element-wrapper grid__item grid__item--{{section_id}} {{ grid_item_width }} {{ grid_item_mobile_width}}">
+            <div class="grid-view-item product-card">
+              <a class="grid-view-item__link grid-view-item__image-container full-width-link" href="#" aria-label="{{ 'homepage.onboarding.product_title' | t }}">
+                <span class="visually-hidden">{{ 'homepage.onboarding.product_title' | t }}</span>
+              </a>
+             <div class="grid-view-item__image-wrapper placeholder_image_wrapper">
+                {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+                {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg zoom-fade-animation-element' }}
+              </div>
+              <div class="h4 grid-view-item__title">{{ 'homepage.onboarding.product_title' | t }}</div>
+              {% include 'atb-product-price'   %}
+            </div>
+          </div>
+          {% endfor %}
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if atb_show_arrows and enable_carousel %}
+          <div class='slider_custom_arrows'>
+            <a href="javascript:void(0)" id='button_prev_{{section_id}}' class='button-prev btn btn--circle-arrow disabled' aria-label="Previous" aria-describedby="button previous"></a>
+            <a href="javascript:void(0)" id='button_next_{{section_id}}' class='button-next btn btn--circle-arrow' aria-label="Next" aria-describedby="button next"></a>
+          </div>
+        {% endif %}
+      </div>
+
+      {% endfor %}
+
+    </div>
+
+  </div>
+  {% if image != blank %}
+  <div class='section_bg'>
+
+
+        <img
+             class="section_bg_image {% if mobile_image != blank %} small--hide {% endif %}"
+             srcset="{%- if image.width >= 375 -%}{{ image | img_url: '375x' }} 375w,{%- endif -%}
+                {%- if image.width >= 720 -%}{{ image | img_url: '720x' }} 750w,{%- endif -%}
+                {%- if image.width >= 1066 -%}{{ image | img_url: '1066x' }} 1066w,{%- endif -%}
+             	{%- if image.width >= 1500 -%}{{ image | img_url: '1500x' }} 1500w,{%- endif -%}
+                {%- if image.width >= 1780 -%}{{ image | img_url: '1780x' }} 1780w,{%- endif -%}
+                {%- if image.width >= 2000 -%}{{ image | img_url: '2000x' }} 2000w,{%- endif -%}
+                {%- if image.width >= 2800 -%}{{ image | img_url: '2800x' }} 2800w{%- endif -%}"
+             src="{{ image | img_url: '535x' }}"
+             sizes="100vw"
+             loading="lazy"
+             width="{{ image.width }}"
+        	 height="{{ image.height }}"
+             alt="{{image.alt | default: atb_title }}">
+
+      {% if mobile_image != blank %}
+        <img
+             class="section_bg_image mobile_image medium-up--hide"
+             srcset="{%- if mobile_image.width >= 375 -%}{{ mobile_image | img_url: '375x' }} 375w,{%- endif -%}
+                {%- if mobile_image.width >= 720 -%}{{ mobile_image | img_url: '720x' }} 750w,{%- endif -%}
+                {%- if mobile_image.width >= 1066 -%}{{ mobile_image | img_url: '1066x' }} 1066w,{%- endif -%}
+             	{%- if mobile_image.width >= 1500 -%}{{ mobile_image | img_url: '1500x' }} 1500w{%- endif -%}"
+             src="{{ mobile_image | img_url: '535x' }}"
+             sizes="100vw"
+             loading="lazy"
+             width="{{ mobile_image.width }}"
+        	 height="{{ mobile_image.height }}"
+             alt="{{mobile_image.alt | default: atb_title  }}">
+      {% endif %}
+
+
+  </div>
+   {% endif %}
+
+
+  {% endif %}
+
+
+  {% if blocks.size == 0 %}
+    <div class="placeholder-noblocks">
+      {{ 'homepage.onboarding.no_content' | t }}
+    </div>
+  {% endif %}
+
+</section>
+
+
+</section>

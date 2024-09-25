@@ -1,0 +1,356 @@
+<div class="off-grid-hotspot-section">
+  <div class="off-grid-hotspot-content--container">
+    {% if section.settings.title != blank %}
+      <h2>{{ section.settings.title }}</h2>
+    {% endif %}
+    {% if section.settings.textarea != blank %}
+      <p class="ogh-section-desc">
+        {{ section.settings.textarea }}
+      </p>
+    {% endif %}
+    <div class="mobile-only">
+      <button class="ogh-expand-button">
+        Read More
+        <svg xmlns="http://www.w3.org/2000/svg" width="13.617" height="8.309" viewBox="0 0 13.617 8.309">
+          <path id="Path_58" data-name="Path 58" d="M893.323-227.95l4.687,4.687,4.687-4.687" transform="translate(-891.202 230.071)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="off-grid-hotspot-image-hotspot--container">
+    <div class="desktop-only">
+      <img
+        loading="lazy"
+        src="{{ section.settings.img | img_url: 'master' }}"
+        alt="{{ section.settings.img.alt }}"
+      >
+
+      {% for block in section.blocks %}
+        {% style %}
+          .hotspot-{{ block.id }}.ogh-hotspot.ogh-hotspot--position {
+            top: {{ block.settings.vertical }}%;
+            left: {{ block.settings.horizontal }}%;
+          }
+        {% endstyle %}
+        <div class="hotspot-{{ block.id }} ogh-hotspot ogh-hotspot--position">
+          <div class="ogh-hotspot__button">
+            <svg
+              class="hotspot-plus-button"
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              viewBox="0 0 25 25"
+            >
+              <g id="Group_11398" data-name="Group 11398" transform="translate(246 -6579)">
+                <circle id="Ellipse_1" data-name="Ellipse 1" cx="12.5" cy="12.5" r="12.5" transform="translate(-246 6579)" fill="#fff" opacity="0.623"/>
+                <line id="Line_9" data-name="Line 9" x2="9" transform="translate(-238 6591.5)" fill="none" stroke="#000" stroke-width="2"/>
+                <line id="Line_10" data-name="Line 10" y2="9" transform="translate(-233.5 6587)" fill="none" stroke="#000" stroke-width="2"/>
+              </g>
+            </svg>
+
+            <svg
+              class="hotspot-minus-button"
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              viewBox="0 0 25 25"
+            >
+              <g id="Group_11398" data-name="Group 11398" transform="translate(246 -6579)">
+                <circle id="Ellipse_1" data-name="Ellipse 1" cx="12.5" cy="12.5" r="12.5" transform="translate(-246 6579)" fill="#fff" opacity="0.623"/>
+                <line id="Line_9" data-name="Line 9" x2="9" transform="translate(-238 6591.5)" fill="none" stroke="#000" stroke-width="2"/>
+                <path id="Path_61" data-name="Path 61" d="M0,9" transform="translate(-233.5 6587)" fill="none" stroke="#000" stroke-width="2"/>
+              </g>
+            </svg>
+          </div>
+          <div class="ogh-hotspot__label">
+            {% if block.settings.img != blank %}
+              <div class="ogh-hotspot__label--image-flex">
+                <img
+                  loading="lazy"
+                  src="{{ block.settings.img | img_url: 'master' }}"
+                  alt="{{ block.settings.img.alt }}"
+                >
+              </div>
+            {% endif %}
+            <div class="ogh-hotspot__label--content-flex">
+              {% if block.settings.title != blank %}
+                <h3>{{ block.settings.title }}</h3>
+              {% endif %}
+              {% if block.settings.textarea != blank %}
+                <p>
+                  {{ block.settings.textarea }}
+                </p>
+              {% endif %}
+              {% if block.settings.button_display %}
+                <div class="ogsc-button--wrapper">
+                  {% if block.settings.btn_text_1 != blank %}
+                    <a href="{{ block.settings.btn_url_1 }}">
+                      <div class="btn--wrapper">{{ block.settings.btn_text_1 }}</div>
+                    </a>
+                  {% endif %}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="mobile-content--wrapper mobile-only">
+      <img
+        loading="lazy"
+        src="{{ section.settings.img_mobile | img_url: 'master' }}"
+        alt="{{ section.settings.img_mobile.alt }}"
+      >
+      <div class="ogsc-button--wrapper">
+        {% if section.settings.btn_text_1 != blank %}
+          <a href="{{ section.settings.btn_url_1 }}">
+            <div class="btn--wrapper">{{ section.settings.btn_text_1 }}</div>
+          </a>
+        {% endif %}
+        {% if section.settings.btn_text_2 != blank %}
+          <a href="{{ section.settings.btn_url_2 }}">
+            <div class="btn--wrapper">{{ section.settings.btn_text_2 }}</div>
+          </a>
+        {% endif %}
+      </div>
+      <div class="ogh-hotspot__product--block-slider product-slide-init">
+        {% for block in section.blocks %}
+          <div class="ogh-hotspot__product--block">
+            <div class="ogh-product--block-title-container">
+              {% if block.settings.title != blank %}
+                <h3 class="product-title">
+                  <span class="ogh-product--count">{{ forloop.index }}</span> {{ block.settings.title }}
+                </h3>
+              {% endif %}
+              {% if block.settings.textarea != blank %}
+                <p>
+                  {{ block.settings.textarea }}
+                </p>
+              {% endif %}
+            </div>
+
+            {% if block.settings.button_display %}
+              <div class="ogsc-button--wrapper">
+                {% if block.settings.btn_text_1 != blank %}
+                  <a href="{{ block.settings.btn_url_1 }}">
+                    <div class="btn--wrapper">{{ block.settings.btn_text_1 }}</div>
+                  </a>
+                {% endif %}
+              </div>
+            {% endif %}
+            {% if block.settings.img_mobile != blank %}
+              <img
+                loading="lazy"
+                src="{{ block.settings.img_mobile| img_url: 'master' }}"
+                alt="{{ block.settings.img_mobile.alt }}"
+              >
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="desktop-only">
+    <div class="ogsc-button--wrapper">
+      {% if section.settings.btn_text_1 != blank %}
+        <a href="{{ section.settings.btn_url_1 }}">
+          <div class="btn--wrapper">{{ section.settings.btn_text_1 }}</div>
+        </a>
+      {% endif %}
+      {% if section.settings.btn_text_2 != blank %}
+        <a href="{{ section.settings.btn_url_2 }}">
+          <div class="btn--wrapper">{{ section.settings.btn_text_2 }}</div>
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+<script>
+  $(window).on('load', function () {
+    {%- comment -%}For Read More on Hotspot section Mobile{%- endcomment -%}
+    $('.ogh-expand-button').on('click', function () {
+      $('.ogh-section-desc').toggleClass('-expanded');
+      $('.ogh-expand-button').toggleClass('-open');
+      if ($('.ogh-section-desc').hasClass('-expanded')) {
+        $('.ogh-expand-button')
+          .html('Read Less')
+          .append(
+            ' <svg xmlns="http://www.w3.org/2000/svg" width="13.617" height="8.309" viewBox="0 0 13.617 8.309">' +
+              '<path id="Path_58" data-name="Path 58" d="M893.323-227.95l4.687,4.687,4.687-4.687" transform="translate(-891.202 230.071)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>' +
+              '</svg>'
+          );
+      } else {
+        $('.ogh-expand-button')
+          .html('Read More')
+          .append(
+            ' <svg xmlns="http://www.w3.org/2000/svg" width="13.617" height="8.309" viewBox="0 0 13.617 8.309">' +
+              '<path id="Path_58" data-name="Path 58" d="M893.323-227.95l4.687,4.687,4.687-4.687" transform="translate(-891.202 230.071)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>' +
+              '</svg>'
+          );
+      }
+    });
+
+    {%- comment -%}For Image Hotspot Popup{%- endcomment -%}
+    document.addEventListener('click', (e) => {
+      if (e.target.classList.contains('ogh-hotspot__label')) {
+        return;
+      }
+      const clickedHotspot = e.target.parentElement;
+      const container = clickedHotspot.parentElement;
+      const hotspots = container.querySelectorAll('.ogh-hotspot');
+      hotspots.forEach((hotspot) => {
+          if (hotspot === clickedHotspot) {
+              hotspot.classList.toggle('ogh-hotspot--selected');
+          } else {
+              hotspot.classList.remove('ogh-hotspot--selected');
+          }
+      });
+    });
+
+    {%- comment -%}For Mobile Product Slider{%- endcomment -%}
+    function productMobileOnlySlider($slidername, $dots, $arrows, $breakpoint) {
+      var slider = $($slidername);
+      var settings = {
+        mobileFirst: true,
+        dots: $dots,
+        arrows: $arrows,
+        responsive: [
+          {
+            breakpoint: $breakpoint,
+            settings: 'unslick',
+          },
+        ],
+      };
+      slider.slick(settings);
+      $(window).on('resize', function () {
+        if ($(window).width() > $breakpoint) {
+          return;
+        }
+        if (!slider.hasClass('slick-initialized')) {
+          return slider.slick(settings);
+        }
+      });
+    }
+    productMobileOnlySlider('.product-slide-init', true, false, 767);
+  });
+</script>
+{% schema %}
+{
+  "name": "Off Grid Hot Spot Image",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Ecoflow's Off Grid Solar System"
+    },
+    {
+      "type": "textarea",
+      "id": "textarea",
+      "label": "Details",
+      "default": "Off-grid solar systems are often complicated and component-heavy, making them difficult to install on your own. But EcoFlow Power Kits have changed all that by integrating modules into a compact self-assembling plug-and-play system that you can customize to fit your power needs 5x faster than typical systems. Designed for RVs and off-grid builds, Power Kits combine large-capacity energy storage of up to 15kWh, with a high 4800W solar input, so you can be truly power-independent, live comfortably, and power almost any appliance, including high-wattage ones."
+    },
+    {
+      "type": "image_picker",
+      "id": "img",
+      "label": "Desktop Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_mobile",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "text",
+      "id": "btn_text_1",
+      "label": "1st Button Text",
+      "default": "Learn More"
+    },
+    {
+      "type": "url",
+      "id": "btn_url_1",
+      "label": "1st Button Link"
+    },
+    {
+      "type": "text",
+      "id": "btn_text_2",
+      "label": "2nd Button Text",
+      "default": "Learn More"
+    },
+    {
+      "type": "url",
+      "id": "btn_url_2",
+      "label": "2nd Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "products",
+      "name": "Hotspot Products",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "img",
+          "label": "Desktop Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "img_mobile",
+          "label": "Mobile Image"
+        },
+        {
+          "type": "html",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "textarea",
+          "label": "Description"
+        },
+        {
+          "type": "checkbox",
+          "id": "button_display",
+          "label": "Enable Button",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "btn_text_1",
+          "label": "1st Button Text",
+          "default": "Learn More"
+        },
+        {
+          "type": "url",
+          "id": "btn_url_1",
+          "label": "1st Button Link"
+        },
+        {
+          "type": "header",
+          "content": "Hotspot Position"
+        },
+        {
+          "type": "range",
+          "id": "vertical",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Vertical Position",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "horizontal",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Horizontal Position",
+          "default": 0
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

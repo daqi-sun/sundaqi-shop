@@ -1,0 +1,195 @@
+<style>
+  .sg-icon__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .sg-icon__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+
+<div
+  class="sg-icon__section sg-icon__section-{{ section.id }}"
+  data-id="_{{ section.settings.id | downcase | remove: ' ' | replace: '&', '-' }}"
+>
+  <div class="container--default">
+    <div class="sg-icon__text-container">
+      {% if section.settings.title != blank %}
+        <h2 class="sg-icon__section-heading text--heading text--white">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+    </div>
+    <div class="display--mobile">
+      <div class="sg-icon__container-slider">
+        <div class="swiper sg-icon__slider-container custom-balcony-slider">
+          <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+              <div class="sg-icon__slide-content swiper-slide">
+                <div class="sg-icon__image-wrapper">
+                  <img
+                    src="{{ block.settings.image | img_url: 'master' }}"
+                    alt="{{ block.settings.image.alt }}"
+                  >
+                </div>
+                <div class="sg-icon__icon-wrapper">
+                  <img
+                    src="{{ block.settings.icon | img_url: 'master' }}"
+                    alt="{{ block.settings.icon.alt }}"
+                  >
+                </div>
+                <div class="sg-icon__border"></div>
+                <div class="sg-icon__title-wrapper">
+                  <h3 class="sg-icon__title text--white">{{ block.settings.title }}</h3>
+                </div>
+                <div class="sg-icon__description-wrapper">
+                  <p class="sg-icon__description text--white">{{ block.settings.description }}</p>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="sg-icon-swiper__navigation">
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="display--desktop">
+      <div class="sg-icon__container">
+        <div class="sg-icon__wrapper">
+          {% for block in section.blocks %}
+            <div class="sg-icon__slide-content">
+              <div class="sg-icon__image-wrapper">
+                <img
+                  src="{{ block.settings.image | img_url: 'master' }}"
+                  alt="{{ block.settings.image.alt }}"
+                >
+              </div>
+              <div class="sg-icon__icon-wrapper">
+                <img
+                  src="{{ block.settings.icon | img_url: 'master' }}"
+                  alt="{{ block.settings.icon.alt }}"
+                >
+              </div>
+              <div class="sg-icon__border"></div>
+              <div class="sg-icon__title-wrapper">
+                <h3 class="sg-icon__title text--white">{{ block.settings.title }}</h3>
+              </div>
+              <div class="sg-icon__description-wrapper">
+                <p class="sg-icon__description text--white">{{ block.settings.description }}</p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    new Swiper('.custom-balcony-slider', {
+      slidesPerView: 1,
+      spaceBetween: 36,
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "SG Icon",
+  "settings": [
+    {
+      "type": "text",
+      "id": "id",
+      "label": "Section ID",
+      "default": "Buyer’s Guides"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Read More About Solar Panels "
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "icon",
+      "name": "Icon",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "How to Charge a 12V Battery Using Solar Panels?"
+        },
+        {
+          "type": "html",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

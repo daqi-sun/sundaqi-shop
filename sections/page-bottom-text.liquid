@@ -1,0 +1,60 @@
+<div class="bottom-text__section">
+  <div class="bottom-text__wrapper container--normal">
+  <p class="bottom-description">{{ section.settings.bottom_text}}</p>
+  </div>
+</div>
+
+<style>
+  #shopify-section-{{ section.id }} {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  p.bottom-description {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  #shopify-section-{{ section.id }} {
+    background-color: {{ section.settings.bg_color }};
+  }
+
+  #shopify-section-{{ section.id }} .bottom-description {
+    color: {{ section.settings.text_color }};
+    font-size: {{ section.settings.font-size }}px !important;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Additional Text",
+  "settings": [
+    {
+      "type": "text",
+      "id": "bottom_text",
+      "label": "Bottom Text",
+      "default": "Los términos “DELTA” y “RIVER”, que se mencionan en esta página, se refieren a productos fabricados exclusivamente por ECOFLOW INC."
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label":"t:sections.rich-text.settings.bg_color.label"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label":"t:sections.rich-text.settings.section_color.label"
+    },
+    {
+        "type": "range",
+        "id": "font-size",
+        "label": "Text font size",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 16
+      }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,122 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "Product Compare",
+  "id": "product-compare",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "class": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "type": "checkbox",
+      "id": "atb_enable_checkbox",
+      "label": "Enable section",
+      "default": true,
+      "info": ""
+    },
+    {
+      "id": "atb_title",
+      "type": "text",
+      "label": "Heading",
+      "default": "Compare The Models",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "blocks",
+      "label": "Block ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": "",
+      "repeatable": "compare"
+    },
+    {
+      "id": "block_background_image",
+      "type": "image_picker",
+      "label": "Background image",
+      "repeatable": "compare",
+      "info": ""
+    },
+    {
+      "id": "block_text",
+      "type": "wysiwyg",
+      "label": "Text",
+      "default": "<p>Wide Angle: 108MP Laser AF (f/1.8)<br>Telephoto 1: 10MP AF (f/2.4)<br>Telephoto 2: 10MP AF (f/4.9)<br>Ultra Wide: 12MP AF (f/2.2)</p>",
+      "repeatable": "compare",
+      "info": ""
+    }
+  ],
+  "warnings": [
+    "repeating image fields may not be properly handled"
+  ]
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_enable_checkbox' -%}
+{%- assign atb_enable_checkbox = val -%}
+{%- include 'atb-render' field:'atb_title' -%}
+{%- assign atb_title = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_background_image' -%}
+{%- assign block_background_image = val -%}
+{%- include 'atb-render' field:'block_text' -%}
+{%- assign block_text = val -%}
+{%- if atb_enable_checkbox == blank -%}
+{%- assign atb_enable_checkbox = false -%}
+{%- else -%}
+{%- assign atb_enable_checkbox = true -%}
+{%- endif -%}
+{%- assign no_image = images['no_image_comparison'] -%}
+{% assign product = all_products['160w-solar-panel'] %}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section ">
+{% if atb_enable_checkbox %}
+  <section class="product-intro" id="product-compare">
+    <div class="white-bg my-md-5 py-md-3 my-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7 mx-auto">
+            <div class="intro-heading">
+              <h2>{{ atb_title }}</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row compare-model-product">
+          {% for block0 in blocks %}
+{%- assign my_image_key0 = block_background_image[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image0 = images[my_image_key0] -%}
+            <div class="col-md-4 col-6">
+              <div class="compare-block">
+                <span class="pdp-com-img"><img class="lazyload" data-src="{{ my_image0 | img_url: '1200x' }}"></span>
+                <div class="com-detail">
+                  <div class="mb-3 dimen">
+                    {{block_text[forloop.index0]}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+
+<style>
+</style>
+
+<script type="application/javascript">
+</script>
+</section>

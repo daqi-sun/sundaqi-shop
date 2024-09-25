@@ -1,0 +1,92 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "PDP Specs",
+  "id": "pdp-specs",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "class": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_section_id",
+      "label": "Section ID",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_title",
+      "label": "Section Title",
+      "default": "Specs",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "blocks",
+      "label": "Block ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": "",
+      "repeatable": "Contents"
+    },
+    {
+      "type": "text",
+      "id": "block_title",
+      "label": "Title",
+      "repeatable": "Contents",
+      "info": ""
+    },
+    {
+      "type": "wysiwyg",
+      "id": "block_content",
+      "label": "Contents",
+      "repeatable": "Contents",
+      "info": ""
+    }
+  ],
+  "warnings": []
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_section_id' -%}
+{%- assign atb_section_id = val -%}
+{%- include 'atb-render' field:'atb_title' -%}
+{%- assign atb_title = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_title' -%}
+{%- assign block_title = val -%}
+{%- include 'atb-render' field:'block_content' -%}
+{%- assign block_content = val -%}
+{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section ">
+<section id="{{ atb_section_id }}" class="pdp pdp-specs">
+    {% if atb_title != blank %}
+        <h2>{{ atb_title }}</h2>
+    {% endif %}
+    <div class="pdp-specs-container">
+        {% for block0 in blocks %}
+            <div class="pdp-specs-block">
+                {% if block_title[forloop.index0] != blank %}
+                    <p class="pdp-specs-title">{{ block_title[forloop.index0] }}</p>
+                {% endif %}
+                {% if block_content[forloop.index0] != blank %}
+                    <div class="pdp-specs-content">{{ block_content[forloop.index0] }}</div>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+</section>

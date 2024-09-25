@@ -1,0 +1,189 @@
+{% if section.blocks.size > 0 %}
+    <div class="star-page-container discount-products-container">
+
+            {% for block in section.blocks %}
+                {%- comment %}<locksmith:b868>{% endcomment -%}
+                  {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                {%- comment %}</locksmith:b868>{% endcomment -%}
+                <div class="discount-products-wrapper">
+                    <div class="discount-products">
+                        {% if block.settings.product_1 != blank or block.settings.variant_id_1 != blank %}
+                            <div class="discount_product">
+                                {% if block.settings.product_image_1 != blank %}
+                                    <div class="product_image">
+                                        <img srcset="{{ block.settings.product_image_1 | img_url: 'small' | replace: '_small', '' }}" loading="lazy" />
+                                    </div>
+                                {% endif %}
+                                {% if block.settings.product_title_1 != blank %}
+                                    <div class="product_title">{{ block.settings.product_title_1 }}</div>
+                                {% endif %}
+                                {% if block.settings.product_subtitle_1 != blank %}
+                                    <div class="product_subtitle">{{ block.settings.product_subtitle_1 }}</div>
+                                {% endif %}
+                            </div>
+                            {% assign product_1_id = block.settings.variant_id_1 | default: block.settings.product_1.first_available_variant.id %}
+                            <div class="plus_sign">+</div>
+                        {% endif %}
+                        {% if block.settings.product_2 != blank or block.settings.variant_id_2 != blank %}
+                            <div class="discount_product">
+                                {% if block.settings.product_image_2 != blank %}
+                                    <div class="product_image">
+                                        <img srcset="{{ block.settings.product_image_2 | img_url: 'small' | replace: '_small', '' }}" loading="lazy" />
+                                    </div>
+                                {% endif %}
+                                {% if block.settings.product_title_2 != blank %}
+                                    <div class="product_title">{{ block.settings.product_title_2 }}</div>
+                                {% endif %}
+                                {% if block.settings.product_subtitle_2 != blank %}
+                                    <div class="product_subtitle">{{ block.settings.product_subtitle_2 }}</div>
+                                {% endif %}
+
+                                {% if block.settings.discount_image != blank %}
+                                    <div class="discount_badge">
+                                        <img src="{{ block.settings.discount_image | img_url: 'large' }}" />
+                                        <div>{{ block.settings.discount_tag_text }}</div>
+                                    </div>
+                                {% endif %}
+                            </div>
+                            {% assign product_2_id = block.settings.variant_id_2 | default: block.settings.product_2.first_available_variant.id %}
+
+                        {% endif %}
+                    </div>
+                    <div class="discount_box">
+                        {% if block.settings.discount_text != blank %}
+                            <div class="discount_title">{{ block.settings.discount_text }}</div>
+                        {% endif %}
+                        {% if block.settings.price_text != blank %}
+                            <div class="discount-sec-price-wrapper">
+                                <div class="discount_price" style="color: {{ block.settings.price_color }};">{{ block.settings.price_text }}</div>
+                                <div class="compare_price" style="color: {{ block.settings.compare_price_color }};">{{ block.settings.compare_price_text }}</div>
+                            </div>
+                        {% endif %}
+                        {% if block.settings.atc_text != blank %}
+                            <button class="btn add_discount_products" data-variant-1-id="{{ product_1_id }}" data-variant-2-id="{{ product_2_id }}">{{ block.settings.atc_text }}</button>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+    </div>
+{% endif %}
+
+{% schema %}
+{
+    "name": "Discount products",
+    "settings": [
+    ],
+    "blocks": [
+    {
+        "type": "product",
+        "name": "Product",
+        "settings": [
+            {
+                "type": "textarea",
+                "id": "discount_text",
+                "label": "Discount text"
+            },
+            {
+                "type": "text",
+                "id": "price_text",
+                "label": "Price"
+            },
+            {
+                "type": "color",
+                "id": "price_color",
+                "label": "Price color"
+            },
+            {
+                "type": "text",
+                "id": "compare_price_text",
+                "label": "Compare price"
+            },
+            {
+                "type": "color",
+                "id": "compare_price_color",
+                "label": "Compare price color"
+            },
+            {
+                "type": "text",
+                "id": "atc_text",
+                "label": "ATC button text"
+            },
+            {
+                "type": "image_picker",
+                "id": "discount_image",
+                "label": "Discount label image"
+            },
+            {
+                "type": "textarea",
+                "id": "discount_tag_text",
+                "label": "Discount label text"
+            },
+            {
+                "type": "header",
+                "content": "Product #1"
+            },
+            {
+                "type": "product",
+                "id": "product_1",
+                "label": "Product"
+            },
+            {
+                "type": "text",
+                "id": "varaint_id_1",
+                "label": "Variant ID"
+            },
+            {
+                "type": "text",
+                "id": "product_title_1",
+                "label": "Product title"
+            },
+            {
+                "type": "text",
+                "id": "product_subtitle_1",
+                "label": "Product subtitle"
+            },
+            {
+                "type": "image_picker",
+                "id": "product_image_1",
+                "label": "Product image"
+            },
+            {
+                "type": "header",
+                "content": "Product #2"
+            },
+            {
+                "type": "product",
+                "id": "product_2",
+                "label": "Product"
+            },
+            {
+                "type": "text",
+                "id": "varaint_id_2",
+                "label": "Variant ID"
+            },
+            {
+                "type": "text",
+                "id": "product_title_2",
+                "label": "Product title"
+            },
+            {
+                "type": "text",
+                "id": "product_subtitle_2",
+                "label": "Product subtitle"
+            },
+            {
+                "type": "image_picker",
+                "id": "product_image_2",
+                "label": "Product image"
+            }
+        ]
+    }
+    ],
+    "presets": [
+        {
+            "name": "Xmas - Discount products",
+            "category": "Custom Sections"
+        }
+    ]
+}
+{% endschema %}

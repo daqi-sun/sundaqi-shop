@@ -1,0 +1,107 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "t:sections.index-custom-section.name",
+  "class": "index-section custom-html-section",
+  "id": "index-custom-section",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "atb_section_width",
+      "label": "t:sections.index-custom-section.settings.section_width.label",
+      "default": "page-width",
+      "options": [
+        {
+          "label": "t:sections.index-custom-section.settings.section_width.options__1.label",
+          "value": "page-width-full"
+        },
+        {
+          "label": "t:sections.index-custom-section.settings.section_width.options__2.label",
+          "value": "page-width"
+        },
+        {
+          "label": "t:sections.index-custom-section.settings.section_width.options__3.label",
+          "value": "page-width-small"
+        }
+      ],
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_title",
+      "label": "t:sections.index-custom-section.settings.title.label",
+      "default": "Heading",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_subtitle",
+      "label": "t:sections.index-custom-section.settings.subtitle.label",
+      "default": "Subheading",
+      "info": ""
+    },
+    {
+      "type": "wysiwyg",
+      "id": "atb_html",
+      "label": "t:sections.index-custom-section.settings.html.label",
+      "default": "<p> Custom Code Paragraph</p>",
+      "info": ""
+    }
+  ],
+  "warnings": []
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_section_width' -%}
+{%- assign atb_section_width = val -%}
+{%- include 'atb-render' field:'atb_title' -%}
+{%- assign atb_title = val -%}
+{%- include 'atb-render' field:'atb_subtitle' -%}
+{%- assign atb_subtitle = val -%}
+{%- include 'atb-render' field:'atb_html' -%}
+{%- assign atb_html = val -%}
+{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section index-section custom-html-section">
+{% assign section_width = atb_section_width %}
+
+<section id="section-{{ section_id }}" data-section-id="{{ section_id }}" data-section-type="custom-content" class='fade-in-animation'>
+
+<div class="{{section_width}} custom-section">
+
+
+   {% if atb_title != blank or  atb_subtitle != blank %}
+  <header class="section-header homepage_subtitle_style_{{settings.homepage_subtitle_color}}">
+    {% if atb_subtitle != blank  %}
+    <span class='h5'>{{ atb_subtitle  }}</span>
+    {% endif %}
+    {% if atb_title != blank  %}
+    <h2>{{ atb_title }}</h2>
+    {% endif %}
+  </header>
+  {% endif %}
+
+  {% if atb_html != blank %}
+  {{ atb_html }}
+  {% endif %}
+
+</div>
+</section>
+
+
+
+
+</section>

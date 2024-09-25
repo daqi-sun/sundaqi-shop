@@ -1,0 +1,122 @@
+{{ 'jquery.min.js' | asset_url | script_tag }}
+<div class="relative">
+  {% assign image = section.settings.mobileImage %}
+  {% render 'th-image--mobile', image: image %}
+
+  {% assign image = section.settings.image %}
+  {% render 'th-image--desktop', image: image %}
+
+  <div class="cbb-content">
+    {% assign title = 'cut-bill.banner.title' | t %}
+    {% if section.settings.title != blank %}
+      {% assign title = section.settings.title %}
+    {% endif %}
+    {% assign subtitle = 'cut-bill.banner.subtitle' | t %}
+    {% if section.settings.subtitle != blank %}
+      {% assign subtitle = section.settings.subtitle %}
+    {% endif %}
+
+    <h1>{{ title }}</h1>
+    <h4>{{ subtitle }}</h4>
+
+    {% if section.settings.button_text != blank %}
+      <a id="btn-scroll" class="custom-link-btn" href="#">
+        {{ section.settings.button_text }}
+        <svg xmlns="http://www.w3.org/2000/svg" width="16.475" height="16.475" viewBox="0 0 16.475 16.475">
+          <path id="Path_9236" data-name="Path 9236" d="M8.237,0a8.237,8.237,0,1,0,8.237,8.237A8.237,8.237,0,0,0,8.237,0Zm4.508,8.6a.655.655,0,0,1-.55.3h-6.6l1.721,1.721a.554.554,0,1,1-.784.784L3.753,8.63a.555.555,0,0,1,0-.784L6.528,5.071a.555.555,0,0,1,.784.786L5.592,7.578h6.6a.658.658,0,0,1,.55.3.557.557,0,0,1,.139.367A.549.549,0,0,1,12.745,8.6Z" transform="translate(0 16.475) rotate(-90)" fill="currentColor"></path>
+        </svg>
+      </a>
+      {% style %}
+        .hidden {
+          display: none !important;
+        }
+        a.custom-link-btn {
+          color: #fff !important;
+          background-color: #2badcc;
+          border-radius: 30px;
+          padding: 10px 40px 10px 40px;
+          text-align: center;
+          font-weight: 400;
+          font-size: 24px;
+          position: relative;
+          margin: 0;
+          display: inline-block;
+        }
+        @media (max-width: 1024px) {
+          a.custom-link-btn {
+            font-size: 12px;
+            padding: 10px 20px 10px 20px;
+          }
+        }
+      {% endstyle %}
+      <script>
+          var links = $('#btn-scroll');
+
+          links.click(function(e) {
+          e.preventDefault();
+
+          const nextSection = $(this).closest('.shopify-section').next();
+          if (nextSection.length) {
+            const nextSectionTop = nextSection.offset().top;
+
+            $('html, body').animate({
+              scrollTop: nextSectionTop
+            }, 100);
+          }
+        });
+          {% comment %} const abtn = document.querySelector('a.custom-link-btn');
+          abtn.addEventListener('click', e => {
+            e.preventDefault()
+            document.querySelector('{{ section.settings.button_link }}').scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"})
+          })
+          window.addEventListener("load", (event) => {
+            abtn.classList.remove('hidden')
+          }); {% endcomment %}
+      </script>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobileImage",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "header",
+      "content": "Title",
+      "info": "By default we are using locale to get the title. If you want to override it, you can do it here."
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "text",
+      "id": "button_link",
+      "label": "Button Target Element",
+      "info": "element class or id"
+    }
+  ]
+}
+{% endschema %}

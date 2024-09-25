@@ -1,0 +1,697 @@
+{
+  "sections": {
+    "daf26638-f596-4384-b150-72d380a3268d": {
+      "type": "product-atb-top",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "sticky-product-bar": {
+      "type": "sticky-product-bar",
+      "blocks": {
+        "588d25af-4d47-43ac-9697-b98aa2f65719": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Overview",
+            "tab_id": "product_information",
+            "section_class": ""
+          }
+        },
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "What's in the box",
+            "tab_id": "what_in_box",
+            "section_class": ""
+          }
+        },
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "FAQ",
+            "tab_id": "faq",
+            "section_class": ""
+          }
+        },
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Reviews",
+            "tab_id": "section-reviews",
+            "section_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "588d25af-4d47-43ac-9697-b98aa2f65719",
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02",
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4",
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38"
+      ],
+      "settings": {
+        "enabled": true,
+        "enabled_tabs": false
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "11795adc-1afa-4833-a193-258f495901ef": {
+          "type": "sku_block",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e": {
+          "type": "product_title",
+          "settings": {
+          }
+        },
+        "judge_me_reviews_preview_badge_BDzX99": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "0471109f-c130-454e-a9ba-c56412cc11f3": {
+          "type": "product_vendor",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185": {
+          "type": "product_price",
+          "settings": {
+          }
+        },
+        "d25a0285-4fb4-422d-b95b-ab67446120ad": {
+          "type": "product_description",
+          "settings": {
+            "desc_display": "default"
+          }
+        },
+        "79e1b437-5bbd-4b8a-ac55-27c2f795ee99": {
+          "type": "coupon_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Component_2_1.png",
+            "discount_off_text": "{{ product.metafields.custom.discount_off_text.value }}",
+            "code": "{{ product.metafields.custom.discount_code.value }}",
+            "show_copy_code_btn": true
+          }
+        },
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879": {
+          "type": "product_options_block",
+          "settings": {
+            "show_product_swatches": true,
+            "use_variant_image_for_swatches": true,
+            "button_content": ""
+          }
+        },
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe": {
+          "type": "quantity_block",
+          "settings": {
+          }
+        },
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0": {
+          "type": "accessories_section",
+          "settings": {
+            "title": "You may also like",
+            "metafield": "accessories"
+          }
+        },
+        "a96faac7-b2a0-4157-9b80-c757c18c6a89": {
+          "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/form-embed-block\/2632fe16-c075-4321-a88b-50b567f42507",
+          "disabled": true,
+          "settings": {
+            "formId": "UHSpKe"
+          }
+        },
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609": {
+          "type": "product_buttons",
+          "settings": {
+            "enable_payment_button": false,
+            "show_custom_icons": true,
+            "custom_payment_logo_1_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_08_7f374817-3a3e-42f2-95ce-077b67f293d2.svg?v=1672025209",
+            "custom_payment_logo_2_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_10_d8002835-e25f-4edb-9038-187f75f69a18.svg?v=1672025208",
+            "custom_payment_logo_3_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_02_a3ea7ab1-aa9a-4857-9ed6-01e62deccfce.svg?v=1672025208",
+            "custom_payment_logo_4_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_06_7c406d24-0983-49ff-ac8e-cf73032050d9.svg?v=1672025208",
+            "custom_payment_logo_5_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_07_be5959d4-9f22-4a31-8e40-285f8e3ac6e7.svg?v=1672025208",
+            "custom_payment_logo_6_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_04_7bff1113-0dc2-489f-8be8-d19dbe467a1a.svg?v=1672025208",
+            "custom_payment_logo_7_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_05_1c21f308-a0a3-4251-8641-87264da43d67.svg?v=1672025208",
+            "custom_payment_logo_8_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_01_96e6a30c-7908-4892-b6f1-75bce8657cd4.svg?v=1672025208",
+            "custom_payment_logo_9_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/sofort_icon_31ba2d5b-2c44-4960-8e80-645a7240c899.png?v=1679023017",
+            "custom_payment_logo_10_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/giropay_icon_c9d7e22e-cd7c-4bee-8de5-e50a4c6dc378.png?v=1679023017",
+            "custom_payment_logo_11_svg": "",
+            "custom_payment_logo_12_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/multibanco_icon_e3f9b26f-234c-4a06-9e48-adfd188e7deb.png?v=1679023016",
+            "custom_payment_logo_13_svg": "",
+            "custom_payment_logo_14_svg": "",
+            "custom_payment_logo_15_svg": ""
+          }
+        },
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% if product.metafields.custom.trade_message != blank %}\n          <div class=\"trade-message\">♻️{{product.metafields.custom.trade_message}} <a href=\"\/pages\/trade-in\" target=\"_blank\">Learn more<\/a><\/div>\n{% endif %}"
+          }
+        }
+      },
+      "block_order": [
+        "11795adc-1afa-4833-a193-258f495901ef",
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e",
+        "judge_me_reviews_preview_badge_BDzX99",
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774",
+        "0471109f-c130-454e-a9ba-c56412cc11f3",
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185",
+        "d25a0285-4fb4-422d-b95b-ab67446120ad",
+        "79e1b437-5bbd-4b8a-ac55-27c2f795ee99",
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879",
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe",
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0",
+        "a96faac7-b2a0-4157-9b80-c757c18c6a89",
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609",
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a"
+      ],
+      "settings": {
+        "section_id": "",
+        "show_breadcrumbs": true,
+        "show_pick_an_option": false,
+        "enable_linked_options": false,
+        "enabled_mobile_sticky_btns": true,
+        "media_size": "medium",
+        "enable_image_zoom": true,
+        "enable_video_looping": true,
+        "thumbnails_type": "grid",
+        "support_email": "",
+        "support_text": "",
+        "feature_1_show": false,
+        "feature_1_title": "Fast & Free Shipping",
+        "feature_1_content": "",
+        "feature_2_show": false,
+        "feature_2_title": "Warranty Protection",
+        "feature_2_content": "",
+        "feature_3_show": false,
+        "feature_3_title": "Secure Payments",
+        "feature_3_content": "",
+        "feature_4_show": false,
+        "feature_4_title": "Multi-channel Support",
+        "feature_4_content": ""
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "grid_mobile": "2",
+        "heading": "You may also like",
+        "show_vendor": false
+      }
+    },
+    "dc930387-d53a-4737-86a1-e3f26cb93197": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "aae25599-f7a0-401c-9900-5e7f0d835f72": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "template--20113698062679__dc930387-d53a-4737-86a1-e3f26cb93197-text_with_image-1": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/ES_f96c3dc9-5d9a-48f3-903b-d7eef6f0acd8.png",
+            "mobile_image": "shopify:\/\/shop_images\/ES-_MOB.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Paneles Solares Portátiles",
+            "title_color": "#232323",
+            "content": "<p>Suministra alimentación a tus aparatos de uso diario en casa y cuando no cuentes con conexión a la red eléctrica con energía solar sostenible.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "aae25599-f7a0-401c-9900-5e7f0d835f72",
+        "template--20113698062679__dc930387-d53a-4737-86a1-e3f26cb93197-text_with_image-1"
+      ],
+      "settings": {
+      }
+    },
+    "a36ca2e9-1b59-4339-93da-275f910eec4f": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--20113698062679__a36ca2e9-1b59-4339-93da-275f910eec4f-text_with_image-1": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/ES_b42d0118-6dd5-435d-9680-23209dd54e8c.png",
+            "mobile_image": "shopify:\/\/shop_images\/ES-_MOB-1.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Más energía con un diseño bifacial dos en uno.",
+            "title_color": "#232323",
+            "content": "<p>El panel solar portátil bifacial EcoFlow de 220 W es dos en uno. Con un lado principal de 220 W y un lado de 155 W en la parte posterior para la luz ambiental, puedes capturar hasta un 25 % más de energía solar y cargar tu generador de energía portátil aún más rápido.<br\/><\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--20113698062679__a36ca2e9-1b59-4339-93da-275f910eec4f-text_with_image-1"
+      ],
+      "settings": {
+      }
+    },
+    "27b89ac6-33d4-4ad6-a3a2-d88e6f3b4539": {
+      "type": "feature-row",
+      "settings": {
+        "section_width": "page-width-small",
+        "image": "shopify:\/\/shop_images\/PC_220wSP_03.jpg",
+        "layout": "right",
+        "title": "Fabricado para capear el temporal.",
+        "text": "<p>El diseño de vidrio templado de una sola pieza hace que sea cinco veces más resistente que otros paneles comparables y con la mitad de grosor que el vidrio templado tradicional. Capaz de soportar un calor de hasta 149 °C, es seguro que puede resistir los elementos.<\/p><p><strong>4X más de disipación de calor en la parte trasera<\/strong><\/p><p><strong>&lt;10% de degradación de la potencia en 10 años<\/strong><\/p><p>*En comparación con los paneles solares estándar.<\/p>",
+        "button_style": "primary",
+        "button_label": "",
+        "button_link": ""
+      }
+    },
+    "e2f04109-0561-4273-b980-1823d0cc8193": {
+      "type": "feature-row",
+      "settings": {
+        "section_width": "page-width-small",
+        "image": "shopify:\/\/shop_images\/PC_220wSP_04.jpg",
+        "layout": "left",
+        "title": "Potente y portátil.",
+        "text": "<p>Se trata de un panel solar portátil diseñado desde cero para ser compacto. Un 10 % más pequeño que los paneles de 220 W comparables, ahorra espacio con vidrio templado más fino y requiere menos superficie para la misma alimentación de entrada.<\/p>",
+        "button_style": "primary",
+        "button_label": "",
+        "button_link": ""
+      }
+    },
+    "790d9e2d-59d1-400c-92f2-e28404b0d60b": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--20113698062679__790d9e2d-59d1-400c-92f2-e28404b0d60b-text_with_image-1": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/PC_220wSP_05.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/m_220wSP_5.jpg",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Más que una funda de transporte.",
+            "title_color": "#232323",
+            "content": "<p>Incluye su propia funda de transporte para que puedas llevarlo a cualquier parte. Una vez que llegues a tu destino, simplemente despliégala y utilízala como soporte para conseguir una exposición al sol perfecta.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--20113698062679__790d9e2d-59d1-400c-92f2-e28404b0d60b-text_with_image-1"
+      ],
+      "settings": {
+      }
+    },
+    "310c03f2-c790-4916-8769-612a7a780f0d": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--20113698062679__310c03f2-c790-4916-8769-612a7a780f0d-text_with_image-1": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/PC_220wSP_06.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/m_220wSP_6.jpg",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Y también es resistente al agua.",
+            "title_color": "#232323",
+            "content": "<p>Hemos subido el listón con este panel. Es completamente resistente al agua y al polvo. Llueva, haga viento o haga sol, el panel es seguro al contar con un grado de impermeabilidad IP68.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--20113698062679__310c03f2-c790-4916-8769-612a7a780f0d-text_with_image-1"
+      ],
+      "settings": {
+      }
+    },
+    "af70a316-a458-4163-8147-de205389e729": {
+      "type": "pdp-whats-in-the-box",
+      "blocks": {
+        "template--20490444374359__38f9b846-322a-468d-8bfc-c2bf7457b9ed-image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PC_220W_01.png",
+            "cta_label": "Panel Solar Bifacial 220 W",
+            "link": "",
+            "cta_width": 50,
+            "cta_image_width": "100%",
+            "custom_width": 300,
+            "custom_height": 365,
+            "custom_width_mobile": 300,
+            "custom_height_mobile": 225
+          }
+        },
+        "template--20490444374359__38f9b846-322a-468d-8bfc-c2bf7457b9ed-image-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PC_XT_60.png",
+            "cta_label": " Cable de carga solar a XT60",
+            "link": "",
+            "cta_width": 25,
+            "cta_image_width": "100%",
+            "custom_width": 265,
+            "custom_height": 100,
+            "custom_width_mobile": 135,
+            "custom_height_mobile": 160
+          }
+        },
+        "template--20490444374359__38f9b846-322a-468d-8bfc-c2bf7457b9ed-image-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PC_220W_bag.png",
+            "cta_label": "Funda protectora",
+            "link": "",
+            "cta_width": 25,
+            "cta_image_width": "100%",
+            "custom_width": 265,
+            "custom_height": 115,
+            "custom_width_mobile": 150,
+            "custom_height_mobile": 215
+          }
+        },
+        "template--20490444374359__38f9b846-322a-468d-8bfc-c2bf7457b9ed-image-4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PC_Snap_Hook_4.png",
+            "cta_label": "Mosquetones*4",
+            "link": "",
+            "cta_width": 25,
+            "cta_image_width": "100%",
+            "custom_width": 255,
+            "custom_height": 90,
+            "custom_width_mobile": 135,
+            "custom_height_mobile": 165
+          }
+        },
+        "template--20490444374359__38f9b846-322a-468d-8bfc-c2bf7457b9ed-image-5": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PC_User_manual_Warranty_card.png",
+            "cta_label": "Manual de Usuario y Tarjeta ",
+            "link": "",
+            "cta_width": 25,
+            "cta_image_width": "100%",
+            "custom_width": 285,
+            "custom_height": 100,
+            "custom_width_mobile": 160,
+            "custom_height_mobile": 190
+          }
+        }
+      },
+      "block_order": [
+        "template--20490444374359__38f9b846-322a-468d-8bfc-c2bf7457b9ed-image-1",
+        "template--20490444374359__38f9b846-322a-468d-8bfc-c2bf7457b9ed-image-2",
+        "template--20490444374359__38f9b846-322a-468d-8bfc-c2bf7457b9ed-image-3",
+        "template--20490444374359__38f9b846-322a-468d-8bfc-c2bf7457b9ed-image-4",
+        "template--20490444374359__38f9b846-322a-468d-8bfc-c2bf7457b9ed-image-5"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Contenido",
+        "bottom_content": "",
+        "cta_height": 400,
+        "cta_height_mobile": 255,
+        "cta_half_height_mobile": 200,
+        "gutter_width": 12
+      }
+    },
+    "2db0d5de-d122-42c8-977e-1f1a985e97c4": {
+      "type": "index-accordion",
+      "blocks": {
+        "template--20121467978071__2db0d5de-d122-42c8-977e-1f1a985e97c4-block-1": {
+          "type": "block",
+          "settings": {
+            "question": "¿El panel solar bifacial de 220 W genera una potencia total de 220 W?",
+            "answer": "<p>En la mayoría de los casos, es normal que un panel solar no suministre toda su potencia nominal. A continuación se indican algunos de los motivos por los que esto ocurre, así como algunas sugerencias para acercarse al valor de potencia nominal. <br\/><br\/>1. Intensidad de la luz. La cantidad de luz que se refleja en el panel producirá fluctuaciones en la potencia de salida. Es más probable que alcance valores de potencia nominal más cercanos a los obtenidos en condiciones de prueba cuando utilice el producto en un día despejado al sol del mediodía, que cuando lo utilice por la mañana o por la tarde. Las condiciones meteorológicas también afectan a la cantidad de luz solar que se refleja en el panel. Por ejemplo, es mucho menos probable que alcance los valores de potencia nominal cuando hay bruma, nubosidad y lluvia. <br\/><br\/>2. Temperatura superficial. La temperatura de la superficie del panel solar también afectará a la cantidad de energía generada. Cuanto menor sea la temperatura de la superficie del panel, más energía se producirá. Por ejemplo, los paneles solares generan más energía cuando se utilizan durante el invierno que durante el verano, y esto es completamente normal. Los paneles solares generalmente alcanzan temperaturas cercanas a los 60 °C (140 °F) durante el verano. Esto reduce la potencia nominal en un 13 %, a pesar de los mayores niveles de luz que se reflejan en el panel. <br\/><br\/>3. Ángulo de luz solar. En condiciones de luz óptimas, los rayos solares deben estar perpendiculares a la superficie del panel para obtener el máximo rendimiento. La potencia de salida solo se ve afectada marginalmente por la luz solar que recibe el panel en unos 10° a cada lado de este ángulo de 90°. <br\/><br\/>4. Efecto de la sombra en el panel. La superficie del panel solar no debe estar a la sombra durante su uso. El efecto provocado por sombras, objetos extraños y cristal puede reducir en gran medida la potencia de salida. Problemas de rendimiento provocados por paneles que no funcionan correctamente: Si el panel sigue sin generar energía o su producción sigue estando muy por debajo de los valores de potencia nominal esperados después de solucionar los problemas anteriores, puede haber un problema con el propio panel. Póngase en contacto con el servicio de atención al cliente para obtener ayuda.<\/p>"
+          }
+        },
+        "template--20121467978071__2db0d5de-d122-42c8-977e-1f1a985e97c4-block-2": {
+          "type": "block",
+          "settings": {
+            "question": "¿Cuánta energía puede generar el panel solar bifacial de 220 W en condiciones normales?",
+            "answer": "<p>Depende ante todo de las condiciones meteorológicas. En términos generales, en un día claro sin nubes en el cielo, la luz solar que recibe el panel a un ángulo de 90° suele generar entre 160 W y 180 W de potencia en el panel de 220 W. <br\/><br\/>(Las condiciones de luz actuales son normalmente de 800 W–900 W\/m² [74,3 W–83,6 W\/ft²] con una temperatura de panel de 50 °C [122 °F] en condiciones de prueba. Los valores de potencia nominal se basan en 1000 W\/m² [92,9 W\/ft²] en condiciones AM1,5 con una temperatura de panel de 25 °C [77 °F] en condiciones de prueba. Se observaron valores de potencia de salida cercanos a los valores nominales normalmente al sol del mediodía durante el invierno).<\/p>"
+          }
+        },
+        "template--20121467978071__2db0d5de-d122-42c8-977e-1f1a985e97c4-block-3": {
+          "type": "block",
+          "settings": {
+            "question": "¿Qué debo saber sobre la temperatura de funcionamiento, el almacenamiento y el uso del panel solar bifacial de 220 W?",
+            "answer": "<p>La temperatura de funcionamiento del panel solar bifacial es de –20 °-C85 °C (–4 °F-185 °F). El panel debe doblarse en su forma original y guardarse en su funda protectora (con función de soporte), que proporciona suficiente protección para el producto. <br\/><br\/>Para prolongar la vida útil del panel, asegúrate de que el producto no esté expuesto a fuerzas o impactos externos cuando no se use. El panel solar está hecho de cristal y no debe caerse, perforarse, doblarse ni usarse para sentarse encima. Estas acciones pueden romper el cristal y hacer que el panel quede inservible. Dichos daños no están cubiertos por la garantía gratuita.<\/p>"
+          }
+        },
+        "template--20121467978071__2db0d5de-d122-42c8-977e-1f1a985e97c4-block-4": {
+          "type": "block",
+          "settings": {
+            "question": "El panel solar bifacial de 220 W tiene dos lados. ¿Cómo puedo saber cuál es cada lado y cómo puedo optimizar la generación de energía con la parte trasera del panel?",
+            "answer": "<p>La parte delantera del panel solar bifacial tiene una caja de conexiones. Esta parte del panel genera energía cuando se coloca en perpendicular a los rayos del sol. Dado que la parte trasera del panel no está orientada hacia el sol, no genera electricidad de la forma habitual. En términos generales, la parte trasera del panel utiliza la luz ambiental para aumentar el rendimiento global del producto hasta en un 5 %-25 %. <br\/><br\/>Esta cifra aumenta si se utilizan espejos o cuando hay iluminación ambiental intensa. El uso del producto con la parte trasera del panel orientada hacia el sol genera el 80 % de la energía que se obtendría al utilizar la parte delantera. Usar el panel de esta forma no tiene un efecto negativo en el producto.<\/p>"
+          }
+        },
+        "template--20121467978071__2db0d5de-d122-42c8-977e-1f1a985e97c4-block-5": {
+          "type": "block",
+          "settings": {
+            "question": "¿Puedo utilizar estaciones de energía que no sean de la marca EcoFlow con el panel solar bifacial de 220 W?",
+            "answer": "<p>Sí, pero solo determinados tipos. La estación de energía utilizada debe ser compatible con las normas MC4 para que funcione correctamente. Además, es posible que otras marcas de estaciones de energía no ofrezcan los mismos grados de compatibilidad que los generadores de la marca EcoFlow, que tengan valores de potencia nominal inferiores y que no ofrezcan los mismos niveles de rendimiento.<\/p>"
+          }
+        },
+        "c5a09990-bbf4-4b58-9d2c-53dded63ad3c": {
+          "type": "block",
+          "settings": {
+            "question": "¿Puedo conectar los paneles solares bifaciales de 110 W y 220 W entre sí en serie?",
+            "answer": "<p>Sí, pero no se recomienda hacerlo. El panel solar de 220 W tiene una corriente nominal máxima de 12 A. Aunque estos paneles se pueden conectar en paralelo, las estaciones de energía de las series DELTA y RIVER solo admiten una corriente máxima de 12 A. Las conexiones en paralelo aumentan la potencia de salida al duplicar la corriente, pero la conexión de los paneles de esta forma provocaría una situación de 1 + 1 = 1 en la que la corriente está limitada a 12 A por los dispositivos conectados. No recomendamos conectar los paneles en paralelo, a menos que utilices una estación de energía de otra marca con una corriente de entrada de 20 A o superior.<\/p>"
+          }
+        },
+        "9baa0601-82ba-4ee9-b10d-514f67557404": {
+          "type": "block",
+          "settings": {
+            "question": "¿Puedo conectar el panel solar bifacial de 220 W en paralelo?",
+            "answer": "<p>Sí, pero no se recomienda hacerlo. El panel solar de 220 W tiene una corriente nominal máxima de 12 A. Aunque estos paneles se pueden conectar en paralelo, las estaciones de energía de las series DELTA y RIVER solo admiten una corriente máxima de 12 A.<br\/><br\/>Las conexiones en paralelo aumentan la potencia de salida al duplicar la corriente, pero la conexión de los paneles de esta forma provocaría una situación de 1 + 1 = 1 en la que la corriente está limitada a 12 A por los dispositivos conectados. No recomendamos conectar los paneles en paralelo, a menos que utilices una estación de energía de otra marca con una corriente de entrada de 20 A o superior.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--20121467978071__2db0d5de-d122-42c8-977e-1f1a985e97c4-block-1",
+        "template--20121467978071__2db0d5de-d122-42c8-977e-1f1a985e97c4-block-2",
+        "template--20121467978071__2db0d5de-d122-42c8-977e-1f1a985e97c4-block-3",
+        "template--20121467978071__2db0d5de-d122-42c8-977e-1f1a985e97c4-block-4",
+        "template--20121467978071__2db0d5de-d122-42c8-977e-1f1a985e97c4-block-5",
+        "c5a09990-bbf4-4b58-9d2c-53dded63ad3c",
+        "9baa0601-82ba-4ee9-b10d-514f67557404"
+      ],
+      "settings": {
+        "section_id": "",
+        "content_side": "left",
+        "title": "Preguntas frecuentes",
+        "subtitle": "",
+        "text_color": "#03060b",
+        "color_image_overlay": "",
+        "color_bgcolor": "",
+        "image_overlay_opacity": 70
+      }
+    },
+    "7fbe39fc-a6f3-4a49-8f87-2b98c7cc0cf1": {
+      "type": "pdp-specs",
+      "blocks": {
+        "81e58691-be8a-4a0e-8e0b-7ccbf1b3a5ab": {
+          "type": "contents",
+          "settings": {
+            "title": "Potencia nominal",
+            "content": "<p>220W Frente\/155W Atrás<\/p>"
+          }
+        },
+        "8089abf9-6f51-4d9d-bad9-91ed67e3fd6b": {
+          "type": "contents",
+          "settings": {
+            "title": "Tipo de celda",
+            "content": "<p>Silicio monocristalino<\/p>"
+          }
+        },
+        "a0fc6548-242e-4230-a770-18fcf1aa9e71": {
+          "type": "contents",
+          "settings": {
+            "title": "Eficiencia",
+            "content": "<p>22-23%<\/p>"
+          }
+        },
+        "7fd0ae01-0292-4701-a220-6aa4d14475a3": {
+          "type": "contents",
+          "settings": {
+            "title": "Dimensiones",
+            "content": "<p>82*183*2.5cm (32.3*72.0*1.0 interior)<\/p>"
+          }
+        },
+        "8a8de69b-17ac-4ce5-ba99-0432320629c0": {
+          "type": "contents",
+          "settings": {
+            "title": "Tensión de circuito abierto",
+            "content": "<p>21.8V (Vmp 18.4V)<\/p>"
+          }
+        },
+        "c18a6ffb-7860-4c09-8d75-eda5569d7f86": {
+          "type": "contents",
+          "settings": {
+            "title": "Corriente de cortocircuito",
+            "content": "<p>13A (Imp 12.0A) Frente\/ 8.8A (Imp8.4A) Atrás<\/p>"
+          }
+        },
+        "da183297-dae2-4f31-86b7-2329cc77d9fd": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso (Panel Solar)",
+            "content": "<p>Aprox. 9,5kg<\/p>"
+          }
+        },
+        "contents_G6dBph": {
+          "type": "contents",
+          "settings": {
+            "title": "Garantía",
+            "content": "<p>24 meses<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "81e58691-be8a-4a0e-8e0b-7ccbf1b3a5ab",
+        "8089abf9-6f51-4d9d-bad9-91ed67e3fd6b",
+        "a0fc6548-242e-4230-a770-18fcf1aa9e71",
+        "7fd0ae01-0292-4701-a220-6aa4d14475a3",
+        "8a8de69b-17ac-4ce5-ba99-0432320629c0",
+        "c18a6ffb-7860-4c09-8d75-eda5569d7f86",
+        "da183297-dae2-4f31-86b7-2329cc77d9fd",
+        "contents_G6dBph"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Especificaciones"
+      }
+    },
+    "17141179160afefe16": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_xpUdxp": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_xpUdxp"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    }
+  },
+  "order": [
+    "daf26638-f596-4384-b150-72d380a3268d",
+    "sticky-product-bar",
+    "main",
+    "product-recommendations",
+    "dc930387-d53a-4737-86a1-e3f26cb93197",
+    "a36ca2e9-1b59-4339-93da-275f910eec4f",
+    "27b89ac6-33d4-4ad6-a3a2-d88e6f3b4539",
+    "e2f04109-0561-4273-b980-1823d0cc8193",
+    "790d9e2d-59d1-400c-92f2-e28404b0d60b",
+    "310c03f2-c790-4916-8769-612a7a780f0d",
+    "af70a316-a458-4163-8147-de205389e729",
+    "2db0d5de-d122-42c8-977e-1f1a985e97c4",
+    "7fbe39fc-a6f3-4a49-8f87-2b98c7cc0cf1",
+    "17141179160afefe16"
+  ]
+}

@@ -1,0 +1,467 @@
+{%- assign total_discount = 0 -%}
+{%- assign total_compare_price = 0 -%}
+{%- assign bundle_product_in_cart = false -%}
+{% assign cart_total_price = 0 %}
+{%- for line_item in cart.items -%}
+  {% if line_item.product.title contains 'WN ' %}
+    {%- assign bundle_product_in_cart = true -%}
+  {% endif %}
+  {%- if line_item.variant.compare_at_price > line_item.variant.price -%}
+    {%- assign total_compare_price = line_item.variant.compare_at_price | times: line_item.quantity | plus: total_compare_price -%}
+    {%- assign line_item_discount = line_item.variant.compare_at_price | minus: line_item.variant.price | times: line_item.quantity -%}
+    {%- assign total_discount = total_discount | plus: line_item_discount -%}
+  {%- else -%}
+    {%- assign total_compare_price = line_item.variant.price | times: line_item.quantity | plus: total_compare_price -%}
+  {%- endif -%}
+
+  {% if line_item.variant.metafields.custom.applicable_for_promotion == true %}
+    {%- assign cart_total_price = cart_total_price | plus: line_item.original_price | times: line_item.quantity -%}
+  {% endif %}
+{%- endfor -%}
+
+{%- assign script_discount = 0 -%}
+{%- for discount in cart.discount_applications -%}
+  {%- if discount.type == 'script' -%}
+    {%- assign script_discount = discount.total_allocated_amount -%}
+    {%- assign total_discount = total_discount | plus: script_discount -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- capture section_settings -%}
+{
+"type": {{ settings.cart_type | json }},
+"itemCount": {{ cart.item_count }},
+"totalPrice": {{ cart.total_price }},
+"originalTotalPrice": {{ cart_total_price }},
+"drawer": true,
+"hasShippingEstimator": {% if section.settings.show_shipping_estimator and cart.item_count > 0 %}true{% else %}false{% endif %}
+}
+{%- endcapture -%}
+
+<link rel="stylesheet" href="{{ 'cart-page.css' | asset_url }}" type="text/css">
+
+
+<div>
+  {% assign banner_image = section.settings.image %}
+  {% assign show_breadcrumbs = section.settings.show_breadcrumbs %}
+
+  {% capture cart_heading %}{{'cart.general.title' | t}}{% endcapture %}
+  {% assign image_overlay_color = section.settings.image_overlay_color %}
+  {% assign image_overlay_opacity = section.settings.image_overlay_opacity %}
+  {% if banner_image != blank %}
+    {% render 'custom_page_header' image: banner_image, heading: cart_heading, show_breadcrumbs: show_breadcrumbs, show_heading: true, image_overlay_color: image_overlay_color, image_overlay_opacity: image_overlay_opacity %}
+  {% endif %}
+
+
+  <div class="cart-page-width" data-section-id="{{ section.id }}" data-section-type="cart-template"  data-section-settings='{{ section_settings }}'>
+    <div class="PageContent" >
+
+      {% if banner_image == blank %}
+        <h3 class="hideMobile">{{ cart_heading }}</h3>
+        <h3 class="hideDesktop">{{ 'cart.general.mobile_title' | t }}</h3>
+      {% endif %}
+
+
+{% comment %}Added/Modified by Limoni Apps on 17/08/22 to support Discount Ninja{% endcomment %}
+
+      <form action="{{ routes.cart_url }}" method="post" novalidate class="limoniapps-discountninja-cart-root Cart Cart {% if cart.item_count == 0 %} hide{% endif %}">
+        <div class='Cart_ContentSide'>
+          {% if settings.pm_enable_tier1 or settings.pm_enable_tier2 or settings.pm_enable_tier3 %}
+          <div class="Cart_ContentSide--box Cart_ContentSide--box-promotion-message">
+            {% render 'widget-promotion-message-cart' %}
+          </div>
+          {% endif %}
+          <div class="Cart_ContentSide--box Cart_ContentSide--box-cart-items">
+            {% render 'cart-items' %}
+
+            {%- if settings.cart_notes_enable or section.settings.show_shipping_estimator -%}
+            <div class="cart__footer">
+              <div class='grid'>
+                {%- if settings.cart_notes_enable -%}
+                <div class='grid__item medium-up--one-half'>
+                  <div class='cart__block'>
+                    <div class='cart_block__title h6'>
+                      <span>{{ 'cart.general.note' | t }}</span>
+                    </div>
+                    <div class='cart_block__content'>
+                      <textarea name="note" id="CartSpecialInstructions" class="cart-note__input" data-cart-notes placeholder='{{ "cart.general.note_placeholder" | t }}'>{{ cart.note }}</textarea>
+                      <button type="button" class="CartSpecialInstructionsSubmit btn btn-gray">{{ 'cart.general.add_note' | t }}</button>
+
+                    </div>
+                  </div>
+                </div>
+                {%- endif -%}
+
+
+                {%- if section.settings.show_shipping_estimator -%}
+                <div class='grid__item medium-up--one-half'>
+                  <div class='cart__block'>
+                    <div class='cart_block__title h6'>
+                      <span>{{ 'cart.shipping_estimator.title' | t }}</span>
+                    </div>
+                    <div class='cart_block__content'>
+
+
+                      <div class="ShippingEstimator__Form">
+                        <div class="ShippingEstimator__Country Form__Select ShippingEstimator__Field">
+                          {%- render 'icon' with 'select-arrow' -%}
+                          <select name="country" title="{{ 'cart.shipping_estimator.country' | t }}"
+                                  data-default="{% if customer %}{{ customer.default_address.country }}{% elsif section.settings.shipping_estimator_default_country != '' %}{{ section.settings.shipping_estimator_default_country }}{% endif %}">
+                            {{ all_country_option_tags }}
+                          </select>
+                        </div>
+
+                        <input type="text" class="ShippingEstimator__City ShippingEstimator__Field Form__Input" name="city" placeholder="{{ 'cart.shipping_estimator.city' | t }}">
+
+
+                        <div class="ShippingEstimator__Province Form__Select ShippingEstimator__Field" style="display: none">
+                          {%- render 'icon' with 'select-arrow' -%}
+                          <select name="province" title="{{ 'cart.shipping_estimator.province' | t }}"></select>
+                        </div>
+
+                        <input type="text" class="ShippingEstimator__Zip Form__Input ShippingEstimator__Field" name="zip" placeholder="{{ 'cart.shipping_estimator.zip_code' | t }}">
+
+                      </div>
+                      <button type="button" class="ShippingEstimator__Submit btn ShippingEstimator__Field btn-gray">{{ 'cart.shipping_estimator.estimate' | t }}</button>
+
+
+                    </div>
+                  </div>
+                </div>
+                {%- endif -%}
+              </div>
+            </div>
+            {%- endif -%}
+          </div>
+          {% if bundle_product_in_cart and section.settings.show_bundle_remove_btn %}
+            <div class="remove_bundle_btn_wrap hideDesktop">
+              <button class="btn">{{ 'cart.general.remove_bundle_products_button_text' | t }}</button>
+              <div class="message">{{ 'cart.general.remove_bundle_products_message' | t }}</div>
+            </div>
+          {% endif %}
+        </div>
+        <div class='Cart_SidebarSide'>
+
+          <div class='cart__block'>
+            <div class='cart_block__content cart_sidebar_first_block'>
+              <div class="cart_sidebar_row subtotal_line subtotal_line limoniapps-discountninja-cart-subtotal">
+                <div>{{ 'cart.general.subtotal' | t }}</div>
+                <div class="limoniapps-discountninja-cart-subtotal-price">
+                  {% if settings.currency_code_enable %}
+                    {% if cart.total_price > 999900 %}
+                      {{ cart.total_price | money_with_currency | replace: ',00', '' | replace: '.', ' ' }}
+                    {% else %}
+                      {{ cart.total_price | money_with_currency | replace: ',00', '' | replace: '.', '' }}
+                    {% endif %}
+                  {% else %}
+                    {% if cart.total_price > 999900 %}
+                      {{ cart.total_price | money | replace: ',00', '' | replace: '.', ' ' }}
+                    {% else %}
+                      {{ cart.total_price | money | replace: ',00', '' | replace: '.', '' }}
+                    {% endif %}
+                  {% endif %}
+                </div>
+              </div>
+              <div class="limoniapps-discountninja-cart-promotionsummary"></div>
+              <div class="limoniapps-discountninja-cartdiscountfield-placeholder"></div>
+              <div class="cart_sidebar_row shipping_line">
+                <div>{{ 'cart.general.shipping' | t }}</div>
+                <div>
+                  {{ 'cart.general.free' | t }}
+                </div>
+              </div>
+              <div class="cart_sidebar_row tax_line">
+                <div>{{ 'cart.general.estimated_tax' | t }}</div>
+                <div>
+                  {{ 'cart.general.calculated_at_checkout' | t }}
+                </div>
+              </div>
+
+              <div class="subtotal-row-wrapper hideMobile limoniapps-discountninja-cart-subtotal">
+                <div class="cart-subtotal-row" data-price="{{ cart.total_price }}" data-saving="{{ total_discount }}">
+                  <div class="cart-subtotal-alter h6">
+                    <span class="cart-subtotal__title">{{ 'cart.general.total' | t }}</span>
+                    <span class="cart-subtotal__price limoniapps-discountninja-cart-subtotal-price" data-cart-subtotal>
+                      {% if settings.currency_code_enable %}
+                        {% if cart.total_price > 999900 %}
+                          {{ cart.total_price | money_with_currency | replace: ',00', '' | replace: '.', ' ' }}
+                        {% else %}
+                          {{ cart.total_price | money_with_currency | replace: ',00', '' | replace: '.', '' }}
+                        {% endif %}
+                      {% else %}
+                        {% if cart.total_price > 999900 %}
+                          {{ cart.total_price | money | replace: ',00', '' | replace: '.', ' ' }}
+                        {% else %}
+                          {{ cart.total_price | money | replace: ',00', '' | replace: '.', '' }}
+                        {% endif %}
+                      {% endif %}
+                    </span>
+                  </div>
+                  {%- if total_discount > 0 -%}
+                    <div class="line-items-discount">
+                      {% if total_discount > 999900 %}
+                        -{{total_discount | money | replace: ',00', '' | replace: '.', ' ' }}
+                      {% else %}
+                        -{{total_discount | money | replace: ',00', '' | replace: '.', '' }}
+                      {% endif %}
+                    </div>
+                  {%- endif -%}
+                </div>
+
+                <klarna-placement
+                  data-key="credit-promotion-badge"
+                  data-locale="es-ES"
+                  data-preloaded="true"
+                  data-purchase-amount="{{ cart.total_price }}"
+                ></klarna-placement>
+                <div class="affirm-as-low-as affirm-message-item" data-page_type="cart" data-amount="{{ cart.total_price }}"></div>
+
+                {% if settings.enable_promotion_message %}{% render 'widget-promotion-message-cart-alter' %}{% endif %}
+              </div>
+
+              <div class="cart-subtotal-row subtotal-top-row hideDesktop limoniapps-discountninja-cart-subtotal">
+                <div class="cart-subtotal-alter h6">
+                  <span class="cart-subtotal__title">{{ 'cart.general.total' | t }}</span>
+                  <span class="cart-subtotal__price limoniapps-discountninja-cart-subtotal-price" data-cart-subtotal>
+                    {% if settings.currency_code_enable %}
+                      {% if cart.total_price > 999900 %}
+                        {{ cart.total_price | money_with_currency | replace: ',00', '' | replace: '.', ' ' }}
+                      {% else %}
+                        {{ cart.total_price | money_with_currency | replace: ',00', '' | replace: '.', '' }}
+                      {% endif %}
+                    {% else %}
+                      {% if cart.total_price > 999900 %}
+                        {{ cart.total_price | money | replace: ',00', '' | replace: '.', ' ' }}
+                      {% else %}
+                        {{ cart.total_price | money | replace: ',00', '' | replace: '.', '' }}
+                      {% endif %}
+                    {% endif %}
+                  </span>
+                </div>
+                {%- if total_discount > 0 -%}
+                  <div class="discount-line">
+                    <div class="hideDesktop">{{ 'cart.general.savings' | t }}</div>
+                    <div class="line-items-discount">
+                      {% if total_discount > 999900 %}
+                        -{{total_discount | money | replace: ',00', '' | replace: '.', ' ' }}
+                      {% else %}
+                        -{{total_discount | money | replace: ',00', '' | replace: '.', '' }}
+                      {% endif %}
+                    </div>
+                  </div>
+                {%- endif -%}
+                <div class="affirm-as-low-as affirm-message-item" data-page_type="cart" data-amount="{{ cart.total_price }}"></div>
+
+                {% if settings.enable_promotion_message %}{% render 'widget-promotion-message-cart-alter' %}{% endif %}
+              </div>
+
+              {%- assign cartDiscounts = 'template ' | split: ' ' -%}
+              {%- if cart.cart_level_discount_applications.size > 0 -%}
+              {%- assign cartDiscounts = cart.cart_level_discount_applications -%}
+              {%- endif -%}
+              <div {% if cart.cart_level_discount_applications.size == 0 %} class="hide"{% endif %} data-cart-discount-wrapper>
+                <div class="order-discount-card-wrapper" data-cart-discount>
+                  {%- for discount_application in cartDiscounts -%}
+                  <span class="order-discount order-discount--title order-discount--cart">
+                    {% render 'icon-saletag' %}<span class="visually-hidden">{{ 'customer.order.discount' | t }}:</span><span data-cart-discount-title>{{- discount_application.title -}}</span>
+                  </span>
+                  <span class="order-discount order-discount--cart order-discount--cart-total">
+                    {% if settings.currency_code_enable %}
+                    -<span data-cart-discount-amount>{{ discount_application.total_allocated_amount | money_with_currency }}</span>
+                    {% else %}
+                    -<span data-cart-discount-amount>{{ discount_application.total_allocated_amount | money }}</span>
+                    {% endif %}
+                  </span>
+                  {%- endfor -%}
+                </div>
+              </div>
+
+
+
+
+
+              {%- if section.settings.show_shipping_estimator -%}
+              <div class="ShippingEstimator hide">
+
+                <div>
+                  <span class="shipping_estimator_title h6">{{ 'cart.general.shipping' | t }}</span>
+                </div>
+
+
+                <div class="ShippingEstimator__Error Alert Alert--error" style="display: none"></div>
+                <div class="ShippingEstimator__Results">
+                  <div class="ShippingEstimator__ResultsInner"></div>
+                </div>
+              </div>
+              {%- endif -%}
+
+              <div class="cart__error-message-wrapper hide" role="alert" data-cart-error-message-wrapper>
+                <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+                {% include 'icon-error' %}
+                <span class="cart__error-message" data-cart-error-message></span>
+              </div>
+
+              {% assign estimated_dispatch = 'cart.general.estimated_dispatch' | t %}
+              {% if estimated_dispatch != '' %}
+              <div class="estimated_dispatch">
+                {{ estimated_dispatch }}
+              </div>
+              {% else %}
+              <hr style="margin: 0;" class="hideDesktop showMobile" />
+              {% endif %}
+
+              <div class="cart__buttons-container">
+                <div class="cart__buttons-wrapper">
+                  {% comment %} Show upsell accessories submit button if upsell accessories discount feature enabled {% endcomment %}
+                  {% if settings.upsell_accessories_feature == "true" %}
+                    <button type="button"
+                            class="cart__submit_upsell_accessories_temp_btn cart__submit btn">
+                      <span>{{ 'cart.general.checkout' | t }}</span>
+                    </button>
+                  {% else %}
+                    <button type="button"
+                            class="cart__submit_temp_btn cart__submit btn">
+                      <span>{{ 'cart.general.checkout' | t }}</span>
+                    </button>
+                  {% endif %}
+
+                  <button type="submit"
+                          name="checkout"
+                          style="display: none;"
+                          class="cart__checkout__btn cart__submit btn">
+                    <span>{{ 'cart.general.checkout' | t }}</span>
+                  </button>
+
+                  {%- if settings.continue_shopping_link != blank -%}
+                    <div class="Cart__Checkout Continue__shopping">
+                      <a href="{{ settings.continue_shopping_link }}">{{- 'cart.general.continue_shopping' | t -}}</a>
+                    </div>
+                  {%- endif -%}
+                </div>
+              </div>
+            </div>
+
+            {%- if settings.cart_block_show_1 or settings.cart_block_show_2 or settings.cart_block_show_3 or settings.cart_block_show_4 or settings.cart_block_show_5 -%}
+              <div class="cart_block__content store_features">
+              {%- for i in (1..5) -%}
+                {% capture block_show %}cart_block_show_{{i}}{% endcapture %}
+                {% capture block_title %}cart_title_{{i}}{% endcapture %}
+                {% capture block_content %}cart_content_{{i}}{% endcapture %}
+                {% capture block_image %}cart_image_{{i}}{% endcapture %}
+                {%- if settings[block_show] -%}
+                <div class="store_feature">
+                  {%- if settings[block_image] != blank -%}
+                    <img src="{{ settings[block_image] | img_url: '100x' }}" />
+                  {%- endif -%}
+                  <div class="store_feature_content">
+                    <div class="feature_title">{{ settings[block_title] }}</div>
+                    <div class="feature_content">{{ settings[block_content] }}</div>
+                  </div>
+                </div>
+                {%- endif -%}
+              {%- endfor -%}
+              </div>
+            {%- endif -%}
+        </div>
+      </div>
+      </form>
+
+      {% if bundle_product_in_cart and section.settings.show_bundle_remove_btn %}
+        <div class="remove_bundle_btn_wrap hideMobile">
+          <button class="btn">{{ 'cart.general.remove_bundle_products_button_text' | t }}</button>
+          <div class="message">{{ 'cart.general.remove_bundle_products_message' | t }}</div>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="empty-page-content{% if cart.item_count > 0 %} hide{% endif %} text-center" data-empty-page-content>
+
+        <svg width="83" height="63" viewBox="0 0 83 63" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+              <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="wikozz6l3a">
+                  <stop stop-color="#E1E2E8" offset="0%"/>
+                  <stop stop-color="#D7D8DF" offset="100%"/>
+              </linearGradient>
+          </defs>
+          <g fill="none" fill-rule="evenodd">
+              <path d="M80.846 20.083c.652 0 1.18.529 1.18 1.18v37.822a3.54 3.54 0 0 1-3.54 3.54H4.04a3.54 3.54 0 0 1-3.54-3.54V21.263c0-.651.528-1.18 1.18-1.18h79.166zM53.55 28.06H28.975a2.659 2.659 0 0 0 0 5.318h24.576a2.659 2.659 0 0 0 0-5.318zM10.916.142H71.61l9.338 15.493a1.18 1.18 0 0 1-1.011 1.79H2.589a1.18 1.18 0 0 1-1.01-1.79L10.915.142z" fill="#EAEBF0"/>
+              <path fill="#D4D6DF" d="M12.729 1.471v13.294H4.576zM69.797 1.471v13.294h8.153z"/>
+              <path fill="url(#wikozz6l3a)" d="M12.229 1.33h57.068v13.294H12.23z" transform="translate(.5 .142)"/>
+          </g>
+        </svg>
+
+      <div class="empty-box-content">
+        <p class="cart--empty-message">{{ 'cart.general.empty' | t }}</p>
+        <div class="cookie-message">
+          <p>{{ 'cart.general.cookies_required' | t }}</p>
+        </div>
+        {%- if settings.continue_shopping_link != blank -%}
+          <div class="Cart__Checkout Continue__shopping">
+            <a href="{{ settings.continue_shopping_link }}">{{- 'cart.general.continue_shopping' | t -}}</a>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script type="module" src="{{ 'dynamic-icon.js' | asset_url }}"></script>
+
+
+
+{% schema %}
+{
+  "name": "t:sections.cart-template.name",
+  "settings": [
+	{
+		"type":"image_picker",
+	"id":"image",
+	"label":"t:sections.cart-template.settings.image.label"
+	},
+
+{
+		"type":"color",
+		"id":"image_overlay_color",
+		"label":"t:sections.cart-template.settings.image_overlay_color.label",
+		"default": "#000"
+		},
+      {
+        "type": "range",
+        "id": "image_overlay_opacity",
+       "label": "t:sections.cart-template.settings.image_overlay_opacity.label",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+       "unit": "t:sections.cart-template.settings.image_overlay_opacity.unit",
+        "default": 40
+      },
+    {
+      "type":"checkbox",
+    "id":"show_breadcrumbs",
+    "label":"t:sections.cart-template.settings.show_breadcrumbs.label",
+    "default": true
+    },
+    {
+      "type":"checkbox",
+      "id":"show_bundle_remove_btn",
+      "label":"Show bundle remove button",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_shipping_estimator",
+      "label": "t:sections.cart-template.settings.show_shipping_estimator.label",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "shipping_estimator_default_country",
+      "label": "t:sections.cart-template.settings.shipping_estimator_default_country.label",
+      "info": "t:sections.cart-template.settings.shipping_estimator_default_country.info",
+      "default": "United States"
+    }
+  ]
+}
+{% endschema %}
+
+<!-- GPO installed -->

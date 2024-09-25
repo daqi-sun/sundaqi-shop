@@ -1,0 +1,128 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "Product FAQ",
+  "id": "product-faq",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "class": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "type": "checkbox",
+      "id": "atb_enable_checkbox",
+      "label": "Enable section",
+      "default": true,
+      "info": ""
+    },
+    {
+      "id": "atb_title",
+      "type": "text",
+      "label": "Heading",
+      "default": "Frequently Asked Questions",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "blocks",
+      "label": "Block ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": "",
+      "repeatable": "question"
+    },
+    {
+      "id": "block_question",
+      "type": "text",
+      "label": "Question",
+      "repeatable": "question",
+      "info": ""
+    },
+    {
+      "id": "block_answer",
+      "type": "text",
+      "label": "Answer",
+      "repeatable": "question",
+      "info": ""
+    }
+  ],
+  "warnings": []
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_enable_checkbox' -%}
+{%- assign atb_enable_checkbox = val -%}
+{%- include 'atb-render' field:'atb_title' -%}
+{%- assign atb_title = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_question' -%}
+{%- assign block_question = val -%}
+{%- include 'atb-render' field:'block_answer' -%}
+{%- assign block_answer = val -%}
+{%- if atb_enable_checkbox == blank -%}
+{%- assign atb_enable_checkbox = false -%}
+{%- else -%}
+{%- assign atb_enable_checkbox = true -%}
+{%- endif -%}
+{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section ">
+{% if atb_enable_checkbox %}
+  <section class="product-intro" id="product-faq">
+    <div class="white-bg my-md-5 py-md-3 my-4 bordertop FAQ-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7 mx-auto">
+            <div class="intro-heading">
+              <h2>{{atb_title}}</h2>
+            </div>
+          </div>
+          <div class="col-12">
+            <div id="accordion" class="FAQ-accordion mt-3">
+            {% for block0 in blocks %}
+                <div class="card-faq">
+                  <div class="card-header-faq" id="heading-{{forloop.index}}">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link py-3 px-0 collapsed" data-toggle="collapse" data-target="#faq-collapse-{{forloop.index}}" aria-expanded="false" aria-controls="faq-collapse-{{forloop.index}}">
+                        {{block_question[forloop.index0]}}
+                        <span>
+                          <svg width="16" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.125 8.75L8.625 1.25L16.125 8.75" stroke="#212121" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </span>
+                      </button>
+                    </h5>
+                  </div>
+
+                  <div id="faq-collapse-{{forloop.index}}" class="collapse" aria-labelledby="heading-{{forloop.index}}" data-parent="#accordion">
+                    <div class="card-body p-0 mb-4">
+                      {{block_answer[forloop.index0]}}
+                    </div>
+                  </div>
+                </div>
+            {% endfor %}  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+
+<style>
+</style>
+
+<script type="application/javascript">
+</script>
+</section>

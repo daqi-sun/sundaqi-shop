@@ -1,0 +1,253 @@
+{%- if section.settings.desktop_navigation_layout == 'condensed' -%}
+  {%- assign is_condensed = true -%}
+{%- else -%}
+  {%- assign is_condensed = false -%}
+{%- endif -%}
+
+{%- assign downcase_title = mega_menu.title | downcase | strip -%}
+{%- assign mega_menu_block = nil -%}
+
+{%- for block in section.blocks -%}
+  {%- assign downcase_block_menu_item = block.settings.menu_item | downcase | strip -%}
+
+  {%- if downcase_block_menu_item == downcase_title -%}
+    {%- assign mega_menu_block = block -%}
+    {%- break -%}
+  {%- endif -%}
+{%- endfor -%}
+
+<div id="dropdown-{{ index }}" class="mega-menu {{ mega_menu_block.type }}" data-type="menu" aria-hidden="true" {{ mega_menu_block.shopify_attributes }}>
+  {%- capture mega_menu_inner -%}
+  {% if mega_menu_block.type == 'custom_mega_menu_alter' %}
+    <div class="mega-menu__inner custom-mega-menu__inner">
+      <div class="mega_menu_columns__wrapper">
+          <div class="custom_menu_left_side">
+              {% assign active_block_index = 0 %}
+              {% if mega_menu_block.settings.block_1_title != blank %}
+                  {% assign active_block_index = 1 %}
+                  <div class="custom_menu_left_side_item custom_menu_left_side_hover_item active" data-title="{{ mega_menu_block.settings.block_1_title }}">{{ mega_menu_block.settings.block_1_title }}</div>
+              {% endif %}
+              {% if mega_menu_block.settings.block_2_title != blank %}
+                  {% if active_block_index == 0 %}{% assign active_block_index = 2 %}{% endif %}
+                  <div class="custom_menu_left_side_item custom_menu_left_side_hover_item {% if active_block_index == 0 %}active{% endif %}" data-title="{{ mega_menu_block.settings.block_2_title }}">{{ mega_menu_block.settings.block_2_title }}</div>
+              {% endif %}
+              {% if mega_menu_block.settings.block_3_title != blank %}
+                  {% if active_block_index == 0 %}{% assign active_block_index = 3 %}{% endif %}
+                  <div class="custom_menu_left_side_item custom_menu_left_side_hover_item {% if active_block_index == 0 %}active{% endif %}" data-title="{{ mega_menu_block.settings.block_3_title }}">{{ mega_menu_block.settings.block_3_title }}</div>
+              {% endif %}
+              {% if mega_menu_block.settings.block_4_title != blank %}
+                {% if active_block_index == 0 %}{% assign active_block_index = 4 %}{% endif %}
+                  <div class="custom_menu_left_side_item custom_menu_left_side_hover_item {% if active_block_index == 0 %}active{% endif %}" data-title="{{ mega_menu_block.settings.block_4_title }}">{{ mega_menu_block.settings.block_4_title }}</div>
+              {% endif %}
+              {% if mega_menu_block.settings.block_5_title != blank %}
+                {% if active_block_index == 0 %}{% assign active_block_index = 5 %}{% endif %}
+                  <div class="custom_menu_left_side_item custom_menu_left_side_hover_item {% if active_block_index == 0 %}active{% endif %}" data-title="{{ mega_menu_block.settings.block_5_title }}">{{ mega_menu_block.settings.block_5_title }}</div>
+              {% endif %}
+          </div>
+          <div class="custom_menu_right_side">
+              {% if mega_menu_block.settings.block_1_title != blank %}
+                  {% render 'custom-mega-menu-block-1' with mega_menu_block: mega_menu_block, active_block_index: active_block_index %}
+              {% endif %}
+
+              {% if mega_menu_block.settings.block_2_title != blank %}
+                  {% render 'custom-mega-menu-block-2' with mega_menu_block: mega_menu_block, active_block_index: active_block_index %}
+              {% endif %}
+
+              {% if mega_menu_block.settings.block_3_title != blank %}
+                  {% render 'custom-mega-menu-block-3' with mega_menu_block: mega_menu_block, active_block_index: active_block_index %}
+              {% endif %}
+
+              {% if mega_menu_block.settings.block_4_title != blank %}
+                  {% render 'custom-mega-menu-block-4' with mega_menu_block: mega_menu_block, active_block_index: active_block_index %}
+              {% endif %}
+
+              {% if mega_menu_block.settings.block_5_title != blank %}
+                {% render 'custom-mega-menu-block-5' with mega_menu_block: mega_menu_block, active_block_index: active_block_index %}
+              {% endif %}
+          </div>
+      </div>
+    </div>
+  {% else %}
+  <div class="mega-menu__inner">
+      {% assign show_left_side = false %}
+      {% if mega_menu_block.type == 'mega_menu_product_cards' %}
+        {% assign show_left_side = true %}
+      {% elsif mega_menu_block.type == 'mega_menu_image_links' and mega_menu_block.settings.images_level == '2' %}
+        {% assign show_left_side = true %}
+      {% endif %}
+      <div class="{% if show_left_side %}mega_menu_columns__wrapper{% endif %}">
+        {% if show_left_side %}
+        <div class="custom_menu_left_side">
+          {% if mega_menu_block.type == 'mega_menu_product_cards' %}
+            {% capture link_title %}{{ mega_menu.title | handle }}{% endcapture %}
+            {% assign link_menu = linklists[link_title] %}
+            {% assign open_element_found = false %}
+            {% assign active_block_found = false %}
+            {% if link_menu.links.size > 0 %}
+              <div class="custom_menu_left_side_item_wrap">
+                {%- comment %}<locksmith:686a>{% endcomment -%}
+                  {%- assign locksmith_0772_forloop__size = 0 %}{% for link in link_menu.links %}{% capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: link_menu, variable: 'transparent' %}{% endcapture %}{% if var == 'true' %}{% assign locksmith_0772_forloop__size = locksmith_0772_forloop__size | plus: 1 %}{% endif %}{% endfor %}{% assign locksmith_0772_forloop__index = nil -%}
+                {%- comment %}</locksmith:686a>{% endcomment -%}
+                {% for link in link_menu.links %}
+                  {%- comment %}<locksmith:3023>{% endcomment -%}
+                    {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: link_menu, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% if locksmith_0772_forloop__index == nil %}{% assign locksmith_0772_forloop__index = 1 %}{% assign locksmith_0772_forloop__index0 = 0 %}{% else %}{% assign locksmith_0772_forloop__index = locksmith_0772_forloop__index | plus: 1 %}{% assign locksmith_0772_forloop__index0 = locksmith_0772_forloop__index0 | plus: 1 %}{% endif %}{% if locksmith_0772_forloop__index == 1 %}{% assign locksmith_0772_forloop__first = true %}{% else %}{% assign locksmith_0772_forloop__first = false %}{% endif %}{% if locksmith_0772_forloop__index == locksmith_0772_forloop__size %}{% assign locksmith_0772_forloop__last = true %}{% else %}{% assign locksmith_0772_forloop__last = false %}{% endif %}{% assign locksmith_0772_forloop__rindex = locksmith_0772_forloop__size | minus: locksmith_0772_forloop__index | minus: 1 %}{% assign locksmith_0772_forloop__rindex0 = locksmith_0772_forloop__size | minus: locksmith_0772_forloop__index0 | minus: 1 %}{% else %}{% continue %}{% endif -%}
+                  {%- comment %}</locksmith:3023>{% endcomment -%}
+                  <div class="custom_menu_item_dropdown {% unless open_element_found %}open{% endunless %}">
+                    {% assign open_element_found = true %}
+                    <div class="custom_menu_left_side_item custom_menu_item_dropdown_title {% if link.links.size == 0 and link.type == 'collection_link' %}custom_menu_left_side_hover_item{% endif %}" data-title="{{ link.title }}-{{ locksmith_0772_forloop__index }}">
+                      {{ link.title }}
+                      {% if link.links.size > 0 %}
+                        <svg xmlns="http://www.w3.org/2000/svg" class="arrow_icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                          <path d="M13.5386 5.74357L8.20524 11.0769L2.87191 5.74357" stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      {% endif %}
+                    </div>
+                    {% if link.links.size > 0 %}
+                      <div class="custom_menu_item_dropdown_content">
+                        {% for child_link in link.links %}
+                          {%- comment %}<locksmith:bd59>{% endcomment -%}
+                            {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: child_link, subject_parent: link, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                          {%- comment %}</locksmith:bd59>{% endcomment -%}
+                          <div class="custom_menu_left_side_item custom_menu_left_side_hover_item {% unless active_block_found %}active{% endunless %}" data-title="{{ link.title }}-{{ child_link.title }}">{{ child_link.title }}</div>
+                          {% assign active_block_found = true %}
+                        {% endfor %}
+                      </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+              </div>
+            {% endif %}
+          {% endif %}
+          {% if mega_menu_block.type == 'mega_menu_image_links' and mega_menu_block.settings.images_level == '2' %}
+              {% assign active_block_found = false %}
+              {% for i in (1..5) %}
+                {% capture block_title %}block_{{i}}_title{% endcapture %}
+                {% if mega_menu_block.settings[block_title] != blank %}
+                  <div class="custom_menu_left_side_item custom_menu_left_side_hover_item {% unless active_block_found %}active{% endunless %}" data-title="{{ mega_menu_block.settings[block_title] }}">{{ mega_menu_block.settings[block_title] }}</div>
+                  {% assign active_block_found = true %}
+                {% endif %}
+              {% endfor %}
+          {% endif %}
+        </div>
+        {% endif %}
+        <div class="{% if show_left_side %}custom_menu_right_side{% else %}mega-menu-image-blocks-wrap{% endif %}">
+          {% if mega_menu_block.type == 'mega_menu_product_cards' %}
+            {% capture link_title %}{{ mega_menu.title | handle }}{% endcapture %}
+            {% assign link_menu = linklists[link_title] %}
+            {% assign active_block_found = false %}
+            {% if link_menu.links.size > 0 %}
+              {%- comment %}<locksmith:6021>{% endcomment -%}
+                {%- assign locksmith_8cb9_forloop__size = 0 %}{% for link in link_menu.links %}{% capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: link_menu, variable: 'transparent' %}{% endcapture %}{% if var == 'true' %}{% assign locksmith_8cb9_forloop__size = locksmith_8cb9_forloop__size | plus: 1 %}{% endif %}{% endfor %}{% assign locksmith_8cb9_forloop__index = nil -%}
+              {%- comment %}</locksmith:6021>{% endcomment -%}
+              {% for link in link_menu.links %}
+                {%- comment %}<locksmith:dfd9>{% endcomment -%}
+                  {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: link_menu, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% if locksmith_8cb9_forloop__index == nil %}{% assign locksmith_8cb9_forloop__index = 1 %}{% assign locksmith_8cb9_forloop__index0 = 0 %}{% else %}{% assign locksmith_8cb9_forloop__index = locksmith_8cb9_forloop__index | plus: 1 %}{% assign locksmith_8cb9_forloop__index0 = locksmith_8cb9_forloop__index0 | plus: 1 %}{% endif %}{% if locksmith_8cb9_forloop__index == 1 %}{% assign locksmith_8cb9_forloop__first = true %}{% else %}{% assign locksmith_8cb9_forloop__first = false %}{% endif %}{% if locksmith_8cb9_forloop__index == locksmith_8cb9_forloop__size %}{% assign locksmith_8cb9_forloop__last = true %}{% else %}{% assign locksmith_8cb9_forloop__last = false %}{% endif %}{% assign locksmith_8cb9_forloop__rindex = locksmith_8cb9_forloop__size | minus: locksmith_8cb9_forloop__index | minus: 1 %}{% assign locksmith_8cb9_forloop__rindex0 = locksmith_8cb9_forloop__size | minus: locksmith_8cb9_forloop__index0 | minus: 1 %}{% else %}{% continue %}{% endif -%}
+                {%- comment %}</locksmith:dfd9>{% endcomment -%}
+                {% if link.links.size > 0 %}
+                    {%- comment %}<locksmith:5872>{% endcomment -%}
+                      {%- assign locksmith_e9aa_forloop__size = 0 %}{% for child_link in link.links %}{% capture var %}{% render 'locksmith-variables', scope: 'subject', subject: child_link, subject_parent: link, variable: 'transparent' %}{% endcapture %}{% if var == 'true' %}{% assign locksmith_e9aa_forloop__size = locksmith_e9aa_forloop__size | plus: 1 %}{% endif %}{% endfor %}{% assign locksmith_e9aa_forloop__index = nil -%}
+                    {%- comment %}</locksmith:5872>{% endcomment -%}
+                    {% for child_link in link.links %}
+                      {%- comment %}<locksmith:8b80>{% endcomment -%}
+                        {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: child_link, subject_parent: link, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% if locksmith_e9aa_forloop__index == nil %}{% assign locksmith_e9aa_forloop__index = 1 %}{% assign locksmith_e9aa_forloop__index0 = 0 %}{% else %}{% assign locksmith_e9aa_forloop__index = locksmith_e9aa_forloop__index | plus: 1 %}{% assign locksmith_e9aa_forloop__index0 = locksmith_e9aa_forloop__index0 | plus: 1 %}{% endif %}{% if locksmith_e9aa_forloop__index == 1 %}{% assign locksmith_e9aa_forloop__first = true %}{% else %}{% assign locksmith_e9aa_forloop__first = false %}{% endif %}{% if locksmith_e9aa_forloop__index == locksmith_e9aa_forloop__size %}{% assign locksmith_e9aa_forloop__last = true %}{% else %}{% assign locksmith_e9aa_forloop__last = false %}{% endif %}{% assign locksmith_e9aa_forloop__rindex = locksmith_e9aa_forloop__size | minus: locksmith_e9aa_forloop__index | minus: 1 %}{% assign locksmith_e9aa_forloop__rindex0 = locksmith_e9aa_forloop__size | minus: locksmith_e9aa_forloop__index0 | minus: 1 %}{% else %}{% continue %}{% endif -%}
+                      {%- comment %}</locksmith:8b80>{% endcomment -%}
+                      <div class="custom_menu_block_content {% unless active_block_found %}active{% endunless %}" data-title="{{ link.title }}-{{ child_link.title }}">
+                      {% assign active_block_found = true %}
+                      {% if child_link.links.size > 0 %}
+                        {%- comment %}<locksmith:a877>{% endcomment -%}
+                          {%- assign locksmith_c148_forloop__size = 0 %}{% for child_child_link in child_link.links %}{% capture var %}{% render 'locksmith-variables', scope: 'subject', subject: child_child_link, subject_parent: child_link, variable: 'transparent' %}{% endcapture %}{% if var == 'true' %}{% assign locksmith_c148_forloop__size = locksmith_c148_forloop__size | plus: 1 %}{% endif %}{% endfor %}{% assign locksmith_c148_forloop__index = nil -%}
+                        {%- comment %}</locksmith:a877>{% endcomment -%}
+                        {% for child_child_link in child_link.links %}
+                          {%- comment %}<locksmith:3bd4>{% endcomment -%}
+                            {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: child_child_link, subject_parent: child_link, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% if locksmith_c148_forloop__index == nil %}{% assign locksmith_c148_forloop__index = 1 %}{% assign locksmith_c148_forloop__index0 = 0 %}{% else %}{% assign locksmith_c148_forloop__index = locksmith_c148_forloop__index | plus: 1 %}{% assign locksmith_c148_forloop__index0 = locksmith_c148_forloop__index0 | plus: 1 %}{% endif %}{% if locksmith_c148_forloop__index == 1 %}{% assign locksmith_c148_forloop__first = true %}{% else %}{% assign locksmith_c148_forloop__first = false %}{% endif %}{% if locksmith_c148_forloop__index == locksmith_c148_forloop__size %}{% assign locksmith_c148_forloop__last = true %}{% else %}{% assign locksmith_c148_forloop__last = false %}{% endif %}{% assign locksmith_c148_forloop__rindex = locksmith_c148_forloop__size | minus: locksmith_c148_forloop__index | minus: 1 %}{% assign locksmith_c148_forloop__rindex0 = locksmith_c148_forloop__size | minus: locksmith_c148_forloop__index0 | minus: 1 %}{% else %}{% continue %}{% endif -%}
+                          {%- comment %}</locksmith:3bd4>{% endcomment -%}
+                          {% if child_child_link.type == 'collection_link' %}
+                            {% unless child_child_link.title contains 'View all' %}
+                              {% render 'mega-menu-block-content' with link: child_child_link, main_link: child_link, mega_menu_block: mega_menu_block, index: locksmith_c148_forloop__index %}
+                            {% endunless %}
+                          {% else %}
+                            {% for block in blocks %}
+                              {%- assign mega_menu_setting_downcase = block.settings.menu_item | downcase | strip -%}
+                              {%- assign downcase_title = child_child_link.title | downcase | strip -%}
+                              {% if mega_menu_setting_downcase == downcase_title %}
+                                {% if block.type == 'custom_mega_menu_child' %}
+                                  {% render 'custom-mega-menu-child' with mega_menu_block: block %}
+                                {% endif %}
+                              {% endif %}
+                            {% endfor %}
+                          {% endif %}
+                        {% endfor %}
+                      {% elsif child_link.type == 'collection_link' %}
+                        {% unless child_link.title contains 'View all' %}
+                          {% render 'mega-menu-block-content' with link: child_link, main_link: link, mega_menu_block: mega_menu_block, index: forloop.index %}
+                        {% endunless %}
+                      {% else %}
+                        {% for block in blocks %}
+                          {%- assign mega_menu_setting_downcase = block.settings.menu_item | downcase | strip -%}
+                          {%- assign downcase_title = child_link.title | downcase | strip -%}
+                          {% if mega_menu_setting_downcase == downcase_title %}
+                            {% if block.type == 'custom_mega_menu_child' %}
+                              {% render 'custom-mega-menu-child' with mega_menu_block: block %}
+                            {% endif %}
+                          {% endif %}
+                        {% endfor %}
+                      {% endif %}
+                    </div>
+                    {% endfor %}
+                {% elsif link.type == 'collection_link' %}
+                <div class="custom_menu_block_content {% unless active_block_found %}active{% endunless %}" data-title="{{ link.title }}-{{ forloop.index }}">
+                  {% render 'mega-menu-block-content' with link: link, main_link: link_menu, mega_menu_block: mega_menu_block, index: forloop.index %}
+                </div>
+                {% else %}
+                  {% for block in blocks %}
+                    {%- assign mega_menu_setting_downcase = block.settings.menu_item | downcase | strip -%}
+                    {%- assign downcase_title = link.title | downcase | strip -%}
+                    {% if mega_menu_setting_downcase == downcase_title %}
+                      {% if block.type == 'custom_mega_menu_child' %}
+                        {% render 'custom-mega-menu-child' with mega_menu_block: block %}
+                      {% endif %}
+                    {% endif %}
+                  {% endfor %}
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+          {% endif %}
+          {% if mega_menu_block.type == 'mega_menu_image_links' and mega_menu_block.settings.images_level == '2' %}
+            {% assign active_block_found = false %}
+            {% for i in (1..5) %}
+              {% capture block_title %}block_{{i}}_title{% endcapture %}
+              {% if mega_menu_block.settings[block_title] != blank %}
+                <div class="custom_menu_block_content image_links_block {% unless active_block_found %}active{% endunless %}" data-title="{{ mega_menu_block.settings[block_title] }}">
+                  {% assign active_block_found = true %}
+                  <div class="custom_menu_tab_content_inner">
+                    {% render 'mega-menu-image-block' with i: i, mega_menu_block: mega_menu_block %}
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+          {% if mega_menu_block.type == 'mega_menu_image_links' and mega_menu_block.settings.images_level == '1' %}
+            <div class="custom_menu_block_content image_links_block level_1_image_links_block {% unless active_block_found %}active{% endunless %}">
+              <div class="custom_menu_tab_content_inner">
+                {% for i in (1..5) %}
+                  {% render 'mega-menu-image-block' with i: i, mega_menu_block: mega_menu_block %}
+                {% endfor %}
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+  </div>
+  {% endif %}
+  {%- endcapture -%}
+
+  <div class="mega-menu-wrapper">
+    {%- if is_condensed -%}
+      {{- mega_menu_inner -}}
+    {%- else -%}
+      <div class="header-container">
+        {{- mega_menu_inner -}}
+      </div>
+    {%- endif -%}
+  </div>
+</div>

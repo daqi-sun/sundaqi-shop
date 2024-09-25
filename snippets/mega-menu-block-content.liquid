@@ -1,0 +1,45 @@
+<div class="tab_row">
+    <div class="custom_menu_tab_title" data-title="">{{ link.title }}</div>
+    {% assign view_all_link_found = false %}
+    {% for temp_link in main_link.links %}
+      {%- comment %}<locksmith:93bd>{% endcomment -%}
+        {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: temp_link, subject_parent: main_link, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+      {%- comment %}</locksmith:93bd>{% endcomment -%}
+      {% if temp_link.title contains '-' %}
+        {% assign temp_link_title = temp_link.title | split: ' - ' %}
+        {% if temp_link_title.first == link.title and temp_link_title.last == 'View all' %}
+          <a class="block_btn " href="{{ temp_link.url }}">
+            {{ mega_menu_block.settings.view_all_btn_text | default: 'View All' }}
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="14" viewBox="0 0 13 14" fill="none">
+              <path d="M5.08341 2.41675L9.41675 6.75008L5.08342 11.0834" stroke="#444444" stroke-width="1.1375" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          {% assign view_all_link_found = true %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    {% unless view_all_link_found %}
+    {% if link.url != blank or link.url != '#' %}
+      <a class="block_btn " href="{{ link.url }}">
+        {{ mega_menu_block.settings.view_all_btn_text | default: 'View All' }}
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="14" viewBox="0 0 13 14" fill="none">
+          <path d="M5.08341 2.41675L9.41675 6.75008L5.08342 11.0834" stroke="#444444" stroke-width="1.1375" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    {% endif %}
+    {% endunless %}
+</div>
+<div class="swiper mega-menu-swiper-products">
+  <div class="swiper-wrapper custom_menu_tab_content_inner">
+    {% assign products_limit = mega_menu_block.settings.products_limit %}
+    {% if index == 2 %}
+      {% assign products_limit = mega_menu_block.settings.products_limit_2 %}
+    {% endif %}
+    {% for product in link.object.products limit: products_limit %}
+        {%- comment %}<locksmith:82d0>{% endcomment -%}
+          {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: link.object, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+        {%- comment %}</locksmith:82d0>{% endcomment -%}
+        {% render 'mega-menu-product' with custom_product: product %}
+    {% endfor %}
+  </div>
+</div>

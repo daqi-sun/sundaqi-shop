@@ -1,0 +1,162 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "PDP Tab Anchor",
+  "id": "pdp-tab-anchor",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "class": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "type": "header",
+      "content": "PDP Tab Anchor",
+      "info": ""
+    },
+    {
+      "type": "checkbox",
+      "id": "atb_full_width",
+      "label": "Full Width",
+      "default": false,
+      "info": ""
+    },
+    {
+      "type": "color",
+      "id": "atb_head_background_color",
+      "label": "Head Background Color",
+      "default": "#DBDBDB",
+      "info": ""
+    },
+    {
+      "type": "color",
+      "id": "atb_head_text_color",
+      "label": "Head Text Color",
+      "default": "#000000",
+      "info": ""
+    },
+    {
+      "type": "color",
+      "id": "atb_active_head_text_color",
+      "label": "Active Head Text Color",
+      "default": "#ffffff",
+      "info": ""
+    },
+    {
+      "type": "color",
+      "id": "atb_active_head_background_color",
+      "label": "Active Head Background Color",
+      "default": "#000000",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "blocks",
+      "label": "Block ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": "",
+      "repeatable": "Anchor-Text"
+    },
+    {
+      "type": "text",
+      "id": "block_pdp_tab_anchor_text",
+      "label": "PDP Tab Anchor Text",
+      "repeatable": "Anchor-Text",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "block_pdp_tab_anchor_text_id",
+      "label": "PDP Tab Anchor Text ID",
+      "repeatable": "Anchor-Text",
+      "info": ""
+    }
+  ],
+  "warnings": []
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_full_width' -%}
+{%- assign atb_full_width = val -%}
+{%- include 'atb-render' field:'atb_head_background_color' -%}
+{%- assign atb_head_background_color = val -%}
+{%- include 'atb-render' field:'atb_head_text_color' -%}
+{%- assign atb_head_text_color = val -%}
+{%- include 'atb-render' field:'atb_active_head_text_color' -%}
+{%- assign atb_active_head_text_color = val -%}
+{%- include 'atb-render' field:'atb_active_head_background_color' -%}
+{%- assign atb_active_head_background_color = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_pdp_tab_anchor_text' -%}
+{%- assign block_pdp_tab_anchor_text = val -%}
+{%- include 'atb-render' field:'block_pdp_tab_anchor_text_id' -%}
+{%- assign block_pdp_tab_anchor_text_id = val -%}
+{%- if atb_full_width == blank -%}
+{%- assign atb_full_width = false -%}
+{%- else -%}
+{%- assign atb_full_width = true -%}
+{%- endif -%}
+{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section ">
+<style>
+    .pdp-tab-anchor .pdp-tab-anchor-head .pdp-anchor-head {
+        background-color: {{ atb_head_background_color }};
+        color: {{ atb_head_text_color }};
+    }
+    .pdp-tab-anchor .pdp-tab-anchor-head .pdp-anchor-head.active {
+        background-color: {{ atb_active_head_background_color }};
+        color: {{ atb_active_head_text_color }};
+    }
+</style>
+<section id="{{ section_id }}" class="pdp pdp-tab-anchor">
+    <div class="pdp-tab-anchor-container">
+        <div class="pdp-tab-anchor-head">
+            {% for block0 in blocks %}
+                {% if block_pdp_tab_anchor_text_id[forloop.index0] != blank and block_pdp_tab_anchor_text[forloop.index0] != blank %}
+                <div class="pdp-anchor-head {% if forloop.first %}active{% endif %}" data-href="{{ block_pdp_tab_anchor_text_id[forloop.index0] }}">
+                    {{ block_pdp_tab_anchor_text[forloop.index0] }}
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<script>
+    document.querySelectorAll("#{{ section_id }} .pdp-anchor-head").forEach(function (el) {
+        el.addEventListener("click", function (e) {
+            let href = el.getAttribute("data-href");
+            e.preventDefault();
+            document.querySelectorAll("#{{ section_id }} .pdp-anchor-head").forEach(function (els) {
+                els.classList.remove("active");
+            });
+            this.classList.add("active");
+
+            let offset = 24;
+            let stickyBar = document.querySelector('.product-sticky-bar');
+            if(stickyBar && getComputedStyle(stickyBar).display !== 'none') offset = 200;
+
+            if(href) {
+                let element = document.getElementById(href);
+                let elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                let offsetPosition = elementPosition - offset;
+
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: offsetPosition
+                }, 1000);
+            }
+        });
+    })
+</script>
+
+</section>

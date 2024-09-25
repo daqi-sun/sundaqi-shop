@@ -1,0 +1,874 @@
+<script>
+
+    (function () {
+
+        const currencyCode = "EUR"
+
+        function convertMoney(value) {
+            return value ? Number(value.replace(".", "").replace(",", ".").replace(/[^0-9.-]+/g, "")) : 0;
+        };
+
+      function catchErrorEvent(en, fn){
+        try {
+          fn && fn()
+        } catch (error){
+          window.dataLayer.push({
+            "event": "error",
+            "error_info": en + ":" + error
+          });
+        }
+      }
+
+      
+        function throttle(fn) {
+            var thrItem = null
+            return function () {
+                var arg = arguments[0]
+                if (thrItem) { return }
+                thrItem = setTimeout(function () {
+                    fn(arg)
+                    thrItem = null
+                }, 2000)
+            }
+        }
+
+        function getCategoryOption(product, label) {
+            var selectedValue = "";
+
+            {% for product_option in product.options_with_values %}
+            if (product_option.name === label) {
+
+                {% for value in product_option.values %}
+                if (product_option.selected_value == value) {
+                    selectedValue = value
+                }
+                {% endfor %}
+            }
+            {% endfor %}
+
+            return selectedValue;
+        }
+
+        function removeCoookieSettingTarget() {
+          document.querySelectorAll("[href='javascript:Optanon.ToggleInfoDisplay()']").forEach(item => {
+              item.removeAttribute("target")
+          })
+        }
+
+        // Cookie
+        (function() {
+          removeCoookieSettingTarget();
+         
+          window.addEventListener('DOMContentLoaded', (event) => {
+              removeCoookieSettingTarget();
+  
+              const subfooer = document.querySelector(".subfooer a");
+              if(subfooer){
+                const subfooerConfig = { attributes: true};
+      
+                const callback = function (mutationsList, observer) {
+                  removeCoookieSettingTarget();
+                }
+        
+                const observer = new MutationObserver(callback);
+                observer.observe(subfooer, subfooerConfig);
+              }
+          });
+        })();
+
+
+
+
+    // index页面
+    // {% if template contains "index" %}
+    // $(".eco-banner-1 .desktop-image").each(function (index) {
+    //     $(this).click(function (event) {
+    //         event.stopPropagation();
+
+    //         window.dataLayer.push({
+    //             event: "uaEvent",
+    //             event_name: "select_homepage_banner",
+    //             page_name: location.pathname
+    //         });
+    //     })
+    // })
+
+    // search页面
+    {% elsif template contains "search" %}
+      const searchResults = [];
+
+      if (window.search_list.length > 0) {
+          window.search_list.forEach((item, index) => {
+              searchResults.push({
+                  item_id: item.id,
+                  item_name: item.title,
+                  item_list_name: "Search result list",
+                  currency: currencyCode,
+                  index: index + 1,
+                  item_brand: "EcoFlow",
+                  price: convertMoney(item.price),
+                  item_category:item.type
+              })
+          })
+          if (searchResults.some(item => item.price > 0)) {
+              window.dataLayer.push({
+                  event: "view_item_list",
+                  ecommerce: {
+                      items: searchResults
+                  }
+              });
+          }
+      }
+      var itemIndex = 0;
+      document.querySelectorAll(".list-view-item").forEach((item, index) => {
+        if(item.querySelector(".price__sale")){
+          var productItem = searchResults[itemIndex];
+          item.addEventListener('click', function(){
+            window.dataLayer.push({
+                event: "select_item",
+                product_name: productItem.item_name,
+                ecommerce: {
+                    items: [productItem]
+                }
+            });
+          });
+          itemIndex += 1;
+        }
+      })
+
+
+    // collection页面
+    {% elsif template contains "collection" %}
+    let allProducts = [];
+    let productList = [];
+    let collectionPrice = 0;
+    let tags = "Product list";
+
+      {%- comment %}<locksmith:8c7d>{% endcomment -%}
+        {%- assign locksmith_53b5_forloop__size = 0 %}{% for product in collection.products %}{% capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: collection, variable: 'transparent' %}{% endcapture %}{% if var == 'true' %}{% assign locksmith_53b5_forloop__size = locksmith_53b5_forloop__size | plus: 1 %}{% endif %}{% endfor %}{% assign locksmith_53b5_forloop__index = nil -%}
+      {%- comment %}</locksmith:8c7d>{% endcomment -%}
+      {% for product in collection.products %}
+        {%- comment %}<locksmith:48bf>{% endcomment -%}
+          {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: collection, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% if locksmith_53b5_forloop__index == nil %}{% assign locksmith_53b5_forloop__index = 1 %}{% assign locksmith_53b5_forloop__index0 = 0 %}{% else %}{% assign locksmith_53b5_forloop__index = locksmith_53b5_forloop__index | plus: 1 %}{% assign locksmith_53b5_forloop__index0 = locksmith_53b5_forloop__index0 | plus: 1 %}{% endif %}{% if locksmith_53b5_forloop__index == 1 %}{% assign locksmith_53b5_forloop__first = true %}{% else %}{% assign locksmith_53b5_forloop__first = false %}{% endif %}{% if locksmith_53b5_forloop__index == locksmith_53b5_forloop__size %}{% assign locksmith_53b5_forloop__last = true %}{% else %}{% assign locksmith_53b5_forloop__last = false %}{% endif %}{% assign locksmith_53b5_forloop__rindex = locksmith_53b5_forloop__size | minus: locksmith_53b5_forloop__index | minus: 1 %}{% assign locksmith_53b5_forloop__rindex0 = locksmith_53b5_forloop__size | minus: locksmith_53b5_forloop__index0 | minus: 1 %}{% else %}{% continue %}{% endif -%}
+        {%- comment %}</locksmith:48bf>{% endcomment -%}
+        collectionPrice = convertMoney("{{ product.price | money_without_trailing_zeros }}")
+    
+    productList.push({
+        item_id: "{{ product.id }}",
+        item_name: "{{ product.title }}",
+        item_list_name: tags,
+        currency: currencyCode,
+        index: "{{ locksmith_8162_forloop__index }}",
+        item_brand: "EcoFlow",
+        item_category: "{{ product.type }}",
+        item_category2: "{{ getCategoryOption(product, "Color") }}",
+        item_category3: "{{ getCategoryOption(product, "Bundle") }}",
+        item_category4: "{{ getCategoryOption(product, "Gift") }}",
+        item_variant: "{{ getCategoryOption(product, "Capacity") }}",
+        price: collectionPrice
+    })
+    {% endfor %}
+
+    window.dataLayer.push({
+        event: "view_item_list",
+        ecommerce: {
+            items: productList
+        }
+    });
+
+    document.querySelectorAll(".product-card").forEach((item, index) => {
+          if(index < productList.length){
+            item.addEventListener('click', function(){
+              window.dataLayer.push({
+                  event: "select_item",
+                  product_name: productList[index].item_name,
+                  ecommerce: {
+                      items: [{
+                          item_id: productList[index].item_id,
+                          item_name: productList[index].item_name,
+                          item_list_name: tags,
+                          currency: currencyCode,
+                          index: index + 1,
+                          item_brand: "EcoFlow",
+                          item_category: productList[index].item_category,
+                          item_category2: productList[index].item_category2,
+                          item_category3: productList[index].item_category3,
+                          item_category4: productList[index].item_category4,
+                          item_variant: productList[index].item_variant,
+                          price: productList[index].price
+                      }]
+                  }
+              });
+            })
+          }
+        })
+
+
+    // product页面
+    {% elsif template contains "product" %}
+       var cartItems = [];
+      {% for line_item in cart.items %}
+        var catrProductPrice = convertMoney("{{ line_item.price | money_without_trailing_zeros }}")
+        cartItems.push({
+            item_list_name: "none",
+            item_id: "{{line_item.product_id}}",
+            item_name: "{{line_item.product.title}}",
+            item_brand: "EcoFlow",
+            item_category: "{{ line_item.type }}",
+            item_category2: "{{ getCategoryOption(line_item, "Color") }}",
+            item_category3: "{{ getCategoryOption(product, "Bundle") }}",
+            item_category4: "{{ getCategoryOption(line_item, "Gift") }}",
+            item_variant: "{{ line_item.variant.options | join: "_" | replace: "Default Title", ""}}",
+            price: catrProductPrice,
+            quantity: {{ line_item.quantity | default: 1 }}
+            });
+      {% endfor %}
+
+      const cartDrawer = document.querySelector('.Cart-Drawer');
+      cartDrawer.addEventListener("click", (event) => {
+        const target = event.target.parentNode
+        const addArr = [...cartDrawer.querySelectorAll(".Quantity-plus")];
+        const addIndex = addArr.indexOf(target);
+        const minusArr = [...cartDrawer.querySelectorAll(".Quantity-minus")];
+        const minusIndex = minusArr.indexOf(target);
+        const removeArr = [...cartDrawer.querySelectorAll(".CartItem__Remove")];
+        const removeIndex = removeArr.indexOf(event.target);
+        const ymalAddArr = [...cartDrawer.querySelectorAll(".rktheme-widget-container .rktheme-addtocart-button")];
+        const ymalAddIndex = ymalAddArr.indexOf(event.target);
+
+        if(addIndex >= 0){
+              const index = addIndex;
+          cartItems[index].quantity = 1;
+              window.dataLayer.push({
+                  event: "add_to_cart",
+                  product_name: cartItems[index].item_name,
+                  list_name: "none",
+                  currency: "{{ cart.currency.iso_code }}",
+                  value: cartItems[index].price,
+                  ecommerce: {
+                      items: [cartItems[index]]
+                  }
+              });
+        }else if(minusIndex >= 0){
+              const index = minusIndex;
+              cartItems[index].quantity = 1;
+              window.dataLayer.push({
+                  event: "remove_from_cart",
+                  product_name: cartItems[index].item_name,
+                  currency: "{{ cart.currency.iso_code }}",
+                  value: cartItems[index].price,
+                  ecommerce: {
+                      items: [cartItems[index]]
+                  }
+              });
+          }else if(removeIndex >= 0){
+              const index = parseInt(removeIndex / 2);
+              cartItems[index].quantity = Number(cartDrawer.querySelectorAll(".QuantitySelector")[index].querySelector("input").value);
+              window.dataLayer.push({
+                  event: "remove_from_cart",
+                  product_name: cartItems[index].item_name,
+                  currency: "{{ cart.currency.iso_code }}",
+                  value: cartItems[index].price * cartItems[index].quantity,
+                  ecommerce: {
+                      items: [cartItems[index]]
+                  }
+              });
+              cartItems.splice(index,1)
+          }else if(ymalAddIndex >= 0){
+              const productName = cartDrawer.querySelectorAll(".rktheme-widget-container .product")[ymalAddIndex].querySelector(".product__description__name").innerText;
+              const productPrice = convertMoney({{ cartDrawer.querySelectorAll(".rktheme-widget-container .product")[ymalAddIndex].querySelector(".product__description__variant").innerText }});
+              const productItem = {
+                item_list_name: "none",
+                item_name: productName,
+                item_brand: "EcoFlow",
+                index: ymalAddIndex + 1,
+                price: productPrice,
+                quantity: 1
+              }
+              window.dataLayer.push({
+                  event: "add_to_cart",
+                  product_name: productName,
+                  list_name: "none",
+                  currency: "{{ cart.currency.iso_code }}",
+                  value: productPrice,
+                  ecommerce: {
+                      items: [productItem]
+                  }
+              });
+
+              const len = cartItems.filter(item => {
+                  return item.item_name === productName && item.price === productPrice
+              }).length;
+              if(len === 0){
+                  cartItems.unshift(productItem)
+              }
+          }else if (event.target === cartDrawer.querySelector(".Cart__Checkout")){
+              window.dataLayer.push({
+                  event: "uaEvent",
+                  event_name: "checkout",
+                  button_name: "Checkout"
+              });
+          }
+      });
+
+      var productDetailPrice = "{{ product.price | money_without_trailing_zeros }}"
+      var variants = {{ product.variants | json }}
+      var options = {{ product.options | json}}
+      var selected_id = document.querySelector('select[name="id"]').value
+      var model = [];
+      var bundle = [];
+      var bundleUpList = [];
+
+      if (variants.length > 0) {
+          variants.forEach(item => {
+              if (item.id == selected_id) {
+                  options.forEach((ops, index) => {
+                      productDetailPrice = item.price / 100
+                      if (ops !== "Title") {
+                          model.push(ops + ":" + item.options[index])
+                      }
+                  })
+              }
+          })
+      }
+
+      $(".bundle-list").find("li").each(function () {
+          if ($(this).attr("class").includes("active")) {
+              $(this).find("p:first-child").each(function () {
+                  bundle.push($(this).text().trim());
+              })
+          }
+      })
+
+      var viewItemDetail = {
+          item_id: "{{ product.id }}",
+          item_name: "{{ product.title }}",
+          item_brand: "EcoFlow",
+          item_category: "{{ product.type }}",
+          item_category2: "{{ getCategoryOption(product, "Color") }}",
+          item_category3: bundle.join(","),
+          item_category4: "{{ getCategoryOption(product, "Gift") }}",
+          item_variant: model.join("_"),
+          price: productDetailPrice
+      }
+
+    // 产品详情页加载
+    window.dataLayer.push({
+        event: "view_item",
+        product_name: "{{ product.title }}",
+        currency: currencyCode,
+        value: productDetailPrice,
+        ecommerce: {
+            items: [viewItemDetail]
+        }
+    });
+
+    // 一起购买
+    catchErrorEvent("add_to_cart", function(){
+      window.addEventListener("load", function(e) {
+        document.querySelector(".rktheme-bundle-add-to-cart") && document.querySelector(".rktheme-bundle-add-to-cart").addEventListener("click", function(event){
+          var items = [];
+          document.querySelectorAll(".rktheme-bundle-products-list li").forEach(function(item,index){
+            if(index === 0 && item.querySelector("input").checked){
+              viewItemDetail.item_list_name = "Frequently Bought Together";
+              viewItemDetail.quantity = 1;
+              items.push(viewItemDetail);
+            }else if(item.querySelector("input").checked){
+              var itemName = item.querySelector("a.rktheme-bundle-product-title").innerText;
+              var itemPrice = convertMoney(item.querySelector("span.rktheme-bundle-product-item-price-final>span.money").innerText);
+              items.push({
+                item_name: itemName,
+                price: itemPrice,
+                quantity: 1,
+                item_list_name: "Frequently Bought Together"
+              })
+            }
+          })
+
+          var totalPrice = convertMoney(document.querySelector(".rktheme-bundle-total-price-amounts .rktheme-bundle-final-price .money").innerText);
+
+          window.dataLayer.push({
+            event: "add_to_cart",
+            product_name: "{{ product.title }}",
+            list_name: "Frequently Bought Together",
+            currency: currencyCode,
+            value: totalPrice,
+            ecommerce: {
+              items: items
+            }
+          });
+        })
+      })
+    })
+
+  // 添加到购物车
+
+    
+    document.querySelector(".product-form__cart-submit") && document.querySelector(".product-form__cart-submit").addEventListener("click",function () {
+        model = [];
+        bundle = [];
+        bundleUpList = [];
+
+        var selected_id = document.querySelector('select[name="id"]').value
+        var productQuantity = Number(document.querySelector(".product-form__input--quantity")?.value) || 1;
+
+
+        let discount = 0;
+        variants.forEach(item => {
+            if (item.id == selected_id) {
+                options.forEach((ops, index) => {
+                    productDetailPrice = item.price / 100;
+                    const compare_at_price = item.compare_at_price / 100;
+                    if(compare_at_price && compare_at_price > productDetailPrice){
+                      discount = compare_at_price - productDetailPrice;
+                    }
+                    if (ops !== "Title") {
+                        model.push(ops + ":" + item.options[index])
+                    }
+                })
+            }
+        })
+
+        var productTotalPrice = productDetailPrice
+        $(".bundle-list").find("li").each(function () {
+            if ($(this).attr("class").includes("active")) {
+                const bundleUp = {};
+
+                $(this).find("p:first-child").each(function () {
+                    bundle.push($(this).text().trim());
+                    bundleUp.name = $(this).text().trim()
+                })
+
+                $(this).find("p:last-child").each(function () {
+                    bundleUp.price = convertMoney($(this).text().trim())
+                })
+
+                $(this).find(".bundle-item-quantity-block input").each(function () {
+                    bundleUp.quantity = Number($(this).val());
+                })
+
+                productTotalPrice += bundleUp.price * bundleUp.quantity;
+                bundleUpList.push(bundleUp);
+            }
+        })
+
+        const addToCartBundleList = bundleUpList.map((item, index) => ({
+            item_list_name: "none",
+            item_id: "",
+            item_name: item.name,
+            index: index + 2,
+            item_brand: "EcoFlow",
+            item_category3: item.name,
+            price: item.price,
+            quantity: item.quantity,
+        }))
+
+
+        const productItem = {
+          item_list_name: "none",
+          item_id: "{{ product.id }}",
+          item_name: "{{ product.title }}",
+          discount: discount,
+          index: 1,
+          item_brand: "EcoFlow",
+          item_category: "{{ product.type }}",
+          item_category2: "{{ getCategoryOption(product, "Color") }}",
+          item_category3: bundle.join(","),
+          item_category4: "{{ getCategoryOption(product, "Gift") }}",
+          item_variant: model.join("_"),
+          price: productDetailPrice,
+          quantity: productQuantity
+        }
+        window.dataLayer.push({
+            event: "add_to_cart",
+            page_name: location.pathname,
+            product_name: "{{ product.title }}",
+            list_name: "none",
+            currency: currencyCode,
+            value: productTotalPrice * productQuantity,
+            ecommerce: {
+                items: [productItem, ...addToCartBundleList]
+            }
+        });
+
+        const len = cartItems.filter(item => {
+            return item.item_name === productItem.item_name && item.price === productItem.price
+        }).length;
+        if(len === 0){
+            cartItems.unshift(productItem)
+        }
+    })
+    
+
+
+
+    // 立即购买
+    var timer = setInterval(function () {
+        if ($(".shopify-payment-button__button").length > 0) {
+
+            $(".shopify-payment-button__button").each(function () {
+
+                if (!$(this).attr("class").includes("shopify-payment-button__button--hidden")) {
+
+                    let checkoutButton = document.querySelector(".shopify-payment-button").querySelector("span")?.textContent || "";
+                    let buttonName = checkoutButton.match("([a-zA-Z\\s]*)$") ? checkoutButton.match("([a-zA-Z\\s]*)$")[0].trim() : "";
+
+                    $(this).click(throttle(function (event) {
+                        if (buttonName === "") {
+                            window.dataLayer.push({
+                                event: "uaEvent",
+                                event_name: "checkout",
+                                button_name: "Buy it now"
+                            });
+                        } else {
+                            window.dataLayer.push({
+                                event: "uaEvent",
+                                event_name: "quick_checkout",
+                                button_name: buttonName,
+                                position: "Product Detail"
+                            });
+                        }
+
+                    }))
+                    clearInterval(timer);
+                }
+            })
+        }
+    }, 1000);
+
+      window.addEventListener('load', (event) => {
+        if(document.querySelector(".satcb_btn button")){
+          document.querySelector(".satcb_btn button").addEventListener("click", function () {
+              window.dataLayer.push({
+                  event: "uaEvent",
+                  event_name: "checkout",
+                  button_name: "Buy it now"
+              });
+          })
+        }
+      });
+      
+      
+    // cart页面
+    {% elsif template contains "cart" %}
+
+      var cartItems = [];
+      var map = new Map();
+      const cartModel = [];
+
+      {% for line_item in cart.items %}
+        
+        var catrProductPrice = convertMoney("{{ line_item.price | money_without_trailing_zeros }}")
+
+        cartItems.push({
+            item_list_name: "none",
+            item_id: "{{line_item.product_id}}",
+            item_name: "{{line_item.product.title}}",
+            item_brand: "EcoFlow",
+            item_category: "{{ line_item.type }}",
+            item_category2: "{{ getCategoryOption(line_item, "Color") }}",
+            item_category3: "{{ getCategoryOption(product, "Bundle") }}",
+            item_category4: "{{ getCategoryOption(line_item, "Gift") }}",
+            item_variant: "{{ line_item.variant.options | join: "_" | replace: "Default Title", ""}}",
+            price: catrProductPrice,
+            quantity: {{ line_item.quantity | default: 1 }}
+            });
+  
+        map.set({{ forloop.index0 }}, {{ line_item.quantity }});
+      {% endfor %}
+
+      var cartPrice = convertMoney("{{cart.total_price | money_without_trailing_zeros}}")
+
+      // 购物车页加载
+      window.dataLayer.push({
+          event: "view_cart",
+          page_name: location.pathname,
+          currency: "{{ cart.currency.iso_code }}",
+          value: cartPrice,
+          ecommerce: {
+              items: cartItems
+          }
+      });
+
+
+    document.querySelector('.PageContent').addEventListener("click", (event) => {
+        let target = event.target.parentNode;
+        let addArr = [...document.querySelectorAll(".Quantity-plus")];
+        let addIndex = addArr.indexOf(target);
+          let minusArr = [...document.querySelectorAll(".Quantity-minus")];
+        let minusIndex = minusArr.indexOf(target);
+          let removeArr = [...document.querySelectorAll(".CartItem__Remove")];
+        let removeIndex = removeArr.indexOf(event.target);
+
+        if(addIndex >= 0){
+              const index = addIndex;
+          cartItems[index].quantity = 1;
+              window.dataLayer.push({
+                  event: "add_to_cart",
+                  product_name: cartItems[index].item_name,
+                  list_name: "none",
+                  currency: "{{ cart.currency.iso_code }}",
+                  value: cartItems[index].price,
+                  ecommerce: {
+                      items: [cartItems[index]]
+                  }
+              });
+        }else if(minusIndex >= 0){
+              const index = minusIndex;
+              cartItems[index].quantity = 1;
+              window.dataLayer.push({
+                  event: "remove_from_cart",
+                  product_name: cartItems[index].item_name,
+                  currency: "{{ cart.currency.iso_code }}",
+                  value: cartItems[index].price,
+                  ecommerce: {
+                      items: [cartItems[index]]
+                  }
+              });
+          }else if(removeIndex >= 0){
+              const index = parseInt(removeIndex / 2);
+              cartItems[index].quantity = Number(document.querySelectorAll(".QuantitySelector")[removeIndex].querySelector("input").value);
+              window.dataLayer.push({
+                  event: "remove_from_cart",
+                  product_name: cartItems[index].item_name,
+                  currency: "{{ cart.currency.iso_code }}",
+                  value: cartItems[index].price * cartItems[index].quantity,
+                  ecommerce: {
+                      items: [cartItems[index]]
+                  }
+              });
+              cartItems.splice(index,1)
+          }
+      });
+
+
+      var checkoutPrice = "{{cart.original_total_price | money_without_trailing_zeros}}"
+      // 结算按钮
+        if(document.querySelector('.cart__buttons-wrapper .cart__submit_temp_btn')){
+          document.querySelector(".cart__buttons-wrapper .cart__submit_temp_btn").addEventListener("click", function(){
+            window.dataLayer.push({
+                  event: "uaEvent",
+                  event_name: "checkout",
+                  button_name: "Check out"
+              });
+          })
+
+        }
+
+
+
+    // 快捷支付
+    // var paymentTimer = setInterval(function () {
+    //     if ($("#dynamic-checkout-cart").find("li").length > 0) {
+    //         $("#dynamic-checkout-cart").find("li").each(function (index, value) {
+    //             const buttonName = $(this).find("span:first-child").text().trim();
+    //             $(this).click(function () {
+    //                 event.stopPropagation();
+
+    //                 window.dataLayer.push({
+    //                     event: "uaEvent",
+    //                     event_name: "quick_checkout",
+    //                     button_name: "ShopPay",
+    //                     position: "Cart"
+    //                 });
+    //             })
+    //         });
+
+    //         clearInterval(paymentTimer);
+    //     }
+
+    // }, 1000)
+
+    // you also like
+    {% assign collection = collections['accessories'] %}
+  /*       {% assign product_limit = section.settings.max_products_count %} */
+
+    window.aaaa = {{ collection.products | json}}
+
+
+    // checkout页面
+    {% elsif checkout %}
+
+    var checkoutModel = [];
+    var total_discount = convertMoney("{{ checkout.discounts_amount | money_without_trailing_zeros }}");
+
+    $(".product__description__variant").each(function () {
+        checkoutModel.push($(this).text().trim());
+    })
+
+    if (Shopify && Shopify.Checkout && Shopify.Checkout.page === "thank_you") {
+        var purchaseItems = [];
+    var purchasePrice = "";
+
+    {% for line_item in checkout.line_items %}
+    purchasePrice = convertMoney("{{ line_item.price | money_without_trailing_zeros }}")
+
+    purchaseItems.push({
+        item_id: "{{ line_item.product_id }}",
+    item_name: "{{ line_item.product.title }}",
+    item_brand: "EcoFlow",
+    item_category: "{{ line_item.product.type }}",
+    item_category2: "{{ getCategoryOption(line_item, "Color") }}",
+    item_category3: "{{ getCategoryOption(line_item, "Bundle") }}",
+    item_category4: "{{ getCategoryOption(line_item, "Gift") }}",
+    item_variant: checkoutModel[{{ forloop.index0 }}],
+    price: purchasePrice,
+    quantity: {{ line_item.quantity }}
+            });
+    {% endfor %}
+
+        // 支付成功加载
+    // window.dataLayer.push({
+    //     event: "purchase",
+    // page_name: location.pathname,
+    // {% if order.transactions[0].payment_details.credit_card_company %}
+    // payment_type: "{{ order.transactions[0].payment_details.credit_card_company }}",
+    // {% else %}
+    // payment_type: "{{ order.transactions[0].gateway }}",
+    // {% endif %}
+    // currency: "{{ checkout.currency }}",
+    // value: convertMoney("{{ checkout.total_price | money_without_trailing_zeros }}"),
+    // transaction_id: "{{ order.id }}",
+    // coupon: "{{ checkout.discount_applications[0].title }}",
+    // shipping: convertMoney("{{ checkout.shipping_price | money_without_trailing_zeros }}"),
+    // tax: convertMoney("{{ checkout.tax_price | money_without_trailing_zeros }}"),
+    // total_discount: total_discount,
+    // full_order_id: "{{checkout.id}}_{{order.id}}_{{order.name}}",
+    // ecommerce: {
+    //     items: purchaseItems
+    //         }
+    //     });
+
+        } else if (Shopify && Shopify.Checkout && Shopify.Checkout.page !== "thank_you") {
+
+        var addShippingInfoItems = [];
+        var shippingPrice = "";
+
+        {% for line_item in checkout.line_items %}
+        shippingPrice = convertMoney("{{line_item.price | money_without_trailing_zeros}}")
+
+        addShippingInfoItems.push({
+            item_id: "{{line_item.product_id}}",
+            item_name: "{{line_item.product.title}}",
+            index: "{{ forloop.index }}",
+            item_brand: "EcoFlow",
+            item_category: "{{ line_item.product.type }}",
+            item_category2: "{{ getCategoryOption(line_item, "Color") }}",
+            item_category3: "{{ getCategoryOption(line_item, "Bundle") }}",
+            item_category4: "{{ getCategoryOption(line_item, "Gift") }}",
+            item_variant: checkoutModel[{{ forloop.index0 }}],
+            price: shippingPrice,
+            quantity: {{ line_item.quantity }}
+            });
+        {% endfor %}
+
+        var totalPrice = convertMoney("{{ checkout.total_price | money_without_currency }}")
+
+
+        if (Shopify.Checkout.step == "contact_information") {
+            window.dataLayer.push({
+                event: "begin_checkout",
+                currency: currencyCode,
+                value: totalPrice,
+                total_discount: total_discount,
+                ecommerce: {
+                    items: addShippingInfoItems
+                }
+            });
+        }
+
+        function handleCheckout(event){
+            var buttonName = event.srcElement.innerText;
+            if (Shopify.Checkout.step === "shipping_method") {
+                    // 邮寄方式模块
+                    window.dataLayer.push({
+                        event: "add_shipping_info",
+                        page_name: location.pathname,
+                        button_name: buttonName,
+                        currency: "{{ checkout.currency }}",
+                        value: totalPrice,
+                        shipping_tier: $('.section--shipping-method').find('input:radio:checked')[0]?.labels[0]?.innerText?.split('\t')[0],
+                        total_discount: total_discount,
+                        ecommerce: {
+                            items: addShippingInfoItems
+                        }
+                    });
+                } else if (Shopify.Checkout.step === "payment_method") {
+                    // 支付模块
+                    window.dataLayer.push({
+                        event: "add_payment_info",
+                        page_name: location.pathname,
+                        button_name: buttonName,
+                        currency: "{{ checkout.currency }}",
+                        value: totalPrice,
+                        // payment_type: $('.section--payment-method').find('input:radio:checked')[0]?.labels[0]?.innerText,
+                        total_discount: total_discount,
+                        ecommerce: {
+                            items: addShippingInfoItems
+                        }
+                    });
+                } else if (Shopify.Checkout.step === "contact_information") {
+                // 支付模块
+                window.dataLayer.push({
+                    "event": "uaEvent",
+                    "event_name": "continue_to_shipping"
+                });
+            }
+        }
+
+        var newHandle = function (event){
+            handleCheckout(event)
+        }
+
+        const targetNode = document.querySelector('.main__content');
+
+        const config = {
+            childList: true, 
+            subtree: true
+        };
+
+        const callback = function(mutationsList, observer) {
+
+            document.querySelectorAll(".step__footer__continue-btn").forEach((elem) => {
+                if(elem.closest("div").className !== "hidden-if-js"){
+                    elem.addEventListener("click", newHandle, false)
+                }
+            })
+        };
+
+        const observer = new MutationObserver(callback);
+        observer.observe(targetNode, config);
+
+        // 快捷支付
+        if (document.querySelector(".dynamic-checkout__buttons")) {
+            document.querySelector(".dynamic-checkout__buttons").addEventListener("click", function(e){
+            const buttonName = e.target.closest("li").querySelector("span").innerText.trim();
+            if(buttonName){
+              window.dataLayer.push({
+                  event: "uaEvent",
+                  event_name: "quick_checkout",
+                  button_name: buttonName,
+                  position: "Checkout"
+              });
+            }
+        })
+        }
+
+      
+        // setTimeout(function () {
+        //     $(".dynamic-checkout__buttons").find("li").each(function () {
+        //         const buttonName = $(this).find("span:first-child").text();
+
+        //         $(this).click(function () {
+        //             window.dataLayer.push({
+        //                 event: "uaEvent",
+        //                 event_name: "checkout",
+        //                 button_name: buttonName
+        //             });
+        //         })
+        //     })
+        // }, 2000)
+    }
+    {% endif %}
+}) ();
+</script>

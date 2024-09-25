@@ -1,0 +1,248 @@
+<div
+  id="diy-purchase__main"
+  data-diy-purchase-title="{{ section.settings.diy_revamp_title }}"
+  data-diy-purchase-badge-label="{{ section.settings.diy_revamp_badge_label }}"
+  data-diy-purchase-default-tab="{{ section.settings.diy_revamp_default_tab }}"
+  x-cloak
+>
+  <div class="diy-purchase__sticky-image-section">
+    <div class="diy-purchase__sticky-image-view">
+      {% comment %} Customize image viewer {% endcomment %}
+      <div
+        class="diy-purchase__image-wrapper"
+        x-show="selectedTab === 'customize'"
+      >
+        <img class="diy-purchase__image" loading="lazy" src="{{ 'diy-sq_background.png' | file_url }}">
+        {% comment %}
+          Loop through the customizeImages array and render corresponding image
+          Drawback: cannot use {{ image | file_url }} and can only use image url as src, therefore might have a potentially slow loading speed
+
+          REMARKS: Use the order field in json to control the z-index of the image, so it can control the overlay order of the overall image
+        {% endcomment %}
+        <template x-for="(image, index) in customizeImages" :key="index" x-show="customizeImages.length > 0">
+          <img class="diy-purchase__image" data-image="default" loading="lazy" :src="image.image_url" :style="`z-index: ${image.order}`">
+        </template>
+
+        {% comment %} omnibus placeholder image initial {% endcomment %}
+        {% comment %} TODO: May need to make a block field for user to update this placeholder image when they upload new product {% endcomment %}
+        <img class="diy-purchase__image" data-image="omnibus" loading="lazy" src="{{ 'diy_sq_omnibus.png' | file_url }}" x-show="customizeImages.length === 0">
+      </div>
+
+      {% comment %} Bundle image slider viewer {% endcomment %}
+      <div
+        id="diy-purchase__slider-dynamic--mobile"
+        class="diy-purchase__slider"
+        :class="selectedTab === 'bundle' ? 'diy-purchase__slider--show' : 'diy-purchase__slider--hide'">
+      </div>
+    </div>
+    <div class="diy-purchase__sticky-image-bar">
+      <button class="diy-purchase__sticky-image-bar--button" @click="showImageViewer"></button>
+    </div>
+  </div>
+  <div class="page-width-small product-container diy-purchase--page">
+    <div class="grid">
+      <div class="grid__item product-single__media-group position--sticky-top--desktop">
+        <div
+          class="diy-purchase__image-wrapper"
+          x-show="selectedTab === 'customize'"
+        >
+
+          <img class="diy-purchase__image" loading="lazy" src="{{ 'diy-sq_background.png' | file_url }}">
+          {% comment %}
+            Loop through the customizeImages array and render corresponding image
+            Drawback: cannot use {{ image | file_url }} and can only use image url as src, therefore might have a potentially slow loading speed
+
+            REMARKS: Use the order field in json to control the z-index of the image, so it can control the overlay order of the overall image
+          {% endcomment %}
+          <template x-for="(image, index) in customizeImages" :key="index" x-show="customizeImages.length > 0">
+            <img class="diy-purchase__image" data-image="default" loading="lazy" :src="image.image_url" :style="`z-index: ${image.order}`">
+          </template>
+
+          {% comment %} omnibus placeholder image initial {% endcomment %}
+          {% comment %} TODO: May need to make a block field for user to update this placeholder image when they upload new product {% endcomment %}
+          <img class="diy-purchase__image" data-image="omnibus" loading="lazy" src="{{ 'diy_sq_omnibus.png' | file_url }}" x-show="customizeImages.length === 0">
+        </div>
+
+          {% comment %}
+          1. x-for cannot be used in this slick slider to render corresponding images because x-for needs to use a template to wrap the forloop content
+          and will render a template shadow document before the loop element, and it breaks the UI of the slider. Therefore, use JS injection instead
+
+          2. x-show cannot be use in this slider as when initializing the slider, the library will add an inline style with display: block, it will make
+          the x-show not working, therefore use x-bind with classname instead
+
+          3. x-init will run inserSliderImages function in diy-alpine.js.liquid and insert initial slides
+          Currently the slides inserted initially are fixed to 2-kWh-Speicher Kit sliderImages
+          TODO: Change the images to dynamically recognize the initial selected bundle
+        {% endcomment %}
+
+        <div
+          class="diy-purchase__slider-wrapper"
+          :class="{ 'hide': selectedTab === 'customize' }"
+        >
+          <div
+            id="diy-purchase__slider-dynamic"
+            class="diy-purchase__slider"
+            :class="selectedTab === 'bundle' ? 'diy-purchase__slider--show' : 'diy-purchase__slider--hide'"
+          ></div>
+        </div>
+      </div>
+
+      <div class="grid__item product-single__description-group position--sticky-top">
+        <div class="product-single__meta">
+          <div class="hideMobile">
+            <div class="new-label" x-show="diyPageBadgeLabel != ''" x-text="diyPageBadgeLabel"></div>
+          </div>
+
+          <h1 class="product-single__title" x-text="diyPageTitle"></h1>
+
+          {% comment %} Tabs {% endcomment %}
+          <div class="diy-purchase__tabs layout--rounded-box-gray">
+            <div class="diy-purchase__options diy-purchase__options--two-column">
+              <label class="diy-purchase__option">
+                <input
+                  type="radio"
+                  name="diy-purchase-option"
+                  data-form-id="feature-bundle"
+                  x-model="selectedTab"
+                  value="bundle"
+                  @change="changeTab('bundle')"
+                >
+                <span class="diy-purchase__option__radio-button">Recomendado</span>
+              </label>
+              <label class="diy-purchase__option">
+                <input
+                  type="radio"
+                  name="diy-purchase-option"
+                  data-form-id="diy"
+                  x-model="selectedTab"
+                  value="customize"
+                  @change="changeTab('customize')"
+                >
+                <span class="diy-purchase__option__radio-button">Personalizado</span>
+              </label>
+            </div>
+          </div>
+
+          <div x-show="!dataInitialize">
+            <!-- Loader HTML -->
+            <div class="loader" style="padding: 20px; text-align: center;">
+              Loading...
+            </div>
+          </div>
+
+          {% comment %} Customize {% endcomment %}
+          <div
+            id="tab-customize"
+            class="form-tab"
+            :class="{ 'form-tab--active': selectedTab === 'customize' }"
+            x-show="dataInitialize && selectedTab === 'customize'"
+            x-cloak
+            {% comment %} x-transition {% endcomment %}
+          >
+            <template x-for="(optionBlock, optionBlockIndex) in jsonCustomizeData" :key="optionBlockIndex">
+              {% render 'diy-alpinejs-template' %}
+            </template>
+          </div>
+
+          {% comment %} Bundle {% endcomment %}
+          <div
+            id="tab-bundle"
+            class="form-tab"
+            :class="{ 'form-tab--active': selectedTab === 'bundle' }"
+            x-show="dataInitialize && selectedTab === 'bundle'"
+            x-cloak
+            {% comment %} x-transition {% endcomment %}
+          >
+            <template x-for="(optionBlock, optionBlockIndex) in jsonBundleData" :key="optionBlockIndex">
+              {% render 'diy-alpinejs-template' %}
+            </template>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="diy-footer position--sticky-bottom">
+    <div class="page-width-small product-container">
+      <div class="diy-footer__col-left">
+        <span class="product-single__title--footer" x-text="diyPageTitle"></span>
+      </div>
+      <div class="diy-footer__col-right">
+        {% comment %} Price {% endcomment %}
+        <div class="diy-footer__total-price-label">
+          <div class="diy-footer__total-price" data-total-price data-cy="total-price" x-show="totalPrice > 0" x-text="priceFormat(totalPrice)"></div>
+          <div class="diy-footer__compare-price" :class="{ 'hide': totalCompareAtPrice == '' || Number(totalCompareAtPrice) < Number(totalPrice) }">
+            <div class="diy-footer__discounted-price" data-cy="discounted-price" data-discounted-price x-show="totalDiscountedPrice > 0" x-text="'-' + priceFormat(totalDiscountedPrice)"></div>
+            <div class="diy-footer__compare-at-price" data-cy="compare-at-price" data-compare-at-price x-show="totalCompareAtPrice > 0" x-text="priceFormat(totalCompareAtPrice)"></div>
+          </div>
+        </div>
+        <div class="diy-footer__buttons">
+          <button
+            class="btn btn--brand btn--diy-checkout"
+            :class="{ 'btn--disabled': !isMandatoryOptionChecked }"
+            data-checkout-button
+            @click="addToCart"
+          >
+            <span class="btn__text">Comprar Ahora</span>
+            <span class="hide" data-loader>
+              {% render 'icon-spinner' %}
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "DIY Purchase",
+  "class": "diy-purchase-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "DIY Revamp"
+    },
+    {
+      "type": "text",
+      "id": "diy_revamp_title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "diy_revamp_badge_label",
+      "label": "New Label"
+    },
+    {
+      "type": "select",
+      "id": "diy_revamp_default_tab",
+      "label": "Default Active Tab",
+      "options": [
+        {
+          "value": "bundle",
+          "label": "Bundle"
+        },
+        {
+          "value": "customize",
+          "label": "Customize"
+        }
+      ],
+      "default": "bundle",
+      "info": "This will effect after Save."
+    },
+    {
+      "type": "header",
+      "content": "JSON Editor"
+    },
+    {
+      "type": "paragraph",
+      "content": "You can create / update the json data in the [JSON Editor](https://json-editor.github.io/json-editor/)."
+    },
+    {
+      "type": "paragraph",
+      "content": "Refer to the [documentation](https://www.notion.so/inscoder/How-to-Customise-DIY-Page-via-Json-Editor-b9cb1a1f41b54d63a2ea4a649c3bc44a) for more info."
+    }
+  ]
+}
+{% endschema %}

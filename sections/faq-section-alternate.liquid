@@ -1,0 +1,203 @@
+<div class="faq-section">
+    <div class="faq-container">
+      <div class="faq-block">
+        <h2>{{ section.settings.title }}</h2>
+        {% for block in section.blocks %}
+          <div class="question">
+            <div class="question-container">
+              <h3>{{ block.settings.title }}</h3>
+              <img
+                class="
+                  plus {% if forloop.index0 != 0 %}
+                    active
+                  {% endif %}
+                "
+                src="https://cdn.shopify.com/s/files/1/0625/0718/8450/files/plus.png?v=1659531704"
+                width="12"
+                height="12"
+              >
+              <img
+                class="
+                  minus {% if forloop.index0 == 0 %}
+                    active
+                  {% endif %}
+                "
+                src="https://cdn.shopify.com/s/files/1/0625/0718/8450/files/minus.png?v=1659531704"
+                width="12"
+                height="12"
+              >
+            </div>
+            <div
+              class="des"
+              {% if forloop.index0 == 0 %}
+                style="display: block;"
+              {% else %}
+                style="display: none;"
+              {% endif %}
+            >
+              <p>
+                {{ block.settings.answer }}
+              </p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  {% schema %}
+  {
+    "name": "FAQ Section - Alternate",
+    "settings": [
+      {
+        "id": "title",
+        "type": "text",
+        "label": "Heading",
+        "default": "Frequently Asked Questions"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "question",
+        "name": "Question Block",
+        "settings": [
+          {
+            "id": "title",
+            "type": "text",
+            "label": "Question"
+          },
+          {
+            "id": "answer",
+            "type": "textarea",
+            "label": "Answer"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": {
+          "en": "FAQ Section"
+        },
+        "category": {
+          "en": "Ecoflow"
+        }
+      }
+    ]
+  }
+  {% endschema %}
+
+  {% style %}
+    .faq-section {
+      padding-top: 100px;
+      padding-bottom: 166px;
+    }
+
+    .faq-section .plus,
+    .faq-section .minus {
+      display: none;
+    }
+
+    .faq-section .plus.active,
+    .faq-section .minus.active {
+      display: inline;
+    }
+
+    .faq-section .faq-container {
+      max-width: 1000px;
+      width: 100%;
+      margin: auto;
+    }
+
+    .faq-section .faq-container h2 {
+      font-style: normal;
+      font-size: 45px !important;
+      line-height: 1.3;
+      text-align: center;
+      text-transform: capitalize;
+      color: #212121 !important;
+      margin-bottom: 48px;
+    }
+
+    .faq-section .faq-container h3 {
+      font-style: normal;
+      font-size: 18px;
+      line-height: 1.3;
+      color: #212121 !important;
+      margin-bottom: 0;
+    }
+
+    .faq-section .faq-container p {
+      font-style: normal;
+      font-weight: 350;
+      font-size: 18px;
+      line-height: 1.3;
+      color: #212121 !important;
+      margin-top: 24.5px;
+    }
+
+    .faq-section .faq-container .question {
+      border-top: 1px solid rgba(161, 161, 166, 0.5);
+      padding: 32.5px 0;
+      text-align: left;
+      display: block;
+    }
+    .faq-section .faq-container .question:last-child {
+      border-bottom: 1px solid rgba(161, 161, 166, 0.5);
+    }
+
+    .faq-section .faq-container .question-container {
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+      align-items: baseline;
+      column-gap: 10px;
+    }
+
+    @media (max-width: 1329px) {
+      .faq-section {
+        padding-left: 65px;
+        padding-right: 65px;
+      }
+    }
+    @media (max-width: 1023px) {
+      .faq-section {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+    }
+    @media (max-width: 767px) {
+      .faq-section {
+        padding-top: 48px;
+        padding-bottom: 48px;
+      }
+      .faq-section .faq-container h2 {
+        font-size: 28px !important;
+      }
+      .faq-section .faq-container .question {
+        padding-top: 32px;
+        padding-bottom: 32px;
+      }
+      .faq-section .faq-container h3 {
+        font-size: 16px;
+      }
+      .faq-section .faq-container p {
+        font-size: 16px;
+        margin-top: 24px;
+      }
+    }
+  {% endstyle %}
+
+  <script>
+    $('.question-container').click(function () {
+      $(this).next('.des').stop(true, true).slideToggle('slow');
+
+      if ($(this).children('.plus').hasClass('active')) {
+        $(this).children('.plus').removeClass('active');
+        $(this).children('.minus').addClass('active');
+      } else if ($(this).children('.minus').hasClass('active')) {
+        $(this).children('.minus').removeClass('active');
+        $(this).children('.plus').addClass('active');
+      }
+    });
+  </script>

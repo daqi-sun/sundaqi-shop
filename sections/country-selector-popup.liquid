@@ -1,0 +1,266 @@
+{%- if section.settings.popup_show and section.blocks.size > 0 -%}
+    <div id="country-selector-popup">
+        <div class="popup-overlay" data-country-popup-close></div>
+        <div class="popup-wrapper">
+            <div class="popup-close" data-country-popup-close>
+                <svg width="20" height="20" viewBox="0 0 20 20" class="hideMobile" xmlns="http://www.w3.org/2000/svg">
+                    <g fill="none" fill-rule="evenodd">
+                        <circle fill="currentColor" cx="10" cy="10" r="10"/>
+                        <path d="M14.438 14.438a2.194 2.194 0 0 1-.498.387c-.16.086-.33.039-.51-.141L10 11.253l-3.443 3.443c-.172.172-.338.215-.497.129a2.194 2.194 0 0 1-.498-.387 2.194 2.194 0 0 1-.387-.498c-.086-.16-.043-.325.13-.497L8.746 10l-3.43-3.43c-.18-.18-.228-.35-.142-.51.086-.16.215-.326.387-.498.172-.172.338-.3.498-.387.16-.086.33-.039.51.141L10 8.747l3.43-3.43c.173-.173.34-.218.504-.136.164.082.332.21.504.381.172.172.299.34.38.504.083.164.038.331-.134.503L11.253 10l3.43 3.43c.18.18.228.35.142.51-.086.16-.215.326-.387.498z" fill="#FFF"/>
+                    </g>
+                </svg>
+
+                <svg width="24" height="25" viewBox="0 0 24 25" class="hideDesktop" xmlns="http://www.w3.org/2000/svg">
+                    <g fill="#03060B" fill-rule="evenodd">
+                        <path d="m5.476 17.59 12-12.001 1.049 1.049-12 12z"/>
+                        <path d="M17.414 18.586 5.527 6.7l1.06-1.058 11.886 11.886z"/>
+                    </g>
+                </svg>
+
+            </div>
+            <div class="popup-container">
+                {%- if section.settings.popup_title != blank -%}
+                    <h3 class="popup-title">{{ section.settings.popup_title }}</h3>
+                {%- endif -%}
+
+                <div class="countries-list">
+                {%- for block in section.blocks -%}
+                    <div class="country-block">
+                        {%- if block.settings.region_title != blank -%}
+                            <h5 class="region_title">{{ block.settings.region_title }}</h5>
+                        {%- endif -%}
+                        <div class="country-block-wrapper">
+                        {%- for i in (1..6) -%}
+                            {%- capture current -%}current_country_{{i}}{%- endcapture -%}
+                            {%- capture title -%}country_{{i}}_title{%- endcapture -%}
+                            {%- capture subtitle -%}country_{{i}}_subtitle{%- endcapture -%}
+                            {%- capture link -%}link_{{i}}{%- endcapture -%}
+                            {%- capture flag -%}country_{{i}}_icon{%- endcapture -%}
+                            {% if block.settings[title] != blank %}
+                            <div class="country-block-inner">
+                            <a {% if block.settings[current] %}data-country-popup-close{% elsif block.settings[title] != blank and block.settings[link] != blank %}href="{{ block.settings[link] }}"{% endif %}>
+                                {% if block.settings[flag] != blank %}<div class="flag-image"><img src="{{ block.settings[flag] | img_url: '100x' }}" /></div>{% endif %}
+                                <div class="country-content">
+                                    <div class="country-title">{{ block.settings[title] }}</div>
+                                    <div class="country-subtitle">{{ block.settings[subtitle] }}</div>
+                                </div>
+                            </a>
+                            </div>
+                            {% endif %}
+                        {%- endfor -%}
+                        </div>
+                    </div>
+                {%- endfor -%}
+                </div>
+            </div>
+        </div>
+    </div>
+{%- endif -%}
+{% schema %}
+{
+  "name": "Custom country selector",
+  "settings": [
+    {
+        "type": "checkbox",
+        "id": "popup_show",
+        "label": "Show?"
+    },
+    {
+        "type": "text",
+        "id": "popup_title",
+        "label": "Title"
+    }
+  ],
+  "blocks": [
+    {
+        "type": "region",
+        "name": "Region",
+        "settings": [
+            {
+                "type": "text",
+                "label": "Region title",
+                "id": "region_title"
+            },
+            {
+                "type": "header",
+                "content": "Countries"
+            },
+            {
+                "type": "header",
+                "content": "#1"
+            },
+            {
+                "type": "checkbox",
+                "label": "Current",
+                "id": "current_country_1"
+            },
+            {
+                "type": "image_picker",
+                "label": "Flag image",
+                "id": "country_1_icon"
+            },
+            {
+                "type": "text",
+                "label": "Country title",
+                "id": "country_1_title"
+            },
+            {
+                "type": "text",
+                "label": "Country subtitle",
+                "id": "country_1_subtitle"
+            },
+            {
+                "type": "url",
+                "label": "Link",
+                "id": "link_1"
+            },
+            {
+                "type": "header",
+                "content": "#2"
+            },
+            {
+                "type": "checkbox",
+                "label": "Current",
+                "id": "current_country_2"
+            },
+            {
+                "type": "image_picker",
+                "label": "Flag image",
+                "id": "country_2_icon"
+            },
+            {
+                "type": "text",
+                "label": "Country title",
+                "id": "country_2_title"
+            },
+            {
+                "type": "text",
+                "label": "Country subtitle",
+                "id": "country_2_subtitle"
+            },
+            {
+                "type": "url",
+                "label": "Link",
+                "id": "link_2"
+            },
+            {
+                "type": "header",
+                "content": "#3"
+            },
+            {
+                "type": "checkbox",
+                "label": "Current",
+                "id": "current_country_3"
+            },
+            {
+                "type": "image_picker",
+                "label": "Flag image",
+                "id": "country_3_icon"
+            },
+            {
+                "type": "text",
+                "label": "Country title",
+                "id": "country_3_title"
+            },
+            {
+                "type": "text",
+                "label": "Country subtitle",
+                "id": "country_3_subtitle"
+            },
+            {
+                "type": "url",
+                "label": "Link",
+                "id": "link_3"
+            },
+            {
+                "type": "header",
+                "content": "#4"
+            },
+            {
+                "type": "checkbox",
+                "label": "Current",
+                "id": "current_country_4"
+            },
+            {
+                "type": "image_picker",
+                "label": "Flag image",
+                "id": "country_4_icon"
+            },
+            {
+                "type": "text",
+                "label": "Country title",
+                "id": "country_4_title"
+            },
+            {
+                "type": "text",
+                "label": "Country subtitle",
+                "id": "country_4_subtitle"
+            },
+            {
+                "type": "url",
+                "label": "Link",
+                "id": "link_4"
+            },
+            {
+                "type": "header",
+                "content": "#5"
+            },
+            {
+                "type": "checkbox",
+                "label": "Current",
+                "id": "current_country_5"
+            },
+            {
+                "type": "image_picker",
+                "label": "Flag image",
+                "id": "country_5_icon"
+            },
+            {
+                "type": "text",
+                "label": "Country title",
+                "id": "country_5_title"
+            },
+            {
+                "type": "text",
+                "label": "Country subtitle",
+                "id": "country_5_subtitle"
+            },
+            {
+                "type": "url",
+                "label": "Link",
+                "id": "link_5"
+            },
+            {
+                "type": "header",
+                "content": "#6"
+            },
+            {
+                "type": "checkbox",
+                "label": "Current",
+                "id": "current_country_6"
+            },
+            {
+                "type": "image_picker",
+                "label": "Flag image",
+                "id": "country_6_icon"
+            },
+            {
+                "type": "text",
+                "label": "Country title",
+                "id": "country_6_title"
+            },
+            {
+                "type": "text",
+                "label": "Country subtitle",
+                "id": "country_6_subtitle"
+            },
+            {
+                "type": "url",
+                "label": "Link",
+                "id": "link_6"
+            }
+        ]
+    }
+  ]
+}
+{% endschema %}

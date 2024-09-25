@@ -1,0 +1,148 @@
+<section id="{{ section.id }}" class="pdp pdp-rich-text pdp-image-sec section-{{section.id}}">
+    <div class="pdp-container content-align__{{ section.settings.alignment }}" id="{{ section.settings.section_id }}">
+        {% if section.settings.title != blank %}
+            <h1 {% if section.settings.title_mobile != blank %}class="hideMobile"{% endif %}>{{ section.settings.title }}</h1>
+        {% endif %}
+        {% if section.settings.title_mobile != blank %}
+            <h1 class="hideDesktop">{{ section.settings.title_mobile }}</h1>
+        {% endif %}
+
+        {% if section.settings.image != blank %}
+            <div class="pdp-image">
+                <img src="{{ section.settings.image | img_url: 'master' }}" alt="{{ section.settings.title }}" {% if section.settings.mobile_image != blank %}class="hideMobile"{% endif %} />
+                {% if section.settings.mobile_image != blank %}
+                    <img src="{{ section.settings.mobile_image | img_url: 'master' }}" alt="{{ section.settings.title }}" {% unless section.settings.full_image_mobile %}style="--mobile-image-width: {{ section.settings.image_width_mobile }}px;"{% endunless %} class="hideDesktop" />
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+</section>
+<style>
+    #{{ section.id }}.pdp-rich-text {
+        padding: {{ section.settings.section_top_spacing }}px 0 {{ section.settings.section_bottom_spacing }}px 0;
+    }
+    #{{ section.id }}.pdp-rich-text h1{ color: {{ section.settings.title_color }}; }
+    @media screen and (max-width: 767px) {
+        #{{ section.id }}.pdp-rich-text {
+            padding: {{ section.settings.section_top_spacing_mobile }}px 0 {{ section.settings.section_bottom_spacing_mobile }}px 0;
+        }
+    }
+</style>
+{% schema %}
+{
+    "name": "PDP Image",
+    "settings": [
+        {
+            "type": "text",
+            "id": "section_id",
+            "label": "Section ID"
+        },
+        {
+            "type": "range",
+            "id": "section_top_spacing",
+            "label": "Section top spacing(Desktop)",
+            "min": 0,
+            "max": 50,
+            "step": 1,
+            "default": 20,
+            "unit": "px"
+        },
+        {
+            "type": "range",
+            "id": "section_bottom_spacing",
+            "label": "Section bottom spacing(Desktop)",
+            "min": 0,
+            "max": 50,
+            "step": 1,
+            "default": 20,
+            "unit": "px"
+        },
+        {
+            "type": "range",
+            "id": "section_top_spacing_mobile",
+            "label": "Section top spacing(Mobile)",
+            "min": 0,
+            "max": 50,
+            "step": 1,
+            "default": 20,
+            "unit": "px"
+        },
+        {
+            "type": "range",
+            "id": "section_bottom_spacing_mobile",
+            "label": "Section bottom spacing(Mobile)",
+            "min": 0,
+            "max": 50,
+            "step": 1,
+            "default": 20,
+            "unit": "px"
+        },
+        {
+            "type": "select",
+            "id": "alignment",
+            "label": "Text alignment",
+            "options": [
+                {
+                    "value": "left",
+                    "label": "Left"
+                },
+                {
+                    "value": "right",
+                    "label": "Right"
+                },
+                {
+                    "value": "center",
+                    "label": "Center"
+                }
+            ],
+            "default": "center"
+        },
+        {
+            "type": "textarea",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "textarea",
+            "id": "title_mobile",
+            "label": "Title(Mobile)"
+        },
+        {
+            "type": "color",
+            "id": "title_color",
+            "label": "Title color"
+        },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "mobile_image",
+            "label": "Image(Mobile)"
+        },
+        {
+            "type": "checkbox",
+            "id": "full_image_mobile",
+            "label": "Full width of image in mobile?"
+        },
+        {
+            "type": "range",
+            "id": "image_width_mobile",
+            "label": "Image width(Mobile)",
+            "min": 300,
+            "max": 750,
+            "step": 10,
+            "unit": "px",
+            "default": 300,
+            "info": "This option will only work when above option is not choosen."
+        }
+    ],
+    "presets": [
+        {
+            "name": "PDP Image"
+        }
+    ]
+}
+{% endschema %}

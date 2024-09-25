@@ -1,0 +1,705 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "daf26638-f596-4384-b150-72d380a3268d": {
+      "type": "product-atb-top",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "sticky-product-bar": {
+      "type": "sticky-product-bar",
+      "blocks": {
+        "588d25af-4d47-43ac-9697-b98aa2f65719": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Overview",
+            "tab_id": "product_information",
+            "section_class": ""
+          }
+        },
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "What's in the box",
+            "tab_id": "what_in_box",
+            "section_class": ""
+          }
+        },
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "FAQ",
+            "tab_id": "faq",
+            "section_class": ""
+          }
+        },
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Reviews",
+            "tab_id": "section-reviews",
+            "section_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "588d25af-4d47-43ac-9697-b98aa2f65719",
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02",
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4",
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38"
+      ],
+      "settings": {
+        "enabled": true,
+        "enabled_tabs": false
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "11795adc-1afa-4833-a193-258f495901ef": {
+          "type": "sku_block",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e": {
+          "type": "product_title",
+          "settings": {
+          }
+        },
+        "873581de-0188-4182-91ec-3d2cd75ac5cd": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "0471109f-c130-454e-a9ba-c56412cc11f3": {
+          "type": "product_vendor",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185": {
+          "type": "product_price",
+          "settings": {
+          }
+        },
+        "d25a0285-4fb4-422d-b95b-ab67446120ad": {
+          "type": "product_description",
+          "settings": {
+            "desc_display": "default"
+          }
+        },
+        "79e1b437-5bbd-4b8a-ac55-27c2f795ee99": {
+          "type": "coupon_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Component_2_1.png",
+            "discount_off_text": "{{ product.metafields.custom.discount_off_text.value }}",
+            "code": "{{ product.metafields.custom.discount_code.value }}",
+            "show_copy_code_btn": true
+          }
+        },
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879": {
+          "type": "product_options_block",
+          "settings": {
+            "show_product_swatches": true,
+            "use_variant_image_for_swatches": true,
+            "button_content": ""
+          }
+        },
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe": {
+          "type": "quantity_block",
+          "settings": {
+          }
+        },
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0": {
+          "type": "accessories_section",
+          "settings": {
+            "title": "You may also like",
+            "metafield": "accessories"
+          }
+        },
+        "a96faac7-b2a0-4157-9b80-c757c18c6a89": {
+          "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/form-embed-block\/2632fe16-c075-4321-a88b-50b567f42507",
+          "disabled": true,
+          "settings": {
+            "formId": "UHSpKe"
+          }
+        },
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609": {
+          "type": "product_buttons",
+          "settings": {
+            "enable_payment_button": false,
+            "show_custom_icons": true,
+            "custom_payment_logo_1_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_08_7f374817-3a3e-42f2-95ce-077b67f293d2.svg?v=1672025209",
+            "custom_payment_logo_2_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_10_d8002835-e25f-4edb-9038-187f75f69a18.svg?v=1672025208",
+            "custom_payment_logo_3_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_02_a3ea7ab1-aa9a-4857-9ed6-01e62deccfce.svg?v=1672025208",
+            "custom_payment_logo_4_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_06_7c406d24-0983-49ff-ac8e-cf73032050d9.svg?v=1672025208",
+            "custom_payment_logo_5_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_07_be5959d4-9f22-4a31-8e40-285f8e3ac6e7.svg?v=1672025208",
+            "custom_payment_logo_6_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_04_7bff1113-0dc2-489f-8be8-d19dbe467a1a.svg?v=1672025208",
+            "custom_payment_logo_7_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_05_1c21f308-a0a3-4251-8641-87264da43d67.svg?v=1672025208",
+            "custom_payment_logo_8_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_01_96e6a30c-7908-4892-b6f1-75bce8657cd4.svg?v=1672025208",
+            "custom_payment_logo_9_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/sofort_icon_31ba2d5b-2c44-4960-8e80-645a7240c899.png?v=1679023017",
+            "custom_payment_logo_10_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/giropay_icon_c9d7e22e-cd7c-4bee-8de5-e50a4c6dc378.png?v=1679023017",
+            "custom_payment_logo_11_svg": "",
+            "custom_payment_logo_12_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/multibanco_icon_e3f9b26f-234c-4a06-9e48-adfd188e7deb.png?v=1679023016",
+            "custom_payment_logo_13_svg": "",
+            "custom_payment_logo_14_svg": "",
+            "custom_payment_logo_15_svg": ""
+          }
+        },
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% if product.metafields.custom.trade_message != blank %}\n          <div class=\"trade-message\">♻️{{product.metafields.custom.trade_message}} <a href=\"\/pages\/trade-in\" target=\"_blank\">Learn more<\/a><\/div>\n{% endif %}"
+          }
+        }
+      },
+      "block_order": [
+        "11795adc-1afa-4833-a193-258f495901ef",
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e",
+        "873581de-0188-4182-91ec-3d2cd75ac5cd",
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774",
+        "0471109f-c130-454e-a9ba-c56412cc11f3",
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185",
+        "d25a0285-4fb4-422d-b95b-ab67446120ad",
+        "79e1b437-5bbd-4b8a-ac55-27c2f795ee99",
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879",
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe",
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0",
+        "a96faac7-b2a0-4157-9b80-c757c18c6a89",
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609",
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a"
+      ],
+      "settings": {
+        "section_id": "",
+        "show_breadcrumbs": true,
+        "show_pick_an_option": false,
+        "enable_linked_options": false,
+        "enabled_mobile_sticky_btns": true,
+        "media_size": "medium",
+        "enable_image_zoom": true,
+        "enable_video_looping": true,
+        "thumbnails_type": "grid",
+        "support_email": "",
+        "support_text": "",
+        "feature_1_show": false,
+        "feature_1_title": "Fast & Free Shipping",
+        "feature_1_content": "",
+        "feature_2_show": false,
+        "feature_2_title": "Warranty Protection",
+        "feature_2_content": "",
+        "feature_3_show": false,
+        "feature_3_title": "Secure Payments",
+        "feature_3_content": "",
+        "feature_4_show": false,
+        "feature_4_title": "Multi-channel Support",
+        "feature_4_content": ""
+      }
+    },
+    "be0ea919-9531-491c-acf6-648a9719eccc": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 0,
+        "section_bottom_spacing": 20,
+        "section_top_spacing_mobile": 0,
+        "section_bottom_spacing_mobile": 20,
+        "alignment": "center",
+        "title": "",
+        "subtitle": "",
+        "content": "<p>Los términos “DELTA” y “RIVER”, que se mencionan en esta página, se refieren a productos fabricados exclusivamente por ECOFLOW INC.<\/p>",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "grid_mobile": "2",
+        "heading": "You may also like",
+        "show_vendor": false
+      }
+    },
+    "1b15ef12-7151-41be-b166-9dcc56820b5a": {
+      "type": "product-atb-bottom",
+      "settings": {
+      }
+    },
+    "1676887592a3dc4fd0": {
+      "type": "apps",
+      "blocks": {
+        "fcff5df0-e125-4e50-a234-8aaf83efb033": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "fcff5df0-e125-4e50-a234-8aaf83efb033"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    },
+    "pdp_text_with_image_kiDbBN": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "text_with_image_biyfhX": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/01_PC.png",
+            "mobile_image": "shopify:\/\/shop_images\/01_01_M.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Cargador GaN EcoFlow RAPID de 65 W",
+            "title_color": "#232323",
+            "content": "<h4>Cargador multipuerto rápido para 3 dispositivos<\/h4>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-4",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "text_with_image_biyfhX"
+      ],
+      "settings": {
+      }
+    },
+    "pdp_image_with_text_horizontal_new_qphXfH": {
+      "type": "pdp-image-with-text-horizontal-new",
+      "blocks": {
+        "image_nRF3fU": {
+          "type": "image",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/02_01_PC.png",
+            "mobile_image": "shopify:\/\/shop_images\/02_01_M.png",
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "image_alignment": "left",
+            "title": "Tecnología GaN",
+            "subtitle": "<p><strong>Conversión altamente eficiente de la energíaGenera menos calor<\/strong><\/p>",
+            "content": "",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "image_nQcNTn": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/02_02_PC.png",
+            "mobile_image": "shopify:\/\/shop_images\/02_02_M.png",
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "image_alignment": "right",
+            "title": "Compact Size",
+            "subtitle": "<p>48.8% smaller than other chargers.<\/p>",
+            "content": "",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "image_nRF3fU",
+        "image_nQcNTn"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "center"
+      }
+    },
+    "pdp_image_with_text_horizontal_new_nEhrpt": {
+      "type": "pdp-image-with-text-horizontal-new",
+      "blocks": {
+        "image_WfbniB": {
+          "type": "image",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/02_02_PC.png",
+            "mobile_image": "shopify:\/\/shop_images\/02_02_M.png",
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "image_alignment": "right",
+            "title": "Tamaño compacto",
+            "subtitle": "<p>48,8 % más pequeño que otros cargadores.<\/p>",
+            "content": "",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "image_WfbniB"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "center"
+      }
+    },
+    "pdp_text_with_image_9dQn4B": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "text_with_image_VgPMAh": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/03_PC.png",
+            "mobile_image": "shopify:\/\/shop_images\/03_M.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Compatibilidad universal",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "<h5>Perfecto para dispositivos Apple, Samsung y Google<\/h5>",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "text_with_image_VgPMAh"
+      ],
+      "settings": {
+      }
+    },
+    "pdp_rich_text_UyUVQU": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 20,
+        "section_bottom_spacing": 20,
+        "section_top_spacing_mobile": 20,
+        "section_bottom_spacing_mobile": 20,
+        "alignment": "center",
+        "title": "Carga de alta velocidad",
+        "subtitle": "",
+        "content": "",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "pdp_image_with_text_horizontal_new_qez8X8": {
+      "type": "pdp-image-with-text-horizontal-new",
+      "blocks": {
+        "image_LmAmiK": {
+          "type": "image",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/04_01_PC.png",
+            "mobile_image": "shopify:\/\/shop_images\/04_01_M.png",
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "image_alignment": "left",
+            "title": "",
+            "subtitle": "<h2>Carga una MacBook Pro 14 al 50 % en 50 minutos.<\/h2>",
+            "content": "",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "image_LmAmiK"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "center"
+      }
+    },
+    "pdp_image_with_text_horizontal_new_xQbQxR": {
+      "type": "pdp-image-with-text-horizontal-new",
+      "blocks": {
+        "image_dcbQei": {
+          "type": "image",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/04_02_PC.png",
+            "mobile_image": "shopify:\/\/shop_images\/04_02_M.png",
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "image_alignment": "right",
+            "title": "",
+            "subtitle": "<h2>Carga el iPhone 15 Pro Max del 0 al 50 % en 30 minutos.<\/h2>",
+            "content": "",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "image_dcbQei"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "center"
+      }
+    },
+    "pdp_image_with_text_horizontal_new_xawgVN": {
+      "type": "pdp-image-with-text-horizontal-new",
+      "blocks": {
+        "image_XfjRgJ": {
+          "type": "image",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/04_03_PC.png",
+            "mobile_image": "shopify:\/\/shop_images\/04_03_M.png",
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "image_alignment": "left",
+            "title": "",
+            "subtitle": "<h2>Carga un Google Pixel Book al 50 % en 43 minutos.<\/h2>",
+            "content": "",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "image_XfjRgJ"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "center"
+      }
+    },
+    "pdp_text_with_image_JrRMGq": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "text_with_image_JDXdDq": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/05_01_PC.png",
+            "mobile_image": "shopify:\/\/shop_images\/05_01_M.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Carga de un solo puerto",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "text_with_image_MQt3FY": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/05_02_PC.png",
+            "mobile_image": "shopify:\/\/shop_images\/05_02_M.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Carga de dos puertos",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "text_with_image_i9pDbf": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/05_03_PC.png",
+            "mobile_image": "shopify:\/\/shop_images\/05_03_M.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Carga de tres puertos",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "text_with_image_JDXdDq",
+        "text_with_image_MQt3FY",
+        "text_with_image_i9pDbf"
+      ],
+      "settings": {
+      }
+    },
+    "pdp_specs_dxR8Fy": {
+      "type": "pdp-specs",
+      "blocks": {
+        "contents_9MhiU7": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada",
+            "content": "<p>Tensión de 100-240 VCA y 50\/60 Hz, Corriente de 1,5 A máx. a 100-240 VCA <\/p>"
+          }
+        },
+        "contents_6g7pdX": {
+          "type": "contents",
+          "settings": {
+            "title": "Potencia de salida total",
+            "content": "<p>65W<\/p>"
+          }
+        },
+        "contents_RrMMw6": {
+          "type": "contents",
+          "settings": {
+            "title": "Unidad de alimentación",
+            "content": "<p><strong>Una sola salida de puerto <\/strong><br\/>USB-C1\/C2 Hasta 65 W, USB-A Hasta 60 W<br\/><strong>Salida dos puertos <\/strong><br\/>USB-C1+C2: C1 Hasta 45 W \/ C2 Hasta 18 W <br\/>USB-C1+USB-A: C1 Hasta 45 W \/ A Hasta 18 W<br\/>USB-C2+USB-A: 15 W combinados<br\/><strong>Salida de triple puerto <\/strong><br\/>USB-C1 Hasta 45 W \/ C2+A 15 W combinados<\/p>"
+          }
+        },
+        "contents_MXyhNi": {
+          "type": "contents",
+          "settings": {
+            "title": "Dimensiones (L × An × Al)",
+            "content": "<p>29.4mm(L)*44.4mm(W)*91.22mm(H)    <\/p>"
+          }
+        },
+        "contents_emWfM3": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso neto",
+            "content": "<p>134.55g<\/p>"
+          }
+        },
+        "contents_EGxAYj": {
+          "type": "contents",
+          "settings": {
+            "title": "Cable de entrada",
+            "content": "<p>5 A 100 W 3 pies (1 m) <\/p>"
+          }
+        },
+        "contents_tpnzVH": {
+          "type": "contents",
+          "settings": {
+            "title": "Garantía",
+            "content": "<p>18 meses<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "contents_9MhiU7",
+        "contents_6g7pdX",
+        "contents_RrMMw6",
+        "contents_MXyhNi",
+        "contents_emWfM3",
+        "contents_EGxAYj",
+        "contents_tpnzVH"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Especificaciones"
+      }
+    }
+  },
+  "order": [
+    "daf26638-f596-4384-b150-72d380a3268d",
+    "sticky-product-bar",
+    "main",
+    "be0ea919-9531-491c-acf6-648a9719eccc",
+    "product-recommendations",
+    "1b15ef12-7151-41be-b166-9dcc56820b5a",
+    "1676887592a3dc4fd0",
+    "pdp_text_with_image_kiDbBN",
+    "pdp_image_with_text_horizontal_new_qphXfH",
+    "pdp_image_with_text_horizontal_new_nEhrpt",
+    "pdp_text_with_image_9dQn4B",
+    "pdp_rich_text_UyUVQU",
+    "pdp_image_with_text_horizontal_new_qez8X8",
+    "pdp_image_with_text_horizontal_new_xQbQxR",
+    "pdp_image_with_text_horizontal_new_xawgVN",
+    "pdp_text_with_image_JrRMGq",
+    "pdp_specs_dxR8Fy"
+  ]
+}

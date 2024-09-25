@@ -1,0 +1,65 @@
+{% comment %}
+  Renders emarsys web extend tracking code.
+  Accepts:
+  - scarab_id: {String} Id for the emarsys unique id (required)
+  Usage:
+  {% render 'emarsys-web-extend', scarab_id: 'My-Id' %}
+{% endcomment %}
+<script type="text/javascript" id="scarab-queue">
+    var ScarabQueue = ScarabQueue || [];
+    (function(id) {
+      if (document.getElementById(id)) return;
+      var js = document.createElement('script'); js.id = id;
+      js.src = `//cdn.scarabresearch.com/js/{{scarab_id}}/scarab-v2.js`;
+      var fs = document.getElementsByTagName('script')[0];
+      fs.parentNode.insertBefore(js, fs);
+    })('scarab-js-api');
+  </script>
+
+  {%- if request.page_type == 'product' -%}
+    <script id="scarab-view">
+      ScarabQueue.push(['view', '{{ product.variants[0].id }}']);
+    </script>
+  {%- elsif request.page_type == 'collection' -%}
+    <script id="scarab-collection">
+      ScarabQueue.push(['category', '{{collection.title | replace: "'", "\\'"}}']);
+    </script>
+  {%- elsif request.page_type == 'search' -%}
+    <script id="scarab-search">
+      ScarabQueue.push(['searchTerm','{{ search.terms | escape }}']);
+    </script>
+  {%- endif -%}
+
+  <!-- For all pages -->
+  <script id="scarab-cart">
+    var cartItems = [];
+    {% assign exchange_rate = 1 %}
+    {% if checkout.line_items %}
+      if (Shopify && Shopify.Checkout && Shopify.Checkout.step !== 'thank_you') {
+        cartItems = [
+          {% for item in checkout.line_items %}
+            {item: '{{item.variant_id}}', price: {{ item.line_price | times: exchange_rate | divided_by: 100.00 }}, quantity: {{item.quantity}}}{% if forloop.last == false %},{% endif %}
+          {% endfor %}
+        ];
+      }
+    {% else %}
+      {% if cart.items %}
+        cartItems = [
+          {% for item in cart.items %}
+            {item: '{{item.variant_id}}', price: {{ item.line_price | times: exchange_rate | divided_by: 100.00 }}, quantity: {{item.quantity}}}{% if forloop.last == false %},{% endif %}
+          {% endfor %}
+        ];
+      {% endif %}
+    {% endif %}
+    ScarabQueue.push(['cart', cartItems]);
+  </script>
+  <script id="scarab-go">
+    {% if customer.email %}
+        ScarabQueue.push(['setEmail','{{customer.email}}']);
+    {%else%}
+      {% if checkout.customer.email %}
+          ScarabQueue.push(['setEmail','{{checkout.customer.email}}']);
+        {%endif%}
+    {%endif%}
+    ScarabQueue.push(['go']);
+  </script>

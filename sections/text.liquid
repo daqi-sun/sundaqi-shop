@@ -1,0 +1,50 @@
+<style>
+    .bottom-desciption-wrapper--{{ section.id }} {
+        padding-top: 24px;
+        padding-bottom: 24px;
+        background-color: {{ section.settings.background_color }}!important;
+    }
+    .bottom-description--{{ section.id }} {
+        text-align: center;
+        color: {{ section.settings.color }}!important;
+        line-height: normal;
+        margin-top: 20px;
+        font-size: 16px;
+        font-weight: 500;
+    }
+  </style>
+
+  {% if section.settings.text != blank %}
+    <div class="bottom-desciption-wrapper--{{ section.id }}">
+      <p class="bottom-description-custom bottom-description--{{ section.id }}">{{ section.settings.text }}</p>
+    </div>
+  {% endif %}
+
+  {% schema %}
+  {
+    "name": "Text",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color",
+        "label": "Text Color"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color"
+      },
+      {
+        "type": "html",
+        "id": "text",
+        "label": "Text"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Text",
+        "category": "Custom Sections"
+      }
+    ]
+  }
+  {% endschema %}

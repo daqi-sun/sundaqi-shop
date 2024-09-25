@@ -1,0 +1,712 @@
+<script>
+    // bf banner section settings will pass to below js file
+    var bfbannerSettingJsons = {{ section.settings | json }};
+  </script>
+  {{ 'subscription-form-common.js' | asset_url | script_tag }}
+  <script src="{{ 'bf-banner-alpine.js' | asset_url }}"></script>
+
+  <div data-section-id="{{ section.id }}" class="fade-in-animation bf-banner dp3-banner">
+    <div class='slideshow-section-wrapper'>
+      <div id="SlideshowWrapper-{{ section.id }}" class="slideshow-wrapper" role="region" aria-label="slideshow" aria-describedby="slideshow-info" tabindex="-1" data-slider>
+        <div class="slideshow"
+             id="Slideshow-{{ section.id }}"
+             data-slider-container
+             >
+          {%- assign block_image = section.settings.image -%}
+          {%- assign block_mobile_image = section.settings.mobile_image -%}
+
+          <div id="slickSlide-{{ section.id }}"
+               class=" slideshow__slide slideshow__slide--active slideshow__slide--{{ section.id }}
+                      block_type__{{section.settings.banner_type}}"
+               >
+
+              {% if block_image == blank %}
+                <div class="slideshow__image">
+                  <div class="placeholder-background">
+                    {% capture current %}{% cycle 1, 2 %}{% endcapture %}
+                    {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                  </div>
+                 <div class="slideshow__overlay" id='slideshow__overlay_{{section.id}}'></div>
+                </div>
+              {% else %}
+                <div class="{% if block_mobile_image != blank %}hideMobile{% endif %} slideshow__image_wrapper">
+                  <img
+                       class="slideshow__image box"
+                       srcset="{{ block_image | img_url: 'small' | replace: '_small', '' }}"
+                       loading="lazy"
+                       aria-label="{{ block_image.alt | default: block.settings.slide_title }}"
+                       alt="{{ block_image.alt | default: block.settings.slide_title  }}"
+                       >
+                  <div class="slideshow__overlay" id='slideshow__overlay_{{section.id}}'></div>
+                </div>
+
+                {% if block_mobile_image != blank %}
+                <div class=" slideshow__image_wrapper hideDesktop">
+                  <img
+                       class="slideshow__image box"
+                       srcset="{{ block_mobile_image | img_url: 'small' | replace: '_small', '' }}"
+                       loading="lazy"
+                       aria-label="{{ block_mobile_image.alt | default: block.settings.slide_title }}"
+                       alt="{{ block_mobile_image.alt | default: block.settings.slide_title }}"
+                       >
+                    <div class="slideshow__overlay" id='slideshow__overlay_{{section.id}}'></div>
+                 </div>
+                {% endif %}
+                <noscript>
+                  <div class="slideshow__image"{% if block_image %}{% unless block_image.alt == blank %} role="img" aria-label="{{ block_image.alt | escape }}"{% endunless %} style="background-image: url('{{ block_image | img_url: '2048x' }}'); background-position: {{ block.settings.alignment }};"{% endif %}>
+                    {% if block_image == blank %}
+                    <div class="placeholder-background">
+                      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                    </div>
+                    {% endif %}
+                  </div>
+                </noscript>
+              {% endif %}
+
+              <div class="slideshow__text-wrap slideshow__text-wrap--desktop">
+                <div class="slideshow__text-content">
+                    <div class="slideshow_text_wrapper">
+                      <div class="text-content-mobile-top">
+                        {%- unless section.settings.banner_top_title == blank -%}
+                        <li class="mega-subtitle slideshow__top__subtitle">
+                            {{ section.settings.banner_top_title }}
+                        </li>
+                        {%- endunless -%}
+                        {%- unless section.settings.banner_title == blank -%}
+                          <li>
+                            <h2 class="h1 mega-title slideshow__title">
+                              {{ section.settings.banner_title }}
+                            </h2>
+                          </li>
+                        {%- endunless -%}
+                        {%- unless section.settings.banner_bottom_title == blank -%}
+                          <li class="mega-subtitle slideshow__bottom__subtitle">
+                              {{ section.settings.banner_bottom_title }}
+                          </li>
+                        {%- endunless -%}
+                        {% if section.settings.btn_text != blank %}
+                          <li class="slideshow__button">
+                            <a href="{{ section.settings.btn_link }}" class="btn">
+                              {{ section.settings.btn_text }}
+                            </a>
+                          </li>
+                        {% endif %}
+                      {% if section.settings.form_position_mobile == 'bottom' %}
+                      </div>
+                      <div class="text-content-mobile-bottom">
+                      {% endif %}
+                        {% if section.settings.show_emarsys_form %}
+                          <li class="slideshow__klaviyo-form slideshow__emarsys-form emarsys__form" x-data="bfBanner">
+                            {% if section.settings.emarsys_form_text != blank %}<div class="klaviyo-form-text">{{ section.settings.emarsys_form_text }}</div>{% endif %}
+                            <div
+                              class="ls-solution-banner__form klaviyo_signup"
+                              style="margin-top: 16px"
+                            >
+                              <div class="klaviyo_field_group contact-form">
+                                  <input
+                                      type="email"
+                                      name="inp_3"
+                                      maxlength="255"
+                                      value="{{ inp_3 }}"
+                                      placeholder="{{ section.settings.email_placeholder_text }}"
+                                      class="Form__Input form__input"
+                                      required
+                                      x-model="email"
+                                  >
+                                  <div class="input-group__btn-wrapper klaviyo_form_actions">
+                                      <button
+                                          aria-label="Submit"
+                                          tabindex="993"
+                                          type="button"
+                                          name="submit1"
+                                          class="btn klaviyo_submit_button"
+                                          @click="submitResult"
+                                      >
+                                        <span x-text="loading ? 'Loading...' : '{{ section.settings.form_btn_text | default: 'Subscribe' }}'"></span>
+                                      </button>
+                                  </div>
+                              </div>
+                              <div class="success_message text--white" style="margin-top:10px;" x-show="isSuccess">{{ section.settings.success_message }}</div>
+                              {% comment %} <div class="blank-email-error" style="display:none;">Email: missing data!</div> {% endcomment %}
+                              <div class="invalid-email-error" style="color: {{ section.settings.form_error_msg_color }}" x-text="errMsg" x-show="errMsg !== ''"></div>
+                            </div>
+                            {% comment %} Disclaimer {% endcomment %}
+                            <div class="bf-banner__disclaimer-wrapper">
+                              <label
+                                class="bf-banner__disclaimer"
+                                style="color: {{ section.settings.disclaimer_text_color }}; --text-color: {{ section.settings.disclaimer_text_color }};"
+                                for="bf_banner_disclaimer"
+                              >
+                                <span>
+                                  {{ section.settings.disclaimer_text }}
+                                </span>
+                                <input
+                                  type="checkbox"
+                                  :value="checked"
+                                  class="bf-banner__disclaimer-checkbox"
+                                  name="disclaimer"
+                                  id="bf_banner_disclaimer"
+                                  x-model="checked"
+                                >
+                                <span class="checkmark"></span>
+                              </label>
+                            </div>
+                          </li>
+                        {% endif %}
+
+                      </div>
+                    </div>
+                </div>
+              </div>
+
+              <style>
+                #slideshow__overlay_{{ section.id }}::before {
+                  opacity: {{ section.settings.image_overlay_opacity }}% ;
+                  background-color: {{ section.settings.color_image_overlay }};
+                }
+                #slickSlide-{{ section.id }} .slideshow__top__subtitle *{
+                  color: {{ section.settings.banner_top_title_color }};
+                }
+                #slickSlide-{{ section.id }} .slideshow__title *{
+                  color: {{ section.settings.banner_title_color }};
+                }
+                #slickSlide-{{ section.id }} .slideshow__title b, #slickSlide-{{ section.id }} .slideshow__title strong{ color: {{ section.settings.banner_title_highlight_color }}; }
+                #slickSlide-{{ section.id }} .slideshow__bottom__subtitle *{
+                  color: {{ section.settings.banner_bottom_title_color }};
+                }
+                #slickSlide-{{ section.id }} .slideshow__button .btn, #slickSlide-{{ section.id }} .klaviyo_submit_button{ background-color: {{ section.settings.btn_bg_color }}; color: {{ section.settings.btn_text_color }}; }
+                #slickSlide-{{ section.id }} .ends_in, #slickSlide-{{ section.id }} .countdown_wrapper .countdown_text, #slickSlide-{{ section.id }} .countdown_wrapper .dots{ color: {{ section.settings.timer_text_color }}; }
+                #slickSlide-{{ section.id }} .countdown_wrapper .days, #slickSlide-{{ section.id }} .countdown_wrapper .hours, #slickSlide-{{ section.id }} .countdown_wrapper .mins, #slickSlide-{{ section.id }} .countdown_wrapper .sec{ align-items: baseline; }
+                #slickSlide-{{ section.id }} .klaviyo-form-text, #slickSlide-{{ section.id }} .success_message p, #slickSlide-{{ section.id }} .success_message *, #slickSlide-{{ section.id }} .error_message, #slickSlide-{{ section.id }} .error_message *, #slickSlide-{{ section.id }} .klaviyo_bottom_line p, #slickSlide-{{ section.id }} .success_message{ color: {{ section.settings.klaviyo_text_color }}; }
+              </style>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+      #shopify-section-{{ section.id }} {
+        --slideshow-height: {{ section.settings.image_height }}px;
+        --slideshow-mobile-height: {{ section.settings.image_height_m }}px;
+      }
+      {% if section.settings.margin_desktop != blank %}
+      @media screen and (min-width: 768px) {
+        #shopify-section-{{ section.id }} {
+          margin: {{ section.settings.margin_desktop }};
+        }
+      }
+      {% endif %}
+  </style>
+
+  {% schema %}
+  {
+    "name": "DP3 banner",
+    "class": "star-page-banner",
+    "settings": [
+      {
+        "type": "text",
+        "id": "margin_desktop",
+        "label": "Section Margin Desktop (CSS)"
+      },
+      {
+        "type": "header",
+        "content": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobile_image",
+        "label": "Mobile image"
+      },
+      {
+        "type": "range",
+        "id": "image_height",
+        "label": "Image height",
+        "min": 300,
+        "max": 800,
+        "step": 10,
+        "unit": "px",
+        "default": 800
+      },
+      {
+        "type": "range",
+        "id": "image_height_m",
+        "label": "Image height(Mobile)",
+        "min": 300,
+        "max": 800,
+        "step": 10,
+        "unit": "px",
+        "default": 540
+      },
+      {
+        "type": "color",
+        "id": "color_image_overlay",
+        "label": "Overlay color",
+        "default": "#000"
+      },
+      {
+        "type": "range",
+        "id": "image_overlay_opacity",
+        "label": "Opacity",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "%",
+        "default": 40
+      },
+      {
+        "type": "header",
+        "content": "Subtitle 1"
+      },
+      {
+        "type": "richtext",
+        "id": "banner_top_title",
+        "label": "Text"
+      },
+      {
+        "type": "color",
+        "id": "banner_top_title_color",
+        "label": "Text color"
+      },
+      {
+        "type": "header",
+        "content": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "banner_title",
+        "label": "Text"
+      },
+      {
+        "type": "color",
+        "id": "banner_title_color",
+        "label": "Text color"
+      },
+      {
+        "type": "color",
+        "id": "banner_title_highlight_color",
+        "label": "Text highlight color"
+      },
+      {
+        "type": "header",
+        "content": "Subtitle 2"
+      },
+      {
+        "type": "richtext",
+        "id": "banner_bottom_title",
+        "label": "Text"
+      },
+      {
+        "type": "color",
+        "id": "banner_bottom_title_color",
+        "label": "Text color"
+      },
+      {
+        "type": "header",
+        "content": "Button"
+      },
+      {
+        "type": "text",
+        "id": "btn_text",
+        "label": "Button text"
+      },
+      {
+        "type": "url",
+        "id": "btn_link",
+        "label": "Button URL"
+      },
+      {
+        "type": "color",
+        "id": "btn_bg_color",
+        "label": "Button background color"
+      },
+      {
+        "type": "color",
+        "id": "btn_text_color",
+        "label": "Button text color"
+      },
+      {
+        "type": "select",
+        "id": "form_position_mobile",
+        "label": "Form position in mobile",
+        "default": "bottom",
+        "options": [
+          {
+            "label": "Top",
+            "value": "top"
+          },
+          {
+            "label": "Bottom",
+            "value": "bottom"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Emarsys form"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_emarsys_form",
+        "label": "Show Emarsys form"
+      },
+      {
+        "type": "richtext",
+        "id": "emarsys_form_text",
+        "label": "Emarsys form header"
+      },
+      {
+        "type": "header",
+        "content": "Email Subscription API Settings",
+        "info": "Global Headers can be changed in the global theme settings - Email Subscription API Settings section"
+      },
+      {
+        "type": "text",
+        "id": "contact_list_id",
+        "label": "Contact List ID"
+      },
+      {
+        "type": "text",
+        "id": "single_1_id",
+        "label": "Single 1 ID"
+      },
+      {
+        "type": "text",
+        "id": "single_1_value",
+        "label": "Single 1 Value",
+        "info": "Please enter a single number for the value. e.g. 1 or 2 or 3"
+      },
+      {
+        "type": "radio",
+        "id": "single_1_overwrite",
+        "label": "Single 1 Overwrite",
+        "options": [
+          {
+            "value": "true",
+            "label": "true"
+          },
+          {
+            "value": "false",
+            "label": "false"
+          }
+        ],
+        "default": "false"
+      },
+      {
+        "type": "text",
+        "id": "single_2_id",
+        "label": "Single 2 ID"
+      },
+      {
+        "type": "text",
+        "id": "single_2_value",
+        "label": "Single 2 Value",
+        "info": "Please enter a single number for the value. e.g. 1 or 2 or 3"
+      },
+      {
+        "type": "radio",
+        "id": "single_2_overwrite",
+        "label": "Single 2 Overwrite",
+        "options": [
+          {
+            "value": "true",
+            "label": "true"
+          },
+          {
+            "value": "false",
+            "label": "false"
+          }
+        ],
+        "default": "false"
+      },
+      {
+        "type": "text",
+        "id": "single_3_id",
+        "label": "Single 3 ID"
+      },
+      {
+        "type": "text",
+        "id": "single_3_value",
+        "label": "Single 3 Value",
+        "info": "Please enter a single number for the value. e.g. 1 or 2 or 3"
+      },
+      {
+        "type": "radio",
+        "id": "single_3_overwrite",
+        "label": "Single 3 Overwrite",
+        "options": [
+          {
+            "value": "true",
+            "label": "true"
+          },
+          {
+            "value": "false",
+            "label": "false"
+          }
+        ],
+        "default": "false"
+      },
+      {
+        "type": "text",
+        "id": "single_4_id",
+        "label": "Single 4 ID"
+      },
+      {
+        "type": "text",
+        "id": "single_4_value",
+        "label": "Single 4 Value",
+        "info": "Please enter a single number for the value. e.g. 1 or 2 or 3"
+      },
+      {
+        "type": "radio",
+        "id": "single_4_overwrite",
+        "label": "Single 4 Overwrite",
+        "options": [
+          {
+            "value": "true",
+            "label": "true"
+          },
+          {
+            "value": "false",
+            "label": "false"
+          }
+        ],
+        "default": "false"
+      },
+      {
+        "type": "text",
+        "id": "subscription_text_1_id",
+        "label": "Text 1 ID"
+      },
+      {
+        "type": "text",
+        "id": "subscription_text_1_value",
+        "label": "Text 1 Value"
+      },
+      {
+        "type": "radio",
+        "id": "subscription_text_1_overwrite",
+        "label": "Text 1 Overwrite",
+        "options": [
+          {
+            "value": "true",
+            "label": "true"
+          },
+          {
+            "value": "false",
+            "label": "false"
+          }
+        ],
+        "default": "false"
+      },
+      {
+        "type": "text",
+        "id": "subscription_text_2_id",
+        "label": "Text 2 ID"
+      },
+      {
+        "type": "text",
+        "id": "subscription_text_2_value",
+        "label": "Text 2 Value"
+      },
+      {
+        "type": "radio",
+        "id": "subscription_text_2_overwrite",
+        "label": "Text 2 Overwrite",
+        "options": [
+          {
+            "value": "true",
+            "label": "true"
+          },
+          {
+            "value": "false",
+            "label": "false"
+          }
+        ],
+        "default": "false"
+      },
+      {
+        "type": "text",
+        "id": "multiple_1_id",
+        "label": "Multiple 1 ID"
+      },
+      {
+        "type": "text",
+        "id": "multiple_1_value",
+        "label": "Multiple 1 Value",
+        "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+      },
+      {
+        "type": "radio",
+        "id": "multiple_1_overwrite",
+        "label": "Multiple 1 Overwrite",
+        "options": [
+          {
+            "value": "true",
+            "label": "true"
+          },
+          {
+            "value": "false",
+            "label": "false"
+          }
+        ],
+        "default": "false"
+      },
+      {
+        "type": "text",
+        "id": "multiple_2_id",
+        "label": "Multiple 2 ID"
+      },
+      {
+        "type": "text",
+        "id": "multiple_2_value",
+        "label": "Multiple 2 Value",
+        "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+      },
+      {
+        "type": "radio",
+        "id": "multiple_2_overwrite",
+        "label": "Multiple 2 Overwrite",
+        "options": [
+          {
+            "value": "true",
+            "label": "true"
+          },
+          {
+            "value": "false",
+            "label": "false"
+          }
+        ],
+        "default": "false"
+      },
+      {
+        "type": "text",
+        "id": "multiple_3_id",
+        "label": "Multiple 3 ID"
+      },
+      {
+        "type": "text",
+        "id": "multiple_3_value",
+        "label": "Multiple 3 Value",
+        "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+      },
+      {
+        "type": "radio",
+        "id": "multiple_3_overwrite",
+        "label": "Multiple 3 Overwrite",
+        "options": [
+          {
+            "value": "true",
+            "label": "true"
+          },
+          {
+            "value": "false",
+            "label": "false"
+          }
+        ],
+        "default": "false"
+      },
+      {
+        "type": "text",
+        "id": "multiple_4_id",
+        "label": "Multiple 4 ID"
+      },
+      {
+        "type": "text",
+        "id": "multiple_4_value",
+        "label": "Multiple 4 Value",
+        "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+      },
+      {
+        "type": "radio",
+        "id": "multiple_4_overwrite",
+        "label": "Multiple 4 Overwrite",
+        "options": [
+          {
+            "value": "true",
+            "label": "true"
+          },
+          {
+            "value": "false",
+            "label": "false"
+          }
+        ],
+        "default": "false"
+      },
+      {
+        "type": "text",
+        "id": "multiple_5_id",
+        "label": "Multiple 5 ID"
+      },
+      {
+        "type": "text",
+        "id": "multiple_5_value",
+        "label": "Multiple 5 Value",
+        "info": "Please enter a set of number with comma to seperate. e.g. 1, 2, 3"
+      },
+      {
+        "type": "radio",
+        "id": "multiple_5_overwrite",
+        "label": "Multiple 5 Overwrite",
+        "options": [
+          {
+            "value": "true",
+            "label": "true"
+          },
+          {
+            "value": "false",
+            "label": "false"
+          }
+        ],
+        "default": "false"
+      },
+      {
+        "type": "text",
+        "id": "form_btn_text",
+        "label": "Button text"
+      },
+      {
+        "type": "color",
+        "id": "form_error_msg_color",
+        "label": "Error message color",
+        "default": "#FF0000"
+      },
+      {
+        "type": "text",
+        "id": "email_placeholder_text",
+        "label": "Email placeholder text",
+        "default": "Email address*"
+      },
+      {
+        "type": "richtext",
+        "id": "disclaimer_text",
+        "label": "Disclaimer text",
+        "default": "<p>By signing up, you agree to receive marketing emails from EcoFlow.</p>"
+      },
+      {
+        "type": "color",
+        "id": "disclaimer_text_color",
+        "label": "Disclaimer text color",
+        "default": "#A5ACBA"
+      },
+      {
+        "type": "textarea",
+        "id": "success_message",
+        "label": "Success text",
+        "default": "Success!"
+      }
+    ],
+      "presets": [
+      {
+          "name": "DP3 banner",
+          "category":"Custom Sections"
+      }
+      ]
+  }
+  {% endschema %}

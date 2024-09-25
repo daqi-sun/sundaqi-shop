@@ -1,0 +1,34 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "ATB Bottom",
+  "class": "atb-section",
+  "id": "product-atb-bottom",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    }
+  ],
+  "warnings": []
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section atb-section">
+{% include 'atb-atb'  zone:'Bottom'  %}
+{% include 'atb-atb'  zone:'zone-1'  %}
+{% include 'atb-atb'  zone:'ecoflow-river'  %}
+
+
+</section>

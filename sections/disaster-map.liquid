@@ -1,0 +1,29 @@
+<div class="disaster-learn-more">
+  <h2 class="disaster-blue-heading">{{ section.settings.title }}</h2>
+  <div class="disaster-subheading">{{ section.settings.richtext }}</div>
+  <div style="margin-top: 40px; margin-left: auto; margin-right: auto; max-width: 1200px; width: 90%;">
+    <iframe
+      src="https://s3.amazonaws.com/datafusion.web.ecoflow/EcoFlow_MTN_0083BLgy.htm"
+      style="width: 100%; height: 800px;"
+    ></iframe>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Disaster Map",
+  "settings": [
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title",
+      "default": "What Are The Causes Of Power Outages?"
+    },
+    {
+      "type": "richtext",
+      "id": "richtext",
+      "label": "Richtext"
+    }
+  ]
+}
+{% endschema %}

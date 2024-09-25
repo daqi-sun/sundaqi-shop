@@ -1,0 +1,217 @@
+<div class="star-page-image-text-section section-{{ section.id }}" id="{{ section.settings.section_id }}" style="background-color: {{ section.settings.section_background }};">
+  <div class="star-page-container">
+    <div class="image-text-box {% if section.settings.layout == 'overlay' %}image-text-overlay-inner{% else %}image-text-inner {% if section.settings.layout == 'right' %}image-layout-right{% endif %}{% endif %}">
+      {% if section.settings.image != blank %}
+        <div class="image_box">
+          <img
+            {% if section.settings.image_m != blank %}class="hideMobile"{% endif %}
+            srcset="{{ section.settings.image | img_url: 'small' | replace: '_small', '' }}"
+            loading="lazy"
+            aria-label="{{ section.settings.image.alt }}"
+            alt="{{ section.settings.image.alt }}"
+          />
+          {% if section.settings.image_m != blank %}
+            <img
+              class="hideDesktop"
+              srcset="{{ section.settings.image_m | img_url: 'small' | replace: '_small', '' }}"
+              loading="lazy"
+              aria-label="{{ section.settings.image_m.alt }}"
+              alt="{{ section.settings.image_m.alt }}"
+            />
+          {% endif %}
+        </div>
+      {% endif %}
+      <div class="text_box font--{{ section.settings.text_font_size }} text-align--left">
+        {% if section.settings.subtitle != blank %}<div class="subtitle">{{ section.settings.subtitle }}</div>{% endif %}
+        {% if section.settings.title != blank %}<h2 class="title {% if section.settings.title_m != blank %}hideMobile{% endif %}">{{ section.settings.title }}</h2>{% endif %}
+        {% if section.settings.title_m != blank %}<h2 class="title hideDesktop">{{ section.settings.title_m }}</h2>{% endif %}
+        {% if section.settings.text != blank %}<div class="text">{{ section.settings.text }}</div>{% endif %}
+        {% if section.settings.button_label != blank %}
+          <div class="btn_box">
+            <a href="{{ section.settings.button_link }}" class="btn btn-primary btn-{{ section.settings.text_font_size }}">{{ section.settings.button_label }}</a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .section-{{ section.id }} .subtitle p{
+      color: {{ section.settings.subtitle_color }};
+  }
+  .section-{{ section.id }} .title p{
+    color: {{ section.settings.title_color }};
+  }
+  .section-{{ section.id }} .text p{
+    color: {{ section.settings.text_color }};
+  }
+  .section-{{ section.id }} .btn_box a{
+      background-color: {{ section.settings.btn_bg_color }};
+      color: {{ section.settings.btn_text_color }};
+      border-color: {{ section.settings.btn_border_color }};
+  }
+  .section-{{ section.id }} .btn_box a:hover{
+    background-color: {{ section.settings.btn_bg_color_hover }};
+    color: {{ section.settings.btn_text_color_hover }};
+    border-color: {{ section.settings.btn_border_color_hover }};
+  }
+</style>
+
+{% schema %}
+{
+    "name": "Star_Image_with text",
+    "settings": [
+      {
+        "type":"color",
+        "id":"section_background",
+        "label":"Section background color"
+      },
+      {
+        "type": "text",
+        "id": "section_id",
+        "label": "Section ID"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_m",
+        "label": "Image(Mobile)"
+      },
+      {
+        "type": "select",
+        "id": "layout",
+        "label": "Layout",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Image - Left"
+          },
+          {
+            "value": "right",
+            "label": "Image - Right"
+          },
+          {
+            "value": "overlay",
+            "label": "Image - Overlay"
+          }
+        ]
+      },
+      {
+        "type": "richtext",
+        "id": "subtitle",
+        "label": "Subtitle"
+      },
+      {
+        "type": "color",
+        "id": "subtitle_color",
+        "label": "Subtitle color"
+      },
+      {
+        "type": "richtext",
+        "id": "title",
+        "label": "Heading",
+        "default": "<p>Image with text</p>"
+      },
+      {
+        "type": "richtext",
+        "id": "title_m",
+        "label": "Heading(Mobile)",
+        "default": "<p>Image with text</p>"
+      },
+      {
+        "type": "color",
+        "id": "title_color",
+        "label": "Heading color"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button label"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Link"
+      },
+      {
+        "type": "select",
+        "id": "text_font_size",
+        "label": "Font size",
+        "default": "medium",
+        "options": [
+          {
+            "label": "Small",
+            "value": "small"
+          },
+          {
+            "label": "Medium",
+            "value": "medium"
+          },
+          {
+            "label": "Large",
+            "value": "large"
+          }
+        ]
+      },
+      {
+        "type": "color",
+        "id": "btn_bg_color",
+        "label": "Button background color",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "btn_text_color",
+        "label": "Button text color",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "btn_border_color",
+        "label": "Button border color",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "btn_bg_color_hover",
+        "label": "Button background color(Hover)",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "btn_text_color_hover",
+        "label": "Button text color(Hover)",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "btn_border_color_hover",
+        "label": "Button border color(Hover)",
+        "default": "#000"
+      }
+    ],
+    "presets": [
+        {
+            "name": "Star_Image_with text",
+            "category":"Custom Sections"
+        }
+    ]
+}
+{% endschema %}

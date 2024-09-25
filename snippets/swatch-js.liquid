@@ -1,0 +1,190 @@
+<script id="product-variant-data" type="application/json">{{ product.variants | json }}</script>
+<script>
+  let jsonProductVariants = JSON.parse(document.getElementById('product-variant-data').textContent);
+  // Create a URL object from the current page's URL
+  const url = new URL(window.location.href);
+  const currentVariantID = url.searchParams.get('variant');
+  
+  $(document).ready(function () {
+    // Loop through all swatches and add a click event listener
+    $('.swatch-element').each(function () {
+      $(this).find('input').on('change', onOptionSelect);
+    });
+
+    // Trigger the event listener on page load
+    onPageLoad();
+  });
+  /**
+   * Get the selected values
+   */
+  function getSelectedValues() {
+    let selectedValues = [];
+    // Loop through all swatches and add the selected value to the array
+    $('.swatch-element').each(function () {
+      const inputRadio = $(this).children('input');
+      
+      if (inputRadio.is(':checked')) {
+        selectedValues.push(inputRadio.val());
+      }
+    });
+    return selectedValues;
+  }
+  function hideUnavailableVariants(selectedOption) {
+    const selectedValues = getSelectedValues();
+    const availableVariants = getAllAvailableVariants(selectedValues[0]);
+    
+    $('.swatch-element').each(function () {
+      const self = $(this);
+      const inputRadio = self.find('input');
+      const variantValue = inputRadio.val();
+      if (!self.parents('.swatch_elements_wrapper').hasClass('selecting')) {
+        self.hide();
+        for (let i = 0; i < availableVariants.length; i+=1) {
+          const variant = availableVariants[i];
+          if (variant.options.includes(variantValue)) {
+            self.show();
+            break;
+          }
+        }
+      }
+    });
+  }
+  /**
+   * Load the selected values
+   */
+  function loadSelectedValues(selectedOption) {
+    hideUnavailableVariants(selectedOption);
+    const selectedValues = getSelectedValues();
+    let selectedVariant = getCurrentVariantBySelectedValues(selectedValues);
+    // If the selected variant is not available, get alternative available variant
+    if (!selectedVariant) {
+      selectedVariant = getAlternativeVariants(selectedOption, selectedValues);
+    }
+    // If the selected variant still not available, get the first available variant based on the selected option
+    if (!selectedVariant) {
+      selectedVariant = getFirstAvailableVariant(selectedOption);
+    }
+    // Auto check if the selected variant is available
+    autoSelectAvailableVariants(selectedVariant);
+    
+    // Update the history state
+    {% comment %} updateHistoryState(selectedVariant); {% endcomment %}
+    
+    // Update the variant ID to add the right variant to the cart
+    $('select[name="id"]').val(selectedVariant.id);
+  }
+  function getAllAvailableVariants(selectedOption) {
+    const availableVariants = [];
+    // Get all available variants
+    jsonProductVariants.forEach((variant) => {
+      if (variant.options.includes(selectedOption)) {
+        availableVariants.push(variant);
+      }
+    });
+    return availableVariants;
+  }
+  function getAlternativeVariants(selectedOption, selectedValues) {
+    const availableVariants = getAllAvailableVariants(selectedOption);
+    return availableVariants.find((variant) => {
+      let found = false;
+      for (let i = 0; i < selectedValues.length; i+=1) {
+        // Skip the selected option
+        if (selectedValues[i] == selectedOption && selectedValues.length > 2) {
+          continue;
+        }
+        if (variant.options.includes(selectedValues[i])) {
+          found = true;
+        }
+      }
+      return found;
+    });
+  }
+  function getFirstAvailableVariant(selectedOption) {
+    const availableVariants = getAllAvailableVariants(selectedOption);
+    return availableVariants[0];
+  }
+  /**
+   * Get the current variant by the selected values
+   * @param {Array} selectedValues
+   */
+  function getCurrentVariantBySelectedValues(selectedValues) {
+    return jsonProductVariants.find((variant) => {
+      let found = false;
+      for (let i = 0; i < selectedValues.length; i+=1) {
+        if (variant.options.includes(selectedValues[i])) {
+          found = true;
+        } else {
+          found = false;
+          break;
+        }
+      }
+      return found;
+    });
+  }
+  /**
+   * Get the current variant by the variant ID
+   * @param {String} variantId
+   */
+  function getCurrentVariantById(variantId) {
+    if (variantId) {
+      for (let i = 0; i < jsonProductVariants.length; i+=1) {
+        const variant = jsonProductVariants[i];
+  
+        if (variant.id == variantId) {
+          return variant;
+        }
+      } 
+    } else {
+      return jsonProductVariants[0];
+    }
+  }
+  /**
+   * Auto select the first available variant
+   * @param {String} selectedOption
+   */
+  function autoSelectAvailableVariants(selectedVariants) {
+    $('.swatch-element').each(function () {
+      const self = $(this);
+      const inputRadio = self.find('input');
+      inputRadio.prop('checked', false);
+      if (selectedVariants.options.includes(inputRadio.val())) {
+        inputRadio.prop('checked', true);
+      }
+    });
+  }
+  /**
+   * Load the available variants on page load
+   */
+  function onPageLoad() {
+    // To avoid hiding some options on first variant group
+    $('.swatch_elements_wrapper').first().addClass('selecting');
+    const currentVariant = getCurrentVariantById(currentVariantID);
+    loadSelectedValues(currentVariant.options[0]);
+  }
+  /**
+   * On option select
+   * @param {Event} event
+   */
+  function onOptionSelect(event) {
+    $('.swatch_elements_wrapper').not(':first').removeClass('selecting');
+    $(this).parents('.swatch_elements_wrapper').addClass('selecting');
+    loadSelectedValues($(this).val());
+  }
+  /**
+   * Update the history state
+   * @param {Object} variant
+   */
+  function updateHistoryState(variant) {
+    if (!history.replaceState || !variant) {
+      return;
+    }
+    var newurl =
+      window.location.protocol +
+      '//' +
+      window.location.host +
+      window.location.pathname +
+      '?variant=' +
+      variant.id;
+    window.history.replaceState({ path: newurl }, '', newurl);
+  }
+</script>

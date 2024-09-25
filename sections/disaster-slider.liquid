@@ -1,0 +1,186 @@
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+>
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"
+></script>
+
+<div class="disaster-slider">
+  <h2 class="disaster-blue-heading">{{ section.settings.title }}</h2>
+  <div class="disaster-subheading">{{ section.settings.richtext }}</div>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        <div class="swiper-slide">
+          <div class="carousel-cell-image">
+            {% assign image = block.settings.image %}
+            <div class="desktop-only">
+              <img
+                src="{{ image | img_url: '1000x' }}"
+                srcset="
+                  {{ image | img_url: '1000x' }} 1000w,
+                  {{ image | img_url: '1200x' }} 1200w,
+                  {{ image | img_url: '1400x' }} 1400w,
+                  {{ image | img_url: 'master' }} 1600w
+                "
+                alt="{{ image.alt }}"
+                loading="lazy"
+              >
+            </div>
+
+            {% assign image = block.settings.image_mobile %}
+            <div class="mobile-only">
+              <img
+                src="{{ image | img_url: '500x' }}"
+                srcset="
+                  {{ image | img_url: '400x' }} 400w,
+                  {{ image | img_url: '500x' }} 500w,
+                  {{ image | img_url: '600x' }} 600w,
+                  {{ image | img_url: 'master' }} 700w
+                "
+                alt="{{ image.alt }}"
+                loading="lazy"
+              >
+            </div>
+          </div>
+          <a
+            class="disaster-slider-slide-content"
+            href="{{ block.settings.url }}"
+          >
+            {{- block.settings.title -}}
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="swiper-button-prev">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="22.541"
+        height="25.203"
+        viewBox="0 0 22.541 25.203"
+        style="transform: rotate(180deg);"
+      >
+        <g transform="translate(1.411 1.411)">
+          <path d="M0,0,11.164,9.9,22.38,0" transform="translate(9.897 22.38) rotate(-90)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+          <path d="M0,0,11.164,9.9,22.38,0" transform="translate(0 22.38) rotate(-90)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2" opacity="0.301"/>
+        </g>
+      </svg>
+    </div>
+    <div class="swiper-button-next">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="22.541"
+        height="25.203"
+        viewBox="0 0 22.541 25.203"
+      >
+        <g transform="translate(1.411 1.411)">
+          <path d="M0,0,11.164,9.9,22.38,0" transform="translate(9.897 22.38) rotate(-90)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+          <path d="M0,0,11.164,9.9,22.38,0" transform="translate(0 22.38) rotate(-90)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2" opacity="0.301"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+  {% if section.settings.btn_text != blank %}
+    <a
+      class="disaster-cta"
+      id="disaster-slider-cta"
+      href=""
+    >
+      {{- section.settings.btn_text -}}
+    </a>
+  {% endif %}
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const swiper = new Swiper('.disaster-slider .swiper', {
+      loop: true,
+      centeredSlides: true,
+      slidesPerView: 1,
+      spaceBetween: 20,
+      breakpoints: {
+        768: {
+          slidesPerView: 1.6,
+        },
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+
+    // Get active url from the active slide everytime the slide changes
+    function UpdateURL() {
+      const activeIndex = swiper.activeIndex;
+
+      const activeSlide =
+        document.querySelectorAll('.swiper-slide')[activeIndex];
+      const activeUrl = activeSlide.querySelector('a').href;
+      const disasterCta = document.querySelector('#disaster-slider-cta');
+
+      if (disasterCta) disasterCta.href = activeUrl;
+    }
+
+    UpdateURL();
+    swiper.on('slideChange', UpdateURL);
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Disaster Slider",
+  "settings": [
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title",
+      "default": "What Are The Causes Of Power Outages?"
+    },
+    {
+      "type": "richtext",
+      "id": "richtext",
+      "label": "Richtext"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button text",
+      "default": "Learn more"
+    }
+  ],
+  "max_blocks": 4,
+  "blocks": [
+    {
+      "type": "block",
+      "name": "Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image mobile"
+        },
+        {
+          "type": "html",
+          "id": "title",
+          "label": "Title",
+          "default": "Power Outages: The Complete Guide to Why and How to Stay Prepared"
+        },
+        {
+          "type": "text",
+          "id": "url",
+          "label": "URL"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

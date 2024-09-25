@@ -1,0 +1,289 @@
+{% if section.settings.show %}
+    <div class="promotion_section">
+        <a class="{% if section.settings.click_action == 'popup' %}promotion_popup_trigger{% endif %}" {% if section.settings.click_action == 'link' and section.settings.image_link != blank %}href="{{ section.settings.image_link }}"{% endif %}>
+            <div class="promotion_section__inner">
+                {% if section.settings.icon != blank %}
+                    <img srcset="{{ section.settings.icon | img_url: 'master' }}" class="hideMobile" loading="lazy" alt="" />
+                {% endif %}
+                {% if section.settings.mobile_icon != blank %}
+                    <img srcset="{{ section.settings.mobile_icon | img_url: 'master' }}" class="hideDesktop" loading="lazy" alt="" />
+                {% endif %}
+                {% if section.settings.countdown_end_date != blank %}
+                <div class="promotion_popup_countdown">
+                    <div class="countdown_wrapper custom_countdown flash-sale-countdown" data-countdown-end-date="{{ section.settings.countdown_end_date }}">
+                        {% if section.settings.countdown_end_text != blank %}<div class="ends_in">{{ section.settings.countdown_end_text }}</div>{% endif %}
+                        <div class="promotion_countdown">
+                            <div class="hours">
+                                <div class="block_wrap">
+                                    <span class="block hours_num"></span>
+                                    <span>H</span>
+                                    <span class="dots">:</span>
+                                </div>
+                            </div>
+                            <div class="mins">
+                                <div class="block_wrap">
+                                    <span class="block mins_num"></span>
+                                    <span>M</span>
+                                </div>
+                            </div>
+                            <div class="seconds hide">
+                                <div class="block_wrap">
+                                    <span class="block sec_num"></span>
+                                    <span>S</span>
+                                    <span class="dots">:</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                <div class="promotion_popup_close">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2.79999C14.5403 2.79999 16.8403 3.82987 18.5052 5.4948C20.1702 7.15973 21.2001 9.45972 21.2001 12C21.2001 14.5403 20.1702 16.8402 18.5052 18.5052C16.8403 20.1701 14.5403 21.2 12 21.2C9.45978 21.2 7.15979 20.1701 5.49486 18.5052C3.82993 16.8402 2.80005 14.5403 2.80005 12C2.80005 9.45972 3.82993 7.15973 5.49486 5.4948C7.15979 3.82987 9.45978 2.79999 12 2.79999Z" stroke="#ACACAC" stroke-width="1.6"/>
+                        <path d="M8.5 8.5L15.5 15.5M15.5 8.5L8.5 15.5" stroke="#ACACAC" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </a>
+        {% if section.settings.click_action == 'popup' %}
+            <div class="promotion_popup_wrapper">
+                <div class="promotion_popup_inner">
+                    <div class="promotion_poup_close">
+                        <div class="hideMobile"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9998 2.79999C14.5401 2.79999 16.8401 3.82987 18.505 5.4948C20.1699 7.15973 21.1998 9.45972 21.1998 12C21.1998 14.5403 20.1699 16.8402 18.505 18.5052C16.8401 20.1701 14.5401 21.2 11.9998 21.2C9.45954 21.2 7.15955 20.1701 5.49462 18.5052C3.82969 16.8402 2.7998 14.5403 2.7998 12C2.7998 9.45972 3.82969 7.15973 5.49462 5.4948C7.15955 3.82987 9.45954 2.79999 11.9998 2.79999Z" stroke="white" stroke-width="1.6"/>
+                            <path d="M8.5 8.5L15.5 15.5M15.5 8.5L8.5 15.5" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg></div>
+                        <div class="hideDesktop"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.15142 8.99963L3.98193 13.1691L4.83046 14.0176L8.99995 9.84816L13.1694 14.0176L14.018 13.1691L9.84848 8.99963L14.018 4.83014L13.1694 3.98161L8.99995 8.1511L4.83046 3.98161L3.98193 4.83014L8.15142 8.99963Z" fill="white"/>
+                        </svg></div>
+                    </div>
+
+                    <div class="promotion-form-wrap">
+                        <div class="title">{{ section.settings.popup_title }}</div>
+                        {% if section.settings.popup_content != blank %}
+                            <div class="content">{{ section.settings.popup_content }}</div>
+                        {% endif %}
+                        <form
+                            id="profileForm"
+                            name="ProfileForm"
+                            onsubmit="return false;"
+                            action="https://media.ecoflow.com/u/register.php"
+                            method="get"
+                            class="ls-solution-banner__form"
+                        >
+                            <input type="hidden" name="CID" value="1046301189">
+                            <input type="hidden" name="f" value="1046">
+                            <input type="hidden" name="p" value="2">
+                            <input type="hidden" name="a" value="r">
+                            <input type="hidden" name="SID" value="">
+                            <input type="hidden" name="el" value="">
+                            <input type="hidden" name="llid" value="">
+                            <input type="hidden" name="counted" value="">
+                            <input type="hidden" name="c" value="">
+                            <input type="hidden" name="inp_4426" value="1">
+                            <input type="hidden" name="inp_5910" value="1">
+                            <input type="hidden" name="optin" value="y">
+                            <div class="contact-form">
+                                <input
+                                    type="email"
+                                    name="inp_3"
+                                    maxlength="255"
+                                    value="{{ inp_3 }}"
+                                    placeholder="{{ section.settings.email_placeholder }}"
+                                    class="Form__Input"
+                                    required
+                                >
+                                <div class="input-group__btn-wrapper klaviyo_form_actions">
+                                    <button
+                                        aria-label="Submit"
+                                        tabindex="993"
+                                        type="button"
+                                        name="submit1"
+                                        class="emarsys-form-btn btn"
+                                    >
+                                        {{ section.settings.btn_text | default: 'Subscribe' }}
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="popup_t_c">
+                                <input class="opt-in" tabindex="882" id="inp_7715" type="checkbox" name="opt-in" value="y" CHECKED>
+                                {% if section.settings.popup_t_c != blank %}
+                                    <label for="inp_7715">{{ section.settings.popup_t_c }}</label>
+                                {% endif %}
+                            </div>
+                            <div class="blank-email-error" style="display:none;">{{ section.settings.blank_error_text }}</div>
+                            <div class="invalid-email-error" style="display:none;">{{ section.settings.invalid_error_text }}</div>
+                        </form>
+
+                        {% if section.settings.link_text != blank %}
+                            <a class="popup_btn" href="{{ section.settings.link_url }}">
+                                {{ section.settings.link_text }}<svg xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 17 18" fill="none">
+                                    <path d="M6.021 4.39581L10.6252 8.99998L6.021 13.6041" stroke="white" stroke-width="1.13333" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        {% endif %}
+                    </div>
+
+                    <div class="form-success-wrap">
+                        <div class="title">{{ section.settings.success_popup_title }}</div>
+                        <div class="content">{{ section.settings.success_popup_content }}</div>
+                        {% if section.settings.link_text != blank %}
+                            <a class="popup_btn" href="{{ section.settings.link_url }}">
+                                {{ section.settings.link_text }}<svg xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 17 18" fill="none">
+                                    <path d="M6.021 4.39581L10.6252 8.99998L6.021 13.6041" stroke="white" stroke-width="1.13333" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <style>
+                .promotion_popup_inner{ background-image: url({{ section.settings.popup_bg | img_url: 'master' }}); background-color: #507bd7; }
+                .promotion_popup_inner.success{ background-image: url({{ section.settings.success_popup_bg | img_url: 'master' }}); }
+                @media screen and (max-width: 749px){
+                    .promotion_popup_inner{ background-image: url({{ section.settings.popup_bg_m | img_url: 'master' }}); }
+                    .promotion_popup_inner.success{ background-image: url({{ section.settings.success_popup_bg_m | img_url: 'master' }}); }
+                }
+            </style>
+        {% endif %}
+    </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Promotion popup",
+  "settings": [
+    {
+        "type":"checkbox",
+        "id":"show",
+        "label":"Show?"
+    },
+    {
+        "type":"image_picker",
+        "id":"icon",
+        "label":"Image"
+    },
+    {
+        "type":"image_picker",
+        "id":"mobile_icon",
+        "label":"Mobile Image"
+    },
+    {
+        "type":"text",
+        "id":"countdown_end_text",
+        "label":"Countdown text"
+    },
+    {
+        "type":"text",
+        "id":"countdown_end_date",
+        "label":"Countdown date"
+    },
+    {
+        "type":"select",
+        "id":"click_action",
+        "label":"Image click action",
+        "options": [
+            { "value": "link", "label": "Link" },
+            { "value": "popup", "label": "Popup" }
+        ]
+    },
+    {
+        "type":"url",
+        "id":"image_link",
+        "label":"Image link"
+    },
+    {
+        "type":"header",
+        "content":"Popup content"
+    },
+    {
+        "type":"image_picker",
+        "id":"popup_bg",
+        "label":"Popup background image"
+    },
+    {
+        "type":"image_picker",
+        "id":"popup_bg_m",
+        "label":"Popup background image(Mobile)"
+    },
+    {
+        "type":"text",
+        "id":"popup_title",
+        "label":"Title"
+    },
+    {
+        "type":"textarea",
+        "id":"popup_content",
+        "label":"Content"
+    },
+    {
+        "type":"text",
+        "id":"email_placeholder",
+        "label":"Email placeholder",
+        "default": "Subscribe to next month's event!"
+    },
+    {
+        "type":"text",
+        "id":"btn_text",
+        "label":"Button text"
+    },
+    {
+        "type":"richtext",
+        "id":"popup_t_c",
+        "label":"Policy text"
+    },
+    {
+        "type":"text",
+        "id":"link_text",
+        "label":"Link text"
+    },
+    {
+        "type":"url",
+        "id":"link_url",
+        "label":"Link"
+    },
+    {
+        "type":"header",
+        "content":"Error content"
+    },
+    {
+        "type": "textarea",
+        "id": "blank_error_text",
+        "label": "Error text if email is blank",
+        "default": "Email: missing data!",
+        "info": "As this text is showing in alert box, HTML tags are not supported."
+    },
+    {
+        "type": "textarea",
+        "id": "invalid_error_text",
+        "label": "Error text if email is invalid",
+        "default": "Email: invalid format!",
+        "info": "As this text is showing in alert box, HTML tags are not supported."
+    },
+    {
+        "type":"header",
+        "content":"Success content"
+    },
+    {
+        "type":"image_picker",
+        "id":"success_popup_bg",
+        "label":"Background image"
+    },
+    {
+        "type":"image_picker",
+        "id":"success_popup_bg_m",
+        "label":"Background image(Mobile)"
+    },
+    {
+        "type":"text",
+        "id":"success_popup_title",
+        "label":"Title"
+    },
+    {
+        "type":"textarea",
+        "id":"success_popup_content",
+        "label":"Content"
+    }
+  ]
+}
+{% endschema %}

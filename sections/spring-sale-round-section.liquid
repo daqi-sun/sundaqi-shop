@@ -1,0 +1,175 @@
+{% if section.blocks.size > 0 %}
+    <section class="star-page-container" id="{{ section.settings.section_id }}">
+        {% if section.settings.round_text != blank or section.settings.round_date != blank %}
+            <div class="round-section-header">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.6647 2.94391C14.9179 1.19703 12.5047 0.116455 9.83936 0.116455C7.17406 0.116455 4.76086 1.19703 3.01398 2.94391C1.2671 4.69079 0.186523 7.10399 0.186523 9.76929C0.186523 12.4346 1.2671 14.8478 3.01398 16.5947C4.76086 18.3415 7.17406 19.4221 9.83936 19.4221C12.5047 19.4221 14.9179 18.3415 16.6647 16.5947C18.4116 14.8478 19.4922 12.4346 19.4922 9.76929C19.4922 7.10399 18.4116 4.69079 16.6647 2.94391ZM10.6522 4.68887C10.6522 4.23994 10.2883 3.876 9.83933 3.876C9.39039 3.876 9.02646 4.23994 9.02646 4.68887V10.7854C9.02646 11.0671 9.17233 11.3288 9.41198 11.4769C9.65163 11.625 9.95088 11.6384 10.2029 11.5125L14.2672 9.48028C14.6687 9.27951 14.8315 8.79124 14.6307 8.3897C14.43 7.98816 13.9417 7.8254 13.5402 8.02617L10.6522 9.47015V4.68887Z" fill="#FFD400"/>
+                </svg>
+                <span class="round_number">{{ section.settings.round_text }}</span>
+                <span class="round_date">{{ section.settings.round_date }}</span>
+            </div>
+        {% endif %}
+
+        <div class="spring-round-section-blocks spring-round-section-blocks--{{ section.id }}" data-autoplay="{{ section.settings.round_autoplay_mobile | default: false }}">
+        {% for block in section.blocks %}
+            {%- comment %}<locksmith:4475>{% endcomment -%}
+              {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+            {%- comment %}</locksmith:4475>{% endcomment -%}
+            <div class="spring-round-section-block">
+                <div class="spring-round-section-block-inner">
+                {% if block.settings.product != blank %}
+                <a href="{{ block.settings.product.url }}">
+                {% endif %}
+                    <div class="spring-round-section-block-image">
+                        <img srcset="{% if block.settings.product_image != blank %}{{ block.settings.product_image | image_url: width: 400 }}{% else %}{{ block.settings.product.featured_image | image_url: width: 400 }}{% endif %}" loading="lazy" alt="{{ block.settings.product_title }}" />
+                    </div>
+                    <div class="spring-round-section-block-content">
+                        {% if block.settings.product_subtitle != blank %}
+                        <h3>{{ block.settings.product_subtitle }}</h3>
+                        {% endif %}
+                        {% if block.settings.product_title != blank %}
+                        <h2>{{ block.settings.product_title }}</h2>
+                        {% endif %}
+                        <div class="spring-round-section-block-price">
+                            <span class="spring-round-section-block-price-amount" style="color: {{ section.settings.product_price_color }}">{{ block.settings.product_price }}</span>
+                            <span class="spring-round-section-block-price-c">{{ block.settings.product_c_price }}</span>
+                        </div>
+                        {% if block.settings.badge_image != blank and block.settings.off_amount != blank %}
+                            <div class="spring-round-section-block-off">
+                                <img src="{{ block.settings.badge_image | image_url: width: 80 }}" />
+                                <div class="discount_text">
+                                    <span class="spring-round-section-block-off-amount">{{ block.settings.off_amount }}</span>
+                                    {{ block.settings.off_text }}
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                {% if block.settings.product != blank %}
+                </a>
+                {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </section>
+{% endif %}
+
+{% comment %} <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    if(document.querySelector('.spring-round-section-blocks--{{ section.id }}').querySelectorAll('.spring-round-section-block').length > 2){
+      document.querySelector('.spring-round-section-blocks--{{ section.id }}').classList.add('slider-enabled');
+      new Flickity(document.querySelector('.spring-round-section-blocks--{{ section.id }}'), {
+        cellAlign: "left",
+        wrapAround: false,
+        pageDots: true,
+        contain: true,
+        groupCells: true,
+        watchCSS: true,
+        prevNextButtons: false,
+        autoPlay: {{ section.settings.round_autoplay_mobile | default: false}}
+      });
+    }
+    else{ document.querySelector('.spring-round-section-blocks--{{ section.id }}').classList.add('no-slider'); }
+
+    // Wait for images to load
+    imagesLoaded(document.querySelector('.spring-round-section-blocks--{{ section.id }}'), function() {
+      flkty.reloadCells();
+    });
+
+  });
+</script> {% endcomment %}
+
+{% schema %}
+    {
+      "name": "Round section",
+      "class": "spring-round-section",
+      "settings": [
+        {
+          "type": "text",
+          "id": "section_id",
+          "label": "Section ID"
+        },
+        {
+          "type": "text",
+          "id": "round_text",
+          "label": "Round text"
+        },
+        {
+            "type": "text",
+            "id": "round_date",
+            "label": "Round Dates"
+        },
+        {
+          "type": "text",
+          "id": "round_autoplay_mobile",
+          "label": "Round Autoplay Slider (mobile)",
+          "info": "Enable autoplay for mobile devices (in milliseconds e.g. 1500 is 1.5sec). If no value is set, the slider will not autoplay."
+        },
+        {
+          "type": "color",
+          "id": "product_price_color",
+          "label": "Product price color",
+          "default": "#000000"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "product",
+          "name": "Product",
+          "settings": [
+            {
+              "type": "product",
+              "id": "product",
+              "label": "Choose product"
+            },
+            {
+              "type": "image_picker",
+              "id": "product_image",
+              "label": "Product image"
+            },
+            {
+              "type": "text",
+              "id": "product_subtitle",
+              "label": "Product subtitle"
+            },
+            {
+              "type": "text",
+              "id": "product_title",
+              "label": "Product title"
+            },
+            {
+              "type": "text",
+              "id": "product_price",
+              "label": "Product price"
+            },
+            {
+              "type": "text",
+              "id": "product_c_price",
+              "label": "Product compare price"
+            },
+            {
+                "type": "image_picker",
+                "id": "badge_image",
+                "label": "Badge image"
+            },
+            {
+              "type": "text",
+              "id": "off_amount",
+              "label": "Off amount"
+            },
+            {
+              "type": "text",
+              "id": "off_text",
+              "label": "Off text"
+            }
+          ]
+        }
+      ],
+      "presets": [
+          {
+              "name": "Spring sale - Round section",
+              "category": "Custom Sections"
+          }
+      ]
+    }
+  {% endschema %}

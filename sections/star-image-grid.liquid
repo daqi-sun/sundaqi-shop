@@ -1,0 +1,521 @@
+{{ 'star-image-grid.css' | asset_url | stylesheet_tag }}
+
+<div class="star-image-grid section-{{ section.id }}" id="{{ section.settings.section_id }}">
+  <div class="star-page-container">
+    {% comment %} Main Card Section Start {% endcomment %}
+    {% if section.settings.show_main_card %}
+      <div class="star-image-grid__top">
+        <div class="star-image-grid__top-image-box">
+          <img
+            class="hideMobile"
+            srcset="{{ section.settings.image | image_url: width: 1200 }}"
+            sizes="auto"
+            loading="lazy"
+            aria-label="{{ section.settings.image.alt }}"
+            alt="{{ section.settings.image.alt }}"
+          >
+          <img
+            class="hideDesktop"
+            srcset="{{ section.settings.image_m | image_url: width: 700 }}"
+            sizes="auto"
+            loading="lazy"
+            aria-label="{{ section.settings.image_m.alt }}"
+            alt="{{ section.settings.image_m.alt }}"
+            style="width: 100%"
+            ;
+          >
+        </div>
+        <div class="star-image-grid__top-content-wrapper">
+          <h2 class="star-image-grid__top-title">
+            {{ section.settings.title }}
+          </h2>
+          <div class="star-image-grid__top-subtitle">{{ section.settings.subtitle }}</div>
+
+          {% if section.settings.show_btn %}
+            <div class="star-image-grid__top-button-wrapper">
+              <a href="{{ section.settings.button_link }}">
+                <button class="star-image-grid__top-button">
+                  {{- section.settings.button_label -}}
+                </button>
+              </a>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+    {% comment %} Main Card Section End {% endcomment %}
+
+    {% comment %} Sub Cards Section Start {% endcomment %}
+    {% if section.settings.show_sub_cards %}
+      <div class="star-image-grid__bottom">
+        {% comment %} Desktop Sub Cards Start {% endcomment %}
+        <div class="hideMobile">
+          <div class="star-image-grid__bottom-cards-wrapper">
+            <div
+              class="star-image-grid__bottom-card"
+              style="background-color: {{ section.settings.sub_card_bg_color_1 }}"
+            >
+              <div class="star-image-grid__bottom-card-title-wrapper">
+                <h3
+                  class="star-image-grid__bottom-card-title"
+                  style="color: {{ section.settings.sub_card_title_color_1 }};"
+                >
+                  {{ section.settings.sub_card_title_1 }}
+                </h3>
+                <p
+                  class="star-image-grid__bottom-card-subtitle"
+                  style="color: {{ section.settings.sub_card_subtitle_color_1 }};"
+                >
+                  {{ section.settings.sub_card_subtitle_1 }}
+                </p>
+                <a href="{{ section.settings.sub_card_button_link_1 }}">
+                  <button
+                    class="star-image-grid__bottom-card-button"
+                    style="
+                      color: {{ section.settings.sub_card_button_text_color_1 }};
+                      border-color: {{ section.settings.sub_card_button_border_color_1 }}
+                    "
+                  >
+                    {{ section.settings.sub_card_button_text_1 }}
+                  </button>
+                </a>
+              </div>
+              <div class="star-image-grid__bottom-card-image-wrapper">
+                <img
+                  src="{{ section.settings.sub_card_image_1 | image_url: width: 300 }}"
+                  alt=""
+                  class="star-image-grid__bottom-card-image"
+                >
+              </div>
+            </div>
+
+            <div
+              class="star-image-grid__bottom-card"
+              style="background-color: {{ section.settings.sub_card_bg_color_2 }}"
+            >
+              <div class="star-image-grid__bottom-card-title-wrapper">
+                <h3
+                  class="star-image-grid__bottom-card-title"
+                  style="color: {{ section.settings.sub_card_title_color_2 }};"
+                >
+                  {{ section.settings.sub_card_title_2 }}
+                </h3>
+                <p
+                  class="star-image-grid__bottom-card-subtitle"
+                  style="color: {{ section.settings.sub_card_subtitle_color_2 }};"
+                >
+                  {{ section.settings.sub_card_subtitle_2 }}
+                </p>
+                <a href="{{ section.settings.sub_card_button_link_2 }}">
+                  <button
+                    class="star-image-grid__bottom-card-button"
+                    style="
+                      color: {{ section.settings.sub_card_button_text_color_2 }};
+                      border-color: {{ section.settings.sub_card_button_border_color_2 }}
+                    "
+                  >
+                    {{ section.settings.sub_card_button_text_2 }}
+                  </button>
+                </a>
+              </div>
+              <div class="star-image-grid__bottom-card-image-wrapper">
+                <img
+                  src="{{ section.settings.sub_card_image_2 | image_url: width: 300 }}"
+                  alt=""
+                  class="star-image-grid__bottom-card-image"
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        {% comment %} Desktop Sub Cards Start {% endcomment %}
+
+        {% comment %} Mobile Sub Cards as Slider Start {% endcomment %}
+        <div class="star-image-grid__bottom-slider-wrapper hideDesktop">
+          <div class="star-image-grid__bottom-slider swiper">
+            <div class="swiper-wrapper">
+              <div
+                class="star-image-grid__bottom-card swiper-slide"
+                style="background-color: {{ section.settings.sub_card_bg_color_1 }}"
+              >
+                <div style="display: flex; flex-grow: 1; flex-direction: column">
+                  <div class="star-image-grid__bottom-card-title-wrapper">
+                    <h3
+                      class="star-image-grid__bottom-card-title"
+                      style="color: {{ section.settings.sub_card_title_color_1 }};"
+                    >
+                      {{ section.settings.sub_card_title_1 }}
+                    </h3>
+                    <p
+                      class="star-image-grid__bottom-card-subtitle"
+                      style="color: {{ section.settings.sub_card_subtitle_color_1 }};"
+                    >
+                      {{ section.settings.sub_card_subtitle_1 }}
+                    </p>
+                  </div>
+                  <a href="{{ section.settings.sub_card_button_link_1 }}">
+                    <button
+                      class="star-image-grid__bottom-card-button"
+                      style="
+                        color: {{ section.settings.sub_card_button_text_color_1 }};
+                        border-color: {{ section.settings.sub_card_button_border_color_1 }}
+                      "
+                    >
+                      {{ section.settings.sub_card_button_text_1 }}
+                    </button>
+                  </a>
+                </div>
+                <div class="star-image-grid__bottom-card-image-wrapper">
+                  <img
+                    src="{{ section.settings.sub_card_image_1 | image_url: width: 300 }}"
+                    alt=""
+                    class="star-image-grid__bottom-card-image"
+                  >
+                </div>
+              </div>
+
+              <div
+                class="star-image-grid__bottom-card swiper-slide"
+                style="background-color: {{ section.settings.sub_card_bg_color_2 }}"
+              >
+                <div style="display: flex; flex-grow: 1; flex-direction: column">
+                  <div class="star-image-grid__bottom-card-title-wrapper">
+                    <h3
+                      class="star-image-grid__bottom-card-title"
+                      style="color: {{ section.settings.sub_card_title_color_2 }};"
+                    >
+                      {{ section.settings.sub_card_title_2 }}
+                    </h3>
+                    <p
+                      class="star-image-grid__bottom-card-subtitle"
+                      style="color: {{ section.settings.sub_card_subtitle_color_2 }};"
+                    >
+                      {{ section.settings.sub_card_subtitle_2 }}
+                    </p>
+                  </div>
+                  <a href="{{ section.settings.sub_card_button_link_2 }}">
+                    <button
+                      class="star-image-grid__bottom-card-button"
+                      style="
+                        color: {{ section.settings.sub_card_button_text_color_2 }};
+                        border-color: {{ section.settings.sub_card_button_border_color_2 }}
+                      "
+                    >
+                      {{ section.settings.sub_card_button_text_2 }}
+                    </button>
+                  </a>
+                </div>
+                <div class="star-image-grid__bottom-card-image-wrapper">
+                  <img
+                    src="{{ section.settings.sub_card_image_2 | image_url: width: 300 }}"
+                    alt=""
+                    class="star-image-grid__bottom-card-image"
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="star-image-grid__bottom-swiper-pagination"></div>
+        </div>
+        {% comment %} Mobile Sub Cards as Slider End {% endcomment %}
+      </div>
+    {% endif %}
+    {% comment %} Sub Cards Section End {% endcomment %}
+  </div>
+</div>
+
+<style>
+  .star-image-grid.section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  .star-image-grid__top-title>p {
+    color: {{ section.settings.title_color }};
+  }
+
+  .star-image-grid__top-subtitle {
+    color: {{ section.settings.subtitle_color }};
+  }
+
+  .star-image-grid__top-button {
+    background-color: {{ section.settings.btn_bg_color }};
+    color: {{ section.settings.btn_text_color }};
+    border-color: {{ section.settings.btn_border_color }};
+  }
+
+  @media (max-width: 749px) {
+    .star-image-grid.section-{{ section.id }} {
+        padding-top: {{ section.settings.padding_top_mobile }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    new Swiper('.star-image-grid__bottom-slider', {
+      sliderPerView: 1,
+      spaceBetween: 16,
+      pagination: {
+        el: '.star-image-grid__bottom-swiper-pagination',
+      },
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Star image grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top Mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom Mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Main Card"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_main_card",
+      "label": "Show main card",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_m",
+      "label": "Image(Mobile)"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Heading",
+      "default": "<p>Image with text</p>"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Heading color"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle color"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_btn",
+      "label": "Show button",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link"
+    },
+    {
+      "type": "color",
+      "id": "btn_bg_color",
+      "label": "Button background color",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "btn_text_color",
+      "label": "Button text color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "btn_border_color",
+      "label": "Button border color",
+      "default": "transparent"
+    },
+    {
+      "type": "header",
+      "content": "Sub Cards"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_sub_cards",
+      "label": "Show sub cards",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "sub_card_title_1",
+      "label": "Sub card title 1"
+    },
+    {
+      "type": "color",
+      "id": "sub_card_title_color_1",
+      "label": "Sub card title color 1",
+      "default": "#fff"
+    },
+    {
+      "type": "text",
+      "id": "sub_card_subtitle_1",
+      "label": "Sub card subtitle 1"
+    },
+    {
+      "type": "color",
+      "id": "sub_card_subtitle_color_1",
+      "label": "Sub card subtitle color 1",
+      "default": "#fff"
+    },
+    {
+      "type": "image_picker",
+      "id": "sub_card_image_1",
+      "label": "Sub card image 1"
+    },
+    {
+      "type": "color",
+      "id": "sub_card_bg_color_1",
+      "label": "Sub card background color 1",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "sub_card_button_text_1",
+      "label": "Sub card button text 1",
+      "default": "Refer Now"
+    },
+    {
+      "type": "url",
+      "id": "sub_card_button_link_1",
+      "label": "Sub card button link 1"
+    },
+    {
+      "type": "color",
+      "id": "sub_card_button_text_color_1",
+      "label": "Sub card button text color 1",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "sub_card_button_border_color_1",
+      "label": "Sub card button border color 1",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "id": "sub_card_title_2",
+      "label": "Sub card title 2"
+    },
+    {
+      "type": "color",
+      "id": "sub_card_title_color_2",
+      "label": "Sub card title color 2",
+      "default": "#fff"
+    },
+    {
+      "type": "text",
+      "id": "sub_card_subtitle_2",
+      "label": "Sub card subtitle 2"
+    },
+    {
+      "type": "color",
+      "id": "sub_card_subtitle_color_2",
+      "label": "Sub card subtitle color 2",
+      "default": "#fff"
+    },
+    {
+      "type": "image_picker",
+      "id": "sub_card_image_2",
+      "label": "Sub card image 2"
+    },
+    {
+      "type": "color",
+      "id": "sub_card_bg_color_2",
+      "label": "Sub card background color 2",
+      "default": "#000"
+    },
+    {
+      "type": "text",
+      "id": "sub_card_button_text_2",
+      "label": "Sub card button text 2",
+      "default": "Refer Now"
+    },
+    {
+      "type": "url",
+      "id": "sub_card_button_link_2",
+      "label": "Sub card button link 2"
+    },
+    {
+      "type": "color",
+      "id": "sub_card_button_text_color_2",
+      "label": "Sub card button text color 2",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "sub_card_button_border_color_2",
+      "label": "Sub card button border color 2",
+      "default": "#000000"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Star image grid",
+      "category": "Star Image"
+    }
+  ]
+}
+{% endschema %}

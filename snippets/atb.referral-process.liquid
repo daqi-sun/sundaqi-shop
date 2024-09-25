@@ -1,0 +1,114 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "Referral process",
+  "class": "referral-process--section",
+  "id": "referral-process",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "id": "atb_title",
+      "type": "text",
+      "label": "Title",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "blocks",
+      "label": "Block ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": "",
+      "repeatable": "Process"
+    },
+    {
+      "id": "block_icon",
+      "type": "wysiwyg",
+      "label": "Icon",
+      "info": "Add svg code of icon",
+      "repeatable": "Process"
+    },
+    {
+      "id": "block_content",
+      "type": "wysiwyg",
+      "label": "Content",
+      "repeatable": "Process",
+      "info": ""
+    }
+  ],
+  "warnings": []
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_title' -%}
+{%- assign atb_title = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_icon' -%}
+{%- assign block_icon = val -%}
+{%- include 'atb-render' field:'block_content' -%}
+{%- assign block_content = val -%}
+{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section referral-process--section">
+{{ "referral-process.css" | asset_url | stylesheet_tag }}
+<div class="referral-process" data-section-id="{{ section_id }}" data-section-type="referral-process">
+  {% if atb_title != blank %}
+    <div class="title-wrapper">
+      <h2 class="title">{{ atb_title }}</h2>
+    </div>
+  {% endif %}
+  <div class="referral-process-wrapper tablet--down-hide">
+    {% for block0 in blocks %}
+      <div class="process-wrapper">
+        {% if block_icon[forloop.index0] != blank %}
+          <div class="process-icon">
+            {{ block_icon[forloop.index0] }}
+          </div>
+        {% endif %}
+        {% if block_content[forloop.index0] != blank %}
+          <div class="process-content">
+            {{ block_content[forloop.index0] }}
+          </div>
+        {% endif %}
+      </div>
+      {% unless forloop.last and forloop.last %}
+        <div class="divider">
+          <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 53.5C19.933 53.5 21.5 51.933 21.5 50C21.5 48.067 19.933 46.5 18 46.5C16.067 46.5 14.5 48.067 14.5 50C14.5 51.933 16.067 53.5 18 53.5Z" fill="black"/>
+            <path d="M50 54.5C52.4853 54.5 54.5 52.4853 54.5 50C54.5 47.5147 52.4853 45.5 50 45.5C47.5147 45.5 45.5 47.5147 45.5 50C45.5 52.4853 47.5147 54.5 50 54.5Z" fill="black"/>
+            <path d="M82 53.5C83.933 53.5 85.5 51.933 85.5 50C85.5 48.067 83.933 46.5 82 46.5C80.067 46.5 78.5 48.067 78.5 50C78.5 51.933 80.067 53.5 82 53.5Z" fill="black"/>
+          </svg>
+        </div>
+      {% endunless %}
+    {% endfor %}
+  </div>
+  <div class="referral-process-wrapper tablet--up-hide">
+    {% for block0 in blocks %}
+      <div class="process-wrapper">
+        {% if block_icon[forloop.index0] != blank %}
+          <div class="process-icon">
+            {{ block_icon[forloop.index0] }}
+          </div>
+        {% endif %}
+        {% if block_content[forloop.index0] != blank %}
+          <div class="process-content">
+            {{ block_content[forloop.index0] }}
+          </div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+</section>

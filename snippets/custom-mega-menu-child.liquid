@@ -1,0 +1,258 @@
+
+    <div class="tab_row">
+        {% if mega_menu_block.settings.tab_1_block_1_row_1_title != blank %}
+            <div class="custom_menu_tab_title">{{ mega_menu_block.settings.tab_1_block_1_row_1_title }}</div>
+        {% endif %}
+        {% if mega_menu_block.settings.tab_1_block_1_row_1_btn_title != blank %}
+            <a class="block_btn {% if mega_menu_block.settings.tab_1_block_1_row_1_title != blank %}title-in-line{% endif %}" href="{{mega_menu_block.settings.tab_1_block_1_row_1_btn_url}}">
+                {{ mega_menu_block.settings.tab_1_block_1_row_1_btn_title }}
+                <svg width="6px" height="9px" viewBox="0 0 6 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="控件" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="导航/下拉/三级1" transform="translate(-626.000000, -739.000000)" fill="currentColor" fill-rule="nonzero">
+                            <g id="编组-8备份-3" transform="translate(580.000000, 734.000000)">
+                                <path d="M51.8189555,13.1327591 L47.3919008,9.50017032 L51.8189555,5.86758151 C51.966656,5.74641152 52.0304147,5.56440224 51.9862143,5.39011479 C51.9420139,5.21582734 51.7965695,5.07574013 51.6046686,5.02262266 C51.4127677,4.9695052 51.2035646,5.01142728 51.0558642,5.13259727 L46.1810793,9.13251154 C46.0656531,9.2271673 46,9.36040721 46,9.5 C46,9.63960011 46.0656531,9.77284001 46.1810793,9.86749578 L51.0558642,13.8674101 C51.2841893,14.0547226 51.6401072,14.0420376 51.8508291,13.8390773 C52.061551,13.636117 52.0472807,13.3197384 51.8189555,13.1324258" id="路径" transform="translate(49.000000, 9.500000) scale(-1, 1) translate(-49.000000, -9.500000) "></path>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </a>
+        {% endif %}
+    </div>
+    <div class="swiper mega-menu-swiper-products">
+        <div class="swiper-wrapper custom_menu_tab_content_inner block-{{mega_menu_block.settings.tab_1_block_1_row_1_block_limit}} text-align-{{ mega_menu_block.settings.tab_1_block_1_text_align }}">
+            {% assign products_criteria = mega_menu_block.settings.tab_1_block_1_row_1_products %}
+            {% if products_criteria == 'collection' %}
+                {% if mega_menu_block.settings.tab_1_block_1_row_1_coll != blank %}
+                    {% for custom_product in collections[mega_menu_block.settings.tab_1_block_1_row_1_coll].products limit: mega_menu_block.settings.tab_1_block_1_row_1_product_limit %}
+                    {%- comment %}<locksmith:fb56>{% endcomment -%}
+                        {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: custom_product, subject_parent: collections[mega_menu_block.settings.tab_1_block_1_row_1_coll], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                    {%- comment %}</locksmith:fb56>{% endcomment -%}
+                    <div class="swiper-slide custom_menu_product">
+                        <a href="{{ custom_product.url }}">
+                        <div class="image">
+                            <img src="{{ custom_product.featured_image | img_url: 'small' }}" loading="lazy"
+                                srcset="{%- if custom_product.featured_image.width >= 375 -%}{{ custom_product.featured_image | img_url: '375x' }} 375w,{%- endif -%}
+                                {%- if custom_product.featured_image.width >= 720 -%}{{ custom_product.featured_image | img_url: '720x' }} 750w,{%- endif -%}
+                                {%- if custom_product.featured_image.width >= 1066 -%}{{ custom_product.featured_image | img_url: '1066x' }} 1066w,{%- endif -%}
+                                {%- if custom_product.featured_image.width >= 1500 -%}{{ custom_product.featured_image | img_url: '1500x' }} 1500w{%- endif -%}"
+                            />
+                        </div>
+                        <div class="product_content">
+                            {% assign mega_menu_max_savings = 0 %}
+                            {% for variant in custom_product.variants %}
+                              {% if variant.metafields.custom.for_member_only != false %}
+                                {% assign savings = variant.compare_at_price | minus: variant.price %}
+                                {% if savings > mega_menu_max_savings %}
+                                  {% assign mega_menu_max_savings = savings %}
+                                {% endif %}
+                              {% endif %}
+                            {% endfor %}
+                            {% if mega_menu_max_savings != 0 %}
+                              <div class="discount-label">
+                                    {% if custom_product.variants.size <= 1 %}
+                                  {% assign variant = custom_product.variants.first %}
+                                  {% if variant.compare_at_price > variant.price %}
+                                    Ahorrar {{ variant.compare_at_price | minus: variant.price | money_without_currency | replace: ',00', '' }} €
+                                  {% endif %}
+                                {% else %}
+                                Hasta -{{ mega_menu_max_savings | money_without_currency | replace: ',00', '' }} €
+                                {% endif %}
+                              </div>
+                            {% else %}
+                            {%- render 'product-custom-labels', product: custom_product -%}
+                            {% endif %}
+                            {% if custom_product.metafields.custom.mega_menu_title != blank %}
+                                <div class="title {% if custom_product.metafields.custom.small_description == blank %}add-bottom-space{% endif %}">
+                                    {{ custom_product.metafields.custom.mega_menu_title }}
+                                </div>
+                            {% endif %}
+                            {% if custom_product.metafields.custom.small_description != blank %}
+                                <div class="small-desc">
+                                    {{ custom_product.metafields.custom.small_description }}
+                                </div>
+                            {% endif %}
+                        </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            {% else %}
+                {% for i in (1..5) %}
+                    {% capture image %}tab_1_block_1_row_1_item_{{i}}{% endcapture %}
+                    {% capture link %}tab_1_block_1_row_1_item_{{i}}_url{% endcapture %}
+                    {% capture text %}tab_1_block_1_row_1_item_{{i}}_text{% endcapture %}
+                    {% if mega_menu_block.settings[image] != blank %}
+                        <div class="swiper-slide custom_menu_product">
+                            {% if mega_menu_block.settings[link] != blank %}<a href="{{ mega_menu_block.settings[link] }}">{% endif %}
+                                <div class="image">
+                                    <img loading="lazy"
+                                        srcset="{{ mega_menu_block.settings[image] | img_url: 'small' | replace: '_small', '' }}"
+                                    />
+                                </div>
+                                <div class="product_content">
+                                    {% assign mega_menu_max_savings = 0 %}
+                                    {% for variant in custom_product.variants %}
+                                      {% if variant.metafields.custom.for_member_only != false %}
+                                        {% assign savings = variant.compare_at_price | minus: variant.price %}
+                                        {% if savings > mega_menu_max_savings %}
+                                          {% assign mega_menu_max_savings = savings %}
+                                        {% endif %}
+                                      {% endif %}
+                                    {% endfor %}
+                                    {% if mega_menu_max_savings != 0 %}
+                                      <div class="discount-label">
+                                            {% if custom_product.variants.size <= 1 %}
+                                          {% assign variant = custom_product.variants.first %}
+                                          {% if variant.compare_at_price > variant.price %}
+                                            Ahorrar {{ variant.compare_at_price | minus: variant.price | money_without_currency | replace: ',00', '' }} €
+                                          {% endif %}
+                                        {% else %}
+                                        Hasta -{{ mega_menu_max_savings | money_without_currency | replace: ',00', '' }} €
+                                        {% endif %}
+                                      </div>
+                                    {% else %}
+                                      <div class="discount-label discount-label-placeholder" style="opacity: 0;">
+                                          Label
+                                      </div>
+                                    {% endif %}
+                                    {% if mega_menu_block.settings[text] != blank %}
+                                        <div class="title">
+                                            {{ mega_menu_block.settings[text] }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            {% if mega_menu_block.settings[link] != blank %}</a>{% endif %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="tab_row">
+        {% if mega_menu_block.settings.tab_1_block_1_row_2_title != blank %}
+            <div class="custom_menu_tab_title">{{ mega_menu_block.settings.tab_1_block_1_row_2_title }}</div>
+        {% endif %}
+        {% if mega_menu_block.settings.tab_1_block_1_row_2_btn_title != blank %}
+            <a class="block_btn {% if mega_menu_block.settings.tab_1_block_1_row_2_title != blank %}title-in-line{% endif %}" href="{{mega_menu_block.settings.tab_1_block_1_row_2_btn_url}}">
+                {{ mega_menu_block.settings.tab_1_block_1_row_2_btn_title }}
+                <svg width="6px" height="9px" viewBox="0 0 6 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="控件" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="导航/下拉/三级1" transform="translate(-626.000000, -739.000000)" fill="currentColor" fill-rule="nonzero">
+                            <g id="编组-8备份-3" transform="translate(580.000000, 734.000000)">
+                                <path d="M51.8189555,13.1327591 L47.3919008,9.50017032 L51.8189555,5.86758151 C51.966656,5.74641152 52.0304147,5.56440224 51.9862143,5.39011479 C51.9420139,5.21582734 51.7965695,5.07574013 51.6046686,5.02262266 C51.4127677,4.9695052 51.2035646,5.01142728 51.0558642,5.13259727 L46.1810793,9.13251154 C46.0656531,9.2271673 46,9.36040721 46,9.5 C46,9.63960011 46.0656531,9.77284001 46.1810793,9.86749578 L51.0558642,13.8674101 C51.2841893,14.0547226 51.6401072,14.0420376 51.8508291,13.8390773 C52.061551,13.636117 52.0472807,13.3197384 51.8189555,13.1324258" id="路径" transform="translate(49.000000, 9.500000) scale(-1, 1) translate(-49.000000, -9.500000) "></path>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </a>
+        {% endif %}
+    </div>
+    <div class="swiper mega-menu-swiper-products">
+        <div class="swiper-wrapper custom_menu_tab_content_inner block-{{mega_menu_block.settings.tab_1_block_1_row_2_block_limit}} text-align-{{ mega_menu_block.settings.tab_1_block_1_text_align }}">
+            {% assign products_criteria = mega_menu_block.settings.tab_1_block_1_row_2_products %}
+            {% if products_criteria == 'collection' %}
+                {% if mega_menu_block.settings.tab_1_block_1_row_2_coll != blank %}
+                    {% for custom_product in collections[mega_menu_block.settings.tab_1_block_1_row_2_coll].products limit: mega_menu_block.settings.tab_1_block_1_row_2_product_limit %}
+                    {%- comment %}<locksmith:b647>{% endcomment -%}
+                        {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: custom_product, subject_parent: collections[mega_menu_block.settings.tab_1_block_1_row_2_coll], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                    {%- comment %}</locksmith:b647>{% endcomment -%}
+                    <div class="swiper-slide custom_menu_product">
+                        <a href="{{ custom_product.url }}">
+                            <img src="{{ custom_product.featured_image | img_url: 'small' }}" loading="lazy"
+                                srcset="{%- if custom_product.featured_image.width >= 375 -%}{{ custom_product.featured_image | img_url: '375x' }} 375w,{%- endif -%}
+                                {%- if custom_product.featured_image.width >= 720 -%}{{ custom_product.featured_image | img_url: '720x' }} 750w,{%- endif -%}
+                                {%- if custom_product.featured_image.width >= 1066 -%}{{ custom_product.featured_image | img_url: '1066x' }} 1066w,{%- endif -%}
+                                {%- if custom_product.featured_image.width >= 1500 -%}{{ custom_product.featured_image | img_url: '1500x' }} 1500w{%- endif -%}"
+                        />
+                        <div class="product_content">
+                            {% assign mega_menu_max_savings = 0 %}
+                            {% for variant in custom_product.variants %}
+                              {% if variant.metafields.custom.for_member_only != false %}
+                                {% assign savings = variant.compare_at_price | minus: variant.price %}
+                                {% if savings > mega_menu_max_savings %}
+                                  {% assign mega_menu_max_savings = savings %}
+                                {% endif %}
+                              {% endif %}
+                            {% endfor %}
+                            {% if mega_menu_max_savings != 0 %}
+                              <div class="discount-label">
+                                    {% if custom_product.variants.size <= 1 %}
+                                  {% assign variant = custom_product.variants.first %}
+                                  {% if variant.compare_at_price > variant.price %}
+                                    Ahorrar {{ variant.compare_at_price | minus: variant.price | money_without_currency | replace: ',00', '' }} €
+                                  {% endif %}
+                                {% else %}
+                                Hasta -{{ mega_menu_max_savings | money_without_currency | replace: ',00', '' }} €
+                                {% endif %}
+                              </div>
+                            {% else %}
+                            {%- render 'product-custom-labels', product: custom_product -%}
+                            {% endif %}
+                            {% if custom_product.metafields.custom.mega_menu_title != blank %}
+                                <div class="title {% if custom_product.metafields.custom.small_description == blank %}add-bottom-space{% endif %}">
+                                    {{ custom_product.metafields.custom.mega_menu_title }}
+                                </div>
+                            {% endif %}
+                            {% if custom_product.metafields.custom.small_description != blank %}
+                                <div class="small-desc">
+                                    {{ custom_product.metafields.custom.small_description }}
+                                </div>
+                            {% endif %}
+                        </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            {% else %}
+                {% for i in (1..5) %}
+                    {% capture image %}tab_1_block_1_row_2_item_{{i}}{% endcapture %}
+                    {% capture link %}tab_1_block_1_row_2_item_{{i}}_url{% endcapture %}
+                    {% capture text %}tab_1_block_1_row_2_item_{{i}}_text{% endcapture %}
+                    {% if mega_menu_block.settings[image] != blank %}
+                        <div class="swiper-slide custom_menu_product">
+                            {% if mega_menu_block.settings[link] != blank %}<a href="{{ mega_menu_block.settings[link] }}">{% endif %}
+                                <div class="image">
+                                    <img loading="lazy"
+                                        srcset="{{ mega_menu_block.settings[image] | img_url: 'small' | replace: '_small', '' }}"
+                                    />
+                                </div>
+                                <div class="product_content">
+                                    {% assign mega_menu_max_savings = 0 %}
+                                    {% for variant in custom_product.variants %}
+                                      {% if variant.metafields.custom.for_member_only != false %}
+                                        {% assign savings = variant.compare_at_price | minus: variant.price %}
+                                        {% if savings > mega_menu_max_savings %}
+                                          {% assign mega_menu_max_savings = savings %}
+                                        {% endif %}
+                                      {% endif %}
+                                    {% endfor %}
+                                    {% if mega_menu_max_savings != 0 %}
+                                      <div class="discount-label">
+                                            {% if custom_product.variants.size <= 1 %}
+                                          {% assign variant = custom_product.variants.first %}
+                                          {% if variant.compare_at_price > variant.price %}
+                                            Ahorrar {{ variant.compare_at_price | minus: variant.price | money_without_currency | replace: ',00', '' }} €
+                                          {% endif %}
+                                        {% else %}
+                                        Hasta -{{ mega_menu_max_savings | money_without_currency | replace: ',00', '' }} €
+                                        {% endif %}
+                                      </div>
+                                    {% else %}
+                                      <div class="discount-label discount-label-placeholder" style="opacity: 0;">
+                                          Label
+                                      </div>
+                                    {% endif %}
+                                    {% if mega_menu_block.settings[text] != blank %}
+                                        <div class="title">
+                                            {{ mega_menu_block.settings[text] }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            {% if mega_menu_block.settings[link] != blank %}</a>{% endif %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>

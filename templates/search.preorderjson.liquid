@@ -1,0 +1,59 @@
+{%- layout none -%}
+{%- paginate search.results by 100 -%}
+[
+  {%- comment %}<locksmith:dc5c>{% endcomment -%}
+    {%- assign locksmith_e441_forloop__size = 0 %}{%- for product in search.results -%}{% capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: search, variable: 'transparent' %}{% endcapture %}{% if var == 'true' %}{% assign locksmith_e441_forloop__size = locksmith_e441_forloop__size | plus: 1 %}{% endif %}{% endfor %}{% assign locksmith_e441_forloop__index = nil -%}
+  {%- comment %}</locksmith:dc5c>{% endcomment -%}
+  {%- for product in search.results -%}
+    {%- comment %}<locksmith:20c7>{% endcomment -%}
+      {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: search, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% if locksmith_e441_forloop__index == nil %}{% assign locksmith_e441_forloop__index = 1 %}{% assign locksmith_e441_forloop__index0 = 0 %}{% else %}{% assign locksmith_e441_forloop__index = locksmith_e441_forloop__index | plus: 1 %}{% assign locksmith_e441_forloop__index0 = locksmith_e441_forloop__index0 | plus: 1 %}{% endif %}{% if locksmith_e441_forloop__index == 1 %}{% assign locksmith_e441_forloop__first = true %}{% else %}{% assign locksmith_e441_forloop__first = false %}{% endif %}{% if locksmith_e441_forloop__index == locksmith_e441_forloop__size %}{% assign locksmith_e441_forloop__last = true %}{% else %}{% assign locksmith_e441_forloop__last = false %}{% endif %}{% assign locksmith_e441_forloop__rindex = locksmith_e441_forloop__size | minus: locksmith_e441_forloop__index | minus: 1 %}{% assign locksmith_e441_forloop__rindex0 = locksmith_e441_forloop__size | minus: locksmith_e441_forloop__index0 | minus: 1 %}{% else %}{% continue %}{% endif -%}
+    {%- comment %}</locksmith:20c7>{% endcomment -%}
+    {%- unless locksmith_e441_forloop__first -%},{%- endunless -%}
+    {
+      "id":{{-product.id-}},
+      "title":{{-product.title | json-}},
+      "handle":"{{-product.handle-}}",
+      "collections":{{-product.collections | map: 'id' | json-}},
+      "images":[{%- for image in product.images -%}{%- unless forloop.first -%},{%- endunless -%}{"id":{{-image.id-}},"src":{{-image.src | json-}}}{%- endfor -%}],
+      "first_available_variant":{"id":{{product.selected_or_first_available_variant.id}}},
+      "available":{{-product.available-}},
+      "selling_plan_groups": {{- product.selling_plan_groups | json -}},
+      "variants": [
+        {%- for variant in product.variants -%}
+          {%- unless forloop.first -%},{%- endunless -%}
+          {
+            "id":{{-variant.id-}}, 
+            "title":{{-variant.title | json}},
+            "price":{{-variant.price-}},
+            "available":{{-variant.available-}},
+            "inventory_quantity":{{-variant.inventory_quantity-}},
+            "inventory_policy":{{-variant.inventory_policy | json-}},
+            "selling_plan_allocations": [
+              {%- for allocation in variant.selling_plan_allocations -%}
+                {%- unless forloop.first -%},{%- endunless -%}
+                {
+                  "price_adjustments": [
+                    {%- for adjustment in allocation.price_adjustments -%}
+                      {%- unless forloop.first -%},{%- endunless -%}
+                      {
+                        "position": {{- adjustment.position -}},
+                        "price": {{- adjustment.price | json -}}
+                      }
+                    {%- endfor -%}
+                  ],
+                  "price": {{- allocation.price | json -}},
+                  "compare_at_price": {{- allocation.compare_at_price | json -}},
+                  "per_delivery_price": {{- allocation.per_delivery_price | json -}},
+                  "selling_plan_id": {{- allocation.selling_plan.id -}},
+                  "selling_plan_group_id": "{{- allocation.selling_plan_group_id -}}"
+                }
+              {%- endfor -%}
+            ]
+          }
+        {%- endfor -%}
+      ],
+      "source": "template"
+    }
+  {%- endfor -%}
+]
+{%- endpaginate -%}

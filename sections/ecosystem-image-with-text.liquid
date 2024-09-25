@@ -1,0 +1,49 @@
+<div class="ecosystem-container">
+    <div class="home-ecosystem-image-with-text">
+        <div class="image-with-text-introduction">
+            {% if section.settings.heading != blank %}
+              <h2>{{ section.settings.heading }}</h2>
+            {% endif %}
+            {% if section.settings.description != blank %}
+              {{ section.settings.description }}
+            {% endif %}
+
+            {% if section.settings.optional_line != blank %}
+              <div class="image-text-line">{{ section.settings.optional_line }}</div>
+            {% endif %}
+        </div>
+        {% if section.settings.slide_image != blank %}
+            <div class="image--with-text-image">
+              <img src="{{ section.settings.slide_image | img_url: 'small' | replace: '_small', '' }}" alt="{{ section.settings.slide_image.alt }}" />
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% schema %}
+  {
+    "name": "Image with text",
+    "settings": [
+      {
+        "id":"heading",
+        "type":"text",
+        "label":"Heading",
+        "default": "Home ecosystem"
+      },
+      {
+        "id":"description",
+        "type":"richtext",
+        "label":"Description"
+      },
+      {
+        "id":"optional_line",
+        "type":"text",
+        "label":"Optional text"
+      },
+      {
+        "type": "image_picker",
+        "id": "slide_image",
+        "label": "Image"
+      }
+	]
+  }
+{% endschema %}

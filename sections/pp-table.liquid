@@ -1,0 +1,134 @@
+<style>
+  .pp-table__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .pp-table__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+
+<div class="pp-table__section pp-table__section-{{ section.id }}">
+  <div class="container--default">
+    <div class="pp-table__text-container">
+      {% if section.settings.title != blank %}
+        <h2 class="pp-table__section-heading text--heading text--black">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+      {% if section.settings.subtitle != blank %}
+        <h3 class="pp-table__section-description text--description text--gray">
+          {{ section.settings.subtitle }}
+        </h3>
+      {% endif %}
+    </div>
+    <div class="pp-table__container">
+      {% for block in section.blocks %}
+        <div class="pp-table__column-wrapper">
+          <div class="pp-table__title-wrapper background--blue">
+            <span class="pp-table__title text--white">{{ block.settings.title }}</span>
+          </div>
+          <div class="pp-table__subtitle-wrapper">
+            {% if block.settings.subtitle != blank %}
+              <span class="pp-table__subtitle text--light-black">{{ block.settings.subtitle }}</span>
+            {% endif %}
+            {% if block.settings.description != blank %}
+              <p class="pp-table__description text--gray">{{ block.settings.description }}</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "PP Table",
+  "max_blocks": 5,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Regionaler Förderzuschuss"
+    },
+    {
+      "type": "html",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Bundesweite, regionale und städtische Mini-PV-Förderung - Balkonkraftwerk-Förderung 2023:"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Column",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Walldorf"
+        },
+        {
+          "type": "html",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "300 euros"
+        },
+        {
+          "type": "html",
+          "id": "description",
+          "label": "Description",
+          "default": "maximal 50 % der anrechenbaren Kosten"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

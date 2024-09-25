@@ -1,0 +1,418 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "Product Tabs",
+  "id": "product-tabs",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "class": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "type": "checkbox",
+      "id": "atb_enable_checkbox",
+      "label": "Enable section",
+      "default": true,
+      "info": ""
+    },
+    {
+      "id": "atb_tab1_name",
+      "type": "text",
+      "label": "Tab 1 name",
+      "default": "Active",
+      "info": ""
+    },
+    {
+      "id": "atb_tab2_name",
+      "type": "text",
+      "label": "Tab 2 name",
+      "default": "Inactive",
+      "info": ""
+    },
+    {
+      "id": "atb_tab3_name",
+      "type": "text",
+      "label": "Tab 3 name",
+      "default": "Contact",
+      "info": ""
+    },
+    {
+      "type": "select",
+      "id": "block_type",
+      "label": "Block Type",
+      "info": "",
+      "default": "",
+      "options": [
+        {
+          "value": "tab1",
+          "label": "tab1"
+        },
+        {
+          "value": "tab2",
+          "label": "tab2"
+        },
+        {
+          "value": "tab3",
+          "label": "tab3"
+        }
+      ],
+      "repeatable": "block"
+    },
+    {
+      "type": "text",
+      "id": "blocks",
+      "label": "Block ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": "",
+      "repeatable": "block"
+    },
+    {
+      "type": "header",
+      "content": "Tab 1",
+      "repeatable": "block",
+      "info": ""
+    },
+    {
+      "id": "block_tab_image",
+      "type": "image_picker",
+      "label": "Tab image",
+      "repeatable": "block",
+      "info": ""
+    },
+    {
+      "id": "block_main_image",
+      "type": "image_picker",
+      "label": "Main image",
+      "repeatable": "block",
+      "info": ""
+    },
+    {
+      "id": "block_main_image_mobile",
+      "type": "image_picker",
+      "label": "Main Image Mobile",
+      "repeatable": "block",
+      "info": ""
+    },
+    {
+      "id": "block_title",
+      "type": "text",
+      "label": "Quote",
+      "default": "Product Intro Copy",
+      "repeatable": "block",
+      "info": ""
+    },
+    {
+      "id": "block_description",
+      "type": "text",
+      "label": "Description",
+      "default": "Long lasting life span",
+      "repeatable": "block",
+      "info": ""
+    }
+  ],
+  "warnings": [
+    "repeating image fields may not be properly handled",
+    "some fields may be named the same"
+  ]
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_enable_checkbox' -%}
+{%- assign atb_enable_checkbox = val -%}
+{%- include 'atb-render' field:'atb_tab1_name' -%}
+{%- assign atb_tab1_name = val -%}
+{%- include 'atb-render' field:'atb_tab2_name' -%}
+{%- assign atb_tab2_name = val -%}
+{%- include 'atb-render' field:'atb_tab3_name' -%}
+{%- assign atb_tab3_name = val -%}
+{%- include 'atb-render' field:'block_type' -%}
+{%- assign block_type = val -%}
+{%- include 'atb-render' field:'blocks' -%}
+{%- assign blocks = val -%}
+{%- include 'atb-render' field:'block_tab_image' -%}
+{%- assign block_tab_image = val -%}
+{%- include 'atb-render' field:'block_main_image' -%}
+{%- assign block_main_image = val -%}
+{%- include 'atb-render' field:'block_main_image_mobile' -%}
+{%- assign block_main_image_mobile = val -%}
+{%- include 'atb-render' field:'block_title' -%}
+{%- assign block_title = val -%}
+{%- include 'atb-render' field:'block_description' -%}
+{%- assign block_description = val -%}
+{%- if atb_enable_checkbox == blank -%}
+{%- assign atb_enable_checkbox = false -%}
+{%- else -%}
+{%- assign atb_enable_checkbox = true -%}
+{%- endif -%}
+{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section ">
+{% if atb_enable_checkbox %}
+  <section class="product-intro" id="product-tabs">
+    <div class="gray-bg intro-pdp-tabs">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7 mx-auto">
+            <div class="intro-heading">
+              <h2>{{atb_heading}}</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-lg-6 pr-lg-5 left-into desktop-image">
+            <span class="left-img">
+              <img class="lazyload desktop-image" id="tab-main-img" src="">
+            </span>
+            <h3 id="tab-main-title">Title</h3>
+            <p id="tab-main-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div class="col-lg-6 right-into-tabs">
+            <ul class="tabs-pdp-top p-0 m-0 nav nav-tabs" id="myTab" role="tablist">
+              {% if atb_tab1_name %}
+                  <li class="nav-item"><a class="nav-link active" id="active-pdp-tab" data-toggle="tab" href="#active-pdp" role="tab" aria-controls="active-pdp" aria-selected="true">{{atb_tab1_name}}</a></li>
+              {% endif %}
+              {% if atb_tab2_name %}
+                  <li class="nav-item"><a class="nav-link" id="inactive-pdp-tab" data-toggle="tab" href="#inactive-pdp" role="tab" aria-controls="inactive-pdp" aria-selected="false">{{atb_tab2_name}}</a></li>
+              {% endif %}
+              {% if atb_tab3_name %}
+                  <li class="nav-item"><a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">{{atb_tab3_name}}</a></li>
+              {% endif %}
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              {% if atb_tab1_name %}
+                <div class="tab-pane fade show active" id="active-pdp" role="tabpanel" aria-labelledby="active-pdp-tab">
+                  <div class="row product-tabs-container">
+                   {% for block0 in blocks %}
+{%- assign my_image_key2 = block_main_image_mobile[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image2 = images[my_image_key2] -%}
+{%- assign my_image_key1 = block_main_image[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image1 = images[my_image_key1] -%}
+{%- assign my_image_key0 = block_tab_image[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image0 = images[my_image_key0] -%}
+                      {% if block_type[forloop.index0] == "tab1" %}
+                        <div class="col-4">
+
+                          <div class="pdp-list-block tab-li">
+                            <div class="wrapper">
+                              <h3>{{block_title[forloop.index0]}}</h3>
+                            </div>
+                            <span class="tab-img-icons">
+                              <img class="lazyload" data-src="{{my_image0 | img_url: '1200x'}}" data-main-img="{{my_image1 | img_url: '1200x'}}" data-main-img-mobile="{{my_image2 | img_url: '1200x'}}" data-description="{{block_description[forloop.index0]}}">
+                            </span>
+                          </div>
+                          <!-- <div class="pdp-list-block">
+                            <ul class="m-0 p-0">
+                              <li class="tab-li">
+                                <a href="javascript:void(0)">
+                                  <h3>{{block_title[forloop.index0]}}</h3>
+                                  <span class="tab-img-icons">
+                                  	<img class="lazyload" data-src="{{my_image0 | img_url: '1200x'}}" data-main-img="{{my_image1 | img_url: '1200x'}}" data-main-img-mobile="{{my_image2 | img_url: '1200x'}}" data-description="{{block_description[forloop.index0]}}">
+                                  </span>
+                                 </a>
+                              </li>
+                            </ul>
+                          </div> -->
+                        </div>
+                      {% endif %}
+                   {% endfor %}
+                  </div>
+                </div>
+              {% endif %}
+
+              {% if atb_tab2_name %}
+                <div class="tab-pane fade" id="inactive-pdp" role="tabpanel" aria-labelledby="inactive-pdp-tab">
+                  <div class="row product-tabs-container">
+                   {% for block0 in blocks %}
+{%- assign my_image_key2 = block_main_image_mobile[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image2 = images[my_image_key2] -%}
+{%- assign my_image_key1 = block_main_image[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image1 = images[my_image_key1] -%}
+{%- assign my_image_key0 = block_tab_image[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image0 = images[my_image_key0] -%}
+                      {% if block_type[forloop.index0] == "tab2" %}
+                        <div class="col-4">
+
+                          <div class="pdp-list-block tab-li">
+                            <div class="wrapper">
+                              <h3>{{block_title[forloop.index0]}}</h3>
+                            </div>
+                            <span class="tab-img-icons">
+                              <img class="lazyload" data-src="{{my_image0 | img_url: '1200x'}}" data-main-img="{{my_image1 | img_url: '1200x'}}" data-main-img-mobile="{{my_image2 | img_url: '1200x'}}" data-description="{{block_description[forloop.index0]}}">
+                            </span>
+                          </div>
+                          <!-- <div class="pdp-list-block">
+                            <ul class="m-0 p-0">
+                              <li class="tab-li">
+                                <a href="javascript:void(0)">
+                                  <h3>{{block_title[forloop.index0]}}</h3>
+                                  <span class="tab-img-icons">
+                                  	<img class="lazyload" data-src="{{my_image0 | img_url: '1200x'}}" data-main-img="{{my_image1 | img_url: '1200x'}}" data-main-img-mobile="{{my_image2 | img_url: '1200x'}}" data-description="{{block_description[forloop.index0]}}">
+                                  </span>
+                                 </a>
+                              </li>
+                            </ul>
+                          </div> -->
+                        </div>
+                      {% endif %}
+                   {% endfor %}
+                  </div>
+                </div>
+              {% endif %}
+
+              {% if atb_tab3_name %}
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                  <div class="row product-tabs-container">
+                   {% for block0 in blocks %}
+{%- assign my_image_key2 = block_main_image_mobile[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image2 = images[my_image_key2] -%}
+{%- assign my_image_key1 = block_main_image[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image1 = images[my_image_key1] -%}
+{%- assign my_image_key0 = block_tab_image[forloop.index0]| split: '/files/' | last -%}
+{%- assign my_image0 = images[my_image_key0] -%}
+                      {% if block_type[forloop.index0] == "tab3" %}
+                        <div class="col-4">
+
+                          <div class="pdp-list-block tab-li">
+                            <div class="wrapper">
+                              <h3>{{block_title[forloop.index0]}}</h3>
+                            </div>
+                            <span class="tab-img-icons">
+                              <img class="lazyload" data-src="{{my_image0 | img_url: '1200x'}}" data-main-img="{{my_image1 | img_url: '1200x'}}" data-main-img-mobile="{{my_image2 | img_url: '1200x'}}" data-description="{{block_description[forloop.index0]}}">
+                            </span>
+                          </div>
+                          <!-- <div class="pdp-list-block">
+                            <ul class="m-0 p-0">
+                              <li class="tab-li">
+                                <a href="javascript:void(0)">
+                                  <h3>{{block_title[forloop.index0]}}</h3>
+                                  <span class="tab-img-icons">
+                                  	<img class="lazyload" data-src="{{my_image0 | img_url: '1200x'}}" data-main-img="{{my_image1 | img_url: '1200x'}}" data-main-img-mobile="{{my_image2 | img_url: '1200x'}}" data-description="{{block_description[forloop.index0]}}">
+                                  </span>
+                                 </a>
+                              </li>
+                            </ul>
+                          </div> -->
+
+                        </div>
+                      {% endif %}
+                   {% endfor %}
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Modal -->
+  <div class="modal fade pdp-modal pdp-product-tab-modal" id="pdpProductTabModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="full-height">
+      <div class="modal-dialog modal-lg w-100" role="document">
+        <div class="modal-content">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 0H0V24H24V0Z" fill="white" fill-opacity="0.01"/>
+              <path d="M4 4L20 20" stroke="#707070" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M4 20L20 4" stroke="#707070" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="modal-body p-md-5 py-5">
+            <div class="row">
+
+                <div class="col-12">
+<!--                   <span><img class="lazyload product-image"></span> -->
+                  <span><img class="lazyload product-image" data-src="{{atb_main_image_mobile | img_url: '1200x'}}"></span>
+
+                </div>
+
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <h5 class="product-title"></h5>
+
+              </div>
+              <div class="col-md-12">
+                <p class="product-description"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+
+
+
+<script>
+  $("document").ready(function(){
+  	var $initialLi = $(".tab-pane.fade.active.show").find(".tab-li").first();
+    setTimeout(function(){
+	    mainDivFormatting($initialLi);
+	}, 1000);
+  });
+
+  $(".tab-li").click(function(){
+	mainDivFormatting($(this));
+    //Show modal only on mobile layout
+    if($(window).width() <= 767){
+	    pdpProductTabModalFormatting($(this));
+    }
+  });
+
+  function mainDivFormatting($this){
+    const pdpData = getPdpItemData($this)
+    const mainImgUrl = pdpData["mainImgUrl"];
+    const mainTitle = pdpData["mainTitle"];
+    const mainDesc = pdpData["mainDesc"];
+    $("#tab-main-img").attr("src",mainImgUrl);
+    $("#tab-main-title").text(mainTitle);
+    $("#tab-main-description").text(mainDesc);
+
+
+  }
+
+  function pdpProductTabModalFormatting($this){
+    const pdpData = getPdpItemData($this)
+    const mainImgUrl = pdpData["mainImgUrl"];
+    const mainTitle = pdpData["mainTitle"];
+    const mainDesc = pdpData["mainDesc"];
+    const mainImgMobileUrl = pdpData["mainImgMobileUrl"];
+    $(".pdp-product-tab-modal .product-image").attr("src",mainImgMobileUrl);
+    $(".pdp-product-tab-modal .product-title").text(mainTitle);
+    $(".pdp-product-tab-modal .product-description").text(mainDesc);
+    $(".pdp-product-tab-modal").modal('show');
+  }
+
+  function getPdpItemData($this){
+    const mainImgUrl = $this.find("img").attr("data-main-img");
+    const mainImgMobileUrl = $this.find("img").attr("data-main-img-mobile");
+    const mainTitle = $this.text().trim();
+    const mainDesc = $this.find("img").attr("data-description");
+    return {
+      "mainImgUrl": mainImgUrl,
+      "mainTitle": mainTitle,
+      "mainDesc": mainDesc,
+      "mainImgMobileUrl": mainImgMobileUrl
+    }
+  }
+
+</script>
+
+<style>
+  .pdp-list-block ul li {
+  	max-height: 200px;
+  }
+</style></section>

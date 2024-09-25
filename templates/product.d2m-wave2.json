@@ -1,0 +1,649 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "sticky-product-bar": {
+      "type": "sticky-product-bar",
+      "blocks": {
+        "588d25af-4d47-43ac-9697-b98aa2f65719": {
+          "type": "tab",
+          "disabled": true,
+          "settings": {
+            "tab_title": "Overview",
+            "tab_id": "product_information",
+            "section_class": ""
+          }
+        },
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4": {
+          "type": "tab",
+          "disabled": true,
+          "settings": {
+            "tab_title": "FAQ",
+            "tab_id": "faq",
+            "section_class": ""
+          }
+        },
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38": {
+          "type": "tab",
+          "disabled": true,
+          "settings": {
+            "tab_title": "Reviews",
+            "tab_id": "section-reviews",
+            "section_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "588d25af-4d47-43ac-9697-b98aa2f65719",
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4",
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38"
+      ],
+      "settings": {
+        "enabled": true,
+        "enabled_tabs": true
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "11795adc-1afa-4833-a193-258f495901ef": {
+          "type": "sku_block",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e": {
+          "type": "product_title",
+          "settings": {
+          }
+        },
+        "judge_me_reviews_preview_badge_hJCtpr": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "0471109f-c130-454e-a9ba-c56412cc11f3": {
+          "type": "product_vendor",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185": {
+          "type": "product_price",
+          "settings": {
+          }
+        },
+        "d25a0285-4fb4-422d-b95b-ab67446120ad": {
+          "type": "product_description",
+          "settings": {
+            "desc_display": "default"
+          }
+        },
+        "79e1b437-5bbd-4b8a-ac55-27c2f795ee99": {
+          "type": "coupon_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Component_2_1.png",
+            "discount_off_text": "{{ product.metafields.custom.discount_off_text.value }}",
+            "code": "{{ product.metafields.custom.discount_code.value }}",
+            "show_copy_code_btn": true
+          }
+        },
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879": {
+          "type": "product_options_block",
+          "settings": {
+            "show_product_swatches": true,
+            "use_variant_image_for_swatches": true,
+            "button_content": ""
+          }
+        },
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe": {
+          "type": "quantity_block",
+          "settings": {
+          }
+        },
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0": {
+          "type": "accessories_section",
+          "settings": {
+            "title": "Accessories",
+            "metafield": "accessories"
+          }
+        },
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609": {
+          "type": "product_buttons",
+          "settings": {
+            "enable_payment_button": false,
+            "show_custom_icons": true,
+            "custom_payment_logo_1_svg": "",
+            "custom_payment_logo_2_svg": "",
+            "custom_payment_logo_3_svg": "",
+            "custom_payment_logo_4_svg": "",
+            "custom_payment_logo_5_svg": "",
+            "custom_payment_logo_6_svg": "",
+            "custom_payment_logo_7_svg": "",
+            "custom_payment_logo_8_svg": "",
+            "custom_payment_logo_9_svg": "",
+            "custom_payment_logo_10_svg": "",
+            "custom_payment_logo_11_svg": "",
+            "custom_payment_logo_12_svg": "",
+            "custom_payment_logo_13_svg": "",
+            "custom_payment_logo_14_svg": "",
+            "custom_payment_logo_15_svg": ""
+          }
+        },
+        "a6857d85-dbb6-41d1-9501-c01cf5bbe11f": {
+          "type": "back_in_stock",
+          "disabled": true,
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "11795adc-1afa-4833-a193-258f495901ef",
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e",
+        "judge_me_reviews_preview_badge_hJCtpr",
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774",
+        "0471109f-c130-454e-a9ba-c56412cc11f3",
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185",
+        "d25a0285-4fb4-422d-b95b-ab67446120ad",
+        "79e1b437-5bbd-4b8a-ac55-27c2f795ee99",
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879",
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe",
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0",
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609",
+        "a6857d85-dbb6-41d1-9501-c01cf5bbe11f"
+      ],
+      "settings": {
+        "section_id": "",
+        "show_breadcrumbs": false,
+        "show_pick_an_option": false,
+        "enable_linked_options": false,
+        "enabled_mobile_sticky_btns": true,
+        "media_size": "medium",
+        "enable_image_zoom": true,
+        "enable_video_looping": true,
+        "thumbnails_type": "grid",
+        "support_email": "",
+        "support_text": "",
+        "feature_1_show": true,
+        "feature_1_title": "Fast & Free Shipping",
+        "feature_1_content": "",
+        "feature_2_show": true,
+        "feature_2_title": "Warranty Protection",
+        "feature_2_content": "",
+        "feature_3_show": true,
+        "feature_3_title": "Secure Payments",
+        "feature_3_content": "",
+        "feature_4_show": true,
+        "feature_4_title": "Multi-channel Support",
+        "feature_4_content": ""
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "grid_mobile": "2",
+        "heading": "You may also like",
+        "show_vendor": false
+      }
+    },
+    "3457daa7-eb8c-4f1a-9b77-6d6dff3ed929": {
+      "type": "pdp-rich-text",
+      "custom_css": [
+
+      ],
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 20,
+        "section_bottom_spacing": 20,
+        "section_top_spacing_mobile": 20,
+        "section_bottom_spacing_mobile": 20,
+        "alignment": "center",
+        "title": "",
+        "subtitle": "<h3>Sincronice su WAVE 2 con un EcoFlow DELTA 2 Max y disfrute de 14 largas horas de funcionamiento en modo Eco de Wave 2. En comparación con otras estaciones de energía portátiles, ofrece un 28 % más de eficiencia. Disfrute de comodidad durante más tiempo en su tienda, autocaravana u hogar gracias a su diseño eficaz y portátil.<\/h3>",
+        "content": "",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "0798ea98-f21d-4692-ba69-2ef2a8162166": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "",
+        "subtitle": "",
+        "content": "",
+        "button_link": "",
+        "button_text": "",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/WAVE2_DM-01.png",
+        "mobile_image": "shopify:\/\/shop_images\/M-WAVE2_DM-01.png",
+        "video_type": "mp4",
+        "video_url": "",
+        "mp4_video_url": "",
+        "mp4_video_url_m": "",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": ""
+      }
+    },
+    "92191593-ab22-4ea1-b82c-e376d66e985a": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "Capacidad más rápida de climatización",
+        "subtitle": "<p>El primer climatizador portátil sin cables del mundo con un calefactor.<\/p>",
+        "content": "<p><strong>El compresor fabricado a medida de EcoFlow permite a Wave 2 proporcionar 5100 BTU de aire acondicionado y 6100 BTU de calefacción. ¡Prepárese para lo último en comodidad con Wave 2!<\/strong><\/p><p>Aire acondicionado de 30 ℃ a 20 ℃ (-10 ℃) en 5 minutos<br\/>Calefacción de 20 ℃ a 30 ℃ (+10 ℃) en 5 minutos<\/p><p>El estándar de excelencia en aire acondicionado: 120 % más potente que otros similares de la industria<\/p><p>*Logra una disminución de 10 ℃ desde los 30 ℃ en espacios de 10 m³ en 5 minutos con 5100 BTU de refrigeración, y sube 10 ℃ desde los 20 ℃ en espacios de 10 m³ en 5 minutos con 6100 BTU de calefacción, en unas condiciones de funcionamiento óptimas.<\/p>",
+        "button_link": "",
+        "button_text": "",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/WAVE_2-04.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/WAVE_2-04.jpg",
+        "video_type": "mp4",
+        "video_url": "",
+        "mp4_video_url": "",
+        "mp4_video_url_m": "",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": ""
+      }
+    },
+    "78d4f57f-9130-4908-b471-f26e36b206f9": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "¡Sin la necesidad de realizar instalaciones!",
+        "subtitle": "<p><strong>Se adapta a cualquier lugar:<\/strong><\/p>",
+        "content": "<p><strong>¡El aire acondicionado perfecto para cualquier lugar donde haya poco espacio! Es extremadamente fácil de usar y no necesita instalación ni drenaje*. Los adaptadores de los conductos de aire se adaptan a cualquier espacio. Disfrute de la comodidad de calefacción y aire acondicionado silenciosos y sin realizar ningún tipo de instalación.<\/strong><\/p><p>* En el modo de aire acondicionado no se necesita ningún drenaje cuando la humedad es inferior al 70 %, pero si es necesario en modo de calefacción. <\/p><p><\/p>",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/WAVE_2-05.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/WAVE_2-05.jpg",
+        "video_type": "mp4",
+        "video_url": "",
+        "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/25377f61e0e94734b7e6b22c62c724e9.mp4",
+        "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/b4805f6b62754937bdd738e28c9b1927.mp4",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "688dfdf7-0bcc-4b10-b0a5-417c938095ec": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "Duerma tranquilo y sin ruidos molestos",
+        "subtitle": "",
+        "content": "<p><strong>gracias al algoritmo de software avanzado de EcoFlow, el Wave 2 ofrece varios modos y control mediante aplicación. Funciona de manera silenciosa (44 dB) en modo Sueño y hasta 8 horas en modo Eco. Disfrute de comodidad durante más tiempo en su tienda, autocaravana u hogar gracias a su diseño eficaz y portátil.<\/strong><\/p><h3>Modo Eco<strong>   |   <\/strong>8 horas de funcionamiento<strong>   |   <\/strong>Modo Sueño<strong>   |   S<\/strong>olo 44 dB<\/h3><p><\/p>",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/WAVE2_DM-04.png",
+        "mobile_image": "shopify:\/\/shop_images\/M-WAVE2_DM-04.png",
+        "video_type": "mp4",
+        "video_url": "",
+        "mp4_video_url": "",
+        "mp4_video_url_m": "",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "e5b03440-c3b1-4da4-a24c-87cb6f207150": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "Batería LFP de larga duración (10 años)",
+        "subtitle": "<p><strong>Duradera, segura, ligera<\/strong><\/p>",
+        "content": "<p><strong>Gracias a la renovada química de la batería LFP, DELTA 2 Max posee una vida útil de 3000 ciclos completos, tras los cuales su capacidad se reduce al 80 %. Disfrutará de 10 largos años de energía, incluso si se utiliza todos los días. Eso equivale a una vida útil seis veces mayor que otras estaciones de energía con una capacidad y salida similar.<\/strong><\/p>",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "video",
+        "video_type": "mp4",
+        "video_url": "",
+        "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/67aad57fcd344327aa0feb7912c3f976.mp4",
+        "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/823b546f0a744a7ab453025dfe5a4d8c.mp4",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": ""
+      }
+    },
+    "f3e56056-c27e-472e-b3ee-3a70d6306c68": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "Disfrute de la recarga solar y la salida de CA más rápida de la industria",
+        "subtitle": "<p><strong>80 % en 43 min.*<\/strong><\/p>",
+        "content": "<p><strong>Gracias a la renovada tecnología de la que dispone DELTA 2 Max, en solo 53 minutos obtendrá la carga de CA de hasta el 80 %. Combine una entrada de energía solar de hasta 1000 W con CA y podrá realizar una carga superrápida en tan solo 43 minutos.<br\/><br\/><\/strong> *Al combinar entrada solar y CA, la potencia es de 2400 W.<\/p>",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/WAVE2_GLACIER_D2M-7.png",
+        "mobile_image": "shopify:\/\/shop_images\/M-GLACIER_D2M-7.png",
+        "video_type": "youtube",
+        "video_url": "",
+        "mp4_video_url": "",
+        "mp4_video_url_m": "",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "48e9c643-00db-426f-a7ac-d20b2d936995": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "Paneles solares portátiles de 400 W",
+        "subtitle": "",
+        "content": "<p><strong>Nuestro panel solar portátil de 400 W ofrece una gran salida de energía solar, una eficiente tasa de conversión y un diseño plegable cómodo para que pueda llevarlo a cualquier sitio cuando quiera.<\/strong><\/p>",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/WAVE2_DM-07.png",
+        "mobile_image": "shopify:\/\/shop_images\/M-WAVE2_DM-07.png",
+        "video_type": "youtube",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "mp4_video_url": "",
+        "mp4_video_url_m": "",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "0fa0c5cf-3f3f-4a49-8697-c4e2c14793fa": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "Carga más rápido allí donde vaya.",
+        "subtitle": "",
+        "content": "<p><strong>Nuestro panel solar de 400 W con un diseño plegable únicocombina una producción de energía eficiente con portabilidad. Para lograr una eficiencia de hastael 23 % en la conversión solar, usamos células monocristalinas con varias barras colectoras para que disfrute inclusode más energía para recargar su energía portátil<\/strong><\/p>",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/WAVE2_DM-08.png",
+        "mobile_image": "shopify:\/\/shop_images\/M-WAVE2_DM-08.png",
+        "video_type": "youtube",
+        "video_url": "",
+        "mp4_video_url": "",
+        "mp4_video_url_m": "",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "c2d6654e-c56d-4556-8857-709667908743": {
+      "type": "pdp-specs",
+      "blocks": {
+        "3d0793c4-e505-4afc-8f59-75b81df8f0f7": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso neto",
+            "content": "<p>aproximado de 14,5 kg<\/p>"
+          }
+        },
+        "afbf26f2-d811-42b6-8440-3a4487013c3f": {
+          "type": "contents",
+          "settings": {
+            "title": "Dimensiones (largo×ancho×alto)",
+            "content": "<p>518×297×336 mm<\/p>"
+          }
+        },
+        "29870530-ec9f-4290-853a-0f44c74f270e": {
+          "type": "contents",
+          "settings": {
+            "title": "Wi-Fi",
+            "content": "<p>compatible<\/p>"
+          }
+        },
+        "bee82ed2-ae6f-4ff2-9c5d-d4df78657ce0": {
+          "type": "contents",
+          "settings": {
+            "title": "Bluetooth",
+            "content": "<p>compatible<\/p>"
+          }
+        },
+        "19377af7-ebea-42a5-914c-c1cd31d8e1ea": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de CA",
+            "content": "<p>100-240 V 50\/60 Hz, 820 W máx<\/p>"
+          }
+        },
+        "26e9c21f-90cc-4504-8415-ec2795cc27bc": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de carga de coche",
+            "content": "<p>12\/24 V 8 A, 200 W máx<\/p>"
+          }
+        },
+        "aedd994c-83a4-47e7-912a-11067e096dff": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada solar",
+            "content": "<p>11-60 V 13A, 400 W máx<\/p>"
+          }
+        },
+        "c4d514e9-ce85-4c2a-a69d-d7dfb16f8748": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de batería externa",
+            "content": "<p>700 W máx<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "3d0793c4-e505-4afc-8f59-75b81df8f0f7",
+        "afbf26f2-d811-42b6-8440-3a4487013c3f",
+        "29870530-ec9f-4290-853a-0f44c74f270e",
+        "bee82ed2-ae6f-4ff2-9c5d-d4df78657ce0",
+        "19377af7-ebea-42a5-914c-c1cd31d8e1ea",
+        "26e9c21f-90cc-4504-8415-ec2795cc27bc",
+        "aedd994c-83a4-47e7-912a-11067e096dff",
+        "c4d514e9-ce85-4c2a-a69d-d7dfb16f8748"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Especificaciones de WAVE 2"
+      }
+    },
+    "7e6cc59f-5e96-4d89-aa41-887919b74054": {
+      "type": "pdp-specs",
+      "blocks": {
+        "b2eef36c-f30f-4e1e-927d-c98d835bad17": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de CA",
+            "content": "<p>Máx. de 2300 W con X-Stream<\/p>"
+          }
+        },
+        "7ae0bb8a-ea1c-43e5-b41d-487250cef6c6": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de energía solar",
+            "content": "<p>11 V-60 V, 15A máx.,1000 W máx.<\/p>"
+          }
+        },
+        "99172e1b-0e9e-45c7-a093-fbf68f88b141": {
+          "type": "contents",
+          "settings": {
+            "title": "Salida de CA",
+            "content": "<p>2400 W (pico de 4800 W), X-Boost 3100 W<\/p>"
+          }
+        },
+        "5cc0af3f-4bcf-41d0-86af-f7416c18ad8e": {
+          "type": "contents",
+          "settings": {
+            "title": "Ciclo de vida",
+            "content": "<p>3000 ciclos a una capacidad de más del 80 %<\/p>"
+          }
+        },
+        "14ccf8ef-ec40-4072-9f22-4372faefc269": {
+          "type": "contents",
+          "settings": {
+            "title": "Dimensiones",
+            "content": "<p>49,7 × 24,2 × 30,5 cm<\/p>"
+          }
+        },
+        "f3f9e14b-9c83-4282-9481-19037631aeee": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso",
+            "content": "<p>23 kg<\/p>"
+          }
+        },
+        "59af2b5f-2399-447c-b240-68434c84402e": {
+          "type": "contents",
+          "settings": {
+            "title": "Capacidad",
+            "content": "<p>2048Wh<\/p>"
+          }
+        },
+        "444f181d-2a69-4d3d-b2ee-1e3a833f401c": {
+          "type": "contents",
+          "settings": {
+            "title": "Garantía",
+            "content": "<p>5 años<\/p>"
+          }
+        },
+        "e79061f5-5be0-47a0-af27-f3adf99e6157": {
+          "type": "contents",
+          "settings": {
+            "title": "Conexión",
+            "content": "<p>Wi-Fi, Bluetooth<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "b2eef36c-f30f-4e1e-927d-c98d835bad17",
+        "7ae0bb8a-ea1c-43e5-b41d-487250cef6c6",
+        "99172e1b-0e9e-45c7-a093-fbf68f88b141",
+        "5cc0af3f-4bcf-41d0-86af-f7416c18ad8e",
+        "14ccf8ef-ec40-4072-9f22-4372faefc269",
+        "f3f9e14b-9c83-4282-9481-19037631aeee",
+        "59af2b5f-2399-447c-b240-68434c84402e",
+        "444f181d-2a69-4d3d-b2ee-1e3a833f401c",
+        "e79061f5-5be0-47a0-af27-f3adf99e6157"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Especificaciones de DELTA 2 Max"
+      }
+    },
+    "1a803663-2273-4977-bb82-4ad6f5dbec8c": {
+      "type": "pdp-specs",
+      "blocks": {
+        "a55174ba-0858-447f-9c4e-4865b8410df2": {
+          "type": "contents",
+          "settings": {
+            "title": "Dimensiones",
+            "content": "<p>106,8 x 239,0 x 2,4 cm<\/p>"
+          }
+        },
+        "c96a804b-2008-4067-8f41-da0a1c85b84f": {
+          "type": "contents",
+          "settings": {
+            "title": "Tipo de celda",
+            "content": "<p>silicio monocristalino<\/p>"
+          }
+        },
+        "2942a171-7fa0-4c0f-943f-7a9030bae4f9": {
+          "type": "contents",
+          "settings": {
+            "title": "Tensión de circuito abierto",
+            "content": "<p>48V (Vmp 41V)<\/p>"
+          }
+        },
+        "4c9a3539-2939-443f-aab0-ab339a5aa0f8": {
+          "type": "contents",
+          "settings": {
+            "title": "Corriente de cortocircuito",
+            "content": "<p>11A (Imp 9.8A)<\/p>"
+          }
+        },
+        "0c81675c-0860-4a38-82a3-fb0ea1c18da7": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso (panel solar)",
+            "content": "<p>aprox. 16,0 Kg<\/p>"
+          }
+        },
+        "96b80a7f-f7d4-4913-b1e1-1a1a52057ac8": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso (con carcasa de soporte)",
+            "content": "<p>aprox. 19 kg<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "a55174ba-0858-447f-9c4e-4865b8410df2",
+        "c96a804b-2008-4067-8f41-da0a1c85b84f",
+        "2942a171-7fa0-4c0f-943f-7a9030bae4f9",
+        "4c9a3539-2939-443f-aab0-ab339a5aa0f8",
+        "0c81675c-0860-4a38-82a3-fb0ea1c18da7",
+        "96b80a7f-f7d4-4913-b1e1-1a1a52057ac8"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Specs of 400W portable solar panelEspecificaciones del panel solar portátil de 400 W"
+      }
+    },
+    "171412801053fdfbda": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_pqdyaB": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_pqdyaB"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    }
+  },
+  "order": [
+    "sticky-product-bar",
+    "main",
+    "product-recommendations",
+    "3457daa7-eb8c-4f1a-9b77-6d6dff3ed929",
+    "0798ea98-f21d-4692-ba69-2ef2a8162166",
+    "92191593-ab22-4ea1-b82c-e376d66e985a",
+    "78d4f57f-9130-4908-b471-f26e36b206f9",
+    "688dfdf7-0bcc-4b10-b0a5-417c938095ec",
+    "e5b03440-c3b1-4da4-a24c-87cb6f207150",
+    "f3e56056-c27e-472e-b3ee-3a70d6306c68",
+    "48e9c643-00db-426f-a7ac-d20b2d936995",
+    "0fa0c5cf-3f3f-4a49-8697-c4e2c14793fa",
+    "c2d6654e-c56d-4556-8857-709667908743",
+    "7e6cc59f-5e96-4d89-aa41-887919b74054",
+    "1a803663-2273-4977-bb82-4ad6f5dbec8c",
+    "171412801053fdfbda"
+  ]
+}

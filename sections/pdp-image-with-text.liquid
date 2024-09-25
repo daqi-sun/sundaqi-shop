@@ -1,0 +1,374 @@
+<section id="{{ section.id }}" class="pdp pdp-image-text">
+    <div class="pdp-image-text-container {% if section.settings.layout == "owl-carousel owl-theme" %}owl-pr-0{% endif%}" id="{{ section.settings.section_id }}">
+        <div class="stacked content-alignment-{{ section.settings.alignment }} {% if section.settings.layout == "owl-carousel owl-theme" %}d-sm-none{% endif %}">
+            {% for block in section.blocks %}
+                <div class="stack-content stack-content-{{ section.settings.stacked_row }} mobile-stack-content-{{ section.settings.mobile_stacked_row }}" style="--image-height: {{block.settings.image_height}}px;--mobile-image-height: {{block.settings.mobile_image_height}}px;">
+                    {% if block.settings.media_type == 'video' %}
+                        {% if block.settings.mp4_video_url != blank or block.settings.mp4_video_url_m != blank %}
+                            <div class="image-content">
+                                <div class="video-parent {% if block.settings.mp4_video_url_m != blank %}hideMobile{% endif %} video-autoplay-{{block.settings.autoplay_video}}">
+                                    <video loop muted playsinline>
+                                        <source src="{{ block.settings.mp4_video_url }}#t=0.001" type="video/mp4">
+                                    </video>
+                                    {% if block.settings.autoplay_video == false %}
+                                        <div class="play-video">
+                                            {% render 'video-play-icon' %}
+                                            {% render 'video-pause-icon' %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                                {% if block.settings.mp4_video_url_m != blank %}
+                                    <div class="video-parent hideDesktop video-autoplay-{{block.settings.autoplay_video}}">
+                                        <video loop muted playsinline>
+                                            <source src="{{ block.settings.mp4_video_url_m }}#t=0.001" type="video/mp4">
+                                        </video>
+                                        {% if block.settings.autoplay_video == false %}
+                                            <div class="play-video">
+                                                {% render 'video-play-icon' %}
+                                                {% render 'video-pause-icon' %}
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    {% else %}
+                        {% if block.settings.image != blank or block.settings.mobile_image != blank %}
+                            <picture>
+                                <source media="(min-width:750px)" srcset="{{ block.settings.image | image_url: width: 1000 }}">
+                                {% if block.settings.mobile_image != blank %}
+                                    <source media="(max-width:749px)"  srcset="{{ block.settings.mobile_image | image_url: width: 749 }}">
+                                {% else %}
+                                    <source media="(max-width:749px)"  srcset="{{ block.settings.image | image_url: width: 749 }}">
+                                {% endif %}
+                                <img src="{{ block.settings.image | image_url: width: 1000 }}" alt="{{ block.settings.image.alt }}" style="width: 100%;">
+                            </picture>
+                        {% endif %}
+                    {% endif %}
+                    <div class="text-content">
+                        {% if block.settings.subtext_top != blank %}
+                            {{ block.settings.subtext_top }}
+                        {% endif %}
+                        {% if block.settings.subtext_bottom != blank %}
+                            {{ block.settings.subtext_bottom }}
+                        {% endif %}
+                    </div>
+                    {% if block.settings.button_link != blank and block.settings.button_text != blank %}
+                        <a href="{{ block.settings.button_link }}" class="pdp-button">{{ block.settings.button_text }}</a>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+        {% if section.settings.layout == "owl-carousel owl-theme" %}
+            <div class="owl-carousel owl-theme content-alignment-{{ section.settings.alignment }}">
+                {% for block in section.blocks %}
+                    <div class="stack-content item">
+                        {% if block.settings.media_type == 'video' %}
+                            {% if block.settings.mp4_video_url != blank or block.settings.mp4_video_url_m != blank %}
+                                <div class="image-content">
+                                    <div class="video-parent {% if block.settings.mp4_video_url_m != blank %}hideMobile{% endif %} video-autoplay-{{block.settings.autoplay_video}}">
+                                        <video loop muted playsinline>
+                                            <source src="{{ block.settings.mp4_video_url }}#t=0.001" type="video/mp4">
+                                        </video>
+                                        {% if block.settings.autoplay_video == false %}
+                                            <div class="play-video">
+                                                {% render 'video-play-icon' %}
+                                                {% render 'video-pause-icon' %}
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                    {% if block.settings.mp4_video_url_m != blank %}
+                                        <div class="video-parent hideDesktop video-autoplay-{{block.settings.autoplay_video}}">
+                                            <video loop muted playsinline>
+                                                <source src="{{ block.settings.mp4_video_url_m }}#t=0.001" type="video/mp4">
+                                            </video>
+                                            {% if block.settings.autoplay_video == false %}
+                                                <div class="play-video">
+                                                    {% render 'video-play-icon' %}
+                                                    {% render 'video-pause-icon' %}
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                        {% else %}
+                            {% if block.settings.image != blank or block.settings.mobile_image != blank %}
+                                <picture>
+                                    <source media="(min-width:750px)" srcset="{{ block.settings.image | image_url: width: 1000 }}">
+                                    {% if block.settings.mobile_image != blank %}
+                                        <source media="(max-width:749px)"  srcset="{{ block.settings.mobile_image | image_url: width: 749 }}">
+                                    {% else %}
+                                        <source media="(max-width:749px)"  srcset="{{ block.settings.image | image_url: width: 749 }}">
+                                    {% endif %}
+                                    <img src="{{ block.settings.image | image_url: width: 1000 }}" alt="{{ block.settings.image.alt }}" style="width: 100%;">
+                                </picture>
+                            {% endif %}
+                        {% endif %}
+                        <div class="text-content">
+                            {% if block.settings.subtext_top != blank %}
+                                {{ block.settings.subtext_top }}
+                            {% endif %}
+                            {% if block.settings.subtext_bottom != blank %}
+                                {{ block.settings.subtext_bottom }}
+                            {% endif %}
+                        </div>
+                        {% if block.settings.button_link != blank and block.settings.button_text != blank %}
+                            <a href="{{ block.settings.button_link }}" class="pdp-button">{{ block.settings.button_text }}</a>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</section>
+<script>
+    let owl = $("#{{ section.id }} .owl-carousel");
+    if(owl) {
+        let owlCarousel = owl.owlCarousel({
+            margin:12,
+            dots:true,
+            stagePadding: 39,
+            responsive:{
+                0:{
+                    items:{{ section.settings.mobile_slider_row }}
+                },
+                749:{
+                    items: {{ section.settings.slider_row }}
+                }
+            }
+        })
+    }
+</script>
+{% schema %}
+{
+    "name": "PDP Image with Text",
+    "presets": [
+        {
+            "name": "PDP Image with Text"
+        }
+    ],
+    "settings": [
+        {
+            "type": "text",
+            "id": "section_id",
+            "label": "Section ID"
+        },
+        {
+            "type": "select",
+            "id": "alignment",
+            "label": "Text alignment",
+            "options": [
+                {
+                    "value": "left",
+                    "label": "Left"
+                },
+                {
+                    "value": "right",
+                    "label": "Right"
+                },
+                {
+                    "value": "center",
+                    "label": "Center"
+                }
+            ],
+            "default": "center"
+        },
+        {
+            "type": "select",
+            "id": "layout",
+            "label": "Mobile Layout",
+            "options": [
+                {
+                    "label": "Stacked",
+                    "value": "stacked"
+                },
+                {
+                    "label": "Slider",
+                    "value": "owl-carousel owl-theme"
+                }
+            ],
+            "default": "stacked"
+        },
+        {
+            "type": "select",
+            "id": "stacked_row",
+            "label": "Desktop Stacked row per column",
+            "options": [
+                {
+                    "label": "1",
+                    "value": "1"
+                },
+                {
+                    "label": "2",
+                    "value": "2"
+                },
+                {
+                    "label": "3",
+                    "value": "3"
+                },
+                {
+                    "label": "4",
+                    "value": "4"
+                }
+            ],
+            "default": "2",
+            "info": "Enabled if Layout selected is Stacked"
+        },
+        {
+            "type": "select",
+            "id": "mobile_stacked_row",
+            "label": "Mobile Stacked row per column",
+            "options": [
+                {
+                    "label": "1",
+                    "value": "1"
+                },
+                {
+                    "label": "2",
+                    "value": "2"
+                }
+            ],
+            "default": "2",
+            "info": "Enabled if Layout selected is Stacked"
+        },
+        {
+            "type": "select",
+            "id": "slider_row",
+            "label": "Desktop slider row per column",
+            "options": [
+                {
+                    "label": "1",
+                    "value": "1"
+                },
+                {
+                    "label": "2",
+                    "value": "2"
+                },
+                {
+                    "label": "3",
+                    "value": "3"
+                },
+                {
+                    "label": "4",
+                    "value": "4"
+                }
+            ],
+            "default": "2",
+            "info": "Enabled if Layout selected is Slider"
+
+        },
+        {
+            "type": "select",
+            "id": "mobile_slider_row",
+            "label": "Mobile slider row per column",
+            "options": [
+                {
+                    "label": "1",
+                    "value": "1"
+                },
+                {
+                    "label": "2",
+                    "value": "2"
+                },
+                {
+                    "label": "3",
+                    "value": "3"
+                },
+                {
+                    "label": "4",
+                    "value": "4"
+                }
+            ],
+            "default": "1",
+            "info": "Enabled if Layout selected is Slider"
+
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Image Content",
+            "type": "image_content",
+            "settings": [
+                {
+                    "type": "radio",
+                    "id": "media_type",
+                    "label": "Media type",
+                    "options": [
+                        { "value": "image", "label": "Image" },
+                        { "value": "video", "label": "Video" }
+                    ]
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "mobile_image",
+                    "label": "Mobile Image"
+                },
+                {
+                    "type": "range",
+                    "id": "image_height",
+                    "label": "Image height(Desktop)",
+                    "min": 200,
+                    "max": 500,
+                    "step": 5,
+                    "default": 310,
+                    "unit": "px"
+                },
+                {
+                    "type": "range",
+                    "id": "mobile_image_height",
+                    "label": "Image height(Mobile)",
+                    "min": 150,
+                    "max": 400,
+                    "step": 5,
+                    "default": 250,
+                    "unit": "px"
+                },
+                {
+                    "type": "text",
+                    "id": "mp4_video_url",
+                    "label": "Mp4 video URL"
+                },
+                {
+                    "type": "text",
+                    "id": "mp4_video_url_m",
+                    "label": "Mobile - Mp4 video URL"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "autoplay_video",
+                    "label": "Autoplay MP4 video",
+                    "default": true
+                },
+                {
+                    "type": "richtext",
+                    "id": "subtext_top",
+                    "label": "Subtext Top"
+                },
+                {
+                    "type": "richtext",
+                    "id": "subtext_bottom",
+                    "label": "Subtext Bottom"
+                },
+                {
+                    "type": "url",
+                    "id": "button_link",
+                    "label": "Button Link"
+                },
+                {
+                    "type": "text",
+                    "id": "button_text",
+                    "label": "Button Text",
+                    "default": "Learn More"
+                }
+            ]
+        }
+    ]
+}
+
+{% endschema %}

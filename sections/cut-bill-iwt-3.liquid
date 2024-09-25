@@ -1,0 +1,38 @@
+<div class="cut-bill-section-wrapper w-90 cut-bill-iwt-3">
+  <div class="">
+    {% assign title = 'cut-bill.iwt3.title' | t %}
+    {% if section.settings.title != blank %}
+      {% assign title = section.settings.title %}
+    {% endif %}
+    {% assign description = 'cut-bill.iwt3.description' | t %}
+    {% if section.settings.description != blank %}
+      {% assign description = section.settings.description %}
+    {% endif %}
+
+    <h2>{{ title }}</h2>
+    <div class="iwt-desc">{{ description }}</div>
+  </div>
+
+  {% assign image = section.settings.mobileImage %}
+  {% render 'th-image--mobile', image: image %}
+
+  {% assign image = section.settings.image %}
+  {% render 'th-image--desktop', image: image %}
+</div>
+{% schema %}
+{
+  "name": "Image with text 3",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobileImage",
+      "label": "Mobile Image"
+    }
+  ]
+}
+{% endschema %}

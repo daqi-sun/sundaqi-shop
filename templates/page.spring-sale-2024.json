@@ -1,0 +1,669 @@
+{
+  "sections": {
+    "c1e6cddf-a0c8-4088-adc2-ab88bfcf7d26": {
+      "type": "star-page-settings",
+      "settings": {
+        "page_background": "rgba(0,0,0,0)"
+      }
+    },
+    "1237a876-271f-4b20-ac3e-1093d0d801b5": {
+      "type": "bf-banner",
+      "custom_css": [
+        "h4 {font-size: 40px; color: #ff5c00;}",
+        "h6 {font-size: 25px;}"
+      ],
+      "settings": {
+        "margin_desktop": "",
+        "center_content": false,
+        "banner_type": "image",
+        "image": "shopify:\/\/shop_images\/shopfiy_PC_EU-tuya.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/shopfiy_MB_EU-tuya.jpg",
+        "image_height": 800,
+        "image_height_m": 540,
+        "youtube_video_url": "",
+        "html5_video_url": "",
+        "html5_video_url_m": "",
+        "color_image_overlay": "#000000",
+        "image_overlay_opacity": 0,
+        "banner_top_title": "<h6>Primavera cargada de descuentos<\/h6>",
+        "banner_top_title_color": "#000000",
+        "banner_title": "<h4>Hasta 1250 € de descuento<\/h4>",
+        "banner_title_color": "#ff5c00",
+        "banner_title_highlight_color": "#ff5c00",
+        "banner_bottom_title": "<h5>12 de marzo a 1 de abril<\/h5>",
+        "banner_bottom_title_color": "#000000",
+        "btn_text": "",
+        "btn_link": "",
+        "btn_bg_color": "",
+        "btn_text_color": "",
+        "form_position_mobile": "bottom",
+        "show_emarsys_form": false,
+        "emarsys_form_text": "",
+        "contact_list_id": "1821358680",
+        "form_btn_text": "",
+        "form_error_msg_color": "#ff0000",
+        "email_placeholder_text": "Email address*",
+        "disclaimer_text": "<p>By signing up, you agree to receive marketing emails from EcoFlow.<\/p>",
+        "disclaimer_text_color": "#a5acba",
+        "show_klaviyo_form": false,
+        "klaviyo_id": "",
+        "klaviyo_text": "",
+        "klaviyo_email_placeholder": "Enter your email",
+        "klaviyo_success_text": "",
+        "klaviyo_form_bottom_line": "",
+        "klaviyo_popup_content": "",
+        "klaviyo_text_color": "",
+        "show_coundown": false,
+        "timer_text": "",
+        "timer_text_color": "",
+        "timer_end_date": "",
+        "block_bg_color": "",
+        "ct_background": "",
+        "block_text_color": "",
+        "show_flash_sale": true,
+        "custom_html": "",
+        "discount_badge_type": "absolute"
+      }
+    },
+    "a4863da9-5d6d-4c08-af33-8e2b229d678d": {
+      "type": "star-page-tab",
+      "blocks": {
+        "e7c0cc8b-25bd-4f15-88d4-08011c1d8f36": {
+          "type": "tab",
+          "settings": {
+            "title": "Cronograma",
+            "tab_id": "timeline",
+            "tab_id_1": ""
+          }
+        },
+        "fb4f88c7-af74-4f3e-930c-583b90f80ac0": {
+          "type": "tab",
+          "settings": {
+            "title": "Envía tu voto y gana",
+            "tab_id": "vote",
+            "tab_id_1": ""
+          }
+        },
+        "031ecf5d-2d6d-4dab-8833-854623779e2c": {
+          "type": "tab",
+          "settings": {
+            "title": "Venta Flash",
+            "tab_id": "flash_sale",
+            "tab_id_1": ""
+          }
+        },
+        "12c15cea-7d6d-4ae1-96d6-73353bbbe9ac": {
+          "type": "tab",
+          "settings": {
+            "title": "Historias reales de ahorros reales",
+            "tab_id": "video",
+            "tab_id_1": ""
+          }
+        },
+        "tab_Mj3dy4": {
+          "type": "tab",
+          "settings": {
+            "title": "5 % de reembolso en efectivo",
+            "tab_id": "Referral",
+            "tab_id_1": ""
+          }
+        }
+      },
+      "block_order": [
+        "e7c0cc8b-25bd-4f15-88d4-08011c1d8f36",
+        "fb4f88c7-af74-4f3e-930c-583b90f80ac0",
+        "031ecf5d-2d6d-4dab-8833-854623779e2c",
+        "12c15cea-7d6d-4ae1-96d6-73353bbbe9ac",
+        "tab_Mj3dy4"
+      ],
+      "settings": {
+        "sticky_section": true,
+        "background_type": "gradient",
+        "gradient_color": "#ffd400",
+        "tab_color": "#000000",
+        "tab_active_color": "#ff5c00",
+        "tab_undeline_color": "#ff5c00",
+        "tab_font_size": 16,
+        "tab_font_size_m": 16
+      }
+    },
+    "spring_sale_calendar_section_7WzApy": {
+      "type": "spring-sale-calendar-section",
+      "settings": {
+        "section_id": "timeline",
+        "bg_color": "#fff5c2",
+        "bg_image": "shopify:\/\/shop_images\/image_2cf563e7-b060-4ff9-8646-3a0a63805ae9.png",
+        "bg_image_m": "shopify:\/\/shop_images\/image-1.png",
+        "table_bg_color": "#ffea62",
+        "column_bg_color": "#fff8e5",
+        "title": "No te pierdas estas increíbles ofertas",
+        "msleft": "Marzo 7-11",
+        "msleftc": "Envía tu voto para tener la oportunidad de conseguir 50 € de descuento",
+        "msleftc_popup": "<p>Vota por lo que más te gustaría hacer con los productos EcoFlow en 2024. ¡Ten la oportunidad de conseguir un cupón de 50 € de descuento! <\/p>",
+        "msline1": "Rebajas de primavera",
+        "msline1text": "<p><strong>Hasta 1250 € de descuento: ¡Disfruta de las compras y ahorra de verdad!<\/strong><\/p><p>Compra EcoFlow DELTA Pro y consigue gratis un inversor PowerStream - Da la bienvenida a tu independencia energética<\/p>",
+        "msline2": "Celebración de usuarios",
+        "msline2text": "<p><strong>¡Megarebajas anuales solo para miembros!<\/strong><\/p><p>1. Triplica los EcoCredits <br\/>2. Compra uno y consigue un exclusivo regalo <br\/>3. Elige Deducción de efectivo con EcoCredits al finalizar la compra para disfrutar de un precio más bajo (Tiempo de lanzamiento: 3 de abril)<\/p>",
+        "msline3": "Primera ronda de Ventas Flash",
+        "msline3text": "<p><strong>Del 14 de marzo a las 09:00 hasta el 18 de marzo a las 09:00<\/strong><\/p><p>- EcoFlow PowerStream + EcoFlow DELTA Max (1600)<br\/>- EcoFlow PowerStream + EcoFlow DELTA Max (2000)<br\/>- Generador solar EcoFlow DELTA 2 (FV 220 W) <br\/>- Generador solar EcoFlow RIVER 2 Pro (FV 220 W)<\/p>",
+        "msline4": "Segunda ronda de Ventas Flash",
+        "msline4text": "<p><strong>Del 21 de marzo a las 09:00 hasta el 25 de marzo a las 09:00<\/strong><\/p><p>- EcoFlow DELTA 2 (reacondicionada)<br\/>- EcoFlow DELTA Pro (reacondicionada)<br\/>- Panel solar portátil bifacial EcoFlow de 220 W (reacondicionado)<br\/>- Batería adicional inteligente EcoFlow DELTA 2 (reacondicionada)<\/p>",
+        "msline5": "Tercera ronda de Ventas Flash",
+        "msline5text": "<p><strong>Del 28 de marzo a las 09:00 hasta el 1 de abril a las 09:00<\/strong><\/p><p>- Generador solar EcoFlow DELTA Pro (FV 400 W portátiles) <br\/>- EcoFlow DELTA Pro + Batería adicional inteligente<\/p>",
+        "msline6": "Cuarta ronda de Ventas Flash",
+        "msline6text": "<p><strong>Del 4 de abril a las 09:00 hasta el 8 de abril a las 09:00<\/strong><\/p><p>- Generador solar EcoFlow RIVER 2 Max (FV 160 W) <br\/>- EcoFlow DELTA Max (2000) + Panel solar portátil de 400 W<\/p>",
+        "msline7": "Semana EcoCredits en marzo",
+        "msline7text": "<p><strong>Es hora de aprovechar los beneficios exclusivos para miembros como tú.<\/strong><\/p><p>1. Precios solo para miembros en productos reacondicionados <br\/>2. Duplica tus EcoCredits en productos seleccionados <br\/>3. Canjea los EcoCredits por un cupón de descuento<\/p>",
+        "msline1_m": "Rebajas de primavera",
+        "msline1text_m": "<p><strong>Hasta 1250 € de descuento: ¡Disfruta de las compras y ahorra de verdad!<\/strong><\/p><p>Compra EcoFlow DELTA Pro y consigue gratis un inversor PowerStream - Da la bienvenida a tu independencia energética<\/p>",
+        "msline2_m": "Celebración de usuarios",
+        "msline2text_m": "<p><strong>¡Megarebajas anuales solo para miembros!<\/strong><\/p><p>1. Triplica los EcoCredits <br\/>2. Compra uno y consigue un exclusivo regalo <br\/>3. Elige Deducción de efectivo con EcoCredits al finalizar la compra para disfrutar de un precio más bajo (Tiempo de lanzamiento: 3 de abril)<\/p>",
+        "msline3_m": "4 rondas de Ventas Flash",
+        "msline3text_m": "<p><strong>Primera ronda: Del 14 de marzo a las 09:00 hasta el 18 de marzo a las 09:00 <\/strong><br\/>- EcoFlow PowerStream + EcoFlow DELTA Max (1600) <br\/>- EcoFlow PowerStream + EcoFlow DELTA Max (2000) <br\/>- Generador solar EcoFlow DELTA 2 (FV 220 W) <br\/>- Generador solar EcoFlow RIVER 2 Pro (FV 220 W) <\/p><p><strong>Segunda ronda: Del 21 de marzo a las 09:00 hasta el 25 de marzo a las 09:00<\/strong><br\/>- EcoFlow DELTA 2 (reacondicionada)<br\/>- EcoFlow DELTA Pro (reacondicionada)<br\/>- Panel solar portátil bifacial EcoFlow de 220 W (reacondicionado)<br\/>- Batería adicional inteligente EcoFlow DELTA 2 (reacondicionada)<\/p><p><strong>Tercera ronda: Del 28 de marzo a las 09:00 hasta el 1 de abril a las 09:00 <\/strong><br\/>- Generador solar EcoFlow DELTA Pro (FV 400 W portátiles) <br\/>- EcoFlow DELTA Pro + Batería adicional inteligente <\/p><p><strong>Cuarta ronda: Del 4 de abril a las 09:00 hasta el 8 de abril a las 09:00 <br\/><\/strong>- Generador solar EcoFlow RIVER 2 Max (FV 160 W) <br\/>- EcoFlow DELTA Max (2000) + Panel solar portátil de 400 W<\/p>",
+        "msline4_m": "Semana EcoCredits",
+        "msline4text_m": "<p><strong>Es hora de aprovechar los beneficios exclusivos para miembros como tú.<\/strong><\/p><p>1. Precios solo para miembros en productos reacondicionados <br\/>2. Duplica tus EcoCredits en productos seleccionados <br\/>3. Canjea los EcoCredits por un cupón de descuento<\/p>",
+        "ms2a": "12",
+        "ms2a_m": "<div class=\"flexbox\">\n<span>12<\/span><span>14<\/span>\n<\/div>",
+        "ms3a": "14",
+        "ms3a_m": "<div class=\"flexbox\">\n<span>18<\/span><span>24<\/span>\n<\/div>",
+        "ms4a": "15",
+        "ms4a_m": "31",
+        "ms5a": "17",
+        "ms5a_m": "<div class=\"flexbox\">\n<span>Apr 1<\/span><span>8<\/span>\n<\/div>",
+        "ms6a": "18",
+        "ms6a_m": "<div class=\"flexbox end\">\n<span>11<\/span>\n<\/div>",
+        "ms7a": "20",
+        "ms8a": "21",
+        "ms9a": "22",
+        "ms10a": "24",
+        "ms11a": "25",
+        "ms12a": "27",
+        "ms13a": "28",
+        "ms14a": "29",
+        "ms15a": "31",
+        "ms16a": "Abr 1",
+        "ms17a": "3",
+        "ms18a": "4",
+        "ms19a": "5",
+        "ms20a": "7",
+        "ms21a": "8",
+        "ms22a": "11",
+        "more_text": "",
+        "story_terms_text": "",
+        "text_color": "#000000",
+        "bg_color1": "#ffffff",
+        "bg_color2": "#ff9900",
+        "bg_color3": "#ff9900",
+        "bg_color4": "#ff9900",
+        "bg_color5": "#ff9900",
+        "bg_color6": "#ff9900",
+        "bg_color7": "#ff9900",
+        "bg_color8": "#ff9900"
+      }
+    },
+    "summer_sale_custom_section_UHtYEi": {
+      "type": "summer-sale-custom-section",
+      "custom_css": [
+        ".summer-sale-custom-section .bottom_line {margin-top: 0px;}"
+      ],
+      "settings": {
+        "section_id": "",
+        "section_background": "#fff5c2",
+        "section_title": "",
+        "section_top_space": 0,
+        "section_bottom_space": 20,
+        "section_top_space_m": 0,
+        "section_bottom_space_m": 10,
+        "bottom_line_text": "<a class=\"popup\">Para obtener más información, consulta los Términos y condiciones. <\/a><a><\/a>",
+        "bottom_line_text_font_size": 20,
+        "bottom_line_text_font_size_m": 10,
+        "bottom_line_text_color": "",
+        "popup_content": "<p><strong>Términos y condiciones de la campaña de rebajas de primavera<\/strong><\/p><p>Las rebajas de primavera tendrán lugar desde el 12 de marzo de 2024 a las 09:00 AM (CET) hasta el 1 de abril de 2024 a las 09:00 AM (CET). EcoFlow se reserva el derecho de acortar o extender el periodo de la campaña a su entera discreción y sin previo aviso.<\/p><p><strong>Requisitos<\/strong><\/p><p>La campaña está abierta a todos los ciudadanos europeos que tengan como mínimo 18 años a las 09:00 (CET) del 12 de marzo de 2024.<\/p><p><strong>Funcionamiento de la campaña: <\/strong><\/p><p><strong>Evento «Envía tu voto y gana» Periodo del evento:<\/strong><\/p><p>El evento de votación comenzará el 7 de marzo de 2024 a las 09:00 (CET) y finalizará el 12 de marzo de 2024 a las 00:00 (CET).<\/p><p><strong>Funcionamiento del evento:<\/strong><\/p><p>1. Introduce tu correo electrónico para participar en el evento de votación una vez. Al ingresar tu dirección de correo electrónico y confirmar tu suscripción, aceptarás los Términos y Condiciones de marketing por correo, incluyendo la suscripción a correos de marketing y la recepción de actualizaciones del equipo de EcoFlow. <br\/>2. Cada usuario puede votar solamente una vez. Si se envían varios votos, solamente se registrará el último voto enviado. <br\/>3. Los usuarios recibirán un cupón de 5 € por participar en la campaña de votación, sin que haya ningún límite para utilizar este cupón; el cupón es válido desde el 7 de marzo de 2024 (09:00 CET) hasta su fecha de caducidad el 11 de abril de 2024 (09:00 CET). <br\/>4. Todos los usuarios afortunados que su opción coincida con la más votada ganarán un vale de 50 € de descuento. Este vale es válido para obtener 50 € de descuento en una compra superior a 500 €; los ganadores del mismo se anunciarán el 12 de marzo de 2024 y la información se enviará por correo electrónico. El vale es válido desde el 12 de marzo de 2024 a las 09:00 (CET) hasta el 11 de abril de 2024 a las 09:00 (CET). <br\/>5. El cupón obtenido en esta campaña no se puede acumular con otros cupones de descuento.<\/p><p><strong>Venta Flash<\/strong><\/p><p>EcoFlow lanzará <strong>4 rondas de<\/strong> los productos de la Venta Flash en la página de promociones desde el 14 de marzo de 2024 a las 09:00 AM (CET) hasta el 8 de abril de 2024 a las 09:00 AM (CET)  <\/p><p>1. Periodo y productos disponibles para las ventas Flash: <\/p><p>a. Primera ronda: Del 14 de marzo a las 09:00 al 18 de marzo a las 09:00 (CET) <br\/>- EcoFlow PowerStream + EcoFlow DELTA Max (1600) <br\/>- EcoFlow PowerStream + EcoFlow DELTA Max (2000) <br\/>- Generador solar EcoFlow DELTA 2 (FV 220 W) <br\/>- Generador solar EcoFlow RIVER 2 Pro (FV 220 W)<strong> <\/strong><\/p><p>b. Segunda ronda: Del 21 de marzo a las 09:00 al 25 de marzo a las 09:00 (CET)<br\/>- EcoFlow DELTA 2 (reacondicionada)<br\/>- EcoFlow DELTA Pro (reacondicionada)<br\/>- Panel solar portátil bifacial EcoFlow de 220 W (reacondicionado)<br\/>- Batería adicional inteligente EcoFlow DELTA 2 (reacondicionada) <\/p><p>c. Tercera ronda: Del 28 de marzo a las 09:00 al 1 de abril a las 09:00 (CET) <br\/>- Generador solar EcoFlow DELTA Pro (FV 400 W portátil) <br\/>- EcoFlow DELTA Pro + Batería adicional inteligente <\/p><p>d. Cuarta ronda: 4\/4 09:00 - 4\/8 09:00 (CET) <br\/>- Generador solar EcoFlow RIVER 2 Max (FV 160 W) <br\/>- EcoFlow DELTA Max (2000) + Panel solar portátil de 400 W <\/p><p>2. Los productos de la venta Flash no tienen derecho a la garantía de igualación del precio de 30 días. <br\/>3. Durante el periodo de rebajas de primavera, los clientes podrán suscribirse a las actualizaciones de la venta Flash ingresando sus direcciones de correo electrónico. <br\/>4. Al ingresar tu dirección de correo electrónico y confirmar tu suscripción, aceptarás los Términos y Condiciones de marketing por correo, incluyendo la suscripción a correos de marketing y la recepción de actualizaciones del equipo de EcoFlow.<\/p><p><strong>Compra uno y consigue un regalo exclusivo<\/strong><\/p><p>1. Periodo del evento: Del 12 de marzo de 2024 a las 09:00 al 1 de abril de 2024 a las 09:00 (CET) <br\/>2. Funcionamiento del evento: Compra un EcoFlow DELTA Pro y consigue gratis un inversor EcoFlow PowerStream.  <br\/>3. Recuerda que los productos reacondicionados como por ejemplo «EcoFlow DELTA Pro (reacondicionado)» no participan en este evento de «Compra 1, obtén 1». <br\/>4. En caso de devolución, el regalo (inversor EcoFlow PowerStream gratis) deberá devolverse.<\/p><p><strong>Productos reacondicionados a precios exclusivos para miembros<\/strong><\/p><p>1. Durante la «Semana de Agradecimiento de EcoCredits» que tendrá lugar del 18 de marzo de 2024 a las 09:00 AM (CET) al 25 de marzo de 2024 a las 09:00 AM (CET), puedes registrarte como miembro o iniciar sesión para aprovecharte de precios exclusivos en productos reacondicionados. <br\/>2. El precio exclusivo para miembros de los productos reacondicionados solo está disponible en cantidades limitadas durante el periodo del evento. <br\/>3. Para obtener más información sobre los equipos reacondicionados, consulta <a href=\"https:\/\/es.ecoflow.com\/pages\/refurbished\" target=\"_blank\" title=\"https:\/\/es.ecoflow.com\/pages\/refurbished\"><span style=\"text-decoration:underline\">https:\/\/es.ecoflow.com\/pages\/refurbished<\/span><\/a><\/p><p><strong>Duplica tus EcoCredits<\/strong><\/p><p>1. Durante la «Semana de Agradecimiento de EcoCredits» que tendrá lugar del 18 de marzo de 2024 a las 09:00 AM (CET) al 25 de marzo de 2024 a las 09:00 AM (CET), puedes obtener el doble de puntos en recompensas en los productos adquiridos en el módulo de «Venta Flash» y en los productos marcados con la etiqueta «Duplica tus EcoCredits» en la página del evento. <br\/>2. Primero, debes iniciar sesión en tu cuenta de EcoCredits y asegurarte de que sea el mismo correo electrónico con el que se realizó el pedido. Si aún no te registraste, puedes hacerlo ahora y obtener una cuenta gratuita. <br\/>3. Si se inicia una devolución, se retirarán los EcoCredits.<\/p><p><strong>Condiciones generales<\/strong><\/p><p>1. Si tienes algún problema durante la promoción, contacta con <a href=\"mailto:support.eu@ecoflow.com\" target=\"_blank\">support.eu@ecoflow.com<\/a> para obtener ayuda.<br\/>2. En la medida en que lo permita la ley aplicable, podremos decidir modificar estas reglas o cancelar la promoción en cualquier momento. Si se comete algún fraude o abuso relacionado con la promoción, nos reservamos el derecho de excluir a cualquier cliente de la promoción.<br\/>3. Los participantes en la venta de rebajas aceptan los términos y condiciones establecidos en este documento y entienden que las decisiones de EcoFlow son definitivas y vinculantes. No se responderá correspondencia ni apelaciones. EcoFlow se reserva el derecho de hacer la interpretación final y definitiva de esta campaña.<br\/>4. Todos los pedidos deben cumplir el acuerdo de compra y la política de devoluciones de EcoFlow durante la promoción.<br\/>5. La promoción no se aplica a los pedidos de mayoristas o distribuidores.<br\/>6. Cualquier comportamiento no autorizado o fraudulento dará lugar a la descalificación de los participantes.<br\/>7. Los participantes deben cumplir con todas las leyes y regulaciones aplicables.<br\/>8. EcoFlow se reserva el derecho a interrumpir, cancelar o modificar la promoción en cualquier momento durante la misma. Cualquier cambio se anunciará en el sitio web oficial de EcoFlow.<br\/>9. Todos los premios de esta promoción están limitados en cantidad y están disponibles por orden de llegada. Cualquier asunto no cubierto en este documento será tratado de acuerdo con la interpretación final de EcoFlow.<br\/>10. EcoFlow no asumirá responsabilidad alguna por las participaciones fuera de plazo que puedan producirse por cualquier motivo, incluidos, entre otros, errores o fallos en la transmisión de la red o internet.<br\/>11. EcoFlow no será responsable de las pérdidas o daños directos o indirectos incurridos por cualquier parte, incluidos los participantes, que surjan de actos u omisiones en esta campaña, estén conectados con esta campaña o relacionados de cualquier forma con ella.<br\/>12. Los participantes aceptan eximir a EcoFlow de toda reclamación y responsabilidad, incluyendo el incumplimiento de contrato, agravio, negligencia o cualquier otra causa de demanda a tenor de la ley o la equidad que surja a raíz de, o que esté de alguna manera relacionada con esta campaña o a la inscripción del participante en la campaña.<\/p>"
+      }
+    },
+    "spring_sale_form_khTqNQ": {
+      "type": "spring-sale-form",
+      "settings": {
+        "section_id": "vote",
+        "contact_list_id": "328255107",
+        "section_background_color": "#fff29b",
+        "step_1_background_color": "#fff5c2",
+        "step_1_border_color": "#fff5c2",
+        "step_1_title": "Envía tu voto y gana",
+        "step_1_title_color": "#03060b",
+        "step_1_description": "<p>Déjanos tu correo y vota por lo que más te gustaría hacer con nuestros productos EcoFlow este 2024. ¡Podrías ganar un cupón <em>con 50 € de descuento!<\/em><\/p>",
+        "step_1_description_color": "#ffffff",
+        "step_1_tips": "* Solo tienes que seleccionar una opción y conseguir una tarjeta regalo de 5 €. Si la opción que seleccionas es la que más votos obtiene, te enviaremos una tarjeta regalo de 50 € a tu email el 12 de marzo. ¡Marca ya tu calendario!",
+        "step_1_tips_color": "#707070",
+        "step_1_tips_color_mobile": "#000000",
+        "step_1_input_placeholder": "Dirección de correo",
+        "step_1_input_placeholder_mobile": "Dirección de correo",
+        "step_1_input_color": "#000000",
+        "step_1_input_background_color": "#ffffff",
+        "step_1_input_button_text": "Unirse ahora",
+        "step_1_input_button_color": "#000000",
+        "step_1_input_button_background_color": "#ffd400",
+        "step_1_disclaimer_text": "Al registrarte, aceptas recibir mensajes de correo electrónico de marketing de EcoFlow.",
+        "step_1_disclaimer_text_color": "#707070",
+        "step_1_error_message_color": "#ff0000",
+        "step_2_border_color": "#fff5c2",
+        "step_2_background_image": "shopify:\/\/shop_images\/spring-sale-form-step2-bg-PC.png",
+        "step_2_background_image_mobile": "shopify:\/\/shop_images\/spring-sale-form-step2-bg-MB.png",
+        "step_2_title": "Vota por lo que más te gustaría hacer con los productos EcoFlow en 2024.",
+        "step_2_title_color": "#000000",
+        "step_2_button_text": "Enviar",
+        "step_2_button_text_color": "#000000",
+        "step_2_button_background_color": "#ffd400",
+        "step_2_error_message_color": "#ff0000",
+        "step_3_background_image": "shopify:\/\/shop_images\/spring-sale-form-step3-bg-PC.jpg",
+        "step_3_background_image_mobile": "shopify:\/\/shop_images\/email_EU.png",
+        "step_3_title": "¡Gracias por participar! Has ganado una tarjeta regalo de 5 €.",
+        "step_3_title_color": "#ffffff",
+        "step_3_description": "Los ganadores se anunciarán a través del correo electrónico el 12 de marzo. ¡Permanece atento!",
+        "step_3_description_color": "#e6e6e6",
+        "coupon_code": "EFSPRING5",
+        "step_3_input_color": "#707070",
+        "step_3_input_background_color": "#ffffff",
+        "step_3_input_button_text": "Copiar",
+        "step_3_input_button_color": "#000000",
+        "step_3_input_button_background_color": "#ffd400",
+        "success_copy_message": "Copiado",
+        "success_copy_message_color": "#000000",
+        "step_3_disclaimer_text": "* El cupón de descuento también se enviará a tu dirección de correo electrónico.",
+        "step_3_disclaimer_text_color": "#e6e6e6",
+        "step_3_tips": ""
+      }
+    },
+    "star_page_title_ytLtUr": {
+      "type": "star-page-title",
+      "settings": {
+        "section_background": "rgba(0,0,0,0)",
+        "section_id": "flash_sale",
+        "section_top_space": 60,
+        "section_bottom_space": 45,
+        "section_top_space_m": 40,
+        "section_bottom_space_m": 40,
+        "banner_title_icon": "shopify:\/\/shop_images\/Group_2526.png",
+        "icon_position": "before",
+        "icon_width": 95,
+        "icon_width_m": 48,
+        "icon_space_right": 20,
+        "icon_space_right_m": 10,
+        "banner_title": "Venta Flash semanal",
+        "banner_title_m": "",
+        "banner_title_font_size": 40,
+        "banner_title_font_size_m": 24,
+        "banner_top_title": "¡No te pierdas la oferta flash del 14 de marzo al 8 de abril para hacer rendir más tu dinero!",
+        "banner_top_title_m": "",
+        "banner_top_title_font_size": 20,
+        "banner_top_title_font_size_m": 16,
+        "text_color": "#000000",
+        "subtitle_text_color": "#707070"
+      }
+    },
+    "spring_sale_round_section_WPb4UT": {
+      "type": "spring-sale-round-section",
+      "blocks": {
+        "product_ytjiae": {
+          "type": "product",
+          "settings": {
+            "product": "delta-max-portable-power-station",
+            "product_image": "shopify:\/\/shop_images\/estacion-de-energia-portatil-ecoflow-delta-max-54103413064027.png",
+            "product_subtitle": "Capacidad 1612 Wh | Salida 2400 W",
+            "product_title": "EcoFlow DELTA Max 1600 + PowerStream de 800 W",
+            "product_price": "13XX €",
+            "product_c_price": "1707 €",
+            "off_amount": "R999",
+            "off_text": "Off"
+          }
+        },
+        "product_KD6ME3": {
+          "type": "product",
+          "settings": {
+            "product": "delta-max-portable-power-station",
+            "product_image": "shopify:\/\/shop_images\/estacion-de-energia-portatil-ecoflow-delta-max-52127037489499.png",
+            "product_subtitle": "Capacidad 2016 Wh | Salida 2400 W",
+            "product_title": "EcoFlow DELTA Max 2000 + PowerStream 800 W",
+            "product_price": "15XX €",
+            "product_c_price": "2107 €",
+            "off_amount": "",
+            "off_text": ""
+          }
+        },
+        "product_MJNK9i": {
+          "type": "product",
+          "settings": {
+            "product": "delta-2-220w-portable-solar-panel",
+            "product_subtitle": "Carga solar rápida en 2,3 horas",
+            "product_title": "Generador solar EcoFlow DELTA 2 (FV 220 W)",
+            "product_price": "1XX0 €",
+            "product_c_price": "1498 €",
+            "off_amount": "R999",
+            "off_text": "Off"
+          }
+        },
+        "product_iX34RR": {
+          "type": "product",
+          "settings": {
+            "product": "river-2-pro-220w-portable-solar-panel",
+            "product_subtitle": "Genera hasta 1,8 kWh diarios",
+            "product_title": "Generador solar EcoFlow RIVER 2 Pro (FV 220 W)",
+            "product_price": "1XX0 €",
+            "product_c_price": "1298 €",
+            "off_amount": "R999",
+            "off_text": "Off"
+          }
+        }
+      },
+      "block_order": [
+        "product_ytjiae",
+        "product_KD6ME3",
+        "product_MJNK9i",
+        "product_iX34RR"
+      ],
+      "settings": {
+        "section_id": "",
+        "round_text": "Primera ronda:",
+        "round_date": "Del 14 de marzo a las 09:00 hasta el 18 de marzo a las 09:00",
+        "round_autoplay_mobile": "3000",
+        "product_price_color": "#000000"
+      }
+    },
+    "spring_sale_round_section_tfaPQ9": {
+      "type": "spring-sale-round-section",
+      "blocks": {
+        "product_gEQwMp": {
+          "type": "product",
+          "settings": {
+            "product": "delta-2-portable-power-station-refurbished",
+            "product_subtitle": "Capacidad 1024 Wh",
+            "product_title": "EcoFlow DELTA 2 (reacondicionada)",
+            "product_price": "XX9 €",
+            "product_c_price": "999 €",
+            "off_amount": "R999",
+            "off_text": "Off"
+          }
+        },
+        "product_hTiGd4": {
+          "type": "product",
+          "settings": {
+            "product": "delta-pro-portable-power-station-refurbished",
+            "product_subtitle": "3600 Wh-25 kWh | Salida 3600 W",
+            "product_title": "EcoFlow DELTA Pro (reacondicionada)",
+            "product_price": "2,XX9 €",
+            "product_c_price": "3,099 €",
+            "off_amount": "R999",
+            "off_text": "Off"
+          }
+        },
+        "product_fedTMb": {
+          "type": "product",
+          "settings": {
+            "product": "220w-bifacial-portable-solar-panel-refurbished",
+            "product_subtitle": "Tasa de conversión 23% | IP68",
+            "product_title": "Panel solar portátil bifacial EcoFlow de 220 W (reacondicionado)",
+            "product_price": "3X9 €",
+            "product_c_price": "499 €",
+            "off_amount": "R999",
+            "off_text": "Off"
+          }
+        },
+        "product_YVHPKa": {
+          "type": "product",
+          "settings": {
+            "product": "delta-2-smart-extra-battery-refurbished",
+            "product_subtitle": "Batería adicional de 1024 Wh para DELTA 2",
+            "product_title": "Batería adicional inteligente EcoFlow DELTA 2 (reacondicionada)",
+            "product_price": "X99 €",
+            "product_c_price": "749 €",
+            "off_amount": "R999",
+            "off_text": "Off"
+          }
+        }
+      },
+      "block_order": [
+        "product_gEQwMp",
+        "product_hTiGd4",
+        "product_fedTMb",
+        "product_YVHPKa"
+      ],
+      "settings": {
+        "section_id": "",
+        "round_text": "Segunda ronda:",
+        "round_date": "Del 21 de marzo a las 09:00 hasta el 25 de marzo a las 09:00",
+        "round_autoplay_mobile": "3000",
+        "product_price_color": "#000000"
+      }
+    },
+    "spring_sale_multiple_rounds_section_naMmah": {
+      "type": "spring-sale-multiple-rounds-section",
+      "blocks": {
+        "round_GV4HXJ": {
+          "type": "round",
+          "settings": {
+            "round_text": "Tercera ronda:",
+            "round_date": "Del 28 de marzo a las 09:00 hasta el 1 de abril a las 09:00",
+            "product_1": "delta-pro-400w-portable-solar-panel",
+            "product_1_subtitle": "Energiza el 99 % de los electrodomésticos",
+            "product_1_title": "Generador solar EcoFlow DELTA Pro (FV 400 W)",
+            "product_1_price": "3XX9 €",
+            "product_1_c_price": "4048 €",
+            "off_1_amount": "",
+            "off_1_text": "",
+            "product_2": "delta-pro-smart-extra-battery-bundle",
+            "product_2_subtitle": "Ampliable de 3,6 a 25 kWh",
+            "product_2_title": "EcoFlow DELTA Pro + Batería adicional DELTA Pro",
+            "product_2_price": "4XX9 €",
+            "product_2_c_price": "5298 €",
+            "off_2_amount": "",
+            "off_2_text": ""
+          }
+        },
+        "round_pWqena": {
+          "type": "round",
+          "settings": {
+            "round_text": "Cuarta ronda:",
+            "round_date": "Del 4 de abril a las 09:00 hasta el 8 de abril a las 09:00",
+            "product_1": "river-2-max-160w-portable-solar-panel",
+            "product_1_subtitle": "Energiza el 80 % de los electrodomésticos",
+            "product_1_title": "Generador solar EcoFlow RIVER 2 Max (FV 160 W)",
+            "product_1_price": "XX9 €",
+            "product_1_c_price": "948 €",
+            "off_1_amount": "",
+            "off_1_text": "",
+            "product_2": "delta-max-400w-portable-solar-panel",
+            "product_2_subtitle": "Generación diaria de 5,8 kWh",
+            "product_2_title": "Generador solar EcoFlow DELTA Max 2000 (FV 400 W)",
+            "product_2_price": "1XX8 €",
+            "product_2_c_price": "2648 €",
+            "off_2_amount": "",
+            "off_2_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "round_GV4HXJ",
+        "round_pWqena"
+      ],
+      "settings": {
+        "section_id": "",
+        "round_autoplay_mobile": "",
+        "product_price_color": "#000000"
+      }
+    },
+    "star_page_title_cUnJxL": {
+      "type": "star-page-title",
+      "settings": {
+        "section_background": "",
+        "section_id": "video",
+        "section_top_space": 60,
+        "section_bottom_space": 25,
+        "section_top_space_m": 30,
+        "section_bottom_space_m": 15,
+        "banner_title_icon": "shopify:\/\/shop_images\/Vector.png",
+        "icon_position": "before",
+        "icon_width": 95,
+        "icon_width_m": 41,
+        "icon_space_right": 20,
+        "icon_space_right_m": 0,
+        "banner_title": "Historias reales de ahorros reales",
+        "banner_title_m": "Historias reales de ahorros reales",
+        "banner_title_font_size": 40,
+        "banner_title_font_size_m": 20,
+        "banner_top_title": "EcoFlow PowerStream \/ Micro INVERSOR ultra sencillo \/ AHORRA y gestiona TU PROPIA ENERGÍA",
+        "banner_top_title_m": "EcoFlow PowerStream \/ Micro INVERSOR ultra sencillo \/ AHORRA y gestiona TU PROPIA ENERGÍA",
+        "banner_top_title_font_size": 20,
+        "banner_top_title_font_size_m": 16,
+        "text_color": "#000000",
+        "subtitle_text_color": "#707070"
+      }
+    },
+    "pdp_video_UNbC8c": {
+      "type": "pdp-video",
+      "custom_css": [
+        ".pdp {padding: 0 0 0px;}"
+      ],
+      "settings": {
+        "section_id": "video",
+        "text_alignment": "center",
+        "title": "",
+        "subtitle": "",
+        "content": "",
+        "button_link": "",
+        "button_text": "",
+        "media_type": "video",
+        "video_type": "youtube",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=XyVpCmaVwYE",
+        "mp4_video_url": "",
+        "mp4_video_url_m": "",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "c8557781-7b82-4414-82ee-8ef9c059ea42": {
+      "type": "star_image_with_text",
+      "settings": {
+        "section_background": "rgba(0,0,0,0)",
+        "section_id": "Referral",
+        "image": "shopify:\/\/shop_images\/EU-PC-Referral.png",
+        "image_m": "shopify:\/\/shop_images\/Frame_1000008093.png",
+        "layout": "overlay",
+        "subtitle": "",
+        "subtitle_color": "#ffffff",
+        "title": "<p><strong>Refiere a un amigo<\/strong><\/p>",
+        "title_m": "<p><strong>Refiere a un amigo<\/strong><\/p>",
+        "title_color": "#ffffff",
+        "text": "<p>- Consigue 100 EcoCredits por cada amigo referido que se registre con éxito. <br\/>- Disfruta de un reembolso en efectivo del 5 % en cada pedido recomendado. <br\/>- Las 3 personas que más nos recomienden ganarán grandes premios.<\/p>",
+        "text_color": "#ffffff",
+        "button_label": "Compartir ahora",
+        "button_link": "https:\/\/www.ecoflow.com\/es\/referral",
+        "text_font_size": "medium",
+        "btn_bg_color": "#ffd63a",
+        "btn_text_color": "#232323",
+        "btn_border_color": "#ffd63a",
+        "btn_bg_color_hover": "#ffffff",
+        "btn_text_color_hover": "#000000",
+        "btn_border_color_hover": "#000000"
+      }
+    },
+    "membership_benefit_section_BmYH4X": {
+      "type": "membership_benefit_section",
+      "blocks": {
+        "block_NGXhgg": {
+          "type": "block",
+          "settings": {
+            "title": "",
+            "mobile_title": "",
+            "quote": "<p><strong>Garantía de comparación de precios de 30 días<\/strong><\/p>",
+            "image": "shopify:\/\/shop_images\/spring-EU.png"
+          }
+        },
+        "block_ULgidk": {
+          "type": "block",
+          "settings": {
+            "title": "",
+            "mobile_title": "",
+            "quote": "<p><strong>Membresía de Élite Global<\/strong><\/p>",
+            "image": "shopify:\/\/shop_images\/spring-vip.png"
+          }
+        },
+        "block_wm6Rk8": {
+          "type": "block",
+          "settings": {
+            "title": "",
+            "mobile_title": "",
+            "quote": "<p><strong>Envío rápido y gratuito<\/strong><\/p>",
+            "image": "shopify:\/\/shop_images\/spring-shipping.png"
+          }
+        },
+        "block_er6NPr": {
+          "type": "block",
+          "settings": {
+            "title": "",
+            "mobile_title": "",
+            "quote": "<p><strong>Protección de garantía<\/strong><\/p>",
+            "image": "shopify:\/\/shop_images\/spring-warranty.png"
+          }
+        },
+        "block_ia4rqU": {
+          "type": "block",
+          "settings": {
+            "title": "",
+            "mobile_title": "",
+            "quote": "<p><strong>Pagos seguros y cómodos planes de pagos a plazos<\/strong><\/p>",
+            "image": "shopify:\/\/shop_images\/spring-Installment-Plans.png"
+          }
+        },
+        "block_q3AR7a": {
+          "type": "block",
+          "settings": {
+            "title": "",
+            "mobile_title": "",
+            "quote": "<p><strong>Servicio de atención al cliente<\/strong><\/p>",
+            "image": "shopify:\/\/shop_images\/AF_2.png"
+          }
+        }
+      },
+      "block_order": [
+        "block_NGXhgg",
+        "block_ULgidk",
+        "block_wm6Rk8",
+        "block_er6NPr",
+        "block_ia4rqU",
+        "block_q3AR7a"
+      ],
+      "settings": {
+        "full_width": false,
+        "heading_style": "center",
+        "title": "¿Por qué elegirnos?",
+        "subtitle": "",
+        "bg_color": "rgba(0,0,0,0)",
+        "heading_color": "#000000",
+        "per_row": 6,
+        "title_color": "#000000",
+        "text_color": "#000000",
+        "section_top_space": 40,
+        "section_bottom_space": 40,
+        "section_top_space_m": 40,
+        "section_bottom_space_m": 40
+      }
+    }
+  },
+  "order": [
+    "c1e6cddf-a0c8-4088-adc2-ab88bfcf7d26",
+    "1237a876-271f-4b20-ac3e-1093d0d801b5",
+    "a4863da9-5d6d-4c08-af33-8e2b229d678d",
+    "spring_sale_calendar_section_7WzApy",
+    "summer_sale_custom_section_UHtYEi",
+    "spring_sale_form_khTqNQ",
+    "star_page_title_ytLtUr",
+    "spring_sale_round_section_WPb4UT",
+    "spring_sale_round_section_tfaPQ9",
+    "spring_sale_multiple_rounds_section_naMmah",
+    "star_page_title_cUnJxL",
+    "pdp_video_UNbC8c",
+    "c8557781-7b82-4414-82ee-8ef9c059ea42",
+    "membership_benefit_section_BmYH4X"
+  ]
+}

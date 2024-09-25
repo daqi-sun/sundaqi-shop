@@ -1,0 +1,122 @@
+<div class="off-grid-outdoor-transition__section">
+  <div class="container--normal hb__text--center">
+    <div class="off-grid-outdoor-transition__text-container">
+      {% if section.settings.image != blank %}
+        <div class="off-grid-outdoor-transition__image__container">
+          <img
+            class="off-grid-outdoor-transition__image"
+            loading="lazy"
+            src="{{ section.settings.image | img_url: 'master' }}"
+            alt="{{ section.settings.image.alt }}"
+          >
+        </div>
+      {% endif %}
+      {% if section.settings.subtitle != blank %}
+        <p class="off-grid-outdoor-transition__description hb__text--description hb__text--black hb__text--left">
+          {{ section.settings.subtitle }}
+        </p>
+      {% endif %}
+    </div>
+    <div class="off-grid-outdoor-transition__image__container">
+      <div class="off-grid-outdoor-transition__flex-container container--flex hb__text--left">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'block_short' %}
+              <div class="off-grid-outdoor-transition__block off-grid-outdoor-transition__block--short background--white">
+                {% if block.settings.image != blank %}
+                  <div class="off-grid-outdoor-transition__block__image-wrapper">
+                    <img
+                      src="{{ block.settings.image | img_url: 'master' }}"
+                      alt="{{ block.settings.image.alt }}"
+                    >
+                  </div>
+                {% endif %}
+                {% if block.settings.title != blank %}
+                  <div class="off-grid-outdoor-transition__block__title-wrapper">
+                    <p class="off-grid-outdoor-transition__title">
+                      {{ block.settings.title }}
+                    </p>
+                  </div>
+                {% endif %}
+              </div>
+            {% else %}
+              <div class="off-grid-outdoor-transition__block off-grid-outdoor-transition__block--wide background--white">
+                {% if block.settings.image != blank %}
+                  <img
+                    src="{{ block.settings.image | img_url: 'master' }}"
+                    alt="{{ block.settings.image.alt }}"
+                  >
+                {% endif %}
+                {% if block.settings.title != blank %}
+                  <p class="off-grid-outdoor-transition__title">
+                    {{ block.settings.title }}
+                  </p>
+                {% endif %}
+              </div>
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Outdoor Transition",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Wir sind überzeugt davon, dass die Energiewende jeden betrifft! "
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Section Image"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Hat Ihnen schon einmal jemand gesagt, dass sich Solaranlagen und Stromspeicher gar nicht lohnen würden und dabei zu viel Strom verschwendet werde? Bitte schenken Sie diesem Gerücht keinen Glauben! EcoFlow beweist Ihnen gerne das Gegenteil: Unsere Solar- und Batteriespeicher machen möglich, wovon wir vor einigen Jahren nur träumen konnten. Nachhaltiger, selbst erzeugter Strom kann in unseren Solaranlagen mit Speicher nicht nur effizient erzeugt werden – er wird auch so lange gespeichert, bis wir ihn in unseren Haushaltsgeräten benötigen."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block_short",
+      "name": "Transition Steps Short",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Block Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Block Title",
+          "default": "Unabhängigkeit von Netzversorgern"
+        }
+      ]
+    },
+    {
+      "type": "block_wide",
+      "name": "Transition Steps Wide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Block Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Block Title",
+          "default": "Unabhängigkeit von Netzversorgern"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,858 @@
+{
+  "sections": {
+    "banner": {
+      "type": "ppsp-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/EU-Only-D2M_1_1.png",
+        "mobileImage": "shopify:\/\/shop_images\/EU-Only-D2M_1_1_1.png",
+        "coupon_url": "#_coupon",
+        "title": "Estaciones de energía portátiles",
+        "subtitle": "Disfruta de energía sin límites con nuestras estaciones de energía portátiles. Una solución fiable, fácil y práctica para cualquier aventura, evento o emergencia."
+      }
+    },
+    "sticky-bar": {
+      "type": "ppsp-sticky-bar",
+      "blocks": {
+        "68a8155e-0999-449f-a206-28f1bcd974f2": {
+          "type": "sticky",
+          "settings": {
+            "title": "Estación de energía"
+          }
+        },
+        "a93ed4ac-d51d-47e1-9e24-46184348578e": {
+          "type": "sticky",
+          "settings": {
+            "title": "Productos"
+          }
+        },
+        "87821e23-0938-4d40-bdf2-b0d386b10737": {
+          "type": "sticky",
+          "settings": {
+            "title": "Características"
+          }
+        },
+        "8db1e070-9ba1-44b6-bac6-fa2ee563a2a7": {
+          "type": "sticky",
+          "settings": {
+            "title": "Opiniones"
+          }
+        },
+        "895c46c3-985b-4b40-bb5e-b0dfef2bfc73": {
+          "type": "sticky",
+          "settings": {
+            "title": "Blogs"
+          }
+        },
+        "60facd96-2b52-44f0-abdf-7ea184fae4d7": {
+          "type": "sticky",
+          "settings": {
+            "title": "FAQs"
+          }
+        }
+      },
+      "block_order": [
+        "68a8155e-0999-449f-a206-28f1bcd974f2",
+        "a93ed4ac-d51d-47e1-9e24-46184348578e",
+        "87821e23-0938-4d40-bdf2-b0d386b10737",
+        "8db1e070-9ba1-44b6-bac6-fa2ee563a2a7",
+        "895c46c3-985b-4b40-bb5e-b0dfef2bfc73",
+        "60facd96-2b52-44f0-abdf-7ea184fae4d7"
+      ],
+      "settings": {
+        "background_color": "#ffffff"
+      }
+    },
+    "content-slider": {
+      "type": "ppsp-content-slider",
+      "blocks": {
+        "e0fcc6d4-d587-4702-b6f4-38d3b3363049": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/768____1_5514995e-7c53-4f65-b0b5-1c0e7cb9c055.png",
+            "image_mobile": "shopify:\/\/shop_images\/768____1_1_09407abc-09c9-4109-a4a1-38ea62f72c6c.png",
+            "tag": "Al aire libre"
+          }
+        },
+        "4c6fcebd-0758-4deb-b390-e19fe5d61786": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/EF_E-S_D2_220_W_GL_30_RGB_1_1.png",
+            "image_mobile": "shopify:\/\/shop_images\/EF_E-S_D2_220_W_GL_30_RGB_1_1_1.png",
+            "tag": "Reduce tu factura de luz"
+          }
+        },
+        "ab1635d6-f9ad-4d2f-a45a-3b8635eb1907": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/D2M_2.png",
+            "image_mobile": "shopify:\/\/shop_images\/D2M_2_1.png",
+            "tag": "Soluciones para el hogar"
+          }
+        },
+        "be38ce36-2e14-4a9d-82a1-a38eb2bdc0a8": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/D2M_2_400W_Portable_Solar_2.png",
+            "image_mobile": "shopify:\/\/shop_images\/D2M_2_400W_Portable_Solar_2_1_9afdc35d-952d-46c9-887c-013b9459621b.png",
+            "tag": "Móvil y sin conexión a la red"
+          }
+        }
+      },
+      "block_order": [
+        "e0fcc6d4-d587-4702-b6f4-38d3b3363049",
+        "4c6fcebd-0758-4deb-b390-e19fe5d61786",
+        "ab1635d6-f9ad-4d2f-a45a-3b8635eb1907",
+        "be38ce36-2e14-4a9d-82a1-a38eb2bdc0a8"
+      ],
+      "settings": {
+        "id": "Estación de energía",
+        "title": "¿Qué es una estación de energía portátil?",
+        "subtitle": "Las estaciones de energía portátiles de EcoFlow son generadores que funcionan con baterías y están diseñadas para ofrecerte energía en donde estés. Con diversas capacidades, salidas y tomas, dispondrás de energía para cualquier situación. No importa si buscas energía de respaldo para el hogar o para tu acampada, EcoFlow dispone de las mejores estaciones de energía portátiles para que nunca tengas que volver a preocuparte por la energía.",
+        "padding_top_desktop": 120,
+        "padding_top_mobile": 80,
+        "padding_bottom_desktop": 60,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "iwt": {
+      "type": "ppsp-iwt",
+      "settings": {
+        "id": "",
+        "title": "¿Cómo funciona una estación de energía portátil?",
+        "subtitle": "Las estaciones de energía portátiles convierten y almacenan energía desde un enchufe de pared en casa, un adaptador de vehículo cuando estás de viaje o conectando paneles solares EcoFlow para aprovechar la energía limpia y renovable del sol. Con tomas de corriente para prácticamente todos los electrodomésticos, conéctalos y enciéndelos cuando y donde los necesites.",
+        "image": "shopify:\/\/shop_images\/Frame_161269079.png",
+        "image_mobile": "shopify:\/\/shop_images\/Frame_128720240.png",
+        "padding_top_desktop": 60,
+        "padding_top_mobile": 40,
+        "padding_bottom_desktop": 60,
+        "padding_bottom_mobile": 80
+      }
+    },
+    "iwt-2": {
+      "type": "ppsp-iwt-2",
+      "disabled": true,
+      "settings": {
+        "id": "",
+        "title": "Cut your bill with EcoFlow Power Stations",
+        "subtitle": "Octopus Energy's Power-Up programme offers customers free energy during high renewable energy production periods, typically mid-day. This initiative allows unlimited energy usage during these periods, encouraging tasks like laundry without added costs. It also promotes the use of portable power stations for storing surplus energy, which reduces electricity bills and supports cleaner energy use.",
+        "image": "shopify:\/\/shop_images\/D2M_AC_1_1_1.png",
+        "image_mobile": "shopify:\/\/shop_images\/D2M_AC_1_1.png",
+        "padding_top_desktop": 60,
+        "padding_top_mobile": 40,
+        "padding_bottom_desktop": 60,
+        "padding_bottom_mobile": 80
+      }
+    },
+    "bwt": {
+      "type": "ppsp-bwt",
+      "settings": {
+        "background_color": "#75665c",
+        "id": "Products",
+        "position": "right",
+        "image": "shopify:\/\/shop_images\/EU-Only-D2M_2_2.png",
+        "mobileImage": "shopify:\/\/shop_images\/EU-Only-D2M_2_2_1.png",
+        "title": "Serie DELTA <br>\nEstaciones de energía portátiles",
+        "subtitle": "Las estaciones de energía portátiles DELTA son soluciones de respaldo ideales para el hogar por sus amplias capacidades de almacenamiento y salida. Con capacidades de 1 a 21,5 kWh, las estaciones de energía de la serie EcoFlow DELTA ofrecen días de energía sin conexión a la red, lo que garantiza seguridad y comodidad durante un apagón. Con una salida de CA de hasta 7200 W, EcoFlow DELTA Pro puede hacer funcionar algunos de los electrodomésticos que consumen más energía, como calentadores o un aire acondicionado central.",
+        "button_text": "Adquirir Ahora",
+        "button_url": "https:\/\/es.ecoflow.com\/collections\/delta-series",
+        "padding_top_desktop": 60,
+        "padding_top_mobile": 0,
+        "padding_bottom_desktop": 60,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "comparison-table": {
+      "type": "ppsp-comparison-table",
+      "blocks": {
+        "034b0cb2-2cc6-4d4f-9784-245130b91d33": {
+          "type": "table_head",
+          "settings": {
+            "first_product": "delta-2-portable-power-station",
+            "first_column_image": "shopify:\/\/shop_images\/sl_ds.png",
+            "first_column_title": "EcoFlow DELTA 2",
+            "first_column_specification": "Capacidad de 1024 Wh  <span class=\"display--desktop\">|<\/span> <br class=\"display--mobile\"> Potencia de 1800 W",
+            "first_column_url": "",
+            "second_product": "delta-2-max-portable-power-station",
+            "second_column_image": "shopify:\/\/shop_images\/sl_ds_3.png",
+            "second_column_title": "EcoFlow DELTA 2 Max",
+            "second_column_specification": "Capacidad de 2048 Wh <span class=\"display--desktop\">|<\/span> <br class=\"display--mobile\"> Potencia de 2400 W",
+            "second_column_url": "",
+            "third_product": "delta-max-portable-power-station",
+            "third_column_image": "shopify:\/\/shop_images\/sl_ds_2.png",
+            "third_column_title": "EcoFlow DELTA Max",
+            "third_column_specification": "Capacidad de 2016 Wh <span class=\"display--desktop\">|<\/span> <br class=\"display--mobile\"> Potencia de 2400 W",
+            "third_column_url": "",
+            "fourth_product": "delta-pro-portable-power-station",
+            "fourth_column_image": "shopify:\/\/shop_images\/sl_dp_7aff45fb-1ffe-4f25-93da-dd149d5db5d1.png",
+            "fourth_column_title": "EcoFlow DELTA Pro",
+            "fourth_column_specification": "Capacidad de 3600 Wh <span class=\"display--desktop\">|<\/span> <br class=\"display--mobile\"> Potencia de 3600 W",
+            "fourth_column_url": ""
+          }
+        },
+        "f8463300-5de7-4247-8a14-29b88a057d3f": {
+          "type": "table_details",
+          "settings": {
+            "row_title": "Router de Wi-Fi (10 W)",
+            "first_column_data": "<p><strong>31 horas<\/strong><\/p>",
+            "second_column_data": "<p><strong>60 horas<\/strong><\/p>",
+            "third_column_data": "<p><strong>60 horas<\/strong><\/p>",
+            "fourth_column_data": "<p><strong>108 horas<\/strong><\/p>"
+          }
+        },
+        "8600fb1f-a875-46b2-8fe3-c0dd8c754d19": {
+          "type": "table_details",
+          "settings": {
+            "row_title": "Ventilador (40 W)",
+            "first_column_data": "<p><strong>16 horas<\/strong><\/p>",
+            "second_column_data": "<p><strong>34 horas<\/strong><\/p>",
+            "third_column_data": "<p><strong>34 horas<\/strong><\/p>",
+            "fourth_column_data": "<p><strong>50 horas<\/strong><\/p>"
+          }
+        },
+        "37ce3509-8985-42f6-bf7e-3321d63220d3": {
+          "type": "table_details",
+          "settings": {
+            "row_title": "Televisión de 50\" (110 W)",
+            "first_column_data": "<p><strong>8 horas<\/strong><\/p>",
+            "second_column_data": "<p><strong>15 horas<\/strong><\/p>",
+            "third_column_data": "<p><strong>15 horas<\/strong><\/p>",
+            "fourth_column_data": "<p><strong>27 horas<\/strong><\/p>"
+          }
+        },
+        "d3d100db-8a91-47e0-9182-327894e71967": {
+          "type": "table_details",
+          "settings": {
+            "row_title": "Refrigerador (120 W)",
+            "first_column_data": "<p><strong>7-14 horas<\/strong><\/p>",
+            "second_column_data": "<p><strong>14-28 horas<\/strong><\/p>",
+            "third_column_data": "<p><strong>14-28 horas<\/strong><\/p>",
+            "fourth_column_data": "<p><strong>24-48 horas<\/strong><\/p>"
+          }
+        },
+        "5ae20351-4807-428d-bbe9-2fe4b705a304": {
+          "type": "table_details",
+          "settings": {
+            "row_title": "Computadora PC (500 W)",
+            "first_column_data": "<p><strong>0.8 horas<\/strong><\/p>",
+            "second_column_data": "<p><strong>1.9 horas<\/strong><\/p>",
+            "third_column_data": "<p><strong>1.9 horas<\/strong><\/p>",
+            "fourth_column_data": "<p><strong>3.3 horas<\/strong><\/p>"
+          }
+        },
+        "465b8ef8-6ad8-4529-be85-168f3d71a8ce": {
+          "type": "table_details",
+          "settings": {
+            "row_title": "Cafetera eléctrica (1000 W)",
+            "first_column_data": "<p><strong>0.7 horas<\/strong><\/p>",
+            "second_column_data": "<p><strong>1.8 horas<\/strong><\/p>",
+            "third_column_data": "<p><strong>1.8 horas<\/strong><\/p>",
+            "fourth_column_data": "<p><strong>3 horas<\/strong><\/p>"
+          }
+        },
+        "5b236c91-c90f-46ac-b49f-272e613fd076": {
+          "type": "table_details",
+          "settings": {
+            "row_title": "Barbacoa eléctrica (1150 W)",
+            "first_column_data": "<p><strong>0.6 horas<\/strong><\/p>",
+            "second_column_data": "<p><strong>1.5 horas<\/strong><\/p>",
+            "third_column_data": "<p><strong>1.5 horas<\/strong><\/p>",
+            "fourth_column_data": "<p><strong>2.5 horas<\/strong><\/p>"
+          }
+        },
+        "d480fe85-7d2b-49be-b7a6-80c6270a6002": {
+          "type": "table_details",
+          "settings": {
+            "row_title": "Microondas (1300 W)",
+            "first_column_data": "<p><strong>0.4 horas<\/strong><\/p>",
+            "second_column_data": "<p><strong>1 hora<\/strong><\/p>",
+            "third_column_data": "<p><strong>1 hora<\/strong><\/p>",
+            "fourth_column_data": "<p><strong>1.8 horas<\/strong><\/p>"
+          }
+        },
+        "e83fdb4e-dfdb-4107-97ec-f34261a3986b": {
+          "type": "table_details",
+          "settings": {
+            "row_title": "Placa de inducción (1800 W)",
+            "first_column_data": "<p><strong>0.4 horas<\/strong><\/p>",
+            "second_column_data": "<p><strong>0.8 horas<\/strong><\/p>",
+            "third_column_data": "<p><strong>0.8 horas<\/strong><\/p>",
+            "fourth_column_data": "<p><strong>1.5 horas<\/strong><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "034b0cb2-2cc6-4d4f-9784-245130b91d33",
+        "f8463300-5de7-4247-8a14-29b88a057d3f",
+        "8600fb1f-a875-46b2-8fe3-c0dd8c754d19",
+        "37ce3509-8985-42f6-bf7e-3321d63220d3",
+        "d3d100db-8a91-47e0-9182-327894e71967",
+        "5ae20351-4807-428d-bbe9-2fe4b705a304",
+        "465b8ef8-6ad8-4529-be85-168f3d71a8ce",
+        "5b236c91-c90f-46ac-b49f-272e613fd076",
+        "d480fe85-7d2b-49be-b7a6-80c6270a6002",
+        "e83fdb4e-dfdb-4107-97ec-f34261a3986b"
+      ],
+      "settings": {
+        "id": "Productos",
+        "title": "",
+        "subtitle": "",
+        "description": "",
+        "table_column": "five",
+        "padding_top_desktop": 60,
+        "padding_top_mobile": 0,
+        "padding_bottom_desktop": 60,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "bwt-2": {
+      "type": "ppsp-bwt",
+      "settings": {
+        "background_color": "#000000",
+        "id": "Products",
+        "position": "right",
+        "image": "shopify:\/\/shop_images\/Frame_161269339.png",
+        "mobileImage": "shopify:\/\/shop_images\/pic.png",
+        "title": "Serie RIVER<br>\nEstaciones de energía portátiles",
+        "subtitle": "¿Necesitas energía pero no quieres que ello sea un carga? La serie RIVER ofrece opciones de energía perfectas para tu próxima aventura sin conexión a la red. Aunque pequeñas, las estaciones de energía portátiles EcoFlow RIVER suministran energía para mantener los dispositivos personales cargados y en funcionamiento sin estar conectado a una red eléctrica. Recarga en cualquier lugar con paneles solares, en una toma de corriente o incluso en tu vehículo. Alejarte de todo no significa sacrificar las comodidades del hogar gracias a las estaciones de energía portátiles EcoFlow RIVER.",
+        "button_text": "Adquirir Ahora",
+        "button_url": "https:\/\/es.ecoflow.com\/collections\/river-series-portable-power-stations",
+        "padding_top_desktop": 60,
+        "padding_top_mobile": 40,
+        "padding_bottom_desktop": 60,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "comparison-table-2": {
+      "type": "ppsp-comparison-table",
+      "blocks": {
+        "034b0cb2-2cc6-4d4f-9784-245130b91d33": {
+          "type": "table_head",
+          "settings": {
+            "first_product": "river-2-portable-power-station",
+            "first_column_image": "shopify:\/\/shop_images\/sl_r2s.png",
+            "first_column_title": "EcoFlow RIVER 2",
+            "first_column_specification": "Capacidad de 256 Wh <span class=\"display--desktop\">|<\/span> <br class=\"display--mobile\"> Potencia de 300 W",
+            "first_column_url": "",
+            "second_product": "river-2-max-portable-power-station",
+            "second_column_image": "shopify:\/\/shop_images\/sl_r2s_1.png",
+            "second_column_title": "EcoFlow RIVER 2 Max",
+            "second_column_specification": "Capacidad de 512 Wh <span class=\"display--desktop\">|<\/span> <br class=\"display--mobile\"> Potencia de 500 W",
+            "second_column_url": "",
+            "third_product": "river-2-pro-portable-power-station",
+            "third_column_image": "shopify:\/\/shop_images\/sl_r2s_2.png",
+            "third_column_title": "EcoFlow RIVER 2 Pro",
+            "third_column_specification": "Capacidad de 768 Wh <span class=\"display--desktop\">|<\/span> <br class=\"display--mobile\"> Potencia de 800 W",
+            "third_column_url": "",
+            "fourth_product": "",
+            "fourth_column_title": "",
+            "fourth_column_specification": "",
+            "fourth_column_url": ""
+          }
+        },
+        "f8463300-5de7-4247-8a14-29b88a057d3f": {
+          "type": "table_details",
+          "settings": {
+            "row_title": "Teléfono (11 Wh)",
+            "first_column_data": "<p><strong>19 cargas<\/strong><\/p>",
+            "second_column_data": "<p><strong>38 cargas<\/strong><\/p>",
+            "third_column_data": "<p><strong>57 cargas<\/strong><\/p>",
+            "fourth_column_data": ""
+          }
+        },
+        "8600fb1f-a875-46b2-8fe3-c0dd8c754d19": {
+          "type": "table_details",
+          "settings": {
+            "row_title": "Cámara (16 Wh)",
+            "first_column_data": "<p><strong>13 cargas<\/strong><\/p>",
+            "second_column_data": "<p><strong>26 cargas<\/strong><\/p>",
+            "third_column_data": "<p><strong>39 cargas<\/strong><\/p>",
+            "fourth_column_data": ""
+          }
+        },
+        "37ce3509-8985-42f6-bf7e-3321d63220d3": {
+          "type": "table_details",
+          "settings": {
+            "row_title": "Luces (10 W CC)",
+            "first_column_data": "<p><strong>20 horas<\/strong><\/p>",
+            "second_column_data": "<p><strong>40 horas<\/strong><\/p>",
+            "third_column_data": "<p><strong>60 horas<\/strong><\/p>",
+            "fourth_column_data": ""
+          }
+        },
+        "d3d100db-8a91-47e0-9182-327894e71967": {
+          "type": "table_details",
+          "settings": {
+            "row_title": "Laptop (60 W)",
+            "first_column_data": "<p><strong>3.4 cargas<\/strong><\/p>",
+            "second_column_data": "<p><strong>6.8 cargas<\/strong><\/p>",
+            "third_column_data": "<p><strong>10.2 cargas<\/strong><\/p>",
+            "fourth_column_data": ""
+          }
+        },
+        "5ae20351-4807-428d-bbe9-2fe4b705a304": {
+          "type": "table_details",
+          "settings": {
+            "row_title": "Proyector (65 W)",
+            "first_column_data": "<p><strong>2.9 horas<\/strong><\/p>",
+            "second_column_data": "<p><strong>5.8 horas<\/strong><\/p>",
+            "third_column_data": "<p><strong>8.7 horas<\/strong><\/p>",
+            "fourth_column_data": ""
+          }
+        },
+        "465b8ef8-6ad8-4529-be85-168f3d71a8ce": {
+          "type": "table_details",
+          "settings": {
+            "row_title": "Refrigerador (120 W)",
+            "first_column_data": "<p><strong>1.7-3.4 horas<\/strong><\/p>",
+            "second_column_data": "<p><strong>3.4-6.8 horas<\/strong><\/p>",
+            "third_column_data": "<p><strong>6.1-12.2 horas<\/strong><\/p>",
+            "fourth_column_data": ""
+          }
+        },
+        "5b236c91-c90f-46ac-b49f-272e613fd076": {
+          "type": "table_details",
+          "settings": {
+            "row_title": "PS5 (200 W)",
+            "first_column_data": "<p><strong>1 horas<\/strong><\/p>",
+            "second_column_data": "<p><strong>2 horas<\/strong><\/p>",
+            "third_column_data": "<p><strong>3 horas<\/strong><\/p>",
+            "fourth_column_data": ""
+          }
+        },
+        "d480fe85-7d2b-49be-b7a6-80c6270a6002": {
+          "type": "table_details",
+          "settings": {
+            "row_title": "Batidora (500 W)",
+            "first_column_data": "<p><strong>0.68 horas<\/strong><\/p>",
+            "second_column_data": "<p><strong>0.8 horas<\/strong><\/p>",
+            "third_column_data": "<p><strong>1.2 horas<\/strong><\/p>",
+            "fourth_column_data": ""
+          }
+        },
+        "e83fdb4e-dfdb-4107-97ec-f34261a3986b": {
+          "type": "table_details",
+          "settings": {
+            "row_title": "Cafetera eléctrica (1000 W)",
+            "first_column_data": "<p><strong>—<\/strong><\/p>",
+            "second_column_data": "<p><strong>—<\/strong><\/p>",
+            "third_column_data": "<p><strong>0.768 horas<\/strong><\/p>",
+            "fourth_column_data": ""
+          }
+        }
+      },
+      "block_order": [
+        "034b0cb2-2cc6-4d4f-9784-245130b91d33",
+        "f8463300-5de7-4247-8a14-29b88a057d3f",
+        "8600fb1f-a875-46b2-8fe3-c0dd8c754d19",
+        "37ce3509-8985-42f6-bf7e-3321d63220d3",
+        "d3d100db-8a91-47e0-9182-327894e71967",
+        "5ae20351-4807-428d-bbe9-2fe4b705a304",
+        "465b8ef8-6ad8-4529-be85-168f3d71a8ce",
+        "5b236c91-c90f-46ac-b49f-272e613fd076",
+        "d480fe85-7d2b-49be-b7a6-80c6270a6002",
+        "e83fdb4e-dfdb-4107-97ec-f34261a3986b"
+      ],
+      "settings": {
+        "id": "Products",
+        "title": "",
+        "subtitle": "",
+        "description": "",
+        "table_column": "four",
+        "padding_top_desktop": 60,
+        "padding_top_mobile": 0,
+        "padding_bottom_desktop": 60,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "brand": {
+      "type": "ppsp-brand",
+      "blocks": {
+        "91e431b3-25ac-4b78-8496-f244034a5656": {
+          "type": "perks",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/img.png",
+            "image_mobile": "shopify:\/\/shop_images\/Frame_128721162_9783758a-4924-49b3-8e3d-ba7bba417cb6.png",
+            "title": "X-BOOST: Más por menos",
+            "description": "Nuestra tecnología patentada, X-Boost, te ofrece más por menos, y te permite usar electrodomésticos con una potencia mayor que la potencia nominal de la unidad. En lugar de aumentar la salida y sobrecargar el circuito, la unidad reduce la potencia del aparato para usarlo de manera segura. Con X-Boost puedes alimentar hasta el 99 % de todos los dispositivos."
+          }
+        },
+        "c656332b-ce21-45db-979f-a211863b2b15": {
+          "type": "perks",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/img_1.png",
+            "image_mobile": "shopify:\/\/shop_images\/Frame_128721162_1_842f2ecb-1a63-487e-90e9-597617a54ea8.png",
+            "title": "X-STREAM: Carga en tan solo 50 min.",
+            "description": "Nuestra tecnología de carga patentada fue diseñada para viajar. Da igual si estás en una aventura al aire libre o en una situación de emergencia, ya no tendrás que esperar horas para cargar tu batería. Simplemente conéctala, cárgala rápidamente y listo."
+          }
+        },
+        "e6b94d8b-7cc2-47e2-aea1-f0e0d809e24f": {
+          "type": "perks",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/img_2.png",
+            "image_mobile": "shopify:\/\/shop_images\/Frame_128721162_2.png",
+            "title": "Sistema de gestión de baterías: Seguridad garantizada.",
+            "description": "No sólo están diseñadas para durar, sino también para priorizar la seguridad. Un avanzado sistema de gestión de baterías regula la tensión, corriente y temperatura en tiempo real para garantizar un rendimiento óptimo y seguro."
+          }
+        },
+        "5c4f6c4a-beca-4f9d-9ea4-92948074e476": {
+          "type": "perks",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/img_3.png",
+            "image_mobile": "shopify:\/\/shop_images\/Frame_128721162_3.png",
+            "title": "Batería LFP: Más de una década de energía.",
+            "description": "Más de una década de energía. Con la química de las baterías LiFePO4, nuestras estaciones de energía tienen una vida útil de 10 años. Eso equivale a más de 3000 ciclos completos, por lo que tu batería resistirá el paso del tiempo."
+          }
+        },
+        "4f839efc-971e-4f77-9727-02e7f8a39e42": {
+          "type": "perks",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/img_4.png",
+            "image_mobile": "shopify:\/\/shop_images\/Frame_128721162_4.png",
+            "title": "Carga solar: Aprovecha la energía de la naturaleza.",
+            "description": "Carga tu estación de energía portátil en cualquier lugar usando la energía del sol. Conecta un panel solar EcoFlow a tu unidad y usa energía gratuita para prepararte para un apagón o reducir tus facturas de la luz."
+          }
+        },
+        "9542b126-62ef-47d4-9636-e68b61a9c926": {
+          "type": "perks",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/img_5.png",
+            "image_mobile": "shopify:\/\/shop_images\/Frame_128721162_6.png",
+            "title": "Garantía: Calidad asegurada.",
+            "description": "Ofrecemos una garantía total y competitiva para que compres con total seguridad con nosotros."
+          }
+        }
+      },
+      "block_order": [
+        "91e431b3-25ac-4b78-8496-f244034a5656",
+        "c656332b-ce21-45db-979f-a211863b2b15",
+        "e6b94d8b-7cc2-47e2-aea1-f0e0d809e24f",
+        "5c4f6c4a-beca-4f9d-9ea4-92948074e476",
+        "4f839efc-971e-4f77-9727-02e7f8a39e42",
+        "9542b126-62ef-47d4-9636-e68b61a9c926"
+      ],
+      "settings": {
+        "id": "Características",
+        "title": "¿Por qué elegir una estación de energía portátil EcoFlow?",
+        "subtitle": "",
+        "padding_top_desktop": 60,
+        "padding_top_mobile": 40,
+        "padding_bottom_desktop": 60,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "testimonial": {
+      "type": "ppsp-testimonial",
+      "blocks": {
+        "d7a3dd70-a8bf-4050-8ff0-7cf2b52c77f5": {
+          "type": "slide",
+          "settings": {
+            "testimonial": "\"Odiaba los apagones. Pero descubrí EcoFlow. ¡Sus estaciones de energía portátiles han sido la salvación! Puedo conectar todos mis dispositivos para mantenerlos funcionando incluso cuando no hay electricidad.\"",
+            "name": "Nkanyiso Mntungwa"
+          }
+        },
+        "7641d118-3f81-4b95-afd2-cd799973a678": {
+          "type": "slide",
+          "settings": {
+            "testimonial": "\"¿Apagones? No me tengo que preocupar, ¡sigo teniendo electricidad! Con varios puertos de salida, mi EcoFlow RIVER Max no sólo es potente, ¡es una maravilla multitarea!\"",
+            "name": "Chintan Patel"
+          }
+        },
+        "7fcc5e8d-861a-42cb-815d-ccc84bfa1dd1": {
+          "type": "slide",
+          "settings": {
+            "testimonial": "\"Siempre me impresionan las capacidades de mi EcoFlow y estoy igualmente sorprendido por la eficiencia energética de mi Philips Airfryer compacta. A su temperatura máxima (1500 vatios), DELTA 2 sin duda realizaría la tarea sin esfuerzo.\"",
+            "name": "Dave Thomas"
+          }
+        },
+        "e3629e06-a8ca-443e-abb4-7ebc922e98dd": {
+          "type": "slide",
+          "settings": {
+            "testimonial": "\"¡DELTA 2 Max! ¡Tiene el tamaño perfecto! ¡Lo mejor es que tiene doble carga solar! ¡Y dos puertos de batería adicionales! Gracias EcoFlow por crear el producto perfecto para la ocasión perfecta.\"",
+            "name": "Brandon Martínez"
+          }
+        },
+        "2fcb5194-abc8-432e-a372-2457474e843e": {
+          "type": "slide",
+          "settings": {
+            "testimonial": "\"La fiabilidad y calidad de ECOFLOW. NUNCA ME DECEPCIONA. He probado estos productos en el campo [ ] durante casi 3 años en las condiciones más duras de Australia. El funcionamiento ha sido impecable.\"",
+            "name": "Wayne Keys"
+          }
+        }
+      },
+      "block_order": [
+        "d7a3dd70-a8bf-4050-8ff0-7cf2b52c77f5",
+        "7641d118-3f81-4b95-afd2-cd799973a678",
+        "7fcc5e8d-861a-42cb-815d-ccc84bfa1dd1",
+        "e3629e06-a8ca-443e-abb4-7ebc922e98dd",
+        "2fcb5194-abc8-432e-a372-2457474e843e"
+      ],
+      "settings": {
+        "id": "Opiniones",
+        "title": "Mira lo que dicen nuestros usuarios",
+        "subtitle": "",
+        "padding_top_desktop": 60,
+        "padding_top_mobile": 40,
+        "padding_bottom_desktop": 60,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "scenario": {
+      "type": "ppsp-scenario",
+      "blocks": {
+        "c4defc96-d2b7-4abe-964c-163d51abed02": {
+          "type": "scenario",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/m_kv_1024.jpg",
+            "title": "Power Backup",
+            "description": "Get prepared for unpredictable power outages and beyond",
+            "url": "https:\/\/www.ecoflow.com\/us\/power-backup",
+            "scenario_layout": "dark"
+          }
+        },
+        "9d1c1190-8470-4f9a-a10f-e884ce85247d": {
+          "type": "scenario",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/outdoor-_3.png",
+            "title": "Outdoor Recreation",
+            "description": "Reliable power wherever your adventures take you.",
+            "url": "https:\/\/www.ecoflow.com\/us\/recreational-activities",
+            "scenario_layout": "light"
+          }
+        },
+        "00d4f51d-32ba-4ff8-a907-009665333f47": {
+          "type": "scenario",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_128721368.png",
+            "title": "Vanlife & Roadtrips",
+            "description": "Enabling a mobile, self-sufficient lifestyle on the road.",
+            "url": "https:\/\/www.ecoflow.com\/us\/vanlife-roadtrips",
+            "scenario_layout": "light"
+          }
+        }
+      },
+      "block_order": [
+        "c4defc96-d2b7-4abe-964c-163d51abed02",
+        "9d1c1190-8470-4f9a-a10f-e884ce85247d",
+        "00d4f51d-32ba-4ff8-a907-009665333f47"
+      ],
+      "disabled": true,
+      "settings": {
+        "id": "",
+        "title": "Power Any Outdoor Pursuit",
+        "subtitle": "",
+        "padding_top_desktop": 60,
+        "padding_top_mobile": 40,
+        "padding_bottom_desktop": 128,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "blog": {
+      "type": "ppsp-blog",
+      "blocks": {
+        "a241b1ae-af3c-41c7-9d3a-df1c2515f524": {
+          "type": "blog",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Delta-Max-3-1-scaled.jpg",
+            "title": "EcoFlow Delta 2 vs EcoFlow Delta Max vs EcoFlow Delta Pro",
+            "url": "https:\/\/blog.ecoflow.com\/es\/ecoflow-delta-2-vs-delta-max-vs-delta-pro\/"
+          }
+        },
+        "02dfba5b-f5cd-4029-946f-4a0f43eff52f": {
+          "type": "blog",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/3960-1.jpg",
+            "title": "Paneles solares y baterías EcoFlow para generar tu propia energía",
+            "url": "https:\/\/blog.ecoflow.com\/es\/placas-solares-y-baterias\/"
+          }
+        },
+        "225511e2-5d39-44bc-8d1f-fb8399d18e3e": {
+          "type": "blog",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/thorcaes-river2-50-scaled.jpg",
+            "title": "EcoFlow River 2 vs River 2 Max vs River Pro 2",
+            "url": "https:\/\/blog.ecoflow.com\/es\/ecoflow-river-2-vs-river-2-max-vs-river-pro-2\/"
+          }
+        },
+        "0ec4617c-de7c-454d-ae2b-9a4c97cac2bf": {
+          "type": "blog",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/que-es-bateria-de-litio.jpg",
+            "title": "¿Qué es una batería solar de litio?",
+            "url": "https:\/\/blog.ecoflow.com\/uk\/portable-power-station-vs-solar-generator\/"
+          }
+        },
+        "c403605c-b5d6-4991-bae9-f86246f43957": {
+          "type": "blog",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/paneles-solares-2.jpg",
+            "title": "¿Cómo conectar un panel solar a una batería EcoFlow?",
+            "url": "https:\/\/blog.ecoflow.com\/es\/como-conectar-un-panel-solar-a-una-bateria-ecoflow\/"
+          }
+        },
+        "1ec58211-a617-4a39-81f3-0c20fa87d84c": {
+          "type": "blog",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/generadores-solares-para-el-hogar_67978c6e-a00a-45e0-b00f-5227ab3225f1.jpg",
+            "title": "Generadores solares para el hogar de EcoFlow",
+            "url": "https:\/\/blog.ecoflow.com\/es\/generador-electrico-solar-para-casa\/"
+          }
+        },
+        "c24a59fa-cd3f-493b-9595-713e55ae4063": {
+          "type": "blog",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Portatil-DELTA-2.jpg",
+            "title": "Presentamos la EcoFlow DELTA 2: guía completa y comparación",
+            "url": "https:\/\/blog.ecoflow.com\/es\/presentamos-la-ecoflow-delta-2-guia-completa-y-comparacion\/"
+          }
+        }
+      },
+      "block_order": [
+        "a241b1ae-af3c-41c7-9d3a-df1c2515f524",
+        "02dfba5b-f5cd-4029-946f-4a0f43eff52f",
+        "225511e2-5d39-44bc-8d1f-fb8399d18e3e",
+        "0ec4617c-de7c-454d-ae2b-9a4c97cac2bf",
+        "c403605c-b5d6-4991-bae9-f86246f43957",
+        "1ec58211-a617-4a39-81f3-0c20fa87d84c",
+        "c24a59fa-cd3f-493b-9595-713e55ae4063"
+      ],
+      "settings": {
+        "id": "Blogs",
+        "title": "Infórmate con nuestra Guía de compras",
+        "subtitle": "",
+        "padding_top_desktop": 128,
+        "padding_top_mobile": 40,
+        "padding_bottom_desktop": 60,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "faq": {
+      "type": "ppsp-faq",
+      "blocks": {
+        "e7bb4649-3693-4aba-aa08-4cc5c01f6192": {
+          "type": "question",
+          "settings": {
+            "title": "¿Son seguras las estaciones de energía portátiles?",
+            "answer": "<p>Sí, siempre que las utilice con cuidado. Existen varias reglas de seguridad que debe seguir para minimizar la probabilidad de resultados indeseados. La primera es mantenerlas secas en todo momento para evitar posibles electrocuciones o problemas de mantenimiento. Además, asegúrese de que sus cables no puedan causar ningún tropiezo. Cuando se utilizan de manera responsable, las estaciones de energía portátiles son completamente seguras.<\/p>"
+          }
+        },
+        "0bb7fbe9-b072-4a31-80a7-d092ee9428c2": {
+          "type": "question",
+          "settings": {
+            "title": "¿Son sostenibles las estaciones de energía portátiles?",
+            "answer": "<p>Sí. Dado que puede cargarlas repetidamente desde varias fuentes de energía, puede reutilizarlas varias veces. La sostenibilidad se puede mejorar aún más mediante paneles solares acoplables, que le permitirán cargar su estación de energía mediante energía solar. La luz solar es una fuente de energía limpia totalmente renovable, lo que la convierte en una fuente ecológica y sostenible.<\/p>"
+          }
+        },
+        "6931f475-e0a3-4821-b5c0-76cc4bd5243b": {
+          "type": "question",
+          "settings": {
+            "title": "¿Cuánto tiempo puede funcionar una estación de energía portátil?",
+            "answer": "<p>El tiempo de funcionamiento depende del tipo de estación de energía portátil que compre. Los diferentes modelos tienen baterías de diferentes tamaños y capacidades de almacenamiento de la energía, lo que afecta el tiempo que pueden funcionar antes de cargarse. Además, los dispositivos y aparatos que conecte a su estación de energía afectarán al tiempo de funcionamiento. Los electrodomésticos que requieren mucha energía (como televisores o neveras) consumirán su batería más rápido que los dispositivos más pequeños, como teléfonos u ordenadores portátiles.<\/p>"
+          }
+        },
+        "cf494959-31c2-4281-bc55-b299a8cdd4b4": {
+          "type": "question",
+          "settings": {
+            "title": "¿Cuántos años duran las estaciones de energía portátiles?",
+            "answer": "<p>La vida útil del producto depende en gran medida del modelo que decida comprar y del tipo de batería. Las baterías LFP (abreviatura de LiFePO4), como las que se encuentran en las estaciones de energía portátiles EcoFlow, duran alrededor de 6500 ciclos antes de que su capacidad de almacenamiento disminuya. La duración de vida de la estación de energía portátil también depende de la frecuencia con la que se utilice y cargue el dispositivo. Puede esperar muchos años de servicio de su estación de energía portátil si la compra de una marca reconocida. Su estación de energía podría satisfacer sus necesidades de energía portátil y de respaldo durante diez años o más. Son una inversión duradera y que vale la pena.​<\/p>"
+          }
+        },
+        "d0f65c3b-0eaa-4b70-96bf-2e3a1074e662": {
+          "type": "question",
+          "settings": {
+            "title": "¿Cuál es la diferencia entre baterías portátiles y generadores?",
+            "answer": "<p>La diferencia fundamental es que un generador crea energía, mientras que una batería portátil sólo almacena energía. No crea nueva energía por sí misma. Una estación de energía portátil almacena la energía con la que la carga desde paneles solares, enchufes de pared de CA, adaptadores de coche y otros métodos de carga para que pueda llevarla consigo y usarla más tarde. En algunas situaciones, como las baterías EcoFlow, puede agregarles paneles solares y convertirlas sin problemas en un generador solar. Agregar paneles solares le evita tener que comprar un generador adicional como fuente de energía.<\/p>"
+          }
+        },
+        "5245deb1-4484-43ca-9e6e-b2d51b6e1851": {
+          "type": "question",
+          "settings": {
+            "title": "¿Se cargan las estaciones de energía portátiles mientras están en uso?",
+            "answer": "<p>Sí, los productos EcoFlow pueden seguir cargándose mientras están en uso. Sólo necesita asegurarse de que la potencia de salida no exceda la potencia de entrada; de lo contrario, la batería portátil no podrá almacenar energía adicional. Por ejemplo, si la potencia de entrada es de 1000W, pero su potencia de salida asciende a 1200W, sus niveles de energía disminuirán aunque técnicamente esté \"cargando\" la estación de energía portátil, ya que está \"vaciando\" la estación más rápido de lo que está \"llenándola\".<\/p>"
+          }
+        },
+        "787caf05-f934-4928-820d-bda71bc4d7c3": {
+          "type": "question",
+          "settings": {
+            "title": "¿Es silenciosa la estación de energía portátil EcoFlow?",
+            "answer": "<p>Las baterías portátiles de EcoFlow son silenciosas, especialmente en comparación con los generadores de combustibles fósiles. No podemos garantizar un silencio total durante su uso, ya que sigue siendo un dispositivo eléctrico que cumple varias funciones, emitiendo un sonido similar al de un ordenador portátil. Sin embargo, cualquier ruido que produzcan nuestras estaciones de energía es mínimo y no molesto, con un promedio de alrededor de 45 decibelios. El nivel de decibelios es similar al de una biblioteca o al canto de los pájaros.<\/p>"
+          }
+        },
+        "04cd3fe0-fbbc-4f01-a031-0ef713210644": {
+          "type": "question",
+          "settings": {
+            "title": "¿Por qué las baterías solares EcoFlow son diferentes a un generador térmico?",
+            "answer": "<p>Los generadores térmicos solo se pueden utilizar al aire libre, ya que emiten gases tóxicos durante su funcionamiento. Además, son pesados, ruidosos y requieren de mucho mantenimiento al disponer de piezas móviles. Las estaciones de energía portátiles de EcoFlow son fiables y se pueden usar en interiores, exteriores e incluso en movimiento. También se pueden combinar con paneles solares. ¿El resultado? ¡Una batería portátil responsable, fiable y eficiente!<\/p>"
+          }
+        },
+        "d16abb87-2afe-421b-a06d-9e0c040d2f48": {
+          "type": "question",
+          "settings": {
+            "title": "¿Pueden las baterías portátiles de EcoFlow alimentar una nevera?",
+            "answer": "<p>Sí, nuestras estaciones de energía portátiles pueden alimentar una nevera. Sin embargo, la duración de la batería puede variar. Si tomamos el ejemplo de la batería portátil DELTA 2 de EcoFlow, esta es capaz de alimentar un frigorífico de 120W durante unas 7 horas… ¡Perfecto en caso de un corte de energía!<\/p>"
+          }
+        },
+        "ddde32b5-bff0-4b91-a701-4a0fcb4b48f0": {
+          "type": "question",
+          "settings": {
+            "title": "¿Es seguro usar una estación de energía portátil tan grande para alimentar mis dispositivos?",
+            "answer": "<p>Hemos diseñado las estaciones de energía portátiles EcoFlow de manera que proporcionen la máxima seguridad. Un avanzado sistema de gestión interno autorregula el voltaje, la corriente y la temperatura en tiempo real para garantizar un uso óptimo y seguro. Los elementos que componen nuestras baterías portátiles son fiables y resistentes, dotándolas de una excelente vida útil de varios años.<\/p>"
+          }
+        },
+        "60e3fe15-3dad-4431-8522-cdf13a589174": {
+          "type": "question",
+          "settings": {
+            "title": "¿Por qué comprar una estación de energía portátil EcoFlow?",
+            "answer": "<p>Las baterías portátiles EcoFlow son fáciles de usar, fiables y proporcionan energía limpia, pero también son versátiles. En particular, la posibilidad de utilizarlas en interiores es una ventaja definitiva, que nos permite reducir nuestra factura eléctrica o disponer de una reserva de energía de repaldo. Al ser silenciosas, también son totalmente aptas para acampar, a diferencia de un generador térmico o de combustible.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "e7bb4649-3693-4aba-aa08-4cc5c01f6192",
+        "0bb7fbe9-b072-4a31-80a7-d092ee9428c2",
+        "6931f475-e0a3-4821-b5c0-76cc4bd5243b",
+        "cf494959-31c2-4281-bc55-b299a8cdd4b4",
+        "d0f65c3b-0eaa-4b70-96bf-2e3a1074e662",
+        "5245deb1-4484-43ca-9e6e-b2d51b6e1851",
+        "787caf05-f934-4928-820d-bda71bc4d7c3",
+        "04cd3fe0-fbbc-4f01-a031-0ef713210644",
+        "d16abb87-2afe-421b-a06d-9e0c040d2f48",
+        "ddde32b5-bff0-4b91-a701-4a0fcb4b48f0",
+        "60e3fe15-3dad-4431-8522-cdf13a589174"
+      ],
+      "settings": {
+        "id": "FAQs",
+        "title": "Preguntas frecuentes sobre las<br> estaciones de energía portátiles EcoFlow",
+        "padding_top_desktop": 60,
+        "padding_top_mobile": 40,
+        "padding_bottom_desktop": 120,
+        "padding_bottom_mobile": 80
+      }
+    },
+    "page-bottom-text": {
+      "type": "page-bottom-text",
+      "settings": {
+        "bottom_text": "Los términos “DELTA” y “RIVER”, que se mencionan en esta página, se refieren a productos fabricados exclusivamente por ECOFLOW INC.",
+        "bg_color": "",
+        "text_color": "",
+        "font-size": 16
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "sticky-bar",
+    "content-slider",
+    "iwt",
+    "iwt-2",
+    "bwt",
+    "comparison-table",
+    "bwt-2",
+    "comparison-table-2",
+    "brand",
+    "testimonial",
+    "scenario",
+    "blog",
+    "faq",
+    "page-bottom-text"
+  ]
+}

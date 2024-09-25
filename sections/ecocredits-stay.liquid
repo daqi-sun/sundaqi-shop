@@ -1,0 +1,71 @@
+<div class="ecocredits-stay__section background--jet-black">
+  <div class="ecocredits-stay__container container--normal ec__text--center">
+    <div class="ecocredits-stay__image__container">
+      <img
+        src="{{ section.settings.icon | img_url: 'master' }}"
+        alt="{{ section.settings.icon.alt }}"
+      >
+    </div>
+    {% if section.settings.title != blank %}
+      <h2 class="ecocredits-stay__title ec__text--white">{{ section.settings.title }}</h2>
+    {% endif %}
+    <p class="ecocredits-stay__content ec__text--white">{{ section.settings.content }}</p>
+    {% if section.settings.button_text != blank %}
+      <a class="ecocredits-stay__button--link" href="{{ section.settings.button_link }}">
+        <div class="ecocredits-stay__button__container">
+          <span
+            class="ec__text--white"
+          >
+            {{- section.settings.button_text -}}
+          </span>
+        </div>
+      </a>
+    {% endif %}
+
+    <p class="ecocredits-stay__login ec__text--dark-gray">
+      ¿Ya eres miembro?
+      <a
+        class="ec__text--dark-gray"
+        href="{% if customer %}/account{% else %}https://account.ecoflow.com/login?return_to=https://{{ request.host }}{{ request.path }}{% endif %}"
+      >
+        Iniciar sesión</a
+      >
+    </p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Ecocredits Stay",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Icon"
+    },
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Register and stay tuned for EcoCredits Day!"
+    },
+    {
+      "type": "html",
+      "id": "content",
+      "label": "Section Content",
+      "default": "Collect double EcoCredits on every order. Redeem for coupons and gifts. Get the chance to join product tests and win free new products."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Go and stay"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ]
+}
+{% endschema %}

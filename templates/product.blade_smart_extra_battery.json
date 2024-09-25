@@ -1,0 +1,377 @@
+{
+  "sections": {
+    "sticky-product-bar": {
+      "type": "sticky-product-bar",
+      "blocks": {
+        "588d25af-4d47-43ac-9697-b98aa2f65719": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Overview",
+            "tab_id": "product_information",
+            "section_class": ""
+          }
+        },
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "FAQ",
+            "tab_id": "faq",
+            "section_class": ""
+          }
+        },
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Reviews",
+            "tab_id": "section-reviews",
+            "section_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "588d25af-4d47-43ac-9697-b98aa2f65719",
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4",
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38"
+      ],
+      "settings": {
+        "enabled": true,
+        "enabled_tabs": true
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "11795adc-1afa-4833-a193-258f495901ef": {
+          "type": "sku_block",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e": {
+          "type": "product_title",
+          "settings": {
+          }
+        },
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "0471109f-c130-454e-a9ba-c56412cc11f3": {
+          "type": "product_vendor",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185": {
+          "type": "product_price",
+          "settings": {
+          }
+        },
+        "d25a0285-4fb4-422d-b95b-ab67446120ad": {
+          "type": "product_description",
+          "settings": {
+            "desc_display": "default"
+          }
+        },
+        "919f9cdd-6184-4311-b675-742931504318": {
+          "type": "coupon_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Component_2_1.png",
+            "discount_off_text": "{{ product.metafields.custom.discount_off_text.value }}",
+            "code": "{{ product.metafields.custom.discount_code.value }}",
+            "show_copy_code_btn": true
+          }
+        },
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879": {
+          "type": "product_options_block",
+          "settings": {
+            "show_product_swatches": true,
+            "use_variant_image_for_swatches": true
+          }
+        },
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe": {
+          "type": "quantity_block",
+          "settings": {
+          }
+        },
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0": {
+          "type": "accessories_section",
+          "settings": {
+            "title": "Accessories"
+          }
+        },
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609": {
+          "type": "product_buttons",
+          "settings": {
+            "enable_payment_button": false,
+            "show_custom_icons": true,
+            "custom_payment_logo_1_svg": "",
+            "custom_payment_logo_2_svg": "",
+            "custom_payment_logo_3_svg": "",
+            "custom_payment_logo_4_svg": "",
+            "custom_payment_logo_5_svg": "",
+            "custom_payment_logo_6_svg": "",
+            "custom_payment_logo_7_svg": "",
+            "custom_payment_logo_8_svg": "",
+            "custom_payment_logo_9_svg": "",
+            "custom_payment_logo_10_svg": "",
+            "custom_payment_logo_11_svg": "",
+            "custom_payment_logo_12_svg": "",
+            "custom_payment_logo_13_svg": "",
+            "custom_payment_logo_14_svg": "",
+            "custom_payment_logo_15_svg": ""
+          }
+        },
+        "a6857d85-dbb6-41d1-9501-c01cf5bbe11f": {
+          "type": "back_in_stock",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "11795adc-1afa-4833-a193-258f495901ef",
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e",
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774",
+        "0471109f-c130-454e-a9ba-c56412cc11f3",
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185",
+        "d25a0285-4fb4-422d-b95b-ab67446120ad",
+        "919f9cdd-6184-4311-b675-742931504318",
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879",
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe",
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0",
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609",
+        "a6857d85-dbb6-41d1-9501-c01cf5bbe11f"
+      ],
+      "settings": {
+        "section_id": "",
+        "show_breadcrumbs": false,
+        "show_pick_an_option": false,
+        "enable_linked_options": false,
+        "enabled_mobile_sticky_btns": true,
+        "media_size": "medium",
+        "enable_image_zoom": true,
+        "enable_video_looping": true,
+        "thumbnails_type": "grid",
+        "support_email": "",
+        "support_text": "",
+        "feature_1_show": true,
+        "feature_1_title": "Fast & Free Shipping",
+        "feature_1_content": "",
+        "feature_2_show": true,
+        "feature_2_title": "Warranty Protection",
+        "feature_2_content": "",
+        "feature_3_show": true,
+        "feature_3_title": "Secure Payments",
+        "feature_3_content": "",
+        "feature_4_show": true,
+        "feature_4_title": "Multi-channel Support",
+        "feature_4_content": ""
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "grid_mobile": "2",
+        "heading": "You may also like",
+        "show_vendor": false
+      }
+    },
+    "165728772697564e64": {
+      "type": "newsletter",
+      "disabled": true,
+      "settings": {
+        "section_bg_color": "",
+        "section_color": "",
+        "bg_image_opacity": 70,
+        "section_title": "Subscribe to our newsletter",
+        "subtitle": "",
+        "subheading": "<p>Promotions, new products and sales. Directly to your inbox.<\/p>",
+        "button_style": "primary",
+        "showFormLabels": true,
+        "removeBottomMargin": false
+      }
+    },
+    "705c586d-c6d2-4609-bba1-b868d0cbc03c": {
+      "type": "whats-in-the-box",
+      "disabled": true,
+      "settings": {
+        "section_id": "",
+        "title": "What's In The Box"
+      }
+    },
+    "2c26b2da-2a1e-4f36-910c-c3227a275ee1": {
+      "type": "quotes",
+      "disabled": true,
+      "blocks": {
+        "template--15039360893001__2c26b2da-2a1e-4f36-910c-c3227a275ee1-1666968004ce8303ac-0": {
+          "type": "quote",
+          "settings": {
+            "title": "Fast & Free Shipping",
+            "mobile_title": "",
+            "quote": "<p>All orders are processed within 3-5 business days. <\/p>",
+            "author": "",
+            "image_format": "image",
+            "svg_image": ""
+          }
+        },
+        "template--15039360893001__2c26b2da-2a1e-4f36-910c-c3227a275ee1-1666968004ce8303ac-1": {
+          "type": "quote",
+          "settings": {
+            "title": "Warranty Protection",
+            "mobile_title": "",
+            "quote": "<p>All products are covered by a warranty service.<\/p>",
+            "author": "",
+            "image_format": "image",
+            "svg_image": ""
+          }
+        },
+        "template--15039360893001__2c26b2da-2a1e-4f36-910c-c3227a275ee1-1666968004ce8303ac-2": {
+          "type": "quote",
+          "settings": {
+            "title": "Secure Payments",
+            "mobile_title": "",
+            "quote": "<p>Pay by debit or credit card, PayPal, or other secure payment platform.<\/p>",
+            "author": "",
+            "image_format": "image",
+            "svg_image": ""
+          }
+        },
+        "template--15039360893001__2c26b2da-2a1e-4f36-910c-c3227a275ee1-1666968004ce8303ac-3": {
+          "type": "quote",
+          "settings": {
+            "title": "Multi-channel Support",
+            "mobile_title": "",
+            "quote": "<p>Contact us via email, phone or online customer service.<\/p>",
+            "author": "",
+            "image_format": "image",
+            "svg_image": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15039360893001__2c26b2da-2a1e-4f36-910c-c3227a275ee1-1666968004ce8303ac-0",
+        "template--15039360893001__2c26b2da-2a1e-4f36-910c-c3227a275ee1-1666968004ce8303ac-1",
+        "template--15039360893001__2c26b2da-2a1e-4f36-910c-c3227a275ee1-1666968004ce8303ac-2",
+        "template--15039360893001__2c26b2da-2a1e-4f36-910c-c3227a275ee1-1666968004ce8303ac-3"
+      ],
+      "settings": {
+        "full_width": false,
+        "image_style": "full",
+        "heading_style": "center",
+        "title": "Why buy from the EcoFlow Store?",
+        "subtitle": "",
+        "bg_color": "#ffffff",
+        "title_color": "#232323",
+        "enable_carousel": false,
+        "show_dots": false,
+        "show_arrows": false,
+        "enable_autoplay": false,
+        "cycle_speed": 5
+      }
+    },
+    "7fc39825-6a05-4fa2-8b6b-186cfe502599": {
+      "type": "pdp-image-with-text-one-column",
+      "settings": {
+        "anchor_id": "",
+        "alignment": "center",
+        "full_width": false,
+        "image": "shopify:\/\/shop_images\/Blade_smart_extra_battery-description.png",
+        "mobile_image": "shopify:\/\/shop_images\/Blade_smart_extra_battery-description.png",
+        "show_actual_mobile_image_size": false,
+        "content_order": "3",
+        "image_alt": "",
+        "title": "",
+        "content": ""
+      }
+    },
+    "c2d6654e-c56d-4556-8857-709667908743": {
+      "type": "pdp-specs",
+      "blocks": {
+        "3d0793c4-e505-4afc-8f59-75b81df8f0f7": {
+          "type": "contents",
+          "settings": {
+            "title": "Tipo:",
+            "content": "<p>LFP<\/p>"
+          }
+        },
+        "afbf26f2-d811-42b6-8440-3a4487013c3f": {
+          "type": "contents",
+          "settings": {
+            "title": "Tamaño:",
+            "content": "<p>340 mm × 211 mm × 247,3 mm \/ 13 pulg. × 8 pulg. × 9,7 pulg<\/p>"
+          }
+        },
+        "26e9c21f-90cc-4504-8415-ec2795cc27bc": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso neto:",
+            "content": "<p>9,25 kg \/ 20 lbs<\/p>"
+          }
+        },
+        "0ed2794d-5d92-4ea7-90f7-e25b45093964": {
+          "type": "contents",
+          "settings": {
+            "title": "Potencia de entrada para carga solar:",
+            "content": "<p>17-60V, 400W máx<\/p>"
+          }
+        },
+        "4f374011-83e9-40dc-a198-5d8ee597eaaa": {
+          "type": "contents",
+          "settings": {
+            "title": "XT 150 Entrada:",
+            "content": "<p>51,2V, 1024W máx<\/p>"
+          }
+        },
+        "76785aad-cc0f-4c72-92ad-4478da49d87a": {
+          "type": "contents",
+          "settings": {
+            "title": "Capacidad:",
+            "content": "<p>1024 Wh (51,2V × 20 Ah)<\/p>"
+          }
+        },
+        "d3a83753-5322-4f8a-88e8-1a8a0beb5f08": {
+          "type": "contents",
+          "settings": {
+            "title": "Ciclos de vida útil:",
+            "content": "<p>3000 ciclos al 80 %<\/p>"
+          }
+        },
+        "9407ab43-38fa-4772-88a7-d973faab06fe": {
+          "type": "contents",
+          "settings": {
+            "title": "Clasificación IP:",
+            "content": "<p>IP65<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "3d0793c4-e505-4afc-8f59-75b81df8f0f7",
+        "afbf26f2-d811-42b6-8440-3a4487013c3f",
+        "26e9c21f-90cc-4504-8415-ec2795cc27bc",
+        "0ed2794d-5d92-4ea7-90f7-e25b45093964",
+        "4f374011-83e9-40dc-a198-5d8ee597eaaa",
+        "76785aad-cc0f-4c72-92ad-4478da49d87a",
+        "d3a83753-5322-4f8a-88e8-1a8a0beb5f08",
+        "9407ab43-38fa-4772-88a7-d973faab06fe"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Especificaciones"
+      }
+    }
+  },
+  "order": [
+    "sticky-product-bar",
+    "main",
+    "product-recommendations",
+    "165728772697564e64",
+    "705c586d-c6d2-4609-bba1-b868d0cbc03c",
+    "2c26b2da-2a1e-4f36-910c-c3227a275ee1",
+    "7fc39825-6a05-4fa2-8b6b-186cfe502599",
+    "c2d6654e-c56d-4556-8857-709667908743"
+  ]
+}

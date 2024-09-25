@@ -1,0 +1,72 @@
+{{ 'outdoor-off-grid-lp.css' | asset_url | stylesheet_tag }}
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+/>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<div class="outdoor-grid-banner">
+  <img class="outdoor-grid-banner__desktop-image"
+    loading="lazy"
+    srcset="{%- if section.settings.banner_img.width >= 375 -%}{{ section.settings.banner_img | img_url: '375x' }} 375w,{%- endif -%}
+            {%- if section.settings.banner_img.width >= 720 -%}{{ section.settings.banner_img | img_url: '720x' }} 750w,{%- endif -%}
+            {%- if section.settings.banner_img.width >= 1066 -%}{{ section.settings.banner_img | img_url: '1066x' }} 1066w,{%- endif -%}
+            {%- if section.settings.banner_img.width >= 1500 -%}{{ section.settings.banner_img | img_url: '1500x' }} 1500w,{%- endif -%}
+            {%- if section.settings.banner_img.width >= 2000 -%}{{ section.settings.banner_img | img_url: '2000x' }} 2000w{%- endif -%}"
+            src="{{ section.settings.banner_img | img_url: '535x' }}"
+            sizes="auto"
+            alt="{{ section.settings.banner_img.alt }}"
+    />
+    <img class="outdoor-grid-banner__mobile-image"
+    loading="lazy"
+    srcset="{%- if section.settings.banner_img_mobile.width >= 375 -%}{{ section.settings.banner_img_mobile | img_url: '375x' }} 375w,{%- endif -%}
+            {%- if section.settings.banner_img_mobile.width >= 720 -%}{{ section.settings.banner_img_mobile | img_url: '720x' }} 750w,{%- endif -%}
+            {%- if section.settings.banner_img_mobile.width >= 1066 -%}{{ section.settings.banner_img_mobile | img_url: '1066x' }} 1066w,{%- endif -%}
+            {%- if section.settings.banner_img_mobile.width >= 1500 -%}{{ section.settings.banner_img_mobile | img_url: '1500x' }} 1500w,{%- endif -%}
+            {%- if section.settings.banner_img_mobile.width >= 2000 -%}{{ section.settings.banner_img_mobile | img_url: '2000x' }} 2000w{%- endif -%}"
+            src="{{ section.settings.banner_img_mobile | img_url: '1050x' }}"
+            sizes="auto"
+            alt="{{ section.settings.banner_img_mobile.alt }}"
+    />
+  <div class="outdoor-grid-banner-content">
+    <div class="outdoor-grid-banner-heading">
+        {% if section.settings.banner_heading != blank %}
+          <span>{{ section.settings.banner_heading }}</span>
+        {% endif %}
+        <a class="outdoor-grid-banner-link" href="#scroll-section">{{ section.settings.banner_btn_text }} 
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9" fill="none">
+            <path d="M13 1L7 7L1 1" stroke="white" stroke-width="1.5"/>
+          </svg>
+        </a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Banner",
+    "settings": [
+      {
+        "id": "banner_img",
+        "type": "image_picker",
+        "label": "Image for Desktop"
+      },
+      {
+        "id": "banner_img_mobile",
+        "type": "image_picker",
+        "label": "Image for Mobile"
+      },
+      {
+        "id": "banner_heading",
+        "type": "text",
+        "label": "Banner Heading"
+      },
+      {
+        "id": "banner_btn_text",
+        "type": "text",
+        "label": "Banner Button Text"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,97 @@
+{% if section.settings.top_menu != blank or section.settings.comparison_link != blank or section.settings.calculator_link != blank %}
+    <div class="sticky-in-mobile" style="background: #fff">
+      <div class="page-width-small collection-top-row">
+        {%- if section.settings.top_menu != blank -%}
+          <div class="collection-top-menu">
+            {%- for link in linklists[section.settings.top_menu].links -%}
+              {%- comment %}<locksmith:912b>{% endcomment -%}
+                {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: linklists[section.settings.top_menu], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+              {%- comment %}</locksmith:912b>{% endcomment -%}
+              {%- assign link_found = false -%}
+                {%- for child_link in link.links -%}
+                  {%- comment %}<locksmith:9687>{% endcomment -%}
+                    {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: child_link, subject_parent: link, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                  {%- comment %}</locksmith:9687>{% endcomment -%}
+                  {%- if link.url == collection.url or child_link.url == collection.url -%}
+                    {%- assign link_found = true -%}
+                  {%- endif -%}
+                {%- endfor -%}
+                {%- if link_found -%}
+                  {%- for child_link in link.links -%}
+                    {%- comment %}<locksmith:c379>{% endcomment -%}
+                      {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: child_link, subject_parent: link, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                    {%- comment %}</locksmith:c379>{% endcomment -%}
+                    <div><a href="{{ child_link.url }}" {% if child_link.url == collection.url %}class="active"{% endif %}>{{ child_link.title }}</a></div>
+                  {%- endfor -%}
+                  {%- break -%}
+                {%- endif -%}
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+        {%- if section.settings.comparison_link != blank or section.settings.calculator_link != blank -%}
+          <div class="sort_comparison_btns">
+            {% if section.settings.calculator_link != blank %}
+              <div class="comparison_btn">
+                <a href="{{ section.settings.calculator_link }}">
+                  <svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+                    <g fill="none" fill-rule="evenodd">
+                        <g transform="translate(5.133 2.933)" stroke="currentColor">
+                            <rect stroke-width=".807" width="12.467" height="16.133" rx="1.232"/>
+                            <g transform="translate(1.959 2.196)" stroke-width=".538">
+                                <rect width="8.549" height="2.775" rx=".257"/>
+                                <rect y="4.295" width="1.786" height="1.701" rx=".257"/>
+                                <rect y="7.158" width="1.786" height="1.701" rx=".257"/>
+                                <rect y="10.021" width="1.786" height="1.701" rx=".257"/>
+                                <rect x="3.382" y="4.295" width="1.786" height="1.701" rx=".257"/>
+                                <rect x="3.382" y="7.158" width="1.786" height="1.701" rx=".257"/>
+                                <rect x="3.382" y="10.021" width="1.786" height="1.701" rx=".257"/>
+                                <rect x="6.763" y="4.295" width="1.786" height="1.701" rx=".257"/>
+                                <rect x="6.763" y="7.158" width="1.786" height="4.565" rx=".257"/>
+                            </g>
+                        </g>
+                    </g>
+                  </svg><span class="hideMobile">{{ 'collections.general.calculator' | t }}</span>
+                </a>
+              </div>
+            {% endif %}
+            {%- if section.settings.comparison_link != blank %}
+              <div class="comparison_btn">
+                <a href="{{ section.settings.comparison_link }}">
+                  <svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+                    <g fill="none" fill-rule="evenodd">
+                        <path d="M9.368 17.6H5.867c-.81 0-1.467-.657-1.467-1.467V5.867c0-.81.657-1.467 1.467-1.467h5.866c.81 0 1.467.657 1.467 1.467V8.27" stroke="#03060B" stroke-width="1.173"/>
+                        <path d="M18.333 10.267v5.866c0 .81-.656 1.467-1.466 1.467H9.533c-.81 0-1.466-.657-1.466-1.467v-5.866c0-.81.656-1.467 1.466-1.467h7.334c.81 0 1.466.657 1.466 1.467z" stroke="#03060B" stroke-width="1.173" stroke-dasharray="3.8133331934611,1.466666666666667"/>
+                    </g>
+                  </svg><span class="hideMobile">{{ 'collections.general.comparison' | t }}</span>
+                </a>
+              </div>
+            {% endif %}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Sticky bar",
+  "class": "collection-sticky-section",
+  "settings": [
+    {
+      "type":"link_list",
+      "id":"top_menu",
+      "label":"Top menu"
+    },
+    {
+      "type":"url",
+      "id":"comparison_link",
+      "label":"Comparison button link"
+    },
+    {
+      "type":"url",
+      "id":"calculator_link",
+      "label":"Calculator button link"
+    }
+  ]
+}
+{% endschema %}

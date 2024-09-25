@@ -1,0 +1,953 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "daf26638-f596-4384-b150-72d380a3268d": {
+      "type": "product-atb-top",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "sticky-product-bar": {
+      "type": "sticky-product-bar",
+      "blocks": {
+        "588d25af-4d47-43ac-9697-b98aa2f65719": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "General",
+            "tab_id": "product_overview",
+            "section_class": ""
+          }
+        },
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Contenido de la caja",
+            "tab_id": "what_in_box",
+            "section_class": ""
+          }
+        },
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Especificaciones",
+            "tab_id": "section-specs",
+            "section_class": ""
+          }
+        },
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38": {
+          "type": "tab",
+          "disabled": true,
+          "settings": {
+            "tab_title": "Reviews",
+            "tab_id": "section-reviews",
+            "section_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "588d25af-4d47-43ac-9697-b98aa2f65719",
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02",
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4",
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38"
+      ],
+      "settings": {
+        "enabled": true,
+        "enabled_tabs": true
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "11795adc-1afa-4833-a193-258f495901ef": {
+          "type": "sku_block",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e": {
+          "type": "product_title",
+          "settings": {
+          }
+        },
+        "judge_me_reviews_preview_badge_Q7HreH": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "0471109f-c130-454e-a9ba-c56412cc11f3": {
+          "type": "product_vendor",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185": {
+          "type": "product_price",
+          "settings": {
+          }
+        },
+        "d25a0285-4fb4-422d-b95b-ab67446120ad": {
+          "type": "product_description",
+          "settings": {
+            "desc_display": "default"
+          }
+        },
+        "919f9cdd-6184-4311-b675-742931504318": {
+          "type": "coupon_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Component_2_1.png",
+            "discount_off_text": "{{ product.metafields.custom.discount_off_text.value }}",
+            "code": "{{ product.metafields.custom.discount_code.value }}",
+            "show_copy_code_btn": true
+          }
+        },
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879": {
+          "type": "product_options_block",
+          "settings": {
+            "show_product_swatches": true,
+            "use_variant_image_for_swatches": true,
+            "button_content": ""
+          }
+        },
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe": {
+          "type": "quantity_block",
+          "settings": {
+          }
+        },
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0": {
+          "type": "accessories_section",
+          "settings": {
+            "title": "También te puede interesar",
+            "metafield": "accessories"
+          }
+        },
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609": {
+          "type": "product_buttons",
+          "settings": {
+            "enable_payment_button": false,
+            "show_custom_icons": true,
+            "custom_payment_logo_1_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_08_7f374817-3a3e-42f2-95ce-077b67f293d2.svg?v=1672025209",
+            "custom_payment_logo_2_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_10_d8002835-e25f-4edb-9038-187f75f69a18.svg?v=1672025208",
+            "custom_payment_logo_3_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_02_a3ea7ab1-aa9a-4857-9ed6-01e62deccfce.svg?v=1672025208",
+            "custom_payment_logo_4_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_06_7c406d24-0983-49ff-ac8e-cf73032050d9.svg?v=1672025208",
+            "custom_payment_logo_5_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_07_be5959d4-9f22-4a31-8e40-285f8e3ac6e7.svg?v=1672025208",
+            "custom_payment_logo_6_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_01_96e6a30c-7908-4892-b6f1-75bce8657cd4.svg?v=1672025208",
+            "custom_payment_logo_7_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/apple_pay_icon_14953f11-2673-4162-8f1b-99c8a65b4610.png?v=1678448779",
+            "custom_payment_logo_8_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0649\/2533\/5793\/files\/googlepay_icon_6235bed6-fedf-42d2-8d0a-4854ccc3bdc2.png?v=1678450994",
+            "custom_payment_logo_9_svg": "",
+            "custom_payment_logo_10_svg": "",
+            "custom_payment_logo_11_svg": "",
+            "custom_payment_logo_12_svg": "",
+            "custom_payment_logo_13_svg": "",
+            "custom_payment_logo_14_svg": "",
+            "custom_payment_logo_15_svg": ""
+          }
+        },
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% if product.metafields.custom.trade_message != blank %}\n          <div class=\"trade-message\">♻️{{product.metafields.custom.trade_message}} <a href=\"\/pages\/trade-in\" target=\"_blank\">Learn more<\/a><\/div>\n{% endif %}"
+          }
+        }
+      },
+      "block_order": [
+        "11795adc-1afa-4833-a193-258f495901ef",
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e",
+        "judge_me_reviews_preview_badge_Q7HreH",
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774",
+        "0471109f-c130-454e-a9ba-c56412cc11f3",
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185",
+        "d25a0285-4fb4-422d-b95b-ab67446120ad",
+        "919f9cdd-6184-4311-b675-742931504318",
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879",
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe",
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0",
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609",
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a"
+      ],
+      "settings": {
+        "section_id": "",
+        "show_breadcrumbs": true,
+        "show_pick_an_option": false,
+        "enable_linked_options": false,
+        "enabled_mobile_sticky_btns": true,
+        "media_size": "medium",
+        "enable_image_zoom": true,
+        "enable_video_looping": true,
+        "thumbnails_type": "grid",
+        "support_email": "",
+        "support_text": "",
+        "feature_1_show": false,
+        "feature_1_title": "Fast & Free Shipping",
+        "feature_1_content": "",
+        "feature_2_show": false,
+        "feature_2_title": "Warranty Protection",
+        "feature_2_content": "",
+        "feature_3_show": false,
+        "feature_3_title": "Secure Payments",
+        "feature_3_content": "",
+        "feature_4_show": false,
+        "feature_4_title": "Multi-channel Support",
+        "feature_4_content": ""
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "grid_mobile": "2",
+        "heading": "You may also like",
+        "show_vendor": false
+      }
+    },
+    "pdp_rich_text_VUhAHe": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 0,
+        "section_bottom_spacing": 50,
+        "section_top_spacing_mobile": 0,
+        "section_bottom_spacing_mobile": 30,
+        "alignment": "center",
+        "title": "",
+        "subtitle": "",
+        "content": "<p>Los términos “DELTA” y “RIVER”, que se mencionan en esta página, se refieren a productos fabricados exclusivamente por ECOFLOW INC.<\/p>",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "a0c9febb-d7b2-4fda-b4fb-ebc75d297973": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "product_overview",
+        "text_alignment": "center",
+        "title": "Energía. Más Fácil Que Nunca",
+        "subtitle": "",
+        "content": "",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "video",
+        "video_type": "mp4",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/746fcc60370f4064893e36936a4afd4d.mp4",
+        "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/746fcc60370f4064893e36936a4afd4d.mp4",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "8a3af0b6-a1ab-49a2-8d1d-a6d2b7a517f1": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--18958192607579__8a3af0b6-a1ab-49a2-8d1d-a6d2b7a517f1-16842233311e326ac1-0": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/ES_RIVER_max_pc.png",
+            "mobile_image": "shopify:\/\/shop_images\/ES_RIVER_max_mob.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--18958192607579__8a3af0b6-a1ab-49a2-8d1d-a6d2b7a517f1-16842233311e326ac1-0"
+      ],
+      "settings": {
+      }
+    },
+    "4f72e159-e6f3-41da-a163-78b6f52205b4": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "Carga 0-100% en 1 hora",
+        "subtitle": "<h2>La carga más rápida hasta la fecha.<\/h2>",
+        "content": "<p>RIVER 2 Max supera el estándar del sector en cuanto a velocidad de carga, alcanzando la carga completa en solo 60 minutos. Es decir, <strong>5 veces más rápido <\/strong>que otras estaciones de energía portátiles del mercado y <strong>un 38 % más rápido <\/strong>que las generaciones anteriores. Carga completamente la RIVER 2 Max mientras haces las maletas, para estar siempre preparado para viajes de última hora.<\/p>",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "video",
+        "video_type": "mp4",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/67dd2855649e4e7d841715ce53aa425c.mp4",
+        "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/67dd2855649e4e7d841715ce53aa425c.mp4",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "4c15fb3a-17ce-4e3c-99d7-22f05123b0cb": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--18958192607579__4c15fb3a-17ce-4e3c-99d7-22f05123b0cb-16842233311e326ac1-0": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/river-2-safe.png",
+            "mobile_image": "shopify:\/\/shop_images\/river-2-safe-mobile.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "<h3>Química de batería LiFePO4<\/h3><h2>Segura, hasta 10 años de uso.<\/h2>",
+            "content_color": "#757575",
+            "notification_message": "<p>Con la química de batería LFP de larga duración mejorada en su núcleo, podrás cargar y agotar la batería de la SerieRIVER 2 más de 3000 veces. Esto se traduce en prácticamente 10 años de uso diario[1]6 veces más que la media del sector. Con las celdas LFP, la Serie RIVER 2 Serie es <strong>segura, duradera y altamente eficiente, incluso a altas temperaturas.<\/strong>.<\/p>",
+            "message_color": "#757575",
+            "notification_message_font_size": "body-2",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--18958192607579__4c15fb3a-17ce-4e3c-99d7-22f05123b0cb-16842233311e326ac1-0"
+      ],
+      "settings": {
+      }
+    },
+    "8f597d19-cc1b-48f3-9ba6-5d425d887428": {
+      "type": "pdp-image-with-text-horizontal-new",
+      "blocks": {
+        "c66b2eb4-b976-48ea-b8d9-5c5c7ef3fd70": {
+          "type": "image",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/river-2-warranty.png",
+            "mobile_image": "shopify:\/\/shop_images\/river-2-warranty-mobile.png",
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "image_alignment": "left",
+            "title": "Garantía de 5 años",
+            "subtitle": "",
+            "content": "<p>Con una de las garantías más extendidas del sector, hacemos todo lo posible para ofrecerte tranquilidad.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "7be5ea30-fa5f-44b3-9b54-dd781e4946ce": {
+          "type": "image",
+          "settings": {
+            "media_type": "video",
+            "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/431b30b8269b4a5a945e19a4e18295d1.mp4",
+            "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/431b30b8269b4a5a945e19a4e18295d1.mp4",
+            "autoplay_video": true,
+            "image_alignment": "right",
+            "title": "Sistema inteligente de protección de baterías",
+            "subtitle": "",
+            "content": "<p>Nuestro avanzado sistema de gestión de baterías (BMS) monitoriza constantemente la tensión, la corriente y la temperatura de la RIVER 2 con múltiples aspectos de protección, lo que prolonga su vida útil al máximo.[2]<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "c66b2eb4-b976-48ea-b8d9-5c5c7ef3fd70",
+        "7be5ea30-fa5f-44b3-9b54-dd781e4946ce"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "left",
+        "space_bw_blocks": 0
+      }
+    },
+    "f21e628c-8fb5-4a84-ad1d-6c3d77e6575f": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 20,
+        "section_bottom_spacing": 20,
+        "section_top_spacing_mobile": 20,
+        "section_bottom_spacing_mobile": 20,
+        "alignment": "center",
+        "title": "",
+        "subtitle": "<p>4 métodos de carga<\/p><h1>Carga dondequiera.<\/h1>",
+        "content": "<p>Con 4 formas diferentes de recargar la Serie RIVER 2, hay una opción de recarga en cualquier caso.[3]Desde la recarga rápida de CA hasta la carga en el coche cuando estés de viaje.<\/p>",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "d8518839-e309-4f01-9a42-6dcd7172a8c5": {
+      "type": "pdp-image-with-text",
+      "blocks": {
+        "3cf6f4bc-4d16-4df2-897e-72becfd72868": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/USB-c.png",
+            "mobile_image": "shopify:\/\/shop_images\/USB-c-_-1.png",
+            "image_height": 310,
+            "mobile_image_height": 250,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "<p>Carga de CA<\/p>",
+            "subtext_bottom": "",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "815b43b8-e5c5-4b78-944d-4b2f355dbbde": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/river-2-max-charge-anywhere-2.png",
+            "mobile_image": "shopify:\/\/shop_images\/river-2-max-charge-anywhere-2-mobile.png",
+            "image_height": 310,
+            "mobile_image_height": 250,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "<p>Carga en vehículo<\/p>",
+            "subtext_bottom": "",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "8ceabc53-506a-442e-a249-6bb52f3862f4": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/river-2-max-charge-anywhere-3.png",
+            "mobile_image": "shopify:\/\/shop_images\/river-2-max-charge-anywhere-3-mobile.png",
+            "image_height": 310,
+            "mobile_image_height": 250,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "<p>Carga mediante energía solar<\/p>",
+            "subtext_bottom": "",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "f5fa9e44-e60f-459e-9422-5157a14465b8": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/48.png",
+            "mobile_image": "shopify:\/\/shop_images\/49.png",
+            "image_height": 310,
+            "mobile_image_height": 250,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "<p>Carga mediante USB-C<\/p>",
+            "subtext_bottom": "",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "3cf6f4bc-4d16-4df2-897e-72becfd72868",
+        "815b43b8-e5c5-4b78-944d-4b2f355dbbde",
+        "8ceabc53-506a-442e-a249-6bb52f3862f4",
+        "f5fa9e44-e60f-459e-9422-5157a14465b8"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "center",
+        "layout": "stacked",
+        "stacked_row": "4",
+        "mobile_stacked_row": "2",
+        "slider_row": "2",
+        "mobile_slider_row": "1"
+      }
+    },
+    "1895c31b-9319-42fe-b651-d10f02387795": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--18958192607579__1895c31b-9319-42fe-b651-d10f02387795-16842233311e326ac1-0": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/river-2-max-solar-panel.png",
+            "mobile_image": "shopify:\/\/shop_images\/river-2-max-solar-panel-mobile.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "<p>¿Por qué no aprovechar la energía renovable mientras acampas o te vas de viaje? Conecta un par de paneles solares portátiles para cargar completamente sin conexión a la red eléctrica en solo 3 horas.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "1129bfc3-993b-424a-80dc-fbb05ccb00e8": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/river-2-max-x-boost.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/river-2-max-x-boost.jpg",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "<h3>Hasta 1000 W con X-Boost<\/h3><h2>Tamaño reducido. Gran potencia.<\/h2>",
+            "content_color": "#757575",
+            "notification_message": "<p>La RIVER 2 Max tiene una salida de CA de hasta 500 W. <strong>Auméntalo hasta 1000 W con el modo X-Boost para hacer funcionar hasta el 80 % de los aparatos de alta potencia.<\/strong><\/p>",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "56e2a23f-decd-4fe3-a9bd-aef671377e46": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/river-2-convenient.png",
+            "mobile_image": "shopify:\/\/shop_images\/river-2-convenient-mobile.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "<h2>Peso reducido de solo 6 kg<\/h2><p>Con un diseño compacto y portátil, nunca ha sido tan fácil obtener energía para viajar sin conexión a la red. Con un peso un 22 % más ligero que la generación anterior, la RIVER 2 Max está preparada para alimentar todas tus escapadas al aire libre, desde acampadas libres hasta barbacoas en la playa.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--18958192607579__1895c31b-9319-42fe-b651-d10f02387795-16842233311e326ac1-0",
+        "1129bfc3-993b-424a-80dc-fbb05ccb00e8",
+        "56e2a23f-decd-4fe3-a9bd-aef671377e46"
+      ],
+      "settings": {
+      }
+    },
+    "86359122-ea1b-4e73-a64f-1b41ae8afd13": {
+      "type": "pdp-video",
+      "disabled": true,
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "",
+        "subtitle": "<h3>Conmutación automática EPS &lt; 30 ms<\/h3><h2>Cambio ultrarrápido a la energía de reserva del hogar.<\/h2>",
+        "content": "<p>Con una velocidad de cambio de menos de 30 ms, ni siquiera te darás cuenta de que se ha ido la luz. Utiliza la Serie RIVER 2 como fuente de alimentación de emergencia durante los cortes nocturnos para mantener en funcionamiento tus aparatos esenciales, desde una <strong>luz <\/strong>hasta <strong>una pecera<\/strong>.<\/p>",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "video",
+        "video_type": "mp4",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "mp4_video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/04deaf860e094f299cf339c15f397a59.mp4",
+        "mp4_video_url_m": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/04deaf860e094f299cf339c15f397a59.mp4",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "mosaic_bDa3Gp": {
+      "type": "mosaic",
+      "blocks": {
+        "image_HWjVTF": {
+          "type": "image",
+          "settings": {
+            "background_type": "image",
+            "image": "shopify:\/\/shop_images\/RIVER_PC-1.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/RIVER_M-1.jpg",
+            "video_url": "",
+            "mobile_video_url": "",
+            "cta_label": "Supervisión",
+            "cta_sublabel": "Información sobre la energía en tiempo real, incluso cuando no estás en tu hogar. <br>Visualiza el estado de la batería en directo en cualquier momento y desde donde estés.<br>",
+            "cta_link": "",
+            "link": "",
+            "cta_width": 50,
+            "custom_height": 400,
+            "custom_height_mobile": 300,
+            "cta_image_width": "100%",
+            "caption_align": "left",
+            "caption_position": "top",
+            "caption_size": "h3",
+            "select_caption_color": "light",
+            "text_max_width": 340
+          }
+        },
+        "image_LRpCa6": {
+          "type": "image",
+          "settings": {
+            "background_type": "image",
+            "image": "shopify:\/\/shop_images\/RIVER_PC-2.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/RIVER_M-2.jpg",
+            "video_url": "",
+            "mobile_video_url": "",
+            "cta_label": "Control",
+            "cta_sublabel": "Tendrás el control incluso a la distancia. <br>Enciende\/apaga fácilmente la salida y los aparatos conectados de forma remota.<br>",
+            "cta_link": "",
+            "link": "",
+            "cta_width": 50,
+            "custom_height": 400,
+            "custom_height_mobile": 300,
+            "cta_image_width": "100%",
+            "caption_align": "left",
+            "caption_position": "top",
+            "caption_size": "h3",
+            "select_caption_color": "light",
+            "text_max_width": 340
+          }
+        },
+        "image_4kDkaL": {
+          "type": "image",
+          "settings": {
+            "background_type": "image",
+            "image": "shopify:\/\/shop_images\/RIVER_PC-3.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/RIVER_M-3.jpg",
+            "video_url": "",
+            "mobile_video_url": "",
+            "cta_label": "Personalización",
+            "cta_sublabel": "Mayor vida útil y seguridad de la batería. <br>Al ajustar la velocidad de carga para adaptarse a diversos entornos de carga, el uso de la batería es seguro, lo que evita la sobrecarga y prolonga su vida útil.<br>",
+            "cta_link": "",
+            "link": "",
+            "cta_width": 100,
+            "custom_height": 400,
+            "custom_height_mobile": 300,
+            "cta_image_width": "100%",
+            "caption_align": "left",
+            "caption_position": "top",
+            "caption_size": "h3",
+            "select_caption_color": "light",
+            "text_max_width": 340
+          }
+        },
+        "image_6hthhE": {
+          "type": "image",
+          "settings": {
+            "background_type": "image",
+            "image": "shopify:\/\/shop_images\/RIVER_PC-4.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/RIVER_M-4.jpg",
+            "video_url": "",
+            "mobile_video_url": "",
+            "cta_label": "Personalización",
+            "cta_sublabel": "Mantén la calma y la energía disponible. <br>En caso de un corte eléctrico, la función de «CA siempre activa» garantiza una transición perfecta de la red eléctrica a la energía de respaldo y una protección sin fallos de tu nevera y otros electrodomésticos.<br>",
+            "cta_link": "",
+            "link": "",
+            "cta_width": 100,
+            "custom_height": 400,
+            "custom_height_mobile": 300,
+            "cta_image_width": "100%",
+            "caption_align": "left",
+            "caption_position": "top",
+            "caption_size": "h3",
+            "select_caption_color": "light",
+            "text_max_width": 340
+          }
+        },
+        "image_QkbKhX": {
+          "type": "image",
+          "settings": {
+            "background_type": "image",
+            "image": "shopify:\/\/shop_images\/RIVER_PC-5.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/RIVER_M-5.jpg",
+            "video_url": "",
+            "mobile_video_url": "",
+            "cta_label": "Actualizaciones constantes",
+            "cta_sublabel": "Actualizaciones continuas para una experiencia de usuario óptima. Actualizaciones periódicas para ofrecerte la gestión energética líder en la industria.",
+            "cta_link": "",
+            "link": "",
+            "cta_width": 100,
+            "custom_height": 400,
+            "custom_height_mobile": 300,
+            "cta_image_width": "100%",
+            "caption_align": "left",
+            "caption_position": "top",
+            "caption_size": "h3",
+            "select_caption_color": "light",
+            "text_max_width": 340
+          }
+        }
+      },
+      "block_order": [
+        "image_HWjVTF",
+        "image_LRpCa6",
+        "image_4kDkaL",
+        "image_6hthhE",
+        "image_QkbKhX"
+      ],
+      "settings": {
+        "section_id": "",
+        "full_width": false,
+        "title": "Mantente conectado con energía inteligente",
+        "subtitle": "Supervisa, controla y personaliza el uso de la energía de un modo inteligente con la aplicación EcoFlow.",
+        "btn_text": "View more",
+        "btn_link": "",
+        "use_stacked_layout": false,
+        "use_lightbox": false,
+        "overlay_opacity": 0,
+        "overlay_color": "#000000",
+        "gutter_width": "15",
+        "title_transform": "none",
+        "hover_animation": "zoom-in",
+        "use_mobile_redability": false,
+        "removeBottomMargin": false
+      }
+    },
+    "772f8711-a80c-42d5-ad41-0f746626393c": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--18958192607579__772f8711-a80c-42d5-ad41-0f746626393c-16842233311e326ac1-0": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/758.png",
+            "mobile_image": "shopify:\/\/shop_images\/759.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Alimentación. Cuandoquiera. Dondequiera.",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--18958192607579__772f8711-a80c-42d5-ad41-0f746626393c-16842233311e326ac1-0"
+      ],
+      "settings": {
+      }
+    },
+    "02942422-7718-4c16-92a4-a0b3993a7138": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "what_in_box",
+        "section_top_spacing": 20,
+        "section_bottom_spacing": 20,
+        "section_top_spacing_mobile": 20,
+        "section_bottom_spacing_mobile": 20,
+        "alignment": "center",
+        "title": "Contenido de la caja",
+        "subtitle": "",
+        "content": "",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "730d2817-d631-45c5-8431-081e4c98b746": {
+      "type": "pdp-image-with-text",
+      "blocks": {
+        "3b1af057-7244-4bfa-91c7-7a04c8d5e038": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/R2M_EU.png",
+            "mobile_image": "shopify:\/\/shop_images\/R2M_EU.png",
+            "image_height": 500,
+            "mobile_image_height": 240,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "<p><strong>1.<\/strong>RIVER 2 Max    <strong>2.<\/strong>Cable de carga de CA    <strong>3.<\/strong>Cable de carga para automóvil      <strong>4.<\/strong>Guía de inicio rápido      <strong>5.<\/strong> Cable de Conexión DC5521<\/p>",
+            "subtext_bottom": "",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "3b1af057-7244-4bfa-91c7-7a04c8d5e038"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "center",
+        "layout": "stacked",
+        "stacked_row": "1",
+        "mobile_stacked_row": "1",
+        "slider_row": "1",
+        "mobile_slider_row": "1"
+      }
+    },
+    "b18f114d-7bdd-48a6-88ae-cfcd44f010c1": {
+      "type": "pdp-specs",
+      "blocks": {
+        "40acd2c3-767b-4bfa-83ea-1651cde16aad": {
+          "type": "contents",
+          "settings": {
+            "title": "BATERÍA",
+            "content": "<p><strong>Capacidad: <\/strong>512Wh<\/p><p><strong>Química de las celdas: <\/strong>LFP<\/p><p><strong>Ciclos de vida útil: <\/strong>3000 ciclos a más del 80 % de la capacidad<\/p><p><strong>Temperatura de descarga: <\/strong>Entre -10°C y 45°C<\/p><p><strong>Temperatura de carga: <\/strong>Entre 0 °C y 45 °C<\/p><p><strong>Temperatura de funcionamiento óptima: <\/strong>Entre 20 °C y 30 °C<\/p><p><strong>Temperatura de almacenamiento: <\/strong>Entre -10°C y 45°C (lo mejor es entre 20°C y 30°C)<\/p>"
+          }
+        },
+        "ddb6d485-58d4-4abb-8006-5eece75dc642": {
+          "type": "contents",
+          "settings": {
+            "title": "PUERTOS",
+            "content": "<p><strong>Entrada de CA: <\/strong>220-240V 50Hz\/60Hz, 660W Máx<\/p><p><strong>Entrada solar: <\/strong>11-50V, 13A, 110W Máx<\/p><p><strong>Entrada de coche: <\/strong>12V\/24V, 8A, 100W Máx<\/p><p><strong>Entrada\/Salida USB-C: <\/strong>5\/9\/12\/15\/20V, 5A, 100W Máx<\/p><p><strong>Salida de CC: <\/strong>12.6V, 10A\/3A\/3A, 126W Máx<\/p><p><strong>Salida USB-A: <\/strong>5V, 2,4A, 12W Máx<\/p><p><strong>Salida de CA: <\/strong>Onda sinusoidal pura, 500W total (máximo 1000W),230V~50Hz\/60Hz<\/p>"
+          }
+        },
+        "631a8cad-e4e8-4443-bff0-da92f6dda807": {
+          "type": "contents",
+          "settings": {
+            "title": "TIEMPO DE CARGA",
+            "content": "<p><strong>Carga de CA: <\/strong>0-80% en 48 minutos 0-100% en 60 minutos (660W Max)<\/p><p><strong>Carga de coche: <\/strong>6<strong> <\/strong>horas<\/p><p><strong>Carga de USB-C: <\/strong>6 horas<\/p><p><strong>Carga solar <\/strong><a href=\"\/products\/river-2-max-160w-portable-solar-panel\" target=\"_blank\" title=\"EcoFlow RIVER 2 Max + Panel Solar Portátil de 160 W\"><strong>(1x 160W panel solar portátil)<\/strong><\/a><strong>: 4<\/strong> horas<\/p>"
+          }
+        },
+        "26759cb4-209a-4700-ae7a-9260d44316f6": {
+          "type": "contents",
+          "settings": {
+            "title": "GENERAL",
+            "content": "<p><strong>Peso neto: <\/strong>Aproximadamente 6 kg<\/p><p><strong>Dimensiones: <\/strong>270 x 260 x 196mm<\/p><p><strong>Control mediante aplicación: <\/strong>Wi-Fi, Bluetooth<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "40acd2c3-767b-4bfa-83ea-1651cde16aad",
+        "ddb6d485-58d4-4abb-8006-5eece75dc642",
+        "631a8cad-e4e8-4443-bff0-da92f6dda807",
+        "26759cb4-209a-4700-ae7a-9260d44316f6"
+      ],
+      "settings": {
+        "section_id": "section-specs",
+        "title": "Especificaciones"
+      }
+    },
+    "6a548029-9564-4133-8e1b-8921288b4e3c": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 20,
+        "section_bottom_spacing": 20,
+        "section_top_spacing_mobile": 20,
+        "section_bottom_spacing_mobile": 20,
+        "alignment": "left",
+        "title": "",
+        "subtitle": "",
+        "content": "<h6>Notas:<\/h6><h6>[1] Utilizando la RIVER 2 Max seis veces a la semana, 3000 ciclos completos del 100 % durarán 9,6 años hasta que descienda al 80 %.<br\/>[2] El sistema BMS incluye sobretensión, sobrecarga, sobretemperatura, cortocircuito, baja temperatura, baja tensión y sobrecorriente.<br\/>[3] Cuando se cargan y descargan a alta potencia, RIVER 2 Max pueden hacer un ruido de hasta 62db.<\/h6>",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "1714119143276b5d71": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_HgpVFY": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_HgpVFY"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    }
+  },
+  "order": [
+    "daf26638-f596-4384-b150-72d380a3268d",
+    "sticky-product-bar",
+    "main",
+    "product-recommendations",
+    "pdp_rich_text_VUhAHe",
+    "a0c9febb-d7b2-4fda-b4fb-ebc75d297973",
+    "8a3af0b6-a1ab-49a2-8d1d-a6d2b7a517f1",
+    "4f72e159-e6f3-41da-a163-78b6f52205b4",
+    "4c15fb3a-17ce-4e3c-99d7-22f05123b0cb",
+    "8f597d19-cc1b-48f3-9ba6-5d425d887428",
+    "f21e628c-8fb5-4a84-ad1d-6c3d77e6575f",
+    "d8518839-e309-4f01-9a42-6dcd7172a8c5",
+    "1895c31b-9319-42fe-b651-d10f02387795",
+    "86359122-ea1b-4e73-a64f-1b41ae8afd13",
+    "mosaic_bDa3Gp",
+    "772f8711-a80c-42d5-ad41-0f746626393c",
+    "02942422-7718-4c16-92a4-a0b3993a7138",
+    "730d2817-d631-45c5-8431-081e4c98b746",
+    "b18f114d-7bdd-48a6-88ae-cfcd44f010c1",
+    "6a548029-9564-4133-8e1b-8921288b4e3c",
+    "1714119143276b5d71"
+  ]
+}

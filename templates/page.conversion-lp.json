@@ -1,0 +1,306 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "image_overlay_color": "#000000",
+        "image_overlay_opacity": 40,
+        "show_breadcrumbs": false,
+        "show_page_content": true
+      }
+    },
+    "banner": {
+      "type": "clp-banner",
+      "disabled": true,
+      "settings": {
+        "title": "Prepare Your Home<br>\nFor Winter Power Outages.",
+        "percent_off": "shopify:\/\/shop_images\/Scroll_Group_1.png",
+        "time": "January 6th to 20th"
+      }
+    },
+    "a60c46cd-dfdb-4170-bb95-d12c73f51b93": {
+      "type": "eco-banner",
+      "blocks": {
+        "e72dd6df-ebea-4541-baa9-b98a9906178c": {
+          "type": "slide",
+          "settings": {
+            "image_link": "",
+            "title": "",
+            "text": "",
+            "color": "#ffffff",
+            "text_alignment": "center",
+            "button1_label": "",
+            "button1_link": "",
+            "button2_label": "",
+            "button2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "e72dd6df-ebea-4541-baa9-b98a9906178c"
+      ],
+      "settings": {
+        "autoplay_setting": "false",
+        "autoplay_speed": "4000"
+      }
+    },
+    "6e47c938-75f3-45b8-8f96-a96c8c6b6a77": {
+      "type": "sticky-subscribe-bar",
+      "settings": {
+        "text": "<p>Sign up to get a sneak preview of <br\/>our Autumn Sale gifts before anyone else.<\/p>",
+        "email_placeholder": "Enter your email",
+        "btn_text": "Submit",
+        "policy_text": "<p>*I agree to EcoFlow's <a href=\"\/pages\/privacy-policy\" target=\"_blank\" title=\"Privacy Policy\">Privacy Policy<\/a> and <a href=\"\/pages\/ecoflow-terms-of-use\" target=\"_blank\" title=\"EcoFlow Terms of Use\">Terms of Service<\/a>.<\/p>",
+        "background_color": "#e08734",
+        "text_color": "#ffffff",
+        "btn_bg_color": "#361b15",
+        "btn_text_color": "#ffffff"
+      }
+    },
+    "products": {
+      "type": "clp-products",
+      "blocks": {
+        "dc97fa88-4341-453b-9dde-d459f390ca39": {
+          "type": "primary",
+          "disabled": true,
+          "settings": {
+            "product": "delta-pro-double-voltage-hub",
+            "variantID": "40358069403721",
+            "amazonURL": "https:\/\/www.amazon.com\/dp\/B0BJK2G52L?maas=maas_adg_1FDCBE554200B207C386DCA204CCAEEC_afap_abs&ref_=aa_maas&tag=maas&th=1",
+            "title": "DELTA Pro x 2 + <br class=\"mobile-only\">\nDouble Voltage Hub",
+            "watts": "7200Wh | 7200W",
+            "subtitle": "Whole Home Backup Power Solution",
+            "desc": "Connect two DELTA Pro with the Double Voltage Hub to your home’s power inlet box to run even your most heavy-duty appliances during a blackout."
+          }
+        },
+        "27269582-e4ce-47a3-a774-d748385b0cd4": {
+          "type": "primary",
+          "settings": {
+            "product": "delta-pro-400w-portable-solar-panel",
+            "variantID": "",
+            "amazonURL": "https:\/\/www.amazon.com\/dp\/B0B1TCMZHZ?maas=maas_adg_69742498CCAE282B204DC6E0B66EA310_afap_abs&ref_=aa_maas&tag=maas&th=1",
+            "title": "DELTA Pro + <br class=\"mobile-only\">\n400W Solar Panel",
+            "watts": "3600Wh｜3600W",
+            "subtitle": "Live Without Limits",
+            "desc": "DELTA Pro is the next leap in portable power technology, add EcoFlow 400W Solar Panels, and you can charge it in just 2.8-5.6 hours."
+          }
+        },
+        "729c3035-e325-4695-bad1-44f7af1a4272": {
+          "type": "primary",
+          "settings": {
+            "product": "delta-2-220w-portable-solar-panel",
+            "variantID": "",
+            "amazonURL": "https:\/\/www.amazon.com\/dp\/B0BG1K1BQ7?maas=maas_adg_D53ACFFF5A25A13FA3D43663E077E5B4_afap_abs&ref_=aa_maas&tag=maas",
+            "title": "DELTA 2 + <br class=\"mobile-only\">\n220W Solar Panel",
+            "watts": "1024Wh｜1800W",
+            "subtitle": "Not Just A Battery",
+            "desc": "DELTA 2 with Solar Panel is a must-have for any home that puts power security &amp; comfort first."
+          }
+        },
+        "10ef76a1-db0b-48d8-8f3c-5209c9b40ebd": {
+          "type": "secondary",
+          "disabled": true,
+          "settings": {
+            "product": "delta-pro-400w-portable-solar-panel",
+            "variantID": "",
+            "amazonURL": "https:\/\/www.amazon.com\/dp\/B0B1TCMZHZ?maas=maas_adg_69742498CCAE282B204DC6E0B66EA310_afap_abs&ref_=aa_maas&tag=maas&th=1"
+          }
+        },
+        "734f4978-da59-4414-a1e9-6c916918dc00": {
+          "type": "secondary",
+          "settings": {
+            "product": "delta-max-160w-portable-solar-panel",
+            "variantID": "39424688848969",
+            "amazonURL": "https:\/\/www.amazon.com\/dp\/B09HGYCMRY?maas=maas_adg_7C4A352C826712803F56D676A2B79F05_afap_abs&ref_=aa_maas&tag=maas"
+          }
+        },
+        "e438341b-a153-4455-938b-444d2b6862d3": {
+          "type": "secondary",
+          "settings": {
+            "product": "river-2-max-160w-portable-solar-panel",
+            "variantID": "",
+            "amazonURL": "https:\/\/www.amazon.com\/dp\/B0BR5NM8L4?maas=maas_adg_4CB3E1CF9BBB9CDACA5F89E886D5F5E1_afap_abs&ref_=aa_maas&tag=maas"
+          }
+        },
+        "ddc3b7c6-bbf8-48ce-89dc-13ee7e11b344": {
+          "type": "secondary",
+          "settings": {
+            "product": "delta-pro-portable-power-station",
+            "variantID": "",
+            "amazonURL": "https:\/\/www.amazon.com\/dp\/B09MVJP7MV?maas=maas_adg_47CEDD67A887C923F08EA22D0AB33E46_afap_abs&ref_=aa_maas&tag=maas"
+          }
+        },
+        "7d7dc7a2-c024-4dac-8317-979e8b141025": {
+          "type": "secondary",
+          "settings": {
+            "product": "delta-max-400w-portable-solar-panel",
+            "variantID": "",
+            "amazonURL": ""
+          }
+        },
+        "68037ef9-3b37-4a50-9b02-21314c49beff": {
+          "type": "secondary",
+          "settings": {
+            "product": "dual-fuel-generator",
+            "variantID": "",
+            "amazonURL": "https:\/\/www.amazon.com\/dp\/B0BKL82ZKY?maas=maas_adg_E0F31A81AD8CF8A55BEB40798A09C414_afap_abs&ref_=aa_maas&tag=maas"
+          }
+        },
+        "de225f2a-1764-4337-a6db-139d8cd15665": {
+          "type": "secondary",
+          "settings": {
+            "product": "110w-portable-solar-panel",
+            "variantID": "",
+            "amazonURL": "https:\/\/www.amazon.com\/dp\/B0B7KY3D15?maas=maas_adg_76DCA03125203184D78FD38F3D2B48C5_afap_abs&ref_=aa_maas&tag=maas"
+          }
+        }
+      },
+      "block_order": [
+        "dc97fa88-4341-453b-9dde-d459f390ca39",
+        "27269582-e4ce-47a3-a774-d748385b0cd4",
+        "729c3035-e325-4695-bad1-44f7af1a4272",
+        "10ef76a1-db0b-48d8-8f3c-5209c9b40ebd",
+        "734f4978-da59-4414-a1e9-6c916918dc00",
+        "e438341b-a153-4455-938b-444d2b6862d3",
+        "ddc3b7c6-bbf8-48ce-89dc-13ee7e11b344",
+        "7d7dc7a2-c024-4dac-8317-979e8b141025",
+        "68037ef9-3b37-4a50-9b02-21314c49beff",
+        "de225f2a-1764-4337-a6db-139d8cd15665"
+      ],
+      "settings": {
+        "title": "Portable Home<br class=\"mobile-only\">\nPower Solutions",
+        "url": "https:\/\/us.ecoflow.com\/collections\/power-outages-sale"
+      }
+    },
+    "ytb": {
+      "type": "clp-ytb",
+      "blocks": {
+        "a64932cf-3049-45aa-ba10-8053a847356f": {
+          "type": "video",
+          "settings": {
+            "video_id": "5n13nhaXNxU"
+          }
+        },
+        "df70d650-3e31-4257-bcf9-2af876b7630e": {
+          "type": "video",
+          "settings": {
+            "video_id": "rNVlHdHRmBw"
+          }
+        },
+        "c697f36e-9e92-4a8e-b60e-2dc57f4bb2a7": {
+          "type": "video",
+          "settings": {
+            "video_id": "bfWzPPDh2Yg"
+          }
+        }
+      },
+      "block_order": [
+        "a64932cf-3049-45aa-ba10-8053a847356f",
+        "df70d650-3e31-4257-bcf9-2af876b7630e",
+        "c697f36e-9e92-4a8e-b60e-2dc57f4bb2a7"
+      ],
+      "settings": {
+        "title": "Experience Of <br class=\"mobile-only\">\nReal Users"
+      }
+    },
+    "customers": {
+      "type": "clp-customers",
+      "blocks": {
+        "682624ff-03f9-471a-91e7-4e4564ee9da4": {
+          "type": "review",
+          "settings": {
+            "title": "AWESOME BACKUP POWER SYSTEM",
+            "text": "<p><a href=\"https:\/\/us.ecoflow.com\/products\/delta-pro-double-voltage-hub?variant=40358069403721\" title=\"https:\/\/us.ecoflow.com\/products\/delta-pro-double-voltage-hub?variant=40358069403721\"><span style=\"text-decoration:underline\"><strong>When coupled together this 7200 watt system can easily power just about anything you throw at it.<\/strong><\/span><\/a><strong> <\/strong>It is extremely easy to use, set up and configure. Most things you use are automatically reconized when you connect them and easily configired for your specific purposes in the app. The app itself is also Great as it easily finds and recognizes items as you add them to your ecosphere. By far this is currently the BEST solar system you can buy!<\/p>",
+            "name": "Jim P"
+          }
+        },
+        "5ab2f2fc-99a8-4172-a788-239258f3e1f8": {
+          "type": "review",
+          "settings": {
+            "title": "LOVE MY DELTA 2",
+            "text": "<p><a href=\"https:\/\/us.ecoflow.com\/products\/delta-2-220w-portable-solar-panel?variant=40142843773001\" title=\"https:\/\/us.ecoflow.com\/products\/delta-2-220w-portable-solar-panel?variant=40142843773001\"><strong>I live in New England and it is possible that we will have rolling blackouts this winter which is why we purchased the DELTA 2<\/strong><\/a><strong>. <\/strong>A wind storm this week knocked over a tree and we were without power for several hours. I was able to hook up lights, my computer, and monitor, my warm throw blanket over my lap and use my phone’s personal hotspot. This enabled me to continue working. My husband also hooked up our Keurig so we could enjoy some coffee.<\/p>",
+            "name": "Micky"
+          }
+        },
+        "4e5038c4-e7c9-4862-a4cb-5ec3108ded27": {
+          "type": "review",
+          "settings": {
+            "title": "GREAT PRODUCT!",
+            "text": "<p>There was an outage that affected my house and the entire block for a couple of days. Good thing I had recently bought my EcoFlow DELTA Pro. What a lifesaver! <a href=\"https:\/\/us.ecoflow.com\/products\/delta-pro-400w-portable-solar-panel?variant=39746297921609\" title=\"https:\/\/us.ecoflow.com\/products\/delta-pro-400w-portable-solar-panel?variant=39746297921609\"><strong>We were able to keep lights on, some essential appliances, fans during the day, heater at night.<\/strong><\/a><strong> <\/strong>Best purchase that I’ve made in a long time.<\/p>",
+            "name": "KevT"
+          }
+        },
+        "7fca403b-064b-46da-902b-8bae5e264942": {
+          "type": "review",
+          "settings": {
+            "title": "PEACE OF MIND!",
+            "text": "<p>I have had my DELTA Max 2000 for several months. It is amazing!! It was able to power a TV, router, computer, and coffeemaker without a problem. I was surprised at how little power was drained. It was easy to charge and use. I am not mechanically inclined but the instructions were clear and easy to follow. <a href=\"https:\/\/us.ecoflow.com\/products\/delta-max-160w-portable-solar-panel?variant=39424688848969\" title=\"https:\/\/us.ecoflow.com\/products\/delta-max-160w-portable-solar-panel?variant=39424688848969\"><strong>Having the Delta Max gives me peace of mind regarding future power outages.<\/strong><\/a><\/p>",
+            "name": "Mary M"
+          }
+        }
+      },
+      "block_order": [
+        "682624ff-03f9-471a-91e7-4e4564ee9da4",
+        "5ab2f2fc-99a8-4172-a788-239258f3e1f8",
+        "4e5038c4-e7c9-4862-a4cb-5ec3108ded27",
+        "7fca403b-064b-46da-902b-8bae5e264942"
+      ],
+      "settings": {
+        "title": "Here’s What Our <br class=\"mobile-only\">\nCustomers Say…"
+      }
+    },
+    "icons": {
+      "type": "clp-icons",
+      "blocks": {
+        "2c650795-653d-4d22-8801-b4dc03ff19ed": {
+          "type": "icon",
+          "settings": {
+            "title": "Fast &amp; Free Shipping",
+            "description": "Get Free Shipping on all orders"
+          }
+        },
+        "02ea812f-a4b0-4513-a15f-50506b334521": {
+          "type": "icon",
+          "settings": {
+            "title": "Convenient Installment Plans",
+            "description": "Pay later in monthly installments using PayPal and Klarna"
+          }
+        },
+        "487fcd34-7ee2-43f0-bd2b-0274577f2017": {
+          "type": "icon",
+          "settings": {
+            "title": "Warranty Protection",
+            "description": "Warranty service on all products. (Up to 5 years)"
+          }
+        },
+        "19459281-96f3-481c-80be-b9a77da76c48": {
+          "type": "icon",
+          "settings": {
+            "title": "Membership",
+            "description": "During the Sale, you can earn 3x EcoCredits"
+          }
+        }
+      },
+      "block_order": [
+        "2c650795-653d-4d22-8801-b4dc03ff19ed",
+        "02ea812f-a4b0-4513-a15f-50506b334521",
+        "487fcd34-7ee2-43f0-bd2b-0274577f2017",
+        "19459281-96f3-481c-80be-b9a77da76c48"
+      ],
+      "settings": {
+        "title": "On Top Of Some Outstanding Discounts, <br>\nHere Are Some Other Great Reasons To Shop Now."
+      }
+    }
+  },
+  "order": [
+    "main",
+    "banner",
+    "a60c46cd-dfdb-4170-bb95-d12c73f51b93",
+    "6e47c938-75f3-45b8-8f96-a96c8c6b6a77",
+    "products",
+    "ytb",
+    "customers",
+    "icons"
+  ]
+}

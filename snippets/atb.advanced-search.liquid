@@ -1,0 +1,336 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "t:sections.advanced-search.name",
+  "class": "index-section no-padding",
+  "id": "advanced-search",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "type": "image_picker",
+      "id": "atb_image",
+      "label": "t:sections.advanced-search.settings.image.label",
+      "info": ""
+    },
+    {
+      "type": "image_picker",
+      "id": "atb_mobile_image",
+      "label": "t:sections.advanced-search.settings.mobile_image.label",
+      "info": ""
+    },
+    {
+      "type": "select",
+      "id": "atb_content_side",
+      "label": "t:sections.advanced-search.settings.content_side.label",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.advanced-search.settings.content_side.options__1.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.advanced-search.settings.content_side.options__2.label"
+        },
+        {
+          "value": "full_width",
+          "label": "t:sections.advanced-search.settings.content_side.options__3.label"
+        }
+      ],
+      "default": "left",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_title",
+      "label": "t:sections.advanced-search.settings.title.label",
+      "default": "Heading",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_subtitle",
+      "label": "t:sections.advanced-search.settings.subtitle.label",
+      "default": "Subtitle",
+      "info": ""
+    },
+    {
+      "type": "wysiwyg",
+      "id": "atb_content",
+      "label": "t:sections.advanced-search.settings.content.label",
+      "default": "<p>Content text</p>",
+      "info": ""
+    },
+    {
+      "type": "select",
+      "id": "atb_button_style",
+      "label": "t:sections.advanced-search.settings.button_style.label",
+      "default": "primary",
+      "options": [
+        {
+          "label": "t:sections.advanced-search.settings.button_style.options__1.label",
+          "value": "primary"
+        },
+        {
+          "label": "t:sections.advanced-search.settings.button_style.options__2.label",
+          "value": "secondary"
+        },
+        {
+          "label": "t:sections.advanced-search.settings.button_style.options__3.label",
+          "value": "white"
+        },
+        {
+          "label": "t:sections.advanced-search.settings.button_style.options__4.label",
+          "value": "transparent_primary"
+        },
+        {
+          "label": "t:sections.advanced-search.settings.button_style.options__5.label",
+          "value": "transparent_secondary"
+        }
+      ],
+      "info": ""
+    },
+    {
+      "type": "color",
+      "id": "atb_text_color",
+      "label": "t:sections.advanced-search.settings.text_color.label",
+      "default": "#fff",
+      "info": ""
+    },
+    {
+      "type": "color",
+      "id": "atb_color_image_overlay",
+      "label": "t:sections.advanced-search.settings.color_image_overlay.label",
+      "info": ""
+    },
+    {
+      "type": "range",
+      "id": "atb_image_overlay_opacity",
+      "label": "t:sections.advanced-search.settings.image_overlay_opacity.label",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "t:sections.advanced-search.settings.image_overlay_opacity.unit",
+      "default": 70,
+      "info": ""
+    }
+  ],
+  "warnings": []
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_image' -%}
+{%- assign atb_image = val -%}
+{%- include 'atb-render' field:'atb_mobile_image' -%}
+{%- assign atb_mobile_image = val -%}
+{%- include 'atb-render' field:'atb_content_side' -%}
+{%- assign atb_content_side = val -%}
+{%- include 'atb-render' field:'atb_title' -%}
+{%- assign atb_title = val -%}
+{%- include 'atb-render' field:'atb_subtitle' -%}
+{%- assign atb_subtitle = val -%}
+{%- include 'atb-render' field:'atb_content' -%}
+{%- assign atb_content = val -%}
+{%- include 'atb-render' field:'atb_button_style' -%}
+{%- assign atb_button_style = val -%}
+{%- include 'atb-render' field:'atb_text_color' -%}
+{%- assign atb_text_color = val -%}
+{%- include 'atb-render' field:'atb_color_image_overlay' -%}
+{%- assign atb_color_image_overlay = val -%}
+{%- include 'atb-render' field:'atb_image_overlay_opacity' -%}
+{%- assign atb_image_overlay_opacity = val -%}
+{%- assign atb_image_overlay_opacity = atb_image_overlay_opacity | plus: 0 -%}
+{%- assign atb_image_key = atb_image| split: '/files/' | last -%}{%- assign atb_image = images[atb_image_key] -%}{%- assign atb_mobile_image_key = atb_mobile_image| split: '/files/' | last -%}{%- assign atb_mobile_image = images[atb_mobile_image_key] -%}{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section index-section no-padding">
+
+{% assign image = atb_image %}
+{% assign mobile_image = atb_mobile_image %}
+{% assign content_side = atb_content_side %}
+
+<section id="section-{{ section_id }}" data-section-id="{{ section_id }}" data-section-type="advanced-search" 
+         class='fade-in-animation advanced-search-section {% if content_side ==  'full_width' %} auto_height padding-section {% else %} bg_image_with_custom_content {% endif %}' >
+
+
+  {% capture section_content%} 
+  {% if atb_title != blank or  atb_subtitle != blank %}
+  <header class="section-header homepage_subtitle_style_{{settings.homepage_subtitle_color}}">
+    {% if atb_subtitle != blank  %}
+    <span class='h5'>{{ atb_subtitle  }}</span>
+    {% endif %}
+    {% if atb_title != blank  %}
+    <h2>{{ atb_title }}</h2>
+    {% endif %}
+
+    {% if atb_content != blank  %}
+    <div class='content'>{{ atb_content }}</div>
+    {% endif %}
+  </header>
+  {% endif %}
+
+  <div class='advanced-search-wrapper {% if content_side ==  'full_width' %} full_width {% endif %}'>
+    <form action="{{ routes.search_url }}" method="get" role="search" class="search-form">
+      <div class="input-group input-group--nowrap">
+        <div class="input-group__field input-group__field--connected search-form__input-wrapper">
+
+    <label for="search-form__input__{{ section_id }}" class="visually-hidden"></label>
+          <input
+             id="search-form__input__{{ section_id }}"
+                 type="search"
+                 name="q"
+                 value="{{ search.terms | escape }}"
+                 placeholder="{{ 'general.search.placeholder' | t }}"
+                 role="combobox"
+                 aria-autocomplete="list"
+                 aria-expanded="false"
+                 aria-label="{{ 'general.search.placeholder' | t }}"
+                 aria-haspopup="listbox"
+                 class="search-form__input"
+                 data-search-page-predictive-search-input
+                 data-base-url="{{ routes.search_url }}"
+                 />
+          
+          <select class='search-form__select' id='advanced-search-product-type' data-search-type="*">
+            <option value=''>{{ 'sections.header.all_categories' | t }}</option>
+            {%- for product_type in shop.types -%}
+            {%- if product_type != blank -%}
+            <option value='{{  product_type }}'>{{ product_type | escape}}</option>
+            {%- endif -%}
+            {%- endfor -%}
+          </select>
+          
+
+          <input type="hidden" name="options[prefix]" value="last" aria-hidden="true" />
+
+        </div>
+
+      </div>
+
+      <button type="submit" class="search-form__connected-submit btn btn--{{atb_button_style }} " aria-label="{{ 'general.search.submit' | t }}">
+        <span>{{ 'general.search.submit' | t }}</span>
+        {% include 'atb-icon'  with 'tail-right'  %}
+      </button>
+    </form>
+  </div>
+  {% endcapture %}
+
+
+  <div class='section_bg {% if content_side ==  'full_width' %} full_height {% endif %}'>
+	{% if image != blank %}
+        <img 
+             class="section_bg_image {% if mobile_image != blank %} small--hide {% endif %}"
+             srcset="{%- if image.width >= 375 -%}{{ image | img_url: '375x' }} 375w,{%- endif -%}
+                {%- if image.width >= 720 -%}{{ image | img_url: '720x' }} 750w,{%- endif -%}
+                {%- if image.width >= 1066 -%}{{ image | img_url: '1066x' }} 1066w,{%- endif -%}
+             	{%- if image.width >= 1500 -%}{{ image | img_url: '1500x' }} 1500w,{%- endif -%}
+                {%- if image.width >= 1780 -%}{{ image | img_url: '1780x' }} 1780w,{%- endif -%}
+                {%- if image.width >= 2000 -%}{{ image | img_url: '2000x' }} 2000w,{%- endif -%}
+                {%- if image.width >= 2800 -%}{{ image | img_url: '2800x' }} 2800w{%- endif -%}"
+             src="{{ image | img_url: '750x' }}"
+             sizes="100vw"
+             loading="lazy"
+             width="{{ image.width }}"
+        	 height="{{ image.height }}"
+            alt="{{image.alt | default: atb_title }}">
+      
+      {% if mobile_image != blank %}
+        <img 
+             class="section_bg_image mobile_image medium-up--hide"
+             srcset="{%- if mobile_image.width >= 375 -%}{{ mobile_image | img_url: '375x' }} 375w,{%- endif -%}
+                {%- if mobile_image.width >= 720 -%}{{ mobile_image | img_url: '720x' }} 750w,{%- endif -%}
+                {%- if mobile_image.width >= 1066 -%}{{ mobile_image | img_url: '1066x' }} 1066w,{%- endif -%}
+             	{%- if mobile_image.width >= 1500 -%}{{ mobile_image | img_url: '1500x' }} 1500w{%- endif -%}"
+             src="{{ mobile_image | img_url: '535x' }}"
+             sizes="100vw"
+             loading="lazy"
+             width="{{ mobile_image.width }}"
+        	 height="{{ mobile_image.height }}"
+             alt="{{mobile_image.alt | default: atb_title }}">
+      {% endif %}
+           
+    
+    {% else %}
+    <div class='section_bg_image'>
+      {% capture current %}{% cycle 1, 2 %}{% endcapture %}
+      {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+    </div>
+    
+	  {% endif %}
+  </div>
+
+
+  <div class='section_content'>
+    <div class="{% if content_side ==  'full_width' %} page-width  {% else %} page-width-small content_side_{{content_side}} {% endif %}">
+      <div class='section_content__wrapper text-left '>
+        <div class='section_main_content {% if content_side ==  'full_width' %} full_width {% endif %}'>
+          {{section_content}}
+        </div>
+
+      
+      </div>
+    </div>
+  </div>
+
+  
+
+  <style>
+      #section-{{ section_id }}  .input-group .search-form__select,
+    #section-{{ section_id }}  .input-group .search-form__input,
+      #section-{{ section_id }}  .input-group ::placeholder,
+    #section-{{ section_id }} .section-header *:not(h5) {
+      color: {{ atb_text_color }};
+    }
+  
+    {% if settings.homepage_subtitle_color == 'match_header' %}
+    #section-{{ section_id }}  .section-header .h5 {
+      color: {{ atb_text_color }};
+    }
+    #section-{{ section_id }}  .section-header .h5:before {
+      background: {{ atb_text_color }};
+    }
+    {% endif %}
+    
+  
+    #section-{{ section_id }}  .input-group ::placeholder {
+      opacity:1;
+    }
+
+    
+  </style>
+
+  {% unless content_side ==  'full_width' %}
+  <div class='section_overlay content_side_{{content_side}}'></div>
+  <div class='section_overlay_border_top content_side_{{content_side}}'></div>
+  <div class='section_overlay_border_bottom content_side_{{content_side}}'></div>
+   {% else %}
+  <div class='section_overlay full_width '></div>
+  {% endunless %}
+  
+  {% assign color_image_overlay = atb_color_image_overlay %}
+
+ {% if color_image_overlay == 'rgba(0,0,0,0)' or color_image_overlay == blank %}
+  {% assign color_image_overlay = settings.color_button %}
+  {% endif %}
+
+  
+  <style>
+    #section-{{ section_id }} .section_overlay {
+      opacity: {{ atb_image_overlay_opacity }}% ;
+      background-color: {{ color_image_overlay }};
+    }
+  </style>
+</section>
+
+
+</section>

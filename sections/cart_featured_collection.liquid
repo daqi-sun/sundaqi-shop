@@ -1,0 +1,184 @@
+{% assign products_per_row = section.settings.grid %}
+
+{% assign show_vendor = section.settings.show_vendor %}
+
+{% assign image = section.settings.image %}
+{% assign mobile_image = section.settings.mobile_image %}
+{% assign image_position = section.settings.image_position %}
+
+{%- capture flickity_options -%}
+{
+  "prevNextButtons": false,
+  "wrapAround": false,
+  "dragThreshold": 15,
+  "cellAlign": "left",
+  "pauseAutoPlayOnHover": true,
+  "autoPlay": false,
+  "pageDots": false,
+  "adaptiveHeight": false,
+  "watchCSS": true,
+  "contain": true
+}
+{%- endcapture -%}
+
+
+  {% case products_per_row %}
+    {% when 2 %}
+      {%- assign max_height = 530 -%}
+      {%- assign grid_item_width = 'medium-up--one-half' -%}
+    {% when 3 %}
+      {%- assign max_height = 345 -%}
+      {%- assign grid_item_width = ' medium-up--one-third' -%}
+    {% when 4 %}
+      {%- assign max_height = 248 -%}
+      {%- assign grid_item_width = ' medium-up--one-quarter' -%}
+    {% when 5 %}
+      {%- assign max_height = 195 -%}
+      {%- assign grid_item_width = ' medium-up--one-fifth' -%}
+  {% endcase %}
+
+{% assign grid_item_mobile_width = '' %}
+
+<section id="section-{{ section.id }}" data-section-id="{{ section.id }}" class="cart-page-width" data-section-type="featured-products"  {% if image != blank %} class="fade-in-animation" {% endif %}>
+    {% if section.settings.title != blank %}
+      <h2>{{ section.settings.title | escape }}</h2>
+    {% endif %}
+
+    {% assign collection = collections[section.settings.collection_handle] %}
+    {% assign product_limit = section.settings.max_products_count %}
+
+  <script>window.collectionList = {{ collection.products | json }}</script>
+
+    <div class='slides_{{collection.products.size}} index-tabs-content_block__slider' data-flickity-config=''>
+        <div class="scroller-platter" data-flickity-config=''>
+          {% for product in collection.products limit:product_limit %}
+            {%- comment %}<locksmith:401b>{% endcomment -%}
+              {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: collection, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+            {%- comment %}</locksmith:401b>{% endcomment -%}
+            {% include 'product-card-item', list: false, max_height: max_height, product: product, show_vendor: show_vendor, show_add_to_cart: section.settings.show_add_to_cart %}
+          {% else %}
+            {% for i in (1..product_limit) %}
+
+            <div class="zoom-fade-animation-element-wrapper grid__item  product-item-block   view-mode-grid {{ grid_item_width }} {{ grid_item_mobile_width}} " >
+              <div class="product-card product-card-grid-wrapper grid-view-item ">
+
+                <div class="product-card__image-with-placeholder-wrapper" data-image-loading-animation>
+                  <a class="grid-view-item__link-image product-card__link-image" href="#" aria-label="{{ 'homepage.onboarding.product_title' | t }}">
+                    <div  class="grid-view-item__image-wrapper product-card__image-wrapper">
+                    {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+                  {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg zoom-fade-animation-element' }}
+                    </div>
+                  </a>
+                </div>
+
+                <a class="grid-view-item__link-title product-card__link-title" href="#" aria-label="{{ 'homepage.onboarding.product_title' | t }}">
+                  <span class="h4 grid-view-item__title product-card__title" >
+                  {{ 'homepage.onboarding.product_title' | t }}
+                  </span>
+                </a>
+
+                <div class='product-item__price_and_reviews_row'>
+                  {% include 'product-price' %}
+                </div>
+
+              </div>
+              <div class="product-card product-card--list-wrapper list-view-item">
+                <div class='product-card--list'>
+
+                  <div class='product-list--media'>
+                    <div class="product-card__image-with-placeholder-wrapper" data-image-loading-animation>
+                      <a class="list-view-item__link-image product-card__link-image" href="#" aria-label="{{ 'homepage.onboarding.product_title' | t }}">
+                        <div  class="list-view-item__image-wrapper product-card__image-wrapper">
+                          {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+                          {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg zoom-fade-animation-element' }}
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class='product-list--info'>
+
+                    <a class="list-view-item__link-title product-card__link-title" href="#" aria-label="{{ 'homepage.onboarding.product_title' | t }}">
+                      <span class="h4 list-view-item__title product-card__title"> {{ 'homepage.onboarding.product_title' | t }}</span>
+                    </a>
+                    <div class='product-item__price_and_reviews_row'>
+                  {% include 'product-price' %}
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {% endfor %}
+          {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+  {
+   "name": "Featured collection",
+	"class":"featured_collection_cart_page",
+	"settings": [
+    {
+        "type":"text",
+        "id":"title",
+        "label":"t:sections.featured-products.settings.title.label",
+        "default": "Heading"
+    },
+    {
+        "type":"collection",
+        "id":"collection_handle",
+        "label":"t:sections.featured-products.blocks.collection.settings.collection_handle.label"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_vendor",
+        "label": "t:sections.featured-products.settings.show_vendor.label",
+        "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_add_to_cart",
+      "label": "Show ATC button",
+      "default": false
+    },
+    {
+        "type": "select",
+        "id": "image_position",
+        "label": "t:sections.featured-products.settings.image_position.label",
+        "options": [
+        {
+                "value": "top",
+                "label": "t:sections.featured-products.settings.image_position.options__1.label"
+        },
+        {
+                "value": "bottom",
+                "label": "t:sections.featured-products.settings.image_position.options__2.label"
+        }
+        ],
+        "default":"bottom"
+    },
+    {
+      "type": "range",
+      "id": "grid",
+      "label": "t:sections.featured-products.settings.grid.label",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "default": 4
+    },
+    {
+        "type": "range",
+        "id": "max_products_count",
+        "label": "t:sections.featured-products.blocks.collection.settings.max_products_count.label",
+        "min": 2,
+        "max": 40,
+        "step": 1,
+        "default": 10
+    }
+	]
+  }
+{% endschema %}
+
+<!-- GPO installed -->

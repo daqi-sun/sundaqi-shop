@@ -1,0 +1,736 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "sticky-product-bar": {
+      "type": "sticky-product-bar",
+      "blocks": {
+        "588d25af-4d47-43ac-9697-b98aa2f65719": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Overview",
+            "tab_id": "product_information",
+            "section_class": ""
+          }
+        },
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "FAQ",
+            "tab_id": "faq",
+            "section_class": ""
+          }
+        },
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Reviews",
+            "tab_id": "section-reviews",
+            "section_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "588d25af-4d47-43ac-9697-b98aa2f65719",
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4",
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38"
+      ],
+      "settings": {
+        "enabled": true,
+        "enabled_tabs": true
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "11795adc-1afa-4833-a193-258f495901ef": {
+          "type": "sku_block",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e": {
+          "type": "product_title",
+          "settings": {
+          }
+        },
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "0471109f-c130-454e-a9ba-c56412cc11f3": {
+          "type": "product_vendor",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185": {
+          "type": "product_price",
+          "settings": {
+          }
+        },
+        "d25a0285-4fb4-422d-b95b-ab67446120ad": {
+          "type": "product_description",
+          "settings": {
+            "desc_display": "default"
+          }
+        },
+        "919f9cdd-6184-4311-b675-742931504318": {
+          "type": "coupon_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Component_2_1.png",
+            "discount_off_text": "{{ product.metafields.custom.discount_off_text.value }}",
+            "code": "{{ product.metafields.custom.discount_code.value }}",
+            "show_copy_code_btn": true
+          }
+        },
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879": {
+          "type": "product_options_block",
+          "settings": {
+            "show_product_swatches": true,
+            "use_variant_image_for_swatches": true,
+            "button_content": ""
+          }
+        },
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe": {
+          "type": "quantity_block",
+          "settings": {
+          }
+        },
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0": {
+          "type": "accessories_section",
+          "settings": {
+            "title": "Accessories",
+            "metafield": "accessories"
+          }
+        },
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609": {
+          "type": "product_buttons",
+          "settings": {
+            "enable_payment_button": false,
+            "show_custom_icons": true,
+            "custom_payment_logo_1_svg": "",
+            "custom_payment_logo_2_svg": "",
+            "custom_payment_logo_3_svg": "",
+            "custom_payment_logo_4_svg": "",
+            "custom_payment_logo_5_svg": "",
+            "custom_payment_logo_6_svg": "",
+            "custom_payment_logo_7_svg": "",
+            "custom_payment_logo_8_svg": "",
+            "custom_payment_logo_9_svg": "",
+            "custom_payment_logo_10_svg": "",
+            "custom_payment_logo_11_svg": "",
+            "custom_payment_logo_12_svg": "",
+            "custom_payment_logo_13_svg": "",
+            "custom_payment_logo_14_svg": "",
+            "custom_payment_logo_15_svg": ""
+          }
+        },
+        "a6857d85-dbb6-41d1-9501-c01cf5bbe11f": {
+          "type": "back_in_stock",
+          "disabled": true,
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "11795adc-1afa-4833-a193-258f495901ef",
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e",
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774",
+        "0471109f-c130-454e-a9ba-c56412cc11f3",
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185",
+        "d25a0285-4fb4-422d-b95b-ab67446120ad",
+        "919f9cdd-6184-4311-b675-742931504318",
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879",
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe",
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0",
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609",
+        "a6857d85-dbb6-41d1-9501-c01cf5bbe11f"
+      ],
+      "settings": {
+        "section_id": "",
+        "show_breadcrumbs": false,
+        "show_pick_an_option": false,
+        "enable_linked_options": false,
+        "enabled_mobile_sticky_btns": true,
+        "media_size": "medium",
+        "enable_image_zoom": true,
+        "enable_video_looping": true,
+        "thumbnails_type": "grid",
+        "support_email": "",
+        "support_text": "",
+        "feature_1_show": true,
+        "feature_1_title": "Fast & Free Shipping",
+        "feature_1_content": "",
+        "feature_2_show": true,
+        "feature_2_title": "Warranty Protection",
+        "feature_2_content": "",
+        "feature_3_show": true,
+        "feature_3_title": "Secure Payments",
+        "feature_3_content": "",
+        "feature_4_show": true,
+        "feature_4_title": "Multi-channel Support",
+        "feature_4_content": ""
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "grid_mobile": "2",
+        "heading": "You may also like",
+        "show_vendor": false
+      }
+    },
+    "165728772697564e64": {
+      "type": "newsletter",
+      "disabled": true,
+      "settings": {
+        "section_bg_color": "",
+        "section_color": "",
+        "bg_image_opacity": 70,
+        "section_title": "Subscribe to our newsletter",
+        "subtitle": "",
+        "subheading": "<p>Promotions, new products and sales. Directly to your inbox.<\/p>",
+        "button_style": "primary",
+        "showFormLabels": true,
+        "removeBottomMargin": false
+      }
+    },
+    "a0cb923d-f248-4e67-93b6-652d64e21115": {
+      "type": "mosaic",
+      "blocks": {
+        "template--14886227869769__a0cb923d-f248-4e67-93b6-652d64e21115-166627215402550331-0": {
+          "type": "image",
+          "settings": {
+            "background_type": "image",
+            "video_url": "",
+            "mobile_video_url": "",
+            "cta_label": "Home power security",
+            "cta_sublabel": "DELTA Max’s large 2kWh capacity keeps your home appliances running during a blackout. Expand up to 6kWh with Extra Batteries for several days of reliable backup power.",
+            "cta_link": "",
+            "link": "",
+            "cta_width": 100,
+            "custom_height": 400,
+            "custom_height_mobile": 450,
+            "cta_image_width": "100%",
+            "caption_align": "left",
+            "caption_position": "center",
+            "caption_size": "h3",
+            "select_caption_color": "light",
+            "text_max_width": 410
+          }
+        },
+        "template--14886227869769__a0cb923d-f248-4e67-93b6-652d64e21115-166627215402550331-1": {
+          "type": "image",
+          "settings": {
+            "background_type": "image",
+            "video_url": "",
+            "mobile_video_url": "",
+            "cta_label": "Fast charging speeds",
+            "cta_sublabel": "EcoFlow’s patented X-Stream AC fast charging lets you recharge DELTA Max in only 1.8 hours. Or even quicker if you combine any two charging methods, that’s from an AC wall outlet, solar panels, or a Smart Generator.",
+            "cta_link": "",
+            "link": "",
+            "cta_width": 60,
+            "custom_height": 400,
+            "custom_height_mobile": 450,
+            "cta_image_width": "100%",
+            "caption_align": "left",
+            "caption_position": "center",
+            "caption_size": "h3",
+            "select_caption_color": "light",
+            "text_max_width": 290
+          }
+        },
+        "template--14886227869769__a0cb923d-f248-4e67-93b6-652d64e21115-166627215402550331-2": {
+          "type": "image",
+          "settings": {
+            "background_type": "image",
+            "video_url": "",
+            "mobile_video_url": "",
+            "cta_label": "Power 99% of essential appliances",
+            "cta_sublabel": "DELTA Max powers almost all the devices you need with a large 2400W AC output.Using 3400W X-Boost mode, power even high-wattage appliances without overloading.",
+            "cta_link": "",
+            "link": "",
+            "cta_width": 40,
+            "custom_height": 400,
+            "custom_height_mobile": 450,
+            "cta_image_width": "100%",
+            "caption_align": "left",
+            "caption_position": "top",
+            "caption_size": "h3",
+            "select_caption_color": "light",
+            "text_max_width": 360
+          }
+        },
+        "template--14886227869769__a0cb923d-f248-4e67-93b6-652d64e21115-166627215402550331-3": {
+          "type": "image",
+          "settings": {
+            "background_type": "image",
+            "video_url": "",
+            "mobile_video_url": "",
+            "cta_label": "Emergency backup",
+            "cta_sublabel": "In the most extreme cases, use the EcoFlow Smart Generator to efficiently recharge using DC. Once DELTA Max hits a low battery level, the Smart Generator kicks in automatically, fully recharging your battery.",
+            "cta_link": "",
+            "link": "",
+            "cta_width": 40,
+            "custom_height": 400,
+            "custom_height_mobile": 450,
+            "cta_image_width": "100%",
+            "caption_align": "left",
+            "caption_position": "top",
+            "caption_size": "h3",
+            "select_caption_color": "light",
+            "text_max_width": 370
+          }
+        },
+        "template--14886227869769__a0cb923d-f248-4e67-93b6-652d64e21115-166627215402550331-4": {
+          "type": "image",
+          "settings": {
+            "background_type": "image",
+            "video_url": "",
+            "mobile_video_url": "",
+            "cta_label": "Harness the power of the sun",
+            "cta_sublabel": "Collect up to 800W of sustainable solar energy to keep DELTA Max running even when there’s an outage. With an advanced MPPT (maximum power point tracking) algorithm, DELTA Max auto-regulates, maintaining optimal solar generation throughout the day.",
+            "cta_link": "",
+            "link": "",
+            "cta_width": 60,
+            "custom_height": 400,
+            "custom_height_mobile": 450,
+            "cta_image_width": "100%",
+            "caption_align": "left",
+            "caption_position": "top",
+            "caption_size": "h3",
+            "select_caption_color": "light",
+            "text_max_width": 440
+          }
+        },
+        "template--14886227869769__a0cb923d-f248-4e67-93b6-652d64e21115-166627215402550331-5": {
+          "type": "image",
+          "settings": {
+            "background_type": "image",
+            "video_url": "",
+            "mobile_video_url": "",
+            "cta_label": "Monitor & control from the EcoFlow app",
+            "cta_sublabel": "Take control of your DELTA Max and quick-view stats right from your phone. Customize settings such as charging speeds and Smart Generator auto-start levels to fit your power needs.",
+            "cta_link": "",
+            "link": "",
+            "cta_width": 60,
+            "custom_height": 400,
+            "custom_height_mobile": 450,
+            "cta_image_width": "100%",
+            "caption_align": "left",
+            "caption_position": "center",
+            "caption_size": "h3",
+            "select_caption_color": "light",
+            "text_max_width": 300
+          }
+        },
+        "f3e4b059-be31-4666-9036-0c4d9cb8c2ad": {
+          "type": "image",
+          "settings": {
+            "background_type": "image",
+            "video_url": "",
+            "mobile_video_url": "",
+            "cta_label": "Reliable BMS",
+            "cta_sublabel": "EcoFlow’s battery management system analyzes DELTA Max’s vitals in real-time, regulating voltage, current, and temperature. BMS keeps DELTA Max safe and efficient, maintaining its life for years to come.",
+            "cta_link": "",
+            "link": "",
+            "cta_width": 40,
+            "custom_height": 400,
+            "custom_height_mobile": 450,
+            "cta_image_width": "100%",
+            "caption_align": "left",
+            "caption_position": "top",
+            "caption_size": "h3",
+            "select_caption_color": "light",
+            "text_max_width": 350
+          }
+        }
+      },
+      "block_order": [
+        "template--14886227869769__a0cb923d-f248-4e67-93b6-652d64e21115-166627215402550331-0",
+        "template--14886227869769__a0cb923d-f248-4e67-93b6-652d64e21115-166627215402550331-1",
+        "template--14886227869769__a0cb923d-f248-4e67-93b6-652d64e21115-166627215402550331-2",
+        "template--14886227869769__a0cb923d-f248-4e67-93b6-652d64e21115-166627215402550331-3",
+        "template--14886227869769__a0cb923d-f248-4e67-93b6-652d64e21115-166627215402550331-4",
+        "template--14886227869769__a0cb923d-f248-4e67-93b6-652d64e21115-166627215402550331-5",
+        "f3e4b059-be31-4666-9036-0c4d9cb8c2ad"
+      ],
+      "settings": {
+        "section_id": "",
+        "full_width": false,
+        "title": "Take a Closer Look",
+        "subtitle": "If you already own a ONE R, take advantage of the action cam's modular design to upgrade your lenses and mods at your own pace.",
+        "btn_text": "View more",
+        "btn_link": "",
+        "use_stacked_layout": false,
+        "use_lightbox": false,
+        "overlay_opacity": 0,
+        "overlay_color": "#000000",
+        "gutter_width": "15",
+        "title_transform": "none",
+        "hover_animation": "none",
+        "use_mobile_redability": false,
+        "removeBottomMargin": false
+      }
+    },
+    "705c586d-c6d2-4609-bba1-b868d0cbc03c": {
+      "type": "whats-in-the-box",
+      "disabled": true,
+      "settings": {
+        "section_id": "",
+        "title": "What's In The Box"
+      }
+    },
+    "5eaba093-2a1e-442a-af59-bda5558ab8f3": {
+      "type": "index-accordion",
+      "blocks": {
+        "template--15039808995401__5eaba093-2a1e-442a-af59-bda5558ab8f3-166697421753c0bbc5-0": {
+          "type": "block",
+          "settings": {
+            "question": "How many solar panels can I use at the same time with DELTA Max？",
+            "answer": "<p>It depends on the total voltage and watts of solar panels you choose. As long as the solar panels use MC4 connector and its voltage and current are under 11-100V, 13A max range.<\/p>"
+          }
+        },
+        "template--15039808995401__5eaba093-2a1e-442a-af59-bda5558ab8f3-166697421753c0bbc5-1": {
+          "type": "block",
+          "settings": {
+            "question": "What's the max input for DELTA Max?",
+            "answer": "<p>When charging DELTA Max and its extra battery together, you can reach 3600W max charging speeds by combining any two methods of AC, solar and Smart Generator. For DELTA Max single unit, you can recharge it at standard wall outlets (1800W max), or combine AC and solar charging to reach max 2000W charging speeds.<\/p>"
+          }
+        },
+        "template--15039808995401__5eaba093-2a1e-442a-af59-bda5558ab8f3-166697421753c0bbc5-2": {
+          "type": "block",
+          "settings": {
+            "question": "How does the Emergency Power Supply (EPS) work? And how fast is it?",
+            "answer": "<p>When your portable power station is plugged into the wall, any electronics plugged into it are powered from the grid and not its battery. When power from the grid stops, as in a blackout, the power station automatically switches to battery power within 30ms.<\/p>"
+          }
+        },
+        "template--15039808995401__5eaba093-2a1e-442a-af59-bda5558ab8f3-166697421753c0bbc5-3": {
+          "type": "block",
+          "settings": {
+            "question": "What's the water-resistance rating for this product?",
+            "answer": "<p>DELTA Max is not water-resistance, so it should be kept away from liquids. Or if you're looking for water-resistance solution, you can purchase the DELTA Max case to water-resistance protection.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--15039808995401__5eaba093-2a1e-442a-af59-bda5558ab8f3-166697421753c0bbc5-0",
+        "template--15039808995401__5eaba093-2a1e-442a-af59-bda5558ab8f3-166697421753c0bbc5-1",
+        "template--15039808995401__5eaba093-2a1e-442a-af59-bda5558ab8f3-166697421753c0bbc5-2",
+        "template--15039808995401__5eaba093-2a1e-442a-af59-bda5558ab8f3-166697421753c0bbc5-3"
+      ],
+      "settings": {
+        "section_id": "",
+        "content_side": "full_width",
+        "title": "Frequently Asked Questions",
+        "subtitle": "If you already own a ONE R, take advantage of the action cam's modular design to upgrade your lenses and mods at your own pace.",
+        "text_color": "#03060b",
+        "color_image_overlay": "",
+        "color_bgcolor": "",
+        "image_overlay_opacity": 0
+      }
+    },
+    "2c26b2da-2a1e-4f36-910c-c3227a275ee1": {
+      "type": "quotes",
+      "blocks": {
+        "template--15039360893001__2c26b2da-2a1e-4f36-910c-c3227a275ee1-1666968004ce8303ac-0": {
+          "type": "quote",
+          "settings": {
+            "title": "Fast & Free Shipping",
+            "mobile_title": "",
+            "quote": "<p>All orders are processed within 3-5 business days. <\/p>",
+            "author": "",
+            "image_format": "image",
+            "svg_image": ""
+          }
+        },
+        "template--15039360893001__2c26b2da-2a1e-4f36-910c-c3227a275ee1-1666968004ce8303ac-1": {
+          "type": "quote",
+          "settings": {
+            "title": "Warranty Protection",
+            "mobile_title": "",
+            "quote": "<p>All products are covered by a warranty service.<\/p>",
+            "author": "",
+            "image_format": "image",
+            "svg_image": ""
+          }
+        },
+        "template--15039360893001__2c26b2da-2a1e-4f36-910c-c3227a275ee1-1666968004ce8303ac-2": {
+          "type": "quote",
+          "settings": {
+            "title": "Secure Payments",
+            "mobile_title": "",
+            "quote": "<p>Pay by debit or credit card, PayPal, or other secure payment platform.<\/p>",
+            "author": "",
+            "image_format": "image",
+            "svg_image": ""
+          }
+        },
+        "template--15039360893001__2c26b2da-2a1e-4f36-910c-c3227a275ee1-1666968004ce8303ac-3": {
+          "type": "quote",
+          "settings": {
+            "title": "Multi-channel Support",
+            "mobile_title": "",
+            "quote": "<p>Contact us via email, phone or online customer service.<\/p>",
+            "author": "",
+            "image_format": "image",
+            "svg_image": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15039360893001__2c26b2da-2a1e-4f36-910c-c3227a275ee1-1666968004ce8303ac-0",
+        "template--15039360893001__2c26b2da-2a1e-4f36-910c-c3227a275ee1-1666968004ce8303ac-1",
+        "template--15039360893001__2c26b2da-2a1e-4f36-910c-c3227a275ee1-1666968004ce8303ac-2",
+        "template--15039360893001__2c26b2da-2a1e-4f36-910c-c3227a275ee1-1666968004ce8303ac-3"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "image_style": "full",
+        "heading_style": "center",
+        "title": "Why buy from the EcoFlow Store?",
+        "subtitle": "",
+        "bg_color": "#ffffff",
+        "heading_color": "#000",
+        "title_color": "#232323",
+        "text_color": "#757575",
+        "enable_carousel": false,
+        "show_dots": false,
+        "show_arrows": false,
+        "enable_autoplay": false,
+        "cycle_speed": 5
+      }
+    },
+    "84051429-aa4b-44ac-bc33-67875c8b7ec2": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 20,
+        "section_bottom_spacing": 20,
+        "section_top_spacing_mobile": 20,
+        "section_bottom_spacing_mobile": 20,
+        "alignment": "center",
+        "title": "TITLE",
+        "subtitle": "<p>SUBTITLE SUBTITLE SUBTITLE SUBTITLE <\/p>",
+        "content": "",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "d11f9dd5-e35b-41d0-a6fd-44258f198fed": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "",
+        "subtitle": "",
+        "content": "",
+        "button_link": "shopify:\/\/pages\/affiliate",
+        "button_text": "Learn More",
+        "media_type": "image",
+        "video_type": "youtube",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "mp4_video_url": "",
+        "mp4_video_url_m": "",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "9c0efed5-4de2-4f05-8da1-22164bb8de4f": {
+      "type": "pdp-image-with-text",
+      "blocks": {
+        "43ba0e10-0352-43f4-b0ae-9850b340d0d5": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/M_3x_67631334-4045-41b8-b4ce-c76709dd6cab.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/M_3x_67631334-4045-41b8-b4ce-c76709dd6cab.jpg",
+            "image_height": 310,
+            "mobile_image_height": 250,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "<p><strong>1- day Kit : 3.6kWh （文本宽度460）DELTA Pro + Grounding Adapter<\/strong><\/p>",
+            "subtext_bottom": "<p><strong>Starlink Wi-Fi (50W): 16hFridge(100W) : 16hLight (20W): 14hLaptop (60W) :3hAir Conditioner (1500W) : 1-2h<\/strong><\/p>",
+            "button_link": "shopify:\/\/pages\/affiliate",
+            "button_text": "Learn More"
+          }
+        },
+        "37d43c33-d3a4-40a4-9e80-45a211336a15": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/DELTA_Pro_EB_3_Mobile_1200x_1200x_4c08bf02-c00f-44dc-be2d-538b000df1e7.png",
+            "mobile_image": "shopify:\/\/shop_images\/DELTA_Pro_EB_3_Mobile_1200x_1200x_4c08bf02-c00f-44dc-be2d-538b000df1e7.png",
+            "image_height": 310,
+            "mobile_image_height": 250,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "<p><strong>1- day Kit : 3.6kWh （文本宽度460）DELTA Pro + Grounding Adapter<\/strong><\/p>",
+            "subtext_bottom": "<p><strong>Starlink Wi-Fi (50W): 16hFridge(100W) : 16hLight (20W): 14hLaptop (60W) :3hAir Conditioner (1500W) : 1-2h<\/strong><\/p>",
+            "button_link": "shopify:\/\/pages\/contact-us",
+            "button_text": "Learn More"
+          }
+        },
+        "27245e54-e4df-4983-b857-144413b9dbec": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/EcoFlow_DELTA_Pro_Smart_Extra_Battery_scene_EU_1_Mobile_1200x_31ae9726-40e0-42c7-a0b0-c6c1e81b0ebe.png",
+            "mobile_image": "shopify:\/\/shop_images\/EcoFlow_DELTA_Pro_Smart_Extra_Battery_scene_EU_1_Mobile_1200x_31ae9726-40e0-42c7-a0b0-c6c1e81b0ebe.png",
+            "image_height": 310,
+            "mobile_image_height": 250,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "<p><strong>1- day Kit : 3.6kWh （文本宽度460）DELTA Pro + Grounding Adapter<\/strong><\/p>",
+            "subtext_bottom": "<p><strong>Starlink Wi-Fi (50W): 16hFridge(100W) : 16hLight (20W): 14hLaptop (60W) :3hAir Conditioner (1500W) : 1-2h<\/strong><\/p>",
+            "button_link": "shopify:\/\/pages\/smart-home-ecosystem",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "43ba0e10-0352-43f4-b0ae-9850b340d0d5",
+        "37d43c33-d3a4-40a4-9e80-45a211336a15",
+        "27245e54-e4df-4983-b857-144413b9dbec"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "center",
+        "layout": "stacked",
+        "stacked_row": "2",
+        "mobile_stacked_row": "1",
+        "slider_row": "2",
+        "mobile_slider_row": "1"
+      }
+    },
+    "2d3bf01a-d23c-4d07-8f98-d75c15eab2a3": {
+      "type": "pdp-specs",
+      "blocks": {
+        "1e47bc54-bc65-418b-8483-9a643b6fe1e6": {
+          "type": "contents",
+          "settings": {
+            "title": "Net Weight 文本宽度480",
+            "content": "<p>16.8 lbs (7.6kg)<\/p>"
+          }
+        },
+        "7b955251-af59-40cb-88cc-0a0fe8d42549": {
+          "type": "contents",
+          "settings": {
+            "title": "Net Weight 文本宽度480",
+            "content": "<p>16.8 lbs (7.6kg)<\/p>"
+          }
+        },
+        "8ee80847-4ccf-474a-9771-1d657d6eae13": {
+          "type": "contents",
+          "settings": {
+            "title": "Net Weight 文本宽度480",
+            "content": "<p>16.8 lbs (7.6kg)<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1e47bc54-bc65-418b-8483-9a643b6fe1e6",
+        "7b955251-af59-40cb-88cc-0a0fe8d42549",
+        "8ee80847-4ccf-474a-9771-1d657d6eae13"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Specs"
+      }
+    },
+    "0642e4dc-895c-4002-9394-cc014c1fe680": {
+      "type": "pdp-tab-anchor",
+      "blocks": {
+        "ac12c930-0143-4b21-9ee6-3a4aeb9e1560": {
+          "type": "anchor",
+          "settings": {
+            "pdp_tab_anchor_text": "Go Grid-Off",
+            "pdp_tab_anchor_text_id": "go_grid_off"
+          }
+        },
+        "67f21da1-9fdb-43b6-b021-f4158ba61733": {
+          "type": "anchor",
+          "settings": {
+            "pdp_tab_anchor_text": "Charge Up",
+            "pdp_tab_anchor_text_id": "charge_up"
+          }
+        }
+      },
+      "block_order": [
+        "ac12c930-0143-4b21-9ee6-3a4aeb9e1560",
+        "67f21da1-9fdb-43b6-b021-f4158ba61733"
+      ],
+      "settings": {
+        "full_width": false,
+        "head_background_color": "#dbdbdb",
+        "head_text_color": "#000000",
+        "active_head_text_color": "#ffffff",
+        "active_head_background_color": "#000000"
+      }
+    },
+    "fc686901-37b0-4dd2-b038-236f1e37e276": {
+      "type": "pdp-image-with-text-one-column",
+      "settings": {
+        "anchor_id": "go_grid_off",
+        "alignment": "center",
+        "full_width": false,
+        "image": "shopify:\/\/shop_images\/EcoFlow_DELTA_Pro_Smart_Extra_Battery_scene_EU_1_PC_1800x_d65eb9dd-84ad-43e5-af46-f355badd4a51.png",
+        "mobile_image": "shopify:\/\/shop_images\/EcoFlow_DELTA_Pro_Smart_Extra_Battery_scene_EU_1_PC_1800x_d65eb9dd-84ad-43e5-af46-f355badd4a51.png",
+        "show_actual_mobile_image_size": false,
+        "content_order": "3",
+        "image_alt": "",
+        "title": "No noise, no fume, maintenance-free",
+        "content": "<p>Bid farewell to noisy, fume-filled gas generators and relish peaceful, green, maintenance-free power wherever your RV adventures take you. Charge your RV essentials using DELTA Pro, or plug into a shore power outlet to directly power your RV’s electrical system.<\/p>"
+      }
+    },
+    "7158e18b-6d2c-4c04-afdb-d1ba422d7c24": {
+      "type": "pdp-image-with-text-one-column",
+      "settings": {
+        "anchor_id": "charge_up",
+        "alignment": "center",
+        "full_width": false,
+        "image": "shopify:\/\/shop_images\/Mask_Group_32.png",
+        "mobile_image": "shopify:\/\/shop_images\/Mask_Group_32_71067750-0e91-42ac-b7be-9a5ea6f8fcb0.png",
+        "show_actual_mobile_image_size": false,
+        "content_order": "3",
+        "image_alt": "",
+        "title": "Fast charging anytime, anywhere",
+        "content": "<p>Whether you’re on the road, at a campsite, or in your backyard, you’re never left without power. Top up using MultiCharge in the time it takes to watch a movie. Fully recharge in only 1.7 hours at an EV charging station (3400W), 1.9 hours with dual AC + solar charging (3000W), 2.7 hours from an AC outlet (1800W), and 3.5 hours using solar (1600W). <\/p>"
+      }
+    }
+  },
+  "order": [
+    "sticky-product-bar",
+    "main",
+    "product-recommendations",
+    "165728772697564e64",
+    "a0cb923d-f248-4e67-93b6-652d64e21115",
+    "705c586d-c6d2-4609-bba1-b868d0cbc03c",
+    "5eaba093-2a1e-442a-af59-bda5558ab8f3",
+    "2c26b2da-2a1e-4f36-910c-c3227a275ee1",
+    "84051429-aa4b-44ac-bc33-67875c8b7ec2",
+    "d11f9dd5-e35b-41d0-a6fd-44258f198fed",
+    "9c0efed5-4de2-4f05-8da1-22164bb8de4f",
+    "2d3bf01a-d23c-4d07-8f98-d75c15eab2a3",
+    "0642e4dc-895c-4002-9394-cc014c1fe680",
+    "fc686901-37b0-4dd2-b038-236f1e37e276",
+    "7158e18b-6d2c-4c04-afdb-d1ba422d7c24"
+  ]
+}

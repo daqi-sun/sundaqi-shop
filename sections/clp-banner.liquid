@@ -1,0 +1,79 @@
+<div class="relative">
+  {% render 'ht-responsive-image',
+    image: section.settings.image,
+    image_mobile: section.settings.image_mobile
+  %}
+  <div class="clp-banner-content">
+    <h1>{{ section.settings.title }}</h1>
+
+    {%- comment -%}
+      <div class="clp-banner-percent-off">
+        <div class="clp-banner-upto">
+          UP<br/>
+          TO
+        </div>
+        <div class="clp-banner-percent">
+          {{ section.settings.percent }}
+        </div>
+        <div class="clp-banner-off">
+          <strong>%</strong>
+          <span>OFF</span>
+        </div>
+      </div>
+    {%- endcomment -%}
+    <img
+      class="clp-banner-percent-off-image"
+      src="{{ section.settings.percent_off | img_url: '500x' }}"
+      alt="{{ section.settings.percent_off.alt }}"
+    >
+
+    <div class="clp-banner-time">
+      {{ section.settings.time }}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "CLP Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image mobile"
+    },
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title",
+      "default": "Prepare Your Home For Winter Power Outages."
+    },
+    {
+      "type": "image_picker",
+      "id": "percent_off",
+      "label": "Percent off image"
+    },
+
+    {
+      "type": "text",
+      "id": "time",
+      "label": "Time",
+      "default": "January 6th to 20th"
+    }
+  ]
+}
+{% endschema %}
+
+{%- comment -%}
+  {
+        "type": "text",
+        "id": "percent",
+        "label": "Percent",
+        "default": "27"
+      },
+{%- endcomment -%}

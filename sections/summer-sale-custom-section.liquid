@@ -1,0 +1,197 @@
+<div class="summer-sale-custom-section section-{{ section.id }}" id="{{ section.settings.section_id }}" style="background-color: {{ section.settings.section_background }};">
+    <div class="container">
+        {% if section.settings.section_title != blank %}
+            <div class="title">{{ section.settings.section_title }}</div>
+        {% endif %}
+
+        {% if section.blocks.size > 0 %}
+            <div class="block_wrapper">
+                <div class="block-content">
+                    {% for block in section.blocks %}
+                        {% if block.settings.block_image != blank %}
+                        <div class="block">
+                            <div class="image"><img src="{{ block.settings.block_image | img_url: 'master' }}" alt="" /></div>
+                            <div class="text_desc">
+                                {% if block.settings.text != blank %}
+                                    <div class="text">{{ block.settings.text }}</div>
+                                {% endif %}
+                                {% if block.settings.desc != blank %}
+                                    <div class="desc">{{ block.settings.desc }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+
+        {% if section.settings.bottom_line_text != blank %}
+            <div class="bottom_line" style="color: {{ section.settings.bottom_line_text_color }}">{{ section.settings.bottom_line_text }}</div>
+        {% endif %}
+
+    </div>
+</div>
+{% if section.settings.popup_content != blank %}
+    <div class="summer_popup_content" style="display: none;">
+        <div class="popup_content_inner">
+            <div class="popup_close">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="9" cy="9" r="8.25" stroke="#757575" stroke-width="1.5"/>
+                    <rect x="4.7574" y="5.46436" width="1" height="11" rx="0.5" transform="rotate(-45 4.7574 5.46436)" fill="#D8D8D8" stroke="#757575"/>
+                    <rect x="12.4852" y="4.70711" width="1" height="11" rx="0.5" transform="rotate(45 12.4852 4.70711)" fill="#D8D8D8" stroke="#757575"/>
+                </svg>
+            </div>
+            <div class="popup_content_wrapper">
+                {{ section.settings.popup_content }}
+            </div>
+        </div>
+    </div>
+{% endif %}
+<style>
+    .section-{{ section.id }}{
+        padding: {{ section.settings.section_top_space }}px 0 {{ section.settings.section_bottom_space }}px 0;
+    }
+    .bottom_line{
+        font-size: {{ section.settings.bottom_line_text_font_size }}px !important
+    }
+    @media screen and (max-width: 749px){
+        .section-{{ section.id }}{
+            padding: {{ section.settings.section_top_space_m }}px 0 {{ section.settings.section_bottom_space_m }}px 0;
+        }
+        .bottom_line{
+            font-size: {{ section.settings.bottom_line_text_font_size_m }}px !important
+        }
+    }
+</style>
+{% schema %}
+{
+    "name": "Summer sale section",
+    "max_blocks": 3,
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_id",
+        "label": "Section ID"
+      },
+      {
+        "type":"color",
+        "id":"section_background",
+        "label":"Section background color"
+      },
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section title"
+      },
+      {
+        "type": "header",
+        "content": "Section spacing"
+      },
+      {
+        "type": "range",
+        "id": "section_top_space",
+        "label": "Top space(Desktop)",
+        "min": 0,
+        "max": 150,
+        "step": 5,
+        "unit": "px",
+        "default": 120
+      },
+      {
+        "type": "range",
+        "id": "section_bottom_space",
+        "label": "Bottom space(Desktop)",
+        "min": 0,
+        "max": 150,
+        "step": 5,
+        "unit": "px",
+        "default": 40
+      },
+      {
+        "type": "range",
+        "id": "section_top_space_m",
+        "label": "Top space(Mobile)",
+        "min": 0,
+        "max": 80,
+        "step": 5,
+        "unit": "px",
+        "default": 40
+      },
+      {
+        "type": "range",
+        "id": "section_bottom_space_m",
+        "label": "Bottom space(Mobile)",
+        "min": 0,
+        "max": 80,
+        "step": 5,
+        "unit": "px",
+        "default": 40
+      },
+      {
+        "type": "textarea",
+        "id": "bottom_line_text",
+        "label": "Bottom line"
+      },
+      {
+        "type": "range",
+        "id": "bottom_line_text_font_size",
+        "label": "Font size(Desktop)",
+        "min": 10,
+        "max": 30,
+        "step": 1,
+        "unit": "px",
+        "default": 24
+      },
+      {
+        "type": "range",
+        "id": "bottom_line_text_font_size_m",
+        "label": "Font size(Mobile)",
+        "min": 10,
+        "max": 30,
+        "step": 1,
+        "unit": "px",
+        "default": 10
+      },
+      {
+        "type": "color",
+        "id": "bottom_line_text_color",
+        "label": "Bottom line text color"
+      },
+      {
+        "type": "richtext",
+        "id": "popup_content",
+        "label": "Popup content"
+      }
+    ],
+    "blocks": [
+        {
+            "type": "block",
+            "name": "Block",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "block_image",
+                    "label": "Image"
+                },
+                {
+                    "type": "text",
+                    "id": "text",
+                    "label": "Text"
+                },
+                {
+                    "type": "richtext",
+                    "id": "desc",
+                    "label": "Description"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Summer sale section",
+            "category": "Custom Sections"
+        }
+    ]
+}
+{% endschema %}

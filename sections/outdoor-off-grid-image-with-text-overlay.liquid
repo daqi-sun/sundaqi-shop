@@ -1,0 +1,77 @@
+<div class="outdoor-off-grid__img-with-text-overlay-wrapper">
+  <div class="outdoor-off-grid__img-with-text-overlay">
+    <div class="outdoor-off-grid__image-overlay outdoor-off-grid__image-overlay--desktop-image">
+      <img src="{{ section.settings.desktop_image | img_url: '850x' }}" alt="">
+    </div>
+    <div class="outdoor-off-grid__image-overlay outdoor-off-grid__image-overlay--mobile-image">
+      <img src="{{ section.settings.mobile_image | img_url: '850x' }}" alt="">
+    </div>
+    <div class="outdoor-off-grid__text-overlay">
+      <span>{{ section.settings.text_overlay }}</span>
+    </div>
+  </div>
+  <div class="outdoor-off-grid__text-block">
+    <div class="outdoor-off-grid__first-text">
+      <span>{{ section.settings.first_text }}</span>
+    </div>
+    {% for block in section.blocks %}
+      <div class="outdoor-off-grid__number-text">
+        <span>{{ block.settings.numbers_text }}</span>
+      </div>
+    {% endfor %}
+    <div class="outdoor-off-grid__second-text">
+      <span>{{ section.settings.second_text }}</span>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Image with Text Overlay",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "text_overlay",
+      "label": "Text Overlay"
+    },
+    {
+      "type": "text",
+      "id": "first_text",
+      "label": "First Text"
+    },
+    {
+      "type": "text",
+      "id": "second_text",
+      "label": "Second Text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_number",
+      "name": "Numbers",
+      "settings": [
+        {
+          "type": "text",
+          "id": "numbers_text",
+          "label": "Numbers"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with Text Overlay"
+    }
+  ]
+}
+{% endschema %}

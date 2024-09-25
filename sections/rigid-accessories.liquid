@@ -1,0 +1,111 @@
+{{ 'rigid-accessories.css' | asset_url | stylesheet_tag }}
+
+<div class="rigid-accessories rigid-container">
+  <h2>{{ section.settings.title }}</h2>
+  <p>{{ section.settings.subtitle }}</p>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        <div class="swiper-slide">
+          {% assign image = block.settings.image %}
+          <div class="ra-img-wrapper">
+            <div
+              class="custom-img-wrapper"
+              style="padding-top: 100%;"
+            >
+              <img
+                class="custom-img"
+                srcset="
+                  {{ image | img_url: '400x' }} 500w,
+                  {{ image | img_url: '500x' }} 600w
+                "
+                alt="{{ image.alt }}"
+                loading="lazy"
+              >
+            </div>
+          </div>
+          <div class="ra-content-wrapper">
+            <div class="ra-block-title">
+              {{ block.settings.title }}
+            </div>
+            <a href="{{ block.settings.url }}" class="ra-btn {% if block.settings.url == blank %} ra-btn--disabled {% endif %}">
+              {{ block.settings.btnText }}
+            </a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+
+<script type="module">
+  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js';
+
+  (function () {
+    const swiper = new Swiper('#shopify-section-{{ section.id }} .swiper', {
+      slidesPerView: 1,
+      spaceBetween: 24,
+      pagination: {
+        el: '#shopify-section-{{ section.id }} .swiper-pagination',
+      },
+      breakpoints: {
+        1000: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+      },
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Accessories",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Accessories"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Catch even more rays with this range of rigid solar panel accessories designed to enhance solar conversion."
+    }
+  ],
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Product title",
+          "default": "EcoFlow 400W Rigid Solar Panel"
+        },
+        {
+          "type": "text",
+          "id": "btnText",
+          "label": "Button text",
+          "default": "Shop Now"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Button URL"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,57 @@
+<div class="sp-button__section sp-button__section-{{ section.id }}">
+  <div class="sp-button__wrapper container--default">
+    <div class="sp-button__block-container">
+      {% for block in section.blocks %}
+        <a
+          class="sp-button__block"
+          href="{{ block.settings.url }}"
+          target="_blank"
+        >
+          <div class="sp-button__container background--white">
+            <div class="sp-button__image-wrapper">
+              <img
+                src="{{ block.settings.image | img_url: 'master' }}"
+                alt="{{ block.settings.image.alt }}"
+              >
+            </div>
+            <div class="sp-button__text-wrapper">
+              <p class="sp-button__text">{{ block.settings.title }} ></p>
+            </div>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "SP Button",
+  "class": "sp-button-section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "button",
+      "name": "Button Bar",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Tab Title",
+          "default": "DELTA Series"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "URL"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

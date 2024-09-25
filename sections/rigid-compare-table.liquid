@@ -1,0 +1,558 @@
+{{ 'rigid-compare-table.css' | asset_url | stylesheet_tag }}
+
+<div class="rigid-compare-table">
+  <div class="rct-heading-wrapper">
+    <h2>{{ section.settings.title }}</h2>
+    <p>{{ section.settings.subtitle }}</p>
+  </div>
+
+  <div class="overflow-x-auto rigid-container">
+    <div class="rct-table-wrapper">
+      <div class="rct-table-title">Panel solar rígido EcoFlow de <strong>100W</strong></div>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th class="rct-dark">
+              <div class="rct-grid-y">
+                {% assign image = section.settings.p2 %}
+                <img
+                  srcset="{{ image | img_url: 'master' }}"
+                  alt="{{ image.alt }}"
+                  loading="lazy"
+                >
+                2 paneles
+              </div>
+            </th>
+            <th class="rct-dark">
+              <div class="rct-grid-y">
+                {% assign image = section.settings.p4 %}
+                <img
+                  srcset="{{ image | img_url: 'master' }}"
+                  alt="{{ image.alt }}"
+                  loading="lazy"
+                >
+                4 paneles
+              </div>
+            </th>
+            <th class="rct-dark">
+              <div class="rct-grid-y">
+                {% assign image = section.settings.p6 %}
+                <img
+                  srcset="{{ image | img_url: 'master' }}"
+                  alt="{{ image.alt }}"
+                  loading="lazy"
+                >
+                6 paneles
+              </div>
+            </th>
+            <th class="rct-dark">
+              <div class="rct-grid-y">
+                {% assign image = section.settings.p8 %}
+                <img
+                  srcset="{{ image | img_url: 'master' }}"
+                  alt="{{ image.alt }}"
+                  loading="lazy"
+                >
+                8 paneles
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th class="rct-dark">
+              <div class="rct-grid-x">
+                {% assign image = section.settings.product1 %}
+                <a
+                  href="https://es.ecoflow.com/products/delta-2-portable-power-station"
+                  target="_blank"
+                >
+                  <img
+                    srcset="{{ image | img_url: '80x' }}"
+                    alt="{{ image.alt }}"
+                    loading="lazy"
+                  >
+                </a>
+                DELTA 2 (1024Wh)
+              </div>
+            </th>
+            <th>6,0 hr</th>
+            <th>3,0 hr</th>
+            <th>2,0 hr</th>
+            <th>1,5 hr</th>
+          </tr>
+          <tr>
+            <th class="rct-dark">
+              <div class="rct-grid-x">
+                {% assign image = section.settings.product2 %}
+                <a
+                  href="hhttps://es.ecoflow.com/products/delta-max-portable-power-station?variant=42969738215646"
+                  target="_blank"
+                >
+                  <img
+                    srcset="{{ image | img_url: '80x' }}"
+                    alt="{{ image.alt }}"
+                    loading="lazy"
+                  >
+                </a>
+                DELTA Max (2000) (2016Wh)
+              </div>
+            </th>
+            <th>11,9 hr</th>
+            <th>5,9 hr</th>
+            <th>4,0 hr</th>
+            <th>3,0 hr</th>
+          </tr>
+          <tr>
+            <th class="rct-dark">
+              <div class="rct-grid-x">
+                {% assign image = section.settings.product3 %}
+                <a
+                  href="https://es.ecoflow.com/products/delta-2-max-portable-power-station"
+                  target="_blank"
+                >
+                  <img
+                    srcset="{{ image | img_url: '80x' }}"
+                    alt="{{ image.alt }}"
+                    loading="lazy"
+                  >
+                </a>
+                DELTA 2 Max (2048Wh)
+              </div>
+            </th>
+            <th>12,0 hr</th>
+            <th>6,0 hr</th>
+            <th>4,0 hr</th>
+            <th>3,0 hr</th>
+          </tr>
+          <tr>
+            <th class="rct-dark">
+              <div class="rct-grid-x">
+                {% assign image = section.settings.product4 %}
+                <a
+                  href="https://es.ecoflow.com/products/delta-pro-portable-power-station"
+                  target="_blank"
+                >
+                  <img
+                    srcset="{{ image | img_url: '80x' }}"
+                    alt="{{ image.alt }}"
+                    loading="lazy"
+                  >
+                </a>
+                DELTA Pro (3600Wh)
+              </div>
+            </th>
+            <th>21,2 hr</th>
+            <th>10,6 hr</th>
+            <th>7,1 hr</th>
+            <th>5,3 hr</th>
+          </tr>
+
+          <tr>
+            <th class="rct-dark">
+              <div class="rct-grid-x">
+                {% assign image = section.settings.product5 %}
+                <a
+                  href="https://es.ecoflow.com/products/lfp-battery?variant=39958505095241"
+                  target="_blank"
+                >
+                  <img
+                    srcset="{{ image | img_url: '80x' }}"
+                    alt="{{ image.alt }}"
+                    loading="lazy"
+                  >
+                </a>
+                PowerKits 2kWh LFP Battery (2000Wh)
+              </div>
+            </th>
+            <th>11,8 hr</th>
+            <th>5,9 hr</th>
+            <th>3,9 hr</th>
+            <th>2,9 hr</th>
+          </tr>
+
+          <tr>
+            <th class="rct-dark">
+              <div class="rct-grid-x">
+                {% assign image = section.settings.product6 %}
+                <a
+                  href="https://es.ecoflow.com/products/4kwh-power-kits"
+                  target="_blank"
+                >
+                  <img
+                    srcset="{{ image | img_url: '80x' }}"
+                    alt="{{ image.alt }}"
+                    loading="lazy"
+                  >
+                </a>
+                PowerKits 2kWh LFP Battery*2 (4000Wh)
+              </div>
+            </th>
+            <th>23,5 hr</th>
+            <th>11,8 hr</th>
+            <th>7,8 hr</th>
+            <th>5,9 hr</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  {% if section.settings.show400 %}
+    <div class="overflow-x-auto rigid-container">
+      <div class="rct-table-wrapper">
+        <div class="rct-table-title">Panel solar rígido EcoFlow de <strong>400W</strong></div>
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th class="rct-dark">
+                <div class="rct-grid-y">
+                  {% assign image = section.settings.p2 %}
+                  <img
+                    srcset="{{ image | img_url: 'master' }}"
+                    alt="{{ image.alt }}"
+                    loading="lazy"
+                  >
+                  2 paneles
+                </div>
+              </th>
+              <th class="rct-dark">
+                <div class="rct-grid-y">
+                  {% assign image = section.settings.p4 %}
+                  <img
+                    srcset="{{ image | img_url: 'master' }}"
+                    alt="{{ image.alt }}"
+                    loading="lazy"
+                  >
+                  4 paneles
+                </div>
+              </th>
+              <th class="rct-dark">
+                <div class="rct-grid-y">
+                  {% assign image = section.settings.p6 %}
+                  <img
+                    srcset="{{ image | img_url: 'master' }}"
+                    alt="{{ image.alt }}"
+                    loading="lazy"
+                  >
+                  6 paneles
+                </div>
+              </th>
+              <th class="rct-dark">
+                <div class="rct-grid-y">
+                  {% assign image = section.settings.p8 %}
+                  <img
+                    srcset="{{ image | img_url: 'master' }}"
+                    alt="{{ image.alt }}"
+                    loading="lazy"
+                  >
+                  8 paneles
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="rct-dark">
+                <div class="rct-grid-x">
+                  {% assign image = section.settings.product7 %}
+                  <a
+                    href="https://es.ecoflow.com/products/delta-max-portable-power-station?variant=42969738215646"
+                    target="_blank"
+                  >
+                    <img
+                      srcset="{{ image | img_url: '80x' }}"
+                      alt="{{ image.alt }}"
+                      loading="lazy"
+                    >
+                  </a>
+                  DELTA Max (2000) (2016Wh)
+                </div>
+              </th>
+              <th>3,0 hr</th>
+              <th>1,5 hr</th>
+              <th>1,0 hr</th>
+              <th>0,7 hr</th>
+            </tr>
+            <tr>
+              <th class="rct-dark">
+                <div class="rct-grid-x">
+                  {% assign image = section.settings.product8 %}
+                  <a
+                    href="https://es.ecoflow.com/products/delta-2-max-portable-power-station"
+                    target="_blank"
+                  >
+                    <img
+                      srcset="{{ image | img_url: '80x' }}"
+                      alt="{{ image.alt }}"
+                      loading="lazy"
+                    >
+                  </a>
+                   DELTA 2 Max (2048Wh)
+                </div>
+              </th>
+              <th>3,0 hr</th>
+              <th>1,5 hr</th>
+              <th>1,0 hr</th>
+              <th>0,8 hr</th>
+            </tr>
+            <tr>
+              <th class="rct-dark">
+                <div class="rct-grid-x">
+                  {% assign image = section.settings.product9 %}
+                  <a
+                    href="https://es.ecoflow.com/products/delta-pro-portable-power-station"
+                    target="_blank"
+                  >
+                    <img
+                      srcset="{{ image | img_url: '80x' }}"
+                      alt="{{ image.alt }}"
+                      loading="lazy"
+                    >
+                  </a>
+                  DELTA Pro (3600Wh)
+                </div>
+              </th>
+              <th>5,3 hr</th>
+              <th>2,6 hr</th>
+              <th>1,8 hr</th>
+              <th>1,3 hr</th>
+            </tr>
+            <tr>
+              <th class="rct-dark">
+                <div class="rct-grid-x">
+                  {% assign image = section.settings.product10 %}
+                  <a
+                    href="https://es.ecoflow.com/products/delta-pro-portable-power-station?variant=46852992041307"
+                    target="_blank"
+                  >
+                    <img
+                      srcset="{{ image | img_url: '80x' }}"
+                      alt="{{ image.alt }}"
+                      loading="lazy"
+                    >
+                  </a>
+                  DELTA Pro+Batería adicional (7200 Wh)
+                </div>
+              </th>
+              <th>10,6 hr</th>
+              <th>5,3 hr</th>
+              <th>3,5 hr</th>
+              <th>2,6 hr</th>
+            </tr>
+
+            <tr>
+              <th class="rct-dark">
+                <div class="rct-grid-x">
+                  {% assign image = section.settings.product11 %}
+                  <a
+                    href="https://es.ecoflow.com/products/lfp-battery"
+                    target="_blank"
+                  >
+                    <img
+                      srcset="{{ image | img_url: '80x' }}"
+                      alt="{{ image.alt }}"
+                      loading="lazy"
+                    >
+                  </a>
+                  Batería LFP PowerKits de 2 kWh (2000 Wh)
+                </div>
+              </th>
+              <th>2,9 hr</th>
+              <th>1,5 hr</th>
+              <th>1,0 hr</th>
+              <th>0,7 hr</th>
+            </tr>
+
+            <tr>
+              <th class="rct-dark">
+                <div class="rct-grid-x">
+                  {% assign image = section.settings.product12 %}
+                  <a
+                    href=" https://es.ecoflow.com/products/4kwh-power-kits"
+                    target="_blank"
+                  >
+                    <img
+                      srcset="{{ image | img_url: '80x' }}"
+                      alt="{{ image.alt }}"
+                      loading="lazy"
+                    >
+                  </a>
+                  Batería LFP PowerKits de 2 kWh*2 (4000 Wh)
+                </div>
+              </th>
+              <th>5,9 hr</th>
+              <th>2,9 hr</th>
+              <th>2,0 hr</th>
+              <th>1,5 hr</th>
+            </tr>
+
+            <tr>
+              <th class="rct-dark">
+                <div class="rct-grid-x">
+                  {% assign image = section.settings.product13 %}
+                  <a
+                    href="https://es.ecoflow.com/products/5kwh-power-kits"
+                    target="_blank"
+                  >
+                    <img
+                      srcset="{{ image | img_url: '80x' }}"
+                      alt="{{ image.alt }}"
+                      loading="lazy"
+                    >
+                  </a>
+                  Batería LFP PowerKits de 5 kWh (5000 Wh)
+                </div>
+              </th>
+              <th>7,4 hr</th>
+              <th>3,7 hr</th>
+              <th>2,5 hr</th>
+              <th>1,8 hr</th>
+            </tr>
+
+            <tr>
+              <th class="rct-dark">
+                <div class="rct-grid-x">
+                  {% assign image = section.settings.product14 %}
+                  <a
+                    href="https://us.ecoflow.com/products/10kwh-power-kits"
+                    target="_blank"
+                  >
+                    <img
+                      srcset="{{ image | img_url: '80x' }}"
+                      alt="{{ image.alt }}"
+                      loading="lazy"
+                    >
+                  </a>
+                  Batería LFP PowerKits de 5 kWh*2 (10000 Wh)
+                </div>
+              </th>
+              <th>14,7 hr</th>
+              <th>7,4 hr</th>
+              <th>4,9 hr</th>
+              <th>3,7 hr</th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Compare table",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show400",
+      "label": "show 400W table",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "How Many Solar paneles Do You Need?"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Compare our solar panel kits to see what best fits your power needs."
+    },
+    {
+      "type": "image_picker",
+      "id": "p2",
+      "label": "2 paneles image"
+    },
+    {
+      "type": "image_picker",
+      "id": "p4",
+      "label": "4 paneles image"
+    },
+    {
+      "type": "image_picker",
+      "id": "p6",
+      "label": "6 paneles image"
+    },
+    {
+      "type": "image_picker",
+      "id": "p8",
+      "label": "8 paneles image"
+    },
+    {
+      "type": "image_picker",
+      "id": "product1",
+      "label": "Product image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "product2",
+      "label": "Product image 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "product3",
+      "label": "Product image 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "product4",
+      "label": "Product image 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "product5",
+      "label": "Product image 5"
+    },
+    {
+      "type": "image_picker",
+      "id": "product6",
+      "label": "Product image 6"
+    },
+    {
+      "type": "image_picker",
+      "id": "product7",
+      "label": "Product image 7"
+    },
+    {
+      "type": "image_picker",
+      "id": "product8",
+      "label": "Product image 8"
+    },
+    {
+      "type": "image_picker",
+      "id": "product9",
+      "label": "Product image 9"
+    },
+    {
+      "type": "image_picker",
+      "id": "product10",
+      "label": "Product image 10"
+    },
+    {
+      "type": "image_picker",
+      "id": "product11",
+      "label": "Product image 11"
+    },
+    {
+      "type": "image_picker",
+      "id": "product12",
+      "label": "Product image 12"
+    },
+    {
+      "type": "image_picker",
+      "id": "product13",
+      "label": "Product image 13"
+    },
+    {
+      "type": "image_picker",
+      "id": "product14",
+      "label": "Product image 14"
+    }
+  ]
+}
+{% endschema %}

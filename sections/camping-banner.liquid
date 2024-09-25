@@ -1,0 +1,149 @@
+{{ 'portable-power-station-camping.css' | asset_url | stylesheet_tag }}
+
+<div class="camping-banner">
+  {% assign image = section.settings.mobileImage %}
+  {% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+  <div
+    class="custom-img-wrapper mobile-only"
+    style="padding-top: {{ pt }}%;"
+  >
+    <img
+      class="custom-img"
+      srcset="
+        {{ image | img_url: '500x' }} 500w,
+        {{ image | img_url: '600x' }} 600w,
+        {{ image | img_url: 'master' }} 700w,
+      "
+      alt="{{ image.alt }}"
+      loading="lazy"
+    >
+  </div>
+
+  {% assign image = section.settings.image %}
+  {% assign pt = 1 | divided_by: image.aspect_ratio | times: 100 %}
+  <div
+    class="custom-img-wrapper desktop-only"
+    style="padding-top: {{ pt }}%;"
+  >
+    <img
+      class="custom-img"
+      srcset="
+        {{ image | img_url: '1000x' }} 1000w,
+        {{ image | img_url: '1200x' }} 1200w,
+        {{ image | img_url: '1400x' }} 1400w,
+        {{ image | img_url: 'master' }} 1600w,
+      "
+      alt="{{ image.alt }}"
+      loading="lazy"
+    >
+  </div>
+
+  <div class="camping-banner__content">
+    {% if section.settings.title != blank %}
+      <h1>
+        {{ section.settings.title }}
+      </h1>
+    {% endif %}
+    {% if section.settings.p != blank and section.settings.buttonText != blank %}
+      <div class="desktop-only">
+        {% if section.settings.p != blank %}
+          <p>
+            {{ section.settings.p }}
+          </p>
+        {% endif %}
+        {% if section.settings.buttonText != blank %}
+          <a class="scroll-link camping-banner-btn" href="#">
+            {{ section.settings.buttonText }}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="19"
+              height="19"
+              viewBox="0 0 19 19"
+              fill="none"
+            >
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M9.5 17.5C13.9183 17.5 17.5 13.9183 17.5 9.5C17.5 5.08172 13.9183 1.5 9.5 1.5C5.08172 1.5 1.5 5.08172 1.5 9.5C1.5 13.9183 5.08172 17.5 9.5 17.5ZM10.4824 6.5C10.4824 6.08579 10.1466 5.75 9.73242 5.75C9.31821 5.75 8.98242 6.08579 8.98242 6.5V11.5156L7.03033 9.56349C6.73744 9.27059 6.26256 9.27059 5.96967 9.56349C5.67678 9.85638 5.67678 10.3313 5.96967 10.6241L9.20185 13.8563C9.49475 14.1492 9.96962 14.1492 10.2625 13.8563L13.4947 10.6241C13.7876 10.3313 13.7876 9.85638 13.4947 9.56349C13.2018 9.27059 12.7269 9.27059 12.434 9.56349L10.4824 11.5151V6.5Z" fill="currentColor"/>
+            </svg>
+          </a>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+{% if section.settings.p != blank and section.settings.buttonText != blank %}
+  <div class="mobile-only">
+    <div class="mobile-banner-content">
+      {% if section.settings.p != blank %}
+        <p>
+          {{ section.settings.p }}
+        </p>
+      {% endif %}
+      {% if section.settings.buttonText != blank %}
+        <a class="scroll-linksection camping-banner-btn" href="#">
+          {{ section.settings.buttonText }}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="19"
+            height="19"
+            viewBox="0 0 19 19"
+            fill="none"
+          >
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.5 17.5C13.9183 17.5 17.5 13.9183 17.5 9.5C17.5 5.08172 13.9183 1.5 9.5 1.5C5.08172 1.5 1.5 5.08172 1.5 9.5C1.5 13.9183 5.08172 17.5 9.5 17.5ZM10.4824 6.5C10.4824 6.08579 10.1466 5.75 9.73242 5.75C9.31821 5.75 8.98242 6.08579 8.98242 6.5V11.5156L7.03033 9.56349C6.73744 9.27059 6.26256 9.27059 5.96967 9.56349C5.67678 9.85638 5.67678 10.3313 5.96967 10.6241L9.20185 13.8563C9.49475 14.1492 9.96962 14.1492 10.2625 13.8563L13.4947 10.6241C13.7876 10.3313 13.7876 9.85638 13.4947 9.56349C13.2018 9.27059 12.7269 9.27059 12.434 9.56349L10.4824 11.5151V6.5Z" fill="currentColor"/>
+          </svg>
+        </a>
+      {% endif %}
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobileImage",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title",
+      "default": "Buy Portable Power Station for Camping",
+      "info": "Enclose the word into a <span>Text</span> tag to highlight the word to teal"
+    },
+    {
+      "type": "textarea",
+      "id": "p",
+      "label": "Paragraph",
+      "default": "Not only designed to fit the curvature of a van or boat roof, they’re light enough to hang from a tent or lay flat on an awning, making them the best flexible solar panels for boondocking or road trips. Our flexible solar panels are extremely versatile; without the need for brackets, nuts, or bolts, they’re easy to move and install wherever you go."
+    },
+    {
+      "type": "text",
+      "id": "buttonText",
+      "label": "Button text",
+      "default": "Keep Reading"
+    }
+  ]
+}
+{% endschema %}
+<script>
+  document.querySelector('a.scroll-link').addEventListener('click', function (e) {
+    e.preventDefault();
+    var nextSection = document.querySelector('#camping');
+    nextSection.scrollIntoView({
+      behavior: 'smooth',
+    });
+  });
+  document.querySelector('a.scroll-linksection').addEventListener('click', function (e) {
+    e.preventDefault();
+    var nextSection = document.querySelector('#camping');
+    nextSection.scrollIntoView({
+      behavior: 'smooth',
+    });
+  });
+</script>

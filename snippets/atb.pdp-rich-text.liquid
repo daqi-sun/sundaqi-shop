@@ -1,0 +1,107 @@
+{% comment %}
+ATB-SCHEMA{
+  "name": "PDP Rich Text",
+  "id": "pdp-rich-text",
+  "banner": "",
+  "icon": "",
+  "tags": "",
+  "description": "",
+  "class": "",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Enter a unique ID with only letters and numbers, no spaces",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_section_id",
+      "label": "Section ID",
+      "info": ""
+    },
+    {
+      "type": "select",
+      "id": "atb_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ],
+      "default": "center",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_title",
+      "label": "Title",
+      "info": ""
+    },
+    {
+      "type": "wysiwyg",
+      "id": "atb_subtitle",
+      "label": "Subtitle",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_button_link",
+      "label": "Button Link",
+      "info": ""
+    },
+    {
+      "type": "text",
+      "id": "atb_button_text",
+      "label": "Button Text",
+      "default": "Learn More",
+      "info": ""
+    }
+  ],
+  "warnings": []
+}ATB-SCHEMA
+{% endcomment %}
+
+
+{%- include 'atb-render' field:'section_id' -%}
+{%- assign section_id = val -%}
+{%- include 'atb-render' field:'atb_section_id' -%}
+{%- assign atb_section_id = val -%}
+{%- include 'atb-render' field:'atb_alignment' -%}
+{%- assign atb_alignment = val -%}
+{%- include 'atb-render' field:'atb_title' -%}
+{%- assign atb_title = val -%}
+{%- include 'atb-render' field:'atb_subtitle' -%}
+{%- assign atb_subtitle = val -%}
+{%- include 'atb-render' field:'atb_button_link' -%}
+{%- assign atb_button_link = val -%}
+{%- include 'atb-render' field:'atb_button_text' -%}
+{%- assign atb_button_text = val -%}
+{%- assign no_image = images['no_image_comparison'] -%}
+
+<section id="shopify-section-{{section_id}}" class="shopify-section ">
+<section id="{{ section_id }}" class="pdp pdp-rich-text">
+    <div class="pdp-container content-align__{{ atb_alignment }}" id="{{ atb_section_id }}">
+        {% if atb_title != blank %}
+            <h1>{{ atb_title }}</h1>
+        {% endif %}
+        {% if atb_subtitle != blank %}
+            {{ atb_subtitle }}
+        {% endif %}
+        {% if atb_button_link != blank and atb_button_text != blank %}
+            <a href="{{ atb_button_link }}" class="pdp-button">{{ atb_button_text }}</a>
+        {% endif %}
+    </div>
+</section>
+
+</section>

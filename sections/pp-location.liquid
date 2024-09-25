@@ -1,0 +1,144 @@
+<style>
+  .pp-location__section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media (min-width: 768px) {
+    .pp-location__section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+</style>
+
+<div class="pp-location__section pp-location__section-{{ section.id }}">
+  <div class="container--default">
+    <div class="pp-location__content-container">
+      {% for block in section.blocks %}
+        <div class="pp-location__content-wrapper background--dark-white">
+          <div class="pp-location__text-container">
+            {% if block.settings.title != blank %}
+              <h2 class="pp-location__section-heading text--heading text--black">
+                {{ block.settings.title }}
+              </h2>
+            {% endif %}
+            {% if block.settings.subtitle != blank %}
+              <p class="pp-location__section-description text--description text--gray">
+                {{ block.settings.subtitle }}
+              </p>
+            {% endif %}
+            <div class="pp-location__button-wrapper">
+              <a href="{{ block.settings.url }}" target="_blank" class="button--container ">
+                <span class="button text--white background--dark-blue">{{ block.settings.button_label }}</span>
+              </a>
+            </div>
+          </div>
+          <div class="pp-location__container">
+            <div class="pp-location__image-wrapper">
+              <img
+                class="display--desktop"
+                src="{{ block.settings.image | img_url: 'master' }}"
+                alt="{{ block.settings.image.alt }}"
+              >
+              <img
+                class="display--mobile"
+                src="{{ block.settings.image_mobile | img_url: 'master' }}"
+                alt="{{ block.settings.image_mobile.alt }}"
+              >
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "PP Location",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Desktop",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "location",
+      "name": "Location",
+      "settings": [
+        {
+          "type": "html",
+          "id": "title",
+          "label": "Title",
+          "default": "EcoFlow × HORNBACH"
+        },
+        {
+          "type": "html",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Besuchen Sie das PowerStream Balkonkraftwerk in Ihrem nahegelegenen HORNBACH und sehen Sie aus erster Hand, wie es Ihr Zuhause mit Strom versorgt."
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Button URL"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button Label",
+          "default": "Wo kaufen?"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image Mobile"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

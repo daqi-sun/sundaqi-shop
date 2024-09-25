@@ -1,0 +1,128 @@
+{{ 'xmas-voucher-section.css' | asset_url | stylesheet_tag }}
+
+<div class="xmas-voucher__section">
+  <div class="star-page-container">
+    <div class="xmas-voucher__card">
+      <div class="xmas-voucher__card-inner">
+        <h3
+          class="xmas-voucher__card-title"
+          style="color: {{ section.settings.title_color }}"
+        >
+          {{ section.settings.title }}
+        </h3>
+        <div
+          class="xmas-voucher__card-content"
+        >
+          {{ section.settings.content }}
+        </div>
+
+        <div class="xmas-voucher__button-wrapper">
+          <a href="{{ section.settings.button_link }}">
+            <button
+              type="button"
+              class="xmas-voucher__button"
+              style="
+                color: {{ section.settings.button_text_color }};
+                background-color: {{ section.settings.button_background_color }}
+              "
+            >
+              {{ section.settings.button_text }}
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .xmas-voucher__card {
+    background-image: url('{{ section.settings.background_image | image_url: width: 1200 }}');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .xmas-voucher__card-content > p {
+    color: {{ section.settings.content_color }}
+  }
+
+  @media (max-width: 749px) {
+    .xmas-voucher__card {
+      background-image: url('{{ section.settings.background_image_mobile | image_url: width: 700 }}');
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Xmas Voucher Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image_mobile",
+      "label": "Background Image Mobile"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Christmas Voucher"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"
+    },
+    {
+      "type": "color",
+      "id": "content_color",
+      "label": "Content Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Buy Now"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Button Background Color",
+      "default": "#AD1500"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Xmas Voucher Section",
+      "category": "Promotional"
+    }
+  ]
+}
+{% endschema %}

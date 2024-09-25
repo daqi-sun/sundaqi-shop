@@ -1,0 +1,626 @@
+{
+  "sections": {
+    "daf26638-f596-4384-b150-72d380a3268d": {
+      "type": "product-atb-top",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "sticky-product-bar": {
+      "type": "sticky-product-bar",
+      "blocks": {
+        "588d25af-4d47-43ac-9697-b98aa2f65719": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Overview",
+            "tab_id": "product_information",
+            "section_class": ""
+          }
+        },
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "What's in the box",
+            "tab_id": "what_in_box",
+            "section_class": ""
+          }
+        },
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "FAQ",
+            "tab_id": "faq",
+            "section_class": ""
+          }
+        },
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Reviews",
+            "tab_id": "section-reviews",
+            "section_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "588d25af-4d47-43ac-9697-b98aa2f65719",
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02",
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4",
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38"
+      ],
+      "settings": {
+        "enabled": true,
+        "enabled_tabs": false
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "11795adc-1afa-4833-a193-258f495901ef": {
+          "type": "sku_block",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e": {
+          "type": "product_title",
+          "settings": {
+          }
+        },
+        "judge_me_reviews_preview_badge_49EB7B": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "0471109f-c130-454e-a9ba-c56412cc11f3": {
+          "type": "product_vendor",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185": {
+          "type": "product_price",
+          "settings": {
+          }
+        },
+        "d25a0285-4fb4-422d-b95b-ab67446120ad": {
+          "type": "product_description",
+          "settings": {
+            "desc_display": "default"
+          }
+        },
+        "919f9cdd-6184-4311-b675-742931504318": {
+          "type": "coupon_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Component_2_1.png",
+            "discount_off_text": "{{ product.metafields.custom.discount_off_text.value }}",
+            "code": "{{ product.metafields.custom.discount_code.value }}",
+            "show_copy_code_btn": true
+          }
+        },
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879": {
+          "type": "product_options_block",
+          "settings": {
+            "show_product_swatches": true,
+            "use_variant_image_for_swatches": true,
+            "button_content": ""
+          }
+        },
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe": {
+          "type": "quantity_block",
+          "settings": {
+          }
+        },
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0": {
+          "type": "accessories_section",
+          "settings": {
+            "title": "También te puede interesar",
+            "metafield": "accessories"
+          }
+        },
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609": {
+          "type": "product_buttons",
+          "settings": {
+            "enable_payment_button": false,
+            "show_custom_icons": true,
+            "custom_payment_logo_1_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_08_7f374817-3a3e-42f2-95ce-077b67f293d2.svg?v=1672025209",
+            "custom_payment_logo_2_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_10_d8002835-e25f-4edb-9038-187f75f69a18.svg?v=1672025208",
+            "custom_payment_logo_3_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_02_a3ea7ab1-aa9a-4857-9ed6-01e62deccfce.svg?v=1672025208",
+            "custom_payment_logo_4_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_06_7c406d24-0983-49ff-ac8e-cf73032050d9.svg?v=1672025208",
+            "custom_payment_logo_5_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_07_be5959d4-9f22-4a31-8e40-285f8e3ac6e7.svg?v=1672025208",
+            "custom_payment_logo_6_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_01_96e6a30c-7908-4892-b6f1-75bce8657cd4.svg?v=1672025208",
+            "custom_payment_logo_7_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/apple_pay_icon_14953f11-2673-4162-8f1b-99c8a65b4610.png?v=1678448779",
+            "custom_payment_logo_8_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0649\/2533\/5793\/files\/googlepay_icon_6235bed6-fedf-42d2-8d0a-4854ccc3bdc2.png?v=1678450994",
+            "custom_payment_logo_9_svg": "",
+            "custom_payment_logo_10_svg": "",
+            "custom_payment_logo_11_svg": "",
+            "custom_payment_logo_12_svg": "",
+            "custom_payment_logo_13_svg": "",
+            "custom_payment_logo_14_svg": "",
+            "custom_payment_logo_15_svg": ""
+          }
+        },
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% if product.metafields.custom.trade_message != blank %}\n          <div class=\"trade-message\">♻️{{product.metafields.custom.trade_message}} <a href=\"\/pages\/trade-in\" target=\"_blank\">Learn more<\/a><\/div>\n{% endif %}"
+          }
+        }
+      },
+      "block_order": [
+        "11795adc-1afa-4833-a193-258f495901ef",
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e",
+        "judge_me_reviews_preview_badge_49EB7B",
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774",
+        "0471109f-c130-454e-a9ba-c56412cc11f3",
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185",
+        "d25a0285-4fb4-422d-b95b-ab67446120ad",
+        "919f9cdd-6184-4311-b675-742931504318",
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879",
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe",
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0",
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609",
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a"
+      ],
+      "settings": {
+        "section_id": "",
+        "show_breadcrumbs": true,
+        "show_pick_an_option": false,
+        "enable_linked_options": false,
+        "enabled_mobile_sticky_btns": true,
+        "media_size": "medium",
+        "enable_image_zoom": true,
+        "enable_video_looping": true,
+        "thumbnails_type": "grid",
+        "support_email": "",
+        "support_text": "",
+        "feature_1_show": false,
+        "feature_1_title": "Fast & Free Shipping",
+        "feature_1_content": "",
+        "feature_2_show": false,
+        "feature_2_title": "Warranty Protection",
+        "feature_2_content": "",
+        "feature_3_show": false,
+        "feature_3_title": "Secure Payments",
+        "feature_3_content": "",
+        "feature_4_show": false,
+        "feature_4_title": "Multi-channel Support",
+        "feature_4_content": ""
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "grid_mobile": "2",
+        "heading": "You may also like",
+        "show_vendor": false
+      }
+    },
+    "e3ed9abe-6951-404b-b912-23d6cf1c5f96": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--18975480283483__e3ed9abe-6951-404b-b912-23d6cf1c5f96-168448527280a12fc4-0": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/100w_flexible_1.png",
+            "mobile_image": "shopify:\/\/shop_images\/100w_flexible_1.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "0a4ce6be-e7e2-4b01-95e2-eaa97e7ffafc": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/100w_flexible_2.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/100w_flexible_2.jpg",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Paneles Solares Flexibles 100W",
+            "title_color": "#232323",
+            "content": "<p>Nuestro panel solar ligero y flexible se ha diseñado para adaptarse perfectamente a la curvatura del techo de una furgoneta o autocaravana. Monta y carga rápidamente tu sistema del Power Kits o la estación de energía portátil.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--18975480283483__e3ed9abe-6951-404b-b912-23d6cf1c5f96-168448527280a12fc4-0",
+        "0a4ce6be-e7e2-4b01-95e2-eaa97e7ffafc"
+      ],
+      "settings": {
+      }
+    },
+    "990e05e6-65a4-4224-bb57-687a38a9f30a": {
+      "type": "pdp-image-with-text-horizontal-new",
+      "blocks": {
+        "69f65911-acb3-42c4-a610-26a27cb5d0f0": {
+          "type": "image",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/100w_flexible_3.png",
+            "mobile_image": "shopify:\/\/shop_images\/100w_flexible_3.png",
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "image_alignment": "right",
+            "title": "",
+            "subtitle": "<p>Este panel pesa solo 5,1 libras (2,3 kg) y se ajusta a varias curvas<\/p><h2>Más ligero y flexible que nunca<\/h2>",
+            "content": "<p>Nuestro panel solar flexible es excepcionalmente ligero y un 70 % menos pesado que los paneles tradicionales, por lo que resulta cómodo de transportar y montar. Se dobla fácilmente hasta 258 grados y se adapta a la forma única de tu caravana o furgoneta sin que ello afecte a la entrada solar.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "cf8b1dc7-2219-4cd4-a263-16db7b014036": {
+          "type": "image",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/100w_flexible_4.png",
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "image_alignment": "left",
+            "title": "",
+            "subtitle": "<p>Recubierto de fibra de vidrio avanzada<\/p><h2>Durabilidad para tu energía solar<\/h2>",
+            "content": "<p>Cada una de sus 182 celdas de silicio monocristalinas ha pasado por un proceso de fabricación avanzado de fibra de vidrio y laminación que protege el panel y mejora su rendimiento.<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "69f65911-acb3-42c4-a610-26a27cb5d0f0",
+        "cf8b1dc7-2219-4cd4-a263-16db7b014036"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "left"
+      }
+    },
+    "be2e731c-2b34-426d-b149-dabdb6bfb3ad": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--18975480283483__be2e731c-2b34-426d-b149-dabdb6bfb3ad-168448527280a12fc4-0": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/100w_flexible_5_PC.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/100w_flexible_5_M.jpg",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "<h4>Fabricados con células monocristalinas de alta eficacia<\/h4><h2>Carga más rápida con una alta conversión solar<\/h2>",
+            "content_color": "#757575",
+            "notification_message": "<p>Fabricado con celdas monocristalinas de alta eficiencia, el panel solar flexible de 100 W permite una carga aún más rápida gracias a una excelente eficiencia del 23 %. Los diodos de derivación integrados en el panel evitan el sobrecalentamiento y mantienen el rendimiento de las celdas, incluso a la sombra. Puedes combinarlo como parte de tu configuración del Power Kits o tu estación de energía portátil EcoFlow y el algoritmo MPPT integrado optimizará la entrada solar.<\/p>",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--18975480283483__be2e731c-2b34-426d-b149-dabdb6bfb3ad-168448527280a12fc4-0"
+      ],
+      "settings": {
+      }
+    },
+    "f29b24b0-0cf4-4733-904e-74ca0c8c258b": {
+      "type": "pdp-image-with-text-horizontal-new",
+      "blocks": {
+        "14c77bde-7716-4096-b5cf-7277a1cfcaa2": {
+          "type": "image",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/100w_flexible_6.png",
+            "mobile_image": "shopify:\/\/shop_images\/100w_flexible_6.png",
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "image_alignment": "right",
+            "title": "",
+            "subtitle": "<p>Grado de impermeabilidad IP68*<\/p><h2>Fabricado para resistir el temporal<\/h2>",
+            "content": "<p>Nuestro panel solar flexible de 100 W puede capturar energía solar incluso bajo la lluvia más intensa. Gracias a una película protectora de ETFE, las celdas solares del panel pueden soportar diversos entornos, desde húmedos hasta secos.<br\/><br\/>*La resistencia al agua y al polvo se probó en condiciones controladas de laboratorio con un índice IP68 según la norma IEC 60529 (profundidad máxima de agua de 1 metro durante un máximo de 72 horas).<\/p>",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "14c77bde-7716-4096-b5cf-7277a1cfcaa2"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "left"
+      }
+    },
+    "ece19845-ee01-42f3-ba21-9f56b17a5039": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--18975480283483__ece19845-ee01-42f3-ba21-9f56b17a5039-168448527280a12fc4-0": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/100w_flexible_7.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/100w_flexible_7.jpg",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "<h4>Usa los agujeros precortados para montar nuestros paneles como prefieras<\/h4><h2>Decide cómo instalarlos con toda facilidad<\/h2>",
+            "content_color": "#757575",
+            "notification_message": "<p>Los agujeros precortados permiten colgar el panel solar flexible con ganchos o fijarlo de forma segura a una superficie con un adhesivo.<\/p>",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "e9855e15-162c-41aa-b7fe-3453cef595ef": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/100w_flexible_8.png",
+            "mobile_image": "shopify:\/\/shop_images\/100w_flexible_8.png",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "<h4>Cable solar con compatibilidad universal<\/h4><h2>Amplía tus sistemas solares y de alimentación<\/h2>",
+            "content_color": "#757575",
+            "notification_message": "<p>Con un conector solar todo incluido, nuestro panel solar flexible de 100 W se puede utilizar incluso con tu sistema de alimentación 48 V o con una estación de alimentación portátil. Este panel flexible incluye un cable solar de 3,3 pies (1 m) que proporciona suficiente espacio para montar varios paneles y maximizar así la entrada solar.<\/p>",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "1ee1bbfa-297d-4d46-b6e5-270788451b17": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/100W_Flexible.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/100W_Flexible_M.jpg",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Contenido de la caja",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "<p>1. Panel solar flexible de 100W 2. Manual de usuario y tarjeta de garantía<br\/><br\/>El cable de carga solar a XT60i no está incluido en este paquete. Haz clic aquí para comprar un <a href=\"\/products\/solar-charging-cable\" target=\"_blank\" title=\"Cable solar a XT60\/XT60i EcoFlow\">cable de carga solar a XT60i<\/a>.<\/p>",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--18975480283483__ece19845-ee01-42f3-ba21-9f56b17a5039-168448527280a12fc4-0",
+        "e9855e15-162c-41aa-b7fe-3453cef595ef",
+        "1ee1bbfa-297d-4d46-b6e5-270788451b17"
+      ],
+      "settings": {
+      }
+    },
+    "1837b947-0f0d-479d-99e6-412d1fac70a8": {
+      "type": "pdp-specs",
+      "blocks": {
+        "1138f1f3-5c0e-45b0-a267-c932c5b7adcf": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso neto",
+            "content": "<p>Aprox. 2.3 kg<\/p>"
+          }
+        },
+        "210b9ea6-f628-4292-9d3b-92c935bc6b46": {
+          "type": "contents",
+          "settings": {
+            "title": "Dimensiones",
+            "content": "<p>1055*612*25 mm<\/p>"
+          }
+        },
+        "fe09e1ec-a30b-4229-bdfb-4a27985ded3c": {
+          "type": "contents",
+          "settings": {
+            "title": "Potencia nominal",
+            "content": "<p>100W (+\/-5W)<\/p>"
+          }
+        },
+        "4233cdd3-1502-4d3f-ba00-06a3c130707c": {
+          "type": "contents",
+          "settings": {
+            "title": "Tensión de circuito abierto",
+            "content": "<p>20.3V<\/p>"
+          }
+        },
+        "46824e87-bb24-4833-94d4-89193cf92599": {
+          "type": "contents",
+          "settings": {
+            "title": "Corriente de cortocircuito",
+            "content": "<p>6.3A<\/p>"
+          }
+        },
+        "8c17a968-7eea-43f1-a7e5-88547a5734eb": {
+          "type": "contents",
+          "settings": {
+            "title": "Voltaje de funcionamiento máximo",
+            "content": "<p>17.1 V<\/p>"
+          }
+        },
+        "ae3610fc-e9ba-43be-8ce1-ec5be978d925": {
+          "type": "contents",
+          "settings": {
+            "title": "Corriente máxima de funcionamiento",
+            "content": "<p>5.9 A<\/p>"
+          }
+        },
+        "1c240e4e-aeeb-4f50-b60c-51ce482acef3": {
+          "type": "contents",
+          "settings": {
+            "title": "Coeficiente de temperatura de potencia nominal",
+            "content": "<p>-0.39%\/°C<\/p>"
+          }
+        },
+        "a89121ac-f988-458e-ac84-1cef257e3593": {
+          "type": "contents",
+          "settings": {
+            "title": "Coeficiente de temperatura del voltaje de circuito abierto",
+            "content": "<p>0.33%\/℃<\/p>"
+          }
+        },
+        "7b91491b-4994-4b61-a5a6-315628e304d7": {
+          "type": "contents",
+          "settings": {
+            "title": "Coeficiente de temperatura de la corriente de cortocircuito",
+            "content": "<p>0.06%\/℃<\/p>"
+          }
+        },
+        "4914f0ce-8756-4ae2-b4f7-ab637057f56f": {
+          "type": "contents",
+          "settings": {
+            "title": "Voltaje máximo del sistema",
+            "content": "<p>600 VDC (UL)<\/p>"
+          }
+        },
+        "598b8465-fc37-4fb9-a310-1e09c37a47c4": {
+          "type": "contents",
+          "settings": {
+            "title": "Corriente máxima del fusible",
+            "content": "<p>15 A<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1138f1f3-5c0e-45b0-a267-c932c5b7adcf",
+        "210b9ea6-f628-4292-9d3b-92c935bc6b46",
+        "fe09e1ec-a30b-4229-bdfb-4a27985ded3c",
+        "4233cdd3-1502-4d3f-ba00-06a3c130707c",
+        "46824e87-bb24-4833-94d4-89193cf92599",
+        "8c17a968-7eea-43f1-a7e5-88547a5734eb",
+        "ae3610fc-e9ba-43be-8ce1-ec5be978d925",
+        "1c240e4e-aeeb-4f50-b60c-51ce482acef3",
+        "a89121ac-f988-458e-ac84-1cef257e3593",
+        "7b91491b-4994-4b61-a5a6-315628e304d7",
+        "4914f0ce-8756-4ae2-b4f7-ab637057f56f",
+        "598b8465-fc37-4fb9-a310-1e09c37a47c4"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Especificaciones"
+      }
+    },
+    "17141187608cbaa3fa": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_pD7Vgp": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_pD7Vgp"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    }
+  },
+  "order": [
+    "daf26638-f596-4384-b150-72d380a3268d",
+    "sticky-product-bar",
+    "main",
+    "product-recommendations",
+    "e3ed9abe-6951-404b-b912-23d6cf1c5f96",
+    "990e05e6-65a4-4224-bb57-687a38a9f30a",
+    "be2e731c-2b34-426d-b149-dabdb6bfb3ad",
+    "f29b24b0-0cf4-4733-904e-74ca0c8c258b",
+    "ece19845-ee01-42f3-ba21-9f56b17a5039",
+    "1837b947-0f0d-479d-99e6-412d1fac70a8",
+    "17141187608cbaa3fa"
+  ]
+}

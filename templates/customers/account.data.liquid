@@ -1,0 +1,6 @@
+{% comment %} Shopify Data that requires a login to get it {% endcomment %}
+<script type="application/json" id="data">{
+  "customer": {
+    "email": {{ customer.email | json | default: "" }}
+  }
+}</script>

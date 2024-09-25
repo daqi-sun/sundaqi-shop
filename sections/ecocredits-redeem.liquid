@@ -1,0 +1,101 @@
+<div class="ecocredits-redeem__section background--black">
+  {% if section.settings.title != blank %}
+    <div class="ecocredits-redeem__container container--normal">
+      <h2 class="ecocredits-redeem__section-heading ec__text--heading ec__text--white ec__text--left">
+        {{ section.settings.title }}
+      </h2>
+    </div>
+  {% endif %}
+  <div
+    class="ecocredits-redeem__slider__wrapper"
+    data-flickity='
+      {   "prevNextButtons": true,
+      "wrapAround": false,
+      "dragThreshold": 15,
+      "cellAlign": "left",
+      "adaptiveHeight": false,
+      "pageDots": false,
+      "contain": true,
+      "freeScroll": true,
+      "groupCells": true }
+    '
+  >
+    {%- comment %}<locksmith:28fb>{% endcomment -%}
+      {%- assign locksmith_5320_forloop__size = 0 %}{% for block in section.blocks %}{% capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == 'true' %}{% assign locksmith_5320_forloop__size = locksmith_5320_forloop__size | plus: 1 %}{% endif %}{% endfor %}{% assign locksmith_5320_forloop__index = nil -%}
+    {%- comment %}</locksmith:28fb>{% endcomment -%}
+    {% for block in section.blocks %}
+      {%- comment %}<locksmith:f341>{% endcomment -%}
+        {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: block.settings.product, subject_parent: section, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% if locksmith_5320_forloop__index == nil %}{% assign locksmith_5320_forloop__index = 1 %}{% assign locksmith_5320_forloop__index0 = 0 %}{% else %}{% assign locksmith_5320_forloop__index = locksmith_5320_forloop__index | plus: 1 %}{% assign locksmith_5320_forloop__index0 = locksmith_5320_forloop__index0 | plus: 1 %}{% endif %}{% if locksmith_5320_forloop__index == 1 %}{% assign locksmith_5320_forloop__first = true %}{% else %}{% assign locksmith_5320_forloop__first = false %}{% endif %}{% if locksmith_5320_forloop__index == locksmith_5320_forloop__size %}{% assign locksmith_5320_forloop__last = true %}{% else %}{% assign locksmith_5320_forloop__last = false %}{% endif %}{% assign locksmith_5320_forloop__rindex = locksmith_5320_forloop__size | minus: locksmith_5320_forloop__index | minus: 1 %}{% assign locksmith_5320_forloop__rindex0 = locksmith_5320_forloop__size | minus: locksmith_5320_forloop__index0 | minus: 1 %}{% else %}{% continue %}{% endif -%}
+      {%- comment %}</locksmith:f341>{% endcomment -%}
+      {% if block.settings.product != blank %}
+        {% assign product = block.settings.product %}
+        {% assign productUrl = product.url %}
+        <div class="ecocredits-redeem__slider__container slider-count{{ locksmith_5320_forloop__index }}">
+          <a href="{{ productUrl }}" target="_blank">
+            <div class="ecocredits-redeem__slider--block background--light-black">
+              <div class="ecocredits-redeem__product__image">
+                <img src="{{ product.featured_image | img_url: 'master' }}" alt="">
+              </div>
+              <div class="ecocredits-redeem__product__title">
+                <h3 class="ecocredits-redeem__product__heading ec__text--white ec__text--center">
+                  {{ product.title | remove: 'EcoFlow' }}
+                </h3>
+              </div>
+              {% assign ecocredits_points = product.metafields.custom.ecocredits_points %}
+              {% if ecocredits_points != blank %}
+                <div class="ecocredits-redeem__points background--light-orange">
+                  <span class="ecocredits-redeem__points--value ec__text--orange">{{ ecocredits_points }}</span>
+                  <span class="ecocredits-redeem__points--text ec__text--orange">Ecocredits</span>
+                </div>
+              {% endif %}
+            </div>
+          </a>
+        </div>
+      {%- endif %}
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+  (function () {
+    checkViewportInterval();
+    var redeemSlider;
+  })();
+
+  function checkViewportInterval() {
+    let doit = setInterval(function () {
+      if ($('.ecocredits-redeem__slider__wrapper').hasClass('flickity-enabled')) {
+        $('.ecocredits-redeem__slider__container').css('height', '100%');
+        var counter = true;
+      }
+      if (counter) clearInterval(doit);
+    }, 100);
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Ecocredits Redeem",
+  "settings": [
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Section Title",
+      "default": "What gift can you redeem for EcoCredits for free?"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "products",
+      "name": "Products",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

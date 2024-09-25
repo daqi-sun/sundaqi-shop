@@ -1,0 +1,1201 @@
+{
+  "sections": {
+    "daf26638-f596-4384-b150-72d380a3268d": {
+      "type": "product-atb-top",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "sticky-product-bar": {
+      "type": "sticky-product-bar",
+      "blocks": {
+        "588d25af-4d47-43ac-9697-b98aa2f65719": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Overview",
+            "tab_id": "product_information",
+            "section_class": ""
+          }
+        },
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "What's in the box",
+            "tab_id": "what_in_box",
+            "section_class": ""
+          }
+        },
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "FAQ",
+            "tab_id": "faq",
+            "section_class": ""
+          }
+        },
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Reviews",
+            "tab_id": "section-reviews",
+            "section_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "588d25af-4d47-43ac-9697-b98aa2f65719",
+        "0cd4426b-a7d2-479a-9f79-8a5a5a5aff02",
+        "3d20233b-8e37-486d-9595-9ce729f7d3b4",
+        "f83a23eb-3aae-4976-bd5a-7c20d5a41c38"
+      ],
+      "settings": {
+        "enabled": true,
+        "enabled_tabs": false
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "11795adc-1afa-4833-a193-258f495901ef": {
+          "type": "sku_block",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e": {
+          "type": "product_title",
+          "settings": {
+          }
+        },
+        "judge_me_reviews_preview_badge_HHGarD": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "0471109f-c130-454e-a9ba-c56412cc11f3": {
+          "type": "product_vendor",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185": {
+          "type": "product_price",
+          "settings": {
+          }
+        },
+        "d25a0285-4fb4-422d-b95b-ab67446120ad": {
+          "type": "product_description",
+          "settings": {
+            "desc_display": "default"
+          }
+        },
+        "bfd98f87-7785-4469-bd4a-4acdeef8a413": {
+          "type": "collapsible_tab_text",
+          "disabled": true,
+          "settings": {
+            "heading": "💡 Lieferverzug: die Lieferung wird ca. 4-7 Tage verspätet zugestellt.",
+            "content": "<p>Beachten Sie bitte: wir haben Feiertage vom 7 April bis 10 April, Ihre Bestellung wird in der kommenden Woche bearbeitet und die Lieferung wird ca. 4-7 Tage verspätet zugestellt. <\/p>"
+          }
+        },
+        "54b8bc8e-c601-43ae-af35-fb9d54e0158c": {
+          "type": "coupon_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Component_2_1.png",
+            "discount_off_text": "{{ product.metafields.custom.discount_off_text.value }}",
+            "code": "{{ product.metafields.custom.discount_code.value }}",
+            "show_copy_code_btn": true
+          }
+        },
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879": {
+          "type": "product_options_block",
+          "settings": {
+            "show_product_swatches": true,
+            "use_variant_image_for_swatches": true,
+            "button_content": ""
+          }
+        },
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe": {
+          "type": "quantity_block",
+          "settings": {
+          }
+        },
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0": {
+          "type": "accessories_section",
+          "settings": {
+            "title": "You may also like",
+            "metafield": "accessories"
+          }
+        },
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609": {
+          "type": "product_buttons",
+          "settings": {
+            "enable_payment_button": false,
+            "show_custom_icons": true,
+            "custom_payment_logo_1_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_08_7f374817-3a3e-42f2-95ce-077b67f293d2.svg?v=1672025209",
+            "custom_payment_logo_2_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_10_d8002835-e25f-4edb-9038-187f75f69a18.svg?v=1672025208",
+            "custom_payment_logo_3_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_02_a3ea7ab1-aa9a-4857-9ed6-01e62deccfce.svg?v=1672025208",
+            "custom_payment_logo_4_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_06_7c406d24-0983-49ff-ac8e-cf73032050d9.svg?v=1672025208",
+            "custom_payment_logo_5_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_07_be5959d4-9f22-4a31-8e40-285f8e3ac6e7.svg?v=1672025208",
+            "custom_payment_logo_6_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1996\/9707\/files\/card_01_96e6a30c-7908-4892-b6f1-75bce8657cd4.svg?v=1672025208",
+            "custom_payment_logo_7_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/apple_pay_icon_14953f11-2673-4162-8f1b-99c8a65b4610.png?v=1678448779",
+            "custom_payment_logo_8_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0649\/2533\/5793\/files\/googlepay_icon_6235bed6-fedf-42d2-8d0a-4854ccc3bdc2.png?v=1678450994",
+            "custom_payment_logo_9_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/sofort_icon_31ba2d5b-2c44-4960-8e80-645a7240c899.png?v=1679023017",
+            "custom_payment_logo_10_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/giropay_icon_c9d7e22e-cd7c-4bee-8de5-e50a4c6dc378.png?v=1679023017",
+            "custom_payment_logo_11_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/ideal_icon_8548c48a-3c4e-4052-95de-670062a453ce.png?v=1679023017",
+            "custom_payment_logo_12_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0431\/3789\/2516\/files\/multibanco_icon_e3f9b26f-234c-4a06-9e48-adfd188e7deb.png?v=1679023016",
+            "custom_payment_logo_13_svg": "",
+            "custom_payment_logo_14_svg": "",
+            "custom_payment_logo_15_svg": ""
+          }
+        },
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% if product.metafields.custom.trade_message != blank %}\n          <div class=\"trade-message\">♻️{{product.metafields.custom.trade_message}} <a href=\"\/pages\/trade-in\" target=\"_blank\">Learn more<\/a><\/div>\n{% endif %}"
+          }
+        }
+      },
+      "block_order": [
+        "11795adc-1afa-4833-a193-258f495901ef",
+        "75a9b1b6-630e-4615-99ce-f30bbec6ea5e",
+        "judge_me_reviews_preview_badge_HHGarD",
+        "59b9a8d1-5bd8-4ed8-92e9-5854a801f774",
+        "0471109f-c130-454e-a9ba-c56412cc11f3",
+        "220d69e9-8c2a-43b9-9363-ffbe33aba185",
+        "d25a0285-4fb4-422d-b95b-ab67446120ad",
+        "bfd98f87-7785-4469-bd4a-4acdeef8a413",
+        "54b8bc8e-c601-43ae-af35-fb9d54e0158c",
+        "b3ed0838-9ce6-4da4-a82b-0e9de5caa879",
+        "0ddb7349-1bf6-4352-af41-583159a4e2fe",
+        "1483c7ac-4a29-41ae-86f6-1e034c3b23c0",
+        "8e2ecb36-9fd8-4b5d-8561-c11f4d549609",
+        "7da81eb9-a2ec-4a1e-ada2-fdde8e5c312a"
+      ],
+      "settings": {
+        "section_id": "",
+        "show_breadcrumbs": true,
+        "show_pick_an_option": false,
+        "enable_linked_options": false,
+        "enabled_mobile_sticky_btns": true,
+        "media_size": "medium",
+        "enable_image_zoom": true,
+        "enable_video_looping": true,
+        "thumbnails_type": "grid",
+        "support_email": "",
+        "support_text": "",
+        "feature_1_show": false,
+        "feature_1_title": "Fast & Free Shipping",
+        "feature_1_content": "",
+        "feature_2_show": false,
+        "feature_2_title": "Warranty Protection",
+        "feature_2_content": "",
+        "feature_3_show": false,
+        "feature_3_title": "Secure Payments",
+        "feature_3_content": "",
+        "feature_4_show": false,
+        "feature_4_title": "Multi-channel Support",
+        "feature_4_content": ""
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "grid_mobile": "2",
+        "heading": "You may also like",
+        "show_vendor": false
+      }
+    },
+    "pdp_rich_text_Kwf9JN": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 0,
+        "section_bottom_spacing": 50,
+        "section_top_spacing_mobile": 0,
+        "section_bottom_spacing_mobile": 30,
+        "alignment": "center",
+        "title": "",
+        "subtitle": "",
+        "content": "<p>Los términos “DELTA” y “RIVER”, que se mencionan en esta página, se refieren a productos fabricados exclusivamente por ECOFLOW INC.<\/p>",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "375326dd-1bc1-48c5-b5c5-470f74bb4dbc": {
+      "type": "pdp-video",
+      "settings": {
+        "section_id": "",
+        "text_alignment": "center",
+        "title": "",
+        "subtitle": "",
+        "content": "",
+        "button_link": "",
+        "button_text": "Learn More",
+        "media_type": "video",
+        "video_type": "youtube",
+        "video_url": "https:\/\/youtu.be\/GGloj4Px-VI",
+        "mp4_video_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0622\/6758\/8855\/files\/DELTA_Max_Intro_Video_Cover_1800x_f73d5ad2-ebad-45f4-abee-43c11aa457ca_1800x.jpg?v=1645502229",
+        "mp4_video_url_m": "https:\/\/cdn.shopify.com\/s\/files\/1\/0622\/6758\/8855\/files\/DELTA_Max_Intro_Video_Cover_1800x_f73d5ad2-ebad-45f4-abee-43c11aa457ca_1800x.jpg?v=1645502229",
+        "autoplay_video": true,
+        "button_2_link": "",
+        "button_2_text": "Learn More"
+      }
+    },
+    "e41be0d9-cd0f-438d-a249-b0c062494258": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--19120921379151__e41be0d9-cd0f-438d-a249-b0c062494258-1686914238131ab812-0": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "#fafafa",
+            "section_top_padding": 45,
+            "section_top_padding_m": 25,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/dm-es-1.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/m-dm-es-1.jpg",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "<p>Alimenta tu hogar durante los cortes de energía con DELTA Max. Gracias a una capacidad ampliable que alcanza hasta 6 kWh, la carga doble y la posibilidad de suministrar alimentación a los dispositivos domésticos, podrás mantenerte conectado en cualquier situación.<\/p>",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "663480a7-e14f-4382-8a01-c55ecd3cca79": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/DELTA_Max_PC_Section_2_Expandable_capacity.png",
+            "mobile_image": "shopify:\/\/shop_images\/DELTA_Max_Mobile_Section_2_Expandable_capacity.jpg",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Reserva de energía para viviendas ampliable.",
+            "title_color": "#232323",
+            "content": "<p>Una sola unidad DELTA Max tiene una capacidad de 2 kWh, ampliable hasta 6 kWh con baterías adicionales inteligentes DELTA Max. Esto significa que, cuando se produce un apagón, puedes seguir alimentando durante horas tus dispositivos domésticos importantes, como el frigorífico y las luces.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "b2bcb87e-f39d-480a-8dfa-42f610ba16a1": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/DELTA_MAX_PC_Dual_Charging.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/DELTA_MAX_MOBILE_Dual_Charging.jpg",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Carga doble rápida y cómoda.",
+            "title_color": "#232323",
+            "content": "<p>DELTA Max se carga de forma rápida y segura del 0 al 80 % en tan solo 1 hora. Y eso no es todo. Si buscas una forma aún más rápida de cargar el DELTA Max, puedes combinar CA con el generador inteligente Smart Generator, CA con energía solar o Smart Generator con energía solar.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "51e4fc9d-bb8e-4c1c-b175-f39f4efa92b4": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/DELTA_Max_PC_Section_4_X-Boost.png",
+            "mobile_image": "shopify:\/\/shop_images\/DELTA_Max_Mobile_Section_4_X-Boost.jpg",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Alimenta el 99% de tus dispositivos caseros.",
+            "title_color": "#232323",
+            "content": "<p>Gracias a la tecnología X-Boost de EcoFlow, DELTA Max puede alimentar dispositivos de altas prestaciones de hasta 3000 W. Esto significa que, durante un corte del suministro eléctrico o un apagón, podrás seguir alimentando el frigorífico, la secadora y mucho más. Ese es el estándar de oro del sector para un generador de energía portátil de este tamaño y capacidad.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "33d153e4-1bc7-4c11-bb67-b1d7adf92059": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/DELTA_Max_PC_Section_5_Solar_power.png",
+            "mobile_image": "shopify:\/\/shop_images\/DELTA_Max_Mobile_Section_5_Solar_power.jpg",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Aprovecha la potencia que ofrece el sol.",
+            "title_color": "#232323",
+            "content": "<p>DELTA Max se conecta con hasta 2 paneles solares EcoFlow de 400 W para proporcionar velocidades de carga solar de 800 W como máximo. Con un rango de tensión de 11-100 V y el conector MC4, también puedes conectar otros paneles solares a tu DELTA Max. Incluso en días fríos o nublados, nuestro algoritmo inteligente de seguimiento del punto de máxima potencia (MPPT) detecta automáticamente la tensión y la corriente en tiempo real para proporcionar una generación solar óptima durante todo el día.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "05b35f2f-9a09-45cd-8a4f-174ba6cc671e": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/DELTA_Max_PC_Section_1_Product_statement.png",
+            "mobile_image": "shopify:\/\/shop_images\/DELTA_Max_Mobile_Section_1_Product_statement.jpg",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Energía de reserva en caso de emergencia.",
+            "title_color": "#232323",
+            "content": "<p>Los desastres pueden ocurrir en cualquier momento del año, y a veces duran más de lo previsto. Cuando se producen apagones prolongados, el generador inteligente EcoFlow sirve como opción de emergencia que se integra con DELTA Max. Se inicia automáticamente cuando el DELTA Max alcanza un nivel de carga bajo, carga el DELTA Max y detiene el motor solo una vez que el DELTA Max alcanza una carga completa. Esto te ofrece una opción de reserva de emergencia fiable que depende de un uso mínimo de un generador.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        },
+        "6f1e3664-fab8-4bc1-80e1-2b4e53b76b4a": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/DELTA_Max_PC_Section7_App_1800x_6dde41dc-7fb1-44ca-8978-19da751aee78.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/DELTA_Max_Mobile_Section_7_EcoFlow_App.jpg",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Controla, supervisa y gestiona el consumo energético.",
+            "title_color": "#232323",
+            "content": "<p>Controla y supervisa tu DELTA Max con la aplicación EcoFlow Accede a los ajustes para personalizar tu consumo de energía o controlar el DELTA Max de forma remota.<\/p>",
+            "content_color": "#757575",
+            "notification_message": "",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--19120921379151__e41be0d9-cd0f-438d-a249-b0c062494258-1686914238131ab812-0",
+        "663480a7-e14f-4382-8a01-c55ecd3cca79",
+        "b2bcb87e-f39d-480a-8dfa-42f610ba16a1",
+        "51e4fc9d-bb8e-4c1c-b175-f39f4efa92b4",
+        "33d153e4-1bc7-4c11-bb67-b1d7adf92059",
+        "05b35f2f-9a09-45cd-8a4f-174ba6cc671e",
+        "6f1e3664-fab8-4bc1-80e1-2b4e53b76b4a"
+      ],
+      "settings": {
+      }
+    },
+    "ac54e296-8a83-4649-b03a-e34c9979cd7d": {
+      "type": "pdp-slideshow",
+      "blocks": {
+        "d17b84b3-5ee1-42be-9207-fb03d7755db6": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "",
+            "title": "Trabaja sincronizado con el Kit solar para balcones EcoFlow PowerStream",
+            "subtitle": "",
+            "content": "<p>Transforma tu estación de energía en una solución de energía solar <strong>conectada a la red<\/strong> que combine paneles solares, una estación de energía y un inversor. Suministra electricidad a tu hogar y ahorra en las facturas eléctricas tanto de día como de noche.<\/p>",
+            "button_link": "https:\/\/es.ecoflow.com\/pages\/powerstream",
+            "button_text": "Más información",
+            "bottom_content": "",
+            "bottom_button_link": "",
+            "bottom_button_text": "Learn More",
+            "bottom_button_bg_color": "#2164ff",
+            "bottom_button_text_color": "#ffffff",
+            "media_1_type": "image",
+            "image_1": "shopify:\/\/shop_images\/pc-1.png",
+            "mobile_image_1": "shopify:\/\/shop_images\/m-1.png",
+            "mp4_video_url_1": "",
+            "mp4_video_url_m_1": "",
+            "autoplay_video_1": true,
+            "media_2_type": "image",
+            "mp4_video_url_2": "",
+            "mp4_video_url_m_2": "",
+            "autoplay_video_2": true,
+            "media_3_type": "image",
+            "mp4_video_url_3": "",
+            "mp4_video_url_m_3": "",
+            "autoplay_video_3": true,
+            "media_4_type": "image",
+            "mp4_video_url_4": "",
+            "mp4_video_url_m_4": "",
+            "autoplay_video_4": true,
+            "media_5_type": "image",
+            "mp4_video_url_5": "",
+            "mp4_video_url_m_5": "",
+            "autoplay_video_5": true
+          }
+        }
+      },
+      "block_order": [
+        "d17b84b3-5ee1-42be-9207-fb03d7755db6"
+      ],
+      "settings": {
+        "section_id": ""
+      }
+    },
+    "817aabaa-3a35-496a-83f9-ba505eaf5ae7": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 0,
+        "section_bottom_spacing": 20,
+        "section_top_spacing_mobile": 0,
+        "section_bottom_spacing_mobile": 20,
+        "alignment": "center",
+        "title": "Múltiples métodos de carga.",
+        "subtitle": "",
+        "content": "",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "ae4bd3e6-9b0b-41cd-a373-3d903296f154": {
+      "type": "pdp-image-with-text",
+      "blocks": {
+        "9e45c930-c236-4057-9b06-f5facb72f8b0": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/DELTA_Max-PC_4_easy_ways_to_charge_Solar.png",
+            "mobile_image": "shopify:\/\/shop_images\/DELTA_Max_Mobile_4_easy_ways_to_charge_Solar.jpg",
+            "image_height": 310,
+            "mobile_image_height": 250,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "<p>Solar Charging<\/p>",
+            "subtext_bottom": "",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "3a7718e9-abbe-474b-b9b3-874cbe7d46a8": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/DELTA_Max-PC_4_easy_ways_to_charge_ACa.png",
+            "mobile_image": "shopify:\/\/shop_images\/DELTA_Max_Mobile_4_easy_ways_to_charge_ACa.jpg",
+            "image_height": 310,
+            "mobile_image_height": 250,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "<p>AC Charging<\/p>",
+            "subtext_bottom": "",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "722a4321-18db-47c6-8aa3-c222cd12c111": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/DELTA_Max-PC_4_easy_ways_to_charge_Smart_Generator.png",
+            "mobile_image": "shopify:\/\/shop_images\/DELTA_Max_Mobile_4_easy_ways_to_charge_Smart_Generator.jpg",
+            "image_height": 310,
+            "mobile_image_height": 250,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "<p>Smart Generator<\/p>",
+            "subtext_bottom": "",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        },
+        "6447556d-5514-4d3c-9abe-3f619a81f817": {
+          "type": "image_content",
+          "settings": {
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/DELTA_Max-PC_4_easy_ways_to_charge_Car.png",
+            "mobile_image": "shopify:\/\/shop_images\/DELTA_Max_Mobile_4_easy_ways_to_charge_Car.jpg",
+            "image_height": 310,
+            "mobile_image_height": 250,
+            "mp4_video_url": "",
+            "mp4_video_url_m": "",
+            "autoplay_video": true,
+            "subtext_top": "<p>Car Charging<\/p>",
+            "subtext_bottom": "",
+            "button_link": "",
+            "button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "9e45c930-c236-4057-9b06-f5facb72f8b0",
+        "3a7718e9-abbe-474b-b9b3-874cbe7d46a8",
+        "722a4321-18db-47c6-8aa3-c222cd12c111",
+        "6447556d-5514-4d3c-9abe-3f619a81f817"
+      ],
+      "settings": {
+        "section_id": "",
+        "alignment": "center",
+        "layout": "stacked",
+        "stacked_row": "4",
+        "mobile_stacked_row": "2",
+        "slider_row": "2",
+        "mobile_slider_row": "1"
+      }
+    },
+    "0d512441-25e1-4261-9739-0b85d0bd2b83": {
+      "type": "pdp-text-with-image",
+      "blocks": {
+        "template--19120921379151__0d512441-25e1-4261-9739-0b85d0bd2b83-1686914238131ab812-0": {
+          "type": "text_with_image",
+          "settings": {
+            "section_bg": "",
+            "section_top_padding": 0,
+            "section_top_padding_m": 0,
+            "anchor_id": "",
+            "alignment": "center",
+            "full_width": false,
+            "image": "shopify:\/\/shop_images\/0001_DELTA_Max.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/M__0001_DELTA_Max.jpg",
+            "show_actual_mobile_image_size": false,
+            "content_order": "3",
+            "image_alt": "",
+            "title": "Contenido",
+            "title_color": "#232323",
+            "content": "",
+            "content_color": "#757575",
+            "notification_message": "<p>1.DELTA Max 2.Cable de carga CA 3.Cable de cargador de coche 4.Cable de DC5521 a DC5525 5.Manual de usuario<\/p>",
+            "message_color": "#757575",
+            "notification_message_font_size": "heading-6",
+            "button_link": "",
+            "button_text": "Learn More",
+            "button_link_2": "",
+            "button_text_2": "Learn More",
+            "button_link_3": "",
+            "button_text_3": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "template--19120921379151__0d512441-25e1-4261-9739-0b85d0bd2b83-1686914238131ab812-0"
+      ],
+      "settings": {
+      }
+    },
+    "f103ebc6-a386-4356-b132-4a82801e6781": {
+      "type": "faq-section-alternate",
+      "blocks": {
+        "a159d4f9-28d8-4028-9275-60cd4adbcbcd": {
+          "type": "question",
+          "settings": {
+            "title": "¿Cuántos paneles solares puedo usar a la vez con DELTA Max?",
+            "answer": "Depende de la tensión total y los vatios de los paneles solares quue elijas. Siempre que los paneles solares utilicenun conector MC4 y su tensión y corriente estén por debajode 11-100 V, rango máximo de 13A."
+          }
+        },
+        "062c006b-604b-4fe8-9659-3f0746e364ea": {
+          "type": "question",
+          "settings": {
+            "title": "¿Cuál es la entrada máxima para DELTA Max?",
+            "answer": "Al cargar el DELTA Max y su batería adicional juntos, puedes alcaanzar una velocidad de carga máxima de 3600 Wmediante la combinación de dos métodos de CA: la energía solary el generador inteligente Smart Generator. Parauna unidad DELTA Max, puedes cargarla en tomas de pared estándar (1800 W como max.) o combinar carga solar yCA para alcanzar velocidades de carga máximas de 2000 W."
+          }
+        },
+        "ba1b76bf-4add-4deb-b89d-8aecfd5da203": {
+          "type": "question",
+          "settings": {
+            "title": "¿Cómo funciona el sistema de alimentación de emergencia (EPS)?¿Cómo de rápido es?",
+            "answer": "Cuando el generador de energía portátil está conectado a laa toma de corriente, los dispositivos electrónicosconectados a este reciben alimentación de la red y no de la batería. Cuando se interrumpe la alimentación de la red,como en el caso de un apagón, el generador de energía cambia automáticamente a la alimentación de la batería enun tiempo de 30 ms."
+          }
+        },
+        "ac61e490-71b4-4de1-a4db-dc10bff32282": {
+          "type": "question",
+          "settings": {
+            "title": "Cuál es el índice de resistencia al agua de este producto?",
+            "answer": "EI DELTA Max no es resistente al agua, por lo que debe mantenerse alejado de líquidos. Si lo que buscas es unasolución resistente al agua, puedes comprar la funda DELTA Max para protegerlo del agua."
+          }
+        }
+      },
+      "block_order": [
+        "a159d4f9-28d8-4028-9275-60cd4adbcbcd",
+        "062c006b-604b-4fe8-9659-3f0746e364ea",
+        "ba1b76bf-4add-4deb-b89d-8aecfd5da203",
+        "ac61e490-71b4-4de1-a4db-dc10bff32282"
+      ],
+      "settings": {
+        "title": "Preguntas frecuentes"
+      }
+    },
+    "2a6176c2-286a-47e2-b338-6ed37f3b8fb1": {
+      "type": "pdp-specs",
+      "blocks": {
+        "c5cd91e7-c915-4994-845e-46021a1e4728": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso neto",
+            "content": "<p>48 lb (22 kg) aprox.<\/p>"
+          }
+        },
+        "c56d36d6-ef73-4f36-9bee-515c3a09f141": {
+          "type": "contents",
+          "settings": {
+            "title": "Dimensiones",
+            "content": "<p>19,6 × 9,5 × 12 pulg. (49,7 × 24,2 × 30,5 cm)<\/p>"
+          }
+        },
+        "c993f994-2f2c-4351-bd3e-d36cb2763593": {
+          "type": "contents",
+          "settings": {
+            "title": "Temperatura de carga",
+            "content": "<p>32 °F a 113 °F (0 ℃ a 45 ℃)<\/p>"
+          }
+        },
+        "ef7d28c4-e324-448e-b24b-a7791a6255b3": {
+          "type": "contents",
+          "settings": {
+            "title": "Temperatura de descarga",
+            "content": "<p>-4 °F a 113 °F (-20 ℃ a 45 ℃)<\/p>"
+          }
+        },
+        "3a5d5145-fe29-4123-9e25-1cecd08a39f0": {
+          "type": "contents",
+          "settings": {
+            "title": "Garantía",
+            "content": "<p>36 meses<\/p>"
+          }
+        },
+        "ff8a063e-1e8e-4bd9-a50d-39bd7bcef81b": {
+          "type": "contents",
+          "settings": {
+            "title": "Método de carga",
+            "content": "<p>Toma de pared de CA, adaptador para coche de 12 V, panel solar, generador inteligente Smart Generator, batería adicional inteligente<\/p>"
+          }
+        },
+        "abafb07f-d6f7-4042-8d97-5dc78b1196db": {
+          "type": "contents",
+          "settings": {
+            "title": "Tiempo de recarga completa",
+            "content": "<p>1,6 horas (CA), 21 horas (cargador para coche de 12 V), 5,6-11,2 horas (con 4 paneles solares de 110 W), 4,2-8,4 horas (con 4 paneles solares de 160 W), 3,2-6,3 horas (con 2 paneles solares de 400 W)<\/p>"
+          }
+        },
+        "4e03fae3-1738-433f-9b36-4a75ea3d2e06": {
+          "type": "contents",
+          "settings": {
+            "title": "Capacidad",
+            "content": "<p>2016Wh<\/p>"
+          }
+        },
+        "97c5a575-e460-4021-80c6-53997d6029c3": {
+          "type": "contents",
+          "settings": {
+            "title": "Química de las celdas",
+            "content": "<p>NCM<\/p>"
+          }
+        },
+        "67cbfbff-f2df-4fd2-ae34-1354405aedae": {
+          "type": "contents",
+          "settings": {
+            "title": "Ciclos de vida útil",
+            "content": "<p>800 ciclos a más del 80 % de la capacidad<\/p>"
+          }
+        },
+        "b595a429-e516-4a4b-9e56-83574c4e1376": {
+          "type": "contents",
+          "settings": {
+            "title": "Sistemas de gestión",
+            "content": "<p>BMS, protección contra sobretensión, protección contra sobrecarga, protección contra sobrecalentamiento, protección contra cortocircuito, protección contra temperatura baja, protección contra tensión baja y protección contra sobrecorriente<\/p>"
+          }
+        },
+        "13b1a4e2-79b4-4171-b7f5-43cfe097bef0": {
+          "type": "contents",
+          "settings": {
+            "title": "Ensayos y certificación",
+            "content": "<p>CE WEEE CTP RCM KC<\/p>"
+          }
+        },
+        "532f2548-cb4f-4016-a647-01ec62d64470": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de carga de CA (alimentación)",
+            "content": "<p>Carga de X-Stream (2000W máx.)<\/p>"
+          }
+        },
+        "dd1581d5-bb0d-4dd4-be8f-c0751b5d4bce": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de carga de CA (tensión y amperaje)",
+            "content": "<p>220-240V~50Hz\/60Hz, 10A<\/p>"
+          }
+        },
+        "84cf3b12-9d7c-464a-9286-5817371dde59": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de carga solar",
+            "content": "<p>11-100 V, 13 A máx., 800 W máx.<\/p>"
+          }
+        },
+        "e60d0612-645a-477e-a426-60ae45e66ea3": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de carga para vehículo",
+            "content": "<p>Admite batería de 12 V\/24 V, valor predeterminado: 8 A<\/p>"
+          }
+        },
+        "9acab2ac-1937-4bd7-9e5a-c2d945f85313": {
+          "type": "contents",
+          "settings": {
+            "title": "Salida de CA (4 ud.)",
+            "content": "<p>Onda sinusoidal pura, 2400 W totales (máximo: 4600 W), 230 V~ (50 Hz\/60 Hz)<\/p>"
+          }
+        },
+        "4d9acfb0-355f-4d3c-b52a-b44be389bac3": {
+          "type": "contents",
+          "settings": {
+            "title": "Potencia máxima de los dispositivos compatibles con X-Boost",
+            "content": "<p>3000W<\/p>"
+          }
+        },
+        "a683c4f7-46b0-423e-9625-7a747dcda49f": {
+          "type": "contents",
+          "settings": {
+            "title": "Salida USB-A (2 ud.)",
+            "content": "<p>5 V, 2,4 A, 12 W como máx. por puerto<\/p>"
+          }
+        },
+        "83e7ebc9-8483-4fa4-abae-46fc942286c3": {
+          "type": "contents",
+          "settings": {
+            "title": "USB-A de carga rápida (2 ud.)",
+            "content": "<p>5 V\/2,4 A, 9 V\/2 A, 12 V\/1,5 A, 18 W como máx.<\/p>"
+          }
+        },
+        "197d86a7-42fc-4bba-979e-c105830e2ead": {
+          "type": "contents",
+          "settings": {
+            "title": "Salida USB-C (2 ud.)",
+            "content": "<p>5\/9\/12\/15\/20 V, 5 A, 100 W como máx.<\/p>"
+          }
+        },
+        "d3e4a536-5991-473a-bc22-493feda57363": {
+          "type": "contents",
+          "settings": {
+            "title": "Salida de cargador para coche (1 ud.)",
+            "content": "<p>12,6 V\/10 A, 126 W como máx.<\/p>"
+          }
+        },
+        "efe9456b-53c5-431c-8666-8e33d5a51d49": {
+          "type": "contents",
+          "settings": {
+            "title": "Salida DC5521 (2 ud.)",
+            "content": "<p>12,6 V\/3 A, por puerto<\/p>"
+          }
+        },
+        "3dfd5ded-c955-414b-95eb-aa955d3496fb": {
+          "type": "contents",
+          "settings": {
+            "title": "Batería adicional inteligente",
+            "content": "<p>Admite hasta 2 baterías adicionales inteligentes DELTA Max (se venden por separado)<\/p>"
+          }
+        },
+        "4747537e-6bc2-40b8-84ef-10a5aa5f79b0": {
+          "type": "contents",
+          "settings": {
+            "title": "Generador inteligente",
+            "content": "<p>Compatible (se vende por separado)<\/p>"
+          }
+        },
+        "a63826a2-f7f7-45c8-b0b4-ff25db2ba132": {
+          "type": "contents",
+          "settings": {
+            "title": "Wi-Fi",
+            "content": "<p>Apoyado<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "c5cd91e7-c915-4994-845e-46021a1e4728",
+        "c56d36d6-ef73-4f36-9bee-515c3a09f141",
+        "c993f994-2f2c-4351-bd3e-d36cb2763593",
+        "ef7d28c4-e324-448e-b24b-a7791a6255b3",
+        "3a5d5145-fe29-4123-9e25-1cecd08a39f0",
+        "ff8a063e-1e8e-4bd9-a50d-39bd7bcef81b",
+        "abafb07f-d6f7-4042-8d97-5dc78b1196db",
+        "4e03fae3-1738-433f-9b36-4a75ea3d2e06",
+        "97c5a575-e460-4021-80c6-53997d6029c3",
+        "67cbfbff-f2df-4fd2-ae34-1354405aedae",
+        "b595a429-e516-4a4b-9e56-83574c4e1376",
+        "13b1a4e2-79b4-4171-b7f5-43cfe097bef0",
+        "532f2548-cb4f-4016-a647-01ec62d64470",
+        "dd1581d5-bb0d-4dd4-be8f-c0751b5d4bce",
+        "84cf3b12-9d7c-464a-9286-5817371dde59",
+        "e60d0612-645a-477e-a426-60ae45e66ea3",
+        "9acab2ac-1937-4bd7-9e5a-c2d945f85313",
+        "4d9acfb0-355f-4d3c-b52a-b44be389bac3",
+        "a683c4f7-46b0-423e-9625-7a747dcda49f",
+        "83e7ebc9-8483-4fa4-abae-46fc942286c3",
+        "197d86a7-42fc-4bba-979e-c105830e2ead",
+        "d3e4a536-5991-473a-bc22-493feda57363",
+        "efe9456b-53c5-431c-8666-8e33d5a51d49",
+        "3dfd5ded-c955-414b-95eb-aa955d3496fb",
+        "4747537e-6bc2-40b8-84ef-10a5aa5f79b0",
+        "a63826a2-f7f7-45c8-b0b4-ff25db2ba132"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Especificaciones de DELTA Max (2000)"
+      }
+    },
+    "9a9285d0-bbc2-4a82-bf2b-a51b85422340": {
+      "type": "pdp-specs",
+      "blocks": {
+        "6fd7ec9f-4c70-4252-a0be-915355eb0800": {
+          "type": "contents",
+          "settings": {
+            "title": "Peso neto",
+            "content": "<p>48 lb (22 kg) aprox.<\/p>"
+          }
+        },
+        "f8c767da-a359-4a58-a17e-60271a05124c": {
+          "type": "contents",
+          "settings": {
+            "title": "Dimensiones",
+            "content": "<p>19,6 × 9,5 × 12 pulg. (49,7 × 24,2 × 30,5 cm)<\/p>"
+          }
+        },
+        "cfa1cfde-dd8e-46e5-9e59-016b0e52c213": {
+          "type": "contents",
+          "settings": {
+            "title": "Temperatura de carga",
+            "content": "<p>32 °F a 113 °F (0 ℃ a 45 ℃)<\/p>"
+          }
+        },
+        "413619da-7370-4255-b783-5bc77aa7fa6d": {
+          "type": "contents",
+          "settings": {
+            "title": "Temperatura de descarga",
+            "content": "<p>-4 °F a 113 °F (-20 ℃ a 45 ℃)<\/p>"
+          }
+        },
+        "4dae4521-64b6-4125-af1f-200afa023861": {
+          "type": "contents",
+          "settings": {
+            "title": "Garantía",
+            "content": "<p>36 meses<\/p>"
+          }
+        },
+        "7b1c02ee-df60-4682-87df-cb2b618f1dfd": {
+          "type": "contents",
+          "settings": {
+            "title": "Método de carga",
+            "content": "<p>Toma de pared de CA, adaptador para coche de 12 V, panel solar, generador inteligente Smart Generator, batería adicional inteligente<\/p>"
+          }
+        },
+        "93a3b784-0e76-45a1-a113-7c2891b083ce": {
+          "type": "contents",
+          "settings": {
+            "title": "Tiempo de recarga completa",
+            "content": "<p>1,6 horas (CA), 16,8 horas (cargador para coche de 12 V), 4,5-9 horas (con 4 paneles solares de 110 W), 3,4-6,8 horas (con 4 paneles solares de 160 W), 2,5-5 horas (con 2 paneles solares de 400 W)<\/p>"
+          }
+        },
+        "43e8d497-112b-4223-b02b-7c43b6f0c820": {
+          "type": "contents",
+          "settings": {
+            "title": "Capacidad",
+            "content": "<p>1612Wh<\/p>"
+          }
+        },
+        "e3342d0b-ef45-45c1-90f2-a45cf814a2bc": {
+          "type": "contents",
+          "settings": {
+            "title": "Química de las celdas",
+            "content": "<p>NCM<\/p>"
+          }
+        },
+        "7ff9b4d3-be91-4f3e-948b-ea4c9f893063": {
+          "type": "contents",
+          "settings": {
+            "title": "Ciclos de vida útil",
+            "content": "<p>500 ciclos a más del 80 % de la capacidad<\/p>"
+          }
+        },
+        "24d99cd5-f465-40b8-963b-0d9682e9fc43": {
+          "type": "contents",
+          "settings": {
+            "title": "Sistemas de gestión",
+            "content": "<p>BMS, protección contra sobretensión, protección contra sobrecarga, protección contra sobrecalentamiento, protección contra cortocircuito, protección contra temperatura baja, protección contra tensión baja y protección contra sobrecorriente<\/p>"
+          }
+        },
+        "7ab5f814-9e9b-48bf-810f-99effcbf899c": {
+          "type": "contents",
+          "settings": {
+            "title": "Ensayos y certificación",
+            "content": "<p>CE WEEE CTP RCM KC<\/p>"
+          }
+        },
+        "17be4a0a-8c56-45c4-94ff-4cc99d17f4f6": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de carga de CA (alimentación)",
+            "content": "<p>Carga de X-Stream (1600W máx.)<\/p>"
+          }
+        },
+        "9d403b57-3f78-4e9a-893f-284783a89823": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de carga de CA (tensión y amperaje)",
+            "content": "<p>220-240V~50Hz\/60Hz, 10A<\/p>"
+          }
+        },
+        "c3c0c168-7521-46a9-941b-693b5226461c": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de carga solar",
+            "content": "<p>11-100 V, 13 A máx., 800 W máx.<\/p>"
+          }
+        },
+        "469650fb-12fb-4399-81ef-dd80322168db": {
+          "type": "contents",
+          "settings": {
+            "title": "Entrada de carga para vehículo",
+            "content": "<p>Admite batería de 12 V\/24 V, valor predeterminado: 8 A<\/p>"
+          }
+        },
+        "4477ec54-fe1b-4439-8b2f-03d506246df9": {
+          "type": "contents",
+          "settings": {
+            "title": "Salida de CA (4 ud.)",
+            "content": "<p>Onda sinusoidal pura, 2000W totales (máximo: 4600 W), 230 V~ (50 Hz\/60 Hz)<\/p>"
+          }
+        },
+        "2d5623a4-96d0-4478-a240-55f95071d597": {
+          "type": "contents",
+          "settings": {
+            "title": "Potencia máxima de los dispositivos compatibles con X-Boost",
+            "content": "<p>2500W<\/p>"
+          }
+        },
+        "52358ea1-8b7a-4be9-8b22-e8c0e9d7760a": {
+          "type": "contents",
+          "settings": {
+            "title": "Salida USB-A (2 ud.)",
+            "content": "<p>5 V, 2,4 A, 12 W como máx. por puerto<\/p>"
+          }
+        },
+        "1b83a055-6ab5-4661-9a5c-556e801c4e25": {
+          "type": "contents",
+          "settings": {
+            "title": "USB-A de carga rápida (2 ud.)",
+            "content": "<p>5 V\/2,4 A, 9 V\/2 A, 12 V\/1,5 A, 18 W como máx.<\/p>"
+          }
+        },
+        "72a8769d-b718-4724-a622-f181fbae8f99": {
+          "type": "contents",
+          "settings": {
+            "title": "Salida USB-C (2 ud.)",
+            "content": "<p>5\/9\/12\/15\/20 V, 5 A, 100 W como máx.<\/p>"
+          }
+        },
+        "003230f2-905a-4c81-ae1b-b69547e425e9": {
+          "type": "contents",
+          "settings": {
+            "title": "Salida de cargador para coche (1 ud.)",
+            "content": "<p>12,6 V\/10 A, 126 W como máx<\/p>"
+          }
+        },
+        "7425fae6-e8fc-456c-95d8-68196bec29d6": {
+          "type": "contents",
+          "settings": {
+            "title": "Salida DC5521 (2 ud.)",
+            "content": "<p>12,6 V\/3 A, por puerto<\/p>"
+          }
+        },
+        "7f872e71-a6b4-42d7-9402-96d086cf6e51": {
+          "type": "contents",
+          "settings": {
+            "title": "Batería adicional inteligente",
+            "content": "<p>Admite hasta 2 baterías adicionales inteligentes DELTA Max (se venden por separado)<\/p>"
+          }
+        },
+        "afa73d4e-8f90-45bb-a65d-f6b7e81fe735": {
+          "type": "contents",
+          "settings": {
+            "title": "Generador inteligente",
+            "content": "<p>Compatible (se vende por separado)<\/p>"
+          }
+        },
+        "2701cc4f-81d0-4bde-89e7-7a815506489c": {
+          "type": "contents",
+          "settings": {
+            "title": "Wi-Fi",
+            "content": "<p>Apoyado<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "6fd7ec9f-4c70-4252-a0be-915355eb0800",
+        "f8c767da-a359-4a58-a17e-60271a05124c",
+        "cfa1cfde-dd8e-46e5-9e59-016b0e52c213",
+        "413619da-7370-4255-b783-5bc77aa7fa6d",
+        "4dae4521-64b6-4125-af1f-200afa023861",
+        "7b1c02ee-df60-4682-87df-cb2b618f1dfd",
+        "93a3b784-0e76-45a1-a113-7c2891b083ce",
+        "43e8d497-112b-4223-b02b-7c43b6f0c820",
+        "e3342d0b-ef45-45c1-90f2-a45cf814a2bc",
+        "7ff9b4d3-be91-4f3e-948b-ea4c9f893063",
+        "24d99cd5-f465-40b8-963b-0d9682e9fc43",
+        "7ab5f814-9e9b-48bf-810f-99effcbf899c",
+        "17be4a0a-8c56-45c4-94ff-4cc99d17f4f6",
+        "9d403b57-3f78-4e9a-893f-284783a89823",
+        "c3c0c168-7521-46a9-941b-693b5226461c",
+        "469650fb-12fb-4399-81ef-dd80322168db",
+        "4477ec54-fe1b-4439-8b2f-03d506246df9",
+        "2d5623a4-96d0-4478-a240-55f95071d597",
+        "52358ea1-8b7a-4be9-8b22-e8c0e9d7760a",
+        "1b83a055-6ab5-4661-9a5c-556e801c4e25",
+        "72a8769d-b718-4724-a622-f181fbae8f99",
+        "003230f2-905a-4c81-ae1b-b69547e425e9",
+        "7425fae6-e8fc-456c-95d8-68196bec29d6",
+        "7f872e71-a6b4-42d7-9402-96d086cf6e51",
+        "afa73d4e-8f90-45bb-a65d-f6b7e81fe735",
+        "2701cc4f-81d0-4bde-89e7-7a815506489c"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "Especificaciones de DELTA Max (1600)"
+      }
+    },
+    "3b0ca8bc-049e-4c0c-98b6-5308c03327f4": {
+      "type": "pdp-rich-text",
+      "settings": {
+        "section_id": "",
+        "section_top_spacing": 16,
+        "section_bottom_spacing": 20,
+        "section_top_spacing_mobile": 20,
+        "section_bottom_spacing_mobile": 20,
+        "alignment": "left",
+        "title": "",
+        "subtitle": "",
+        "content": "<p>*Nota: El peso, tamaño, etc. indicados anteriormente tienen ciertos errores de medición. Consulte la medición real.<\/p><p>El cargador para coche comparte alimentación con el puerto de salida DC5521 con lo que suministra una potencia máxima de 126 W.<\/p><p>La posibilidad de que el producto se cargue o descargue depende de la temperatura real del grupo de baterías<\/p><p>DELTA Max (2000) debe conectarse a la batería adicional inteligente DELTA Max para la carga doble.<\/p>",
+        "button_link": "",
+        "button_text": "Learn More"
+      }
+    },
+    "1677853362288a00c5": {
+      "type": "apps",
+      "settings": {
+        "include_margins": false
+      }
+    },
+    "17141181429f4a42af": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_AmDBag": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_AmDBag"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    }
+  },
+  "order": [
+    "daf26638-f596-4384-b150-72d380a3268d",
+    "sticky-product-bar",
+    "main",
+    "product-recommendations",
+    "pdp_rich_text_Kwf9JN",
+    "375326dd-1bc1-48c5-b5c5-470f74bb4dbc",
+    "e41be0d9-cd0f-438d-a249-b0c062494258",
+    "ac54e296-8a83-4649-b03a-e34c9979cd7d",
+    "817aabaa-3a35-496a-83f9-ba505eaf5ae7",
+    "ae4bd3e6-9b0b-41cd-a373-3d903296f154",
+    "0d512441-25e1-4261-9739-0b85d0bd2b83",
+    "f103ebc6-a386-4356-b132-4a82801e6781",
+    "2a6176c2-286a-47e2-b338-6ed37f3b8fb1",
+    "9a9285d0-bbc2-4a82-bf2b-a51b85422340",
+    "3b0ca8bc-049e-4c0c-98b6-5308c03327f4",
+    "1677853362288a00c5",
+    "17141181429f4a42af"
+  ]
+}
