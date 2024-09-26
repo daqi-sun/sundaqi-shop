@@ -67,18 +67,6 @@
           "settings": {
           }
         },
-        "0be521b4-bac8-4e6f-a8ee-4d6bfa17ec65": {
-          "type": "shopify:\/\/apps\/growave-loyalty-wishlist\/blocks\/block.product.reviewAvgProfile\/b3d2efbe-110a-4e27-84a8-1f2ed63996a4",
-          "settings": {
-            "margin": "",
-            "textColor": "",
-            "fontSize": "",
-            "ratingIconColor": "",
-            "ratingIconSize": "",
-            "questionsIconColor": "",
-            "questionsIconSize": ""
-          }
-        },
         "59b9a8d1-5bd8-4ed8-92e9-5854a801f774": {
           "type": "rating",
           "disabled": true,
@@ -162,7 +150,6 @@
       "block_order": [
         "11795adc-1afa-4833-a193-258f495901ef",
         "75a9b1b6-630e-4615-99ce-f30bbec6ea5e",
-        "0be521b4-bac8-4e6f-a8ee-4d6bfa17ec65",
         "59b9a8d1-5bd8-4ed8-92e9-5854a801f774",
         "0471109f-c130-454e-a9ba-c56412cc11f3",
         "220d69e9-8c2a-43b9-9363-ffbe33aba185",
@@ -1099,35 +1086,6 @@
     },
     "1676887592a3dc4fd0": {
       "type": "apps",
-      "blocks": {
-        "6968de8d-ed22-4f9e-8856-9260bce48bd6": {
-          "type": "shopify:\/\/apps\/growave-loyalty-wishlist\/blocks\/block.product.reviewWidget\/b3d2efbe-110a-4e27-84a8-1f2ed63996a4",
-          "settings": {
-            "containerMaxWidth": "",
-            "containerMarginTop": "",
-            "containerMarginBottom": "",
-            "containerSidePadding": "",
-            "containerLineHeight": "",
-            "containerFontFamily": "",
-            "containerLetterSpacing": "",
-            "buttonsColor": "",
-            "buttonsColorOnHover": "",
-            "buttonsBackgroundColor": "",
-            "buttonsBackgroundColorOnHover": "",
-            "buttonsBorder": "",
-            "buttonsBorderColorOnHover": "",
-            "buttonsBoxShadow": "",
-            "buttonsBoxShadowOnHover": "",
-            "buttonsPaddings": "",
-            "buttonsTextTransform": "",
-            "tabTriggerSelector": "",
-            "tabContentSelector": ""
-          }
-        }
-      },
-      "block_order": [
-        "6968de8d-ed22-4f9e-8856-9260bce48bd6"
-      ],
       "settings": {
         "include_margins": false
       }
