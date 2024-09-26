@@ -1,0 +1,132 @@
+{%- liquid
+  assign section_id = section.id
+  assign section_div_id = section.settings.section_div_id
+  assign section_div_class = section.settings.section_div_class
+  assign heading = section.settings.heading
+  assign section_background_color = section.settings.section_background_color
+-%}
+<style>
+  #shopify-section-{{ section_id }} {
+    background-color: {{ section_background_color }}
+  }
+</style>
+
+<section id="{{ section_div_id }}" data-section-id="{{ section_id }}" class="cust_slider-image-content {{ section_div_class }} fade-in-animation">
+  <div class="star-page-container cust_slider-image-content__container">
+    {% if heading != blank %}
+    <div class="cust_slider-image-content__header">
+      <h2 class="section-title">{{ heading }}</h2>
+    </div>
+    {% endif %}
+    <div class="cust_slider-image-content__slider-container">
+      <div class="cust_slider-image-content__slider" data-js-cust-slider-image-content>
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            {%- liquid
+              assign image_desktop = block.settings.image_desktop
+              assign image_mobile = block.settings.image_mobile
+              assign title = block.settings.title
+              assign content = block.settings.content
+            -%}
+            <div class="swiper-slide cust_slider-image-content__slide">
+              <div class="cust_slider-image-content__image-container">
+                <img
+                  class="cust_slider-image-content__slider-desktop {% if image_mobile != blank %} small--hide {% endif %}"
+                  src="{{ image_desktop | img_url: 'master' }}"
+                  width="{{ image_desktop.width }}"
+                  height="{{ image_desktop.height }}"
+                  alt="{{ image_desktop.alt }}">
+
+                {% if image_mobile != blank %}
+                  <img
+                    class="cust_slider-image-content__slider-mobile medium-up--hide"
+                    src="{{ image_mobile | img_url: 'master' }}"
+                    width="{{ image_mobile.width }}"
+                    height="{{ image_mobile.height }}"
+                    alt="{{ image_mobile.alt }}">
+                {% endif %}
+              </div>
+              <div class="cust_slider-image-content__content-container">
+                {%- if title != blank -%}
+                <h3 class="cust_slider-image-content__title">{{ title }}</h3>
+                {%- endif -%}
+                {%- if content != blank -%}
+                <div class="cust_slider-image-content__content">{{ content }}</div>
+                {%- endif -%}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "cust_Slider Image Content",
+  "class": "cust-slider-image-content",
+  "presets": [
+    {
+      "name": "cust_Slider Image Content"
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_div_id",
+      "label": "Section ID",
+      "info": "The ID of the section (no need to add #). Example: 'section-1'"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Section heading"
+    },
+    {
+      "type": "color",
+      "id": "section_background_color",
+      "label": "Section background color",
+      "default": "transparent"
+    },
+    {
+      "type": "text",
+      "id": "section_div_class",
+      "label": "Section class",
+      "info": "The class of the section. Can be used to style the section. (no need to add .). Example: 'some-class-name'"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Slide",
+      "type": "slide",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_desktop",
+          "label": "Image (Desktop)"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image (Mobile)"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,488 @@
+{%- liquid
+  assign section_id = section.id
+  assign section_div_id = section.settings.section_div_id
+  assign section_div_class = section.settings.section_div_class
+  assign image_desktop = section.settings.image_desktop
+  assign image_mobile = section.settings.image_mobile
+  assign image_height_desktop = section.settings.image_height_desktop
+  assign image_height_mobile = section.settings.image_height_mobile
+  assign section_background_color = section.settings.section_background_color
+-%}
+<style>
+  #shopify-section-{{ section_id }} {
+    background-color: {{ section_background_color }}
+  }
+  .cust_banner-with-headings {
+    position: relative;
+  }
+  .banner-with-headings__image-container {
+    position: absolute;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .banner-with-headings__slider-desktop,
+  .banner-with-headings__slider-mobile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    display: block;
+  }
+
+  .cust_banner-with-headings__container {
+    position: relative;
+    z-index: 2;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  #shopify-section-{{ section_id }} .banner-with-headings__content-container,
+  #shopify-section-{{ section_id }} .banner-with-headings__image-container {
+    height: {{ image_height_desktop }}px;
+  }
+  .banner-with-headings__content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .banner-with-headings__title {
+    font-family: 'Helvetica Neue ForEco';
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 500;
+  }
+  .banner-with-headings__group {
+    display: flex;
+    position: relative;
+  }
+  .banner-with-headings__group-icon {
+    position: absolute;
+    top: -12px;
+    left: 100%;
+    z-index: 3;
+    display: block;
+    width: 70px;
+  }
+  .banner-with-headings__group-icon-image {
+    display: block;
+  }
+  .banner-with-headings__group-price {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+  }
+  .banner-with-headings__title_price {
+    font-family: 'Helvetica Neue ForEco';
+    font-size: 72px;
+    line-height: 72px;
+    font-weight: 700;
+    color: #FF7A00;
+  }
+  .banner-with-headings__unit {
+    bottom: 8px;
+    position: relative;
+    margin-right: 5px;
+  }
+  .banner-with-headings__text,
+  .banner-with-headings__unit {
+    font-family: 'Helvetica Neue ForEco';
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 700;
+    color: #FF7A00;
+  }
+  .banner-with-headings__group-text {
+    font-family: 'Helvetica Neue ForEco';
+    display: flex;
+    flex-direction: column;
+    padding-top: 12px;
+    padding-left: 8px;
+    position: relative;
+  }
+  .banner-with-headings__text + .banner-with-headings__text {
+    margin-top: 3px;
+  }
+
+  #shopify-section-{{ section_id }} .banner-with-headings__group {
+    font-size: 24px;
+    letter-spacing: 1px;
+  }
+
+
+  @media (max-width: 767px) {
+    #shopify-section-{{ section_id }} .banner-with-headings__content-container,
+    #shopify-section-{{ section_id }} .banner-with-headings__image-container {
+      height: {{ image_height_mobile }}px;
+    }
+    .banner-with-headings__content-container {
+      padding-top: 70px;
+      justify-content: flex-start;
+      text-align: center;
+      align-items: center;
+    }
+    .banner-with-headings__title {
+      font-size: 14px;
+      line-height: 16.16px;
+    }
+    .banner-with-headings__group {
+      display: flex;
+      transform: scale(.8);
+      margin-top: -8px;
+    }
+  }
+
+</style>
+
+<section id="{{ section_div_id }}" data-section-id="{{ section_id }}" class="cust_banner-with-headings {{ section_div_class }} fade-in-animation">
+  <div class="banner-with-headings__image-container">
+    {% if image_desktop != blank %}
+    <img
+      class="banner-with-headings__slider-desktop {% if image_mobile != blank %} small--hide {% endif %}"
+      src="{{ image_desktop | img_url: 'master' }}"
+      width="{{ image_desktop.width }}"
+      height="{{ image_desktop.height }}"
+      alt="{{ image_desktop.alt }}">
+    {% endif %}
+
+    {% if image_mobile != blank %}
+      <img
+        class="banner-with-headings__slider-mobile medium-up--hide"
+        src="{{ image_mobile | img_url: 'master' }}"
+        width="{{ image_mobile.width }}"
+        height="{{ image_mobile.height }}"
+        alt="{{ image_mobile.alt }}">
+    {% endif %}
+  </div>
+  <div class="star-page-container cust_banner-with-headings__container">
+    <div class="banner-with-headings__content-container">
+      {% for block in section.blocks %}
+        {% case block.type %}
+
+          {% when 'heading' %}
+            {%- liquid
+              assign title = block.settings.title
+              assign font_size_desktop = block.settings.font_size_desktop
+              assign font_size_mobile = block.settings.font_size_mobile
+              assign margin_bottom_desktop = block.settings.margin_bottom_desktop
+              assign margin_bottom_mobile = block.settings.margin_bottom_mobile
+            -%}
+            <style>
+              #shopify-section-{{ section_id }} .banner-with-headings__title--{{ forloop.index }} {
+                margin-bottom: {{ margin_bottom_desktop }}px;
+                font-size: {{ font_size_desktop }}px;
+              }
+              @media (max-width: 767px) {
+                #shopify-section-{{ section_id }} .banner-with-headings__title--{{ forloop.index }} {
+                  margin-bottom: {{ margin_bottom_mobile }}px;
+                  font-size: {{ font_size_mobile }}px;
+                }
+              }
+            </style>
+            <h3 class="banner-with-headings__title banner-with-headings__title--{{ forloop.index }}">{{ title }}</h3>
+
+          {% when 'discount_heading' %}
+            {%- liquid
+              assign unit = block.settings.unit
+              assign title = block.settings.title
+              assign text_1 = block.settings.text_1
+              assign text_2 = block.settings.text_2
+              assign margin_bottom_desktop = block.settings.margin_bottom_desktop
+              assign margin_bottom_mobile = block.settings.margin_bottom_mobile
+              assign price_amount_font_size = block.settings.price_amount_font_size
+              assign price_amount_font_size_m = block.settings.price_amount_font_size_m
+              assign letter_spacing_text_1 = block.settings.letter_spacing_text_1
+              assign letter_spacing_text_2 = block.settings.letter_spacing_text_2
+              assign icon_image = block.settings.icon_image
+              assign font_size_text_1 = block.settings.font_size_text_1
+              assign font_size_text_2 = block.settings.font_size_text_2
+            -%}
+            <style>
+              #shopify-section-{{ section_id }} .banner-with-headings__group--{{ forloop.index }} {
+                margin-bottom: {{ margin_bottom_desktop }}px
+              }
+              #shopify-section-{{ section_id }} .banner-with-headings__title_price--{{ forloop.index }} {
+                font-size: {{ price_amount_font_size }}px;
+                line-height: {{ price_amount_font_size }}px;
+              }
+              @media (max-width: 767px) {
+                #shopify-section-{{ section_id }} .banner-with-headings__group--{{ forloop.index }} {
+                  margin-bottom: {{ margin_bottom_mobile }}px
+                }
+                #shopify-section-{{ section_id }} .banner-with-headings__title_price--{{ forloop.index }} {
+                  font-size: {{ price_amount_font_size_m }}px;
+                  line-height: {{ price_amount_font_size_m }}px;
+                }
+              }
+            </style>
+            <div class="banner-with-headings__group banner-with-headings__group--{{ forloop.index }}">
+              <div class="banner-with-headings__group-price">
+                {% if unit != blank %}<span class="banner-with-headings__unit">{{ unit }}</span>{% endif %}
+                <span class="banner-with-headings__title_price banner-with-headings__title_price--{{ forloop.index }}">{{ title }}</span>
+              </div>
+              <div class="banner-with-headings__group-text">
+                <span class="banner-with-headings__text" style="font-size: {{ font_size_text_1 }}px; letter-spacing: {{ letter_spacing_text_1 }}px;">{{ text_1 }}</span>
+                <span class="banner-with-headings__text" style="font-size: {{ font_size_text_2 }}px; letter-spacing: {{ letter_spacing_text_2 }}px;">{{ text_2 }}</span>
+                {% if icon_image != blank %}
+                <span class="banner-with-headings__group-icon">
+                  <img
+                    class="banner-with-headings__group-icon-image"
+                    src="{{ icon_image | img_url: 'master' }}"
+                    width="{{ icon_image.width }}"
+                    height="{{ icon_image.height }}"
+                    alt="{{ icon_image.alt }}">
+                </span>
+                {% endif %}
+              </div>
+            </div>
+
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "cust_Banner with headings",
+  "class": "cust-slider-image-content",
+  "presets": [
+    {
+      "name": "cust_Banner with headings"
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_div_id",
+      "label": "Section ID",
+      "info": "The ID of the section (no need to add #). Example: 'section-1'"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Section heading"
+    },
+    {
+      "type": "color",
+      "id": "section_background_color",
+      "label": "Section background color",
+      "default": "transparent"
+    },
+    {
+      "type": "text",
+      "id": "section_div_class",
+      "label": "Section class",
+      "info": "The class of the section. Can be used to style the section. (no need to add .). Example: 'some-class-name'"
+    },
+    {
+      "type": "header",
+      "content": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Image (Desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image (Mobile)"
+    },
+    {
+      "type": "range",
+      "id": "image_height_desktop",
+      "label": "Image container height (Desktop)",
+      "min": 300,
+      "max": 800,
+      "step": 10,
+      "unit": "px",
+      "default": 640
+    },
+    {
+      "type": "range",
+      "id": "image_height_mobile",
+      "label": "Image container height (Mobile)",
+      "min": 300,
+      "max": 800,
+      "step": 10,
+      "unit": "px",
+      "default": 500
+    },
+  ],
+  "blocks": [
+    {
+      "name": "Heading",
+      "type": "heading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "range",
+          "id": "font_size_desktop",
+          "label": "Font size (Desktop)",
+          "min": 14,
+          "max": 34,
+          "step": 1,
+          "unit": "px",
+          "default": 20
+        },
+        {
+          "type": "range",
+          "id": "font_size_mobile",
+          "label": "Font size (Mobile)",
+          "min": 12,
+          "max": 34,
+          "step": 1,
+          "unit": "px",
+          "default": 14
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom_desktop",
+          "label": "Margin bottom (Desktop)",
+          "min": 0,
+          "max": 54,
+          "step": 1,
+          "unit": "px",
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom_mobile",
+          "label": "Margin bottom (Mobile)",
+          "min": 0,
+          "max": 34,
+          "step": 1,
+          "unit": "px",
+          "default": 12
+        }
+      ]
+    },
+    {
+      "name": "Discount Heading",
+      "type": "discount_heading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "unit",
+          "label": "Price symbol",
+          "info": "Example: '€'"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Price amount",
+          "default": "1050"
+        },
+        {
+          "type": "range",
+          "id": "price_amount_font_size",
+          "label": "Font size desktop",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "default": 72
+        },
+        {
+          "type": "range",
+          "id": "price_amount_font_size_m",
+          "label": "Font size mobile",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "default": 72
+        },
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text 1",
+          "default": "Save up"
+        },
+        {
+          "type": "range",
+          "id": "font_size_text_1",
+          "label": "Font size",
+          "min": 14,
+          "max": 24,
+          "step": 1,
+          "unit": "px",
+          "default": 24
+        },
+        {
+          "type": "range",
+          "id": "letter_spacing_text_1",
+          "label": "Letter spacing",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "default": 1
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text 2",
+          "default": "OFF"
+        },
+        {
+          "type": "range",
+          "id": "font_size_text_2",
+          "label": "Font size",
+          "min": 14,
+          "max": 24,
+          "step": 1,
+          "unit": "px",
+          "default": 24
+        },
+        {
+          "type": "range",
+          "id": "letter_spacing_text_2",
+          "label": "Letter spacing",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "default": 1
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_image",
+          "label": "Icon image"
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom_desktop",
+          "label": "Margin bottom (Desktop)",
+          "min": 0,
+          "max": 54,
+          "step": 1,
+          "unit": "px",
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom_mobile",
+          "label": "Margin bottom (Mobile)",
+          "min": 0,
+          "max": 34,
+          "step": 1,
+          "unit": "px",
+          "default": 12
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
