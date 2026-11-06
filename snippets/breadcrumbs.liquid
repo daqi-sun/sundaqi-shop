@@ -40,7 +40,7 @@
     <li class="breadcrumbs__item">
       <a class="breadcrumbs__link" href="{{ product.url }}" aria-current="page">{{ product.title }}</a>
     </li>
-    {%- when 'collection' and collection.handle -%}
+    {%- when 'collection' -%}
       {% if link_found_in_menu %}
         {%- for link in linklists[section.settings.top_menu].links -%}
           {%- comment %}<locksmith:438b>{% endcomment -%}
@@ -154,4 +154,13 @@
     {%- endcase -%}
   </ol>
 </nav>
-{%- endunless -%}
+{%- endunless -%}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- when 'collection' and collection.handle -%}"
+  to: "{%- when 'collection' -%}"
+  position: 1637..1662
+{%- endcomment -%}

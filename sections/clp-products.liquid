@@ -68,11 +68,7 @@
               and current_variant.compare_at_price != current_variant.price
             %}
               <div class="clp-product-discount">
-                {%
-                  render 'ht-responsive-image',
-                  image: section.settings.badge,
-                  image_mobile: section.settings.badge.
-                %}
+                {% render 'ht-responsive-image', image: section.settings.badge, image_mobile: section.settings.badge %}
                 <div class="clp-product-discount-text">
                   {% assign priceDiff = current_variant.compare_at_price
                     | minus: current_variant.price
@@ -511,3 +507,19 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%
+                      render 'ht-responsive-image',
+                      image: section.settings.badge,
+                      image_mobile: section.settings.badge.
+                    %}
+  to: "{% render 'ht-responsive-image', image: section.settings.badge, image_mobile:
+    section.settings.badge %}"
+  position: 2583..2686
+{% endcomment %}

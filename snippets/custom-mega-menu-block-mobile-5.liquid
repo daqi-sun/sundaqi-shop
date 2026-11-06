@@ -18,7 +18,7 @@
                     {%- comment %}<locksmith:60e3>{% endcomment -%}
                       {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: custom_product, subject_parent: collections[mega_menu_block.settings.tab_1_block_5_row_1_coll], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
                     {%- comment %}</locksmith:60e3>{% endcomment -%}
-                    {% render 'mega-menu-product' with link: child_child_link, mega_menu_block: mega_menu_block, custom_product: custom_product %}
+                    {% render 'mega-menu-product' with link, link: child_child_link, mega_menu_block: mega_menu_block, custom_product: custom_product %}
                 {% endfor %}
             {% else %}
                 {% for i in (1..5) %}
@@ -92,7 +92,7 @@
                     {%- comment %}<locksmith:4263>{% endcomment -%}
                       {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: custom_product, subject_parent: collections[mega_menu_block.settings.tab_1_block_5_row_2_coll], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
                     {%- comment %}</locksmith:4263>{% endcomment -%}
-                    {% render 'mega-menu-product' with link: child_child_link, mega_menu_block: mega_menu_block, custom_product: custom_product %}
+                    {% render 'mega-menu-product' with link, link: child_child_link, mega_menu_block: mega_menu_block, custom_product: custom_product %}
                 {% endfor %}
             {% else %}
                 {% for i in (1..5) %}
@@ -146,4 +146,20 @@
             {% endif %}
         </div>
     </div>
-</div>
+</div>{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'mega-menu-product' with link: child_child_link, mega_menu_block:
+    mega_menu_block, custom_product: custom_product %}"
+  to: "{% render 'mega-menu-product' with link, link: child_child_link, mega_menu_block:
+    mega_menu_block, custom_product: custom_product %}"
+  position: 1811..1943
+- from: "{% render 'mega-menu-product' with link: child_child_link, mega_menu_block:
+    mega_menu_block, custom_product: custom_product %}"
+  to: "{% render 'mega-menu-product' with link, link: child_child_link, mega_menu_block:
+    mega_menu_block, custom_product: custom_product %}"
+  position: 7128..7260
+{%- endcomment -%}

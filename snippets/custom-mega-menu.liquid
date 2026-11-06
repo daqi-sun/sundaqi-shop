@@ -46,23 +46,23 @@
           </div>
           <div class="custom_menu_right_side">
               {% if mega_menu_block.settings.block_1_title != blank %}
-                  {% render 'custom-mega-menu-block-1' with mega_menu_block: mega_menu_block, active_block_index: active_block_index %}
+                  {% render 'custom-mega-menu-block-1' with mega_menu_block, mega_menu_block: mega_menu_block, active_block_index: active_block_index %}
               {% endif %}
 
               {% if mega_menu_block.settings.block_2_title != blank %}
-                  {% render 'custom-mega-menu-block-2' with mega_menu_block: mega_menu_block, active_block_index: active_block_index %}
+                  {% render 'custom-mega-menu-block-2' with mega_menu_block, mega_menu_block: mega_menu_block, active_block_index: active_block_index %}
               {% endif %}
 
               {% if mega_menu_block.settings.block_3_title != blank %}
-                  {% render 'custom-mega-menu-block-3' with mega_menu_block: mega_menu_block, active_block_index: active_block_index %}
+                  {% render 'custom-mega-menu-block-3' with mega_menu_block, mega_menu_block: mega_menu_block, active_block_index: active_block_index %}
               {% endif %}
 
               {% if mega_menu_block.settings.block_4_title != blank %}
-                  {% render 'custom-mega-menu-block-4' with mega_menu_block: mega_menu_block, active_block_index: active_block_index %}
+                  {% render 'custom-mega-menu-block-4' with mega_menu_block, mega_menu_block: mega_menu_block, active_block_index: active_block_index %}
               {% endif %}
 
               {% if mega_menu_block.settings.block_5_title != blank %}
-                {% render 'custom-mega-menu-block-5' with mega_menu_block: mega_menu_block, active_block_index: active_block_index %}
+                {% render 'custom-mega-menu-block-5' with mega_menu_block, mega_menu_block: mega_menu_block, active_block_index: active_block_index %}
               {% endif %}
           </div>
       </div>
@@ -163,7 +163,7 @@
                           {%- comment %}</locksmith:3bd4>{% endcomment -%}
                           {% if child_child_link.type == 'collection_link' %}
                             {% unless child_child_link.title contains 'View all' %}
-                              {% render 'mega-menu-block-content' with link: child_child_link, main_link: child_link, mega_menu_block: mega_menu_block, index: locksmith_c148_forloop__index %}
+                              {% render 'mega-menu-block-content' with link, link: child_child_link, main_link: child_link, mega_menu_block: mega_menu_block, index: locksmith_c148_forloop__index %}
                             {% endunless %}
                           {% else %}
                             {% for block in blocks %}
@@ -171,7 +171,7 @@
                               {%- assign downcase_title = child_child_link.title | downcase | strip -%}
                               {% if mega_menu_setting_downcase == downcase_title %}
                                 {% if block.type == 'custom_mega_menu_child' %}
-                                  {% render 'custom-mega-menu-child' with mega_menu_block: block %}
+                                  {% render 'custom-mega-menu-child' with mega_menu_block, mega_menu_block: block %}
                                 {% endif %}
                               {% endif %}
                             {% endfor %}
@@ -179,7 +179,7 @@
                         {% endfor %}
                       {% elsif child_link.type == 'collection_link' %}
                         {% unless child_link.title contains 'View all' %}
-                          {% render 'mega-menu-block-content' with link: child_link, main_link: link, mega_menu_block: mega_menu_block, index: forloop.index %}
+                          {% render 'mega-menu-block-content' with link, link: child_link, main_link: link, mega_menu_block: mega_menu_block, index: forloop.index %}
                         {% endunless %}
                       {% else %}
                         {% for block in blocks %}
@@ -187,7 +187,7 @@
                           {%- assign downcase_title = child_link.title | downcase | strip -%}
                           {% if mega_menu_setting_downcase == downcase_title %}
                             {% if block.type == 'custom_mega_menu_child' %}
-                              {% render 'custom-mega-menu-child' with mega_menu_block: block %}
+                              {% render 'custom-mega-menu-child' with mega_menu_block, mega_menu_block: block %}
                             {% endif %}
                           {% endif %}
                         {% endfor %}
@@ -196,7 +196,7 @@
                     {% endfor %}
                 {% elsif link.type == 'collection_link' %}
                 <div class="custom_menu_block_content {% unless active_block_found %}active{% endunless %}" data-title="{{ link.title }}-{{ forloop.index }}">
-                  {% render 'mega-menu-block-content' with link: link, main_link: link_menu, mega_menu_block: mega_menu_block, index: forloop.index %}
+                  {% render 'mega-menu-block-content' with link, link: link, main_link: link_menu, mega_menu_block: mega_menu_block, index: forloop.index %}
                 </div>
                 {% else %}
                   {% for block in blocks %}
@@ -204,7 +204,7 @@
                     {%- assign downcase_title = link.title | downcase | strip -%}
                     {% if mega_menu_setting_downcase == downcase_title %}
                       {% if block.type == 'custom_mega_menu_child' %}
-                        {% render 'custom-mega-menu-child' with mega_menu_block: block %}
+                        {% render 'custom-mega-menu-child' with mega_menu_block, mega_menu_block: block %}
                       {% endif %}
                     {% endif %}
                   {% endfor %}
@@ -220,7 +220,7 @@
                 <div class="custom_menu_block_content image_links_block {% unless active_block_found %}active{% endunless %}" data-title="{{ mega_menu_block.settings[block_title] }}">
                   {% assign active_block_found = true %}
                   <div class="custom_menu_tab_content_inner">
-                    {% render 'mega-menu-image-block' with i: i, mega_menu_block: mega_menu_block %}
+                    {% render 'mega-menu-image-block' with i, i: i, mega_menu_block: mega_menu_block %}
                   </div>
                 </div>
               {% endif %}
@@ -230,7 +230,7 @@
             <div class="custom_menu_block_content image_links_block level_1_image_links_block {% unless active_block_found %}active{% endunless %}">
               <div class="custom_menu_tab_content_inner">
                 {% for i in (1..5) %}
-                  {% render 'mega-menu-image-block' with i: i, mega_menu_block: mega_menu_block %}
+                  {% render 'mega-menu-image-block' with i, i: i, mega_menu_block: mega_menu_block %}
                 {% endfor %}
               </div>
             </div>
@@ -250,4 +250,74 @@
       </div>
     {%- endif -%}
   </div>
-</div>
+</div>{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'custom-mega-menu-block-1' with mega_menu_block: mega_menu_block,
+    active_block_index: active_block_index %}"
+  to: "{% render 'custom-mega-menu-block-1' with mega_menu_block, mega_menu_block:
+    mega_menu_block, active_block_index: active_block_index %}"
+  position: 3284..3418
+- from: "{% render 'custom-mega-menu-block-2' with mega_menu_block: mega_menu_block,
+    active_block_index: active_block_index %}"
+  to: "{% render 'custom-mega-menu-block-2' with mega_menu_block, mega_menu_block:
+    mega_menu_block, active_block_index: active_block_index %}"
+  position: 3535..3669
+- from: "{% render 'custom-mega-menu-block-3' with mega_menu_block: mega_menu_block,
+    active_block_index: active_block_index %}"
+  to: "{% render 'custom-mega-menu-block-3' with mega_menu_block, mega_menu_block:
+    mega_menu_block, active_block_index: active_block_index %}"
+  position: 3786..3920
+- from: "{% render 'custom-mega-menu-block-4' with mega_menu_block: mega_menu_block,
+    active_block_index: active_block_index %}"
+  to: "{% render 'custom-mega-menu-block-4' with mega_menu_block, mega_menu_block:
+    mega_menu_block, active_block_index: active_block_index %}"
+  position: 4037..4171
+- from: "{% render 'custom-mega-menu-block-5' with mega_menu_block: mega_menu_block,
+    active_block_index: active_block_index %}"
+  to: "{% render 'custom-mega-menu-block-5' with mega_menu_block, mega_menu_block:
+    mega_menu_block, active_block_index: active_block_index %}"
+  position: 4286..4420
+- from: "{% render 'mega-menu-block-content' with link: child_child_link, main_link:
+    child_link, mega_menu_block: mega_menu_block, index: locksmith_c148_forloop__index
+    %}"
+  to: "{% render 'mega-menu-block-content' with link, link: child_child_link, main_link:
+    child_link, mega_menu_block: mega_menu_block, index: locksmith_c148_forloop__index
+    %}"
+  position: 16893..17060
+- from: "{% render 'custom-mega-menu-child' with mega_menu_block: block %}"
+  to: "{% render 'custom-mega-menu-child' with mega_menu_block, mega_menu_block: block
+    %}"
+  position: 17616..17698
+- from: "{% render 'mega-menu-block-content' with link: child_link, main_link: link,
+    mega_menu_block: mega_menu_block, index: forloop.index %}"
+  to: "{% render 'mega-menu-block-content' with link, link: child_link, main_link:
+    link, mega_menu_block: mega_menu_block, index: forloop.index %}"
+  position: 18072..18211
+- from: "{% render 'custom-mega-menu-child' with mega_menu_block: block %}"
+  to: "{% render 'custom-mega-menu-child' with mega_menu_block, mega_menu_block: block
+    %}"
+  position: 18729..18811
+- from: "{% render 'mega-menu-block-content' with link: link, main_link: link_menu,
+    mega_menu_block: mega_menu_block, index: forloop.index %}"
+  to: "{% render 'mega-menu-block-content' with link, link: link, main_link: link_menu,
+    mega_menu_block: mega_menu_block, index: forloop.index %}"
+  position: 19257..19395
+- from: "{% render 'custom-mega-menu-child' with mega_menu_block: block %}"
+  to: "{% render 'custom-mega-menu-child' with mega_menu_block, mega_menu_block: block
+    %}"
+  position: 19848..19930
+- from: "{% render 'mega-menu-image-block' with i: i, mega_menu_block: mega_menu_block
+    %}"
+  to: "{% render 'mega-menu-image-block' with i, i: i, mega_menu_block: mega_menu_block
+    %}"
+  position: 20797..20880
+- from: "{% render 'mega-menu-image-block' with i: i, mega_menu_block: mega_menu_block
+    %}"
+  to: "{% render 'mega-menu-image-block' with i, i: i, mega_menu_block: mega_menu_block
+    %}"
+  position: 21381..21464
+{%- endcomment -%}

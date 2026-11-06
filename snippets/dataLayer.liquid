@@ -161,10 +161,10 @@
         index: "{{ locksmith_8162_forloop__index }}",
         item_brand: "EcoFlow",
         item_category: "{{ product.type }}",
-        item_category2: "{{ getCategoryOption(product, "Color") }}",
-        item_category3: "{{ getCategoryOption(product, "Bundle") }}",
-        item_category4: "{{ getCategoryOption(product, "Gift") }}",
-        item_variant: "{{ getCategoryOption(product, "Capacity") }}",
+        item_category2: "{{ getCategoryOption.product }}",
+        item_category3: "{{ getCategoryOption.product }}",
+        item_category4: "{{ getCategoryOption.product }}",
+        item_variant: "{{ getCategoryOption.product }}",
         price: collectionPrice
     })
     {% endfor %}
@@ -215,9 +215,9 @@
             item_name: "{{line_item.product.title}}",
             item_brand: "EcoFlow",
             item_category: "{{ line_item.type }}",
-            item_category2: "{{ getCategoryOption(line_item, "Color") }}",
-            item_category3: "{{ getCategoryOption(product, "Bundle") }}",
-            item_category4: "{{ getCategoryOption(line_item, "Gift") }}",
+            item_category2: "{{ getCategoryOption.line_item }}",
+            item_category3: "{{ getCategoryOption.product }}",
+            item_category4: "{{ getCategoryOption.line_item }}",
             item_variant: "{{ line_item.variant.options | join: "_" | replace: "Default Title", ""}}",
             price: catrProductPrice,
             quantity: {{ line_item.quantity | default: 1 }}
@@ -276,7 +276,7 @@
               cartItems.splice(index,1)
           }else if(ymalAddIndex >= 0){
               const productName = cartDrawer.querySelectorAll(".rktheme-widget-container .product")[ymalAddIndex].querySelector(".product__description__name").innerText;
-              const productPrice = convertMoney({{ cartDrawer.querySelectorAll(".rktheme-widget-container .product")[ymalAddIndex].querySelector(".product__description__variant").innerText }});
+              const productPrice = convertMoney({{ cartDrawer.querySelectorAll.rktheme-widget-container.product[ymalAddIndex].querySelector.product__description__variant.innerText }});
               const productItem = {
                 item_list_name: "none",
                 item_name: productName,
@@ -345,9 +345,9 @@
           item_name: "{{ product.title }}",
           item_brand: "EcoFlow",
           item_category: "{{ product.type }}",
-          item_category2: "{{ getCategoryOption(product, "Color") }}",
+          item_category2: "{{ getCategoryOption.product }}",
           item_category3: bundle.join(","),
-          item_category4: "{{ getCategoryOption(product, "Gift") }}",
+          item_category4: "{{ getCategoryOption.product }}",
           item_variant: model.join("_"),
           price: productDetailPrice
       }
@@ -472,9 +472,9 @@
           index: 1,
           item_brand: "EcoFlow",
           item_category: "{{ product.type }}",
-          item_category2: "{{ getCategoryOption(product, "Color") }}",
+          item_category2: "{{ getCategoryOption.product }}",
           item_category3: bundle.join(","),
-          item_category4: "{{ getCategoryOption(product, "Gift") }}",
+          item_category4: "{{ getCategoryOption.product }}",
           item_variant: model.join("_"),
           price: productDetailPrice,
           quantity: productQuantity
@@ -566,9 +566,9 @@
             item_name: "{{line_item.product.title}}",
             item_brand: "EcoFlow",
             item_category: "{{ line_item.type }}",
-            item_category2: "{{ getCategoryOption(line_item, "Color") }}",
-            item_category3: "{{ getCategoryOption(product, "Bundle") }}",
-            item_category4: "{{ getCategoryOption(line_item, "Gift") }}",
+            item_category2: "{{ getCategoryOption.line_item }}",
+            item_category3: "{{ getCategoryOption.product }}",
+            item_category4: "{{ getCategoryOption.line_item }}",
             item_variant: "{{ line_item.variant.options | join: "_" | replace: "Default Title", ""}}",
             price: catrProductPrice,
             quantity: {{ line_item.quantity | default: 1 }}
@@ -708,9 +708,9 @@
     item_name: "{{ line_item.product.title }}",
     item_brand: "EcoFlow",
     item_category: "{{ line_item.product.type }}",
-    item_category2: "{{ getCategoryOption(line_item, "Color") }}",
-    item_category3: "{{ getCategoryOption(line_item, "Bundle") }}",
-    item_category4: "{{ getCategoryOption(line_item, "Gift") }}",
+    item_category2: "{{ getCategoryOption.line_item }}",
+    item_category3: "{{ getCategoryOption.line_item }}",
+    item_category4: "{{ getCategoryOption.line_item }}",
     item_variant: checkoutModel[{{ forloop.index0 }}],
     price: purchasePrice,
     quantity: {{ line_item.quantity }}
@@ -753,9 +753,9 @@
             index: "{{ forloop.index }}",
             item_brand: "EcoFlow",
             item_category: "{{ line_item.product.type }}",
-            item_category2: "{{ getCategoryOption(line_item, "Color") }}",
-            item_category3: "{{ getCategoryOption(line_item, "Bundle") }}",
-            item_category4: "{{ getCategoryOption(line_item, "Gift") }}",
+            item_category2: "{{ getCategoryOption.line_item }}",
+            item_category3: "{{ getCategoryOption.line_item }}",
+            item_category4: "{{ getCategoryOption.line_item }}",
             item_variant: checkoutModel[{{ forloop.index0 }}],
             price: shippingPrice,
             quantity: {{ line_item.quantity }}
@@ -872,3 +872,75 @@
     {% endif %}
 }) ();
 </script>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{{ getCategoryOption(product, "Color") }}'
+  to: "{{ getCategoryOption.product }}"
+  position: 6525..6556
+- from: '{{ getCategoryOption(product, "Bundle") }}'
+  to: "{{ getCategoryOption.product }}"
+  position: 6584..6615
+- from: '{{ getCategoryOption(product, "Gift") }}'
+  to: "{{ getCategoryOption.product }}"
+  position: 6643..6674
+- from: '{{ getCategoryOption(product, "Capacity") }}'
+  to: "{{ getCategoryOption.product }}"
+  position: 6700..6731
+- from: '{{ getCategoryOption(line_item, "Color") }}'
+  to: "{{ getCategoryOption.line_item }}"
+  position: 8664..8697
+- from: '{{ getCategoryOption(product, "Bundle") }}'
+  to: "{{ getCategoryOption.product }}"
+  position: 8729..8760
+- from: '{{ getCategoryOption(line_item, "Gift") }}'
+  to: "{{ getCategoryOption.line_item }}"
+  position: 8792..8825
+- from: '{{ cartDrawer.querySelectorAll(".rktheme-widget-container .product")[ymalAddIndex].querySelector(".product__description__variant").innerText
+    }}'
+  to: "{{ cartDrawer.querySelectorAll.rktheme-widget-container.product[ymalAddIndex].querySelector.product__description__variant.innerText
+    }}"
+  position: 11728..11862
+- from: '{{ getCategoryOption(product, "Color") }}'
+  to: "{{ getCategoryOption.product }}"
+  position: 14298..14329
+- from: '{{ getCategoryOption(product, "Gift") }}'
+  to: "{{ getCategoryOption.product }}"
+  position: 14403..14434
+- from: '{{ getCategoryOption(product, "Color") }}'
+  to: "{{ getCategoryOption.product }}"
+  position: 19022..19053
+- from: '{{ getCategoryOption(product, "Gift") }}'
+  to: "{{ getCategoryOption.product }}"
+  position: 19127..19158
+- from: '{{ getCategoryOption(line_item, "Color") }}'
+  to: "{{ getCategoryOption.line_item }}"
+  position: 22334..22367
+- from: '{{ getCategoryOption(product, "Bundle") }}'
+  to: "{{ getCategoryOption.product }}"
+  position: 22399..22430
+- from: '{{ getCategoryOption(line_item, "Gift") }}'
+  to: "{{ getCategoryOption.line_item }}"
+  position: 22462..22495
+- from: '{{ getCategoryOption(line_item, "Color") }}'
+  to: "{{ getCategoryOption.line_item }}"
+  position: 27669..27702
+- from: '{{ getCategoryOption(line_item, "Bundle") }}'
+  to: "{{ getCategoryOption.line_item }}"
+  position: 27726..27759
+- from: '{{ getCategoryOption(line_item, "Gift") }}'
+  to: "{{ getCategoryOption.line_item }}"
+  position: 27783..27816
+- from: '{{ getCategoryOption(line_item, "Color") }}'
+  to: "{{ getCategoryOption.line_item }}"
+  position: 29570..29603
+- from: '{{ getCategoryOption(line_item, "Bundle") }}'
+  to: "{{ getCategoryOption.line_item }}"
+  position: 29635..29668
+- from: '{{ getCategoryOption(line_item, "Gift") }}'
+  to: "{{ getCategoryOption.line_item }}"
+  position: 29700..29733
+{% endcomment %}

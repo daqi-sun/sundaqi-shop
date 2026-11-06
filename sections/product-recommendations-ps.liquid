@@ -44,12 +44,12 @@
                                 <div class="recommended_products count-{{recommended_product_count}} {% if forloop.first %}active{% endif %}" data-station="{{block.settings.power_station}}">
                                     {% if block.settings.recommended_product_1 != blank %}
                                         {% assign product = all_products[block.settings.recommended_product_1] %}
-                                        {% render 'recommended-product' with product: product, btn_text: block.settings.recommended_product_1_btn_text, text: block.settings.recommended_product_1_text, title_position: 'default' %}
+                                        {% render 'recommended-product' with product, product: product, btn_text: block.settings.recommended_product_1_btn_text, text: block.settings.recommended_product_1_text, title_position: 'default' %}
                                     {% endif %}
 
                                     {% if block.settings.recommended_product_2 != blank %}
                                         {% assign product = all_products[block.settings.recommended_product_2] %}
-                                        {% render 'recommended-product' with product: product, btn_text: block.settings.recommended_product_2_btn_text, text: block.settings.recommended_product_2_text, title_position: 'default' %}
+                                        {% render 'recommended-product' with product, product: product, btn_text: block.settings.recommended_product_2_btn_text, text: block.settings.recommended_product_2_text, title_position: 'default' %}
                                     {% endif %}
                                 </div>
                             {% endfor %}
@@ -155,3 +155,20 @@
     ]
   }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'recommended-product' with product: product, btn_text: block.settings.recommended_product_1_btn_text,
+    text: block.settings.recommended_product_1_text, title_position: 'default' %}"
+  to: "{% render 'recommended-product' with product, product: product, btn_text: block.settings.recommended_product_1_btn_text,
+    text: block.settings.recommended_product_1_text, title_position: 'default' %}"
+  position: 3402..3600
+- from: "{% render 'recommended-product' with product: product, btn_text: block.settings.recommended_product_2_btn_text,
+    text: block.settings.recommended_product_2_text, title_position: 'default' %}"
+  to: "{% render 'recommended-product' with product, product: product, btn_text: block.settings.recommended_product_2_btn_text,
+    text: block.settings.recommended_product_2_text, title_position: 'default' %}"
+  position: 3895..4093
+{% endcomment %}

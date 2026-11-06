@@ -1,1 +1,13 @@
-[{"_name":"Product Box","_template":"product-box","_zone":"ecoflow-river","_icon":"","section_id":"wyqzsqfmbe","atb_enable_checkbox":"true","atb_title":"What's in the box","atb_background_image":"","atb_background_image_mobile":"","atb_description":"{% assign 160SP = all_products['160w-solar-panel'] %}{{ 160SP.price | money }}","i":0}]
+[{"_name":"Product Box","_template":"product-box","_zone":"ecoflow-river","_icon":"","section_id":"wyqzsqfmbe","atb_enable_checkbox":"true","atb_title":"What's in the box","atb_background_image":"","atb_background_image_mobile":"","atb_description":"{% assign renamed_variable_160SP = all_products['160w-solar-panel'] %}{{ renamed_variable_160SP.price | money }}","i":0}]{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% assign 160SP = all_products['160w-solar-panel'] %}"
+  to: "{% assign renamed_variable_160SP = all_products['160w-solar-panel'] %}"
+  position: 250..320
+- from: "{{ 160SP.price | money }}"
+  to: "{{ renamed_variable_160SP.price | money }}"
+  position: 320..362
+{%- endcomment -%}

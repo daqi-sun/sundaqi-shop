@@ -1186,7 +1186,7 @@ class="predictive-search-item">
           {%- assign is_mega_menu = false -%}
           {%- assign downcase_title = link.title | downcase | strip -%}
 
-          {% include 'mobile-mega-menu' with link: link, outerLoopIndex: outerLoopIndex, index: locksmith_6c25_forloop__index, blocks: section.blocks %}
+          {% include 'mobile-mega-menu' with link, link: link, outerLoopIndex: outerLoopIndex, index: locksmith_6c25_forloop__index, blocks: section.blocks %}
         {% endfor %}
       </ul>
       <div class='mobile-nav-footer'>
@@ -4165,4 +4165,15 @@ document.documentElement.style.setProperty('--sticky-header-height', '0');
 </script>
 <script src="https://swrap.tradedoubler.com/wrap?id=[CONTAINER_TAG_ID]"></script>
 
-                                
+                                {%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% include 'mobile-mega-menu' with link: link, outerLoopIndex: outerLoopIndex,
+    index: locksmith_6c25_forloop__index, blocks: section.blocks %}"
+  to: "{% include 'mobile-mega-menu' with link, link: link, outerLoopIndex: outerLoopIndex,
+    index: locksmith_6c25_forloop__index, blocks: section.blocks %}"
+  position: 71481..71629
+{%- endcomment -%}

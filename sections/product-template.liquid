@@ -361,7 +361,7 @@ You can learn more about this (and learn how to cleanly revert these changes) at
           endfor
         -%}
 
-        {% capture "form_classes" -%}
+        {% capture form_classes -%}
         product-form product-form-{{ section.id }}
         {%- if found_option -%}
         disabled_btns
@@ -2484,3 +2484,13 @@ You can learn more about this (and learn how to cleanly revert these changes) at
 	]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% capture "form_classes" -%}'
+  to: "{% capture form_classes -%}"
+  position: 15882..15909
+{% endcomment %}

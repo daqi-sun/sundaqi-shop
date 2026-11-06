@@ -212,7 +212,7 @@ ATB-SCHEMA{
                 {%- if collections[block_main_collection[forloop.index0]].handle == collection.handle -%}
                     {%- for i in (1..6) -%}
                         {%- capture title -%}tab_{{i}}_title{%- endcapture -%}
-                        {%- if block_title[forloop.index0]] != blank -%}
+                        {%- if block_title[forloop.index0] != blank -%}
                             {%- assign tab_count = tab_count | plus: 1 -%}
                         {%- endif -%}
                     {%- endfor -%}
@@ -226,8 +226,8 @@ ATB-SCHEMA{
                     {%- if collections[block_main_collection[forloop.index0]].handle == collection.handle -%}
                         {%- for i in (1..6) -%}
                             {%- capture title -%}tab_{{i}}_title{%- endcapture -%}
-                            {%- if block_title[forloop.index0]] != blank -%}
-                                <div class="accessories-tab-title {% unless tab_shown %}tab-active{% endunless %}" data-tab-title="{{ block_title[forloop.index0]] | handleize }}">{{ block_title[forloop.index0]] }}</div>
+                            {%- if block_title[forloop.index0] != blank -%}
+                                <div class="accessories-tab-title {% unless tab_shown %}tab-active{% endunless %}" data-tab-title="{{ block_title[forloop.index0] | handleize }}">{{ block_title[forloop.index0] }}</div>
                                 {%- assign tab_shown = true -%}
                             {%- endif -%}
                         {%- endfor -%}
@@ -247,10 +247,10 @@ ATB-SCHEMA{
                             {%- capture title -%}tab_{{i}}_title{%- endcapture -%}
                             {%- capture tab_collection -%}tab_{{i}}_collection{%- endcapture -%}
                             {%- capture products_count -%}tab_{{i}}_max_products_count{%- endcapture -%}
-                            {%- if block_title[forloop.index0]] != blank -%}
-                                {%- assign tab_collection = block_tab_collection[forloop.index0]] -%}
+                            {%- if block_title[forloop.index0] != blank -%}
+                                {%- assign tab_collection = block_tab_collection[forloop.index0] -%}
 
-                                <div class="accessories-tab-content {% unless tab_shown %}tab-content-active{% endunless %}" data-tab-title="{{ block_title[forloop.index0]] | handleize }}">
+                                <div class="accessories-tab-content {% unless tab_shown %}tab-content-active{% endunless %}" data-tab-title="{{ block_title[forloop.index0] | handleize }}">
                                     <div class="grid {% if settings.align_height %} use_align_height {% else %} use_image_height {% endif %} Collection-wrapper grid--uniform" >
                                         {% for product in collections[tab_collection].products %}
                                             {%- comment %}<locksmith:d265>{% endcomment -%}
@@ -270,4 +270,31 @@ ATB-SCHEMA{
     </div>
     {%- endif -%}
 {%- endif -%}
-</section>
+</section>{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- if block_title[forloop.index0]] != blank -%}"
+  to: "{%- if block_title[forloop.index0] != blank -%}"
+  position: 6192..6239
+- from: "{%- if block_title[forloop.index0]] != blank -%}"
+  to: "{%- if block_title[forloop.index0] != blank -%}"
+  position: 6896..6943
+- from: "{{ block_title[forloop.index0]] | handleize }}"
+  to: "{{ block_title[forloop.index0] | handleize }}"
+  position: 7075..7120
+- from: "{{ block_title[forloop.index0]] }}"
+  to: "{{ block_title[forloop.index0] }}"
+  position: 7122..7155
+- from: "{%- if block_title[forloop.index0]] != blank -%}"
+  to: "{%- if block_title[forloop.index0] != blank -%}"
+  position: 8215..8262
+- from: "{%- assign tab_collection = block_tab_collection[forloop.index0]] -%}"
+  to: "{%- assign tab_collection = block_tab_collection[forloop.index0] -%}"
+  position: 8295..8363
+- from: "{{ block_title[forloop.index0]] | handleize }}"
+  to: "{{ block_title[forloop.index0] | handleize }}"
+  position: 8506..8551
+{%- endcomment -%}

@@ -17,7 +17,7 @@
                         {% if block.settings.product != blank %}
                             {% assign accessory = all_products[block.settings.product] %}
                             <div class="recommendation-column accessory-outer">
-                                {% render 'recommended-product' with product: accessory, btn_text: block.settings.recommended_product_btn_text, text: block.settings.recommended_product_text, title_position: 'top' %}
+                                {% render 'recommended-product' with product, product: accessory, btn_text: block.settings.recommended_product_btn_text, text: block.settings.recommended_product_text, title_position: 'top' %}
                             </div>
                         {% endif %}
                     {% endfor %}
@@ -86,4 +86,16 @@
         }
     ]
   }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'recommended-product' with product: accessory, btn_text: block.settings.recommended_product_btn_text,
+    text: block.settings.recommended_product_text, title_position: 'top' %}"
+  to: "{% render 'recommended-product' with product, product: accessory, btn_text:
+    block.settings.recommended_product_btn_text, text: block.settings.recommended_product_text,
+    title_position: 'top' %}"
+  position: 1247..1439
+{%- endcomment -%}

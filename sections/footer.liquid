@@ -315,8 +315,8 @@
               </div>
               {% endform %}
             </div>
-            {% render 'modal-consent' with id: 'footer-sms-consent', text: block.settings.sms_consent_text, confirm: block.settings.sms_consent_confirm %}
-            {% render 'modal-consent' with id: 'footer-email-consent', text: block.settings.email_consent_text, confirm: block.settings.email_consent_confirm %}
+            {% render 'modal-consent' with id, id: 'footer-sms-consent', text: block.settings.sms_consent_text, confirm: block.settings.sms_consent_confirm %}
+            {% render 'modal-consent' with id, id: 'footer-email-consent', text: block.settings.email_consent_text, confirm: block.settings.email_consent_confirm %}
             <script>
               // footer section settings will pass to below js file
               window.footerNewsletterSettingJsons = {{ block.settings | json }};
@@ -1728,3 +1728,20 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'modal-consent' with id: 'footer-sms-consent', text: block.settings.sms_consent_text,
+    confirm: block.settings.sms_consent_confirm %}"
+  to: "{% render 'modal-consent' with id, id: 'footer-sms-consent', text: block.settings.sms_consent_text,
+    confirm: block.settings.sms_consent_confirm %}"
+  position: 16926..17072
+- from: "{% render 'modal-consent' with id: 'footer-email-consent', text: block.settings.email_consent_text,
+    confirm: block.settings.email_consent_confirm %}"
+  to: "{% render 'modal-consent' with id, id: 'footer-email-consent', text: block.settings.email_consent_text,
+    confirm: block.settings.email_consent_confirm %}"
+  position: 17085..17237
+{% endcomment %}

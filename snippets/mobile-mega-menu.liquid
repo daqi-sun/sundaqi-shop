@@ -114,7 +114,7 @@
                                                     {%- comment %}<locksmith:5991>{% endcomment -%}
                                                       {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: child_child_link.object, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
                                                     {%- comment %}</locksmith:5991>{% endcomment -%}
-                                                    {% render 'mega-menu-product' with link: child_child_link, mega_menu_block: mega_menu_block, custom_product: product %}
+                                                    {% render 'mega-menu-product' with link, link: child_child_link, mega_menu_block: mega_menu_block, custom_product: product %}
                                                 {% endfor %}
                                             </div>
                                         </div>
@@ -125,7 +125,7 @@
                                             {%- assign downcase_title = child_child_link.title | downcase | strip -%}
                                             {% if mega_menu_setting_downcase == downcase_title %}
                                                 {% if block.type == 'custom_mega_menu_child' %}
-                                                    {% render 'custom-mega-menu-block-mobile-child' with mega_menu_block: block %}
+                                                    {% render 'custom-mega-menu-block-mobile-child' with mega_menu_block, mega_menu_block: block %}
                                                 {% endif %}
                                             {% endif %}
                                         {% endfor %}
@@ -181,7 +181,7 @@
                                             {%- comment %}<locksmith:73a1>{% endcomment -%}
                                               {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: child_link.object, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
                                             {%- comment %}</locksmith:73a1>{% endcomment -%}
-                                            {% render 'mega-menu-product' with link: child_link, mega_menu_block: mega_menu_block, custom_product: product %}
+                                            {% render 'mega-menu-product' with link, link: child_link, mega_menu_block: mega_menu_block, custom_product: product %}
                                         {% endfor %}
                                     </div>
                                 </div>
@@ -192,7 +192,7 @@
                                     {%- assign downcase_title = child_link.title | downcase | strip -%}
                                     {% if mega_menu_setting_downcase == downcase_title %}
                                         {% if block.type == 'custom_mega_menu_child' %}
-                                            {% render 'custom-mega-menu-block-mobile-child' with mega_menu_block: block %}
+                                            {% render 'custom-mega-menu-block-mobile-child' with mega_menu_block, mega_menu_block: block %}
                                         {% endif %}
                                     {% endif %}
                                 {% endfor %}
@@ -208,7 +208,7 @@
                             {%- comment %}<locksmith:0f6c>{% endcomment -%}
                               {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: link.object, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
                             {%- comment %}</locksmith:0f6c>{% endcomment -%}
-                            {% render 'mega-menu-product' with link: link, mega_menu_block: mega_menu_block, custom_product: product %}
+                            {% render 'mega-menu-product' with link, link: link, mega_menu_block: mega_menu_block, custom_product: product %}
                         {% endfor %}
                     </div>
                 {% else %}
@@ -217,7 +217,7 @@
                         {%- assign downcase_title = link.title | downcase | strip -%}
                         {% if mega_menu_setting_downcase == downcase_title %}
                             {% if block.type == 'custom_mega_menu_child' %}
-                                {% render 'custom-mega-menu-block-mobile-child' with mega_menu_block: block %}
+                                {% render 'custom-mega-menu-block-mobile-child' with mega_menu_block, mega_menu_block: block %}
                             {% endif %}
                         {% endif %}
                     {% endfor %}
@@ -241,10 +241,10 @@
                 <div class="custom_menu_tab_content_inner">
                     {% if mega_menu_block.settings.images_level == '2' %}
                         {% if mega_menu_block.settings[block_title] != blank %}
-                            {% render 'mega-menu-image-block' with i: i, mega_menu_block: mega_menu_block %}
+                            {% render 'mega-menu-image-block' with i, i: i, mega_menu_block: mega_menu_block %}
                         {% endif %}
                     {% elsif mega_menu_block.settings.images_level == '1' %}
-                        {% render 'mega-menu-image-block' with i: i, mega_menu_block: mega_menu_block %}
+                        {% render 'mega-menu-image-block' with i, i: i, mega_menu_block: mega_menu_block %}
                     {% endif %}
                 </div>
             {% endfor %}
@@ -262,7 +262,7 @@
                     </div>
                 </button>
                 {% assign open_element_found = true %}
-                {% render 'custom-mega-menu-block-mobile-1' with mega_menu_block: mega_menu_block %}
+                {% render 'custom-mega-menu-block-mobile-1' with mega_menu_block, mega_menu_block: mega_menu_block %}
             {% endif %}
             {% if mega_menu_block.settings.block_2_title != blank %}
                 <button type="button" class="btn--link js-toggle-submenu mobile-nav__link mobile-nav__sublist-link {% if open_element_found == false %}is-active{% endif %}" data-target="{{ mega_menu_block.settings.block_2_title }}" data-level="2" aria-expanded="false">
@@ -274,7 +274,7 @@
                     </div>
                 </button>
                 {% assign open_element_found = true %}
-                {% render 'custom-mega-menu-block-mobile-2' with mega_menu_block: mega_menu_block %}
+                {% render 'custom-mega-menu-block-mobile-2' with mega_menu_block, mega_menu_block: mega_menu_block %}
             {% endif %}
             {% if mega_menu_block.settings.block_3_title != blank %}
                 <button type="button" class="btn--link js-toggle-submenu mobile-nav__link mobile-nav__sublist-link {% if open_element_found == false %}is-active{% endif %}" data-target="{{ mega_menu_block.settings.block_3_title }}" data-level="2" aria-expanded="false">
@@ -286,7 +286,7 @@
                     </div>
                 </button>
                 {% assign open_element_found = true %}
-                {% render 'custom-mega-menu-block-mobile-3' with mega_menu_block: mega_menu_block %}
+                {% render 'custom-mega-menu-block-mobile-3' with mega_menu_block, mega_menu_block: mega_menu_block %}
             {% endif %}
             {% if mega_menu_block.settings.block_4_title != blank %}
                 <button type="button" class="btn--link js-toggle-submenu mobile-nav__link mobile-nav__sublist-link {% if open_element_found == false %}is-active{% endif %}" data-target="{{ mega_menu_block.settings.block_4_title }}" data-level="2" aria-expanded="false">
@@ -298,7 +298,7 @@
                     </div>
                 </button>
                 {% assign open_element_found = true %}
-                {% render 'custom-mega-menu-block-mobile-4' with mega_menu_block: mega_menu_block %}
+                {% render 'custom-mega-menu-block-mobile-4' with mega_menu_block, mega_menu_block: mega_menu_block %}
             {% endif %}
             {% if mega_menu_block.settings.block_5_title != blank %}
                 <button type="button" class="btn--link js-toggle-submenu mobile-nav__link mobile-nav__sublist-link {% if open_element_found == false %}is-active{% endif %}" data-target="{{ mega_menu_block.settings.block_5_title }}" data-level="2" aria-expanded="false">
@@ -310,7 +310,7 @@
                     </div>
                 </button>
                 {% assign open_element_found = true %}
-                {% render 'custom-mega-menu-block-mobile-5' with mega_menu_block: mega_menu_block %}
+                {% render 'custom-mega-menu-block-mobile-5' with mega_menu_block, mega_menu_block: mega_menu_block %}
             {% endif %}
         </div>
     {% endif %}
@@ -388,3 +388,75 @@
     </a>
 </li>
 {% endif %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'mega-menu-product' with link: child_child_link, mega_menu_block:
+    mega_menu_block, custom_product: product %}"
+  to: "{% render 'mega-menu-product' with link, link: child_child_link, mega_menu_block:
+    mega_menu_block, custom_product: product %}"
+  position: 13377..13502
+- from: "{% render 'custom-mega-menu-block-mobile-child' with mega_menu_block: block
+    %}"
+  to: "{% render 'custom-mega-menu-block-mobile-child' with mega_menu_block, mega_menu_block:
+    block %}"
+  position: 14350..14445
+- from: "{% render 'mega-menu-product' with link: child_link, mega_menu_block: mega_menu_block,
+    custom_product: product %}"
+  to: "{% render 'mega-menu-product' with link, link: child_link, mega_menu_block:
+    mega_menu_block, custom_product: product %}"
+  position: 19561..19680
+- from: "{% render 'custom-mega-menu-block-mobile-child' with mega_menu_block: block
+    %}"
+  to: "{% render 'custom-mega-menu-block-mobile-child' with mega_menu_block, mega_menu_block:
+    block %}"
+  position: 20419..20514
+- from: "{% render 'mega-menu-product' with link: link, mega_menu_block: mega_menu_block,
+    custom_product: product %}"
+  to: "{% render 'mega-menu-product' with link, link: link, mega_menu_block: mega_menu_block,
+    custom_product: product %}"
+  position: 21659..21772
+- from: "{% render 'custom-mega-menu-block-mobile-child' with mega_menu_block: block
+    %}"
+  to: "{% render 'custom-mega-menu-block-mobile-child' with mega_menu_block, mega_menu_block:
+    block %}"
+  position: 22302..22397
+- from: "{% render 'mega-menu-image-block' with i: i, mega_menu_block: mega_menu_block
+    %}"
+  to: "{% render 'mega-menu-image-block' with i, i: i, mega_menu_block: mega_menu_block
+    %}"
+  position: 23644..23727
+- from: "{% render 'mega-menu-image-block' with i: i, mega_menu_block: mega_menu_block
+    %}"
+  to: "{% render 'mega-menu-image-block' with i, i: i, mega_menu_block: mega_menu_block
+    %}"
+  position: 23865..23948
+- from: "{% render 'custom-mega-menu-block-mobile-1' with mega_menu_block: mega_menu_block
+    %}"
+  to: "{% render 'custom-mega-menu-block-mobile-1' with mega_menu_block, mega_menu_block:
+    mega_menu_block %}"
+  position: 25143..25244
+- from: "{% render 'custom-mega-menu-block-mobile-2' with mega_menu_block: mega_menu_block
+    %}"
+  to: "{% render 'custom-mega-menu-block-mobile-2' with mega_menu_block, mega_menu_block:
+    mega_menu_block %}"
+  position: 26207..26308
+- from: "{% render 'custom-mega-menu-block-mobile-3' with mega_menu_block: mega_menu_block
+    %}"
+  to: "{% render 'custom-mega-menu-block-mobile-3' with mega_menu_block, mega_menu_block:
+    mega_menu_block %}"
+  position: 27271..27372
+- from: "{% render 'custom-mega-menu-block-mobile-4' with mega_menu_block: mega_menu_block
+    %}"
+  to: "{% render 'custom-mega-menu-block-mobile-4' with mega_menu_block, mega_menu_block:
+    mega_menu_block %}"
+  position: 28335..28436
+- from: "{% render 'custom-mega-menu-block-mobile-5' with mega_menu_block: mega_menu_block
+    %}"
+  to: "{% render 'custom-mega-menu-block-mobile-5' with mega_menu_block, mega_menu_block:
+    mega_menu_block %}"
+  position: 29399..29500
+{% endcomment %}

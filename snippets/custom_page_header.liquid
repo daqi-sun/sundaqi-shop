@@ -99,7 +99,7 @@
 
 
 {% if blog_show_author %}
-	{% render 'article_author_block' with: article:article %}
+	{% render 'article_author_block', with: article.article %}
 {% endif %}
 
       </div>
@@ -139,3 +139,13 @@
 </div>
 {% endif %}
 {% endif %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'article_author_block' with: article:article %}"
+  to: "{% render 'article_author_block', with: article.article %}"
+  position: 4531..4589
+{% endcomment %}

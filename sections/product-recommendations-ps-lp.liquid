@@ -73,12 +73,12 @@
                                 <div class="recommended_products count-{{recommended_product_count}} {% if forloop.first %}active{% endif %}" data-station="{{block.settings.power_station}}">
                                     {% if block.settings.recommended_product_1 != blank or block.settings.show_manual_options_product_1 %}
                                         {% assign product = all_products[block.settings.recommended_product_1] %}
-                                        {% render 'recommended-product-1' with block: block %}
+                                        {% render 'recommended-product-1' with block, block: block %}
                                     {% endif %}
 
                                     {% if block.settings.recommended_product_2 != blank or block.settings.show_manual_options_product_2 %}
                                         {% assign product = all_products[block.settings.recommended_product_2] %}
-                                        {% render 'recommended-product-2' with block: block %}
+                                        {% render 'recommended-product-2' with block, block: block %}
                                     {% endif %}
                                 </div>
                             {% endfor %}
@@ -530,3 +530,16 @@
     ]
   }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'recommended-product-1' with block: block %}"
+  to: "{% render 'recommended-product-1' with block, block: block %}"
+  position: 6017..6078
+- from: "{% render 'recommended-product-2' with block: block %}"
+  to: "{% render 'recommended-product-2' with block, block: block %}"
+  position: 6421..6482
+{% endcomment %}

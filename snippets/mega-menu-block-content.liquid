@@ -39,7 +39,18 @@
         {%- comment %}<locksmith:82d0>{% endcomment -%}
           {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: link.object, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
         {%- comment %}</locksmith:82d0>{% endcomment -%}
-        {% render 'mega-menu-product' with custom_product: product %}
+        {% render 'mega-menu-product' with custom_product, custom_product: product %}
     {% endfor %}
   </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'mega-menu-product' with custom_product: product %}"
+  to: "{% render 'mega-menu-product' with custom_product, custom_product: product
+    %}"
+  position: 2540..2617
+{% endcomment %}

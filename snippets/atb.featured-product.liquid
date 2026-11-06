@@ -614,7 +614,7 @@ ATB-SCHEMA{
 
 
         {% endcapture %}
-        {% capture "form_classes" -%}product-form product-form-{{ section_id }}
+        {% capture form_classes -%}product-form product-form-{{ section_id }}
         {%- if atb_enable_payment_button and product.has_only_default_variant%} product-form--payment-button-no-variants{% endif %}
               {%- if current_variant.available == false %} product-form--variant-sold-out {%- endif -%}
         {%- endcapture %}
@@ -929,11 +929,11 @@ ATB-SCHEMA{
             {% capture show_block_handle %}show_block_{{i}}{% endcapture %}
 
 
-            {% assign link = block_link_handle[forloop.index0]] %}
-            {% assign text = block_text_handle[forloop.index0]] %}
-            {% assign image = block_image_handle[forloop.index0]] %}
+            {% assign link = block_link_handle[forloop.index0] %}
+            {% assign text = block_text_handle[forloop.index0] %}
+            {% assign image = block_image_handle[forloop.index0] %}
 
-            {% assign show_block = block_show_block_handle[forloop.index0]] %}
+            {% assign show_block = block_show_block_handle[forloop.index0] %}
 
              {% if i == 1 %}
           {% assign show_block = true %}
@@ -1375,11 +1375,11 @@ ATB-SCHEMA{
             {% capture show_block_handle %}show_block_{{i}}{% endcapture %}
 
 
-            {% assign link = block_link_handle[forloop.index0]] %}
-            {% assign text = block_text_handle[forloop.index0]] %}
-            {% assign image = block_image_handle[forloop.index0]] %}
+            {% assign link = block_link_handle[forloop.index0] %}
+            {% assign text = block_text_handle[forloop.index0] %}
+            {% assign image = block_image_handle[forloop.index0] %}
 
-            {% assign show_block = block_show_block_handle[forloop.index0]] %}
+            {% assign show_block = block_show_block_handle[forloop.index0] %}
 
              {% if i == 1 %}
           {% assign show_block = true %}
@@ -1688,4 +1688,37 @@ ATB-SCHEMA{
 
 
 
-</section>
+</section>{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% capture "form_classes" -%}'
+  to: "{% capture form_classes -%}"
+  position: 21619..21646
+- from: "{% assign link = block_link_handle[forloop.index0]] %}"
+  to: "{% assign link = block_link_handle[forloop.index0] %}"
+  position: 35618..35671
+- from: "{% assign text = block_text_handle[forloop.index0]] %}"
+  to: "{% assign text = block_text_handle[forloop.index0] %}"
+  position: 35684..35737
+- from: "{% assign image = block_image_handle[forloop.index0]] %}"
+  to: "{% assign image = block_image_handle[forloop.index0] %}"
+  position: 35750..35805
+- from: "{% assign show_block = block_show_block_handle[forloop.index0]] %}"
+  to: "{% assign show_block = block_show_block_handle[forloop.index0] %}"
+  position: 35819..35884
+- from: "{% assign link = block_link_handle[forloop.index0]] %}"
+  to: "{% assign link = block_link_handle[forloop.index0] %}"
+  position: 54393..54446
+- from: "{% assign text = block_text_handle[forloop.index0]] %}"
+  to: "{% assign text = block_text_handle[forloop.index0] %}"
+  position: 54459..54512
+- from: "{% assign image = block_image_handle[forloop.index0]] %}"
+  to: "{% assign image = block_image_handle[forloop.index0] %}"
+  position: 54525..54580
+- from: "{% assign show_block = block_show_block_handle[forloop.index0]] %}"
+  to: "{% assign show_block = block_show_block_handle[forloop.index0] %}"
+  position: 54594..54659
+{%- endcomment -%}
